@@ -1,7 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellKick
   skillUiPosition: 0, 0
-  tree: Atlethic
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: kick
@@ -10,8 +9,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSprint
-  skillUiPosition: 0, 2
-  tree: Atlethic
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
@@ -20,9 +18,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSprintGoblin
-  skillUiPosition: 2, 2
+  skillUiPosition: 0, 0
   learnCost: 0
-  tree: Atlethic
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint

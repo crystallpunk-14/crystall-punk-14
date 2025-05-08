@@ -1,7 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellCureBurn
   skillUiPosition: 0, 0
-  tree: Healing
   learnCost: 1
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
@@ -11,9 +10,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellBloodPurification
-  skillUiPosition: 2, 0
+  skillUiPosition: 0, 0
   learnCost: 1
-  tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_poison
@@ -22,9 +20,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
-  skillUiPosition: 4, 0
+  skillUiPosition: 0, 0
   learnCost: 1
-  tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_wounds
@@ -33,8 +30,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellPlantGrowth
-  skillUiPosition: 0, 2
-  tree: Healing
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: plant_growth
@@ -43,9 +39,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellHealBallade
-  skillUiPosition: 0, 6
+  skillUiPosition: 0, 0
   learnCost: 1
-  tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: heal_music
@@ -54,8 +49,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellPeaceBallade
-  skillUiPosition: 0, 8
-  tree: Healing
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: peace_music
@@ -64,8 +58,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSpeedBallade
-  skillUiPosition: 0, 10
-  tree: Healing
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: speed_music
@@ -74,8 +67,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSheepPolymorph
-  skillUiPosition: 4, 10
-  tree: Healing
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/misc.rsi
     state: polymorph

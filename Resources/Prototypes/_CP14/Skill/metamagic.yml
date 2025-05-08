@@ -1,7 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellMagicSplitting
   skillUiPosition: 0, 0
-  tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: counter_spell
@@ -10,9 +9,8 @@
     
 - type: cp14Skill
   id: CP14ActionSpellManaGift
-  skillUiPosition: 0, 2
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
@@ -21,9 +19,8 @@
     
 - type: cp14Skill
   id: CP14ActionSpellManaGiftElf
-  skillUiPosition: 2, 2
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
@@ -38,9 +35,8 @@
     
 - type: cp14Skill
   id: CP14ActionSpellManaConsume
-  skillUiPosition: 0, 4
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
@@ -49,9 +45,8 @@
     
 - type: cp14Skill
   id: CP14ActionSpellManaConsumeElf
-  skillUiPosition: 2, 4
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
@@ -66,8 +61,7 @@
     
 - type: cp14Skill
   id: CP14ActionSpellMagicBallade
-  skillUiPosition: 0, 6
-  tree: Metamagic
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: magic_music

@@ -1,7 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellSphereOfLight
   skillUiPosition: 0, 0
-  tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
@@ -10,8 +9,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellFlashLight
-  skillUiPosition: 2, 0
-  tree: Illusion
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: flash_light
@@ -20,9 +18,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightRed
-  skillUiPosition: 0, 4
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_red
@@ -31,9 +28,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightYellow
-  skillUiPosition: 0, 6
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_yellow
@@ -42,9 +38,8 @@
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightBlue
-  skillUiPosition: 0, 8
+  skillUiPosition: 0, 0
   learnCost: 0.5
-  tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_blue

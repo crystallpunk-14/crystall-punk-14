@@ -102,9 +102,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             _action.AddAction(entity, action);
         }
 
-        foreach (var tree in loadout.SkillTree)
+        foreach (var skill in loadout.Skills)
         {
-            _skill.TryAddExperience(entity, tree.Key, tree.Value);
+            _skill.TryAddSkill(entity, skill);
         }
     }
 

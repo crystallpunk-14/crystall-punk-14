@@ -66,20 +66,12 @@
                        HorizontalExpand="True" HorizontalAlignment="Center" />
             </BoxContainer>
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
-                <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
+                <parallax:ParallaxControl Name="ParallaxBackground" ParallaxPrototype="AspidParallax" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
                     <nodeTree:CP14NodeTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
                 </BoxContainer>
-                <!-- Tree Tabs -->
-                <BoxContainer Margin="10 10 10 10" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
-                    <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public"/>
-                </BoxContainer>
                 <!-- Experience Data -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
-                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-skillpoints'}" StyleClasses="LabelKeyText"/>
-                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
-                    <RichTextLabel Margin="0 0 20 0" Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
-
                     <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-level'}" StyleClasses="LabelKeyText"/>
                     <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
                     <RichTextLabel Margin="0 0 0 0" Name="LevelLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>

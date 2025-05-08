@@ -1,7 +1,6 @@
 - type: cp14Skill
   id: CP14ActionSpellFreeze
-  skillUiPosition: 0, 4
-  tree: Hydrosophistry
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: freeze
@@ -11,7 +10,6 @@
 - type: cp14Skill
   id: CP14ActionSpellWaterCreation
   skillUiPosition: 0, 0
-  tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: water_creation
@@ -20,8 +18,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellBeerCreation
-  skillUiPosition: 2, 0
-  tree: Hydrosophistry
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: beer_creation
@@ -33,8 +30,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellIceShards
-  skillUiPosition: 0, 6
-  tree: Hydrosophistry
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_shards
@@ -43,8 +39,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellIceDagger
-  skillUiPosition: 0, 8
-  tree: Hydrosophistry
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_dagger
@@ -53,8 +48,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellIceArrow
-  skillUiPosition: 0, 10
-  tree: Hydrosophistry
+  skillUiPosition: 0, 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
