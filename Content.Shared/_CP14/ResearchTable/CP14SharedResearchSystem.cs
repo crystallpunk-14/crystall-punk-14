@@ -13,7 +13,7 @@ public abstract class CP14SharedResearchSystem : EntitySystem
 public sealed partial class CP14ResearchDoAfterEvent : DoAfterEvent
 {
     [DataField(required: true)]
-    public ProtoId<CP14SkillPrototype> Recipe = default!;
+    public ProtoId<CP14SkillPrototype> Skill = default!;
 
     public override DoAfterEvent Clone() => this;
 }

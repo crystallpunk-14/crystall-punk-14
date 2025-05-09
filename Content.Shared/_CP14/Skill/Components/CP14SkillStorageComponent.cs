@@ -1,3 +1,4 @@
+using Content.Shared._CP14.ResearchTable;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
@@ -10,7 +11,7 @@ namespace Content.Shared._CP14.Skill.Components;
 /// Component that stores the skills learned by a player and their progress in the skill trees.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(CP14SharedSkillSystem))]
+[Access(typeof(CP14SharedSkillSystem), typeof(CP14SharedResearchSystem))]
 public sealed partial class CP14SkillStorageComponent : Component
 {
     [DataField, AutoNetworkedField]
