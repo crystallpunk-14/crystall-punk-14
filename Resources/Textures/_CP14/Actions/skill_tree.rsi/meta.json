@@ -29,6 +29,12 @@
       "name": "pyro"
     },
     {
+      "name": "pyro2"
+    },
+    {
+      "name": "pyro3"
+    },
+    {
       "name": "water"
     }
   ]

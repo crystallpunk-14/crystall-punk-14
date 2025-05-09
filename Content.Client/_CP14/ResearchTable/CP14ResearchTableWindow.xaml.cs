@@ -21,6 +21,7 @@ public sealed partial class CP14ResearchTableWindow : DefaultWindow
     [Dependency] private readonly IEntityManager _entity = default!;
 
     private readonly SpriteSystem _sprite;
+    private readonly CP14SharedSkillSystem _skillSystem;
 
     public event Action<CP14ResearchUiEntry>? OnResearch;
 
@@ -38,6 +39,7 @@ public sealed partial class CP14ResearchTableWindow : DefaultWindow
         IoCManager.InjectDependencies(this);
 
         _sprite = _entity.System<SpriteSystem>();
+        _skillSystem = _entity.System<CP14SharedSkillSystem>();
 
         Sawmill = _log.GetSawmill("cp14_research_table_window");
 
@@ -147,7 +149,7 @@ public sealed partial class CP14ResearchTableWindow : DefaultWindow
         if (_searchFilter == string.Empty)
             return true;
 
-        return Loc.GetString(indexedEntry.Name).Contains(_searchFilter);
+        return Loc.GetString(_skillSystem.GetSkillName(indexedEntry)).Contains(_searchFilter);
     }
 
     private bool ProcessSearchCategoryFilter(CP14SkillPrototype indexedEntry)
@@ -199,8 +201,8 @@ public sealed partial class CP14ResearchTableWindow : DefaultWindow
         _selectedEntry = entry;
 
         ItemView.Texture = _sprite.Frame0(skill.Icon);
-        ItemName.Text = Loc.GetString(skill.Name);
-        ItemDescription.Text = Loc.GetString(skill.Desc);
+        ItemName.Text = _skillSystem.GetSkillName(skill);
+        ItemDescription.Text = _skillSystem.GetSkillDescription(skill);
         ItemRequirements.RemoveAllChildren();
 
         foreach (var restriction in skill.Restrictions)

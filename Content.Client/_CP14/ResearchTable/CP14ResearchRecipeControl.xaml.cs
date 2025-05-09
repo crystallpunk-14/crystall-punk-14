@@ -17,6 +17,7 @@ public sealed partial class CP14ResearchRecipeControl : Control
     public event Action<CP14ResearchUiEntry, CP14SkillPrototype>? OnResearch;
 
     private readonly SpriteSystem _sprite;
+    private readonly CP14SharedSkillSystem _skillSystem;
 
     private readonly CP14SkillPrototype _skillPrototype;
     private readonly bool _craftable;
@@ -27,6 +28,7 @@ public sealed partial class CP14ResearchRecipeControl : Control
         IoCManager.InjectDependencies(this);
 
         _sprite = _entity.System<SpriteSystem>();
+        _skillSystem = _entity.System<CP14SharedSkillSystem>();
 
         _skillPrototype = _prototype.Index(entry.ProtoId);
         _craftable = entry.Craftable;
@@ -48,7 +50,7 @@ public sealed partial class CP14ResearchRecipeControl : Control
 
     private void UpdateName()
     {
-        Name.Text = $"{Loc.GetString(_skillPrototype.Name)}" ;
+        Name.Text = $"{Loc.GetString(_skillSystem.GetSkillName(_skillPrototype))}" ;
     }
 
     private void UpdateView()

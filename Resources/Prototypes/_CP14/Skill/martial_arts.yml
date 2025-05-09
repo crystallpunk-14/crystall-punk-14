@@ -23,11 +23,11 @@
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
     state: preview
-  restrictions:
-  - !type:Researched
-    requirements:
-    - !type:StackGroupResource
-      group: WoodenPlanks
-      count: 3
-  - !type:NeedPrerequisite
-    prerequisite: SwordMastery
+  #restrictions:
+  #- !type:Researched
+  #  requirements:
+  #  - !type:StackGroupResource
+  #    group: WoodenPlanks
+  #    count: 3
+  #- !type:NeedPrerequisite
+  #  prerequisite: SwordMastery

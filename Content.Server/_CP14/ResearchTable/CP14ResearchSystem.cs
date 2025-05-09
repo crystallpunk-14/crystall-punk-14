@@ -31,6 +31,13 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
         SubscribeLocalEvent<CP14ResearchTableComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
         SubscribeLocalEvent<CP14ResearchTableComponent, CP14ResearchMessage>(OnResearch);
         SubscribeLocalEvent<CP14ResearchTableComponent, CP14ResearchDoAfterEvent>(OnResearchEnd);
+
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnReloadPrototypes);
+    }
+
+    private void OnReloadPrototypes(PrototypesReloadedEventArgs ev)
+    {
+        _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
     }
 
     private void OnResearchEnd(Entity<CP14ResearchTableComponent> table, ref CP14ResearchDoAfterEvent args)
@@ -113,6 +120,11 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
 
                 switch (restriction)
                 {
+                    case SpeciesWhitelist speciesWhitelist: //We cant change species of our character, so hide it
+                        if (!speciesWhitelist.Check(EntityManager, user, skill))
+                            hidden = true;
+                        break;
+
                     case NeedPrerequisite prerequisite:
                         if (!storage.ResearchedSkills.Contains(prerequisite.Prerequisite))
                             hidden = true;

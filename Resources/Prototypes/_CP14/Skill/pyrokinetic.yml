@@ -1,16 +1,56 @@
+# T1 
+
+- type: cp14Skill
+  id: PyrokineticT1
+  skillUiPosition: 1, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t1-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro
+  effect: !type:ModifyManacost
+    modifiers:
+      Fire: -0.25
+  restrictions:
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:StackGroupResource
+      group: WoodenPlanks
+      count: 10
+    - !type:ProtoIdResource
+      protoId: CP14Lighter
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
 - type: cp14Skill
   id: CP14ActionSpellFlameCreation
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 4
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: flame_creation
   effect: !type:AddAction
     action: CP14ActionSpellFlameCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
-  skillUiPosition: 0, 2
+  skillUiPosition: 2, 4
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
@@ -18,12 +58,14 @@
   effect: !type:AddAction
     action: CP14ActionSpellHellBallade
   restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
   - !type:SpeciesWhitelist
     species: CP14Tiefling
 
 - type: cp14Skill
   id: CP14ActionSpellTieflingInnerFire
-  skillUiPosition: 0, 4
+  skillUiPosition: 2, 6
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
@@ -31,5 +73,78 @@
   effect: !type:AddAction
     action: CP14ActionSpellTieflingInnerFire
   restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
   - !type:SpeciesWhitelist
     species: CP14Tiefling
+
+# T2
+
+- type: cp14Skill
+  id: PyrokineticT2
+  skillUiPosition: 7, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro2
+  effect: !type:ModifyManacost
+    modifiers:
+      Fire: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 10
+
+- type: cp14Skill
+  id: CP14ActionSpellFireball
+  skillUiPosition: 6, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  effect: !type:AddAction
+    action: CP14ActionSpellFireball
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+# T3
+
+- type: cp14Skill
+  id: PyrokineticT3
+  skillUiPosition: 13, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t3-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro3
+  effect: !type:ModifyManacost
+    modifiers:
+      Fire: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 20
