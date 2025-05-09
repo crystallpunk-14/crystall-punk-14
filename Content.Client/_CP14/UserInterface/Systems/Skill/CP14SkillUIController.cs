@@ -206,7 +206,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         //Restrictions
         foreach (var req in skill.Restrictions)
         {
-            var color = req.Check(_entManager, _playerManager.LocalEntity.Value) ? "green" : "red";
+            var color = req.Check(_entManager, _playerManager.LocalEntity.Value, skill) ? "green" : "red";
 
             sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
         }

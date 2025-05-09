@@ -35,9 +35,6 @@ public abstract partial class CP14SharedSkillSystem
             if (!_proto.TryIndex(skill, out var indexedSkill))
                 continue;
 
-            if (indexedSkill.Name is null)
-                continue;
-
             var color = HaveSkill(args.Examiner, skill) ? Color.LimeGreen.ToHex() : Color.Red.ToHex();
             sb.Append($"[color={color}] - {Loc.GetString(indexedSkill.Name)} [/color]\n");
         }

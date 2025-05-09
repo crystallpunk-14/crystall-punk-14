@@ -17,3 +17,14 @@
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
     state: preview
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellSprint
+  - !type:Researched
+    requirements:
+    - !type:StackGroupResource
+      group: WoodenPlanks
+      count: 3
+    - !type:ProtoIdResource
+      protoId: CP14Rope
+      count: 1 

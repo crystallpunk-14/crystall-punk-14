@@ -35,7 +35,7 @@ public sealed partial class CP14WorkbenchSystem
 
             foreach (var requirement in indexedRecipe.Requirements)
             {
-                if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities, user, indexedRecipe))
+                if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities, user))
                 {
                     canCraft = false;
                     hidden = requirement.HideRecipe;

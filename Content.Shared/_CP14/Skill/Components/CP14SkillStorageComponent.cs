@@ -17,6 +17,12 @@ public sealed partial class CP14SkillStorageComponent : Component
     public List<ProtoId<CP14SkillPrototype>> LearnedSkills = new();
 
     /// <summary>
+    /// skills that the player has learned on the research table, but has not yet learned in the skill tree.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<ProtoId<CP14SkillPrototype>> ResearchedSkills = new();
+
+    /// <summary>
     /// The number of experience points spent on skills. Technically this could be calculated via LearnedSkills, but this is a cached value for optimization.
     /// </summary>
     [DataField, AutoNetworkedField]

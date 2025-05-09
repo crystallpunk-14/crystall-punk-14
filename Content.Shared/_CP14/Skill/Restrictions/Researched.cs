@@ -1,27 +1,26 @@
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared._CP14.Workbench;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill.Restrictions;
 
-public sealed partial class NeedPrerequisite : CP14SkillRestriction
+public sealed partial class Researched : CP14SkillRestriction
 {
     [DataField(required: true)]
-    public ProtoId<CP14SkillPrototype> Prerequisite = new();
+    public List<CP14WorkbenchCraftRequirement> Requirements = new();
 
     public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
     {
         if (!entManager.TryGetComponent<CP14SkillStorageComponent>(target, out var skillStorage))
             return false;
 
-        var learned = skillStorage.LearnedSkills;
-        return learned.Contains(Prerequisite);
+        var learned = skillStorage.ResearchedSkills;
+        return learned.Contains(skill);
     }
 
     public override string GetDescription(IEntityManager entManager, IPrototypeManager protoManager)
     {
-        var skillSystem = entManager.System<CP14SharedSkillSystem>();
-
-        return Loc.GetString("cp14-skill-req-prerequisite", ("name", skillSystem.GetSkillName(Prerequisite)));
+        return Loc.GetString("cp14-skill-req-researched");
     }
 }

@@ -10,7 +10,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Workbench;
 
-public abstract class SharedCP14WorkbenchSystem : EntitySystem
+public abstract class CP14SharedWorkbenchSystem : EntitySystem
 {
 }
 

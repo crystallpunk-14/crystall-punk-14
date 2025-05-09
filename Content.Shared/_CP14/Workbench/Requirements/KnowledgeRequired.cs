@@ -16,8 +16,7 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe)
+        EntityUid user)
     {
         var knowledgeSystem = entManager.System<CP14SharedSkillSystem>();
 

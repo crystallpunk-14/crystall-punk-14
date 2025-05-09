@@ -141,7 +141,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         //Restrictions check
         foreach (var req in skill.Restrictions)
         {
-            if (!req.Check(EntityManager, target))
+            if (!req.Check(EntityManager, target, skill))
                 return false;
         }
 
@@ -175,7 +175,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Name != null)
+        if (indexedSkill.Name != string.Empty)
             return Loc.GetString(indexedSkill.Name);
 
         if (indexedSkill.Effect != null)
@@ -192,7 +192,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Desc != null)
+        if (indexedSkill.Desc != string.Empty)
             return Loc.GetString(indexedSkill.Desc);
 
         if (indexedSkill.Effect != null)

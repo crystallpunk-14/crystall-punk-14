@@ -20,7 +20,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Workbench;
 
-public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
+public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -139,7 +139,7 @@ public sealed partial class CP14WorkbenchSystem : SharedCP14WorkbenchSystem
     {
         foreach (var req in recipe.Requirements)
         {
-            if (!req.CheckRequirement(EntityManager, _proto, entities, user, recipe))
+            if (!req.CheckRequirement(EntityManager, _proto, entities, user))
                 return false;
         }
 
