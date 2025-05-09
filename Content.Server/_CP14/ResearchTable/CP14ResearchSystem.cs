@@ -33,7 +33,7 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
         SubscribeLocalEvent<CP14ResearchTableComponent, CP14ResearchDoAfterEvent>(OnResearchEnd);
     }
 
-    private void OnResearchEnd(Entity<CP14ResearchTableComponent> ent, ref CP14ResearchDoAfterEvent args)
+    private void OnResearchEnd(Entity<CP14ResearchTableComponent> table, ref CP14ResearchDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled)
             return;
@@ -41,15 +41,12 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
         if (!_proto.TryIndex(args.Skill, out var indexedSkill))
             return;
 
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates,
-            ent.Comp.ResearchRadius,
+        var placedEntities = _lookup.GetEntitiesInRange(Transform(table).Coordinates,
+            table.Comp.ResearchRadius,
             LookupFlags.Uncontained);
 
         if (!CanResearch(indexedSkill, placedEntities, args.User))
-        {
-            //popup
             return;
-        }
 
         if (!TryComp<CP14SkillStorageComponent>(args.User, out var storage))
             return;
@@ -71,7 +68,8 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
             }
         }
 
-        UpdateUI(ent, args.User);
+        _audio.PlayPvs(table.Comp.ResearchSound, table);
+        UpdateUI(table, args.User);
         args.Handled = true;
     }
 
@@ -98,16 +96,28 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
     {
         var placedEntities = _lookup.GetEntitiesInRange(Transform(entity).Coordinates, entity.Comp.ResearchRadius);
 
+        if (!TryComp<CP14SkillStorageComponent>(user, out var storage))
+            return;
+
         var researches = new List<CP14ResearchUiEntry>();
         foreach (var skill in _allSkills)
         {
             var researchable = false;
             var canCraft = true;
+            var hidden = false;
 
             foreach (var restriction in skill.Restrictions)
             {
+                if (storage.ResearchedSkills.Contains(skill) || storage.LearnedSkills.Contains(skill))
+                    continue;
+
                 switch (restriction)
                 {
+                    case NeedPrerequisite prerequisite:
+                        if (!storage.ResearchedSkills.Contains(prerequisite.Prerequisite))
+                            hidden = true;
+                        break;
+
                     case Researched researched:
                         researchable = true;
 
@@ -122,7 +132,7 @@ public sealed class CP14ResearchSystem : CP14SharedResearchSystem
                 }
             }
 
-            if (!researchable)
+            if (!researchable || hidden)
                 continue;
 
             var entry = new CP14ResearchUiEntry(skill, canCraft);

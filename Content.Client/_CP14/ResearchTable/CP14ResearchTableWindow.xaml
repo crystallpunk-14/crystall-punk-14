@@ -1,7 +1,7 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-               Title="{Loc 'cp14-workbench-ui-title'}"
+               Title="{Loc 'cp14-research-table-title'}"
                SetSize="700 500"
                MinSize="700 300">
     <BoxContainer Orientation="Horizontal">
@@ -49,7 +49,7 @@
                         <controls:HLine Color="#404040" Thickness="2" Margin="0 5" />
 
                         <!-- Required title -->
-                        <Label Margin="5 0 0 0" Text="{Loc 'cp14-workbench-recipe-list'}" />
+                        <Label Margin="5 0 0 0" Text="{Loc 'cp14-research-recipe-list'}" />
 
                         <!-- Craft requirements content -->
                         <!-- Added by code -->
@@ -62,7 +62,7 @@
                         <controls:HLine Color="#404040" Thickness="5" Margin="0 5" />
 
                         <!-- Craft button -->
-                        <Button Name="CraftButton" Text="{Loc 'cp14-workbench-craft'}" />
+                        <Button Name="CraftButton" Text="{Loc 'cp14-research-craft'}" />
                     </BoxContainer>
                 </PanelContainer>
             </BoxContainer>
