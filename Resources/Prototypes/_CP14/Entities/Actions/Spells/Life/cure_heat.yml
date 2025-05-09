@@ -1,41 +1,39 @@
 - type: entity
-  id: CP14ActionSpellBloodPurification
-  name: Blood purification
-  description: You cleanse the target's blood of poisons, and restore its volume slightly
+  id: CP14ActionSpellCureBurn
+  name: Cure burn
+  description: You heal skin damage caused by excessive cooling or heating.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_poison
+    state: cure_burn
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
     manaCost: 10
   - type: CP14MagicEffect
+    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectBloodPurification
+      - CP14ImpactEffectCureBurn
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectBloodPurification
+      - CP14ImpactEffectCureBurn
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
         damage:
           types:
-            Poison: -10
-            Bloodloss: -10
-            Caustic: -10
+            Cold: -10
+            Heat: -10
+            Shock: -10
       - !type:Jitter
-      - !type:ModifyBleedAmount
-      - !type:ModifyBloodLevel
-        amount: 10
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Nella coda..."
-    endSpeech: "sta il veleno"
+    startSpeech: "Pellis dolorem..."
+    endSpeech: "non novit"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneBloodPurification
+    proto: CP14RuneCureBurn
   - type: EntityTargetAction
     whitelist:
       components:
@@ -47,14 +45,14 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
-      state: cure_poison
+      state: cure_burn
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
  
 - type: entity
-  id: CP14RuneBloodPurification
+  id: CP14RuneCureBurn
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
@@ -67,11 +65,11 @@
       color: "#79b330"
       shader: unshaded
     - state: double_outer
-      color: "#a1252f"
+      color: "#ed9b4a"
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectBloodPurification
+  id: CP14ImpactEffectCureBurn
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
@@ -84,9 +82,9 @@
 
 - type: entity
   parent: CP14BaseSpellScrollHealing
-  id: CP14SpellScrollBloodPurification
-  name: blood purification spell scroll
+  id: CP14SpellScrollCureBurn
+  name: cure burn spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellBloodPurification
+    - CP14ActionSpellCureBurn

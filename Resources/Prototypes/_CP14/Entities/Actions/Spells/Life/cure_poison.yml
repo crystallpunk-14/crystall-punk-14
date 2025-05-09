@@ -1,46 +1,42 @@
 - type: entity
-  id: CP14ActionSpellResurrection
-  name: Resurrection
-  description: You're trying to put the soul back into the body.
+  id: CP14ActionSpellBloodPurification
+  name: Blood purification
+  description: You cleanse the target's blood of poisons, and restore its volume slightly
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/necromancy.rsi
-    state: resurrection
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_poison
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.2
+    speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 100
-  - type: CP14MagicEffectAliveTargetRequired
-    inverted: true
+    manaCost: 10
   - type: CP14MagicEffect
+    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectResurrection
+      - CP14ImpactEffectBloodPurification
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectResurrection
-    - !type:CP14SpellResurrectionEffect
+      - CP14ImpactEffectBloodPurification
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:ChemVomit
-        probability: 0.25
-      - !type:Emote
-        showInChat: false
-        emote: Cough
-        probability: 0.3
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: -500
+            Poison: -10
             Bloodloss: -10
+            Caustic: -10
       - !type:Jitter
+      - !type:ModifyBleedAmount
+      - !type:ModifyBloodLevel
+        amount: 10
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Redi animam meam..."
-    endSpeech: "Eu rezei por ti"
+    startSpeech: "Nella coda..."
+    endSpeech: "sta il veleno"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneResurrection
+    proto: CP14RuneBloodPurification
   - type: EntityTargetAction
     whitelist:
       components:
@@ -48,19 +44,18 @@
     range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
-    canTargetSelf: false
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Actions/Spells/necromancy.rsi
-      state: resurrection
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: cure_poison
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 300
-      castDelay: 10
-      breakOnMove: true
-
+      cooldown: 5
+      castDelay: 1.5
+      breakOnMove: false
+ 
 - type: entity
-  id: CP14RuneResurrection
+  id: CP14RuneBloodPurification
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
@@ -70,29 +65,29 @@
   - type: Sprite
     layers:
     - state: sun
-      color: "#366357"
+      color: "#79b330"
       shader: unshaded
-    - state: medium_circle
-      color: "#55877a"
+    - state: double_outer
+      color: "#a1252f"
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectResurrection
+  id: CP14ImpactEffectBloodPurification
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
   components:
   - type: Sprite
     layers:
-    - state: wave_up
-      color: "#55877a"
+    - state: particles_up
+      color: "#79b330"
       shader: unshaded
 
 - type: entity
-  parent: CP14BaseSpellScrollNecromancy
-  id: CP14SpellScrollResurrection
-  name: resurrection spell scroll
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollBloodPurification
+  name: blood purification spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellResurrection
+    - CP14ActionSpellBloodPurification

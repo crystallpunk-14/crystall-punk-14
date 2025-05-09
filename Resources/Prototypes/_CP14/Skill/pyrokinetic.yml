@@ -17,12 +17,12 @@
     - !type:ProtoIdResource
       protoId: CP14Paper
       count: 1
-    - !type:StackGroupResource
-      group: WoodenPlanks
-      count: 10
+    - !type:ProtoIdResource
+      protoId: CP14Torch
+      count: 3
     - !type:ProtoIdResource
       protoId: CP14Lighter
-      count: 1
+      count: 2
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
       count: 2
@@ -100,8 +100,11 @@
       protoId: CP14Paper
       count: 1
     - !type:ProtoIdResource
+      protoId: CP14ModularInlayQuartzFire
+      count: 1
+    - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 10
+      count: 5
 
 - type: cp14Skill
   id: CP14ActionSpellFireball
@@ -122,7 +125,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 4
 
 # T3
 
@@ -147,4 +150,4 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 20
+      count: 50

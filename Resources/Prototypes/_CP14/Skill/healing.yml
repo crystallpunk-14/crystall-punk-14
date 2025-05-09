@@ -1,17 +1,56 @@
+# T1
+
 - type: cp14Skill
-  id: CP14ActionSpellCureBurn
-  skillUiPosition: 0, 0
+  id: HealingT1
+  skillUiPosition: 1, 0
   tree: Healing
-  learnCost: 1
+  name: cp14-skill-life-t1-name
   icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_burn
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal
+  effect: !type:ModifyManacost
+    modifiers:
+      Life: -0.25
+  restrictions:
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14BloodFlower
+      count: 5
+    - !type:ProtoIdResource
+      protoId: CP14AgaricMushroom
+      count: 5
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+- type: cp14Skill
+  id: CP14ActionSpellSheepPolymorph
+  skillUiPosition: 0, 4
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
   effect: !type:AddAction
-    action: CP14ActionSpellCureBurn
+    action: CP14ActionSpellSheepPolymorph
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellBloodPurification
-  skillUiPosition: 2, 0
+  skillUiPosition: 2, 6
   learnCost: 1
   tree: Healing
   icon:
@@ -19,10 +58,113 @@
     state: cure_poison
   effect: !type:AddAction
     action: CP14ActionSpellBloodPurification
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+- type: cp14Skill
+  id: CP14ActionSpellPlantGrowth
+  skillUiPosition: 2, 4
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: plant_growth
+  effect: !type:AddAction
+    action: CP14ActionSpellPlantGrowth
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+- type: cp14Skill
+  id: CP14ActionSpellSpeedBallade
+  skillUiPosition: 0, 6
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: speed_music
+  effect: !type:AddAction
+    action: CP14ActionSpellSpeedBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+# T2
+
+- type: cp14Skill
+  id: HealingT2
+  skillUiPosition: 7, 0
+  tree: Healing
+  name: cp14-skill-life-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal2
+  effect: !type:ModifyManacost
+    modifiers:
+      Life: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14ModularInlayQuartzLife
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 5
+
+- type: cp14Skill
+  id: CP14ActionSpellCureBurn
+  skillUiPosition: 6, 4
+  tree: Healing
+  learnCost: 1
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_burn
+  effect: !type:AddAction
+    action: CP14ActionSpellCureBurn
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
-  skillUiPosition: 4, 0
+  skillUiPosition: 6, 6
   learnCost: 1
   tree: Healing
   icon:
@@ -30,20 +172,21 @@
     state: cure_wounds
   effect: !type:AddAction
     action: CP14ActionSpellCureWounds
-
-- type: cp14Skill
-  id: CP14ActionSpellPlantGrowth
-  skillUiPosition: 0, 2
-  tree: Healing
-  icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: plant_growth
-  effect: !type:AddAction
-    action: CP14ActionSpellPlantGrowth
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellHealBallade
-  skillUiPosition: 0, 6
+  skillUiPosition: 8, 6
   learnCost: 1
   tree: Healing
   icon:
@@ -51,33 +194,60 @@
     state: heal_music
   effect: !type:AddAction
     action: CP14ActionSpellHealBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+# T3
 
 - type: cp14Skill
-  id: CP14ActionSpellPeaceBallade
-  skillUiPosition: 0, 8
+  id: HealingT3
+  skillUiPosition: 13, 0
   tree: Healing
+  name: cp14-skill-life-t3-name
   icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: peace_music
-  effect: !type:AddAction
-    action: CP14ActionSpellPeaceBallade
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal3
+  effect: !type:ModifyManacost
+    modifiers:
+      Life: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 6
 
 - type: cp14Skill
-  id: CP14ActionSpellSpeedBallade
-  skillUiPosition: 0, 10
+  id: CP14ActionSpellResurrection
+  skillUiPosition: 12, 4
   tree: Healing
   icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: speed_music
+    sprite: _CP14/Actions/Spells/necromancy.rsi
+    state: resurrection
   effect: !type:AddAction
-    action: CP14ActionSpellSpeedBallade
-
-- type: cp14Skill
-  id: CP14ActionSpellSheepPolymorph
-  skillUiPosition: 4, 10
-  tree: Healing
-  icon:
-    sprite: _CP14/Actions/Spells/misc.rsi
-    state: polymorph
-  effect: !type:AddAction
-    action: CP14ActionSpellSheepPolymorph
+    action: CP14ActionSpellResurrection
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT3
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 6

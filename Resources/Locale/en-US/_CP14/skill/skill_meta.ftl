@@ -6,3 +6,15 @@ cp14-skill-parier-mastery-name = Rapier Mastery
 cp14-skill-pyro-t1-name = Basic pyrokinetics
 cp14-skill-pyro-t2-name = Advanced pyrokinetics
 cp14-skill-pyro-t3-name = Expert pyrokinetics
+
+cp14-skill-illusion-t1-name = Basic illusion
+cp14-skill-illusion-t2-name = Advanced illusion
+cp14-skill-illusion-t3-name = Expert illusion
+
+cp14-skill-water-t1-name = Basic hydrosophistry
+cp14-skill-water-t2-name = Advanced hydrosophistry
+cp14-skill-water-t3-name = Expert hydrosophistry
+
+cp14-skill-life-t1-name = Basic lifecation
+cp14-skill-life-t2-name = Advanced lifecation
+cp14-skill-life-t3-name = Expert lifecation

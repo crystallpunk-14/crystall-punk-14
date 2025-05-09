@@ -17,7 +17,19 @@
       "name": "heal"
     },
     {
+      "name": "heal2"
+    },
+    {
+      "name": "heal3"
+    },
+    {
       "name": "light"
+    },
+    {
+      "name": "light2"
+    },
+    {
+      "name": "light3"
     },
     {
       "name": "martial"
@@ -36,6 +48,12 @@
     },
     {
       "name": "water"
+    },
+    {
+      "name": "water2"
+    },
+    {
+      "name": "water3"
     }
   ]
 }

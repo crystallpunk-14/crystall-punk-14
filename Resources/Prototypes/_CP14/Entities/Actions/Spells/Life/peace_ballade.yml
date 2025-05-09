@@ -1,30 +1,31 @@
 - type: entity
-  id: CP14ActionSpellHealBallade
-  name: Healing ballade
-  description: Your music is filled with healing magic, slowly healing all the creatures around you.
+  id: CP14ActionSpellPeaceBallade
+  name: Peace ballade
+  description: Your music is filled with peaceful magic, forbidding anyone near you to fight.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
-    state: heal_music
+    state: peace_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
-    manaCost: 1
+    manaCost: 2
   - type: CP14MagicEffect
+    magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14AreaEntityEffectHealBallade
+      - CP14AreaEntityEffectPeaceBallade
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneHealBallade
+    proto: CP14RunePeaceBallade
   - type: InstantAction
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
-      state: heal_music
+      state: peace_music
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 1
       cooldown: 15
@@ -32,7 +33,7 @@
       hidden: true
 
 - type: entity
-  id: CP14AreaEntityEffectHealBallade
+  id: CP14AreaEntityEffectPeaceBallade
   categories: [ HideSpawnMenu ]
   save: false
   components:
@@ -47,24 +48,17 @@
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectHealthBallade
+      - CP14ImpactEffectPeaceBallade
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Slash: -0.70
-            Blunt: -0.70
-            Piercing: -0.70
-            Cold: -0.40
-            Heat: -0.40
-            Shock: -0.40
-            Poison: -0.25
-            Bloodloss: -0.40
-            Caustic: -0.30
+      - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        type: Add
+        time: 1.8
 
 - type: entity
-  id: CP14ImpactEffectHealthBallade
+  id: CP14ImpactEffectPeaceBallade
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
@@ -73,20 +67,20 @@
     sprite: _CP14/Effects/music.rsi
     layers:
     - state: notes_5
-      color: "#79b330"
+      color: "#bd4fda"
       shader: unshaded
  
 - type: entity
-  id: CP14RuneHealBallade
+  id: CP14RunePeaceBallade
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
   components:
   - type: PointLight
-    color: "#79b330"
+    color: "#bd4fda"
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
     layers:
     - state: notes_3
-      color: "#79b330"
+      color: "#bd4fda"
       shader: unshaded

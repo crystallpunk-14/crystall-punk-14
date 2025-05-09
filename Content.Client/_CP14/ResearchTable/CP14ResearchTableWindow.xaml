@@ -12,7 +12,7 @@
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                     <!-- Search Bar -->
                     <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True" />
-                    <OptionButton Name="OptionCategories" Access="Public" MinSize="130 0"/>
+                    <OptionButton Name="OptionCategories" Access="Public" MinSize="130 0" />
                 </BoxContainer>
                 <!-- Crafts container -->
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
@@ -34,10 +34,11 @@
                         <!-- Item info -->
                         <!-- icon -->
                         <TextureRect Name="ItemView"
-                                             Margin="0,0,4,0"
-                                             MinSize="64 64"
-                                             MaxSize="64 64"
-                                             HorizontalAlignment="Left" />
+                                     Stretch="KeepAspectCentered"
+                                     Margin="5"
+                                     MinSize="64 64"
+                                     MaxSize="64 64"
+                                     HorizontalAlignment="Left" />
 
                         <!-- name & description -->
                         <BoxContainer Margin="5 0 0 0" HorizontalExpand="True" VerticalExpand="True"
