@@ -29,7 +29,7 @@
   id: CP14GuildmasterGear
   storage:
     back:
-    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalMedium
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingGuildmaster

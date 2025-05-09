@@ -71,6 +71,14 @@
     - state: electrified
       color: "#601fc2"
       shader: unshaded
+  - type: PointLight
+    color: "#601fc2"
+    enabled: true
+    radius: 2
+    energy: 2
+    netsync: false
+  - type: LightFade
+    duration: 1
 
 - type: entity
   parent: CP14BaseSpellScrollMeta

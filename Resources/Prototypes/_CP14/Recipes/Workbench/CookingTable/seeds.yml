@@ -60,7 +60,7 @@
     protoId: CP14FoodPepper
     count: 1
   result: CP14SeedPepper
-  resultCount: 3
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14SeedSage
@@ -71,4 +71,15 @@
     protoId: CP14WildSage
     count: 1
   result: CP14SeedSage
-  resultCount: 1
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14SeedCotton
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  result: CP14SeedCotton
+  resultCount: 2

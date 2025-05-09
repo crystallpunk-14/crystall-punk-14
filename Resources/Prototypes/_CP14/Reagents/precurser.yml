@@ -10,7 +10,6 @@
   flavor: CP14Metallic
   color: "#5c1f0a"
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -24,7 +23,6 @@
   flavor: CP14Sweetly
   color: "#ffe269"
   physicalDesc: cp14-reagent-physical-desc-pureed
-  slippery: false
 
 - type: reagent
   id: CP14AirLily
@@ -84,7 +82,6 @@
   flavor: CP14Bitterly
   color: "#89a195"
   physicalDesc: cp14-reagent-physical-desc-colorless
-  slippery: false
   metabolisms:
     Poison:
       effects:
@@ -111,7 +108,6 @@
   flavor: CP14Vomit
   color: "#36c98f"
   physicalDesc: cp14-reagent-physical-desc-colorless
-  slippery: false
   metabolisms:
     Poison:
       effects:
@@ -164,7 +160,8 @@
   flavor: CP14Vomit
   color: "#3b4872"
   physicalDesc: cp14-reagent-physical-desc-colorless
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   metabolisms:
     Food:
       effects:

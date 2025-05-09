@@ -1,4 +1,45 @@
 - type: CP14Recipe
+  id: CP14ClothMaterialCotton
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 2
+  result: CP14Cloth1
+
+- type: CP14Recipe
+  id: CP14StringCotton
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  result: CP14String
+
+- type: CP14Recipe
+  id: CP14ClothMaterialString
+  tag: CP14RecipeSewing
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2
+  result: CP14Cloth1
+
+- type: CP14Recipe
+  id: CP14StringCottonCloth
+  tag: CP14RecipeSewing
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  result: CP14String
+  resultCount: 2
+
+- type: CP14Recipe
   id: CP14ClothingShirtCottonBlue
   tag: CP14RecipeSewing
   craftTime: 2

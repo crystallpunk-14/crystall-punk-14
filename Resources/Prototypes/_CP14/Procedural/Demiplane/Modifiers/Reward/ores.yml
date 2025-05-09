@@ -4,11 +4,11 @@
   id: IronOre
   levels:
     min: 1
-    max: 10
+    max: 7
   name: cp14-modifier-iron-ore
   unique: false
   categories:
-    Reward: 0.4
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -17,19 +17,19 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: IronOreUnderground
   levels:
     min: 1
-    max: 10
+    max: 7
   name: cp14-modifier-iron-ore
   unique: false
   categories:
-    Reward: 0.4
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -38,19 +38,19 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneIronOre
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 15
+      minGroupSize: 4
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: CopperOre
   levels:
     min: 1
-    max: 4
+    max: 2
   name: cp14-modifier-copper-ore
   unique: false
   categories:
-    Reward: 0.3
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -59,19 +59,19 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: CopperOreUnderground
   levels:
     min: 1
-    max: 4
+    max: 2
   name: cp14-modifier-copper-ore
   unique: false
   categories:
-    Reward: 0.3
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -80,21 +80,21 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneCopperOre
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 15
+      minGroupSize: 4
+      maxGroupSize: 6
 
 # TIER 2
 
 - type: cp14DemiplaneModifier
   id: GoldOre
   levels:
-    min: 5
-    max: 6
+    min: 4
+    max: 5
   name: cp14-modifier-gold-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -103,19 +103,19 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneGoldOre
-      count: 5
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 10
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: GoldOreUnderground
   levels:
-    min: 3
-    max: 6
+    min: 4
+    max: 5
   name: cp14-modifier-gold-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -124,9 +124,9 @@
       entityMask: 
       - CP14WallStone
       entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 3
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOre
@@ -136,7 +136,7 @@
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -146,8 +146,8 @@
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
       count: 10
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4
 
 - type: cp14DemiplaneModifier
   id: MithrilOreUnderground
@@ -157,7 +157,7 @@
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
-    Reward: 0.5
+    Reward: 0.25
   requiredTags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -167,5 +167,5 @@
       - CP14WallStone
       entity: CP14WallStoneMithrilOre 
       count: 15
-      minGroupSize: 1
-      maxGroupSize: 3
+      minGroupSize: 2
+      maxGroupSize: 4

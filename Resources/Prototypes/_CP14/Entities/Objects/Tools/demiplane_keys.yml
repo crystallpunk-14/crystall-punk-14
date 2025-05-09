@@ -1,59 +1,53 @@
 - type: entity
   parent: BaseItem
-  id: CP14BaseSubdimensionalKey
-  abstract: true
+  id: CP14BaseDemiplaneKey
   categories: [ ForkFiltered ]
-  name: demiplane key
-  description: The core that connects the real world to the demiplane. Use it to open a temporary passage to the other world.
+  name: demiplane coordinate key
+  description: A temporary blob of energy linking the real world and the demiplane. Use it before it dissipates.
   components:
   - type: Item
-    size: Normal
+    size: Ginormous
   - type: Sprite
-    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+    noRot: true
+    drawdepth: Effects
+    sprite: _CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
-    - state: core
+    - state: coord
   - type: GuideHelp
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
   - type: CP14DemiplaneUsingOpen
-
-- type: entity
-  id: CP14DemiplaneKeyT1
-  parent: CP14BaseSubdimensionalKey
-  suffix: Level 3
-  components:
-  - type: CP14DemiplaneGeneratorData
-    level: 3
-    limits:
-      Reward: 1
-      Danger: 1
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
+  - type: CP14DemiplaneData
     selectedModifiers:
+    - DemiplaneDecor
+    - Core
     - EntryRoom
     - Exit
-
-- type: entity
-  id: CP14DemiplaneKeyT2
-  parent: CP14BaseSubdimensionalKey
-  suffix: Level 6
-  components:
-  - type: Sprite
-    layers:
-    - state: core
-      color: red
-  - type: CP14DemiplaneGeneratorData
-    level: 6
-    limits:
-      Reward: 1
-      Danger: 1.5
-      GhostRoleDanger: 1
-      Fun: 1
-      Weather: 1
-      MapLight: 1
-    selectedModifiers:
-    - EntryRoom
-    - Exit
+  - type: TimedDespawn
+    lifetime: 120
+  - type: CanMoveInAir
+  - type: RandomWalk
+    minSpeed: 0.25
+    maxSpeed: 0.75
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        #- ItemMask # CP14 swap ItemMask to Impassable only
+        - Impassable
+        restitution: 0.3  # fite me
+        friction: 0.2
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 2
+    netsync: false

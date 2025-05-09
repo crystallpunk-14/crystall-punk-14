@@ -276,7 +276,7 @@
   id: CP14ClothingWarriorsGarbDress
   name: warrior's garb
   description: show your strength.
-  components: 
+  components:
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
   - type: Clothing
@@ -286,7 +286,7 @@
   parent: CP14ClothingShirtBase
   id: CP14ClothinShirtMaidDress
   name: maid's dress
-  components:
+  components: 
   - type: Sprite
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
   - type: Clothing
