@@ -1,5 +1,7 @@
+using System.Text;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Damage;
+using Content.Shared.Examine;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
@@ -20,6 +22,26 @@ public abstract partial class CP14SharedSkillSystem
     private void InitializeChecks()
     {
         SubscribeLocalEvent<CP14MeleeWeaponSkillRequiredComponent, MeleeHitEvent>(OnMeleeAttack);
+        SubscribeLocalEvent<CP14MeleeWeaponSkillRequiredComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnExamined(Entity<CP14MeleeWeaponSkillRequiredComponent> ent, ref ExaminedEvent args)
+    {
+        var sb = new StringBuilder();
+        sb.Append(Loc.GetString("cp14-skill-issue-title") + "\n");
+
+        foreach (var skill in ent.Comp.Skills)
+        {
+            if (!_proto.TryIndex(skill, out var indexedSkill))
+                continue;
+
+            if (indexedSkill.Name is null)
+                continue;
+
+            var color = HaveSkill(args.Examiner, skill) ? Color.LimeGreen.ToHex() : Color.Red.ToHex();
+            sb.Append($"[color={color}] - {Loc.GetString(indexedSkill.Name)} [/color]\n");
+        }
+        args.PushMarkup(sb.ToString());
     }
 
     private void OnMeleeAttack(Entity<CP14MeleeWeaponSkillRequiredComponent> ent, ref MeleeHitEvent args)

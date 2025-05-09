@@ -71,7 +71,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private void CacheSkillProto()
     {
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
-        _allTrees = _proto.EnumeratePrototypes<CP14SkillTreePrototype>();
+        _allTrees = _proto.EnumeratePrototypes<CP14SkillTreePrototype>().OrderBy(tree => Loc.GetString(tree.Name));
     }
 
     public void OnStateExited(GameplayState state)
