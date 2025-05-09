@@ -7,12 +7,16 @@ namespace Content.Shared._CP14.Skill;
 
 public abstract partial class CP14SharedSkillSystem : EntitySystem
 {
+    private EntityQuery<CP14SkillStorageComponent> _skillStorageQuery = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        _skillStorageQuery = GetEntityQuery<CP14SkillStorageComponent>();
+
         InitializeAdmin();
+        InitializeChecks();
     }
 
     /// <summary>
@@ -40,6 +44,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         component.LearnedSkills.Add(skill);
         Dirty(target, component);
+
+        var learnEv = new CP14SkillLearnedEvent(skill, target);
+        RaiseLocalEvent(target, ref learnEv);
+
         return true;
     }
 
@@ -193,3 +201,6 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         return string.Empty;
     }
 }
+
+[ByRefEvent]
+public record struct CP14SkillLearnedEvent(ProtoId<CP14SkillPrototype> Skill, EntityUid User);

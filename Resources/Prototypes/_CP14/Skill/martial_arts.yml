@@ -1,0 +1,9 @@
+- type: cp14Skill
+  id: SwordMastery
+  skillUiPosition: 0, 0
+  name: cp14-skill-sword-mastery-name
+  desc: cp14-skill-sword-mastery-desc
+  tree: MartialArts
+  icon: 
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    state: preview

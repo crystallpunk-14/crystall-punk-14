@@ -4,7 +4,6 @@
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:parallax="clr-namespace:Content.Client.Parallax"
-    xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
     xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     Title="{Loc 'cp14-skill-info-title'}"
     MinSize="700 350"

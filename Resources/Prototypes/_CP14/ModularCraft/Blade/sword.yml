@@ -12,6 +12,9 @@
     - BaseWeaponSharp
   - !type:AddComponents
     components:
+    - type: CP14MeleeWeaponSkillRequired
+      skills:
+      - SwordMastery
   - !type:EditMeleeWeapon
     resetOnHandSelected: true # Disable fast swap
     bonusRange: 0.2

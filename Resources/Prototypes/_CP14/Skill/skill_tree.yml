@@ -60,3 +60,12 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: dimension
+
+- type: cp14SkillTree
+  id: MartialArts
+  name: cp14-skill-tree-martial-name
+  desc: cp14-skill-tree-martial-desc
+  color: "#f54242"
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: martial

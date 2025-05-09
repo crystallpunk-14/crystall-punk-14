@@ -23,3 +23,6 @@ cp14-skill-tree-dimension-desc = Immerse yourself in the nature of space and voi
 
 cp14-skill-tree-atlethic-name = Atlethic
 cp14-skill-tree-atlethic-desc = Develop your body by pushing the boundaries of what is available.
+
+cp14-skill-tree-martial-name = Martial arts
+cp14-skill-tree-martial-desc = Master the secrets of deadly weapons, or make your own body a weapon.
