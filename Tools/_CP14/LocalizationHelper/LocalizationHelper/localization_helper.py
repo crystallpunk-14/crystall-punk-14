@@ -134,11 +134,11 @@ class LocalizationHelper:
         to_delete = []
         for prototype_id, prototype_obj in general_prototypes_dict.items():
             prototype_parent_id = prototype_obj.parent
-            if not isinstance(prototype_parent_id, list): #Проверяет, имеет ли объект множество парентов
+            if not isinstance(prototype_parent_id, list): #Checks if prototype have multiple parents
 
                 parent_prototype_obj = general_prototypes_dict.get(prototype_parent_id) 
 
-                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True): #Ставим аттрибуты парента если они имеются
+                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True):
                     self._set_parent_attrs(prototype_parent_id, prototype_obj, parent_prototype_obj)
                 else:
                     if not check_prototype_attrs(prototype_obj, True):
