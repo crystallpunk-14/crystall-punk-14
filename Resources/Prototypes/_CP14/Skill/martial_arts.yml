@@ -2,8 +2,18 @@
   id: SwordMastery
   skillUiPosition: 0, 0
   name: cp14-skill-sword-mastery-name
-  desc: cp14-skill-sword-mastery-desc
+  desc: cp14-skill-mastery-desc
   tree: MartialArts
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+    state: preview
+
+- type: cp14Skill
+  id: RapierMastery
+  skillUiPosition: 2, 0
+  name: cp14-skill-parier-mastery-name
+  desc: cp14-skill-mastery-desc
+  tree: MartialArts
+  icon: 
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
     state: preview
