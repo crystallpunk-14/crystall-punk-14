@@ -17,6 +17,9 @@ class LocalizationHelper:
 
     @staticmethod
     def _save_to_json(path: str, data: dict):
+        """
+        Saves data to a JSON file
+        """
         os.makedirs(os.path.dirname(path), exist_ok=True)
         try:
             logger.debug("%s: %s", LogText.SAVING_DATA_TO_FILE, path)
@@ -27,6 +30,9 @@ class LocalizationHelper:
 
     @staticmethod
     def _read_from_json(path: str) -> dict:
+        """
+        Reads data from a JSON file
+        """
         if os.path.exists(path):
             try:
                 logger.debug("%s: %s", LogText.READING_DATA_FROM_FILE, path)
@@ -37,6 +43,9 @@ class LocalizationHelper:
         return {}
 
     def _save_yaml_parser_last_launch_result(self, last_launch_result: dict[str, Entity]):
+        """
+        Saves all prototypes and their attributes to a JSON file
+        """
         logger.debug("%s %s", LogText.SAVING_LAST_LAUNCH_RESULT, YAML_PARSER_LAST_LAUNCH_RESULT_PATH)
 
         prototypes_dict = {}
@@ -46,6 +55,9 @@ class LocalizationHelper:
         self._save_to_json(YAML_PARSER_LAST_LAUNCH_RESULT_PATH, prototypes_dict)
 
     def _read_prototypes_from_last_launch_result(self) -> dict[str, Entity] | None:
+        """
+        Reads all prototypes from the last run JSON file 
+        """
         if os.path.isfile(YAML_PARSER_LAST_LAUNCH_RESULT_PATH):
             last_launch_result = self._read_from_json(YAML_PARSER_LAST_LAUNCH_RESULT_PATH)
             last_launch_result_dict = {}
@@ -58,6 +70,10 @@ class LocalizationHelper:
     @staticmethod
     def _update_prototype_if_attrs_has_been_changed(yaml_prototype_obj: Entity, last_launch_prototype_obj: Entity,
                                                     final_prototype_obj: Entity):
+        """
+        Updates the prototype if their attributes have changed
+        Compares the YAML prototype with the FTL and overwrites if there have been changes
+        """
         if yaml_prototype_obj.attrs_dict != last_launch_prototype_obj.attrs_dict:
             log_text = f"Has been updated from: {final_prototype_obj.attrs_dict}, to: "
 
@@ -72,7 +88,9 @@ class LocalizationHelper:
 
     def _merge_yaml_parser_prototypes_and_ftl_parser_prototypes(self, yaml_parser_prototypes: dict[str, Entity],
                                                                 ftl_parser_prototypes: dict[str, Entity]) -> dict[str, Entity]:
-
+        """
+        Combines YAML and FTL prototypes with persistence of changes
+        """
         general_prototypes_dict = {}
 
         last_launch_result = self._read_prototypes_from_last_launch_result()
@@ -91,6 +109,9 @@ class LocalizationHelper:
 
     @staticmethod
     def _set_parent_attrs(prototype_parent_id: str, prototype_obj: Entity, parent_prototype_obj: Entity):
+        """
+        Sets the prototype to the parent's existing attributes
+        """
         for attr_name, attr_value in prototype_obj.attrs_dict.items():
             if attr_value or attr_name in ("parent", "id"):
                 continue
@@ -107,14 +128,17 @@ class LocalizationHelper:
         return prototype_obj
 
     def _parent_checks(self, general_prototypes_dict: dict[str, Entity]):
+        """
+        Replaces prototype attributes with their parent attributes if they exist
+        """
         to_delete = []
         for prototype_id, prototype_obj in general_prototypes_dict.items():
             prototype_parent_id = prototype_obj.parent
-            if not isinstance(prototype_parent_id, list):
+            if not isinstance(prototype_parent_id, list): #Проверяет, имеет ли объект множество парентов
 
-                parent_prototype_obj = general_prototypes_dict.get(prototype_parent_id)
+                parent_prototype_obj = general_prototypes_dict.get(prototype_parent_id) 
 
-                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True):
+                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True): #Ставим аттрибуты парента если они имеются
                     self._set_parent_attrs(prototype_parent_id, prototype_obj, parent_prototype_obj)
                 else:
                     if not check_prototype_attrs(prototype_obj, True):
@@ -133,7 +157,11 @@ class LocalizationHelper:
 
     def _create_general_prototypes_dict(self, yaml_parser_prototypes: dict[str, Entity],
                                         ftl_parser_prototypes: dict[str, Entity]) -> dict[str, Entity]:
-
+        """
+        Creates a prototype dictionary by combining YAML and FTL
+        Preserves YAML parsing data
+        Replaces prototype attributes with their parent attributes
+        """
         general_prototypes_dict = self._merge_yaml_parser_prototypes_and_ftl_parser_prototypes(yaml_parser_prototypes,
                                                                                                ftl_parser_prototypes)
 
@@ -143,12 +171,18 @@ class LocalizationHelper:
 
     @staticmethod
     def _create_result_ftl(general_prototypes_dict: dict[str, Entity]) -> str:
+        """
+        Creates string for FTL writing
+        """
         result = ""
         for prototype_obj in general_prototypes_dict.values():
             result += create_ftl(prototype_obj)
         return result
 
     def _save_result(self, general_prototypes_dict: dict[str, Entity]):
+        """
+        Saves prototypes to an FTL file
+        """
         logger.debug("%s: %s", LogText.SAVING_FINAL_RESULT, SAVE_RESULT_TO)
         result = self._create_result_ftl(general_prototypes_dict)
         try:
