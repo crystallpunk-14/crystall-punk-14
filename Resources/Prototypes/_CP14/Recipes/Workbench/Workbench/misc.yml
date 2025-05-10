@@ -228,3 +228,39 @@
   - !type:ProtoIdResource
     protoId: CP14CrossboltIron
   result: CP14Screwdriver
+
+- type: CP14Recipe
+  id: CP14FluteInstrument
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ModularGripWooden
+    count: 2
+  result: CP14FluteInstrument
+
+- type: CP14Recipe
+  id: CP14LyraInstrument
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2
+  result: CP14LyraInstrument
+
+- type: CP14Recipe
+  id: CP14LuteInstrument
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 1
+  result: CP14LuteInstrument

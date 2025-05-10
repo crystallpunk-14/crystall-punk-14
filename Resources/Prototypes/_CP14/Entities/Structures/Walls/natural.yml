@@ -209,11 +209,6 @@
       collection: CP14GrassGathering
   - type: TriggerOnCollide
     fixtureID: fix1
-  - type: DamageContacts
-    damage:
-      types:
-        Slash: 0.2
-        Piercing: 0.2
   - type: Airtight
     airBlocked: false
 
