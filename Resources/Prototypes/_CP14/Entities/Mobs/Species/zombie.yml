@@ -149,7 +149,6 @@
   - type: Tag
     tags:
       - CP14Mosquito
-      - CP14WallLeafDamage
   - type: Inventory
     templateId: CP14Partial
     femaleDisplacements:

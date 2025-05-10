@@ -31,7 +31,6 @@
   - type: Tag
     tags:
     - CP14Rabbit
-    - CP14WallLeafDamage
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -114,7 +113,6 @@
   - type: Tag
     tags:
     - CP14Pig
-    - CP14WallLeafDamage
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -200,7 +198,6 @@
   - type: Tag
     tags:
     - CP14Boar
-    - CP14WallLeafDamage
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatBoar
@@ -316,7 +313,6 @@
   - type: Tag
     tags:
     - CP14Mosquito
-    - CP14WallLeafDamage
   - type: Destructible
     thresholds:
     - trigger:
