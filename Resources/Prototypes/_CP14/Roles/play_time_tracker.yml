@@ -19,6 +19,9 @@
   id: CP14JobGuildmaster
 
 - type: playTimeTracker
+  id: CP14Guildworker
+
+- type: playTimeTracker
   id: CP14JobAdventurer
 
 # Guard

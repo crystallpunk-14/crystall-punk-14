@@ -41,4 +41,5 @@ cp14-lock-shaper-guard-commander = guardhouse
 cp14-lock-shaper-guard-weapon-storage = weapons storage
 
 cp14-lock-shape-guildmaster = guildmaster
+cp14-lock-shape-guild = adventurers guild
 cp14-lock-shape-demiplane-crystal = demiplane crystal
