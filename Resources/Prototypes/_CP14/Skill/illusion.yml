@@ -8,9 +8,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light
-  effect: !type:ModifyManacost
-    modifiers:
-      Light: -0.25
   restrictions:
   - !type:Researched
     requirements:
@@ -31,7 +28,8 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellSphereOfLight
   restrictions:
   - !type:NeedPrerequisite
@@ -53,7 +51,8 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_red
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellSignalLightRed
   restrictions:
   - !type:NeedPrerequisite
@@ -75,7 +74,8 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_yellow
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellSignalLightYellow
   restrictions:
   - !type:NeedPrerequisite
@@ -97,7 +97,8 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: signal_light_blue
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellSignalLightBlue
   restrictions:
   - !type:NeedPrerequisite
@@ -121,7 +122,8 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light2
-  effect: !type:ModifyManacost
+  effects: 
+  - !type:ModifyManacost
     modifiers:
       Light: -0.25
   restrictions:
@@ -146,7 +148,8 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: flash_light
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellFlashLight
   restrictions:
   - !type:NeedPrerequisite
@@ -167,7 +170,8 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: peace_music
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellPeaceBallade
   restrictions:
   - !type:NeedPrerequisite
@@ -191,7 +195,8 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light3
-  effect: !type:ModifyManacost
+  effects: 
+  - !type:ModifyManacost
     modifiers:
       Light: -0.25
   restrictions:

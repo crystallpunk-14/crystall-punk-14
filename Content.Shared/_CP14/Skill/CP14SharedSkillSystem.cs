@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Text;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
@@ -35,9 +37,9 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return false;
 
-        if (indexedSkill.Effect is not null)
+        foreach (var effect in indexedSkill.Effects)
         {
-            indexedSkill.Effect.AddSkill(EntityManager, target);
+            effect.AddSkill(EntityManager, target);
         }
 
         component.SkillsSumExperience += indexedSkill.LearnCost;
@@ -67,9 +69,9 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return false;
 
-        if (indexedSkill.Effect is not null)
+        foreach (var effect in indexedSkill.Effects)
         {
-            indexedSkill.Effect.RemoveSkill(EntityManager, target);
+            effect.RemoveSkill(EntityManager, target);
         }
 
         component.SkillsSumExperience -= indexedSkill.LearnCost;
@@ -178,8 +180,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (indexedSkill.Name != string.Empty)
             return Loc.GetString(indexedSkill.Name);
 
-        if (indexedSkill.Effect != null)
-            return indexedSkill.Effect.GetName(EntityManager, _proto) ?? string.Empty;
+        if (indexedSkill.Effects.Count > 0)
+            return indexedSkill.Effects.First().GetName(EntityManager, _proto) ?? string.Empty;
 
         return string.Empty;
     }
@@ -195,10 +197,14 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (indexedSkill.Desc != string.Empty)
             return Loc.GetString(indexedSkill.Desc);
 
-        if (indexedSkill.Effect != null)
-            return indexedSkill.Effect.GetDescription(EntityManager, _proto) ?? string.Empty;
+        var sb = new StringBuilder();
 
-        return string.Empty;
+        foreach (var effect in indexedSkill.Effects)
+        {
+            sb.Append(effect.GetDescription(EntityManager, _proto) + "\n");
+        }
+
+        return sb.ToString();
     }
 }
 

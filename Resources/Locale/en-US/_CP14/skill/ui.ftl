@@ -10,4 +10,6 @@ cp14-skill-menu-level = Memory:
 
 cp14-research-table-title = Research table
 cp14-research-recipe-list = Research costs:
-cp14-research-craft = Investigate
+cp14-research-craft = Research
+
+cp14-skill-desc-add-mana = Increases your character's mana amount by {$mana}.

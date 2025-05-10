@@ -8,9 +8,9 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta
-  effect: !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
+  effects: 
+  - !type:AddManaMax
+    additionalMana: 25
   restrictions:
   - !type:Researched
     requirements:
@@ -33,7 +33,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellManaGift
   restrictions:
   - !type:NeedPrerequisite
@@ -55,7 +56,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
-  effect: !type:ReplaceAction
+  effects: 
+  - !type:ReplaceAction
     oldAction: CP14ActionSpellManaGift
     newAction: CP14ActionSpellManaGiftElf
   restrictions:
@@ -72,7 +74,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellManaConsume
   restrictions:
   - !type:NeedPrerequisite
@@ -94,7 +97,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
-  effect: !type:ReplaceAction
+  effects: 
+  - !type:ReplaceAction
     oldAction: CP14ActionSpellManaConsume
     newAction: CP14ActionSpellManaConsumeElf
   restrictions:
@@ -118,7 +122,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: magic_music
-  effect: !type:AddAction 
+  effects: 
+  - !type:AddAction 
     action: CP14ActionSpellMagicBallade
   restrictions:
   - !type:NeedPrerequisite
@@ -142,9 +147,9 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta2
-  effect: !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
+  effects: 
+  - !type:AddManaMax
+    additionalMana: 25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT1
@@ -171,7 +176,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: counter_spell
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellMagicSplitting
   restrictions:
   - !type:NeedPrerequisite
@@ -195,9 +201,9 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta3
-  effect: !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
+  effects: 
+  - !type:AddManaMax
+    additionalMana: 25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2

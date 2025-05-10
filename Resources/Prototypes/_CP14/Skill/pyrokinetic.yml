@@ -8,9 +8,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro
-  effect: !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
   restrictions:
   - !type:Researched
     requirements:
@@ -34,7 +31,8 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: flame_creation
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellFlameCreation
   restrictions:
   - !type:NeedPrerequisite
@@ -55,7 +53,8 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: heat
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellHeat
   restrictions:
   - !type:NeedPrerequisite
@@ -76,7 +75,8 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellHellBallade
   restrictions:
   - !type:NeedPrerequisite
@@ -91,7 +91,8 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: tiefling_revenge
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellTieflingInnerFire
   restrictions:
   - !type:NeedPrerequisite
@@ -109,7 +110,8 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
-  effect: !type:ModifyManacost
+  effects: 
+  - !type:ModifyManacost
     modifiers:
       Fire: -0.25
   restrictions:
@@ -134,7 +136,8 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fireball
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellFireball
   restrictions:
   - !type:NeedPrerequisite
@@ -158,7 +161,8 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro3
-  effect: !type:ModifyManacost
+  effects: 
+  - !type:ModifyManacost
     modifiers:
       Fire: -0.25
   restrictions:

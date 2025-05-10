@@ -55,7 +55,7 @@ public sealed partial class CP14SkillPrototype : IPrototype
     ///  But the presence of the skill itself can affect some systems that check for the presence of certain skills.
     /// </summary>
     [DataField]
-    public CP14SkillEffect? Effect;
+    public List<CP14SkillEffect> Effects = new();
 
     /// <summary>
     /// Skill restriction. Limiters on learning. Any reason why a player cannot learn this skill.

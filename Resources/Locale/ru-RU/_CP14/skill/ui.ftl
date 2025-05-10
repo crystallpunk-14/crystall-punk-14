@@ -11,3 +11,5 @@ cp14-skill-menu-level = Память:
 cp14-research-table-title = Стол исследований
 cp14-research-recipe-list = Затраты на исследование:
 cp14-research-craft = Исследовать
+
+cp14-skill-desc-add-mana = Увеличивает объем маны вашего персонажа на {$mana}.
