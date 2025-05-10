@@ -25,11 +25,17 @@
   name: cp14-loadout-alchemist-cloak
   loadouts:
   - CP14ClothingCloakAlchemist
+  - CP14ClothingCloakAlchemistMantle
 
 - type: loadout
   id: CP14ClothingCloakAlchemist
   equipment:
     cloak: CP14ClothingCloakAlchemist
+
+- type: loadout
+  id: CP14ClothingCloakAlchemistMantle
+  equipment:
+    cloak: CP14ClothingCloakAlchemistMantle
 
 # Eyes
 
