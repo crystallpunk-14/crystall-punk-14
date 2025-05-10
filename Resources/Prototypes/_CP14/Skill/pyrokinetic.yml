@@ -50,13 +50,24 @@
 
 - type: cp14Skill
   id: CP14ActionSpellHeat
-  skillUiPosition: 4, 0
+  skillUiPosition: 0, 6
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: heat
   effect: !type:AddAction
     action: CP14ActionSpellHeat
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
