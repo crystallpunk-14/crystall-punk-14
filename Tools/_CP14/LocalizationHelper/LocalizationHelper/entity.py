@@ -80,6 +80,9 @@ class Entity:
 
 
 def check_prototype_attrs(prototype: Entity, without_parent_check: bool = False) -> bool:
+    """
+    Checks if the parent has all of the attributes: name, desc, suff, parent
+    """
     if prototype.name:
         return True
     elif prototype.description:
