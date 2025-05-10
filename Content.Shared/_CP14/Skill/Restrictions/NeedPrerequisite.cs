@@ -9,7 +9,7 @@ public sealed partial class NeedPrerequisite : CP14SkillRestriction
     [DataField(required: true)]
     public ProtoId<CP14SkillPrototype> Prerequisite = new();
 
-    public override bool Check(IEntityManager entManager, EntityUid target)
+    public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
     {
         if (!entManager.TryGetComponent<CP14SkillStorageComponent>(target, out var skillStorage))
             return false;

@@ -1,26 +1,53 @@
+# T1
+
+- type: cp14Skill
+  id: IllusionT1
+  skillUiPosition: 1, 0
+  tree: Illusion
+  name: cp14-skill-illusion-t1-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: light
+  effect: !type:ModifyManacost
+    modifiers:
+      Light: -0.25
+  restrictions:
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14LumiMushroom
+      count: 10
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
 - type: cp14Skill
   id: CP14ActionSpellSphereOfLight
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 4
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
   effect: !type:AddAction
     action: CP14ActionSpellSphereOfLight
-
-- type: cp14Skill
-  id: CP14ActionSpellFlashLight
-  skillUiPosition: 2, 0
-  tree: Illusion
-  icon:
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: flash_light
-  effect: !type:AddAction
-    action: CP14ActionSpellFlashLight
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightRed
-  skillUiPosition: 0, 4
+  skillUiPosition: 2, 6
   learnCost: 0.5
   tree: Illusion
   icon:
@@ -28,6 +55,17 @@
     state: signal_light_red
   effect: !type:AddAction
     action: CP14ActionSpellSignalLightRed
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightYellow
@@ -39,10 +77,21 @@
     state: signal_light_yellow
   effect: !type:AddAction
     action: CP14ActionSpellSignalLightYellow
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightBlue
-  skillUiPosition: 0, 8
+  skillUiPosition: 2, 4
   learnCost: 0.5
   tree: Illusion
   icon:
@@ -50,3 +99,109 @@
     state: signal_light_blue
   effect: !type:AddAction
     action: CP14ActionSpellSignalLightBlue
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 1
+
+# T2
+
+- type: cp14Skill
+  id: IllusionT2
+  skillUiPosition: 7, 0
+  tree: Illusion
+  name: cp14-skill-illusion-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: light2
+  effect: !type:ModifyManacost
+    modifiers:
+      Light: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14ModularInlayQuartzLight
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 5
+
+- type: cp14Skill
+  id: CP14ActionSpellFlashLight
+  skillUiPosition: 6, 4
+  tree: Illusion
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: flash_light
+  effect: !type:AddAction
+    action: CP14ActionSpellFlashLight
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 4
+
+- type: cp14Skill
+  id: CP14ActionSpellPeaceBallade
+  skillUiPosition: 8, 4
+  tree: Illusion
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: peace_music
+  effect: !type:AddAction
+    action: CP14ActionSpellPeaceBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+# T3
+
+- type: cp14Skill
+  id: IllusionT3
+  skillUiPosition: 13, 0
+  tree: Illusion
+  name: cp14-skill-illusion-t3-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: light3
+  effect: !type:ModifyManacost
+    modifiers:
+      Light: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 50

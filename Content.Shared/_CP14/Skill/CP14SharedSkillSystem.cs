@@ -7,12 +7,16 @@ namespace Content.Shared._CP14.Skill;
 
 public abstract partial class CP14SharedSkillSystem : EntitySystem
 {
+    private EntityQuery<CP14SkillStorageComponent> _skillStorageQuery = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        _skillStorageQuery = GetEntityQuery<CP14SkillStorageComponent>();
+
         InitializeAdmin();
+        InitializeChecks();
     }
 
     /// <summary>
@@ -40,6 +44,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         component.LearnedSkills.Add(skill);
         Dirty(target, component);
+
+        var learnEv = new CP14SkillLearnedEvent(skill, target);
+        RaiseLocalEvent(target, ref learnEv);
+
         return true;
     }
 
@@ -84,55 +92,6 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     }
 
     /// <summary>
-    ///  Adds experience to the specified skill tree for the player.
-    /// </summary>
-    public bool TryAddExperience(EntityUid target,
-        ProtoId<CP14SkillTreePrototype> tree,
-        FixedPoint2 exp,
-        CP14SkillStorageComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-
-        if (component.Progress.TryGetValue(tree, out var currentExp))
-        {
-            // If the tree already exists, add experience to it
-            component.Progress[tree] = currentExp + exp;
-        }
-        else
-        {
-            // If the tree doesn't exist, initialize it with the experience
-            component.Progress[tree] = exp;
-        }
-
-        Dirty(target, component);
-        return true;
-    }
-
-    /// <summary>
-    ///  Removes experience from the specified skill tree for the player.
-    /// </summary>
-    public bool TryRemoveExperience(EntityUid target,
-        ProtoId<CP14SkillTreePrototype> tree,
-        FixedPoint2 exp,
-        CP14SkillStorageComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-
-        if (!component.Progress.TryGetValue(tree, out var currentExp))
-            return false;
-
-        if (currentExp < exp)
-            return false;
-
-        component.Progress[tree] = FixedPoint2.Max(0, component.Progress[tree] - exp);
-
-        Dirty(target, component);
-        return true;
-    }
-
-    /// <summary>
     ///  Checks if the player can learn the specified skill.
     /// </summary>
     public bool CanLearnSkill(EntityUid target,
@@ -158,12 +117,6 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!AllowedToLearn(target, skill, component))
             return false;
 
-        //Experience check
-        if (!component.Progress.TryGetValue(skill.Tree, out var currentExp))
-            return false;
-        if (currentExp < skill.LearnCost)
-            return false;
-
         return true;
     }
 
@@ -182,13 +135,13 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             return false;
 
         //Check max cap
-        if (component.SkillsSumExperience + skill.LearnCost >= component.ExperienceMaxCap)
+        if (component.SkillsSumExperience + skill.LearnCost > component.ExperienceMaxCap)
             return false;
 
         //Restrictions check
         foreach (var req in skill.Restrictions)
         {
-            if (!req.Check(EntityManager, target))
+            if (!req.Check(EntityManager, target, skill))
                 return false;
         }
 
@@ -205,13 +158,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!Resolve(target, ref component, false))
             return false;
 
-        if (!_proto.TryIndex(skill, out var indexedSkill))
-            return false;
-
         if (!CanLearnSkill(target, skill, component))
-            return false;
-
-        if (!TryRemoveExperience(target, indexedSkill.Tree, indexedSkill.LearnCost, component))
             return false;
 
         if (!TryAddSkill(target, skill, component))
@@ -228,7 +175,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Name != null)
+        if (indexedSkill.Name != string.Empty)
             return Loc.GetString(indexedSkill.Name);
 
         if (indexedSkill.Effect != null)
@@ -245,7 +192,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Desc != null)
+        if (indexedSkill.Desc != string.Empty)
             return Loc.GetString(indexedSkill.Desc);
 
         if (indexedSkill.Effect != null)
@@ -254,3 +201,6 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         return string.Empty;
     }
 }
+
+[ByRefEvent]
+public record struct CP14SkillLearnedEvent(ProtoId<CP14SkillPrototype> Skill, EntityUid User);

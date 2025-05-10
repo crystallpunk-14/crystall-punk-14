@@ -26,8 +26,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe)
+        EntityUid user)
     {
         var count = 0;
         foreach (var ent in placedEntities)

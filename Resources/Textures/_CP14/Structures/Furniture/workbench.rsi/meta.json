@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "All right reserved",
-  "copyright": "Created by jaraten(discord) , modified by vladimir.s. Cooking table by Max Gab",
+  "copyright": "Created by jaraten(discord), modified by vladimir.s. Cooking table by Max Gab, research_table by TheShuEd(github)",
   "size": {
     "x": 48,
     "y": 48
@@ -20,7 +20,7 @@
       "name": "sewing_table"
     },
     {
-      "name": "furnace"
+      "name": "research_table"
     }
   ]
 }

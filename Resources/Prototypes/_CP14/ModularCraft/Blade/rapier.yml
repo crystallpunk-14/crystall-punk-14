@@ -12,6 +12,9 @@
     - BaseWeaponSharp
   - !type:AddComponents
     components:
+    - type: CP14MeleeWeaponSkillRequired
+      skills:
+      - RapierMastery
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
     resetOnHandSelected: true # Disable fast swap

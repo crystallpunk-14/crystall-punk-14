@@ -1,38 +1,47 @@
 - type: entity
-  id: CP14ActionSpellCureBurn
-  name: Cure burn
-  description: You heal skin damage caused by excessive cooling or heating.
+  id: CP14ActionSpellResurrection
+  name: Resurrection
+  description: You're trying to put the soul back into the body.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_burn
+    sprite: _CP14/Actions/Spells/necromancy.rsi
+    state: resurrection
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.5
+    speedMultiplier: 0.2
   - type: CP14MagicEffectManaCost
-    manaCost: 10
+    manaCost: 100
+  - type: CP14MagicEffectAliveTargetRequired
+    inverted: true
   - type: CP14MagicEffect
+    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectCureBurn
+      - CP14ImpactEffectResurrection
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectCureBurn
+      - CP14ImpactEffectResurrection
+    - !type:CP14SpellResurrectionEffect
     - !type:CP14SpellApplyEntityEffect
       effects:
+      - !type:ChemVomit
+        probability: 0.25
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
       - !type:HealthChange
         damage:
           types:
-            Cold: -10
-            Heat: -10
-            Shock: -10
+            Asphyxiation: -500
+            Bloodloss: -10
       - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Pellis dolorem..."
-    endSpeech: "non novit"
+    startSpeech: "Redi animam meam..."
+    endSpeech: "Eu rezei por ti"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneCureBurn
+    proto: CP14RuneResurrection
   - type: EntityTargetAction
     whitelist:
       components:
@@ -40,18 +49,19 @@
     range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
+    canTargetSelf: false
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
-      sprite: _CP14/Actions/Spells/healing.rsi
-      state: cure_burn
+      sprite: _CP14/Actions/Spells/necromancy.rsi
+      state: resurrection
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 5
-      castDelay: 1.5
-      breakOnMove: false
- 
+      cooldown: 300
+      castDelay: 10
+      breakOnMove: true
+
 - type: entity
-  id: CP14RuneCureBurn
+  id: CP14RuneResurrection
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
@@ -61,29 +71,29 @@
   - type: Sprite
     layers:
     - state: sun
-      color: "#79b330"
+      color: "#366357"
       shader: unshaded
-    - state: double_outer
-      color: "#ed9b4a"
+    - state: medium_circle
+      color: "#55877a"
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectCureBurn
+  id: CP14ImpactEffectResurrection
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
   components:
   - type: Sprite
     layers:
-    - state: particles_up
-      color: "#79b330"
+    - state: wave_up
+      color: "#55877a"
       shader: unshaded
 
 - type: entity
-  parent: CP14BaseSpellScrollHealing
-  id: CP14SpellScrollCureBurn
-  name: cure burn spell scroll
+  parent: CP14BaseSpellScrollNecromancy
+  id: CP14SpellScrollResurrection
+  name: resurrection spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellCureBurn
+    - CP14ActionSpellResurrection

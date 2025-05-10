@@ -1,30 +1,31 @@
 - type: entity
-  id: CP14ActionSpellPeaceBallade
-  name: Peace ballade
-  description: Your music is filled with peaceful magic, forbidding anyone near you to fight.
+  id: CP14ActionSpellSpeedBallade
+  name: Speed ballade
+  description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
-    state: peace_music
+    state: speed_music
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.8
+    speedMultiplier: 1
   - type: CP14MagicEffectManaCost
-    manaCost: 2
+    manaCost: 1
   - type: CP14MagicEffect
+    magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14AreaEntityEffectPeaceBallade
+      - CP14AreaEntityEffectSpeedBallade
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RunePeaceBallade
+    proto: CP14RuneSpeedBallade
   - type: InstantAction
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
-      state: peace_music
+      state: speed_music
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 1
       cooldown: 15
@@ -32,7 +33,7 @@
       hidden: true
 
 - type: entity
-  id: CP14AreaEntityEffectPeaceBallade
+  id: CP14AreaEntityEffectSpeedBallade
   categories: [ HideSpawnMenu ]
   save: false
   components:
@@ -47,17 +48,16 @@
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectPeaceBallade
+      - CP14ImpactEffectSpeedBallade
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:GenericStatusEffect
-        key: Pacified
-        component: Pacified
-        type: Add
-        time: 1.8
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+        statusLifetime: 1.8
 
 - type: entity
-  id: CP14ImpactEffectPeaceBallade
+  id: CP14ImpactEffectSpeedBallade
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
@@ -66,20 +66,20 @@
     sprite: _CP14/Effects/music.rsi
     layers:
     - state: notes_5
-      color: "#bd4fda"
+      color: "#e8cb56"
       shader: unshaded
  
 - type: entity
-  id: CP14RunePeaceBallade
+  id: CP14RuneSpeedBallade
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
   components:
   - type: PointLight
-    color: "#bd4fda"
+    color: "#e8cb56"
   - type: Sprite
     sprite: _CP14/Effects/music.rsi
     layers:
     - state: notes_3
-      color: "#bd4fda"
+      color: "#e8cb56"
       shader: unshaded

@@ -12,7 +12,7 @@
     attackRateMultiplier: 1.5
     bonusDamage:
       types:
-        Slash: 8
+        Slash: 6
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:

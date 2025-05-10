@@ -1,26 +1,53 @@
+# T1 
+
 - type: cp14Skill
-  id: CP14ActionSpellFreeze
-  skillUiPosition: 0, 4
+  id: HydrosophistryT1
+  skillUiPosition: 1, 0
   tree: Hydrosophistry
+  name: cp14-skill-water-t1-name
   icon:
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: freeze
-  effect: !type:AddAction
-    action: CP14ActionSpellFreeze
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: water
+  effect: !type:ModifyManacost
+    modifiers:
+      Water: -0.25
+  restrictions:
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14Snowball
+      count: 10
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellWaterCreation
-  skillUiPosition: 0, 0
+  skillUiPosition: 0, 4
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: water_creation
   effect: !type:AddAction
     action: CP14ActionSpellWaterCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellBeerCreation
-  skillUiPosition: 2, 0
+  skillUiPosition: 2, 4
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
@@ -28,35 +55,152 @@
   effect: !type:AddAction
     action: CP14ActionSpellBeerCreation
   restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
   - !type:SpeciesWhitelist
     species: CP14Dwarf
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellIceShards
-  skillUiPosition: 0, 6
+  skillUiPosition: 2, 6
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_shards
   effect: !type:AddAction
     action: CP14ActionSpellIceShards
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellIceDagger
-  skillUiPosition: 0, 8
+  skillUiPosition: 0, 6
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_dagger
   effect: !type:AddAction
     action: CP14ActionSpellIceDagger
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellIceArrow
-  skillUiPosition: 0, 10
+  skillUiPosition: 0, 8
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
   effect: !type:AddAction
     action: CP14ActionSpellIceArrow
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2
+
+# T2
+
+- type: cp14Skill
+  id: HydrosophistryT2
+  skillUiPosition: 7, 0
+  tree: Hydrosophistry
+  name: cp14-skill-water-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: water2
+  effect: !type:ModifyManacost
+    modifiers:
+      Water: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14ModularInlayQuartzWater
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 5
+
+- type: cp14Skill
+  id: CP14ActionSpellFreeze
+  skillUiPosition: 6, 4
+  tree: Hydrosophistry
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: freeze
+  effect: !type:AddAction
+    action: CP14ActionSpellFreeze
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 4
+
+# T3
+
+- type: cp14Skill
+  id: HydrosophistryT3
+  skillUiPosition: 13, 0
+  tree: Hydrosophistry
+  name: cp14-skill-water-t3-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: water3
+  effect: !type:ModifyManacost
+    modifiers:
+      Water: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 50

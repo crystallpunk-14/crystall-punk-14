@@ -17,7 +17,22 @@
       "name": "heal"
     },
     {
+      "name": "heal2"
+    },
+    {
+      "name": "heal3"
+    },
+    {
       "name": "light"
+    },
+    {
+      "name": "light2"
+    },
+    {
+      "name": "light3"
+    },
+    {
+      "name": "martial"
     },
     {
       "name": "meta"
@@ -26,7 +41,19 @@
       "name": "pyro"
     },
     {
+      "name": "pyro2"
+    },
+    {
+      "name": "pyro3"
+    },
+    {
       "name": "water"
+    },
+    {
+      "name": "water2"
+    },
+    {
+      "name": "water3"
     }
   ]
 }

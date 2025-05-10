@@ -30,8 +30,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe)
+        EntityUid user)
     {
         var tagSystem = entManager.System<TagSystem>();
 

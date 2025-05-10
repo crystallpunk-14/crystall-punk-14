@@ -57,5 +57,5 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// CP14 - it is possible to give skill trees to players who have taken this loadout
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> SkillTree = new();
+    public HashSet<ProtoId<CP14SkillPrototype>> Skills = new();
 }

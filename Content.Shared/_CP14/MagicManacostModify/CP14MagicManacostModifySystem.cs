@@ -2,6 +2,7 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
@@ -24,10 +25,10 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
 
     private void OnVerbExamine(Entity<CP14MagicManacostModifyComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess)
+        if (!args.CanInteract || !args.CanAccess || !ent.Comp.Examinable)
             return;
 
-        var markup = GetMagicClothingExamine(ent.Comp);
+        var markup = GetManacostModifyMessage(ent.Comp.GlobalModifier, ent.Comp.Modifiers);
         _examine.AddDetailedExamineVerb(
             args,
             ent.Comp,
@@ -37,21 +38,21 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
             Loc.GetString("cp14-magic-examinable-verb-message"));
     }
 
-    private FormattedMessage GetMagicClothingExamine(CP14MagicManacostModifyComponent comp)
+    public FormattedMessage GetManacostModifyMessage(FixedPoint2 global, Dictionary<ProtoId<CP14MagicTypePrototype>, FixedPoint2> modifiers)
     {
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("cp14-clothing-magic-examine"));
 
-        if (comp.GlobalModifier != 1)
+        if (global != 1)
         {
             msg.PushNewline();
 
-            var plus = (float)comp.GlobalModifier > 1 ? "+" : "";
+            var plus = (float)global > 1 ? "+" : "";
             msg.AddMarkupOrThrow(
-                $"{Loc.GetString("cp14-clothing-magic-global")}: {plus}{MathF.Round((float)(comp.GlobalModifier - 1) * 100, MidpointRounding.AwayFromZero)}%");
+                $"{Loc.GetString("cp14-clothing-magic-global")}: {plus}{MathF.Round((float)(global - 1) * 100, MidpointRounding.AwayFromZero)}%");
         }
 
-        foreach (var modifier in comp.Modifiers)
+        foreach (var modifier in modifiers)
         {
             if (modifier.Value == 1)
                 continue;
