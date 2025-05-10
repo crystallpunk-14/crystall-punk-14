@@ -42,7 +42,7 @@
         - MobLayer
   - type: NpcFactionMember
     factions:
-    - CP14Monster
+    - CP14Slimes
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
     baseSprintSpeed: 2
