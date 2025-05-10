@@ -43,7 +43,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellBeerCreation
@@ -66,7 +66,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellIceShards
@@ -87,7 +87,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellIceDagger
@@ -108,7 +108,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellIceArrow
@@ -129,7 +129,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 # T2
 
@@ -157,7 +157,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 5
+      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellFreeze
@@ -178,7 +178,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 4
+      count: 2
 
 # T3
 
@@ -203,4 +203,4 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 50
+      count: 6

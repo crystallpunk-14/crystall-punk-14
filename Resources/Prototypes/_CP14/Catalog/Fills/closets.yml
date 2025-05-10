@@ -6,7 +6,6 @@
   - type: StorageFill
     contents:
       - id: CP14Lighter
-      - id: CP14ManaOperationGlove
       - id: CP14Syringe
         amount: 2
       - id: CP14Cauldron

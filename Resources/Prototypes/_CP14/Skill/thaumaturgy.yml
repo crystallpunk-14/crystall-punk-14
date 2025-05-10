@@ -1,0 +1,39 @@
+- type: cp14Skill
+  id: AlchemyVision
+  skillUiPosition: 0, 0
+  tree: Thaumaturgy
+  name: cp14-skill-alchemy-vision-name
+  desc: cp14-skill-alchemy-vision-desc
+  icon:
+    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+    state: icon
+  effect: !type:AddComponents
+    components:
+    - type: SolutionScanner
+  restrictions:
+  - !type:Researched
+    requirements:
+    - !type:ProtoIdResource
+      protoId: CP14Paper
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14BloodFlower
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14AgaricMushroom
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14AirLily
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14Dayflin
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14LumiMushroom
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14BlueAmanita
+      count: 1
+    - !type:ProtoIdResource
+      protoId: CP14DimensitCrystal
+      count: 2

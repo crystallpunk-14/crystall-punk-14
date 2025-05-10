@@ -28,3 +28,8 @@ cp14-skill-tree-atlethic-desc = Развивайте свое тело, расш
 
 cp14-skill-tree-martial-name = Боевые исскуства
 cp14-skill-tree-martial-desc = Овладейте секретами смертельного оружия, или сделайте оружием свое собственное тело.
+
+# Job
+
+cp14-skill-tree-thaumaturgy-name = Алхимия
+cp14-skill-tree-thaumaturgy-desc = Исскуство создания волшебных зелий, способных убивать, воскрешать из мертвых или превращать существ в овечек. 

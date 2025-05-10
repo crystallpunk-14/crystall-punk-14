@@ -43,7 +43,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellSignalLightRed
@@ -137,7 +137,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 5
+      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellFlashLight
@@ -158,7 +158,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 4
+      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellPeaceBallade
@@ -204,4 +204,4 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 50
+      count: 6

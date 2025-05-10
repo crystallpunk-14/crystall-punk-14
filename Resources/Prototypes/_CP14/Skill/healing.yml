@@ -46,7 +46,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 4
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellBloodPurification
@@ -68,7 +68,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellPlantGrowth
@@ -89,7 +89,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellSpeedBallade
@@ -110,7 +110,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 2
+      count: 1
 
 # T2
 
@@ -138,7 +138,7 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 5
+      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellCureBurn
@@ -250,4 +250,4 @@
       count: 1
     - !type:ProtoIdResource
       protoId: CP14DimensitCrystal
-      count: 6
+      count: 3

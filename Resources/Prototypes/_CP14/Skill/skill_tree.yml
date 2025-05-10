@@ -2,7 +2,7 @@
   id: Pyrokinetic
   name: cp14-skill-tree-pyrokinetic-name
   desc: cp14-skill-tree-pyrokinetic-desc
-  color: "#b52400"
+  color: "#d6933c"
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro
@@ -52,14 +52,14 @@
     sprite: _CP14/Actions/skill_tree.rsi
     state: atlethic
 
-- type: cp14SkillTree
-  id: Dimension
-  name: cp14-skill-tree-dimension-name
-  desc: cp14-skill-tree-dimension-desc
-  color: "#ac66be"
-  icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: dimension
+#- type: cp14SkillTree
+#  id: Dimension
+#  name: cp14-skill-tree-dimension-name
+#  desc: cp14-skill-tree-dimension-desc
+#  color: "#ac66be"
+#  icon:
+#    sprite: _CP14/Actions/skill_tree.rsi
+#    state: dimension
 
 - type: cp14SkillTree
   id: MartialArts
@@ -69,3 +69,11 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: martial
+
+# 
+
+- type: cp14SkillTree
+  id: Thaumaturgy
+  name: cp14-skill-tree-thaumaturgy-name
+  desc: cp14-skill-tree-thaumaturgy-desc
+  color: "#7c52bf"

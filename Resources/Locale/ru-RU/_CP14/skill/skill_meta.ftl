@@ -19,3 +19,9 @@ cp14-skill-life-t1-name = Базовое животворение
 cp14-skill-life-t2-name = Продвинутое животворение
 cp14-skill-life-t3-name = Экспертное животворение
 
+cp14-skill-meta-t1-name = Базовая метамагия
+cp14-skill-meta-t2-name = Продвинутая метамагия
+cp14-skill-meta-t3-name = Экспертная метамагия
+
+cp14-skill-alchemy-vision-name = Взор алхимика
+cp14-skill-alchemy-vision-desc = Вы способны понимать какие именно жидкости находятся в емкостях, при помощи визуального анализа.

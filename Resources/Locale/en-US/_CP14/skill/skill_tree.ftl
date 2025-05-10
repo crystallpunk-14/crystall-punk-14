@@ -26,3 +26,8 @@ cp14-skill-tree-atlethic-desc = Develop your body by pushing the boundaries of w
 
 cp14-skill-tree-martial-name = Martial arts
 cp14-skill-tree-martial-desc = Master the secrets of deadly weapons, or make your own body a weapon.
+
+# Job
+
+cp14-skill-tree-thaumaturgy-name = Alchemy
+cp14-skill-tree-thaumaturgy-desc = The art of creating magical potions that can kill, raise from the dead, or turn creatures into sheep.
