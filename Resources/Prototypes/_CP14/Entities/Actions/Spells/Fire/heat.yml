@@ -24,7 +24,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto calidum..."
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RunePlantHeat
+    proto: CP14RuneHeat
   - type: EntityTargetAction
     range: 8
     interactOnMiss: false
@@ -53,7 +53,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14RunePlantHeat
+  id: CP14RuneHeat
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
