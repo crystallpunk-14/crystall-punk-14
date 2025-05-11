@@ -31,3 +31,6 @@
   - id: CP14AgaricMushroom
     amount: 1
     maxAmount: 2
+  - id: CP14MobMonsterMyconideFlyagaric
+    amount: 1
+    prob: 0.08
