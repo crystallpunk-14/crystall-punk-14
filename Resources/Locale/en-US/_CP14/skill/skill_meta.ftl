@@ -26,3 +26,9 @@ cp14-skill-meta-t3-name = Expert metamagic
 
 cp14-skill-alchemy-vision-name = Alchemist's Vision
 cp14-skill-alchemy-vision-desc = You are able to understand what liquids are in containers by visually analyzing them.
+
+cp14-skill-copper-melt-name = Copper melting
+cp14-skill-iron-melt-name = Iron melting
+cp14-skill-gold-melt-name = Gold melting
+cp14-skill-mithril-melt-name = Mithril melting
+cp14-skill-glass-melt-name = Glasswork

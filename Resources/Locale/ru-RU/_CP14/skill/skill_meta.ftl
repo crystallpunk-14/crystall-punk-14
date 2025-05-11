@@ -26,3 +26,9 @@ cp14-skill-meta-t3-name = Экспертная метамагия
 
 cp14-skill-alchemy-vision-name = Взор алхимика
 cp14-skill-alchemy-vision-desc = Вы способны понимать какие именно жидкости находятся в емкостях, при помощи визуального анализа.
+
+cp14-skill-copper-melt-name = Плавка меди
+cp14-skill-iron-melt-name = Плавка железа
+cp14-skill-gold-melt-name = Плавка золота
+cp14-skill-mithril-melt-name = Плавка мифрила
+cp14-skill-glass-melt-name = Работа со стеклом

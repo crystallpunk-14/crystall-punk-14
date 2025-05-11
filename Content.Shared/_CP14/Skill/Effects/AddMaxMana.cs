@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
@@ -25,7 +26,7 @@ public sealed partial class AddManaMax : CP14SkillEffect
         return null;
     }
 
-    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager)
+    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill)
     {
         return Loc.GetString("cp14-skill-desc-add-mana", ("mana", AdditionalMana.ToString()));
     }

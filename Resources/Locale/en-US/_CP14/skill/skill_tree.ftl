@@ -31,3 +31,6 @@ cp14-skill-tree-martial-desc = Master the secrets of deadly weapons, or make you
 
 cp14-skill-tree-thaumaturgy-name = Alchemy
 cp14-skill-tree-thaumaturgy-desc = The art of creating magical potions that can kill, raise from the dead, or turn creatures into sheep.
+
+cp14-skill-tree-blacksmithing-name = Blacksmithing
+cp14-skill-tree-blacksmithing-desc = The art of turning metal into various useful things.

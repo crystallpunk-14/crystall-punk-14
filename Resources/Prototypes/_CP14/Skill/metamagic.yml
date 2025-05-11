@@ -5,6 +5,7 @@
   skillUiPosition: 1, 0
   tree: Metamagic
   name: cp14-skill-meta-t1-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta
@@ -144,6 +145,7 @@
   skillUiPosition: 7, 0
   tree: Metamagic
   name: cp14-skill-meta-t2-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta2
@@ -198,6 +200,7 @@
   skillUiPosition: 13, 0
   tree: Metamagic
   name: cp14-skill-meta-t3-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta3

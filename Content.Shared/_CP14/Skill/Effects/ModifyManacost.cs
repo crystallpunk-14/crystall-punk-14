@@ -1,6 +1,7 @@
 using System.Text;
 using Content.Shared._CP14.MagicManacostModify;
 using Content.Shared._CP14.MagicRitual.Prototypes;
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
@@ -49,7 +50,7 @@ public sealed partial class ModifyManacost : CP14SkillEffect
         return null;
     }
 
-    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager)
+    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill)
     {
         var sb = new StringBuilder();
         sb.Append(Loc.GetString("cp14-clothing-magic-examine")+"\n");

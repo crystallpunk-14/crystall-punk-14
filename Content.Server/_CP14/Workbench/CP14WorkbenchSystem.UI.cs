@@ -38,7 +38,8 @@ public sealed partial class CP14WorkbenchSystem
                 if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities, user))
                 {
                     canCraft = false;
-                    hidden = requirement.HideRecipe;
+                    if (requirement.HideRecipe)
+                        hidden = true;
                 }
             }
 

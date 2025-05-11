@@ -13,3 +13,4 @@ cp14-research-recipe-list = Research costs:
 cp14-research-craft = Research
 
 cp14-skill-desc-add-mana = Increases your character's mana amount by {$mana}.
+cp14-skill-desc-unlock-recipes = Opens up the possibility of crafting:

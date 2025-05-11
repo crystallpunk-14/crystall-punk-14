@@ -32,7 +32,7 @@
     addSlots:
     - Garde
     - BladeInlay
-  - !type:EditDamageableModifier # Only 1 ingot t craft, so less health
+  - !type:EditDamageableModifier # Only 1 ingot craft, so less health
     multiplier: 2
 
 - type: modularPart

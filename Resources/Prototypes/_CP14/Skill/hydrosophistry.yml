@@ -5,6 +5,7 @@
   skillUiPosition: 1, 0
   tree: Hydrosophistry
   name: cp14-skill-water-t1-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: water
@@ -140,6 +141,7 @@
   skillUiPosition: 7, 0
   tree: Hydrosophistry
   name: cp14-skill-water-t2-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: water2
@@ -191,6 +193,7 @@
   skillUiPosition: 13, 0
   tree: Hydrosophistry
   name: cp14-skill-water-t3-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: water3

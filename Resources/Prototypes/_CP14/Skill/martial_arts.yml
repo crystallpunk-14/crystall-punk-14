@@ -29,7 +29,7 @@
   desc: cp14-skill-mastery-desc
   tree: MartialArts
   icon: 
-    sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_skimitar.rsi
+    sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
     state: preview
   restrictions:
   - !type:Impossible

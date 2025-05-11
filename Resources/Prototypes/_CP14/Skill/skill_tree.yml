@@ -70,10 +70,16 @@
     sprite: _CP14/Actions/skill_tree.rsi
     state: martial
 
-# 
+#
 
 - type: cp14SkillTree
   id: Thaumaturgy
   name: cp14-skill-tree-thaumaturgy-name
   desc: cp14-skill-tree-thaumaturgy-desc
   color: "#7c52bf"
+
+- type: cp14SkillTree
+  id: Blacksmithing
+  name: cp14-skill-tree-blacksmithing-name
+  desc: cp14-skill-tree-blacksmithing-desc
+  color: "#6b3200"

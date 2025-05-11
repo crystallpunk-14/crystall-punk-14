@@ -201,7 +201,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         foreach (var effect in indexedSkill.Effects)
         {
-            sb.Append(effect.GetDescription(EntityManager, _proto) + "\n");
+            sb.Append(effect.GetDescription(EntityManager, _proto, skill) + "\n");
         }
 
         return sb.ToString();
