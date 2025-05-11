@@ -34,3 +34,6 @@
   - id: CP14LumiMushroom
     amount: 1
     maxAmount: 1
+  - id: CP14MobMonsterMyconideLumish
+    amount: 1
+    prob: 0.08
