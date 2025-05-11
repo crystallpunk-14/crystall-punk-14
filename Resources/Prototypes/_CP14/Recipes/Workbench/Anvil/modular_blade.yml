@@ -597,3 +597,49 @@
     stack: CP14MithrilBar
     count: 1
   result: CP14ModularBladeMithrilHoe
+
+# Skimitar
+
+- type: CP14Recipe
+  id: CP14ModularBladeIronSkimitar
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 2
+  result: CP14ModularBladeIronSkimitar
+
+- type: CP14Recipe
+  id: CP14ModularBladeGoldSkimitar
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 2
+  result: CP14ModularBladeGoldSkimitar
+
+- type: CP14Recipe
+  id: CP14ModularBladeCopperSkimitar
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 2
+  result: CP14ModularBladeCopperSkimitar
+
+- type: CP14Recipe
+  id: CP14ModularBladeMithrilSkimitar
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 2
+  result: CP14ModularBladeMithrilSkimitar

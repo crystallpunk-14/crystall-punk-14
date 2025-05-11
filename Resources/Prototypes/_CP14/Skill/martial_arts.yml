@@ -21,3 +21,15 @@
     state: preview
   restrictions:
   - !type:Impossible
+
+- type: cp14Skill
+  id: SkimitarMastery
+  skillUiPosition: 4, 0
+  name: cp14-skill-skimitar-mastery-name
+  desc: cp14-skill-mastery-desc
+  tree: MartialArts
+  icon: 
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_skimitar.rsi
+    state: preview
+  restrictions:
+  - !type:Impossible

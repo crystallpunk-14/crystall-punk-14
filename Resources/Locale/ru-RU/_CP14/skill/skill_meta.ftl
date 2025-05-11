@@ -2,6 +2,7 @@ cp14-skill-mastery-desc = Овладев искусством этого ору�
 
 cp14-skill-sword-mastery-name = Владение мечом
 cp14-skill-parier-mastery-name = Владение рапирой
+cp14-skill-skimitar-mastery-name = Владение скимитаром
 
 cp14-skill-pyro-t1-name = Базовая пирокинетика
 cp14-skill-pyro-t2-name = Продвинутая пирокинетика

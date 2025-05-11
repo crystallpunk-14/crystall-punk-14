@@ -1,95 +1,87 @@
 #Concept:
-# + High Throwable damage
-#   Piercing animation
-# - Low Melee Damage
+# + Additional range
+# + High Damage! + Wielded buff
+# - Required Warcraft skill
 
 - type: modularPart
-  id: BaseBladeSpear
+  id: BaseBladeSkimitar
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseWeaponThrowable
     - BaseWeaponChemical
     - BaseWeaponSharp
   - !type:AddComponents
-    override: true
     components:
-    - type: DamageOtherOnHit
-      damage:
-        types:
-          Piercing: 16
-    - type: ThrowingAngle
-      angle: 135
-    - type: EmbeddableProjectile
-      offset: -0.15,-0.15
-      removalTime: 1.5
+    - type: CP14MeleeWeaponSkillRequired
+      skills:
+      - SkimitarMastery
   - !type:EditMeleeWeapon
-    newWideAnimation: CP14WeaponArcThrust
-    angleMultiplier: 0
+    resetOnHandSelected: false # We can fast swing!
     bonusRange: 0.2
+    angleMultiplier: 1.5
     bonusDamage:
       types:
-        Piercing: 8
+        Slash: 8
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Piercing: 3
+        Slash: 5
   - !type:EditItem
-    newSize: Normal
-    adjustShape: 0, 1
-    storedOffsetBonus: 0, 5
+    newSize: Large
+    adjustShape: 0, 2
+    storedOffsetBonus: 0, 10
   - !type:EditModularSlots
     addSlots:
     - Garde
     - BladeInlay
 
 - type: modularPart
-  id: BladeIronSpear
+  id: BladeIronSkimitar
   slots:
   - Blade
   sourcePart: CP14ScrapIron
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeSkimitar
     - BaseBladeIron
 
 - type: modularPart
-  id: BladeGoldSpear
+  id: BladeGoldSkimitar
   slots:
   - Blade
   sourcePart: CP14ScrapGold
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
   color: "#ffe269"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeSkimitar
     - BaseBladeGold
 
 - type: modularPart
-  id: BladeCopperSpear
+  id: BladeCopperSkimitar
   slots:
   - Blade
   sourcePart: CP14ScrapCopper
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
   color: "#e28f08"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeSkimitar
     - BaseBladeCopper
 
 - type: modularPart
-  id: BladeMithrilSpear
+  id: BladeMithrilSkimitar
   slots:
   - Blade
   sourcePart: CP14ScrapMithril
-  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/metall_spear.rsi
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
   color: "#38f0b3"
   modifiers:
   - !type:Inherit
     copyFrom:
-    - BaseBladeSpear
+    - BaseBladeSkimitar
     - BaseBladeMithril
