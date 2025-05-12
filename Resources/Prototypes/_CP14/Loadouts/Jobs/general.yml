@@ -150,6 +150,7 @@
   loadouts:
   - CP14ClothingEyesMonocle
   - CP14ClothingEyesGlasses
+  - CP14ClothingEyesEyePatch
 
 - type: loadout
   id: CP14ClothingEyesMonocle
@@ -160,6 +161,11 @@
   id: CP14ClothingEyesGlasses
   equipment:
     eyes: CP14ClothingEyesGlasses
+
+- type: loadout
+  id: CP14ClothingEyesEyePatch
+  equipment:
+    eyes: CP14ClothingEyesEyePatch
 
 # Gloves
 

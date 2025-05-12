@@ -104,3 +104,21 @@
     sprite: _CP14/Clothing/Eyes/thaumaturgy_glasses.rsi
   - type: CP14MagicEssenceScanner
   - type: VisionCorrection
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesEyePatch
+  name: eye patch
+  description: Hides the mutilation of the eyes. 
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/eye_patch.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/eye_patch.rsi
