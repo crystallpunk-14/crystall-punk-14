@@ -1,6 +1,7 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
+  - CP14AdventureEquip
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes

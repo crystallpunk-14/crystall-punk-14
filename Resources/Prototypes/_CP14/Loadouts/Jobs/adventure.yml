@@ -1,0 +1,32 @@
+- type: loadoutGroup
+  id: CP14AdventureEquip
+  name: cp14-loadout-adventurers-equip
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CP14ModularIronSkimitar
+  - CP14ModularIronSword
+  - CP14ModularIronRapier
+  - CP14BowCombat
+
+- type: loadout
+  id: CP14ModularIronSkimitar
+  equipment:
+    belt2: CP14ModularIronSkimitar
+
+- type: loadout
+  id: CP14ModularIronSword
+  equipment:
+    belt2: CP14ModularIronSword
+
+- type: loadout
+  id: CP14ModularIronRapier
+  equipment:
+    belt2: CP14ModularIronRapier
+
+- type: loadout
+  id: CP14BowCombat
+  dummyEntity: CP14BowCombat
+  equipment:
+    belt2: CP14ClothingBeltQuiverCopperArrow
+    neck: CP14BowCombat

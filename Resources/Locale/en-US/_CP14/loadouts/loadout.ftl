@@ -15,6 +15,10 @@ cp14-loadout-general-spells = Spells
 cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
+# Adventurer
+
+cp14-loadout-adventurers-equip = Advenrurer weapons
+
 # Apprentice
 
 cp14-loadout-apprentice-bundle = Apprentice bundle
