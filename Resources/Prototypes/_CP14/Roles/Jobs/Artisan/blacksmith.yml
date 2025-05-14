@@ -17,7 +17,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobApprentice
-      time: 3600 # 1 hours
+      time: 3600 # 1 hour
 
 - type: startingGear
   id: CP14BlacksmithGear
