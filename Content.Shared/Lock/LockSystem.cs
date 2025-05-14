@@ -84,6 +84,16 @@ public sealed class LockSystem : EntitySystem
         //CrystallEdge LockSystem Adapt End
     }
 
+    //CP14 Lock adapt
+    private void OnBeforeDoorOpened(EntityUid uid, LockComponent component, BeforeDoorOpenedEvent args)
+    {
+        if (!component.Locked)
+            return;
+
+        args.Cancel();
+    }
+    //CP14 Lock adapt end
+
     private void OnStorageOpenAttempt(EntityUid uid, LockComponent component, ref StorageOpenAttemptEvent args)
     {
         if (!component.Locked)
