@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
-  name: wooden chair
-  description: Made of the most common planks. Simple and effective!
   id: CP14ChairWooden
   graph: CP14Seat
   startNode: start
   targetNode: CP14ChairWooden
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/chairs.rsi
-    state: wooden
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -18,16 +13,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wooden table
-  description: A simple table made of boards.
   id: CP14TableWooden
   graph: CP14TableWooden
   startNode: start
   targetNode: CP14TableWooden
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -36,16 +26,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wooden table (round)
-  description: A simple table made of boards.
   id: CP14TableWoodenRound
   graph: CP14TableWoodenRound
   startNode: start
   targetNode: CP14TableWoodenRound
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi
-    state: round
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -54,16 +39,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wooden counter
-  description: A simple table made of boards.
   id: CP14TableWoodenCounter
   graph: CP14TableWooden
   startNode: start
   targetNode: CP14TableWoodenCounter
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/Tables/wood_counter.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -72,16 +52,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wallmount orders board
-  description: Is there a job for a witcher?
   id: CP14WallmountOrdersBorder
   graph: CP14WallmountOrdersBorder
   startNode: start
   targetNode: CP14WallmountOrdersBorder
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/wallmount_order_board.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -93,15 +68,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14Mannequin
-  name: mannequin
-  description: Wooden mannequin designed for clothing displaying.
   graph: CP14Mannequin
   startNode: start
   targetNode: CP14mannequin
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/mannequin.rsi
-    state: mannequin
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -112,15 +82,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14TargetStake
-  name: target stake
-  description: A wooden stand on which to fix a target for firing.
   graph: CP14TargetStake
   startNode: start
   targetNode: CP14targetStake
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/target.rsi
-    state: target_stake
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -130,15 +95,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14Target
-  name: target
-  description: A target for marksmanship practice.
   graph: CP14TargetStake
   startNode: start
   targetNode: CP14target
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/target.rsi
-    state: target
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -148,15 +108,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14TargetEffigy
-  name: target
-  description: A target for marksmanship practice.
   graph: CP14TargetEffigy
   startNode: start
   targetNode: CP14targetEffigy
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/target.rsi
-    state: target_effigy
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -167,15 +122,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenBed
-  name: wooden bed
-  description: Comfortable bed for sleeping.
   graph: CP14WoodenBed
   startNode: start
   targetNode: CP14WoodenBed
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/wooden_bed.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -185,16 +135,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wood bench
-  description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
   id: CP14BenchWood
   graph: CP14BenchWood
   startNode: start
   targetNode: CP14BenchWood
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/bench.rsi
-    state: wooden
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -204,16 +149,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: curtains white
-  description: Two hanging sheets made of white fabric.
   id: CP14CurtainsWhite
   graph: CP14Curtains
   startNode: start
   targetNode: CP14CurtainsWhite
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/curtains.rsi
-    state: white_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -223,16 +163,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: curtains blue
-  description: Two hanging sheets made of blue fabric.
   id: CP14CurtainsBlue
   graph: CP14Curtains
   startNode: start
   targetNode: CP14CurtainsBlue
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/curtains.rsi
-    state: blue_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -242,16 +177,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: curtains red
-  description: Two hanging sheets made of red fabric.
   id: CP14CurtainsRed
   graph: CP14Curtains
   startNode: start
   targetNode: CP14CurtainsRed
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Furniture/curtains.rsi
-    state: red_closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -261,16 +191,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wooden closet
-  description: A simple wooden wardrobe for storing clothes and other things.
   id: CP14WoodenCloset
   graph: CP14WoodenCloset
   startNode: start
   targetNode: CP14WoodenCloset
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/wood_cupboard.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -279,16 +204,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: wooden cabinet
-  description: An ordinary wooden cabinet for simple knickknacks.
   id: CP14WoodenCabinet
   graph: CP14WoodenCabinet
   startNode: start
   targetNode: CP14WoodenCabinet
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/wood_cabinet.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -297,16 +217,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: iron cabinet
-  description: An ordinary iron cabinet for simple knickknacks.
   id: CP14IronCabinet
   graph: CP14IronCabinet
   startNode: start
   targetNode: CP14IronCabinet
   category: construction-category-furniture
-  icon:
-    sprite: _CP14/Structures/Storage/Dressers/iron_cabinet.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
