@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: CP14AdventureEquip
   name: cp14-loadout-adventurers-equip
-  minLimit: 1
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - CP14ModularIronSkimitar
