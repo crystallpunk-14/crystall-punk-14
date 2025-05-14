@@ -191,3 +191,20 @@
       - !type:FlammableReaction
         multiplier: 1
       - !type:Ignite
+
+- type: weather
+  id: CP14DemiplaneDestructionStorm
+  sprite:
+    sprite: /Textures/Effects/weather.rsi
+    state: snowfall_heavy
+  alpha: 0.4
+  offsetSpeed: 0.56, -0.36
+  color: "#c034eb"
+  config:
+  - maxEntities: 4
+    frequency: 3
+    canAffectOnWeatherBlocker: false
+    effects:
+    - !type:SpawnEntityOnTop
+      prob: 0.25
+      entity: CP14SkyLightningPurple

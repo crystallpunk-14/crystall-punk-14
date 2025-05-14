@@ -15,6 +15,10 @@ cp14-loadout-general-spells = Заклинания
 cp14-loadout-skill-tree = Специализация
 cp14-loadout-general-keys = Ключи
 
+# Adventurer
+
+cp14-loadout-adventurers-equip = Оружие авантюриста
+
 # Apprentice
 
 cp14-loadout-apprentice-bundle = Набор подмастерья
@@ -43,12 +47,8 @@ cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
 cp14-loadout-guard-spells = Заклинания стражи
 
-# Trade guild
-
-cp14-loadout-commandant-head = Шляпа коменданта
-cp14-loadout-commandant-cloak = Накидка коменданта
-
 cp14-loadout-merchant-head = Шляпа торговца
+cp14-loadout-merchant-cloak = Накидка торговца
 cp14-loadout-merchant-outer = Жилет торговца
 cp14-loadout-merchant-shirt = Рубашка торговца
 cp14-loadout-merchant-pants = Штаны торговца

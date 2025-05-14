@@ -1,0 +1,76 @@
+- type: entity
+  id: CP14ActionSpellHeat
+  name: Heat
+  description: You start to heat the target up a lot, burning it from the inside.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: heat
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 7
+  - type: CP14MagicEffect
+    magicType: Fire
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectHeat
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:AdjustTemperature
+        amount: 36000
+      - !type:ExtinguishReaction
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Vos adepto calidum..."
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneHeat
+  - type: EntityTargetAction
+    range: 8
+    interactOnMiss: false
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: heat
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 8
+      castTime: 10
+      distanceThreshold: 5
+      breakOnMove: false
+
+- type: entity
+  id: CP14ImpactEffectHeat
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14RuneHeat
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollHeat
+  name: heat spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellHeat

@@ -1,3 +1,4 @@
+using Content.Shared._CP14.ResearchTable;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
@@ -10,11 +11,17 @@ namespace Content.Shared._CP14.Skill.Components;
 /// Component that stores the skills learned by a player and their progress in the skill trees.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(CP14SharedSkillSystem))]
+[Access(typeof(CP14SharedSkillSystem), typeof(CP14SharedResearchSystem))]
 public sealed partial class CP14SkillStorageComponent : Component
 {
     [DataField, AutoNetworkedField]
     public List<ProtoId<CP14SkillPrototype>> LearnedSkills = new();
+
+    /// <summary>
+    /// skills that the player has learned on the research table, but has not yet learned in the skill tree.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<ProtoId<CP14SkillPrototype>> ResearchedSkills = new();
 
     /// <summary>
     /// The number of experience points spent on skills. Technically this could be calculated via LearnedSkills, but this is a cached value for optimization.
@@ -23,16 +30,10 @@ public sealed partial class CP14SkillStorageComponent : Component
     public FixedPoint2 SkillsSumExperience = 0;
 
     /// <summary>
-    /// Keeps track of progress points in the knowledge areas available to the player. Important: The absence of a specific area means that the player CANNOT progress in that area.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> Progress = new();
-
-    /// <summary>
     /// The maximum ceiling of experience points that can be spent on learning skills. Not tied to a category.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public FixedPoint2 ExperienceMaxCap = 10;
+    public FixedPoint2 ExperienceMaxCap = 5;
 }
 
 /// <summary>

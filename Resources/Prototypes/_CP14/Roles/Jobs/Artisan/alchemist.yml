@@ -6,6 +6,13 @@
   startingGear: CP14AlchemistGear
   icon: "CP14JobIconAlchemist"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - AlchemyVision
+      - MetamagicT1
+      - MetamagicT2
+      - CP14ActionSpellMagicSplitting
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobApprentice
@@ -19,8 +26,8 @@
   id: CP14AlchemistGear
   storage:
     back:
-    - CP14EnergyCrystalSmall
-    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingAlchemist

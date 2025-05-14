@@ -9,6 +9,12 @@
   "states": [
     {
       "name": "resurrection"
+    },
+    {
+      "name": "cure_dead"
+    },
+    {
+      "name": "dead_heal_ballade"
     }
   ]
 }

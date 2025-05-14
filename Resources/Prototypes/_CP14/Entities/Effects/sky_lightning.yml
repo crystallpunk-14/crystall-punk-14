@@ -57,3 +57,37 @@
       collection: CP14LightningFar
       params:
         variation: 0.2
+
+- type: entity
+  id: CP14SkyLightningPurple
+  parent: CP14SkyLightning
+  suffix: Purple
+  components:
+  - type: PointLight
+    color: "#8f42ff"
+  - type: Sprite
+    color: "#8f42ff"
+  - type: CP14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:CP14SpellThrowFromUser
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 15
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 10
+    farSound:
+      collection: CP14LightningFar
+      params:
+        variation: 0.2
+        volume: -5

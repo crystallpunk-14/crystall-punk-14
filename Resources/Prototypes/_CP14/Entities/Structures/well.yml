@@ -1,0 +1,30 @@
+- type: entity
+  id: CP14StoneWell
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  name: well
+  description: At the bottom of this well gurgles clear water. If you have a bucket, you can reach it.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: icon
+  #- type: Damageable
+  #  damageContainer: StructuralInorganic
+  #  damageModifierSet: CP14RockStructural
+  - type: DrawableSolution
+    solution: pool
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+  - type: DrainableSolution
+    solution: pool
+  - type: Drink
+    solution: pool

@@ -33,7 +33,6 @@
 
 - type: markingPoints
   id: CP14MobGoblinMarkingLimits
-  onlyWhitelisted: true
   points:
     Hair:
       points: 1
@@ -41,23 +40,29 @@
     FacialHair:
       points: 1
       required: false
+      onlyWhitelisted: true
     Snout:
       points: 1
       required: true
       defaultMarkings: [ CP14GoblinNose ]
+      onlyWhitelisted: true
     HeadTop:
       points: 1
       required: true
       defaultMarkings: [ CP14GoblinEars ]
+      onlyWhitelisted: true
     Chest:
       points: 1
       required: false
+      onlyWhitelisted: true
     Legs:
       points: 2
       required: false
+      onlyWhitelisted: true
     Arms:
       points: 2
       required: false
+      onlyWhitelisted: true
 
 - type: humanoidBaseSprite
   id: CP14MobGoblinEyes

@@ -22,7 +22,7 @@
   - type: PointLight
     energy: 1
     radius: 8
-    color: "#b2ceeb"
+    color: "#dfe7f0"
     enabled: false
   - type: Appearance
   - type: GenericVisualizer
@@ -41,14 +41,14 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 40
+          damage: 20
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
   - type: CP14MagicLantern
   - type: CP14MagicEnergyDraw
     energy: -0.1
-    delay: 6
+    delay: 12
   - type: Construction
     graph: CP14WallmountLampEmpty
     node: CP14WallmountLampEmpty
@@ -75,7 +75,7 @@
   - type: ItemSlots
     slots:
       crystal_slot:
-        startingItem: CP14EnergyCrystalSmall
+        startingItem: CP14EnergyCrystalMedium
         insertSound: 
           path: /Audio/_CP14/Items/crystal_insert.ogg
           params:

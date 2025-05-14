@@ -5,14 +5,13 @@ Demiplanes are one of the main ways for adventurers and the city as a whole to o
 
 The main goal of exploration is for adventurers to obtain resources (ore, loot, etc.) and successfully return them back to their world.
 
-As an adventurer, you can sell resources from the demiplane to artisans and other players at your own prices. 
+As an adventurer, you can sell resources from the demiplane to artisans and other players at your own prices.
 
 ## What research and preparation looks like.
 
 There are "keys" in the game world that allow you to temporarily activate a portal to move into a procedurally generated demiplane with enemies and resources. Within the location there will be generated exits from the demiplane that you will have to find on your own.
 
 <Box>
-<GuideEntityEmbed Entity="CP14DemiplaneKeyT1"/>
 <GuideEntityEmbed Entity="CP14DemiplanRiftCore"/>
 </Box>.
 
@@ -42,11 +41,11 @@ To prepare for an expedition to the demiplane, you may need the following items:
 - Weapons for all members of the group.
 - Vials of healing potions or poison for weapons.
 - Sharpening stones to sharpen your weapons on the spot.
-- Armor for group members. 
+- Armor for group members.
 - Magical items and/or crossbows (with ammunition) for dealing damage remotely.
 - A "key" to open the demiplane.
-- Extra bags or crates for collecting loot. 
-- Belt lanterns or magical lighting. 
+- Extra bags or crates for collecting loot.
+- Belt lanterns or magical lighting.
 - A supply of water and food for a short break from exploring.
 
 ## Cooperation tips

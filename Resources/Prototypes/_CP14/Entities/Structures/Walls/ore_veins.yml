@@ -29,8 +29,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreCopper1:
-            min: 3
-            max: 6
+            min: 4
+            max: 7
       - !type:DoActsBehavior
         acts: ["Destruction"]
 
@@ -64,7 +64,7 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14OreIron1:
-            min: 3
+            min: 4
             max: 6
       - !type:DoActsBehavior
         acts: ["Destruction"]

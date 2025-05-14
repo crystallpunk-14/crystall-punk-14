@@ -7,7 +7,6 @@
   color: "#800000"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -43,7 +42,6 @@
   color: "#802020"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -71,7 +69,6 @@
   color: "#800000"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -86,7 +83,6 @@
   color: "#803300"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -136,7 +132,6 @@
   color: "#80003e"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:
@@ -178,7 +173,6 @@
   color: "#576e35"
   recognizable: true
   physicalDesc: cp14-reagent-physical-desc-ferrous
-  slippery: false
   footstepSound:
     collection: FootstepBlood
     params:

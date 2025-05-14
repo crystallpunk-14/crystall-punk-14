@@ -118,7 +118,7 @@ CP14DungeonExitAutoLink: CP14LaddersUpStoneAutoLink
 CP14BaseBroom: null
 
 #2024-15-12
-CP14DemiplanKey: CP14DemiplaneKeyT1
+CP14DemiplanKey: null
 CP14SpawnerExpeditionLootCommon: CP14SpawnerDemiplaneLootT1
 
 #2025-06-01
@@ -146,29 +146,6 @@ CP14PlateIron: CP14Plate
 #2025-22-01
 CP14BaseLightHammer: CP14ModularIronHammer
 CP14BaseBattleHammer: CP14ModularIronHammer
-
-#2025-28-01
-CP14CrystalRubiesSmall: CP14CrystalFire
-CP14CrystalRubiesMedium: CP14CrystalFire
-CP14CrystalRubiesBig: CP14CrystalFire
-CP14CrystalTopazesSmall: CP14CrystalAir
-CP14CrystalTopazesMedium: CP14CrystalAir
-CP14CrystalTopazesBig: CP14CrystalAir
-CP14CrystalEmeraldsSmall: CP14CrystalOrder
-CP14CrystalEmeraldsMedium: CP14CrystalOrder
-CP14CrystalEmeraldsBig: CP14CrystalOrder
-CP14CrystalSapphiresSmall: CP14CrystalWater
-CP14CrystalSapphiresMedium: CP14CrystalWater
-CP14CrystalSapphiresBig: CP14CrystalWater
-CP14CrystalAmethystsSmall: CP14CrystalChaos
-CP14CrystalAmethystsMedium: CP14CrystalChaos
-CP14CrystalAmethystsBig: CP14CrystalChaos
-CP14CrystalDiamondsSmall: CP14CrystalAir
-CP14CrystalDiamondsMedium: CP14CrystalAir
-CP14CrystalDiamondsBig: CP14CrystalAir
-
-CP14QuartzCrystal: CP14CrystalEmpty
-CP14QuartzShard: CP14CrystalShardBase
 
 #2025-30-01
 CP14OreCopper: CP14OreCopper1
@@ -198,34 +175,6 @@ CP14Crossbolt: CP14CrossboltIron
 
 #2025-26-02
 CP14BookImperialLawsHandBook: CP14GuidebookImperialLaws
-
-#2025-28-02
-CP14CrystalSmall: CP14CrystalEmpty
-CP14CrystalMedium: CP14CrystalEmpty
-CP14CrystalBig: CP14CrystalEmpty
-CP14CrystalElementalWaterSmall: CP14CrystalWater
-CP14CrystalElementalWaterMedium: CP14CrystalWater
-CP14CrystalElementalWaterBig: CP14CrystalWater
-CP14CrystalElementalHealingSmall: CP14CrystalOrder
-CP14CrystalElementalHealingMedium: CP14CrystalOrder
-CP14CrystalElementalHealingBig: CP14CrystalOrder
-CP14CrystalElementalFireSmall: CP14CrystalFire
-CP14CrystalElementalFireMedium: CP14CrystalFire
-CP14CrystalElementalFireBig: CP14CrystalFire
-CP14CrystalElementalLightSmall: CP14CrystalAir
-CP14CrystalElementalLightMedium: CP14CrystalAir
-CP14CrystalElementalLightBig: CP14CrystalAir
-CP14CrystalElementalElectricSmall: CP14CrystalAir
-CP14CrystalElementalElectricMedium: CP14CrystalAir
-CP14CrystalElementalElectricBig: CP14CrystalAir
-CP14CrystalElementalDarknessSmall: CP14CrystalChaos
-CP14CrystalElementalDarknessMedium: CP14CrystalChaos
-CP14CrystalElementalDarknessBig: CP14CrystalChaos
-
-CP14CrystalShardHealing: CP14CrystalShardOrder
-CP14CrystalShardLight: CP14CrystalShardAir
-CP14CrystalShardElectric: CP14CrystalShardAir
-CP14CrystalShardDarkness: CP14CrystalShardChaos
 
 CP14AlchemyNormalizer: CP14AlchemySolutionCleaner
 CP14VialSmallBloodFlowerSap: CP14VialSmall
@@ -336,6 +285,36 @@ CP14WoodenChestFrame: null
 CP14Nail1: null
 CP14Nail20: null
 CP14Nail50: null
+
+CP14WallmountCrystalDiamonds: null
+CP14WallmountCrystalAmethysts: null
+CP14WallmountCrystalSapphires: null
+CP14WallmountCrystalEmeralds: null
+CP14WallmountCrystalTopazes: null
+CP14WallmountCrystalRubies: null
+
+CP14CrystalShardBase: CP14CrystalShardQuartz
+CP14CrystalShardChaos: CP14CrystalShardQuartz
+CP14CrystalShardEarth: CP14CrystalShardQuartz
+CP14CrystalShardFire: CP14CrystalShardQuartz
+CP14CrystalShardWater: CP14CrystalShardQuartz
+CP14CrystalShardAir: CP14CrystalShardQuartz
+CP14CrystalShardOrder: CP14CrystalShardQuartz
+
+CP14CrystalEmpty: CP14CrystalQuartz
+CP14CrystalEarth: CP14CrystalQuartz
+CP14CrystalFire: CP14CrystalQuartz
+CP14CrystalWater: CP14CrystalQuartz
+CP14CrystalAir: CP14CrystalQuartz
+CP14CrystalOrder: CP14CrystalQuartz
+CP14CrystalChaos: CP14CrystalQuartz
+
+CP14EnergyCrystalSmallEmpty: CP14EnergyCrystalMediumEmpty
+CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
+
+#2025-05-05
+CP14DemiplaneKeyT1: null
+CP14DemiplaneKeyT2: null
 
 # <---> CrystallEdge migration zone end
 
@@ -878,19 +857,22 @@ LightTree04: LightTree
 LightTree05: LightTree
 LightTree06: LightTree
 
-#2024-12-28
+# 2024-12-28
 DrinkIrishCarBomb: DrinkIrishSlammer
 
-#2025-01-06
+# 2025-01-06
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime
 
 # 2025-01-27
 FoodCondimentPacketFrostoil: FoodCondimentPacketColdsauce
 
-#2025-02-05
+# 2025-02-05
 WeaponSubMachineGunVector: null
 WeaponSubMachineGunVectorRubber: null
+
+# 2025-02-11
+WallShuttleInterior: WallShuttle
 
 # 2025-02-20
 MagazineBoxAntiMaterielBig: null
@@ -917,3 +899,27 @@ PaxChemistryBottle: ChemistryBottlePax
 MuteToxinChemistryBottle: ChemistryBottleMuteToxin
 LeadChemistryBottle: ChemistryBottleLead
 ToxinChemistryBottle: ChemistryBottleToxin
+
+# 2025-03-29
+ClothingBackpackDuffelSyndicateRaidBundle: ClothingBackpackSyndicateRaidBundle
+
+# 2025-04-14
+MailRobustToolsSpam: MailSpamLetter
+MailNanotrasenSpam: MailSpamLetter
+MailSyndicateSpam: MailSpamLetter
+MailAlternativeDimensionSpam: MailSpamLetter
+MailNarsieCultSpam: MailSpamLetter
+MailRageCageSpam: MailSpamLetter
+MailVoyageAdvertisementSpam: MailSpamLetter
+MailScienceSpiderClanSpam: MailSpamLetter
+MailAllAccessSpam: MailSpamLetter
+MailCentcommRetributionSpam: MailSpamLetter
+MailEvilLizardSpam: MailSpamLetter
+MailParentsNeedMoneySpam: MailSpamLetter
+
+# 2025-04-15
+SimpleXenoArtifact: ComplexXenoArtifact
+MediumXenoArtifact: ComplexXenoArtifact
+SimpleXenoArtifactItem: ComplexXenoArtifactItem
+MediumXenoArtifactItem: ComplexXenoArtifactItem
+VariedXenoArtifactItem: ComplexXenoArtifactItem

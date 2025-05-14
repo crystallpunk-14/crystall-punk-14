@@ -10,6 +10,7 @@ using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.Actions;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.FixedPoint;
+using Content.Shared.Instruments;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;

@@ -100,3 +100,16 @@
     - state: sage
   - type: CP14Seed
     plantProto: CP14PlantSage
+
+- type: entity
+  id: CP14SeedCotton
+  name: cotton seeds
+  description: Cotton seeds. It's time to grow some pants!
+  parent: CP14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: cotton
+  - type: CP14Seed
+    plantProto: CP14PlantCotton

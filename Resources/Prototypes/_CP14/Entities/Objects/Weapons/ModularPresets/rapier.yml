@@ -1,4 +1,19 @@
 - type: entity
+  id: CP14ModularIronRapier
+  parent: CP14ModularGripWooden
+  name: iron rapier
+  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronRapier
+
+- type: entity
   id: CP14ModularGuildmasterRapier
   parent: CP14ModularGripGuildmaster
   name: guildmaster's personal rapier

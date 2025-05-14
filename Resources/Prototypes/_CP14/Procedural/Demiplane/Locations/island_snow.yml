@@ -1,0 +1,66 @@
+- type: cp14DemiplaneLocation
+  id: T1SnowIsland
+  levels:
+    min: 2
+    max: 5
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: snow_island
+  locationConfig: CP14DemiplaneSnowIsland
+  name: cp14-demiplane-location-snow-island
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneOpenSky
+  - CP14DemiplanePeacefulAnimals
+  - CP14DemiplaneCold
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14CloudShadows
+  - type: Biome
+    template: CP14IceOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+
+- type: dungeonConfig
+  id: CP14DemiplaneSnowIsland
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneIslandFloorMaskSnow
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandFloorMaskGrass
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneGrasslandIslandFloorMaskStone
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14SnowlandSwamp
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14IceCavesGeneric
+      tileMask:
+      - CP14FloorBase
+    - !type:BiomeDunGen
+      biomeTemplate: CP14SnowlandTestResult
+      tileMask:
+      - CP14FloorGrass
+
+- type: dungeonConfig
+  id: CP14DemiplaneIslandFloorMaskSnow
+  layers:
+  - !type:NoiseDistanceDunGen
+    size: 160, 160
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5

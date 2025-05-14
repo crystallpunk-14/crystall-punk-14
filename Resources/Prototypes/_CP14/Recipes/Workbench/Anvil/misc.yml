@@ -4,6 +4,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14WoodenPlanks
     count: 2
@@ -18,27 +21,22 @@
   category: Tools
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 2
   result: CP14BaseWrench
 
 - type: CP14Recipe
-  id: CP14Screwdriver
-  tag: CP14RecipeAnvil
-  category: Tools
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 1
-  result: CP14Screwdriver
-
-- type: CP14Recipe
   id: CP14PlatePie
   tag: CP14RecipeAnvil
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -50,6 +48,10 @@
   category: Tools
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
+    - IronMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 2
@@ -64,6 +66,9 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -75,6 +80,9 @@
   category: Armor
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 4
@@ -86,6 +94,9 @@
   category: Armor
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -97,6 +108,9 @@
   category: Weapon
   craftTime: 1
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -109,6 +123,9 @@
   category: Weapon
   craftTime: 1
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -121,6 +138,9 @@
   category: Weapon
   craftTime: 1
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -133,6 +153,9 @@
   category: Weapon
   craftTime: 1
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -145,6 +168,9 @@
   category: Tools
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -156,6 +182,9 @@
   category: Tools
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -167,6 +196,10 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
+    - IronMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -184,6 +217,9 @@
   category: Armor
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 2
@@ -195,6 +231,9 @@
   category: Tools
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -206,6 +245,9 @@
   category: Tools
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -217,6 +259,9 @@
   category: Tools
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -228,6 +273,9 @@
   category: Tools
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -239,6 +287,9 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -250,6 +301,9 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -261,6 +315,9 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -272,6 +329,9 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -283,8 +343,27 @@
   category: Tools
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
   result: CP14LockMithril
 
+- type: CP14Recipe
+  id: CP14EnergyCrystalMediumEmpty
+  tag: CP14RecipeAnvil
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
+  - !type:ProtoIdResource
+    protoId: CP14CrystalShardQuartz
+    count: 1
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14EnergyCrystalMediumEmpty

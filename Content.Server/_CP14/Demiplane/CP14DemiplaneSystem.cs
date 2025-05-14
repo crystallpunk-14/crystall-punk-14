@@ -162,7 +162,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         foreach (var exit in demiplane.Comp.ExitPoints)
         {
-            RemoveDemiplanRandomExitPoint(demiplane, exit);
+            RemoveDemiplaneRandomExitPoint(demiplane, exit);
         }
 
         foreach (var entry in demiplane.Comp.EntryPoints)

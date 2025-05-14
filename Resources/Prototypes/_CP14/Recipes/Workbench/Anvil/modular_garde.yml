@@ -6,6 +6,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -17,6 +20,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -28,6 +34,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -39,6 +48,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -52,6 +64,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -63,6 +78,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -74,6 +92,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -85,6 +106,9 @@
   category: Weapon
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
