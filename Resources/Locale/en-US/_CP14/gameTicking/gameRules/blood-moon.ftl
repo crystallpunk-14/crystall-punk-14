@@ -1,0 +1,1 @@
+cp14-bloodmoon-start = A blood moon rises on the horizon. The next night will be terrible.

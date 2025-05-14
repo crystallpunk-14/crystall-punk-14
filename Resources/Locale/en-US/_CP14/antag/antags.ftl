@@ -4,3 +4,4 @@ cp14-roles-antag-vampire-briefing = You are a parasite on society. It hates and 
 
 cp14-roles-antag-blood-moon-cursed-name = Cursed by the blood moon
 cp14-roles-antag-blood-moon-cursed-objective = Some creatures lose their minds, and can commit unthinkable atrocities when a bloody blood moon rises from behind the horizon ...
+cp14-roles-antag-blood-moon-cursed-briefing = The blood moon takes control of your thoughts. Your bloodlust awakens and the voices in your head say only one thing: Kill, kill, kill... kill while the moon is in its prime. Kill before the sun restores your sanity.

@@ -1,7 +1,30 @@
 - type: entity
-  id: CP14JudgmentNightRule
+  id: CP14BloodMoonRule
   parent: CP14BaseGameRule
   components:
   - type: CP14BloodMoonRule
+    curseRule: CP14BloodMoonCurseRule
+    announcementColor: "#630f24"
   - type: GameRule
     minPlayers: 0
+
+- type: entity
+  id: CP14BloodMoonCurseRule
+  parent: CP14BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 0
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CP14BloodMoonCursed ]
+      max: 25
+      playerRatio: 2
+      multiAntagSetting: NotExclusive
+      lateJoinAdditional: true
+      allowNonHumans: true
+      mindRoles:
+      - CP14MindRoleBloodMoonCursed
+      briefing:
+        text: cp14-roles-antag-blood-moon-cursed-briefing
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
