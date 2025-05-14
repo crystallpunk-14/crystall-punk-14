@@ -131,7 +131,8 @@
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_trance
-  effect: !type:AddAction
+  effects:
+  - !type:AddAction
     action: CP14ActionSpellManaTrance
   restrictions:
   - !type:NeedPrerequisite
