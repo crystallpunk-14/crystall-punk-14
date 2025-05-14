@@ -22,6 +22,16 @@ public sealed class CP14DayCycleSystem : EntitySystem
     [Dependency] private readonly SharedWeatherSystem _weather = default!;
 
     private EntityQuery<MapGridComponent> _mapGridQuery;
+    private EntityQuery<InsideEntityStorageComponent> _storageQuery;
+
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _mapGridQuery = GetEntityQuery<MapGridComponent>();
+        _storageQuery = GetEntityQuery<InsideEntityStorageComponent>();
+    }
 
     public override void Update(float frameTime)
     {
@@ -56,7 +66,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
     /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
     public bool UnderSunlight(EntityUid target)
     {
-        if (HasComp<InsideEntityStorageComponent>(target))
+        if (_storageQuery.HasComp(target))
             return false;
 
         var xform = Transform(target);

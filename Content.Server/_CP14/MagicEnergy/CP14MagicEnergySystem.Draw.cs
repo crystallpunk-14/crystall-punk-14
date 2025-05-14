@@ -77,8 +77,7 @@ public partial class CP14MagicEnergySystem
 
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
-            if (!_dayCycle.UnderSunlight(uid))
-                continue;
+            var daylight = _dayCycle.UnderSunlight(uid);
 
             ChangeEnergy((uid, magicContainer), daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, true);
         }
