@@ -9,6 +9,7 @@
   - CP14_EN_Elf
   - CP14_EN_Tiefling
   - CP14_EN_Goblin
+  - CP14_EN_Carcat
   filterEnabled: True
 
 - type: guideEntry
@@ -44,4 +45,11 @@
   id: CP14_EN_Goblin
   name: Goblin
   text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Goblin.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Carcat
+  name: Carcat
+  text: "/ServerInfo/_CP14/Guidebook_EN/SpeciesTabs/Carcat.xml"
   filterEnabled: True
