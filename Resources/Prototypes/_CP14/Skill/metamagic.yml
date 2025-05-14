@@ -126,7 +126,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellManaTrance 
-  skillUiPosition: 6, 4
+  skillUiPosition: 8, 2
   tree: Metamagic
   icon:
     sprite: _CP14/Actions/Spells/meta.rsi
