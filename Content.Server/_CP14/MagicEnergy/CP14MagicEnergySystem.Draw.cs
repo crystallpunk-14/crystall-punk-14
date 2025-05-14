@@ -4,7 +4,6 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Robust.Shared.Map.Components;
 
 namespace Content.Server._CP14.MagicEnergy;
 

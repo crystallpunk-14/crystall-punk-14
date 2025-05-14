@@ -1,6 +1,5 @@
 using Content.Shared.GameTicking;
 using Content.Shared.Light.Components;
-using Content.Shared.Light.EntitySystems;
 using Content.Shared.Storage.Components;
 using Content.Shared.Weather;
 using Robust.Shared.Map;
@@ -14,7 +13,6 @@ namespace Content.Shared._CP14.DayCycle;
 /// </summary>
 public sealed class CP14DayCycleSystem : EntitySystem
 {
-    [Dependency] private readonly SharedLightCycleSystem _light = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedGameTicker _ticker = default!;
@@ -37,16 +35,34 @@ public sealed class CP14DayCycleSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<LightCycleComponent>();
-        while (query.MoveNext(out var uid, out var lightCycle))
+        var query = EntityQueryEnumerator<LightCycleComponent, CP14DayCycleComponent, MapComponent>();
+        while (query.MoveNext(out var uid, out var lightCycle, out var dayCycle, out var map))
         {
+            var oldLightLevel = dayCycle.LastLightLevel;
+            var newLightLevel = GetLightLevel((uid, lightCycle));
+
+            dayCycle.LastLightLevel = newLightLevel;
+
+            // Going into darkness
+            if (oldLightLevel < newLightLevel && oldLightLevel > dayCycle.Threshold && newLightLevel < dayCycle.Threshold)
+            {
+                var ev = new CP14StartNightEvent(map.MapId);
+                RaiseLocalEvent(uid, ref ev, true);
+            }
+
+            // Going into light
+            if (oldLightLevel > newLightLevel && oldLightLevel < dayCycle.Threshold && newLightLevel > dayCycle.Threshold)
+            {
+                var ev = new CP14StartDayEvent(map.MapId);
+                RaiseLocalEvent(uid, ref ev, true);
+            }
         }
     }
 
-    public bool IsDay(Entity<LightCycleComponent?> map)
+    public double GetLightLevel(Entity<LightCycleComponent?> map)
     {
         if (!Resolve(map.Owner, ref map.Comp, false))
-            return false;
+            return 0;
 
         var time = (float) _timing.CurTime
             .Add(map.Comp.Offset)
@@ -56,14 +72,13 @@ public sealed class CP14DayCycleSystem : EntitySystem
 
         var normalizedTime = time % map.Comp.Duration.TotalSeconds;
         var lightLevel = Math.Sin((normalizedTime / map.Comp.Duration.TotalSeconds) * MathF.PI);
-        return lightLevel > 0.5f;
+        return lightLevel;
     }
 
     /// <summary>
     /// Checks to see if the specified entity is on the map where it's daytime.
     /// </summary>
     /// <param name="target">An entity being tested to see if it is in daylight</param>
-    /// <param name="checkRoof">Checks if the tile covers the weather (the only "roof" factor at the moment)</param>
     public bool UnderSunlight(EntityUid target)
     {
         if (_storageQuery.HasComp(target))
@@ -74,7 +89,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
         if (xform.MapUid is null || xform.GridUid is null)
             return false;
 
-        var day = IsDay(xform.MapUid.Value);
+        var day = GetLightLevel(xform.MapUid.Value) > 0.5f;
 
         var grid = xform.GridUid;
         if (grid is null)
@@ -90,11 +105,14 @@ public sealed class CP14DayCycleSystem : EntitySystem
     }
 }
 
-/// <summary>
-/// Raised when the offset on <see cref="LightCycleComponent"/> changes.
-/// </summary>
 [ByRefEvent]
 public record struct CP14StartNightEvent(MapId Map)
+{
+    public readonly MapId Map = Map;
+}
+
+[ByRefEvent]
+public record struct CP14StartDayEvent(MapId Map)
 {
     public readonly MapId Map = Map;
 }
