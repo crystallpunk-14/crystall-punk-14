@@ -7,7 +7,7 @@
   icon:
     sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
     state: icon
-  effect: 
+  effects: 
   - !type:AddComponents
     components:
     - type: SolutionScanner
