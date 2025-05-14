@@ -3,7 +3,7 @@
   skillUiPosition: 0, 0
   tree: Blacksmithing
   name: cp14-skill-copper-melt-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     state: ore3
@@ -17,7 +17,7 @@
   skillUiPosition: 0, 2
   tree: Blacksmithing
   name: cp14-skill-iron-melt-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Objects/Materials/iron_ore.rsi
     state: ore3
@@ -31,7 +31,7 @@
   skillUiPosition: 0, 4
   tree: Blacksmithing
   name: cp14-skill-gold-melt-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     state: ore3
@@ -45,7 +45,7 @@
   skillUiPosition: 0, 6
   tree: Blacksmithing
   name: cp14-skill-mithril-melt-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
     state: ore3
@@ -59,7 +59,7 @@
   skillUiPosition: 2, 0
   tree: Blacksmithing
   name: cp14-skill-glass-melt-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Objects/Materials/glass.rsi
     state: glass_3

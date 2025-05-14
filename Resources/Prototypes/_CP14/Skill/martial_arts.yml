@@ -3,6 +3,7 @@
   skillUiPosition: 0, 0
   name: cp14-skill-sword-mastery-name
   desc: cp14-skill-mastery-desc
+  learnCost: 0
   tree: MartialArts
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
@@ -15,6 +16,7 @@
   skillUiPosition: 2, 0
   name: cp14-skill-parier-mastery-name
   desc: cp14-skill-mastery-desc
+  learnCost: 0
   tree: MartialArts
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
@@ -27,6 +29,7 @@
   skillUiPosition: 4, 0
   name: cp14-skill-skimitar-mastery-name
   desc: cp14-skill-mastery-desc
+  learnCost: 0
   tree: MartialArts
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi

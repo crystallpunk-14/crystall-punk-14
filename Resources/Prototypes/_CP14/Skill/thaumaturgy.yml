@@ -4,6 +4,7 @@
   tree: Thaumaturgy
   name: cp14-skill-alchemy-vision-name
   desc: cp14-skill-alchemy-vision-desc
+  learnCost: 0
   icon:
     sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
     state: icon
