@@ -18,13 +18,13 @@ public sealed partial class CP14SkillPrototype : IPrototype
     /// Skill Title. If you leave null, the name will try to generate from Effect.GetName()
     /// </summary>
     [DataField]
-    public LocId Name = string.Empty;
+    public LocId? Name = null;
 
     /// <summary>
     /// Skill Description. If you leave null, the description will try to generate from Effect.GetDescription()
     /// </summary>
     [DataField]
-    public LocId Desc = string.Empty;
+    public LocId? Desc = null;
 
     /// <summary>
     /// The tree this skill belongs to. This is used to group skills together in the UI.

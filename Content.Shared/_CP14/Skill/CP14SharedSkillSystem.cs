@@ -177,7 +177,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Name != string.Empty)
+        if (indexedSkill.Name is not null)
             return Loc.GetString(indexedSkill.Name);
 
         if (indexedSkill.Effects.Count > 0)
@@ -194,7 +194,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Desc != string.Empty)
+        if (indexedSkill.Desc is not null)
             return Loc.GetString(indexedSkill.Desc);
 
         var sb = new StringBuilder();
