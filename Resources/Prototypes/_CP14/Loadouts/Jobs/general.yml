@@ -668,7 +668,6 @@
   - CP14FluteInstrument
   - CP14LuteInstrument
   - CP14LyraInstrument
-  - CP14ClothingBeltQuiver
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -759,11 +758,6 @@
   storage:
     back:
     - CP14FluteInstrument
-
-- type: loadout
-  id: CP14ClothingBeltQuiver
-  equipment:
-    belt2: CP14ClothingBeltQuiver
 
 # Keys
 

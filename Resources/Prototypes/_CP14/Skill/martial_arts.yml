@@ -7,6 +7,8 @@
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
     state: preview
+  restrictions:
+  - !type:Impossible
 
 - type: cp14Skill
   id: RapierMastery
@@ -17,6 +19,8 @@
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
     state: preview
+  restrictions:
+  - !type:Impossible
 
 - type: cp14Skill
   id: SkimitarMastery
@@ -27,3 +31,5 @@
   icon: 
     sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
     state: preview
+  restrictions:
+  - !type:Impossible
