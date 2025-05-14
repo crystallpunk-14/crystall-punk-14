@@ -7,6 +7,8 @@
   icon:
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     state: ore3
+  restrictions:
+  - !type:Impossible
   effects:
   - !type:UnlockRecipes
 
@@ -19,6 +21,8 @@
   icon:
     sprite: _CP14/Objects/Materials/iron_ore.rsi
     state: ore3
+  restrictions:
+  - !type:Impossible
   effects:
   - !type:UnlockRecipes
 
@@ -31,6 +35,8 @@
   icon:
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     state: ore3
+  restrictions:
+  - !type:Impossible
   effects:
   - !type:UnlockRecipes
 
@@ -43,6 +49,8 @@
   icon:
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
     state: ore3
+  restrictions:
+  - !type:Impossible
   effects:
   - !type:UnlockRecipes
 
@@ -55,5 +63,7 @@
   icon:
     sprite: _CP14/Objects/Materials/glass.rsi
     state: glass_3
+  restrictions:
+  - !type:Impossible
   effects:
   - !type:UnlockRecipes

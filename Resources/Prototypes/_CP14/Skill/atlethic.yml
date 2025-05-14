@@ -8,8 +8,6 @@
   effects: 
   - !type:AddAction
     action: CP14ActionSpellKick
-  restrictions:
-  - !type:Impossible
 
 - type: cp14Skill
   id: CP14ActionSpellSprint
@@ -21,8 +19,6 @@
   effects: 
   - !type:AddAction
     action: CP14ActionSpellSprint
-  restrictions:
-  - !type:Impossible
 
 - type: cp14Skill
   id: CP14ActionSpellSprintGoblin

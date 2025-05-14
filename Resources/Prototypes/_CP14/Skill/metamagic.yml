@@ -12,20 +12,7 @@
   effects: 
   - !type:AddManaMax
     additionalMana: 25
-  restrictions:
-  - !type:Researched
-    requirements:
-    - !type:TagResource
-      tag: CP14EnergyCrystal
-      count: 5
-      title: cp14-recipe-title-energy-crystal
-      texture:
-        sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
-        state: medium
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 2
-    
+
 - type: cp14Skill
   id: CP14ActionSpellManaGift
   skillUiPosition: 0, 2
@@ -40,15 +27,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
-    
+
 - type: cp14Skill
   id: CP14ActionSpellManaGiftElf
   skillUiPosition: 0, 4
@@ -81,14 +60,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
     
 - type: cp14Skill
   id: CP14ActionSpellManaConsumeElf
@@ -107,14 +78,6 @@
     prerequisite: CP14ActionSpellManaConsume
   - !type:SpeciesWhitelist
     species: CP14Elf
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
     
 - type: cp14Skill
   id: CP14ActionSpellMagicBallade
@@ -129,14 +92,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
 
 # T2
 
@@ -145,7 +100,6 @@
   skillUiPosition: 7, 0
   tree: Metamagic
   name: cp14-skill-meta-t2-name
-  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta2
@@ -155,21 +109,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:TagResource
-      tag: CP14EnergyCrystal
-      count: 5
-      title: cp14-recipe-title-energy-crystal
-      texture:
-        sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
-        state: medium
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellMagicSplitting
@@ -184,14 +123,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 2
 
 # T3
 
@@ -200,7 +131,6 @@
   skillUiPosition: 13, 0
   tree: Metamagic
   name: cp14-skill-meta-t3-name
-  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: meta3
@@ -210,11 +140,3 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 6

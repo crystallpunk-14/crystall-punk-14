@@ -12,29 +12,4 @@
     components:
     - type: SolutionScanner
   restrictions:
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14BloodFlower
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14AgaricMushroom
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14AirLily
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14Dayflin
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14LumiMushroom
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14BlueAmanita
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 2
+  - !type:Impossible

@@ -9,21 +9,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro
-  restrictions:
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14Torch
-      count: 3
-    - !type:ProtoIdResource
-      protoId: CP14Lighter
-      count: 2
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 2
 
 - type: cp14Skill
   id: CP14ActionSpellFlameCreation
@@ -38,14 +23,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellHeat
@@ -60,14 +37,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 1
 
 - type: cp14Skill
   id: CP14ActionSpellHellBallade
@@ -108,7 +77,6 @@
   skillUiPosition: 7, 0
   tree: Pyrokinetic
   name: cp14-skill-pyro-t2-name
-  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
@@ -119,17 +87,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14ModularInlayQuartzFire
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 4
 
 - type: cp14Skill
   id: CP14ActionSpellFireball
@@ -144,14 +101,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 2
 
 # T3
 
@@ -160,7 +109,6 @@
   skillUiPosition: 13, 0
   tree: Pyrokinetic
   name: cp14-skill-pyro-t3-name
-  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro3
@@ -171,11 +119,3 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
-  - !type:Researched
-    requirements:
-    - !type:ProtoIdResource
-      protoId: CP14Paper
-      count: 1
-    - !type:ProtoIdResource
-      protoId: CP14DimensitCrystal
-      count: 6
