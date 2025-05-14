@@ -35,9 +35,9 @@
                         <!-- icon -->
                         <EntityPrototypeView Name="ItemView"
                                              Scale="2,2"
-                                             Margin="0,0,4,0"
-                                             MinSize="64 64"
-                                             MaxSize="64 64"
+                                             Margin="8"
+                                             MinSize="96 96"
+                                             MaxSize="96 96"
                                              HorizontalAlignment="Left" />
 
                         <!-- name & description -->
