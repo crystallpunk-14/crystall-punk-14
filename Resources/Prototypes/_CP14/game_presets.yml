@@ -11,25 +11,33 @@
     - Secret
 
 - type: gamePreset
+  id: CP14Sandbox
+  alias:
+    - sandbox
+  name: sandbox-title
+  description: sandbox-description
+  showInVote: false
+  cP14Allowed: true
+  rules:
+    - CP14RoundObjectivesRule
+    - CP14BasicStationEventScheduler
+    - Sandbox
+
+- type: gamePreset
   id: CP14Greenshift
   name: greenshift-title
   description: greenshift-description
   showInVote: true
   cP14Allowed: true
   rules:
-    - CP14SubGamemodesRule
     - CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
 
 - type: gamePreset
-  id: CP14Sandbox
-  alias:
-    - sandbox
-  name: sandbox-title
-  description: sandbox-description
-  showInVote: true # For playtest period only
+  id: CP14JudgmentNight
+  name: cp14-judge-night-title
+  description: cp14-judge-night-desc
+  showInVote: true
   cP14Allowed: true
   rules:
-    - CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
-    - Sandbox

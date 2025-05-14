@@ -1,0 +1,7 @@
+- type: entity
+  id: CP14JudgmentNightRule
+  parent: CP14BaseGameRule
+  components:
+  - type: CP14BloodMoonRule
+  - type: GameRule
+    minPlayers: 0
