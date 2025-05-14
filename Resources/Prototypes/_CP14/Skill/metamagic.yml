@@ -124,6 +124,20 @@
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2
 
+- type: cp14Skill
+  id: CP14ActionSpellManaTrance 
+  skillUiPosition: 8, 2
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_trance
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellManaTrance
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
 # T3
 
 - type: cp14Skill
