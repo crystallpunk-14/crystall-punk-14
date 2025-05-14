@@ -25,7 +25,7 @@
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
-        Slash: 5
+        Slash: 16
   - !type:EditItem
     newSize: Large
     adjustShape: 0, 2
