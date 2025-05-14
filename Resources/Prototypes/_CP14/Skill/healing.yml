@@ -66,6 +66,9 @@
   - !type:ModifyManacost
     modifiers:
       Life: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
 
 - type: cp14Skill
   id: CP14ActionSpellCureBurn
@@ -123,6 +126,9 @@
   - !type:ModifyManacost
     modifiers:
       Life: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
 
 - type: cp14Skill
   id: CP14ActionSpellResurrection
