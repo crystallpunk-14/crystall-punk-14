@@ -41,30 +41,42 @@ public sealed class CP14DayCycleSystem : EntitySystem
             var oldLightLevel = dayCycle.LastLightLevel;
             var newLightLevel = GetLightLevel((uid, lightCycle));
 
-            dayCycle.LastLightLevel = newLightLevel;
-
             // Going into darkness
-            if (oldLightLevel < newLightLevel && oldLightLevel > dayCycle.Threshold && newLightLevel < dayCycle.Threshold)
+            if (oldLightLevel > newLightLevel)
             {
-                var ev = new CP14StartNightEvent(map.MapId);
-                RaiseLocalEvent(uid, ref ev, true);
+                if (oldLightLevel > dayCycle.Threshold)
+                {
+                    if (newLightLevel < dayCycle.Threshold)
+                    {
+                        var ev = new CP14StartNightEvent(uid);
+                        RaiseLocalEvent(ev);
+                    }
+                }
             }
 
             // Going into light
-            if (oldLightLevel > newLightLevel && oldLightLevel < dayCycle.Threshold && newLightLevel > dayCycle.Threshold)
+            if (oldLightLevel < newLightLevel)
             {
-                var ev = new CP14StartDayEvent(map.MapId);
-                RaiseLocalEvent(uid, ref ev, true);
+                if (oldLightLevel < dayCycle.Threshold)
+                {
+                    if (newLightLevel > dayCycle.Threshold)
+                    {
+                        var ev = new CP14StartDayEvent(uid);
+                        RaiseLocalEvent(ev);
+                    }
+                }
             }
+
+            dayCycle.LastLightLevel = newLightLevel;
         }
     }
 
-    public double GetLightLevel(Entity<LightCycleComponent?> map)
+    public float GetLightLevel(Entity<LightCycleComponent?> map)
     {
         if (!Resolve(map.Owner, ref map.Comp, false))
             return 0;
 
-        var time = (float) _timing.CurTime
+        var time = (float)_timing.CurTime
             .Add(map.Comp.Offset)
             .Subtract(_ticker.RoundStartTimeSpan)
             .Subtract(_metaData.GetPauseTime(map))
@@ -72,7 +84,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
 
         var normalizedTime = time % map.Comp.Duration.TotalSeconds;
         var lightLevel = Math.Sin((normalizedTime / map.Comp.Duration.TotalSeconds) * MathF.PI);
-        return lightLevel;
+        return (float)lightLevel;
     }
 
     /// <summary>
@@ -98,21 +110,21 @@ public sealed class CP14DayCycleSystem : EntitySystem
         if (!_mapGridQuery.TryComp(grid, out var gridComp))
             return day;
 
-        if (!_weather.CanWeatherAffect(grid.Value, gridComp, _maps.GetTileRef(xform.GridUid.Value, gridComp, xform.Coordinates)))
+        if (!_weather.CanWeatherAffect(grid.Value,
+                gridComp,
+                _maps.GetTileRef(xform.GridUid.Value, gridComp, xform.Coordinates)))
             return false;
 
         return day;
     }
 }
 
-[ByRefEvent]
-public record struct CP14StartNightEvent(MapId Map)
+public sealed class CP14StartNightEvent(EntityUid map) : EntityEventArgs
 {
-    public readonly MapId Map = Map;
+    public EntityUid? Map = map;
 }
 
-[ByRefEvent]
-public record struct CP14StartDayEvent(MapId Map)
+public sealed class CP14StartDayEvent(EntityUid map) : EntityEventArgs
 {
-    public readonly MapId Map = Map;
+    public EntityUid? Map = map;
 }

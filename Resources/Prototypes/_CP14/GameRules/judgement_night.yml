@@ -1,0 +1,39 @@
+- type: entity
+  id: CP14BloodMoonRule
+  parent: CP14BaseGameRule
+  components:
+  - type: CP14BloodMoonRule
+    curseRule: CP14BloodMoonCurseRule
+  - type: GameRule
+    minPlayers: 0
+
+- type: entity
+  id: CP14BloodMoonCurseRule
+  parent: CP14BaseGameRule
+  components:
+  - type: CP14BloodMoonCurseRule
+    announcementColor: "#e32759"
+  - type: StationEvent
+    maxOccurrences: 0 #We dont wanna random start it
+    startAnnouncement: cp14-bloodmoon-start
+    startAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    startAnnouncementColor: "#e32759"
+    endAnnouncement: cp14-bloodmoon-end
+    endAudio:
+      path: /Audio/_CP14/Ambience/event_boom.ogg
+    endAnnouncementColor: "#e32759"
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ CP14BloodMoonCursed ]
+      max: 15
+      playerRatio: 2
+      multiAntagSetting: NotExclusive
+      lateJoinAdditional: true
+      allowNonHumans: true
+      mindRoles:
+      - CP14MindRoleBloodMoonCursed
+      briefing:
+        text: cp14-roles-antag-blood-moon-cursed-briefing
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
