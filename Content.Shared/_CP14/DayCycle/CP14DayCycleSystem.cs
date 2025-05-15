@@ -121,10 +121,10 @@ public sealed class CP14DayCycleSystem : EntitySystem
 
 public sealed class CP14StartNightEvent(EntityUid map) : EntityEventArgs
 {
-    public EntityUid? Map = map;
+    public EntityUid Map = map;
 }
 
 public sealed class CP14StartDayEvent(EntityUid map) : EntityEventArgs
 {
-    public EntityUid? Map = map;
+    public EntityUid Map = map;
 }

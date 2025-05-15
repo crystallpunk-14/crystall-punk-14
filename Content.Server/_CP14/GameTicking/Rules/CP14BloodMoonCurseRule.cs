@@ -9,9 +9,11 @@ using Content.Shared._CP14.BloodMoon;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Server._CP14.GameTicking.Rules;
@@ -23,6 +25,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -31,6 +34,12 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         SubscribeLocalEvent<CP14StartDayEvent>(OnStartDay);
         SubscribeLocalEvent<CP14BloodMoonCurseRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagEntitySelected);
         SubscribeLocalEvent<CP14BloodMoonCurseComponent, ExaminedEvent>(CurseExamined);
+        SubscribeLocalEvent<CP14BloodMoonCurseComponent, MobStateChangedEvent>(OnDead);
+    }
+
+    private void OnDead(Entity<CP14BloodMoonCurseComponent> ent, ref MobStateChangedEvent args)
+    {
+        ClearCurse((ent.Owner, ent.Comp));
     }
 
     private void CurseExamined(Entity<CP14BloodMoonCurseComponent> ent, ref ExaminedEvent args)
@@ -54,6 +63,8 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
     {
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
         _chatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(component.StartAnnouncement), colorOverride: component.AnnouncementColor);
+
+        _audio.PlayGlobal(component.GlobalSound, allPlayersInGame, true);
     }
 
     protected override void Ended(EntityUid uid,
@@ -68,16 +79,9 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
 
         foreach (var antag in aliveAntags)
         {
-            _stun.TryParalyze(antag, component.EndStunDuration, true);
-            _popup.PopupEntity(Loc.GetString("cp14-bloodmoon-curse-removed"), antag, PopupType.SmallCaution);
             SpawnAttachedTo(component.CurseEffect, Transform(antag).Coordinates);
-            if (TryComp<CP14BloodMoonCurseComponent>(antag, out var curseComp))
-            {
-                QueueDel(curseComp.SpawnedEffect);
-                RemCompDeferred<CP14BloodMoonCurseComponent>(antag);
-            }
+            ClearCurse(antag);
         }
-        GameTicker.EndRound();
     }
 
     private void OnStartDay(CP14StartDayEvent ev)
@@ -87,6 +91,20 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         {
             if (HasComp<BecomesStationComponent>(ev.Map) || HasComp<StationMemberComponent>(ev.Map))
                 ForceEndSelf(uid);
+        }
+    }
+
+    private void ClearCurse(Entity<CP14BloodMoonCurseComponent?> ent)
+    {
+        if (!Resolve(ent.Owner, ref ent.Comp, false))
+            return;
+
+        _stun.TryParalyze(ent, ent.Comp.EndStunDuration, true);
+        _popup.PopupEntity(Loc.GetString("cp14-bloodmoon-curse-removed"), ent, PopupType.SmallCaution);
+        if (TryComp<CP14BloodMoonCurseComponent>(ent, out var curseComp))
+        {
+            QueueDel(curseComp.SpawnedEffect);
+            RemCompDeferred<CP14BloodMoonCurseComponent>(ent);
         }
     }
 }

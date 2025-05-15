@@ -12,4 +12,7 @@ public sealed partial class CP14BloodMoonCurseComponent : Component
 
     [DataField]
     public EntityUid? SpawnedEffect;
+
+    [DataField]
+    public TimeSpan EndStunDuration = TimeSpan.FromSeconds(60f);
 }

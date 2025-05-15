@@ -24,6 +24,7 @@
     children:
     - id: CP14TestRaidSpawn
     - id: CP14Storm
+    - id: CP14BloodMoonRule
 
 #- type: entity
 #  parent: CP14BaseStationEventLongDelay
@@ -32,7 +33,7 @@
 #  - type: StationEvent
 #    startAnnouncement: cp14-event-announcement-demiplane-outbreak
 #    startAudio:
-#      path: /Audio/_CP14/Ambience/event_boom.ogg
+#      path: /Audio/_CP14/Announce/event_boom.ogg
 #    earliestStart: 20
 #    minimumPlayers: 15
 #    weight: 5
@@ -49,7 +50,7 @@
   - type: StationEvent
     startAnnouncement: cp14-event-announcement-demiplane-outbreak
     startAudio:
-      path: /Audio/_CP14/Ambience/event_boom.ogg
+      path: /Audio/_CP14/Announce/event_boom.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 1

@@ -4,6 +4,12 @@
   components:
   - type: CP14BloodMoonRule
     curseRule: CP14BloodMoonCurseRule
+  - type: StationEvent
+    earliestStart: 60
+    maxOccurrences: 1
+    startAnnouncement: cp14-bloodmoon-raising
+    startAudio:
+      path: /Audio/_CP14/Ambience/darkness_boom.ogg
   - type: GameRule
     minPlayers: 0
 
@@ -13,16 +19,6 @@
   components:
   - type: CP14BloodMoonCurseRule
     announcementColor: "#e32759"
-  - type: StationEvent
-    maxOccurrences: 0 #We dont wanna random start it
-    startAnnouncement: cp14-bloodmoon-start
-    startAudio:
-      path: /Audio/_CP14/Ambience/event_boom.ogg
-    startAnnouncementColor: "#e32759"
-    endAnnouncement: cp14-bloodmoon-end
-    endAudio:
-      path: /Audio/_CP14/Ambience/event_boom.ogg
-    endAnnouncementColor: "#e32759"
   - type: AntagSelection
     definitions:
     - prefRoles: [ CP14BloodMoonCursed ]
