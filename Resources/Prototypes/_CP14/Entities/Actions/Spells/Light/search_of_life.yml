@@ -1,0 +1,90 @@
+- type: entity
+  id: CP14ActionSpellSearchOfLife
+  name: Search of life
+  description: Detects all living things in a large radius around you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: search_of_life
+  - type: CP14MagicEffectManaCost
+    manaCost: 30
+  - type: CP14MagicEffect
+    magicType: Light
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSearchOfLife
+    - !type:CP14SpellPointerToAlive
+      pointerEntity: CP14SearchOfLifePointer
+      searchRange: 30
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Ego vultus..."
+    endSpeech: "parumper vita"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSearchOfLife
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/light.rsi
+      state: search_of_life
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 30
+      castDelay: 1.5
+
+- type: entity
+  id: CP14ImpactEffectSearchOfLife
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#efedff"
+      shader: unshaded
+    - state: circle_increase
+      color: "#79b330"
+      shader: unshaded
+ 
+- type: entity
+  id: CP14RuneSearchOfLife
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#efedff"
+      shader: unshaded
+    - state: double_outer
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  id: CP14SearchOfLifePointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
+      offset: 0, -1
+      layers:
+        - state: pointer
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: PointLight
+      netSync: false
+      radius: 3
+      color: "#ffffff"
+      energy: 0.2
+    - type: TimedDespawn
+      lifetime: 8
+    - type: Tag
+      tags:
+      - HideContextMenu
