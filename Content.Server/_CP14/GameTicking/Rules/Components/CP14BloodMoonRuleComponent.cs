@@ -9,11 +9,11 @@ public sealed partial class CP14BloodMoonRuleComponent : Component
     public EntProtoId CurseRule = "CP14BloodMoonCurseRule";
 
     [DataField]
-    public bool Announed = false;
+    public bool Announced = false;
 
     [DataField]
-    public LocId StartAnnouncement = "cp14-bloodmoon-start";
+    public LocId StartAnnouncement = "cp14-bloodmoon-raising";
 
     [DataField]
-    public Color? AnnouncementColor;
+    public Color? AnnouncementColor = Color.FromHex("#e32759");
 }

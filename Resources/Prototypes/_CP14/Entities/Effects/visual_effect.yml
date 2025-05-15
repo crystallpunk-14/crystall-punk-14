@@ -97,3 +97,25 @@
   - type: Tag
     tags:
       - HideContextMenu
+
+- type: entity
+  id: CP14BloodMoonCurseEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_CP14/Effects/Magic/blood_moon_curse.rsi
+    drawdepth: Effects
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#a83256"
+    enabled: true
+    radius: 2
+    energy: 2
+    netsync: false

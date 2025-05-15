@@ -48,7 +48,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
                 {
                     if (newLightLevel < dayCycle.Threshold)
                     {
-                        var ev = new CP14StartNightEvent(map.MapId);
+                        var ev = new CP14StartNightEvent(uid);
                         RaiseLocalEvent(ev);
                     }
                 }
@@ -61,7 +61,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
                 {
                     if (newLightLevel > dayCycle.Threshold)
                     {
-                        var ev = new CP14StartDayEvent(map.MapId);
+                        var ev = new CP14StartDayEvent(uid);
                         RaiseLocalEvent(ev);
                     }
                 }
@@ -119,12 +119,12 @@ public sealed class CP14DayCycleSystem : EntitySystem
     }
 }
 
-public sealed class CP14StartNightEvent(MapId map) : EntityEventArgs
+public sealed class CP14StartNightEvent(EntityUid map) : EntityEventArgs
 {
-    public MapId? Map = map;
+    public EntityUid? Map = map;
 }
 
-public sealed class CP14StartDayEvent(MapId map) : EntityEventArgs
+public sealed class CP14StartDayEvent(EntityUid map) : EntityEventArgs
 {
-    public MapId? Map = map;
+    public EntityUid? Map = map;
 }

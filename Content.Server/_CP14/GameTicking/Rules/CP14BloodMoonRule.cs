@@ -1,10 +1,7 @@
 using Content.Server._CP14.GameTicking.Rules.Components;
-using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
-using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Shared._CP14.DayCycle;
-using Content.Shared.GameTicking.Components;
 using Robust.Shared.Player;
 
 namespace Content.Server._CP14.GameTicking.Rules;
@@ -26,12 +23,12 @@ public sealed class CP14BloodMoonRule : GameRuleSystem<CP14BloodMoonRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            if (!comp.Announed)
+            if (!comp.Announced)
             {
-                comp.Announed = true;
+                comp.Announced = true;
 
                 Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
-                _chatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(comp.StartAnnouncement), playSound: false, colorOverride: comp.AnnouncementColor);
+                _chatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(comp.StartAnnouncement), playSound: false, sender: Loc.GetString("cp14-announcement-gamemaster"), colorOverride: comp.AnnouncementColor);
             }
         }
     }
@@ -41,7 +38,7 @@ public sealed class CP14BloodMoonRule : GameRuleSystem<CP14BloodMoonRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            if (!comp.Announed)
+            if (!comp.Announced)
                 continue;
 
             GameTicker.AddGameRule(comp.CurseRule);
