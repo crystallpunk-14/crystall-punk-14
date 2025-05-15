@@ -103,6 +103,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
+    noRot: true
     sprite: /Textures/_CP14/Effects/Magic/blood_moon_curse.rsi
     drawdepth: Effects
     layers:

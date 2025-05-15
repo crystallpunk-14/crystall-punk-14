@@ -40,4 +40,6 @@
   showInVote: true
   cP14Allowed: true
   rules:
+    - CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
+    - CP14BloodMoonRule

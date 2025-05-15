@@ -27,7 +27,7 @@
     definitions:
     - prefRoles: [ CP14BloodMoonCursed ]
       max: 15
-      playerRatio: 1 #2
+      playerRatio: 2
       multiAntagSetting: NotExclusive
       lateJoinAdditional: true
       allowNonHumans: true
