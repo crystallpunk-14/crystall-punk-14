@@ -39,7 +39,7 @@
   generationWeight: 0.33
   generationProb: 0.25
   categories:
-    GhostRoleDanger: 0.3
+    GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
       entity: SpawnPointGhostDemiplaneLurker
