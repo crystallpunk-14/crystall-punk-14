@@ -23,7 +23,7 @@
   name: cp14-modifier-skeleton
   generationWeight: 2.0
   categories:
-    GhostRoleDanger: 0.5
+    GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
       entity: CP14SpawnPointGhostDemiplaneSkeletonT2
