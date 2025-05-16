@@ -7,7 +7,7 @@
   generationWeight: 1.5
   generationProb: 0.5
   categories:
-    GhostRoleDanger: 0.2
+    GhostRoleDanger: 1
   layers:
     - !type:OreDunGen
       entity: CP14SpawnPointGhostDemiplaneSkeletonT1
