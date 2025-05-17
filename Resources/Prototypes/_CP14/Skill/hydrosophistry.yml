@@ -12,7 +12,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellWaterCreation
-  skillUiPosition: 0, 4
+  skillUiPosition: 1, 4
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
@@ -26,8 +26,9 @@
 
 - type: cp14Skill
   id: CP14ActionSpellBeerCreation
-  skillUiPosition: 2, 4
+  skillUiPosition: 1, 8
   tree: Hydrosophistry
+  learnCost: 0
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
     state: beer_creation
@@ -36,23 +37,9 @@
     action: CP14ActionSpellBeerCreation
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: HydrosophistryT1
+    prerequisite: CP14ActionSpellWaterCreation
   - !type:SpeciesWhitelist
     species: CP14Dwarf
-
-- type: cp14Skill
-  id: CP14ActionSpellIceShards
-  skillUiPosition: 2, 6
-  tree: Hydrosophistry
-  icon:
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: ice_shards
-  effects: 
-  - !type:AddAction
-    action: CP14ActionSpellIceShards
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: HydrosophistryT1
 
 - type: cp14Skill
   id: CP14ActionSpellIceDagger
@@ -70,7 +57,7 @@
 
 - type: cp14Skill
   id: CP14ActionSpellIceArrow
-  skillUiPosition: 0, 8
+  skillUiPosition: 2, 6
   tree: Hydrosophistry
   icon:
     sprite: _CP14/Actions/Spells/water.rsi
@@ -110,6 +97,20 @@
   effects: 
   - !type:AddAction
     action: CP14ActionSpellFreeze
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+
+- type: cp14Skill
+  id: CP14ActionSpellIceShards
+  skillUiPosition: 8, 4
+  tree: Hydrosophistry
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_shards
+  effects: 
+  - !type:AddAction
+    action: CP14ActionSpellIceShards
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HydrosophistryT2
