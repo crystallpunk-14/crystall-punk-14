@@ -8,6 +8,9 @@ namespace Content.Shared._CP14.BloodMoon;
 public sealed partial class CP14BloodMoonCurseComponent : Component
 {
     [DataField]
+    public EntityUid? CurseRule;
+
+    [DataField]
     public EntProtoId CurseEffect = "CP14BloodMoonCurseEffect";
 
     [DataField]

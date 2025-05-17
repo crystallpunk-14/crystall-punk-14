@@ -4,14 +4,12 @@
   components:
   - type: CP14BloodMoonRule
     curseRule: CP14BloodMoonCurseRule
-  - type: StationEvent
-    earliestStart: 60
-    maxOccurrences: 1
-    startAnnouncement: cp14-bloodmoon-raising
-    startAudio:
-      path: /Audio/_CP14/Ambience/darkness_boom.ogg
+    announceSound:
+       path: /Audio/_CP14/Announce/darkness_boom.ogg
   - type: GameRule
-    minPlayers: 0
+    delay:
+      min:  30
+      max:  60
 
 - type: entity
   id: CP14BloodMoonCurseRule
@@ -32,4 +30,4 @@
       briefing:
         text: cp14-roles-antag-blood-moon-cursed-briefing
         color: "#630f24"
-        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
+        sound: "/Audio/_CP14/Announce/darkness_boom_2.ogg"

@@ -11,7 +11,6 @@ using Content.Shared.Examine;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
-using Content.Shared.Station.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -53,6 +52,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         var curseComp = EnsureComp<CP14BloodMoonCurseComponent>(args.EntityUid);
         var effect = SpawnAttachedTo(curseComp.CurseEffect, Transform(args.EntityUid).Coordinates);
         curseComp.SpawnedEffect = effect;
+        curseComp.CurseRule = ent;
         _transform.SetParent(effect, args.EntityUid);
     }
 
@@ -86,11 +86,13 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
 
     private void OnStartDay(CP14StartDayEvent ev)
     {
+        if (!HasComp<BecomesStationComponent>(ev.Map))
+            return;
+
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var comp, out _))
         {
-            if (HasComp<BecomesStationComponent>(ev.Map) || HasComp<StationMemberComponent>(ev.Map))
-                ForceEndSelf(uid);
+            ForceEndSelf(uid);
         }
     }
 

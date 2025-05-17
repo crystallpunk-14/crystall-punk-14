@@ -24,7 +24,6 @@
     children:
     - id: CP14TestRaidSpawn
     - id: CP14Storm
-    - id: CP14BloodMoonRule
 
 #- type: entity
 #  parent: CP14BaseStationEventLongDelay
