@@ -85,7 +85,6 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuardSpells
 
 - type: roleLoadout
   id: JobCP14Guard
@@ -100,7 +99,6 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuardSpells
 
 - type: roleLoadout
   id: JobCP14Commandant
@@ -125,7 +123,6 @@
   - CP14GuildmasterShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuildmasterSpells
 
 - type: roleLoadout
   id: JobCP14Merchant
