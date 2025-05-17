@@ -9,7 +9,7 @@
   joinNotifyCrew: true
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
-  weight: 2
+  weight: 3
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobBlacksmith

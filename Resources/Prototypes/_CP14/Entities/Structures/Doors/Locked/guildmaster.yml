@@ -8,6 +8,16 @@
   - type: Lock
     locked: true
 
+- type: entity
+  parent: CP14IronDoor
+  id: CP14IronDoorGuardGuild
+  suffix: Adventurers Guild
+  components:
+  - type: CP14Lock
+    autoGenerateShape: AdventurersGuild
+  - type: Lock
+    locked: true
+
 # Grill Gate
 
 - type: entity
