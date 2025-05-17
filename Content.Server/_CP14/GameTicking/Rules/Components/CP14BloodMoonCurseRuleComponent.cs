@@ -1,3 +1,4 @@
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.GameTicking.Rules.Components;
@@ -15,8 +16,11 @@ public sealed partial class CP14BloodMoonCurseRuleComponent : Component
     public Color? AnnouncementColor;
 
     [DataField]
-    public TimeSpan EndStunDuration = TimeSpan.FromSeconds(60f);
+    public EntProtoId CurseEffect = "CP14ImpactEffectMagicSplitting";
 
     [DataField]
-    public EntProtoId CurseEffect = "CP14ImpactEffectMagicSplitting";
+    public SoundSpecifier GlobalSound = new SoundPathSpecifier("/Audio/_CP14/Ambience/blood_moon_raise.ogg")
+    {
+        Params = AudioParams.Default.WithVolume(-2f)
+    };
 }

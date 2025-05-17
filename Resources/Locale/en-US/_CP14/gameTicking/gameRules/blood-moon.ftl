@@ -1,4 +1,4 @@
-cp14-bloodmoon-raising = A blood moon rises on the horizon. The next night will be terrible.
+cp14-bloodmoon-raising = The moon in the sky is stained with blood. The next night will be terrible.
 cp14-bloodmoon-start = The blood moon shines in full force, enslaving minds.
 cp14-bloodmoon-end = The blood moon sets over the horizon, losing its power.
 
