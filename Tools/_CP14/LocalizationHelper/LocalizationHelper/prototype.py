@@ -93,9 +93,6 @@ def check_prototype_attrs(prototype: Prototype, with_parent_check: bool = True) 
         return True
     elif prototype.suffix:
         return True
-    # TODO: check this out
-    # In some cases a parent can be a list (because of multiple parents),
-    # the game will not be able to handle such cases in ftl files.
     elif with_parent_check and prototype.parent:
         return True
 
