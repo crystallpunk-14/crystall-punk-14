@@ -16,7 +16,7 @@ public sealed partial class CP14LearnSkillsSpecial : JobSpecial
 
         foreach (var skill in Skills)
         {
-            skillSys.TryAddSkill(mob, skill);
+            skillSys.TryAddSkill(mob, skill, free: true);
         }
     }
 }

@@ -136,7 +136,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (_window is null)
             return;
 
-        if (_playerManager.LocalEntity == null)
+        if (_targetPlayer == null)
             return;
 
         if (node == null)
@@ -159,7 +159,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         if (_window is null)
             return;
 
-        if (_playerManager.LocalEntity == null)
+        if (_targetPlayer == null)
             return;
 
         _selectedSkill = skill;
@@ -172,8 +172,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         {
             _window.SkillName.Text = _skill.GetSkillName(skill);
             _window.SkillDescription.SetMessage(GetSkillDescription(skill));
+            _window.SkillFree.Visible = _skill.HaveFreeSkill(_targetPlayer.Value, skill);
             _window.SkillView.Texture = skill.Icon.Frame0();
-            _window.LearnButton.Disabled = !_skill.CanLearnSkill(_playerManager.LocalEntity.Value, skill);
+            _window.LearnButton.Disabled = !_skill.CanLearnSkill(_targetPlayer.Value, skill);
             _window.SkillCost.Text = skill.LearnCost.ToString();
         }
 
@@ -187,6 +188,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         _window.SkillName.Text = string.Empty;
         _window.SkillDescription.Text = string.Empty;
+        _window.SkillFree.Visible = false;
         _window.SkillView.Texture = null;
         _window.LearnButton.Disabled = true;
     }
@@ -195,7 +197,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     {
         var msg = new FormattedMessage();
 
-        if (_playerManager.LocalEntity == null)
+        if (_targetPlayer == null)
             return msg;
 
         var sb = new StringBuilder();
@@ -206,7 +208,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         //Restrictions
         foreach (var req in skill.Restrictions)
         {
-            var color = req.Check(_entManager, _playerManager.LocalEntity.Value, skill) ? "green" : "red";
+            var color = req.Check(_entManager, _targetPlayer.Value, skill) ? "green" : "red";
 
             sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
         }
@@ -310,6 +312,8 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 //TODO: Loop indexing each skill is bad
                 if (_proto.TryIndex(skillId, out var skill) && skill.Tree == tree)
                 {
+                    if (_skill.HaveFreeSkill(_targetPlayer.Value, skillId))
+                        continue;
                     learnedPoints += skill.LearnCost;
                 }
             }
