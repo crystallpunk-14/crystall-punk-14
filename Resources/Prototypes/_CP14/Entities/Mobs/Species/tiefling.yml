@@ -44,10 +44,6 @@
     damage:
       Heat: 1 #Magic regen from fire
       Cold: -1
-  - type: CP14MagicManacostModify
-    globalModifier: 1.2
-    modifiers:
-      Fire: 0.5
   - type: CP14SkillStorage #Innate pyrokinetic
     freeLearnedSkills:
     - PyrokineticT1
