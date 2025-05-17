@@ -41,6 +41,10 @@
   - type: CP14MagicEnergyDraw #Half of standard mana regeneration
     energy: 0.5
     delay: 3
+  - type: CP14SkillStorage #Innate metamagic
+    freeLearnedSkills:
+    - MetamagicT1
+    - MetamagicT2
   - type: Inventory
     templateId: CP14Human
     displacements:

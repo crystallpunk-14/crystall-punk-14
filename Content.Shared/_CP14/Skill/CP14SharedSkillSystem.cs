@@ -17,8 +17,31 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         _skillStorageQuery = GetEntityQuery<CP14SkillStorageComponent>();
 
+        SubscribeLocalEvent<CP14SkillStorageComponent, MapInitEvent>(OnMapInit);
+
         InitializeAdmin();
         InitializeChecks();
+    }
+
+    private void OnMapInit(Entity<CP14SkillStorageComponent> ent, ref MapInitEvent args)
+    {
+        //If at initialization we have any skill records, we automatically give them to this entity
+
+        var free = ent.Comp.FreeLearnedSkills.ToList();
+        var learned = ent.Comp.LearnedSkills.ToList();
+
+        ent.Comp.FreeLearnedSkills.Clear();
+        ent.Comp.LearnedSkills.Clear();
+
+        foreach (var skill in free)
+        {
+            TryAddSkill(ent.Owner, skill, ent.Comp, true);
+        }
+
+        foreach (var skill in learned)
+        {
+            TryAddSkill(ent.Owner, skill, ent.Comp);
+        }
     }
 
     /// <summary>

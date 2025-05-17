@@ -205,12 +205,15 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         //Description
         sb.Append(_skill.GetSkillDescription(skill) + "\n \n");
 
-        //Restrictions
-        foreach (var req in skill.Restrictions)
+        if (!_skill.HaveSkill(_targetPlayer.Value, skill))
         {
-            var color = req.Check(_entManager, _targetPlayer.Value, skill) ? "green" : "red";
+            //Restrictions
+            foreach (var req in skill.Restrictions)
+            {
+                var color = req.Check(_entManager, _targetPlayer.Value, skill) ? "green" : "red";
 
-            sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
+                sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
+            }
         }
 
         msg.TryAddMarkup(sb.ToString(), out _);
