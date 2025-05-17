@@ -25,46 +25,16 @@
     prerequisite: IllusionT1
 
 - type: cp14Skill
-  id: CP14ActionSpellSignalLightRed
-  skillUiPosition: 2, 6
-  learnCost: 0.5
-  tree: Illusion
-  icon:
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: signal_light_red
-  effects: 
-  - !type:AddAction
-    action: CP14ActionSpellSignalLightRed
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: IllusionT1
-
-- type: cp14Skill
-  id: CP14ActionSpellSignalLightYellow
-  skillUiPosition: 0, 6
-  learnCost: 0.5
-  tree: Illusion
-  icon:
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: signal_light_yellow
-  effects: 
-  - !type:AddAction
-    action: CP14ActionSpellSignalLightYellow
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: IllusionT1
-
-- type: cp14Skill
-  id: CP14ActionSpellSignalLightBlue
+  id: CP14ActionSpellSearchOfLife
   skillUiPosition: 2, 4
-  learnCost: 0.5
+  learnCost: 1
   tree: Illusion
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
-    state: signal_light_blue
+    state: search_of_life
   effects: 
   - !type:AddAction
-    action: CP14ActionSpellSignalLightBlue
+    action: CP14ActionSpellSearchOfLife
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: IllusionT1
