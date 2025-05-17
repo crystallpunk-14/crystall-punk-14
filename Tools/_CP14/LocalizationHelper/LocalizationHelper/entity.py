@@ -63,6 +63,9 @@ class Entity:
         return self._attrs_dict
 
     def set_attrs_dict_value(self, key, value):
+        '''
+        Set attributes for entity object with given key (for set with cycle)
+        '''
         self._attrs_dict[key] = value
         if key == "name":
             self._name = value
@@ -81,7 +84,7 @@ class Entity:
 
 def check_prototype_attrs(prototype: Entity, without_parent_check: bool = False) -> bool:
     """
-    Checks if the parent has all of the attributes: name, desc, suff, parent
+    Checks if the prototype has all of the attributes: name, desc, suff, parent
     """
     if prototype.name:
         return True

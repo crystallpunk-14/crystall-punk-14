@@ -44,7 +44,7 @@ class LocalizationHelper:
 
     def _save_yaml_parser_last_launch_result(self, last_launch_result: dict[str, Entity]):
         """
-        Saves all prototypes and their attributes to a JSON file
+        Updates all prototypes and their attributes at last launch JSON file
         """
         logger.debug("%s %s", LogText.SAVING_LAST_LAUNCH_RESULT, YAML_PARSER_LAST_LAUNCH_RESULT_PATH)
 
@@ -56,7 +56,7 @@ class LocalizationHelper:
 
     def _read_prototypes_from_last_launch_result(self) -> dict[str, Entity] | None:
         """
-        Reads all prototypes from the last run JSON file 
+        Reads all prototypes from the last launch JSON file 
         """
         if os.path.isfile(YAML_PARSER_LAST_LAUNCH_RESULT_PATH):
             last_launch_result = self._read_from_json(YAML_PARSER_LAST_LAUNCH_RESULT_PATH)
@@ -108,9 +108,9 @@ class LocalizationHelper:
         return general_prototypes_dict
 
     @staticmethod
-    def _set_parent_attrs(prototype_parent_id: str, prototype_obj: Entity, parent_prototype_obj: Entity):
+    def _add_parent_attrs(prototype_parent_id: str, prototype_obj: Entity, parent_prototype_obj: Entity):
         """
-        Sets the prototype to the parent's existing attributes
+        Adds parent's attributes to the entity
         """
         for attr_name, attr_value in prototype_obj.attrs_dict.items():
             if attr_value or attr_name in ("parent", "id"):
@@ -118,40 +118,59 @@ class LocalizationHelper:
 
             parent_prototype_attr_value = parent_prototype_obj.attrs_dict.get(attr_name)
             if parent_prototype_attr_value:
-                if attr_name == "name":
+                if attr_name == "name" and not prototype_obj.name:
                     prototype_obj.name = f"{{ ent-{prototype_parent_id} }}"
-                elif attr_name == "description":
+                elif attr_name == "description" and not prototype_obj.description:
                     prototype_obj.description = f"{{ ent-{prototype_parent_id}.desc }}"
-                elif attr_name == "suffix":
+                elif attr_name == "suffix" and not prototype_obj.suffix:
                     prototype_obj.suffix = parent_prototype_attr_value
 
         return prototype_obj
 
+    def _add_all_parents_attributes(self, general_prototypes_dict: dict[str, Entity], prototype_id: str, main_prototype_obj: Entity = None):
+        '''
+        Recursively finds all object parents and adds to his attributes parents attributes
+        '''
+        prototype_obj = general_prototypes_dict.get(prototype_id) # Mainly parent object of main prototype
+
+        if not main_prototype_obj: # Main prototype object doesnt exist only at first call
+            main_prototype_obj = prototype_obj
+
+        if check_prototype_attrs(prototype_obj): # Adds attributes from parent to main prototype
+            for prototype_attribute, prototype_attribute_value in prototype_obj.attrs_dict.items():
+                if prototype_attribute != "parent":
+                    self._add_parent_attrs(prototype_id, main_prototype_obj, prototype_obj) # TODO for asqw: it is adds from one prototype to another prototype, naming work
+        
+        if main_prototype_obj.name and main_prototype_obj.description and main_prototype_obj.suffix:
+            return # Parent already have all attributes
+
+        if prototype_obj.parent: # Find all parents recursively
+            prototype_parent_id_list = []
+
+            if isinstance(prototype_obj.parent, list): # Makes id list list if it is not list (TODO for asqw: it must be list at parent writing)
+                prototype_parent_id_list.extend(prototype_obj.parent)
+            else:
+                prototype_parent_id_list.append(prototype_obj.parent)
+            
+            for prototype_parent_id in prototype_parent_id_list:
+                self._add_all_parents_attributes(general_prototypes_dict, prototype_parent_id, main_prototype_obj)
+        else:
+            return # Last parent achieved
+
     def _parent_checks(self, general_prototypes_dict: dict[str, Entity]):
         """
-        Replaces prototype attributes with their parent attributes if they exist
+        Adds parent's attributes at all entities in general prototypes dictionary and returns new copy
         """
         to_delete = []
         for prototype_id, prototype_obj in general_prototypes_dict.items():
-            prototype_parent_id = prototype_obj.parent
-            if not isinstance(prototype_parent_id, list): #Checks if prototype have multiple parents
-
-                parent_prototype_obj = general_prototypes_dict.get(prototype_parent_id) 
-
-                if parent_prototype_obj and check_prototype_attrs(parent_prototype_obj, True):
-                    self._set_parent_attrs(prototype_parent_id, prototype_obj, parent_prototype_obj)
-                else:
-                    if not check_prototype_attrs(prototype_obj, True):
-                        to_delete.append(prototype_id)
+            if check_prototype_attrs(prototype_obj, True):
+                self._add_all_parents_attributes(general_prototypes_dict, prototype_id)
             else:
-                if not prototype_obj.name:
-                    prototype_obj.name = f"CONFLICT{{ ent-{prototype_parent_id} }}"
-                if not prototype_obj.description:
-                    prototype_obj.description = f"CONFLICT{{ ent-{prototype_parent_id}.desc }}"
+                to_delete.append(prototype_id)
 
         for prototype_id in to_delete:
             logger.debug("%s %s: %s", prototype_id, LogText.HAS_BEEN_DELETED, general_prototypes_dict[prototype_id])
-            del general_prototypes_dict[prototype_id]
+            del general_prototypes_dict[prototype_id] # Deletes prototype if ID wasn't found
 
         return general_prototypes_dict
 
