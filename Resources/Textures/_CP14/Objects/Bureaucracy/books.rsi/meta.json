@@ -1,17 +1,62 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Created by TheShuEd (github)",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "created by ripmax https://discord.com/channels/1221923073759121468/1297234364609990769 and Viator",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "icon_anvil"
+      "name": "paper"
     },
     {
-      "name": "icon_rift"
+      "name": "paper_open"
+    },
+    {
+      "name": "cover_base"
+    },
+    {
+      "name": "cover_open_base"
+    },
+    {
+      "name": "decor_line"
+    },
+    {
+      "name": "icon_image"
+    },
+    {
+      "name": "icon_moon"
+    },
+    {
+      "name": "icon_text"
+    },
+    {
+      "name": "icon_plate"
+    },
+    {
+      "name": "icon_uptext"
+    },
+    {
+      "name": "icon_magic"
+    },
+    {
+      "name": "bookmark_short"
+    },
+    {
+      "name": "bookmark_open"
+    },
+    {
+      "name": "paper_icon_big"
+    },
+    {
+      "name": "paper_icon_form"
+    },
+    {
+      "name": "paper_icon_middle"
+    },
+    {
+      "name": "paper_icon_mini"
     }
   ]
 }

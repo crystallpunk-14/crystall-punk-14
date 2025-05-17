@@ -12,41 +12,14 @@
     available:
       - cover:
           cover_base: Sixteen
-          cover_old: Sixteen
-          cover_strong: Sixteen
         decor:
-          decor_wingette: Sixteen
-          decor_wingette_circle: Sixteen
-          decor_bottom: Sixteen
-          decor_middle: Sixteen
-          decor_spine: Sixteen
-          decor_diagonal: Sixteen
-          decor_vertical_middle: Sixteen
-          icon_corner: Sixteen
-          icon_mount: ""
+          decor_line: Sixteen
         icon:
-          icon_glow: Sixteen
-          icon_magnifier: ""
-          icon_time: Sixteen
-          icon_eye: ""
-          icon_letter_N: ""
-          icon_letter_P: ""
-          icon_lightning: ""
-          icon_question: Sixteen
-          icon_scmmd: ""
-          icon_stars: Sixteen
-          icon_stars2: Sixteen
-          icon_temple: Sixteen
-          icon_tree: ""
-          icon_pentagramm: Sixteen
-          icon_fish: ""
-          icon_skull: ""
-          icon_text: ""
-          icon_text2: ""
-          icon_text3: ""
+          icon_image: Sixteen
+          icon_moon: Sixteen
+          icon_text: Sixteen
+          icon_plate: Sixteen
+          icon_uptext: Sixteen
+          icon_magic: ""
         overlay:
-          overlay_blood: ""
-          overlay_dirt: Sixteen
-          detail_bookmark: Sixteen
-          detail_rivets: Sixteen
-          overlay_null: ""
+          bookmark_short: ""

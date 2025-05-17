@@ -1,0 +1,21 @@
+- type: entity
+  id: CP14BookGuildMoral
+  parent: CP14BookWriteableBase
+  name: The guild moral of the adventurer
+  description: A book with written down unofficial rules among adventurers.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#45784e"
+      map: [ "cover" ]
+    - state: decor_line
+      color: "#ffb71c"
+      map: [ "decor" ]
+    - state: icon_magic
+      map: [ "icon" ]
+    - state: bookmark_short
+      map: [ "overlay" ]
+  - type: Paper
+    content: cp14-book-text-guild_moral
