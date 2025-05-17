@@ -84,55 +84,19 @@
       minGroupSize: 4
       maxGroupSize: 8
     - !type:OreDunGen
-      entityMask: 
+      entityMask:
       - IronRock
       entity: IronRockArtifactFragment
       count: 25
       minGroupSize: 1
       maxGroupSize: 3
     - !type:OreDunGen
-      entityMask: 
+      entityMask:
       - IronRock
       entity: IronRockDiamond
       count: 15
       minGroupSize: 1
       maxGroupSize: 2
-    # Decoration
-    - !type:OreDunGen
-      tileMask:
-      - FloorAsteroidSand
-      entity: CrystalGreen
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
-    - !type:OreDunGen
-      tileMask:
-      - FloorAsteroidSand
-      entity: CrystalPink
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
-    - !type:OreDunGen
-      tileMask:
-      - FloorAsteroidSand
-      entity: CrystalOrange
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
-    - !type:OreDunGen
-      tileMask:
-      - FloorAsteroidSand
-      entity:  CrystalBlue
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
-    - !type:OreDunGen
-      tileMask:
-      - FloorAsteroidSand
-      entity:  CrystalCyan
-      count: 10
-      minGroupSize: 3
-      maxGroupSize: 5
 
 # Configs
 - type: dungeonConfig

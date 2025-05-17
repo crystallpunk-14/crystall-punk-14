@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden roof
-  description: A roof over your head to protect you from the heat of the sun or the weather.
   id: CP14RoofWooden
   graph: CP14RoofWooden
   startNode: start
   targetNode: CP14RoofWooden
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Roof/wooden.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -18,16 +13,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Stone roof
-  description: A roof over your head to protect you from the heat of the sun or the weather.
   id: CP14RoofStone
   graph: CP14RoofStone
   startNode: start
   targetNode: CP14RoofStone
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Roof/stone.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
