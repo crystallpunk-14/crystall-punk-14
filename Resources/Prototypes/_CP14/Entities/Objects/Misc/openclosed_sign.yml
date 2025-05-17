@@ -14,32 +14,39 @@
       - state: table_sign
       - state: en_open_sign
         map: [signState]
-
   - type: Item
     size: Small
-
   - type: Flippable
     mirrorEntity: CP14closed_sign
-
   - type: Appearance
-
   - type: InteractionOutline
-
   - type: CP14LocalizationVisuals
     mapStates:
       signState:
         ru-RU: ru_open_sign
         en-US: en_open_sign
-
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
-
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
+        damage: 6
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Ash1:
+            min: 1
+            max: 2
+    - trigger:
+        !type:DamageTrigger
         damage: 10
       behaviors:
       - !type:DoActsBehavior
@@ -47,16 +54,6 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
-    - trigger:
-        !type:DamageTrigger
-        damage: 15
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WoodDestroy
-
 
 - type: entity
   id: CP14closed_sign
@@ -74,27 +71,20 @@
       - state: table_sign
       - state: en_close_sign
         map: [signState]
-
   - type: Item
     size: Small
-
   - type: Flippable
     mirrorEntity: CP14open_sign
-
   - type: Appearance
-
   - type: InteractionOutline
-
   - type: CP14LocalizationVisuals
     mapStates:
       signState:
         ru-RU: ru_close_sign
         en-US: en_close_sign
-
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
-
   - type: Destructible
     thresholds:
     - trigger:
@@ -107,6 +97,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Ash1:
+            min: 1
+            max: 2
     - trigger:
         !type:DamageTrigger
         damage: 10
