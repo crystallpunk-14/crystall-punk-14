@@ -138,8 +138,7 @@ class LocalizationHelper:
 
         if check_prototype_attrs(prototype_obj): # Adds attributes from parent to main prototype
             for prototype_attribute, prototype_attribute_value in prototype_obj.attrs_dict.items():
-                if prototype_attribute != "parent":
-                    self._add_parent_attrs(prototype_id, main_prototype_obj, prototype_obj) # TODO for asqw: it is adds from one prototype to another prototype, naming work
+                self._add_parent_attrs(prototype_id, main_prototype_obj, prototype_obj) # TODO for asqw: it is adds from one prototype to another prototype, naming work
         
         if main_prototype_obj.name and main_prototype_obj.description and main_prototype_obj.suffix:
             return # Parent already have all attributes
