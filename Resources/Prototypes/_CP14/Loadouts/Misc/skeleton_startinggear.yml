@@ -35,7 +35,7 @@
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularIronDagger
+    belt1: CP14ModularCopperSkimitar
     belt2: CP14ModularIronDagger
 
 - type: startingGear
@@ -77,8 +77,8 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularIronDaggerTundra
-    belt2: CP14ModularIronDaggerAgony
+    belt1: CP14ModularIronSkimitarTundra
+    belt2: CP14ModularGoldSkimitarAgony
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -104,8 +104,6 @@
     shoes: CP14LongLeatherBoots
     ring2: CP14ClothingCloakAmuletMana
     belt1: CP14ModularSkeletonSword
-  inhand:
-    - CP14ManaOperationGlove
 
 - type: startingGear
   id: CP14MobSkeletonBardT2
