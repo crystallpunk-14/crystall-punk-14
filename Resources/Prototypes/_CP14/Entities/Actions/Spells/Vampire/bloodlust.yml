@@ -13,7 +13,7 @@
       - CP14ImpactEffectVampireHypnosis
     - !type:CP14SpellPointerToAlive
       pointerEntity: CP14BloodlustPointer
-      searchRange: 30
+      searchRange: 60
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Ego vultus..."
     endSpeech: "parumper vita"

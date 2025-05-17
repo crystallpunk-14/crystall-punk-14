@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server.Antag;
 using Content.Server.Chat.Systems;
@@ -85,6 +86,8 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
             SpawnAttachedTo(component.CurseEffect, Transform(antag).Coordinates);
             ClearCurse(antag);
         }
+
+        GameTicker.EndRound();
     }
 
     private void OnStartDay(CP14StartDayEvent ev)
