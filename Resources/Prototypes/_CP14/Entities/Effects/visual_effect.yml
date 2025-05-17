@@ -17,7 +17,6 @@
           dirt2: ""
   - type: TimedDespawn
     lifetime: 2
-  - type: EffectVisuals
   - type: Tag
     tags:
       - HideContextMenu
@@ -53,7 +52,6 @@
     drawdepth: Items
     sprite: _CP14/Effects/dust.rsi
     state: dust
-  - type: EffectVisuals
   - type: Tag
     tags:
       - HideContextMenu
@@ -104,19 +102,13 @@
   components:
   - type: Sprite
     noRot: true
+    color: "#FFFFFF33"
     sprite: /Textures/_CP14/Effects/Magic/blood_moon_curse.rsi
     drawdepth: Effects
     layers:
     - state: icon
-      shader: unshaded
   - type: Physics
     canCollide: false
   - type: Tag
     tags:
       - HideContextMenu
-  - type: PointLight
-    color: "#a83256"
-    enabled: true
-    radius: 2
-    energy: 2
-    netsync: false
