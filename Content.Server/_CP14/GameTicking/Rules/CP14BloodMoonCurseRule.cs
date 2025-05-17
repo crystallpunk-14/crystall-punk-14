@@ -7,6 +7,7 @@ using Content.Server.Station.Components;
 using Content.Server.Stunnable;
 using Content.Shared._CP14.BloodMoon;
 using Content.Shared._CP14.DayCycle;
+using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs;
@@ -25,6 +26,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedActionsSystem _action = default!;
 
     public override void Initialize()
     {
@@ -54,6 +56,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         curseComp.SpawnedEffect = effect;
         curseComp.CurseRule = ent;
         _transform.SetParent(effect, args.EntityUid);
+        _action.AddAction(args.EntityUid, ref curseComp.ActionEntity, curseComp.Action);
     }
 
     protected override void Started(EntityUid uid,
@@ -108,5 +111,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
             QueueDel(curseComp.SpawnedEffect);
             RemCompDeferred<CP14BloodMoonCurseComponent>(ent);
         }
+
+        _action.RemoveAction(ent.Comp.ActionEntity);
     }
 }

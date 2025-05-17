@@ -18,4 +18,10 @@ public sealed partial class CP14BloodMoonCurseComponent : Component
 
     [DataField]
     public TimeSpan EndStunDuration = TimeSpan.FromSeconds(60f);
+
+    [DataField]
+    public EntProtoId Action = "CP14ActionSpellBloodlust";
+
+    [DataField]
+    public EntityUid? ActionEntity;
 }
