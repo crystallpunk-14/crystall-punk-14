@@ -36,12 +36,6 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         SubscribeLocalEvent<CP14StartDayEvent>(OnStartDay);
         SubscribeLocalEvent<CP14BloodMoonCurseRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagEntitySelected);
         SubscribeLocalEvent<CP14BloodMoonCurseComponent, ExaminedEvent>(CurseExamined);
-        SubscribeLocalEvent<CP14BloodMoonCurseComponent, MobStateChangedEvent>(OnDead);
-    }
-
-    private void OnDead(Entity<CP14BloodMoonCurseComponent> ent, ref MobStateChangedEvent args)
-    {
-        ClearCurse((ent.Owner, ent.Comp));
     }
 
     private void CurseExamined(Entity<CP14BloodMoonCurseComponent> ent, ref ExaminedEvent args)
