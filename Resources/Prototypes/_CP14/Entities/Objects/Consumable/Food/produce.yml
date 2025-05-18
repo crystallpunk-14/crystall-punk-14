@@ -71,6 +71,9 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 0.25
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14CabbageBurger
 
 - type: entity
   id: CP14FoodPumpkin
@@ -146,6 +149,9 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14PumpkinBurger
 
 - type: entity
   id: CP14FoodPotato
@@ -225,6 +231,9 @@
   - type: Tag
     tags:
     - CP14FarmFood
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14CucumberBurger
 
 - type: entity
   id: CP14FoodTomatoes
@@ -324,6 +333,9 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14TomatoesBurger
 
 - type: entity
   id: CP14FoodApple
@@ -388,6 +400,9 @@
           Quantity: 2.5
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14AppleBurger
 
 - type: entity
   id: CP14FoodPepper

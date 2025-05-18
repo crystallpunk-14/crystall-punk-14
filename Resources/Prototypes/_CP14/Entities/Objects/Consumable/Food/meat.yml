@@ -184,6 +184,9 @@
           Quantity: 4
         - ReagentId: Egg
           Quantity: 6
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14CutletBurger
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -210,6 +213,9 @@
           Quantity: 4
         - ReagentId: EggCooked
           Quantity: 6
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14CutletCookedBurger
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500

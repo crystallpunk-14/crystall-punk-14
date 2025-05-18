@@ -1,0 +1,98 @@
+# Bun bottom
+
+- type: foodSequenceElement
+  id: CP14BunTopBurger
+  final: true
+  sprites:
+  - sprite: _CP14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked_slice_top
+  tags:
+  - Bun
+
+# Meat
+
+- type: foodSequenceElement
+  id: CP14CutletBurger
+  sprites:
+  - sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: cutlet
+  tags:
+  - Cutlet
+  - CP14Meat
+
+- type: foodSequenceElement
+  id: CP14CutletCookedBurger
+  sprites:
+  - sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: cutlet_cooked
+  tags:
+  - Cooked
+  - Cutlet
+  - CP14Meat
+
+# Cheese
+
+- type: foodSequenceElement
+  id: CP14CheeseBurger
+  name: food-sequence-content-cheese
+  sprites:
+  - sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: cheese_slice
+  tags:
+  - Cheese
+
+# Cabbage
+
+- type: foodSequenceElement
+  id: CP14CabbageBurger
+  name: food-sequence-content-cabbage
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
+    state: slice1
+  tags:
+  - Vegetable
+
+# Pumpkin
+
+- type: foodSequenceElement
+  id: CP14PumpkinBurger
+  name: cp14-food-sequence-content-pumpkin
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
+    state: slice1
+  tags:
+  - Vegetable
+
+# Cucumber
+
+- type: foodSequenceElement
+  id: CP14CucumberBurger
+  name: cp14-food-sequence-content-cucumber
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
+    state: base1
+  tags:
+  - Vegetable
+
+# Tomatoes
+
+- type: foodSequenceElement
+  id: CP14TomatoesBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
+    state: slice1
+  tags:
+  - Fruit
+  - Vegetable
+
+# Apple
+
+- type: foodSequenceElement
+  id: CP14AppleBurger
+  name: food-sequence-content-apple
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/apple.rsi
+    state: slice1
+  tags:
+  - Fruit

@@ -146,11 +146,24 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/dough.rsi
-    state: bun_cooked_slice_bottom
+    layers:
+    - state: bun_cooked_slice_bottom
+    - map: ["foodSequenceLayers"]
+  - type: FoodSequenceStartPoint
+    key: Burger
+    maxLayers: 5
+    startPosition: 0, 0
+    offset: 0, 0.07
+    minLayerOffset: -0.05, 0
+    maxLayerOffset: 0.05, 0
+    nameGeneration: food-sequence-burger-gen
+  - type: Appearance
+  - type: FoodMetamorphableByAdding
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 4 # 1/2 bun
+        canReact: false
         reagents:
         - ReagentId: Nutriment
           Quantity: 2.6
@@ -179,6 +192,9 @@
           Quantity: 2.6
         - ReagentId: Protein
           Quantity: 0.25
+  - type: FoodSequenceElement
+    entries:
+      Burger: CP14BunTopBurger
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
