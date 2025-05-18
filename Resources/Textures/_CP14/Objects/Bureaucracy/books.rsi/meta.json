@@ -23,6 +23,12 @@
       "name": "decor_line"
     },
     {
+      "name": "decor_corner"
+    },
+    {
+      "name": "decor_frame"
+    },
+    {
       "name": "icon_image"
     },
     {

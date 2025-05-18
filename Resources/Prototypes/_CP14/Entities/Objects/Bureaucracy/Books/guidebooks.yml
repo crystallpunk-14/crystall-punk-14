@@ -9,6 +9,8 @@
     - state: paper
     - state: cover_base
       color: "#1f389c"
+    - state: decor_frame
+      color: "#38f0b3"
     - state: icon_plate
       color: "#f5ba56"
     - state: bookmark_short
@@ -28,6 +30,8 @@
     - state: paper
     - state: cover_base
       color: "#3b8065"
+    - state: decor_frame
+      color: "#ffe269"
     - state: icon_plate
       color: "#4eabbf"
     - state: bookmark_short
@@ -47,6 +51,8 @@
     - state: paper
     - state: cover_base
       color: "#5f1280"
+    - state: decor_frame
+      color: "#ffe269"
     - state: icon_magic
       shader: unshaded
     - state: bookmark_short

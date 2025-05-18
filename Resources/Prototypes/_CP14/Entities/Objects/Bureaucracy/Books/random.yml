@@ -14,6 +14,8 @@
           cover_base: Sixteen
         decor:
           decor_line: Sixteen
+          decor_corner: Sixteen
+          decor_frame: Sixteen
         icon:
           icon_image: Sixteen
           icon_moon: Sixteen

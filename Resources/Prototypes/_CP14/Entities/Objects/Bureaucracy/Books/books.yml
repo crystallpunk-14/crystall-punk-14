@@ -10,8 +10,8 @@
     - state: cover_base
       color: "#45784e"
       map: [ "cover" ]
-    - state: decor_line
-      color: "#ffb71c"
+    - state: decor_frame
+      color: "#e28f08"
       map: [ "decor" ]
     - state: icon_magic
       map: [ "icon" ]
