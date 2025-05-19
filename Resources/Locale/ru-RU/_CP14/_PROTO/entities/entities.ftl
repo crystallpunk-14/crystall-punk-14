@@ -1165,7 +1165,7 @@ ent-CP14ClothingShoesArtifactFrogs = жаботапы
 
 ent-CP14Mist = облако
 
-ent-CP14SkyLightning = освещение неба
+ent-CP14SkyLightning = молния с небес
 
 ent-CP14DemiplaneEntryPointMarker = точка входа в демиплан
 

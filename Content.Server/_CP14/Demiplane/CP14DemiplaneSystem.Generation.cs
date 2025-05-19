@@ -115,8 +115,6 @@ public sealed partial class CP14DemiplaneSystem
             demiplane = ev.Demiplane;
         }
 
-        _statistic.TrackAdd(generator.Comp.Statistic, 1);
-
         if (demiplane is null)
             return;
 

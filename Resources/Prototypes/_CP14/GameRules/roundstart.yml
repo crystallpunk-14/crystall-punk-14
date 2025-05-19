@@ -19,14 +19,8 @@
   id: CP14RoundObjectivesRule
   parent: CP14BaseGameRule
   components:
-  #- type: CP14CommonObjectivesRule
-  #  departmentObjectives:
-  #    CP14Command:
-  #    - CP14TownSendObjectiveGroup
   - type: CP14PersonalObjectivesRule
     roleObjectives:
-      CP14Guildmaster:
-      - CP14GuildmasterNoDemiplaneObjectiveGroup
       CP14Adventurer:
       - CP14PersonalCurrencyCollectObjectiveGroup
       CP14Alchemist:
@@ -37,8 +31,6 @@
       - CP14PersonalCurrencyCollectObjectiveGroup
       CP14Innkeeper:
       - CP14PersonalCurrencyCollectObjectiveGroup
-      CP14Merchant:
-      - CP14PersonalObjectiveRichestMerchantGroup
 
 # event schedulers
 
