@@ -4642,7 +4642,7 @@ ent-CP14WoodenDoorAlchemyMirrored2 = { entCP14WoodenDoorAlchemy2 }
     .desc = { entCP14WoodenDoorAlchemy2.desc }
     .suffix = Алхимия 2, Зеркальная
 
-ent-CP14WoodenDoorAlchemyMirrored3 = { ent-['CP14WoodenDoorAlchemy3 }
+ent-CP14WoodenDoorAlchemyMirrored3 = { ent-CP14WoodenDoorAlchemy3 }
     .desc = { ent-CP14WoodenDoorAlchemy3.desc }
     .suffix = Алхимия 3, Зеркальная
 
