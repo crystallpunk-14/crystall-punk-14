@@ -27,7 +27,7 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Wheat
-    count: 2
+    count: 1
   result: CP14FoodDoughMedium
 
 - type: CP14Recipe
