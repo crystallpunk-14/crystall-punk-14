@@ -152,10 +152,10 @@ ent-CP14BaseSpellScrollNecromancy = { ent-CP14BaseSpellScroll }
 ent-CP14BaseSpellScrollWater = { ent-CP14BaseSpellScroll }
     .desc = { ent-CP14BaseSpellScroll.desc }
 
-ent-CP14ActionSpellCureFromDeath = Исцеление смерти
+ent-CP14ActionSpellCureFromDeath = Исцеление мёртвых
     .desc = Вы исцеляете цель от всех видов урона.
 
-ent-CP14ActionSpellHealFromDeathBallade = Исцеляющая смерть баллада
+ent-CP14ActionSpellHealFromDeathBallade = Исцеляющая мёртвых баллада
     .desc = Ваша музыка наполнена целительной магией, быстро исцеляющей всех существ вокруг вас.
 
 ent-CP14ImpactEffectDeadHealBallade = { ent-CP14BaseMagicImpact }
@@ -248,8 +248,8 @@ ent-CP14ImpactEffectFlameCreation = { ent-CP14BaseMagicImpact }
 ent-CP14SpellScrollFlameCreation = свиток заклинания создания пламени
     .desc = { ent-CP14BaseSpellScrollFire.desc }
 
-ent-CP14ActionSpellHeat = Жара
-    .desc = Вы начинаете сильно нагревать мишень, прожигая ее изнутри.
+ent-CP14ActionSpellHeat = Нагрев
+    .desc = Вы начинаете сильно нагревать цель, прожигая ее изнутри.
 
 ent-CP14ImpactEffectHeat = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -257,7 +257,7 @@ ent-CP14ImpactEffectHeat = { ent-CP14BaseMagicImpact }
 ent-CP14RuneHeat = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14SpellScrollHeat = свиток заклинания жары
+ent-CP14SpellScrollHeat = свиток заклинания нагрева
     .desc = { ent-CP14BaseSpellScrollFire.desc }
 
 ent-CP14ActionSpellHellBallade = Адская баллада
@@ -365,7 +365,7 @@ ent-CP14ImpactEffectResurrection = { ent-CP14BaseMagicImpact }
 ent-CP14SpellScrollResurrection = свиток заклинания воскрешения
     .desc = { ent-CP14BaseSpellScrollNecromancy.desc }
 
-ent-CP14ActionSpellSheepPolymorph = Полиморф в овечку
+ent-CP14ActionSpellSheepPolymorph = Овечкофикация
     .desc = Вы проклинаете цель, превращая ее на короткое время в глупую овцу.
 
 ent-CP14RuneSheepPolymorph = { ent-CP14BaseMagicRune }
@@ -766,7 +766,7 @@ ent-CP14ClothingGlovesJagermeister = перчатки егермейстера
 ent-CP14ClothingGlovesBlacksmith = кузнечные перчатки
     .desc = Говорят, в них можно взять в руки только что отлитый слиток. Но проверять это все равно не стоит.
 
-ent-CP14ClothingHeadSlimeCrown = слаймовая корона
+ent-CP14ClothingHeadSlimeCrown = корона слаймов
     .desc = Граф Уоза. Великий герцог Гу. Повелитель Слаймов.
 
 ent-CP14ModularAventailIronChainmail = железный кольчужный воротник
@@ -1469,11 +1469,11 @@ ent-CP14MobMonsterMole = хищный крот
     .suffix = AI
 
 ent-CP14MobMonsterMyconideFlyagaric = миконид мухоморный
-    .desc = Пока вы смотрите на него, он уже бежит к вам!!!
+    .desc = Бегающий мухомор на ножках, странное явление даже для нашего безумного мира.
     .suffix = AI
 
 ent-CP14MobMonsterMyconideLumish = миконид люмидовый
-    .desc = Это гриб со светящейся шляпкой, и он сильно бьет вас по голове.
+    .desc = Это гриб со светящейся шляпкой, и он может сильно ударить по голове.
     .suffix = AI
 
 ent-CP14MobWatcherIce = ледяной наблюдатель
@@ -1565,19 +1565,19 @@ ent-CP14SpawnPointGhostDemiplaneSkeletonT1 = точка спавна роли
     .suffix = Случайный скелет T1
 
 ent-SpawnPointGhostDemiplaneSkeletonHalberdT1 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1.desc }
     .suffix = Скелет Алебардщик T1
 
 ent-SpawnPointGhostDemiplaneSkeletonSwordT1 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1.desc }
     .suffix = Скелет Мечник T1
 
 ent-SpawnPointGhostDemiplaneSkeletonDodgerT1 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1.desc }
     .suffix = Скелет Кинжальщик T1
 
 ent-SpawnPointGhostDemiplaneSkeletonArcherT1 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1.desc }
     .suffix = Скелет Лучник T1
 
 ent-CP14MobUndeadSkeletonDemiplaneT2 = скелет
@@ -1600,32 +1600,32 @@ ent-CP14MobUndeadSkeletonWizardT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
 ent-CP14MobUndeadSkeletonBardT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
     .suffix = Бард T2
 
-ent-CP14SpawnPointGhostDemiplaneSkeletonT2 = точка спавна роли
+ent-CP14SpawnPointGhostDemiplaneSkeletonT2 = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1 }
     .desc = Роль призрака для кровожадного и хитрого скелета.
     .suffix = Случайный скелет T2
 
-ent-CP14SpawnPointGhostDemiplaneSkeletonHalberdT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+ent-CP14SpawnPointGhostDemiplaneSkeletonHalberdT2 = { ent-SpawnPointGhostDemiplaneSkeletonHalberdT1 }
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Алебардщик T2
 
-ent-CP14SpawnPointGhostDemiplaneSkeletonSwordT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+ent-CP14SpawnPointGhostDemiplaneSkeletonSwordT2 = { ent-SpawnPointGhostDemiplaneSkeletonSwordT1 }
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Мечник T2
 
-ent-CP14SpawnPointGhostDemiplaneSkeletonDodgerT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+ent-CP14SpawnPointGhostDemiplaneSkeletonDodgerT2 = { ent-SpawnPointGhostDemiplaneSkeletonDodgerT1 }
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Кинжальщик T2
 
-ent-CP14SpawnPointGhostDemiplaneSkeletonArcherT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+ent-CP14SpawnPointGhostDemiplaneSkeletonArcherT2 = { ent-SpawnPointGhostDemiplaneSkeletonArcherT1 }
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Лучник T2
 
 ent-CP14SpawnPointGhostDemiplaneSkeletonWizardT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Маг T2
 
 ent-CP14SpawnPointGhostDemiplaneSkeletonBardT2 = точка спавна роли
-    .desc = Роль призрака для кровожадного и хитрого скелета.
+    .desc = { ent-CP14SpawnPointGhostDemiplaneSkeletonT2.desc }
     .suffix = Скелет Бард T2
 
 ent-CP14SpawnPointTownRaid = городской рейд точка спавна роли призрака
@@ -3174,7 +3174,7 @@ ent-CP14SeedCotton = семена хлопка
     .desc = Семена хлопка. Пора выращивать брюки!
 
 ent-CP14GuardBell = сторожевой колокол
-    .desc = Звонок, используемый для установки соответствующего уровня оповещения.
+    .desc = Мощный колокол, сообщающий на всё поселение о возможной угрозе.
 
 ent-CP14HerbalBandage = травяной бинт
     .desc = Бинт для перевязки, сплетенный из травы. Не самая надежная и полезная вещь, но лучше, чем ничего.
@@ -3337,10 +3337,10 @@ ent-CP14ModularIronAxe = железный топор
 ent-CP14ModularIronDagger = железный кинжал
     .desc = Маленький, многофункциональный, острый клинок. Им можно резать мясо или бросать в гоблинов.
 
-ent-CP14ModularIronDaggerTundra = Кинжал Тундры
+ent-CP14ModularIronDaggerTundra = кинжал Тундры
     .desc = Маленький, многоцелевой, острый клинок. Им можно резать мясо или бросать в гоблина. На нем выгравировано слово «тундра».
 
-ent-CP14ModularIronDaggerAgony = Кинжал Агонии
+ent-CP14ModularIronDaggerAgony = кинжал Агонии
     .desc = Маленький, многоцелевой, острый клинок. Им можно резать мясо или бросать в гоблина. На нем выгравировано слово «агония».
 
 ent-CP14ModularIronHammer = железный молоток
@@ -4262,13 +4262,13 @@ ent-CP14FloorTorchIgnited = { ent-CP14FloorTorch }
     .suffix = Зажжённый
 
 ent-CP14FloorTorchAlwaysPowered = напольный факел
-    .suffix = Отладочный, Бесконечный
+    .suffix = Debug, Бесконечный
 
 ent-CP14WallmountTorchIgnited = { ent-CP14WallmountTorch }
     .suffix = Зажжённый
 
 ent-CP14WallmountTorchAlwaysPowered = настенный факел
-    .suffix = Отладочный, Бесконечный
+    .suffix = Debug, Бесконечный
 
 ent-CP14WallmountBarShelfA = барная полка
     .desc = Настенные полки для хранения коллекции вин.
@@ -4309,7 +4309,7 @@ ent-CP14DemiplanePasswayRed = { ent-CP14DemiplanePassway }
 
 ent-CP14DemiplaneLinkCrystal = кристалл связи демиплана
     .desc = Поддерживает связь с демипланами во время заряда. Вызывает монстров из демипланов атаковать город. Когда он разряжается, игра заканчивается.
-    .suffix = ONE TO MAP
+    .suffix = ОДИН НА КАРТУ
 
 ent-CP14PortalFrameCrystal = рамка портала
     .desc = Структура из теневых кристаллов, используемая для создания стабильного портала в другое место.
@@ -4696,11 +4696,11 @@ ent-CP14FenceGateBigIron = { ent-CP14BaseFenceGateBig }
 
 ent-CP14FenceWooden = { ent-CP14BaseFence }
     .desc = { ent-CP14BaseFence.desc }
-    .suffix = Wooden
+    .suffix = Дерево
 
 ent-CP14FenceGateWooden = { ent-CP14BaseFenceGate }
     .desc = { ent-CP14BaseFenceGate.desc }
-    .suffix = Wooden
+    .suffix = Дерево
 
 ent-CP14GatherablePlantSingleHarvestBase = { ent-CP14BaseFlammableSpreading }
     .desc = { ent-CP14BaseFlammableSpreading.desc }
