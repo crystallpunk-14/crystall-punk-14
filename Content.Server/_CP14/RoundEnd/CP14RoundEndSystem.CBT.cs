@@ -1,6 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
-using Robust.Client;
+using Robust.Server;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 
@@ -10,7 +10,7 @@ public sealed partial class CP14RoundEndSystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IGameController _gameController = default!;
+    [Dependency] private readonly IBaseServer _baseServer = default!;
 
     private TimeSpan _nextUpdateTime = TimeSpan.Zero;
     private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(50f);
@@ -88,7 +88,7 @@ public sealed partial class CP14RoundEndSystem
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var playtime = (now.Hour is >= 16 and < 19) || (now.Hour is >= 22 and < 24);
+        var playtime = (now.Hour is >= 16 and < 19) || (now.Hour is >= 20 and < 22);
 
         if (playtime)
         {
@@ -119,9 +119,9 @@ public sealed partial class CP14RoundEndSystem
             }),
             (19, 2, () =>
             {
-                _gameController.Shutdown("Русский ОБТ подошел к концу. Следующие 3 часа будет английский ОБТ. Просьба не мешать англоязычным ребятам играть в свое время :)");
+                _baseServer.Shutdown("Русский ОБТ подошел к концу. Следующие 3 часа будет английский ОБТ. Просьба не мешать англоязычным ребятам играть в свое время :)");
             }),
-            (23, 45, () =>
+            (21, 45, () =>
             {
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
@@ -129,7 +129,7 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (00, 2, () =>
+            (22, 2, () =>
             {
                 _consoleHost.ExecuteCommand("golobby");
             }),
