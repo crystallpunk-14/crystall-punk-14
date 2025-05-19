@@ -1,5 +1,6 @@
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
+using Robust.Client;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 
@@ -9,9 +10,10 @@ public sealed partial class CP14RoundEndSystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly IGameController _gameController = default!;
 
     private TimeSpan _nextUpdateTime = TimeSpan.Zero;
-    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(60f);
+    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(50f);
 
     private bool _enabled;
 
@@ -24,7 +26,8 @@ public sealed partial class CP14RoundEndSystem
     }
 
     // Вы можете сказать: Эд, ты ебанулся? Это же лютый щиткод!
-    // И я вам отвечу: Да. Но сама система ограничения времени работы сервера - временная штука на этап разработки, которая будет удалена. Мне просто лень каждый раз запускать и выключать сервер ручками.
+    // И я вам отвечу: Да. Но сама система ограничения времени работы сервера - временная штука на этап разработки, которая будет удалена.
+    // Мне просто лень каждый раз запускать и выключать сервер ручками.
     private void UpdateCbt(float _)
     {
         if (!_enabled || _timing.CurTime < _nextUpdateTime)
@@ -33,16 +36,16 @@ public sealed partial class CP14RoundEndSystem
         _nextUpdateTime = _timing.CurTime + _updateFrequency;
         var now = DateTime.UtcNow.AddHours(3); // Moscow time
 
-        OpenWeekendRule(now);
-        EnglishDayRule(now);
+        OpenSaturdayRule(now);
+        LanguageRule(now);
         LimitPlaytimeRule(now);
         ApplyAnnouncements(now);
     }
 
-    private void OpenWeekendRule(DateTime now)
+    private void OpenSaturdayRule(DateTime now)
     {
         var curWhitelist = _cfg.GetCVar(CCVars.WhitelistEnabled);
-        var isOpenWeened = now.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday;
+        var isOpenWeened = now.DayOfWeek is DayOfWeek.Saturday;
 
         if (isOpenWeened && curWhitelist)
         {
@@ -54,22 +57,14 @@ public sealed partial class CP14RoundEndSystem
         }
     }
 
-    private void EnglishDayRule(DateTime now)
+    private void LanguageRule(DateTime now)
     {
         var curLang = _cfg.GetCVar(CCVars.Language);
-        var englishDay = now.DayOfWeek == DayOfWeek.Saturday;
 
-        if (englishDay && curLang != "en-US")
-        {
-            _cfg.SetCVar(CCVars.Language, "en-US");
+        var ruHalfDay = now.Hour < 19 && now.Minute < 5;
 
-            _chatSystem.DispatchGlobalAnnouncement(
-                "WARNING: The server changes its language to English. For the changes to apply to your device, reconnect to the server.",
-                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
-                sender: "Server"
-            );
-        }
-        else if (!englishDay && curLang != "ru-RU")
+
+        if (ruHalfDay && curLang != "ru-RU")
         {
             _cfg.SetCVar(CCVars.Language, "ru-RU");
 
@@ -79,11 +74,21 @@ public sealed partial class CP14RoundEndSystem
                 sender: "Server"
             );
         }
+        else if (!ruHalfDay && curLang != "en-US")
+        {
+            _cfg.SetCVar(CCVars.Language, "en-US");
+
+            _chatSystem.DispatchGlobalAnnouncement(
+                "WARNING: The server changes its language to English. For the changes to apply to your device, reconnect to the server.",
+                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                sender: "Server"
+            );
+        }
     }
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var playtime = now.Hour is >= 18 and < 21;
+        var playtime = (now.Hour is >= 16 and < 19) || (now.Hour is >= 22 and < 24);
 
         if (playtime)
         {
@@ -104,7 +109,7 @@ public sealed partial class CP14RoundEndSystem
     {
         var timeMap = new (int Hour, int Minute, Action Action)[]
         {
-            (20, 45, () =>
+            (18, 45, () =>
             {
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
@@ -112,7 +117,19 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (21, 2, () =>
+            (19, 2, () =>
+            {
+                _gameController.Shutdown("Русский ОБТ подошел к концу. Следующие 3 часа будет английский ОБТ. Просьба не мешать англоязычным ребятам играть в свое время :)");
+            }),
+            (23, 45, () =>
+            {
+                _chatSystem.DispatchGlobalAnnouncement(
+                    Loc.GetString("cp14-cbt-close-15m"),
+                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                    sender: "Server"
+                );
+            }),
+            (00, 2, () =>
             {
                 _consoleHost.ExecuteCommand("golobby");
             }),
