@@ -23,7 +23,7 @@
 - type: CP14Recipe
   id: CP14FoodDoughMedium
   tag: CP14RecipeCooking
-  craftTime: 2
+  craftTime: 1
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Wheat
