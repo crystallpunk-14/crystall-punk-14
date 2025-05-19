@@ -22,3 +22,6 @@
   - id: CP14FoodCucumber
     amount: 4
     maxAmount: 8
+  - id: CP14SeedCucumber
+    amount: 0
+    maxAmount: 2

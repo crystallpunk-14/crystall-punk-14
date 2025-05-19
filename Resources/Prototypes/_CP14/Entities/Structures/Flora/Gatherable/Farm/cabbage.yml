@@ -22,3 +22,6 @@
   - id: CP14FoodCabbage
     amount: 6
     maxAmount: 8
+  - id: CP14SeedCabbage
+    amount: 1
+    maxAmount: 2
