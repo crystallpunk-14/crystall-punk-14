@@ -1439,6 +1439,7 @@ ent-CP14MobPig = свинья
 
 ent-CP14MobBoar = кабан
     .desc = Дальний родственник свиней, но, в отличие от своих мирных сородичей, обязательно попытается подцепить вас на клыки, если вы проявите к нему агрессию.
+    .suffix = AI
 
 ent-CP14MobFrog = лягушка
     .desc = Зеленая и постоянно прыгающая лягушка. Возможно, только благодаря ей комары еще не полностью заполнили болота.
@@ -1453,9 +1454,11 @@ ent-CP14MobDino = дино
 
 ent-CP14MobDinoYumkaraptor = юмкараптор
     .desc = Крупная чешуйчатая ящерица, явный хищник, любивший полакомиться мясом.
+    .suffix = AI
 
 ent-CP14MobDinoSmallHydra = малая гидра
     .desc = Небольшая двухголовая ящерица, несмотря на свои размеры, может быть довольно опасной.
+    .suffix = AI
 
 ent-CP14ActionSpellIceShardsGhost = { ent-CP14ActionSpellIceShards }
     .desc = { ent-CP14ActionSpellIceShards.desc }
@@ -1478,9 +1481,11 @@ ent-CP14MobMonsterMyconideLumish = миконид люмидовый
 
 ent-CP14MobWatcherIce = ледяной наблюдатель
     .desc = { ent-CP14MobWatcherBase.desc }
+    .suffix = AI
 
 ent-CP14MobWatcherMagma = магмовый наблюдатель
     .desc = { ent-CP14MobWatcherBase.desc }
+    .suffix = AI
 
 ent-CP14MobUndeadZombie = ходячий труп
     .desc = Ожившее гниющее тело мертвеца, желающее пожрать живых.
@@ -1506,18 +1511,21 @@ ent-CP14ActionSpellSlimeJump = Слаймопрыжок
 
 ent-CP14MobSlimeElectric = электрослайм
     .desc = { ent-CP14MobSlimeBase.desc }
+    .suffix = AI
 
 ent-CP14AreaEntityEffectSlimeShock = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14MobSlimeFire = огненный слайм
     .desc = { ent-CP14MobSlimeBase.desc }
+    .suffix = AI
 
 ent-CP14AreaEntityEffectSlimeIgnite = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14MobSlimeIce = морозный слайм
     .desc = { ent-CP14MobSlimeBase.desc }
+    .suffix = AI
 
 ent-CP14AreaEntityEffectSlimeFroze = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
@@ -3669,6 +3677,7 @@ ent-CP14IronDoorWindowedGuardEntrance = { ent-CP14IronDoorWindowed }
     .suffix = Стража, Вход
 
 ent-CP14FenceGateBigIronGuard = None
+    .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Стража
 
 ent-CP14IronDoorGuardGuildmaster = { ent-CP14IronDoor }
@@ -3676,9 +3685,11 @@ ent-CP14IronDoorGuardGuildmaster = { ent-CP14IronDoor }
     .suffix = Гильдмастер
 
 ent-CP14FenceGateBigIronGuildmaster = None
+    .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Гильдмастер
 
 ent-CP14FenceGateBigIronDemiplaneCrystal = None
+    .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Кристалл Демиплана
 
 ent-CP14WoodenDoorMerchantShop1 = { ent-CP14WoodenDoor }
@@ -3774,6 +3785,7 @@ ent-CP14IronDoorWindowedRandomLocked = { ent-CP14IronDoorWindowed }
     .suffix = Случайный замок (Комплекс 5)
 
 ent-CP14FenceGateBigIronRandomLocked = None
+    .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Случайный замок (Комплекс 5)
 
 ent-CP14WoodenDoorTavernStaff = { ent-CP14WoodenDoor }
@@ -3808,6 +3820,7 @@ ent-CP14BaseFenceBig = большой забор
     .desc = Чтобы перебраться на другую сторону, вам обязательно понадобится поленница.
 
 ent-CP14FenceBigWoodenBirch = None
+    .desc = { ent-CP14BaseFenceBig.desc }
     .suffix = Дерево. Берёза.
 
 ent-CP14FenceBigIron = { ent-CP14BaseFenceBig }
@@ -3818,6 +3831,7 @@ ent-CP14BaseFenceGateBig = большие ворота забора
     .desc = Большие ворота размером с человека. Каков ваш следующий шаг?
 
 ent-CP14FenceGateBigWoodenBirch = None
+    .desc = { ent-CP14BaseFenceGateBig.desc }
     .suffix = Дерево. Берёза.
 
 ent-CP14Cliff = обрыв
@@ -3844,12 +3858,14 @@ ent-CP14BaseFence = забор
     .desc = Низкий забор, ограничивающий движение чисто номинально.
 
 ent-CP14FenceWoodenBirch = None
+    .desc = { ent-CP14BaseFence.desc }
     .suffix = Дерево. Берёза
 
 ent-CP14BaseFenceGate = ворота забора
     .desc = У вас есть два пути. Вы можете открыть дверь, как обычный человек, или перелезть через неё, как смешной человек.
 
 ent-CP14FenceGateWoodenBirch = None
+    .desc = { ent-CP14BaseFenceGate.desc }
     .suffix = Дерево. Берёза.
 
 ent-CP14BaseFenceWindow = окно забора
@@ -4259,12 +4275,14 @@ ent-CP14BaseTorch = None
     .desc = Хороший, надежный источник света. Жаль, что он недолговечен.
 
 ent-CP14FloorTorchIgnited = { ent-CP14FloorTorch }
+    .desc = { ent-CP14BaseTorch.desc }
     .suffix = Зажжённый
 
 ent-CP14FloorTorchAlwaysPowered = напольный факел
     .suffix = Debug, Бесконечный
 
 ent-CP14WallmountTorchIgnited = { ent-CP14WallmountTorch }
+    .desc = { ent-CP14WallmountTorch.desc }
     .suffix = Зажжённый
 
 ent-CP14WallmountTorchAlwaysPowered = настенный факел
@@ -4455,8 +4473,10 @@ ent-CP14BaseWallFrame = None
     .desc = Сейчас эта стена находится в неопределенном состоянии между существованием и небытием.
 
 ent-CP14WallFrameWoodenBirch = { ent-CP14WallFrameWooden }
+    .desc = { ent-CP14BaseWallFrame.desc }
 
 ent-CP14WallWoodenBirch = { ent-CP14WallWooden }
+    .desc = { ent-CP14BaseWall.desc }
 
 ent-CP14WindowDirectional = направленное окно
     .desc = Не заляпайте стекло.
@@ -4639,7 +4659,7 @@ ent-CP14WoodenDoorAlchemyMirrored1 = { ent-CP14WoodenDoorAlchemy1 }
     .suffix = Алхимия 1, Зеркальная
 
 ent-CP14WoodenDoorAlchemyMirrored2 = { entCP14WoodenDoorAlchemy2 }
-    .desc = { entCP14WoodenDoorAlchemy2.desc }
+    .desc = { ent-CP14WoodenDoorAlchemy2.desc }
     .suffix = Алхимия 2, Зеркальная
 
 ent-CP14WoodenDoorAlchemyMirrored3 = { ent-CP14WoodenDoorAlchemy3 }
@@ -4834,8 +4854,10 @@ ent-CP14WallWoodenPalisade = частокол
     .desc = Стена из острых бревен. Не то чтобы это было безопасное убежище.
 
 ent-CP14WallFrameWooden = деревянная настенная рама
+    .desc = { ent-CP14BaseWallFrame.desc }
 
 ent-CP14WallWooden = деревянная стена
+    .desc = { ent-CP14BaseWall.desc }
 
 ent-CP14WindowWooden = деревянное окно
     .desc = Деревянная стена со стеклянным окном в ней.
