@@ -316,6 +316,18 @@ CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
 CP14DemiplaneKeyT1: null
 CP14DemiplaneKeyT2: null
 
+#2025-20-05
+CP14KeyGuardEntrance: CP14KeyGuardBarracks
+CP14KeyGuard: CP14KeyGuardBarracks
+CP14KeyGuardWeaponStorage: null
+CP14IronDoorGuard: CP14IronDoorGuardBarracks
+CP14IronDoorGuardWeaponStorage: null
+CP14IronDoorWindowedGuardEntrance: CP14KeyGuardBarracks
+CP14IronDoorWindowedMirroredGuardEntrance: CP14KeyGuardBarracks
+CP14FenceGateBigIronGuard: CP14FenceGateBigIronGuardBarracks
+
+
+
 # <---> CrystallEdge migration zone end
 
 

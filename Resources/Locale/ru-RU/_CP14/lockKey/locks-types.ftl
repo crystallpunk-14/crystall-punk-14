@@ -35,10 +35,9 @@ cp14-lock-shape-personalhouse14 = дом №14
 cp14-lock-shape-personalhouse15 = дом №15
 cp14-lock-shape-personalhouse16 = дом №16
 
-cp14-lock-shaper-guard-entrance = казармы, вход
-cp14-lock-shaper-guard-staff = казармы
+cp14-lock-shaper-guard-city-gate = городские ворота
+cp14-lock-shaper-guard-barracks = казармы
 cp14-lock-shaper-guard-commander = дом главы стражи
-cp14-lock-shaper-guard-weapon-storage = хранилище оружия
 
 cp14-lock-shape-guildmaster = гильдмастер
 cp14-lock-shape-demiplane-crystal = кристалл демиплана

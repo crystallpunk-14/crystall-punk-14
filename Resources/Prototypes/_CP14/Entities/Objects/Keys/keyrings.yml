@@ -101,8 +101,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyGuardEntrance
-    - id: CP14KeyGuard
+    - id: CP14KeyCityGate
+    - id: CP14KeyGuardBarracks
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -111,10 +111,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyGuardEntrance
-    - id: CP14KeyGuard
+    - id: CP14KeyCityGate
+    - id: CP14KeyGuardBarracks
     - id: CP14KeyGuardCommander
-    #- id: CP14KeyGuardWeaponStorage
 
 - type: entity
   parent: CP14BaseKeyRing
