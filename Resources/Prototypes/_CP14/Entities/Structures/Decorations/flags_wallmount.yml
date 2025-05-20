@@ -55,7 +55,7 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagTavern
   name: tavern tapestry
-  description: A tapestry with a beer symbol indicating that tavern is here.
+  description: A tapestry with a beer symbol indicating that the tavern is here.
   components:
   - type: Sprite
     layers:
