@@ -322,8 +322,8 @@ CP14KeyGuard: CP14KeyGuardBarracks
 CP14KeyGuardWeaponStorage: null
 CP14IronDoorGuard: CP14IronDoorGuardBarracks
 CP14IronDoorGuardWeaponStorage: null
-CP14IronDoorWindowedGuardEntrance: CP14KeyGuardBarracks
-CP14IronDoorWindowedMirroredGuardEntrance: CP14KeyGuardBarracks
+CP14IronDoorWindowedGuardEntrance: CP14IronDoorGuardBarracks
+CP14IronDoorWindowedMirroredGuardEntrance: CP14IronDoorGuardBarracks
 CP14FenceGateBigIronGuard: CP14FenceGateBigIronGuardBarracks
 
 

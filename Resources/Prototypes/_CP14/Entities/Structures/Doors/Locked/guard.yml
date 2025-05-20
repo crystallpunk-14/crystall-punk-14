@@ -54,7 +54,7 @@
 
 - type: entity
   parent: CP14FenceGateBigIron
-  id: CP14FenceGateBigIronGuardBarracks
+  id: CP14FenceGateBigIronCityGate
   suffix: City Gate
   components:
   - type: CP14Lock

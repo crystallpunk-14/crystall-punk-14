@@ -4,8 +4,8 @@ meta:
   engineVersion: 255.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/20/2025 18:59:02
-  entityCount: 15344
+  time: 05/20/2025 19:15:42
+  entityCount: 15339
 maps:
 - 1
 grids:
@@ -76,6 +76,14 @@ entities:
     - type: SunShadow
     - type: SunShadowCycle
     - type: Biome
+      forcedMarkerLayers: []
+      markerLayers: []
+      loadedMarkers: {}
+      pendingMarkers: {}
+      loadedChunks: []
+      entities: {}
+      decals: {}
+      modifiedTiles: {}
       template: CP14SandOceanFill
       layers: []
     - type: MapGrid
@@ -41617,6 +41625,31 @@ entities:
       rot: 3.141592653589793 rad
       pos: 105.5,58.5
       parent: 1
+- proto: CP14FenceGateBigIronCityGate
+  entities:
+  - uid: 7184
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 37.5,8.5
+      parent: 1
+  - uid: 7185
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-45.5
+      parent: 1
+  - uid: 7186
+    components:
+    - type: Transform
+      pos: -0.5,-45.5
+      parent: 1
+  - uid: 7187
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 37.5,9.5
+      parent: 1
 - proto: CP14FenceGateBigIronDemiplaneCrystal
   entities:
   - uid: 7693
@@ -41632,29 +41665,6 @@ entities:
       parent: 1
 - proto: CP14FenceGateBigIronGuardBarracks
   entities:
-  - uid: 7184
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 37.5,9.5
-      parent: 1
-  - uid: 7185
-    components:
-    - type: Transform
-      pos: -0.5,-45.5
-      parent: 1
-  - uid: 7186
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-45.5
-      parent: 1
-  - uid: 7187
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 37.5,8.5
-      parent: 1
   - uid: 7694
     components:
     - type: Transform
@@ -47366,6 +47376,32 @@ entities:
       rot: 3.141592653589793 rad
       pos: 30.5,14.5
       parent: 1
+- proto: CP14IronDoorWindowedCityGate
+  entities:
+  - uid: 7682
+    components:
+    - type: Transform
+      pos: 20.5,-14.5
+      parent: 1
+  - uid: 7683
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,-27.5
+      parent: 1
+- proto: CP14IronDoorWindowedMirroredCityGate
+  entities:
+  - uid: 7691
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 10.5,-26.5
+      parent: 1
+  - uid: 7703
+    components:
+    - type: Transform
+      pos: 21.5,-14.5
+      parent: 1
 - proto: CP14JewelryTopaz
   entities:
   - uid: 8847
@@ -47375,32 +47411,6 @@ entities:
       name: supermatter
     - type: Transform
       pos: -0.4932046,48.519947
-      parent: 1
-- proto: CP14KeyGuardBarracks
-  entities:
-  - uid: 8843
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,-26.5
-      parent: 1
-  - uid: 8844
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.5,-14.5
-      parent: 1
-  - uid: 8845
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 20.5,-14.5
-      parent: 1
-  - uid: 8846
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,-27.5
       parent: 1
 - proto: CP14KeyPersonalHouse5
   entities:
