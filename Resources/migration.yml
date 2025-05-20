@@ -264,7 +264,7 @@ CP14FenceWoodSmallCorner: CP14FenceWooden
 CP14FenceWoodSmallGate: CP14FenceGateWooden
 CP14FenceIronGrilleStraight: CP14FenceBigIron
 CP14FenceIronGrilleGate: CP14FenceGateBigIron
-CP14FenceIronGrilleGateGuard: CP14FenceGateBigIronGuard
+CP14FenceIronGrilleGateGuard: CP14FenceGateBigIronGuardBarracks
 CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIronGuildmaster 
 CP14FenceIronGrilleGateDemiplaneCrystal: CP14FenceGateBigIronDemiplaneCrystal
 CP14FenceIronGrilleWindowStraight: CP14FenceWindowIron
@@ -315,6 +315,18 @@ CP14EnergyCrystalSmall: CP14EnergyCrystalMedium
 #2025-05-05
 CP14DemiplaneKeyT1: null
 CP14DemiplaneKeyT2: null
+
+#2025-20-05
+CP14KeyGuardEntrance: CP14KeyGuardBarracks
+CP14KeyGuard: CP14KeyGuardBarracks
+CP14KeyGuardWeaponStorage: null
+CP14IronDoorGuard: CP14IronDoorGuardBarracks
+CP14IronDoorGuardWeaponStorage: null
+CP14IronDoorWindowedGuardEntrance: CP14IronDoorGuardBarracks
+CP14IronDoorWindowedMirroredGuardEntrance: CP14IronDoorGuardBarracks
+CP14FenceGateBigIronGuard: CP14FenceGateBigIronGuardBarracks
+
+
 
 # <---> CrystallEdge migration zone end
 
