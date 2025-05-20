@@ -6523,6 +6523,13 @@
         "parent": "CP14SackFarming",
         "suffix": null
     },
+    "CP14SackFarmingSeedFull": {
+        "id": "CP14SackFarmingSeedFull",
+        "name": null,
+        "description": null,
+        "parent": "CP14SackFarming",
+        "suffix": "Full"
+    },
     "CP14BaseSeed": {
         "id": "CP14BaseSeed",
         "name": null,
