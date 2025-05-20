@@ -3,7 +3,7 @@
   parent: BaseStructure
   categories: [ ForkFiltered ]
   name: demiplane link crystal
-  description: Maintains communication with the demiplanes while charged. Causes mosnters from the demiplanes to attack the city. Once it is discharged, the game is over.
+  description: Maintains communication with the demiplanes while charged. Causes monsters from the demiplanes to attack the city. Once it is discharged, the game is over.
   suffix: ONE TO MAP
   components:
   - type: Fixtures
@@ -94,7 +94,7 @@
     sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_small.rsi
     layers:
     - state: dimension
-    - state: frame 
+    - state: frame
     drawdepth: Mobs
     offset: 0,0.4
   - type: CP14MagicEnergyContainer

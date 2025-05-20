@@ -33,7 +33,7 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagAlchemist
   name: alchemist tapestry
-  description: A tapestry with a potion symbol, indicating that alchemists dwell here.
+  description: A tapestry with a potion symbol indicating that alchemists dwell here.
   components:
   - type: Sprite
     layers:
@@ -44,7 +44,7 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagBlacksmith
   name: blacksmith tapestry
-  description: A tapestry with a anvil symbol, indicating that blacksmiths dwell here.
+  description: A tapestry with an anvil symbol indicating that blacksmiths dwell here.
   components:
   - type: Sprite
     layers:
@@ -55,7 +55,7 @@
   parent: CP14WallmountFlagBase
   id: CP14WallmountFlagTavern
   name: tavern tapestry
-  description: A tapestry with a beer symbol, indicating that tavern is here.
+  description: A tapestry with a beer symbol indicating that the tavern is here.
   components:
   - type: Sprite
     layers:

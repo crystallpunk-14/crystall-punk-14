@@ -13,7 +13,7 @@ There are "keys" in the game world that allow you to temporarily activate a port
 
 <Box>
 <GuideEntityEmbed Entity="CP14DemiplanRiftCore"/>
-</Box>.
+</Box>
 
 When you activate the "key" (via the "Z" key or by clicking on the key), a portal is formed, which will teleport up to 4 players and what they are pulling behind them to the demiplane.
 Be aware that you may be immediately attacked by opponents who are near you.
@@ -50,11 +50,11 @@ To prepare for an expedition to the demiplane, you may need the following items:
 
 ## Cooperation tips
 The entire Demiplane is designed for adventurers to (and should) work as a team. Define the basic concepts amongst yourselves:
-- who will engage in melee and ranged combat?
-- who will be responsible for healing and/or storing medicine vials?
+- Who will engage in melee and ranged combat?
+- Who will be responsible for healing and/or storing medicine vials?
 - Who will carry the team's cargo (crates or extra bags) to gather resources?
 - How will you divide the items you receive amongst yourselves later on?
-- who will be your team leader during critical situations?
+- Who will be your team leader during critical situations?
 - What will you do with dead and injured team members?
 
 </Document>
