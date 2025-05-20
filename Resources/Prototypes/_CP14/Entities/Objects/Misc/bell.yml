@@ -2,7 +2,7 @@
   parent: BaseItem
   id: CP14Bell
   name: bell
-  description: A regular bell with a handle to attract attention.
+  description: A regular bell, with a handle to attract attention.
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

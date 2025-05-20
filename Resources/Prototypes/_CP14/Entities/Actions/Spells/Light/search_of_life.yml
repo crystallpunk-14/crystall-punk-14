@@ -48,7 +48,7 @@
     - state: circle_increase
       color: "#79b330"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneSearchOfLife
   parent: CP14BaseMagicRune
