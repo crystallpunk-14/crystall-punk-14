@@ -18,6 +18,8 @@
   - type: Appearance
   - type: BurnStateVisuals
     unlitIcon: unlit-icon
+  - type: CP14IgnitionModifier
+    hideCaution: true
 
 - type: entity
   id: CP14SmokingPipeFilledTobacco
