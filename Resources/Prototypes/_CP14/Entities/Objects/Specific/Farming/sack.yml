@@ -63,6 +63,8 @@
 
 - type: entity
   id: CP14SackFarmingWheat
+  name: seed sack
+  description: Sack for various plant seeds.
   parent: CP14SackFarming
   suffix: Wheat
   components:
