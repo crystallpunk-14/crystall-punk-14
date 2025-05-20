@@ -1,7 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1MagmaCaves
   levels:
-    min: 7
+    min: 4
     max: 10
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi

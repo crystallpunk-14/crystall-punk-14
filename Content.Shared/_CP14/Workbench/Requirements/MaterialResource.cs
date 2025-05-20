@@ -75,12 +75,14 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
                 if (mat.Key != Material)
                     continue;
 
+                if (requiredCount <= 0)
+                    return;
+
                 if (stack is null)
                 {
                     var value = (int)MathF.Min(requiredCount, mat.Value);
                     requiredCount -= value;
                     entManager.DeleteEntity(placedEntity);
-                    continue;
                 }
                 else
                 {
