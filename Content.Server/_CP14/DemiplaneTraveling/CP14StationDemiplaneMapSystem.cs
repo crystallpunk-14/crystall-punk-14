@@ -236,7 +236,7 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
                 new Vector2(specialPos.X, specialPos.Y),
                 false,
                 locationConfig: special.Location,
-                modifiers: special.Modifiers
+                modifiers: [..special.Modifiers]
             );
             grid[specialPos] = specialNode;
             specialPositions.Add(specialPos);

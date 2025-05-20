@@ -29,5 +29,5 @@ public sealed partial class CP14SpecialDemiplanePrototype : IPrototype
     /// Modifiers that will be automatically added to the demiplane when it is generated.
     /// </summary>
     [DataField]
-    public List<ProtoId<CP14DemiplaneModifierPrototype>>? Modifiers = new();
+    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = new();
 }
