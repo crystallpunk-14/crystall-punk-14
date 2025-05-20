@@ -167,7 +167,7 @@ class LocalizationHelper:
         """
         to_delete = []
         for prototype_id, prototype_obj in general_prototypes_dict.items():
-            if check_prototype_attrs(prototype_obj, True):
+            if check_prototype_attrs(prototype_obj):
                 self._add_all_parents_attributes(general_prototypes_dict, prototype_id)
             else:
                 to_delete.append(prototype_id)
