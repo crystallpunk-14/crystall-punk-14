@@ -99,6 +99,8 @@ class LocalizationHelper:
             if prototype_id in ftl_parser_prototypes:
                 final_prototype_obj = ftl_parser_prototypes[prototype_id]
 
+            final_prototype_obj.parent = yaml_prototype_obj.parent
+
             if last_launch_result and prototype_id in last_launch_result:
                 last_launch_prototype_obj = last_launch_result[prototype_id]
                 final_prototype_obj = self._update_prototype_if_attrs_has_been_changed(yaml_prototype_obj,
@@ -131,19 +133,22 @@ class LocalizationHelper:
         '''
         Recursively finds all object parents and adds to his attributes parents attributes
         '''
-        prototype_obj = general_prototypes_dict.get(prototype_id) # Mainly parent object of main prototype
+        prototype_obj = general_prototypes_dict.get(prototype_id)
 
-        if not main_prototype_obj: # Main prototype object doesnt exist only at first call
+        if prototype_obj is None: # TODO for asqw: moment when we find wizden parent. We must parse them
+            return
+
+        if not main_prototype_obj:
             main_prototype_obj = prototype_obj
 
-        if check_prototype_attrs(prototype_obj): # Adds attributes from parent to main prototype
-            for prototype_attribute, prototype_attribute_value in prototype_obj.attrs_dict.items():
+        if main_prototype_obj != prototype_obj and check_prototype_attrs(prototype_obj):
+            for _ in prototype_obj.attrs_dict.items():
                 self._add_parent_attrs(prototype_id, main_prototype_obj, prototype_obj) # TODO for asqw: it is adds from one prototype to another prototype, naming work
         
         if main_prototype_obj.name and main_prototype_obj.description and main_prototype_obj.suffix:
-            return # Parent already have all attributes
+            return
 
-        if prototype_obj.parent: # Find all parents recursively
+        if prototype_obj.parent:
             prototype_parent_id_list = []
 
             if isinstance(prototype_obj.parent, list): # Makes id list list if it is not list (TODO for asqw: it must be list at parent writing)
@@ -154,7 +159,7 @@ class LocalizationHelper:
             for prototype_parent_id in prototype_parent_id_list:
                 self._add_all_parents_attributes(general_prototypes_dict, prototype_parent_id, main_prototype_obj)
         else:
-            return # Last parent achieved
+            return
 
     def _parent_checks(self, general_prototypes_dict: dict[str, Entity]):
         """
