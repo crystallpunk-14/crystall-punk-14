@@ -5,7 +5,8 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: kick
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellKick
 
 - type: cp14Skill
@@ -15,7 +16,8 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effect: !type:AddAction
+  effects: 
+  - !type:AddAction
     action: CP14ActionSpellSprint
 
 - type: cp14Skill
@@ -26,7 +28,8 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effect: !type:ReplaceAction
+  effects: 
+  - !type:ReplaceAction
     oldAction: CP14ActionSpellSprint
     newAction: CP14ActionSpellSprintGoblin
   restrictions:

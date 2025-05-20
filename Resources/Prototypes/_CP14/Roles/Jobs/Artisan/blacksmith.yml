@@ -6,17 +6,25 @@
   startingGear: CP14BlacksmithGear
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - CopperMelting
+      - IronMelting
+      - GoldMelting
+      - GlassMelting
+      - MithrilMelting
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobApprentice
-      time: 3600 # 1 hours
+      time: 3600 # 1 hour
 
 - type: startingGear
   id: CP14BlacksmithGear
   storage:
     back:
-    - CP14EnergyCrystalSmall
-    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
   equipment:
     belt1: CP14WalletFilledTest
     keys: CP14KeyRingBlacksmith

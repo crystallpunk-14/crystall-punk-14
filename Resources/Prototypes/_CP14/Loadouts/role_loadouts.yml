@@ -1,7 +1,7 @@
 - type: roleLoadout
   id: JobCP14Adventurer
   groups:
-  - CP14SkillTree
+  - CP14AdventureEquip
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -18,7 +18,6 @@
 - type: roleLoadout
   id: JobCP14Apprentice
   groups:
-  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -33,7 +32,6 @@
 - type: roleLoadout
   id: JobCP14Alchemist
   groups:
-  - CP14SkillTree
   - CP14AlchemistHead #
   - CP14GeneralOuterClothing
   - CP14AlchemistEyes #
@@ -49,7 +47,6 @@
 - type: roleLoadout
   id: JobCP14Innkeeper
   groups:
-  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -64,7 +61,6 @@
 - type: roleLoadout
   id: JobCP14Blacksmith
   groups:
-  - CP14SkillTree
   - CP14GeneralHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -79,7 +75,6 @@
 - type: roleLoadout
   id: JobCP14GuardCommander
   groups:
-  - CP14SkillTree
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -90,12 +85,10 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuardSpells
 
 - type: roleLoadout
   id: JobCP14Guard
   groups:
-  - CP14SkillTree
   - CP14GuardHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
@@ -106,16 +99,12 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuardSpells
 
 - type: roleLoadout
   id: JobCP14Commandant
   groups:
-  - CP14SkillTree
-  - CP14CommandantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes
-  - CP14CommandantCloak
   - CP14MerchantShirt
   - CP14MerchantPants
   - CP14MerchantShoes
@@ -125,7 +114,6 @@
 - type: roleLoadout
   id: JobCP14Guildmaster
   groups:
-  - CP14SkillTree
   - CP14GuildmasterOuterClothing
   - CP14GeneralEyes
   - CP14GuildmasterHead
@@ -135,12 +123,10 @@
   - CP14GuildmasterShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
-  - CP14GuildmasterSpells
 
 - type: roleLoadout
   id: JobCP14Merchant
   groups:
-  - CP14SkillTree
   - CP14MerchantHead
   - CP14MerchantOuterClothing
   - CP14GeneralEyes

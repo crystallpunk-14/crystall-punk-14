@@ -13,6 +13,19 @@
   equipment:
     head: CP14ClothingHeadBowler
 
+# Cloak
+
+- type: loadoutGroup
+  id: CP14MerchantCloak
+  name: cp14-loadout-merchant-cloak
+  loadouts:
+  - CP14ClothingCloakCommandantJacket
+
+- type: loadout
+  id: CP14ClothingCloakCommandantJacket
+  equipment:
+    cloak: CP14ClothingCloakCommandantJacket
+
 # OuterClothing
 
 - type: loadoutGroup

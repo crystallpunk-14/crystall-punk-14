@@ -256,7 +256,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private void OnFTLStarted(ref FTLStartedEvent ev)
     {
-        var targetMap = ev.TargetCoordinates.ToMap(EntityManager, _transform);
+        var targetMap = _transform.ToMapCoordinates(ev.TargetCoordinates);
         var targetMapUid = _mapManager.GetMapEntityId(targetMap.MapId);
 
         if (!TryComp<BiomeComponent>(targetMapUid, out var biome))
@@ -324,7 +324,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
     private bool CanLoad(EntityUid uid)
     {
-        return !_ghostQuery.HasComp(uid) || _tags.HasTag(uid, AllowBiomeLoadingTag);
+        return !_ghostQuery.HasComp(uid);// CP14 - Admin biome loading break mapping || _tags.HasTag(uid, AllowBiomeLoadingTag);
     }
 
     public override void Update(float frameTime)

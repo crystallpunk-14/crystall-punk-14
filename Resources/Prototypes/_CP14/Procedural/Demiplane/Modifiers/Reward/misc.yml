@@ -4,10 +4,10 @@
   id: LootT1
   levels:
     min: 1
-    max: 4
+    max: 3
   generationWeight: 2
   categories:
-    Reward: 0.35
+    Reward: 0.15
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerDemiplaneLootT1
@@ -23,7 +23,7 @@
   name: cp14-modifier-rabbits
   generationWeight: 0.4
   categories:
-    Reward: 0.2
+    Reward: 0.15
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
@@ -58,7 +58,7 @@
     max: 10
   generationWeight: 0.4
   categories:
-    Reward: 0.2
+    Reward: 0.1
   requiredTags:
   - CP14DemiplaneAnimalsSwamp
   layers:
@@ -80,7 +80,7 @@
   name: cp14-modifier-sheeps
   generationWeight: 0.4
   categories:
-    Reward: 0.2
+    Reward: 0.15
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
@@ -89,6 +89,22 @@
       count: 1
       minGroupSize: 4
       maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: Ruins
+  levels:
+    min: 0
+    max: 10
+  name: cp14-modifier-ruins
+  categories:
+    Reward: 0.2
+  generationProb: 0.8
+  layers:
+    - !type:OreDunGen
+      entity: CP14DemiplaneRuinsRoomSpawner
+      count: 8
+      minGroupSize: 1
+      maxGroupSize: 1
 
 # TIER 2
 
@@ -99,7 +115,7 @@
     max: 10
   generationWeight: 2
   categories:
-    Reward: 0.35
+    Reward: 0.15
   layers:
     - !type:OreDunGen
       entity: CP14SpawnerDemiplaneLootT2

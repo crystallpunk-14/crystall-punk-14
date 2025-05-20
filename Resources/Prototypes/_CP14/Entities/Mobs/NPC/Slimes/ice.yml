@@ -77,8 +77,6 @@
           - id: CP14Snowball
           - id: CP14CopperCoin1
           - id: CP14ModularInlayQuartzWater
-          - id: CP14CrystalShardWater
-            weight: 3
  
 - type: entity
   id: CP14AreaEntityEffectSlimeFroze

@@ -4,7 +4,7 @@
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:parallax="clr-namespace:Content.Client.Parallax"
-    xmlns:ui1="clr-namespace:Content.Client._CP14.Skill.Ui"
+    xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     Title="{Loc 'cp14-skill-info-title'}"
     MinSize="700 350"
     SetSize="980 550">
@@ -38,12 +38,15 @@
                             <!-- Skill Cost -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel HorizontalExpand="True" Access="Public" Text="{Loc 'cp14-skill-menu-learncost'}" Margin="0 10 0 10" />
-                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                                <TextureRect VerticalAlignment="Center" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
                                 <RichTextLabel Name="SkillCost" Access="Public" Text="0"/>
                             </BoxContainer>
                             <!-- Skill Description -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel Name="SkillDescription" HorizontalExpand="True" Access="Public"/>
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="True">
+                                <RichTextLabel Name="SkillFree" Text="{Loc 'cp14-skill-menu-free'}" HorizontalExpand="True" Access="Public" Visible="False"/>
                             </BoxContainer>
                         </BoxContainer>
                     </BoxContainer>
@@ -67,7 +70,7 @@
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
                 <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4" Access="Public" SpeedX="10" SpeedY="5"/>
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
-                    <ui1:CP14SkillTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
+                    <nodeTree:CP14NodeTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Access="Public"/>
                 </BoxContainer>
                 <!-- Tree Tabs -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
@@ -75,12 +78,8 @@
                 </BoxContainer>
                 <!-- Experience Data -->
                 <BoxContainer Margin="10 10 10 10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" VerticalExpand="True">
-                    <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-skillpoints'}" StyleClasses="LabelKeyText"/>
-                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
-                    <RichTextLabel Margin="0 0 20 0" Name="ExpPointLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
-
                     <RichTextLabel VerticalAlignment="Center" HorizontalAlignment="Left" Text="{Loc 'cp14-skill-menu-level'}" StyleClasses="LabelKeyText"/>
-                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Skills/skillpoint.png"/>
+                    <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
                     <RichTextLabel Margin="0 0 0 0" Name="LevelLabel" VerticalAlignment="Center" HorizontalAlignment="Left" Text="0" StyleClasses="LabelKeyText" Access="Public"/>
                 </BoxContainer>
             </PanelContainer>

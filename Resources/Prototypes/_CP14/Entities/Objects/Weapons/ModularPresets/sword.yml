@@ -60,3 +60,37 @@
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeBoneSword
+
+- type: entity
+  id: CP14ModularSkeletonHalberdUpgrade
+  parent: CP14ModularGripWoodenLong
+  name: bone halberd
+  suffix: Reinforced
+  description: Monstrous weapons of bone.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword
+    - GardeSharpIron
+
+- type: entity
+  id: CP14ModularSkeletonSwordUpgrade
+  parent: CP14ModularGripWooden
+  name: bone sword
+  suffix: Reinforced
+  description: Monstrous weapons of bone.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/bone_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeBoneSword
+    - GardeSharpIron

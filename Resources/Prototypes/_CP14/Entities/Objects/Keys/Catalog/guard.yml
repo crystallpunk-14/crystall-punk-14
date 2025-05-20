@@ -1,18 +1,18 @@
 - type: entity
   parent: CP14KeyIronBlank
-  id: CP14KeyGuardEntrance
-  suffix: Guard Entrance
+  id: CP14KeyCityGate
+  suffix: City Gate
   components:
   - type: CP14Key
-    autoGenerateShape: GuardEntrance
+    autoGenerateShape: CityGate
 
 - type: entity
   parent: CP14KeyIronBlank
-  id: CP14KeyGuard
-  suffix: Guard
+  id: CP14KeyGuardBarracks
+  suffix: Guard Barracks
   components:
   - type: CP14Key
-    autoGenerateShape: Guard
+    autoGenerateShape: GuardBarracks
 
 - type: entity
   parent: CP14KeyMithrilBlank
@@ -21,11 +21,3 @@
   components:
   - type: CP14Key
     autoGenerateShape: GuardCommander
-
-- type: entity
-  parent: CP14KeyMithrilBlank
-  id: CP14KeyGuardWeaponStorage
-  suffix: Guard Weapon Storage
-  components:
-  - type: CP14Key
-    autoGenerateShape: GuardWeaponStorage

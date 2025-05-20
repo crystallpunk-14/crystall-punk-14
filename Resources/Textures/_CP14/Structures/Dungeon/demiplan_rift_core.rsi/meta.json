@@ -1,14 +1,23 @@
 {
   "version": 1,
   "license": "CC0-1.0",
-  "copyright": "Core created by TheShuEd, connective created by omsoyk",
+  "copyright": "core1 core2 core3 core4 created by TheShuEd, connective created by omsoyk",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "core"
+      "name": "core1"
+    },
+    {
+      "name": "core2"
+    },
+    {
+      "name": "core3"
+    },
+    {
+      "name": "core4"
     },
     {
       "name": "connective",
@@ -24,6 +33,21 @@
           0.15,
           0.15,
           0.15
+        ]
+      ]
+    },
+    {
+      "name": "coord",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
         ]
       ]
     }

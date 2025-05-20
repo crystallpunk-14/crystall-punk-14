@@ -10,7 +10,7 @@ public abstract partial class CP14SpellEffect
     public abstract void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args);
 }
 
-public record class CP14SpellEffectBaseArgs
+public record CP14SpellEffectBaseArgs
 {
     public EntityUid? User;
     public EntityUid? Used;

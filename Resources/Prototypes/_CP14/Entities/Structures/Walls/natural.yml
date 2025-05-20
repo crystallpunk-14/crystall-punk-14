@@ -209,11 +209,6 @@
       collection: CP14GrassGathering
   - type: TriggerOnCollide
     fixtureID: fix1
-  - type: DamageContacts
-    damage:
-      types:
-        Slash: 0.2
-        Piercing: 0.2
   - type: Airtight
     airBlocked: false
 
@@ -262,3 +257,40 @@
             max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
+
+- type: entity
+  id: CP14WallDimensit
+  parent: CP14BaseWall
+  name: dimensit wall
+  description: The solid form of the interdimensional continuum.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/Natural/cave_dimensit.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/Natural/cave_dimensit.rsi
+  - type: IconSmooth
+    base: wall
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Rock
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:DoActsBehavior
+          acts: ["Destruction"]

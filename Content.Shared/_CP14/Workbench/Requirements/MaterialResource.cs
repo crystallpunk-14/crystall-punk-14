@@ -26,8 +26,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe)
+        EntityUid user)
     {
         var count = 0;
         foreach (var ent in placedEntities)
@@ -76,12 +75,14 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
                 if (mat.Key != Material)
                     continue;
 
+                if (requiredCount <= 0)
+                    return;
+
                 if (stack is null)
                 {
                     var value = (int)MathF.Min(requiredCount, mat.Value);
                     requiredCount -= value;
                     entManager.DeleteEntity(placedEntity);
-                    continue;
                 }
                 else
                 {

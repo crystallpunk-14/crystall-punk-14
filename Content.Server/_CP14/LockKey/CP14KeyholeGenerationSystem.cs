@@ -3,6 +3,7 @@ using Content.Server.Labels;
 using Content.Shared._CP14.LockKey;
 using Content.Shared._CP14.LockKey.Components;
 using Content.Shared.GameTicking;
+using Content.Shared.Labels.EntitySystems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 

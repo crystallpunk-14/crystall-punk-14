@@ -49,26 +49,6 @@
     count: 1
 
 - type: storePositionSell
-  id: CP14EnergyCrystalSmallEmpty
-  special: true
-  price: 70
-  factions:
-  - Sylphoria
-  service: !type:CP14SellPrototypeService
-    proto: CP14EnergyCrystalSmallEmpty
-    count: 5
-
-- type: storePositionSell
-  id: CP14EnergyCrystalMediumEmpty
-  special: true
-  price: 80
-  factions:
-  - Sylphoria
-  service: !type:CP14SellPrototypeService
-    proto: CP14EnergyCrystalMediumEmpty
-    count: 3
-
-- type: storePositionSell
   id: CP14ClothingRingIceShards
   special: true
   price: 150

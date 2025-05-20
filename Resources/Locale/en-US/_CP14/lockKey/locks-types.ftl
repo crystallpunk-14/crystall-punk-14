@@ -35,10 +35,9 @@ cp14-lock-shape-personalhouse14 = house  №14
 cp14-lock-shape-personalhouse15 = house  №15
 cp14-lock-shape-personalhouse16 = house  №16
 
-cp14-lock-shaper-guard-entrance = barracks, entrance
-cp14-lock-shaper-guard-staff = barracks
-cp14-lock-shaper-guard-commander = guardhouse
-cp14-lock-shaper-guard-weapon-storage = weapons storage
+cp14-lock-shaper-guard-city-gate = city gate
+cp14-lock-shaper-guard-barracks = barracks
+cp14-lock-shaper-guard-commander = guard commander house
 
 cp14-lock-shape-guildmaster = guildmaster
 cp14-lock-shape-demiplane-crystal = demiplane crystal

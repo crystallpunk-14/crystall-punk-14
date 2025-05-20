@@ -22,3 +22,6 @@
   - id: CP14FoodTomatoes
     amount: 4
     maxAmount: 8
+  - id: CP14SeedTomato
+    amount: 0
+    maxAmount: 2

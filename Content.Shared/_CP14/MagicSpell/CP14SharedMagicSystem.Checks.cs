@@ -3,7 +3,8 @@ using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
-using Content.Shared.Instruments;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 
@@ -11,6 +12,8 @@ namespace Content.Shared._CP14.MagicSpell;
 
 public abstract partial class CP14SharedMagicSystem
 {
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+
     private void InitializeChecks()
     {
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14CastMagicEffectAttemptEvent>(OnSomaticCheck);
@@ -18,6 +21,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
+        SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
 
         //Verbal speaking
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
@@ -37,7 +41,8 @@ public abstract partial class CP14SharedMagicSystem
         //First - trying get mana from item
         if (_magicEffectQuery.TryComp(ent, out var magicEffect))
         {
-            if (magicEffect.SpellStorage is not null && _magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer))
+            if (magicEffect.SpellStorage is not null &&
+                _magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer))
                 requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
         }
 
@@ -53,22 +58,27 @@ public abstract partial class CP14SharedMagicSystem
         }
 
         if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
-            _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"), args.Performer, args.Performer, PopupType.SmallCaution);
+            _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
+                args.Performer,
+                args.Performer,
+                PopupType.SmallCaution);
     }
 
-    private void OnStaminaCheck(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    private void OnStaminaCheck(Entity<CP14MagicEffectStaminaCostComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
     {
         if (!TryComp<StaminaComponent>(args.Performer, out var staminaComp))
             return;
 
-        if (staminaComp.Critical)
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
-            args.Cancel();
-        }
+        if (!staminaComp.Critical)
+            return;
+
+        args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
+        args.Cancel();
     }
 
-    private void OnSomaticCheck(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    private void OnSomaticCheck(Entity<CP14MagicEffectSomaticAspectComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
@@ -78,32 +88,68 @@ public abstract partial class CP14SharedMagicSystem
                 if (hand.Value.IsEmpty)
                     freeHand++;
             }
+
             if (freeHand >= ent.Comp.FreeHandRequired)
                 return;
         }
+
         args.PushReason(Loc.GetString("cp14-magic-spell-need-somatic-component"));
         args.Cancel();
     }
 
-    private void OnVerbalCheck(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    private void OnVerbalCheck(Entity<CP14MagicEffectVerbalAspectComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
     {
-        if (HasComp<MutedComponent>(args.Performer))
+        if (!HasComp<MutedComponent>(args.Performer))
+            return;
+
+        args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
+        args.Cancel();
+    }
+
+    private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (!HasComp<PacifiedComponent>(args.Performer))
+            return;
+
+        args.PushReason(Loc.GetString("cp14-magic-spell-pacified"));
+        args.Cancel();
+    }
+
+    private void OnMobStateCheck(Entity<CP14MagicEffectAliveTargetRequiredComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (args.Target is not { } target)
+            return;
+
+        if (!TryComp<MobStateComponent>(target, out var mobStateComp))
         {
-            args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
+            args.PushReason(Loc.GetString("cp14-magic-spell-target-not-mob"));
             args.Cancel();
+            return;
+        }
+
+        if (!ent.Comp.Inverted)
+        {
+            if (_mobState.IsDead(target, mobStateComp))
+            {
+                args.PushReason(Loc.GetString("cp14-magic-spell-target-dead"));
+                args.Cancel();
+            }
+        }
+        else
+        {
+            if (!_mobState.IsDead(target, mobStateComp))
+            {
+                args.PushReason(Loc.GetString("cp14-magic-spell-target-alive"));
+                args.Cancel();
+            }
         }
     }
 
-    private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (HasComp<PacifiedComponent>(args.Performer))
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-pacified"));
-            args.Cancel();
-        }
-    }
-
-    private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14StartCastMagicEffectEvent args)
+    private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
+        ref CP14StartCastMagicEffectEvent args)
     {
         var ev = new CP14SpellSpeechEvent
         {
@@ -114,7 +160,8 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
+        ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (_net.IsClient)
             return;

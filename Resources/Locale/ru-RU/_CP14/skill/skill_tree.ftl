@@ -18,7 +18,21 @@ cp14-skill-tree-illusion-desc = Исследуйте природу света, 
 cp14-skill-tree-healing-name = Жизнетворение
 cp14-skill-tree-healing-desc = Изучайте способы влияния магии на живые создания.
 
+cp14-skill-tree-dimension-name = Дименсиум
+cp14-skill-tree-dimension-desc = Погрузитесь в природу пространства и пустоты.
+
 # Body
 
 cp14-skill-tree-atlethic-name = Атлетика
 cp14-skill-tree-atlethic-desc = Развивайте свое тело, расширяя границы доступного.
+
+cp14-skill-tree-martial-name = Боевые исскуства
+cp14-skill-tree-martial-desc = Овладейте секретами смертельного оружия, или сделайте оружием свое собственное тело.
+
+# Job
+
+cp14-skill-tree-thaumaturgy-name = Алхимия
+cp14-skill-tree-thaumaturgy-desc = Исскуство создания волшебных зелий, способных убивать, воскрешать из мертвых или превращать существ в овечек. 
+
+cp14-skill-tree-blacksmithing-name = Кузнечное дело
+cp14-skill-tree-blacksmithing-desc = Исскуство превращения металла в различные полезные вещи.

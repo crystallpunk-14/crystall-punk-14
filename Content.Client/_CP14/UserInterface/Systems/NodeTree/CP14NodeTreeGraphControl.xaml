@@ -1,0 +1,6 @@
+<ui:CP14NodeTreeGraphControl
+    xmlns="https://spacestation14.io"
+    xmlns:ui="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
+    HorizontalExpand="True"
+    VerticalExpand="True"
+    MouseFilter="Stop"/>
