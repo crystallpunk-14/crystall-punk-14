@@ -1,0 +1,164 @@
+- type: entity
+  id: CP14MobMonsterMyconideFlyagaric
+  parent: CP14SimpleMobBase
+  name: myconide flyagaric
+  description: While you're looking at it, it's already running towards you!!! 
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/flyagaric.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: flyagaric
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 60
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      20: 0.8
+  - type: Stamina
+    critThreshold: 60
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: flyagaric
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: CP14AgaricMushroom
+      amount: 3
+  - type: Bloodstream
+    bloodMaxVolume: 60
+    bloodReagent: CP14AgaricMushroom
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Tag
+    tags:
+      - FootstepSound
+      - CP14Mosquito
+
+- type: entity
+  id: CP14MobMonsterMyconideLumish
+  parent: CP14SimpleMobBase
+  name: myconide lumish
+  description: It's a mushroom with a glowing cap, and it hits you hard on the head.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/lumish.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: lumishroom
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: lumishroom_cap
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 60
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      20: 0.8
+  - type: Stamina
+    critThreshold: 60
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: lumishroom
+        BaseUnshaded: lumishroom_cap
+      Dead:
+        Base: dead
+        BaseUnshaded: dead_cap
+  - type: Butcherable
+    spawned:
+    - id: CP14LumiMushroom
+      amount: 3
+  - type: Bloodstream
+    bloodMaxVolume: 60
+    bloodReagent: CP14LumiMushroom
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Tag
+    tags:
+      - FootstepSound
+      - CP14Mosquito

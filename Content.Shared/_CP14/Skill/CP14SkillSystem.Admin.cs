@@ -50,27 +50,6 @@ public abstract partial class CP14SharedSkillSystem
 
         var target = args.Target;
 
-        //Add skill points
-        foreach (var tree in _allTrees)
-        {
-            FixedPoint2 current = 0;
-            ent.Comp.Progress.TryGetValue(tree, out current);
-
-            var name = Loc.GetString(tree.Name);
-            args.Verbs.Add(new Verb
-            {
-                Text = name,
-                Message = $"{name} EXP {current} -> {current + 1}",
-                Category = VerbCategory.CP14AdminSkillAdd,
-                Icon = tree.Icon,
-                Act = () =>
-                {
-                    TryAddExperience(target, tree.ID, 1);
-                },
-                Priority = 2,
-            });
-        }
-
         //Add Skill
         foreach (var skill in _allSkills)
         {
@@ -88,30 +67,6 @@ public abstract partial class CP14SharedSkillSystem
                 {
                     TryAddSkill(target, skill);
                 },
-            });
-        }
-
-        //Remove skill points
-        foreach (var tree in _allTrees)
-        {
-            FixedPoint2 current = 0;
-            ent.Comp.Progress.TryGetValue(tree, out current);
-
-            if (current < 1)
-                continue;
-
-            var name = Loc.GetString(tree.Name);
-            args.Verbs.Add(new Verb
-            {
-                Text = name,
-                Message = $"{name} EXP {current} -> {current - 1}",
-                Category = VerbCategory.CP14AdminSkillRemove,
-                Icon = tree.Icon,
-                Act = () =>
-                {
-                    TryRemoveExperience(target, tree.ID, 1);
-                },
-                Priority = 2,
             });
         }
 

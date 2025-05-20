@@ -227,24 +227,3 @@
       count: 8
       minGroupSize: 2
       maxGroupSize: 3
-
-- type: cp14DemiplaneModifier
-  id: EnemySkeletonT2
-  levels:
-    min: 6
-    max: 10
-  name: cp14-modifier-skeleton
-  generationWeight: 2.0
-  categories:
-    Danger: 0.5
-  layers:
-    - !type:OreDunGen
-      entity: CP14SpawnPointGhostDemiplaneSkeletonT2
-      count: 1
-      minGroupSize: 1
-      maxGroupSize: 2
-    - !type:OreDunGen
-      entity: CP14SpawnPointGhostDemiplaneSkeletonMagicalT2
-      count: 1
-      minGroupSize: 0
-      maxGroupSize: 1

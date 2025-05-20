@@ -315,8 +315,9 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
         var limits = new Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float>
         {
             { "Danger", (node.Level + node.AdditionalLevel) * 0.2f },
-            { "GhostRoleDanger", node.Level * 0.2f },
+            { "GhostRoleDanger", 1f },
             { "Reward", Math.Max(node.Level * 0.2f, 0.5f) },
+            { "Ore", Math.Max(node.Level * 0.2f, 0.5f) },
             { "Fun", 1f },
             { "Weather", 1f },
             { "MapLight", 1f },

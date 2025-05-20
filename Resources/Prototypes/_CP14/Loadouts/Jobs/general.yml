@@ -114,6 +114,7 @@
   - CP14ClothingOuterClothingBrownVest3
   - CP14ClothingOuterClothingJagermeisterWaistcoat
   - CP14ClothingOuterClothingRedVest
+  - CP14ClothingOuterClothingPurple
 
 - type: loadout
   id: CP14ClothingOuterClothingBrownVest1
@@ -140,6 +141,10 @@
   equipment:
     outerClothing: CP14ClothingOuterClothingJagermeisterWaistcoat
 
+- type: loadout
+  id: CP14ClothingOuterClothingPurple
+  equipment:
+    outerClothing: CP14ClothingOuterClothingPurple
 
 # Eyes
 
@@ -344,6 +349,7 @@
   name: cp14-loadout-general-shirt
   loadouts:
   - CP14ClothingShirtCottonBlack
+  - CP14ClothinShirtGray
   - CP14ClothingShirtBlackDress
   - CP14ClothinShirtMaidDress
   - CP14ClothingShirtCottonBlue
@@ -351,11 +357,15 @@
   - CP14ClothingBlueCollarDress
   - CP14ClothingShirtBlueOpen
   - CP14ClothingBlueOpenDress
+  - CP14ClothinShirtWhiteBlueDress
+  - CP14ClothinShirtWhiteBlue2Dress
+  - CP14ClothinShirtRedBlueDress 
   - CP14ClothingShirtJestersAttire
   - CP14ClothingShirtRedOpen
   - CP14ClothingRedOpenDress
   - CP14ClothingShirtYellowOpen
   - CP14ClothingYellowOpenDress
+  - CP14ClothinShirtBlueYellowDress 
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
   - CP14ClothingCottonRedDress
@@ -363,12 +373,20 @@
   - CP14ClothingCottonWhiteDress
   - CP14ClothingShirtCottonWhiteCollar
   - CP14ClothingCottonWhiteCollarDress
+  - CP14ClothinShirtWhiteBrown
+  - CP14ClothinShirtBrown2Dress
+  - CP14ClothinShirtBrown3Dress
   - CP14ClothinGreenBeltDress
   - CP14ClothinGreenBeltDress2
+  - CP14ClothinShirtWhiteGreenDress
+  - CP14ClothinShirtwhiteGreenYellowDress
+  - CP14ClothinShirtGreenYellow
+  - CP14ClothinShirtBlueGreen
   - CP14ClothinGreenLightDress
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
   - CP14ClothingCottonYellowCollarDress
+  - CP14ClothinShirtYellowBlueDress
   - CP14ClothingWarriorsGarbDress
 
 - type: loadout
@@ -506,6 +524,71 @@
   equipment:
     shirt: CP14ClothingWarriorsGarbDress
 
+- type: loadout
+  id: CP14ClothinShirtBlueYellowDress 
+  equipment:
+    shirt: CP14ClothinShirtBlueYellowDress 
+
+- type: loadout
+  id: CP14ClothinShirtWhiteBlueDress 
+  equipment:
+    shirt: CP14ClothinShirtWhiteBlueDress 
+
+- type: loadout
+  id: CP14ClothinShirtWhiteBlue2Dress 
+  equipment:
+    shirt: CP14ClothinShirtWhiteBlue2Dress 
+
+- type: loadout
+  id: CP14ClothinShirtBrown2Dress
+  equipment:
+    shirt: CP14ClothinShirtBrown2Dress
+
+- type: loadout
+  id: CP14ClothinShirtBrown3Dress
+  equipment:
+    shirt: CP14ClothinShirtBrown3Dress
+
+- type: loadout
+  id: CP14ClothinShirtWhiteGreenDress
+  equipment:
+    shirt: CP14ClothinShirtWhiteGreenDress
+
+- type: loadout
+  id: CP14ClothinShirtwhiteGreenYellowDress
+  equipment:
+    shirt: CP14ClothinShirtwhiteGreenYellowDress
+
+- type: loadout
+  id: CP14ClothinShirtRedBlueDress
+  equipment:
+    shirt: CP14ClothinShirtRedBlueDress
+
+- type: loadout
+  id: CP14ClothinShirtYellowBlueDress
+  equipment:
+    shirt: CP14ClothinShirtYellowBlueDress
+
+- type: loadout
+  id: CP14ClothinShirtBlueGreen
+  equipment:
+    shirt: CP14ClothinShirtBlueGreen
+
+- type: loadout
+  id: CP14ClothinShirtGray
+  equipment:
+    shirt: CP14ClothinShirtGray
+
+- type: loadout
+  id: CP14ClothinShirtGreenYellow
+  equipment:
+    shirt: CP14ClothinShirtGreenYellow
+
+- type: loadout
+  id: CP14ClothinShirtWhiteBrown
+  equipment:
+    shirt: CP14ClothinShirtWhiteBrown
+
 # Shoes
 
 - type: loadoutGroup
@@ -585,7 +668,6 @@
   - CP14FluteInstrument
   - CP14LuteInstrument
   - CP14LyraInstrument
-  - CP14ClothingBeltQuiver
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -676,11 +758,6 @@
   storage:
     back:
     - CP14FluteInstrument
-
-- type: loadout
-  id: CP14ClothingBeltQuiver
-  equipment:
-    belt2: CP14ClothingBeltQuiver
 
 # Keys
 

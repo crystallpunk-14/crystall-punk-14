@@ -6,10 +6,6 @@
   - type: StorageFill
     contents:
       - id: CP14GuidebookAlchemy
-      - id: CP14ClothingEyesAlchemyGlasses
-        prob: 0.5
-      - id: CP14ClothingEyesAlchemyMonocle
-        prob: 0.2
       - id: CP14ClothingCloakAlchemist
         prob: 0.6
       - id: CP14ClothingHeadAlchemistBeret

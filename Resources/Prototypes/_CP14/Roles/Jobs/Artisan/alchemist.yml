@@ -6,6 +6,10 @@
   startingGear: CP14AlchemistGear
   icon: "CP14JobIconAlchemist"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - AlchemyVision
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobApprentice

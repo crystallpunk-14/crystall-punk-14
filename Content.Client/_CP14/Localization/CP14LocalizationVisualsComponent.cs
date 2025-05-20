@@ -27,5 +27,5 @@ public sealed partial class CP14LocalizationVisualsComponent : Component
     ///
     /// </summary>
     [DataField]
-    public Dictionary<string, Dictionary<string, string>> MapStates;
+    public Dictionary<string, Dictionary<string, string>> MapStates = new();
 }

@@ -6,6 +6,11 @@
   startingGear: CP14ApprenticeGear
   icon: "CP14JobIconApprentice"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - CopperMelting
+      - AlchemyVision
 
 - type: startingGear
   id: CP14ApprenticeGear

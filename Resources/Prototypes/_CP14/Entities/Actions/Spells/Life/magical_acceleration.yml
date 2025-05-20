@@ -11,6 +11,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 3
   - type: CP14MagicEffect
+    magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
