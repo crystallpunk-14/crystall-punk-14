@@ -76,3 +76,23 @@
       - id: CP14Wheat
         amount: 5
         prob: 0.4
+
+- type: entity
+  id: CP14SackFarmingSeed
+  parent: CP14SackFarming
+  suffix: Seed
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Storage/sack.rsi
+    state: seed
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,6,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - CP14FarmSeed
