@@ -14,14 +14,14 @@
         - type: StationJobs
           availableJobs:
             #Mercenary
-            CP14Guildmaster: [1, 1]
+            #CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
             #Artisans
             CP14Apprentice: [ 3, 3 ]
             CP14Alchemist: [ 2, 2 ]
             CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 2, 3 ]
-            CP14Merchant: [2, 2]
+            #CP14Merchant: [2, 2]
             #Guard
             CP14Guard: [5, 5]
             CP14GuardCommander: [1, 1]
