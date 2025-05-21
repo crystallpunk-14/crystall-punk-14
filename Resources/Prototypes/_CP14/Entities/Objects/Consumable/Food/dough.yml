@@ -157,6 +157,7 @@
     minLayerOffset: -0.05, 0
     maxLayerOffset: 0.05, 0
     nameGeneration: cp14-food-sequence-sandwich-gen
+    contentSeparator: ", "
   - type: Appearance
   - type: FoodMetamorphableByAdding
   - type: SolutionContainerManager
