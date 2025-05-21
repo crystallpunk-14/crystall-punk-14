@@ -312,7 +312,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.TextCompletePrev);
 
             //CP14
-
             AddHeader("ui-options-header-cp14");
             AddButton(ContentKeyFunctions.CP14OpenSkillMenu);
             AddButton(CP14ContentKeyFunctions.OpenBelt1);

@@ -103,7 +103,7 @@
       strippingWindowPos: 2,4
       dependsOn: jumpsuit
       displayName: ID
-    - name: belt
+    - name: belt2
       slotTexture: belt
       fullTextureName: template_small
       slotFlags: BELT
