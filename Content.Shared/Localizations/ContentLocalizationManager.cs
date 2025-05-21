@@ -27,6 +27,8 @@ namespace Content.Shared.Localizations
         {
             var culture = new CultureInfo(_cfg.GetCVar(CCVars.Language));
 
+            _loc.Initialize();
+
             _loc.LoadCulture(culture);
 
             /*
