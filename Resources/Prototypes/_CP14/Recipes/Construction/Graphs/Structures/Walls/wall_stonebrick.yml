@@ -37,7 +37,7 @@
               doAfter: 2
               
     - node: CP14WallStoneBrick
-      entity: CP14WallStoneBrick
+      entity: CP14WallStonebrick
       edges:
         - to: CP14WallFrameStoneBrick
           steps:
