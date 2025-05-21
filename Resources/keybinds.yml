@@ -92,18 +92,18 @@ binds:
   key: R
 - function: OpenBelt1
   type: State
-  key: F
-- function: OpenBelt2
-  type: State
   key: V
   mod1: Shift
-- function: SmartEquipBelt1
+- function: OpenBelt2
   type: State
   key: F
+- function: SmartEquipBelt1
+  type: State
+  key: E
   mod1: Shift
 - function: SmartEquipBelt2
   type: State
-  key: E
+  key: F
   mod1: Shift
 # CP14 Zone end
 - function: ShowEscapeMenu
@@ -267,14 +267,14 @@ binds:
   type: State
   key: B
   mod1: Shift
-#- function: SmartEquipBelt
+#- function: SmartEquipBelt # Commented out for CP14 replacements
 #  type: State
 #  key: E
 #  mod1: Shift
 - function: OpenBackpack
   type: State
   key: V
-#- function: OpenBelt
+#- function: OpenBelt # Commented out for CP14 replacements
 #  type: State
 #  key: V
 #  mod1: Shift
