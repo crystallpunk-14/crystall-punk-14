@@ -54,14 +54,14 @@
     sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
   - type: Construction
-    graph: CP14WallStonebrick
-    node: CP14WallStonebrick
+    graph: CP14WallStoneBrick
+    node: CP14WallStoneBrick
 
 - type: entity
   id: CP14WindowMarbleBrick
   parent: CP14WindowBase
   name: marble brick window
-  description: A stone brick wall with a glass window in it.
+  description: A marble brick wall with a glass window in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Windows/marble_bricks_window.rsi

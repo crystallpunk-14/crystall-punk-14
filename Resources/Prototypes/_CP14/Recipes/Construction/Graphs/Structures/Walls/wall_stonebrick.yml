@@ -1,10 +1,10 @@
 - type: constructionGraph
-  id: CP14WallStonebrick
+  id: CP14WallStoneBrick
   start: start
   graph:
     - node: start
       edges:
-        - to: CP14WallFrameStonebrick
+        - to: CP14WallFrameStoneBrick
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -13,7 +13,7 @@
               amount: 2
               doAfter: 2
 
-    - node: CP14WallFrameStonebrick
+    - node: CP14WallFrameStoneBrick
       entity: CP14WallFrameStonebrick
       edges:
         - to: start
@@ -25,7 +25,7 @@
           steps:
             - tool: Prying
               doAfter: 2
-        - to: CP14WallStonebrick
+        - to: CP14WallStoneBrick
           steps:
             - material: CP14Stone
               amount: 2
@@ -36,10 +36,10 @@
               amount: 2
               doAfter: 2
               
-    - node: CP14WallStonebrick
-      entity: CP14WallStonebrick
+    - node: CP14WallStoneBrick
+      entity: CP14WallStoneBrick
       edges:
-        - to: CP14WallFrameStonebrick
+        - to: CP14WallFrameStoneBrick
           steps:
             - tool: CP14Hammering
               doAfter: 2
