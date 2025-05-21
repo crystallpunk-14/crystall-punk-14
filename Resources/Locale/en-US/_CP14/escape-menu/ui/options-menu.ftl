@@ -9,7 +9,7 @@ cp14-ui-options-main-graphics-label = Graphics
 cp14-ui-options-main-graphics-wave-shader = Wave shader
 
 cp14-ui-options-postprocess = Cosmetic Post-processing
-cp14-ui-options-postprocess-tooltip = 
+cp14-ui-options-postprocess-tooltip =
     When enabled, cosmetic post-processing effects such as
     additive lighting will be present. This does not control
     post-process effects that affect the game or otherwise
@@ -19,4 +19,8 @@ cp14-ui-options-postprocess-tooltip =
 ## Controls menu
 
 ui-options-header-cp14 = CrystallEdge
-ui-options-function-cp14-open-knowledge-menu = Open character knowledge menu.
+ui-options-function-cp14-open-skill-menu = Open character knowledge menu.
+ui-options-function-open-belt1 = Open belt 1
+ui-options-function-open-belt2 = Open belt 2
+ui-options-function-smart-equip-belt1 = Smart-equip to belt 1
+ui-options-function-smart-equip-belt2 = Smart-equip to belt 2

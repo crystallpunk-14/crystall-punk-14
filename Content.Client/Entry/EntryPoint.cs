@@ -1,5 +1,6 @@
 using Content.Client._CP14.Discord;
 using Content.Client._CP14.JoinQueue;
+using Content.Client._CP14.Input;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -169,6 +170,7 @@ namespace Content.Client.Entry
             _parallaxManager.LoadDefaultParallax();
 
             //CP14
+            CP14ContentContexts.SetupContexts(_inputManager.Contexts);
             _overlayManager.AddOverlay(new CP14BasePostProcessOverlay());
             _discordAuth.Initialize();
             _joinQueueManager.Initialize();

@@ -124,7 +124,7 @@
       dependsOn: pants
       displayName: Pocket
       stripHidden: true
-    - name: belt2
+    - name: belt
       slotTexture: belt
       slotFlags: BELT
       slotGroup: MainHotbar
