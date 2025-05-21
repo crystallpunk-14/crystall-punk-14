@@ -40,4 +40,5 @@ cp14-lock-shaper-guard-barracks = казармы
 cp14-lock-shaper-guard-commander = дом главы стражи
 
 cp14-lock-shape-guildmaster = гильдмастер
+cp14-lock-shape-guild = гильдия авантюристов
 cp14-lock-shape-demiplane-crystal = кристалл демиплана

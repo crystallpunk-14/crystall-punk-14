@@ -15,6 +15,7 @@
           availableJobs:
             #Mercenary
             CP14Guildmaster: [1, 1]
+            CP14Guildworker: [2, 2]
             CP14Adventurer: [ -1, -1 ]
             #Artisans
             CP14Apprentice: [ 5, 5 ]
