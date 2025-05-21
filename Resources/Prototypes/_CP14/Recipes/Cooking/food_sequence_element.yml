@@ -1,7 +1,7 @@
 # Bun bottom
 
 - type: foodSequenceElement
-  id: CP14BunTopBurger
+  id: CP14BunTopSandwich
   final: true
   sprites:
   - sprite: _CP14/Objects/Consumable/Food/dough.rsi
@@ -12,7 +12,7 @@
 # Meat
 
 - type: foodSequenceElement
-  id: CP14CutletBurger
+  id: CP14CutletSandwich
   sprites:
   - sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: cutlet
@@ -21,7 +21,7 @@
   - CP14Meat
 
 - type: foodSequenceElement
-  id: CP14CutletCookedBurger
+  id: CP14CutletCookedSandwich
   sprites:
   - sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: cutlet_cooked
@@ -33,7 +33,7 @@
 # Cheese
 
 - type: foodSequenceElement
-  id: CP14CheeseBurger
+  id: CP14CheeseSandwich
   name: food-sequence-content-cheese
   sprites:
   - sprite: _CP14/Objects/Consumable/Food/cheese.rsi
@@ -44,7 +44,7 @@
 # Cabbage
 
 - type: foodSequenceElement
-  id: CP14CabbageBurger
+  id: CP14CabbageSandwich
   name: food-sequence-content-cabbage
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
@@ -55,7 +55,7 @@
 # Pumpkin
 
 - type: foodSequenceElement
-  id: CP14PumpkinBurger
+  id: CP14PumpkinSandwich
   name: cp14-food-sequence-content-pumpkin
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
@@ -66,7 +66,7 @@
 # Cucumber
 
 - type: foodSequenceElement
-  id: CP14CucumberBurger
+  id: CP14CucumberSandwich
   name: cp14-food-sequence-content-cucumber
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
@@ -77,7 +77,7 @@
 # Tomatoes
 
 - type: foodSequenceElement
-  id: CP14TomatoesBurger
+  id: CP14TomatoesSandwich
   name: food-sequence-content-tomato
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
@@ -89,7 +89,7 @@
 # Apple
 
 - type: foodSequenceElement
-  id: CP14AppleBurger
+  id: CP14AppleSandwich
   name: food-sequence-content-apple
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/apple.rsi

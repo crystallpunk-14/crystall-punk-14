@@ -73,7 +73,7 @@
           Quantity: 0.25
   - type: FoodSequenceElement
     entries:
-      Burger: CP14CabbageBurger
+      Sandwich: CP14CabbageSandwich
 
 - type: entity
   id: CP14FoodPumpkin
@@ -151,7 +151,7 @@
           Quantity: 1
   - type: FoodSequenceElement
     entries:
-      Burger: CP14PumpkinBurger
+      Sandwich: CP14PumpkinSandwich
 
 - type: entity
   id: CP14FoodPotato
@@ -233,7 +233,7 @@
     - CP14FarmFood
   - type: FoodSequenceElement
     entries:
-      Burger: CP14CucumberBurger
+      Sandwich: CP14CucumberSandwich
 
 - type: entity
   id: CP14FoodTomatoes
@@ -335,7 +335,7 @@
           Quantity: 1
   - type: FoodSequenceElement
     entries:
-      Burger: CP14TomatoesBurger
+      Sandwich: CP14TomatoesSandwich
 
 - type: entity
   id: CP14FoodApple
@@ -402,7 +402,7 @@
           Quantity: 1
   - type: FoodSequenceElement
     entries:
-      Burger: CP14AppleBurger
+      Sandwich: CP14AppleSandwich
 
 - type: entity
   id: CP14FoodPepper

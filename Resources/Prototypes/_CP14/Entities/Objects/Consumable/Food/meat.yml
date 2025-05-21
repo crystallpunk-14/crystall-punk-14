@@ -186,7 +186,7 @@
           Quantity: 6
   - type: FoodSequenceElement
     entries:
-      Burger: CP14CutletBurger
+      Sandwich: CP14CutletSandwich
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -215,7 +215,7 @@
           Quantity: 6
   - type: FoodSequenceElement
     entries:
-      Burger: CP14CutletCookedBurger
+      Sandwich: CP14CutletCookedSandwich
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
