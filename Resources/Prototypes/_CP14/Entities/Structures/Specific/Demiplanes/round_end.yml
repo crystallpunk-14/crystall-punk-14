@@ -180,9 +180,9 @@
           acts: ["Destruction"]
         - !type:SpawnEntitiesBehavior
           spawn:
-            CP14DimensitCrystal:
-              min: 4
-              max: 6
+            #CP14DimensitCrystal:
+            #  min: 4
+            #  max: 6
         - !type:SpawnEntitiesBehavior
           spawn:
             CP14SkyLightningPurple:
