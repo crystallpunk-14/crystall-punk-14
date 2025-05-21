@@ -3157,6 +3157,13 @@ ent-CP14SackFarmingWheat = { ent-CP14SackFarming }
     .desc = { ent-CP14SackFarming.desc }
     .suffix = Пшеница
 
+ent-CP14SackFarmingSeed = мешочек для семян
+    .desc = Мешочек для хранения семян растений.
+
+ent-CP14SackFarmingSeedFull = { ent-CP14SackFarmingSeed }
+    .desc = { ent-CP14SackFarmingSeed.desc }
+    .suffix = Полный
+
 ent-CP14SeedWheat = семена пшеницы
     .desc = Маленькие семена пшеницы. Что вы будете с ними делать? Размолоть в муку или посадить снова?
 

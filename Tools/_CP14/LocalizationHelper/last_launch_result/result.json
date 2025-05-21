@@ -7307,6 +7307,20 @@
         "parent": "CP14SackFarming",
         "suffix": "Wheat"
     },
+    "CP14SackFarmingSeed": {
+        "id": "CP14SackFarmingSeed",
+        "name": "seed sack",
+        "description": "Sack for various plant seeds.",
+        "parent": "CP14SackFarming",
+        "suffix": null
+    },
+    "CP14SackFarmingSeedFull": {
+        "id": "CP14SackFarmingSeedFull",
+        "name": null,
+        "description": null,
+        "parent": "CP14SackFarming",
+        "suffix": "Full"
+    },
     "CP14BaseSeed": {
         "id": "CP14BaseSeed",
         "name": null,
