@@ -27,6 +27,20 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WindowStoneBrick
+  parent: CP14WindowBase
+  name: stone brick window
+  description: A stone brick wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    state: full
+  - type: Destructible
+    thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 50
@@ -41,18 +55,8 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-
-- type: entity
-  id: CP14WindowStoneBrick
-  parent: CP14WindowBase
-  name: stone brick window
-  description: A stone brick wall with a glass window in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    state: full
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WallFrameStoneBrick
   - type: Construction
     graph: CP14WallStoneBrick
     node: CP14WallStoneBrick
@@ -68,6 +72,24 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
     state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WallFrameMarbleBrick
   - type: Construction
     graph: CP14WallMarbleBrick
     node: CP14WindowMarbleBrick
@@ -84,6 +106,24 @@
     sprite: _CP14/Structures/Windows/wooden_window.rsi
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WallFrameWooden
   - type: Construction
     graph: CP14WallWooden
     node: CP14WindowWooden
