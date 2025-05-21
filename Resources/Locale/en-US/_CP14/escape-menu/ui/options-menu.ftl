@@ -19,7 +19,7 @@ cp14-ui-options-postprocess-tooltip =
 ## Controls menu
 
 ui-options-header-cp14 = CrystallEdge
-ui-options-function-cp14-open-skill-menu = Open character knowledge menu.
+ui-options-function-cp14-open-knowledge-menu = Open character knowledge menu.
 ui-options-function-open-belt1 = Open belt 1
 ui-options-function-open-belt2 = Open belt 2
 ui-options-function-smart-equip-belt1 = Smart-equip to belt 1
