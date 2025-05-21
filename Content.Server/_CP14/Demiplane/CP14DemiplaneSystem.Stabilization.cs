@@ -75,7 +75,7 @@ public sealed partial class CP14DemiplaneSystem
         }
     }
 
-    private void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane, bool safe = false)
+    public void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane, bool safe = false)
     {
         var query = EntityQueryEnumerator<CP14DemiplaneStabilizerComponent, TransformComponent>();
 

@@ -1,0 +1,22 @@
+- type: alertLevels
+  id: CP14TownAlerts
+  defaultLevel: safe
+  levels:
+    safe:
+      announcement: cp14-alert-level-safe-announcement
+      sound: /Audio/_CP14/Misc/safe-alert.ogg
+      color: Green
+      emergencyLightColor: LawnGreen
+      shuttleTime: 600
+    minor:
+      announcement: cp14-alert-level-minor-announcement
+      sound: /Audio/_CP14/Misc/minor-alert.ogg
+      color: DodgerBlue
+      emergencyLightColor: DodgerBlue
+      shuttleTime: 600
+    major:
+      announcement: cp14-alert-level-major-announcement
+      sound: /Audio/_CP14/Misc/major-alert.ogg
+      color: Red
+      emergencyLightColor: Red
+      shuttleTime: 600

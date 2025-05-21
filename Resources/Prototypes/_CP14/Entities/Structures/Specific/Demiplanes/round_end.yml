@@ -1,0 +1,190 @@
+- type: entity
+  id: CP14DemiplaneLinkCrystal
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  name: demiplane link crystal
+  description: Maintains communication with the demiplanes while charged. Causes monsters from the demiplanes to attack the city. Once it is discharged, the game is over.
+  suffix: ONE TO MAP
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_big.rsi
+    layers:
+    - state: dimension
+    - state: frame
+    drawdepth: Mobs
+    offset: 0,0.8
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 5
+        minValue: 1.0
+        maxValue: 40.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: CP14MagicContainerRoundFinisher
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 1000
+    energy: 1000
+  - type: CP14MagicEnergyDraw
+    energy: -10
+    delay: 60 # 1h 30 minutes to full discharge
+  - type: AmbientSound
+    volume: 5
+    range: 10
+    sound:
+      path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
+  - type: ActivatableUI
+    key: enum.CP14DemiplaneMapUiKey.Key
+    requiresComplex: true
+    singleUser: true
+  - type: CP14DemiplaneNavigationMap
+  - type: UserInterface
+    interfaces:
+      enum.CP14DemiplaneMapUiKey.Key:
+        type: CP14DemiplaneMapBoundUserInterface
+
+- type: entity
+  id: CP14PortalFrameCrystal
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  name: portal frame
+  description: A structure made of shadow crystals used to create a stable portal to another location.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Tag
+    tags:
+      - Structure
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_small.rsi
+    layers:
+    - state: dimension
+    - state: frame
+    drawdepth: Mobs
+    offset: 0,0.4
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 100
+    energy: 100
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyPortRelay
+
+- type: entity
+  id: CP14DemiplaneCore
+  categories: [ ForkFiltered ]
+  parent: BaseStructureDynamic
+  name: demiplane core
+  description: The heart of the demiplane. Your task is to take it out of the demiplane safe and sound and hand it over to the guildmaster.
+  components:
+  - type: CP14DemiplaneCore
+  - type: Transform
+    anchored: false
+  - type: Pullable
+  - type: Clickable
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 600
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Tag
+    tags:
+      - Structure
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_big.rsi
+    layers:
+    - state: dimension_core
+    drawdepth: Mobs
+    offset: 0,0.4
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    castShadows: false
+    energy: 1
+    radius: 5
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 5
+        minValue: 1.0
+        maxValue: 40.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: AmbientSound
+    volume: 5
+    range: 10
+    sound:
+      path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Rock
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14DimensitCrystal:
+              min: 4
+              max: 6
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14SkyLightningPurple:
+              min: 1
+              max: 1

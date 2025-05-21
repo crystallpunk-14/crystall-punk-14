@@ -97,14 +97,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
     private void CP14EquipStartingActions(EntityUid entity, LoadoutPrototype loadout)
     {
-        foreach (var action in loadout.Actions)
+        foreach (var skill in loadout.Skills)
         {
-            _action.AddAction(entity, action);
-        }
-
-        foreach (var tree in loadout.SkillTree)
-        {
-            _skill.TryAddExperience(entity, tree.Key, tree.Value);
+            _skill.TryAddSkill(entity, skill, free: true);
         }
     }
 

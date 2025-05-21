@@ -1,13 +1,40 @@
+using Content.Server._CP14.WeatherControl;
+using Content.Server.Weather;
 using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared.Weather;
 using Robust.Shared.Audio;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Demiplane;
 
 public sealed partial class CP14DemiplaneSystem
 {
+    [Dependency] private readonly WeatherSystem _weather = default!;
     private void InitDestruction()
     {
         SubscribeLocalEvent<CP14DemiplaneTimedDestructionComponent, ComponentAdd>(OnDestructionStarted);
+    }
+
+    public void StartDestructDemiplane(Entity<CP14DemiplaneComponent> demiplane)
+    {
+        if (!TryComp<MapComponent>(demiplane, out var map))
+            return;
+
+        if (HasComp<CP14DemiplaneTimedDestructionComponent>(demiplane))
+            return;
+
+        EnsureComp<CP14DemiplaneTimedDestructionComponent>(demiplane);
+
+        if (HasComp<CP14WeatherControllerComponent>(demiplane))
+        {
+            RemCompDeferred<CP14WeatherControllerComponent>(demiplane);
+        }
+
+        if (!_proto.TryIndex<WeatherPrototype>("CP14DemiplaneDestructionStorm", out var indexedWeather))
+            return;
+
+        _weather.SetWeather(map.MapId, indexedWeather, null);
     }
 
     private void OnDestructionStarted(Entity<CP14DemiplaneTimedDestructionComponent> ent, ref ComponentAdd args)

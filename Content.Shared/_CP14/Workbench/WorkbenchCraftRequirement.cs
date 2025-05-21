@@ -26,8 +26,7 @@ public abstract partial class CP14WorkbenchCraftRequirement
     public abstract bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe);
+        EntityUid user);
 
     /// <summary>
     /// An event that is triggered after crafting. This is the place to put important things like removing items, spending stacks or other things.

@@ -1,5 +1,4 @@
 using Content.Server._CP14.Demiplane.Components;
-using Content.Server._CP14.RoundStatistic;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Flash;
@@ -33,7 +32,6 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly CP14RoundStatTrackerSystem _statistic = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
 
@@ -162,7 +160,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
         foreach (var exit in demiplane.Comp.ExitPoints)
         {
-            RemoveDemiplanRandomExitPoint(demiplane, exit);
+            RemoveDemiplaneRandomExitPoint(demiplane, exit);
         }
 
         foreach (var entry in demiplane.Comp.EntryPoints)

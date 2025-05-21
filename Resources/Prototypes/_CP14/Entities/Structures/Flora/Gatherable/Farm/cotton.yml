@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14PlantCotton
+  parent: CP14GatherablePlantSingleHarvestBase
+  name: cotton
+  description: In a way, you're growing future clothes.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      offset: 0, 0.5
+      sprite: _CP14/Structures/Flora/Farm/cotton.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: CP14PlantGatherable
+    loot:
+      All: CP14GatherCotton
+
+- type: entityLootTable
+  id: CP14GatherCotton
+  entries:
+  - id: CP14Cotton
+    amount: 4
+    maxAmount: 6
+  - id: CP14SeedCotton
+    amount: 1
+    maxAmount: 2

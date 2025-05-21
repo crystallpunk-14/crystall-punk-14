@@ -306,9 +306,8 @@
   components:
   - type: Sprite
     layers:
-      - state: human_meat1 # We need fried sprites
+      - state: human_meat1_cooked
         map: [ "random" ]
-        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -323,8 +322,8 @@
   - type: RandomSprite
     available:
       - random:
-          human_meat1: CP14cookedMeat
-          human_meat2: CP14cookedMeat
+          human_meat1_cooked: ""
+          human_meat2_cooked: ""
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -365,8 +364,7 @@
   name: cooked dino meat
   components:
   - type: Sprite
-    state: dino_meat1 # We need fried sprites
-    color: "#c98367"
+    state: dino_meat1_cooked
   - type: SolutionContainerManager
     solutions:
       food:
@@ -414,8 +412,7 @@
   name: cooked hydra meat
   components:
   - type: Sprite
-    state: dino_meat2 # We need fried sprites
-    color: "#c98367"
+    state: dino_meat2_cooked
   - type: SolutionContainerManager
     solutions:
       food:
@@ -475,9 +472,8 @@
   components:
   - type: Sprite
     layers:
-      - state: rabbit_meat1 # We need fried sprites
+      - state: rabbit_meat1_cooked
         map: [ "random" ]
-        color: "#c98367"
   - type: SolutionContainerManager
     solutions:
       food:
@@ -490,8 +486,8 @@
   - type: RandomSprite
     available:
       - random:
-          rabbit_meat1: CP14cookedMeat
-          rabbit_meat2: CP14cookedMeat
+          rabbit_meat1_cooked: ""
+          rabbit_meat2_cooked: ""
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -543,9 +539,8 @@
   components:
   - type: Sprite
     layers:
-      - state: pig_meat1 # We need fried sprites
+      - state: pig_meat1_cooked
         map: [ "random" ]
-        color: "#c98367"
   - type: SliceableFood
     count: 4
     slice: CP14FoodMeatPigCookedSlice
@@ -563,8 +558,8 @@
   - type: RandomSprite
     available:
       - random:
-          pig_meat1: CP14cookedMeat
-          pig_meat4: CP14cookedMeat
+          pig_meat1_cooked: ""
+          pig_meat4_cooked: ""
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -603,8 +598,7 @@
   name: cooked pig leg meat # Jamon? - Хамон?
   components:
   - type: Sprite
-    state: pig_meat5 # We need fried sprites
-    color: "#c98367"
+    state: pig_meat5_cooked
   - type: SolutionContainerManager
     solutions:
       food:
@@ -666,9 +660,8 @@
   components:
   - type: Sprite
     layers:
-      - state: pig_meat2 # We need fried sprites
+      - state: pig_meat2_cooked
         map: [ "random" ]
-        color: "#c98367"
   - type: SliceableFood
     count: 4
     slice: CP14FoodMeatPigCookedSlice
@@ -686,8 +679,8 @@
   - type: RandomSprite
     available:
       - random:
-          pig_meat2: CP14cookedMeat
-          pig_meat3: CP14cookedMeat
+          pig_meat2_cooked: ""
+          pig_meat3_cooked: ""
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -731,8 +724,7 @@
   components:
   - type: Sprite
     layers:
-      - state: pig_meat6 # We need fried sprites
-        color: "#c98367"
+      - state: pig_meat6_cooked
   - type: SolutionContainerManager
     solutions:
       food:

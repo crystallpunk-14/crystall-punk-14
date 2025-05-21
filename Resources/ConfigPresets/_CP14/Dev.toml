@@ -16,6 +16,9 @@ port = 1212
 bindto = "::,0.0.0.0"
 max_connections = 100
 
+[status]
+max_connections = 10
+
 [game]
 hostname = "⚔️ CrystallEdge ⚔️"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
@@ -36,6 +39,8 @@ hub_urls = "https://hub.spacestation14.com/"
 
 [infolinks]
 discord = "https://discord.gg/8BEPa9JbZ6"
+patreon = "https://boosty.to/theshued"
+github = "https://github.com/crystallpunk-14/crystall-punk-14"
 
 [procgen]
 preload = false

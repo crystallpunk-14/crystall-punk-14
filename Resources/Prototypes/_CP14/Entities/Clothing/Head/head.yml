@@ -1,0 +1,31 @@
+# Admeme spawn only for now
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadSlimeCrown
+  name: slime crown
+  description: Earl of Ooze. Grand Duke of Goo. Lord of the Slimes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/slime_crown.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/slime_crown.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Heat: 0.9
+        Cold: 0.9
+        Shock: 0.9
+        Caustic: 0.9
+  - type: FactionClothing
+    faction: CP14Slimes
+  - type: Storage
+    grid:
+    - 0,0,0,0
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container

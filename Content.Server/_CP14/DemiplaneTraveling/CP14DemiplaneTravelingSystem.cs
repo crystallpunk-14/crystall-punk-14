@@ -34,7 +34,7 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
     }
 
     // !!!SHITCODE WARNING!!!
-    // This whole module is saturated with shieldcode, code duplication and other delights. Why? Because.
+    // This whole module is saturated with shitcode, code duplication and other delights. Why? Because.
     //TODO: Refactor this shitcode
     public override void Update(float frameTime)
     {

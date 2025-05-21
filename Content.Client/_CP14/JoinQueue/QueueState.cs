@@ -1,4 +1,3 @@
-using Content.Client._CP14.JoinQueue;
 using Content.Shared._CP14.JoinQueue;
 using Robust.Client.Audio;
 using Robust.Client.Console;

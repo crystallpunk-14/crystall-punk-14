@@ -16,7 +16,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_1
   size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 0,0
   tags:
@@ -25,7 +25,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_2
   size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 8,0
   tags:
@@ -34,7 +34,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_3
   size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 16,0
   tags:
@@ -43,7 +43,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_4
   size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 24,0
   tags:
@@ -52,7 +52,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_5
   size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 0,8
   tags:
@@ -61,7 +61,7 @@
 - type: dungeonRoom
   id: CP14DemiplanEnterRoom_6
   size: 9,7
-  atlas: /Maps/_CP14/Dungeon/demiplan_enter.yml
+  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
   offset: 8,8
   tags:

@@ -5,10 +5,10 @@
   - BaseStation
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
-  - BaseStationAlertLevels #Checks fail without it
+  - CP14BaseTownAlerts
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
-  - CP14BaseStationSalary
+  - CP14BaseStationDemiplaneMap
 
 - type: entity
   id: CP14BaseStationCommonObjectives
@@ -17,10 +17,14 @@
     - type: CP14StationCommonObjectives
 
 - type: entity
-  id: CP14BaseStationSalary
+  id: CP14BaseTownAlerts
   abstract: true
   components:
-    - type: CP14StationSalary
-      #frequency: every 20 minutes
-      salary:
-        CP14Guard: 550
+    - type: AlertLevel
+      alertLevelPrototype: CP14TownAlerts
+
+- type: entity
+  id: CP14BaseStationDemiplaneMap
+  abstract: true
+  components:
+    - type: CP14StationDemiplaneMap

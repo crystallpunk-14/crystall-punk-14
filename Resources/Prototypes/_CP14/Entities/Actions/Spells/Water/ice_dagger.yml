@@ -7,8 +7,9 @@
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_dagger
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 25
   - type: CP14MagicEffect
+    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -30,14 +31,14 @@
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_dagger
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 20
+      cooldown: 10
       breakOnMove: false
 
 - type: entity
   name: ice dagger
   parent: BaseItem
   id: CP14IceDagger
-  description: A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.
+  description: A sharp ice dagger, not very durable but can temporarily replace real weapons.
   categories: [ ForkFiltered ]
   components:
   - type: Sharp

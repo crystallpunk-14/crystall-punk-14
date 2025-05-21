@@ -1,0 +1,9 @@
+- files: ["event_boom.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by juskiddink of Freesound.org.'
+  source: "https://freesound.org/people/juskiddink/sounds/130890/"
+
+- files: ["darkness_boom.ogg", "darkness_boom_2.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by Uzbazur of Freesound.org.'
+  source: "https://freesound.org/people/Uzbazur/sounds/442241/"

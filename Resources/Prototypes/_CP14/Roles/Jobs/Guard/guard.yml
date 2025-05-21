@@ -6,6 +6,10 @@
   startingGear: CP14GuardGear
   icon: "CP14JobIconGuard"
   supervisors: cp14-job-supervisors-guard-commander
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - SwordMastery
 
 - type: startingGear
   id: CP14GuardGear

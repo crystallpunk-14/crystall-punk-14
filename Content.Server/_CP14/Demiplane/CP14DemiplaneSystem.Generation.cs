@@ -30,13 +30,113 @@ public sealed partial class CP14DemiplaneSystem
 
     private void InitGeneration()
     {
-        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, MapInitEvent>(GeneratorMapInit);
+        SubscribeLocalEvent<CP14DemiplaneRandomGeneratorComponent, MapInitEvent>(GeneratorMapInit);
         SubscribeLocalEvent<CP14DemiplaneUsingOpenComponent, UseInHandEvent>(GeneratorUsedInHand);
 
-        SubscribeLocalEvent<CP14DemiplaneGeneratorDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
+        SubscribeLocalEvent<CP14DemiplaneDataComponent, GetVerbsEvent<ExamineVerb>>(OnVerbExamine);
     }
 
-    private void OnVerbExamine(Entity<CP14DemiplaneGeneratorDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    private void GeneratorMapInit(Entity<CP14DemiplaneRandomGeneratorComponent> generator, ref MapInitEvent args)
+    {
+        if (!TryComp<CP14DemiplaneDataComponent>(generator, out var data))
+            return;
+
+        CP14DemiplaneLocationPrototype? selectedConfig = null;
+        //Location generation
+        if (data.Location is null || generator.Comp.OverrideLocation)
+        {
+            selectedConfig = GenerateDemiplaneLocation(generator.Comp.Level);
+            data.Location = selectedConfig;
+        }
+        else
+        {
+            if (!_proto.TryIndex(data.Location, out selectedConfig))
+                return;
+        }
+
+        //Modifier generation
+        var newModifiers = GenerateDemiplaneModifiers(
+            generator.Comp.Level,
+            selectedConfig,
+            generator.Comp.Limits);
+
+        foreach (var mod in newModifiers)
+        {
+            data.SelectedModifiers.Add(mod);
+        }
+    }
+
+    private void GeneratorUsedInHand(Entity<CP14DemiplaneUsingOpenComponent> ent, ref UseInHandEvent args)
+    {
+        if (!TryComp<CP14DemiplaneDataComponent>(ent, out var generator))
+            return;
+
+        UseGenerator((ent, generator), args.User);
+    }
+    //Ed: I hate this function.
+    private void UseGenerator(Entity<CP14DemiplaneDataComponent> generator, EntityUid? user = null)
+    {
+        //block the opening of demiplanes after the end of a round
+        if (_gameTicker.RunLevel != GameRunLevel.InRound)
+        {
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, user.Value);
+            return;
+        }
+        //We cant open demiplane in another demiplane or if parent is not Map
+        if (_demiplaneQuery.HasComp(Transform(generator).MapUid))
+        {
+            if (user is not null)
+                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, user.Value);
+            return;
+        }
+
+        if (generator.Comp.Location is null)
+            return;
+
+        //an attempt to open demiplanes can be intercepted by other systems that substitute a map instead of generating the planned demiplane.
+        Entity<CP14DemiplaneComponent>? demiplane = null;
+        var ev = new CP14DemiplaneGenerationCatchAttemptEvent();
+        RaiseLocalEvent(ev);
+
+        if (ev.Demiplane is null)
+        {
+            SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out demiplane, out var mapId);
+            if (demiplane is not null && TryComp<CP14DemiplaneMapNodeBlockerComponent>(generator, out var blocker))
+            {
+                EnsureComp<CP14DemiplaneMapNodeBlockerComponent>(demiplane.Value, out var blockerMap);
+                blockerMap.Position = blocker.Position;
+                blockerMap.Station = blocker.Station;
+                blockerMap.IncreaseNodeDifficulty = 1;
+            }
+        }
+        else
+        {
+            demiplane = ev.Demiplane;
+        }
+
+        if (demiplane is null)
+            return;
+
+        //Admin log needed
+        EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane.Value);
+
+        //Rifts spawning
+        foreach (var rift in generator.Comp.AutoRifts)
+        {
+            var spawnedRift = EntityManager.Spawn(rift);
+            _transform.SetCoordinates(spawnedRift, Transform(generator).Coordinates);
+            _transform.AttachToGridOrMap(spawnedRift);
+            var connection = EnsureComp<CP14DemiplaneRiftComponent>(spawnedRift);
+            AddDemiplaneRandomExitPoint(demiplane.Value, (spawnedRift, connection));
+        }
+
+#if !DEBUG
+        QueueDel(generator); //wtf its crash debug build!
+#endif
+    }
+
+    private void OnVerbExamine(Entity<CP14DemiplaneDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
             return;
@@ -50,7 +150,7 @@ public sealed partial class CP14DemiplaneSystem
             "/Textures/Interface/VerbIcons/dot.svg.192dpi.png"); //TODO custom icon
     }
 
-    private FormattedMessage GetDemiplanExamine(CP14DemiplaneGeneratorDataComponent comp)
+    private FormattedMessage GetDemiplanExamine(CP14DemiplaneDataComponent comp)
     {
         var msg = new FormattedMessage();
 
@@ -136,113 +236,51 @@ public sealed partial class CP14DemiplaneSystem
         _expeditionQueue.EnqueueJob(job);
     }
 
-    private void UseGenerator(Entity<CP14DemiplaneGeneratorDataComponent> generator, EntityUid? user = null)
-    {
-        //block the opening of demiplanes after the end of a round
-        if (_gameTicker.RunLevel != GameRunLevel.InRound)
-        {
-            if (user is not null)
-                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open-end-round"), generator, user.Value);
-            return;
-        }
-        //We cant open demiplane in another demiplane or if parent is not Map
-        if (_demiplaneQuery.HasComp(Transform(generator).MapUid))
-        {
-            if (user is not null)
-                _popup.PopupEntity(Loc.GetString("cp14-demiplan-cannot-open", ("name", MetaData(generator).EntityName)), generator, user.Value);
-            return;
-        }
 
-        if (generator.Comp.Location is null)
-            return;
-
-        //an attempt to open demiplanes can be intercepted by other systems that substitute a map instead of generating the planned demiplane.
-        Entity<CP14DemiplaneComponent>? demiplane = null;
-        var ev = new CP14DemiplaneGenerationCatchAttemptEvent();
-        RaiseLocalEvent(ev);
-
-        if (ev.Demiplane is null)
-        {
-            SpawnRandomDemiplane(generator.Comp.Location.Value, generator.Comp.SelectedModifiers, out demiplane, out var mapId);
-        }
-        else
-        {
-            demiplane = ev.Demiplane;
-        }
-
-        _statistic.TrackAdd(generator.Comp.Statistic, 1);
-
-        if (demiplane is null)
-            return;
-
-        //Admin log needed
-        EnsureComp<CP14DemiplaneDestroyWithoutStabilizationComponent>(demiplane.Value);
-
-        //Rifts spawning
-        foreach (var rift in generator.Comp.AutoRifts)
-        {
-            var spawnedRift = EntityManager.Spawn(rift);
-            _transform.SetCoordinates(spawnedRift, Transform(generator).Coordinates);
-            _transform.AttachToGridOrMap(spawnedRift);
-            var connection = EnsureComp<CP14DemiplaneRiftComponent>(spawnedRift);
-            AddDemiplaneRandomExitPoint(demiplane.Value, (spawnedRift, connection));
-        }
-
-#if !DEBUG
-        QueueDel(generator); //wtf its crash debug build!
-#endif
-    }
-
-    private void GeneratorUsedInHand(Entity<CP14DemiplaneUsingOpenComponent> ent, ref UseInHandEvent args)
-    {
-        if (!TryComp<CP14DemiplaneGeneratorDataComponent>(ent, out var generator))
-            return;
-
-        UseGenerator((ent, generator), args.User);
-    }
-
-    private void GeneratorMapInit(Entity<CP14DemiplaneGeneratorDataComponent> generator, ref MapInitEvent args)
+    /// <summary>
+    /// Returns a suitable demiplane location for the specified difficulty level.
+    /// </summary>
+    public CP14DemiplaneLocationPrototype GenerateDemiplaneLocation(int level)
     {
         CP14DemiplaneLocationPrototype? selectedConfig = null;
-        //Location generation
-        if (generator.Comp.Location is null)
+
+        HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
+        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
         {
-            HashSet<CP14DemiplaneLocationPrototype> suitableConfigs = new();
-            foreach (var locationConfig in _proto.EnumeratePrototypes<CP14DemiplaneLocationPrototype>())
-            {
-                suitableConfigs.Add(locationConfig);
-            }
-
-            while (suitableConfigs.Count > 0)
-            {
-                var randomConfig = _random.Pick(suitableConfigs);
-
-                //LevelRange filter
-                if (generator.Comp.Level < randomConfig.Levels.Min || generator.Comp.Level > randomConfig.Levels.Max)
-                {
-                    suitableConfigs.Remove(randomConfig);
-                    continue;
-                }
-
-                selectedConfig = randomConfig;
-                break;
-            }
-
-            if (selectedConfig is null)
-            {
-                // We dont should be here
-
-                Log.Warning("Expedition mission generation failed: No suitable location configs.");
-                QueueDel(generator);
-                return;
-            }
-            generator.Comp.Location = selectedConfig;
+            suitableConfigs.Add(locationConfig);
         }
-        else
+
+        while (suitableConfigs.Count > 0)
         {
-            if (!_proto.TryIndex(generator.Comp.Location, out selectedConfig))
-                return;
+            var randomConfig = _random.Pick(suitableConfigs);
+
+            //LevelRange filter
+            if (level < randomConfig.Levels.Min || level > randomConfig.Levels.Max)
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            selectedConfig = randomConfig;
+            break;
         }
+
+        if (selectedConfig is null)
+            throw new Exception($"No suitable demiplane location config found for level {level}!");
+
+        return selectedConfig;
+    }
+
+
+    /// <summary>
+    /// Returns a set of modifiers under the specified difficulty level that are appropriate for the specified demiplane location
+    /// </summary>
+    public List<CP14DemiplaneModifierPrototype> GenerateDemiplaneModifiers(
+        int level,
+        CP14DemiplaneLocationPrototype location,
+        Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>,float> modifierLimits)
+    {
+        List<CP14DemiplaneModifierPrototype> selectedModifiers = new();
 
         //Modifier generation
         Dictionary<CP14DemiplaneModifierPrototype, float> suitableModifiersWeights = new();
@@ -262,14 +300,14 @@ public sealed partial class CP14DemiplaneSystem
             //Levels filter
             if (passed)
             {
-                if (generator.Comp.Level < modifier.Levels.Min || generator.Comp.Level > modifier.Levels.Max)
+                if (level < modifier.Levels.Min || level > modifier.Levels.Max)
                 {
                     passed = false;
                 }
             }
 
             //Tag blacklist filter
-            foreach (var configTag in selectedConfig.Tags)
+            foreach (var configTag in location.Tags)
             {
                 if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
                 {
@@ -283,7 +321,7 @@ public sealed partial class CP14DemiplaneSystem
             {
                 foreach (var reqTag in modifier.RequiredTags)
                 {
-                    if (!selectedConfig.Tags.Contains(reqTag))
+                    if (!location.Tags.Contains(reqTag))
                     {
                         passed = false;
                         break;
@@ -298,10 +336,11 @@ public sealed partial class CP14DemiplaneSystem
 
         //Limits calculation
         Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> limits = new();
-        foreach (var limit in generator.Comp.Limits)
+        foreach (var limit in modifierLimits)
         {
             limits.Add(limit.Key, limit.Value);
         }
+
 
         while (suitableModifiersWeights.Count > 0)
         {
@@ -329,7 +368,7 @@ public sealed partial class CP14DemiplaneSystem
             if (!passed)
                 continue;
 
-            generator.Comp.SelectedModifiers.Add(selectedModifier);
+            selectedModifiers.Add(selectedModifier);
 
             foreach (var category in selectedModifier.Categories)
             {
@@ -340,14 +379,8 @@ public sealed partial class CP14DemiplaneSystem
                 suitableModifiersWeights.Remove(selectedModifier);
         }
 
-        //Scenario generation
-
-        //ETC generation
-
-        if (HasComp<CP14DemiplaneAutoOpenComponent>(generator))
-            UseGenerator(generator);
+        return selectedModifiers;
     }
-
 
     /// <summary>
     /// Optimization moment: avoid re-indexing for weight selection

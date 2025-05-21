@@ -6,13 +6,18 @@
   startingGear: CP14ApprenticeGear
   icon: "CP14JobIconApprentice"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - CopperMelting
+      - AlchemyVision
 
 - type: startingGear
   id: CP14ApprenticeGear
   storage:
     back:
-    - CP14EnergyCrystalSmall
-    - CP14EnergyCrystalSmall
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
   equipment:
     keys: CP14BaseKeyRing
     belt1: CP14WalletFilledTest
