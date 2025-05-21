@@ -88,7 +88,7 @@ public sealed partial class CP14RoundEndSystem
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var playtime = (now.Hour is >= 16 and < 19) || (now.Hour is >= 20 and < 22);
+        var playtime = (now.Hour is >= 15 and < 19) || (now.Hour is >= 20 and < 24);
 
         if (playtime)
         {
@@ -121,7 +121,7 @@ public sealed partial class CP14RoundEndSystem
             {
                 _baseServer.Shutdown("Русский ОБТ подошел к концу. Следующие 3 часа будет английский ОБТ. Просьба не мешать англоязычным ребятам играть в свое время :)");
             }),
-            (21, 45, () =>
+            (23, 45, () =>
             {
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
@@ -129,7 +129,7 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (22, 2, () =>
+            (00, 2, () =>
             {
                 _consoleHost.ExecuteCommand("golobby");
             }),
