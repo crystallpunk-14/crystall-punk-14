@@ -39,7 +39,7 @@
     offset: 1
     table: !type:GroupSelector
       rolls: !type:RangeNumberSelector
-        range: 1, 5
+        range: 3, 5
       children:
       - id: CP14MobUndeadZombie
         weight: 2
@@ -50,6 +50,21 @@
     tags:
     - FootstepSound
     - CP14RaidLeader
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellFireballSlowCast
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellCureFromDeath
+    - CP14ActionSpellManaConsumeElf
+    - CP14ActionSpellManaGiftElf
+    - CP14ActionSpellMagicSplitting
+    - CP14ActionSpellManaTrance
+    - CP14ActionSpellDemiplaneDepletion
+  - type: Loadout
+    prototypes:
+    - CP14MobSkeletonWizardTownRaid
 
 - type: entity
   id: CP14SpawnPointTownRaidUndeadEasy

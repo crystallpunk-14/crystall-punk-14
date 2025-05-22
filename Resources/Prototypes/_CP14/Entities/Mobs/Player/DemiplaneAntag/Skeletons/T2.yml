@@ -93,11 +93,8 @@
     spells:
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
-    - CP14ActionSpellIceDagger
     - CP14ActionSpellCureFromDeath
     - CP14ActionSpellShadowStep
-    - CP14ActionSpellShadowSwap
-    - CP14ActionSpellShadowGrab
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
