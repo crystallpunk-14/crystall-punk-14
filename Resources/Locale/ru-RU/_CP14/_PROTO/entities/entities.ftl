@@ -4713,11 +4713,11 @@ ent-CP14FenceBigWooden = { ent-CP14BaseFenceBig }
     .desc = { ent-CP14BaseFenceBig.desc }
     .suffix = Дерево
 
-ent-CP14FenceGateBigWooden = большие ворота забора
+ent-CP14FenceGateBigWooden = { ent-CP14BaseFenceGateBig }
     .desc = { ent-CP14BaseFenceGateBig.desc }
     .suffix = Дерево
 
-ent-CP14FenceGateBigIron = большие ворота забора
+ent-CP14FenceGateBigIron = { ent-CP14BaseFenceGateBig }
     .desc = { ent-CP14BaseFenceGateBig.desc }
     .suffix = Железо
 
