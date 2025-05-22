@@ -111,7 +111,7 @@
   name: stone brick window
   description: A stone brick wall with a glass window in it.
   id: CP14WindowStoneBrick
-  graph: CP14WallStoneBrick
+  graph: CP14WindowStoneBrick
   startNode: start
   targetNode: CP14WindowStoneBrick
   category: construction-category-structures
@@ -147,7 +147,7 @@
   name: marble brick window
   description: A marble brick wall with a glass window in it.
   id: CP14WindowMarbleBrick
-  graph: CP14WallMarbleBrick
+  graph: CP14WindowMarbleBrick
   startNode: start
   targetNode: CP14WindowMarbleBrick
   category: construction-category-structures

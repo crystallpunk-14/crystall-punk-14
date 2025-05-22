@@ -30,11 +30,6 @@
             - material: CP14MarbleStone
               amount: 2
               doAfter: 2
-        - to: CP14WindowMarbleBrick
-          steps:
-            - material: CP14GlassSheet
-              amount: 2
-              doAfter: 2
               
     - node: CP14WallMarbleBrick
       entity: CP14WallMarbleBrick
@@ -47,6 +42,3 @@
             - !type:SpawnPrototype
               prototype: CP14MarbleBlock1
               amount: 2
-              
-    - node: CP14WindowMarbleBrick
-      entity: CP14WindowMarbleBrick

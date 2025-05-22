@@ -35,7 +35,7 @@
 - type: entity
   id: CP14WindowFrameWooden
   name: wooden window frame
-  parent: 
+  parent:
   - CP14BaseWindowFrame
   - CP14BaseFlammable
   components:

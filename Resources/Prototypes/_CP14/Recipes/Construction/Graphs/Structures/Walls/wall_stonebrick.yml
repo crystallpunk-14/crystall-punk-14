@@ -30,11 +30,6 @@
             - material: CP14Stone
               amount: 2
               doAfter: 2
-        - to: CP14WindowStoneBrick
-          steps:
-            - material: CP14GlassSheet
-              amount: 2
-              doAfter: 2
               
     - node: CP14WallStoneBrick
       entity: CP14WallStonebrick
@@ -47,6 +42,3 @@
             - !type:SpawnPrototype
               prototype: CP14StoneBlock1
               amount: 2
-              
-    - node: CP14WindowStoneBrick
-      entity: CP14WindowStoneBrick
