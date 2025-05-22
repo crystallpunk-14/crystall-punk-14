@@ -1,0 +1,93 @@
+- type: entity
+  id: CP14WindowWooden
+  parent:
+  - CP14WindowBase
+  - CP14BaseFlammable
+  name: wooden window
+  description: A wooden wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/wooden_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WindowWoodenBroken
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowWooden
+
+- type: entity
+  id: CP14WindowFrameWooden
+  name: wooden window frame
+  parent: 
+  - CP14BaseWindowFrame
+  - CP14BaseFlammable
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/wooden_window_frame.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/wooden_window_frame.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowFrameWooden
+
+- type: entity
+  id: CP14WindowWoodenBroken
+  name: shattered wooden window
+  parent: CP14WindowFrameWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/wooden_window_broken.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/wooden_window_broken.rsi
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.2
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/glass_crack3.ogg
+    slipData:
+      launchForwardsMultiplier: 0
+  - type: TriggerOnStepTrigger
+  - type: DamageUserOnTrigger
+    damage:
+      types:
+        Slash: 5
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowWoodenBroken

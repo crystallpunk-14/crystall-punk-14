@@ -57,7 +57,7 @@
   name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden
-  graph: CP14WallWooden
+  graph: CP14WindowWooden
   startNode: start
   targetNode: CP14WindowWooden
   category: construction-category-structures

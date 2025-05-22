@@ -13,6 +13,16 @@
     base: window
   - type: PlacementReplacement
     key: walls
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -27,6 +37,38 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14BaseWindowFrame
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  abstract: true
+  description: Provides a nice breeze. The gap looks big enough to climb through.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+  - type: Icon
+    state: full
+  - type: IconSmooth
+    key: CP14window
+    base: window
+  - type: PlacementReplacement
+    key: walls
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - HalfWallLayer
+  - type: Climbable
 
 - type: entity
   id: CP14WindowStoneBrick
@@ -93,40 +135,6 @@
   - type: Construction
     graph: CP14WallMarbleBrick
     node: CP14WindowMarbleBrick
-
-- type: entity
-  id: CP14WindowWooden
-  parent:
-  - CP14WindowBase
-  - CP14BaseFlammable
-  name: wooden window
-  description: A wooden wall with a glass window in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/wooden_window.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Windows/wooden_window.rsi
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WindowShatter
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14GlassShard:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:ChangeConstructionNodeBehavior
-        node: CP14WallFrameWooden
-  - type: Construction
-    graph: CP14WallWooden
-    node: CP14WindowWooden
 
 - type: entity
   id: CP14WindowIceBlock
