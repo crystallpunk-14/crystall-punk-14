@@ -41,3 +41,5 @@ cp14-lock-shaper-guard-commander = guard commander house
 
 cp14-lock-shape-guildmaster = guildmaster
 cp14-lock-shape-demiplane-crystal = demiplane crystal
+
+cp14-lock-shape-storeship = Store ship

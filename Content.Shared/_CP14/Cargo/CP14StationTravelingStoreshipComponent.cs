@@ -21,7 +21,7 @@ public sealed partial class CP14StationTravelingStoreShipComponent : Component
     public bool OnStation;
 
     [DataField]
-    public ResPath ShuttlePath = new("/Maps/_CP14/Ships/cargo_shuttle.yml");
+    public ResPath ShuttlePath = new("/Maps/_CP14/Shuttle/cargo_shuttle.yml");
 
     /// <summary>
     /// Available to random selecting and pusharing

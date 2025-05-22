@@ -67,6 +67,8 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
 
         AddRoundstartTradingPositions(station);
         UpdateStaticPositions(station);
+
+        SendShuttleToStation(station.Comp.Shuttle.Value);
     }
 
     private void AddRoundstartTradingPositions(Entity<CP14StationTravelingStoreShipComponent> station)

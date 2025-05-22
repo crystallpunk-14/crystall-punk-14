@@ -1,7 +1,8 @@
 - type: entity
   parent: BaseStructure
-  id: CP14TradingBoardBase
+  id: CP14TradingBoard
   name: trading information board
+  suffix: ONE TO SHIP
   description: Allows you to track what is selling and buying right now. 
   categories: [ ForkFiltered ]
   components:

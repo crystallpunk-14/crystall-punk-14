@@ -331,6 +331,8 @@ CP14TradingPortalSylphoria: null
 CP14TradingPortalHelmirWeapon: null
 CP14TradingPortalBradFamily: null
 CP14TradingPortalSpiceStream: null
+CP14TradingBoardBase: null
+CP14SpawnUniqueTradepost: null
 
 # <---> CrystallEdge migration zone end
 

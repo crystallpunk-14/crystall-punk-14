@@ -9,6 +9,7 @@
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
   - CP14BaseStationDemiplaneMap
+  - CP14BaseStationTravelingStoreShip
 
 - type: entity
   id: CP14BaseStationCommonObjectives
@@ -28,3 +29,10 @@
   abstract: true
   components:
     - type: CP14StationDemiplaneMap
+
+
+- type: entity
+  id: CP14BaseStationTravelingStoreShip
+  abstract: true
+  components:
+    - type: CP14StationTravelingStoreShip

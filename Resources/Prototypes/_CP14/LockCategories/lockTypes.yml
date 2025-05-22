@@ -78,6 +78,8 @@
   complexity: 5
   name: cp14-lock-shape-blacksmith3
 
+# Traders
+
 - type: CP14LockType
   id: Shop1
   group: Merchant
@@ -95,6 +97,11 @@
   group: Merchant
   complexity: 5
   name: cp14-lock-shape-merchant3
+
+- type: CP14LockType
+  id: StoreShip
+  complexity: 5
+  name: cp14-lock-shape-storeship
 
 # Mercenary
 

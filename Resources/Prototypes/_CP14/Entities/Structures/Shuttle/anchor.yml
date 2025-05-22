@@ -1,0 +1,16 @@
+- type: entity
+  id: CP14StoreshipAnchor
+  categories: [ ForkFiltered ]
+  name: storeship anchor
+  description: Ahhh, we dont have description, do wi wi?
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Shuttle/traveling_storeship_anchor.rsi
+    state: base
+    drawdepth: FloorTiles
+  - type: Clickable
+  - type: Transform
+    anchored: true
+  - type: CP14TravelingStoreShipFTLTarget
