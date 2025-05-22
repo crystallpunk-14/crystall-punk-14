@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server._CP14.Currency;
+using Content.Server.Cargo.Systems;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._CP14.Cargo;
@@ -27,6 +28,7 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly PricingSystem _price = default!;
 
     private IEnumerable<CP14StoreBuyPositionPrototype>? _buyProto;
     private IEnumerable<CP14StoreSellPositionPrototype>? _sellProto;
@@ -214,20 +216,10 @@ public sealed partial class CP14CargoSystem : CP14SharedCargoSystem
     private void TopUpBalance(Entity<CP14TradingPortalComponent> portal, EntityStorageComponent storage)
     {
         //Get all currency in portal
-        var cash = 0;
+        double cash = 0;
         foreach (var stored in storage.Contents.ContainedEntities)
         {
-            if (TryComp<CP14CurrencyComponent>(stored, out var currency))
-            {
-                //fix currency calculation
-                var c = currency.Currency;
-
-                if (TryComp<StackComponent>(stored, out var stack))
-                    c *= stack.Count;
-
-                cash += c;
-                QueueDel(stored);
-            }
+            cash += _price.GetPrice(stored);
         }
 
         portal.Comp.Balance += cash;

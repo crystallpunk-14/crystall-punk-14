@@ -59,5 +59,5 @@ public sealed partial class CP14TradingPortalComponent : Component
     public int SpecialSellPositionCount = 2;
 
     [DataField]
-    public int Balance = 0;
+    public double Balance = 0;
 }
