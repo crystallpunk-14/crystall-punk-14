@@ -16,7 +16,11 @@
                 </BoxContainer>
                 <!-- Crafts container -->
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
-                    <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True" />
+                    <GridContainer Name="CraftsContainer"
+                                   HorizontalExpand="True"
+                                   VerticalExpand="True"
+                                   Access="Public"
+                                   Columns="6" />
                 </ScrollContainer>
             </BoxContainer>
 
