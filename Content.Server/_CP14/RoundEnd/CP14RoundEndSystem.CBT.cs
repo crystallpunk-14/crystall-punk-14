@@ -61,7 +61,7 @@ public sealed partial class CP14RoundEndSystem
     {
         var curLang = _cfg.GetCVar(CCVars.Language);
 
-        var ruHalfDay = now.Hour < 19 && now.Minute < 5 && now.Hour >= 9;
+        var ruHalfDay = now.Hour < 19 && now.Hour >= 9;
 
 
         if (ruHalfDay && curLang != "ru-RU")
