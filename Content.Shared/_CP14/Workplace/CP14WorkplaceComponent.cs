@@ -20,5 +20,5 @@ public sealed partial class CP14WorkplaceComponent : Component
     /// Cached when initializing a workstation or reloading prototypes
     /// </summary>
     [DataField]
-    public HashSet<EntProtoId> CachedRecipes = new();
+    public HashSet<EntityUid> CachedRecipes = new();
 }

@@ -67,6 +67,7 @@
   - CP14ActionSpellBloodlust
   components:
   - type: CP14WorkplaceRecipe
+    tag: CP14RecipeWorkbench
     category: cp14-recipe-category-tile
 
 - type: entity
@@ -76,4 +77,5 @@
   - CP14Lighter
   components:
   - type: CP14WorkplaceRecipe
+    tag: CP14RecipeWorkbench
     category: cp14-recipe-category-tile

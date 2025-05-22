@@ -14,12 +14,16 @@ public sealed partial class CP14WorkplaceWindow : DefaultWindow
 
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly IEntityManager _e = default!;
+    private readonly CP14ClientWorkplaceSystem _workplace = default!;
 
     public event Action<CP14WorkplaceRecipeEntry>? OnCraft;
 
     private readonly Dictionary<int, LocId> _categories = new();
 
     private CP14WorkplaceState? _cachedState;
+    private EntityUid? user;
+    private EntityUid? workplace;
     private CP14WorkplaceRecipeEntry? _selectedEntry;
     private string _searchFilter = string.Empty;
 
@@ -30,6 +34,7 @@ public sealed partial class CP14WorkplaceWindow : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        _workplace = _e.System<CP14ClientWorkplaceSystem>();
         Sawmill = _log.GetSawmill("cp14_workplace_window");
 
         SearchBar.OnTextChanged += OnSearchChanged;
@@ -77,6 +82,8 @@ public sealed partial class CP14WorkplaceWindow : DefaultWindow
     public void UpdateState(CP14WorkplaceState state)
     {
         _cachedState = state;
+        user = _e.GetEntity(state.User);
+        workplace = _e.GetEntity(state.Workplace);
 
         _categories.Clear();
         OptionCategories.Clear();
@@ -178,7 +185,7 @@ public sealed partial class CP14WorkplaceWindow : DefaultWindow
         //    ItemRequirements.AddChild(new CP14WorkbenchRequirementControl(requirement));
         //}
 
-        CraftButton.Disabled = !entry.Craftable;
+        CraftButton.Disabled = _workplace.CheckCraftable(entry.Recipe, workplace, user);
     }
 
     private void RecipeSelectNull()

@@ -27,3 +27,16 @@
     interfaces:
       enum.CP14WorkplaceUiKey.Key:
         type: CP14WorkplaceBoundUserInterface
+
+- type: entity
+  parent: CP14BaseWorkplace
+  id: CP14BaseWorkplace2
+  name: workplace 2
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: cooking_table
+  - type: CP14Workplace
+    tags:
+    - CP14RecipeWorkbench
