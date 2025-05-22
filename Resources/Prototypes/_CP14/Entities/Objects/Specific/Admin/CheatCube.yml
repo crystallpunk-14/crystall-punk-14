@@ -1,0 +1,23 @@
+- type: entity
+  id: CP14AdminCheatCube
+  parent: BaseItem
+  name: cheat cube
+  description: The ultimate artifact of the gods.
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Specific/Admin/CheatCube.rsi
+    state: icon
+  - type: CP14MagicEnergyContainer
+    energy: 31415926
+    maxEnergy: 31415926
+  - type: CP14SpellStorageAccessHolding
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellAdminTrueResurrection
+    - CP14ActionSpellAdminGodSmite

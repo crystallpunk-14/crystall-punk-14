@@ -1,0 +1,74 @@
+- type: entity
+  id: CP14ActionSpellAdminTrueResurrection
+  name: True resurrection
+  description: You heal the target from all damage and ressurect it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Paralyze
+        paralyzeTime: 3
+    - !type:CP14SpellResurrectionEffect
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectTrueRessuraction
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -500
+            Bloodloss: -500
+            Blunt: -500
+            Cellular: -500
+            Caustic: -500
+            Cold: -500
+            Heat: -500
+            Piercing: -500
+            Poison: -500
+            Radiation: -500
+            Shock: -500
+            Slash: -500
+            CP14ManaDepletion: -500
+      - !type:Jitter
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 50
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/blink.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: cure_wounds
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false
+
+- type: entity
+  id: CP14ImpactEffectTrueRessuraction1
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: "#79b330"
+      shader: unshaded
+  - type: PointLight
+    color: "#79b330"
+    enabled: true
+    radius: 2
+    energy: 2
+    netsync: false
+  - type: LightFade
+    duration: 1

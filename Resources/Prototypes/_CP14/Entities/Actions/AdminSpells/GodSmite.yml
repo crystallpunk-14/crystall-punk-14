@@ -1,0 +1,49 @@
+- type: entity
+  id: CP14ActionSpellAdminGodSmite
+  name: God's Smite
+  description: You destroy the chosen creature and send it to hell.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SkyLightning
+      - CP14SkyLightningPurple
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 5000
+            Bloodloss: 5000
+            Blunt: 5000
+            Cellular: 5000
+            Caustic: 5000
+            Cold: 5000
+            Heat: 5000
+            Piercing: 5000
+            Poison: 5000
+            Radiation: 5000
+            Shock: 5000
+            Slash: 5000
+            CP14ManaDepletion: 5000
+      - !type:Jitter
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 50
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/adminhelp.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false
