@@ -1,4 +1,3 @@
-cp14-store-ui-title = Trading outpost "{$name}"
 cp14-store-ui-order = More info
 
 cp14-store-ui-next-travel-out = Before departure:

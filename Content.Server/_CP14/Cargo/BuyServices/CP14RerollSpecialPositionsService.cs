@@ -9,9 +9,8 @@ namespace Content.Server._CP14.Cargo.BuyServices;
 public sealed partial class CP14RerollSpecialPositionsService : CP14StoreBuyService
 {
     [DataField] public int RerollBuy;
-    [DataField] public int RerollSell;
 
-    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
+    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14StationTravelingStoreShipComponent> portal)
     {
         var randomSystem = IoCManager.Resolve<IRobustRandom>();
         var cargoSystem = entManager.System<CP14CargoSystem>();
@@ -29,21 +28,6 @@ public sealed partial class CP14RerollSpecialPositionsService : CP14StoreBuyServ
             }
 
             cargoSystem.AddRandomBuySpecialPosition(portal, removed);
-        }
-
-        if (RerollSell > 0)
-        {
-            var removed = 0;
-            for (var i = 0; i < RerollSell; i++)
-            {
-                if (portal.Comp.CurrentSpecialSellPositions.Count == 0)
-                    break;
-                removed++;
-                var position = randomSystem.Pick(portal.Comp.CurrentSpecialSellPositions);
-                portal.Comp.CurrentSpecialSellPositions.Remove(position.Key);
-            }
-
-            cargoSystem.AddRandomSellSpecialPosition(portal, removed);
         }
     }
 

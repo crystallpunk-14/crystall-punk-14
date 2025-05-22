@@ -15,7 +15,7 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 
     public override void Buy(EntityManager entManager,
         IPrototypeManager prototype,
-        Entity<CP14TradingPortalComponent> portal)
+        Entity<CP14StationTravelingStoreShipComponent> portal)
     {
         var storageSystem = entManager.System<SharedEntityStorageSystem>();
 

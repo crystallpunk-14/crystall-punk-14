@@ -9,9 +9,4 @@ namespace Content.Shared._CP14.Cargo;
 [RegisterComponent]
 public sealed partial class CP14TradingInfoBoardComponent : Component
 {
-    [DataField]
-    public EntityUid? TradingPortal = null;
-
-    [DataField]
-    public ProtoId<CP14StoreFactionPrototype>? CahcedFaction;
 }

@@ -1,4 +1,3 @@
-cp14-store-ui-title = Торговый аванпост "{$name}"
 cp14-store-ui-order = Дополнительная информация
 
 cp14-store-ui-next-travel-out = До отправления:

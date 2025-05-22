@@ -1,20 +1,24 @@
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                Name="Window"
-               Title=""
+               Title="{Loc 'cp14-workbench-ui-title'}"
                MinSize="800 600"
                SetSize="800 600">
     <BoxContainer Orientation="Horizontal">
+        <!-- Main -->
         <BoxContainer HorizontalExpand="True" VerticalExpand="True" Orientation="Horizontal">
             <!-- Product list (left side UI) -->
-            <TabContainer MinWidth="400" Name="Tabs" HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
+            <BoxContainer MinWidth="400" HorizontalExpand="True" Orientation="Vertical" Margin="0 0 10 0">
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <!-- Search Bar -->
+                    <LineEdit Name="SearchBar" Margin="4" PlaceHolder="Search" HorizontalExpand="True" />
+                    <OptionButton Name="OptionCategories" Access="Public" MinSize="130 0"/>
+                </BoxContainer>
+                <!-- Crafts container -->
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
-                    <BoxContainer Name="BuyProductsContainer" Orientation="Vertical" HorizontalExpand="True"/>
+                    <BoxContainer Name="BuyPositions" Orientation="Vertical" HorizontalExpand="True" />
                 </ScrollContainer>
-                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200">
-                    <BoxContainer Name="SellProductsContainer" Orientation="Vertical" HorizontalExpand="True"/>
-                </ScrollContainer>
-            </TabContainer>
+            </BoxContainer>
             <!-- Station trading data (right side UI) -->
             <BoxContainer MinWidth="400" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="0 0 10 0">
                 <controls:StripeBack>
@@ -22,8 +26,6 @@
                         <Label Text="{Loc 'cp14-store-ui-order'}" Align="Center" Margin="0 5 0 3"/>
                     </PanelContainer>
                 </controls:StripeBack>
-                <Label Name="TravelTimeLabel" Text="00:00" HorizontalAlignment="Center" HorizontalExpand="True" Margin="0 15 0 0"/>
-                <controls:HLine Color="#404040" Thickness="2" Margin="0 5"/>
                 <RichTextLabel Name="SelectedName" HorizontalExpand="True" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
                 <RichTextLabel Name="SelectedDesc" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" Margin="5"/>
             </BoxContainer>

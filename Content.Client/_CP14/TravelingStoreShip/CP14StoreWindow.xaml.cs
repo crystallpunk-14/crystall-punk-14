@@ -9,28 +9,19 @@ namespace Content.Client._CP14.TravelingStoreShip;
 [GenerateTypedNameReferences]
 public sealed partial class CP14StoreWindow : DefaultWindow
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-
     public CP14StoreWindow()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-
-        Tabs.SetTabTitle(0, Loc.GetString("cp14-store-ui-tab-buy"));
-        Tabs.SetTabTitle(1, Loc.GetString("cp14-store-ui-tab-sell"));
     }
 
     public void UpdateUI(CP14StoreUiState state)
     {
-        Window.Title = Loc.GetString("cp14-store-ui-title", ("name", state.ShopName));
         UpdateProducts(state);
     }
 
     private void UpdateProducts(CP14StoreUiState state)
     {
-        BuyProductsContainer.RemoveAllChildren();
-        SellProductsContainer.RemoveAllChildren();
-
         foreach (var product in state.ProductsBuy)
         {
             var control = new CP14StoreProductControl(product);
@@ -38,17 +29,7 @@ public sealed partial class CP14StoreWindow : DefaultWindow
             {
                 SelectProduct(product);
             };
-            BuyProductsContainer.AddChild(control);
-        }
-
-        foreach (var product in state.ProductsSell)
-        {
-            var control = new CP14StoreProductControl(product);
-            control.ProductButton.OnPressed += _ =>
-            {
-                SelectProduct(product);
-            };
-            SellProductsContainer.AddChild(control);
+            BuyPositions.AddChild(control);
         }
     }
 

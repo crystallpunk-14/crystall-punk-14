@@ -326,7 +326,11 @@ CP14IronDoorWindowedGuardEntrance: CP14IronDoorGuardBarracks
 CP14IronDoorWindowedMirroredGuardEntrance: CP14IronDoorGuardBarracks
 CP14FenceGateBigIronGuard: CP14FenceGateBigIronGuardBarracks
 
-
+#2025-23-05
+CP14TradingPortalSylphoria: null
+CP14TradingPortalHelmirWeapon: null
+CP14TradingPortalBradFamily: null
+CP14TradingPortalSpiceStream: null
 
 # <---> CrystallEdge migration zone end
 

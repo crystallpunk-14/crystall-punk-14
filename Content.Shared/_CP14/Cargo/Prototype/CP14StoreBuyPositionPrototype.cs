@@ -39,16 +39,13 @@ public sealed partial class CP14StoreBuyPositionPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool Special;
-
-    [DataField]
-    public HashSet<ProtoId<CP14StoreFactionPrototype>> Factions = new();
 }
 
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]
 public abstract partial class CP14StoreBuyService
 {
-    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14TradingPortalComponent> portal);
+    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  Entity<CP14StationTravelingStoreShipComponent> portal);
 
     public abstract string GetName(IPrototypeManager protoMan);
 

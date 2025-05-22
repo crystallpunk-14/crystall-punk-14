@@ -9,13 +9,7 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
     public HashSet<ProtoId<CP14StoreBuyPositionPrototype>> AddBuyPositions = new();
 
     [DataField]
-    public HashSet<ProtoId<CP14StoreSellPositionPrototype>> AddSellPositions = new();
-
-    [DataField]
     public HashSet<ProtoId<CP14StoreBuyPositionPrototype>> RemoveBuyPositions = new();
-
-    [DataField]
-    public HashSet<ProtoId<CP14StoreSellPositionPrototype>> RemoveSellPositions = new();
 
     [DataField]
     public SpriteSpecifier? Icon = null;
@@ -23,7 +17,7 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
     [DataField]
     public LocId Name = string.Empty;
 
-    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14TradingPortalComponent> portal)
+    public override void Buy(EntityManager entManager, IPrototypeManager prototype, Entity<CP14StationTravelingStoreShipComponent> portal)
     {
         foreach (var buy in AddBuyPositions)
         {
@@ -31,14 +25,6 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
                 continue;
 
             portal.Comp.AvailableBuyPosition.Add(indexedBuy);
-        }
-
-        foreach (var sell in AddSellPositions)
-        {
-            if (!prototype.TryIndex(sell, out var indexedSell))
-                continue;
-
-            portal.Comp.AvailableSellPosition.Add(indexedSell);
         }
 
         foreach (var rBuy in RemoveBuyPositions)
@@ -50,17 +36,6 @@ public sealed partial class CP14UnlockPositionsService : CP14StoreBuyService
                 continue;
 
             portal.Comp.AvailableBuyPosition.Remove(indexedBuy);
-        }
-
-        foreach (var rSell in RemoveSellPositions)
-        {
-            if (!prototype.TryIndex(rSell, out var indexedSell))
-                continue;
-
-            if (!portal.Comp.AvailableSellPosition.Contains(indexedSell))
-                continue;
-
-            portal.Comp.AvailableSellPosition.Remove(indexedSell);
         }
     }
 
