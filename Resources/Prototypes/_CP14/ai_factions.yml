@@ -7,6 +7,8 @@
   - CP14Monster
   - CP14Insects
   - CP14Slimes
+  friendly:
+  - CP14Pets
 
 - type: npcFaction
   id: CP14HostileEveryone
@@ -17,6 +19,8 @@
   - CP14AggressiveAnimals
   - CP14Monster
   - CP14Slimes
+  - CP14Pets
+  - CP14HostileEveryone
 
 - type: npcFaction
   id: CP14Undead
@@ -25,6 +29,7 @@
   - CP14HostileEveryone
   - CP14PeacefulAnimals
   - CP14AggressiveAnimals
+  - CP14Pets
 
 - type: npcFaction
   id: CP14PeacefulAnimals
@@ -40,6 +45,7 @@
   - CP14PeacefulAnimals
   - CP14Monster
   - CP14Slimes
+  - CP14Pets
   - CP14HostileEveryone
 
 - type: npcFaction
@@ -49,6 +55,7 @@
   - CP14HostileEveryone
   - CP14AggressiveAnimals
   - CP14PeacefulAnimals
+  - CP14Pets
 
 - type: npcFaction
   id: CP14Insects
@@ -56,6 +63,7 @@
   - CP14Adventurers
   - CP14AggressiveAnimals
   - CP14PeacefulAnimals
+  - CP14Pets
 
 - type: npcFaction
   id: CP14Slimes
@@ -64,3 +72,10 @@
   - CP14HostileEveryone
   - CP14PeacefulAnimals
   - CP14AggressiveAnimals
+  - CP14Pets
+
+- type: npcFaction
+  id: CP14Pets
+  friendly:
+  - CP14Adventurers
+  - CP14PeacefulAnimals

@@ -1,0 +1,103 @@
+- type: entity
+  name: Opus
+  id: CP14MobSlimePet
+  parent: CP14MobSlimeBase
+  description: A princely little slime that carries itself with a regal air. It is the alchemist's familiar.
+  components:
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14Slimes
+    - CP14Pets
+  - type: Sprite
+    sprite: _CP14/Mobs/Pets/opus.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: base
+      shader: unshaded
+  - type: PointLight
+    color: "#620bf7"
+    energy: 3
+    radius: 1.8
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  # since it pops at 100 damage, it can have slow passive healing to help it out
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      groups:
+        Brute: -0.05
+        Burn: -0.05
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 20
+        - ReagentId: CP14BasicEffectRainbow
+          Quantity: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # By request, we can feed this slime (no starvation damage though; that's annoying on a pet)
+  - type: Hunger
+    thresholds:
+      Overfed: 100
+      Okay: 50
+      Peckish: 25
+      Starving: 10
+      Dead: 0
+    baseDecayRate: 0.00925925925926
+  - type: Thirst
+    thresholds:
+      OverHydrated: 200
+      Okay: 150
+      Thirsty: 100
+      Parched: 50
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 1
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 1
+        Caustic: 1
+  - type: MultiHandedItem
+  - type: InteractionPopup #TODO: a petting sound?
+    successChance: 0.3
+    interactSuccessSpawn: EffectHearts
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NoneSelector
+  - type: GhostRole
+    name: cp14-ghost-role-information-opus-name
+    description: cp14-ghost-role-information-opus-description
+    rules: ghost-role-information-familiar-rules
+    raffle: null
+  - type: GhostTakeoverAvailable
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: neuter
