@@ -1,0 +1,28 @@
+- type: entity
+  id: CP14RuneFireSlime #TODO: general casting effect; slime droplets flying off?
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+    - state: medium_circle
+      color: "#fdda5d"
+      shader: unshaded
+
+#- type: entity
+#  id: CP14ImpactEffectFireSlime
+#  parent: CP14BaseMagicImpact
+#  categories: [ HideSpawnMenu ]
+#  save: false
+#  components:
+#  - type: Sprite
+#    layers:
+#    - state: wave_up
+#      color: "#eea911"
+#      shader: unshaded

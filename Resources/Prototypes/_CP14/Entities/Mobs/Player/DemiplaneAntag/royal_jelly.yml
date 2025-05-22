@@ -1,0 +1,132 @@
+- type: entity
+  id: CP14MobSlimeRoyalJelly
+  parent: CP14MobSlimeBase
+  name: royal jelly
+  description: A massive clot of highly-intelligent slime. The remains of past victims slosh within its mass. Its commanding presence radiates with elemental power.
+  components:
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/royal_jelly.rsi #TODO: unique sprite, not just Big Slime
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: jump
+    noMovementLayers:
+      movement:
+        state: base
+  - type: PointLight
+    color: "#ffffff"
+    energy: 1
+    radius: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1.2
+        density: 600
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 4
+  - type: Damageable
+    damageModifierSet: CP14SlimeRoyalJelly
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead #Death threshold just needs to be at least as high as destruction threshold
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 0
+    heatDamage:
+      types:
+        Heat: 0
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+        Heat: 3
+        Cold: 3
+        Shock: 3
+        Caustic: 2
+        Structural: 15
+    range: 2
+  - type: GhostTakeoverAvailable
+  - type: NoSlip
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 200
+        reagents:
+        - ReagentId: CP14BasicEffectRainbow
+          Quantity: 200
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14HeadSkeleton:
+            min: 1
+            max: 1
+          CP14MobSlimeBase:
+            min: 1
+            max: 4
+          CP14ClothingHeadSlimeCrown:
+            min: 1
+            max: 1
+          CP14ScrapMithril:
+            min: 5
+            max: 10
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CP14MagicCasterSlowdown
+  - type: Tag
+    tags:
+    - FootstepSound
+    - CannotSuicide
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NoneSelector
+  - type: StatusEffects
+    allowed: # default status effects from BaseSimpleMob, minus Electrocution
+    - SlowedDown
+    - Stutter
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      150: 0.7
+      250: 0.5
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionSpellJellyFireSlime
+    - CP14ActionSpellJellyElectricSlime
+    - CP14ActionSpellJellyIceSlime
+    - CP14ActionSpellJellyShock
+    - CP14ActionSpellJellyFreeze
+    - CP14ActionSpellJellyIgnite
+
+# TODO: Raffle Ghost Role when this is in a more stable and tested state

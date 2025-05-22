@@ -1,0 +1,60 @@
+- type: entity
+  id: CP14ActionSpellJellyElectricSlime
+  name: Throw Electric Slime
+  description: Project an energia-aspected slime to wreak havoc.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffect
+    effects:
+    #    - !type:CP14SpellSpawnEntityOnUser
+    #      spawns:
+    #      - CP14ImpactEffectFireball
+    - !type:CP14SpellProjectile
+      prototype: CP14ProjectileSlimeElectric
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFireSlime
+  - type: CP14MagicEffectPacifiedBlock
+  - type: EntityWorldTargetAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 30
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi # TODO: sprite
+      state: fireball
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 30
+      castDelay: 1.5
+      breakOnMove: false
+
+- type: entity
+  id: CP14ProjectileSlimeElectric
+  parent: BaseBulletTrigger
+  name: electric slime ball
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#f7f00c"
+    radius: 2.0
+    energy: 5.0
+  - type: Projectile
+    #    impactEffect: CP14AreaEntityEffectSlimeIgnite
+    damage:
+      types:
+        Blunt: 5
+        Shock: 5
+  - type: SpawnOnTrigger
+    proto: CP14MobSlimeElectric
+  - type: DeleteOnTrigger
+  - type: Sprite
+    sprite: _CP14/Mobs/Monster/slime.rsi
+    layers:
+    - state: jump
+      shader: unshaded
+      color: "#f7f00c"

@@ -1,0 +1,69 @@
+- type: entity
+  id: CP14ActionSpellJellyFreeze
+  name: Icy Burst
+  description: Release frost in an area around yourself.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/light.rsi # TODO: sprite
+    state: sphere_of_light
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14AreaEntityEffectJellyFreeze
+  #      - !type:CP14SpellSpawnEntityOnUser
+  #        spawns:
+  #        - CP14ImpactEffectFireball
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFireSlime
+  - type: CP14MagicEffectPacifiedBlock
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/light.rsi # TODO: sprite
+      state: sphere_of_light
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 30
+      castDelay: 1.5
+      breakOnMove: false
+
+- type: entity
+  id: CP14AreaEntityEffectJellyFreeze
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#0cb1f7"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#0cb1f7"
+      scale: 4, 4
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: CP14AreaEntityEffect
+    range: 4
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFreeze
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+        statusLifetime: 5
+      - !type:AdjustTemperature
+        amount: -82000
+      - !type:ExtinguishReaction

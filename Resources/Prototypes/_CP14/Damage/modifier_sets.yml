@@ -166,6 +166,17 @@
     Cold: 0.0
     Poison: 0.8
 
+- type: damageModifierSet
+  id: CP14SlimeRoyalJelly
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 0.5
+    Cold: 0.5
+    Shock: 0.5
+    Poison: 0.8
+
 # Species
 
 - type: damageModifierSet
