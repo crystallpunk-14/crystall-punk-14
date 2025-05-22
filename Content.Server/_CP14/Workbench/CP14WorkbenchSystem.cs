@@ -20,7 +20,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Workbench;
 
-public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
+public sealed partial class CP14WorkbenchSystem : Shared._CP14.Workplace.CP14SharedWorkbenchSystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;

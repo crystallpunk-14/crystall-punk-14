@@ -1,0 +1,26 @@
+- type: entity
+  parent:
+  - BaseStructure
+  id: CP14BaseWorkplace
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: ActivatableUI
+    key: enum.CP14WorkplaceUiKey.Key
+    requiresComplex: true
+    singleUser: true
+  - type: Climbable
+  - type: Clickable
+  - type: InteractionOutline
+  - type: PlaceableSurface
+  - type: UserInterface
+    interfaces:
+      enum.CP14WorkplaceUiKey.Key:
+        type: CP14WorkplaceBoundUserInterface

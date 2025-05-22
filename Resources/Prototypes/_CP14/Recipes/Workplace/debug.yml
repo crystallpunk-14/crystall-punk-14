@@ -1,0 +1,6 @@
+- type: entity
+  id: CP14BaseWorkplaceRecipe
+  abstract: true
+  components:
+  - type: CP14WorkplaceRecipe
+    tag: CP14RecipeMeltingFurnace
