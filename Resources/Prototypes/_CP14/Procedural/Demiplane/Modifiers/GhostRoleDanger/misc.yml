@@ -34,7 +34,7 @@
 - type: cp14DemiplaneModifier
   id: EnemyLurker
   levels:
-    min: 1
+    min: 2
     max: 10
   generationWeight: 0.33
   generationProb: 0.25

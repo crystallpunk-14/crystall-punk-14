@@ -48,7 +48,7 @@
 
 - type: entity
   id: CP14LiquidDropWater
-  parent: 
+  parent:
   - BaseItem
   - ItemHeftyBase
   name: floating liquid drop

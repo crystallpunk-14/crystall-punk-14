@@ -45,6 +45,9 @@
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel Name="SkillDescription" HorizontalExpand="True" Access="Public"/>
                             </BoxContainer>
+                            <BoxContainer HorizontalExpand="True">
+                                <RichTextLabel Name="SkillFree" Text="{Loc 'cp14-skill-menu-free'}" HorizontalExpand="True" Access="Public" Visible="False"/>
+                            </BoxContainer>
                         </BoxContainer>
                     </BoxContainer>
                 </ScrollContainer>

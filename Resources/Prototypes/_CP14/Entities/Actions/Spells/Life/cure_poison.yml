@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellBloodPurification
   name: Blood purification
-  description: You cleanse the target's blood of poisons, and restore its volume slightly
+  description: You cleanse the target's blood of poisons and acids, and restore its volume slightly
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
@@ -53,7 +53,7 @@
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneBloodPurification
   parent: CP14BaseMagicRune

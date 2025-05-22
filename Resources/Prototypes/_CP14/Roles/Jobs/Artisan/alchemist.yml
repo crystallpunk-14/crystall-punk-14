@@ -10,13 +10,10 @@
     - !type:CP14LearnSkillsSpecial
       skills:
       - AlchemyVision
-      - MetamagicT1
-      - MetamagicT2
-      - CP14ActionSpellMagicSplitting
   requirements:
-    - !type:RoleTimeRequirement
-      role: CP14JobApprentice
-      time: 3600 # 1 hours
+    #- !type:RoleTimeRequirement
+    #  role: CP14JobApprentice
+    #  time: 3600 # 1 hours
     - !type:TraitsRequirement
       inverted: true
       traits:

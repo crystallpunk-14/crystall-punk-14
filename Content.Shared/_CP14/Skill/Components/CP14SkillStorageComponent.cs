@@ -14,6 +14,13 @@ namespace Content.Shared._CP14.Skill.Components;
 [Access(typeof(CP14SharedSkillSystem), typeof(CP14SharedResearchSystem))]
 public sealed partial class CP14SkillStorageComponent : Component
 {
+    /// <summary>
+    /// Tracks skills that are learned without spending memory points.
+    /// the skills that are here are DUBLED in the LearnedSkills, 
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public List<ProtoId<CP14SkillPrototype>> FreeLearnedSkills = new();
+
     [DataField, AutoNetworkedField]
     public List<ProtoId<CP14SkillPrototype>> LearnedSkills = new();
 

@@ -58,17 +58,3 @@
   id: CP14ClothingShirtGuardsChainmailShirtB
   equipment:
     shirt: CP14ClothingShirtGuardsChainmailShirtB
-
-# Spells
-
-- type: loadoutGroup
-  id: CP14GuardSpells
-  name: cp14-loadout-guard-spells
-  loadouts:
-  - CP14ActionSpellFlashLight
-
-- type: loadout
-  id: CP14ActionSpellFlashLight
-  dummyEntity: CP14ActionSpellFlashLight
-  actions:
-  - CP14ActionSpellFlashLight

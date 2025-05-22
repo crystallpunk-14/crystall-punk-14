@@ -1,69 +1,68 @@
 - type: cp14Skill
   id: CopperMelting
-  skillUiPosition: 0, 0
+  skillUiPosition: 1, 0
   tree: Blacksmithing
   name: cp14-skill-copper-melt-name
-  learnCost: 0
+  learnCost: 0.5
   icon:
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     state: ore3
-  restrictions:
-  - !type:Impossible
   effects:
   - !type:UnlockRecipes
 
 - type: cp14Skill
   id: IronMelting
-  skillUiPosition: 0, 2
+  skillUiPosition: 1, 2
   tree: Blacksmithing
   name: cp14-skill-iron-melt-name
-  learnCost: 0
+  learnCost: 0.5
   icon:
     sprite: _CP14/Objects/Materials/iron_ore.rsi
     state: ore3
-  restrictions:
-  - !type:Impossible
   effects:
   - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CopperMelting
 
 - type: cp14Skill
   id: GoldMelting
   skillUiPosition: 0, 4
   tree: Blacksmithing
   name: cp14-skill-gold-melt-name
-  learnCost: 0
+  learnCost: 0.5
   icon:
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     state: ore3
-  restrictions:
-  - !type:Impossible
   effects:
   - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IronMelting
 
 - type: cp14Skill
   id: MithrilMelting
-  skillUiPosition: 0, 6
+  skillUiPosition: 2, 4
   tree: Blacksmithing
   name: cp14-skill-mithril-melt-name
-  learnCost: 0
+  learnCost: 0.5
   icon:
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
     state: ore3
-  restrictions:
-  - !type:Impossible
   effects:
   - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IronMelting
 
 - type: cp14Skill
   id: GlassMelting
-  skillUiPosition: 2, 0
+  skillUiPosition: 3, 0
   tree: Blacksmithing
   name: cp14-skill-glass-melt-name
-  learnCost: 0
+  learnCost: 0.5
   icon:
     sprite: _CP14/Objects/Materials/glass.rsi
     state: glass_3
-  restrictions:
-  - !type:Impossible
   effects:
   - !type:UnlockRecipes

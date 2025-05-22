@@ -2,7 +2,7 @@
   id: CP14MobMonsterMyconideFlyagaric
   parent: CP14SimpleMobBase
   name: myconide flyagaric
-  description: While you're looking at it, it's already running towards you!!! 
+  description: A running fly on legs, a strange phenomenon even for our crazy world.
   categories: [ ForkFiltered ]
   components:
   - type: HTN

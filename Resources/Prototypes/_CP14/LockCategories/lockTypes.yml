@@ -209,21 +209,16 @@
 # Guard
 
 - type: CP14LockType
-  id: GuardEntrance
+  id: CityGate
   complexity: 5
-  name: cp14-lock-shaper-guard-entrance
+  name: cp14-lock-shaper-guard-city-gate
 
 - type: CP14LockType
-  id: Guard
+  id: GuardBarracks
   complexity: 5
-  name: cp14-lock-shaper-guard-staff
+  name: cp14-lock-shaper-guard-barracks
 
 - type: CP14LockType
   id: GuardCommander
   complexity: 7
   name: cp14-lock-shaper-guard-commander
-
-- type: CP14LockType
-  id: GuardWeaponStorage
-  complexity: 7
-  name: cp14-lock-shaper-guard-weapon-storage

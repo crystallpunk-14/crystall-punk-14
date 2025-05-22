@@ -17,8 +17,31 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         _skillStorageQuery = GetEntityQuery<CP14SkillStorageComponent>();
 
+        SubscribeLocalEvent<CP14SkillStorageComponent, MapInitEvent>(OnMapInit);
+
         InitializeAdmin();
         InitializeChecks();
+    }
+
+    private void OnMapInit(Entity<CP14SkillStorageComponent> ent, ref MapInitEvent args)
+    {
+        //If at initialization we have any skill records, we automatically give them to this entity
+
+        var free = ent.Comp.FreeLearnedSkills.ToList();
+        var learned = ent.Comp.LearnedSkills.ToList();
+
+        ent.Comp.FreeLearnedSkills.Clear();
+        ent.Comp.LearnedSkills.Clear();
+
+        foreach (var skill in free)
+        {
+            TryAddSkill(ent.Owner, skill, ent.Comp, true);
+        }
+
+        foreach (var skill in learned)
+        {
+            TryAddSkill(ent.Owner, skill, ent.Comp);
+        }
     }
 
     /// <summary>
@@ -26,7 +49,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     /// </summary>
     public bool TryAddSkill(EntityUid target,
         ProtoId<CP14SkillPrototype> skill,
-        CP14SkillStorageComponent? component = null)
+        CP14SkillStorageComponent? component = null,
+        bool free = false)
     {
         if (!Resolve(target, ref component, false))
             return false;
@@ -42,7 +66,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             effect.AddSkill(EntityManager, target);
         }
 
-        component.SkillsSumExperience += indexedSkill.LearnCost;
+        if (free)
+            component.FreeLearnedSkills.Add(skill);
+        else
+            component.SkillsSumExperience += indexedSkill.LearnCost;
 
         component.LearnedSkills.Add(skill);
         Dirty(target, component);
@@ -74,7 +101,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             effect.RemoveSkill(EntityManager, target);
         }
 
-        component.SkillsSumExperience -= indexedSkill.LearnCost;
+        if (!component.FreeLearnedSkills.Remove(skill))
+            component.SkillsSumExperience -= indexedSkill.LearnCost;
 
         Dirty(target, component);
         return true;
@@ -91,6 +119,16 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             return false;
 
         return component.LearnedSkills.Contains(skill);
+    }
+
+    public bool HaveFreeSkill(EntityUid target,
+        ProtoId<CP14SkillPrototype> skill,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+
+        return component.FreeLearnedSkills.Contains(skill);
     }
 
     /// <summary>

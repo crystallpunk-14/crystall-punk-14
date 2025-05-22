@@ -3,11 +3,11 @@
 
 - type: entity
   parent: CP14IronDoor
-  id: CP14IronDoorGuard
-  suffix: Guard
+  id: CP14IronDoorGuardBarracks
+  suffix: Guard Barracks
   components:
   - type: CP14Lock
-    autoGenerateShape: Guard
+    autoGenerateShape: GuardBarracks
   - type: Lock
     locked: true
 
@@ -21,43 +21,43 @@
   - type: Lock
     locked: true
 
-- type: entity
-  parent: CP14IronDoor
-  id: CP14IronDoorGuardWeaponStorage
-  suffix: Guard, Weapon Storage
-  components:
-  - type: CP14Lock
-    autoGenerateShape: GuardWeaponStorage
-  - type: Lock
-    locked: true
-
 # Iron windowed
 
 - type: entity
   parent: CP14IronDoorWindowed
-  id: CP14IronDoorWindowedGuardEntrance
-  suffix: Guard, Entrance
+  id: CP14IronDoorWindowedCityGate
+  suffix: Guard Barracks
   components:
   - type: CP14Lock
-    autoGenerateShape: GuardEntrance
+    autoGenerateShape: GuardBarracks
   - type: Lock
     locked: true
 
 - type: entity
   parent:
-  - CP14IronDoorWindowedGuardEntrance
+  - CP14IronDoorWindowedCityGate
   - CP14IronDoorWindowedMirrored
-  id: CP14IronDoorWindowedMirroredGuardEntrance
-  suffix: Guard, Entrance, Mirrored
+  id: CP14IronDoorWindowedMirroredCityGate
+  suffix: Guard Barracks, Mirrored
 
 # Grill Gate
 
 - type: entity
   parent: CP14FenceGateBigIron
-  id: CP14FenceGateBigIronGuard
-  suffix: Guard
+  id: CP14FenceGateBigIronGuardBarracks
+  suffix: Guard Barracks
   components:
   - type: CP14Lock
-    autoGenerateShape: Guard
+    autoGenerateShape: GuardBarracks
   - type: Lock
     locked: true
+
+- type: entity
+  parent: CP14FenceGateBigIron
+  id: CP14FenceGateBigIronCityGate
+  suffix: City Gate
+  components:
+  - type: CP14Lock
+    autoGenerateShape: CityGate
+  - type: Lock
+    locked: false #City gate opened by default
