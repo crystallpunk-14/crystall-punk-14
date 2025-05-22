@@ -82,13 +82,37 @@ public sealed partial class CP14WorkplaceWindow : DefaultWindow
         OptionCategories.Clear();
         OptionCategories.AddItem(Loc.GetString("cp14-recipe-category-all"), AllCategoryId);
 
+        //Categories update
         var categories = new List<LocId>();
         var count = 0;
 
         foreach (var recipe in state.Recipes)
         {
+            if (!_prototype.TryIndex(recipe.Recipe, out var indexedRecipe))
+                continue;
 
+            if(!indexedRecipe.Components.TryGetComponent(CP14WorkplaceRecipeComponent.CompName, out var compData) || compData is not CP14WorkplaceRecipeComponent recipeComp)
+                continue;
+
+            if (recipeComp.Category is null)
+                continue;
+
+            if (categories.Contains(recipeComp.Category.Value))
+                continue;
+
+            categories.Add(recipeComp.Category.Value);
         }
+
+        categories.Sort((a, b) => string.Compare(Loc.GetString(a), Loc.GetString(b), StringComparison.Ordinal));
+
+        foreach (var category in categories)
+        {
+            OptionCategories.AddItem(Loc.GetString(category), count);
+            _categories.Add(count, category);
+            count++;
+        }
+
+        UpdateRecipesVisibility();
     }
 
     private void OnSearchChanged(LineEdit.LineEditEventArgs _)

@@ -4,3 +4,52 @@
   components:
   - type: CP14WorkplaceRecipe
     tag: CP14RecipeMeltingFurnace
+    category: cp14-recipe-category-tool
+
+- type: entity
+  id: CP14RecipeBucket
+  parent: CP14BaseWorkplaceRecipe
+  name: Крафт верстака
+  description: Пара досок и вы прекрасны
+  components:
+  - type: CP14WorkplaceRecipe
+    category: cp14-recipe-category-weapon
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+
+- type: entity
+  id: CP14RecipeBucket2
+  parent: CP14BaseWorkplaceRecipe
+  name: Крафт верстака 2
+  description: Пара досок и вы прекрасны
+  components:
+  - type: CP14WorkplaceRecipe
+    category: cp14-recipe-category-weapon
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: workbench
+
+- type: entity
+  id: CP14RecipeBucket3
+  parent: CP14BaseWorkplaceRecipe
+  name: Крафт верстака 3
+  description: Пара досок и вы прекрасны
+  components:
+  - type: CP14WorkplaceRecipe
+    category: cp14-recipe-category-armor
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: cooking_table
+
+- type: entity
+  id: CP14RecipeBucket4
+  parent: CP14BaseWorkplaceRecipe
+  name: Крафт верстака 4
+  description: Пара досок и вы прекрасны
+  components:
+  - type: CP14WorkplaceRecipe
+    category: cp14-recipe-category-tile
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    state: electrified
