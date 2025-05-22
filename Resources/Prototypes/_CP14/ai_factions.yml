@@ -20,7 +20,6 @@
   - CP14Monster
   - CP14Slimes
   - CP14Pets
-  - CP14HostileEveryone
 
 - type: npcFaction
   id: CP14Undead
