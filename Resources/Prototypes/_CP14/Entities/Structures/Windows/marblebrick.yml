@@ -1,0 +1,81 @@
+- type: entity
+  id: CP14WindowMarbleBrick
+  parent: CP14WindowBase
+  name: marble brick window
+  description: A marble brick wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WindowMarbleBrickBroken
+  - type: Construction
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowMarbleBrick
+
+- type: entity
+  id: CP14WindowFrameMarbleBrick
+  name: marble brick window frame
+  parent: CP14BaseWindowFrame
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/marble_bricks_window_frame.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/marble_bricks_window_frame.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14MarbleBlock1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowFrameMarbleBrick
+
+- type: entity
+  id: CP14WindowMarbleBrickBroken
+  name: shattered marble brick window
+  parent:
+  - CP14BaseWindowFrameBroken
+  - CP14WindowFrameMarbleBrick
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/marble_bricks_window_broken.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/marble_bricks_window_broken.rsi
+  - type: Construction
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowMarbleBrickBroken

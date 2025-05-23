@@ -57,7 +57,7 @@
   name: wooden window
   description: A wooden wall with a glass window in it.
   id: CP14WindowWooden
-  graph: CP14WallWooden
+  graph: CP14WindowWooden
   startNode: start
   targetNode: CP14WindowWooden
   category: construction-category-structures
@@ -90,15 +90,33 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: stonebrick wall
+  name: stone brick wall
   description: Sturdy enough to cover you from threats or cold winds.
-  id: CP14WallStonebrick
-  graph: CP14WallStonebrick
+  id: CP14WallStoneBrick
+  graph: CP14WallStoneBrick
   startNode: start
-  targetNode: CP14WallStonebrick
+  targetNode: CP14WallStoneBrick
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: stone brick window
+  description: A stone brick wall with a glass window in it.
+  id: CP14WindowStoneBrick
+  graph: CP14WindowStoneBrick
+  startNode: start
+  targetNode: CP14WindowStoneBrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
   objectType: Structure
   placementMode: SnapgridCenter
@@ -117,6 +135,24 @@
   category: construction-category-structures
   icon:
     sprite: _CP14/Structures/Walls/marblebricks_stone_wall.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  name: marble brick window
+  description: A marble brick wall with a glass window in it.
+  id: CP14WindowMarbleBrick
+  graph: CP14WindowMarbleBrick
+  startNode: start
+  targetNode: CP14WindowMarbleBrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
     state: full
   objectType: Structure
   placementMode: SnapgridCenter
