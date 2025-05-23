@@ -65,8 +65,8 @@
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WallStonebrick
-  graph: CP14WallStonebrick
+  id: CP14WallStoneBrick
+  graph: CP14WallStoneBrick
   startNode: start
   targetNode: CP14WallStoneBrick
   category: construction-category-structures
