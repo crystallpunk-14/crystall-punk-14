@@ -69,25 +69,14 @@
 - type: entity
   id: CP14WindowWoodenBroken
   name: shattered wooden window
-  parent: CP14WindowFrameWooden
+  parent: 
+  - CP14BaseWindowFrameBroken
+  - CP14WindowFrameWooden
   components:
   - type: Sprite
     sprite: _CP14/Structures/Windows/wooden_window_broken.rsi
   - type: Icon
     sprite: _CP14/Structures/Windows/wooden_window_broken.rsi
-  - type: StepTrigger
-    requiredTriggeredSpeed: 0
-    intersectRatio: 0.2
-  - type: Slippery
-    slipSound:
-      path: /Audio/Effects/glass_crack3.ogg
-    slipData:
-      launchForwardsMultiplier: 0
-  - type: TriggerOnStepTrigger
-  - type: DamageUserOnTrigger
-    damage:
-      types:
-        Slash: 5
   - type: Construction
     graph: CP14WindowWooden
     node: CP14WindowWoodenBroken

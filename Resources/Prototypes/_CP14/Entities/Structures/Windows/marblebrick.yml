@@ -1,13 +1,13 @@
 - type: entity
-  id: CP14WindowStoneBrick
+  id: CP14WindowMarbleBrick
   parent: CP14WindowBase
-  name: stone brick window
-  description: A stone brick wall with a glass window in it.
+  name: marble brick window
+  description: A marble brick wall with a glass window in it.
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
   - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
     state: full
   - type: Destructible
     thresholds:
@@ -26,20 +26,20 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:ChangeConstructionNodeBehavior
-        node: CP14WindowStoneBrickBroken
+        node: CP14WindowMarbleBrickBroken
   - type: Construction
-    graph: CP14WindowStoneBrick
-    node: CP14WindowStoneBrick
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowMarbleBrick
 
 - type: entity
-  id: CP14WindowFrameStoneBrick
-  name: stone brick window frame
+  id: CP14WindowFrameMarbleBrick
+  name: marble brick window frame
   parent: CP14BaseWindowFrame
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window_frame.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window_frame.rsi
   - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window_frame.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window_frame.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: CP14RockStructural
@@ -51,7 +51,7 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14StoneBlock1:
+          CP14MarbleBlock1:
             min: 1
             max: 2
       - !type:PlaySoundBehavior
@@ -62,20 +62,20 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
-    graph: CP14WindowStoneBrick
-    node: CP14WindowFrameStoneBrick
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowFrameMarbleBrick
 
 - type: entity
-  id: CP14WindowStoneBrickBroken
-  name: shattered stone brick window
+  id: CP14WindowMarbleBrickBroken
+  name: shattered marble brick window
   parent:
   - CP14BaseWindowFrameBroken
-  - CP14WindowFrameStoneBrick
+  - CP14WindowFrameMarbleBrick
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window_broken.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window_broken.rsi
   - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window_broken.rsi
+    sprite: _CP14/Structures/Windows/marble_bricks_window_broken.rsi
   - type: Construction
-    graph: CP14WindowStoneBrick
-    node: CP14WindowStoneBrickBroken
+    graph: CP14WindowMarbleBrick
+    node: CP14WindowMarbleBrickBroken
