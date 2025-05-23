@@ -38,9 +38,6 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     [DataField]
     public List<CP14StoreBuyService> Services = new();
 
-    /// <summary>
-    /// Service restriction. Limiters on learning. Any reason why a player cannot learn this skill.
-    /// </summary>
     [DataField]
-    public List<CP14SkillRestriction> Restrictions = new();
+    public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
 }

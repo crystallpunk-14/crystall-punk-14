@@ -5,3 +5,21 @@
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: filler
+
+- type: cp14TradingPosition
+  id: Test2
+  faction: HelmirWeapon
+  uiPosition: 0, 300
+  prerequisite: Test1
+  icon:
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+
+- type: cp14TradingPosition
+  id: Test3
+  faction: HelmirWeapon
+  uiPosition: 30, 60
+  prerequisite: Test2
+  icon:
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: workbench

@@ -27,7 +27,7 @@ public sealed class CP14TradingPlatformBoundUserInterface : BoundUserInterface
         switch (state)
         {
             case CP14TradingPlatformUiState storeState:
-                _window?.UpdateUI(storeState);
+                _window?.UpdateState(storeState);
                 break;
         }
     }
