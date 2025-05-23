@@ -1,0 +1,7 @@
+- type: cp14TradingPosition
+  id: Test1
+  faction: HelmirWeapon
+  uiPosition: 0, 0
+  icon:
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler

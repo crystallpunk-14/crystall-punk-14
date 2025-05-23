@@ -1,0 +1,19 @@
+- type: cp14TradingFaction
+  id: HelmirWeapon
+  name: cp14-faction-name-helmir
+  desc: cp14-faction-desc-helmir
+
+- type: cp14TradingFaction
+  id: Sylphoria
+  name: cp14-faction-name-sylphoria
+  desc: cp14-faction-desc-sylphoria
+
+- type: cp14TradingFaction
+  id: SpiceStream
+  name: cp14-faction-name-spice-stream
+  desc: cp14-faction-desc-spice-stream
+
+- type: cp14TradingFaction
+  id: BradFamily
+  name: cp14-faction-name-brad-family
+  desc: cp14-faction-desc-brad-family
