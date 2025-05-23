@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14TradingPlatform
+  name: trading platform
+  description: Allows you to track what is selling and buying right now. 
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: ActivatableUI
+    key: enum.CP14TradingUiKey.Key
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CP14TradingPlatform
+  - type: UserInterface
+    interfaces:
+      enum.CP14TradingUiKey.Key:
+        type: CP14TradingPlatformBoundUserInterface
+  #- type: GuideHelp
+  #  guides:
+  #  - CP14_RU_Trading
+  #  - CP14_EN_Trading
