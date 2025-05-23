@@ -118,6 +118,6 @@
     sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/straw_hat.rsi
-  - type: Construction
-    graph: CP14StrawHat
-    node: cp14headstrawhat
+  #- type: Construction
+  #  graph: CP14StrawHat
+  #  node: cp14headstrawhat
