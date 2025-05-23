@@ -2,6 +2,7 @@
   id: Test1
   faction: HelmirWeapon
   uiPosition: 0, 0
+  unlockCost: 0.2
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: filler
@@ -10,15 +11,27 @@
   id: Test2
   faction: HelmirWeapon
   uiPosition: 0, 3
+  unlockCost: 0.5
   prerequisite: Test1
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: filler
 
 - type: cp14TradingPosition
+  id: Test21
+  faction: HelmirWeapon
+  uiPosition: 3, 3
+  unlockCost: 0.1
+  prerequisite: Test1
+  icon:
+    sprite: _CP14/Structures/Furniture/workbench.rsi
+    state: cooking_table
+
+- type: cp14TradingPosition
   id: Test3
   faction: HelmirWeapon
   uiPosition: 3, 6
+  unlockCost: 0.6
   prerequisite: Test2
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi

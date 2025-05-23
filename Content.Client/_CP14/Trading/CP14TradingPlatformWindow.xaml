@@ -3,7 +3,6 @@
                xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
                xmlns:parallax="clr-namespace:Content.Client.Parallax"
                xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
-               xmlns:travelingStoreShip="clr-namespace:Content.Client._CP14.TravelingStoreShip"
                Name="Window"
                Title=""
                MinSize="800 600"
@@ -51,7 +50,7 @@
 
                 <!-- Buttons -->
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Button Name="EjectButton" Text="{Loc 'cp14-demiplane-map-eject'}"
+                    <Button Name="UnlockButton" Text="{Loc 'cp14-demiplane-map-eject'}"
                             ToolTip="{Loc 'cp14-demiplane-map-eject-tooltip'}" StyleClasses="OpenRight"
                             HorizontalExpand="True" MinHeight="35" Access="Public" />
                 </BoxContainer>

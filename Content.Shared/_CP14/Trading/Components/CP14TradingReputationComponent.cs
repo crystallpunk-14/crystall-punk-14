@@ -17,4 +17,7 @@ public sealed partial class CP14TradingReputationComponent : Component
 
     [DataField, AutoNetworkedField]
     public HashSet<ProtoId<CP14TradingPositionPrototype>> UnlockedPositions = new();
+
+    [DataField]
+    public float GlobalRoundstartReputation = 1f;
 }
