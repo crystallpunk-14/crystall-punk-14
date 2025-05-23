@@ -91,4 +91,4 @@
           Quantity: 1.4
   - type: FoodSequenceElement
     entries:
-      Sandwich: CP14CheeseSandwich
+      CP14Sandwich: CP14CheeseSandwich
