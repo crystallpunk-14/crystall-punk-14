@@ -6,9 +6,6 @@
   targetNode: cp14herbbandage
   category: construction-category-tools
   objectType: Item
-  icon:
-    sprite: _CP14/Objects/Specific/Medical/medical.rsi
-    state: herbbandage
 
 - type: construction
   crystallPunkAllowed: true
@@ -18,9 +15,6 @@
   targetNode: cp14gauze
   category: construction-category-tools
   objectType: Item
-  icon:
-    sprite: _CP14/Objects/Specific/Medical/medical.rsi
-    state: bandage
 
 - type: construction
   crystallPunkAllowed: true
@@ -30,6 +24,3 @@
   targetNode: cp14torch
   category: construction-category-tools
   objectType: Item
-  icon:
-    sprite: _CP14/Objects/Tools/torch.rsi
-    state: torch-unlit

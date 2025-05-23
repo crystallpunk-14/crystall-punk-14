@@ -83,9 +83,6 @@
   startNode: start
   targetNode: CP14WindowStoneBrick
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
