@@ -27,6 +27,10 @@ namespace Content.Shared.Localizations
         {
             var culture = new CultureInfo(_cfg.GetCVar(CCVars.Language));
 
+            //CP14 Boilerplate! Should be deleted when https://github.com/space-wizards/space-station-14/pull/34404 is merged
+            _loc.Initialize();
+            //CP14 Boilerplate end
+            
             _loc.LoadCulture(culture);
 
             /*
