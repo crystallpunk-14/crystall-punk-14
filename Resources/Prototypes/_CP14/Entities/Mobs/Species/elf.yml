@@ -35,15 +35,16 @@
     requiredLegs: 2
   - type: Bloodstream
     bloodReagent: CP14BloodElf
-  - type: CP14SkillStorage
-    progress:
-      Metamagic: 1
   - type: CP14MagicEnergyContainer #Increased mana container
     maxEnergy: 200
     energy: 200
   - type: CP14MagicEnergyDraw #Half of standard mana regeneration
     energy: 0.5
     delay: 3
+  - type: CP14SkillStorage #Innate metamagic
+    freeLearnedSkills:
+    - MetamagicT1
+    - MetamagicT2
   - type: Inventory
     templateId: CP14Human
     displacements:

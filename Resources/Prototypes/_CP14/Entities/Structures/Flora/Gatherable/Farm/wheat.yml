@@ -27,3 +27,6 @@
   - id: CP14Wheat
     amount: 5
     maxAmount: 8
+  - id: CP14SeedWheat
+    amount: 1
+    maxAmount: 2

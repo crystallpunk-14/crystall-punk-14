@@ -40,7 +40,7 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WindowWooden
-  graph: CP14WallWooden
+  graph: CP14WindowWooden
   startNode: start
   targetNode: CP14WindowWooden
   category: construction-category-structures
@@ -68,8 +68,24 @@
   id: CP14WallStonebrick
   graph: CP14WallStonebrick
   startNode: start
-  targetNode: CP14WallStonebrick
+  targetNode: CP14WallStoneBrick
   category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WindowStoneBrick
+  graph: CP14WindowStoneBrick
+  startNode: start
+  targetNode: CP14WindowStoneBrick
+  category: construction-category-structures
+  icon:
+    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -82,6 +98,19 @@
   graph: CP14WallMarbleBrick
   startNode: start
   targetNode: CP14WallMarbleBrick
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WindowMarbleBrick
+  graph: CP14WindowMarbleBrick
+  startNode: start
+  targetNode: CP14WindowMarbleBrick
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter

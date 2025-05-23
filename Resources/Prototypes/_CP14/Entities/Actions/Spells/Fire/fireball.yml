@@ -11,6 +11,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 20
   - type: CP14MagicEffect
+    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
@@ -36,7 +37,7 @@
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 25
-      castDelay: 1.5
+      castDelay: 2.5
       breakOnMove: false
 
 - type: entity

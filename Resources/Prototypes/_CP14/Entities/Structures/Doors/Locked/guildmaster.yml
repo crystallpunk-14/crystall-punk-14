@@ -28,4 +28,4 @@
   - type: CP14Lock
     autoGenerateShape: DemiplaneCrystal
   - type: Lock
-    locked: true
+    locked: false

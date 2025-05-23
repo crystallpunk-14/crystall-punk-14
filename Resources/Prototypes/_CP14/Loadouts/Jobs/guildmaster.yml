@@ -31,11 +31,18 @@
   name: cp14-loadout-guildmaster-outer
   loadouts:
   - CP14ClothingOuterClothingGreenVest
+  - CP14ClothingOuterClothingGreenVest2
 
 - type: loadout
   id: CP14ClothingOuterClothingGreenVest
   equipment:
     outerClothing: CP14ClothingOuterClothingGreenVest
+
+- type: loadout
+  id: CP14ClothingOuterClothingGreenVest2
+  equipment:
+    outerClothing: CP14ClothingOuterClothingGreenVest2
+
 
 # Shirt
 
@@ -60,26 +67,3 @@
   name: cp14-loadout-guildmaster-shoes
   loadouts:
   - CP14ShoesAristocraticBlack
-
-# Spells
-
-- type: loadoutGroup
-  id: CP14GuildmasterSpells
-  name: cp14-loadout-guildmaster-spells
-  minLimit: 2
-  maxLimit: 2
-  loadouts:
-  - CP14ActionSpellDemiplaneInfiltration
-  - CP14ActionSpellMonolithWarp
-
-- type: loadout
-  id: CP14ActionSpellDemiplaneInfiltration
-  dummyEntity: CP14ActionSpellDemiplaneInfiltration
-  actions:
-  - CP14ActionSpellDemiplaneInfiltration
-
-- type: loadout
-  id: CP14ActionSpellMonolithWarp
-  dummyEntity: CP14ActionSpellMonolithWarp
-  actions:
-  - CP14ActionSpellMonolithWarp

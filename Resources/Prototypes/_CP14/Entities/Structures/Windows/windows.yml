@@ -13,6 +13,16 @@
     base: window
   - type: PlacementReplacement
     key: walls
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
@@ -27,97 +37,73 @@
           collection: WindowShatter
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WindowShatter
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          CP14GlassShard:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
 
 - type: entity
-  id: CP14WindowStoneBrick
-  parent: CP14WindowBase
-  name: stone brick window
-  description: A stone brick wall with a glass window in it.
+  id: CP14BaseWindowFrame
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  abstract: true
+  description: Provides a nice breeze. The gap looks big enough to climb through.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
+    drawdepth: Mobs
   - type: Icon
-    sprite: _CP14/Structures/Windows/stone_bricks_window.rsi
     state: full
-  - type: Construction
-    graph: CP14WallStonebrick
-    node: CP14WallStonebrick
+  - type: IconSmooth
+    key: CP14window
+    base: window
+  - type: PlacementReplacement
+    key: walls
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - HalfWallLayer
+  - type: Appearance
+  - type: Climbable
 
 - type: entity
-  id: CP14WindowMarbleBrick
-  parent: CP14WindowBase
-  name: marble brick window
-  description: A stone brick wall with a glass window in it.
+  id: CP14BaseWindowFrameBroken
+  parent: CP14BaseWindowFrame
+  abstract: true
+  description: Broken window. You can get in, but the sharp splinters will tear your skin.
   components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Windows/marble_bricks_window.rsi
-    state: full
-  - type: Construction
-    graph: CP14WallMarbleBrick
-    node: CP14WindowMarbleBrick
-
-- type: entity
-  id: CP14WindowWooden
-  parent:
-  - CP14WindowBase
-  - CP14BaseFlammable
-  name: wooden window
-  description: A wooden wall with a glass window in it.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/wooden_window.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Windows/wooden_window.rsi
-  - type: Construction
-    graph: CP14WallWooden
-    node: CP14WindowWooden
-
-- type: entity
-  id: CP14WindowIceBlock
-  parent: CP14WindowBase
-  name: ice block
-  description: Smooth and translucent ice.
-  components:
-  - type: Sprite
-    sprite: _CP14/Structures/Windows/ice_block.rsi
-  - type: Icon
-    sprite: _CP14/Structures/Windows/ice_block.rsi
-    state: full
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 15 
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: WindowShatter
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: GlassSmash
-  - type: InteractionPopup
-    interactSuccessString: popup-cp14crystal-ding
-    messagePerceivedByOthers: popup-cp14crystal-ding
-    interactSuccessSound:
-      collection: CP14CrystalDings
-      params:
-        variation: 0.03
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.2
+  - type: Slippery
+    slipSound:
+      collection: GlassCrack
+    slipData:
+      launchForwardsMultiplier: 0
+  - type: TriggerOnStepTrigger
+  - type: DamageUserOnTrigger
+    damage:
+      types:
+        Slash: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - HalfWallLayer
+      slips: # For stun & damage
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        hard: false
+        mask:
+          - FullTileLayer

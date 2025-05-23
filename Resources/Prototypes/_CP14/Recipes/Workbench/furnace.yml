@@ -3,6 +3,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
   - !type:MaterialResource
     material: CP14Copper
     count: 10
@@ -13,6 +16,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
   - !type:MaterialResource
     material: CP14Iron
     count: 10
@@ -23,6 +29,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
   - !type:MaterialResource
     material: CP14Gold
     count: 10
@@ -33,6 +42,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
   - !type:MaterialResource
     material: CP14Mithril
     count: 10
@@ -43,6 +55,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:ProtoIdResource
     protoId: CP14CrystalShardQuartz
     count: 1
@@ -53,6 +68,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:ProtoIdResource
     protoId: CP14GlassShard
     count: 2
@@ -63,6 +81,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 1
@@ -73,6 +94,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -86,6 +110,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 2
@@ -96,6 +123,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -109,6 +139,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 6
@@ -119,6 +152,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -132,6 +168,9 @@
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
   requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 9

@@ -1,0 +1,33 @@
+- type: entity
+  id: CP14WindowIceBlock
+  parent: CP14WindowBase
+  name: ice block
+  description: Smooth and translucent ice.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/ice_block.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/ice_block.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15 
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: InteractionPopup
+    interactSuccessString: popup-cp14crystal-ding
+    messagePerceivedByOthers: popup-cp14crystal-ding
+    interactSuccessSound:
+      collection: CP14CrystalDings
+      params:
+        variation: 0.03

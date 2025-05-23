@@ -1,5 +1,6 @@
 - type: job
   id: CP14Merchant
+  setPreference: false
   name: cp14-job-name-merchant
   description: cp14-job-desc-merchant
   playTimeTracker: CP14JobMerchant
