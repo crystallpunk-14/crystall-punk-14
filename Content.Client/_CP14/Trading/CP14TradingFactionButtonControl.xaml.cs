@@ -10,21 +10,12 @@ public sealed partial class CP14TradingFactionButtonControl : Control
 {
     public event Action? OnPressed;
 
-    public CP14TradingFactionButtonControl(Color color, string label, float skillpoints)
+    public CP14TradingFactionButtonControl(Color color, string label, float reputation)
     {
         RobustXamlLoader.Load(this);
 
         ColorPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = color };
-        if (skillpoints > 0)
-        {
-            SkillPointImage.Visible = true;
-            SkillTreeLabel.Text = $"{skillpoints} {label}";
-        }
-        else
-        {
-            SkillPointImage.Visible = false;
-            SkillTreeLabel.Text = $"{label}";
-        }
+        SkillTreeLabel.Text = $"{label} {reputation}";
 
         MainButton.OnPressed += args => OnPressed?.Invoke();
     }

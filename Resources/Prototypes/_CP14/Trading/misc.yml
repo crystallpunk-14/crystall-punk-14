@@ -9,7 +9,7 @@
 - type: cp14TradingPosition
   id: Test2
   faction: HelmirWeapon
-  uiPosition: 0, 300
+  uiPosition: 0, 3
   prerequisite: Test1
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
@@ -18,7 +18,7 @@
 - type: cp14TradingPosition
   id: Test3
   faction: HelmirWeapon
-  uiPosition: 30, 60
+  uiPosition: 3, 6
   prerequisite: Test2
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi

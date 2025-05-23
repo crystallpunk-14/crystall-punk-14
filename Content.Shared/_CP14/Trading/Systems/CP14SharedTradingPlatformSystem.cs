@@ -16,6 +16,9 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
     private void OnBeforeUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState());
+        if (!TryComp<CP14TradingReputationComponent>(args.User, out var repComp))
+            return;
+
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(repComp.Reputation, repComp.UnlockedPositions));
     }
 }

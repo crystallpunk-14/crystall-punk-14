@@ -18,6 +18,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
+    private CP14TradingPlatformUiState? _cacheState;
+
     private IEnumerable<CP14TradingPositionPrototype> _allPositions = [];
     private IEnumerable<CP14TradingFactionPrototype> _allFactions = [];
 
@@ -60,11 +62,16 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
     public void UpdateState(CP14TradingPlatformUiState state)
     {
+        _cacheState = state;
+
         UpdateGraphControl();
     }
 
     private void UpdateGraphControl()
     {
+        if (_cacheState is null)
+            return;
+
         HashSet<CP14NodeTreeElement> nodeTreeElements = new();
         var edges = new HashSet<(string, string)>();
         foreach (var position in _allPositions)
@@ -72,7 +79,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             if (position.Faction != _selectedFaction)
                 continue;
 
-            var node = new CP14NodeTreeElement(position.ID, false, false, position.UiPosition, position.Icon);
+            var node = new CP14NodeTreeElement(position.ID, _cacheState.UnlockedPositions.Contains(position), false, position.UiPosition * 50, position.Icon);
             nodeTreeElements.Add(node);
             if (position.Prerequisite != null)
             {
@@ -108,7 +115,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             var factionButton = new CP14TradingFactionButtonControl(
                 faction.Color,
                 Loc.GetString(faction.Name),
-                0);
+                _cacheState.Reputation.GetValueOrDefault(faction.ID, 0f));
 
             factionButton.OnPressed += () =>
             {
