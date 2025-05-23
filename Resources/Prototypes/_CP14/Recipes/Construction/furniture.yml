@@ -149,48 +149,6 @@
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14CurtainsWhite
-  graph: CP14Curtains
-  startNode: start
-  targetNode: CP14CurtainsWhite
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: false
-  conditions:
-    - !type:EmptyOrWindowValidInTile 
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14CurtainsBlue
-  graph: CP14Curtains
-  startNode: start
-  targetNode: CP14CurtainsBlue
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: false
-  conditions:
-    - !type:EmptyOrWindowValidInTile 
-
-- type: construction
-  crystallPunkAllowed: true
-  id: CP14CurtainsRed
-  graph: CP14Curtains
-  startNode: start
-  targetNode: CP14CurtainsRed
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: true
-  canBuildInImpassable: false
-  conditions:
-    - !type:EmptyOrWindowValidInTile 
-
-- type: construction
-  crystallPunkAllowed: true
   id: CP14WoodenCloset
   graph: CP14WoodenCloset
   startNode: start
