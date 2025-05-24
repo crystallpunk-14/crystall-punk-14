@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenDoor
-  name: wooden door
-  description: Not the most solid construction, but it's better than nothing.
   graph: CP14WoodenDoor
   startNode: start
   targetNode: CP14WoodenDoor
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/wooden_door.rsi
-    state: closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -20,15 +15,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenDoorMirrored
-  name: wooden door (mirrored)
-  description: Not the most solid construction, but it's better than nothing.
   graph: CP14WoodenDoor
   startNode: start
   targetNode: CP14WoodenDoorMirrored
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/wooden_door.rsi
-    state: closed_mirrored
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -39,15 +29,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenDoorWindowed
-  name: wooden windowed door
-  description: Not the most solid construction, but it's better than nothing.
   graph: CP14WoodenDoor
   startNode: start
   targetNode: CP14WoodenDoorWindowed
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/wooden_windowed_door.rsi
-    state: closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -58,15 +43,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14WoodenDoorWindowedMirrored
-  name: wooden windowed door
-  description: Not the most solid construction, but it's better than nothing.
   graph: CP14WoodenDoor
   startNode: start
   targetNode: CP14WoodenDoorWindowedMirrored
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/wooden_windowed_door.rsi
-    state: closed_mirrored
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -77,15 +57,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14IronDoor
-  name: iron door
-  description: Solid iron door.
   graph: CP14IronDoor
   startNode: start
   targetNode: CP14IronDoor
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/iron_door.rsi
-    state: closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -96,15 +71,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14IronDoorMirrored
-  name: iron door (mirrored)
-  description: Solid iron door.
   graph: CP14IronDoor
   startNode: start
   targetNode: CP14IronDoorMirrored
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/iron_door.rsi
-    state: closed_mirrored
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -115,15 +85,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14IronDoorWindowed
-  name: iron windowed door
-  description: The same sturdy iron door, but with a small window.
   graph: CP14IronDoor
   startNode: start
   targetNode: CP14IronDoorWindowed
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/iron_windowed_door.rsi
-    state: closed
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
@@ -134,15 +99,10 @@
 - type: construction
   crystallPunkAllowed: true
   id: CP14IronDoorWindowedMirrored
-  name: iron windowed door
-  description: The same sturdy iron door, but with a small window.
   graph: CP14IronDoor
   startNode: start
   targetNode: CP14IronDoorWindowedMirrored
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Doors/iron_windowed_door.rsi
-    state: closed_mirrored
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true
