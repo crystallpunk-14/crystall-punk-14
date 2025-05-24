@@ -7,18 +7,18 @@
   parent: BaseItem
   components:
   - type: Sprite
-    sprite: Objects/Misc/books.rsi
+    sprite: _CP14/Objects/Bureaucracy/books.rsi
     layers:
     - state: paper
     - state: cover_base
       color: "#332d27"
       map: [ "cover" ]
-    - state: decor_wingette
+    - state: decor_line
       color: "#453f3a"
       map: [ "decor" ]
-    - state: icon_eye
+    - state: icon_plate
       map: [ "icon" ]
-    - state: overlay_null
+    - state: bookmark_short
       map: [ "overlay" ]
   - type: Tag
     tags:
