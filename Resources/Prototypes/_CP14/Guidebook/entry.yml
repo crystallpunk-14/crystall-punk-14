@@ -8,8 +8,7 @@
   - CP14_EN_Species
   - CP14_EN_Jobs
   - CP14_EN_Imperial_Laws
-  - CP14_EN_Locks
-  - CP14_EN_Lockpicking_101
+  - CP14_EN_Mechanics
 
 - type: guideEntry
   crystallPunkAllowed: true
