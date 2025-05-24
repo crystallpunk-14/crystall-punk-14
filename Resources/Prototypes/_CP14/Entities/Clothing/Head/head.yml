@@ -4,6 +4,7 @@
   id: CP14ClothingHeadSlimeCrown
   name: slime crown
   description: Earl of Ooze. Grand Duke of Goo. Lord of the Slimes.
+  categories: [ DoNotMap ]
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Head/slime_crown.rsi

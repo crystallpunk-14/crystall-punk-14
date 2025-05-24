@@ -123,6 +123,49 @@
     Heat: 0.2
     Cold: 1.4
 
+# Slimes
+# TODO: upstream a way to get modifier sets to inherit from each other
+
+- type: damageModifierSet
+  id: CP14Slime
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Cold: 1.5
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: CP14SlimeElectric
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 1.2
+    Cold: 1.5
+    Shock: 0.0
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: CP14SlimeFire
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 0.0
+    Cold: 2.0
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: CP14SlimeIce
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 2.0
+    Cold: 0.0
+    Poison: 0.8
+
 # Species
 
 - type: damageModifierSet
