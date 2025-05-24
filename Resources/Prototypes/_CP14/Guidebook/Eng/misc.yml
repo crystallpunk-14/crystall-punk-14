@@ -31,4 +31,6 @@
   id: CP14_EN_Locks
   name: Locks
   text: "/ServerInfo/_CP14/Guidebook_EN/Locks.xml"
+  children:
+  - CP14_EN_Lockpicking_101
   filterEnabled: True
