@@ -11,13 +11,9 @@ public enum CP14TradingUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14TradingPlatformUiState(
-    Dictionary<ProtoId<CP14TradingFactionPrototype>, float> reputation,
-    HashSet<ProtoId<CP14TradingPositionPrototype>> unlockedPositions
-) : BoundUserInterfaceState
+public sealed class CP14TradingPlatformUiState(NetEntity user) : BoundUserInterfaceState
 {
-    public Dictionary<ProtoId<CP14TradingFactionPrototype>, float> Reputation = reputation;
-    public HashSet<ProtoId<CP14TradingPositionPrototype>> UnlockedPositions = unlockedPositions;
+    public NetEntity User = user;
 }
 
 [Serializable, NetSerializable]

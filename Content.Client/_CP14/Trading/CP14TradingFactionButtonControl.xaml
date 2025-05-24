@@ -8,9 +8,9 @@
                 StyleClasses="OpenRight"
                 Margin="0 0 -1 0">
             <BoxContainer Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Right">
+                <TextureRect VerticalAlignment="Center" Visible="True" HorizontalAlignment="Center" Margin="0 0 8 0" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/star.png"/>
                 <Label Name="SkillTreeLabel" Margin="-5 0 0 0"/>
-                <TextureRect Name="SkillPointImage" VerticalAlignment="Center" Visible="False" HorizontalAlignment="Center" Margin="0 0 8 0" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/skillpoint.png"/>
-            </BoxContainer>
+                </BoxContainer>
         </Button>
         <PanelContainer Name="ColorPanel"
                         VerticalExpand="True"

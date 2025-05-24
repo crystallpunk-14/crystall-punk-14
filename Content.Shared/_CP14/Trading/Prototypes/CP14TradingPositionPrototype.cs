@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared._CP14.Skill.Restrictions;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -27,7 +28,10 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     public ProtoId<CP14TradingFactionPrototype> Faction;
 
     [DataField]
-    public float UnlockCost = 1f;
+    public FixedPoint2 UnlockReputationCost = 1f;
+
+    [DataField]
+    public int SponsorCost = 1;
 
     [DataField(required: true)]
     public Vector2 UiPosition = default!;
