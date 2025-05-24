@@ -1640,7 +1640,6 @@ ent-CP14SpawnPointTownRaid = городской рейд точка спавна
     .suffix = Городской рейд
 
 ent-CP14MobUndeadSkeletonWizardTownRaid = { ent-CP14MobUndeadSkeletonWizardT2 }
-    .desc = { ent-CP14MobUndeadSkeletonWizardT2.desc }
     .suffix = Маг
 
 ent-CP14SpawnPointTownRaidUndeadEasy = { ent-CP14SpawnPointTownRaid }
