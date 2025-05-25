@@ -7,6 +7,7 @@ using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared.Ghost;
+using Content.Shared.Item;
 using Content.Shared.Movement.Pulling.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -118,6 +119,10 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                     continue;
 
                 if (!_interaction.InRangeUnobstructed(ent, uid))
+                    continue;
+
+                // Talking swords are not party members, and should not be teleported separately from their wielders
+                if (HasComp<ItemComponent>(ent))
                     continue;
 
                 teleportedEnts.Add(ent);
