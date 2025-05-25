@@ -1,9 +1,9 @@
+using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.Stacks;
-using Content.Shared.Storage.EntitySystems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.Cargo.Prototype.BuyServices;
+namespace Content.Shared._CP14.Trading.BuyServices;
 
 public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 {
@@ -15,14 +15,11 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
 
     public override void Buy(EntityManager entManager,
         IPrototypeManager prototype,
-        Entity<CP14TradingPortalComponent> portal)
+        EntityUid platform)
     {
-        var storageSystem = entManager.System<SharedEntityStorageSystem>();
-
         for (var i = 0; i < Count; i++)
         {
-            var spawned = entManager.Spawn(Product);
-            storageSystem.Insert(spawned, portal);
+            entManager.SpawnNextToOrDrop(Product, platform);
         }
     }
 

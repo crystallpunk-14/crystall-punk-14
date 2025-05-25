@@ -1,8 +1,6 @@
 using System.Numerics;
-using Content.Shared._CP14.Cargo.Prototype;
-using Content.Shared._CP14.Skill.Restrictions;
-using Content.Shared.Destructible.Thresholds;
 using Content.Shared.FixedPoint;
+using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -31,17 +29,14 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     [DataField]
     public FixedPoint2 UnlockReputationCost = 1f;
 
-    [DataField]
-    public int SponsorCost = 1;
-
     [DataField(required: true)]
     public Vector2 UiPosition = default!;
 
     [DataField(required: true)]
     public SpriteSpecifier Icon = default!;
 
-    [DataField]
-    public List<CP14StoreBuyService> Services = new();
+    [DataField(required: true, serverOnly: true)]
+    public CP14StoreBuyService Service = default!;
 
     [DataField]
     public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
@@ -51,4 +46,23 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
 
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(10);
+}
+
+[ImplicitDataDefinitionForInheritors]
+[MeansImplicitUse]
+public abstract partial class CP14StoreBuyService
+{
+    public abstract void Buy(EntityManager entManager, IPrototypeManager prototype,  EntityUid platform);
+
+    public abstract string GetName(IPrototypeManager protoMan);
+
+    /// <summary>
+    /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
+    /// </summary>
+    public abstract EntProtoId? GetEntityView(IPrototypeManager protoManager);
+
+    /// <summary>
+    /// You can specify the texture directly. Return null to disable.
+    /// </summary>
+    public abstract SpriteSpecifier? GetTexture(IPrototypeManager protoManager);
 }

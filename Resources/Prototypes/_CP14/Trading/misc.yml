@@ -7,6 +7,8 @@
   icon:
     sprite: _CP14/Objects/Fun/Instruments/flute.rsi
     state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledAlchemy
 
 - type: cp14TradingPosition
   id: Test2
@@ -18,6 +20,8 @@
   icon:
     sprite: _CP14/Objects/Fun/Instruments/lira.rsi
     state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledAlchemy
 
 - type: cp14TradingPosition
   id: Test21
@@ -29,6 +33,8 @@
   icon:
     sprite: _CP14/Objects/Fun/Instruments/skeleton_guitar.rsi
     state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledAlchemy
 
 - type: cp14TradingPosition
   id: Test3
@@ -40,3 +46,5 @@
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: workbench
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenChestFilledAlchemy

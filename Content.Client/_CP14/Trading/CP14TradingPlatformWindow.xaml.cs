@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Numerics;
-using Content.Client._CP14.TravelingStoreShip;
+using Content.Client._CP14.UserInterface;
 using Content.Client._CP14.UserInterface.Systems.NodeTree;
 using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;

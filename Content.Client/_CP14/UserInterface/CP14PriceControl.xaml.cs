@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client._CP14.TravelingStoreShip;
+namespace Content.Client._CP14.UserInterface;
 
 [GenerateTypedNameReferences]
 public sealed partial class CP14PriceControl : Control
