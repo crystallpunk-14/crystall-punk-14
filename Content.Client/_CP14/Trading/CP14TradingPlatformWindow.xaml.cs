@@ -28,6 +28,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
     private CP14TradingPlatformUiState? _cacheState;
     private Entity<CP14TradingReputationComponent>? _cachedUser;
+    private Entity<CP14TradingPlatformComponent>? _cachedPlatform;
     private bool _haveCooldown = false;
 
     private IEnumerable<CP14TradingPositionPrototype> _allPositions = [];
@@ -71,6 +72,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         _haveCooldown = _timing.CurTime < _cacheState.NextBuyTime;
         CooldownBox.Visible = _haveCooldown;
+        BuyBox.Visible = !_haveCooldown;
 
         if (!_haveCooldown)
             return;
@@ -118,7 +120,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
     private void SelectNode(CP14TradingPositionPrototype? node)
     {
-        if (node is null || _cachedUser is null)
+        if (node is null || _cachedUser is null || _cachedPlatform is null)
         {
             DeselectNode();
             return;
@@ -131,13 +133,14 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         }
 
         _selectedPosition = node;
+        var unlocked = _cachedUser.Value.Comp.UnlockedPositions;
 
         Name.Text = Loc.GetString(_selectedPosition.Name ?? "");
         Description.Text = Loc.GetString(_selectedPosition.Desc ?? "");
 
         LocationView.Texture = _selectedPosition.Icon.Frame0();
         UnlockButton.Disabled = !_tradingSystem.CanUnlockPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
-        BuyButton.Disabled = !_tradingSystem.CanBuyPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
+        BuyButton.Disabled = !unlocked.Contains(_selectedPosition);
 
         UnlockCost.Text = _selectedPosition.UnlockReputationCost.ToString();
 
@@ -169,6 +172,11 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         _cachedUser = (ent, repComp);
 
+        var plat = _e.GetEntity(state.Platform);
+        if (!_e.TryGetComponent<CP14TradingPlatformComponent>(plat, out var platComp))
+            return;
+
+        _cachedPlatform = (plat, platComp);
         UpdateGraphControl();
     }
 

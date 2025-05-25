@@ -17,37 +17,12 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14TradingReputationComponent, MapInitEvent>(OnReputationMapInit);
+
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
-        SubscribeLocalEvent<CP14TradingReputationComponent, MapInitEvent>(OnReputationMapInit);
-    }
-
-    private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
-    {
-        if (_timing.CurTime < ent.Comp.NextBuyTime)
-        {
-            //popup
-            return;
-        }
-
-        if (!CanBuyPosition(args.Actor, args.Position))
-            return;
-
-        if (!_proto.TryIndex(args.Position, out var indexedPosition))
-            return;
-
-        ent.Comp.NextBuyTime = _timing.CurTime + indexedPosition.Cooldown;
-        Dirty(ent);
-
-        UpdateUIState(ent, args.Actor);
-    }
-
-    private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
-    {
-        TryUnlockPosition(args.Actor, args.Position);
-        UpdateUIState(ent, args.Actor);
     }
 
     private void OnReputationMapInit(Entity<CP14TradingReputationComponent> ent, ref MapInitEvent args)
@@ -57,6 +32,18 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
             ent.Comp.Reputation[faction] = ent.Comp.Reputation.GetValueOrDefault(faction, 0f) + ent.Comp.GlobalRoundstartReputation;
         }
         Dirty(ent);
+    }
+
+    private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
+    {
+        TryBuyPosition(args.Actor, ent, args.Position);
+        UpdateUIState(ent, args.Actor);
+    }
+
+    private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
+    {
+        TryUnlockPosition(args.Actor, args.Position);
+        UpdateUIState(ent, args.Actor);
     }
 
     private void OnBeforeUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
@@ -69,7 +56,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
             return;
 
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), ent.Comp.NextBuyTime));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), GetNetEntity(ent), ent.Comp.NextBuyTime));
     }
 
     public bool TryUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
@@ -90,6 +77,24 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         return true;
     }
 
+    public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)
+    {
+        if (!CanBuyPosition(user, platform!, position))
+            return false;
+
+        if (!_proto.TryIndex(position, out var indexedPosition))
+            return false;
+
+        if (!Resolve(user.Owner, ref user.Comp, false))
+            return false;
+
+        platform.Comp.NextBuyTime = _timing.CurTime + indexedPosition.Cooldown;
+        Dirty(platform);
+
+        indexedPosition.Service.Buy(EntityManager, _proto, platform);
+        return true;
+    }
+
     public bool CanUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
@@ -107,12 +112,17 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         return user.Comp.Reputation.GetValueOrDefault(indexedPosition.Faction, 0f) >= indexedPosition.UnlockReputationCost;
     }
 
-    public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
+    public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent?> platform, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
             return false;
+        if (!Resolve(platform.Owner, ref platform.Comp, false))
+            return false;
 
         if (!user.Comp.UnlockedPositions.Contains(position))
+            return false;
+
+        if (_timing.CurTime < platform.Comp.NextBuyTime)
             return false;
 
         return true;
