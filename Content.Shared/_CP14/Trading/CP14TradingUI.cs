@@ -1,5 +1,3 @@
-using Content.Shared._CP14.Trading.Prototypes;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Trading;
@@ -11,9 +9,10 @@ public enum CP14TradingUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14TradingPlatformUiState(NetEntity user) : BoundUserInterfaceState
+public sealed class CP14TradingPlatformUiState(NetEntity user, TimeSpan nextTime) : BoundUserInterfaceState
 {
     public NetEntity User = user;
+    public TimeSpan NextBuyTime = nextTime;
 }
 
 [Serializable, NetSerializable]

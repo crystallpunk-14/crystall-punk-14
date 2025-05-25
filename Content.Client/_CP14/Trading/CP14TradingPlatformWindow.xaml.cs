@@ -22,11 +22,13 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IEntityManager _e = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly CP14ClientTradingPlatformSystem _tradingSystem;
 
     private CP14TradingPlatformUiState? _cacheState;
     private Entity<CP14TradingReputationComponent>? _cachedUser;
+    private bool _haveCooldown = false;
 
     private IEnumerable<CP14TradingPositionPrototype> _allPositions = [];
     private IEnumerable<CP14TradingFactionPrototype> _allFactions = [];
@@ -58,6 +60,24 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         GraphControl.OnNodeSelected += SelectNode;
         UnlockButton.OnPressed += UnlockPressed;
         BuyButton.OnPressed += BuyPressed;
+    }
+
+    protected override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        if (_cacheState is null)
+            return;
+
+        _haveCooldown = _timing.CurTime < _cacheState.NextBuyTime;
+        CooldownBox.Visible = _haveCooldown;
+
+        if (!_haveCooldown)
+            return;
+
+        var cooldown = _cacheState!.NextBuyTime - _timing.CurTime;
+
+        BuyCooldownLabel.Text = $"{Math.Floor(cooldown.TotalMinutes):00}:{cooldown.Seconds:00}";
     }
 
     private void UnlockPressed(BaseButton.ButtonEventArgs obj)

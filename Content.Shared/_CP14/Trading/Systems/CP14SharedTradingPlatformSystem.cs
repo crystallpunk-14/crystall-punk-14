@@ -3,6 +3,7 @@ using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Trading.Systems;
 
@@ -10,6 +11,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -24,7 +26,22 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
     {
+        if (_timing.CurTime < ent.Comp.NextBuyTime)
+        {
+            //popup
+            return;
+        }
 
+        if (!CanBuyPosition(args.Actor, args.Position))
+            return;
+
+        if (!_proto.TryIndex(args.Position, out var indexedPosition))
+            return;
+
+        ent.Comp.NextBuyTime = _timing.CurTime + indexedPosition.Cooldown;
+        Dirty(ent);
+
+        UpdateUIState(ent, args.Actor);
     }
 
     private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
@@ -47,12 +64,12 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         UpdateUIState(ent, args.User);
     }
 
-    private void UpdateUIState(EntityUid ent, EntityUid user)
+    private void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
     {
         if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
             return;
 
-        _userInterface.SetUiState(ent, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user)));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), ent.Comp.NextBuyTime));
     }
 
     public bool TryUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)

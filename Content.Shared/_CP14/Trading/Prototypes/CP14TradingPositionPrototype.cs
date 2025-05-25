@@ -48,4 +48,7 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
 
     [DataField(required: true)]
     public int Price = 1;
+
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(10);
 }
