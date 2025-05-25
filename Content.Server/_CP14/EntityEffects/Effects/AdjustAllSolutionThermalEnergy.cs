@@ -43,11 +43,13 @@ public sealed partial class AdjustAllSolutionThermalEnergy : EntityEffect
             var heatCap = solution.Comp.Solution.GetHeatCapacity(null);
             var deltaT = _delta / heatCap;
 
-            solution.Comp.Solution.Temperature = Math.Clamp(solution.Comp.Solution.Temperature + deltaT, _minTemp, _maxTemp);
+            var temperature = Math.Clamp(solution.Comp.Solution.Temperature + deltaT, _minTemp, _maxTemp);
+            solutionContainer.SetTemperature(solution, temperature);
         }
     }
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-    => Loc.GetString("reagent-effect-guidebook-adjust-solution-temperature-effect",
-        ("chance", Probability), ("deltasign", MathF.Sign(_delta)), ("mintemp", _minTemp), ("maxtemp", _maxTemp));
+    {
+        return null;
+    }
 }

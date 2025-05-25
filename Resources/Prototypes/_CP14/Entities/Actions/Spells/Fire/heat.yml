@@ -18,11 +18,11 @@
       - CP14ImpactEffectHeat
     - !type:CP14SpellApplyEntityEffect
       effects:
+      - !type:AdjustAllSolutionThermalEnergy
+        delta: 3600 # One full use heats 100u from ~300k to ~650k
       - !type:AdjustTemperature
         amount: 36000
       - !type:ExtinguishReaction
-      - !type:AdjustAllSolutionThermalEnergy
-        delta: 3600 # One full use heats 100u from ~300k to ~650k
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto calidum..."
   - type: CP14MagicEffectCastingVisual
