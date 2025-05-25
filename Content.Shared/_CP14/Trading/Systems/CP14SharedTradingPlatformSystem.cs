@@ -17,16 +17,9 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
-        SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionSponsorAttempt>(OnSponsorAttempt);
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
         SubscribeLocalEvent<CP14TradingReputationComponent, MapInitEvent>(OnReputationMapInit);
-    }
-
-    private void OnSponsorAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionSponsorAttempt args)
-    {
-        TrySponsorPosition(args.Actor, args.Position);
-        UpdateUIState(ent, args.Actor);
     }
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
@@ -80,24 +73,6 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         return true;
     }
 
-    public bool TrySponsorPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
-    {
-        if (!CanSponsorPosition(user, position))
-            return false;
-
-        if (!_proto.TryIndex(position, out var indexedPosition))
-            return false;
-
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-
-        //user.Comp.Reputation[indexedPosition.Faction] -= indexedPosition.SponsorCost;
-        //user.Comp.SponsoredPositions.Add(position);
-        //Dirty(user);
-
-        return true;
-    }
-
     public bool CanUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
@@ -125,21 +100,6 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         return true;
     }
-
-    public bool CanSponsorPosition(Entity<CP14TradingReputationComponent?> user,
-        ProtoId<CP14TradingPositionPrototype> position)
-    {
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-
-        if (!user.Comp.UnlockedPositions.Contains(position))
-            return false;
-
-        if (!_proto.TryIndex(position, out var indexedPosition))
-            return false;
-
-        return user.Comp.Reputation.GetValueOrDefault(indexedPosition.Faction, 0f) >= indexedPosition.SponsorCost;
-    }
 }
 
 [Serializable, NetSerializable]
@@ -150,12 +110,6 @@ public sealed class CP14TradingPositionUnlockAttempt(ProtoId<CP14TradingPosition
 
 [Serializable, NetSerializable]
 public sealed class CP14TradingPositionBuyAttempt(ProtoId<CP14TradingPositionPrototype> position) : BoundUserInterfaceMessage
-{
-    public readonly ProtoId<CP14TradingPositionPrototype> Position = position;
-}
-
-[Serializable, NetSerializable]
-public sealed class CP14TradingPositionSponsorAttempt(ProtoId<CP14TradingPositionPrototype> position) : BoundUserInterfaceMessage
 {
     public readonly ProtoId<CP14TradingPositionPrototype> Position = position;
 }

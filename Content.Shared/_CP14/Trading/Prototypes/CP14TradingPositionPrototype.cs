@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._CP14.Cargo.Prototype;
 using Content.Shared._CP14.Skill.Restrictions;
+using Content.Shared.Destructible.Thresholds;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -44,4 +45,7 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
 
     [DataField]
     public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
+
+    [DataField(required: true)]
+    public int Price = 1;
 }

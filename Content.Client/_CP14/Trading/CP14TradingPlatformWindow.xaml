@@ -51,7 +51,7 @@
                 <!-- Buttons -->
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
 
-                    <BoxContainer Name="UnlockBox" Orientation="Horizontal" HorizontalExpand="True" Visible="False">
+                    <BoxContainer Name="UnlockBox" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
                         <Button Name="UnlockButton" Text="{Loc 'cp14-trading-ui-button-unlock'}"
                                 ToolTip="{Loc 'cp14-trading-ui-button-unlock-tooltip'}" StyleClasses="OpenRight"
                                 HorizontalExpand="True" MinHeight="35" Access="Public"/>
@@ -61,21 +61,12 @@
                         </BoxContainer>
                     </BoxContainer>
 
-                    <BoxContainer Name="BuyBox" Orientation="Horizontal" HorizontalExpand="True" Visible="False">
+                    <BoxContainer Name="BuyBox" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
                         <Button Name="BuyButton" Text="{Loc 'cp14-trading-ui-button-buy'}"
                                 ToolTip="{Loc 'cp14-trading-ui-button-buy-tooltip'}" StyleClasses="OpenRight"
                                 HorizontalExpand="True" MinHeight="35" Access="Public"/>
                         <BoxContainer Orientation="Horizontal">
                             <BoxContainer SetWidth="100" Name="BuyPriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Center" />
-                        </BoxContainer>
-                    </BoxContainer>
-
-                    <BoxContainer Name="SponsorBox" Orientation="Horizontal" HorizontalExpand="True" Visible="False">
-                        <Button Name="SponsorButton" Text="{Loc 'cp14-trading-ui-button-sponsor'}"
-                                ToolTip="{Loc 'cp14-trading-ui-button-sponsor-tooltip'}" StyleClasses="OpenRight"
-                                HorizontalExpand="True" MinHeight="35" Access="Public"/>
-                        <BoxContainer Orientation="Horizontal">
-                            <BoxContainer SetWidth="100"  Name="SponsorPriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Center" />
                         </BoxContainer>
                     </BoxContainer>
                 </BoxContainer>

@@ -3,36 +3,40 @@
   faction: HelmirWeapon
   uiPosition: 0, 0
   unlockReputationCost: 0.2
+  price: 15
   icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
+    sprite: _CP14/Objects/Fun/Instruments/flute.rsi
+    state: icon
 
 - type: cp14TradingPosition
   id: Test2
   faction: HelmirWeapon
-  uiPosition: 0, 3
+  uiPosition: 0, 1
   unlockReputationCost: 0.5
   prerequisite: Test1
+  price: 2148
   icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
+    sprite: _CP14/Objects/Fun/Instruments/lira.rsi
+    state: icon
 
 - type: cp14TradingPosition
   id: Test21
   faction: HelmirWeapon
-  uiPosition: 3, 3
+  uiPosition: 1, 1
   unlockReputationCost: 0.1
   prerequisite: Test1
+  price: 156
   icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: cooking_table
+    sprite: _CP14/Objects/Fun/Instruments/skeleton_guitar.rsi
+    state: icon
 
 - type: cp14TradingPosition
   id: Test3
   faction: HelmirWeapon
-  uiPosition: 3, 6
+  uiPosition: 1, 2
   unlockReputationCost: 0.6
   prerequisite: Test2
+  price: 7
   icon:
     sprite: _CP14/Structures/Furniture/workbench.rsi
     state: workbench

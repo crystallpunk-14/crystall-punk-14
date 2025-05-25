@@ -35,7 +35,6 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     private CP14TradingPositionPrototype? _selectedPosition;
 
     public event Action<ProtoId<CP14TradingPositionPrototype>>? OnUnlock;
-    public event Action<ProtoId<CP14TradingPositionPrototype>>? OnSponsor;
     public event Action<ProtoId<CP14TradingPositionPrototype>>? OnBuy;
 
     private ISawmill Sawmill { get; init; }
@@ -59,7 +58,6 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         GraphControl.OnNodeSelected += SelectNode;
         UnlockButton.OnPressed += UnlockPressed;
         BuyButton.OnPressed += BuyPressed;
-        SponsorButton.OnPressed += SponsorPressed;
     }
 
     private void UnlockPressed(BaseButton.ButtonEventArgs obj)
@@ -76,14 +74,6 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             return;
 
         OnBuy?.Invoke(_selectedPosition.ID);
-    }
-
-    private void SponsorPressed(BaseButton.ButtonEventArgs obj)
-    {
-        if (_selectedPosition is null)
-            return;
-
-        OnSponsor?.Invoke(_selectedPosition.ID);
     }
 
     private void SelectNode(CP14NodeTreeElement? node)
@@ -128,24 +118,11 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         LocationView.Texture = _selectedPosition.Icon.Frame0();
         UnlockButton.Disabled = !_tradingSystem.CanUnlockPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
         BuyButton.Disabled = !_tradingSystem.CanBuyPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
-        SponsorButton.Disabled = !_tradingSystem.CanSponsorPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
 
         UnlockCost.Text = _selectedPosition.UnlockReputationCost.ToString();
 
-        SponsorPriceHolder.RemoveAllChildren();
-        SponsorPriceHolder.AddChild(new CP14PriceControl(_selectedPosition.SponsorCost));
-
         BuyPriceHolder.RemoveAllChildren();
-        BuyPriceHolder.AddChild(new CP14PriceControl(10));
-
-        var unlocked = _cachedUser.Value.Comp.UnlockedPositions;
-        var sponsored = _cachedUser.Value.Comp.SponsoredPositions;
-        var selectedUnlocked = unlocked.Contains(_selectedPosition.ID);
-        var selectedSponsored = sponsored.Contains(_selectedPosition.ID);
-
-        UnlockBox.Visible = !selectedUnlocked;
-        SponsorBox.Visible = selectedUnlocked && !selectedSponsored;
-        BuyBox.Visible = selectedUnlocked;
+        BuyPriceHolder.AddChild(new CP14PriceControl(_selectedPosition.Price));
     }
 
     private void DeselectNode()
@@ -188,9 +165,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
                 continue;
 
             var unlocked = _cachedUser.Value.Comp.UnlockedPositions;
-            var sponsored = _cachedUser.Value.Comp.SponsoredPositions;
-            var gained = sponsored.Contains(position);
-            var active = unlocked.Contains(position.ID) || sponsored.Contains(position.ID);
+            var gained = unlocked.Contains(position);
+            var active = _tradingSystem.CanUnlockPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), position);
             var node = new CP14NodeTreeElement(position.ID, gained, active, position.UiPosition * 50, position.Icon);
             nodeTreeElements.Add(node);
             if (position.Prerequisite != null)
@@ -204,16 +180,16 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
                 nodeTreeElements,
                 edges: edges,
                 frameIcon: new SpriteSpecifier.Rsi(
-                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/trading.rsi"),
                     "frame"),
                 hoveredIcon: new SpriteSpecifier.Rsi(
-                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/trading.rsi"),
                     "hovered"),
                 selectedIcon: new SpriteSpecifier.Rsi(
-                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/trading.rsi"),
                     "selected"),
                 learnedIcon: new SpriteSpecifier.Rsi(
-                    new ResPath("/Textures/_CP14/Interface/NodeTree/demiplane_map.rsi"),
+                    new ResPath("/Textures/_CP14/Interface/NodeTree/trading.rsi"),
                     "learned"),
                 activeLineColor: new Color(172, 102, 190),
                 lineColor: new Color(83, 40, 121)
