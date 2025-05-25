@@ -92,6 +92,8 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         Dirty(platform);
 
         indexedPosition.Service.Buy(EntityManager, _proto, platform);
+        user.Comp.Reputation[indexedPosition.Faction] += (float)indexedPosition.Price / 10;
+        Dirty(user);
         return true;
     }
 
