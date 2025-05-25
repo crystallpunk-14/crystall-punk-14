@@ -10,6 +10,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -25,6 +27,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly CP14ClientTradingPlatformSystem _tradingSystem;
+    private readonly SharedAudioSystem _audio = default!;
 
     private CP14TradingPlatformUiState? _cacheState;
     private Entity<CP14TradingReputationComponent>? _cachedUser;
@@ -52,7 +55,9 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         CacheSkillProto();
         _proto.PrototypesReloaded += _ => CacheSkillProto();
         _selectedFaction = _allFactions.First();
+
         _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
+        _audio = _e.System<SharedAudioSystem>();
 
         GraphControl.OnOffsetChanged += offset =>
         {
@@ -88,6 +93,9 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             return;
 
         OnUnlock?.Invoke(_selectedPosition);
+
+        if (_cachedUser is not null)
+            _audio.PlayGlobal(new SoundCollectionSpecifier("CP14CoinImpact"), _cachedUser.Value);
     }
 
     private void BuyPressed(BaseButton.ButtonEventArgs obj)
@@ -195,7 +203,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             var unlocked = _cachedUser.Value.Comp.UnlockedPositions;
             var gained = unlocked.Contains(position);
             var active = _tradingSystem.CanUnlockPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), position);
-            var node = new CP14NodeTreeElement(position.ID, gained, active, position.UiPosition * 50, position.Icon);
+            var node = new CP14NodeTreeElement(position.ID, gained, active, position.UiPosition * 66, position.Icon);
             nodeTreeElements.Add(node);
             if (position.Prerequisite != null)
             {

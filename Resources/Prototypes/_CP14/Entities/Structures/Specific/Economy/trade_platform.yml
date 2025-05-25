@@ -21,6 +21,32 @@
     interfaces:
       enum.CP14TradingUiKey.Key:
         type: CP14TradingPlatformBoundUserInterface
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
   #- type: GuideHelp
   #  guides:
   #  - CP14_RU_Trading
