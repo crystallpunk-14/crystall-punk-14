@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.UserInterface;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -12,6 +13,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -94,6 +96,8 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         indexedPosition.Service.Buy(EntityManager, _proto, platform);
         user.Comp.Reputation[indexedPosition.Faction] += (float)indexedPosition.Price / 10;
         Dirty(user);
+
+        _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
         return true;
     }
 
