@@ -1,6 +1,8 @@
 using Content.Shared._CP14.Trading.Systems;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Trading.Components;
 
@@ -15,4 +17,7 @@ public sealed partial class CP14TradingPlatformComponent : Component
     {
         Params = AudioParams.Default.WithVariation(0.1f)
     };
+
+    [DataField]
+    public ProtoId<TagPrototype> CoinTag = "CP14Coin";
 }

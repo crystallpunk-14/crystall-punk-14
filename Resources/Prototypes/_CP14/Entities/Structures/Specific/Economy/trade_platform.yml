@@ -1,18 +1,19 @@
 - type: entity
   parent: BaseStructure
   id: CP14TradingPlatform
-  name: trading platform
-  description: Allows you to track what is selling and buying right now. 
+  name: buying dimensional platform
+  description: Allows you to trade with the outside world, through retail trade transactions 
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
   - type: Icon
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: filler
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
   - type: ActivatableUI
+    singleUser: true
     key: enum.CP14TradingUiKey.Key
   - type: Clickable
   - type: InteractionOutline
@@ -24,13 +25,15 @@
   - type: PlaceableSurface
   - type: ItemPlacer
     maxEntities: 0
+    whitelist:
+      tags:
+      - CP14Coin
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        density: 55
+          bounds: "-0.08,-0.35,0.15,0.25"
         mask:
         - TabletopMachineMask
         layer:
@@ -38,15 +41,6 @@
         - MidImpassable
         - LowImpassable
         hard: false
-      fix2:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        density: 55
-        mask:
-        - TableMask
-        layer:
-        - TableLayer
   #- type: GuideHelp
   #  guides:
   #  - CP14_RU_Trading

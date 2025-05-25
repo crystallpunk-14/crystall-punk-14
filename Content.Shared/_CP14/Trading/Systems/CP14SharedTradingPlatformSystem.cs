@@ -11,9 +11,8 @@ namespace Content.Shared._CP14.Trading.Systems;
 public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] protected readonly IPrototypeManager Proto = default!;
+    [Dependency] protected readonly IGameTiming Timing = default!;
 
     public override void Initialize()
     {
@@ -22,24 +21,17 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         SubscribeLocalEvent<CP14TradingReputationComponent, MapInitEvent>(OnReputationMapInit);
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
-        SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
 
     private void OnReputationMapInit(Entity<CP14TradingReputationComponent> ent, ref MapInitEvent args)
     {
-        foreach (var faction in _proto.EnumeratePrototypes<CP14TradingFactionPrototype>())
+        foreach (var faction in Proto.EnumeratePrototypes<CP14TradingFactionPrototype>())
         {
             ent.Comp.Reputation[faction] = ent.Comp.Reputation.GetValueOrDefault(faction, 0f) + ent.Comp.GlobalRoundstartReputation;
         }
         Dirty(ent);
-    }
-
-    private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
-    {
-        TryBuyPosition(args.Actor, ent, args.Position);
-        UpdateUIState(ent, args.Actor);
     }
 
     private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
@@ -53,7 +45,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         UpdateUIState(ent, args.User);
     }
 
-    private void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
+    protected void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
     {
         if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
             return;
@@ -66,7 +58,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         if (!CanUnlockPosition(user, position))
             return false;
 
-        if (!_proto.TryIndex(position, out var indexedPosition))
+        if (!Proto.TryIndex(position, out var indexedPosition))
             return false;
 
         if (!Resolve(user.Owner, ref user.Comp, false))
@@ -78,35 +70,12 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         return true;
     }
-
-    public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)
-    {
-        if (!CanBuyPosition(user, platform!, position))
-            return false;
-
-        if (!_proto.TryIndex(position, out var indexedPosition))
-            return false;
-
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-
-        platform.Comp.NextBuyTime = _timing.CurTime + indexedPosition.Cooldown;
-        Dirty(platform);
-
-        indexedPosition.Service.Buy(EntityManager, _proto, platform);
-        user.Comp.Reputation[indexedPosition.Faction] += (float)indexedPosition.Price / 10;
-        Dirty(user);
-
-        _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
-        return true;
-    }
-
     public bool CanUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
             return false;
 
-        if (!_proto.TryIndex(position, out var indexedPosition))
+        if (!Proto.TryIndex(position, out var indexedPosition))
             return false;
 
         if (user.Comp.UnlockedPositions.Contains(position))
@@ -128,7 +97,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         if (!user.Comp.UnlockedPositions.Contains(position))
             return false;
 
-        if (_timing.CurTime < platform.Comp.NextBuyTime)
+        if (Timing.CurTime < platform.Comp.NextBuyTime)
             return false;
 
         return true;

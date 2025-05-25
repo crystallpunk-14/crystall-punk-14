@@ -16,7 +16,7 @@
   uiPosition: 0, 1
   unlockReputationCost: 0.5
   prerequisite: Test1
-  price: 2148
+  price: 214
   icon:
     sprite: _CP14/Objects/Fun/Instruments/lira.rsi
     state: icon
