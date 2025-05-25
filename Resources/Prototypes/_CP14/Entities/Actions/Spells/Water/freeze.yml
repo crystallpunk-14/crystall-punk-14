@@ -25,6 +25,8 @@
       - !type:AdjustTemperature
         amount: -12000
       - !type:ExtinguishReaction
+      - !type:AdjustAllSolutionThermalEnergy
+        delta: -1200 # One full use cools 100u from ~300k to ~250k
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
