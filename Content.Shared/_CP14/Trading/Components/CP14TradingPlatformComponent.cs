@@ -20,4 +20,7 @@ public sealed partial class CP14TradingPlatformComponent : Component
 
     [DataField]
     public ProtoId<TagPrototype> CoinTag = "CP14Coin";
+
+    [DataField]
+    public EntProtoId BuyVisual = "CP14CashImpact";
 }

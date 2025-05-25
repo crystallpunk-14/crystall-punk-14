@@ -45,3 +45,30 @@
   #  guides:
   #  - CP14_RU_Trading
   #  - CP14_EN_Trading
+
+- type: entity
+  id: CP14CashImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: impact
+      shader: unshaded
+      color: "#8f42ff"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#8f42ff"
+    enabled: true
+    radius: 8
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 2

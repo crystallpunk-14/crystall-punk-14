@@ -82,7 +82,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         //return the change
         _cp14Currency.GenerateMoney(balance, Transform(platform).Coordinates);
-
+        SpawnAtPosition(platform.Comp.BuyVisual, Transform(platform).Coordinates);
         return true;
     }
 }
