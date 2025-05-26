@@ -16,14 +16,14 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectFreeze
+    - !type:CP14AdjustAllSolutionThermalEnergy
+      delta: -1200 # One full use cools 100u from ~300k to ~250k
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 0.5
         sprintSpeedModifier: 0.5
         statusLifetime: 2
-      - !type:AdjustAllSolutionThermalEnergy
-        delta: -1200 # One full use cools 100u from ~300k to ~250k
       - !type:AdjustTemperature
         amount: -12000
       - !type:ExtinguishReaction
