@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 12
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
