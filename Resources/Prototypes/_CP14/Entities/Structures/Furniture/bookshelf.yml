@@ -92,6 +92,10 @@
       - id: CP14GuidebookImperialLaws
       - id: CP14GuidebookAlchemy
       - id: CP14GuidebookDemiplanes
+    #Lore books
+    - !type:GroupSelector
+      children:
+      - id: CP14BookGuildMoral
     #Empty random
     - id: CP14BookRandom
       amount: !type:RangeNumberSelector

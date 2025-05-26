@@ -72,9 +72,9 @@
     layers:
     - state: white_closed
       map: ["enum.DoorVisualLayers.Base"]
-  - type: Construction
-    graph: CP14Curtains
-    node: CP14CurtainsWhite
+  #- type: Construction
+  #  graph: CP14Curtains
+  #  node: CP14CurtainsWhite
 
 - type: entity
   id: CP14CurtainsWhiteOpened
@@ -104,9 +104,9 @@
     layers:
     - state: blue_closed
       map: ["enum.DoorVisualLayers.Base"]
-  - type: Construction
-    graph: CP14Curtains
-    node: CP14CurtainsBlue
+  #- type: Construction
+  #  graph: CP14Curtains
+  #  node: CP14CurtainsBlue
 
 - type: entity
   id: CP14CurtainsBlueOpened
@@ -136,9 +136,9 @@
     layers:
     - state: red_closed
       map: ["enum.DoorVisualLayers.Base"]
-  - type: Construction
-    graph: CP14Curtains
-    node: CP14CurtainsRed
+  #- type: Construction
+  #  graph: CP14Curtains
+  #  node: CP14CurtainsRed
 
 - type: entity
   id: CP14CurtainsRedOpened
