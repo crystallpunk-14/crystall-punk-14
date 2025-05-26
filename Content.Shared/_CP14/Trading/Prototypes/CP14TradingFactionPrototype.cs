@@ -10,9 +10,6 @@ public sealed partial class CP14TradingFactionPrototype : IPrototype
     [DataField(required: true)]
     public LocId Name = default!;
 
-    [DataField(required: true)]
-    public LocId Desc = default!;
-
     [DataField]
     public Color Color = Color.White;
 }

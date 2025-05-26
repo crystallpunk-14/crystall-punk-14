@@ -54,7 +54,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         CacheSkillProto();
         _proto.PrototypesReloaded += _ => CacheSkillProto();
-        _selectedFaction = _allFactions.First();
+        SelectFaction(_allFactions.First());
 
         _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
         _audio = _e.System<SharedAudioSystem>();
