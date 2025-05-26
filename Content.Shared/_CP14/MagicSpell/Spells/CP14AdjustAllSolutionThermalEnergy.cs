@@ -44,9 +44,17 @@ public sealed partial class CP14AdjustAllSolutionThermalEnergy : CP14SpellEffect
             var temperature = solution.Comp.Solution.Temperature + deltaT;
 
             if (deltaT > 0 && MaxTemp is { } maxTemp && temperature > maxTemp)
+            {
                 temperature = maxTemp;
+                if (solution.Comp.Solution.Temperature > temperature)
+                    continue;
+            }
             else if (deltaT < 0 && MinTemp is { } minTemp && temperature < minTemp)
+            {
                 temperature = minTemp;
+                if (solution.Comp.Solution.Temperature < temperature)
+                    continue;
+            }
 
             solutionContainer.SetTemperature(solution, temperature);
         }
