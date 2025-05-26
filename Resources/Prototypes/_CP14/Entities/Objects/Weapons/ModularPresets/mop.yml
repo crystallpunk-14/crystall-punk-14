@@ -1,0 +1,14 @@
+- type: entity
+  id: CP14ModularWoodMop
+  parent: CP14ModularGripWoodenLong
+  name: wooden mop
+  description: A mop for cleaning floors of various unpleasant liquids.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Mop/mop.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeWoodMop

@@ -24,3 +24,35 @@
   targetNode: cp14torch
   category: construction-category-tools
   objectType: Item
+  description: If darkness has become a nuisance, a good method is to lighten it up.
+  icon:
+    sprite: _CP14/Objects/Tools/torch.rsi
+    state: torch-unlit
+
+- type: construction
+  crystallPunkAllowed: true
+  name: rope
+  id: cp14ropegrass
+  graph: CP14Rope
+  startNode: start
+  targetNode: cp14ropegrass
+  category: construction-category-tools
+  objectType: Item
+  description: Multifunctional rope. You can tie something with it. Or someone.
+  icon:
+    sprite: _CP14/Objects/Tools/rope.rsi
+    state: icon
+
+- type: construction
+  crystallPunkAllowed: true
+  name: rope
+  id: cp14ropecloth
+  graph: CP14Rope
+  startNode: start
+  targetNode: cp14ropecloth
+  category: construction-category-tools
+  objectType: Item
+  description: Multifunctional rope. You can tie something with it. Or someone.
+  icon:
+    sprite: _CP14/Objects/Tools/rope.rsi
+    state: icon
