@@ -39,26 +39,19 @@ public sealed partial class CP14AdjustAllSolutionThermalEnergy : CP14SpellEffect
             if (solution.Comp.Solution.Volume == 0)
                 continue;
 
+            var maxTemp = MaxTemp ?? float.PositiveInfinity;
+            var minTemp = Math.Max(MinTemp ?? 0, 0);
+            var oldTemp = solution.Comp.Solution.Temperature;
+
+            if (Delta > 0 && oldTemp >= maxTemp)
+                continue;
+            if (Delta < 0 && oldTemp <= minTemp)
+                continue;
+
             var heatCap = solution.Comp.Solution.GetHeatCapacity(null);
             var deltaT = Delta / heatCap;
-            var temperature = solution.Comp.Solution.Temperature + deltaT;
 
-            if (deltaT > 0 && MaxTemp is { } maxTemp && temperature > maxTemp)
-            {
-                temperature = maxTemp;
-                if (solution.Comp.Solution.Temperature > temperature)
-                    continue;
-            }
-            else if (deltaT < 0 && MinTemp is { } minTemp && temperature < minTemp)
-            {
-                temperature = minTemp;
-                if (solution.Comp.Solution.Temperature < temperature)
-                    continue;
-            }
-
-            // Freezing below 0k is not possible.
-            temperature = Math.Max(temperature, 0);
-            solutionContainer.SetTemperature(solution, temperature);
+            solutionContainer.SetTemperature(solution, Math.Clamp(oldTemp + deltaT, minTemp, maxTemp));
         }
     }
 }
