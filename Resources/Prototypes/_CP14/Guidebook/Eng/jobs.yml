@@ -37,8 +37,8 @@
   children:
   - CP14_EN_Trading
   filterEnabled: True
-
-  - type: guideEntry
+  
+- type: guideEntry
   crystallPunkAllowed: true
   id: CP14_EN_JobInnkeeper
   name: Innkeepers
