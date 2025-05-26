@@ -37,3 +37,10 @@
   children:
   - CP14_EN_Trading
   filterEnabled: True
+
+  - type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_JobInnkeeper
+  name: Innkeepers
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Innkeepers.xml"
+  filterEnabled: True
