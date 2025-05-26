@@ -1,7 +1,5 @@
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
-using Content.Shared.UserInterface;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -17,12 +15,9 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeUI();
 
         SubscribeLocalEvent<CP14TradingReputationComponent, MapInitEvent>(OnReputationMapInit);
-
-        SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
-
-        SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
     }
 
     private void OnReputationMapInit(Entity<CP14TradingReputationComponent> ent, ref MapInitEvent args)
@@ -32,17 +27,6 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
             ent.Comp.Reputation[faction] = ent.Comp.Reputation.GetValueOrDefault(faction, 0f) + ent.Comp.GlobalRoundstartReputation;
         }
         Dirty(ent);
-    }
-
-    private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
-    {
-        TryUnlockPosition(args.Actor, args.Position);
-        UpdateUIState(ent, args.Actor);
-    }
-
-    private void OnBeforeUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
-    {
-        UpdateUIState(ent, args.User);
     }
 
     protected void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)

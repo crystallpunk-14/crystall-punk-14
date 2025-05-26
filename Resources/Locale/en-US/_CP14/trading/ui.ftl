@@ -7,5 +7,6 @@ cp14-trading-ui-button-buy-tooltip = You spend the funds on the trading platform
 
 cp14-trading-ui-title = Empire Trade link Platform
 cp14-trading-ui-cooldown = Cooldown:
+cp14-trading-faction-prefix = Trading with:
 
 cp14-trading-failure-popup-money = Not enough funds on the platform!

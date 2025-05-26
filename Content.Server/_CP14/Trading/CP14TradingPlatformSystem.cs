@@ -74,7 +74,8 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         platform.Comp.NextBuyTime = Timing.CurTime + indexedPosition.Cooldown;
         Dirty(platform);
 
-        indexedPosition.Service.Buy(EntityManager, Proto, platform);
+        if (indexedPosition.Service is not null)
+            indexedPosition.Service.Buy(EntityManager, Proto, platform);
         user.Comp.Reputation[indexedPosition.Faction] += (float)indexedPosition.Price / 10;
         Dirty(user);
 

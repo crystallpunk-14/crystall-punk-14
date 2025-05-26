@@ -11,10 +11,3 @@
   name: Исследование демипланов
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AdventurersTabs/Demiplanes.xml"
   filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_Trading
-  name: Внешняя торговля
-  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/MerchantTabs/Trading.xml"
-  filterEnabled: True

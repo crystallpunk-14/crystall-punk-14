@@ -11,10 +11,3 @@
   name: Demiplanes exploration
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AdventurersTabs/Demiplanes.xml"
   filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_EN_Trading
-  name: External trade
-  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/MerchantTabs/Trading.xml"
-  filterEnabled: True

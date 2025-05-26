@@ -15,13 +15,19 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     /// Service Title. If you leave null, the name will try to generate from first Service.GetName()
     /// </summary>
     [DataField]
-    public LocId? Name = null;
+    public LocId? Name;
 
     /// <summary>
     /// Service Description. If you leave null, the description will try to generate from first Service.GetDescription()
     /// </summary>
     [DataField]
-    public LocId? Desc = null;
+    public LocId? Desc;
+
+    /// <summary>
+    /// Icon for UI. If you leave null, the icon will try to generate from first Service.GetTexture()
+    /// </summary>
+    [DataField(required: true)]
+    public SpriteSpecifier Icon = default!;
 
     [DataField(required: true)]
     public ProtoId<CP14TradingFactionPrototype> Faction;
@@ -33,10 +39,7 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     public Vector2 UiPosition = default!;
 
     [DataField(required: true)]
-    public SpriteSpecifier Icon = default!;
-
-    [DataField(required: true, serverOnly: true)]
-    public CP14StoreBuyService Service = default!;
+    public CP14StoreBuyService? Service = null;
 
     [DataField]
     public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
@@ -56,13 +59,5 @@ public abstract partial class CP14StoreBuyService
 
     public abstract string GetName(IPrototypeManager protoMan);
 
-    /// <summary>
-    /// You can specify an icon generated from an entity. It will support layering, colour changes and other layer options. Return null to disable.
-    /// </summary>
-    public abstract EntProtoId? GetEntityView(IPrototypeManager protoManager);
-
-    /// <summary>
-    /// You can specify the texture directly. Return null to disable.
-    /// </summary>
-    public abstract SpriteSpecifier? GetTexture(IPrototypeManager protoManager);
+    public abstract string GetDesc(IPrototypeManager protoMan);
 }

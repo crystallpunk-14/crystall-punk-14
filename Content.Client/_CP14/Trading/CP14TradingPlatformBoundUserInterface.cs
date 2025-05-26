@@ -1,6 +1,5 @@
 using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Systems;
-using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
 namespace Content.Client._CP14.Trading;

@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.Stacks;
+using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -35,13 +36,11 @@ public sealed partial class CP14BuyItemsService : CP14StoreBuyService
         return Count > 0 ? $"{indexedProduct.Name} x{count}" : indexedProduct.Name;
     }
 
-    public override EntProtoId? GetEntityView(IPrototypeManager protoManager)
+    public override string GetDesc(IPrototypeManager protoMan)
     {
-        return Product;
-    }
+        if (!protoMan.TryIndex(Product, out var indexedProduct))
+            return string.Empty;
 
-    public override SpriteSpecifier? GetTexture(IPrototypeManager protoManager)
-    {
-        return null;
+        return indexedProduct.Description;
     }
 }

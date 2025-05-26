@@ -143,8 +143,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         _selectedPosition = node;
         var unlocked = _cachedUser.Value.Comp.UnlockedPositions;
 
-        Name.Text = Loc.GetString(_selectedPosition.Name ?? "");
-        Description.Text = Loc.GetString(_selectedPosition.Desc ?? "");
+        Name.Text = _tradingSystem.GetTradeName(_selectedPosition);
+        Description.Text = _tradingSystem.GetTradeDescription(_selectedPosition);
 
         LocationView.Texture = _selectedPosition.Icon.Frame0();
         UnlockButton.Disabled = !_tradingSystem.CanUnlockPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), _selectedPosition);
@@ -254,8 +254,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     private void SelectFaction(CP14TradingFactionPrototype faction)
     {
         _selectedFaction = faction;
-        //ParallaxBackground.ParallaxPrototype = faction.ParallaxBackground;
-        TreeName.Text = Loc.GetString(faction.Name);
+        TreeName.Text = Loc.GetString("cp14-trading-faction-prefix") + " " + Loc.GetString(faction.Name);
         UpdateGraphControl();
     }
 }
