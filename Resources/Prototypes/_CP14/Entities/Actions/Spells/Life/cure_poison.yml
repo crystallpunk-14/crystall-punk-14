@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 12
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -31,7 +31,7 @@
       - !type:Jitter
       - !type:ModifyBleedAmount
       - !type:ModifyBloodLevel
-        amount: 10
+        amount: 15
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
