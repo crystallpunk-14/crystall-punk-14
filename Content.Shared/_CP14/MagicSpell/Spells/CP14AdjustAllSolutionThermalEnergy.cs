@@ -56,6 +56,8 @@ public sealed partial class CP14AdjustAllSolutionThermalEnergy : CP14SpellEffect
                     continue;
             }
 
+            // Freezing below 0k is not possible.
+            temperature = Math.Max(temperature, 0);
             solutionContainer.SetTemperature(solution, temperature);
         }
     }
