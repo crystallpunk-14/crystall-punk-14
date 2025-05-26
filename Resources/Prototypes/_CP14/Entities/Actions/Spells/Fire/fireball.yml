@@ -125,5 +125,5 @@
       state: fireball
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 25
-      castDelay: 6
+      castDelay: 3.5
       breakOnMove: false
