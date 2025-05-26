@@ -192,7 +192,7 @@ CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting
 
 #2025-04-03
 CP14TravelingStoreshipAnchor: null
-CP14TravelingShop: CP14TradingBoardBase
+CP14TravelingShop: null
 CP14IronCabinetCargo: CP14IronCabinet
 CP14BrassChestFilledDemiplanes: null
 CP14BrassChestFilledWood: null
