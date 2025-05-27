@@ -30,7 +30,7 @@
             Piercing: -10
       - !type:Jitter
       - !type:ModifyBleedAmount
-        amount: 5
+        amount: -5
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
