@@ -24,3 +24,6 @@
   - id: CP14Cotton
     amount: 4
     maxAmount: 6
+  - id: CP14SeedCotton
+    amount: 1
+    maxAmount: 2

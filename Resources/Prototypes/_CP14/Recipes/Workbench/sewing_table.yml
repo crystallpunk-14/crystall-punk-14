@@ -255,6 +255,18 @@
     count: 4
   result: CP14SackFarming
 
+- type: CP14Recipe
+  id: CP14SackFarmingSeed
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14SackFarmingSeed
+
 # Wallpaper (TODO: Move to separate workbench?)
 
 - type: CP14Recipe

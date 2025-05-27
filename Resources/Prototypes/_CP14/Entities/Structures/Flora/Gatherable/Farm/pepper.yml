@@ -24,3 +24,6 @@
   - id: CP14FoodPepper
     amount: 4
     maxAmount: 8
+  - id: CP14SeedPepper
+    amount: 0
+    maxAmount: 2

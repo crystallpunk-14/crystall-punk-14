@@ -33,7 +33,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;

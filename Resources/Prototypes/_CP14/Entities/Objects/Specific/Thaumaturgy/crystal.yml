@@ -12,6 +12,9 @@
     sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
   - type: CP14MagicEnergyContainer
   - type: CP14MagicEnergyExaminable
+  - type: Tag
+    tags:
+    - CP14EnergyCrystal
 
 - type: entity
   id: CP14EnergyCrystalMedium

@@ -58,6 +58,19 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
         _ambient.SetAmbience(ent, args.Powered);
     }
 
+    private void UpdateMagicAlert(Entity<CP14MagicEnergyContainerComponent> ent)
+    {
+        if (ent.Comp.MagicAlert is null)
+            return;
+
+        var level = ContentHelpers.RoundToLevels(
+            MathF.Max(0f, (float) ent.Comp.Energy),
+            (float) ent.Comp.MaxEnergy,
+            _alerts.GetMaxSeverity(ent.Comp.MagicAlert.Value));
+
+        _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short) level);
+    }
+
     public void ChangeEnergy(Entity<CP14MagicEnergyContainerComponent?> ent,
         FixedPoint2 energy,
         out FixedPoint2 deltaEnergy,
@@ -154,17 +167,14 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
             ("color", color));
     }
 
-    private void UpdateMagicAlert(Entity<CP14MagicEnergyContainerComponent> ent)
+    public void ChangeMaximumEnergy(Entity<CP14MagicEnergyContainerComponent?> ent, FixedPoint2 energy)
     {
-        if (ent.Comp.MagicAlert is null)
+        if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        var level = ContentHelpers.RoundToLevels(
-            MathF.Max(0f, (float) ent.Comp.Energy),
-            (float) ent.Comp.MaxEnergy,
-            _alerts.GetMaxSeverity(ent.Comp.MagicAlert.Value));
+        ent.Comp.MaxEnergy += energy;
 
-        _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short) level);
+        ChangeEnergy(ent, energy, out _, out _);
     }
 }
 

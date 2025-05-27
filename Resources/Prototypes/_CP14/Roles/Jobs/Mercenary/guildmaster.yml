@@ -1,5 +1,6 @@
 - type: job
   id: CP14Guildmaster
+  setPreference: false
   name: cp14-job-name-guildmaster
   description: cp14-job-desc-guildmaster
   playTimeTracker: CP14JobGuildmaster

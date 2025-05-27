@@ -18,13 +18,13 @@ public sealed partial class CP14SkillPrototype : IPrototype
     /// Skill Title. If you leave null, the name will try to generate from Effect.GetName()
     /// </summary>
     [DataField]
-    public LocId? Name;
+    public LocId? Name = null;
 
     /// <summary>
     /// Skill Description. If you leave null, the description will try to generate from Effect.GetDescription()
     /// </summary>
     [DataField]
-    public LocId? Desc;
+    public LocId? Desc = null;
 
     /// <summary>
     /// The tree this skill belongs to. This is used to group skills together in the UI.
@@ -55,7 +55,7 @@ public sealed partial class CP14SkillPrototype : IPrototype
     ///  But the presence of the skill itself can affect some systems that check for the presence of certain skills.
     /// </summary>
     [DataField]
-    public CP14SkillEffect? Effect;
+    public List<CP14SkillEffect> Effects = new();
 
     /// <summary>
     /// Skill restriction. Limiters on learning. Any reason why a player cannot learn this skill.

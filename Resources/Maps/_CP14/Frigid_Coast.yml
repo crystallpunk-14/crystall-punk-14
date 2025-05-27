@@ -51511,13 +51511,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 102.332535,53.33797
       parent: 1
-- proto: CP14SpellScrollFireRune
-  entities:
-  - uid: 8072
-    components:
-    - type: Transform
-      pos: -100.13099,21.66595
-      parent: 1
 - proto: CP14SpellScrollFlameCreation
   entities:
   - uid: 8073

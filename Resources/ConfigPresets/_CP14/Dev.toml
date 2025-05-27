@@ -2,7 +2,7 @@
 enabled = true
 
 [localization]
-language = "ru-RU"
+language = "en-US"
 
 [log]
 path = "logs"
@@ -15,6 +15,9 @@ tickrate = 30
 port = 1212
 bindto = "::,0.0.0.0"
 max_connections = 100
+
+[status]
+max_connections = 10
 
 [game]
 hostname = "⚔️ CrystallEdge ⚔️"
@@ -36,6 +39,8 @@ hub_urls = "https://hub.spacestation14.com/"
 
 [infolinks]
 discord = "https://discord.gg/8BEPa9JbZ6"
+patreon = "https://boosty.to/theshued"
+github = "https://github.com/crystallpunk-14/crystall-punk-14"
 
 [procgen]
 preload = false

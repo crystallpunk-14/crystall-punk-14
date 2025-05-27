@@ -23,6 +23,11 @@
   copyright: 'by be-steele of Freesound.org.'
   source: "https://freesound.org/people/be-steele/sounds/130753/"
 
+- files: ["blood_moon_raise.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by xkeril of Freesound.org.'
+  source: "https://freesound.org/people/xkeril/sounds/639585/"
+
 - files: ["ambimagic1.ogg", "ambimagic2.ogg", "ambimagic3.ogg", "ambimagic4.ogg"]
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
@@ -32,8 +37,3 @@
   license: "CC0-1.0"
   copyright: 'by xkeril of Freesound.org.'
   source: "https://freesound.org/people/xkeril/sounds/706092/"
-
-- files: ["event_boom.ogg"]
-  license: "CC-BY-4.0"
-  copyright: 'by juskiddink of Freesound.org.'
-  source: "https://freesound.org/people/juskiddink/sounds/130890/"

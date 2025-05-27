@@ -2,7 +2,7 @@
   parent: BaseStructure
   id: CP14GuardBell
   name: guard bell
-  description: A bell used to set the appropriate alert level.
+  description: A strong bell to alert the entire settlement of a possible threat.
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

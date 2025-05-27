@@ -1,7 +1,5 @@
-using Content.Shared._CP14.MagicAttuning;
 using Content.Shared._CP14.MagicSpellStorage.Components;
 using Content.Shared.Clothing;
-using Content.Shared.Clothing.Components;
 using Content.Shared.Hands;
 
 namespace Content.Shared._CP14.MagicSpellStorage;
@@ -11,9 +9,7 @@ public sealed partial class CP14SpellStorageSystem
     private void InitializeAccess()
     {
         SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, GotEquippedHandEvent>(OnEquippedHand);
-        SubscribeLocalEvent<CP14SpellStorageAccessHoldingComponent, AddedAttuneToMindEvent>(OnHandAddedAttune);
 
-        SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, AddedAttuneToMindEvent>(OnClothingAddedAttune);
         SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotEquippedEvent>(OnClothingEquipped);
         SubscribeLocalEvent<CP14SpellStorageAccessWearingComponent, ClothingGotUnequippedEvent>(OnClothingUnequipped);
     }
@@ -24,40 +20,6 @@ public sealed partial class CP14SpellStorageSystem
             return;
 
         TryGrantAccess((ent, spellStorage), args.User);
-    }
-
-    private void OnHandAddedAttune(Entity<CP14SpellStorageAccessHoldingComponent> ent, ref AddedAttuneToMindEvent args)
-    {
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        if (args.User is null)
-            return;
-
-        if (!_hands.IsHolding(args.User.Value, ent))
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.User.Value);
-    }
-
-    private void OnClothingAddedAttune(Entity<CP14SpellStorageAccessWearingComponent> ent, ref AddedAttuneToMindEvent args)
-    {
-        if (!ent.Comp.Wearing)
-            return;
-
-        if (!TryComp<CP14SpellStorageComponent>(ent, out var spellStorage))
-            return;
-
-        if (args.User is null)
-            return;
-
-        if (!TryComp<ClothingComponent>(ent, out var clothing))
-            return;
-
-        if (Transform(ent).ParentUid != args.User)
-            return;
-
-        TryGrantAccess((ent, spellStorage), args.User.Value);
     }
 
     private void OnClothingEquipped(Entity<CP14SpellStorageAccessWearingComponent> ent, ref ClothingGotEquippedEvent args)

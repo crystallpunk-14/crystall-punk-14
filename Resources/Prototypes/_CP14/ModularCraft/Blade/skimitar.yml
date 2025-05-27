@@ -1,0 +1,87 @@
+#Concept:
+# + Additional range
+# + High Damage! + Wielded buff
+# - Required Warcraft skill
+
+- type: modularPart
+  id: BaseBladeSkimitar
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseWeaponSharp
+  - !type:AddComponents
+    components:
+    - type: CP14MeleeWeaponSkillRequired
+      skills:
+      - SkimitarMastery
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: false # We can fast swing!
+    bonusRange: 0.2
+    angleMultiplier: 1.5
+    bonusDamage:
+      types:
+        Slash: 8
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Slash: 16
+  - !type:EditItem
+    newSize: Large
+    adjustShape: 0, 2
+    storedOffsetBonus: 0, 10
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay
+
+- type: modularPart
+  id: BladeIronSkimitar
+  slots:
+  - Blade
+  sourcePart: CP14ScrapIron
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSkimitar
+    - BaseBladeIron
+
+- type: modularPart
+  id: BladeGoldSkimitar
+  slots:
+  - Blade
+  sourcePart: CP14ScrapGold
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
+  color: "#ffe269"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSkimitar
+    - BaseBladeGold
+
+- type: modularPart
+  id: BladeCopperSkimitar
+  slots:
+  - Blade
+  sourcePart: CP14ScrapCopper
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
+  color: "#e28f08"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSkimitar
+    - BaseBladeCopper
+
+- type: modularPart
+  id: BladeMithrilSkimitar
+  slots:
+  - Blade
+  sourcePart: CP14ScrapMithril
+  rsiPath: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
+  color: "#38f0b3"
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeSkimitar
+    - BaseBladeMithril

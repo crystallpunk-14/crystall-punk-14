@@ -1,7 +1,7 @@
 - type: cp14DemiplaneLocation
   id: T1IceCaves
   levels:
-    min: 3
+    min: 2
     max: 7
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi

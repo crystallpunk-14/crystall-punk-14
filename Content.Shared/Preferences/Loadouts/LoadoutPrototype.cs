@@ -48,14 +48,8 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     public Dictionary<string, List<EntProtoId>> Storage { get; set; } = new();
 
     /// <summary>
-    /// CP14 - it is possible to give action spells or spells to players who have taken this loadout
+    /// CP14 - it is possible to give free skills to players
     /// </summary>
     [DataField]
-    public List<EntProtoId> Actions { get; set; } = new();
-
-    /// <summary>
-    /// CP14 - it is possible to give skill trees to players who have taken this loadout
-    /// </summary>
-    [DataField]
-    public Dictionary<ProtoId<CP14SkillTreePrototype>, FixedPoint2> SkillTree = new();
+    public HashSet<ProtoId<CP14SkillPrototype>> Skills = new();
 }

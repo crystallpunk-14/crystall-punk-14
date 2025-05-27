@@ -1,3 +1,4 @@
+using Content.Shared._CP14.DayCycle;
 using Content.Shared.Light.Components;
 using Robust.Shared.Map.Components;
 
@@ -14,6 +15,10 @@ public abstract class SharedLightCycleSystem : EntitySystem
 
     protected virtual void OnCycleMapInit(Entity<LightCycleComponent> ent, ref MapInitEvent args)
     {
+        //CP14DayCycleSystem
+        EnsureComp<CP14DayCycleComponent>(ent);
+        //CP14DayCycleSystem end
+
         if (TryComp(ent.Owner, out MapLightComponent? mapLight))
         {
             ent.Comp.OriginalColor = mapLight.AmbientLightColor;

@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Skill.Prototypes;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
@@ -13,5 +14,5 @@ public abstract partial class CP14SkillEffect
 
     public abstract string? GetName(IEntityManager entMagager, IPrototypeManager protoManager);
 
-    public abstract string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager);
+    public abstract string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill);
 }

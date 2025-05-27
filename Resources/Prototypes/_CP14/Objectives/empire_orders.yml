@@ -54,24 +54,3 @@
     CP14TownSendDinoObjective: 1
     CP14TownSendMoleObjective: 1
     CP14TownSendBoarObjective: 1
-
-# No Demiplane death objective
-- type: entity
-  parent: CP14BaseTownObjective
-  id: CP14GuildmasterNoDemiplaneDeathObjective
-  components:
-  - type: CP14StatisticRangeCondition
-    statistic: DemiplaneDeaths
-    range:
-      min: 0
-      max: 3 #TODO Adaptive to player count
-    objectiveText: cp14-objective-no-demiplane-death-title
-    objectiveDescription: cp14-objective-no-demiplane-death-desc
-    objectiveSprite:
-      sprite: /Textures/_CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
-      state: tool
-
-- type: weightedRandom
-  id: CP14GuildmasterNoDemiplaneObjectiveGroup
-  weights:
-    CP14GuildmasterNoDemiplaneDeathObjective: 1

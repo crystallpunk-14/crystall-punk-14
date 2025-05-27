@@ -8,6 +8,9 @@
   id: Reward
 
 - type: cp14DemiplaneModifierCategory
+  id: Ore
+
+- type: cp14DemiplaneModifierCategory
   id: Fun
 
 - type: cp14DemiplaneModifierCategory

@@ -9,6 +9,9 @@
   - type: Sprite
     sprite: _CP14/Objects/Specific/Farming/seeds.rsi
   - type: CP14Seed
+  - type: Tag
+    tags:
+    - CP14FarmSeed
 
 - type: entity
   id: CP14SeedWheat

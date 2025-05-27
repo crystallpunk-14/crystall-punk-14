@@ -23,8 +23,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user,
-        CP14WorkbenchRecipePrototype recipe)
+        EntityUid user)
     {
         if (!protoManager.TryIndex(Group, out var indexedGroup))
             return false;

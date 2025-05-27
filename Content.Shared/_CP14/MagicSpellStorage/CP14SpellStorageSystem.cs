@@ -1,4 +1,3 @@
-using Content.Shared._CP14.MagicAttuning;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpellStorage.Components;
@@ -18,7 +17,6 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly CP14SharedMagicAttuningSystem _attuning = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -31,7 +29,6 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         SubscribeLocalEvent<CP14SpellStorageComponent, ComponentShutdown>(OnMagicStorageShutdown);
 
         SubscribeLocalEvent<CP14SpellStorageUseDamageComponent, CP14SpellFromSpellStorageUsedEvent>(OnSpellUsed);
-        SubscribeLocalEvent<CP14SpellStorageRequireAttuneComponent, RemovedAttuneFromMindEvent>(OnRemovedAttune);
     }
 
     private void OnSpellUsed(Entity<CP14SpellStorageUseDamageComponent> ent, ref CP14SpellFromSpellStorageUsedEvent args)
@@ -81,21 +78,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         if (mind.OwnedEntity is null)
             return false;
 
-        if (TryComp<CP14SpellStorageRequireAttuneComponent>(storage, out var reqAttune))
-        {
-            if (!_attuning.IsAttunedTo(mindId, storage))
-                return false;
-        }
-
         _actions.GrantActions(user, storage.Comp.SpellEntities, storage);
         return true;
-    }
-
-    private void OnRemovedAttune(Entity<CP14SpellStorageRequireAttuneComponent> ent, ref RemovedAttuneFromMindEvent args)
-    {
-        if (args.User is null)
-            return;
-
-        _actions.RemoveProvidedActions(args.User.Value, ent);
     }
 }

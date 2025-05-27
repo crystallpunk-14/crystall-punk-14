@@ -1,0 +1,58 @@
+- type: constructionGraph
+  id: CP14WindowWooden
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WindowFrameWooden
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WindowFrameWooden
+      entity: CP14WindowFrameWooden
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+        - to: CP14WindowWooden
+          steps:
+            - material: CP14GlassSheet
+              amount: 2
+              doAfter: 2
+              
+    - node: CP14WindowWooden
+      entity: CP14WindowWooden
+      edges:
+        - to: CP14WindowFrameWooden
+          steps:
+            - tool: Screwing
+              doAfter: 1
+            - tool: Anchoring
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14GlassSheet1
+              amount: 2
+
+    - node: CP14WindowWoodenBroken
+      entity: CP14WindowWoodenBroken
+      edges:
+        - to: CP14WindowFrameWooden
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14GlassShard
+              amount: 1

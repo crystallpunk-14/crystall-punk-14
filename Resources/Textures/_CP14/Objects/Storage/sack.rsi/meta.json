@@ -1,14 +1,17 @@
 {
   "version": 1,
   "license": "All right reserved",
-  "copyright": "Created by Artista", 
+  "copyright": "Created by Artista. Seed sack By Ell_Good", 
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "icon"
+        "name": "icon"
+    },
+    {
+      "name": "seed"
     }
   ]
 }

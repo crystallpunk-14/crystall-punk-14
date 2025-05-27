@@ -1,3 +1,4 @@
+using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Farming.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 
@@ -5,6 +6,7 @@ namespace Content.Server._CP14.Farming;
 
 public sealed partial class CP14FarmingSystem
 {
+    [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
     private void InitializeResources()
     {
         SubscribeLocalEvent<CP14PlantEnergyFromLightComponent, CP14PlantUpdateEvent>(OnTakeEnergyFromLight);
@@ -16,7 +18,7 @@ public sealed partial class CP14FarmingSystem
     private void OnTakeEnergyFromLight(Entity<CP14PlantEnergyFromLightComponent> regeneration, ref CP14PlantUpdateEvent args)
     {
         var gainEnergy = false;
-        var daylight = true;//_dayCycle.UnderSunlight(regeneration);
+        var daylight = _dayCycle.UnderSunlight(regeneration);
 
         if (regeneration.Comp.Daytime && daylight)
             gainEnergy = true;

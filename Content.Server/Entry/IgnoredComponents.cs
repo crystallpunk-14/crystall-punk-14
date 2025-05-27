@@ -5,7 +5,6 @@ namespace Content.Server.Entry
     {
         public static string[] List => new[] {
             "CP14WaveShader", // CP14 Wave shader
-            "CP14WorldSprite", // CP14 World Sprite
             "ConstructionGhost",
             "IconSmooth",
             "InteractionOutline",

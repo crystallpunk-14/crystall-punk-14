@@ -76,3 +76,28 @@
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
 
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingGreenVest2
+  name: green vest
+  description: Stylish green vest with gold buttons.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/green_2.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/green_2.rsi
+
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingPurple
+  name: purple vest
+  description: Stylish purple vest.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/purple.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/purple.rsi

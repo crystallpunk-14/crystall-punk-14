@@ -1,7 +1,7 @@
 - type: cp14DemiplaneModifier
   id: ArtifactRoom
   levels:
-    min: 1
+    min: 3
     max: 10
   generationWeight: 2
   categories:

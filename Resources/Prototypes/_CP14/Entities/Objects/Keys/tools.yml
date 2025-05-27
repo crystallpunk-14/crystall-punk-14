@@ -34,7 +34,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    storedRotation: -45
+    storedRotation: 45
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     state: file

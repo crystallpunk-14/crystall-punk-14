@@ -7,8 +7,9 @@
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 7
   - type: CP14MagicEffect
+    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -30,7 +31,7 @@
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_arrow
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 5
+      cooldown: 10
       breakOnMove: false
 
 - type: entity
@@ -78,7 +79,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Piercing: 17
+        Piercing: 15
         Cold: 5
   - type: Damageable
   - type: Destructible
@@ -93,7 +94,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: TimedDespawn
-    lifetime: 60
+    lifetime: 240
   - type: DamageOnLand
     damage:
       types:

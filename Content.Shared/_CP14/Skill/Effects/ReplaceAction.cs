@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Actions;
 using Robust.Shared.Prototypes;
 
@@ -62,7 +63,7 @@ public sealed partial class ReplaceAction : CP14SkillEffect
         return !protoManager.TryIndex(NewAction, out var indexedAction) ? string.Empty : indexedAction.Name;
     }
 
-    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager)
+    public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill)
     {
         return !protoManager.TryIndex(NewAction, out var indexedAction) ? string.Empty : indexedAction.Description;
     }

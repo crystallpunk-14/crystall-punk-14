@@ -51,7 +51,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 
         _demiplane.DeleteAllDemiplanes(safe: false);
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
-            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
+            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
         _roundEnd.EndRound();
     }
 
@@ -63,7 +63,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         {
             _chatSystem.DispatchGlobalAnnouncement(
                 Loc.GetString("cp14-round-end-monolith-50"),
-                announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
+                announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
         }
 
         //We initiate round end timer
@@ -99,7 +99,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
                 "cp14-round-end-monolith-discharged",
                 ("time", time),
                 ("units", Loc.GetString(unitsLocString))),
-            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
+            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
     }
 
     private void CancelRoundEndTimer()
@@ -107,6 +107,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         _roundEndMoment = TimeSpan.Zero;
 
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end-monolith-recharged"),
-            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Ambience/event_boom.ogg"));
+            announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
     }
 }

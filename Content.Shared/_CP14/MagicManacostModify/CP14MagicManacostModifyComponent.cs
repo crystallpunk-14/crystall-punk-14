@@ -15,4 +15,7 @@ public sealed partial class CP14MagicManacostModifyComponent : Component
 
     [DataField]
     public FixedPoint2 GlobalModifier = 1f;
+
+    [DataField]
+    public bool Examinable = false;
 }

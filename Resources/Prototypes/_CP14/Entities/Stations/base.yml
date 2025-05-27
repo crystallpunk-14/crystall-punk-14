@@ -8,7 +8,6 @@
   - CP14BaseTownAlerts
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
-  - CP14BaseStationSalary
   - CP14BaseStationDemiplaneMap
 
 - type: entity
@@ -16,15 +15,6 @@
   abstract: true
   components:
     - type: CP14StationCommonObjectives
-
-- type: entity
-  id: CP14BaseStationSalary
-  abstract: true
-  components:
-    - type: CP14StationSalary
-      #frequency: every 20 minutes
-      salary:
-        CP14Guard: 550
 
 - type: entity
   id: CP14BaseTownAlerts

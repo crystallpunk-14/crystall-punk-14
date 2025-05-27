@@ -94,7 +94,7 @@ public sealed class CP14RoundLeaveSystem : EntitySystem
 
         _adminLog.Add(LogType.Action,
             LogImpact.High,
-            $"{ToPrettyString(ent):player} was leave the round by ghosting into mist");
+            $"{ToPrettyString(ent):player} left the round by ghosting into mist");
 
         LeaveRound(ent, userId.Value, args.Mind);
     }

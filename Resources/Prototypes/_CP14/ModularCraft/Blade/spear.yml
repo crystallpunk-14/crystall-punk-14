@@ -26,6 +26,7 @@
   - !type:EditMeleeWeapon
     newWideAnimation: CP14WeaponArcThrust
     angleMultiplier: 0
+    bonusRange: 0.2
     bonusDamage:
       types:
         Piercing: 8

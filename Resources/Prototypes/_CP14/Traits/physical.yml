@@ -29,7 +29,6 @@
     - type: CP14MagicEnergyDraw
     - type: CP14MagicUnsafeDamage
     - type: CP14MagicUnsafeSleep
-    - type: CP14MagicAttuningMind
 
 # -1
 

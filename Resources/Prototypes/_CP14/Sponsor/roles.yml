@@ -8,6 +8,13 @@
   color: "#1fbf51"
 
 - type: sponsorRole
+  id: Collaborator
+  name: Collaborator
+  discordRoleId: "1288813716707606549"
+  priority: 1
+  color: "#1fbf51"
+
+- type: sponsorRole
   id: Moderator
   name: "Discord Moderator"
   discordRoleId: "1225071736286875718"

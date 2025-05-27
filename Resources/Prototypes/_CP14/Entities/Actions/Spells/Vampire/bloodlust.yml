@@ -1,0 +1,56 @@
+- type: entity
+  id: CP14ActionSpellBloodlust
+  name: Bloodlust
+  description: you sense all living things in a large radius around you that you want to KILL.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/vampire.rsi
+    state: blood_moon
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellPointerToAlive
+      pointerEntity: CP14BloodlustPointer
+      searchRange: 60
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Ego vultus..."
+    endSpeech: "parumper vita"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneVampireHypnosis
+  - type: InstantAction
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 30
+      castDelay: 1.5
+
+- type: entity
+  id: CP14BloodlustPointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      color: red
+      sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
+      offset: 0, -1
+      layers:
+        - state: pointer
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: PointLight
+      netSync: false
+      radius: 3
+      color: red
+      energy: 0.2
+    - type: TimedDespawn
+      lifetime: 8
+    - type: Tag
+      tags:
+      - HideContextMenu

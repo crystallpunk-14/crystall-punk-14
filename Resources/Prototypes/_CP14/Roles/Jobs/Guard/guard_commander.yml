@@ -15,6 +15,10 @@
     - !type:DepartmentTimeRequirement
       department: CP14Guard
       time: 3600 # 1 hours
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - SwordMastery
 
 - type: startingGear
   id: CP14GuardCommanderGear

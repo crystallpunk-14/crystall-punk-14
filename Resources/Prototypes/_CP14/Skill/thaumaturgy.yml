@@ -1,0 +1,14 @@
+- type: cp14Skill
+  id: AlchemyVision
+  skillUiPosition: 0, 0
+  tree: Thaumaturgy
+  name: cp14-skill-alchemy-vision-name
+  desc: cp14-skill-alchemy-vision-desc
+  learnCost: 1
+  icon:
+    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+    state: icon
+  effects: 
+  - !type:AddComponents
+    components:
+    - type: SolutionScanner
