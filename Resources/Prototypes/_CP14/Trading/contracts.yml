@@ -1,0 +1,12 @@
+- type: cp14TradingPosition
+  id: CP14TradeContractVictoriaGardens
+  faction: ContractGuild
+  uiPosition: 0, 0
+  unlockReputationCost: 1
+  price: 10
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: victoria_garden
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractVictoriaGardens
+    count: 1

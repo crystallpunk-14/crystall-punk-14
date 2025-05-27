@@ -1,3 +1,8 @@
 - type: cp14TradingFaction
+  id: ContractGuild
+  name: cp14-trade-faction-contracts
+  roundStart: 1
+
+- type: cp14TradingFaction
   id: VictoriaGardens
   name: cp14-trade-faction-victoria-gardens

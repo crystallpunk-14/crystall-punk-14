@@ -53,9 +53,19 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         CacheSkillProto();
         _proto.PrototypesReloaded += _ => CacheSkillProto();
-        SelectFaction(_allFactions.First());
+        if (_cachedUser is not null)
+        {
+            foreach (var (f, _) in _cachedUser.Value.Comp.Reputation)
+            {
+                if (_proto.TryIndex(f, out var indexedFaction))
+                {
+                    SelectFaction(indexedFaction);
+                    break;
+                }
+            }
+        }
 
-        _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
+    _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
         _audio = _e.System<SharedAudioSystem>();
 
         GraphControl.OnOffsetChanged += offset =>
@@ -214,16 +224,18 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         //Faction tabs update
         TreeTabsContainer.RemoveAllChildren();
-        foreach (var faction in _allFactions)
+        foreach (var (faction, rep) in _cachedUser.Value.Comp.Reputation)
         {
+            if (!_proto.TryIndex(faction, out var indexedFaction))
+                continue;
             var factionButton = new CP14TradingFactionButtonControl(
-                faction.Color,
-                Loc.GetString(faction.Name),
-                _cachedUser.Value.Comp.Reputation.GetValueOrDefault(faction.ID, 0f));
+                indexedFaction.Color,
+                Loc.GetString(indexedFaction.Name),
+                rep);
 
             factionButton.OnPressed += () =>
             {
-                SelectFaction(faction);
+                SelectFaction(indexedFaction);
             };
 
             TreeTabsContainer.AddChild(factionButton);

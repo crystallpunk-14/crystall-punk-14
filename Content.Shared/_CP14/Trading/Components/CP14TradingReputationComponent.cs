@@ -13,12 +13,12 @@ namespace Content.Shared._CP14.Trading.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedTradingPlatformSystem))]
 public sealed partial class CP14TradingReputationComponent : Component
 {
+    /// <summary>
+    /// is both a reputation counter for each faction and an indicator of whether that faction is unlocked for that player.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<CP14TradingFactionPrototype>, FixedPoint2> Reputation = new();
 
     [DataField, AutoNetworkedField]
     public HashSet<ProtoId<CP14TradingPositionPrototype>> UnlockedPositions = new();
-
-    [DataField]
-    public FixedPoint2 GlobalRoundstartReputation = 1f;
 }

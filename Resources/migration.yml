@@ -228,7 +228,7 @@ CP14ClothingOuterClothingCuirassLeg: CP14ArmorIronCuirass
 #2025-11-03
 CP14BrassChest: CP14WoodenChest
 CP14BrassChestFilledEnergyCrystals: null
-CP14BrassChestFilledAlchemy: CP14WoodenChestFilledAlchemy
+CP14BrassChestFilledAlchemy: null
 CP14BrassChestFilledCheese: CP14WoodenChestFilledCheese
 CP14BrassChestFilledSmallHealingBrute: CP14WoodenChestFilledSmallHealingBrute
 CP14BrassChestFilledSmallHealingPoison: CP14WoodenChestFilledSmallHealingPoison
@@ -335,6 +335,7 @@ CP14TradingPortalBradFamily: null
 CP14TradingPortalSpiceStream: null
 CP14WoodenChestFilledFarmSeeds: CP14SackFarmingSeedFull
 CP14WoodenChestFilledEnergyCrystals: null
+CP14WoodenChestFilledAlchemy: null
 
 # <---> CrystallEdge migration zone end
 

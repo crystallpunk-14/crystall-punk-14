@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseItem
+  id: CP14TradeContractBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: trade contract
+  components:
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Document
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: blank
+  - type: CP14TradingContract
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractVictoriaGardens
+  description: Trading contract with the "Victoria Gardens" chain. Allows you to purchase various natural products on the trading platform.
+  suffix: Victoria Gardens
+  components:
+  - type: Sprite
+    state: victoria_garden
+  - type: CP14TradingContract 
+    faction: VictoriaGardens
