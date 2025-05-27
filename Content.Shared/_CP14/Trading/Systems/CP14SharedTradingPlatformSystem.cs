@@ -34,7 +34,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
             return;
 
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), GetNetEntity(ent), ent.Comp.NextBuyTime));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), GetNetEntity(ent)));
     }
 
     public bool TryUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)

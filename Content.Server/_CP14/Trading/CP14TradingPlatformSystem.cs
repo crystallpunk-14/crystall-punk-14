@@ -71,7 +71,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         balance -= indexedPosition.Price;
 
-        platform.Comp.NextBuyTime = Timing.CurTime + indexedPosition.Cooldown;
+        platform.Comp.NextBuyTime = Timing.CurTime + TimeSpan.FromSeconds(1f);
         Dirty(platform);
 
         if (indexedPosition.Service is not null)

@@ -58,10 +58,6 @@
                         </BoxContainer>
                     </BoxContainer>
 
-                    <BoxContainer Name="CooldownBox" Margin="0 0 0 20" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
-                        <Label Text="{Loc 'cp14-trading-ui-cooldown'}" HorizontalAlignment="Center" HorizontalExpand="True" Margin="0 15 0 0"/>
-                        <Label Name="BuyCooldownLabel" Text="00:00" HorizontalAlignment="Center" HorizontalExpand="True" Margin="0 15 0 0"/>
-                    </BoxContainer>
                     <BoxContainer Name="BuyBox" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
                         <Button Name="BuyButton" Text="{Loc 'cp14-trading-ui-button-buy'}"
                                 ToolTip="{Loc 'cp14-trading-ui-button-buy-tooltip'}" StyleClasses="OpenRight"
