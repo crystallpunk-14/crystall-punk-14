@@ -1,32 +1,31 @@
 <Document>
-  #Innkeeping
+  # Трактирное дело
+  Трактирщик — это роль, основное время которой проходит в пределах города. В обязанности трактирщика входят садоводство, работа за барной стойкой и приготовление еды.
 
-  The innkeeper is a role that primarily stays within the town. The jobs of an innkeeper include gardening, bartending, and cooking. 
+  В трактире у трактирщика будет доступ к трём основным зонам:
 
-  Within the inn, an innkeeper will have access to three main areas that they will use.
+  ## Сад
+  Сад, он же огород или ферма, — важный ресурс для любого повара. Здесь можно найти несколько грядок, колодец и базовые припасы.
+  Чтобы начать фермерство, найди стол с припасами в саду. Обычно в ящике лежит разнообразие семян, а на столе — инструменты вроде ведра и мотыги. Возьми нужные семена и используй их на земле, чтобы посадить. Подожди немного, а затем используй любой острый инструмент (например, серп или кинжал), чтобы собрать урожай.
 
-  ##The garden
-  The garden, or farm, is an important asset for any chef. A few seedbeds are found here, as well as a well and some basic supplies.
-  To begin farming, locate the supply table in the garden. Usually, a crate will hold a variety of seeds while a table will hold farming instruments like a bucket and hoe. Grab a seed variety and use it on the ground to plant it. Wait a while, and then use any sharp tool (such as a sickle or dagger) to harvest the fully grown crop.
+  Чтобы растения дольше оставались живыми, не забывай регулярно их поливать. Упростить уход за растениями поможет заклинание **Рост растений** из школы жизнетворения, которое восстанавливает влагу, питательные вещества и здоровье растения.
 
-  In order to have your crops stay alive for an extended period of time, make sure to water them often. Keeping plants alive can be made easier with the spell “Plant growth” in the vivification tree, which restores the water, nutrients, and health of a plant. 
+  Если все грядки заняты, а спрос всё ещё превышает предложение, используй мотыгу, чтобы вскопать новую грядку. Если планируешь расширяться, стоит со временем сделать сумку для семян.
 
-  If you have filled all your seed beds with crops and still can’t keep up with demand, you can use the hoe to make more. Consider making a seed bag eventually with this if you have plans to expand your farm. 
+  ## Погреб
+  Погреб — излюбленное место завсегдатаев. Здесь можно найти несколько бочек, разливающих алкоголь. Возьми кружку, убедись, что наливаешь из кеги — и получай прибыль.
 
-  ##The cellar
-  The cellar is extremely popular among patrons. Within the usual cellar, several barrels can be found which dispense alcohol. Grab a mug, make sure you are drawing from the keg, and profit.
+  Обычно в погребе также есть столы и факелы, а также бочка с водой. На столах часто лежат запасные кружки. Старайся не наливать слишком много алкоголя за раз… разве что твоим уважаемым клиентом оказался гном.
 
-  A cellar will also contain a few tables and torches, as well as a barrel of water. The tables will usually hold spare mugs. Make sure not to serve too much alcohol at once.. except if your esteemed customer is a dwarf.
+  ## Кухня
+  Больше всего времени трактирщик проводит на кухне. Для начала собери материалы: наруби или найди доски, начни выращивать культуры, найди запасные продукты и возьми нужные инструменты. Хороший повар знает ценность кинжала — обычно он выдается трактирщику. Кинжал может быть использован для сбора растений, нарезки еды и отпугивания буйных клиентов.
 
-  ##The kitchen
+  Начнём с чего-то простого — **зелёного салата**. Сначала вырасти капусту, тыкву и огурец. Когда урожай будет готов, принеси его на кухню. Подойди к кулинарному столу и найди рецепт зелёного салата. Обрати внимание, что в рецепте требуются нарезанные ингредиенты — просто используй нож, чтобы их нарезать. Затем найди тарелку (обычно запасные лежат у печей). Когда все ингредиенты будут под рукой, можно приступать к приготовлению.
 
-  Most of an innkeeper's time will be spent in the kitchen. First things first, materials are needed. Chop some wood for planks (or find some), start growing some crops, find your spare food items, and grab your tools. A good chef will recognize the value of a dagger, usually provided to an innkeeper inside their building. Daggers can be used to harvest plants, chop up food into slices, and fend off patrons that have had a bit too much ale.
+  Зелёный салат легко готовить, потому что его не нужно подогревать. Однако почти все остальные блюда требуют готовки на печи. Чтобы использовать печь, положи внутрь 2–3 деревянные доски — этого хватит, чтобы поддерживать огонь во время готовки. Разожги пламя заклинанием **«Создание огня»** или при помощи кресала. Затем положи сырую еду *наверх* печи — **после** того как зажжён огонь, чтобы еда начала готовиться. Снимай еду вовремя, иначе она сгорит и превратится в несъедобный пепел (который, конечно, можно попытаться продать, но закончится это плохо). Заклинание **«Заморозка»** поможет остановить печь, чтобы не тратить топливо между готовкой.
 
-  Lets begin with cooking something simple: a green salad. First, begin to grow cabbage, pumpkin, and cucumber. Once the crops are ready, bring them into your kitchen. Go to your cooking table and find the recipe for green salad. You may notice that the crops are in sliced form for the recipe, which is attained simply by using your knife to cut them up. Next, you need to find a plate. Usually some spares are around your ovens. Once all ingredients are near the table, you can begin to cook the salad.
+  ## Посетители
+  На кухне есть небольшое окно для приёма заказов от клиентов. Настоятельно рекомендуется составить небольшое меню — на листе бумаги с помощью перьевой ручки — с перечнем предлагаемых блюд и цен. Цены устанавливает сам трактирщик, но большинство клиентов оценят доступные предложения.
 
-  Green salad is easy to make because it does not need to be heated. However, almost all other food dishes require cooking with your furnace. To use the furnace, find some wood planks and deposit them inside of it. Usually 2-3 planks will keep the fire burning long enough to cook an item. Now that there is fuel, ignite the fire with either a “create flame” spell or a flint and steel. Next, place the uncooked item on top of the furnace (place them on top AFTER the flame is lit so they begin to cook!). Take the food off of the stove quickly or else it will burn into inedible ash, which you can try to market to customers, but it won't end well. The “Freeze” spell can stop a furnace from wasting fuel inbetween cooking. 
-
-  ##Customers
-
-  In the kitchen, there is a small ordering window for customers. It is heavily suggested that you make a small menu with paper and a fountain pen containing the dishes you will make and their prices. Prices can be decided by the innkeeper, but most customers will enjoy it if your prices are affordable. Try to attract customers with different services as well, including music enhanced with bardic magic, special deals, or any sort of gimmick you can come up with. 
+  Привлекай клиентов дополнительными услугами: музыкой с применением бардовской магии, особыми акциями или любыми другими забавными фишками, которые сможешь придумать.
 </Document>
