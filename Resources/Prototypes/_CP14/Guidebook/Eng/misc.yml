@@ -21,16 +21,16 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Lockpicking_101
-  name: Lockpicking 101
-  text: "/ServerInfo/_CP14/Guidebook_EN/Lockpicking101.xml"
+  id: CP14_EN_Lockpicking
+  name: Lockpicking
+  text: "/ServerInfo/_CP14/Guidebook_EN/Lockpicking.xml"
   filterEnabled: True
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Locks
-  name: Locks
-  text: "/ServerInfo/_CP14/Guidebook_EN/Locks.xml"
+  id: CP14_EN_Locks_and_Keys
+  name: Locks and Keys
+  text: "/ServerInfo/_CP14/Guidebook_EN/LocksKeys.xml"
   children:
-  - CP14_EN_Lockpicking_101
+  - CP14_EN_Lockpicking
   filterEnabled: True
