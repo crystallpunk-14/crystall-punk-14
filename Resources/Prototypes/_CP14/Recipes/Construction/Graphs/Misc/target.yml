@@ -27,12 +27,6 @@
             - stackGroup: WoodenPlanks
               amount: 3
               doAfter: 1
-            - tag: CP14DyeRed
-              name: red dye
-              icon:
-                sprite: _CP14/Objects/Materials/dye.rsi
-                state: powder
-              doAfter: 0.5
             - tool: CP14Hammering
               doAfter: 1
               
@@ -62,16 +56,5 @@
               amount: 5
             - material: CP14Cloth
               amount: 2
-            - tag: CP14DyeRed
-              name: red dye
-              icon:
-                sprite: _CP14/Objects/Materials/dye.rsi
-                state: powder
-            - tag: CP14Wheat
-              name: wheat bushel
-              icon:
-                sprite: _CP14/Objects/Flora/Farm/wheat.rsi
-                state: base1
-              doAfter: 4
     - node: CP14targetEffigy
       entity: CP14TargetEffigy
