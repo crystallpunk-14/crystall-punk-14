@@ -1,0 +1,7 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Mechanics
+  name: Mechanics
+  text: "/ServerInfo/_CP14/Guidebook_EN/Mechanics.xml"
+  children:
+  - CP14_EN_Locks_and_Keys
