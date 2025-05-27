@@ -1,6 +1,6 @@
 <Document>
   # Innkeeping
-  The innkeeper is a role that primarily stays within the town. The responsibilities of an innkeeper include gardening, bartending, and cooking, but can also include spreading gossip and rumors around the town, paying adventures to fetch exotic ingredients and wood, and keeping your lovely tavern clean and free of corpses.
+  The innkeeper is a role that primarily stays within the town. The responsibilities of an innkeeper mainly include gardening, bartending, and cooking, but can also include spreading gossip and rumors around the town, paying adventures to fetch exotic ingredients and wood, and keeping your lovely tavern clean and free of corpses.
 
   Within the inn, an innkeeper will have access to three main areas:
 
@@ -15,7 +15,7 @@
   Along with growing food crops, cotton can also be grown. Cotton can be used to weave fabrics and clothing for the people, providing an additional source of income for the inn. To do this, gather some cotton, find a few wood planks, and create a tailoring workbench.
   
   ## The Cellar
-  The cellar is extremely popular among patrons. Several barrels can be found here that dispense alcohol. Grab a mug, ensure you are drawing from a keg, and profit. For this very reason though, patrons may try to break into the cellar via the caves it is built in. Checking in on the cellar often can keep all your glorious booze safe. In the event that some ruffian breaks your barrels, the alcohol can be mopped up and put into a new barrel. Customers will certainly enjoy your new "cocktail".
+  The cellar is extremely popular among patrons. Several barrels can be found here that dispense alcohol. Grab a mug, ensure you are drawing from a keg, and profit. For this very reason though, patrons may try to break into the cellar via the caves it is built in. Checking in on the cellar often can keep all your highly valued booze safe. In the event that some ruffian breaks your barrels, the alcohol can be mopped up and put into a new barrel. Customers will certainly enjoy your new "cocktail".
 
   A typical cellar also contains a few tables and torches, as well as a barrel of water. Tables usually hold spare mugs. Be careful not to serve too much alcohol at once... unless your esteemed customer is a dwarf.
 
@@ -30,7 +30,7 @@
   ## Customers
   In the kitchen, there is a small ordering window for customers. It is strongly recommended that you create a small menu using paper and a fountain pen, listing the dishes you offer and their prices. Prices are set by the innkeeper, but customers will appreciate affordable options.
 
-  Attract customers with additional services such as bardic music, special deals, or any unique gimmicks you can come up with. Make sure to pay your employees! Bards do not always work for free. 
+  Attract customers with additional services such as bardic music, special deals, or any unique gimmicks you can come up with. Note that people often expect to be paid for their work! Bards need to make money too.
 
-  And finally, in the event your amazingly delicious cooking or your carefully made cocktail of ale from the cellar floor makes a customer vomit, a mop can be found near the stairs to the cellar. Dip the mop inside one of your water barrels and wipe up the mess. 
+  In the event your delightfully delicious cooking or your carefully brewed cocktail of ale from the cellar floor makes a customer vomit, a mop can be found near the stairs to the cellar. Dip the mop inside one of your water barrels and wipe up the mess. Be careful to avoid serving water from your mopping barrel - customers generally don't enjoy the taste of vomit.
 </Document>
