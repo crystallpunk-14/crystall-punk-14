@@ -15,6 +15,7 @@ tickrate = 30
 port = 1212
 bindto = "::,0.0.0.0"
 max_connections = 100
+log_late_msg = false
 
 [status]
 max_connections = 10
