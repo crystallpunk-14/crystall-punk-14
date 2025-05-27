@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._CP14.Farming.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.EntityTable;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Weapons.Melee.Events;
@@ -16,6 +17,7 @@ public abstract partial class CP14SharedFarmingSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly EntityTableSystem _entityTable = default!;
 
     private void InitializeInteractions()
     {
@@ -115,11 +117,8 @@ public abstract partial class CP14SharedFarmingSystem
                 if (used != null && !_tag.HasTag(used.Value, tag))
                     continue;
             }
-
-            if (!_proto.TryIndex(table, out var getLoot))
-                continue;
-
-            var spawnLoot = getLoot.GetSpawns(_random);
+            
+            var spawnLoot = _entityTable.GetSpawns(table);
             foreach (var loot in spawnLoot)
             {
                 var spawnPos = pos.Offset(_random.NextVector2(gatherable.Comp.GatherOffset));

@@ -22,11 +22,6 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherDayflin
-
-- type: entityLootTable
-  id: CP14GatherDayflin
-  entries:
-  - id: CP14Dayflin
-    amount: 1
-    maxAmount: 2
+      All: !type:GroupSelector
+        children:
+        - id: CP14Dayflin

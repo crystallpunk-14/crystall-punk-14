@@ -14,11 +14,8 @@
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherOnion
-
-- type: entityLootTable
-  id: CP14GatherOnion
-  entries:
-  - id: CP14FoodOnion
-    amount: 5
-    maxAmount: 8
+      All: !type:AllSelector
+        children:
+        - id: CP14GatherOnion
+          rolls: !type:RangeNumberSelector
+            range: 4, 6

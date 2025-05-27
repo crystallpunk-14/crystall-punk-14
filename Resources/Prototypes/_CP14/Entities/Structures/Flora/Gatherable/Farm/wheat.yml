@@ -16,17 +16,14 @@
     growthSteps: 5
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherWheat
+      All: !type:AllSelector
+        children:
+        - id: CP14Wheat
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedWheat
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
   - type: CP14WaveShader
     speed: 2.8
     dis: 4
-
-- type: entityLootTable
-  id: CP14GatherWheat
-  entries:
-  - id: CP14Wheat
-    amount: 5
-    maxAmount: 8
-  - id: CP14SeedWheat
-    amount: 1
-    maxAmount: 2

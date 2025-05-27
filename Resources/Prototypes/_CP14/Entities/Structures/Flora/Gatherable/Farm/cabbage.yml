@@ -14,14 +14,11 @@
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherCabbage
-
-- type: entityLootTable
-  id: CP14GatherCabbage
-  entries:
-  - id: CP14FoodCabbage
-    amount: 6
-    maxAmount: 8
-  - id: CP14SeedCabbage
-    amount: 1
-    maxAmount: 2
+      All: !type:AllSelector
+        children:
+        - id: CP14FoodCabbage
+          rolls: !type:RangeNumberSelector
+            range: 6, 8
+        - id: CP14SeedCabbage
+          rolls: !type:RangeNumberSelector
+            range: 1, 2

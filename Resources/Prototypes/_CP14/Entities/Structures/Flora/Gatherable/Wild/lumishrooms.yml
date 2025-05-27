@@ -26,14 +26,8 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherLumiMushroom
-
-- type: entityLootTable
-  id: CP14GatherLumiMushroom
-  entries:
-  - id: CP14LumiMushroom
-    amount: 1
-    maxAmount: 1
-  - id: CP14MobMonsterMyconideLumish
-    amount: 1
-    prob: 0.08
+      All: !type:GroupSelector
+        children:
+        - id: CP14LumiMushroom
+        - id: CP14MobMonsterMyconideLumish
+          weight: 0.08

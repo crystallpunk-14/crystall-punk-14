@@ -16,14 +16,11 @@
     growthSteps: 4
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherSage
-
-- type: entityLootTable
-  id: CP14GatherSage
-  entries:
-  - id: CP14WildSage
-    amount: 4
-    maxAmount: 8
-  - id: CP14SeedSage
-    amount: 1
-    maxAmount: 2
+      All: !type:AllSelector
+        children:
+        - id: CP14WildSage
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedSage
+          rolls: !type:RangeNumberSelector
+            range: 1, 2

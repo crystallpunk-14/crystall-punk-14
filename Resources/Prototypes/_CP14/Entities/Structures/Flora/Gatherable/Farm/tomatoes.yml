@@ -14,14 +14,11 @@
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherTomatoes
-
-- type: entityLootTable
-  id: CP14GatherTomatoes
-  entries:
-  - id: CP14FoodTomatoes
-    amount: 4
-    maxAmount: 8
-  - id: CP14SeedTomato
-    amount: 0
-    maxAmount: 2
+      All: !type:AllSelector
+        children:
+        - id: CP14FoodTomatoes
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedTomato
+          rolls: !type:RangeNumberSelector
+            range: 0, 2

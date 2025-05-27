@@ -20,11 +20,6 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherWildSage
-
-- type: entityLootTable
-  id: CP14GatherWildSage
-  entries:
-  - id: CP14WildSage
-    amount: 1
-    maxAmount: 1
+      All: !type:GroupSelector
+        children:
+        - id: CP14WildSage

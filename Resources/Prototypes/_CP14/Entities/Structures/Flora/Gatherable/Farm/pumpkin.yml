@@ -14,14 +14,11 @@
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherPumpkin
-
-- type: entityLootTable
-  id: CP14GatherPumpkin
-  entries:
-  - id: CP14FoodPumpkin
-    amount: 4
-    maxAmount: 8
-  - id: CP14SeedPumpkin
-    amount: 1
-    maxAmount: 2
+      All: !type:AllSelector
+        children:
+        - id: CP14FoodPumpkin
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedPumpkin
+          rolls: !type:RangeNumberSelector
+            range: 1, 2

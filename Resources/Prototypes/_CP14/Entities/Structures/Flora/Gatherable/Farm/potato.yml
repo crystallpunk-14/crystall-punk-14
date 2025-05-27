@@ -16,11 +16,8 @@
     growthSteps: 5
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherPotato
-
-- type: entityLootTable
-  id: CP14GatherPotato
-  entries:
-  - id: CP14FoodPotato
-    amount: 4
-    maxAmount: 8
+      All: !type:AllSelector
+        children:
+        - id: CP14FoodPotato
+          rolls: !type:RangeNumberSelector
+            range: 4, 6

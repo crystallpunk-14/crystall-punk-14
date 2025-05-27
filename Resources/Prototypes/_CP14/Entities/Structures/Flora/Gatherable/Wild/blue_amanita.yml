@@ -22,11 +22,6 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherBlueAmanita
-
-- type: entityLootTable
-  id: CP14GatherBlueAmanita
-  entries:
-  - id: CP14BlueAmanita
-    amount: 1
-    maxAmount: 1
+      All: !type:GroupSelector
+        children:
+        - id: CP14BlueAmanita
