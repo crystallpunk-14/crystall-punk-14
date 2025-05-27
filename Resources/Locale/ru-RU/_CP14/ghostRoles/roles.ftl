@@ -1,3 +1,6 @@
+cp14-ghost-role-information-opus-name = Опус
+cp14-ghost-role-information-opus-description = Надменный питомец алхимика. Фиолетовый слайм княжеского вида. Помогайте алхимику, но будьте любезны с другими слаймами.
+
 cp14-ghost-role-information-name-skeleton = Оживленный скелет
 cp14-ghost-role-information-description-skeleton = Порождение некромантии, вселившее живую душу в мертвые кости. Часто такие души контролируются некромантом, исполняя его волю.
 

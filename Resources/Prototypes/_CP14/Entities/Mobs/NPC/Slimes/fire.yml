@@ -21,7 +21,9 @@
         - ReagentId: CP14ChromiumSlime
           Quantity: 20
         - ReagentId: CP14EssenceFire
-          Quantity: 30
+          Quantity: 20
+        - ReagentId: CP14BasicEffectDamageHeat
+          Quantity: 10
   - type: MeleeWeapon
     damage:
       types:

@@ -13,18 +13,10 @@
     - CP14Pets
   - type: Sprite
     sprite: _CP14/Mobs/Pets/opus.rsi
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-      state: base
-      shader: unshaded
   - type: PointLight
     color: "#620bf7"
     energy: 3
     radius: 1.8
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Dead
   # since it pops at 100 damage, it can have slow passive healing to help it out
   - type: PassiveDamage
     allowedStates:
@@ -37,7 +29,6 @@
   - type: SolutionContainerManager
     solutions:
       slime:
-        maxVol: 50
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 20
@@ -53,40 +44,13 @@
         solution: slime
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  # By request, we can feed this slime (no starvation damage though; that's annoying on a pet)
-  - type: Hunger
-    thresholds:
-      Overfed: 100
-      Okay: 50
-      Peckish: 25
-      Starving: 10
-      Dead: 0
-    baseDecayRate: 0.00925925925926
-  - type: Thirst
-    thresholds:
-      OverHydrated: 200
-      Okay: 150
-      Thirsty: 100
-      Parched: 50
-      Dead: 0
-    baseDecayRate: 0.04
-  - type: FootstepModifier
-    footstepSoundCollection:
-      path: /Audio/Effects/Footsteps/slime1.ogg
-      params:
-        volume: 1
-  - type: Tag
-    tags:
-    - FootstepSound
-    - CannotSuicide
   - type: MeleeWeapon
     damage:
       types:
         Blunt: 1
         Caustic: 1
-  - type: MultiHandedItem
   - type: InteractionPopup #TODO: a petting sound?
-    successChance: 0.3
+    successChance: 0.3 # default is 0.5
     interactSuccessSpawn: EffectHearts
   - type: EntityTableContainerFill
     containers:
@@ -100,4 +64,3 @@
   - type: Grammar
     attributes:
       proper: true
-      gender: neuter
