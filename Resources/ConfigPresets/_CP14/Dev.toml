@@ -17,9 +17,6 @@ bindto = "::,0.0.0.0"
 max_connections = 100
 log_late_msg = false
 
-[status]
-max_connections = 10
-
 [game]
 hostname = "⚔️ CrystallEdge ⚔️"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
