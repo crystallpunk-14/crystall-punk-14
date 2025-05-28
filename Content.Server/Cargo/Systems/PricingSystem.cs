@@ -279,7 +279,7 @@ public sealed class PricingSystem : EntitySystem
     {
         double price = 0;
 
-        if (prototype.Components.ContainsKey(_factory.GetComponentName(typeof(MaterialComponent))) &&
+        if (//prototype.Components.ContainsKey(_factory.GetComponentName(typeof(MaterialComponent))) && //CP14 We take materials into account when calculating the price in any case.
             prototype.Components.TryGetValue(_factory.GetComponentName(typeof(PhysicalCompositionComponent)), out var composition))
         {
             var compositionComp = (PhysicalCompositionComponent) composition.Component;

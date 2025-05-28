@@ -8,6 +8,15 @@
   price: 0.1
 
 - type: material
+  id: CP14LucensWoodenPlanks
+  stackEntity: CP14LucensWoodenPlanks1
+  name: cp14-material-lucens-planks
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
+  color: "#1a1e22"
+  price: 1
+
+- type: material
   id: CP14Dirt
   stackEntity: CP14DirtBlock1
   name: cp14-material-dirt-block
@@ -86,15 +95,6 @@
   icon: { sprite: _CP14/Objects/Materials/mithril_scrap.rsi, state: scrap }
   color: "#006c83"
   price: 5
-
-- type: material
-  id: CP14LucensWoodenPlanks
-  stackEntity: CP14LucensWoodenPlanks1
-  name: cp14-material-lucens-planks
-  unit: materials-unit-bar
-  icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
-  color: "#1a1e22"
-  price: 1
 
 - type: material
   id: CP14FloraMaterial
