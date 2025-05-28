@@ -80,7 +80,7 @@
             </BoxContainer>
             <PanelContainer Margin="10 10 10 10" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
                 <parallax:ParallaxControl Name="ParallaxBackground" ScaleX="4" ScaleY="4"
-                                          ParallaxPrototype="CP14Astral" Access="Public" SpeedX="10" SpeedY="5" />
+                                          ParallaxPrototype="KettleStation" Access="Public" SpeedX="10" SpeedY="5" />
                 <BoxContainer Margin="10 10 10 10" Orientation="Horizontal" HorizontalExpand="True"
                               VerticalExpand="True">
                     <nodeTree:CP14NodeTreeGraphControl Name="GraphControl" HorizontalAlignment="Stretch"
