@@ -31,6 +31,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 10
 
 - type: entity
   parent: CP14BaseKey
@@ -45,6 +48,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14BaseKey
@@ -60,6 +66,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 10
 
 - type: entity
   parent: CP14BaseKey
@@ -76,3 +85,6 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
