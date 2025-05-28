@@ -48,9 +48,9 @@
     - cloth_2
     - cloth_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
 
 - type: entity
   id: CP14Cloth10
@@ -75,6 +75,9 @@
       - enum.DamageStateVisualLayers.Base:
           shard1: ""
           shard2: ""
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 5
 
 - type: entity
   id: CP14Snowball

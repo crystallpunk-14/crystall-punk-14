@@ -34,3 +34,10 @@
     - /Audio/_CP14/Effects/Lurker/ritual1.ogg
     - /Audio/_CP14/Effects/Lurker/ritual2.ogg
     - /Audio/_CP14/Effects/Lurker/ritual3.ogg
+
+- type: soundCollection
+  id: CP14CoinImpact
+  files:
+    - /Audio/_CP14/Effects/coin_impact1.ogg
+    - /Audio/_CP14/Effects/coin_impact2.ogg
+    - /Audio/_CP14/Effects/coin_impact3.ogg

@@ -144,7 +144,7 @@
     - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
-    count: 6
+    count: 4
   result: CP14VialMedium
 
 - type: CP14Recipe
@@ -160,7 +160,7 @@
     count: 1
   - !type:StackResource
     stack: CP14GlassSheet
-    count: 6
+    count: 4
   result: CP14VialMediumReinforced
 
 - type: CP14Recipe

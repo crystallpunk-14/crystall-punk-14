@@ -22,9 +22,9 @@
     - state: icon
   - type: Clothing
     sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
-  - type: CP14Material
-    materials:
-      CP14Gold: 5
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 2
 
 - type: entity
   parent: CP14ClothingJewelleryBase
