@@ -27,6 +27,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly CP14ClientTradingPlatformSystem _tradingSystem;
+    private readonly CP14ClientStationEconomySystem _economySystem;
     private readonly SharedAudioSystem _audio = default!;
 
     private CP14TradingPlatformUiState? _cacheState;
@@ -65,7 +66,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
             }
         }
 
-    _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
+        _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
+        _economySystem = _e.System<CP14ClientStationEconomySystem>();
         _audio = _e.System<SharedAudioSystem>();
 
         GraphControl.OnOffsetChanged += offset =>
@@ -143,7 +145,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         UnlockCost.Text = _selectedPosition.UnlockReputationCost.ToString();
 
         BuyPriceHolder.RemoveAllChildren();
-        BuyPriceHolder.AddChild(new CP14PriceControl(_selectedPosition.Price));
+        BuyPriceHolder.AddChild(new CP14PriceControl(_economySystem.GetPrice(_selectedPosition) ?? 0));
     }
 
     private void DeselectNode()

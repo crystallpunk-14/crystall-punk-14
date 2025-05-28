@@ -17,6 +17,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly PricingSystem _price = default!;
     [Dependency] private readonly CP14CurrencySystem _cp14Currency = default!;
+    [Dependency] private readonly CP14StationEconomySystem _economy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
@@ -55,7 +56,8 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placedEntity);
         }
 
-        if (balance < indexedPosition.Price)
+        var price = _economy.GetPrice(position) ?? 10000;
+        if (balance < price)
         {
             // Not enough balance to buy the position
             _popup.PopupEntity(Loc.GetString("cp14-trading-failure-popup-money"), platform);
@@ -69,14 +71,14 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             QueueDel(placedEntity);
         }
 
-        balance -= indexedPosition.Price;
+        balance -= price;
 
         platform.Comp.NextBuyTime = Timing.CurTime + TimeSpan.FromSeconds(1f);
         Dirty(platform);
 
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
-        user.Comp.Reputation[indexedPosition.Faction] += (float)indexedPosition.Price / 10;
+        user.Comp.Reputation[indexedPosition.Faction] += (float)price / 10;
         Dirty(user);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);

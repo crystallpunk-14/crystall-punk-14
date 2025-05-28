@@ -44,8 +44,14 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     [DataField]
     public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
 
-    [DataField(required: true)]
-    public int Price = 1;
+    [DataField]
+    public int PriceMarkup = 1;
+
+    /// <summary>
+    /// each round prices will differ within +X percent of the calculated value
+    /// </summary>
+    [DataField]
+    public float PriceFluctuation = 0.2f;
 }
 
 [ImplicitDataDefinitionForInheritors]
