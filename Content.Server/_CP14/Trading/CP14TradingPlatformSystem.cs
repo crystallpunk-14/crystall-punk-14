@@ -1,8 +1,11 @@
 using Content.Server._CP14.Currency;
+using Content.Server._CP14.MagicEnergy;
 using Content.Server.Cargo.Systems;
+using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared._CP14.Trading.Systems;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
@@ -19,12 +22,42 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
     [Dependency] private readonly CP14CurrencySystem _cp14Currency = default!;
     [Dependency] private readonly CP14StationEconomySystem _economy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14MagicEnergyOverloadEvent>(OnMagicOverload);
+    }
+
+    private void OnMagicOverload(Entity<CP14SellingPlatformComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    {
+        _magicEnergy.ClearEnergy(ent.Owner);
+
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        double price = 0;
+        foreach (var placed in itemPlacer.PlacedEntities)
+        {
+            if (_mobState.IsAlive(ent))
+                continue;
+
+            var placedPrice = _price.GetPrice(placed);
+
+            if (placedPrice <= 0)
+                continue;
+
+            price += placedPrice;
+            QueueDel(placed);
+        }
+
+        _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
+        SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
     }
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
