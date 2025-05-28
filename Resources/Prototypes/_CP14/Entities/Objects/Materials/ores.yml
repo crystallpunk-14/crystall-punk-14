@@ -21,6 +21,7 @@
     - ore1
     - ore2
     - ore3
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 2
@@ -66,6 +67,7 @@
     - ore1
     - ore2
     - ore3
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 2
@@ -111,6 +113,7 @@
     - ore1
     - ore2
     - ore3
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 2
@@ -156,6 +159,7 @@
     - ore1
     - ore2
     - ore3
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 2

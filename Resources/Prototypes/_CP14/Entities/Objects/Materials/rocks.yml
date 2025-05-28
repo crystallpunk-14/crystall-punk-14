@@ -33,7 +33,7 @@
   - type: Material
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
-      CP14Dirt: 100
+      CP14Dirt: 10
   - type: CP14MagicEssenceContainer
     essences:
       Earth: 1
@@ -73,7 +73,7 @@
   - type: Material
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
-      CP14Stone: 100
+      CP14Stone: 10
   - type: CP14MagicEssenceContainer
     essences:
       Earth: 1
@@ -121,7 +121,7 @@
   - type: Material
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
-      CP14MarbleStone: 100
+      CP14MarbleStone: 10
 
 - type: entity
   id: CP14MarbleBlock10

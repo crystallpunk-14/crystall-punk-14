@@ -20,9 +20,6 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
     [DataField]
     public int Count = 1;
 
-    [DataField]
-    public bool OnlyMaterialComponent = true;
-
     public override bool CheckRequirement(
         EntityManager entManager,
         IPrototypeManager protoManager,
@@ -33,9 +30,6 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         foreach (var ent in placedEntities)
         {
             if (!entManager.TryGetComponent<PhysicalCompositionComponent>(ent, out var material))
-                continue;
-
-            if (OnlyMaterialComponent && !entManager.HasComponent<MaterialComponent>(ent))
                 continue;
 
             entManager.TryGetComponent<StackComponent>(ent, out var stack);
@@ -70,9 +64,6 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         foreach (var placedEntity in placedEntities)
         {
             if (!entManager.TryGetComponent<PhysicalCompositionComponent>(placedEntity, out var material))
-                continue;
-
-            if (OnlyMaterialComponent && !entManager.HasComponent<MaterialComponent>(placedEntity))
                 continue;
 
             entManager.TryGetComponent<StackComponent>(placedEntity, out var stack);

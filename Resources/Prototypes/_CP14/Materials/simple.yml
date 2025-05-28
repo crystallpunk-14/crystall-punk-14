@@ -31,7 +31,7 @@
   name: materials-glass
   icon: { sprite: _CP14/Objects/Materials/glass.rsi, state: glass_2 }
   color: "#555963"
-  price: 0.08
+  price: 0.15
 
 - type: material
   id: CP14MarbleStone

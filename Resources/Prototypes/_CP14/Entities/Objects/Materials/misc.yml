@@ -39,7 +39,7 @@
   - type: Material
   - type: PhysicalComposition # точно ли это нужно?
     materialComposition:
-      CP14Ash: 100
+      CP14Ash: 10
 
 - type: entity
   id: CP14Ash3

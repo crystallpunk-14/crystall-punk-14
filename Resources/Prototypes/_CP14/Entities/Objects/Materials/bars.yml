@@ -205,9 +205,9 @@
     - bar_2
     - bar_3
   - type: Material
-  #- type: CP14Material
-  #  materials:
-  #    CP14Mithril: 10
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
 
 - type: entity
   id: CP14MithrilBar5
