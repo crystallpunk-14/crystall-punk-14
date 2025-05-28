@@ -208,9 +208,6 @@ namespace Content.Client.Construction.UI
         {
             foreach (var recipe in actualRecipes)
             {
-                if (!recipe.Prototype.CrystallPunkAllowed) //CrystallEdge clearing recipes
-                    continue;
-
                 var protoView = new EntityPrototypeView()
                 {
                     Scale = new Vector2(1.2f),
@@ -265,6 +262,9 @@ namespace Content.Client.Construction.UI
 
             foreach (var recipe in _prototypeManager.EnumeratePrototypes<ConstructionPrototype>())
             {
+                if (!recipe.CrystallPunkAllowed) //CrystallEdge filter vanilla recipes
+                    continue;
+
                 if (recipe.Hide)
                     continue;
 

@@ -29,6 +29,7 @@
         damage:
           groups:
             Brute: -6
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectDamageBrute
@@ -47,6 +48,7 @@
         damage:
           groups:
             Brute: 3
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectHealHeat
@@ -65,6 +67,7 @@
         damage:
           types:
             Heat: -10
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectDamageHeat
@@ -87,6 +90,7 @@
       - !type:AdjustTemperature
         amount: 2000
       - !type:Ignite
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectHealCold
@@ -105,6 +109,7 @@
         damage:
           types:
             Cold: -10
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectDamageCold
@@ -123,6 +128,7 @@
         damage:
           types:
             Cold: 3
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectHealPoison
@@ -141,6 +147,7 @@
         damage:
           types:
             Poison: -10
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectDamagePoison
@@ -159,6 +166,7 @@
         damage:
           types:
             Poison: 3
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectHealAirloss
@@ -177,6 +185,7 @@
         damage:
           types:
             Asphyxiation: -10
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectDamageAirloss
@@ -195,6 +204,7 @@
         damage:
           types:
             Asphyxiation: 3
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectHealManaDepletion
@@ -213,6 +223,7 @@
         damage:
           types:
             CP14ManaDepletion: -10
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectDamageManaDepletion
@@ -231,6 +242,7 @@
         damage:
           types:
             CP14ManaDepletion: 3
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectBloodRestore
@@ -247,6 +259,7 @@
       effects:
       - !type:ModifyBloodLevel
         amount: 20
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectBloodAbsorption
@@ -263,6 +276,7 @@
       effects:
       - !type:ModifyBloodLevel
         amount: -10
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
@@ -282,6 +296,7 @@
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst
@@ -297,6 +312,7 @@
       effects:
       - !type:SatiateThirst
         factor: 15
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14BasicEffectHealMana
@@ -313,6 +329,7 @@
       - !type:CP14ManaChange
         manaDelta: 1.5
         safe: true
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectDamageMana
@@ -329,6 +346,7 @@
       - !type:CP14ManaChange
         manaDelta: -1.5
         safe: false
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectSpeedUp
@@ -349,6 +367,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectSpeedDown
@@ -369,6 +388,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14BasicEffectSleep
@@ -390,6 +410,7 @@
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectUnsleep
@@ -423,6 +444,7 @@
           min: 1
         reagent: CP14BasicEffectSleep
         amount: -10
+  pricePerUnit: 1
 
 # Gimmick solutions, otherwise doesn't give a mechanical benefit
 
@@ -444,6 +466,7 @@
         type: Add
         time: 25
         refresh: false
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14BasicEffectEmoteCough
@@ -491,6 +514,7 @@
       effects:
       - !type:Drunk
         boozePower: 15
+  pricePerUnit: 0.5
 
 - type: reagent
   id: CP14BasicEffectJitter
