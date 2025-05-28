@@ -5,6 +5,7 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared._CP14.Trading.Systems;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
@@ -43,7 +44,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         double price = 0;
         foreach (var placed in itemPlacer.PlacedEntities)
         {
-            if (_mobState.IsAlive(ent))
+            if (HasComp<MobStateComponent>(placed))
                 continue;
 
             var placedPrice = _price.GetPrice(placed);
