@@ -28,3 +28,47 @@
     solution: pool
   - type: Drink
     solution: pool
+
+- type: entity
+  id: CP14StoneWellBroken
+  parent: CP14StoneWell
+  categories: [ ForkFiltered ]
+  name: broken well
+  description: A barely surviving well that's been through too much, maybe there's still water left.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: broken
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999
+        reagents:
+        - ReagentId: Water
+          Quantity: 1000
+
+- type: entity
+  id: CP14StoneWellGrovelling
+  parent: CP14StoneWell
+  categories: [ ForkFiltered ]
+  name: grovelling well
+  description: A well ruined by time, overgrown with moss and grass, perhaps there was at least a couple of buckets of water left there.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: grovelling
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 999
+        reagents:
+        - ReagentId: Water
+          Quantity: 200
