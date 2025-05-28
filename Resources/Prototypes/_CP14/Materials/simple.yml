@@ -5,7 +5,7 @@
   unit: materials-unit-plank
   icon: { sprite: _CP14/Objects/Materials/wood.rsi, state: planks_2 }
   color: "#874d3a"
-  price: 0
+  price: 0.1
 
 - type: material
   id: CP14Dirt
@@ -23,7 +23,15 @@
   unit: materials-unit-chunk
   icon: { sprite: _CP14/Objects/Materials/stone_block.rsi, state: stone_2 }
   color: "#555963"
-  price: 0
+  price: 0.02
+
+- type: material
+  id: CP14Glass
+  stackEntity: CP14GlassSheet1
+  name: materials-glass
+  icon: { sprite: _CP14/Objects/Materials/glass.rsi, state: glass_2 }
+  color: "#555963"
+  price: 0.08
 
 - type: material
   id: CP14MarbleStone
@@ -32,7 +40,7 @@
   unit: materials-unit-chunk
   icon: { sprite: _CP14/Objects/Materials/marble_block.rsi, state: stone_2 }
   color: "#555963"
-  price: 0
+  price: 0.15
 
 - type: material
   id: CP14Cloth
@@ -41,7 +49,7 @@
   unit: materials-unit-roll
   icon: { sprite: _CP14/Objects/Materials/cloth.rsi, state: cloth_3 }
   color: "#d8e3e2"
-  price: 0
+  price: 0.3
 
 - type: material
   id: CP14Copper
@@ -50,7 +58,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/copper_scrap.rsi, state: scrap }
   color: "#9a5e22"
-  price: 0
+  price: 1
 
 - type: material
   id: CP14Iron
@@ -59,7 +67,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/iron_scrap.rsi, state: scrap_2 }
   color: "#9093a1"
-  price: 0
+  price: 2
 
 - type: material
   id: CP14Gold
@@ -68,7 +76,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/gold_scrap.rsi, state: scrap_3 }
   color: "#FFD700"
-  price: 0
+  price: 5
 
 - type: material
   id: CP14Mithril
@@ -77,7 +85,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/mithril_scrap.rsi, state: scrap }
   color: "#006c83"
-  price: 0
+  price: 5
 
 - type: material
   id: CP14LucensWoodenPlanks
@@ -86,7 +94,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
   color: "#1a1e22"
-  price: 0
+  price: 1
 
 - type: material
   id: CP14FloraMaterial
@@ -95,7 +103,7 @@
   unit: materials-unit-bunch
   icon: { sprite: _CP14/Objects/Materials/flora.rsi, state: grass_material1 }
   color: "#85903e"
-  price: 0
+  price: 0.01
 
 - type: material
   id: CP14Ash

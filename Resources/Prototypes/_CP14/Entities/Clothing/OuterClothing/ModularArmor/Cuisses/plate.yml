@@ -26,8 +26,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesIronPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 20
 
 - type: entity
@@ -44,8 +44,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesGoldPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 20
 
 - type: entity
@@ -62,8 +62,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesCopperPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 20
 
 - type: entity
@@ -80,6 +80,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - CuissesMithrilPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 20

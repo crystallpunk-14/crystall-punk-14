@@ -3,8 +3,6 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
-using Content.Shared._CP14.Material;
-using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Materials;
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
@@ -22,6 +20,9 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
     [DataField]
     public int Count = 1;
 
+    [DataField]
+    public bool OnlyMaterialComponent = true;
+
     public override bool CheckRequirement(
         EntityManager entManager,
         IPrototypeManager protoManager,
@@ -31,12 +32,15 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         var count = 0;
         foreach (var ent in placedEntities)
         {
-            if (!entManager.TryGetComponent<CP14MaterialComponent>(ent, out var material))
+            if (!entManager.TryGetComponent<PhysicalCompositionComponent>(ent, out var material))
+                continue;
+
+            if (OnlyMaterialComponent && !entManager.HasComponent<MaterialComponent>(ent))
                 continue;
 
             entManager.TryGetComponent<StackComponent>(ent, out var stack);
 
-            foreach (var (key, value) in material.Materials)
+            foreach (var (key, value) in material.MaterialComposition)
             {
                 if (key != Material)
                     continue;
@@ -65,12 +69,15 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         var requiredCount = Count;
         foreach (var placedEntity in placedEntities)
         {
-            if (!entManager.TryGetComponent<CP14MaterialComponent>(placedEntity, out var material))
+            if (!entManager.TryGetComponent<PhysicalCompositionComponent>(placedEntity, out var material))
+                continue;
+
+            if (OnlyMaterialComponent && !entManager.HasComponent<MaterialComponent>(placedEntity))
                 continue;
 
             entManager.TryGetComponent<StackComponent>(placedEntity, out var stack);
 
-            foreach (var mat in material.Materials)
+            foreach (var mat in material.MaterialComposition)
             {
                 if (mat.Key != Material)
                     continue;
