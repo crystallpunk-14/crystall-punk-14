@@ -6,3 +6,7 @@
 - type: cp14TradingFaction
   id: VictoriaGardens
   name: cp14-trade-faction-victoria-gardens
+
+- type: cp14TradingFaction
+  id: BradPotions
+  name: cp14-trade-faction-brad-potions

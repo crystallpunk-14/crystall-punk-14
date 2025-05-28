@@ -48,7 +48,7 @@
     - cloth_2
     - cloth_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
 

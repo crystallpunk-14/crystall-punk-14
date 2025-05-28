@@ -37,7 +37,7 @@
     - ash_2
     - ash_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14Ash: 10
 

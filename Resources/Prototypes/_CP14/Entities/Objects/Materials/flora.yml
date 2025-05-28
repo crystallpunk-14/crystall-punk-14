@@ -23,7 +23,7 @@
       - state: grass_material1
         map: ["base"]
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14FloraMaterial: 10
 

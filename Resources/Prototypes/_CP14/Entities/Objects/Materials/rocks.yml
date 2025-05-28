@@ -31,7 +31,7 @@
     - dirt_2
     - dirt_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14Dirt: 10
   - type: CP14MagicEssenceContainer
@@ -71,7 +71,7 @@
     - stone_2
     - stone_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14Stone: 10
   - type: CP14MagicEssenceContainer
@@ -119,7 +119,7 @@
     - stone_2
     - stone_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
       CP14MarbleStone: 10
 

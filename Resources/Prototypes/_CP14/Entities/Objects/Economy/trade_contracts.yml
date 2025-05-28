@@ -13,15 +13,28 @@
   - type: Sprite
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: blank
+  - type: StaticPrice
+    price: 10
   - type: CP14TradingContract
 
 - type: entity
   parent: CP14TradeContractBase
   id: CP14TradeContractVictoriaGardens
-  description: Trading contract with the "Victoria Gardens" chain. Allows you to purchase various natural products on the trading platform.
+  description: Trading contract with the "Victoria Gardens" shop. Allows you to purchase various natural products on the trading platform.
   suffix: Victoria Gardens
   components:
   - type: Sprite
     state: victoria_garden
   - type: CP14TradingContract 
     faction: VictoriaGardens
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractBradPotions
+  description: Trading contract with the "Brad's marvelous potions" ahop. Allows you to purchase various potions and alchemy equipment.
+  suffix: Brad Potions
+  components:
+  - type: Sprite
+    state: brad_potions
+  - type: CP14TradingContract 
+    faction: BradPotions
