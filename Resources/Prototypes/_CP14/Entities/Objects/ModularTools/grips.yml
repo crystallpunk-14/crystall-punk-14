@@ -105,6 +105,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -131,6 +134,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -155,6 +161,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -180,6 +189,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -205,6 +217,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -230,6 +245,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -254,6 +272,10 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
+      CP14Gold: 10
 
 # Long
 - type: entity
@@ -278,6 +300,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripLong
@@ -303,6 +328,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripLong
@@ -326,6 +354,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20
 
 - type: entity
   parent: CP14ModularGripIronLong
@@ -336,6 +367,8 @@
     state: icon
   - type: CP14ModularCraftStartPoint
     startProtoPart: CP14ModularGripIronLongGuard
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularGripLong
@@ -361,6 +394,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 20
 
 - type: entity
   parent: CP14ModularGripLong
@@ -386,6 +422,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 20
 
 
 - type: entity
@@ -412,3 +451,6 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 20

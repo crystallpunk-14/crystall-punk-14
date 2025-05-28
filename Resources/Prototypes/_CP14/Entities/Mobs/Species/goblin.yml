@@ -80,6 +80,8 @@
       Male: CP14UnisexGoblin
       Female: CP14UnisexGoblin
       Unsexed: CP14UnisexGoblin
+  - type: Speech
+    speechSounds: CP14Goblin
   - type: Thirst
   - type: Butcherable
     butcheringType: Spike

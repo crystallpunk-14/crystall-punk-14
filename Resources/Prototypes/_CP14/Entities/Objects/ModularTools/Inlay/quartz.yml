@@ -5,6 +5,8 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Inlay/quartz.rsi
+  - type: StaticPrice
+    price: 50
 
 - type: entity
   parent: CP14ModularInlayQuartzBase
@@ -50,6 +52,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - InlayQuartzFire
+  - type: StaticPrice
+    price: 70
 
 - type: entity
   parent: CP14ModularInlayQuartzBase

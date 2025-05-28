@@ -29,6 +29,7 @@
     endSpeech: "pecora tua"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSheepPolymorph
+  - type: CP14MagicEffectAliveTargetRequired
   - type: EntityTargetAction
     whitelist:
       components:

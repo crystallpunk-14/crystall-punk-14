@@ -39,6 +39,20 @@
     prerequisite: HealingT1
 
 - type: cp14Skill
+  id: CP14ActionSpellSheepPolymorph
+  skillUiPosition: 0, 4
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
+  effects: 
+  - !type:AddAction
+    action: CP14ActionSpellSheepPolymorph
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
+- type: cp14Skill
   id: CP14ActionSpellSpeedBallade
   skillUiPosition: 0, 6
   tree: Healing

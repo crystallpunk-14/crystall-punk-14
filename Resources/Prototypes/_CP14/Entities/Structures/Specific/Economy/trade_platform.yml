@@ -1,0 +1,121 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14TradingPlatform
+  name: buying dimensional platform
+  description: Allows you to trade with the outside world, through retail trade transactions.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: buy
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
+  - type: ActivatableUI
+    singleUser: true
+    key: enum.CP14TradingUiKey.Key
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CP14TradingPlatform
+  - type: UserInterface
+    interfaces:
+      enum.CP14TradingUiKey.Key:
+        type: CP14TradingPlatformBoundUserInterface
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+    whitelist:
+      tags:
+      - CP14Coin
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  #- type: GuideHelp
+  #  guides:
+  #  - CP14_RU_Trading
+  #  - CP14_EN_Trading
+
+- type: entity
+  parent: BaseStructure
+  id: CP14TradingSellingPlatform
+  name: selling dimensional platform
+  description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: sell
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CP14SellingPlatform
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 30
+    energy: 0
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: -1
+    delay: 3 # 5m to full restore
+  - type: CP14MagicUnsafeDamage
+  - type: CP14MagicEnergyExaminable
+
+- type: entity
+  id: CP14CashImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: impact
+      shader: unshaded
+      color: "#8f42ff"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#8f42ff"
+    enabled: true
+    radius: 8
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 2
