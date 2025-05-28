@@ -65,6 +65,7 @@
     - CP14ActionSpellFireball
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
+    - CP14ActionSpellResurrectionDead
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
