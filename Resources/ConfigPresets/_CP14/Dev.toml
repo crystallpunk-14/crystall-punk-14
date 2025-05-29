@@ -27,7 +27,7 @@ lobbyduration = 300
 role_timers = true
 
 [server]
-rules_file = "CP14SandboxRU"
+rules_file = "CP14Rules"
 
 [hub]
 advertise = true
