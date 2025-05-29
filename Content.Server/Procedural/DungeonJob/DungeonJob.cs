@@ -213,6 +213,11 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
 
         switch (layer)
         {
+            //CP14 zone
+            case CP14OreDunGen cp14OreDunGen:
+                await PostGen(cp14OreDunGen, dungeons, reservedTiles, random);
+                break;
+            //CP14 zone end
             case AutoCablingDunGen cabling:
                 await PostGen(cabling, dungeons[^1], reservedTiles, random);
                 break;

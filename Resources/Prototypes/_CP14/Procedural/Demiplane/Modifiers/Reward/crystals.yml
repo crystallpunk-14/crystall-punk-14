@@ -6,7 +6,7 @@
   categories:
     Reward: 0.15
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       tileMask: 
       - CP14FloorBase
       - CP14FloorIce

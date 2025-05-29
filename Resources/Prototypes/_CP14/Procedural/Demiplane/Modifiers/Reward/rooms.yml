@@ -7,7 +7,7 @@
   categories:
     Reward: 0.15
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplaneArtifactRoomSpawner
       count: 1
       minGroupSize: 1

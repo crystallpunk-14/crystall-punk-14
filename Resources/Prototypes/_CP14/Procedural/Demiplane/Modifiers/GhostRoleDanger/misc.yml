@@ -9,7 +9,7 @@
   categories:
     GhostRoleDanger: 1
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnPointGhostDemiplaneSkeletonT1
       count: 1
       minGroupSize: 1
@@ -25,7 +25,7 @@
   categories:
     GhostRoleDanger: 1
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnPointGhostDemiplaneSkeletonT2
       count: 1
       minGroupSize: 2
@@ -41,7 +41,7 @@
   categories:
     GhostRoleDanger: 1
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: SpawnPointGhostDemiplaneLurker
       count: 1
       minGroupSize: 1

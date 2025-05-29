@@ -9,7 +9,7 @@
   categories:
     Reward: 0.15
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnerDemiplaneLootT1
       count: 20
       minGroupSize: 2
@@ -27,7 +27,7 @@
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobRabbit
       count: 3
       minGroupSize: 2
@@ -45,7 +45,7 @@
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobBoar
       count: 3
       minGroupSize: 2
@@ -62,7 +62,7 @@
   requiredTags:
   - CP14DemiplaneAnimalsSwamp
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       tileMask: 
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -84,7 +84,7 @@
   requiredTags:
   - CP14DemiplanePeacefulAnimals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobSheep
       count: 1
       minGroupSize: 4
@@ -100,7 +100,7 @@
     Reward: 0.2
   generationProb: 0.8
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplaneRuinsRoomSpawner
       count: 8
       minGroupSize: 1
@@ -117,7 +117,7 @@
   categories:
     Reward: 0.15
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnerDemiplaneLootT2
       count: 20
       minGroupSize: 2

@@ -10,7 +10,7 @@
   categories:
     Danger: 0.25
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14Chasm
       tileMask:
       - CP14FloorBase
@@ -33,7 +33,7 @@
   - CP14DemiplaneCold
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14FloorLava
       tileMask:
       - CP14FloorBase
@@ -53,7 +53,7 @@
   categories:
     Danger: 0.2
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: LandMineExplosive
       count: 20
       minGroupSize: 1
@@ -68,7 +68,7 @@
   categories:
     Danger: 0.25
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14AstralHaze
       count: 10
       minGroupSize: 1
