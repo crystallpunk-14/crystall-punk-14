@@ -27,7 +27,7 @@
             </BoxContainer>
         </BoxContainer>
         <!-- CP14 random reactions begin -->
-        <BoxContainer Name="RandomVariations"
+        <!--<BoxContainer Name="RandomVariations"
                       Orientation="Vertical"
                       VerticalExpand="True"
                       VerticalAlignment="Center"
@@ -41,10 +41,10 @@
                    FontColorOverride="#1e6651" />
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
                 <BoxContainer Name="RandomProductsContainer" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                    <!-- Random products will be added as children here -->
+                    ~1~ Random products will be added as children here @1@
                 </BoxContainer>
             </BoxContainer>
-        </BoxContainer>
+        </BoxContainer>-->
         <!-- CP14 random reactions end -->
 
     </BoxContainer>
