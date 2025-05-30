@@ -56,7 +56,7 @@
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_wounds
-    event: !type:CP14ToggleableInstantActionEvent
+    event: !type:CP14ToggleableEntityTargetActionEvent
       effectFrequency: 1
       cooldown: 60
       castTime: 15
