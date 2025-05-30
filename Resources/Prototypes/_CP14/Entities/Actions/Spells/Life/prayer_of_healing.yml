@@ -17,7 +17,7 @@
       spawns:
       - CP14AreaEntityEffectCureWounds
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneHealBallade
+    proto: CP14RunePrayerofHealing
   - type: InstantAction
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -77,7 +77,7 @@
       shader: unshaded
  
 - type: entity
-  id: CP14RuneHealBallade
+  id: CP14RunePrayerofHealing
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
