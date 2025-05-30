@@ -50,12 +50,10 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         {
             // If there aren't any variations, this label will be not visible
             RandomVariationsLabel.Visible = true;
-            var randomProductLabel = new RichTextLabel {
-                HorizontalAlignment=HAlignment.Left,
-                VerticalAlignment=VAlignment.Center,
-            };
+
+            Container randomProductContainer = RandomProductsContainer;
             var randomProducts = new Dictionary<string, FixedPoint2>(randomVariation);
-            RandomVariations.AddChild(randomProductLabel);
+            RandomVariations.AddChild(randomProductContainer);
             RandomVariations.AddChild(new SplitBar
             {
                 MinHeight = 10,
@@ -65,7 +63,7 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
                 if (reactantProto.Catalyst)
                     randomProducts.Add(reagent, reactantProto.Amount);
             }
-            SetReagents(randomProducts, ref randomProductLabel, protoMan);
+            SetReagents(randomProducts, ref randomProductContainer, protoMan);
         }
         // CP14 random reagents end
 

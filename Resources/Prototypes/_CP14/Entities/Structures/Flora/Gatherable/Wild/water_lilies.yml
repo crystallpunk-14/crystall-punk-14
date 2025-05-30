@@ -72,13 +72,6 @@
     speed: 3.5
     dis: 2
 
-- type: entityLootTable
-  id: CP14GatherAirLily
-  entries:
-  - id: CP14AirLily
-    amount: 2
-    maxAmount: 3
-
 - type: entity
   id: CP14GatherableWaterAirLily
   parent: 

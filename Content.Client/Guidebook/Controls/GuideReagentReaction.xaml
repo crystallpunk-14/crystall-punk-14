@@ -39,6 +39,9 @@
                    Visible="False"
                    HorizontalAlignment="Center"
                    FontColorOverride="#1e6651" />
+            <BoxContainer Name="RandomProductsContainer" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <!-- Random products will be added as children here -->
+            </BoxContainer>
             <controls:SplitBar MinHeight="10">
             </controls:SplitBar>
         </BoxContainer>
