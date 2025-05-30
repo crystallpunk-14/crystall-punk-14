@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "license": "All right reserved",
-  "copyright": "Created by Militore for CrystallEdge",
   "size": {
     "x": 32,
-    "y": 48
+    "y": 64
   },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by Jaba",
   "states": [
     {
       "name": "base"

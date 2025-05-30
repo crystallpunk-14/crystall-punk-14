@@ -259,6 +259,10 @@
       effects:
       - !type:ModifyBloodLevel
         amount: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -10
   pricePerUnit: 2
 
 - type: reagent
@@ -276,6 +280,10 @@
       effects:
       - !type:ModifyBloodLevel
         amount: -10
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: 3
   pricePerUnit: 2
 
 - type: reagent
@@ -529,4 +537,3 @@
       metabolismRate: 0.05
       effects:
       - !type:Jitter
-
