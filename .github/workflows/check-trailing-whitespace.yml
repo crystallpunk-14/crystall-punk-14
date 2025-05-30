@@ -29,6 +29,11 @@ jobs:
         has_missing_eof_newline=0
 
         for file in ${ALL_CHANGED_FILES}; do
+          # Ignore vanilla not CrystallEdge files
+          if [[ "$file" != *CP14* ]]; then
+              continue
+            fi
+          
           echo "Checking $file"
 
           # Check for trailing whitespace
