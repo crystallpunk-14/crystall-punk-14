@@ -102,3 +102,4 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: IllusionT2
+

@@ -171,3 +171,4 @@
     growthPerUpdate: 0.06
   - type: CP14PlantGatherable
     deleteAfterHarvest: false
+

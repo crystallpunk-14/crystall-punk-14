@@ -47,3 +47,4 @@
   components:
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy3 ]
+

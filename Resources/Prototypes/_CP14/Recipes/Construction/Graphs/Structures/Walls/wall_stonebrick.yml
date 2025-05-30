@@ -42,3 +42,4 @@
             - !type:SpawnPrototype
               prototype: CP14StoneBlock1
               amount: 2
+

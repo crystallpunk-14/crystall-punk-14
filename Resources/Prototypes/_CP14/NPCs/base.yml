@@ -38,3 +38,4 @@
     - tasks:
         - !type:HTNCompoundTask
           task: MeleeAttackTargetCompound
+

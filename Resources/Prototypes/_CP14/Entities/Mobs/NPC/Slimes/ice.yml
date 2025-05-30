@@ -114,3 +114,4 @@
       - !type:AdjustTemperature
         amount: -82000
       - !type:ExtinguishReaction
+

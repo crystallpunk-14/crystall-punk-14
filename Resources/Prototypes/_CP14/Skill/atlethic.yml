@@ -37,3 +37,4 @@
     prerequisite: CP14ActionSpellSprint
   - !type:SpeciesWhitelist
     species: CP14Goblin
+

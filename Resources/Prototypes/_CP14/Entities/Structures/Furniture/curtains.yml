@@ -155,3 +155,4 @@
       map: ["enum.DoorVisualLayers.Base"]
   - type: Physics
     canCollide: false
+

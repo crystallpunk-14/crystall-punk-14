@@ -22,3 +22,4 @@
         - id: CP14SeedCabbage
           rolls: !type:RangeNumberSelector
             range: 1, 2
+

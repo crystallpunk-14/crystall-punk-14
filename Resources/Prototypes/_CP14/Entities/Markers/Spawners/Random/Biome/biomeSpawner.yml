@@ -166,3 +166,4 @@
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14Wastelands
+

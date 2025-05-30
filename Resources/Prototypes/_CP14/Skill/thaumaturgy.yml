@@ -12,3 +12,4 @@
   - !type:AddComponents
     components:
     - type: SolutionScanner
+

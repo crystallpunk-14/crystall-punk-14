@@ -69,3 +69,4 @@
         type: NetworkConfiguratorBoundUserInterface
       enum.NetworkConfiguratorUiKey.Link:
         type: NetworkConfiguratorBoundUserInterface
+

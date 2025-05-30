@@ -56,3 +56,4 @@
             - !type:SpawnPrototype
               prototype: CP14GlassShard
               amount: 1
+

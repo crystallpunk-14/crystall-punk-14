@@ -34,3 +34,4 @@
       sprite: _CP14/Actions/zLevel.rsi
       state: roof
     event: !type:CP14ToggleRoofVisibilityAction
+

@@ -134,3 +134,4 @@
         node: CP14WallFrameWoodenBirch
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+

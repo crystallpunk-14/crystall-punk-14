@@ -58,3 +58,4 @@
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Magic/ethereal_enter.ogg
+

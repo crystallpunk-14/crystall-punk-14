@@ -529,3 +529,4 @@
       metabolismRate: 0.05
       effects:
       - !type:Jitter
+
