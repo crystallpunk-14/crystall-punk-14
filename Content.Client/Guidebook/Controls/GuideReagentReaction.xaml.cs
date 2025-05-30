@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Client.Message;
-using Content.Client.UserInterface.Controls; // CP14 random reactions
 using Content.Client.UserInterface.ControlExtensions;
 using Content.Shared.Atmos.Prototypes;
 using Content.Shared.Chemistry.Components;
@@ -47,16 +46,16 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         SetReagents(products, ref productContainer, protoMan, false);
 
         // CP14 random reagents begin
-        Container randomProductContainer = RandomProductsContainer;
-        if (prototype.Cp14RandomProducts.Count > 0)
-        {
-            // If there aren't any variations, this label will be not visible
-            RandomVariationsLabel.Visible = true;
-
-            var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
-
-            SetReagents(randomProducts, ref randomProductContainer, protoMan, false);
-        }
+        //Container randomProductContainer = RandomProductsContainer;
+        //if (prototype.Cp14RandomProducts.Count > 0)
+        //{
+        //    // If there aren't any variations, this label will be not visible
+        //    RandomVariationsLabel.Visible = true;
+//
+        //    var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
+//
+        //    SetReagents(randomProducts, ref randomProductContainer, protoMan, false);
+        //}
         // CP14 random reagents end
 
         var mixingCategories = new List<MixingCategoryPrototype>();
