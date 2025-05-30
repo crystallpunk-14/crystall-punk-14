@@ -1,6 +1,8 @@
 using System.Numerics;
+using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Currency;
 
@@ -22,4 +24,7 @@ public sealed partial class CP14CurrencyConverterComponent : Component
 
     [DataField]
     public SoundSpecifier InsertSound = new SoundCollectionSpecifier("CP14Coins");
+
+    [DataField]
+    public ProtoId<TagPrototype> CoinTag = "CP14Coin";
 }

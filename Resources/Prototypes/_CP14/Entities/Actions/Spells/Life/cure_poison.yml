@@ -30,7 +30,7 @@
             Caustic: -5
       - !type:Jitter
       - !type:ModifyBloodLevel
-        amount: 10
+        amount: 25
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"

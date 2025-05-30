@@ -192,7 +192,7 @@ CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting
 
 #2025-04-03
 CP14TravelingStoreshipAnchor: null
-CP14TravelingShop: CP14TradingBoardBase
+CP14TravelingShop: null
 CP14IronCabinetCargo: CP14IronCabinet
 CP14BrassChestFilledDemiplanes: null
 CP14BrassChestFilledWood: null
@@ -227,17 +227,17 @@ CP14ClothingOuterClothingCuirassLeg: CP14ArmorIronCuirass
 
 #2025-11-03
 CP14BrassChest: CP14WoodenChest
-CP14BrassChestFilledEnergyCrystals: CP14WoodenChestFilledEnergyCrystals
-CP14BrassChestFilledAlchemy: CP14WoodenChestFilledAlchemy
-CP14BrassChestFilledCheese: CP14WoodenChestFilledCheese
-CP14BrassChestFilledSmallHealingBrute: CP14WoodenChestFilledSmallHealingBrute
-CP14BrassChestFilledSmallHealingPoison: CP14WoodenChestFilledSmallHealingPoison
-CP14BrassChestFilledSmallHealingAirloss: CP14WoodenChestFilledSmallHealingAirloss
-CP14BrassChestFilledSmallHealingBlood: CP14WoodenChestFilledSmallHealingBlood
-CP14BrassChestFilledSmallHealingMana: CP14WoodenChestFilledSmallHealingMana
-CP14BrassChestFilledSmallSpeedUp: CP14WoodenChestFilledSmallSpeedUp
-CP14BrassChestFilledSmallRainbow: CP14WoodenChestFilledSmallRainbow
-CP14BrassChestFilledFarmSeeds: CP14WoodenChestFilledFarmSeeds
+CP14BrassChestFilledEnergyCrystals: null
+CP14BrassChestFilledAlchemy: null
+CP14BrassChestFilledCheese: null
+CP14BrassChestFilledSmallHealingBrute: null
+CP14BrassChestFilledSmallHealingPoison: null
+CP14BrassChestFilledSmallHealingAirloss: null
+CP14BrassChestFilledSmallHealingBlood: null
+CP14BrassChestFilledSmallHealingMana: null
+CP14BrassChestFilledSmallSpeedUp: null
+CP14BrassChestFilledSmallRainbow: null
+CP14BrassChestFilledFarmSeeds: null
 
 CP14ClothingHeadCaptainCap: null
 CP14ClothingHeadBeretBlack: null
@@ -326,7 +326,17 @@ CP14IronDoorWindowedGuardEntrance: CP14IronDoorGuardBarracks
 CP14IronDoorWindowedMirroredGuardEntrance: CP14IronDoorGuardBarracks
 CP14FenceGateBigIronGuard: CP14FenceGateBigIronGuardBarracks
 
-
+#2025-25-05
+CP14SpawnUniqueTradepost: null
+CP14TradingBoardBase: null
+CP14TradingPortalSylphoria: null
+CP14TradingPortalHelmirWeapon: null
+CP14TradingPortalBradFamily: null
+CP14TradingPortalSpiceStream: null
+CP14WoodenChestFilledFarmSeeds: CP14SackFarmingSeedFull
+CP14WoodenChestFilledEnergyCrystals: null
+CP14WoodenChestFilledAlchemy: null
+CP14WoodenChestFilledCheese: null
 
 # <---> CrystallEdge migration zone end
 
@@ -873,6 +883,10 @@ LightTree06: LightTree
 DrinkIrishCarBomb: DrinkIrishSlammer
 
 # 2025-01-06
+BorgModuleRadiationDetection: null
+BorgModuleGPS: null
+BorgModuleLightReplacer: BorgModuleCustodial
+BorgModuleAdvancedTreatment: null
 ClothingMaskSexyClown: ClothingMaskBlushingClown
 ClothingMaskSexyMime: ClothingMaskBlushingMime
 
@@ -885,6 +899,10 @@ WeaponSubMachineGunVectorRubber: null
 
 # 2025-02-11
 WallShuttleInterior: WallShuttle
+
+# 2025-02-18
+PosterContrabandLustyExomorph: PosterContrabandRealExomorph
+PosterContrabandBustyBackdoorExoBabes6: PosterContrabandRouny
 
 # 2025-02-20
 MagazineBoxAntiMaterielBig: null
@@ -935,3 +953,12 @@ MediumXenoArtifact: ComplexXenoArtifact
 SimpleXenoArtifactItem: ComplexXenoArtifactItem
 MediumXenoArtifactItem: ComplexXenoArtifactItem
 VariedXenoArtifactItem: ComplexXenoArtifactItem
+
+# 2025-04-19
+ClothingOuterHardsuitSyndicate: ClothingOuterEVASuitSyndicate
+AirlockMaintCommonLocked: AirlockMaintLocked
+AirlockMaintIntLocked: AirlockMaintLocked
+
+# 2025-04-26
+ComputerCargoShuttle: ComputerShuttleCargo
+CargoShuttleComputerCircuitboard: CargoShuttleConsoleCircuitboard
