@@ -11,3 +11,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeGuildmaster
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 15

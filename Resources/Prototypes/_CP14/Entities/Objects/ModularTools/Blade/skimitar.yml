@@ -22,8 +22,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronSkimitar
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -39,8 +39,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSkimitar
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -56,8 +56,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperSkimitar
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -73,6 +73,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilSkimitar
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10

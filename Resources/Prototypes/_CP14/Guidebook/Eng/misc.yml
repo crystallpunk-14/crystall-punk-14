@@ -14,7 +14,16 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Trading
-  name: External trade
-  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/MerchantTabs/Trading.xml"
+  id: CP14_EN_Locks_and_Keys
+  name: Locks and Keys
+  text: "/ServerInfo/_CP14/Guidebook_EN/LocksKeys.xml"
+  children:
+  - CP14_EN_Lockpicking
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Lockpicking
+  name: Lockpicking
+  text: "/ServerInfo/_CP14/Guidebook_EN/Lockpicking.xml"
   filterEnabled: True

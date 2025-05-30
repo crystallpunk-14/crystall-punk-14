@@ -21,8 +21,8 @@
     startProtoPart: CP14ArmorIronChainmail
   - type: CP14MagicManacostModify
     globalModifier: 1.15
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 40
 
 - type: entity
@@ -64,8 +64,8 @@
     startProtoPart: CP14ArmorGoldChainmail
   - type: CP14MagicManacostModify
     globalModifier: 1.05
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 40
 
 - type: entity
@@ -104,8 +104,8 @@
     startProtoPart: CP14ArmorCopperChainmail
   - type: CP14MagicManacostModify
     globalModifier: 1.1
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 40
 
 - type: entity
@@ -147,6 +147,6 @@
     startProtoPart: CP14ArmorMithrilChainmail
   - type: CP14MagicManacostModify
     globalModifier: 0.96
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 40

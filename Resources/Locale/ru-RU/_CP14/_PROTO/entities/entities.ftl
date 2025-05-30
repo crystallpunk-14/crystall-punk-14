@@ -1035,10 +1035,10 @@ ent-CP14ModularGreaveCopperPlate = медные поножи
 ent-CP14ModularGreaveMithrilPlate = мифриловые поножи
     .desc = { ent-CP14ModularGreaveIronPlate.desc }
 
-ent-CP14ClothingPantsBase = None
+ent-CP14ClothingPantsBase = штаны
     .desc = Штаны, защищающие ваши бедра от холода.
 
-ent-CP14ClothingPantsDress = None
+ent-CP14ClothingPantsDress = платье
     .desc = Просторное, женственное платье.
 
 ent-CP14ClothingPantsTrouserWhite = белые панталоны
@@ -1639,8 +1639,7 @@ ent-CP14SpawnPointGhostDemiplaneSkeletonBardT2 = точка спавна рол�
 ent-CP14SpawnPointTownRaid = городской рейд точка спавна роли призрака
     .suffix = Городской рейд
 
-ent-CP14MobUndeadSkeletonWizardTownRaid = { ent-CP14MobUndeadSkeletonWizard }
-    .desc = { ent-CP14MobUndeadSkeletonWizard.desc }
+ent-CP14MobUndeadSkeletonWizardTownRaid = { ent-CP14MobUndeadSkeletonWizardT2 }
     .suffix = Маг
 
 ent-CP14SpawnPointTownRaidUndeadEasy = { ent-CP14SpawnPointTownRaid }
@@ -2684,7 +2683,7 @@ ent-CP14CrayonPurple = фиолетовый мелок
 ent-CP14PartsMonsterGlands = ядовитые железы
     .desc = Ядовитые железы опасного монстра, возможно, в них что-то осталось.
 
-ent-CP14FloorTileBase = None
+ent-CP14FloorTileBase = плитка
     .desc = Сделайте пол более приятным для ваших ног. И для ваших глаз.
 
 ent-CP14FloorTileFoundation = напольная плитка для фундамента
@@ -2732,10 +2731,10 @@ ent-CP14FloorTileBirchWoodplanksCruciform = берёзовые крестооб�
 ent-CP14FloorTileBirchWoodplanksStairs = берёзовая лестница
     .desc = { ent-CP14FloorTileBase.desc }
 
-ent-CP14ModularGripShort = None
+ent-CP14ModularGripShort = рукоять
     .desc = Инструмент для ваших целей!
 
-ent-CP14ModularGripLong = None
+ent-CP14ModularGripLong = длинная рукоять
     .desc = Инструмент для ваших целей! Теперь достаточно длинный, чтобы держать двумя руками.
 
 ent-CP14ModularGripWooden = деревянная рукоять
@@ -2780,7 +2779,7 @@ ent-CP14ModularGripCopperLong = длинная медная рукоять
 ent-CP14ModularGripMithrilLong = длинная мифриловая рукоять
     .desc = { ent-CP14ModularGripLong.desc }
 
-ent-CP14ModularRod = None
+ent-CP14ModularRod = древко
     .desc = Тонкое древко из дерева, самая важная часть будущей стрелы.
 
 ent-CP14ModularRodWooden = деревянное древко
@@ -2789,7 +2788,7 @@ ent-CP14ModularRodWooden = деревянное древко
 ent-CP14ModularRodLucens = люценовое древко
     .desc = { ent-CP14ModularRod.desc }
 
-ent-CP14ModularBladeAxeBase = None
+ent-CP14ModularBladeAxeBase = головка топора
     .desc = Лезвие топора без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronAxe = железная головка топора
@@ -2804,7 +2803,7 @@ ent-CP14ModularBladeCopperAxe = медная головка топора
 ent-CP14ModularBladeMithrilAxe = мифриловая головка топора
     .desc = { ent-CP14ModularBladeAxeBase.desc }
 
-ent-CP14ModularBladeDaggerBase = None
+ent-CP14ModularBladeDaggerBase = лезвие кинжала
     .desc = Лезвие кинжала. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronDagger = железное лезвие кинжала
@@ -2819,7 +2818,7 @@ ent-CP14ModularBladeCopperDagger = медное лезвие кинжала
 ent-CP14ModularBladeMithrilDagger = мифриловое лезвие кинжала
     .desc = { ent-CP14ModularBladeDaggerBase.desc }
 
-ent-CP14ModularBladeHammerBase = None
+ent-CP14ModularBladeHammerBase = наболдашник молота
     .desc = Молот без рукояти. Кузнец может использовать его как запасную часть для создания инструмента.
 
 ent-CP14ModularBladeIronHammer = железный наболдашник молота
@@ -2834,7 +2833,7 @@ ent-CP14ModularBladeCopperHammer = медный наболдашник моло�
 ent-CP14ModularBladeMithrilHammer = мифриловый наболдашник молота
     .desc = { ent-CP14ModularBladeHammerBase.desc }
 
-ent-CP14ModularBladeHoeBase = None
+ent-CP14ModularBladeHoeBase = лезвие мотыги
     .desc = Лезвие мотыги без рукояти. Кузнец может использовать его как запасную часть для создания инструмента.
 
 ent-CP14ModularBladeIronHoe = железное лезвие мотыги
@@ -2849,7 +2848,7 @@ ent-CP14ModularBladeGoldHoe = золотое лезвие мотыги
 ent-CP14ModularBladeMithrilHoe = мифриловое лезвие мотыги
     .desc = { ent-CP14ModularBladeSickleBase.desc }
 
-ent-CP14ModularBladeMaceBase = None
+ent-CP14ModularBladeMaceBase = шар булавы
     .desc = Булава-шар без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronMace = железный шар булавы
@@ -2864,7 +2863,7 @@ ent-CP14ModularBladeCopperMace = медный шар булавы
 ent-CP14ModularBladeMithrilMace = мифриловый шар булавы
     .desc = { ent-CP14ModularBladeMaceBase.desc }
 
-ent-CP14ModularBladePickaxeBase = None
+ent-CP14ModularBladePickaxeBase = головка кирки
     .desc = Массивная острая головка кирки без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
 
 ent-CP14ModularBladeIronPickaxe = железная головка кирки
@@ -2879,7 +2878,7 @@ ent-CP14ModularBladeCopperPickaxe = медная головка кирки
 ent-CP14ModularBladeMithrilPickaxe = мифриловая головка кирки
     .desc = { ent-CP14ModularBladePickaxeBase.desc }
 
-ent-CP14ModularBladeRapierBase = None
+ent-CP14ModularBladeRapierBase = лезвие рапиры
     .desc = Лезвие рапиры без рукояти. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronRapier = железное лезвие рапиры
@@ -2894,7 +2893,7 @@ ent-CP14ModularBladeCopperRapier = медное лезвие рапиры
 ent-CP14ModularBladeMithrilRapier = мифриловое лезвие рапиры
     .desc = { ent-CP14ModularBladeRapierBase.desc }
 
-ent-CP14ModularBladeShovelBase = None
+ent-CP14ModularBladeShovelBase = лезвие лопаты
     .desc = Лезвие лопаты без рукояти. Кузнец может использовать его как запасную часть для создания инструмента.
 
 ent-CP14ModularBladeIronShovel = железное лезвие лопаты
@@ -2909,7 +2908,7 @@ ent-CP14ModularBladeCopperShovel = медное лезвие лопаты
 ent-CP14ModularBladeMithrilShovel = мифриловое лезвие лопаты
     .desc = { ent-CP14ModularBladeShovelBase.desc }
 
-ent-CP14ModularBladeSickleBase = None
+ent-CP14ModularBladeSickleBase = лезвие серпа
     .desc = Серповидный клинок без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronSickle = железное лезвие серпа
@@ -2924,22 +2923,22 @@ ent-CP14ModularBladeGoldSickle = золотое лезвие серпа
 ent-CP14ModularBladeMithrilSickle = мифриловое лезвие серпа
     .desc = { ent-CP14ModularBladeSickleBase.desc }
 
-ent-CP14ModularBladeSkimitarBase = None
+ent-CP14ModularBladeSkimitarBase = клинок скимитара
     .desc = Клинок скимитара без рукояти. Кузнец может использовать его как запасную часть для создания оружия.
 
-ent-CP14ModularBladeIronSkimitar = железный клинок скимитара
+ent-CP14ModularBladeIronSkimitar = железное лезвие скимитара
     .desc = { ent-CP14ModularBladeSkimitarBase.desc }
 
-ent-CP14ModularBladeGoldSkimitar = золотые клинок скимитара
+ent-CP14ModularBladeGoldSkimitar = золотое лезвие скимитара
     .desc = { ent-CP14ModularBladeSkimitarBase.desc }
 
-ent-CP14ModularBladeCopperSkimitar = медный клинок скимитара
+ent-CP14ModularBladeCopperSkimitar = медное лезвие скимитара
     .desc = { ent-CP14ModularBladeSkimitarBase.desc }
 
-ent-CP14ModularBladeMithrilSkimitar = мифриловый клинок скимитара
+ent-CP14ModularBladeMithrilSkimitar = мифриловое лезвие скимитара
     .desc = { ent-CP14ModularBladeSkimitarBase.desc }
 
-ent-CP14ModularBladeSpearBase = None
+ent-CP14ModularBladeSpearBase = наконечник копья
     .desc = Наконечник копья. Кузнец может использовать его как запасную часть для создания оружия.
 
 ent-CP14ModularBladeIronSpear = железный наконечник копья
@@ -2954,7 +2953,7 @@ ent-CP14ModularBladeCopperSpear = медный наконечник копья
 ent-CP14ModularBladeMithrilSpear = мифриловый наконечник копья
     .desc = { ent-CP14ModularBladeSpearBase.desc }
 
-ent-CP14ModularBladeSwordBase = None
+ent-CP14ModularBladeSwordBase = лезвие меча
     .desc = Лезвие меча без рукояти. Кузнец может использовать это, чтобы сделать оружие.
 
 ent-CP14ModularBladeIronSword = железное лезвие меча
@@ -2972,7 +2971,7 @@ ent-CP14ModularBladeMithrilSword = мифриловое лезвие меча
 ent-CP14ModularBladeBoneSword = костяное лезвие меча
     .desc = { ent-CP14ModularBladeSwordBase.desc }
 
-ent-CP14ModularGardeBase = None
+ent-CP14ModularGardeBase = гарда
     .desc = Гарда? Гарда!
 
 ent-CP14ModularGardeGuildmaster = гарда рапиры гильдмастера
@@ -3002,10 +3001,10 @@ ent-CP14ModularGardeSturdyCopper = прочная медная гарда
 ent-CP14ModularGardeSturdyMithril = прочная мифриловая гарда
     .desc = { ent-CP14ModularGardeBase.desc }
 
-ent-CP14ModularInlayBase = None
+ent-CP14ModularInlayBase = кварцевая инкрустация
     .desc = Небольшая деталь, которую можно вставить в оружие или инструмент.
 
-ent-CP14ModularInlayQuartzBase = None
+ent-CP14ModularInlayQuartzBase = кварцевая инкрустация
     .desc = { ent-CP14ModularInlayBase.desc }
 
 ent-CP14ModularInlayQuartzWater = водная кварцевая инкрустация
@@ -3026,7 +3025,7 @@ ent-CP14ModularInlayQuartzElectric = электрическая кварцева
 ent-CP14ModularInlayQuartzDarkness = пространственная кварцевая инкрустация
     .desc = { ent-CP14ModularInlayQuartzBase.desc }
 
-ent-CP14ModularBladeTipBase = None
+ent-CP14ModularBladeTipBase = наконечник стрелы
     .desc = Наконечник на древке стрелы, хорошо обработанный кусочек металла.
 
 ent-CP14ModularTipIronArrow = железный наконечник стрелы
@@ -3207,7 +3206,7 @@ ent-CP14Gauze1 = { ent-CP14Gauze }
     .desc = { ent-CP14Gauze.desc }
     .suffix = 1
 
-ent-CP14EnergyCrystalBase = None
+ent-CP14EnergyCrystalBase = энергокристалл
     .desc = Осколок кристалла, способный накапливать магическую энергию.
 
 ent-CP14EnergyCrystalMedium = энергокристалл
@@ -3309,7 +3308,7 @@ ent-CP14WallpaperBank = обои "честность банкира"
 ent-CP14WallpaperBank2 = обои "богатство банкира"
     .desc = { ent-CP14BaseWallpaper.desc }
 
-ent-CP14BaseWallpaper = None
+ent-CP14BaseWallpaper = обои
     .desc = Обои из тонкой бумаги. Их можно наклеить на стены с любых сторон или содрать любым острым предметом.
 
 ent-CP14WallpaperBlack = обои "чернильная тьма"
@@ -3683,7 +3682,7 @@ ent-CP14IronDoorWindowedGuardEntrance = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
     .suffix = Стража, Вход
 
-ent-CP14FenceGateBigIronGuard = None
+ent-CP14FenceGateBigIronGuard = { ent-CP14FenceGateBigIron }
     .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Стража
 
@@ -3691,11 +3690,11 @@ ent-CP14IronDoorGuardGuildmaster = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
     .suffix = Гильдмастер
 
-ent-CP14FenceGateBigIronGuildmaster = None
+ent-CP14FenceGateBigIronGuildmaster = { ent-CP14FenceGateBigIron }
     .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Гильдмастер
 
-ent-CP14FenceGateBigIronDemiplaneCrystal = None
+ent-CP14FenceGateBigIronDemiplaneCrystal = { ent-CP14FenceGateBigIron }
     .desc = { ent-CP14FenceGateBigIron.desc }
     .suffix = Кристалл Демиплана
 
@@ -3777,23 +3776,23 @@ ent-CP14WoodenDoorPersonalHouse16 = { ent-CP14WoodenDoor }
 
 ent-CP14WoodenDoorRandomLocked = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
-    .suffix = Случайный замок (Комплекс 3)
+    .suffix = Случайный замок (Сложность 3)
 
 ent-CP14WoodenDoorWindowedRandomLocked = { ent-CP14WoodenDoorWindowed }
     .desc = { ent-CP14WoodenDoorWindowed.desc }
-    .suffix = Случайный замок (Комплекс 3)
+    .suffix = Случайный замок (Сложность 3)
 
 ent-CP14IronDoorRandomLocked = { ent-CP14IronDoor }
     .desc = { ent-CP14IronDoor.desc }
-    .suffix = Случайный замок (Комплекс 5)
+    .suffix = Случайный замок (Сложность 5)
 
 ent-CP14IronDoorWindowedRandomLocked = { ent-CP14IronDoorWindowed }
     .desc = { ent-CP14IronDoorWindowed.desc }
-    .suffix = Случайный замок (Комплекс 5)
+    .suffix = Случайный замок (Сложность 5)
 
-ent-CP14FenceGateBigIronRandomLocked = None
+ent-CP14FenceGateBigIronRandomLocked = { ent-CP14FenceGateBigIron }
     .desc = { ent-CP14FenceGateBigIron.desc }
-    .suffix = Случайный замок (Комплекс 5)
+    .suffix = Случайный замок (Сложность 5)
 
 ent-CP14WoodenDoorTavernStaff = { ent-CP14WoodenDoor }
     .desc = { ent-CP14WoodenDoor.desc }
@@ -3826,7 +3825,7 @@ ent-CP14WoodenDoorWindowedTavernHall = { ent-CP14WoodenDoorWindowed }
 ent-CP14BaseFenceBig = большой забор
     .desc = Чтобы перебраться на другую сторону, вам обязательно понадобится поленница.
 
-ent-CP14FenceBigWoodenBirch = None
+ent-CP14FenceBigWoodenBirch = { ent-CP14BaseFenceBig }
     .desc = { ent-CP14BaseFenceBig.desc }
     .suffix = Дерево. Берёза.
 
@@ -3837,7 +3836,7 @@ ent-CP14FenceBigIron = { ent-CP14BaseFenceBig }
 ent-CP14BaseFenceGateBig = большие ворота забора
     .desc = Большие ворота размером с человека. Каков ваш следующий шаг?
 
-ent-CP14FenceGateBigWoodenBirch = None
+ent-CP14FenceGateBigWoodenBirch = { ent-CP14BaseFenceGateBig }
     .desc = { ent-CP14BaseFenceGateBig.desc }
     .suffix = Дерево. Берёза.
 
@@ -3864,14 +3863,14 @@ ent-CP14CliffEndRight = { ent-CP14Cliff }
 ent-CP14BaseFence = забор
     .desc = Низкий забор, ограничивающий движение чисто номинально.
 
-ent-CP14FenceWoodenBirch = None
+ent-CP14FenceWoodenBirch = { ent-CP14BaseFence }
     .desc = { ent-CP14BaseFence.desc }
     .suffix = Дерево. Берёза
 
 ent-CP14BaseFenceGate = ворота забора
     .desc = У вас есть два пути. Вы можете открыть дверь, как обычный человек, или перелезть через неё, как смешной человек.
 
-ent-CP14FenceGateWoodenBirch = None
+ent-CP14FenceGateWoodenBirch = { ent-CP14BaseFenceGate }
     .desc = { ent-CP14BaseFenceGate.desc }
     .suffix = Дерево. Берёза.
 
@@ -4278,7 +4277,7 @@ ent-CP14TableWoodenCounter = деревянная стойка
 ent-CP14TableMarble = мраморный стол
     .desc = Изысканный стол из белого мрамора.
 
-ent-CP14BaseTorch = None
+ent-CP14BaseTorch = факел
     .desc = Хороший, надежный источник света. Жаль, что он недолговечен.
 
 ent-CP14FloorTorchIgnited = { ent-CP14FloorTorch }
@@ -4476,7 +4475,7 @@ ent-CP14WallStonebrickOld = старая кирпичная стена
 ent-CP14BaseWall = стена
     .desc = Достаточно прочная, чтобы укрыть вас от угрозы или холодного ветра.
 
-ent-CP14BaseWallFrame = None
+ent-CP14BaseWallFrame = каркас
     .desc = Сейчас эта стена находится в неопределенном состоянии между существованием и небытием.
 
 ent-CP14WallFrameWoodenBirch = { ent-CP14WallFrameWooden }
@@ -4603,7 +4602,7 @@ ent-CP14BaseMobSkeleton = Мистер Скелет
 
 ent-CP14BaseMobZombie = Мистер Зомби
 
-ent-CP14FoodEggBase = None
+ent-CP14FoodEggBase = яйцо
     .desc = Овальное яйцо!
 
 ent-CP14FoodTomatoes = помидор
