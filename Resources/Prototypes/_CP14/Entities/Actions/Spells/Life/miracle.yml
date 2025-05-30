@@ -5,7 +5,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_wounds
+    state: cure wounds
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
