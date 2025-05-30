@@ -16,6 +16,6 @@
     loot:
       All: !type:AllSelector
         children:
-        - id: CP14GatherOnion
+        - id: CP14FoodOnion
           rolls: !type:RangeNumberSelector
             range: 4, 6
