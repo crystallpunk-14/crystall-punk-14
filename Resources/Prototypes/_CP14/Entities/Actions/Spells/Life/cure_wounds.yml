@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 12
+    manaCost: 4
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -25,12 +25,12 @@
       - !type:HealthChange
         damage:
           types:
-            Slash: -10
-            Blunt: -10
-            Piercing: -10
+            Slash: -5
+            Blunt: -5
+            Piercing: -5
       - !type:Jitter
       - !type:ModifyBleedAmount
-        amount: -5
+        amount: -3
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
@@ -40,7 +40,7 @@
     whitelist:
       components:
       - MobState
-    range: 7
+    range: 3
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
@@ -49,8 +49,10 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
+      effectFrequency: 1
       cooldown: 5
       castDelay: 1.5
+      castTime: 3
       breakOnMove: false
  
 - type: entity
