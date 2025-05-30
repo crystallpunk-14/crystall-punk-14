@@ -25,7 +25,7 @@
   components:
   - type: Sprite
     state: victoria_garden
-  - type: CP14TradingContract 
+  - type: CP14TradingContract
     faction: VictoriaGardens
 
 - type: entity
@@ -36,5 +36,6 @@
   components:
   - type: Sprite
     state: brad_potions
-  - type: CP14TradingContract 
+  - type: CP14TradingContract
     faction: BradPotions
+

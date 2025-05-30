@@ -1,10 +1,10 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   - CP14ClothingBaseContainer
   id: CP14ClothingCloakBlacksmithArpon
   name: blacksmith's apron
-  description: Loose leather strips, still actually being clothing. 
+  description: Loose leather strips, still actually being clothing.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi

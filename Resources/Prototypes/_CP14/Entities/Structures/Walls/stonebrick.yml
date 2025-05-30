@@ -179,3 +179,4 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+

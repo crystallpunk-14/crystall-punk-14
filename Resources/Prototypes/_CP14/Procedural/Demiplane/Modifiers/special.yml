@@ -2,7 +2,7 @@
   id: EntryRoom
   generationProb: 0
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplanEnterRoomMarker
       count: 1
       minGroupSize: 1
@@ -12,7 +12,7 @@
   id: Core
   generationProb: 0
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplanCoreRoomMarker
       count: 1
       minGroupSize: 1
@@ -22,28 +22,28 @@
   id: Exit
   generationProb: 0
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplanePassway
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14DemiplaneHint
       count: 20
       minGroupSize: 1
-      maxGroupSize: 1 
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: DemiplaneDecor
   generationProb: 0
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14AstralCorrosion
       count: 15
       minGroupSize: 3
-      maxGroupSize: 10 
-    - !type:OreDunGen
-      entityMask: 
+      maxGroupSize: 10
+    - !type:CP14OreDunGen
+      entityMask:
       - CP14WallStone
       - CP14WallDirt
       - CP14WallSnow
@@ -51,3 +51,4 @@
       count: 5
       minGroupSize: 3
       maxGroupSize: 5
+

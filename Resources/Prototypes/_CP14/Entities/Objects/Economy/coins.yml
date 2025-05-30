@@ -29,7 +29,7 @@
   - type: CP14CurrencyExaminable
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_CP14/Items/coins_fall.ogg  
+      path: /Audio/_CP14/Items/coins_fall.ogg
   - type: EmitSoundOnDrop
     sound:
       collection: CP14Coins

@@ -140,7 +140,7 @@
         volume: 15
   - type: Damageable
   - type: Destructible
-    thresholds: 
+    thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 1
@@ -158,3 +158,4 @@
           CP14SnowEffect:
             min: 1
             max: 1
+

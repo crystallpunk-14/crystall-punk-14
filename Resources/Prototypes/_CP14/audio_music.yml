@@ -92,7 +92,7 @@
   rules:
     - !type:CP14TimePeriod
       #periods:
-      #- Night 
+      #- Night
       #- Evening
     - !type:NearbyTilesPercentRule
       ignoreAnchored: true
@@ -104,3 +104,4 @@
       - CP14FloorDirt
       - CP14FloorSand
       range: 5
+
