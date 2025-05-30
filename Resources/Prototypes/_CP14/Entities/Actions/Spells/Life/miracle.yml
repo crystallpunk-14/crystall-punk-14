@@ -59,7 +59,7 @@
     event: !type:CP14ToggleableEntityTargetActionEvent
       effectFrequency: 1
       cooldown: 60
-      castTime: 15
+      castTime: 20
       breakOnMove: true
  
 - type: entity
