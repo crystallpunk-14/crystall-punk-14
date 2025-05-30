@@ -46,16 +46,11 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         SetReagents(products, ref productContainer, protoMan, false);
 
         // CP14 random reagents begin
-        //Container randomProductContainer = RandomProductsContainer;
-        //if (prototype.Cp14RandomProducts.Count > 0)
-        //{
-        //    // If there aren't any variations, this label will be not visible
-        //    RandomVariationsLabel.Visible = true;
-//
-        //    var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
-//
-        //    SetReagents(randomProducts, ref randomProductContainer, protoMan, false);
-        //}
+        if (prototype.Cp14RandomProducts.Count > 0)
+        {
+            var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
+            SetReagents(randomProducts, ref productContainer, protoMan, false);
+        }
         // CP14 random reagents end
 
         var mixingCategories = new List<MixingCategoryPrototype>();
