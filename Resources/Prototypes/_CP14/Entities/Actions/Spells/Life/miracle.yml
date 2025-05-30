@@ -77,7 +77,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectCureWounds
+  id: CP14ImpactEffectMiracle
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
