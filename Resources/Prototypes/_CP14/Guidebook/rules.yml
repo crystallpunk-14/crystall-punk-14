@@ -1,5 +1,21 @@
 - type: guideEntry
-  id: CP14SandboxRU
+  crystallPunkAllowed: true
+  id: CP14Rules
   name: guide-entry-rules
   ruleEntry: true
-  text: "/ServerInfo/_CP14/Rules/CP14SandboxRU.xml"
+  text: "/ServerInfo/_CP14/Rules/CP14_Rules.xml"
+  children:
+  - CP14RulesRU
+  - CP14RulesEN
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14RulesRU
+  name: "(RU) Правила сервера"
+  text: "/ServerInfo/_CP14/Rules/CP14_Rules_RU.xml"
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14RulesEN
+  name: "(EN) Server rules"
+  text: "/ServerInfo/_CP14/Rules/CP14_Rules_EN.xml"
