@@ -76,7 +76,7 @@
     - state: notes_5
       color: "#79b330"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneHealBallade
   parent: CP14BaseMagicRune

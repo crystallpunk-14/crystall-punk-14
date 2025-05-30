@@ -1,5 +1,5 @@
-- type: entity 
-  id: CP14MobUndeadSkeletonDemiplaneT1 
+- type: entity
+  id: CP14MobUndeadSkeletonDemiplaneT1
   parent: CP14BaseMobSkeleton
   name: skeleton
   abstract: true

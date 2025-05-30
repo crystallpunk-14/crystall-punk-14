@@ -92,7 +92,7 @@
   rules:
     - !type:CP14TimePeriod
       #periods:
-      #- Night 
+      #- Night
       #- Evening
     - !type:NearbyTilesPercentRule
       ignoreAnchored: true

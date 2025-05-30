@@ -11,6 +11,6 @@
             - material: CP14Dirt
               amount: 3
               doAfter: 5
-              
+
     - node: CP14CrateDirtPitGrave
       entity: CP14CrateDirtPitGrave

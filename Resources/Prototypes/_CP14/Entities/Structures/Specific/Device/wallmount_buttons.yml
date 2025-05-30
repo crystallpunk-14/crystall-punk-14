@@ -5,7 +5,7 @@
   - CP14BaseWallmount
   categories: [ ForkFiltered ]
   name: wall button
-  description: This button can activate something! 
+  description: This button can activate something!
   components:
   - type: Sprite
     sprite: _CP14/Structures/Specific/Device/wallmount_buttons.rsi

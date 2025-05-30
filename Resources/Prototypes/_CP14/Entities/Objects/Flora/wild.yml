@@ -156,12 +156,12 @@
     currentTemperature: 290
   - type: InternalTemperature
     thickness: 0.02
-    area: 0.02 
+    area: 0.02
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14GroundSage
-    
+
 
 - type: entity
   id: CP14LumiMushroom
@@ -207,7 +207,7 @@
   parent: CP14WildProduceBase
   name: blue Amanita
   description: A sky blue flower known for its medicinal and magical properties.
-  components: 
+  components:
   - type: Sprite
     sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
     layers:
@@ -234,7 +234,7 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
-  
+
 - type: entity
   id: CP14Dayflin
   parent: CP14WildProduceBase

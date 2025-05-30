@@ -97,7 +97,7 @@
   - type: Icon
     sprite: _CP14/Structures/Fences/cliff_dirt.rsi
     state: end_left
-    
+
 - type: entity
   parent: CP14Cliff
   id: CP14CliffEndRight

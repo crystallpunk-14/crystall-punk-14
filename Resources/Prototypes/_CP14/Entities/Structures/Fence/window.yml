@@ -46,7 +46,7 @@
 - type: entity
   parent: CP14BaseFenceWindow
   id: CP14FenceWindowIron
-  suffix: Iron 
+  suffix: Iron
   components:
   - type: Sprite
     sprite: _CP14/Structures/Fence/iron_window.rsi

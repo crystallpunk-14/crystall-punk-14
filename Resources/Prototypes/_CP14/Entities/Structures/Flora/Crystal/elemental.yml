@@ -3,7 +3,7 @@
   abstract: true
   parent: BaseRock
   name: quartz
-  description: Natural quartz crystals that can absorb the magical energy of the world around them. 
+  description: Natural quartz crystals that can absorb the magical energy of the world around them.
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
@@ -22,7 +22,7 @@
       collection: CP14CrystalDings
       params:
         variation: 0.03
-  - type: Damageable 
+  - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Glass
   - type: MeleeSound

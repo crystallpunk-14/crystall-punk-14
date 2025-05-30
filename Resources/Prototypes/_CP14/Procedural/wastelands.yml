@@ -4,7 +4,7 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorBase
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorDirt
       threshold: 0
       noise:

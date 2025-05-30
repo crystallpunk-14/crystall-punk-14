@@ -1,7 +1,7 @@
 - type: entity
   name: wooden bed
   id: CP14WoodenBed
-  parent: 
+  parent:
   - BaseStructure
   - CP14BaseFlammableSpreading
   description: Wooden bed. Better than nothing.

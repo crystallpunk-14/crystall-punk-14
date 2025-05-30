@@ -43,7 +43,7 @@
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 15
       castDelay: 0.25
-      breakOnMove: false 
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneMagicSplitting

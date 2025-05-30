@@ -1,6 +1,6 @@
 - type: entity
   id: CP14BaseShield
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseWeaponLight
   - CP14BaseWeaponThrowable

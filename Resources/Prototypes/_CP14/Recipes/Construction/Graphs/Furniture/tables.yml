@@ -11,7 +11,7 @@
             - material: CP14WoodenPlanks
               amount: 1
               doAfter: 1
-    
+
     - node: CP14TableWoodenFrame
       entity: CP14TableWoodenFrame
       edges:
@@ -28,7 +28,7 @@
             - material: CP14WoodenPlanks
               amount: 1
               doAfter: 1
-    
+
     - node: CP14TableWooden
       entity: CP14TableWooden
       edges:
@@ -76,7 +76,7 @@
               doAfter: 2
     - node: CP14TableWoodenRound
       entity: CP14TableWoodenRound
-              
+
 - type: constructionGraph
   id: CP14Workbench
   start: start
@@ -92,7 +92,7 @@
               doAfter: 2
     - node: CP14Workbench
       entity: CP14Workbench
-              
+
 - type: constructionGraph
   id: CP14WorkbenchCooking
   start: start
@@ -108,7 +108,7 @@
               doAfter: 2
     - node: CP14WorkbenchCooking
       entity: CP14WorkbenchCooking
-              
+
 - type: constructionGraph
   id: CP14WorkbenchSewing
   start: start

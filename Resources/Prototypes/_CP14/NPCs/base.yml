@@ -33,7 +33,7 @@
       tasks:
         - !type:HTNCompoundTask
           task: EscapeCompound
-          
+
     # Melee combat (unarmed or otherwise)
     - tasks:
         - !type:HTNCompoundTask

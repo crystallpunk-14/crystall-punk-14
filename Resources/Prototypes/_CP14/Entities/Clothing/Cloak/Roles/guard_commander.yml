@@ -2,7 +2,7 @@
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakGuardCommander
   name: armored cloak of a guard commander
-  description: It is an extremely durable and lightweight cape, custom designed for Imperial Guard commanders 
+  description: It is an extremely durable and lightweight cape, custom designed for Imperial Guard commanders
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_commander_cloak.rsi

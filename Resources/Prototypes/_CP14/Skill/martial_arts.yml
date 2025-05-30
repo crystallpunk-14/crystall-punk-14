@@ -5,7 +5,7 @@
   desc: cp14-skill-mastery-desc
   learnCost: 0.5
   tree: MartialArts
-  icon: 
+  icon:
     sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
     state: preview
 
@@ -16,7 +16,7 @@
   desc: cp14-skill-mastery-desc
   learnCost: 0.5
   tree: MartialArts
-  icon: 
+  icon:
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
     state: preview
 
@@ -27,6 +27,6 @@
   desc: cp14-skill-mastery-desc
   learnCost: 0.5
   tree: MartialArts
-  icon: 
+  icon:
     sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
     state: preview

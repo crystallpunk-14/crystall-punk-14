@@ -31,7 +31,7 @@
       entity: CP14DemiplaneHint
       count: 20
       minGroupSize: 1
-      maxGroupSize: 1 
+      maxGroupSize: 1
 
 - type: cp14DemiplaneModifier
   id: DemiplaneDecor
@@ -41,9 +41,9 @@
       entity: CP14AstralCorrosion
       count: 15
       minGroupSize: 3
-      maxGroupSize: 10 
+      maxGroupSize: 10
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       - CP14WallDirt
       - CP14WallSnow

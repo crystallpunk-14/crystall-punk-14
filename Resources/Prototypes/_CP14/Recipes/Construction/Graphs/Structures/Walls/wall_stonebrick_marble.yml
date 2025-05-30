@@ -30,7 +30,7 @@
             - material: CP14MarbleStone
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WallMarbleBrick
       entity: CP14WallMarbleBrick
       edges:

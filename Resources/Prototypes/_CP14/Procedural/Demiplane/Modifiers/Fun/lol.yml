@@ -12,7 +12,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -35,7 +35,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall

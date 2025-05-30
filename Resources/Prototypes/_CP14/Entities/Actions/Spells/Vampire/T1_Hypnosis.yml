@@ -44,7 +44,7 @@
       cooldown: 30
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneVampireHypnosis
   parent: CP14BaseMagicRune

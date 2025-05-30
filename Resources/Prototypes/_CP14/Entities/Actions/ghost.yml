@@ -5,7 +5,7 @@
   components:
   - type: InstantAction
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: up
     event: !type:CP14ZLevelActionUp
@@ -17,7 +17,7 @@
   components:
   - type: InstantAction
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: down
     event: !type:CP14ZLevelActionDown
@@ -30,7 +30,7 @@
   - type: InstantAction
     clientExclusive: true
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: roof
     event: !type:CP14ToggleRoofVisibilityAction

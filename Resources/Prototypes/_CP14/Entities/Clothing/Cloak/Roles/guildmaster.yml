@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   id: CP14ClothingCloakGuildmasterCape
   name: guildmaster cape

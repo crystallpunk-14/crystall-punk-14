@@ -46,7 +46,7 @@
     - CP14wall
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFenceBig
   - CP14BaseFlammableSpreading
   id: CP14FenceBigWooden
@@ -89,7 +89,7 @@
 - type: entity
   parent: CP14BaseFenceBig
   id: CP14FenceBigIron
-  suffix: Iron 
+  suffix: Iron
   components:
   - type: Sprite
     sprite: _CP14/Structures/Fence/iron_big.rsi

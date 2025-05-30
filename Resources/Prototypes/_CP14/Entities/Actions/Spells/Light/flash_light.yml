@@ -71,7 +71,7 @@
     sprite: /Textures/Objects/Fun/goldbikehorn.rsi
     visible: false
     state: icon
-  - type: TriggerOnSpawn   
+  - type: TriggerOnSpawn
   - type: TimedDespawn
     lifetime: 5
   - type: FlashOnTrigger

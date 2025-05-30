@@ -13,7 +13,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -34,7 +34,7 @@
   - CP14DemiplaneHerbals
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -56,7 +56,7 @@
   - CP14DemiplaneHerbals
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -77,7 +77,7 @@
   - CP14DemiplaneHerbals
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -99,7 +99,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -121,7 +121,7 @@
   - CP14DemiplaneWater
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14FloorWater
       - CP14FloorWaterLilies
       entity: CP14FloorWaterAirLily
@@ -143,7 +143,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall

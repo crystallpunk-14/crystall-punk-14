@@ -1,6 +1,6 @@
 - type: entity
   id: CP14BaseVat
-  parent: 
+  parent:
   - BaseStructureDynamic
   name: big vat
   description: A very large vat for storing huge amounts of liquid. Heavy, uncomfortable to carry.

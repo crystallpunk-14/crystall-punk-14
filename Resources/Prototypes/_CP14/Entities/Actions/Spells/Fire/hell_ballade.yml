@@ -70,7 +70,7 @@
     - state: notes_5
       color: "#eea911"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneHellBallade
   parent: CP14BaseMagicRune

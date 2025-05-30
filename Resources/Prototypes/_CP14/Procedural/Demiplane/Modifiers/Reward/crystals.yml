@@ -7,7 +7,7 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorBase
       - CP14FloorIce
       entity: CP14CrystalQuartz

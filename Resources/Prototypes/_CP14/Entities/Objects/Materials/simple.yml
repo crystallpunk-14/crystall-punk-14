@@ -140,7 +140,7 @@
         volume: 15
   - type: Damageable
   - type: Destructible
-    thresholds: 
+    thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 1

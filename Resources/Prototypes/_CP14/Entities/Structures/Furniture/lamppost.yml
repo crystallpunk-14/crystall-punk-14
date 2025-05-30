@@ -76,7 +76,7 @@
   parent: CP14BaseLamppost
   id: CP14Lamppost
   name: lamppost
-  description: A lantern hanging from a pole. 
+  description: A lantern hanging from a pole.
   suffix: Always powered
   components:
   - type: Sprite
@@ -91,7 +91,7 @@
   parent: CP14BaseLamppost
   id: CP14LamppostBlue
   name: lamppost
-  description: A lantern hanging from a pole. 
+  description: A lantern hanging from a pole.
   suffix: Always powered, Blue
   components:
   - type: Sprite

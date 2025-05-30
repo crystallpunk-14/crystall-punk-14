@@ -117,7 +117,7 @@ public abstract partial class CP14SharedFarmingSystem
                 if (used != null && !_tag.HasTag(used.Value, tag))
                     continue;
             }
-            
+
             var spawnLoot = _entityTable.GetSpawns(table);
             foreach (var loot in spawnLoot)
             {
@@ -218,3 +218,4 @@ public abstract partial class CP14SharedFarmingSystem
         return true;
     }
 }
+

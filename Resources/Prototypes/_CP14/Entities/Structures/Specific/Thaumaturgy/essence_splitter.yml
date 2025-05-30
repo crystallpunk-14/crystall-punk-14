@@ -56,5 +56,5 @@
       - HideContextMenu
   - type: AnimationPlayer
   - type: EmitSoundOnSpawn
-    sound: 
+    sound:
       path: /Audio/Magic/ethereal_enter.ogg

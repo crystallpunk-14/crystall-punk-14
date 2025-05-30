@@ -1,6 +1,6 @@
 - type: entity
   id: CP14WoodenDoor
-  parent: 
+  parent:
   - CP14BaseDoor
   - CP14BaseFlammableSpreading
   name: wooden door

@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellLurkerFear
   name: Primal terror
-  description: You plunge the target into primal terror, robbing them of the ability to fight and speak. 
+  description: You plunge the target into primal terror, robbing them of the ability to fight and speak.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/lurker.rsi
@@ -62,7 +62,7 @@
     - state: particles_down
       color: "#6c5f82"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneLurkerFear
   parent: CP14BaseMagicRune
@@ -75,7 +75,7 @@
     - state: double_outer
       color: "#6c5f82"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneLurkerFearImpact
   parent: CP14BaseMagicImpact

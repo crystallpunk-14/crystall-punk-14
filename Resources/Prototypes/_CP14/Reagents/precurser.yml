@@ -1,4 +1,4 @@
-# Contains Flora and fauna, like flower, roots, mushrooms, etc, 
+# Contains Flora and fauna, like flower, roots, mushrooms, etc,
 
 # Flower based
 
@@ -181,7 +181,7 @@
 
 - type: reagent
   id: CP14GroundQuartz
-  group: CP14Precurser 
+  group: CP14Precurser
   name: cp14-reagent-name-grounded-quartz
   desc: cp14-reagent-desc-grounded-quartz
   flavor: CP14Quartz

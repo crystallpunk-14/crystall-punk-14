@@ -23,7 +23,7 @@
       - CP14ImpactEffectVampireBite
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Jitter 
+      - !type:Jitter
       - !type:ModifyBloodLevel
         amount: -15
   - type: EntityTargetAction
@@ -43,7 +43,7 @@
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 1
       castDelay: 1
-  
+
 - type: entity
   id: CP14ImpactEffectVampireBite
   parent: CP14SnowEffect

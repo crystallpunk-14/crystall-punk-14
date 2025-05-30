@@ -1,6 +1,6 @@
 - type: entity
   id: CP14WallmountOrdersBorder
-  parent: 
+  parent:
   - CP14BaseWallmount
   - CP14BaseFlammableSpreading
   name: orders board

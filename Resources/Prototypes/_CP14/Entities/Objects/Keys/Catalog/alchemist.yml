@@ -5,7 +5,7 @@
   components:
   - type: CP14AbstractKey
     group: Alchemist
-    
+
 - type: entity
   parent: CP14KeyIronBlank
   id: CP14KeyAlchemy1

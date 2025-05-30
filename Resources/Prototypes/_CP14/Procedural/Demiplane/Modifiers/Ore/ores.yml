@@ -14,7 +14,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 20
@@ -35,7 +35,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneIronOre
       count: 15
@@ -56,7 +56,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 20
@@ -77,7 +77,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneCopperOre
       count: 15
@@ -100,7 +100,7 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneGoldOre
       count: 10
@@ -121,7 +121,7 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
       entity: CP14WallStoneGoldOre
       count: 15
@@ -142,9 +142,9 @@
   - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
-      entity: CP14WallStoneMithrilOre 
+      entity: CP14WallStoneMithrilOre
       count: 10
       minGroupSize: 2
       maxGroupSize: 4
@@ -163,9 +163,9 @@
   - CP14DemiplaneUnderground
   layers:
     - !type:CP14OreDunGen
-      entityMask: 
+      entityMask:
       - CP14WallStone
-      entity: CP14WallStoneMithrilOre 
+      entity: CP14WallStoneMithrilOre
       count: 15
       minGroupSize: 2
       maxGroupSize: 4

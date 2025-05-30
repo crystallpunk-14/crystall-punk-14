@@ -12,7 +12,7 @@
     manaCost: 4
   - type: CP14MagicEffect
     telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget 
+    - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectResurrection
     effects:

@@ -81,7 +81,7 @@
 
 - type: entity
   name: ice bow
-  description: A magic bow that needs no ammunition. 
+  description: A magic bow that needs no ammunition.
   id: CP14BowIceArtifact
   parent: CP14BowCombat
   categories: [ DoNotMap ]

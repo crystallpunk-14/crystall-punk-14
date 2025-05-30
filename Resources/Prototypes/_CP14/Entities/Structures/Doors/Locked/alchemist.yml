@@ -11,7 +11,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorAlchemy1
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorAlchemyMirrored1
@@ -28,7 +28,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorAlchemy2
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorAlchemyMirrored2
@@ -45,7 +45,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorAlchemy3
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorAlchemyMirrored3

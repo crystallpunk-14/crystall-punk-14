@@ -70,7 +70,7 @@
   id: CP14LargeWoodenCrate
   name: large wooden crate
   description: Solid wooden crate.
-  parent: 
+  parent:
   - CP14BaseCrate
   - CP14BaseFlammable
   components:
@@ -103,7 +103,7 @@
   id: CP14SmallWoodenCrate
   name: small wooden crate
   description: Solid wooden crate.
-  parent: 
+  parent:
   - CP14BaseSmallCrate
   - CP14BaseFlammable
   components:

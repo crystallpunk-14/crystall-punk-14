@@ -109,7 +109,7 @@
   parent: CP14ClothingEyesBase
   id: CP14ClothingEyesEyePatch
   name: eye patch
-  description: Hides the mutilation of the eyes. 
+  description: Hides the mutilation of the eyes.
   components:
   - type: Foldable
     canFoldInsideContainer: true

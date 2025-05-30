@@ -3,7 +3,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -17,7 +17,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -31,7 +31,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -45,7 +45,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -59,7 +59,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -73,7 +73,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -87,7 +87,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -101,7 +101,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -115,7 +115,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring

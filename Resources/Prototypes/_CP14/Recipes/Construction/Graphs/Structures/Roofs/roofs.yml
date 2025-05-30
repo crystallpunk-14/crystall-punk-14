@@ -11,7 +11,7 @@
             - stackGroup: WoodenPlanks
               amount: 1
               doAfter: 2
-      
+
     - node: CP14RoofWooden
       entity: CP14RoofWooden
       edges:
@@ -38,7 +38,7 @@
             - material: CP14Stone
               amount: 1
               doAfter: 2
-      
+
     - node: CP14RoofStone
       entity: CP14RoofStone
       edges:

@@ -63,7 +63,7 @@
   - CP14DemiplaneAnimalsSwamp
   layers:
     - !type:CP14OreDunGen
-      tileMask: 
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall

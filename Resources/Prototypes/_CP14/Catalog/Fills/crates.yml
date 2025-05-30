@@ -1,6 +1,6 @@
 - type: entity
   id: CP14SmallWoodenCrateFilled
-  parent: 
+  parent:
   - CP14SmallWoodenCrate
   suffix: Filled, Tools and Fluff
   components:
@@ -14,7 +14,7 @@
 - type: entity
   id: CP14LargeWoodenCrateFilled
   suffix: Filled, Tools and Fluff
-  parent: 
+  parent:
   - CP14LargeWoodenCrate
   components:
   - type: EntityTableContainerFill

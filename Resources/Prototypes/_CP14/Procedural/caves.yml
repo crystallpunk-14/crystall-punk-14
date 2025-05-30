@@ -22,7 +22,7 @@
         - CP14FloorBase
       entities:
         - CP14RockSmall
- 
+
 - type: biomeTemplate
   id: CP14CavesGeneric
   layers:

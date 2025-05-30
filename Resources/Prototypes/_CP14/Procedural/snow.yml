@@ -4,7 +4,7 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorSnowDeepDeep
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorSnowDeep
       threshold: 0
       noise:
@@ -102,7 +102,7 @@
   layers:
     - !type:BiomeMetaLayer
       template: CP14SnowlandForest
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorBase
       invert: true
       threshold: 0.5

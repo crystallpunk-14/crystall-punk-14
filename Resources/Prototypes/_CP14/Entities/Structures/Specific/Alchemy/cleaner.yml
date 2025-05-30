@@ -1,6 +1,6 @@
 - type: entity
   id: CP14AlchemySolutionCleaner
-  parent: 
+  parent:
   - BaseStructureDynamic
   - CP14BaseCrystalSlot
   name: solution cleaner

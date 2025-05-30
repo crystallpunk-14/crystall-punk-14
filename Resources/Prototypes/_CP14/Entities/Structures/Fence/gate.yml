@@ -48,7 +48,7 @@
   - type: CP14Lock #Empty, for installing new locks
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFenceGate
   - CP14BaseFlammableSpreading
   id: CP14FenceGateWooden

@@ -57,7 +57,7 @@
           CP14GlassShard:
             min: 1
             max: 2
-      - !type:DoActsBehavior 
+      - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: ContainerContainer
     containers:

@@ -181,7 +181,7 @@
       volume: -6
   config:
   - effects:
-    #- !type:ApplyEntityEffect 
+    #- !type:ApplyEntityEffect
     #  prob: 1
     #  effects:
     #  - !type:AdjustTemperature

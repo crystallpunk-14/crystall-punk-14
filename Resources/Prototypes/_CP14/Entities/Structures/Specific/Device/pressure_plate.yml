@@ -1,13 +1,13 @@
 - type: entity
   id: CP14PressurePlateBase
-  abstract: true  
+  abstract: true
   parent: BaseStructure
   placement:
     mode: SnapgridCenter
   categories: [ ForkFiltered ]
   name: pressure plate
-  description: This button can activate something! 
-  components:  
+  description: This button can activate something!
+  components:
   - type: Fixtures
     fixtures:
       slipFixture:
@@ -21,7 +21,7 @@
         hard: false
   - type: Physics
     bodyType: Static
-  - type: Sprite    
+  - type: Sprite
     snapCardinals: true
     drawdepth: FloorObjects
     sprite: _CP14/Structures/Specific/Device/pressure_plate.rsi

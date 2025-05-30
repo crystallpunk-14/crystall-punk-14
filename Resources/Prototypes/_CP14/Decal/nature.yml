@@ -181,7 +181,7 @@
   sprite:
     sprite: /Textures/_CP14/Decals/Flora/Grass.rsi
     state: grass_short11
-    
+
 - type: decal
   id: CP14FloraGrass12
   snapCardinals: true
@@ -190,7 +190,7 @@
   sprite:
     sprite: /Textures/_CP14/Decals/Flora/Grass.rsi
     state: grass_short12
-    
+
 - type: decal
   id: CP14FloraGrass13
   snapCardinals: true
@@ -199,7 +199,7 @@
   sprite:
     sprite: /Textures/_CP14/Decals/Flora/Grass.rsi
     state: grass_short13
-    
+
 - type: decal
   id: CP14FloraGrass14
   snapCardinals: true

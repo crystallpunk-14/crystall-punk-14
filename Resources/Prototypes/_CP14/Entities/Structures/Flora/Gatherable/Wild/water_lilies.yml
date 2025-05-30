@@ -74,7 +74,7 @@
 
 - type: entity
   id: CP14GatherableWaterAirLily
-  parent: 
+  parent:
   - CP14GatherableBase
   - CP14WaterLilies
   name: air lily
@@ -145,5 +145,4 @@
         big8: ""
   - type: CP14WaveShader
     speed: 2.5
-    dis: 3 
-  
+    dis: 3

@@ -1,4 +1,4 @@
-# Tavern 
+# Tavern
 
 - type: CP14LockType
   id: TavernHall
@@ -40,20 +40,20 @@
   complexity: 3
   name: cp14-lock-shape-tavern-dorm5
 
-# Artisans 
+# Artisans
 
 - type: CP14LockType
   id: Alchemy1
   group: Alchemist
   complexity: 5
   name: cp14-lock-shape-alchemist1
-  
+
 - type: CP14LockType
   id: Alchemy2
   group: Alchemist
   complexity: 5
   name: cp14-lock-shape-alchemist2
-  
+
 - type: CP14LockType
   id: Alchemy3
   group: Alchemist

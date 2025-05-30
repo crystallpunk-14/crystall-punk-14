@@ -44,7 +44,7 @@
     delay: 2.5
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFence
   - CP14BaseFlammableSpreading
   id: CP14FenceWooden

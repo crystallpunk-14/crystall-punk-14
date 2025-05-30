@@ -4,7 +4,7 @@
   name: bucket
   description: It's a boring old bucket.
   categories: [ ForkFiltered ]
-  components: 
+  components:
   - type: Drink
     solution: bucket
     ignoreEmpty: true

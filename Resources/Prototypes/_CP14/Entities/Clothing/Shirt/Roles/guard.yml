@@ -12,7 +12,7 @@
         Slash: 0.90
         Piercing: 0.85
         Heat: 0.90
-  
+
 - type: entity
   parent: CP14ClothingShirtGuardBase
   id: CP14ClothingShirtGuardsChainmailShirtB
