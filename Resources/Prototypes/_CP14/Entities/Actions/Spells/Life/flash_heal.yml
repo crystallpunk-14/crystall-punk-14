@@ -42,7 +42,7 @@
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneCureWounds
+    proto: CP14RuneFlashHeal
   - type: EntityTargetAction
     whitelist:
       components:
@@ -62,7 +62,7 @@
       breakOnMove: false
  
 - type: entity
-  id: CP14RuneCureWounds
+  id: CP14RuneFlashHeal
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
