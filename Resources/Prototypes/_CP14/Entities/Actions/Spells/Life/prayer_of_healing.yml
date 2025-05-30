@@ -64,7 +64,7 @@
             Caustic: -3
 
 - type: entity
-  id: CP14ImpactEffectHealthBallade
+  id: CP14ImpactEffectPrayerofHealing
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
