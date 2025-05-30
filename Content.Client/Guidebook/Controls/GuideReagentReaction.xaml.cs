@@ -45,25 +45,17 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
                 products.Add(reagent, reactantProto.Amount);
         }
         SetReagents(products, ref productContainer, protoMan, false);
+
         // CP14 random reagents begin
-        foreach (var randomVariation in prototype.Cp14RandomProducts)
+        Container randomProductContainer = RandomProductsContainer;
+        if (prototype.Cp14RandomProducts.Count > 0)
         {
             // If there aren't any variations, this label will be not visible
             RandomVariationsLabel.Visible = true;
 
-            Container randomProductContainer = RandomProductsContainer;
-            var randomProducts = new Dictionary<string, FixedPoint2>(randomVariation);
-            RandomVariations.AddChild(randomProductContainer);
-            RandomVariations.AddChild(new SplitBar
-            {
-                MinHeight = 10,
-            });
-            foreach (var (reagent, reactantProto) in prototype.Reactants)
-            {
-                if (reactantProto.Catalyst)
-                    randomProducts.Add(reagent, reactantProto.Amount);
-            }
-            SetReagents(randomProducts, ref randomProductContainer, protoMan);
+            var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
+
+            SetReagents(randomProducts, ref randomProductContainer, protoMan, false);
         }
         // CP14 random reagents end
 
