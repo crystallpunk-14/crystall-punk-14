@@ -57,9 +57,9 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_wounds
     event: !type:CP14ToggleableEntityTargetActionEvent
-      effectFrequency: 1
+      effectFrequency: 0.5
       cooldown: 60
-      castTime: 20
+      castTime: 10
       breakOnMove: true
  
 - type: entity
