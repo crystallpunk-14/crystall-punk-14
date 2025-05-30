@@ -40,7 +40,7 @@
     whitelist:
       components:
       - MobState
-    range: 3
+    range: 7
     itemIconStyle: BigAction
     interactOnMiss: false
     sound: !type:SoundPathSpecifier
