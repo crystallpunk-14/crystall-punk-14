@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   id: CP14ClothingCloakCommandantJacket #TODO: Rename from Jacket to Cape
   name: commandant's cape
@@ -9,3 +9,4 @@
     sprite: _CP14/Clothing/Cloak/Roles/Commandant/commandant_cape.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/Commandant/commandant_cape.rsi
+

@@ -3,7 +3,7 @@
   parent: CP14VialSmall
   categories: [ ForkFiltered ]
   name: alchemical bomb
-  description: A vial of liquid that explodes with an alchemical reagent cloud when thrown. 
+  description: A vial of liquid that explodes with an alchemical reagent cloud when thrown.
   components:
   - type: Spillable
     solution: none #Disable spillable
@@ -39,3 +39,4 @@
       - state: label
         visible: false
         map: ["enum.PaperLabelVisuals.Layer"]
+

@@ -23,8 +23,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronPickaxe
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -40,8 +40,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldPickaxe
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -57,8 +57,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperPickaxe
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -74,6 +74,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilPickaxe
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10

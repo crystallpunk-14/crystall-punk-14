@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: 
+  parent:
   - Clothing
   - ContentsExplosionResistanceBase
   id: CP14ClothingBackpackBase

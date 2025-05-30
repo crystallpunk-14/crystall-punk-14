@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellManaTrance
   name: Mana trance
-  description: You go into a trance for a while, restoring mana. 
+  description: You go into a trance for a while, restoring mana.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
@@ -46,3 +46,4 @@
     - state: sun
       color: "#5096d4"
       shader: unshaded
+

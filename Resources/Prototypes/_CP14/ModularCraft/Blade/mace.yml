@@ -21,7 +21,7 @@
         Blunt: 8
         Piercing: 4
   - !type:EditItem
-    newSize: Large
+    newSize: Normal
     adjustShape: 0, 1
     storedOffsetBonus: 0, 5
 

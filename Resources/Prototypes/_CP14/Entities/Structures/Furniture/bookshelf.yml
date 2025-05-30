@@ -1,7 +1,7 @@
 - type: entity
   id: CP14BookshelfWooden
   categories: [ ForkFiltered ]
-  parent: 
+  parent:
   - BaseStructureDynamic
   - CP14BaseFlammable
   name: wooden bookshelf
@@ -110,3 +110,4 @@
     containers:
       storagebase: !type:NestedSelector
         tableId: CP14BookshelfEntityTable
+

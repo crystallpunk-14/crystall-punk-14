@@ -8,7 +8,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Food
-    trash: 
+    trash:
     - CP14Eggshells
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/egg.rsi
@@ -100,3 +100,4 @@
       - random:
           brown: ""
           icon: ""
+

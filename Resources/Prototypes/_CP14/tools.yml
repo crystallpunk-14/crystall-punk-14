@@ -11,3 +11,4 @@
   toolName: cp14-tool-quality-hammering-tool-name
   spawn: CP14ModularIronHammer
   icon: { sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi, state: tool}
+

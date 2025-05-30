@@ -181,7 +181,7 @@
       volume: -6
   config:
   - effects:
-    #- !type:ApplyEntityEffect 
+    #- !type:ApplyEntityEffect
     #  prob: 1
     #  effects:
     #  - !type:AdjustTemperature
@@ -208,3 +208,4 @@
     - !type:SpawnEntityOnTop
       prob: 0.25
       entity: CP14SkyLightningPurple
+

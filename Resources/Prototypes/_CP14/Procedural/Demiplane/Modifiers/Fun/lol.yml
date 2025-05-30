@@ -11,8 +11,8 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -34,8 +34,8 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -56,12 +56,12 @@
   requiredTags:
   - CP14DemiplaneOpenSky
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14StatueStoneHeadHigh
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14StatueStoneHeadLow
       count: 1
       minGroupSize: 1

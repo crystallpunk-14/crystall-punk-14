@@ -23,11 +23,7 @@
       components:
         - Hands
     loot:
-      All: CP14GatherChromiumSlime
+      All: !type:GroupSelector
+        children:
+        - id: CP14BloodFlower
 
-- type: entityLootTable
-  id: CP14GatherChromiumSlime
-  entries:
-  - id: CP14ChromiumSlime
-    amount: 1
-    maxAmount: 1

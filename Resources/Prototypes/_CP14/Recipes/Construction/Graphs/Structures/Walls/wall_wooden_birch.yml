@@ -35,7 +35,7 @@
         #    - material: CP14GlassSheet
         #      amount: 2
         #      doAfter: 2
-              
+
     - node: CP14WallWoodenBirch
       entity: CP14WallWoodenBirch
       edges:
@@ -47,6 +47,7 @@
             - !type:SpawnPrototype
               prototype: CP14BirchWoodenPlanks1
               amount: 2
-              
+
     #- node: WindowWooden
     #  entity: CP14WindowWooden
+

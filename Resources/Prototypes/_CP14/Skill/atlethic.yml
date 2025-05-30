@@ -5,7 +5,7 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: kick
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellKick
 
@@ -16,7 +16,7 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellSprint
 
@@ -28,7 +28,7 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effects: 
+  effects:
   - !type:ReplaceAction
     oldAction: CP14ActionSpellSprint
     newAction: CP14ActionSpellSprintGoblin
@@ -37,3 +37,4 @@
     prerequisite: CP14ActionSpellSprint
   - !type:SpeciesWhitelist
     species: CP14Goblin
+

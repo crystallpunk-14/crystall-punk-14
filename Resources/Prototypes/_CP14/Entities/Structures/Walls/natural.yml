@@ -131,7 +131,7 @@
 
 - type: entity
   id: CP14WallLeaf
-  parent: 
+  parent:
   - CP14BaseFlammableSpreading
   - CP14BaseWall
   name: leaf wall
@@ -171,7 +171,7 @@
           !type:PhysShapeAabb
           bounds: "-0.35,-0.35,0.35,0.35"
         mask:
-        - FullTileMask 
+        - FullTileMask
         layer:
         - Opaque
   - type: Destructible
@@ -294,3 +294,4 @@
             collection: GlassBreak
         - !type:DoActsBehavior
           acts: ["Destruction"]
+

@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Effects/mist.rsi
-    state: chemmist  
+    state: chemmist
   - type: TimedDespawn
     lifetime: 20
   - type: Tag
@@ -17,3 +17,4 @@
     solutions:
       solutionArea:
         maxVol: 100
+

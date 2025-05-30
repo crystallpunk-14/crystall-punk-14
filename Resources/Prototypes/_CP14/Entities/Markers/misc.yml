@@ -10,3 +10,4 @@
     - sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
       state: pulse
   - type: CP14DemiplaneRift
+

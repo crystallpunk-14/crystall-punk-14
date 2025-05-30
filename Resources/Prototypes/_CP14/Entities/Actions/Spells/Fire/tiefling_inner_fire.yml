@@ -50,7 +50,7 @@
     - state: wave_up
       color: "#eea911"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneTieflingRevenge
   parent: CP14BaseMagicRune
@@ -64,3 +64,4 @@
     - state: sun
       color: "#eea911"
       shader: unshaded
+

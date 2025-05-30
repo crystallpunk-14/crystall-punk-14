@@ -112,6 +112,24 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
         UpdateMagicAlert((ent, ent.Comp));
     }
 
+    /// <summary>
+    /// Set energy to 0
+    /// </summary>
+    public void ClearEnergy(Entity<CP14MagicEnergyContainerComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return;
+
+        var oldEnergy = ent.Comp.Energy;
+
+        ent.Comp.Energy = 0;
+
+        if (oldEnergy != 0)
+            RaiseLocalEvent(ent, new CP14MagicEnergyLevelChangeEvent(oldEnergy, 0, ent.Comp.MaxEnergy));
+
+        UpdateMagicAlert((ent, ent.Comp));
+    }
+
     public void TransferEnergy(Entity<CP14MagicEnergyContainerComponent?> sender,
         Entity<CP14MagicEnergyContainerComponent?> receiver,
         FixedPoint2 energy,

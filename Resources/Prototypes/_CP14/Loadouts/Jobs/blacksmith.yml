@@ -11,7 +11,7 @@
   equipment:
     cloak: CP14ClothingCloakBlacksmithArpon
 
-# Gloves 
+# Gloves
 
 - type: loadoutGroup
   id: CP14BlacksmithGloves
@@ -29,3 +29,4 @@
   id: CP14ClothingGlovesGirdles
   equipment:
     gloves: CP14ClothingGlovesGirdles
+

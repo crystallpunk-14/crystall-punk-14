@@ -7,7 +7,7 @@
   - type: Clothing
     equipDelay: 0.2
     unequipDelay: 0.2
-    slots: 
+    slots:
     - gloves
   - type: Sprite
     state: icon

@@ -2,7 +2,7 @@
   id: CP14CopperCoin
   name: cp14-stack-copper-coin
   spawn: CP14CopperCoin1
-  icon: 
+  icon:
     sprite: /Textures/_CP14/Objects/Economy/cp_coin.rsi
     state: coin1
   maxCount: 10
@@ -11,7 +11,7 @@
   id: CP14SilverCoin
   name: cp14-stack-silver-coin
   spawn: CP14SilverCoin1
-  icon: 
+  icon:
     sprite: /Textures/_CP14/Objects/Economy/sp_coin.rsi
     state: coin1
   maxCount: 10
@@ -20,7 +20,7 @@
   id: CP14GoldCoin
   name: cp14-stack-gold-coin
   spawn: CP14GoldCoin1
-  icon: 
+  icon:
     sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
     state: coin1
   maxCount: 10
@@ -29,7 +29,8 @@
   id: CP14PlatinumCoin
   name: cp14-stack-platinum-coin
   spawn: CP14PlatinumCoin1
-  icon: 
+  icon:
     sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
     state: coin1
   maxCount: 10
+

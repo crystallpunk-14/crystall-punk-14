@@ -17,7 +17,7 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellSphereOfLight
   restrictions:
@@ -32,7 +32,7 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: search_of_life
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellSearchOfLife
   restrictions:
@@ -49,7 +49,7 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light2
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Light: -0.25
@@ -64,7 +64,7 @@
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
     state: flash_light
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellFlashLight
   restrictions:
@@ -78,7 +78,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: peace_music
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellPeaceBallade
   restrictions:
@@ -95,10 +95,11 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light3
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Light: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: IllusionT2
+

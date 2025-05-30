@@ -8,6 +8,7 @@
   - CP14_EN_Species
   - CP14_EN_Jobs
   - CP14_EN_Imperial_Laws
+  - CP14_EN_Mechanics
 
 - type: guideEntry
   crystallPunkAllowed: true
@@ -19,3 +20,4 @@
   - CP14_RU_Species
   - CP14_RU_Jobs
   - CP14_RU_Imperial_Laws
+  - CP14_RU_Mechanics

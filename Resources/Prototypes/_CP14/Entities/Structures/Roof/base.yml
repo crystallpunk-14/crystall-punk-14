@@ -29,7 +29,7 @@
   - type: SunShadowCast
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseRoof
   - CP14BaseFlammableSpreading
   id: CP14RoofWooden
@@ -63,7 +63,7 @@
     node: CP14RoofWooden
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseRoof
   id: CP14RoofStone
   name: stone roof
@@ -93,7 +93,7 @@
     node: CP14RoofStone
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseRoof
   id: CP14RoofRemover
   name: roof remover debug
@@ -104,4 +104,3 @@
     sprite: _CP14/Structures/Roof/stone.rsi
   - type: TimedDespawn
     lifetime: 2
-    

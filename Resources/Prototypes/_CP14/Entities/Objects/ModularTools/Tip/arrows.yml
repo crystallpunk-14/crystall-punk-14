@@ -21,8 +21,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - TipIronArrow
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 2
 
 - type: entity
@@ -38,8 +38,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - TipGoldArrow
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 2
 
 - type: entity
@@ -55,8 +55,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - TipCopperArrow
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 2
 
 - type: entity
@@ -72,6 +72,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - TipMithrilArrow
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 2

@@ -13,7 +13,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 15 
+        damage: 15
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -31,3 +31,4 @@
       collection: CP14CrystalDings
       params:
         variation: 0.03
+

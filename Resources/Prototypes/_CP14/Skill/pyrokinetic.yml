@@ -1,4 +1,4 @@
-# T1 
+# T1
 
 - type: cp14Skill
   id: PyrokineticT1
@@ -17,7 +17,7 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: flame_creation
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellFlameCreation
   restrictions:
@@ -31,7 +31,7 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: heat
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellHeat
   restrictions:
@@ -45,7 +45,7 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellHellBallade
   restrictions:
@@ -61,7 +61,7 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: tiefling_revenge
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellTieflingInnerFire
   restrictions:
@@ -80,7 +80,7 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Fire: -0.25
@@ -95,7 +95,7 @@
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fireball
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellFireball
   restrictions:
@@ -112,10 +112,11 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro3
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Fire: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
+

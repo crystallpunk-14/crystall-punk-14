@@ -101,7 +101,7 @@
   id: CP14ClothingCloakYellowSyurko
   equipment:
     cloak: CP14ClothingCloakYellowSyurko
-    
+
 # OuterClothing
 
 - type: loadoutGroup
@@ -155,7 +155,7 @@
   loadouts:
   - CP14ClothingEyesMonocle
   - CP14ClothingEyesGlasses
-
+  - CP14ClothingEyesEyePatch
 - type: loadout
   id: CP14ClothingEyesMonocle
   equipment:
@@ -165,6 +165,11 @@
   id: CP14ClothingEyesGlasses
   equipment:
     eyes: CP14ClothingEyesGlasses
+
+- type: loadout
+  id: CP14ClothingEyesEyePatch
+  equipment:
+    eyes: CP14ClothingEyesEyePatch
 
 # Gloves
 
@@ -359,13 +364,13 @@
   - CP14ClothingBlueOpenDress
   - CP14ClothinShirtWhiteBlueDress
   - CP14ClothinShirtWhiteBlue2Dress
-  - CP14ClothinShirtRedBlueDress 
+  - CP14ClothinShirtRedBlueDress
   - CP14ClothingShirtJestersAttire
   - CP14ClothingShirtRedOpen
   - CP14ClothingRedOpenDress
   - CP14ClothingShirtYellowOpen
   - CP14ClothingYellowOpenDress
-  - CP14ClothinShirtBlueYellowDress 
+  - CP14ClothinShirtBlueYellowDress
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
   - CP14ClothingCottonRedDress
@@ -525,19 +530,19 @@
     shirt: CP14ClothingWarriorsGarbDress
 
 - type: loadout
-  id: CP14ClothinShirtBlueYellowDress 
+  id: CP14ClothinShirtBlueYellowDress
   equipment:
-    shirt: CP14ClothinShirtBlueYellowDress 
+    shirt: CP14ClothinShirtBlueYellowDress
 
 - type: loadout
-  id: CP14ClothinShirtWhiteBlueDress 
+  id: CP14ClothinShirtWhiteBlueDress
   equipment:
-    shirt: CP14ClothinShirtWhiteBlueDress 
+    shirt: CP14ClothinShirtWhiteBlueDress
 
 - type: loadout
-  id: CP14ClothinShirtWhiteBlue2Dress 
+  id: CP14ClothinShirtWhiteBlue2Dress
   equipment:
-    shirt: CP14ClothinShirtWhiteBlue2Dress 
+    shirt: CP14ClothinShirtWhiteBlue2Dress
 
 - type: loadout
   id: CP14ClothinShirtBrown2Dress

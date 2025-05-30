@@ -17,7 +17,7 @@ cp14-loadout-general-keys = Keys
 
 # Adventurer
 
-cp14-loadout-adventurers-equip = Advenrurer weapons
+cp14-loadout-adventurers-equip = Adventurer weapons
 
 # Apprentice
 

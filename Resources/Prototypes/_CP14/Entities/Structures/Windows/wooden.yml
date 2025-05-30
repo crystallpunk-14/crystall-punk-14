@@ -69,7 +69,7 @@
 - type: entity
   id: CP14WindowWoodenBroken
   name: shattered wooden window
-  parent: 
+  parent:
   - CP14BaseWindowFrameBroken
   - CP14WindowFrameWooden
   components:
@@ -80,3 +80,4 @@
   - type: Construction
     graph: CP14WindowWooden
     node: CP14WindowWoodenBroken
+

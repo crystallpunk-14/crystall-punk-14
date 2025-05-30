@@ -66,3 +66,4 @@
     state: glass_3
   effects:
   - !type:UnlockRecipes
+

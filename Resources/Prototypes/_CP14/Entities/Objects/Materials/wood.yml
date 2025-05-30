@@ -51,6 +51,9 @@
           collection: WoodDestroy
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
 
 - type: entity
   id: CP14WoodenPlanks1
@@ -90,9 +93,9 @@
     - planks_2
     - planks_3
   - type: Material
-  - type: PhysicalComposition # точно ли это нужно?
+  - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 100
+      CP14WoodenPlanks: 10
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Wood
@@ -145,6 +148,9 @@
   - type: Log
     spawnedPrototype: CP14LucensWoodenPlanks1
     spawnCount: 3
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 30
 
 - type: entity
   id: CP14LucensWoodenPlanks1
@@ -165,6 +171,9 @@
     - planks
     - planks_2
     - planks_3
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 10
 
 - type: entity
   id: CP14LucensWoodenPlanks10
@@ -239,3 +248,4 @@
   components:
   - type: Stack
     count: 20
+

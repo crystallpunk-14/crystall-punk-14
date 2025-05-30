@@ -5,7 +5,7 @@
   components:
   - type: CP14AbstractKey
     group: Blacksmith
-    
+
 - type: entity
   parent: CP14KeyIronBlank
   id: CP14KeyBlacksmith
@@ -13,7 +13,7 @@
   components:
   - type: CP14Key
     autoGenerateShape: Blacksmith1
-    
+
 - type: entity
   parent: CP14KeyIronBlank
   id: CP14KeyBlacksmith2
@@ -21,3 +21,4 @@
   components:
   - type: CP14Key
     autoGenerateShape: Blacksmith2
+

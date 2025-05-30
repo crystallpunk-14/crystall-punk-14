@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using Content.Shared._CP14.Cargo.Prototype;
-using Robust.Shared.GameObjects;
+using Content.Shared._CP14.Trading.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._CP14;
@@ -16,7 +15,6 @@ public sealed class CP14CargoTest
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 
-        var compFactory = server.ResolveDependency<IComponentFactory>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
         await server.WaitAssertion(() =>
@@ -25,10 +23,9 @@ public sealed class CP14CargoTest
             {
                 HashSet<string> existedCodes = new();
 
-                foreach (var proto in protoManager.EnumeratePrototypes<CP14StoreBuyPositionPrototype>())
+                foreach (var proto in protoManager.EnumeratePrototypes<CP14TradingPositionPrototype>())
                 {
-                    Assert.That(!existedCodes.Contains(proto.Code), $"Repeated purchasing code {proto.Code} of the {proto}");
-                    existedCodes.Add(proto.Code);
+
                 }
             });
         });

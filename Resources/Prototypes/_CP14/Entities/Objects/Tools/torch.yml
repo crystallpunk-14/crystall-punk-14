@@ -1,6 +1,6 @@
 - type: entity
   id: CP14Torch
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseTorch
   name: torch

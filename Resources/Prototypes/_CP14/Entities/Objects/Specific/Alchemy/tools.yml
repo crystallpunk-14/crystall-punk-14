@@ -70,6 +70,9 @@
     damage:
       types:
         Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 30
 
 - type: entity
   id: CP14Pestle
@@ -91,6 +94,9 @@
     guides:
     - CP14_RU_Alchemy
     - CP14_EN_Alchemy
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 5
 
 - type: entity
   id: CP14Mortar
@@ -169,6 +175,9 @@
     guides:
     - CP14_RU_Alchemy
     - CP14_EN_Alchemy
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: BaseItem
@@ -265,3 +274,8 @@
   - type: Tag
     tags:
     - Syringe
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 10
+      CP14Iron: 10
+

@@ -11,7 +11,7 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WoodenDoorFrame
       entity: CP14WoodenDoorFrame
       edges:
@@ -38,7 +38,7 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WoodenDoorFrameMirrored
       entity: CP14WoodenDoorFrameMirrored
       edges:
@@ -65,7 +65,7 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WoodenDoor
       entity: CP14WoodenDoor
       edges:
@@ -80,7 +80,7 @@
           steps:
             - tool: Prying
               doAfter: 4
-              
+
     - node: CP14WoodenDoorMirrored
       entity: CP14WoodenDoorMirrored
       edges:
@@ -95,7 +95,7 @@
           steps:
             - tool: Prying
               doAfter: 4
-              
+
     - node: CP14WoodenDoorWindowed
       entity: CP14WoodenDoorWindowed
       edges:
@@ -110,7 +110,7 @@
           steps:
             - tool: Prying
               doAfter: 4
-              
+
     - node: CP14WoodenDoorWindowedMirrored
       entity: CP14WoodenDoorWindowedMirrored
       edges:

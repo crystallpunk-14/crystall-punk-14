@@ -159,3 +159,4 @@
     - state: magic
       shader: unshaded
       color: "#1c94d9"
+

@@ -36,19 +36,4 @@ public partial class CP14SharedCurrencySystem : EntitySystem
 
         return sb.ToString();
     }
-
-    public int GetTotalCurrencyRecursive(EntityUid uid)
-    {
-        var ev = new CP14GetCurrencyEvent();
-        RaiseLocalEvent(uid, ev);
-
-        return (int)(ev.Currency * ev.Multiplier);
-    }
-}
-
-public sealed class CP14GetCurrencyEvent(int currency = 0, int multiplier = 1) : EntityEventArgs
-{
-    public HashSet<EntityUid> CheckedEntities = new();
-    public int Currency = currency;
-    public float Multiplier = multiplier;
 }

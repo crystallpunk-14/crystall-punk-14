@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ChestGeneric
   - CP14BaseFlammable
   id: CP14WoodenChest

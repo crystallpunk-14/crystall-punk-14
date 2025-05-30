@@ -11,8 +11,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSturdyIron
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -29,8 +29,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSturdyGold
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -47,8 +47,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSturdyCopper
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -65,6 +65,7 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSturdyMithril
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10
+

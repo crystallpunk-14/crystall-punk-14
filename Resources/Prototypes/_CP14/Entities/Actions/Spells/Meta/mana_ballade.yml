@@ -68,7 +68,7 @@
     - state: notes_5
       color: "#5096d4"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RuneMagicBallade
   parent: CP14BaseMagicRune
@@ -83,3 +83,4 @@
     - state: notes_3
       color: "#5096d4"
       shader: unshaded
+

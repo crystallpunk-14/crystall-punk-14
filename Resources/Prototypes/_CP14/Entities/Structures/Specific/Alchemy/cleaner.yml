@@ -1,6 +1,6 @@
 - type: entity
   id: CP14AlchemySolutionCleaner
-  parent: 
+  parent:
   - BaseStructureDynamic
   - CP14BaseCrystalSlot
   name: solution cleaner
@@ -82,3 +82,4 @@
   - type: CP14MagicEnergyDraw
     energy: -0.8
     delay: 1
+

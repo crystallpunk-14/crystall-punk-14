@@ -3,7 +3,7 @@
 - type: entity
   id: CP14WallFrameWooden
   name: wooden wall frame
-  parent: 
+  parent:
   - CP14BaseWallFrame
   - CP14BaseFlammableSpreading
   components:
@@ -134,3 +134,4 @@
         node: CP14WallFrameWoodenBirch
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+

@@ -25,7 +25,7 @@
     sprite: _CP14/Clothing/Shoes/black.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/black.rsi
-    
+
 - type: entity
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesAristocraticBlack
@@ -36,7 +36,7 @@
     sprite: _CP14/Clothing/Shoes/aristocratic_black.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/aristocratic_black.rsi
-    
+
 - type: entity
   parent: CP14ClothingShoesBase
   id: CP14ClothingShoesSandals

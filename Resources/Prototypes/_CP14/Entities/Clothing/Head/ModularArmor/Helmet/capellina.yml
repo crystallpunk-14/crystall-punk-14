@@ -36,8 +36,8 @@
     startProtoPart: CP14HelmetIronCapellina
   - type: CP14MagicManacostModify
     globalModifier: 1.05
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 20
 
 - type: entity
@@ -70,8 +70,8 @@
     startProtoPart: CP14HelmetGoldCapellina
   - type: CP14MagicManacostModify
     globalModifier: 1.01
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 20
 
 - type: entity
@@ -104,8 +104,8 @@
     startProtoPart: CP14HelmetCopperCapellina
   - type: CP14MagicManacostModify
     globalModifier: 1.03
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 20
 
 - type: entity
@@ -138,6 +138,6 @@
     startProtoPart: CP14HelmetMithrilCapellina
   - type: CP14MagicManacostModify
     globalModifier: 0.98
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 20

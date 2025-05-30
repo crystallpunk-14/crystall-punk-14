@@ -37,8 +37,8 @@
     startProtoPart: CP14ArmorIronCuirass
   - type: CP14MagicManacostModify
     globalModifier: 1.2
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 50
 
 - type: entity
@@ -81,8 +81,8 @@
     startProtoPart: CP14ArmorGoldCuirass
   - type: CP14MagicManacostModify
     globalModifier: 1.1
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 50
 
 - type: entity
@@ -125,8 +125,8 @@
     startProtoPart: CP14ArmorCopperCuirass
   - type: CP14MagicManacostModify
     globalModifier: 1.15
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 50
 
 - type: entity
@@ -169,6 +169,6 @@
     startProtoPart: CP14ArmorMithrilCuirass
   - type: CP14MagicManacostModify
     globalModifier: 0.95
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 50

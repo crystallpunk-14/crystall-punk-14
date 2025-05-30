@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellManaConsume
   name: Mana consume
-  description: You absorb a small amount of mana from the target. 
+  description: You absorb a small amount of mana from the target.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
@@ -79,3 +79,4 @@
     - state: particles_down
       color: "#5096d4"
       shader: unshaded
+

@@ -20,3 +20,4 @@
               sound: /Audio/_CP14/Effects/snowball.ogg
             - !type:DeleteEntity {}
     - node: CP14Snowdrift
+

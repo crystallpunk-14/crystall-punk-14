@@ -9,11 +9,11 @@
     sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi
     state: icon
   - type: Item
-    sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi 
+    sprite: _CP14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi
 
 - type: entity
   id: CP14ManaOperationGlove
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseWeaponLight
   - CP14BaseWeaponShort
@@ -29,7 +29,7 @@
     shape:
     - 0,0,0,1
     storedRotation: -45
-    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi 
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 50
@@ -69,3 +69,4 @@
         type: NetworkConfiguratorBoundUserInterface
       enum.NetworkConfiguratorUiKey.Link:
         type: NetworkConfiguratorBoundUserInterface
+

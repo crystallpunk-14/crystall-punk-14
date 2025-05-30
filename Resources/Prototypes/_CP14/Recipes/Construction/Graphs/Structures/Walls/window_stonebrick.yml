@@ -30,7 +30,7 @@
             - material: CP14GlassSheet
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WindowStoneBrick
       entity: CP14WindowStoneBrick
       edges:
@@ -56,3 +56,4 @@
             - !type:SpawnPrototype
               prototype: CP14GlassShard
               amount: 1
+

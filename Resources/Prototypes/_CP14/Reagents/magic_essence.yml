@@ -9,8 +9,9 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
+  pricePerUnit: 0.05
 
-# Basic 6 
+# Basic 6
 
 - type: reagent
   parent: CP14EssenceBase
@@ -82,6 +83,12 @@
 
 - type: reagent
   parent: CP14EssenceBase
+  id: CP14EssenceBaseT1
+  abstract: true
+  pricePerUnit: 0.1
+
+- type: reagent
+  parent: CP14EssenceBaseT1
   id: CP14EssenceFrost
   name: cp14-reagent-name-essence-frost
   desc: cp14-reagent-desc-essence-frost
@@ -92,7 +99,7 @@
     entity: CP14EssenceFrost
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceLight
   name: cp14-reagent-name-essence-light
   desc: cp14-reagent-desc-essence-light
@@ -103,7 +110,7 @@
     entity: CP14EssenceLight
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceMotion
   name: cp14-reagent-name-essence-motion
   desc: cp14-reagent-desc-essence-motion
@@ -114,7 +121,7 @@
     entity: CP14EssenceMotion
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceCycle
   name: cp14-reagent-name-essence-cycle
   desc: cp14-reagent-desc-essence-cycle
@@ -125,7 +132,7 @@
     entity: CP14EssenceCycle
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceEnergia
   name: cp14-reagent-name-essence-energia
   desc: cp14-reagent-desc-essence-energia
@@ -136,7 +143,7 @@
     entity: CP14EssenceEnergia
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceVoid
   name: cp14-reagent-name-essence-void
   desc: cp14-reagent-desc-essence-void
@@ -147,7 +154,7 @@
     entity: CP14EssenceVoid
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssencePoison
   name: cp14-reagent-name-essence-poison
   desc: cp14-reagent-desc-essence-poison
@@ -158,7 +165,7 @@
     entity: CP14EssencePoison
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceLife
   name: cp14-reagent-name-essence-life
   desc: cp14-reagent-desc-essence-life
@@ -169,7 +176,7 @@
     entity: CP14EssenceLife
 
 - type: reagent
-  parent: CP14EssenceBase
+  parent: CP14EssenceBaseT1
   id: CP14EssenceCrystal
   name: cp14-reagent-name-essence-crystal
   desc: cp14-reagent-desc-essence-crystal
@@ -183,6 +190,12 @@
 
 - type: reagent
   parent: CP14EssenceBase
+  id: CP14EssenceBaseT2
+  abstract: true
+  pricePerUnit: 0.2
+
+- type: reagent
+  parent: CP14EssenceBaseT2
   id: CP14EssenceMagic
   name: cp14-reagent-name-essence-magic
   desc: cp14-reagent-desc-essence-magic

@@ -1,4 +1,5 @@
 using Content.Server._CP14.Objectives.Components;
+using Content.Server.Cargo.Systems;
 using Content.Server.Objectives.Components;
 using Content.Shared._CP14.Currency;
 using Content.Shared.Interaction;
@@ -16,6 +17,7 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
     [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
+    [Dependency] private readonly PricingSystem _price = default!;
 
     public override void Initialize()
     {
@@ -40,15 +42,16 @@ public sealed class CP14CurrencyCollectConditionSystem : EntitySystem
 
     private float GetProgress(MindComponent mind, CP14CurrencyCollectConditionComponent condition)
     {
-        var count = 0;
+        double count = 0;
 
         if (mind.OwnedEntity is null)
             return 0;
 
-        count += _currency.GetTotalCurrencyRecursive(mind.OwnedEntity.Value);
+        count += _price.GetPrice(mind.OwnedEntity.Value);
+        count -= _price.GetPrice(mind.OwnedEntity.Value, false); //We don't want to count the price of the entity itself.
 
         var result = count / (float)condition.Currency;
         result = Math.Clamp(result, 0, 1);
-        return result;
+        return (float)result;
     }
 }

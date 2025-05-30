@@ -1,7 +1,7 @@
 - type: entity
   id: CP14Mannequin
   categories: [ ForkFiltered ]
-  parent: 
+  parent:
   - Mannequin
   - CP14BaseFlammable
   name: mannequin
@@ -122,3 +122,4 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+

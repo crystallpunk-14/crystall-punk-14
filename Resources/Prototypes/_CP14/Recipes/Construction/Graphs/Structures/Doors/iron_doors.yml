@@ -11,7 +11,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14IronDoorFrame
       entity: CP14IronDoorFrame
       edges:
@@ -38,7 +38,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14IronDoorFrameMirrored
       entity: CP14IronDoorFrameMirrored
       edges:
@@ -68,7 +68,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14IronDoor
       entity: CP14IronDoor
       edges:
@@ -83,7 +83,7 @@
           steps:
             - tool: Prying
               doAfter: 5
-              
+
     - node: CP14IronDoorMirrored
       entity: CP14IronDoorMirrored
       edges:
@@ -98,7 +98,7 @@
           steps:
             - tool: Prying
               doAfter: 5
-              
+
     - node: CP14IronDoorWindowed
       entity: CP14IronDoorWindowed
       edges:
@@ -113,7 +113,7 @@
           steps:
             - tool: Prying
               doAfter: 5
-              
+
     - node: CP14IronDoorWindowedMirrored
       entity: CP14IronDoorWindowedMirrored
       edges:

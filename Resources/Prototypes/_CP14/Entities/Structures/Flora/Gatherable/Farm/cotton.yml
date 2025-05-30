@@ -16,14 +16,12 @@
       map: ["enum.PlantVisualLayers.Base"]
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherCotton
+      All: !type:AllSelector
+        children:
+        - id: CP14Cotton
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedCotton
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
 
-- type: entityLootTable
-  id: CP14GatherCotton
-  entries:
-  - id: CP14Cotton
-    amount: 4
-    maxAmount: 6
-  - id: CP14SeedCotton
-    amount: 1
-    maxAmount: 2

@@ -10,7 +10,7 @@
   id: CP14ClothingHeadGildmaster
   equipment:
     head: CP14ClothingHeadGildmaster
-     
+
 # Cloak
 
 - type: loadoutGroup
@@ -67,3 +67,4 @@
   name: cp14-loadout-guildmaster-shoes
   loadouts:
   - CP14ShoesAristocraticBlack
+

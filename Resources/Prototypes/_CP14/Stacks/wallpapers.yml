@@ -60,3 +60,4 @@
   spawn: CP14WallpaperBank2
   icon: { sprite: _CP14/Structures/Wallpaper/icons.rsi, state: bank2 }
   maxCount: 30
+

@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Markers/jobs.rsi
     snapCardinals: true
-      
+
 # Security
 
 - type: entity
@@ -139,3 +139,4 @@
     layers:
       - state: green
       - state: workman #TODO Replace
+

@@ -1,9 +1,11 @@
+using Content.Server.Cargo.Components;
 using Content.Server.Item;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared._CP14.ModularCraft.Prototypes;
 using Content.Shared.Throwing;
 using Content.Shared.Examine;
+using Content.Shared.Materials;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -181,6 +183,36 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         start.Comp.InstalledParts.Add(partProto);
 
         var indexedPart = _proto.Index(partProto);
+
+        if (TryComp<PhysicalCompositionComponent>(part, out var partMaterial))
+        {
+            var startMaterial = EnsureComp<PhysicalCompositionComponent>(start);
+
+            //Merge materials
+            foreach (var (material, count) in partMaterial.MaterialComposition)
+            {
+                if (startMaterial.MaterialComposition.TryGetValue(material, out var existingCount))
+                    startMaterial.MaterialComposition[material] = existingCount + count;
+                else
+                    startMaterial.MaterialComposition[material] = count;
+            }
+
+            //Merge solutions
+            foreach (var (sol, count) in partMaterial.ChemicalComposition)
+            {
+                if (startMaterial.ChemicalComposition.TryGetValue(sol, out var existingCount))
+                    startMaterial.ChemicalComposition[sol] = existingCount + count;
+                else
+                    startMaterial.ChemicalComposition[sol] = count;
+            }
+        }
+
+        if (TryComp<StaticPriceComponent>(part, out var staticPartPrice))
+        {
+            var startStaticPrice = EnsureComp<StaticPriceComponent>(start);
+
+            startStaticPrice.Price += staticPartPrice.Price;
+        }
 
         foreach (var modifier in indexedPart.Modifiers)
         {

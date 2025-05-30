@@ -24,7 +24,7 @@
   - type: EmitSoundOnSpawn
     sound:
       collection: CP14Digging
-  
+
 - type: entity
   id: CP14SnowEffect
   parent: CP14DirtEffect
@@ -112,3 +112,4 @@
   - type: Tag
     tags:
       - HideContextMenu
+

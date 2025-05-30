@@ -13,7 +13,7 @@
             - stackGroup: WoodenPlanks
               amount: 1
     - node: CP14SmallWoodenCrate
-      entity: CP14SmallWoodenCrate 
+      entity: CP14SmallWoodenCrate
       edges:
         - to: start
           steps:

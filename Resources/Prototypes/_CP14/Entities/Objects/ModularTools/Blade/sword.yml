@@ -22,8 +22,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeIronSword
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -39,8 +39,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeGoldSword
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -56,8 +56,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeCopperSword
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -73,8 +73,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeMithrilSword
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10
 
 - type: entity

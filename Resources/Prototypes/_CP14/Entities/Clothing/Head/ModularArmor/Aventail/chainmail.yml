@@ -23,8 +23,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - AventailIronChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -41,8 +41,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - AventailGoldChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -59,8 +59,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - AventailCopperChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -77,6 +77,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - AventailMithrilChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10

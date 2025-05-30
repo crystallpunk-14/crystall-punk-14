@@ -53,5 +53,4 @@
         whitelist:
           tags:
             - CP14CrossbowBolt
-  - type: CP14Currency
-    currency: 2500
+

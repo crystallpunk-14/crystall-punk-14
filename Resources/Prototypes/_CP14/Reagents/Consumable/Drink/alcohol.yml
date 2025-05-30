@@ -56,6 +56,7 @@
       - !type:Drunk
         boozePower: 2
   fizziness: 0.8
+  pricePerUnit: 2
 
 - type: reagent
   id: CP14Beer
@@ -74,6 +75,7 @@
       - !type:Emote
         emote: Laugh
         probability: 0.05
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14BeerGerbil
@@ -91,6 +93,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.2
+  pricePerUnit: 1.33
 
 - type: reagent
   id: CP14BeerBreeze
@@ -108,6 +111,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.2
+  pricePerUnit: 0.44
 
 - type: reagent
   id: CP14BeerBlowLaw
@@ -125,6 +129,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.3
+  pricePerUnit: 1.67
 
 - type: reagent
   id: CP14Wine
@@ -140,6 +145,7 @@
       effects:
       - !type:ModifyBloodLevel
         amount: 0.4
+  pricePerUnit: 1.98
 
 - type: reagent
   id: CP14WineZellasianPleasure
@@ -158,6 +164,7 @@
       - !type:AdjustReagent
         reagent: CP14Wine
         amount: 0.3
+  pricePerUnit: 1.12
 
 - type: reagent
   id: CP14WineLeeks
@@ -175,6 +182,7 @@
       - !type:AdjustReagent
         reagent: CP14Wine
         amount: 0.2
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14WineDurandate
@@ -193,6 +201,7 @@
       - !type:AdjustReagent
         reagent: CP14Wine
         amount: 0.1
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14Ale
@@ -211,6 +220,7 @@
       - !type:Emote
         emote: Laugh
         probability: 0.05
+  pricePerUnit: 0.5
 
 - type: reagent
   id: CP14AleBloodyTear
@@ -228,6 +238,7 @@
       - !type:AdjustReagent
         reagent: CP14Ale
         amount: 0.2
+  pricePerUnit: 1
 
 - type: reagent
   id: CP14AleBottomless
@@ -246,3 +257,4 @@
       - !type:AdjustReagent
         reagent: CP14Ale
         amount: 0.2
+  pricePerUnit: 2

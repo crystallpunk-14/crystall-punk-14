@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 10
+    manaCost: 12
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -50,7 +50,7 @@
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneCureBurn
   parent: CP14BaseMagicRune

@@ -11,7 +11,7 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
-              
+
     - node: CP14WoodenChest
       entity: CP14WoodenChest
       edges:

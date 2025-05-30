@@ -11,7 +11,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorMerchantShop1
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorMerchantShopMirrored1
@@ -28,7 +28,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorMerchantShop2
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorMerchantShopMirrored2
@@ -45,8 +45,9 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorMerchantShop3
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorMerchantShopMirrored3
   suffix: Merchant shop 3, Mirrored
+

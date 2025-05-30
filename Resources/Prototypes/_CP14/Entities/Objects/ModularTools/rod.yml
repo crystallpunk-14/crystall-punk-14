@@ -2,7 +2,7 @@
   parent: CP14ModularGripBase
   id: CP14ModularRod
   abstract: true
-  description: A thin shaft of wood, the most important part of the future arrow. 
+  description: A thin shaft of wood, the most important part of the future arrow.
   components:
   - type: CP14ModularCraftStartPoint
     startSlots:

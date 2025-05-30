@@ -2,6 +2,7 @@ using Content.Shared._CP14.Currency;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Stacks;
+using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -12,6 +13,7 @@ namespace Content.Server._CP14.Currency;
 
 public sealed partial class CP14CurrencySystem
 {
+    [Dependency] private readonly TagSystem _tag = default!;
     private void InitializeConverter()
     {
         SubscribeLocalEvent<CP14CurrencyConverterComponent, GetVerbsEvent<Verb>>(OnGetVerb);
@@ -115,14 +117,14 @@ public sealed partial class CP14CurrencySystem
 
     private void OnInteractUsing(Entity<CP14CurrencyConverterComponent> ent, ref InteractUsingEvent args)
     {
-        if (!TryComp<CP14CurrencyComponent>(args.Used, out var currency))
+        if (!_tag.HasTag(args.Used, ent.Comp.CoinTag))
             return;
 
         if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, args.Used))
             return;
 
-        var delta = GetTotalCurrencyRecursive(args.Used);
-        ent.Comp.Balance += delta;
+        var delta = _price.GetPrice(args.Used);
+        ent.Comp.Balance += (int)delta;
         QueueDel(args.Used);
 
         _popup.PopupEntity(Loc.GetString("cp14-currency-converter-insert", ("cash", delta)), ent, args.User);
@@ -130,9 +132,9 @@ public sealed partial class CP14CurrencySystem
     }
 
     public HashSet<EntityUid> GenerateMoney(EntProtoId currencyType,
-        int target,
+        double target,
         EntityCoordinates coordinates,
-        out int remainder)
+        out double remainder)
     {
         remainder = target;
         HashSet<EntityUid> spawns = new();
@@ -155,7 +157,7 @@ public sealed partial class CP14CurrencySystem
     }
 
     public HashSet<EntityUid> GenerateMoney(
-        int target,
+        double target,
         EntityCoordinates coordinates)
     {
         HashSet<EntityUid> coins = new();
@@ -204,9 +206,9 @@ public sealed partial class CP14CurrencySystem
         return coins;
     }
 
-    private bool ProcessEntity(EntityUid ent, ref int remainder, HashSet<EntityUid> spawns)
+    private bool ProcessEntity(EntityUid ent, ref double remainder, HashSet<EntityUid> spawns)
     {
-        var singleCurrency = GetTotalCurrencyRecursive(ent);
+        var singleCurrency = _price.GetPrice(ent);
 
         if (singleCurrency > remainder)
         {
@@ -229,15 +231,15 @@ public sealed partial class CP14CurrencySystem
     private void AdjustStack(EntityUid ent,
         StackComponent stack,
         StackPrototype stackProto,
-        float singleCurrency,
-        ref int remainder)
+        double singleCurrency,
+        ref double remainder)
     {
         var singleStackCurrency = singleCurrency / stack.Count;
         var stackLeftSpace = stackProto.MaxCount - stack.Count;
 
         if (stackLeftSpace is not null)
         {
-            var addedStack = MathF.Min((float)stackLeftSpace, MathF.Floor(remainder / singleStackCurrency));
+            var addedStack = MathF.Min((float)stackLeftSpace, MathF.Floor((float)(remainder / singleStackCurrency)));
 
             if (addedStack > 0)
             {
