@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 4
+    manaCost: 12
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -25,12 +25,12 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: -5
-            Bloodloss: -5
-            Caustic: -5
+            Poison: -10
+            Bloodloss: -10
+            Caustic: -10
       - !type:Jitter
       - !type:ModifyBloodLevel
-        amount: 10
+        amount: 25
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
@@ -49,10 +49,8 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_poison
     event: !type:CP14DelayedEntityTargetActionEvent
-      effectFrequency: 1
       cooldown: 5
       castDelay: 1.5
-      castTime: 3
       breakOnMove: false
 
 - type: entity
