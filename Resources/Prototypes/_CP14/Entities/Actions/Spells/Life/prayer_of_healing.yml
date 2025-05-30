@@ -32,7 +32,7 @@
       hidden: true
 
 - type: entity
-  id: CP14AreaEntityEffectHealBallade
+  id: CP14AreaEntityEffectPrayerofHealing
   categories: [ HideSpawnMenu ]
   save: false
   components:
