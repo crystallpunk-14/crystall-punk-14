@@ -244,6 +244,21 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         return sb.ToString();
     }
+    /// <summary>
+    ///  Helper function to reset skills to only learned skills
+    /// </summary>
+    public bool TryResetSkills(EntityUid target,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return false;
+
+        component.LearnedSkills = component.FreeLearnedSkills;
+        component.SkillsSumExperience = 0;
+
+        Dirty(target, component);
+        return true;
+    }
 }
 
 [ByRefEvent]

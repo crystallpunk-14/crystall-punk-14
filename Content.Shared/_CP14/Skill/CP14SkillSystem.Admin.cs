@@ -6,6 +6,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.FixedPoint;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Skill;
 
@@ -89,5 +90,19 @@ public abstract partial class CP14SharedSkillSystem
                 },
             });
         }
+
+        //Reset/Remove All Skills
+        args.Verbs.Add(new Verb
+        {
+            Text = "Reset skills",
+            Message = "Remove all learned skills",
+            Category = VerbCategory.CP14AdminSkillRemove,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_CP14/Interface/Misc/reroll.rsi"), "reroll"),
+            Act = () =>
+            {
+                TryResetSkills(target);
+            },
+        });
+
     }
 }
