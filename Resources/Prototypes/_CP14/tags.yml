@@ -152,4 +152,7 @@
   id: CP14EnergyCrystal
 
 - type: Tag
+  id: CP14BigCrossbowBolt
+
+- type: Tag
   id: CP14Sandwich
