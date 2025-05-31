@@ -34,7 +34,6 @@
             poison: -30
             Bloodloss: -30
             Caustic: -30
-            
       - !type:Jitter
       - !type:ModifyBleedAmount
         amount: -5
@@ -60,7 +59,7 @@
       cooldown: 30
       castDelay: 0.2
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneFlashHeal
   parent: CP14BaseMagicRune
