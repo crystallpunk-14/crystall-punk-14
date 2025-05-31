@@ -68,6 +68,7 @@
   - BaseStructure
   - CP14BaseFlammableSpreadingStrong
   categories: [ ForkFiltered ]
+  name: cocoon
   components:
   - type: Transform
     anchored: True
