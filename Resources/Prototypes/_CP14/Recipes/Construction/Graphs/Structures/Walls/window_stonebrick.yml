@@ -1,0 +1,59 @@
+- type: constructionGraph
+  id: CP14WindowStoneBrick
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WindowFrameStoneBrick
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: CP14Stone
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WindowFrameStoneBrick
+      entity: CP14WindowFrameStoneBrick
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14StoneBlock1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+        - to: CP14WindowStoneBrick
+          steps:
+            - material: CP14GlassSheet
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WindowStoneBrick
+      entity: CP14WindowStoneBrick
+      edges:
+        - to: CP14WindowFrameStoneBrick
+          steps:
+            - tool: Screwing
+              doAfter: 1
+            - tool: Anchoring
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14GlassSheet1
+              amount: 2
+
+    - node: CP14WindowStoneBrickBroken
+      entity: CP14WindowStoneBrickBroken
+      edges:
+        - to: CP14WindowFrameStoneBrick
+          steps:
+            - tool: Anchoring
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14GlassShard
+              amount: 1
+

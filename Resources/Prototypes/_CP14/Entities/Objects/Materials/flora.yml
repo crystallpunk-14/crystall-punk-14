@@ -23,6 +23,9 @@
       - state: grass_material1
         map: ["base"]
   - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14FloraMaterial: 10
 
 - type: entity
   id: CP14FloraMaterial10
@@ -65,3 +68,4 @@
   components:
     - type: Stack
       count: 10
+

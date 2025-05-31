@@ -15,6 +15,9 @@
   - type: Tag
     tags:
     - CP14Lockpick
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14BaseLockpick
@@ -25,6 +28,9 @@
     health: 50
   - type: Sprite
     state: lockpick_mithril
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
 
 - type: entity
   parent: BaseItem
@@ -34,10 +40,13 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    storedRotation: -45
+    storedRotation: 45
   - type: Sprite
     sprite: _CP14/Objects/keys.rsi
     state: file
   - type: CP14KeyFile
   - type: UseDelay
     delay: 1.0
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10

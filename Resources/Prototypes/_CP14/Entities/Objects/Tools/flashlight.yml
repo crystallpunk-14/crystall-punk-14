@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseCrystalSlot
   id: CP14CrystalLamp
@@ -63,11 +63,11 @@
   - type: ItemSlots
     slots:
       crystal_slot:
-        insertSound: 
+        insertSound:
           path: /Audio/_CP14/Items/crystal_insert.ogg
           params:
             variation: 0.05
-        ejectSound: 
+        ejectSound:
           path: /Audio/_CP14/Items/crystal_eject.ogg
           params:
             variation: 0.05
@@ -76,7 +76,7 @@
         whitelist:
           components:
           - CP14MagicEnergyCrystal
- 
+
 - type: entity
   parent: CP14CrystalLamp
   id: CP14CrystalLampBlueEmpty
@@ -119,3 +119,4 @@
   - type: PointLight
     color: "#d68f4d"
     energy: 5
+

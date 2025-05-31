@@ -62,7 +62,7 @@
 
 - type: entity
   id: CP14FlameCreationArtificialFlame
-  parent: 
+  parent:
   - BaseItem
   - ItemHeftyBase
   name: artificial flame
@@ -154,3 +154,4 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellFlameCreation
+

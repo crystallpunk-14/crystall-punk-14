@@ -1,7 +1,7 @@
 - type: entity
   name: wood bench
   id: CP14BenchWood
-  parent: 
+  parent:
   - SeatBase
   - CP14BaseFlammable
   description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.

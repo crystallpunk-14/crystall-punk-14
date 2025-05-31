@@ -30,12 +30,7 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
-        - to: CP14WindowWooden
-          steps:
-            - material: CP14GlassSheet
-              amount: 2
-              doAfter: 2
-              
+
     - node: CP14WallWooden
       entity: CP14WallWooden
       edges:
@@ -47,6 +42,4 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 2
-              
-    - node: CP14WindowWooden
-      entity: CP14WindowWooden
+

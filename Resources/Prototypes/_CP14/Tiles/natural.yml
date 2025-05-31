@@ -339,7 +339,7 @@
   baseTurf: CP14FloorBase
   isSubfloor: false
   heatCapacity: 10000
-  mobFriction: 0.5
-  mobFrictionNoInput: 0.05
-  mobAcceleration: 2
+  friction: 0.05
+  mobAcceleration: 0.1
   weather: true
+

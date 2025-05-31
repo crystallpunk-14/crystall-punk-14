@@ -1,0 +1,43 @@
+<Document>
+
+  #Locks
+  Locks is a craftable item from the Blacksmith's Anvil. Its purpose is to lock away any unwanted rummaging on chests or prevent access on doors.
+
+  #Type of Locks
+  There are four version of the locks available in the following metals:
+  -Copper (3 teeth)
+  -Iron (5 teeth)
+  -Gold (6 teeth)
+  -Mithril (7 teeth)
+
+  #Obtaining Locks
+  There are two ways to obtain locks:
+  -Crafting via Blacksmithing (Requires One metal bar of desired metal and knowledge of the metal melting skill)
+  OR
+  -If lacking the necessary materials or skills, you can ask a fellow blacksmith to craft one for you.
+
+  #Editing a Lock
+  Once a lock is crafted, all the teeth is set to 2 by default.
+
+  A screwdriver is needed to edit the teeth from a value of -2 to 2. They are obtainable via the Workbench table with the following materials: 1 Wooden Grip and 1 Iron Crossbow bolt.
+
+  Hold the screwdriver on the active hand and right-click the lock, hover the option "Edit Lock" then start clicking "Edit Tooth:#" to set your desire combination.
+
+  #Keys
+  A key is needed to operate the lock. The material of the key needs to be identical to the lock as the teeth must match to even operate the lock.
+
+  Keys can be store away in Key Rings spawned on your character by default.
+
+  #Obtaining Keys
+  Obtaining a Key is done the same way as obtaining a lock. Either by Blacksmithing with the necessary materials and skills or by asking a fellow blacksmith to create.
+
+  #Editing Keys
+  All keys freshly made from the anvil start at the default value of 2 on all teeth.
+
+  In order to edit the keys, an item called "Key File" is needed. You can craft one at the anvil for a cost of one Iron Bar. (Requires knowledge of Iron Melting)
+
+  Hold the Key File on the active hand and right-click the key, hover the option "Modify Key" then start clicking "Edit Tooth:#" to set the desired combination, preferably the same combination as the lock.
+
+  You can only go from 2 to -2 in one go. If you mess up, you would need to obtain another key.
+
+</Document>

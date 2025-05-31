@@ -22,9 +22,9 @@
   - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
     state: mana8
   - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi
-    state: mana9 
+    state: mana9
   - sprite: /Textures/_CP14/Interface/Alerts/mana.rsi #TODO: Without this dublication, alerts never be fully null
-    state: mana9 
+    state: mana9
   name: cp14-alerts-magic-energy-name
   description: cp14-alerts-magic-energy-desc
   minSeverity: 0
@@ -47,3 +47,4 @@
     state: peckish
   name: alerts-hunger-name
   description: alerts-hunger-desc
+

@@ -46,7 +46,7 @@
 
 - type: entity
   id: CP14FloorTorch
-  parent: 
+  parent:
   - CP14BaseTorch
   - BaseStructure
   name: floor torch
@@ -182,3 +182,4 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
+

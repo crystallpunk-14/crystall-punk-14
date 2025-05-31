@@ -1,41 +1,26 @@
 - type: construction
   crystallPunkAllowed: true
-  name: herbal bandage
   id: cp14herbbandage
   graph: CP14HerbBandage
   startNode: start
   targetNode: cp14herbbandage
   category: construction-category-tools
   objectType: Item
-  description: I'm surprised it can help at all.
-  icon:
-    sprite: _CP14/Objects/Specific/Medical/medical.rsi
-    state: herbbandage
 
 - type: construction
   crystallPunkAllowed: true
-  name: gauze
   id: cp14gauze
   graph: CP14Gauze
   startNode: start
   targetNode: cp14gauze
   category: construction-category-tools
   objectType: Item
-  description: Last chance not to bleed out.
-  icon:
-    sprite: _CP14/Objects/Specific/Medical/medical.rsi
-    state: bandage
 
 - type: construction
   crystallPunkAllowed: true
-  name: torch
   id: cp14torch
   graph: CP14Torch
   startNode: start
   targetNode: cp14torch
   category: construction-category-tools
   objectType: Item
-  description: If darkness has become a nuisance, a good method is to lighten it up.
-  icon:
-    sprite: _CP14/Objects/Tools/torch.rsi
-    state: torch-unlit

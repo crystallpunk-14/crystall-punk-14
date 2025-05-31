@@ -1,6 +1,6 @@
 - type: entity
   id: CP14BaseMop
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseWeaponDestructible
   name: wooden mop
@@ -34,3 +34,4 @@
     solutions:
       absorbed:
         maxVol: 50
+

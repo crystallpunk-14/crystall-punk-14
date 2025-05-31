@@ -23,8 +23,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - VisorIronChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 10
 
 - type: entity
@@ -41,8 +41,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - VisorGoldChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 10
 
 - type: entity
@@ -59,8 +59,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - VisorCopperChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 10
 
 - type: entity
@@ -77,6 +77,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - VisorMithrilChainmail
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 10

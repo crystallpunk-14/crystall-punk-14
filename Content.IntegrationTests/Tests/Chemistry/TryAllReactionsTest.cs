@@ -59,7 +59,6 @@ namespace Content.IntegrationTests.Tests.Chemistry
 #pragma warning restore NUnit2045
                     }
 
-                    //------------CP14 - improve test for alchemy
                     //Get all possible reactions with the current reagents
                     var possibleReactions = prototypeManager.EnumeratePrototypes<ReactionPrototype>()
                         .Where(x => x.Reactants.All(id => solution.Contents.Any(s => s.Reagent.Prototype == id.Key)))
@@ -84,7 +83,6 @@ namespace Content.IntegrationTests.Tests.Chemistry
                     }
 
                     //Now safe set the temperature and mix the reagents
-                    //----------CP14 - improve test for alchemy end
                     solutionContainerSystem.SetTemperature(solutionEnt.Value, reactionPrototype.MinimumTemperature);
 
                     if (reactionPrototype.MixingCategories != null)

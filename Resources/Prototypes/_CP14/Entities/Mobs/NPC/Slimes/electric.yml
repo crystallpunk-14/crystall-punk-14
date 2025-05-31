@@ -104,3 +104,4 @@
       - !type:Electrocute
         electrocuteTime: 3.5
         electrocuteDamageScale: 1
+

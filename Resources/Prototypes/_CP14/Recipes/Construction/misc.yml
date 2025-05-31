@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Bonfire
-  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
   id: CP14Bonfire
   graph: CP14Bonfire
   startNode: start
   targetNode: CP14Bonfire
   category: construction-category-misc
-  icon:
-    sprite: _CP14/Structures/Furniture/bonfire.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -18,16 +13,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Tombstone
-  description: A piece of stone used to honor the dead.
   id: CP14BaseTombstone
   graph: CP14BaseTombstone
   startNode: start
   targetNode: CP14BaseTombstone
   category: construction-category-misc
-  icon:
-    sprite: _CP14/Structures/Decoration/tombstone.rsi
-    state: cross
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -36,18 +26,14 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Wooden pallet
-  description: Wooden crates stand.
   id: CP14WoodenPallet
   graph: CP14WoodenPallet
   startNode: start
   targetNode: CP14WoodenPallet
   category: construction-category-misc
-  icon:
-    sprite: _CP14/Structures/Furniture/pallets.rsi
-    state: wooden
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
