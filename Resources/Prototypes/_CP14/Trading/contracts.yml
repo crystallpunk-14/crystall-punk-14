@@ -21,3 +21,4 @@
   service: !type:CP14BuyItemsService
     product: CP14TradeContractBradPotions
     count: 1
+

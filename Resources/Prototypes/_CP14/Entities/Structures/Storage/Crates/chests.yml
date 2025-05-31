@@ -1,11 +1,22 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ChestGeneric
   - CP14BaseFlammable
   id: CP14WoodenChest
   name: wooden chest
   description: A simple wooden chest for easy storage of junk.
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 500
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
@@ -28,8 +39,8 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
-            min: 1
-            max: 2
+            min: 3
+            max: 5
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
@@ -40,8 +51,14 @@
       path: /Audio/Effects/woodenclosetclose.ogg
     openSound:
       path: /Audio/Effects/woodenclosetopen.ogg
+  - type: StaticPrice
+    price: 0
   - type: Construction
     graph: CP14WoodenChest
     node: CP14WoodenChest
     containers:
     - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 50
+      CP14Iron: 10

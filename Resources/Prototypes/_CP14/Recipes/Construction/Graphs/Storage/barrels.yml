@@ -9,7 +9,7 @@
         - to: CP14BaseBarrel
           steps:
             - stackGroup: WoodenPlanks
-              amount: 5
+              amount: 3
               doAfter: 3
     - node: CP14BaseBarrel
       entity: CP14BaseBarrel
@@ -45,3 +45,4 @@
               doAfter: 3
     - node: CP14CraneBarrelSmall
       entity: CP14CraneBarrelSmall
+

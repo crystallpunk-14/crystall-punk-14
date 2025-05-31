@@ -46,7 +46,7 @@
       cooldown: 30
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneSheepPolymorph
   parent: CP14BaseMagicRune
@@ -73,3 +73,4 @@
     - state: particles_up
       color: "#db35c8"
       shader: unshaded
+

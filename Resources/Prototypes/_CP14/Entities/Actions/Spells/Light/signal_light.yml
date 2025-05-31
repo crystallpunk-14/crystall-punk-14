@@ -24,7 +24,7 @@
   id: CP14ActionSpellSignalLightRed
   parent: CP14ActionSpellSignalLightBase
   name: Red signal Light
-  description: You launch a hovering ball of light, briefly emitting a bright glow of red. This glow is able to penetrate the real world even from the demiplane. 
+  description: You launch a hovering ball of light, briefly emitting a bright glow of red. This glow is able to penetrate the real world even from the demiplane.
   components:
   - type: Sprite
     state: signal_light_red
@@ -69,7 +69,7 @@
   id: CP14ActionSpellSignalLightYellow
   parent: CP14ActionSpellSignalLightBase
   name: Yellow signal Light
-  description: You launch a hovering ball of light, briefly emitting a bright glow of yellow. This glow is able to penetrate the real world even from the demiplane. 
+  description: You launch a hovering ball of light, briefly emitting a bright glow of yellow. This glow is able to penetrate the real world even from the demiplane.
   components:
   - type: Sprite
     state: signal_light_yellow
@@ -114,7 +114,7 @@
   id: CP14ActionSpellSignalLightBlue
   parent: CP14ActionSpellSignalLightBase
   name: Blue signal Light
-  description: You launch a hovering ball of light, briefly emitting a bright glow of blue. This glow is able to penetrate the real world even from the demiplane. 
+  description: You launch a hovering ball of light, briefly emitting a bright glow of blue. This glow is able to penetrate the real world even from the demiplane.
   components:
   - type: Sprite
     state: signal_light_blue
@@ -160,7 +160,7 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: signal light
-  description: A signal of light left by an adventurer possibly in trouble. 
+  description: A signal of light left by an adventurer possibly in trouble.
   components:
   - type: TimedDespawn
     lifetime: 12
@@ -176,12 +176,12 @@
     netsync: false
     mask: /Textures/_CP14/Effects/LightMasks/lighthouse_cone.png
   - type: EmitSoundOnSpawn
-    sound: 
+    sound:
       path: /Audio/Items/Flare/flare_on.ogg
   - type: AmbientSound
     enabled: true
     volume: -5
-    range: 5 
+    range: 5
     sound:
       path: /Audio/Items/Flare/flare_burn.ogg #TODO sound redesign
   - type: CP14SpawnOutOfDemiplane

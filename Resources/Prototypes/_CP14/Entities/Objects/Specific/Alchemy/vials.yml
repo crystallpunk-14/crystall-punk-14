@@ -117,7 +117,7 @@
       types:
         Blunt: 5
 
-# Vials 
+# Vials
 
 - type: entity
   id: CP14VialTiny
@@ -316,3 +316,4 @@
     materialComposition:
       CP14Glass: 40
       CP14Copper: 10
+

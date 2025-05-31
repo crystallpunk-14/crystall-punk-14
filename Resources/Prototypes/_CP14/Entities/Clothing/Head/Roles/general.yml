@@ -101,7 +101,7 @@
   parent: CP14ClothingHeadBase
   id: CP14ClothingHeadJagermeisterHat
   name: jagermeister's hat
-  description: The mark of a professional in his field. 
+  description: The mark of a professional in his field.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Head/Roles/General/jagermeister_hat.rsi

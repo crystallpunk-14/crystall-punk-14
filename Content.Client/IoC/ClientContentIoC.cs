@@ -43,6 +43,7 @@ namespace Content.Client.IoC
             collection.Register<ICP14SponsorManager, ClientSponsorSystem>();
             //CP14 end
             collection.Register<IParallaxManager, ParallaxManager>();
+            collection.Register<GeneratedParallaxCache>();
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();
             collection.Register<IClientPreferencesManager, ClientPreferencesManager>();
