@@ -123,5 +123,5 @@
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14Web:
-            min: 0
-            max: 1
+            min: 4
+            max: 5
