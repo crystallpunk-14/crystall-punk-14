@@ -1,7 +1,7 @@
 - type: entity
   id: CP14SpiderWeb
   name: spider web
-  parent: CP14BaseFlammableSpreading
+  parent: CP14BaseFlammableSpreadingStrong
   description: It's stringy and sticky.
   placement:
     mode: SnapgridCenter
@@ -61,3 +61,67 @@
     ignoreWhitelist:
       components:
         - IgnoreSpiderWeb
+
+- type: entity
+  id: CP14WebCocoon
+  parent: 
+  - BaseStructure
+  - CP14BaseFlammableSpreadingStrong
+  categories: [ ForkFiltered ]
+  components:
+  - type: Transform
+    anchored: True
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 500
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _CP14/Structures/dungeon/web_cocoon.rsi
+    layers:
+      - state: full
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        full: ""
+        full2: ""
+        full3: ""
+        full4: ""
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: GlassTable
+    climberDamage:
+      types:
+        Blunt: 1
+    tableDamage:
+      types:
+        Blunt: 65
+    tableMassLimit: 60
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/gib1.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Web:
+            min: 0
+            max: 1
