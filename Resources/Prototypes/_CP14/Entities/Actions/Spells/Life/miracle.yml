@@ -61,7 +61,7 @@
       cooldown: 60
       castTime: 10
       breakOnMove: true
- 
+
 - type: entity
   id: CP14RuneMiracle
   parent: CP14BaseMagicRune
