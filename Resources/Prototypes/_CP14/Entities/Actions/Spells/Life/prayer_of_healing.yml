@@ -62,7 +62,6 @@
             Poison: -2
             Bloodloss: -4
             Caustic: -3
-
 - type: entity
   id: CP14ImpactEffectPrayerofHealing
   parent: CP14BaseMagicImpact
