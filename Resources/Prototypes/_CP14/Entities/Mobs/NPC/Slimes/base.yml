@@ -52,8 +52,8 @@
       params:
         volume: 3
   - type: Damageable
-    damageContainer: CP14Biological
-    damageModifierSet: Slime
+    damageContainer: CP14BiologicalAnaerobic
+    damageModifierSet: CP14Slime
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
@@ -72,6 +72,8 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: ReplacementAccent
+    accent: slimes
   - type: SolutionContainerManager
     solutions:
       slime:
@@ -91,6 +93,9 @@
         solution: slime
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # TODO: shouldn't be openable by others
+  # TODO: custom sound for opening and closing--shouldn't be a chest
+  # TODO: allow player-controlled slime to open its own storage?
   - type: EntityStorage
     isCollidableWhenOpen: true
     enteringOffset: 0, 0
@@ -98,6 +103,9 @@
     showContents: true
     occludesLight: false
   - type: CP14MagicCasterSlowdown
+  - type: Tag
+    tags:
+    - FootstepSound
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:GroupSelector
@@ -110,32 +118,3 @@
           - id: CP14ScrapIron
           - id: CP14CopperCoin1
             weight: 3
-
-- type: entity
-  id: CP14ActionSpellSlimeJump
-  name: Slime jump
-  description: Jump! JUMP!
-  components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/physical.rsi
-    state: kick #TODO
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.1
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellThrowUserTo
-      throwPower: 8
-  - type: EntityWorldTargetAction
-    useDelay: 8
-    range: 10
-    checkCanAccess: false
-    itemIconStyle: BigAction
-    icon:
-      sprite: _CP14/Actions/Spells/physical.rsi
-      state: kick #TODO
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
-      hidden: true
-      breakOnMove: false
-      breakOnDamage: false
-      castDelay: 1
-    raiseOnUser: true

@@ -1506,6 +1506,9 @@ ent-CP14MobSlimeBase = слайм
     .desc = Сгусток полуразумной слизи, чувствительной к стихиям. Он с удовольствием слижет кожу с вашего лица.
     .suffix = AI
 
+ent-CP14MobSlimePet = Опус
+    .desc = Маленький принц-слайм, который ведет себя царственно. Это питомец алхимика.
+
 ent-CP14ActionSpellSlimeJump = Слаймопрыжок
     .desc = Прыгай! ПРЫГАЙ!
 
@@ -1553,6 +1556,8 @@ ent-CP14LurkerRitualSound = ритуал луркера с дальним зву
 ent-SpawnPointGhostDemiplaneLurker = точка спавна роли призрака
     .desc = Роль призрака луркера
     .suffix = Луркер
+
+ent-SpawnPointPetsOpus = Точка появления Опуса
 
 ent-CP14MobUndeadSkeletonDemiplaneT1 = скелет
 

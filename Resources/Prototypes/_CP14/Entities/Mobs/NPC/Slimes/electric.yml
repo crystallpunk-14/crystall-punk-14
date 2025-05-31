@@ -23,26 +23,23 @@
         - ReagentId: CP14EssenceEnergia
           Quantity: 30
   - type: MeleeWeapon
-    altDisarm: false
-    soundHit:
-        path: /Audio/Weapons/punch3.ogg
-    angle: 0
-    animation: WeaponArcPunch
     damage:
       types:
         Blunt: 3
         Shock: 3
   - type: CP14SpellEffectOnHit
-    prob: 0.3
+    prob: 0.15
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute
-        electrocuteTime: 1
+        electrocuteTime: 0.5
         electrocuteDamageScale: 1
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ElectrifiedEffect
+  - type: Damageable
+    damageModifierSet: CP14SlimeElectric
   - type: Destructible
     thresholds:
     - trigger:
@@ -102,6 +99,5 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute
-        electrocuteTime: 3.5
+        electrocuteTime: 2
         electrocuteDamageScale: 1
-

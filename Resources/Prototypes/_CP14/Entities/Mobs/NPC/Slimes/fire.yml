@@ -25,15 +25,19 @@
         - ReagentId: CP14BasicEffectDamageHeat
           Quantity: 10
   - type: MeleeWeapon
-    altDisarm: false
-    soundHit:
-        path: /Audio/Weapons/punch3.ogg
-    angle: 0
-    animation: WeaponArcPunch
     damage:
       types:
         Blunt: 3
         Heat: 3
+  - type: Damageable
+    damageModifierSet: CP14SlimeFire
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 1
+    heatDamage:
+      types:
+        Heat: 0
   - type: Destructible
     thresholds:
     - trigger:
@@ -100,4 +104,3 @@
       - !type:AdjustTemperature
         amount: 6000
       - !type:Ignite
-

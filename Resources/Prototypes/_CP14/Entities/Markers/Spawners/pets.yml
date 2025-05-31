@@ -1,0 +1,13 @@
+- type: entity
+  name: Opus Spawner
+  id: SpawnPointPetsOpus
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSlimePet

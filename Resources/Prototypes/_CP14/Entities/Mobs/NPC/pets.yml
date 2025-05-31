@@ -1,0 +1,66 @@
+- type: entity
+  name: Opus
+  id: CP14MobSlimePet
+  parent: CP14MobSlimeBase
+  description: A princely little slime that carries itself with a regal air. It is the alchemist's familiar.
+  components:
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14Slimes
+    - CP14Pets
+  - type: Sprite
+    sprite: _CP14/Mobs/Pets/opus.rsi
+  - type: PointLight
+    color: "#620bf7"
+    energy: 3
+    radius: 1.8
+  # since it pops at 100 damage, it can have slow passive healing to help it out
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      groups:
+        Brute: -0.05
+        Burn: -0.05
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 20
+        - ReagentId: CP14BasicEffectRainbow
+          Quantity: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 1
+        Caustic: 1
+  - type: InteractionPopup #TODO: a petting sound?
+    successChance: 0.3 # default is 0.5
+    interactSuccessSpawn: EffectHearts
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NoneSelector
+  - type: GhostRole
+    name: cp14-ghost-role-information-opus-name
+    description: cp14-ghost-role-information-opus-description
+    rules: ghost-role-information-familiar-rules
+    raffle: null
+  - type: GhostTakeoverAvailable
+  - type: Grammar
+    attributes:
+      proper: true
