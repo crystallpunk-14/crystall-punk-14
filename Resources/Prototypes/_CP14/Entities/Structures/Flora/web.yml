@@ -21,7 +21,7 @@
     sprite: _CP14/Structures/Dungeon/floor_web.rsi
     state: full
   - type: IconSmooth
-    key: full
+    key: web
     additionalKeys:
     - CP14wall
     base: carpet_
@@ -56,8 +56,8 @@
             max: 1
   - type: SpiderWebObject
   - type: SpeedModifierContacts
-    walkSpeedModifier: 0.5
-    sprintSpeedModifier: 0.5
+    walkSpeedModifier: 0.3
+    sprintSpeedModifier: 0.3
     ignoreWhitelist:
       components:
         - IgnoreSpiderWeb
@@ -89,7 +89,7 @@
   - type: Sprite
     drawdepth: Mobs
     snapCardinals: true
-    sprite: _CP14/Structures/dungeon/web_cocoon.rsi
+    sprite: _CP14/Structures/Dungeon/web_cocoon.rsi
     layers:
       - state: full
         map: ["random"]
@@ -126,3 +126,38 @@
           CP14Web:
             min: 4
             max: 5
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SpawnerWebCocoonLoot:
+            min: 1
+            max: 1
+
+- type: entityTable
+  id: CP14TableWebCocoonLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 1, 2
+    children:
+      - !type:NestedSelector
+        weight: 75
+        tableId: CP14TableDemiplaneLootT1
+      - !type:GroupSelector
+        weight: 25
+        children:
+        - id: CP14MobSpiderBlackHunter
+
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerWebCocoonLoot
+  name: Web Cocoon T1 Loot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: CP14TableWebCocoonLoot
