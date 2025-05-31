@@ -251,12 +251,18 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
+        {
             return false;
-
+        }
+        foreach(var skill in component.LearnedSkills)
+        {
+            if (!HaveFreeSkill(target, skill, component))
+            {
+                TryRemoveSkill(target, skill, component);
+            }
+        }
         component.LearnedSkills = component.FreeLearnedSkills;
         component.SkillsSumExperience = 0;
-
-        Dirty(target, component);
         return true;
     }
 }
