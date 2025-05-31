@@ -15,7 +15,7 @@
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14AreaEntityEffectCureWounds
+      - CP14AreaEntityEffectPrayerofHealing
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePrayerofHealing
   - type: InstantAction
