@@ -74,7 +74,7 @@
     - state: notes_5
       color: "#79b330"
       shader: unshaded
- 
+
 - type: entity
   id: CP14RunePrayerofHealing
   parent: CP14BaseMagicRune
