@@ -18,7 +18,7 @@
     params:
       volume: -6
     collection: CP14NightForest
-  rules: NightForest
+  rules: GrassNight
   priority: 2
 
 ## Fallback if nothing else found
@@ -86,22 +86,3 @@
           - CP14MagicRitual
           - CP14DemiplanPassway
       range: 6
-
-- type: rules
-  id: NightForest
-  rules:
-    - !type:CP14TimePeriod
-      #periods:
-      #- Night
-      #- Evening
-    - !type:NearbyTilesPercentRule
-      ignoreAnchored: true
-      percent: 0.5
-      tiles:
-      - CP14FloorGrass
-      - CP14FloorGrassLight
-      - CP14FloorGrassTall
-      - CP14FloorDirt
-      - CP14FloorSand
-      range: 5
-

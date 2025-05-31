@@ -29,6 +29,9 @@
   id: CP14AmbientWater
 
 - type: Tag
+  id: CP14AmbientForest
+
+- type: Tag
   id: CP14AmbientLurker
 
 - type: Tag

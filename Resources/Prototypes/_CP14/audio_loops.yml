@@ -31,6 +31,22 @@
     collection: CP14LoopCave
   rules: CaveFloor
 
+- type: ambientLoop
+  id: NightGrass
+  sound:
+    params:
+      volume: 2
+    collection: CP14LoopNightGrass
+  rules: GrassNight
+
+- type: ambientLoop
+  id: ForestDay
+  sound:
+    params:
+      volume: 2
+    collection: CP14LoopForestDay
+  rules: DayForest
+
 # Sound collections
 - type: soundCollection
   id: CP14LoopWinds
@@ -47,6 +63,16 @@
   files:
     - /Audio/_CP14/Ambience/Loops/cave.ogg
 
+- type: soundCollection
+  id: CP14LoopNightGrass
+  files:
+    - /Audio/_CP14/Ambience/Loops/ambiforest_night.ogg
+
+- type: soundCollection
+  id: CP14LoopForestDay
+  files:
+    - /Audio/_CP14/Ambience/Loops/ambiforest_day.ogg
+
 # Rules
 - type: rules
   id: OpenWinds
@@ -61,6 +87,30 @@
       - CP14FloorDirt
       - CP14FloorSand
       range: 5
+
+- type: rules
+  id: GrassNight
+  rules:
+    - !type:CP14IsNight
+    - !type:NearbyTilesPercentRule
+      ignoreAnchored: true
+      percent: 0.5
+      tiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      range: 5
+
+- type: rules
+  id: DayForest
+  rules:
+    - !type:CP14IsNight
+      inverted: true
+    - !type:NearbyEntitiesRule
+      count: 3
+      whitelist:
+        tags:
+          - CP14AmbientForest
 
 - type: rules
   id: CaveFloor

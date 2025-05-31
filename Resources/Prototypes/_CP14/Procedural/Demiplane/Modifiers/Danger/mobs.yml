@@ -228,3 +228,31 @@
       minGroupSize: 2
       maxGroupSize: 3
 
+- type: cp14DemiplaneModifier
+  id: MobSpiders
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-spiders
+  categories:
+    Danger: 0.3
+  blacklistTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobSpiderBlackHunter
+      count: 8
+      minGroupSize: 2
+      maxGroupSize: 3
+    - !type:CP14OreDunGen
+      entity: CP14WebCocoon
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:CP14OreDunGen
+      entity: CP14SpiderWeb
+      count: 10
+      minGroupSize: 5
+      maxGroupSize: 15
+
+
