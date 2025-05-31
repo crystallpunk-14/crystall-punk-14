@@ -55,7 +55,6 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
-      effectFrequency: 1
       cooldown: 30
       castDelay: 0.2
       breakOnMove: false
