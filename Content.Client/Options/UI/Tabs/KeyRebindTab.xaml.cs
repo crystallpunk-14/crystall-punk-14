@@ -313,7 +313,7 @@ namespace Content.Client.Options.UI.Tabs
 
             //CP14
             AddHeader("ui-options-header-cp14");
-            AddButton(ContentKeyFunctions.CP14OpenSkillMenu);
+            AddButton(CP14ContentKeyFunctions.CP14OpenSkillMenu);
             AddButton(CP14ContentKeyFunctions.OpenBelt2);
             AddButton(CP14ContentKeyFunctions.SmartEquipBelt2);
             //CP14 end

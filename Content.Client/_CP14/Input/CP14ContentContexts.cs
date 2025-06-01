@@ -10,7 +10,7 @@ namespace Content.Client._CP14.Input
             var human = contexts.GetContext("human");
             human.AddFunction(CP14ContentKeyFunctions.OpenBelt2);
             human.AddFunction(CP14ContentKeyFunctions.SmartEquipBelt2);
-
+            human.AddFunction(CP14ContentKeyFunctions.CP14OpenSkillMenu);
         }
     }
 }
