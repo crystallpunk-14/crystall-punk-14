@@ -37,21 +37,13 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         Container container = ReactantsContainer;
         SetReagents(prototype.Reactants, ref container, protoMan);
         Container productContainer = ProductsContainer;
-        var products = new Dictionary<string, FixedPoint2>(prototype._products);  // CP14 random reactions
+        var products = new Dictionary<string, FixedPoint2>(prototype.Products);
         foreach (var (reagent, reactantProto) in prototype.Reactants)
         {
             if (reactantProto.Catalyst)
                 products.Add(reagent, reactantProto.Amount);
         }
         SetReagents(products, ref productContainer, protoMan, false);
-
-        // CP14 random reagents begin
-        if (prototype.Cp14RandomProducts.Count > 0)
-        {
-            var randomProducts = new Dictionary<string, FixedPoint2>(prototype.Cp14RandomProducts[prototype.Cp14RandomProductIndex]);
-            SetReagents(randomProducts, ref productContainer, protoMan, false);
-        }
-        // CP14 random reagents end
 
         var mixingCategories = new List<MixingCategoryPrototype>();
         if (prototype.MixingCategories != null)
