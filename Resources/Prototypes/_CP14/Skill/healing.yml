@@ -195,7 +195,7 @@
     state: sphere_of_light
   effects: 
   - !type:AddAction
-    action: CP14ActionSpellFlashHeal
+    action: CP14ActionSpellMiracle
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT3
