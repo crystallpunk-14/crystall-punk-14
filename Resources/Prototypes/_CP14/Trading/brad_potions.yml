@@ -1,7 +1,10 @@
+
+# Rep 0
+
 - type: cp14TradingPosition
   id: CP14VialSmallHealingBrute
   faction: BradPotions
-  uiPosition: 0, 0
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -9,69 +12,10 @@
     product: CP14VialSmallHealingBrute
 
 - type: cp14TradingPosition
-  id: CP14VialSmallHealingPoison
-  faction: BradPotions
-  uiPosition: 0, 1
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallHealingPoison
-
-- type: cp14TradingPosition
-  id: CP14VialSmallHealingAirloss
-  faction: BradPotions
-  uiPosition: 0, 2
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallHealingAirloss
-
-- type: cp14TradingPosition
-  id: CP14VialSmallHealingBlood
-  faction: BradPotions
-  uiPosition: 0, 3
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallHealingBlood
-
-- type: cp14TradingPosition
-  id: CP14VialSmallSpeedUp
-  faction: BradPotions
-  uiPosition: 1, 0
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallSpeedUp
-
-- type: cp14TradingPosition
-  id: CP14VialSmallRainbow
-  faction: BradPotions
-  uiPosition: 1, 1
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallRainbow
-
-- type: cp14TradingPosition
-  id: CP14VialSmallHealingManaDepletion
-  faction: BradPotions
-  uiPosition: 1, 2
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallHealingManaDepletion
-
-- type: cp14TradingPosition
   id: CP14VialSmallHealingMana
   faction: BradPotions
-  uiPosition: 1, 3
+  reputationLevel: 0
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -79,12 +23,10 @@
     product: CP14VialSmallHealingMana
 
 
-
-
 - type: cp14TradingPosition
   id: CP14VialTiny
   faction: BradPotions
-  uiPosition: 3, 0
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
     state: vial
@@ -93,83 +35,21 @@
 
 - type: cp14TradingPosition
   id: CP14VialTinyReinforced
-  prerequisite: CP14VialTiny
   priceMarkup: 1
   faction: BradPotions
-  uiPosition: 3, 1
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialTinyReinforced
 
-- type: cp14TradingPosition
-  id: CP14VialSmall
-  prerequisite: CP14VialTiny
-  priceMarkup: 1
-  faction: BradPotions
-  uiPosition: 4, 0
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmall
-
-- type: cp14TradingPosition
-  id: CP14VialSmallReinforced
-  prerequisite: CP14VialSmall
-  priceMarkup: 2
-  faction: BradPotions
-  uiPosition: 4, 1
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallReinforced
-
-- type: cp14TradingPosition
-  id: CP14VialMedium
-  prerequisite: CP14VialSmall
-  priceMarkup: 2
-  faction: BradPotions
-  uiPosition: 5, 0
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialMedium
-
-- type: cp14TradingPosition
-  id: CP14VialMediumReinforced
-  prerequisite: CP14VialMedium
-  priceMarkup: 3
-  faction: BradPotions
-  uiPosition: 5, 1
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialMediumReinforced
-
-
-
-
-- type: cp14TradingPosition
-  id: CP14Cauldron
-  priceMarkup: 5
-  faction: BradPotions
-  uiPosition: 7, 0
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/cauldron.rsi
-    state: icon
-  service: !type:CP14BuyItemsService
-    product: CP14Cauldron
 
 - type: cp14TradingPosition
   id: CP14Pestle
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 8, 0
+  uiPosition: 6
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
@@ -180,18 +60,67 @@
   id: CP14Mortar
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 9, 0
+  uiPosition: 7
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: mortar_base
   service: !type:CP14BuyItemsService
     product: CP14Mortar
 
+# Rep 1
+
+- type: cp14TradingPosition
+  id: CP14VialSmallHealingBlood
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallHealingBlood
+
+- type: cp14TradingPosition
+  id: CP14VialSmallHealingManaDepletion
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallHealingManaDepletion
+
+- type: cp14TradingPosition
+  id: CP14VialSmall
+  reputationLevel: 1
+  priceMarkup: 1
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmall
+
+- type: cp14TradingPosition
+  id: CP14VialSmallReinforced
+  reputationLevel: 1
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallReinforced
+
 - type: cp14TradingPosition
   id: CP14Dropper
   priceMarkup: 1
+  reputationLevel: 1
   faction: BradPotions
-  uiPosition: 7, 1
+  uiPosition: 6
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/dropper.rsi
     state: dropper
@@ -201,12 +130,107 @@
 - type: cp14TradingPosition
   id: CP14Syringe
   priceMarkup: 2
+  reputationLevel: 1
   faction: BradPotions
-  uiPosition: 8, 1
+  uiPosition: 7
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/syringe.rsi
     state: base
   service: !type:CP14BuyItemsService
     product: CP14Syringe
 
+# Rep 2
 
+- type: cp14TradingPosition
+  id: CP14VialSmallHealingPoison
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallHealingPoison
+
+- type: cp14TradingPosition
+  id: CP14VialSmallHealingAirloss
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallHealingAirloss
+
+
+- type: cp14TradingPosition
+  id: CP14VialMedium
+  reputationLevel: 2
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialMedium
+
+- type: cp14TradingPosition
+  id: CP14VialMediumReinforced
+  reputationLevel: 2
+  priceMarkup: 3
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialMediumReinforced
+
+- type: cp14TradingPosition
+  id: CP14Cauldron
+  priceMarkup: 5
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/cauldron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Cauldron
+
+- type: cp14TradingPosition
+  id: CP14BaseAlchemyBomb
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14BaseAlchemyBomb
+
+# Rep 3
+
+- type: cp14TradingPosition
+  id: CP14VialSmallSpeedUp
+  faction: BradPotions
+  reputationLevel: 3
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallSpeedUp
+
+- type: cp14TradingPosition
+  id: CP14VialSmallRainbow
+  faction: BradPotions
+  reputationLevel: 3
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSmallRainbow

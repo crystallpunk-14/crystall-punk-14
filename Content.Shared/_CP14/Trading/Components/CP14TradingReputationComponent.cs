@@ -18,7 +18,4 @@ public sealed partial class CP14TradingReputationComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Dictionary<ProtoId<CP14TradingFactionPrototype>, FixedPoint2> Reputation = new();
-
-    [DataField, AutoNetworkedField]
-    public HashSet<ProtoId<CP14TradingPositionPrototype>> UnlockedPositions = new();
 }

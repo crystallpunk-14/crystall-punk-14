@@ -22,6 +22,11 @@
       collection: PaperScribbles
       params:
         variation: 0.1
+  - type: StaticPrice
+    price: 3
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 0 #Parenting from vanilla moment
 
 # TODO: Чернильницу нужно доделать. Перо должно быть видно, пока оно внутри чернильницы. Предмет должен быть через ItemSlots, чтобы перо вставлять забирать можно было кликом. Нужно добавить прикольные звуки вставляния, выставляния. И добавить механ, который будет требовать периодически макать перо в чернильницу.
 - type: entity

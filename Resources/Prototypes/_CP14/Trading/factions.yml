@@ -5,9 +5,20 @@
 
 - type: cp14TradingFaction
   id: VictoriaGardens
+  color: "#67db67"
   name: cp14-trade-faction-victoria-gardens
 
 - type: cp14TradingFaction
   id: BradPotions
+  color: "#ad67db"
   name: cp14-trade-faction-brad-potions
 
+- type: cp14TradingFaction
+  id: DwarfMining
+  color: "#b05a3e"
+  name: cp14-trade-faction-dwarf-mining
+
+- type: cp14TradingFaction
+  id: Thaumaturgy
+  color: "#a43ae0"
+  name: cp14-trade-faction-thaumaturgy

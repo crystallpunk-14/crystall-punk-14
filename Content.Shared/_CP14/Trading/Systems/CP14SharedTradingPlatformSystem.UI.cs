@@ -8,14 +8,7 @@ public abstract partial class CP14SharedTradingPlatformSystem
 {
     private void InitializeUI()
     {
-        SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
         SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
-    }
-
-    private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
-    {
-        TryUnlockPosition(args.Actor, args.Position);
-        UpdateUIState(ent, args.Actor);
     }
 
     private void OnBeforeUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
