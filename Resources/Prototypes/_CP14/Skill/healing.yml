@@ -196,7 +196,7 @@
   effects: 
   - !type:AddAction
     action: CP14ActionSpellMiracle
+  learnCost: 0
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT3
-    learnCost: 0
