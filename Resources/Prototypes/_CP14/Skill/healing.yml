@@ -157,3 +157,46 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT3
+
+- type: cp14Skill
+  id: CP14ActionSpellPrayerofHealing
+  skillUiPosition: 12, 6
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: heal_music
+  effects: 
+  - !type:AddAction
+    action: CP14ActionSpellPrayerofHealing
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT3
+
+  - type: cp14Skill
+  id: CP14ActionSpellFlashHeal
+  skillUiPosition: 14, 6
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  effects: 
+  - !type:AddAction
+    action: CP14ActionSpellFlashHeal
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT3
+
+  - type: cp14Skill
+  id: CP14ActionSpellMiracle
+  skillUiPosition: 14, 4
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: sphere_of_light
+  effects: 
+  - !type:AddAction
+    action: CP14ActionSpellFlashHeal
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT3
+    learnCost: 0
