@@ -14,9 +14,11 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Trading
-  name: Внешняя торговля
-  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/MerchantTabs/Trading.xml"
+  id: CP14_RU_Locks_and_Keys
+  name: Замки и ключи
+  text: "/ServerInfo/_CP14/Guidebook_RU/LocksKeys.xml"
+  children:
+  - CP14_RU_Lockpicking
   filterEnabled: True
 
 - type: guideEntry
@@ -26,11 +28,3 @@
   text: "/ServerInfo/_CP14/Guidebook_RU/Lockpicking.xml"
   filterEnabled: True
 
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_Locks_and_Keys
-  name: Замки и ключи
-  text: "/ServerInfo/_CP14/Guidebook_RU/LocksKeys.xml"
-  children:
-  - CP14_RU_Lockpicking
-  filterEnabled: True

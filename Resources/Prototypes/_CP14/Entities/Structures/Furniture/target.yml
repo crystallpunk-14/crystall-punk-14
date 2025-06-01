@@ -1,6 +1,6 @@
 - type: entity
   id: CP14Target
-  parent: 
+  parent:
   - BaseStructureDynamic
   - CP14BaseFlammable
   name: target
@@ -71,7 +71,7 @@
 
 - type: entity
   id: CP14TargetStake
-  parent: 
+  parent:
   - BaseStructureDynamic
   - CP14BaseFlammable
   name: target stake

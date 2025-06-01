@@ -59,6 +59,9 @@
   - type: Construction
     graph: CP14CraneBarrel
     node: CP14CraneBarrel
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 50
 
 - type: entity
   parent: CP14CraneBarrel

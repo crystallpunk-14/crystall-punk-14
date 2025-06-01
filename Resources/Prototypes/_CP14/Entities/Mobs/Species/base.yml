@@ -232,6 +232,7 @@
         Cold: 0.25
         Bloodloss: 0.25
   - type: CP14SkillStorage
+  - type: CP14TradingReputation
 
 
 - type: entity

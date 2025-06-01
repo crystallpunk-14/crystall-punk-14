@@ -23,8 +23,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GreaveIronPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 20
 
 - type: entity
@@ -41,8 +41,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GreaveGoldPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 20
 
 - type: entity
@@ -59,8 +59,8 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GreaveCopperPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 20
 
 - type: entity
@@ -77,6 +77,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GreaveMithrilPlate
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 20

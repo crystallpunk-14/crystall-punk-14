@@ -9,9 +9,12 @@
         - to: CP14WoodenChest
           steps:
             - material: CP14WoodenPlanks
-              amount: 2
+              amount: 5
               doAfter: 2
-              
+            - material: CP14IronBar
+              amount: 1
+              doAfter: 2
+
     - node: CP14WoodenChest
       entity: CP14WoodenChest
       edges:

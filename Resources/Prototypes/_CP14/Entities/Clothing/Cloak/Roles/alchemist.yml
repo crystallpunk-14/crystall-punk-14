@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   - CP14ClothingBaseContainer
   id: CP14ClothingCloakAlchemist
@@ -25,7 +25,7 @@
         - CP14Vial
 
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   - CP14ClothingBaseContainer
   id: CP14ClothingCloakAlchemistMantle
@@ -49,3 +49,4 @@
     whitelist:
       tags:
         - CP14Vial
+

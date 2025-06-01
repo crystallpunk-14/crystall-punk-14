@@ -21,8 +21,7 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
   - !type:OreDunGen
-    entityMask:
-    - AsteroidRock
+    replacement: AsteroidRock
     entity: AsteroidRockGibtonite
     count: 8
     minGroupSize: 0
@@ -51,8 +50,7 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
   - !type:OreDunGen
-    entityMask:
-    - AsteroidRock
+    replacement: AsteroidRock
     entity: AsteroidRockGibtonite
     count: 8
     minGroupSize: 0
@@ -81,8 +79,7 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
   - !type:OreDunGen
-    entityMask:
-    - AsteroidRock
+    replacement: AsteroidRock
     entity: AsteroidRockGibtonite
     count: 8
     minGroupSize: 0
@@ -110,8 +107,7 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
   - !type:OreDunGen
-    entityMask:
-    - AsteroidRock
+    replacement: AsteroidRock
     entity: AsteroidRockGibtonite
     count: 8
     minGroupSize: 0

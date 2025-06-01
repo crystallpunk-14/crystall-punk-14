@@ -117,7 +117,7 @@
       types:
         Blunt: 5
 
-# Vials 
+# Vials
 
 - type: entity
   id: CP14VialTiny
@@ -147,6 +147,9 @@
     fillBaseName: liq-
   - type: Injector
     maxTransferAmount: 5
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 10
 
 - type: entity
   id: CP14VialTinyReinforced
@@ -178,6 +181,10 @@
     fillBaseName: liq-
   - type: Injector
     maxTransferAmount: 5
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 10
+      CP14Copper: 10
 
 - type: entity
   id: CP14VialSmall
@@ -205,6 +212,9 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 20
 
 - type: entity
   id: CP14VialSmallReinforced
@@ -234,6 +244,10 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 20
+      CP14Copper: 10
 
 - type: entity
   id: CP14VialMedium
@@ -262,7 +276,10 @@
         maxVol: 50
   - type: SolutionContainerVisuals
     maxFillLevels: 5
-    fillBaseName: liq- 
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 40
 
 - type: entity
   id: CP14VialMediumReinforced
@@ -295,3 +312,8 @@
     fillBaseName: liq-
   - type: Injector
     transferAmount: 10
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 40
+      CP14Copper: 10
+
