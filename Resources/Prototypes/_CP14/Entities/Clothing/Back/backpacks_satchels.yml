@@ -1,0 +1,86 @@
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingSatchelBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,3
+    - 3,0,6,3
+    - 8,0,9,3
+
+- type: entity
+  parent: CP14ClothingSatchelBase
+  id: CP14ClothingSatchelT0
+  name: satchel T0
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT0
+  - type: Storage
+    grid:
+    - 1,0,1,0
+    - 0,1,1,2
+    - 3,0,5,2
+    - 7,0,7,0
+    - 7,1,8,2
+
+- type: entity
+  parent: CP14ClothingSatchelT0
+  id: CP14ClothingSatchelT1
+  name: satchel T1
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT1
+  - type: Storage
+    grid:
+    - 0,1,1,3
+    - 3,0,3,3
+    - 5,0,7,3
+    - 9,0,9,3
+    - 11,4,12,3
+
+- type: entity
+  parent: CP14ClothingSatchelT1
+  id: CP14ClothingSatchelT2
+  name: satchel T2
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT2
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    - 0,3,1,4
+    - 3,0,5,4
+    - 7,0,9,4
+    - 11,0,12,1
+    - 11,3,12,4
+
+- type: entity
+  parent: CP14ClothingSatchelT2
+  id: CP14ClothingSatchelT3
+  name: satchel T3
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT3
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    - 0,3,1,6
+    - 3,0,5,6
+    - 7,0,9,6
+    - 11,0,12,1
+    - 11,3,12,6

@@ -1,43 +1,60 @@
 - type: entity
   abstract: true
-  parent:
-  - Clothing
-  - ContentsExplosionResistanceBase
+  parent: CP14ClothingBackContainerBase
   id: CP14ClothingBackpackBase
   categories: [ ForkFiltered ]
   components:
-  - type: Item
-    size: Huge
-  - type: Clothing
-    equipDelay: 0.4
-    unequipDelay: 0.2
-    slots:
-    - back
-    quickEquip: false
-    breakOnMove: false
-  - type: Storage
-    grid:
-    - 0,0,6,3
-    maxItemSize: Huge
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UseDelay
-    delay: 0.5
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
 
-- type: entity
+type: entity
   parent: CP14ClothingBackpackBase
-  id: CP14ClothingBackpackLeather
-  name: leather backpack
+  id: CP14ClothingBackpackT0
+  name: backpack T0
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
-    state: icon
+    state: iconT0
+  - type: Storage
+    grid:
+    - 0,0,4,2
+
+- type: entity
+  parent: CP14ClothingBackpackT0
+  id: CP14ClothingBackpackT1
+  name: backpack T1
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT1
+  - type: Storage
+    grid:
+    - 0,0,5,3
+
+- type: entity
+  parent: CP14ClothingBackpackT1
+  id: CP14ClothingBackpackT2
+  name: backpack T2
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT2
+  - type: Storage
+    grid:
+    - 0,1,1,3
+    - 3,0,9,3
+    - 11,1,12,3
+
+- type: entity
+  parent: CP14ClothingBackpackT2
+  id: CP14ClothingBackpackT3
+  name: backpack T3
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    state: iconT3
+  - type: Storage
+    grid:
+    - 0,0,8,1
+    - 0,3,8,6

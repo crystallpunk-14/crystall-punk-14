@@ -637,18 +637,19 @@
   id: CP14GeneralBack
   name: cp14-loadout-general-back
   loadouts:
-  - CP14ClothingBackpackLeather
-  - CP14ClothingSatchelLeather
+  - CP14ClothingBackpackT0
+  - CP14ClothingSatchelT0
+  - CP14ClothingExplorerBackpackT0
 
 - type: loadout
-  id: CP14ClothingBackpackLeather
+  id: CP14ClothingBackpackT0
   equipment:
-    back: CP14ClothingBackpackLeather
+    back: CP14ClothingBackpackT0
 
 - type: loadout
-  id: CP14ClothingSatchelLeather
+  id: CP14ClothingSatchelT0
   equipment:
-    back: CP14ClothingSatchelLeather
+    back: CP14ClothingSatchelT0
 
 # Trinkets
 

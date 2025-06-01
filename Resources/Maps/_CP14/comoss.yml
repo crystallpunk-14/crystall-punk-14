@@ -39527,7 +39527,7 @@ entities:
       parent: 7459
     - type: Physics
       canCollide: False
-- proto: CP14ClothingSatchelLeather
+- proto: CP14ClothingSatchelT0
   entities:
   - uid: 7478
     components:

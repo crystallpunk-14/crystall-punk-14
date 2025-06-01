@@ -1,0 +1,96 @@
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingExplorerBackpackBase
+  categories: [ ForkFiltered ]
+
+- type: entity
+  parent: CP14ClothingExplorerBackpackBase
+  id: CP14ClothingExplorerBackpackT0
+  name: Small Explorer Backpack
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,1,0
+    - 0,2,1,2
+    - 3,0,4,0
+    - 3,2,4,2
+    - 6,0,6,2
+    - 8,0,8,2
+    - 10,0,11,0
+    - 10,2,11,2
+    - 13,0,14,0
+    - 13,2,14,2
+
+- type: entity
+  parent: CP14ClothingExplorerBackpackBase
+  id: CP14ClothingExplorerBackpackT1
+  name: Explorer Backpack
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,0,1
+    - 0,3,0,4
+    - 2,0,4,1
+    - 2,3,4,4
+    - 5,0,7,1
+    - 5,3,7,4
+    - 9,0,10,1
+    - 9,3,10,4
+    - 12,0,13,1
+    - 12,3,13,4
+
+- type: entity
+  parent: CP14ClothingExplorerBackpackBase
+  id: CP14ClothingExplorerBackpackT2
+  name: Big Explorer Backpack
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,0,1
+    - 0,3,0,5
+    - 2,0,4,1
+    - 2,3,4,5
+    - 5,0,6,1
+    - 5,3,6,5
+    - 8,0,9,1
+    - 8,3,9,5
+    - 11,0,12,1
+    - 11,3,12,5
+
+
+- type: entity
+  parent: CP14ClothingExplorerBackpackBase
+  id: CP14ClothingExplorerBackpackT3
+  name: Huge Explorer Backpack
+  description: You wear this on your back and put items into it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,0,2
+    - 0,4,0,6
+    - 2,0,4,2
+    - 2,4,4,6
+    - 5,0,7,2
+    - 5,4,7,6
+    - 9,0,1,2
+    - 9,4,1,6
+    - 13,0,14,2
+    - 13,4,14,6
+    - 16,0,16,2
+    - 16,4,16,6
