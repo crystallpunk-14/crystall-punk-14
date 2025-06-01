@@ -4,8 +4,8 @@
   tree: Atlethic
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
-    state: kick
-  effects: 
+    state: head
+  effects:
   - !type:AddAction
     action: CP14ActionSpellKick
 
@@ -16,7 +16,7 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellSprint
 
@@ -28,7 +28,7 @@
   icon:
     sprite: _CP14/Actions/Spells/physical.rsi
     state: sprint
-  effects: 
+  effects:
   - !type:ReplaceAction
     oldAction: CP14ActionSpellSprint
     newAction: CP14ActionSpellSprintGoblin
@@ -37,3 +37,15 @@
     prerequisite: CP14ActionSpellSprint
   - !type:SpeciesWhitelist
     species: CP14Goblin
+
+- type: cp14Skill
+  id: CP14ActionSpellHeadchop
+  skillUiPosition: 0, 4
+  learnCost: 0.5
+  tree: Atlethic
+  icon:
+    sprite: _cp14/Actions/Spell/physical.rsi
+    state: head
+  effect:
+  - !type:AddAction
+    action: CP14ActionSpellHeadchop

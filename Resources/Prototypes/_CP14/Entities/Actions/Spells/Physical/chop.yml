@@ -1,0 +1,40 @@
+- type: entity
+  id: CP14ActionSpellHeadchop
+  name: Head chop
+  description: You perfrom a devastating chop to the persons head, disorienting them. Obviously, this works better on human sentient creatures.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: head
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.6
+  - type: CP14MagicEffectStaminaCost
+    stamina: 30
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+        - !type:flash
+          Duration: 2.5
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14DustEffectKickSound
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            blunt: 10
+  - type: EntityTargetAction
+    canTargetSelf: true
+    range: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _CP14/Actions/Spells/physical.rsi
+      state: head
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 10
+      castDelay: 0.25
+      distanceThreshold: 1
+      breakOnMobe: false
+      breakOnDamage: false
