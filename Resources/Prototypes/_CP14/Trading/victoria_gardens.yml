@@ -1,3 +1,5 @@
+# Rep 0
+
 - type: cp14TradingPosition
   id: CP14FoodCabbage
   faction: VictoriaGardens
@@ -7,6 +9,75 @@
     state: base1
   service: !type:CP14BuyItemsService
     product: CP14FoodCabbage
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodPotato
+  faction: VictoriaGardens
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/potato.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodPotato
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodCucumber
+  faction: VictoriaGardens
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodCucumber
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodTomatoes
+  faction: VictoriaGardens
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodTomatoes
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodPepper
+  faction: VictoriaGardens
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/pepper.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodPepper
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodOnion
+  faction: VictoriaGardens
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/onion.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodOnion
+    count: 3
+
+# Rep 1
+
+- type: cp14TradingPosition
+  id: CP14FoodApple
+  faction: VictoriaGardens
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/apple.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodApple
     count: 3
 
 - type: cp14TradingPosition
@@ -20,71 +91,3 @@
   service: !type:CP14BuyItemsService
     product: CP14FoodPumpkin
     count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodPotato
-  faction: VictoriaGardens
-  uiPosition: 2
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/potato.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodPotato
-    count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodCucumber
-  faction: VictoriaGardens
-  uiPosition: 3
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodCucumber
-    count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodTomatoes
-  faction: VictoriaGardens
-  uiPosition: 4
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodTomatoes
-    count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodApple
-  faction: VictoriaGardens
-  reputationLevel: 1
-  uiPosition: 5
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/apple.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodApple
-    count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodPepper
-  faction: VictoriaGardens
-  uiPosition: 6
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/pepper.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodPepper
-    count: 3
-
-- type: cp14TradingPosition
-  id: CP14FoodOnion
-  faction: VictoriaGardens
-  uiPosition: 7
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/onion.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodOnion
-    count: 3
-

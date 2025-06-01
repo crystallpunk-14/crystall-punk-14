@@ -146,6 +146,7 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     {
         _allPositions = _proto.EnumeratePrototypes<CP14TradingPositionPrototype>();
         _allFactions = _proto.EnumeratePrototypes<CP14TradingFactionPrototype>().OrderBy(tree => Loc.GetString(tree.Name));
+        UpdateGraphControl();
     }
 
     public void UpdateState(CP14TradingPlatformUiState state)
@@ -179,12 +180,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
             var unlocked = _cachedUser.Value.Comp.Reputation[position.Faction] >= position.ReputationLevel;
             var active = _tradingSystem.CanBuyPosition((_cachedUser.Value.Owner, _cachedUser.Value.Comp), position);
-            var node = new CP14NodeTreeElement(position.ID, unlocked, active, new Vector2(position.UiPosition * 50, position.ReputationLevel.Float() * 50) , position.Icon);
+            var node = new CP14NodeTreeElement(position.ID, unlocked, active, new Vector2(position.ReputationLevel.Float() * 50, position.UiPosition * 50) , position.Icon);
             nodeTreeElements.Add(node);
-            if (position.Prerequisite != null)
-            {
-                edges.Add((position.Prerequisite, position.ID));
-            }
         }
 
         GraphControl.UpdateState(

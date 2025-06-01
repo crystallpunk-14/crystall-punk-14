@@ -31,11 +31,14 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         base.Initialize();
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
-        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14MagicEnergyOverloadEvent>(OnMagicOverload);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14MagicEnergyLevelChangeEvent>(OnMagicChange);
     }
 
-    private void OnMagicOverload(Entity<CP14SellingPlatformComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    private void OnMagicChange(Entity<CP14SellingPlatformComponent> ent, ref CP14MagicEnergyLevelChangeEvent args)
     {
+        if (args.NewValue != args.MaxValue)
+            return;
+
         _magicEnergy.ClearEnergy(ent.Owner);
 
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
@@ -115,7 +118,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
-        user.Comp.Reputation[indexedPosition.Faction] += (float)price / 10;
+        user.Comp.Reputation[indexedPosition.Faction] += (float)price / 100;
         Dirty(user);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
