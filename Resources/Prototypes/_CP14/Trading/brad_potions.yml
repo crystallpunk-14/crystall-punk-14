@@ -1,7 +1,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingBrute
   faction: BradPotions
-  uiPosition: 0, 0
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -11,7 +11,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingPoison
   faction: BradPotions
-  uiPosition: 0, 1
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -21,7 +21,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingAirloss
   faction: BradPotions
-  uiPosition: 0, 2
+  uiPosition: 2
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -31,7 +31,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingBlood
   faction: BradPotions
-  uiPosition: 0, 3
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -41,7 +41,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallSpeedUp
   faction: BradPotions
-  uiPosition: 1, 0
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -51,7 +51,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallRainbow
   faction: BradPotions
-  uiPosition: 1, 1
+  uiPosition: 5
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -61,7 +61,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingManaDepletion
   faction: BradPotions
-  uiPosition: 1, 2
+  uiPosition: 6
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -71,7 +71,7 @@
 - type: cp14TradingPosition
   id: CP14VialSmallHealingMana
   faction: BradPotions
-  uiPosition: 1, 3
+  uiPosition: 7
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -84,7 +84,7 @@
 - type: cp14TradingPosition
   id: CP14VialTiny
   faction: BradPotions
-  uiPosition: 3, 0
+  uiPosition: 8
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
     state: vial
@@ -96,7 +96,7 @@
   prerequisite: CP14VialTiny
   priceMarkup: 1
   faction: BradPotions
-  uiPosition: 3, 1
+  uiPosition: 9
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
     state: vial
@@ -108,7 +108,7 @@
   prerequisite: CP14VialTiny
   priceMarkup: 1
   faction: BradPotions
-  uiPosition: 4, 0
+  uiPosition: 10
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -120,7 +120,7 @@
   prerequisite: CP14VialSmall
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 4, 1
+  uiPosition: 11
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
     state: vial
@@ -132,7 +132,7 @@
   prerequisite: CP14VialSmall
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 5, 0
+  uiPosition: 12
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
     state: vial
@@ -144,7 +144,7 @@
   prerequisite: CP14VialMedium
   priceMarkup: 3
   faction: BradPotions
-  uiPosition: 5, 1
+  uiPosition: 13
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_medium.rsi
     state: vial
@@ -158,7 +158,7 @@
   id: CP14Cauldron
   priceMarkup: 5
   faction: BradPotions
-  uiPosition: 7, 0
+  uiPosition: 14
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/cauldron.rsi
     state: icon
@@ -169,7 +169,7 @@
   id: CP14Pestle
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 8, 0
+  uiPosition: 15
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: pestle
@@ -180,7 +180,7 @@
   id: CP14Mortar
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 9, 0
+  uiPosition: 16
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/mortar_pestle.rsi
     state: mortar_base
@@ -191,7 +191,7 @@
   id: CP14Dropper
   priceMarkup: 1
   faction: BradPotions
-  uiPosition: 7, 1
+  uiPosition: 17
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/dropper.rsi
     state: dropper
@@ -202,7 +202,7 @@
   id: CP14Syringe
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 8, 1
+  uiPosition: 18
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/syringe.rsi
     state: base

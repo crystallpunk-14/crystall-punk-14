@@ -69,7 +69,10 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
     public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)
     {
-        if (!CanBuyPosition(user, platform!, position))
+        if (Timing.CurTime < platform.Comp.NextBuyTime)
+            return false;
+
+        if (!CanBuyPosition(user, position))
             return false;
 
         if (!Proto.TryIndex(position, out var indexedPosition))

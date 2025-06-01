@@ -38,6 +38,10 @@
                             <!-- Description -->
                             <BoxContainer HorizontalExpand="True">
                                 <RichTextLabel Name="Description" HorizontalExpand="True" Access="Public" />
+                                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Center">
+                                    <TextureRect VerticalAlignment="Center" Margin="20 0 5 0" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/star.png"/>
+                                    <RichTextLabel  Name="UnlockCost" Access="Public" Text="0"/>
+                                </BoxContainer>
                             </BoxContainer>
                         </BoxContainer>
                     </BoxContainer>
@@ -47,17 +51,6 @@
 
                 <!-- Buttons -->
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-
-                    <BoxContainer Name="UnlockBox" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
-                        <Button Name="UnlockButton" Text="{Loc 'cp14-trading-ui-button-unlock'}"
-                                ToolTip="{Loc 'cp14-trading-ui-button-unlock-tooltip'}" StyleClasses="OpenRight"
-                                HorizontalExpand="True" MinHeight="35" Access="Public"/>
-                        <BoxContainer SetWidth="100" MaxWidth="100" Orientation="Horizontal">
-                            <TextureRect VerticalAlignment="Center" Margin="20 0 5 0" HorizontalAlignment="Left" TextureScale="2, 2" TexturePath="/Textures/_CP14/Interface/Misc/star.png"/>
-                            <RichTextLabel  Name="UnlockCost" Access="Public" Text="0"/>
-                        </BoxContainer>
-                    </BoxContainer>
-
                     <BoxContainer Name="BuyBox" Orientation="Horizontal" HorizontalExpand="True" Visible="True">
                         <Button Name="BuyButton" Text="{Loc 'cp14-trading-ui-button-buy'}"
                                 ToolTip="{Loc 'cp14-trading-ui-button-buy-tooltip'}" StyleClasses="OpenRight"

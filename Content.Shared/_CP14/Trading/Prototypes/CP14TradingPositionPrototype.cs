@@ -33,10 +33,10 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     public ProtoId<CP14TradingFactionPrototype> Faction;
 
     [DataField]
-    public FixedPoint2 UnlockReputationCost = 1f;
+    public FixedPoint2 ReputationLevel = 0f;
 
     [DataField(required: true)]
-    public Vector2 UiPosition = default!;
+    public float UiPosition = default!;
 
     [DataField(required: true)]
     public CP14StoreBuyService? Service = null;

@@ -2,6 +2,8 @@ using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -16,6 +18,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
     [Dependency] protected readonly IGameTiming Timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -44,7 +47,8 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
             return;
 
         var repComp = EnsureComp<CP14TradingReputationComponent>(args.User);
-        repComp.Reputation.TryAdd(ent.Comp.Faction, ent.Comp.StartReputation);
+        repComp.Reputation.TryAdd(ent.Comp.Faction, 0);
+        _audio.PlayGlobal(new SoundCollectionSpecifier("CP14CoinImpact"), args.User);
         _popup.PopupPredicted(Loc.GetString("cp14-trading-contract-use", ("name", Loc.GetString(indexedFaction.Name))), args.User, args.User);
         if (_net.IsServer)
             QueueDel(ent);
@@ -55,68 +59,21 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
             return;
 
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(user), GetNetEntity(ent)));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(ent)));
     }
 
-    public bool TryUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
+    public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
-        if (!CanUnlockPosition(user, position))
+        if (!Resolve(user.Owner, ref user.Comp, false))
             return false;
-
         if (!Proto.TryIndex(position, out var indexedPosition))
             return false;
 
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-
-        user.Comp.Reputation[indexedPosition.Faction] -= indexedPosition.UnlockReputationCost;
-        user.Comp.UnlockedPositions.Add(position);
-        Dirty(user);
-
-        return true;
-    }
-
-    public bool CanUnlockPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
-    {
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-
-        if (!Proto.TryIndex(position, out var indexedPosition))
-            return false;
-
-        if (!user.Comp.Reputation.ContainsKey(indexedPosition.Faction))
-            return false;
-
-        if (user.Comp.UnlockedPositions.Contains(position))
-            return false;
-
-        if (indexedPosition.Prerequisite is not null && !user.Comp.UnlockedPositions.Contains(indexedPosition.Prerequisite.Value))
-            return false;
-
-        return user.Comp.Reputation.GetValueOrDefault(indexedPosition.Faction, 0f) >= indexedPosition.UnlockReputationCost;
-    }
-
-    public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent?> platform, ProtoId<CP14TradingPositionPrototype> position)
-    {
-        if (!Resolve(user.Owner, ref user.Comp, false))
-            return false;
-        if (!Resolve(platform.Owner, ref platform.Comp, false))
-            return false;
-
-        if (!user.Comp.UnlockedPositions.Contains(position))
-            return false;
-
-        if (Timing.CurTime < platform.Comp.NextBuyTime)
+        if (user.Comp.Reputation[indexedPosition.Faction] < indexedPosition.ReputationLevel)
             return false;
 
         return true;
     }
-}
-
-[Serializable, NetSerializable]
-public sealed class CP14TradingPositionUnlockAttempt(ProtoId<CP14TradingPositionPrototype> position) : BoundUserInterfaceMessage
-{
-    public readonly ProtoId<CP14TradingPositionPrototype> Position = position;
 }
 
 [Serializable, NetSerializable]

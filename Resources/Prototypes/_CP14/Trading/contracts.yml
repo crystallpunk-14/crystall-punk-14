@@ -1,8 +1,7 @@
 - type: cp14TradingPosition
   id: CP14TradeContractVictoriaGardens
   faction: ContractGuild
-  uiPosition: 0, 0
-  unlockReputationCost: 1
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: victoria_garden
@@ -13,8 +12,7 @@
 - type: cp14TradingPosition
   id: CP14TradeContractBradPotions
   faction: ContractGuild
-  uiPosition: 0, 1
-  unlockReputationCost: 1
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: brad_potions
