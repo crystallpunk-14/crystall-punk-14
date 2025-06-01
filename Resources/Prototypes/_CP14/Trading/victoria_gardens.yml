@@ -1,7 +1,9 @@
+# Rep 0
+
 - type: cp14TradingPosition
   id: CP14FoodCabbage
   faction: VictoriaGardens
-  uiPosition: 0, 0
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Farm/cabbage.rsi
     state: base1
@@ -10,20 +12,9 @@
     count: 3
 
 - type: cp14TradingPosition
-  id: CP14FoodPumpkin
-  faction: VictoriaGardens
-  uiPosition: 0, 1
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodPumpkin
-    count: 3
-
-- type: cp14TradingPosition
   id: CP14FoodPotato
   faction: VictoriaGardens
-  uiPosition: 0, 2
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Flora/Farm/potato.rsi
     state: base1
@@ -34,7 +25,7 @@
 - type: cp14TradingPosition
   id: CP14FoodCucumber
   faction: VictoriaGardens
-  uiPosition: 0, 3
+  uiPosition: 2
   icon:
     sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
     state: base1
@@ -45,7 +36,7 @@
 - type: cp14TradingPosition
   id: CP14FoodTomatoes
   faction: VictoriaGardens
-  uiPosition: 1, 0
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/Flora/Farm/tomatoes.rsi
     state: base1
@@ -54,20 +45,9 @@
     count: 3
 
 - type: cp14TradingPosition
-  id: CP14FoodApple
-  faction: VictoriaGardens
-  uiPosition: 1, 1
-  icon:
-    sprite: _CP14/Objects/Flora/Farm/apple.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodApple
-    count: 3
-
-- type: cp14TradingPosition
   id: CP14FoodPepper
   faction: VictoriaGardens
-  uiPosition: 1, 2
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Flora/Farm/pepper.rsi
     state: base1
@@ -78,7 +58,7 @@
 - type: cp14TradingPosition
   id: CP14FoodOnion
   faction: VictoriaGardens
-  uiPosition: 1, 3
+  uiPosition: 5
   icon:
     sprite: _CP14/Objects/Flora/Farm/onion.rsi
     state: base1
@@ -86,3 +66,28 @@
     product: CP14FoodOnion
     count: 3
 
+# Rep 1
+
+- type: cp14TradingPosition
+  id: CP14FoodApple
+  faction: VictoriaGardens
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/apple.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodApple
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodPumpkin
+  faction: VictoriaGardens
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Farm/pumpkin.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodPumpkin
+    count: 3

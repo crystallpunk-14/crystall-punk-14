@@ -117,6 +117,9 @@
     fillBaseName: liq
   - type: ExaminableSolution
     solution: barrel
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
 
 - type: entity
   id: CP14BarrelWater

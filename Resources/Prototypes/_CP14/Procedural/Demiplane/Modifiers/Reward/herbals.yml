@@ -141,6 +141,8 @@
     Reward: 0.15
   requiredTags:
   - CP14DemiplaneUnderground
+  blacklistTags:
+  - CP14DemiplaneCold
   layers:
     - !type:CP14OreDunGen
       tileMask:

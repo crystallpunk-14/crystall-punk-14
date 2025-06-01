@@ -39,4 +39,7 @@
       - state: label
         visible: false
         map: ["enum.PaperLabelVisuals.Layer"]
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 10
+      CP14Gold: 10

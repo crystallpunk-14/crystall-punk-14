@@ -12,6 +12,30 @@
     state: icon
 
 - type: entity
+  id: CP14Web
+  parent: BaseItem
+  name: web
+  description: A lump of nasty cobweb. If done correctly, this can be turned into threads.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/web.rsi
+    state: icon
+    layers:
+    - state: icon
+      map: ["random"]
+  - type: Appearance
+  - type: RandomSprite
+    available:
+    - random:
+        icon: ""
+        icon2: ""
+        icon3: ""
+        icon4: ""
+
+- type: entity
   id: CP14Cloth1
   parent: BaseItem
   categories: [ ForkFiltered ]
