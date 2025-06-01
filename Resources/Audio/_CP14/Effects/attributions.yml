@@ -82,3 +82,13 @@
   license: "CC0-1.0"
   copyright: 'Created by Fenodyrie on Freesound.org'
   source: "https://freesound.org/people/Fenodyrie/sounds/583950/"
+
+- files: ["coin_impact1.ogg", "coin_impact2.ogg", "coin_impact3.ogg", "coin_impact4.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: 'Created by Timbre on Freesound.org'
+  source: "https://freesound.org/people/Timbre/sounds/103219/"
+
+- files: ["cash.ogg"]
+  license: "CC0-1.0"
+  copyright: 'Created by Zott820 on Freesound.org'
+  source: "https://freesound.org/people/Zott820/sounds/209578/"

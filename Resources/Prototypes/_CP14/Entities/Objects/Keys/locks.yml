@@ -5,7 +5,7 @@
   categories: [ ForkFiltered ]
   name: lock
   description: A small device customized only for a specific key shape. Attach it to doors or chests that have no lock and feel the spirit of security.
-  components: 
+  components:
   - type: Item
     size: Tiny
   - type: Sprite
@@ -29,6 +29,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 10
 
 - type: entity
   parent: CP14BaseLock
@@ -43,6 +46,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14BaseLock
@@ -58,6 +64,9 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 10
 
 - type: entity
   parent: CP14BaseLock
@@ -74,3 +83,7 @@
     - 2
     - 2
     - 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 10
+

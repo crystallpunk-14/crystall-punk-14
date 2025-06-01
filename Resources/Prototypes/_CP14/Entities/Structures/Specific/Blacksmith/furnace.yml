@@ -35,7 +35,9 @@
     radius: 2
     energy: 2
   - type: CP14Workbench
+    workbenchRadius: 0.5
     craftSound:
       collection: CP14Sawing #TODO
     recipeTags:
-    - CP14RecipeMeltingFurnace 
+    - CP14RecipeMeltingFurnace
+

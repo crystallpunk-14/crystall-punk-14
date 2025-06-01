@@ -12,3 +12,13 @@
   license: "CC-BY-4.0"
   copyright: 'by EminYILDIRIM of Freesound.org.'
   source: "https://freesound.org/people/EminYILDIRIM/sounds/711956/"
+
+- files: ["ambiforest_day.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by kvgarlic of Freesound.org.'
+  source: "https://freesound.org/people/kvgarlic/sounds/135834/"
+
+- files: ["ambiforest_night.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by Moulaythami of Freesound.org.'
+  source: "https://freesound.org/people/Moulaythami/sounds/536930/"

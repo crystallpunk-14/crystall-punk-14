@@ -32,3 +32,4 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: false
+

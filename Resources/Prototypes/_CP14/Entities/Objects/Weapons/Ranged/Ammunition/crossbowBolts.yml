@@ -45,8 +45,8 @@
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 3
 
 - type: entity
@@ -69,8 +69,8 @@
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 3
 
 - type: entity
@@ -93,8 +93,8 @@
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 3
 
 - type: entity
@@ -117,8 +117,8 @@
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 3
 
 - type: entity

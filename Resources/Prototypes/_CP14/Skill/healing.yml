@@ -17,7 +17,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_poison
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellBloodPurification
   restrictions:
@@ -31,9 +31,23 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: plant_growth
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellPlantGrowth
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
+- type: cp14Skill
+  id: CP14ActionSpellSheepPolymorph
+  skillUiPosition: 0, 4
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellSheepPolymorph
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT1
@@ -45,7 +59,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: speed_music
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellSpeedBallade
   restrictions:
@@ -62,7 +76,7 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: heal2
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Life: -0.25
@@ -77,7 +91,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_burn
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellCureBurn
   restrictions:
@@ -91,7 +105,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: cure_wounds
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellCureWounds
   restrictions:
@@ -105,7 +119,7 @@
   icon:
     sprite: _CP14/Actions/Spells/healing.rsi
     state: heal_music
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellHealBallade
   restrictions:
@@ -122,7 +136,7 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: heal3
-  effects: 
+  effects:
   - !type:ModifyManacost
     modifiers:
       Life: -0.25
@@ -137,7 +151,7 @@
   icon:
     sprite: _CP14/Actions/Spells/necromancy.rsi
     state: resurrection
-  effects: 
+  effects:
   - !type:AddAction
     action: CP14ActionSpellResurrection
   restrictions:

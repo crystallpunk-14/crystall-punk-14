@@ -22,7 +22,7 @@ public sealed partial class ArmorComponent : Component
     /// to determine the monetary value of the armor
     /// </summary>
     [DataField]
-    public float PriceMultiplier = 1;
+    public float PriceMultiplier = 0.25f; //CP14 1 -> 0.25 (different economy)
 
     /// <summary>
     /// If true, you can examine the armor to see the protection. If false, the verb won't appear.

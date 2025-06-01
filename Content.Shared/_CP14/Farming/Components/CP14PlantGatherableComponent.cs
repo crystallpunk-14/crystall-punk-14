@@ -1,4 +1,5 @@
 using Content.Shared.EntityList;
+using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -31,7 +32,7 @@ public sealed partial class CP14PlantGatherableComponent : Component
     ///       Tag2: LootTableID2
     /// </summary>
     [DataField]
-    public Dictionary<string, ProtoId<EntityLootTablePrototype>>? Loot = new();
+    public Dictionary<string, EntityTableSelector>? Loot = new();
 
     /// <summary>
     /// Random shift of the appearing entity during gathering

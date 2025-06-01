@@ -24,6 +24,7 @@ cp14-modifier-chasm = бездонные пропасти
 cp14-modifier-air-lily = воздушные лилии
 cp14-modifier-shadow-kudzu = поглощающий астральный мрак
 cp14-modifier-night = темнота
+cp14-modifier-spiders = паучье логово
 
 cp14-modifier-storm = гроза
 cp14-modifier-fire-storm = огненный шторм

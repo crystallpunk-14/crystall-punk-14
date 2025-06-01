@@ -1,0 +1,103 @@
+﻿- type: entity
+  id: CP14TorsoZombie
+  parent: CP14TorsoHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: torso
+
+- type: entity
+  id: CP14HeadZombie
+  parent: CP14HeadHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+    state: head
+
+- type: entity
+  id: CP14LeftArmZombie
+  parent: CP14LeftArmHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightArmZombie
+  parent: CP14RightArmHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14LeftHandZombie
+  parent: CP14LeftHandHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightHandZombie
+  parent: CP14RightHandHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14LeftLegZombie
+  parent: CP14LeftLegHuman
+  categories: [ ForkFiltered ]
+  components:
+    - type: Sprite
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "l_leg"
+    - type: Icon
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "l_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Left
+    - type: MovementBodyPart
+      walkSpeed: 1.5
+      sprintSpeed: 1.5
+      acceleration: 10
+
+- type: entity
+  id: CP14RightLegZombie
+  parent: CP14RightLegHuman
+  categories: [ ForkFiltered ]
+  components:
+    - type: Sprite
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "r_leg"
+    - type: Icon
+      sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+      state: "r_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Right
+    - type: MovementBodyPart
+      walkSpeed: 2.5
+      sprintSpeed: 2.5
+      acceleration: 10
+
+- type: entity
+  id: CP14LeftFootZombie
+  parent: CP14LeftFootHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi
+
+- type: entity
+  id: CP14RightFootZombie
+  parent: CP14RightFootHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Species/Zombie/parts.rsi

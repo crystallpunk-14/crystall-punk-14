@@ -53,3 +53,19 @@
     - id: CP14CopperCoin
     - id: CP14CopperCoin
     - id: CP14CopperCoin
+
+- type: entity
+  id: CP14WalletFilledMerchant
+  parent: CP14Wallet
+  suffix: Merchant
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14GoldCoin1
+    - id: CP14SilverCoin5
+    - id: CP14SilverCoin1
+    - id: CP14SilverCoin1
+    - id: CP14CopperCoin
+    - id: CP14CopperCoin
+    - id: CP14CopperCoin
+
