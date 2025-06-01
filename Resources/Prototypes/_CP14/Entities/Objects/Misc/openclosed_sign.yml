@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14open_sign
+  id: CP14OpenSign
   name: flip sign "Open"
   description: A small double-sided sign that can be turned over
   parent: 
@@ -17,7 +17,7 @@
   - type: Item
     size: Small
   - type: Flippable
-    mirrorEntity: CP14closed_sign
+    mirrorEntity: CP14ClosedSign
   - type: Appearance
   - type: InteractionOutline
   - type: CP14LocalizationVisuals
@@ -61,13 +61,11 @@
             max: 1
 
 - type: entity
-  id: CP14closed_sign
+  id: CP14ClosedSign
   name: flip sign "Closed"
   description: A small double-sided sign that can be turned over
   parent: 
-  - BaseItem
-  - CP14BaseFlammable
-  - CP14open_sign
+  - CP14OpenSign
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
@@ -78,7 +76,7 @@
       - state: en_close_sign
         map: [signState]
   - type: Flippable
-    mirrorEntity: CP14open_sign
+    mirrorEntity: CP14OpenSign
   - type: CP14LocalizationVisuals
     mapStates:
       signState:
