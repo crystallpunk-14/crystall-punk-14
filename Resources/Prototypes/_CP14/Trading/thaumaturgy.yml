@@ -10,3 +10,249 @@
     state: medium
   service: !type:CP14BuyItemsService
     product: CP14EnergyCrystalMediumEmpty
+
+- type: cp14TradingPosition
+  id: CP14Paper
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+    state: paper
+  service: !type:CP14BuyItemsService
+    product: CP14Paper
+
+- type: cp14TradingPosition
+  id: CP14PenFeather
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Bureaucracy/pens.rsi
+    state: feather
+  service: !type:CP14BuyItemsService
+    product: CP14PenFeather
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollShadowGrab
+  faction: Thaumaturgy
+  priceMarkup: 5
+  reputationLevel: 0
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: shadow_grab
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollShadowGrab
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollFlameCreation
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: flame_creation
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollFlameCreation
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollBloodPurification
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_poison
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollBloodPurification
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollSheepPolymorph
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Actions/Spells/misc.rsi
+    state: polymorph
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollSheepPolymorph
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollSearchOfLife
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 11
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: search_of_life
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollSearchOfLife
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollSphereOfLight
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 12
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: sphere_of_light
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollSphereOfLight
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollWaterCreation
+  faction: Thaumaturgy
+  reputationLevel: 0
+  uiPosition: 14
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: water_creation
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollWaterCreation
+
+# Rep 1
+
+- type: cp14TradingPosition
+  id: CP14ManaOperationGlove
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ManaOperationGlove
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollDemiplaneInfiltration
+  priceMarkup: 5 #Unique trade spells
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: rift_arrow
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollDemiplaneInfiltration
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollEarthWall
+  faction: Thaumaturgy
+  priceMarkup: 2
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_wall
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollEarthWall
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollCureBurn
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_burn
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollCureBurn
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollCureWounds
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollCureWounds
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollFlashLight
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 11
+  icon:
+    sprite: _CP14/Actions/Spells/light.rsi
+    state: flash_light
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollFlashLight
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollMagicSplitting
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: counter_spell
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollMagicSplitting
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollIceShards
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 14
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_shards
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollIceShards
+
+# Rep 2
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollFireball
+  faction: Thaumaturgy
+  reputationLevel: 2
+  priceMarkup: 5
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollFireball
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollBeerCreation
+  faction: Thaumaturgy
+  priceMarkup: 5
+  reputationLevel: 2
+  uiPosition: 14
+  icon:
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: beer_creation
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollBeerCreation
+
+# Rep 3
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollResurrection
+  faction: Thaumaturgy
+  reputationLevel: 3
+  priceMarkup: 5
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Actions/Spells/necromancy.rsi
+    state: resurrection
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollResurrection
+
+# Rep 4
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollShadowStep
+  priceMarkup: 15 #Unique trade spells
+  faction: Thaumaturgy
+  reputationLevel: 4
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: shadow_step
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollShadowStep
