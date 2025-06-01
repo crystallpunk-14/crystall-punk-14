@@ -23,29 +23,12 @@ public sealed class VocalSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
     }
 
-    private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
-    {
-        // try to add scream action when vocal comp added
-        _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
-        LoadSounds(uid, component);
-    }
 
-    private void OnShutdown(EntityUid uid, VocalComponent component, ComponentShutdown args)
-    {
-        // remove scream action when component removed
-        if (component.ScreamActionEntity != null)
-        {
-            _actions.RemoveAction(uid, component.ScreamActionEntity);
-        }
-    }
 
     private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
     {
