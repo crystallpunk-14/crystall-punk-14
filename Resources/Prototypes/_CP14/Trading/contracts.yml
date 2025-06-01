@@ -20,3 +20,14 @@
     product: CP14TradeContractBradPotions
     count: 1
 
+- type: cp14TradingPosition
+  id: CP14TradeContractDwarfMining
+  faction: ContractGuild
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: dwarf_mining
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractDwarfMining
+    count: 1
+
