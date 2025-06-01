@@ -4,7 +4,7 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorDirt
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorGrass
       threshold: 0
       noise:
@@ -61,7 +61,7 @@
         - CP14FloorWater
       #Lakes end
 
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorGrassLight
       threshold: 0.3
       noise:

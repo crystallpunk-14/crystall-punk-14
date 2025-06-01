@@ -11,7 +11,7 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorTavernStaff
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorTavernStaffMirrored
@@ -80,8 +80,9 @@
     locked: true
 
 - type: entity
-  parent: 
+  parent:
   - CP14WoodenDoorWindowedTavernHall
   - CP14WoodenDoorWindowedMirrored
   id: CP14WoodenDoorTavernHallMirrored
   suffix: Tavern Hall, Mirrored
+

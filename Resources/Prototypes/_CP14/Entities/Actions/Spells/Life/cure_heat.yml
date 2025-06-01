@@ -50,7 +50,7 @@
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneCureBurn
   parent: CP14BaseMagicRune

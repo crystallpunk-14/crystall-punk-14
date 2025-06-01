@@ -38,7 +38,7 @@
     maxItemSize: Normal
 ##   whitelist:                TODO
 ##     tags:
-##       - CP14Bottles 
+##       - CP14Bottles
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

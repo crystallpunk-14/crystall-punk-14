@@ -22,7 +22,7 @@
       - sprite: _CP14/Mobs/Species/Skeleton/parts.rsi
         state: full
 
-# Easy 
+# Easy
 
 - type: entity
   id: CP14MobUndeadSkeletonWizardTownRaid
@@ -58,3 +58,4 @@
   components:
   - type: GhostRoleMobSpawner
     prototype: CP14MobUndeadSkeletonWizardTownRaid
+

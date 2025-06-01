@@ -9,9 +9,6 @@
   "states": [
     {
       "name": "medium"
-    },
-    {
-      "name": "medium_connector"
     }
   ]
 }

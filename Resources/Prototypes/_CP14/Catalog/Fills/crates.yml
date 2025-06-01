@@ -1,6 +1,6 @@
 - type: entity
   id: CP14SmallWoodenCrateFilled
-  parent: 
+  parent:
   - CP14SmallWoodenCrate
   suffix: Filled, Tools and Fluff
   components:
@@ -14,7 +14,7 @@
 - type: entity
   id: CP14LargeWoodenCrateFilled
   suffix: Filled, Tools and Fluff
-  parent: 
+  parent:
   - CP14LargeWoodenCrate
   components:
   - type: EntityTableContainerFill
@@ -30,13 +30,13 @@
     - !type:NestedSelector
       tableId: CP14StationCrateLootTools
       rolls: !type:RangeNumberSelector
-        range: 1, 5
+        range: 4, 5
     # Fluff
     - !type:NestedSelector
       tableId: CP14StationCrateLootFluff
-      prob: 0.33
+      prob: 0.5
       rolls: !type:RangeNumberSelector
-        range: 0, 2
+        range: 4, 5
 
 - type: entityTable
   id: CP14StationCrateLootTools
@@ -51,11 +51,17 @@
       - id: CP14Scissors
       - id: CP14Torch
       - id: CP14Lighter
-      - id: CP14ManaOperationGlove
       - id: CP14ModularIronShovel
+      - id: CP14KeyFile
       - id: CP14BaseMop
+      - id: CP14LockCopper
       - id: CP14ModularIronPickaxe
       - id: CP14ModularIronSickle
+      - !type:GroupSelector
+        children:
+        - id: CP14FluteInstrument
+        - id: CP14LyraInstrument
+        - id: CP14LuteInstrument
       - !type:GroupSelector
         children:
         - id: CP14Candle
@@ -88,9 +94,11 @@
   id: CP14StationCrateLootFluff
   table: !type:GroupSelector
     children:
+    - id: CP14PaperFolderBlue
+    - id: CP14PaperFolderRed
+    - id: CP14PenFeather
     - id: CP14FoodPotato
     - id: CP14FoodOnion
-    - id: CP14AgaricMushroom #dont eat
     - id: CP14Cloth10
     - id: CP14CrayonWhite
     - !type:GroupSelector
@@ -112,6 +120,17 @@
       - id: CP14DyePurple
       - id: CP14DyeBlack
       - id: CP14DyeBlue
+    - !type:GroupSelector
+      children:
+      - id: CP14BloodFlower
+      - id: CP14AgaricMushroom
+      - id: CP14ChromiumSlime
+        weight: 0.5
+      - id: CP14WildSage
+      - id: CP14LumiMushroom
+      - id: CP14BlueAmanita
+      - id: CP14Dayflin
+      - id: CP14AirLily
 
 - type: entityTable
   id: CP14RandomVials
@@ -124,3 +143,4 @@
     - id: CP14BlueBottle
     - id: CP14OrangeBottle
     - id: CP14RedBottle
+
