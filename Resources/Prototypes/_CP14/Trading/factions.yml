@@ -18,3 +18,7 @@
   color: "#b05a3e"
   name: cp14-trade-faction-dwarf-mining
 
+- type: cp14TradingFaction
+  id: Thaumaturgy
+  color: "#a43ae0"
+  name: cp14-trade-faction-thaumaturgy

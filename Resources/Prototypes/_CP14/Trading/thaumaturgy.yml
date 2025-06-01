@@ -1,0 +1,12 @@
+
+# Rep 0
+
+- type: cp14TradingPosition
+  id: CP14EnergyCrystalMediumEmpty
+  faction: Thaumaturgy
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Thaumaturgy/crystal.rsi
+    state: medium
+  service: !type:CP14BuyItemsService
+    product: CP14EnergyCrystalMediumEmpty
