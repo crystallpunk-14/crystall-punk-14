@@ -43,13 +43,18 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
     private void OnContractUse(Entity<CP14TradingContractComponent> ent, ref UseInHandEvent args)
     {
+        if (args.Handled)
+            return;
         if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
             return;
 
+        args.Handled = true;
+
         var repComp = EnsureComp<CP14TradingReputationComponent>(args.User);
         repComp.Reputation.TryAdd(ent.Comp.Faction, 0);
-        _audio.PlayGlobal(new SoundCollectionSpecifier("CP14CoinImpact"), args.User);
+        _audio.PlayLocal(new SoundCollectionSpecifier("CP14CoinImpact"), args.User, args.User);
         _popup.PopupPredicted(Loc.GetString("cp14-trading-contract-use", ("name", Loc.GetString(indexedFaction.Name))), args.User, args.User);
+
         if (_net.IsServer)
             QueueDel(ent);
     }
