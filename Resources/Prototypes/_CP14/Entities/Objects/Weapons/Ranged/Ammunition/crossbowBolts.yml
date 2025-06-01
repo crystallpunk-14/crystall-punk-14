@@ -137,8 +137,8 @@
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: big_rod
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Iron: 5
 
 - type: entity
@@ -158,8 +158,8 @@
     layers:
     - state: big_rod
       color: "#ffe269"
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Gold: 5
 
 - type: entity
@@ -179,8 +179,8 @@
     layers:
     - state: big_rod
       color: "#e28f08"
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Copper: 5
 
 - type: entity
@@ -200,6 +200,6 @@
     layers:
     - state: big_rod
       color: "#38f0b3"
-  - type: CP14Material
-    materials:
+  - type: PhysicalComposition
+    materialComposition:
       CP14Mithril: 5
