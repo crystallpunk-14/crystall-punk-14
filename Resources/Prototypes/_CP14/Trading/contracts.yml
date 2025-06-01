@@ -1,8 +1,7 @@
 - type: cp14TradingPosition
   id: CP14TradeContractVictoriaGardens
   faction: ContractGuild
-  uiPosition: 0, 0
-  unlockReputationCost: 1
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: victoria_garden
@@ -13,12 +12,22 @@
 - type: cp14TradingPosition
   id: CP14TradeContractBradPotions
   faction: ContractGuild
-  uiPosition: 0, 1
-  unlockReputationCost: 1
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: brad_potions
   service: !type:CP14BuyItemsService
     product: CP14TradeContractBradPotions
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractDwarfMining
+  faction: ContractGuild
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: dwarf_mining
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractDwarfMining
     count: 1
 
