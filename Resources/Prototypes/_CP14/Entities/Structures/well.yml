@@ -46,10 +46,10 @@
   - type: SolutionContainerManager
     solutions:
       pool:
-        maxVol: 9999
+        maxVol: 999
         reagents:
         - ReagentId: Water
-          Quantity: 1000
+          Quantity: 200
 
 - type: entity
   id: CP14StoneWellGrovelling
@@ -71,4 +71,4 @@
         maxVol: 999
         reagents:
         - ReagentId: Water
-          Quantity: 200
+          Quantity: 50
