@@ -7,7 +7,7 @@
     - !type:BiomeTileLayer
       threshold: -1.0
       tile: CP14FloorGrass
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorGrassLight
       threshold: 0
       noise:
@@ -125,7 +125,7 @@
         - CP14FloorGrass
         - CP14FloorGrassLight
         - CP14FloorGrassTall
-      entities: 
+      entities:
         - CP14FloraTreeBirchLarge
         - CP14FloraTreeBirchSmall
         - CP14FloraTreeBirchMedium
@@ -195,7 +195,7 @@
   layers:
     - !type:BiomeMetaLayer
       template: CP14GrasslandForest
-    - !type:BiomeTileLayer 
+    - !type:BiomeTileLayer
       tile: CP14FloorBase
       invert: true
       threshold: 0.5
@@ -365,4 +365,3 @@
       entities:
         - CP14FloorWater
     # Lakes end
-  

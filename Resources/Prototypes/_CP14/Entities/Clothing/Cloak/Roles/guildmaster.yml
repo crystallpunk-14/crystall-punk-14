@@ -1,5 +1,5 @@
 - type: entity
-  parent: 
+  parent:
   - CP14ClothingCloakBase
   id: CP14ClothingCloakGuildmasterCape
   name: guildmaster cape
@@ -9,3 +9,4 @@
     sprite: _CP14/Clothing/Cloak/Roles/Mercenary/guildmaster_cape.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/Mercenary/guildmaster_cape.rsi
+

@@ -29,7 +29,7 @@
 
 - type: localizedDataset
   id: CP14_Names_Human_Female_First
-  values: 
+  values:
     prefix: cp14-species-name-human-female-first-
     count: 44
 

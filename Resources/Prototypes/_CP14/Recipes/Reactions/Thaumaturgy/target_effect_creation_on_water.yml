@@ -249,7 +249,7 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
-    
+
 # CP14BasicEffectSatiateHunger
 # CP14BasicEffectSatiateThirst
 

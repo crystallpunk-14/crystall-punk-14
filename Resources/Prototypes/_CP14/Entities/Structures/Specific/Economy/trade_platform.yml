@@ -15,7 +15,6 @@
     sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
     state: base
   - type: ActivatableUI
-    singleUser: true
     key: enum.CP14TradingUiKey.Key
   - type: Clickable
   - type: InteractionOutline
@@ -90,7 +89,6 @@
   - type: CP14MagicEnergyDraw
     energy: -1
     delay: 3 # 5m to full restore
-  - type: CP14MagicUnsafeDamage
   - type: CP14MagicEnergyExaminable
 
 - type: entity
@@ -119,3 +117,4 @@
     netsync: false
   - type: LightFade
     duration: 2
+

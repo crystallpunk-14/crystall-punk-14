@@ -5,7 +5,7 @@
   categories: [ ForkFiltered ]
   name: key
   description: A small, intricate piece of metal that opens some locks. Don't give it to anyone!
-  components: 
+  components:
   - type: Tag
     tags:
     - CP14Key
@@ -88,3 +88,4 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
+

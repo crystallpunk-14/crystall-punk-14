@@ -1,9 +1,9 @@
 - type: entity
   name: wooden chair
-  description: Made of the most common planks. Simple and effective!    
+  description: Made of the most common planks. Simple and effective!
   id: CP14ChairWooden
   categories: [ ForkFiltered ]
-  parent: 
+  parent:
   - UnanchoredChairBase
   - CP14BaseFlammable
   components:
@@ -42,3 +42,4 @@
           CP14WoodenPlanks1:
             min: 1
             max: 1
+

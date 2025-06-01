@@ -11,7 +11,7 @@
         probability: 0.25
   pricePerUnit: 0.05
 
-# Basic 6 
+# Basic 6
 
 - type: reagent
   parent: CP14EssenceBase

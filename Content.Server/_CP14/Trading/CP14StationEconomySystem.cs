@@ -20,6 +20,19 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         InitPriceEvents();
 
         SubscribeLocalEvent<CP14StationEconomyComponent, StationPostInitEvent>(OnStationPostInit);
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+    }
+
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
+    {
+        if (!ev.WasModified<CP14TradingPositionPrototype>())
+            return;
+
+        var query = EntityQueryEnumerator<CP14StationEconomyComponent>();
+        while (query.MoveNext(out var uid, out var economyComponent))
+        {
+            UpdatePricing((uid, economyComponent));
+        }
     }
 
     private void OnStationPostInit(Entity<CP14StationEconomyComponent> ent, ref StationPostInitEvent args)

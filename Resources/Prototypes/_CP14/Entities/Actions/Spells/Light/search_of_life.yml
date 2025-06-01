@@ -88,3 +88,12 @@
     - type: Tag
       tags:
       - HideContextMenu
+
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellScrollSearchOfLife
+  name: search of life spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSearchOfLife
