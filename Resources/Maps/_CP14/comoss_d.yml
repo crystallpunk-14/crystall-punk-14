@@ -104638,7 +104638,7 @@ entities:
           showEnts: False
           occludes: False
           ent: null
-        belt1: !type:ContainerSlot
+        belt: !type:ContainerSlot
           showEnts: False
           occludes: False
           ent: null
@@ -104701,7 +104701,7 @@ entities:
           showEnts: False
           occludes: False
           ent: 19735
-        belt1: !type:ContainerSlot
+        belt: !type:ContainerSlot
           showEnts: False
           occludes: False
           ent: null
@@ -104765,7 +104765,7 @@ entities:
           showEnts: False
           occludes: False
           ent: null
-        belt1: !type:ContainerSlot
+        belt: !type:ContainerSlot
           showEnts: False
           occludes: False
           ent: null
@@ -104830,7 +104830,7 @@ entities:
           showEnts: False
           occludes: False
           ent: null
-        belt1: !type:ContainerSlot
+        belt: !type:ContainerSlot
           showEnts: False
           occludes: False
           ent: null
@@ -104894,7 +104894,7 @@ entities:
           showEnts: False
           occludes: False
           ent: null
-        belt1: !type:ContainerSlot
+        belt: !type:ContainerSlot
           showEnts: False
           occludes: False
           ent: null

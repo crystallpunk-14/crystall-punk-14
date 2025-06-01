@@ -90,17 +90,9 @@ binds:
 - function: CP14OpenSkillMenu
   type: State
   key: R
-- function: OpenBelt1
-  type: State
-  key: V
-  mod1: Shift
 - function: OpenBelt2
   type: State
   key: F
-- function: SmartEquipBelt1
-  type: State
-  key: E
-  mod1: Shift
 - function: SmartEquipBelt2
   type: State
   key: F
@@ -267,17 +259,17 @@ binds:
   type: State
   key: B
   mod1: Shift
-#- function: SmartEquipBelt # Commented out for CP14 replacements
-#  type: State
-#  key: E
-#  mod1: Shift
+- function: SmartEquipBelt
+  type: State
+  key: E
+  mod1: Shift
 - function: OpenBackpack
   type: State
   key: V
-#- function: OpenBelt # Commented out for CP14 replacements
-#  type: State
-#  key: V
-#  mod1: Shift
+- function: OpenBelt
+  type: State
+  key: V
+  mod1: Shift
 - function: ShowDebugConsole
   type: State
   key: Tilde

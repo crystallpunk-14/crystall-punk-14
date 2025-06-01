@@ -72,7 +72,7 @@
       strippingWindowPos: 2,2
       displayName: Cloak
     # Main hotbar
-    - name: belt1
+    - name: belt
       slotTexture: belt
       slotFlags: BELT
       slotGroup: SecondHotbar

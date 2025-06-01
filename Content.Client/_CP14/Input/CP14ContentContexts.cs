@@ -8,9 +8,7 @@ namespace Content.Client._CP14.Input
         public static void SetupContexts(IInputContextContainer contexts)
         {
             var human = contexts.GetContext("human");
-            human.AddFunction(CP14ContentKeyFunctions.OpenBelt1);
             human.AddFunction(CP14ContentKeyFunctions.OpenBelt2);
-            human.AddFunction(CP14ContentKeyFunctions.SmartEquipBelt1);
             human.AddFunction(CP14ContentKeyFunctions.SmartEquipBelt2);
 
         }

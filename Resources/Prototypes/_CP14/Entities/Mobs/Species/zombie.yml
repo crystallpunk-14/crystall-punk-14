@@ -36,7 +36,7 @@
     - map: [ "cloak" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]

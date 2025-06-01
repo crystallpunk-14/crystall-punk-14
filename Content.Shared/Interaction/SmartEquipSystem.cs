@@ -37,7 +37,6 @@ public sealed class SmartEquipSystem : EntitySystem
             .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
             //CP14
-            .Bind(CP14ContentKeyFunctions.SmartEquipBelt1, InputCmdHandler.FromDelegate(HandleSmartEquipBelt1, handle: false, outsidePrediction: false))
             .Bind(CP14ContentKeyFunctions.SmartEquipBelt2, InputCmdHandler.FromDelegate(HandleSmartEquipBelt2, handle: false, outsidePrediction: false))
             //CP14 end
             .Register<SmartEquipSystem>();

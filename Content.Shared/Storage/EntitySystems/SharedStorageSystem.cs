@@ -169,7 +169,6 @@ public abstract class SharedStorageSystem : EntitySystem
             .Bind(ContentKeyFunctions.OpenBackpack, InputCmdHandler.FromDelegate(HandleOpenBackpack, handle: false))
             .Bind(ContentKeyFunctions.OpenBelt, InputCmdHandler.FromDelegate(HandleOpenBelt, handle: false))
             //CP14
-            .Bind(CP14ContentKeyFunctions.OpenBelt1, InputCmdHandler.FromDelegate(HandleOpenBelt1, handle: false))
             .Bind(CP14ContentKeyFunctions.OpenBelt2, InputCmdHandler.FromDelegate(HandleOpenBelt2, handle: false))
             //CP14 end
             .Register<SharedStorageSystem>();
@@ -1590,10 +1589,6 @@ public abstract class SharedStorageSystem : EntitySystem
         HandleToggleSlotUI(session, "belt");
     }
     //CP14
-    private void HandleOpenBelt1(ICommonSession? session)
-    {
-        HandleToggleSlotUI(session, "belt1");
-    }
     private void HandleOpenBelt2(ICommonSession? session)
     {
         HandleToggleSlotUI(session, "belt2");
