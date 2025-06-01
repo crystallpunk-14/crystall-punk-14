@@ -200,6 +200,17 @@
   service: !type:CP14BuyItemsService
     product: CP14Cauldron
 
+- type: cp14TradingPosition
+  id: CP14BaseAlchemyBomb
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14BaseAlchemyBomb
+
 # Rep 3
 
 - type: cp14TradingPosition
