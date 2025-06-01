@@ -35,3 +35,4 @@
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     noRot: true
   - type: CP14SpawnOutOfDemiplane
+

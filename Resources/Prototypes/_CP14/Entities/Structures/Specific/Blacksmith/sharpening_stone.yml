@@ -18,7 +18,8 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.08,-0.35,0.15,0.25"
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
         mask:
         - TabletopMachineMask
         layer:
@@ -26,6 +27,15 @@
         - MidImpassable
         - LowImpassable
         hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -44,3 +54,4 @@
     targetDamage:
       types:
         blunt: 0.5
+

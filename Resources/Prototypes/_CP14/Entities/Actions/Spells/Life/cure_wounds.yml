@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 10
+    manaCost: 12
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -29,6 +29,8 @@
             Blunt: -10
             Piercing: -10
       - !type:Jitter
+      - !type:ModifyBleedAmount
+        amount: -5
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
@@ -50,7 +52,7 @@
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneCureWounds
   parent: CP14BaseMagicRune

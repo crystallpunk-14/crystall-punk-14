@@ -1,5 +1,6 @@
 - type: job
   id: CP14Merchant
+  setPreference: true
   name: cp14-job-name-merchant
   description: cp14-job-desc-merchant
   playTimeTracker: CP14JobMerchant
@@ -19,3 +20,4 @@
   equipment:
     belt: CP14WalletFilledTest
     keys: CP14KeyRingMerchant
+

@@ -16,14 +16,12 @@
     growthSteps: 5
   - type: CP14PlantGatherable
     loot:
-      All: CP14GatherPepper
+      All: !type:AllSelector
+        children:
+        - id: CP14FoodPepper
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: CP14SeedPepper
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
 
-- type: entityLootTable
-  id: CP14GatherPepper
-  entries:
-  - id: CP14FoodPepper
-    amount: 4
-    maxAmount: 8
-  - id: CP14SeedPepper
-    amount: 0
-    maxAmount: 2

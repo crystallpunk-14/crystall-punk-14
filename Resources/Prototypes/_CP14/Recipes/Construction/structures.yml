@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
-  name: wallmount torch
-  description: A torch attached to the wall
   id: CP14WallmountTorch
   graph: CP14WallmountTorch
   startNode: start
   targetNode: CP14WallmountTorch
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Furniture/wallmount_torch.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -20,16 +15,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: floor torch
-  description: A good, reliable light source. Too bad it doesn't last.
   id: CP14FloorTorch
   graph: CP14FloorTorch
   startNode: start
   targetNode: CP14FloorTorch
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Furniture/torch_floor.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -38,16 +28,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: crystal wall lamp
-  description: A simple wallmount magical device that converts crystal energy into bright light.
   id: CP14WallmountLampEmpty
   graph: CP14WallmountLampEmpty
   startNode: start
   targetNode: CP14WallmountLampEmpty
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -58,16 +43,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: bar shelf
-  description: Wall shelves to store your wine collection.
   id: CP14WallmountBarShelfA
   graph: CP14WallmountBarShelfA
   startNode: start
   targetNode: CP14WallmountBarShelfA
   category: construction-category-structures
-  icon:
-    sprite: _CP14/Structures/Wallmount/wallmount_bar_shelf.rsi
-    state: shelf
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -75,3 +55,4 @@
   conditions:
     - !type:TileNotBlocked
     - !type:CP14WallRequired
+

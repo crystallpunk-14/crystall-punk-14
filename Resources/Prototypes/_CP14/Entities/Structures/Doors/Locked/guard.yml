@@ -61,3 +61,4 @@
     autoGenerateShape: CityGate
   - type: Lock
     locked: false #City gate opened by default
+

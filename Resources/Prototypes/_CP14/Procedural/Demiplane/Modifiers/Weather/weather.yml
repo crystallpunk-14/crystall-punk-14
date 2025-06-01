@@ -86,11 +86,11 @@
   components:
   - type: CP14WeatherController
     entries:
-    - visuals: CP14SnowHeavyWithStorm 
+    - visuals: CP14SnowHeavyWithStorm
       duration:
         min: 30
         max: 180
-    - visuals: SnowfallHeavy 
+    - visuals: SnowfallHeavy
       duration:
         min: 30
         max: 60
@@ -166,3 +166,4 @@
       count: 10
       minGroupSize: 1
       maxGroupSize: 1
+

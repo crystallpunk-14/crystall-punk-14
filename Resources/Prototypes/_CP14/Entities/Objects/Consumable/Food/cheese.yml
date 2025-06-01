@@ -89,3 +89,6 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.4
+  - type: FoodSequenceElement
+    entries:
+      CP14Sandwich: CP14CheeseSandwich

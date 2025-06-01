@@ -1,8 +1,8 @@
-# Stonebrick
+# Stone brick
 
 - type: entity
   id: CP14WallFrameStonebrick
-  name: stonebrick wall base
+  name: stone brick wall base
   parent: CP14BaseWallFrame
   components:
   - type: Sprite
@@ -12,8 +12,8 @@
     sprite: _CP14/Structures/Walls/bricks_stone_wall.rsi
     state: frame
   - type: Construction
-    graph: CP14WallStonebrick
-    node: CP14WallFrameStonebrick
+    graph: CP14WallStoneBrick
+    node: CP14WallFrameStoneBrick
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: CP14RockStructural
@@ -38,7 +38,7 @@
 
 - type: entity
   id: CP14WallStonebrick
-  name: stonebrick wall
+  name: stone brick wall
   parent: CP14BaseWall
   components:
   - type: Sprite
@@ -48,8 +48,8 @@
   - type: IconSmooth
     base: stonebricks
   - type: Construction
-    graph: CP14WallStonebrick
-    node: CP14WallStonebrick
+    graph: CP14WallStoneBrick
+    node: CP14WallStoneBrick
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: CP14RockStructural
@@ -65,7 +65,7 @@
             min: 1
             max: 2
       - !type:ChangeConstructionNodeBehavior
-        node: CP14WallFrameStonebrick
+        node: CP14WallFrameStoneBrick
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg
@@ -79,7 +79,7 @@
 
 - type: entity
   id: CP14WallFrameMarblebrick
-  name: marblebrick wall base
+  name: marble brick wall base
   parent: CP14BaseWallFrame
   components:
   - type: Sprite
@@ -90,7 +90,7 @@
     state: frame
   - type: Construction
     graph: CP14WallMarbleBrick
-    node: CP14WallFrameMarblebrick
+    node: CP14WallFrameMarbleBrick
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: CP14RockStructural
@@ -144,7 +144,7 @@
             min: 1
             max: 2
       - !type:ChangeConstructionNodeBehavior
-        node: CP14WallFrameMarblebrick
+        node: CP14WallFrameMarbleBrick
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
@@ -154,7 +154,7 @@
 
 - type: entity
   id: CP14WallStonebrickOld
-  name: old stonebrick wall
+  name: old stone brick wall
   parent: CP14BaseWall
   components:
   - type: Sprite
@@ -179,3 +179,4 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+

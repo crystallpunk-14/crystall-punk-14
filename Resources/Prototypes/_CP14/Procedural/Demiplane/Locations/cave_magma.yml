@@ -2,7 +2,7 @@
   id: T1MagmaCaves
   levels:
     min: 4
-    max: 10
+    max: 20
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi
     state: magma_caves
@@ -113,3 +113,4 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
+
