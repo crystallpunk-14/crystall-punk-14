@@ -60,6 +60,8 @@
   - type: Tag
     tags:
     - Document
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   parent: CP14BasePaper

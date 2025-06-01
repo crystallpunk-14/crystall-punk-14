@@ -50,3 +50,14 @@
   - type: CP14TradingContract
     faction: DwarfMining
 
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractThaumaturgy
+  description: Trading contract with the "Academy of Thaumaturgy". Allows you to purchase various omagic device, tools and scrolls.
+  suffix: Thaumaturgy
+  components:
+  - type: Sprite
+    state: magic
+  - type: CP14TradingContract
+    faction: Thaumaturgy
+

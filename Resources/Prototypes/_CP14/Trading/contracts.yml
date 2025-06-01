@@ -31,3 +31,13 @@
     product: CP14TradeContractDwarfMining
     count: 1
 
+- type: cp14TradingPosition
+  id: CP14TradeContractThaumaturgy
+  faction: ContractGuild
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: magic
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractThaumaturgy
+    count: 1
