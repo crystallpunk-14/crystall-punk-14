@@ -46,3 +46,14 @@
   id: 8055
   time: '2025-06-02T21:38:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1367
+- author: paige404
+  changes:
+  - message: Tweaked slime damage resistances and immunities. Elemental slimes are
+      now immune to their own elements, but weak to an opposing element. Electric
+      slimes take equal damage from both heat and cold, and have had their oppressive
+      stunlocking power somewhat reduced. Additionally, all slimes are now immune
+      to airloss damage.
+    type: Tweak
+  id: 8056
+  time: '2025-06-02T21:59:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1300
