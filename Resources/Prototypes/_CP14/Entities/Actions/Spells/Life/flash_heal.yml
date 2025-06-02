@@ -9,7 +9,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 70
+    manaCost: 60
   - type: CP14MagicEffect
     magicType: Life
     telegraphyEffects:
@@ -38,8 +38,8 @@
       - !type:ModifyBleedAmount
         amount: -5
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Et curabuntur..."
-    endSpeech: "vulnera tua"
+    startSpeech: "Divina..."
+    endSpeech: "recuperatio"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlashHeal
   - type: EntityTargetAction
