@@ -1,31 +1,36 @@
 <Document>
-  # Трактирное дело
-  Трактирщик — это роль, основное время которой проходит в пределах города. В обязанности трактирщика входят садоводство, работа за барной стойкой и приготовление еды.
+    # Innkeeping
+  The innkeeper is a role that primarily stays within the town. The responsibilities of an innkeeper mainly include gardening, bartending, and cooking. Innkeepers also commonly spread gossip and rumors around the town, pay adventurers to collect exotic meats and materials for the inn, and making sure the inn stays clean and tidy.
 
-  В трактире у трактирщика будет доступ к трём основным зонам:
+  Within the inn, an innkeeper will have access to three main areas:
 
-  ## Сад
-  Сад, он же огород или ферма, — важный ресурс для любого повара. Здесь можно найти несколько грядок, колодец и базовые припасы.
-  Чтобы начать фермерство, найди стол с припасами в саду. Обычно в ящике лежит разнообразие семян, а на столе — инструменты вроде ведра и мотыги. Возьми нужные семена и используй их на земле, чтобы посадить. Подожди немного, а затем используй любой острый инструмент (например, серп или кинжал), чтобы собрать урожай.
+  ## The Garden
+  The garden, or farm, is an important asset for any chef. A few seedbeds can be found here, along with a well and some basic supplies.
+  To begin farming, locate the supply table in the garden. Usually, a crate will contain a variety of seeds, while a table will hold farming tools like a bucket and hoe. Grab a seed variety and use it on the ground to plant it. Wait a while, then use any sharp tool (such as a sickle or dagger) to harvest the fully grown crop.
 
-  Чтобы растения дольше оставались живыми, не забывай регулярно их поливать. Упростить уход за растениями поможет заклинание **Рост растений** из школы жизнетворения, которое восстанавливает влагу, питательные вещества и здоровье растения.
+  To keep your crops alive for an extended period, be sure to water them frequently. Keeping plants healthy is easier with the spell **“Plant Growth”** from the Vivification tree, which restores a plant’s water, nutrients, and health.
 
-  Если все грядки заняты, а спрос всё ещё превышает предложение, используй мотыгу, чтобы вскопать новую грядку. Если планируешь расширяться, стоит со временем сделать сумку для семян.
+  If all your seedbeds are full and demand is still high, you can use a hoe to till additional soil. Consider making a seed bag if you plan to expand your farm.
 
-  ## Погреб
-  Погреб — излюбленное место завсегдатаев. Здесь можно найти несколько бочек, разливающих алкоголь. Возьми кружку, убедись, что наливаешь из кеги — и получай прибыль.
+  Along with growing food crops, cotton can also be grown. Cotton can be used to weave fabrics and clothing for the people, providing an additional source of income for the inn. To do this, gather some cotton, find a few wood planks, and create a tailoring workbench.
+  
+  ## The Cellar
+  The cellar is extremely popular among patrons. Several barrels can be found here that dispense alcohol. Grab a mug, ensure you are drawing from a keg, and profit. For this very reason though, patrons may try to break into the cellar via the caves it is built in. Checking in on the cellar often can keep all your highly valued booze safe. In the event that some ruffian breaks your barrels, the alcohol can be mopped up and put into a new barrel. Customers will certainly enjoy your new "cocktail".
 
-  Обычно в погребе также есть столы и факелы, а также бочка с водой. На столах часто лежат запасные кружки. Старайся не наливать слишком много алкоголя за раз… разве что твоим уважаемым клиентом оказался гном.
+  A typical cellar also contains a few tables and torches, as well as a barrel of water. Tables usually hold spare mugs. Be careful not to serve too much alcohol at once... unless your esteemed customer is a dwarf.
 
-  ## Кухня
-  Больше всего времени трактирщик проводит на кухне. Для начала собери материалы: наруби или найди доски, начни выращивать культуры, найди запасные продукты и возьми нужные инструменты. Хороший повар знает ценность кинжала — обычно он выдается трактирщику. Кинжал может быть использован для сбора растений, нарезки еды и отпугивания буйных клиентов.
+  ## The Kitchen
 
-  Начнём с чего-то простого — **зелёного салата**. Сначала вырасти капусту, тыкву и огурец. Когда урожай будет готов, принеси его на кухню. Подойди к кулинарному столу и найди рецепт зелёного салата. Обрати внимание, что в рецепте требуются нарезанные ингредиенты — просто используй нож, чтобы их нарезать. Затем найди тарелку (обычно запасные лежат у печей). Когда все ингредиенты будут под рукой, можно приступать к приготовлению.
+  Most of an innkeeper's time is spent in the kitchen. First, gather materials: chop or find some wood for planks, start growing crops, locate spare food items, and grab your tools. A good chef will recognize the value of a dagger or a sickle — both typically provided to an innkeeper — which can be used to harvest plants, chop food into slices, and fend off unruly patrons.
 
-  Зелёный салат легко готовить, потому что его не нужно подогревать. Однако почти все остальные блюда требуют готовки на печи. Чтобы использовать печь, положи внутрь 2–3 деревянные доски — этого хватит, чтобы поддерживать огонь во время готовки. Разожги пламя заклинанием **«Создание огня»** или при помощи кресала. Затем положи сырую еду *наверх* печи — **после** того как зажжён огонь, чтобы еда начала готовиться. Снимай еду вовремя, иначе она сгорит и превратится в несъедобный пепел (который, конечно, можно попытаться продать, но закончится это плохо). Заклинание **«Заморозка»** поможет остановить печь, чтобы не тратить топливо между готовкой.
+  Let’s begin with cooking something simple: a green salad. Start by growing cabbage, pumpkin, and cucumber. Once the crops are ready, bring them into the kitchen. Go to your cooking table and find the recipe for green salad. You may notice the recipe requires sliced ingredients — simply use your knife to prepare them. Next, find a plate (usually some are stored near the ovens). Once all ingredients are near the table, you can begin to assemble the salad.
 
-  ## Посетители
-  На кухне есть небольшое окно для приёма заказов от клиентов. Настоятельно рекомендуется составить небольшое меню — на листе бумаги с помощью перьевой ручки — с перечнем предлагаемых блюд и цен. Цены устанавливает сам трактирщик, но большинство клиентов оценят доступные предложения.
+  Green salad is easy to make because it doesn't require heating. However, almost all other dishes will need to be cooked using the furnace. To use it, place 2–3 wood planks inside to keep the fire burning long enough. Ignite the fire with either the **“Create Flame”** spell or a flint and steel. Then, place the uncooked item on top of the furnace — *after* lighting it — so it begins to cook. Remove the food promptly, or it will burn into inedible ash (which you might try to market, but it won’t end well). The **“Freeze”** spell can stop a furnace from wasting fuel between cooking sessions. The **"Heat"** spell can instantly cook food for patrons without the risk of burning it to ash or using up wood fuel. Mugs and plates can be made at a workbench using the wood saved. 
 
-  Привлекай клиентов дополнительными услугами: музыкой с применением бардовской магии, особыми акциями или любыми другими забавными фишками, которые сможешь придумать.
+  ## Customers
+  In the kitchen, there is a small ordering window for customers. It is strongly recommended that you create a small menu using paper and a fountain pen, listing the dishes you offer and their prices. Prices are set by the innkeeper, but customers will appreciate affordable options.
+
+  Attract customers with additional services such as bardic music, special deals, or any unique gimmicks you can come up with. Note that people often expect to be paid for their work! Bards need to make money too.
+
+  In the event your delightful cooking or your generous portions of ale makes a customer vomit, a mop can be found near the stairs to the cellar. Dip the mop inside one of your water barrels and wipe up the mess. Be careful to avoid serving water from your mopping barrel - customers generally don't enjoy the taste of vomit.
 </Document>
