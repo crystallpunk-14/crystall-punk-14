@@ -58,7 +58,7 @@
       state: cure_wounds
     event: !type:CP14ToggleableEntityTargetActionEvent
       effectFrequency: 0.5
-      cooldown: 60
+      cooldown: 30
       castTime: 10
       breakOnMove: true
 
