@@ -8,6 +8,12 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - SwordMastery
+    - RapierMastery
+    - SkimitarMastery
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberdT1
