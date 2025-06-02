@@ -22,3 +22,8 @@
   id: Thaumaturgy
   color: "#a43ae0"
   name: cp14-trade-faction-thaumaturgy
+
+- type: cp14TradingFaction
+  id: HomeDecor
+  color: "#95f542"
+  name: cp14-trade-faction-home-decor

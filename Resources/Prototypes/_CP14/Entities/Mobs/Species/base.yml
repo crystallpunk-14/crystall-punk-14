@@ -400,6 +400,7 @@
   - BaseMob
   - CP14MobDamageable
   - CP14MobMagical
+  - CP14BaseMobSpecies
   id: CP14BaseMobSpeciesNoLife
   categories: [ ForkFiltered ]
   abstract: true

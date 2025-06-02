@@ -1,0 +1,66 @@
+﻿Entries:
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8052
+  time: '2025-06-02T18:40:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1359
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8053
+  time: '2025-06-02T19:33:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1364
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8054
+  time: '2025-06-02T20:00:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1365
+- author: TheShuEd
+  changes:
+  - message: "A new trade contract with the \u201CCozy Home\u201D store has been added.\
+      \ Now you can buy wallpaper, home decorations, and some other items."
+    type: Add
+  id: 8055
+  time: '2025-06-02T21:38:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1367
+- author: paige404
+  changes:
+  - message: Tweaked slime damage resistances and immunities. Elemental slimes are
+      now immune to their own elements, but weak to an opposing element. Electric
+      slimes take equal damage from both heat and cold, and have had their oppressive
+      stunlocking power somewhat reduced. Additionally, all slimes are now immune
+      to airloss damage.
+    type: Tweak
+  id: 8056
+  time: '2025-06-02T21:59:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1300
+- author: ArZarLordOfMango
+  changes:
+  - message: Fixed Guild moral book
+    type: Fix
+  id: 8057
+  time: '2025-06-02T22:04:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1368
