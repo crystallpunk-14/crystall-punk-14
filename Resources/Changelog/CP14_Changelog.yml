@@ -1,1 +1,14 @@
 Entries:
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8052
+  time: '2025-06-02T18:40:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1359
