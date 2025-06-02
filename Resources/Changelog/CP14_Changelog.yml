@@ -38,3 +38,11 @@
   id: 8054
   time: '2025-06-02T20:00:16.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1365
+- author: TheShuEd
+  changes:
+  - message: "A new trade contract with the \u201CCozy Home\u201D store has been added.\
+      \ Now you can buy wallpaper, home decorations, and some other items."
+    type: Add
+  id: 8055
+  time: '2025-06-02T21:38:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1367
