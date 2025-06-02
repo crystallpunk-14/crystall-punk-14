@@ -254,16 +254,14 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         {
             return false;
         }
-
-        foreach (var skill in from skill in component.LearnedSkills
-                              where !HaveFreeSkill(target, skill, component)
-                              select skill)
+        for(var i = component.LearnedSkills.Count - 1; i >= 0; i--)
         {
-            TryRemoveSkill(target, skill, component);
+            if(HaveFreeSkill(target, component.LearnedSkills[i], component))
+            {
+                continue;
+            }
+            TryRemoveSkill(target, component.LearnedSkills[i], component);
         }
-
-        component.LearnedSkills = component.FreeLearnedSkills;
-        component.SkillsSumExperience = 0;
         return true;
     }
 }
