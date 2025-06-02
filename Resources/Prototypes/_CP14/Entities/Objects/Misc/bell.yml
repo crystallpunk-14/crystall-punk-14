@@ -11,6 +11,8 @@
   - type: Tag
     tags:
       - Payload
+  - type: StaticPrice
+    price: 5
   - type: InteractionPopup
     successChance: 1
     interactSuccessSound:

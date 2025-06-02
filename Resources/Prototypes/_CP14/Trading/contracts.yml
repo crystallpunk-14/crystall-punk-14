@@ -41,3 +41,14 @@
   service: !type:CP14BuyItemsService
     product: CP14TradeContractThaumaturgy
     count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractHomeDecor
+  faction: ContractGuild
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: house
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractHomeDecor
+    count: 1
