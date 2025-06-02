@@ -1,16 +1,19 @@
 - type: entity
-  id: CP14ActionSpellCureFromDeath
-  name: Cure from death
-  description: You heal the target from all kinds of damage.
+  id: CP14ActionSpellResurrectionDead
+  name: Death resurrection
+  description: You resurrect the target and cure it from damage.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/necromancy.rsi
     state: cure_dead
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.7
+    speedMultiplier: 0.9
   - type: CP14MagicEffectManaCost
-    manaCost: 4
+    manaCost: 20
+  - type: CP14MagicEffectAliveTargetRequired
+    inverted: true
   - type: CP14MagicEffect
+    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -19,27 +22,27 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectResurrection
-    - !type:CP14SpellResurrectionEffect # TODO заставить работать только на нежить
+    - !type:CP14SpellResurrectionEffect
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: -2
-            Bloodloss: -2
-            Blunt: -2
-            Cellular: -1
-            Caustic: -2
-            Cold: -1
-            Heat: -1
-            Piercing: -2
-            Poison: -2
-            Radiation: -2
-            Shock: -2
-            Slash: -2
-  - type: CP14MagicEffectSomaticAspect
+            Asphyxiation: -500
+            Bloodloss: -100
+            Blunt: -25
+            Caustic: -25
+            Cold: -25
+            Heat: -50
+            Piercing: -25
+            Poison: -25
+            Radiation: -25
+            Shock: -25
+            Slash: -25
+      - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Surge, hominem mortuum!"
+    startSpeech: "Surge..."
+    endSpeech: "Hominem mortuum"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneResurrection
   - type: EntityTargetAction
@@ -49,14 +52,15 @@
     range: 10
     itemIconStyle: BigAction
     interactOnMiss: false
+    canTargetSelf: false
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/necromancy.rsi
       state: cure_dead
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 2
-      castTime: 10
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 2
       breakOnMove: false
       breakOnDamage: false
 

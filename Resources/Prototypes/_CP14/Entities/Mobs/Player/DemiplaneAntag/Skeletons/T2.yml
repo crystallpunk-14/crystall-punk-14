@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonDemiplaneT2
-  parent: CP14BaseMobSkeleton
+  parent: CP14MobUndeadSkeletonDemiplaneT1 
   name: skeleton
   abstract: true
   components:
@@ -77,20 +77,38 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonWizardT2
-  - type: CP14MagicEnergyDraw
-    energy: 1
-    delay: 1
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 200
+    energy: 200
+    unsafeSupport: true
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        CP14ManaDepletion: -0.1
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - SwordMastery
+    - RapierMastery
+    - SkimitarMastery
+    - HydrosophistryT1
+    - HydrosophistryT2
+    - MetamagicT1
+    - MetamagicT2
+    - CP14ActionSpellFreeze
+    - CP14ActionSpellIceShards
+    - CP14ActionSpellManaConsumeElf
+    - CP14ActionSpellManaGiftElf
+    - CP14ActionSpellMagicSplitting
+    - CP14ActionSpellManaTrance
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellIceShards
-    - CP14ActionSpellIceDagger
-    - CP14ActionSpellCureFromDeath
+    - CP14ActionSpellResurrectionDead
     - CP14ActionSpellShadowStep
-    - CP14ActionSpellShadowSwap
-    - CP14ActionSpellShadowGrab
-
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2

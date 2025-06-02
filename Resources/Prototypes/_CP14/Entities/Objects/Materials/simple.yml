@@ -10,6 +10,9 @@
   - type: Sprite
     sprite: _CP14/Objects/Materials/string.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 5
 
 - type: entity
   id: CP14Web
@@ -34,6 +37,9 @@
         icon2: ""
         icon3: ""
         icon4: ""
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 2
 
 - type: entity
   id: CP14Cloth1
