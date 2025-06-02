@@ -82,6 +82,8 @@
     damage:
       types:
         Heat: 10
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_metal1.ogg
   - type: Sprite
     sprite: _CP14/Effects/Magic/firebolt.rsi
     layers:
