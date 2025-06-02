@@ -40,8 +40,8 @@
   - type: TimedDespawn
     lifetime: 1.6
   - type: CP14AreaEntityEffect
-    range: 3
-    maxTargets: 4
+    range: 5
+    maxTargets: 8
     whitelist:
       components:
       - MobState
