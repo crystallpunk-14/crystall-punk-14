@@ -40,8 +40,7 @@
       - !type:ModifyBleedAmount
         amount: -1
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Et curabuntur..."
-    endSpeech: "vulnera tua"
+    startSpeech: "Deliniens miraculum"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMiracle
   - type: EntityTargetAction
