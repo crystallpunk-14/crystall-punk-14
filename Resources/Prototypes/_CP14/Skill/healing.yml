@@ -189,6 +189,7 @@
   - type: cp14Skill
   id: CP14ActionSpellMiracle
   skillUiPosition: 14, 4
+  learnCost: 0
   tree: Healing
   icon:
     sprite: _CP14/Actions/Spells/light.rsi
@@ -196,7 +197,6 @@
   effects: 
   - !type:AddAction
     action: CP14ActionSpellMiracle
-  learnCost: 0
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT3
