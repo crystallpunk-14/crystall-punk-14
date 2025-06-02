@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14FenceBigWooden
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14FenceBigWooden
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+    - node: CP14FenceBigWooden
+      entity: CP14FenceBigWooden

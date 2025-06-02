@@ -1,0 +1,12 @@
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceBigWooden
+  graph: CP14FenceBigWooden
+  startNode: start
+  targetNode: CP14FenceBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
