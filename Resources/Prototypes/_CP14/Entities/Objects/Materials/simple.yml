@@ -39,7 +39,7 @@
         icon4: ""
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 2.5
+      CP14Cloth: 2
 
 - type: entity
   id: CP14Cloth1
