@@ -8,7 +8,7 @@
   - type: CP14WaveShader
     speed: 2.5
     dis: 4
-  - type: SpriteFade
+  #- type: SpriteFade #Hard to attack
   - type: Clickable
   - type: Sprite
     noRot: true
