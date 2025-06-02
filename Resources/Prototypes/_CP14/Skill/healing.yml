@@ -172,7 +172,7 @@
   - !type:NeedPrerequisite
     prerequisite: HealingT3
 
-  - type: cp14Skill
+- type: cp14Skill
   id: CP14ActionSpellFlashHeal
   skillUiPosition: 14, 6
   tree: Healing
@@ -186,7 +186,7 @@
   - !type:NeedPrerequisite
     prerequisite: HealingT3
 
-  - type: cp14Skill
+- type: cp14Skill
   id: CP14ActionSpellMiracle
   skillUiPosition: 14, 4
   learnCost: 0
