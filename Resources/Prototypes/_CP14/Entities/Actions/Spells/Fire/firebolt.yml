@@ -36,6 +36,7 @@
       state: firebolt
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 1.0
+      breakOnMove: false
 
 - type: entity
   id: CP14RuneFirebolt
