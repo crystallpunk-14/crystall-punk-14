@@ -40,7 +40,7 @@ public sealed class ClientClothingSystem : ClothingSystem
         {Jumpsuit, "INNERCLOTHING"},
         {"neck", "NECK"},
         {"back", "BACKPACK"},
-        {"belt", "BELT1"},
+        {"belt", "BELT"},
         {"belt2", "BELT2"},
         {"gloves", "HAND"},
         {"shoes", "FEET"},

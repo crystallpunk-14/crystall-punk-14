@@ -58,11 +58,6 @@ public sealed class SmartEquipSystem : EntitySystem
     {
         HandleSmartEquip(session, "belt");
     }
-    //CP14
-    private void HandleSmartEquipBelt1(ICommonSession? session)
-    {
-        HandleSmartEquip(session, "belt1");
-    }
 
     private void HandleSmartEquipBelt2(ICommonSession? session)
     {
