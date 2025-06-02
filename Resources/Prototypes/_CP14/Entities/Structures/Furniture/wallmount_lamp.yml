@@ -11,6 +11,10 @@
     sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
     layers:
       - state: base
+      - state: shader
+        map: [ "shader" ]
+        visible: true 
+        shader: unshaded
       - state: crystal
         map: [ "crystal" ]
         visible: false

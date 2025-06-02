@@ -12,6 +12,10 @@
       "directions": 4
     },
     {
+      "name": "shader",
+      "directions": 4
+    },
+    {
       "name": "on",
       "directions": 4
     },
@@ -19,5 +23,6 @@
       "name": "crystal",
       "directions": 4
     }
+
   ]
 }
