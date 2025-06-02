@@ -39,3 +39,25 @@
   - type: CP14TradingContract
     faction: BradPotions
 
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractDwarfMining
+  description: Trading contract with the "Dwarf Steel" mining branch. Allows you to purchase various ore and mining tools.
+  suffix: Dwarf Miners
+  components:
+  - type: Sprite
+    state: dwarf_mining
+  - type: CP14TradingContract
+    faction: DwarfMining
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractThaumaturgy
+  description: Trading contract with the "Academy of Thaumaturgy". Allows you to purchase various omagic device, tools and scrolls.
+  suffix: Thaumaturgy
+  components:
+  - type: Sprite
+    state: magic
+  - type: CP14TradingContract
+    faction: Thaumaturgy
+

@@ -68,11 +68,19 @@ public sealed partial class CP14DemiplaneSystem
 
     private void GeneratorUsedInHand(Entity<CP14DemiplaneUsingOpenComponent> ent, ref UseInHandEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (!TryComp<CP14DemiplaneDataComponent>(ent, out var generator))
             return;
 
+        args.Handled = true;
+
         UseGenerator((ent, generator), args.User);
+
+        QueueDel(ent);
     }
+
     //Ed: I hate this function.
     private void UseGenerator(Entity<CP14DemiplaneDataComponent> generator, EntityUid? user = null)
     {
@@ -130,10 +138,6 @@ public sealed partial class CP14DemiplaneSystem
             var connection = EnsureComp<CP14DemiplaneRiftComponent>(spawnedRift);
             AddDemiplaneRandomExitPoint(demiplane.Value, (spawnedRift, connection));
         }
-
-#if !DEBUG
-        QueueDel(generator); //wtf its crash debug build!
-#endif
     }
 
     private void OnVerbExamine(Entity<CP14DemiplaneDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)

@@ -21,7 +21,7 @@
             CP14Alchemist: [ 2, 2 ]
             CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 3, 4 ]
-            #CP14Merchant: [2, 2]
+            CP14Merchant: [2, 2]
             #Guard
             CP14Guard: [8, 8]
             CP14GuardCommander: [1, 1]

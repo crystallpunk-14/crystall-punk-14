@@ -6,6 +6,18 @@
   equipment:
     pants: CP14ClothingPantsLoincloth
 
+- type: startingGear
+  id: CP14MobSkeletonWizardTownRaid
+  equipment:
+    outerClothing: CP14ClothingOuterClothingBoneArmor
+    cloak: CP14ClothingCloakBoneMage
+    head: CP14ClothingHeadTriangularHatGolden
+    shirt: CP14ClothingShirtCottonBlack
+    pants: CP14ClothingPantsBrown
+    shoes: CP14LongLeatherBoots
+    belt1: CP14ModularSkeletonSwordUpgrade
+    neck: CP14ModularIronPickaxe
+
 # TIER 1
 
 - type: startingGear
@@ -104,8 +116,6 @@
     shoes: CP14LongLeatherBoots
     ring2: CP14ClothingCloakAmuletMana
     belt: CP14ModularSkeletonSword
-  inhand:
-    - CP14ManaOperationGlove
 
 - type: startingGear
   id: CP14MobSkeletonBardT2

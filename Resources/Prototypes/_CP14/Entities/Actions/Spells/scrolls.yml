@@ -63,6 +63,8 @@
     energy: 30
     maxEnergy: 50
   - type: CP14MagicUnsafeDamage
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   abstract: true
