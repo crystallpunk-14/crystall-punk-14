@@ -23,6 +23,7 @@
   parent: CP14ClothingSatchelBase
   id: CP14ClothingSatchelT0
   name: satchel T0
+  suffix: backpack T0
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -39,6 +40,7 @@
   parent: CP14ClothingSatchelT0
   id: CP14ClothingSatchelT1
   name: satchel T1
+  suffix: backpack T1
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -55,6 +57,7 @@
   parent: CP14ClothingSatchelT1
   id: CP14ClothingSatchelT2
   name: satchel T2
+  suffix: backpack T2
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -72,6 +75,7 @@
   parent: CP14ClothingSatchelT2
   id: CP14ClothingSatchelT3
   name: satchel T3
+  suffix: backpack T3
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite

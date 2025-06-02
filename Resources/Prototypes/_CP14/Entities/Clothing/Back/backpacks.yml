@@ -7,10 +7,11 @@
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
 
-type: entity
+- type: entity
   parent: CP14ClothingBackpackBase
   id: CP14ClothingBackpackT0
   name: backpack T0
+  suffix: backpack T0
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -24,6 +25,7 @@ type: entity
   parent: CP14ClothingBackpackT0
   id: CP14ClothingBackpackT1
   name: backpack T1
+  suffix: backpack T1
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -36,6 +38,7 @@ type: entity
   parent: CP14ClothingBackpackT1
   id: CP14ClothingBackpackT2
   name: backpack T2
+  suffix: backpack T2
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -50,6 +53,7 @@ type: entity
   parent: CP14ClothingBackpackT2
   id: CP14ClothingBackpackT3
   name: backpack T3
+  suffix: backpack T3
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite

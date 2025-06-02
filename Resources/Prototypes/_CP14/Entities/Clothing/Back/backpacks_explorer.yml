@@ -8,6 +8,7 @@
   parent: CP14ClothingExplorerBackpackBase
   id: CP14ClothingExplorerBackpackT0
   name: Small Explorer Backpack
+  suffix: backpack T0
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -30,6 +31,7 @@
   parent: CP14ClothingExplorerBackpackBase
   id: CP14ClothingExplorerBackpackT1
   name: Explorer Backpack
+  suffix: backpack T1
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -52,6 +54,7 @@
   parent: CP14ClothingExplorerBackpackBase
   id: CP14ClothingExplorerBackpackT2
   name: Big Explorer Backpack
+  suffix: backpack T2
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
@@ -75,6 +78,7 @@
   parent: CP14ClothingExplorerBackpackBase
   id: CP14ClothingExplorerBackpackT3
   name: Huge Explorer Backpack
+  suffix: backpack T3
   description: You wear this on your back and put items into it.
   components:
   - type: Sprite
