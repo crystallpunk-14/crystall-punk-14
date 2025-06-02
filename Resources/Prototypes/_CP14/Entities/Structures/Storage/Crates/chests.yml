@@ -58,6 +58,8 @@
     node: CP14WoodenChest
     containers:
     - entity_storage
+  - type: StaticPrice
+    price: 1
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 50
