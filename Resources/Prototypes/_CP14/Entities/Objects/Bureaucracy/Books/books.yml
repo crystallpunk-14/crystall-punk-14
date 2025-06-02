@@ -18,4 +18,4 @@
     - state: bookmark_short
       map: [ "overlay" ]
   - type: Paper
-    content: cp14-book-text-guild_moral
+    content: cp14-book-text-guild-moral
