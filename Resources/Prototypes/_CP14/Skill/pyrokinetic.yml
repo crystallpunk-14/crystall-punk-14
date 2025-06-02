@@ -108,7 +108,7 @@
   tree: Pyrokinetic
   icon:
     sprite: _CP14/Actions/Spells/fire.rsi
-    state: fireball
+    state: firebolt
   effects:
   - !type:AddAction
     action: CP14ActionSpellFirebolt

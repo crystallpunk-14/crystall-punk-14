@@ -33,12 +33,12 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
-      state: fireball
+      state: firebolt
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 1.0
 
 - type: entity
-  id: CP14RuneFireball
+  id: CP14RuneFirebolt
   parent: CP14BaseMagicRune
   categories: [ HideSpawnMenu ]
   save: false
@@ -55,7 +55,7 @@
       shader: unshaded
 
 - type: entity
-  id: CP14ImpactEffectFireball
+  id: CP14ImpactEffectFirebolt
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
@@ -82,9 +82,9 @@
       types:
         Heat: 10
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    sprite: _CP14/Effects/Magic/firebolt.rsi
     layers:
-    - state: fireball
+    - state: firebolt
       shader: unshaded
 
 - type: entity
