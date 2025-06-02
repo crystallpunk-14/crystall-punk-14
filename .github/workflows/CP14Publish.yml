@@ -10,6 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    
+    - name: Install Python dependencies
+      run: sudo apt-get install -y python3-paramiko python3-lxml
+      
     - name: Send POST-request
       uses: appleboy/ssh-action@master
       with:
