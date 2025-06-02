@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellFlashHeal
   name: Flash heal
-  description: You hastly incant an healing prayer
+  description: You hastly incant an healing prayer.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/healing.rsi
@@ -55,7 +55,7 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_wounds
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 30
+      cooldown: 20
       castDelay: 0.2
       breakOnMove: false
 
