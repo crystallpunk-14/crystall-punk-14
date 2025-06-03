@@ -13,9 +13,24 @@
   - type: CP14MagicEffect
     magicType: Fire
     effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14AreaEntityEffectHellBallade
+    - !type:CP14SpellArea
+      range: 3
+      maxTargets: 4
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectHellBallade
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:FlammableReaction
+          multiplier: 0.5
+        - !type:AdjustTemperature
+          amount: 500
+        - !type:Ignite
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHellBallade
@@ -31,32 +46,6 @@
       cooldown: 15
       castTime: 120
       hidden: true
-
-- type: entity
-  id: CP14AreaEntityEffectHellBallade
-  categories: [ HideSpawnMenu ]
-  save: false
-  components:
-  - type: TimedDespawn
-    lifetime: 1.6
-  - type: CP14AreaEntityEffect
-    range: 3
-    maxTargets: 4
-    whitelist:
-      components:
-      - MobState
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectHellBallade
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-      - !type:FlammableReaction
-        multiplier: 0.5
-      - !type:AdjustTemperature
-        amount: 500
-      - !type:Ignite
 
 - type: entity
   id: CP14ImpactEffectHellBallade
@@ -85,4 +74,3 @@
     - state: notes_3
       color: "#eea911"
       shader: unshaded
-
