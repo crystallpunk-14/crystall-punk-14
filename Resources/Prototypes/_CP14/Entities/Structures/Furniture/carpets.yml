@@ -1,6 +1,8 @@
 - type: entity
   id: CP14CarpetBase
-  parent: BaseStructure
+  parent:
+  - BaseStructure
+  - CP14BaseFlammableSpreadingStrong
   name: carpet
   description: "Fancy walking surface."
   categories: [ ForkFiltered ]
