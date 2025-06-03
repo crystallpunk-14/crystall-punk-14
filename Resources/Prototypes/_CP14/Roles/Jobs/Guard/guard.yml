@@ -15,5 +15,5 @@
   id: CP14GuardGear
   equipment:
     keys: CP14KeyRingGuard
-    belt1: CP14WalletFilledTest
+    belt: CP14WalletFilledTest
 

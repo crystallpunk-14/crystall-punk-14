@@ -18,6 +18,6 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
   equipment:
-    belt1: CP14WalletFilledMerchant
+    belt: CP14WalletFilledTest
     keys: CP14KeyRingMerchant
 

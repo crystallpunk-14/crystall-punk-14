@@ -26,7 +26,7 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
   equipment:
-    belt1: CP14WalletFilledTest
+    belt: CP14WalletFilledTest
     keys: CP14KeyRingAlchemist
     neck: CP14MagicHealingStaff
 
