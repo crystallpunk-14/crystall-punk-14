@@ -17,11 +17,11 @@
       prototype: CP14Firebolt
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
-      - CP14ImpactEffectFireball
+      - CP14ImpactEffectFirebolt
   - type: CP14MagicEffectVerbalAspect
     endSpeech: "Ignis acus!"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneFireball
+    proto: CP14RuneFirebolt
   - type: CP14MagicEffectPacifiedBlock
   - type: EntityWorldTargetAction
     repeat: true
