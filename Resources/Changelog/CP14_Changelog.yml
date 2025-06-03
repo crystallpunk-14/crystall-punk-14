@@ -116,3 +116,11 @@
   id: 8063
   time: '2025-06-03T12:37:25.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1374
+- author: KittyCat432
+  changes:
+  - message: Changed Healing solution to not "waste" any of its healing on types of
+      brute you do not have.
+    type: Tweak
+  id: 8064
+  time: '2025-06-03T14:10:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1340
