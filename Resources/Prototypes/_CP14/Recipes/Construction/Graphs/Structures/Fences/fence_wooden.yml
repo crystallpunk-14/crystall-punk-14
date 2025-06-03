@@ -4,12 +4,23 @@
   graph:
     - node: start
       actions:
-        - !type:DestroyEntity {}
+        - !type:DeleteEntity {}
       edges:
         - to: CP14FenceBigWooden
+          completed:
+            - !type:SnapToGrid
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 4
               doAfter: 2
     - node: CP14FenceBigWooden
       entity: CP14FenceBigWooden
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 4
+          steps:
+            - tool: Prying
+              doAfter: 4
