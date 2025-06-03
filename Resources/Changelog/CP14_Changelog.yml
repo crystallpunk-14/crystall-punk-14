@@ -102,3 +102,10 @@
   id: 8061
   time: '2025-06-03T11:39:39.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1298
+- author: Mandranir
+  changes:
+  - message: dropper size is now 1x1
+    type: Fix
+  id: 8062
+  time: '2025-06-03T11:41:00.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1373
