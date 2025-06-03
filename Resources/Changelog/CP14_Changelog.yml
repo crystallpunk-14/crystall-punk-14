@@ -64,3 +64,33 @@
   id: 8057
   time: '2025-06-02T22:04:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1368
+- author: TheKittehJesus
+  changes:
+  - message: Cash converters can be anchored on tables
+    type: Fix
+  id: 8058
+  time: '2025-06-03T06:41:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1371
+- author: TheShuEd
+  changes:
+  - message: Music magic no longer applies the effect on the musician. Tieflings with
+      Hell Ballad are now OP
+    type: Tweak
+  - message: The radius of action of the peace ballad has been increased by 2 times
+      and the maximum number of entities that can be affected has been increased from
+      4 to 8
+    type: Tweak
+  - message: The speed increase from the speed ballad is increased by 5%
+    type: Tweak
+  id: 8059
+  time: '2025-06-03T09:43:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1372
+- author: DeLTaAlarm0
+  changes:
+  - message: Added flippable open/closed table sign
+    type: Add
+  - message: Added workbench recipe for open/closed sign
+    type: Add
+  id: 8060
+  time: '2025-06-03T11:22:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1275

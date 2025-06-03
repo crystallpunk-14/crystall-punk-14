@@ -46,7 +46,5 @@
           bounds: "-0.4,-0.4,0.4,0.4"
         density: 190
         mask:
-        - MachineMask
-        layer:
-          - MachineLayer
+        - TabletopMachineMask
 
