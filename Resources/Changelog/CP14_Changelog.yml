@@ -71,3 +71,17 @@
   id: 8058
   time: '2025-06-03T06:41:17.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1371
+- author: TheShuEd
+  changes:
+  - message: Music magic no longer applies the effect on the musician. Tieflings with
+      Hell Ballad are now OP
+    type: Tweak
+  - message: The radius of action of the peace ballad has been increased by 2 times
+      and the maximum number of entities that can be affected has been increased from
+      4 to 8
+    type: Tweak
+  - message: The speed increase from the speed ballad is increased by 5%
+    type: Tweak
+  id: 8059
+  time: '2025-06-03T09:43:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1372
