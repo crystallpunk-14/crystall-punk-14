@@ -57,3 +57,42 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi
 
+- type: entity
+  id: CP14CarpetCyan
+  parent: CP14CarpetBase
+  suffix: Cyan
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/cyan_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/cyan_carpet.rsi
+
+- type: entity
+  id: CP14CarpetGreen
+  parent: CP14CarpetBase
+  suffix: Green
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/green_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/green_carpet.rsi
+
+- type: entity
+  id: CP14CarpetOrange
+  parent: CP14CarpetBase
+  suffix: Orange
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/orange_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/orange_carpet.rsi
+
+- type: entity
+  id: CP14CarpetPink
+  parent: CP14CarpetBase
+  suffix: Pink
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/pink_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/pink_carpet.rsi
