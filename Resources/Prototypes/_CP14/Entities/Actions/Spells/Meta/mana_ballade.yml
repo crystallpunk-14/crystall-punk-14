@@ -13,9 +13,22 @@
     canModifyManacost: false
   - type: CP14MagicEffect
     effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14AreaEntityEffectMagicBallade
+    - !type:CP14SpellArea
+      range: 5
+      maxTargets: 5
+      whitelist:
+        components:
+        - CP14MagicEnergyContainer
+        - CP14MagicEnergyCrystalSlot
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectMagicBallade
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: 1.2
+          safe: true
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicBallade
@@ -31,30 +44,6 @@
       cooldown: 15
       castTime: 120
       hidden: true
-
-- type: entity
-  id: CP14AreaEntityEffectMagicBallade
-  categories: [ HideSpawnMenu ]
-  save: false
-  components:
-  - type: TimedDespawn
-    lifetime: 1.6
-  - type: CP14AreaEntityEffect
-    range: 5
-    maxTargets: 5
-    whitelist:
-      components:
-      - CP14MagicEnergyContainer
-      - CP14MagicEnergyCrystalSlot
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectMagicBallade
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:CP14ManaChange
-        manaDelta: 1.2
-        safe: true
 
 - type: entity
   id: CP14ImpactEffectMagicBallade
