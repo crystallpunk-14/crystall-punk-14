@@ -124,3 +124,11 @@
   id: 8064
   time: '2025-06-03T14:10:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1340
+- author: TheShuEd
+  changes:
+  - message: All merchants now gain +1 reputation with each faction at the start of
+      the round, greatly expanding their range of goods.
+    type: Tweak
+  id: 8065
+  time: '2025-06-03T15:12:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1376
