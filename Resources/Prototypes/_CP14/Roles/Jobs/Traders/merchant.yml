@@ -10,6 +10,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours
+  special:
+    - !type:CP14AddGlobalReputationSpecial
 
 - type: startingGear
   id: CP14MerchantGear

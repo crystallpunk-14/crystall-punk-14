@@ -118,8 +118,8 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
-        user.Comp.Reputation[indexedPosition.Faction] += (float)price / 100;
-        Dirty(user);
+
+        AddReputation(user, indexedPosition.Faction, (float)price / 100);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
 
