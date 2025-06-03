@@ -94,3 +94,11 @@
   id: 8060
   time: '2025-06-03T11:22:24.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1275
+- author: TheKittehJesus
+  changes:
+  - message: Added controls for quick pickup both belt slots! Check your controls,
+      as belt2 controls may be unbound.
+    type: Add
+  id: 8061
+  time: '2025-06-03T11:39:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1298
