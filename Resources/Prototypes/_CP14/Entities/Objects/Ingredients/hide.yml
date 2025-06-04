@@ -40,15 +40,15 @@
 - type: entity
   id: CP14RuggedHide
   parent: CP14LHideBase
-  name: rough hide
+  name: rugged hide
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
   components:
   - type: Item
     size: Big
   - type: Sprite
-    state: rough_hide
+    state: rugged_hide
   - type: Item
-    state: rough_hide
+    state: rugged_hide
   - type: StaticPrice
     price: 60
 

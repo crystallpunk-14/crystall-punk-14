@@ -1,3 +1,11 @@
+# T0 - Rawhide Leather [None]
+# T1 - Thin Leather [By PhantomRU]
+# T2 - Coarse Leather [By PhantomRU]
+# T3 - Rugged Leather [By PhantomRU]
+# T4 - Thick Leather [None]
+# T5 - Hardened Leather [None]
+# Rough Leather ?
+
 - type: entity
   id: CP14LeatherBase
   parent: BaseItem
@@ -31,7 +39,7 @@
 - type: entity
   id: CP14Leather
   parent: CP14LeatherBase
-  name: leather
+  name: coarse leather
   description: Standard quality leather for various crafts.
   components:
   - type: Sprite
@@ -48,13 +56,13 @@
 - type: entity
   id: CP14RuggedLeather
   parent: CP14LeatherBase
-  name: rough leather
-  description: Thick and durable leather for heavy-duty equipment.
+  name: rugged leather
+  description: Thick and durable leather.
   components:
   - type: Sprite
-    state: rough_leather
+    state: rugged_leather
   - type: Item
-    state: rough_leather
+    state: rugged_leather
   - type: PhysicalComposition
     materialComposition:
       CP14RuggedHide: 1
