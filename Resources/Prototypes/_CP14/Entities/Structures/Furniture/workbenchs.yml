@@ -126,12 +126,12 @@
     - CP14RecipeSewing
 
 - type: entity
-  id: CP14WorkbenchLeatherWorking
+  id: CP14WorkbenchLeather
   parent:
   - CP14BaseWorkbench
   - CP14BaseFlammable
   name: tanner table
-  suffix: Leather  Workbench
+  suffix: Leather Workbench
   description: Table for leather processing and creation of leather goods.
   components:
   - type: Sprite
@@ -139,8 +139,8 @@
   - type: Icon
     state: tanner_table
   - type: Construction
-    graph: CP14WorkbenchTanner
-    node: CP14WorkbenchTanner
+    graph: CP14WorkbenchLeather
+    node: CP14WorkbenchLeather
   - type: CP14Workbench
     craftSound:
       collection: CP14Leather # TODO?
