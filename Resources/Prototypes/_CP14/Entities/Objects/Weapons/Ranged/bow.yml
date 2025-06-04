@@ -78,6 +78,8 @@
         base:
           True: { state: wielded }
           False: { state: unwielded }
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   name: ice bow

@@ -10,6 +10,8 @@
     shape:
     - 0,0,0,0
     storedOffset: 0, 5
+  - type: StaticPrice
+    price: 15
 
 - type: entity
   parent: CP14ModularBladeShovelBase

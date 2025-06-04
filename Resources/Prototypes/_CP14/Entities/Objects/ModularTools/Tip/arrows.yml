@@ -8,6 +8,8 @@
   - type: Item
     size: Tiny
     storedRotation: 0
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   parent: CP14ModularBladeTipBase

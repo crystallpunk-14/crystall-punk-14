@@ -32,6 +32,8 @@
     breakOnMove: false
   - type: CP14MeleeParriable
   - type: CP14LabeledRenaming
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   parent: CP14ModularGripBase

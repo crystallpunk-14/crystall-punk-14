@@ -25,6 +25,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10
+  - type: StaticPrice
+    price: 35
+
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -42,6 +45,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 10
+  - type: StaticPrice
+    price: 95
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -59,6 +64,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 10
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -76,3 +83,5 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
+  - type: StaticPrice
+    price: 65
