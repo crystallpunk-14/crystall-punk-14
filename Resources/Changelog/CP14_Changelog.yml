@@ -160,3 +160,20 @@
   id: 8068
   time: '2025-06-04T09:22:55.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1381
+- author: TheShuEd
+  changes:
+  - message: The blacksmith no longer has gold bars from the start of the round, but
+      has more planks
+    type: Tweak
+  - message: The value of gold and all gold items is greatly increased in value
+    type: Tweak
+  - message: The amount of gold ore in the demiplanes has been greatly reduced and
+      is no longer visible in the demiplane description
+    type: Tweak
+  - message: Gold amulets in demiplanes now cost good money!
+    type: Fix
+  - message: Removed all gold and mithril mapped on maps
+    type: Remove
+  id: 8069
+  time: '2025-06-04T11:34:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1382
