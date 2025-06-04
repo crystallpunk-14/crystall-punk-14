@@ -14,7 +14,6 @@ namespace Content.Server.Speech.EntitySystems;
 
 public sealed class VocalSystem : EntitySystem
 {
-
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -24,30 +23,30 @@ public sealed class VocalSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
-        //SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown); Commetet out along with Addiding the Scream Action as its not used at the moment
+        SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
     }
 
-
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
     {
-    //     // try to add scream action when vocal comp added
-    //     _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
-    //     LoadSounds(uid, component);
-    // }
-
-    // private void OnShutdown(EntityUid uid, VocalComponent component, ComponentShutdown args)
-    // {
-    //     // remove scream action when component removed
-    //     if (component.ScreamActionEntity != null)
-    //     {
-    //         _actions.RemoveAction(uid, component.ScreamActionEntity);
-    //    }
+        // try to add scream action when vocal comp added
+        //_actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction); Commetet out to Remove The Scream Action from the Action bar
+        LoadSounds(uid, component);
     }
-    //Commentet out to Remove Scream Action From the Action Bar
+
+    private void OnShutdown(EntityUid uid, VocalComponent component, ComponentShutdown args)
+    {
+        // remove scream action when component removed
+        if (component.ScreamActionEntity != null)
+        {
+            //_actions.RemoveAction(uid, component.ScreamActionEntity); Commetet out to Remove The Scream Action from the Action bar
+        }
+    }
+
     private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
     {
         LoadSounds(uid, component, args.NewSex);
