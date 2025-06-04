@@ -142,6 +142,46 @@
   service: !type:CP14BuyItemsService
     product: CP14PottedPlant3
 
+
+- type: cp14TradingPosition
+  id: CP14FloorTileGrassBag
+  faction: HomeDecor
+  priceMarkup: 2
+  reputationLevel: 0
+  uiPosition: 16
+  icon:
+    sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi
+    state: grass
+  service: !type:CP14BuyItemsService
+    product: CP14FloorTileGrassBag
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14FloorTileGrassBagLight
+  faction: HomeDecor
+  priceMarkup: 2
+  reputationLevel: 0
+  uiPosition: 17
+  icon:
+    sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi
+    state: grass2
+  service: !type:CP14BuyItemsService
+    product: CP14FloorTileGrassBagLight
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14FloorTileGrassBagTall
+  faction: HomeDecor
+  priceMarkup: 2
+  reputationLevel: 0
+  uiPosition: 18
+  icon:
+    sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi
+    state: grass3
+  service: !type:CP14BuyItemsService
+    product: CP14FloorTileGrassBagTall
+    count: 5
+
 # Rep 1
 
 - type: cp14TradingPosition
