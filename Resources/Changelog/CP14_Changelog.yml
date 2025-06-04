@@ -139,3 +139,14 @@
   id: 8066
   time: '2025-06-04T06:57:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1375
+- author: TheShuEd
+  changes:
+  - message: fixed mispredict with examining the amount of remaining energy in magic
+      containers
+    type: Fix
+  - message: Merchants can no longer sell organs and things in containers. Economy
+      exploit hotfix
+    type: Fix
+  id: 8067
+  time: '2025-06-04T08:43:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1380
