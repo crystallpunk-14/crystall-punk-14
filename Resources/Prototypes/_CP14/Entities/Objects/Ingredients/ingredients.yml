@@ -15,10 +15,8 @@
   description: A sturdy metal buckle for fastening straps and belts.
   components:
   - type: Sprite
-    sprite: _CP14/Materials/Metal/iron_buckle.rsi # TODO
+    sprite: _CP14/Ingredients/buckle.rsi
     state: icon
-  - type: Item
-    sprite: _CP14/Materials/Metal/iron_buckle.rsi # TODO
 
 # Salt
 - type: entity
