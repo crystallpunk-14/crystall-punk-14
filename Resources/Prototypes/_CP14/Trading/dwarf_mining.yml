@@ -64,6 +64,16 @@
   service: !type:CP14BuyItemsService
     product: CP14ModularIronShovel
 
+- type: cp14TradingPosition
+  id: CP14BaseSharpeningStone
+  faction: DwarfMining
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Objects/sharpening_stone.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSharpeningStone
+
 # Rep 1
 
 - type: cp14TradingPosition
@@ -136,3 +146,15 @@
     state: bar_2
   service: !type:CP14BuyItemsService
     product: CP14MithrilBar5
+
+- type: cp14TradingPosition
+  id: CP14BaseSharpeningStoneStructure
+  faction: DwarfMining
+  reputationLevel: 2
+  priceMarkup: 5
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSharpeningStoneStructure
