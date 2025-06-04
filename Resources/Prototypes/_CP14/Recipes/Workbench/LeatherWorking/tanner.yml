@@ -1,0 +1,101 @@
+# ================
+# Leather
+# ================
+# Crafting Recipes
+# Leather Processing
+- type: CP14Recipe
+  id: CP14LightLeatherRecipe
+  tag: CP14RecipeTanner
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: LightAnimalHide
+    count: 2
+  - !type:StackResource
+    stack: Salt
+    count: 1
+  result: CP14LightLeather
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14LeatherRecipe
+  tag: CP14RecipeTanner
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: AnimalHide
+    count: 1
+  - !type:StackResource
+    stack: Salt
+    count: 1
+  result: CP14Leather
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14RoughLeatherRecipe
+  tag: CP14RecipeTanner
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: RoughAnimalHide
+    count: 1
+  - !type:StackResource
+    stack: Salt
+    count: 2
+  result: CP14RoughLeather
+  resultCount: 2
+
+# ================
+# Straps Crafting
+- type: CP14Recipe
+  id: CP14LightLeatherStrapRecipe
+  tag: CP14RecipeTanner
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14LightLeather
+    count: 1
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14LeatherStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14LeatherStrapRecipe
+  tag: CP14RecipeTanner
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 1
+  result: CP14LeatherStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ReinforcedStrapRecipe
+  tag: CP14RecipeTanner
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 2
+  - !type:StackResource
+    stack: CP14String
+    count: 8
+  result: CP14ReinforcedStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14ReinforcedRoughStrapRecipe
+  tag: CP14RecipeTanner
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14RoughLeather
+    count: 1
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14ReinforcedStrap
+  resultCount: 4

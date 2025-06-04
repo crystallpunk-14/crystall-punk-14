@@ -1,7 +1,7 @@
 - type: CP14Recipe
   id: CP14ClothMaterialCotton
   tag: CP14RecipeSewing
-  craftTime: 2
+  craftTime: 1
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Cotton
@@ -11,7 +11,7 @@
 - type: CP14Recipe
   id: CP14StringCotton
   tag: CP14RecipeSewing
-  craftTime: 2
+  craftTime: 1
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Cotton

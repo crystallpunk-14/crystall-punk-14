@@ -122,4 +122,5 @@
       collection: CP14Sawing #TODO
     recipeTags:
     - CP14RecipeSewing
+    - CP14RecipeTanner
 

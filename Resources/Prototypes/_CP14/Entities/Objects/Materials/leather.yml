@@ -1,0 +1,95 @@
+- type: entity
+  id: CP14LeatherBase
+  parent: BaseItem
+  abstract: true
+  categories: [ ForkFiltered ]
+
+# ================
+# Hide Types
+- type: entity
+  id: CP14AnimalHide
+  parent: CP14LeatherBase
+  name: animal hide
+  description: Untreated animal hide.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+
+- type: entity
+  id: CP14RoughHide
+  parent: CP14LeatherBase
+  name: rough hide
+  description: Durable animal hide.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/rough_hide.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/rough_hide.rsi
+
+# ================
+# Leather Types
+- type: entity
+  id: CP14LightLeather
+  parent: CP14LeatherBase
+  name: light leather
+  description: Soft and flexible leather, perfect for lightweight items.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/light_leather.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/light_leather.rsi
+
+- type: entity
+  id: CP14Leather
+  parent: CP14LeatherBase
+  name: leather
+  description: Standard quality leather for various crafts.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/leather.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/leather.rsi
+
+- type: entity
+  id: CP14RoughLeather
+  parent: CP14LeatherBase
+  name: heavy leather
+  description: Thick and durable leather for heavy-duty equipment.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/heavy_leather.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/heavy_leather.rsi
+
+# ================
+# Straps
+- type: entity
+  id: CP14LeatherStrap
+  parent: CP14LeatherBase
+  name: leather strap
+  description: A flexible strap made of leather, used in various crafts.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/leather_strap.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/leather_strap.rsi
+
+- type: entity
+  id: CP14ReinforcedStrap
+  parent: CP14LeatherBase
+  name: reinforced strap
+  description: A sturdy strap reinforced with additional layers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/reinforced_strap.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/reinforced_strap.rsi
