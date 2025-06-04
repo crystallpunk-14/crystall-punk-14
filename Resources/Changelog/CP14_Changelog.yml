@@ -177,3 +177,16 @@
   id: 8069
   time: '2025-06-04T11:34:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1382
+- author: TheShuEd
+  changes:
+  - message: "Beer spell now creates a special \u201Cmagical beer\u201D that costs\
+      \ nothing - infinite money exploit fixed"
+    type: Fix
+  - message: Alcohol prices have plummeted, so barrels of beer from the tavern can
+      no longer be sold for platinum coins
+    type: Fix
+  - message: Removed personal earning 5 gp objectives
+    type: Remove
+  id: 8070
+  time: '2025-06-04T15:40:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1384
