@@ -150,3 +150,13 @@
   id: 8067
   time: '2025-06-04T08:43:15.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1380
+- author: TheShuEd
+  changes:
+  - message: Bags of herbs are now available for purchase at Victorian Gardens. Allows
+      players to regenerate grass cover on the dirt tiles
+    type: Add
+  - message: Minor imrove grassland biome generation
+    type: Tweak
+  id: 8068
+  time: '2025-06-04T09:22:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1381
