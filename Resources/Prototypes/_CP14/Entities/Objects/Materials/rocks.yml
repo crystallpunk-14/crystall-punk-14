@@ -7,8 +7,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     noRot: true
     sprite: _CP14/Objects/Materials/dirt_block.rsi
@@ -57,8 +55,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     noRot: true
     sprite: _CP14/Objects/Materials/stone_block.rsi
@@ -107,8 +103,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     noRot: true
     sprite: _CP14/Objects/Materials/marble_block.rsi

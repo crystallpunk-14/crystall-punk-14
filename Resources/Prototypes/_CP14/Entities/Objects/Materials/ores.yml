@@ -7,8 +7,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Objects/Materials/copper_ore.rsi
     layers:
@@ -55,8 +53,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Objects/Materials/iron_ore.rsi
     layers:
@@ -103,8 +99,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Objects/Materials/gold_ore.rsi
     layers:
@@ -151,8 +145,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Objects/Materials/mithril_ore.rsi
     layers:

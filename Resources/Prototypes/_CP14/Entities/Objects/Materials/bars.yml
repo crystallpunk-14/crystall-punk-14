@@ -8,8 +8,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/copper_bar.rsi
     layers:
@@ -57,8 +55,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/iron_bar.rsi
     layers:
@@ -105,8 +101,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/gold_bar.rsi
     layers:
@@ -152,8 +146,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/glass.rsi
     layers:
@@ -198,8 +190,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/mithril_bar.rsi
     layers:

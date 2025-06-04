@@ -6,8 +6,6 @@
   components:
   - type: Item
     size: Normal
-    shape:
-    - 0,0,1,1 # 2x2
 
 # ================
 # Hide Types
@@ -17,10 +15,6 @@
   name: thin animal hide
   description: Untreated thin animal hide. It seems you can push it with your finger!
   components:
-  - type: Item
-    size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Materials/Hide/thin_hide.rsi
     state: icon
@@ -33,10 +27,6 @@
   name: animal hide
   description: Untreated animal hide. It would make a great pouch.
   components:
-  - type: Item
-    size: Big
-    shape:
-    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Materials/Hide/normal_hide.rsi
     state: icon
@@ -51,8 +41,6 @@
   components:
   - type: Item
     size: Big
-    shape:
-    - 0,0,2,1 # 3x2
   - type: Sprite
     sprite: _CP14/Materials/Hide/rough_hide.rsi
     state: icon
@@ -66,9 +54,7 @@
   description: Scraps of skin, someone cut it off carelessly!
   components:
   - type: Item
-    size: Small
-    shape:
-    - 0,0,1,0 # 2x1
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Materials/Hide/animal_hide.rsi
     state: icon
@@ -83,6 +69,8 @@
   name: thin leather
   description: Soft and flexible leather, perfect for lightweight items.
   components:
+  - type: Item
+    size: Small
   - type: Sprite
     sprite: _CP14/Materials/Hide/thin_leather.rsi
     state: icon
@@ -95,6 +83,8 @@
   name: leather
   description: Standard quality leather for various crafts.
   components:
+  - type: Item
+    size: Small
   - type: Sprite
     sprite: _CP14/Materials/Hide/leather.rsi
     state: icon
@@ -107,6 +97,8 @@
   name: heavy leather
   description: Thick and durable leather for heavy-duty equipment.
   components:
+  - type: Item
+    size: Small
   - type: Sprite
     sprite: _CP14/Materials/Hide/heavy_leather.rsi
     state: icon
@@ -122,9 +114,7 @@
   description: A flexible strap made of leather, used in various crafts.
   components:
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
+    size: Small
   - type: Sprite
     sprite: _CP14/Materials/Hide/leather_strap.rsi
     state: icon
@@ -138,9 +128,7 @@
   description: A sturdy strap reinforced with additional layers.
   components:
   - type: Item
-    size: Normal
-    shape:
-    - 0,0,1,0 # 2x1
+    size: Small
   - type: Sprite
     sprite: _CP14/Materials/Hide/reinforced_strap.rsi
     state: icon

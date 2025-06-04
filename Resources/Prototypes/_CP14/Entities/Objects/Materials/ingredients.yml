@@ -27,9 +27,7 @@
   description: A crystalline mineral used to season and preserve food.
   components:
   - type: Item
-    size: Small
-    shape:
-    - 0,0,1,1 # 2x2
+    size: Normal
   - type: Sprite
     sprite: Resources/Textures/Objects/Materials/ore.rsi
     state: salt
