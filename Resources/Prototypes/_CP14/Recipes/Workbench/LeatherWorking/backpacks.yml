@@ -1,7 +1,7 @@
 # Backpacks (heavy on leather)
 - type: CP14Recipe
   id: CP14ClothingBackpackT0
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -18,7 +18,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingBackpackT1
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -35,7 +35,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingBackpackT2
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -52,7 +52,7 @@
 
 - type: CP14Recipe
   id: CP14ClothingBackpackT3
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 10
   requirements:
   - !type:StackResource

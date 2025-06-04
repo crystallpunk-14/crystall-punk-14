@@ -1,11 +1,11 @@
 # ================
-# Leather
+# Hide
 # ================
 # Crafting Recipes
 # Leather Processing
 - type: CP14Recipe
-  id: CP14ThinLeatherRecipe
-  tag: CP14RecipeTanner
+  id: CP14ThinHideRecipe
+  tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -18,8 +18,8 @@
   resultCount: 2
 
 - type: CP14Recipe
-  id: CP14LeatherRecipe
-  tag: CP14RecipeTanner
+  id: CP14HideRecipe
+  tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -32,8 +32,8 @@
   resultCount: 1
 
 - type: CP14Recipe
-  id: CP14RoughLeatherRecipe
-  tag: CP14RecipeTanner
+  id: CP14RoughHideRecipe
+  tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -46,21 +46,40 @@
   resultCount: 1
 
 - type: CP14Recipe
-  id: CP14ScrapLeatherRecipe
-  tag: CP14RecipeTanner
+  id: CP14ScrapHideRecipe
+  tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
     stack: CP14ScrapAnimalHide
     count: 3
+  - !type:StackResource
+    stack: CP14String
+    count: 3
   result: CP14AnimalHide
+  resultCount: 1
+
+# ================
+# Leather Crafting
+- type: CP14Recipe
+  id: CP14ThinToNormalLeatherRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 2
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14Leather
   resultCount: 1
 
 # ================
 # Straps Crafting
 - type: CP14Recipe
   id: CP14ThinLeatherStrapRecipe
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -74,7 +93,7 @@
 
 - type: CP14Recipe
   id: CP14LeatherStrapRecipe
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
   - !type:StackResource
@@ -85,7 +104,7 @@
 
 - type: CP14Recipe
   id: CP14ReinforcedStrapRecipe
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
@@ -99,7 +118,7 @@
 
 - type: CP14Recipe
   id: CP14ReinforcedRoughStrapRecipe
-  tag: CP14RecipeTanner
+  tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
