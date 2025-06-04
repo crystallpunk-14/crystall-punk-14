@@ -3,6 +3,11 @@
   parent: BaseItem
   abstract: true
   categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1 # 2x2
 
 # ================
 # Hide Types
@@ -12,6 +17,10 @@
   name: thin animal hide
   description: Untreated thin animal hide. It seems you can push it with your finger!
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Materials/Hide/thin_hide.rsi
     state: icon
@@ -24,6 +33,10 @@
   name: animal hide
   description: Untreated animal hide. It would make a great pouch.
   components:
+  - type: Item
+    size: Big
+    shape:
+    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: _CP14/Materials/Hide/normal_hide.rsi
     state: icon
@@ -36,6 +49,10 @@
   name: rough hide
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
   components:
+  - type: Item
+    size: Big
+    shape:
+    - 0,0,2,1 # 3x2
   - type: Sprite
     sprite: _CP14/Materials/Hide/rough_hide.rsi
     state: icon
@@ -48,6 +65,10 @@
   name: scraps of hide
   description: Scraps of skin, someone cut it off carelessly!
   components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Materials/Hide/animal_hide.rsi
     state: icon
@@ -100,6 +121,10 @@
   name: leather strap
   description: A flexible strap made of leather, used in various crafts.
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Materials/Hide/leather_strap.rsi
     state: icon
@@ -112,6 +137,10 @@
   name: reinforced strap
   description: A sturdy strap reinforced with additional layers.
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Materials/Hide/reinforced_strap.rsi
     state: icon

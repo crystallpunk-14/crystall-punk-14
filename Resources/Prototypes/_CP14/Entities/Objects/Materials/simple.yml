@@ -51,6 +51,8 @@
   components:
   - type: Item
     size: Normal
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Materials/cloth.rsi
     layers:

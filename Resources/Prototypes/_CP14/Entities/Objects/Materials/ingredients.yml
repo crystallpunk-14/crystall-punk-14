@@ -4,24 +4,32 @@
   abstract: true
   categories: [ ForkFiltered ]
 
+# Buckle
 - type: entity
   id: CP14IronBuckle
   parent: CP14IngredientBase
   name: Iron Buckle
   description: A sturdy metal buckle for fastening straps and belts.
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _CP14/Materials/Metal/iron_buckle.rsi # TODO
     state: icon
   - type: Item
     sprite: _CP14/Materials/Metal/iron_buckle.rsi # TODO
 
+# Salt
 - type: entity
   id: CP14Salt
   parent: CP14IngredientBase
   name: Salt
   description: A crystalline mineral used to season and preserve food.
   components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1 # 2x2
   - type: Sprite
     sprite: Resources/Textures/Objects/Materials/ore.rsi
     state: salt
