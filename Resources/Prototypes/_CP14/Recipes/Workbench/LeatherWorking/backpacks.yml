@@ -53,10 +53,10 @@
   craftTime: 10
   requirements:
   - !type:StackResource
-    stack: CP14RoughLeather
+    stack: CP14RuggedLeather
     count: 8
   - !type:StackResource
-    stack: CP14RoughStrap
+    stack: CP14RuggedStrap
     count: 4
   - !type:StackResource
     stack: CP14IronBuckle

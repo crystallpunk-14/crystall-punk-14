@@ -46,7 +46,7 @@
     price: 10
 
 - type: entity
-  id: CP14RoughLeather
+  id: CP14RuggedLeather
   parent: CP14LeatherBase
   name: rough leather
   description: Thick and durable leather for heavy-duty equipment.
@@ -57,7 +57,7 @@
     state: rough_leather
   - type: PhysicalComposition
     materialComposition:
-      CP14RoughHide: 1
+      CP14RuggedHide: 1
       CP14Salt: 2
   - type: StaticPrice
     price: 15
@@ -82,7 +82,7 @@
     price: 5
 
 - type: entity
-  id: CP14RoughStrap
+  id: CP14RuggedStrap
   parent: CP14LeatherBase
   name: reinforced strap
   description: A sturdy strap reinforced with additional layers.
@@ -93,7 +93,7 @@
     state: rough_strap
   - type: PhysicalComposition
     materialComposition:
-      CP14RoughLeather: 0.25
+      CP14RuggedLeather: 0.25
       CP14String: 1
   - type: StaticPrice
     price: 10

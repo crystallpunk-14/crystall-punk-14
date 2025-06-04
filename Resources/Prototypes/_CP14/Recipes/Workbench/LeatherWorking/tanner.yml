@@ -32,17 +32,17 @@
   resultCount: 1
 
 - type: CP14Recipe
-  id: CP14RoughHideRecipe
+  id: CP14RuggedHideRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
-    stack: CP14RoughAnimalHide
+    stack: CP14RuggedAnimalHide
     count: 1
   - !type:StackResource
     stack: CP14Salt
     count: 2
-  result: CP14RoughLeather
+  result: CP14RuggedLeather
   resultCount: 1
 
 - type: CP14Recipe
@@ -103,7 +103,7 @@
   resultCount: 4
 
 - type: CP14Recipe
-  id: CP14StringedRoughStrapRecipe
+  id: CP14StringedRuggedStrapRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
@@ -113,19 +113,19 @@
   - !type:StackResource
     stack: CP14String
     count: 8
-  result: CP14RoughStrap
+  result: CP14RuggedStrap
   resultCount: 4
 
 - type: CP14Recipe
-  id: CP14RoughStrapRecipe
+  id: CP14RuggedStrapRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
   - !type:StackResource
-    stack: CP14RoughLeather
+    stack: CP14RuggedLeather
     count: 1
   - !type:StackResource
     stack: CP14String
     count: 4
-  result: CP14RoughStrap
+  result: CP14RuggedStrap
   resultCount: 4

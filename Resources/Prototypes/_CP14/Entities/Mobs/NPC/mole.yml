@@ -79,7 +79,7 @@
     - id: CP14FoodMeatMoleLeg
       amount: 1
       prob: 0.6
-    - id: CP14RoughAnimalHide
+    - id: CP14RuggedAnimalHide
       amount: 1
       prob: 0.2
     - id: CP14AnimalHide

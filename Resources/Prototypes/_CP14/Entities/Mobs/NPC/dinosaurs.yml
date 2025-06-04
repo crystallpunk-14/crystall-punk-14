@@ -94,7 +94,7 @@
     spawned:
     - id: CP14FoodMeatDino
       amount: 4
-    - id: CP14RoughAnimalHide
+    - id: CP14RuggedAnimalHide
       amount: 1
       maxAmount: 2
       prob: 0.2

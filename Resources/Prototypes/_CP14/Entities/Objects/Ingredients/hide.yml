@@ -38,7 +38,7 @@
     price: 25
 
 - type: entity
-  id: CP14RoughHide
+  id: CP14RuggedHide
   parent: CP14LHideBase
   name: rough hide
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
