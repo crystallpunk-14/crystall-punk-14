@@ -1,4 +1,3 @@
-cp14-modifier-gold-ore = золотая руда
 cp14-modifier-iron-ore = железная руда
 cp14-modifier-copper-ore = медная руда
 cp14-modifier-mithril-ore = мифриловая руда

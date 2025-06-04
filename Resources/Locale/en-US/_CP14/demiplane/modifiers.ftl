@@ -1,4 +1,3 @@
-cp14-modifier-gold-ore = gold ore
 cp14-modifier-iron-ore = iron ore
 cp14-modifier-copper-ore = copper ore
 cp14-modifier-mithril-ore = mithril ore
