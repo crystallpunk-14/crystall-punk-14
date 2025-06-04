@@ -85,7 +85,7 @@
   unit: materials-unit-bar
   icon: { sprite: _CP14/Objects/Materials/gold_scrap.rsi, state: scrap_3 }
   color: "#FFD700"
-  price: 5
+  price: 8
 
 - type: material
   id: CP14Mithril
