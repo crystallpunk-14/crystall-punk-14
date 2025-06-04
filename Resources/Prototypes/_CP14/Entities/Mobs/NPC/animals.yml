@@ -427,13 +427,13 @@
       amount: 4
     - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
       amount: 4
-    - id: CP14LightAnimalHide
-      amount: 1
-      maxAmount: 3
+    - id: CP14ThinAnimalHide
+      amount: 2
+      maxAmount: 5
     - id: CP14ScrapAnimalHide
       amount: 1
-      maxAmount: 3
-      prob: 0.5
+      maxAmount: 5
+      prob: 0.3
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal

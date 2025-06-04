@@ -7,16 +7,16 @@
 # ================
 # Hide Types
 - type: entity
-  id: CP14LightAnimalHide
+  id: CP14ThinAnimalHide
   parent: CP14LeatherBase
   name: thin animal hide
   description: Untreated thin animal hide. It seems you can push it with your finger!
   components:
   - type: Sprite
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    sprite: _CP14/Materials/Hide/thin_hide.rsi
     state: icon
   - type: Item
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    sprite: _CP14/Materials/Hide/thin_hide.rsi
 
 - type: entity
   id: CP14AnimalHide
@@ -25,10 +25,10 @@
   description: Untreated animal hide. It would make a great pouch.
   components:
   - type: Sprite
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    sprite: _CP14/Materials/Hide/normal_hide.rsi
     state: icon
   - type: Item
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    sprite: _CP14/Materials/Hide/normal_hide.rsi
 
 - type: entity
   id: CP14RoughHide
