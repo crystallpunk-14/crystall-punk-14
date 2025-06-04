@@ -30,6 +30,20 @@
   - CP14GeneralKeys
 
 - type: roleLoadout
+  id: JobCP14Carpenter
+  groups:
+  - CP14GeneralHead
+  - CP14GeneralOuterClothing
+  - CP14GeneralEyes
+  - CP14GeneralGloves
+  - CP14GeneralShirt
+  - CP14GeneralPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+  - CP14GeneralKeys
+
+- type: roleLoadout
   id: JobCP14Alchemist
   groups:
   - CP14AlchemistHead #

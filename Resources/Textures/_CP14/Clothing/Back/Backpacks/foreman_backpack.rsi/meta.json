@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "license": "All right reserved",
+  "copyright": "Created by jaraten (Discord/Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BACKPACK-goblin",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BACKPACK-carcat",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

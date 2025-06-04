@@ -1,0 +1,23 @@
+- type: job
+  id: CP14Carpenter
+  name: cp14-job-name-carpenter
+  description: cp14-job-desc-carpenter
+  playTimeTracker: CP14JobCarpenter
+  startingGear: CP14CarpenterGear
+  icon: "CP14JobIconGuildmaster"
+  supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - CopperMelting
+      - AlchemyVision
+
+- type: startingGear
+  id: CP14CarpenterGear
+  storage:
+    back:
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
+  equipment:
+    keys: CP14BaseKeyRing
+    belt: CP14WalletFilledTest

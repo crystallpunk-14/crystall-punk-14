@@ -639,6 +639,7 @@
   loadouts:
   - CP14ClothingBackpackLeather
   - CP14ClothingSatchelLeather
+  - CP14ClothingBackpackForeman
 
 - type: loadout
   id: CP14ClothingBackpackLeather
@@ -649,6 +650,11 @@
   id: CP14ClothingSatchelLeather
   equipment:
     back: CP14ClothingSatchelLeather
+
+- type: loadout
+  id: CP14ClothingBackpackForeman
+  equipment:
+    back: CP14ClothingBackpackForeman
 
 # Trinkets
 

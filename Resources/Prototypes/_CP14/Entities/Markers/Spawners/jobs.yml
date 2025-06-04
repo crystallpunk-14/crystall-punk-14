@@ -127,6 +127,20 @@
       - state: blacksmith
 
 - type: entity
+  id: CP14SpawnPointCarpenter
+  parent: CP14SpawnPointJobBase
+  name: carpenter
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Carpenter
+  - type: Sprite
+    layers:
+      - state: green
+      - state: workman #TODO Replace
+
+- type: entity
   id: CP14SpawnPointInnkeeper
   parent: CP14SpawnPointJobBase
   name: innkeeper

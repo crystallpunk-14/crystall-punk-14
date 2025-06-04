@@ -35,3 +35,6 @@ cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! Yo
 
 cp14-job-name-apprentice = Apprentice
 cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.
+
+cp14-job-name-carpenter = Foreman [Earlier WIP]
+cp14-job-desc-carpenter = Maintain the town. Do it. Thats your job. Fire? Thats you. People want a house? That's you. Broken Locks? You. It's all you. All day. Drinks are on the house, you're going to need them.
