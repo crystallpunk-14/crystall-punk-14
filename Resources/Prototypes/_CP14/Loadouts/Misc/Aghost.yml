@@ -6,5 +6,7 @@
     id: AdminPDA
   storage:
     back:
-    - CP14AdminMapCrystal
     - CP14AdminCheatCube
+    - CP14AdminMapCrystal
+    - AppraisalTool
+    - CP14BookGuildMoral

@@ -19,6 +19,7 @@
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
     spells:
+    - CP14ActionSpellMagicSplitting
     - CP14ActionSpellAdminTrueResurrection
     - CP14ActionSpellAdminNeutralization
     - CP14ActionSpellAdminDisadvantage
