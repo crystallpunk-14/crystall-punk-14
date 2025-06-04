@@ -1,6 +1,7 @@
 using Content.Server._CP14.Currency;
 using Content.Server._CP14.MagicEnergy;
 using Content.Server.Cargo.Systems;
+using Content.Server.Storage.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
@@ -9,8 +10,10 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Trading;
@@ -48,6 +51,14 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         foreach (var placed in itemPlacer.PlacedEntities)
         {
             if (HasComp<MobStateComponent>(placed))
+                continue;
+            if (HasComp<EntityStorageComponent>(placed))
+                continue;
+            if (HasComp<StorageComponent>(placed))
+                continue;
+
+            var proto = MetaData(placed).EntityPrototype;
+            if (proto != null && !proto.ID.StartsWith("CP14")) //Shitfix, we dont wanna sell anything vanilla (like mob organs)
                 continue;
 
             var placedPrice = _price.GetPrice(placed);

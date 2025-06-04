@@ -6,6 +6,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
+    drawdepth: FloorTiles
     snapCardinals: true
     sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
     layers:
@@ -55,6 +56,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
+    drawdepth: FloorTiles
     snapCardinals: true
     sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
     layers:
