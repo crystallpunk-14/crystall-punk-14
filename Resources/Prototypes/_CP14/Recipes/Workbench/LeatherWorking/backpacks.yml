@@ -23,7 +23,7 @@
   requirements:
   - !type:StackResource
     stack: CP14LightLeather
-    count: 10
+    count: 8
   - !type:StackResource
     stack: CP14LeatherStrap
     count: 2
@@ -40,7 +40,7 @@
   requirements:
   - !type:StackResource
     stack: CP14Leather
-    count: 10
+    count: 8
   - !type:StackResource
     stack: CP14LeatherStrap
     count: 4
@@ -57,7 +57,7 @@
   requirements:
   - !type:StackResource
     stack: CP14RoughLeather
-    count: 10
+    count: 8
   - !type:StackResource
     stack: CP14ReinforcedStrap
     count: 4
