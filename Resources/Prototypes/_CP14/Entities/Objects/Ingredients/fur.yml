@@ -25,7 +25,7 @@
 - type: entity
   id: CP14Fur
   parent: CP14HideBase
-  name: cheap fur
+  name: fur
   description: Ordinary fur, intended for everyday use and carpets.
   components:
   - type: Item
@@ -38,7 +38,7 @@
 - type: entity
   id: CP14GoodFur
   parent: CP14HideBase
-  name: good fur
+  name: soft fur
   description: Good, pleasant fur, perfect for fur coats and insulation.
   components:
   - type: Item

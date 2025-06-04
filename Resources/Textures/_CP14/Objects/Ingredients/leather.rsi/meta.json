@@ -14,13 +14,13 @@
         "name": "leather"
       },
       {
-        "name": "rough_leather"
+        "name": "rugged_leather"
       },
       {
         "name": "strap"
       },
       {
-        "name": "rough_strap"
+        "name": "rugged_strap"
       }
     ]
   }

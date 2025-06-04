@@ -96,9 +96,9 @@
   description: A sturdy strap reinforced with additional layers.
   components:
   - type: Sprite
-    state: rough_strap
+    state: rugged_strap
   - type: Item
-    state: rough_strap
+    state: rugged_strap
   - type: PhysicalComposition
     materialComposition:
       CP14RuggedLeather: 0.25
