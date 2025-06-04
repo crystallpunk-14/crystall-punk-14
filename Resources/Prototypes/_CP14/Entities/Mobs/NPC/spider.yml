@@ -35,6 +35,7 @@
     - id: CP14FoodMeatMoleLeg #TODO
       amount: 1
       prob: 0.6
+      # TODO: Chitin drops
   - type: CombatMode
   - type: MeleeWeapon
     angle: 0
@@ -111,7 +112,7 @@
   parent: CP14MobSpiderBase
   id: CP14MobSpiderBlackHunter
   name: black hunter
-  description: A giant predatory spider eager to eat your flesh. 
+  description: A giant predatory spider eager to eat your flesh.
   components:
   - type: Sprite
     drawdepth: Mobs

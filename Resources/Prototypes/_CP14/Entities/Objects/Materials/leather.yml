@@ -7,10 +7,22 @@
 # ================
 # Hide Types
 - type: entity
+  id: CP14LightAnimalHide
+  parent: CP14LeatherBase
+  name: thin animal hide
+  description: Untreated thin animal hide. It seems you can push it with your finger!
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+
+- type: entity
   id: CP14AnimalHide
   parent: CP14LeatherBase
   name: animal hide
-  description: Untreated animal hide.
+  description: Untreated animal hide. It would make a great pouch.
   components:
   - type: Sprite
     sprite: _CP14/Materials/Hide/animal_hide.rsi
@@ -22,7 +34,7 @@
   id: CP14RoughHide
   parent: CP14LeatherBase
   name: rough hide
-  description: Durable animal hide.
+  description: Durable animal hide. It would make great expensive boots or even protect against cuts.
   components:
   - type: Sprite
     sprite: _CP14/Materials/Hide/rough_hide.rsi
@@ -30,19 +42,31 @@
   - type: Item
     sprite: _CP14/Materials/Hide/rough_hide.rsi
 
+- type: entity
+  id: CP14ScrapAnimalHide
+  parent: CP14LeatherBase
+  name: scraps of hide
+  description: Scraps of skin, someone cut it off carelessly!
+  components:
+  - type: Sprite
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    state: icon
+  - type: Item
+    sprite: _CP14/Materials/Hide/animal_hide.rsi
+
 # ================
 # Leather Types
 - type: entity
-  id: CP14LightLeather
+  id: CP14ThinLeather
   parent: CP14LeatherBase
-  name: light leather
+  name: thin leather
   description: Soft and flexible leather, perfect for lightweight items.
   components:
   - type: Sprite
-    sprite: _CP14/Materials/Hide/light_leather.rsi
+    sprite: _CP14/Materials/Hide/thin_leather.rsi
     state: icon
   - type: Item
-    sprite: _CP14/Materials/Hide/light_leather.rsi
+    sprite: _CP14/Materials/Hide/thin_leather.rsi
 
 - type: entity
   id: CP14Leather

@@ -4,17 +4,17 @@
 # Crafting Recipes
 # Leather Processing
 - type: CP14Recipe
-  id: CP14LightLeatherRecipe
+  id: CP14ThinLeatherRecipe
   tag: CP14RecipeTanner
   craftTime: 1
   requirements:
   - !type:StackResource
-    stack: LightAnimalHide
+    stack: CP14ThinAnimalHide
     count: 2
   - !type:StackResource
-    stack: Salt
+    stack: CP14Salt
     count: 1
-  result: CP14LightLeather
+  result: CP14ThinLeather
   resultCount: 2
 
 - type: CP14Recipe
@@ -23,13 +23,13 @@
   craftTime: 1
   requirements:
   - !type:StackResource
-    stack: AnimalHide
+    stack: CP14AnimalHide
     count: 1
   - !type:StackResource
-    stack: Salt
+    stack: CP14Salt
     count: 1
   result: CP14Leather
-  resultCount: 2
+  resultCount: 1
 
 - type: CP14Recipe
   id: CP14RoughLeatherRecipe
@@ -37,23 +37,34 @@
   craftTime: 2
   requirements:
   - !type:StackResource
-    stack: RoughAnimalHide
+    stack: CP14RoughAnimalHide
     count: 1
   - !type:StackResource
-    stack: Salt
+    stack: CP14Salt
     count: 2
   result: CP14RoughLeather
-  resultCount: 2
+  resultCount: 1
+
+- type: CP14Recipe
+  id: CP14ScrapLeatherRecipe
+  tag: CP14RecipeTanner
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14ScrapAnimalHide
+    count: 3
+  result: CP14AnimalHide
+  resultCount: 1
 
 # ================
 # Straps Crafting
 - type: CP14Recipe
-  id: CP14LightLeatherStrapRecipe
+  id: CP14ThinLeatherStrapRecipe
   tag: CP14RecipeTanner
   craftTime: 1
   requirements:
   - !type:StackResource
-    stack: CP14LightLeather
+    stack: CP14ThinLeather
     count: 1
   - !type:StackResource
     stack: CP14String

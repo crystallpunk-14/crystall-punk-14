@@ -22,7 +22,7 @@
   craftTime: 4
   requirements:
   - !type:StackResource
-    stack: CP14LightLeather
+    stack: CP14ThinLeather
     count: 8
   - !type:StackResource
     stack: CP14LeatherStrap

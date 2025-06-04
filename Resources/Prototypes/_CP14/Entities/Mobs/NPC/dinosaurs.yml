@@ -94,6 +94,13 @@
     spawned:
     - id: CP14FoodMeatDino
       amount: 4
+    - id: CP14RoughAnimalHide
+      amount: 1
+      maxAmount: 2
+      prob: 0.2
+    - id: CP14AnimalHide
+      amount: 2
+      maxAmount: 4
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: SpamEmitSound
@@ -166,6 +173,13 @@
     spawned:
     - id: CP14FoodMeatHydra
       amount: 2
+    - id: CP14AnimalHide
+      amount: 1
+      prob: 0.5
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      maxAmount: 3
+      prob: 0.75
   - type: Bloodstream
     bloodMaxVolume: 100
   - type: SoundWhileAlive
