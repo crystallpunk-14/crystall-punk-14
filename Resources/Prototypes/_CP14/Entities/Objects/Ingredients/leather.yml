@@ -21,6 +21,12 @@
     state: thin_leather
   - type: Item
     state: thin_leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14ThinHide: 1
+      CP14Salt: 2
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14Leather
@@ -32,6 +38,12 @@
     state: leather
   - type: Item
     state: leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Hide: 1
+      CP14Salt: 2
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   id: CP14RoughLeather
@@ -43,6 +55,12 @@
     state: rough_leather
   - type: Item
     state: rough_leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14RoughHide: 1
+      CP14Salt: 2
+  - type: StaticPrice
+    price: 15
 
 # ================
 # Straps
@@ -56,9 +74,15 @@
     state: strap
   - type: Item
     state: strap
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 0.25
+      CP14String: 1
+  - type: StaticPrice
+    price: 5
 
 - type: entity
-  id: CP14ReinforcedStrap
+  id: CP14RoughStrap
   parent: CP14LeatherBase
   name: reinforced strap
   description: A sturdy strap reinforced with additional layers.
@@ -67,3 +91,9 @@
     state: rough_strap
   - type: Item
     state: rough_strap
+  - type: PhysicalComposition
+    materialComposition:
+      CP14RoughLeather: 0.25
+      CP14String: 1
+  - type: StaticPrice
+    price: 10

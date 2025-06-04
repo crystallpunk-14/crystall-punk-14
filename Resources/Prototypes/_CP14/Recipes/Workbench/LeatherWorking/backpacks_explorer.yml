@@ -14,7 +14,6 @@
     stack: CP14IronBuckle
     count: 8
   result: CP14ClothingExplorerBackpackT0
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingExplorerBackpackT1
@@ -31,7 +30,6 @@
     stack: CP14IronBuckle
     count: 10
   result: CP14ClothingExplorerBackpackT1
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingExplorerBackpackT2
@@ -48,7 +46,6 @@
     stack: CP14IronBuckle
     count: 12
   result: CP14ClothingExplorerBackpackT2
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingExplorerBackpackT3
@@ -59,10 +56,9 @@
     stack: CP14RoughLeather
     count: 6
   - !type:StackResource
-    stack: CP14ReinforcedStrap
+    stack: CP14RoughStrap
     count: 4
   - !type:StackResource
     stack: CP14IronBuckle
     count: 12
   result: CP14ClothingExplorerBackpackT3
-  resultCount: 1

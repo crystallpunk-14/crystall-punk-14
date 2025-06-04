@@ -14,7 +14,6 @@
     stack: CP14IronBuckle
     count: 3
   result: CP14ClothingSatchelT0
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingSatchelT1
@@ -31,7 +30,6 @@
     stack: CP14IronBuckle
     count: 4
   result: CP14ClothingSatchelT1
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingSatchelT2
@@ -48,7 +46,6 @@
     stack: CP14IronBuckle
     count: 6
   result: CP14ClothingSatchelT2
-  resultCount: 1
 
 - type: CP14Recipe
   id: CP14ClothingSatchelT3
@@ -59,10 +56,9 @@
     stack: CP14RoughLeather
     count: 6
   - !type:StackResource
-    stack: CP14ReinforcedStrap
+    stack: CP14RoughStrap
     count: 12
   - !type:StackResource
     stack: CP14IronBuckle
     count: 6
   result: CP14ClothingSatchelT3
-  resultCount: 1

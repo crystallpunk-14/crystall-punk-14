@@ -103,7 +103,7 @@
   resultCount: 4
 
 - type: CP14Recipe
-  id: CP14ReinforcedStrapRecipe
+  id: CP14StringedRoughStrapRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
@@ -113,11 +113,11 @@
   - !type:StackResource
     stack: CP14String
     count: 8
-  result: CP14ReinforcedStrap
+  result: CP14RoughStrap
   resultCount: 4
 
 - type: CP14Recipe
-  id: CP14ReinforcedRoughStrapRecipe
+  id: CP14RoughStrapRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
@@ -127,5 +127,5 @@
   - !type:StackResource
     stack: CP14String
     count: 4
-  result: CP14ReinforcedStrap
+  result: CP14RoughStrap
   resultCount: 4
