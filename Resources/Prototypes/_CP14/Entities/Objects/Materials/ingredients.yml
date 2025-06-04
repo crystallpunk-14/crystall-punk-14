@@ -3,6 +3,9 @@
   parent: BaseItem
   abstract: true
   categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
 
 # Buckle
 - type: entity
@@ -11,8 +14,6 @@
   name: Iron Buckle
   description: A sturdy metal buckle for fastening straps and belts.
   components:
-  - type: Item
-    size: Tiny
   - type: Sprite
     sprite: _CP14/Materials/Metal/iron_buckle.rsi # TODO
     state: icon
