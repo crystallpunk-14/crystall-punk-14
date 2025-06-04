@@ -89,6 +89,17 @@
   service: !type:CP14BuyItemsService
     product: CP14IronBar5
 
+- type: cp14TradingPosition
+  id: CP14Salt5
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: Resources/Textures/Objects/Materials/ore.rsi
+    state: salt
+  service: !type:CP14BuyItemsService
+    product: CP14Salt5
+
 # Rep 2
 
 - type: cp14TradingPosition

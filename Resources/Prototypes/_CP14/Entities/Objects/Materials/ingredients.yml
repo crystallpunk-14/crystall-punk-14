@@ -25,3 +25,23 @@
   - type: Sprite
     sprite: Resources/Textures/Objects/Materials/ore.rsi
     state: salt
+  - type: Stack
+    stackType: CP14Salt
+    count: 1
+    baseLayer: base
+
+- type: entity
+  id: CP14Salt5
+  parent: CP14Salt
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14Salt10
+  parent: CP14Salt
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
