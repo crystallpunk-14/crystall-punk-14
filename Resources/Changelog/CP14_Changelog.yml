@@ -190,3 +190,24 @@
   id: 8070
   time: '2025-06-04T15:40:18.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1384
+- author: TheShuEd
+  changes:
+  - message: The Guardian Department (Guard and Guard Commander) have been removed
+      from the game for rework.
+    type: Remove
+  - message: You can't buy mithril anymore
+    type: Remove
+  - message: 'Experimental change: public selling platforms have been removed. Buying
+      platforms are now located in the merchant''s lobby, in the public area. Selling
+      platforms exist only in the merchant''s private chambers.'
+    type: Tweak
+  - message: Sharpening stones can no longer be found in demiplanes and crates in
+      town. The Dwarf Steel faction now sells sharpening stones, including the large
+      station one.
+    type: Tweak
+  - message: The stationary sharpening stone can now be unscrewed and screwed on with
+      a wrench
+    type: Fix
+  id: 8071
+  time: '2025-06-04T21:58:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1386
