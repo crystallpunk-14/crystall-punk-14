@@ -39,7 +39,7 @@
           !type:PhysShapeAabb
           bounds: "-0.5,-0.5,0.5,0.5"
         mask:
-        - FullTileMask 
+        - FullTileMask
         layer:
         - Opaque
   - type: StepTrigger
@@ -132,3 +132,4 @@
   - type: CP14FireSpread
     spreadCooldownMin: 1
     spreadCooldownMax: 3
+

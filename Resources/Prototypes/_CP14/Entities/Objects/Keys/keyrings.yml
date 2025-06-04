@@ -42,6 +42,9 @@
     slots:
     - keys
     - belt
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 5
 
 - type: entity
   parent: CP14BaseKeyRing

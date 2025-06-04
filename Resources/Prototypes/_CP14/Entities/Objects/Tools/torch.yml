@@ -1,6 +1,6 @@
 - type: entity
   id: CP14Torch
-  parent: 
+  parent:
   - BaseItem
   - CP14BaseTorch
   name: torch
@@ -60,6 +60,10 @@
   - type: Tag
     tags:
     - CP14Torch
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Cloth: 10
 
 - type: entity
   parent: CP14Torch

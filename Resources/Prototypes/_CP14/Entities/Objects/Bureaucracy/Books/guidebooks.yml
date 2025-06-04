@@ -7,14 +7,13 @@
   - type: Sprite
     layers:
     - state: paper
-    - state: cover_strong
+    - state: cover_base
       color: "#1f389c"
-    - state: decor_wingette
-      color: "#49a0f2"
-    - state: detail_rivets
-      color: "#734b3f"
-    - state: icon_law
+    - state: decor_frame
+      color: "#38f0b3"
+    - state: icon_plate
       color: "#f5ba56"
+    - state: bookmark_short
   - type: GuideHelp
     guides:
     - CP14_RU_Imperial_Laws
@@ -29,11 +28,13 @@
   - type: Sprite
     layers:
     - state: paper
-    - state: cover_old
+    - state: cover_base
       color: "#3b8065"
-    - state: decor_wingette_circle
+    - state: decor_frame
+      color: "#ffe269"
+    - state: icon_plate
       color: "#4eabbf"
-    - state: icon_chemical
+    - state: bookmark_short
   - type: GuideHelp
     guides:
     - CP14_RU_Alchemy
@@ -48,17 +49,15 @@
   - type: Sprite
     layers:
     - state: paper
-    - state: cover_strong
+    - state: cover_base
       color: "#5f1280"
-    - sprite: _CP14/Objects/Bureaucracy/books.rsi
-      state: icon_rift
+    - state: decor_frame
+      color: "#ffe269"
+    - state: icon_magic
       shader: unshaded
-    - state: detail_rivets
-      color: "#734b3f"
-    - state: overlay_dirt
-      color: "#e149f2"
-      shader: unshaded
+    - state: bookmark_short
   - type: GuideHelp
     guides:
     - CP14_RU_Demiplanes
     - CP14_EN_Demiplanes
+

@@ -6,7 +6,6 @@
   children:
   - CP14_RU_JobAdventurer
   - CP14_RU_JobAlchemist
-  - CP14_RU_JobMerchant
   filterEnabled: True
 
 
@@ -29,11 +28,3 @@
   - CP14_RU_Alchemy
   filterEnabled: True
 
-- type: guideEntry
-  crystallPunkAllowed: true
-  id: CP14_RU_JobMerchant
-  name: Торговец
-  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Merchant.xml"
-  children:
-  - CP14_RU_Trading
-  filterEnabled: True

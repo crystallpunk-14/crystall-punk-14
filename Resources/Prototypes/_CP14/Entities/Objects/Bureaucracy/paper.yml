@@ -60,6 +60,8 @@
   - type: Tag
     tags:
     - Document
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   parent: CP14BasePaper
@@ -77,3 +79,4 @@
     - state: paper_stamp-generic
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
+

@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Input;
 using System.Numerics;
 using Content.Client.Stylesheets;
 using Content.Shared.CCVar;
@@ -181,6 +182,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Drop);
             AddButton(ContentKeyFunctions.ExamineEntity);
             AddButton(ContentKeyFunctions.SwapHands);
+            AddButton(ContentKeyFunctions.SwapHandsReverse);
             AddButton(ContentKeyFunctions.MoveStoredItem);
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
@@ -312,7 +314,9 @@ namespace Content.Client.Options.UI.Tabs
 
             //CP14
             AddHeader("ui-options-header-cp14");
-            AddButton(ContentKeyFunctions.CP14OpenSkillMenu);
+            AddButton(CP14ContentKeyFunctions.CP14OpenSkillMenu);
+            AddButton(CP14ContentKeyFunctions.OpenBelt2);
+            AddButton(CP14ContentKeyFunctions.SmartEquipBelt2);
             //CP14 end
 
             foreach (var control in _keyControls.Values)

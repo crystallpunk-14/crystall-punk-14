@@ -76,7 +76,6 @@ public sealed class CP14SpawnRandomDemiplaneJob : Job<bool>
         var expeditionConfig = _prototypeManager.Index(_config);
         var indexedLocation = _prototypeManager.Index(expeditionConfig.LocationConfig);
 
-        dungeonConfig.Data = indexedLocation.Data;
         dungeonConfig.Layers.AddRange(indexedLocation.Layers);
         dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
 

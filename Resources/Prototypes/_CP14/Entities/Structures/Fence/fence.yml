@@ -44,7 +44,7 @@
     delay: 2.5
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFence
   - CP14BaseFlammableSpreading
   id: CP14FenceWooden
@@ -83,3 +83,4 @@
     sprite: _CP14/Structures/Fence/wooden_birch.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch.rsi
+

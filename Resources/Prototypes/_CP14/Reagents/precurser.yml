@@ -1,4 +1,4 @@
-# Contains Flora and fauna, like flower, roots, mushrooms, etc, 
+# Contains Flora and fauna, like flower, roots, mushrooms, etc,
 
 # Flower based
 
@@ -14,6 +14,7 @@
     collection: FootstepBlood
     params:
       volume: 6
+  pricePerUnit: 0.1
 
 - type: reagent
   id: CP14YellowDayflinPulp
@@ -23,6 +24,7 @@
   flavor: CP14Sweetly
   color: "#ffe269"
   physicalDesc: cp14-reagent-physical-desc-pureed
+  pricePerUnit: 0.1
 
 - type: reagent
   id: CP14AirLily
@@ -49,6 +51,7 @@
         showInChat: false
         emote: Cough
         probability: 0.3
+  pricePerUnit: 0.2
 
 - type: reagent
   id: CP14WildSageSap
@@ -71,6 +74,7 @@
         type: Add
         time: 3
         refresh: false
+  pricePerUnit: 0.15
 
 # Fungus based
 
@@ -99,6 +103,7 @@
         type: Add
         time: 6
         refresh: false
+  pricePerUnit: 0.2
 
 - type: reagent
   id: CP14LumiMushroom
@@ -125,6 +130,7 @@
         type: Add
         time: 6
         refresh: false
+  pricePerUnit: 0.2
 
 - type: reagent
   id: CP14BlueAmanita
@@ -149,6 +155,7 @@
         damage:
           types:
             Poison: 0.1
+  pricePerUnit: 0.2
 
 # Slime based
 
@@ -168,12 +175,13 @@
       - !type:SatiateThirst
       - !type:ChemVomit
         probability: 0.05
+  pricePerUnit: 0.7
 
 # Inorganic
 
 - type: reagent
   id: CP14GroundQuartz
-  group: CP14Precurser 
+  group: CP14Precurser
   name: cp14-reagent-name-grounded-quartz
   desc: cp14-reagent-desc-grounded-quartz
   flavor: CP14Quartz
@@ -209,3 +217,5 @@
         component: ForcedSleeping
         refresh: false
         type: Add
+  pricePerUnit: 1.2
+

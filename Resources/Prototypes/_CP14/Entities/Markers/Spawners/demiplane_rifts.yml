@@ -47,7 +47,7 @@
     falloffPower: 1.5
     intensity: 50
   - type: EmitSoundOnSpawn
-    sound: 
+    sound:
       path: /Audio/Effects/demon_dies.ogg
       params:
         variation: 0.3

@@ -21,6 +21,8 @@
     tags:
     - CP14Wheat
     - CP14FarmFood
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14Cotton
@@ -45,3 +47,5 @@
   - type: Tag
     tags:
     - CP14FarmFood
+  - type: StaticPrice
+    price: 1

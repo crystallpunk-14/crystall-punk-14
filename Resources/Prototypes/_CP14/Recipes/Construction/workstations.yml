@@ -1,15 +1,10 @@
 - type: construction
   crystallPunkAllowed: true
-  name: Workbench
-  description: Table for the production of various basic tools.
   id: CP14Workbench
   graph: CP14Workbench
   startNode: start
   targetNode: CP14Workbench
   category: construction-category-machines
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: workbench
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -18,16 +13,11 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Cooking table
-  description: A table to work with food. Time to cook!
   id: CP14WorkbenchCooking
   graph: CP14WorkbenchCooking
   startNode: start
   targetNode: CP14WorkbenchCooking
   category: construction-category-machines
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: cooking_table
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -36,18 +26,14 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: Sewing table
-  description: A table with embroidery tools to create different clothing and materials.
   id: CP14WorkbenchSewing
   graph: CP14WorkbenchSewing
   startNode: start
   targetNode: CP14WorkbenchSewing
   category: construction-category-machines
-  icon:
-    sprite: _CP14/Structures/Furniture/workbench.rsi
-    state: sewing_table
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+

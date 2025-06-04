@@ -63,6 +63,8 @@
     energy: 30
     maxEnergy: 50
   - type: CP14MagicUnsafeDamage
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   abstract: true
@@ -159,3 +161,4 @@
     - state: magic
       shader: unshaded
       color: "#1c94d9"
+

@@ -11,9 +11,9 @@
       skills:
       - AlchemyVision
   requirements:
-    - !type:RoleTimeRequirement
-      role: CP14JobApprentice
-      time: 3600 # 1 hours
+    #- !type:RoleTimeRequirement
+    #  role: CP14JobApprentice
+    #  time: 3600 # 1 hours
     - !type:TraitsRequirement
       inverted: true
       traits:
@@ -26,6 +26,7 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
   equipment:
-    belt1: CP14WalletFilledTest
+    belt: CP14WalletFilledTest
     keys: CP14KeyRingAlchemist
     neck: CP14MagicHealingStaff
+

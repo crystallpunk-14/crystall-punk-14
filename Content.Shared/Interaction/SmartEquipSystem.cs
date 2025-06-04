@@ -3,6 +3,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
+using Content.Shared._CP14.Input;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Stacks;
@@ -35,6 +36,9 @@ public sealed class SmartEquipSystem : EntitySystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
+            //CP14
+            .Bind(CP14ContentKeyFunctions.SmartEquipBelt2, InputCmdHandler.FromDelegate(HandleSmartEquipBelt2, handle: false, outsidePrediction: false))
+            //CP14 end
             .Register<SmartEquipSystem>();
     }
 
@@ -55,6 +59,11 @@ public sealed class SmartEquipSystem : EntitySystem
         HandleSmartEquip(session, "belt");
     }
 
+    private void HandleSmartEquipBelt2(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "belt2");
+    }
+    //CP14 end
     private void HandleSmartEquip(ICommonSession? session, string equipmentSlot)
     {
         if (session is not { } playerSession)

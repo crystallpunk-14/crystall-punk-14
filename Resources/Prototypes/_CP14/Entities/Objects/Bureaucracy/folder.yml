@@ -35,6 +35,8 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14PaperFolderBlue
@@ -51,3 +53,4 @@
   - type: Sprite
     sprite: _CP14/Objects/Bureaucracy/paper.rsi
     state: folder_red
+

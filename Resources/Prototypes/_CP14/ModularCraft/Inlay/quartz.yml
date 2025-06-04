@@ -127,3 +127,4 @@
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:
         - CP14ImpactEffectShadowGrab
+

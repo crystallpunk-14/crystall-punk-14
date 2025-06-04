@@ -8,7 +8,7 @@
   "copyright": "Created by TheShuEd (Github) ",
   "states": [
     {
-      "name": "equipped-BELT1",
+      "name": "equipped-BELT",
       "directions": 4
     },
     {
@@ -21,6 +21,9 @@
     },
     {
       "name": "icon"
+    },
+    {
+      "name": "tool"
     },
     {
       "name": "inhand-left",

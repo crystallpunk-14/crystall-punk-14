@@ -29,6 +29,9 @@
   id: CP14AmbientWater
 
 - type: Tag
+  id: CP14AmbientForest
+
+- type: Tag
   id: CP14AmbientLurker
 
 - type: Tag
@@ -113,6 +116,9 @@
   id: CP14FarmFood
 
 - type: Tag
+  id: CP14FarmSeed
+
+- type: Tag
   id: CP14AlchemicalHerbals
 
 - type: Tag
@@ -144,3 +150,6 @@
 
 - type: Tag
   id: CP14EnergyCrystal
+
+- type: Tag
+  id: CP14Sandwich

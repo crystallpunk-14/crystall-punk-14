@@ -2,7 +2,7 @@
 enabled = true
 
 [localization]
-language = "ru-RU"
+language = "en-US"
 
 [log]
 path = "logs"
@@ -15,9 +15,7 @@ tickrate = 30
 port = 1212
 bindto = "::,0.0.0.0"
 max_connections = 100
-
-[status]
-max_connections = 10
+log_late_msg = false
 
 [game]
 hostname = "⚔️ CrystallEdge ⚔️"

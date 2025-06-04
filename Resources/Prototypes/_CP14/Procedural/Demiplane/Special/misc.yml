@@ -62,10 +62,11 @@
   id: Test7
   levels:
     min: 9
-    max: 10
+    max: 9
 
 - type: cp14SpecialDemiplane
   id: Test8
   levels:
     min: 9
-    max: 10
+    max: 9
+

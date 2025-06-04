@@ -1,5 +1,6 @@
 - type: job
   id: CP14Merchant
+  setPreference: true
   name: cp14-job-name-merchant
   description: cp14-job-desc-merchant
   playTimeTracker: CP14JobMerchant
@@ -9,6 +10,8 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours
+  special:
+    - !type:CP14AddGlobalReputationSpecial
 
 - type: startingGear
   id: CP14MerchantGear
@@ -17,5 +20,6 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
   equipment:
-    belt1: CP14WalletFilledTest
+    belt: CP14WalletFilledTest
     keys: CP14KeyRingMerchant
+

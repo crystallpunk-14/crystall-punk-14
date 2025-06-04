@@ -29,6 +29,16 @@
   result: CP14Cloth1
 
 - type: CP14Recipe
+  id: CP14StringFromWeb
+  tag: CP14RecipeSewing
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Web
+    count: 2
+  result: CP14String
+
+- type: CP14Recipe
   id: CP14StringCottonCloth
   tag: CP14RecipeSewing
   craftTime: 1
@@ -255,6 +265,18 @@
     count: 4
   result: CP14SackFarming
 
+- type: CP14Recipe
+  id: CP14SackFarmingSeed
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14SackFarmingSeed
+
 # Wallpaper (TODO: Move to separate workbench?)
 
 - type: CP14Recipe
@@ -336,3 +358,4 @@
   - !type:ProtoIdResource
     protoId: CP14DyeYellow
   result: CP14WallpaperYellow
+
