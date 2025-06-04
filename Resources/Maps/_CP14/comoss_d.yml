@@ -120715,7 +120715,7 @@ entities:
     - type: Transform
       pos: -25.5,4.5
       parent: 1
-- proto: CP14WallStoneGoldOre
+- proto: CP14WallStoneCopperOre
   entities:
   - uid: 22956
     components:
@@ -120909,7 +120909,7 @@ entities:
     - type: Transform
       pos: -62.5,11.5
       parent: 1
-- proto: CP14WallStoneMithrilOre
+- proto: CP14WallStoneIronOre
   entities:
   - uid: 23055
     components:

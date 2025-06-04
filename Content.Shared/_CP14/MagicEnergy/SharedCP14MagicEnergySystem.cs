@@ -105,6 +105,7 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
 
         deltaEnergy = newEnergy - oldEnergy;
         ent.Comp.Energy = newEnergy;
+        Dirty(ent);
 
         if (oldEnergy != newEnergy)
             RaiseLocalEvent(ent, new CP14MagicEnergyLevelChangeEvent(oldEnergy, newEnergy, ent.Comp.MaxEnergy));
@@ -120,14 +121,7 @@ public abstract class SharedCP14MagicEnergySystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
-        var oldEnergy = ent.Comp.Energy;
-
-        ent.Comp.Energy = 0;
-
-        if (oldEnergy != 0)
-            RaiseLocalEvent(ent, new CP14MagicEnergyLevelChangeEvent(oldEnergy, 0, ent.Comp.MaxEnergy));
-
-        UpdateMagicAlert((ent, ent.Comp));
+        ChangeEnergy(ent, -ent.Comp.Energy, out _, out _);
     }
 
     public void TransferEnergy(Entity<CP14MagicEnergyContainerComponent?> sender,

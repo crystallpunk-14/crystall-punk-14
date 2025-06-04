@@ -24,7 +24,9 @@
     sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 2
+      CP14Gold: 5
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   parent: CP14ClothingJewelleryBase
@@ -41,3 +43,8 @@
     sprite: _CP14/Clothing/Rings/Amulet/amulet_mana.rsi
   - type: CP14MagicManacostModify
     globalModifier: 0.9
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 5
+  - type: StaticPrice
+    price: 30

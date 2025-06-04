@@ -132,3 +132,61 @@
   id: 8065
   time: '2025-06-03T15:12:44.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1376
+- author: Nimfar11
+  changes:
+  - message: Adds new carpets in different colours.
+    type: Add
+  id: 8066
+  time: '2025-06-04T06:57:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1375
+- author: TheShuEd
+  changes:
+  - message: fixed mispredict with examining the amount of remaining energy in magic
+      containers
+    type: Fix
+  - message: Merchants can no longer sell organs and things in containers. Economy
+      exploit hotfix
+    type: Fix
+  id: 8067
+  time: '2025-06-04T08:43:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1380
+- author: TheShuEd
+  changes:
+  - message: Bags of herbs are now available for purchase at Victorian Gardens. Allows
+      players to regenerate grass cover on the dirt tiles
+    type: Add
+  - message: Minor imrove grassland biome generation
+    type: Tweak
+  id: 8068
+  time: '2025-06-04T09:22:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1381
+- author: TheShuEd
+  changes:
+  - message: The blacksmith no longer has gold bars from the start of the round, but
+      has more planks
+    type: Tweak
+  - message: The value of gold and all gold items is greatly increased in value
+    type: Tweak
+  - message: The amount of gold ore in the demiplanes has been greatly reduced and
+      is no longer visible in the demiplane description
+    type: Tweak
+  - message: Gold amulets in demiplanes now cost good money!
+    type: Fix
+  - message: Removed all gold and mithril mapped on maps
+    type: Remove
+  id: 8069
+  time: '2025-06-04T11:34:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1382
+- author: TheShuEd
+  changes:
+  - message: "Beer spell now creates a special \u201Cmagical beer\u201D that costs\
+      \ nothing - infinite money exploit fixed"
+    type: Fix
+  - message: Alcohol prices have plummeted, so barrels of beer from the tavern can
+      no longer be sold for platinum coins
+    type: Fix
+  - message: Removed personal earning 5 gp objectives
+    type: Remove
+  id: 8070
+  time: '2025-06-04T15:40:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1384

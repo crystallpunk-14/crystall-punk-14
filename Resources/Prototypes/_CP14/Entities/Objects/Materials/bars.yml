@@ -97,7 +97,7 @@
   parent: BaseItem
   name: gold bar
   description: A warm to the touch, soft piece of refined gold.
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: Item
     size: Normal
@@ -123,6 +123,7 @@
 - type: entity
   id: CP14GoldBar5
   parent: CP14GoldBar1
+  categories: [ DoNotMap ]
   suffix: 5
   components:
   - type: Stack
@@ -131,6 +132,7 @@
 - type: entity
   id: CP14GoldBar10
   parent: CP14GoldBar1
+  categories: [ DoNotMap ]
   suffix: 10
   components:
   - type: Stack
@@ -186,7 +188,7 @@
   parent: BaseItem
   name: mithril bar
   description: A warm to the touch, soft piece of refined mithril.
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: Item
     size: Normal
@@ -212,6 +214,7 @@
 - type: entity
   id: CP14MithrilBar5
   parent: CP14MithrilBar1
+  categories: [ DoNotMap ]
   suffix: 5
   components:
   - type: Stack
@@ -220,6 +223,7 @@
 - type: entity
   id: CP14MithrilBar10
   parent: CP14MithrilBar1
+  categories: [ DoNotMap ]
   suffix: 10
   components:
   - type: Stack
