@@ -9,7 +9,6 @@
     sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi
   - type: Item
     sprite: _CP14/Objects/Tile/tile.rsi
-    state: bag
     size: Tiny
   - type: Stack
     count: 1
