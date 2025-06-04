@@ -87,6 +87,7 @@
   - CP14BaseWorkbench
   - CP14BaseFlammable
   name: cooking table
+  suffix: Workbench
   description: A table to work with food. Time to cook!
   components:
   - type: Sprite
@@ -108,6 +109,7 @@
   - CP14BaseWorkbench
   - CP14BaseFlammable
   name: sewing table
+  suffix: Clothing Workbench
   description: A table with embroidery tools to create different clothing and materials.
   components:
   - type: Sprite
@@ -122,5 +124,26 @@
       collection: CP14Sawing #TODO
     recipeTags:
     - CP14RecipeSewing
+
+- type: entity
+  id: CP14WorkbenchLeatherWorking
+  parent:
+  - CP14BaseWorkbench
+  - CP14BaseFlammable
+  name: tanner table
+  suffix: Leather  Workbench
+  description: Table for leather processing and creation of leather goods.
+  components:
+  - type: Sprite
+    state: tanner_table
+  - type: Icon
+    state: tanner_table
+  - type: Construction
+    graph: CP14WorkbenchTanner
+    node: CP14WorkbenchTanner
+  - type: CP14Workbench
+    craftSound:
+      collection: CP14Leather # TODO?
+    recipeTags:
     - CP14RecipeLeatherWorking
 
