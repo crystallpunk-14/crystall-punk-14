@@ -28,7 +28,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Resources/Textures/Objects/Materials/ore.rsi
+    sprite: Objects/Materials/ore.rsi
     state: salt
   - type: Stack
     stackType: CP14Salt

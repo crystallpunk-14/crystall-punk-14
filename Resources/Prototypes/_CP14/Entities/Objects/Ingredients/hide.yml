@@ -1,0 +1,61 @@
+- type: entity
+  id: CP14HideBase
+  parent: BaseItem
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+
+# ================
+# Hide Types
+- type: entity
+  id: CP14ThinAnimalHide
+  parent: CP14HideBase
+  name: thin animal hide
+  description: Untreated thin animal hide. It seems you can push it with your finger!
+  components:
+  - type: Sprite
+    state: thin_hide
+  - type: Item
+    state: thin_hide
+
+- type: entity
+  id: CP14AnimalHide
+  parent: CP14HideBase
+  name: animal hide
+  description: Untreated animal hide. It would make a great pouch.
+  components:
+  - type: Sprite
+    state: hide
+  - type: Item
+    state: hide
+
+- type: entity
+  id: CP14RoughHide
+  parent: CP14LHideBase
+  name: rough hide
+  description: Durable animal hide. It would make great expensive boots or even protect against cuts.
+  components:
+  - type: Item
+    size: Big
+  - type: Sprite
+    state: rough_hide
+  - type: Item
+    state: rough_hide
+
+# Pieces of hide to assemble whole hide.
+- type: entity
+  id: CP14ScrapAnimalHide
+  parent: CP14HideBase
+  name: scraps of hide
+  description: Scraps of skin, someone cut it off carelessly!
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: scrap_hide
+  - type: Item
+    state: scrap_hide

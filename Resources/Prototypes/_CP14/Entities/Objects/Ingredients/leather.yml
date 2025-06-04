@@ -5,61 +5,9 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Normal
-
-# ================
-# Hide Types
-- type: entity
-  id: CP14ThinAnimalHide
-  parent: CP14LeatherBase
-  name: thin animal hide
-  description: Untreated thin animal hide. It seems you can push it with your finger!
-  components:
+    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/thin_hide.rsi
-    state: icon
-  - type: Item
-    sprite: _CP14/Materials/Hide/thin_hide.rsi
-
-- type: entity
-  id: CP14AnimalHide
-  parent: CP14LeatherBase
-  name: animal hide
-  description: Untreated animal hide. It would make a great pouch.
-  components:
-  - type: Sprite
-    sprite: _CP14/Materials/Hide/normal_hide.rsi
-    state: icon
-  - type: Item
-    sprite: _CP14/Materials/Hide/normal_hide.rsi
-
-- type: entity
-  id: CP14RoughHide
-  parent: CP14LeatherBase
-  name: rough hide
-  description: Durable animal hide. It would make great expensive boots or even protect against cuts.
-  components:
-  - type: Item
-    size: Big
-  - type: Sprite
-    sprite: _CP14/Materials/Hide/rough_hide.rsi
-    state: icon
-  - type: Item
-    sprite: _CP14/Materials/Hide/rough_hide.rsi
-
-- type: entity
-  id: CP14ScrapAnimalHide
-  parent: CP14LeatherBase
-  name: scraps of hide
-  description: Scraps of skin, someone cut it off carelessly!
-  components:
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
-    state: icon
-  - type: Item
-    sprite: _CP14/Materials/Hide/animal_hide.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
 
 # ================
 # Leather Types
@@ -69,13 +17,10 @@
   name: thin leather
   description: Soft and flexible leather, perfect for lightweight items.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/thin_leather.rsi
-    state: icon
+    state: thin_leather
   - type: Item
-    sprite: _CP14/Materials/Hide/thin_leather.rsi
+    state: thin_leather
 
 - type: entity
   id: CP14Leather
@@ -83,27 +28,21 @@
   name: leather
   description: Standard quality leather for various crafts.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/leather.rsi
-    state: icon
+    state: leather
   - type: Item
-    sprite: _CP14/Materials/Hide/leather.rsi
+    state: leather
 
 - type: entity
   id: CP14RoughLeather
   parent: CP14LeatherBase
-  name: heavy leather
+  name: rough leather
   description: Thick and durable leather for heavy-duty equipment.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/heavy_leather.rsi
-    state: icon
+    state: rough_leather
   - type: Item
-    sprite: _CP14/Materials/Hide/heavy_leather.rsi
+    state: rough_leather
 
 # ================
 # Straps
@@ -113,13 +52,10 @@
   name: leather strap
   description: A flexible strap made of leather, used in various crafts.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/leather_strap.rsi
-    state: icon
+    state: strap
   - type: Item
-    sprite: _CP14/Materials/Hide/leather_strap.rsi
+    state: strap
 
 - type: entity
   id: CP14ReinforcedStrap
@@ -127,10 +63,7 @@
   name: reinforced strap
   description: A sturdy strap reinforced with additional layers.
   components:
-  - type: Item
-    size: Small
   - type: Sprite
-    sprite: _CP14/Materials/Hide/reinforced_strap.rsi
-    state: icon
+    state: rough_strap
   - type: Item
-    sprite: _CP14/Materials/Hide/reinforced_strap.rsi
+    state: rough_strap
