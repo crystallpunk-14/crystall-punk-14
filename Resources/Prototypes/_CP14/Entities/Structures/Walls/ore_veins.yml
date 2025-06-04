@@ -106,6 +106,8 @@
         acts: ["Destruction"]
   - type: IconSmooth
     base: wall
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: CP14WallStoneMithrilOre
