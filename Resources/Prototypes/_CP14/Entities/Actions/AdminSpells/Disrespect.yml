@@ -1,26 +1,22 @@
 - type: entity
-  id: CP14ActionSpellAdminDisadvantage
-  name: Disadvantage
-  description: You're giving disadvantage to a hated player.
+  id: CP14ActionSpellAdminDisrespect
+  name: Disrespect
+  description: You throw lightning at the creature.
   components:
   - type: Sprite
     sprite: _CP14/Actions/AdminSpells.rsi
-    state: disadvantage
+    state: disrespect
   - type: CP14MagicEffect
     effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SkyLightningPurple
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:MovespeedModifier 
-        walkSpeedModifier: 0.9
-        sprintSpeedModifier: 0.85
-        statusLifetime: 120
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: 10.0 # Add more effects when they are available
-      - !type:CP14ManaChange
-        manaDelta: -20
-        safe: true
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.88
+        statusLifetime: 30
       - !type:Jitter
   - type: EntityTargetAction
     whitelist:
@@ -28,10 +24,10 @@
       - MobState
     range: 50
     itemIconStyle: BigAction
-    interactOnMiss: false
+    interactOnMiss: true
     icon:
       sprite: _CP14/Actions/AdminSpells.rsi
-      state: disadvantage
+      state: disrespect
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1

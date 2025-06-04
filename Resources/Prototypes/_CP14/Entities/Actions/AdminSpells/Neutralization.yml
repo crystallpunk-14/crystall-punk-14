@@ -10,6 +10,9 @@
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
+      - !type:CP14ManaChange
+        manaDelta: -1000
+        safe: true
       - !type:Paralyze
         paralyzeTime: 3
       - !type:GenericStatusEffect

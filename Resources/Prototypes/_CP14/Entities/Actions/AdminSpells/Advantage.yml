@@ -27,6 +27,9 @@
             Bloodloss: -10.0
             Caustic: -10.0
             CP14ManaDepletion: -10.0 # Add more effects when they are available
+      - !type:CP14ManaChange
+        manaDelta: 20
+        safe: true
       - !type:Jitter
   - type: EntityTargetAction
     whitelist:
@@ -35,8 +38,6 @@
     range: 50
     itemIconStyle: BigAction
     interactOnMiss: false
-#    sound: !type:SoundPathSpecifier
-#      path: /Audio/Magic/blink.ogg
     icon:
       sprite: _CP14/Actions/AdminSpells.rsi
       state: advantage
