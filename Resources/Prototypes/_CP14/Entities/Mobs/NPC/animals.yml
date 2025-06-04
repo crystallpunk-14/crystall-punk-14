@@ -74,6 +74,7 @@
       maxAmount: 2
     - id: CP14Fur
       amount: 1
+      prob: 0.75
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
@@ -220,6 +221,9 @@
     - id: CP14RuggedAnimalHide
       amount: 1
       prob: 0.1
+    - id: CP14CheapFur
+      amount: 1
+      prob: 0.25
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -429,6 +433,7 @@
       amount: 4
     - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
       amount: 4
+      maxAmount: 16
     - id: CP14ThinAnimalHide
       amount: 2
       maxAmount: 5
