@@ -112,16 +112,16 @@
   service: !type:CP14BuyItemsService
     product: CP14OreGold5
 
-- type: cp14TradingPosition
-  id: CP14OreMithril5
-  faction: DwarfMining
-  reputationLevel: 2
-  uiPosition: 1
-  icon:
-    sprite: _CP14/Objects/Materials/mithril_ore.rsi
-    state: ore2
-  service: !type:CP14BuyItemsService
-    product: CP14OreMithril5
+#- type: cp14TradingPosition
+#  id: CP14OreMithril5
+#  faction: DwarfMining
+#  reputationLevel: 2
+#  uiPosition: 1
+#  icon:
+#    sprite: _CP14/Objects/Materials/mithril_ore.rsi
+#    state: ore2
+#  service: !type:CP14BuyItemsService
+#    product: CP14OreMithril5
 
 - type: cp14TradingPosition
   id: CP14GoldBar5
@@ -135,17 +135,17 @@
   service: !type:CP14BuyItemsService
     product: CP14GoldBar5
 
-- type: cp14TradingPosition
-  id: CP14MithrilBar5
-  faction: DwarfMining
-  reputationLevel: 2
-  priceMarkup: 5
-  uiPosition: 5
-  icon:
-    sprite: _CP14/Objects/Materials/mithril_bar.rsi
-    state: bar_2
-  service: !type:CP14BuyItemsService
-    product: CP14MithrilBar5
+#- type: cp14TradingPosition
+#  id: CP14MithrilBar5
+#  faction: DwarfMining
+#  reputationLevel: 2
+#  priceMarkup: 5
+#  uiPosition: 5
+#  icon:
+#    sprite: _CP14/Objects/Materials/mithril_bar.rsi
+#    state: bar_2
+#  service: !type:CP14BuyItemsService
+#    product: CP14MithrilBar5
 
 - type: cp14TradingPosition
   id: CP14BaseSharpeningStoneStructure
