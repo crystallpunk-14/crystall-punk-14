@@ -13,9 +13,23 @@
   - type: CP14MagicEffect
     magicType: Life
     effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14AreaEntityEffectPeaceBallade
+    - !type:CP14SpellArea
+      range: 4
+      maxTargets: 8
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectPeaceBallade
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:GenericStatusEffect
+          key: Pacified
+          component: Pacified
+          type: Add
+          time: 1.8
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePeaceBallade
@@ -31,31 +45,6 @@
       cooldown: 15
       castTime: 120
       hidden: true
-
-- type: entity
-  id: CP14AreaEntityEffectPeaceBallade
-  categories: [ HideSpawnMenu ]
-  save: false
-  components:
-  - type: TimedDespawn
-    lifetime: 1.6
-  - type: CP14AreaEntityEffect
-    range: 3
-    maxTargets: 4
-    whitelist:
-      components:
-      - MobState
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectPeaceBallade
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:GenericStatusEffect
-        key: Pacified
-        component: Pacified
-        type: Add
-        time: 1.8
 
 - type: entity
   id: CP14ImpactEffectPeaceBallade

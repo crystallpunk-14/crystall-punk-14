@@ -1,0 +1,141 @@
+﻿Entries:
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8052
+  time: '2025-06-02T18:40:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1359
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8053
+  time: '2025-06-02T19:33:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1364
+- author: TheShuEd
+  changes:
+  - message: Added fun!
+    type: Add
+  - message: Removed fun!
+    type: Remove
+  - message: Changed fun!
+    type: Tweak
+  - message: Fixed fun!
+    type: Fix
+  id: 8054
+  time: '2025-06-02T20:00:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1365
+- author: TheShuEd
+  changes:
+  - message: "A new trade contract with the \u201CCozy Home\u201D store has been added.\
+      \ Now you can buy wallpaper, home decorations, and some other items."
+    type: Add
+  id: 8055
+  time: '2025-06-02T21:38:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1367
+- author: paige404
+  changes:
+  - message: Tweaked slime damage resistances and immunities. Elemental slimes are
+      now immune to their own elements, but weak to an opposing element. Electric
+      slimes take equal damage from both heat and cold, and have had their oppressive
+      stunlocking power somewhat reduced. Additionally, all slimes are now immune
+      to airloss damage.
+    type: Tweak
+  id: 8056
+  time: '2025-06-02T21:59:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1300
+- author: ArZarLordOfMango
+  changes:
+  - message: Fixed Guild moral book
+    type: Fix
+  id: 8057
+  time: '2025-06-02T22:04:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1368
+- author: TheKittehJesus
+  changes:
+  - message: Cash converters can be anchored on tables
+    type: Fix
+  id: 8058
+  time: '2025-06-03T06:41:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1371
+- author: TheShuEd
+  changes:
+  - message: Music magic no longer applies the effect on the musician. Tieflings with
+      Hell Ballad are now OP
+    type: Tweak
+  - message: The radius of action of the peace ballad has been increased by 2 times
+      and the maximum number of entities that can be affected has been increased from
+      4 to 8
+    type: Tweak
+  - message: The speed increase from the speed ballad is increased by 5%
+    type: Tweak
+  id: 8059
+  time: '2025-06-03T09:43:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1372
+- author: DeLTaAlarm0
+  changes:
+  - message: Added flippable open/closed table sign
+    type: Add
+  - message: Added workbench recipe for open/closed sign
+    type: Add
+  id: 8060
+  time: '2025-06-03T11:22:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1275
+- author: TheKittehJesus
+  changes:
+  - message: Added controls for quick pickup both belt slots! Check your controls,
+      as belt2 controls may be unbound.
+    type: Add
+  id: 8061
+  time: '2025-06-03T11:39:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1298
+- author: Mandranir
+  changes:
+  - message: dropper size is now 1x1
+    type: Fix
+  id: 8062
+  time: '2025-06-03T11:41:00.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1373
+- author: Nimfar11
+  changes:
+  - message: Adds a new artifact Skeleton Lockpick.
+    type: Add
+  id: 8063
+  time: '2025-06-03T12:37:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1374
+- author: KittyCat432
+  changes:
+  - message: Changed Healing solution to not "waste" any of its healing on types of
+      brute you do not have.
+    type: Tweak
+  id: 8064
+  time: '2025-06-03T14:10:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1340
+- author: TheShuEd
+  changes:
+  - message: All merchants now gain +1 reputation with each faction at the start of
+      the round, greatly expanding their range of goods.
+    type: Tweak
+  id: 8065
+  time: '2025-06-03T15:12:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1376
+- author: Nimfar11
+  changes:
+  - message: Adds new carpets in different colours.
+    type: Add
+  id: 8066
+  time: '2025-06-04T06:57:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1375

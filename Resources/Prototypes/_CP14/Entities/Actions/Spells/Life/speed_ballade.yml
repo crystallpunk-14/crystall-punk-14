@@ -13,9 +13,23 @@
   - type: CP14MagicEffect
     magicType: Life
     effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14AreaEntityEffectSpeedBallade
+    - !type:CP14SpellArea
+      affectCaster: true
+      range: 5
+      maxTargets: 4
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectSpeedBallade
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.2
+          sprintSpeedModifier: 1.2
+          statusLifetime: 1.8
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSpeedBallade
@@ -31,30 +45,6 @@
       cooldown: 15
       castTime: 120
       hidden: true
-
-- type: entity
-  id: CP14AreaEntityEffectSpeedBallade
-  categories: [ HideSpawnMenu ]
-  save: false
-  components:
-  - type: TimedDespawn
-    lifetime: 1.6
-  - type: CP14AreaEntityEffect
-    range: 3
-    maxTargets: 4
-    whitelist:
-      components:
-      - MobState
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectSpeedBallade
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:MovespeedModifier
-        walkSpeedModifier: 1.15
-        sprintSpeedModifier: 1.15
-        statusLifetime: 1.8
 
 - type: entity
   id: CP14ImpactEffectSpeedBallade

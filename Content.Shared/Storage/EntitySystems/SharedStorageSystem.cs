@@ -12,6 +12,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants.Components;
 using Content.Shared.Input;
+using Content.Shared._CP14.Input;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
@@ -172,6 +173,9 @@ public abstract class SharedStorageSystem : EntitySystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenBackpack, InputCmdHandler.FromDelegate(HandleOpenBackpack, handle: false))
             .Bind(ContentKeyFunctions.OpenBelt, InputCmdHandler.FromDelegate(HandleOpenBelt, handle: false))
+            //CP14
+            .Bind(CP14ContentKeyFunctions.OpenBelt2, InputCmdHandler.FromDelegate(HandleOpenBelt2, handle: false))
+            //CP14 end
             .Register<SharedStorageSystem>();
 
         Subs.CVar(_cfg, CCVars.NestedStorage, OnNestedStorageCvar, true);
@@ -1832,6 +1836,12 @@ public abstract class SharedStorageSystem : EntitySystem
     {
         HandleToggleSlotUI(session, "belt");
     }
+    //CP14
+    private void HandleOpenBelt2(ICommonSession? session)
+    {
+        HandleToggleSlotUI(session, "belt2");
+    }
+    //CP14 end
 
     private void HandleToggleSlotUI(ICommonSession? session, string slot)
     {

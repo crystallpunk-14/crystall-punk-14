@@ -49,3 +49,8 @@
   tags:
   - CP14UniqueSpawnDemiplanetLoot
 
+- type: uniqueSpawn
+  id: CP14LockpickSkeletonArtifact
+  entity: CP14LockpickSkeletonArtifact
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot

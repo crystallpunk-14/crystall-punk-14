@@ -74,3 +74,11 @@
       color: "#db35c8"
       shader: unshaded
 
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollSheepPolymorph
+  name: sheep polymorph spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSheepPolymorph

@@ -90,6 +90,13 @@ binds:
 - function: CP14OpenSkillMenu
   type: State
   key: R
+- function: OpenBelt2
+  type: State
+  key: F
+- function: SmartEquipBelt2
+  type: State
+  key: F
+  mod1: Shift
 # CP14 Zone end
 - function: ShowEscapeMenu
   type: State

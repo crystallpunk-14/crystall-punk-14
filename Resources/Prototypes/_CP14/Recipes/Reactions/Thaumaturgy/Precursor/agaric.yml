@@ -10,9 +10,7 @@
       amount: 1
   products:
     CP14EssencePoison: 0.5
-  cp14RandomProducts:
-  - CP14EssenceWater: 0.5
-  - CP14EssenceEarth: 0.5
+    CP14EssenceEarth: 0.5
 
 # Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
 

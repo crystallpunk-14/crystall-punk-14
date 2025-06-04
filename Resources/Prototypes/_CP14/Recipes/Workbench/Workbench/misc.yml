@@ -264,3 +264,14 @@
     protoId: CP14String
     count: 1
   result: CP14LuteInstrument
+
+- type: CP14Recipe
+  id: CP14OpenSign
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14OpenSign
+

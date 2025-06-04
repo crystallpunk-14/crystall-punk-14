@@ -33,16 +33,13 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     public ProtoId<CP14TradingFactionPrototype> Faction;
 
     [DataField]
-    public FixedPoint2 UnlockReputationCost = 1f;
+    public FixedPoint2 ReputationLevel = 0f;
 
     [DataField(required: true)]
-    public Vector2 UiPosition = default!;
+    public float UiPosition = default!;
 
     [DataField(required: true)]
     public CP14StoreBuyService? Service = null;
-
-    [DataField]
-    public ProtoId<CP14TradingPositionPrototype>? Prerequisite;
 
     [DataField]
     public int PriceMarkup = 1;
@@ -51,7 +48,7 @@ public sealed partial class CP14TradingPositionPrototype : IPrototype
     /// each round prices will differ within +X percent of the calculated value
     /// </summary>
     [DataField]
-    public float PriceFluctuation = 0.2f;
+    public float PriceFluctuation = 0.6f;
 }
 
 [ImplicitDataDefinitionForInheritors]

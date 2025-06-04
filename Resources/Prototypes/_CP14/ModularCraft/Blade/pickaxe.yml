@@ -32,7 +32,6 @@
     storedOffsetBonus: 0, 5
   - !type:EditModularSlots
     addSlots:
-    - Garde
     - BladeInlay
 
 - type: modularPart
