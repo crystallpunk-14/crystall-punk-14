@@ -4,13 +4,13 @@
   description: You destroy the chosen creature and send it to hell.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_wounds
+    sprite: _CP14/Actions/AdminSpells.rsi
+    state: smite
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14SkyLightning
+      - CP14SkyLightningRed
       - CP14SkyLightningPurple
     - !type:CP14SpellApplyEntityEffect
       effects:
@@ -41,8 +41,8 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/adminhelp.ogg
     icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: blood_moon
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: smite
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1

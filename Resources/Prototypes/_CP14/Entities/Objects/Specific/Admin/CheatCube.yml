@@ -20,4 +20,7 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellAdminTrueResurrection
+    - CP14ActionSpellAdminNeutralization
+    - CP14ActionSpellAdminDisadvantage
+    - CP14ActionSpellAdminAdvantage
     - CP14ActionSpellAdminGodSmite

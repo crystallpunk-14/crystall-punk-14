@@ -1,40 +1,26 @@
 - type: entity
-  id: CP14ActionSpellAdminTrueResurrection
-  name: True resurrection
-  description: You heal the target from all damage and ressurect it.
+  id: CP14ActionSpellAdminNeutralization
+  name: Neutralization
+  description: You make the creature completely harmless for 2 minutes.
   components:
   - type: Sprite
     sprite: _CP14/Actions/AdminSpells.rsi
-    state: true_resurrection
+    state: neutralization
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Paralyze
         paralyzeTime: 3
-    - !type:CP14SpellResurrectionEffect
+      - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        type: Add
+        time: 120
+      - !type:Jitter
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
-      - CP14ImpactEffectTrueRessuraction
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: -5000
-            Bloodloss: -5000
-            Blunt: -5000
-            Cellular: -5000
-            Caustic: -5000
-            Cold: -5000
-            Heat: -5000
-            Piercing: -5000
-            Poison: -5000
-            Radiation: -5000
-            Shock: -5000
-            Slash: -5000
-            CP14ManaDepletion: -5000
-      - !type:Jitter
+      - CP14ImpactEffectNeutralization
   - type: EntityTargetAction
     whitelist:
       components:
@@ -46,14 +32,14 @@
       path: /Audio/Magic/blink.ogg
     icon:
       sprite: _CP14/Actions/AdminSpells.rsi
-      state: true_resurrection
+      state: neutralization
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1
       breakOnMove: false
 
 - type: entity
-  id: CP14ImpactEffectTrueRessuraction
+  id: CP14ImpactEffectNeutralization
   parent: CP14BaseMagicImpact
   categories: [ HideSpawnMenu ]
   save: false
@@ -62,10 +48,10 @@
     sprite: Effects/electricity.rsi
     layers:
     - state: electrified
-      color: "#79b330"
+      color: "#d82bdb"
       shader: unshaded
   - type: PointLight
-    color: "#79b330"
+    color: "#d82bdb"
     enabled: true
     radius: 2
     energy: 2

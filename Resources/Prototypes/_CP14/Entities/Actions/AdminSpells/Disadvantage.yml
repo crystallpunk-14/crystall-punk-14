@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14ActionSpellAdminDisadvantage
+  name: Disadvantage
+  description: You're giving disadvantage to a hated player.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/AdminSpells.rsi
+    state: disadvantage
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier 
+        walkSpeedModifier: 0.9
+        sprintSpeedModifier: 0.85
+        statusLifetime: 120
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 10.0 # Add more effects when they are available
+      - !type:Jitter
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 50
+    itemIconStyle: BigAction
+    interactOnMiss: false
+#    sound: !type:SoundPathSpecifier
+#      path: /Audio/Magic/blink.ogg
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: disadvantage
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false

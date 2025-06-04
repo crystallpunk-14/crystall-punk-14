@@ -1,0 +1,46 @@
+- type: entity
+  id: CP14ActionSpellAdminAdvantage
+  name: Advantage
+  description: You are giving advantage to your favorite player.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/AdminSpells.rsi
+    state: advantage
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.15
+        statusLifetime: 120
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: -10.0
+            Blunt: -10.0
+            Piercing: -10.0
+            Cold: -10.0
+            Heat: -10.0
+            Shock: -10.0
+            Poison: -10.0
+            Bloodloss: -10.0
+            Caustic: -10.0
+            CP14ManaDepletion: -10.0 # Add more effects when they are available
+      - !type:Jitter
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 50
+    itemIconStyle: BigAction
+    interactOnMiss: false
+#    sound: !type:SoundPathSpecifier
+#      path: /Audio/Magic/blink.ogg
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: advantage
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false
