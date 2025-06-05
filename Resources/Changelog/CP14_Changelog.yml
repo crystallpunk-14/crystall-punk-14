@@ -219,3 +219,12 @@
   id: 8072
   time: '2025-06-05T08:46:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1348
+- author: TheShuEd
+  changes:
+  - message: Removed both ring slots from inventory
+    type: Remove
+  - message: Fireball ring artifact replaced with fire magic staff
+    type: Tweak
+  id: 8073
+  time: '2025-06-05T09:46:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1389
