@@ -43,7 +43,7 @@ public sealed class VocalSystem : EntitySystem
         // remove scream action when component removed
         if (component.ScreamActionEntity != null)
         {
-            //_actions.RemoveAction(uid, component.ScreamActionEntity); Commetet out to Remove The Scream Action from the Action bar
+            //_actions.RemoveAction(uid, component.ScreamActionEntity);  //CP14 Remove The Scream Action from the Action bar
         }
     }
 
