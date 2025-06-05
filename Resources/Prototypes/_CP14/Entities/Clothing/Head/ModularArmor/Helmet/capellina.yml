@@ -12,6 +12,8 @@
     startSlots:
     - Visor
     - Aventail
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularHeadBase

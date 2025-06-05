@@ -13,7 +13,7 @@
     startSlots:
     - Greave
   - type: StaticPrice
-    price: 15
+    price: 10
 
 - type: entity
   parent: CP14ModularCuissesBase

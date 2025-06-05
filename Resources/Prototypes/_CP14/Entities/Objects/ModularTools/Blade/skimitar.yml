@@ -10,6 +10,8 @@
     shape:
     - 0,0,0,1
     storedOffset: 0, 10
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -24,9 +26,7 @@
     - BladeIronSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 10
-  - type: StaticPrice
-    price: 35
+      CP14Iron: 20
 
 
 - type: entity
@@ -44,9 +44,7 @@
     - BladeGoldSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 10
-  - type: StaticPrice
-    price: 95
+      CP14Gold: 20
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -63,9 +61,7 @@
     - BladeCopperSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 10
-  - type: StaticPrice
-    price: 25
+      CP14Copper: 20
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -82,6 +78,4 @@
     - BladeMithrilSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 10
-  - type: StaticPrice
-    price: 65
+      CP14Mithril: 20

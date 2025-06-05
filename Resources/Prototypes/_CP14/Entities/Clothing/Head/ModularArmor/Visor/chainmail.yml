@@ -9,6 +9,8 @@
     storedRotation: 0
     shape:
     - 0,0,0,0
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularVisorBase

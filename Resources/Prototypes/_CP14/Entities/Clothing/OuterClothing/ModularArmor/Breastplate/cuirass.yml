@@ -12,6 +12,8 @@
     startSlots:
     - Cuisses
     - Greave
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularArmorBase
@@ -40,8 +42,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 50
-  - type: StaticPrice
-    price: 145.5
 
 - type: entity
   parent: CP14ModularArmorBase
@@ -86,8 +86,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 50
-  - type: StaticPrice
-    price: 446.5
 
 - type: entity
   parent: CP14ModularArmorBase
@@ -132,8 +130,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 50
-  - type: StaticPrice
-    price: 86.38
 
 - type: entity
   parent: CP14ModularArmorBase
@@ -178,5 +174,3 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 50
-  - type: StaticPrice
-    price: 307

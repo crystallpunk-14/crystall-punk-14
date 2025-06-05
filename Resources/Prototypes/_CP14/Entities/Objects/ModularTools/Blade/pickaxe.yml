@@ -10,6 +10,8 @@
     shape:
     - 0,0,1,0
     storedOffset: 0, 5
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularBladePickaxeBase
@@ -25,9 +27,7 @@
     - BladeIronPickaxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 10
-  - type: StaticPrice
-    price: 35
+      CP14Iron: 20
 
 - type: entity
   parent: CP14ModularBladePickaxeBase
@@ -44,9 +44,7 @@
     - BladeGoldPickaxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 10
-  - type: StaticPrice
-    price: 95
+      CP14Gold: 20
 
 - type: entity
   parent: CP14ModularBladePickaxeBase
@@ -63,9 +61,7 @@
     - BladeCopperPickaxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 10
-  - type: StaticPrice
-    price: 25
+      CP14Copper: 20
 
 - type: entity
   parent: CP14ModularBladePickaxeBase
@@ -82,6 +78,4 @@
     - BladeMithrilPickaxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 10
-  - type: StaticPrice
-    price: 65
+      CP14Mithril: 20
