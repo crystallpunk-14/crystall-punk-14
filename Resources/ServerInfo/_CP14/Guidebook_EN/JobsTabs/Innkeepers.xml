@@ -29,7 +29,7 @@
   Most of an innkeeper's time is spent in the kitchen. First, gather materials: chop or find some wood for planks, start growing crops, locate spare food items, and grab your tools. A good chef will recognize the value of a dagger or a sickle — both typically provided to an innkeeper — which can be used to harvest plants, chop food into slices, and fend off unruly patrons.
 
   Let’s begin with cooking something simple: a green salad. Start by growing cabbage, pumpkin, and cucumber. Once the crops are ready, bring them into the kitchen. Go to your cooking table and find the recipe for green salad. You may notice the recipe requires sliced ingredients — simply use your knife to prepare them. Next, find a plate (usually some are stored near the ovens). Once all ingredients are near the table, you can begin to assemble the salad.
-</Box>
+<Box>
   <GuideEntityEmbed Entity="CP14FoodCabbageSlice"/>
   <GuideEntityEmbed Entity="CP14FoodCucumber"/>
   <GuideEntityEmbed Entity="CP14FoodPumpkinSlice"/>
@@ -38,13 +38,13 @@
   
   
   Green salad is easy to make because it doesn't require heating. However, almost all other dishes will need to be cooked using the furnace. To use it, place 2–3 wood planks inside to keep the fire burning long enough. Ignite the fire with either the **“Create Flame”** spell or a flint and steel. Then, place the uncooked item on top of the furnace — *after* lighting it — so it begins to cook. Remove the food promptly, or it will burn into inedible ash (which you might try to market, but it won’t end well). The **“Freeze”** spell can stop a furnace from wasting fuel between cooking sessions. The **"Heat"** spell can instantly cook food for patrons without the risk of burning it to ash or using up wood fuel. Mugs and plates can be made at a workbench using the wood saved. 
-  </Box>
+  <Box>
       <GuideEntityEmbed Entity="CP14ActionSpellHeat"/>
       <GuideEntityEmbed Entity="CP14ActionSpellFlameCreation"/>
       <GuideEntityEmbed Entity="CP14ActionSpellFreeze"/>
   </Box>
 
-  </Box>
+  <Box>
       <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
       <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
       <GuideEntityEmbed Entity="CP14Workbench"/>
