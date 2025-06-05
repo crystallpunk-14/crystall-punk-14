@@ -46,7 +46,7 @@
   parent: CP14ClothingBackpackBase
   id: CP14ClothingBackpackForeman
   name: Construction Rucksack
-  suffix: Orange, Empty
+  suffix: Empty
   description: You wear this on your back and put items into it. Comes with a handy light!
   components:
   - type: Sprite

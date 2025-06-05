@@ -13,3 +13,17 @@
     details:
     - BladeIronPickaxe
 
+- type: entity
+  id: CP14ModularIronPickaxeGuild
+  parent: CP14ModularGripIronLongGuild
+  name: guild-grade iron pickaxe
+  description: Notched to perfection, for jamming it into rocks.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeIronPickaxe

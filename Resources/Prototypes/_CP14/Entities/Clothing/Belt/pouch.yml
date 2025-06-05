@@ -31,3 +31,30 @@
   - type: StorageContainerVisuals
     maxFillLevels: 2
     fillBaseName: fill-
+
+
+- type: entity
+  parent: CP14ClothingBeltPouchPotions
+  id: CP14ClothingBeltPouchMaterials
+  name: materials pouch
+  description: A pouch for storing and storing Materials, capable of holding stone, glass, and wood.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Belt/materials_pouch.rsi
+    layers:
+    - state: icon
+    - map: [ "enum.StorageContainerVisualLayers.Fill" ]
+      visible: false
+  - type: Storage
+    grid:
+    - 0,0,7,1
+    maxItemSize: Huge
+    whitelist:
+      tags:
+      - CP14WoodenPlanks
+      - CP14GlassSheet
+      - CP14stoneblock
+  - type: StorageContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: fill-

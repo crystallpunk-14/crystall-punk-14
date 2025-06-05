@@ -153,3 +153,12 @@
 
 - type: Tag
   id: CP14Sandwich
+
+- type: Tag
+  id: CP14WoodenPlanks
+
+- type: Tag
+  id: CP14GlassSheet
+
+- type: Tag
+  id: CP14stoneblock
