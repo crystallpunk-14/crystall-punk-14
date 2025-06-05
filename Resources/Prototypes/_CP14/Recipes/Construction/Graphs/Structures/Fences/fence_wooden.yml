@@ -3,16 +3,16 @@
   start: start
   graph:
     - node: start
-      actions:
-        - !type:DeleteEntity {}
       edges:
         - to: CP14FenceBigWooden
           completed:
             - !type:SnapToGrid
+              southRotation: true
           steps:
             - material: CP14WoodenPlanks
               amount: 4
               doAfter: 2
+
     - node: CP14FenceBigWooden
       entity: CP14FenceBigWooden
       edges:
@@ -21,6 +21,7 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 4
+            - !type:DeleteEntity {}
           steps:
             - tool: Prying
-              doAfter: 4
+              doAfter: 2
