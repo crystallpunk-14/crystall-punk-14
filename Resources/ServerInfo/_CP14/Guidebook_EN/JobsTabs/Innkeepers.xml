@@ -56,6 +56,6 @@
   Attract customers with additional services such as bardic music, special deals, or any unique gimmicks you can come up with. Note that people often expect to be paid for their work! Bards need to make money too.
 
   In the event your delightful cooking or your generous portions of ale makes a customer vomit, a mop can be found near the stairs to the cellar. Dip the mop inside one of your water barrels and wipe up the mess. Be careful to avoid serving water from your mopping barrel - customers generally don't enjoy the taste of vomit.
-<GuideEntityEmbed Entity="CP14BaseMop"/>
-<GuideEntityEmbed Entity="CP14BarrelWater"/>
+  <GuideEntityEmbed Entity="CP14BaseMop"/>
+  <GuideEntityEmbed Entity="CP14BarrelWater"/>
 </Document>
