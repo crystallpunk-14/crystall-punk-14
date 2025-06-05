@@ -3,12 +3,12 @@
   slots:
     # Left hotbar
     # 0, y
-    - name: ring1
-      slotTexture: ring
-      slotFlags: RING
+    - name: gloves
+      slotTexture: gloves
+      slotFlags: GLOVES
       uiWindowPos: 0,1
-      strippingWindowPos: 0,3
-      displayName: Ring
+      strippingWindowPos: 0,2
+      displayName: Gloves
     - name: mask
       slotTexture: mask
       slotFlags: MASK
@@ -47,18 +47,6 @@
       strippingWindowPos: 1,1
       displayName: Head
     # 2, y
-    - name: gloves
-      slotTexture: gloves
-      slotFlags: GLOVES
-      uiWindowPos: 2,0
-      strippingWindowPos: 0,2
-      displayName: Gloves
-    - name: ring2
-      slotTexture: ring
-      slotFlags: RING
-      uiWindowPos: 2,1
-      strippingWindowPos: 2,3
-      displayName: Ring
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING

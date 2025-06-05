@@ -1,14 +1,13 @@
+# TODO remove amulets from the game and replace with something not-wearable visually
+
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: BaseItem
   id: CP14ClothingJewelleryBase
   categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Small
-  - type: Clothing
-    slots:
-    - ring
 
 - type: entity
   parent: CP14ClothingJewelleryBase
@@ -17,11 +16,9 @@
   description: A gold amulet, a valuable trinket.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
+    sprite: _CP14/Objects/Misc/Amulet/amulet.rsi
     layers:
     - state: icon
-  - type: Clothing
-    sprite: _CP14/Clothing/Rings/Amulet/amulet.rsi
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 5
@@ -31,18 +28,14 @@
 - type: entity
   parent: CP14ClothingJewelleryBase
   id: CP14ClothingCloakAmuletMana
-  name: mana amulet
-  description: A gold amulet with a magical stone inside that helps you conjure more easily.
+  name: strange amulet
+  description: A gold amulet with a magical stone inside.
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Rings/Amulet/amulet_mana.rsi
+    sprite: _CP14/Objects/Misc/Amulet/amulet_mana.rsi
     layers:
     - state: icon
     - state: amethyst_stone
-  - type: Clothing
-    sprite: _CP14/Clothing/Rings/Amulet/amulet_mana.rsi
-  - type: CP14MagicManacostModify
-    globalModifier: 0.9
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 5
