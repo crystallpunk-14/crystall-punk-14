@@ -61,3 +61,14 @@
   - type: CP14TradingContract
     faction: Thaumaturgy
 
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractHomeDecor
+  description: Trading contract with the "Cozy House" store. Allows you to buy various decorations and nice things to furnish your home.
+  suffix: Home Decor
+  components:
+  - type: Sprite
+    state: house
+  - type: CP14TradingContract
+    faction: HomeDecor
+

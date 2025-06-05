@@ -41,3 +41,9 @@
     node: CP14CrateCoffin
     containers:
     - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
+      CP14Cloth: 20
+  - type: EntityStorage
+    capacity: 1

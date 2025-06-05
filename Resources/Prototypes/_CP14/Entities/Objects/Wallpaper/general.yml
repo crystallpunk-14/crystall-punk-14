@@ -11,6 +11,8 @@
     sprite: _CP14/Structures/Wallpaper/icons.rsi
   - type: Stack
     count: 30
+  - type: StackPrice
+    price: 0.5
 
 - type: entity
   id: CP14WallpaperBlack

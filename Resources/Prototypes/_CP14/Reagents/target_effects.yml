@@ -25,10 +25,9 @@
       effects:
       - !type:ModifyBleedAmount
         amount: -2
-      - !type:HealthChange
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -6
+          Brute: -6
   pricePerUnit: 2
 
 - type: reagent

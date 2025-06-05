@@ -231,6 +231,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: liq-
+  - type: Item
+    size: Tiny
 
 - type: entity
   id: CP14Syringe

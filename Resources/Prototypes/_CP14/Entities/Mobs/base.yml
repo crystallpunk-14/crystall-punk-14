@@ -109,7 +109,6 @@
 - type: entity
   parent:
   - CP14MobDamageable
-  - MobRespirator
   - MobAtmosStandard
   - CP14SimpleSpaceMobNoLifeBase
   id: CP14SimpleMobNoLifeBase

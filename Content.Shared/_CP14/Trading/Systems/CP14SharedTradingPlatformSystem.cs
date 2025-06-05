@@ -79,6 +79,20 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         return true;
     }
+
+    public void AddReputation(Entity<CP14TradingReputationComponent?> user,
+        ProtoId<CP14TradingFactionPrototype> faction, float rep)
+    {
+        if (!Resolve(user.Owner, ref user.Comp, false))
+            return;
+
+        if (!user.Comp.Reputation.ContainsKey(faction))
+            user.Comp.Reputation.Add(faction, rep);
+        else
+            user.Comp.Reputation[faction] += rep;
+
+        Dirty(user);
+    }
 }
 
 [Serializable, NetSerializable]

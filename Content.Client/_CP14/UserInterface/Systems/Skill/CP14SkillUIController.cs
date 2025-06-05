@@ -11,6 +11,7 @@ using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Skill.Restrictions;
 using Content.Shared.Input;
+using Content.Shared._CP14.Input;
 using JetBrains.Annotations;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
@@ -53,7 +54,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterTop);
 
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.CP14OpenSkillMenu,
+            .Bind(CP14ContentKeyFunctions.CP14OpenSkillMenu,
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
             .Register<CP14SkillUIController>();
 

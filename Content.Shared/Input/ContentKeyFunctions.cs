@@ -128,9 +128,5 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction MappingRemoveDecal = "MappingRemoveDecal";
         public static readonly BoundKeyFunction MappingCancelEraseDecal = "MappingCancelEraseDecal";
         public static readonly BoundKeyFunction MappingOpenContextMenu = "MappingOpenContextMenu";
-
-        //CP14 keys
-        public static readonly BoundKeyFunction CP14OpenSkillMenu = "CP14OpenSkillMenu";
-        //CP14 keys end
     }
 }
