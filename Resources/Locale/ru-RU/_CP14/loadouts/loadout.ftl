@@ -63,3 +63,9 @@ cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
 cp14-loadout-guildmaster-pants = Штаны гильдмастера
 cp14-loadout-guildmaster-shoes = Ботинки гильдмастера
 cp14-loadout-guildmaster-spells = Заклинания гильдмастера
+
+
+# Foreman
+
+cp14-loadout-foreman-back = Спина
+cp14-loadout-foreman-trinkets = Безделушки

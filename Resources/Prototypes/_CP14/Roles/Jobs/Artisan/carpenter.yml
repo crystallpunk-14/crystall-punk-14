@@ -4,7 +4,7 @@
   description: cp14-job-desc-carpenter
   playTimeTracker: CP14JobCarpenter
   startingGear: CP14CarpenterGear
-  icon: "CP14JobIconGuildmaster"
+  icon: "CP14JobIconCarpenter"
   supervisors: cp14-job-supervisors-command
   special:
     - !type:CP14LearnSkillsSpecial
@@ -20,6 +20,10 @@
     - CP14ModularIronAxeGuild
     - CP14ModularIronPickaxeGuild
     - CP14KeyFile
+    - CP14Screwdriver
+    - CP14BaseWrench
   equipment:
     keys: CP14KeyRingForeman
     belt: CP14ClothingBeltPouchMaterials
+
+
