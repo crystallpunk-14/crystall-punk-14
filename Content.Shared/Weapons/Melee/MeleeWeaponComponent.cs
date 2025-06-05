@@ -133,6 +133,12 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField]
     public float CPAnimationOffset = -1f;
 
+    /// <summary>
+    /// CrystallEdge economic - Copper coins per 1 DPS
+    /// </summary>
+    [DataField]
+    public double CPWeaponPrice = 0.05f;
+
     // Sounds
 
     /// <summary>

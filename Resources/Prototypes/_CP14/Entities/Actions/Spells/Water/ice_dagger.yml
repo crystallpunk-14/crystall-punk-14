@@ -61,6 +61,7 @@
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.25
+    cPWeaponPrice: 0
   - type: Clothing
     equipDelay: 0.25
     unequipDelay: 0.25

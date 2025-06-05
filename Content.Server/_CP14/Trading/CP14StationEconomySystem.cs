@@ -49,9 +49,9 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
             switch (trade.Service)
             {
                 case CP14BuyItemsService buyItems:
-                    if (!_proto.TryIndex(buyItems.Product, out var indexedProduct))
-                        break;
-                    price += _price.GetEstimatedPrice(indexedProduct) * buyItems.Count;
+                    var tempEnt = Spawn(buyItems.Product); //we need to correctly rate items through price event to rate melee weapon damage, amount of magic energy, and so on.
+                    price += _price.GetPrice(tempEnt) * buyItems.Count;
+                    QueueDel(tempEnt);
                     break;
             }
 
