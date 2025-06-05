@@ -54,7 +54,7 @@
       tags:
       - CP14WoodenPlanks
       - CP14GlassSheet
-      - CP14stoneblock
+      - CP14StoneBrick
   - type: StorageContainerVisuals
     maxFillLevels: 2
     fillBaseName: fill-
