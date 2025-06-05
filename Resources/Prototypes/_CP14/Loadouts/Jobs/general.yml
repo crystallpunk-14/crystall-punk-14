@@ -639,7 +639,6 @@
   loadouts:
   - CP14ClothingBackpackLeather
   - CP14ClothingSatchelLeather
-  - CP14ClothingBackpackForeman
 
 - type: loadout
   id: CP14ClothingBackpackLeather

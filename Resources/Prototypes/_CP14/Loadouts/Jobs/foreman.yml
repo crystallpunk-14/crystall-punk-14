@@ -1,0 +1,33 @@
+
+- type: loadoutGroup
+  id: CP14ForemanBack
+  parent: CP14ModularGripIronLongGuild
+  name: cp14-loadout-foreman-back
+  loadouts:
+  - CP14ClothingBackpackForeman
+  - CP14ClothingBackpackLeather
+  - CP14ClothingSatchelLeather
+
+- type: loadoutGroup
+  id: CP14ForemanTrinkets
+  name: cp14-loadout-foreman-trinkets
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - CP14Lockpick
+  - Bucket
+  - CP14ManaOperationGlove
+  - CP14CrystalLampOrangeEmpty
+  - CP14BaseSharpeningStone
+  - CP14Scissors
+  - CP14Rope
+  - CP14SilverCoin
+  - CP14ModularIronDagger
+  - CP14ModularIronSickle
+  - CP14ModularIronPickaxe
+  - CP14Lighter
+  - CP14Torch
+  - CP14SmokingPipeFilledTobacco
+  - CP14FluteInstrument
+  - CP14LuteInstrument
+  - CP14LyraInstrument

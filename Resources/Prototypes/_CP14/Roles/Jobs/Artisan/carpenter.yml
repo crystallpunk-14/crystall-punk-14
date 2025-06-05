@@ -9,8 +9,7 @@
   special:
     - !type:CP14LearnSkillsSpecial
       skills:
-      - CopperMelting
-      - AlchemyVision
+      - GlassMelting
 
 - type: startingGear
   id: CP14CarpenterGear
@@ -18,6 +17,9 @@
     back:
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
+    - CP14ModularIronAxeGuild
+    - CP14ModularIronPickaxeGuild
+    - CP14KeyFile
   equipment:
-    keys: CP14BaseKeyRing
-    belt: CP14WalletFilledTest
+    keys: CP14KeyRingForeman
+    belt: CP14ClothingBeltPouchMaterials
