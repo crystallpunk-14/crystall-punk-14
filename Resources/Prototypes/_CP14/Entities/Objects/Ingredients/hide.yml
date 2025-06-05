@@ -22,7 +22,7 @@
   - type: Item
     state: thin_hide
   - type: StaticPrice
-    price: 10
+    price: 5
 
 - type: entity
   id: CP14AnimalHide
@@ -35,7 +35,7 @@
   - type: Item
     state: hide
   - type: StaticPrice
-    price: 25
+    price: 15
 
 - type: entity
   id: CP14RuggedHide
@@ -50,7 +50,7 @@
   - type: Item
     state: rugged_hide
   - type: StaticPrice
-    price: 60
+    price: 25
 
 # Pieces of hide to assemble whole hide.
 - type: entity

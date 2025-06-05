@@ -21,7 +21,7 @@
     materialComposition:
       CP14IronBar: 0.2
   - type: StaticPrice
-    price: 5
+    price: 2
 
 # Salt
 - type: entity
@@ -40,7 +40,7 @@
     count: 1
     baseLayer: base
   - type: StaticPrice
-    price: 4
+    price: 2
 
 - type: entity
   id: CP14Salt5
