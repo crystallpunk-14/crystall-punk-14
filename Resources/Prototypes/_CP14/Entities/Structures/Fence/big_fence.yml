@@ -75,9 +75,9 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-    - type: Construction
-      graph: CP14FenceBigWooden
-      node: CP14FenceBigWooden
+  - type: Construction
+    graph: CP14FenceBigWooden
+    node: CP14FenceBigWooden
 
 - type: entity
   parent: CP14FenceBigWooden
