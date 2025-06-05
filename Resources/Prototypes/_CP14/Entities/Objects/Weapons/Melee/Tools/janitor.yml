@@ -1,13 +1,10 @@
-# DEPRECATED
-# Mappers, use the modular preset mop instead (CP14ModularWoodMop)
 - type: entity
   id: CP14BaseMop
   parent:
   - BaseItem
   - CP14BaseWeaponDestructible
   name: wooden mop
-  description: A mop for cleaning floors of various unpleasant liquids.
-  categories: [ DoNotMap ]
+  description: Mop for cleaning floors from various unpleasant liquids
   components:
   - type: Item
     size: Normal
@@ -17,14 +14,7 @@
     sprite: _CP14/Objects/Tools/mop.rsi
   - type: Sprite
     sprite: _CP14/Objects/Tools/mop.rsi
-    layers:
-    - state: icon
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: CP14MeleeSelfDamage
-    damageToSelf:
-      types:
-        Blunt: 2.4 # Should come out to be as durable as modular wood mop, I think
+    state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 10
     damage:
@@ -37,18 +27,6 @@
     damage:
       types:
         Blunt: 3
-  - type: CP14MeleeParriable
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: Spillable
     solution: absorbed
   - type: Absorbent
@@ -56,10 +34,4 @@
     solutions:
       absorbed:
         maxVol: 50
-  - type: Clothing
-    equipDelay: 0.25
-    unequipDelay: 0.25
-    quickEquip: false
-    breakOnMove: false
-    slots:
-    - neck
+
