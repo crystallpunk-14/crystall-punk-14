@@ -93,4 +93,6 @@
     spells:
     - CP14ActionSpellIceArrow
   - type: CP14SpellStorageAccessHolding
+  - type: StaticPrice
+    price: 300
 

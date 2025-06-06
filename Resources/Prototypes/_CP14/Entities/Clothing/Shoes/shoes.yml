@@ -64,6 +64,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 2
     sprintModifier: 2
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: CP14ClothingShoesBase
@@ -81,6 +83,8 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellMagicalAcceleration
+  - type: StaticPrice
+    price: 400
 
 - type: entity
   parent: CP14ClothingShoesBase
@@ -127,3 +131,5 @@
       params:
         variation: 0.07
   - type: NoSlip
+  - type: StaticPrice
+    price: 500
