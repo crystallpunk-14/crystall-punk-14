@@ -82,6 +82,8 @@
     energy: 1
   - type: RgbLightController
     layers: [ 1 ]
+  - type: StaticPrice
+    price: 200
 
 - type: entity
   parent: CP14Crayon
