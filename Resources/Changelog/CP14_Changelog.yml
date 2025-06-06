@@ -228,3 +228,13 @@
   id: 8073
   time: '2025-06-05T09:46:39.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1389
+- author: gogenych
+  changes:
+  - message: Now artifacts have a fair price!
+    type: Add
+  - message: Selling bones from the graveyard no longer yields platinum at the start
+      of the game!
+    type: Fix
+  id: 8074
+  time: '2025-06-06T15:06:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1392
