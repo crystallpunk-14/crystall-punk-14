@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by Viator.",
+  "states": [
+    {
+      "name": "advantage"
+    },
+    {
+      "name": "disadvantage"
+    },
+    {
+      "name": "neutralization"
+    },
+    {
+      "name": "smite"
+    },
+    {
+      "name": "true_resurrection"
+    },
+    {
+      "name": "disrespect"
+    }
+  ]
+}

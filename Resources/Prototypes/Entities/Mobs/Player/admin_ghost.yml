@@ -99,7 +99,7 @@
   - type: Inventory
     templateId: aghost
   - type: Loadout
-    prototypes: [ MobAghostGear ]
+    prototypes: [ CP14MobAghostGear ]
   - type: BypassInteractionChecks
 
 - type: entity
