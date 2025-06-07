@@ -47,7 +47,7 @@
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularIronDagger
+    belt: CP14ModularCopperSkimitar
     belt2: CP14ModularIronDagger
 
 - type: startingGear
