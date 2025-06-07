@@ -22,7 +22,7 @@
 - type: entity
   parent: CP14ClothingSatchelBase
   id: CP14ClothingSatchelT0
-  name: satchel T0
+  name: Rustic Satchel
   suffix: backpack T0
   description: You wear this on your back and put items into it.
   components:
@@ -39,7 +39,7 @@
 - type: entity
   parent: CP14ClothingSatchelT0
   id: CP14ClothingSatchelT1
-  name: satchel T1
+  name: Villager Satchel
   suffix: backpack T1
   description: You wear this on your back and put items into it.
   components:
@@ -56,7 +56,7 @@
 - type: entity
   parent: CP14ClothingSatchelT1
   id: CP14ClothingSatchelT2
-  name: satchel T2
+  name: Courier Satchel
   suffix: backpack T2
   description: You wear this on your back and put items into it.
   components:
@@ -74,7 +74,7 @@
 - type: entity
   parent: CP14ClothingSatchelT2
   id: CP14ClothingSatchelT3
-  name: satchel T3
+  name: Veteran Satchel
   suffix: backpack T3
   description: You wear this on your back and put items into it.
   components:
