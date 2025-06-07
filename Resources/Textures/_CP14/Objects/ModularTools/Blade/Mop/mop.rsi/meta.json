@@ -8,7 +8,7 @@
   "copyright": "Icon by frogoo. (Discord), recolored by paige404. Additional sprites created by paige404 based on that icon.",
   "states": [
     {
-      "name": "equipped-BELT1",
+      "name": "equipped-BELT",
       "directions": 4
     },
     {
