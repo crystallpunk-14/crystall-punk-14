@@ -6,6 +6,7 @@
   children:
   - CP14_RU_JobAdventurer
   - CP14_RU_JobAlchemist
+  - CP14_RU_JobInnkeeper
   filterEnabled: True
 
 
@@ -28,3 +29,9 @@
   - CP14_RU_Alchemy
   filterEnabled: True
 
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_JobInnkeeper
+  name: Innkeepers
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Innkeepers.xml"
+  filterEnabled: True

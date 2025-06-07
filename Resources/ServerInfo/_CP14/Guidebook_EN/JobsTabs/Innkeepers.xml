@@ -1,0 +1,67 @@
+<Document>
+  # Innkeeping
+  The innkeeper is a role that primarily stays within the town. The responsibilities of an innkeeper mainly include gardening, bartending, and cooking. Innkeepers also commonly spread gossip and rumors around the town, pay adventurers to collect exotic meats and materials for the inn, and making sure the inn stays clean and tidy.
+
+  Within the inn, an innkeeper will have access to three main areas:
+
+  ## The Garden
+  The garden, or farm, is an important asset for any chef. A few seedbeds can be found here, along with a well and some basic supplies.
+  To begin farming, locate the supply table in the garden. Usually, a crate will contain a variety of seeds, while a table will hold farming tools like a bucket and hoe. Grab a seed variety and use it on the ground to plant it. Wait a while, then use any sharp tool (such as a sickle or dagger) to harvest the fully grown crop.
+
+  To keep your crops alive for an extended period, be sure to water them frequently. Keeping plants healthy is easier with the spell **“Plant Growth”** from the Vivification tree, which restores a plant’s water, nutrients, and health.
+  <Box>  
+    <GuideEntityEmbed Entity="CP14ActionSpellPlantGrowth"/>
+    <GuideEntityEmbed Entity="CP14StoneWell"/>
+  </Box>
+  
+  If all your seedbeds are full and demand is still high, you can use a hoe to till additional soil. Consider making a seed bag if you plan to expand your farm.
+
+  Along with growing food crops, cotton can also be grown. Cotton can be used to weave fabrics and clothing for the people, providing an additional source of income for the inn. To do this, gather some cotton, find a few wood planks, and create a tailoring workbench.
+  <Box>
+      <GuideEntityEmbed Entity="CP14WorkbenchSewing"/>
+      <GuideEntityEmbed Entity="CP14Cotton"/>
+  </Box>
+    
+  ## The Cellar
+  The cellar is extremely popular among patrons. Several barrels can be found here that dispense alcohol. Grab a mug, ensure you are drawing from a keg, and profit. For this very reason though, patrons may try to break into the cellar via the caves it is built in. Checking in on the cellar often can keep all your highly valued booze safe. In the event that some ruffian breaks your barrels, the alcohol can be mopped up and put into a new barrel. Customers will certainly enjoy your new "cocktail".
+  <GuideEntityEmbed Entity="CP14CraneBarrel"/>
+  
+  A typical cellar also contains a few tables and torches, as well as a barrel of water. Tables usually hold spare mugs. Be careful not to serve too much alcohol at once... unless your esteemed customer is a dwarf.
+
+  ## The Kitchen
+
+  Most of an innkeeper's time is spent in the kitchen. First, gather materials: chop or find some wood for planks, start growing crops, locate spare food items, and grab your tools. A good chef will recognize the value of a dagger or a sickle — both typically provided to an innkeeper — which can be used to harvest plants, chop food into slices, and fend off unruly patrons.
+
+  Let’s begin with cooking something simple: a green salad. Start by growing cabbage, pumpkin, and cucumber. Once the crops are ready, bring them into the kitchen. Go to your cooking table and find the recipe for green salad. You may notice the recipe requires sliced ingredients — simply use your knife to prepare them. Next, find a plate (usually some are stored near the ovens). Once all ingredients are near the table, you can begin to assemble the salad.
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodCabbageSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodCucumber"/>
+    <GuideEntityEmbed Entity="CP14FoodPumpkinSlice"/>
+    <GuideEntityEmbed Entity="CP14Plate"/>
+  </Box>
+  
+  
+  Green salad is easy to make because it doesn't require heating. However, almost all other dishes will need to be cooked using the furnace. To use it, place 2–3 wood planks inside to keep the fire burning long enough. Ignite the fire with either the **“Create Flame”** spell or a flint and steel. Then, place the uncooked item on top of the furnace — *after* lighting it — so it begins to cook. Remove the food promptly, or it will burn into inedible ash (which you might try to market, but it won’t end well). The **“Freeze”** spell can stop a furnace from wasting fuel between cooking sessions. The **"Heat"** spell can instantly cook food for patrons without the risk of burning it to ash or using up wood fuel. Mugs and plates can be made at a workbench using the wood saved. 
+  <Box>
+      <GuideEntityEmbed Entity="CP14ActionSpellHeat"/>
+      <GuideEntityEmbed Entity="CP14ActionSpellFlameCreation"/>
+      <GuideEntityEmbed Entity="CP14ActionSpellFreeze"/>
+  </Box>
+
+  <Box>
+      <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+      <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
+      <GuideEntityEmbed Entity="CP14Workbench"/>
+  </Box>
+  
+  ## Customers
+  In the kitchen, there is a small ordering window for customers. It is strongly recommended that you create a small menu using paper and a fountain pen, listing the dishes you offer and their prices. Prices are set by the innkeeper, but customers will appreciate affordable options.
+
+  Attract customers with additional services such as bardic music, special deals, or any unique gimmicks you can come up with. Note that people often expect to be paid for their work! Bards need to make money too.
+
+  In the event your delightful cooking or your generous portions of ale makes a customer vomit, a mop can be found near the stairs to the cellar. Dip the mop inside one of your water barrels and wipe up the mess. Be careful to avoid serving water from your mopping barrel - customers generally don't enjoy the taste of vomit.
+  <Box>
+    <GuideEntityEmbed Entity="CP14BaseMop"/>
+    <GuideEntityEmbed Entity="CP14BarrelWater"/>
+  </Box>
+</Document>
