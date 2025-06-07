@@ -55,12 +55,12 @@
               doAfter: 2
 
 - type: constructionGraph
-  id: CP14FenceGateBigWooden
+  id: CP14FenceGateWooden
   start: start
   graph:
     - node: start
       edges:
-        - to: CP14FenceGateBigWooden
+        - to: CP14FenceGateWooden
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -69,8 +69,8 @@
               amount: 2
               doAfter: 2
 
-    - node: CP14FenceGateBigWooden
-      entity: CP14FenceGateBigWooden
+    - node: CP14FenceGateWooden
+      entity: CP14FenceGateWooden
       edges:
         - to: start
           completed:
@@ -83,12 +83,12 @@
               doAfter: 2
 
 - type: constructionGraph
-  id: CP14FenceGateBigWoodenBirch
+  id: CP14FenceGateWoodenBirch
   start: start
   graph:
     - node: start
       edges:
-        - to: CP14FenceGateBigWoodenBirch
+        - to: CP14FenceGateWoodenBirch
           completed:
             - !type:SnapToGrid
               southRotation: true
@@ -97,8 +97,8 @@
               amount: 2
               doAfter: 2
 
-    - node: CP14FenceGateBigWoodenBirch
-      entity: CP14FenceGateBigWoodenBirch
+    - node: CP14FenceGateWoodenBirch
+      entity: CP14FenceGateWoodenBirch
       edges:
         - to: start
           completed:
