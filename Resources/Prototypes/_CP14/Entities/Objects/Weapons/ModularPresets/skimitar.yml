@@ -29,7 +29,7 @@
     - BladeCopperSkimitar
 
 - type: entity
-  id: CP14ModularIronSkimitarTundra
+  id: CP14ModularCopperSkimitarTundra
   parent: CP14ModularGripWooden
   name: Skimitar Tundra
   description: the gold standard of edged weapons. Medium length, comfortable grip. It has "tundra" engraved on it.
@@ -37,11 +37,11 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSkimitar
+    - BladeCopperSkimitar
     - InlayQuartzWater
 
 - type: entity
@@ -53,7 +53,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
