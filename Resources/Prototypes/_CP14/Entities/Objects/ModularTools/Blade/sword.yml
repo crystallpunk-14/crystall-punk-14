@@ -10,6 +10,8 @@
     shape:
     - 0,0,0,1
     storedOffset: 0, 10
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularBladeSwordBase
@@ -26,6 +28,7 @@
     materialComposition:
       CP14Iron: 10
 
+
 - type: entity
   parent: CP14ModularBladeSwordBase
   id: CP14ModularBladeGoldSword
@@ -41,7 +44,8 @@
     - BladeGoldSword
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 10
+      CP14Gold: 20
+
 
 - type: entity
   parent: CP14ModularBladeSwordBase
@@ -58,7 +62,7 @@
     - BladeCopperSword
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 10
+      CP14Copper: 20
 
 - type: entity
   parent: CP14ModularBladeSwordBase
@@ -75,7 +79,7 @@
     - BladeMithrilSword
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 10
+      CP14Mithril: 20
 
 - type: entity
   parent: CP14ModularBladeSwordBase

@@ -12,6 +12,8 @@
     startSlots:
     - Visor
     - Aventail
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularHeadBase
@@ -107,6 +109,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 20
+  - type: StaticPrice
+    price: 14.5
 
 - type: entity
   parent: CP14ModularHeadBase
