@@ -367,3 +367,17 @@
     stack: CP14CopperBar
     count: 1
   result: CP14EnergyCrystalMediumEmpty
+
+- type: CP14Recipe
+  id: CP14IronBuckleRecipe
+  tag: CP14RecipeBlacksmith
+  craftTime: 4
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14IronBuckle
+  resultCount: 5

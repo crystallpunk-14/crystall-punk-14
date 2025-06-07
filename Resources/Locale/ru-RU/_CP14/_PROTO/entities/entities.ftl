@@ -648,10 +648,10 @@ ent-CP14SpellScrollWaterCreation = свиток заклинания созда�
 ent-CP14HeadSkeleton = череп
     .desc = Бедный Йорик...
 
-ent-CP14ClothingBackpackLeather = кожаный рюкзак
+ent-CP14ClothingBackpackT0 = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
-ent-CP14ClothingSatchelLeather = кожаная сумка
+ent-CP14ClothingSatchelT0 = кожаная сумка
     .desc = Вы носите его на спине и кладете в него предметы.
 
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий

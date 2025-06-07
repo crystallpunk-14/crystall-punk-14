@@ -25,7 +25,7 @@
   - CP14GeneralShirt
   - CP14GeneralPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
   - CP14GeneralKeys
 
@@ -41,7 +41,7 @@
   - CP14AlchemistBelt #
   - CP14GeneralPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -55,7 +55,7 @@
   - CP14GeneralShirt
   - CP14GeneralPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -69,7 +69,7 @@
   - CP14GeneralShirt
   - CP14GeneralPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -83,7 +83,7 @@
   - CP14GuardShirt
   - CP14GuardPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerHighBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -97,7 +97,7 @@
   - CP14GuardShirt
   - CP14GuardPants
   - CP14GeneralShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -108,7 +108,7 @@
   - CP14MerchantShirt
   - CP14MerchantPants
   - CP14MerchantShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerHighBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -121,7 +121,7 @@
   - CP14GuildmasterShirt
   - CP14GuildmasterPants
   - CP14GuildmasterShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerHighBack
   - CP14GeneralTrinkets
 
 - type: roleLoadout
@@ -133,5 +133,5 @@
   - CP14MerchantShirt
   - CP14MerchantPants
   - CP14MerchantShoes
-  - CP14GeneralBack
+  - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
