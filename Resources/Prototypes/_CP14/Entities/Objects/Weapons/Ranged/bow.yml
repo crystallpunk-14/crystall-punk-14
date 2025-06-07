@@ -7,7 +7,9 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/bow.rsi
   - type: Item
-    size: Normal
+    size: Huge
+    shape:
+    - 0,0,1,3
   - type: Clothing
     equipDelay: 0.45
     unequipDelay: 0.45
