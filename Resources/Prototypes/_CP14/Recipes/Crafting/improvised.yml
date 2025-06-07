@@ -27,7 +27,7 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: rope
+  name: cp14rope
   id: cp14ropegrass
   graph: CP14Rope
   startNode: start
