@@ -166,6 +166,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Glass: 10
+  - type: Tag
+    tags:
+    - CP14GlassSheet
 
 - type: entity
   id: CP14GlassSheet5

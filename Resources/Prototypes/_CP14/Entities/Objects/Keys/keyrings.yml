@@ -99,6 +99,15 @@
 
 - type: entity
   parent: CP14BaseKeyRing
+  id: CP14KeyRingForeman
+  suffix: Foreman
+  components:
+  - type: StorageFill
+    contents:
+    - id: # we'll iron this out with mappers
+
+- type: entity
+  parent: CP14BaseKeyRing
   id: CP14KeyRingGuard
   suffix: Guardian
   components:

@@ -650,6 +650,11 @@
   equipment:
     back: CP14ClothingSatchelLeather
 
+- type: loadout
+  id: CP14ClothingBackpackForeman
+  equipment:
+    back: CP14ClothingBackpackForeman
+
 # Trinkets
 
 - type: loadoutGroup

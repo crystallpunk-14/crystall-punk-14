@@ -26,6 +26,7 @@
   weight: 7
   color: "#834833"
   roles:
+  - CP14Carpenter
   - CP14Merchant
   - CP14Alchemist
   - CP14Blacksmith

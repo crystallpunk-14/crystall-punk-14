@@ -654,6 +654,9 @@ ent-CP14ClothingBackpackLeather = кожаный рюкзак
 ent-CP14ClothingSatchelLeather = кожаная сумка
     .desc = Вы носите его на спине и кладете в него предметы.
 
+ent-CP14ClothingBackpackForeman = Foreman backpack
+    .desc = ALALALALALA
+
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий
     .desc = Мешочек для хранения зелий - здесь они точно не разобьются.
 

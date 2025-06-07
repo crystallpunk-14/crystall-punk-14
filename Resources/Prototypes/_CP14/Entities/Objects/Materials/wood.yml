@@ -72,6 +72,7 @@
         map: ["base"]
   - type: Tag
     tags:
+    - CP14WoodenPlanks
     - CP14FireplaceFuel
     - Wooden
   - type: Flammable

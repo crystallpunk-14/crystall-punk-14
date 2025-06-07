@@ -359,6 +359,33 @@
       CP14Iron: 20
 
 - type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripIronLongGuild
+  name: guild-grade long iron grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/guild_grip_long.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIronLongGuild
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200 #Guild stronk
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20
+      CP14Mithril: 5
+
+- type: entity
   parent: CP14ModularGripIronLong
   id: CP14ModularGripIronLongGuard
   components:

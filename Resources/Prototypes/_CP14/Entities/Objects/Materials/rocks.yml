@@ -53,6 +53,9 @@
   description: A block of cold stone.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+    - CP14StoneBrick
   - type: Item
     size: Normal
   - type: Sprite
@@ -101,6 +104,9 @@
   description: A block of white marble.
   categories: [ ForkFiltered ]
   components:
+  - type: Tag
+    tags:
+    - CP14StoneBrick
   - type: Item
     size: Normal
   - type: Sprite
