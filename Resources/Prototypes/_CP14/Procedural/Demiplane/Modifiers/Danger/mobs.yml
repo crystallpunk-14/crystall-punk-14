@@ -72,6 +72,24 @@
       minGroupSize: 2
       maxGroupSize: 3
 
+- type: cp14DemiplaneModifier
+  id: MonsterFlem
+  levels:
+    min: 1
+    max: 8
+  name: flem
+  categories:
+    Danger: 0.25
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:OreDunGen
+      entity: CP14MobMonsterFlem
+      count: 2
+      minGroupSize: 2
+      maxGroupSize: 5
+
 # TIER 2
 
 - type: cp14DemiplaneModifier

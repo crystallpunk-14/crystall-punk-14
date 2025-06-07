@@ -102,3 +102,25 @@
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/Roles/General/purple.rsi
 
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - CP14ClothingOuterFoldableBase
+  id: CP14ClothingOuterClothingFish
+  name: fish suit
+  description: smells horible....
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/fish_suit.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/Roles/General/fish_suit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Cold: 0.9
+        Slash: 0.92
+  - type: FactionClothing
+    faction: CP14Fishies
+
+
