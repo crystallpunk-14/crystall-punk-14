@@ -67,7 +67,7 @@
     spawned:
     - id: CP14AgaricMushroom
       amount: 2
-    - id: CP14ClothingHeadaAmanitaHelmet
+    - id: CP14ClothingHeadaAgaricHelmet
       amount: 1
       prob: 0.3
   - type: Food
