@@ -8,6 +8,7 @@
   - CP14ModularIronSword
   - CP14ModularIronRapier
   - CP14BowCombat
+  - CP14MagicDruidStaff
 
 - type: loadout
   id: CP14ModularIronSkimitar
@@ -40,3 +41,8 @@
     belt2: CP14ClothingBeltQuiverCopperArrow
     neck: CP14BowCombat
 
+- type: loadout
+  id: CP14MagicDruidStaff
+  dummyEntity: CP14MagicDruidStaff
+  equipment:
+    neck: CP14MagicDruidStaff

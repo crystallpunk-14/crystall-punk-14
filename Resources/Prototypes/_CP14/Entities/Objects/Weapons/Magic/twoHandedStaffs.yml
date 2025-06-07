@@ -103,3 +103,22 @@
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
   - type: Clothing
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
+
+- type: entity
+  id: CP14MagicDruidStaff
+  parent: CP14MagicHealingStaff
+  name: magic druid staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into spells.
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellPlantGrowth
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/druid_staff.rsi
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/druid_staff.rsi
+  - type: CP14MagicEnergyContainer
+    energy: 0
+    maxEnergy: 30
+  - type: CP14MagicManacostModify
+    globalModifier: 0.9
