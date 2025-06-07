@@ -88,7 +88,7 @@
   description: It's a boring old bucket, made less boring by being blue.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Tools/lucens_bucket.rsi # TODO
+    sprite: _CP14/Objects/Tools/lucens_bucket.rsi
   - type: Clothing
     sprite: _CP14/Objects/Tools/lucens_bucket.rsi
   - type: Armor
@@ -98,9 +98,3 @@
         Slash: 0.93
   - type: ClothingSpeedModifier
     walkModifier: 0.98
-  - type: SolutionContainerManager
-    solutions:
-      bucket:
-        maxVol: 100
-  - type: Injector
-    maxTransferAmount: 100
