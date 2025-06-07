@@ -47,6 +47,12 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14Slippers
+      params:
+        volume: -8
+        variation: 0.07
 
 - type: entity
   parent: CP14ClothingShoesBase
@@ -144,5 +150,11 @@
     sprite: _CP14/Clothing/Shoes/pink_slippers.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/pink_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14Slippers
+      params:
+        volume: -9
+        variation: 0.07
   - type: StaticPrice
     price: 100
