@@ -47,6 +47,12 @@
     sprite: _CP14/Clothing/Shoes/sandals.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/sandals.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14Slippers
+      params:
+        volume: -8
+        variation: 0.07
 
 - type: entity
   parent: CP14ClothingShoesBase
@@ -133,3 +139,22 @@
   - type: NoSlip
   - type: StaticPrice
     price: 500
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesPinkSlippers
+  name: pink slippers
+  description: Pink slippers made of the rarest pink llama fur. Despite its peculiar appearance, it is a very expensive shoe.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/pink_slippers.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/pink_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14Slippers
+      params:
+        volume: -9
+        variation: 0.07
+  - type: StaticPrice
+    price: 100

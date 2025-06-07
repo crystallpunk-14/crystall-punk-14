@@ -30,3 +30,29 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+
+- type: entity
+  parent: 
+  - CP14ClothingHeadBase
+  - FoodProduceBase
+  id: CP14ClothingHeadaAgaricHelmet
+  name: agaric helmet
+  description: The severed head of a myconid in the form of a headdress. Terrify the mushroom people.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/amanita_helmet.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/amanita_helmet.rsi
+  - type: BadFood
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14AgaricMushroom
+        Quantity: 7
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 7
