@@ -651,6 +651,11 @@
   equipment:
     back: CP14ClothingSatchelT0
 
+- type: loadout
+  id: CP14ClothingExplorerBackpackT0
+  equipment:
+    back: CP14ClothingExplorerBackpackT0
+
 # Trinkets
 
 - type: loadoutGroup
