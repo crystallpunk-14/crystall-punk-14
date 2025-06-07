@@ -102,6 +102,20 @@
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
 
+- type: cp14Skill
+  id: CP14ActionSpellFirebolt
+  skillUiPosition: 6, 6
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: firebolt
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellFirebolt
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+
 # T3
 
 - type: cp14Skill
