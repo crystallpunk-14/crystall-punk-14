@@ -6,7 +6,9 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Big
+    size: Normal
+    shape:
+    - 0,0,1,2 # 2x3
   - type: Sprite
     sprite: _CP14/Objects/Materials/wood.rsi
     layers:

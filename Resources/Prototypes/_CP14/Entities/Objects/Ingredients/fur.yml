@@ -17,6 +17,8 @@
   name: cheap fur
   description: Thin, uneven fur that is only good for wiping your feet on.
   components:
+  - type: Item
+    size: Small
   - type: Sprite
     state: cheap_fur
   - type: StaticPrice
@@ -42,7 +44,9 @@
   description: Good, pleasant fur, perfect for fur coats and insulation.
   components:
   - type: Item
-    size: Big
+    size: Normal
+    shape:
+    - 0,0,1,2 # 2x3
   - type: Sprite
     state: good_fur
   - type: StaticPrice

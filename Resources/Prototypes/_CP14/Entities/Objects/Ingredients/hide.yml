@@ -19,8 +19,6 @@
   components:
   - type: Sprite
     state: thin_hide
-  - type: Item
-    state: thin_hide
   - type: StaticPrice
     price: 5
 
@@ -32,8 +30,6 @@
   components:
   - type: Sprite
     state: hide
-  - type: Item
-    state: hide
   - type: StaticPrice
     price: 15
 
@@ -44,10 +40,10 @@
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
   components:
   - type: Item
-    size: Big
+    size: Normal
+    shape:
+    - 0,0,2,1 # 3x2
   - type: Sprite
-    state: rugged_hide
-  - type: Item
     state: rugged_hide
   - type: StaticPrice
     price: 25
@@ -62,8 +58,6 @@
   - type: Item
     size: Tiny
   - type: Sprite
-    state: scrap_hide
-  - type: Item
     state: scrap_hide
   - type: StaticPrice
     price: 3

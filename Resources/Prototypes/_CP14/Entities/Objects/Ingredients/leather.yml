@@ -27,8 +27,6 @@
   components:
   - type: Sprite
     state: thin_leather
-  - type: Item
-    state: thin_leather
   - type: PhysicalComposition
     materialComposition:
       CP14ThinHide: 1
@@ -42,9 +40,9 @@
   name: coarse leather
   description: Standard quality leather for various crafts.
   components:
-  - type: Sprite
-    state: leather
   - type: Item
+    size: Normal
+  - type: Sprite
     state: leather
   - type: PhysicalComposition
     materialComposition:
@@ -59,9 +57,9 @@
   name: rugged leather
   description: Thick and durable leather.
   components:
-  - type: Sprite
-    state: rugged_leather
   - type: Item
+    size: Normal
+  - type: Sprite
     state: rugged_leather
   - type: PhysicalComposition
     materialComposition:
@@ -78,9 +76,11 @@
   name: leather strap
   description: A flexible strap made of leather, used in various crafts.
   components:
-  - type: Sprite
-    state: strap
   - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
     state: strap
   - type: PhysicalComposition
     materialComposition:
@@ -95,9 +95,11 @@
   name: reinforced strap
   description: A sturdy strap reinforced with additional layers.
   components:
-  - type: Sprite
-    state: rugged_strap
   - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
     state: rugged_strap
   - type: PhysicalComposition
     materialComposition:
