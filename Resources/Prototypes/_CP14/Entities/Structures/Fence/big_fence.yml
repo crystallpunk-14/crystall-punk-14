@@ -88,6 +88,9 @@
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
+  - type: Construction
+    graph: CP14FenceBigWoodenBirch
+    node: CP14FenceBigWoodenBirch
 
 - type: entity
   parent: CP14BaseFenceBig

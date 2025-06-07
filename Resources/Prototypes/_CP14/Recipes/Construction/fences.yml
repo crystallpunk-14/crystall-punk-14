@@ -10,3 +10,42 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceBigWoodenBirch
+  graph: CP14FenceBigWoodenBirch
+  startNode: start
+  targetNode: CP14FenceBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateBigWooden
+  graph: CP14FenceGateBigWooden
+  startNode: start
+  targetNode: CP14FenceGateBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateBigWoodenBirch
+  graph: CP14FenceGateBigWoodenBirch
+  startNode: start
+  targetNode: CP14FenceGateBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
