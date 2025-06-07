@@ -48,8 +48,6 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
-        {"ring1", "RING1"},
-        {"ring2", "RING2"},
         {"pants", "PANTS"},
         {"shirt", "SHIRT"},
         {"cloak", "CLOAK"},
