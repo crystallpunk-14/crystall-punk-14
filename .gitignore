@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*Tools\_CP14\LocalizationHelper\last_launch_result\result.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
