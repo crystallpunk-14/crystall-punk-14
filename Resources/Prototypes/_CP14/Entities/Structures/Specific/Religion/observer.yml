@@ -4,5 +4,5 @@
   name: test observer
   components:
   - type: CP14ReligionObserver
-    religion: Test
+    religion: Nature
     range: 10

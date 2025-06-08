@@ -4,7 +4,7 @@ uniform highp vec2[32] position;
 uniform highp float[32] radius;
 uniform highp vec2 renderScale;
 
-const highp float radiusFalloff = 100.0;
+const highp float radiusFalloff = 25.0;
 
 void fragment() {
     highp vec2 fragPos = FRAGCOORD.xy;
@@ -20,5 +20,5 @@ void fragment() {
     }
 
     vec4 baseColor = zTextureSpec(SCREEN_TEXTURE, fragPos * SCREEN_PIXEL_SIZE);
-    COLOR = mix(vec4(0, 0, 0, 1), baseColor, visibility);
+    COLOR = mix(vec4(0.01, 0.003, 0.02, 1), baseColor, visibility);
 }

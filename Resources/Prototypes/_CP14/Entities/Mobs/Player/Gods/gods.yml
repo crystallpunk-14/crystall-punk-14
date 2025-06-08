@@ -1,0 +1,71 @@
+- type: entity
+  id: CP14MobGodBase
+  parent:
+  - Incorporeal
+  - BaseMob
+  - CP14MobMagical
+  name: god
+  description: The supreme entity formed from the beliefs, desires, and fears of the human race.
+  abstract: true
+  components:
+  - type: Input
+    context: "ghost"
+  - type: Spectral
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 6
+    baseSprintSpeed: 8
+    friction: 0.5
+    acceleration: 3
+  - type: NoSlip
+  - type: Eye
+    drawFov: false
+    visMask:
+      - Normal
+      - Ghost
+  - type: Visibility
+    layer: 2 #ghost vis layer
+  - type: ContentEye
+    maxZoom: 1.4, 1.4
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Speech
+    speechVerb: Ghost
+  #- type: GhostRole #TODO
+  #  makeSentient: true
+  #  name: ghost-role-information-revenant-name
+  #  description: ghost-role-information-revenant-description
+  #  rules: ghost-role-information-antagonist-rules
+  #  mindRoles:
+  #  - MindRoleGhostRoleSoloAntagonist
+  #  raffle:
+  #    settings: default
+  - type: GhostTakeoverAvailable
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 1000
+    energy: 1000
+    unsafeSupport: false
+  - type: CP14MagicEnergyDraw
+    energy: 5
+    delay: 3 # 10m to full restore
+  - type: CP14ReligionVision
+
+- type: entity
+  parent: CP14MobGodBase
+  id: CP14MobGodNature
+  name: Silvania
+  description: Lady Silvania, Her Majesty Nature. 
+  components:
+  - type: Sprite
+    sprite: Mobs/Ghosts/revenant.rsi
+    layers:
+    - state: active
+  - type: PointLight
+    color: "#51cf72"
+    radius: 2
+    softness: 1
+  - type: CP14SkillStorage
+    availableSkillTrees:
+    - NatureGod
+  - type: CP14ReligionVision
+    religion: Nature
