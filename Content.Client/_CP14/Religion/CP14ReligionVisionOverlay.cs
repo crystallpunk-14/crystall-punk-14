@@ -3,30 +3,24 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Client._CP14.Religion;
 
 public sealed class CP14ReligionVisionOverlay : Overlay
 {
-    [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-    [Dependency] private readonly IEyeManager _eyeManager = default!;
 
     private readonly SharedTransformSystem _transform;
 
     /// <summary>
-    ///     Maximum number of distortions that can be shown on screen at a time.
+    ///     Maximum number of observers zones that can be shown on screen at a time.
     ///     If this value is changed, the shader itself also needs to be updated.
     /// </summary>
-    public const int MaxCount = 16;
+    public const int MaxCount = 32;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -82,7 +76,7 @@ public sealed class CP14ReligionVisionOverlay : Overlay
                 break;
         }
 
-        return _count > 0;
+        return true;
     }
 
     protected override void Draw(in OverlayDrawArgs args)

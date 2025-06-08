@@ -1,11 +1,12 @@
 using Content.Shared._CP14.Religion.Components;
+using Content.Shared._CP14.Religion.Systems;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
 
 namespace Content.Client._CP14.Religion;
 
-public sealed partial class CP14ReligionVisionSystem : EntitySystem
+public sealed partial class CP14ClientReligionGodSystem : CP14SharedReligionGodSystem
 {
     [Dependency] private readonly IOverlayManager _overlayMgr = default!;
     [Dependency] private readonly IPlayerManager _player = default!;

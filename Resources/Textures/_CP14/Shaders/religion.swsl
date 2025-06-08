@@ -1,7 +1,7 @@
 uniform sampler2D SCREEN_TEXTURE;
 uniform lowp int count;
-uniform highp vec2[16] position;
-uniform highp float[16] radius;
+uniform highp vec2[32] position;
+uniform highp float[32] radius;
 uniform highp vec2 renderScale;
 
 const highp float radiusFalloff = 100.0;
@@ -12,7 +12,7 @@ void fragment() {
 
     highp float scale = renderScale.x;
 
-    for (int i = 0; i < 16 && i < count; i++) {
+    for (int i = 0; i < 32 && i < count; i++) {
         highp float scaledRadius = radius[i] * 30.0 * scale;
         highp float dist = length(fragPos - position[i]);
         highp float fade = smoothstep(scaledRadius - radiusFalloff * scale, scaledRadius, dist);
