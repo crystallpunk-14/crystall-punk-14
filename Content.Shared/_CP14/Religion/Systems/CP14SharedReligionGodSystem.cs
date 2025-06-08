@@ -19,20 +19,14 @@ public abstract partial class CP14SharedReligionGodSystem : EntitySystem
 
         _observersQuery = GetEntityQuery<CP14ReligionObserverComponent>();
 
-        SubscribeLocalEvent<CP14ReligionVisionComponent, AccessibleOverrideEvent>(OnGodAccessible);
         SubscribeLocalEvent<CP14ReligionVisionComponent, InRangeOverrideEvent>(OnGodInRange);
         SubscribeLocalEvent<CP14ReligionVisionComponent, MenuVisibilityEvent>(OnGodMenu);
-    }
-
-    private void OnGodAccessible(Entity<CP14ReligionVisionComponent> ent, ref AccessibleOverrideEvent args)
-    {
-
     }
 
     private void OnGodInRange(Entity<CP14ReligionVisionComponent> ent, ref InRangeOverrideEvent args)
     {
         args.Handled = true;
-        
+
         args.InRange = InVision(args.Target, ent);
     }
 

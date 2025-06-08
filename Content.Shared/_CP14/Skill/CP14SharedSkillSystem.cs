@@ -174,6 +174,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (HaveSkill(target, skill, component))
             return false;
 
+        //Check if the skill is in the available skill trees
+        if (!component.AvailableSkillTrees.Contains(skill.Tree))
+            return false;
+
         //Check max cap
         if (component.SkillsSumExperience + skill.LearnCost > component.ExperienceMaxCap)
             return false;

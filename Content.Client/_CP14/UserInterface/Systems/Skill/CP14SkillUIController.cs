@@ -37,7 +37,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private EntityUid? _targetPlayer;
 
     private IEnumerable<CP14SkillPrototype> _allSkills = [];
-    private IEnumerable<CP14SkillTreePrototype> _allTrees = [];
 
     private CP14SkillPrototype? _selectedSkill;
     private CP14SkillTreePrototype? _selectedSkillTree;
@@ -72,7 +71,6 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
     private void CacheSkillProto()
     {
         _allSkills = _proto.EnumeratePrototypes<CP14SkillPrototype>();
-        _allTrees = _proto.EnumeratePrototypes<CP14SkillTreePrototype>().OrderBy(tree => Loc.GetString(tree.Name));
     }
 
     public void OnStateExited(GameplayState state)
@@ -293,9 +291,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         //If tree not selected, select the first one
         if (_selectedSkillTree == null)
         {
-            var firstTree = _allTrees.First();
+            var firstTree = storage.AvailableSkillTrees.First();
 
-            SelectTree(firstTree, storage); // Set the first tree from the player's progress
+            SelectTree(firstTree); // Set the first tree from the player's progress
         }
 
         if (_selectedSkillTree == null)
@@ -308,8 +306,11 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.LevelLabel.Text = $"{storage.SkillsSumExperience}/{storage.ExperienceMaxCap}";
 
         _window.TreeTabsContainer.RemoveAllChildren();
-        foreach (var tree in _allTrees)
+        foreach (var tree in storage.AvailableSkillTrees)
         {
+            if (!_proto.TryIndex(tree, out var indexedTree))
+                return;
+
             float learnedPoints = 0;
             foreach (var skillId in storage.LearnedSkills)
             {
@@ -322,25 +323,28 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 }
             }
 
-            var treeButton2 = new CP14SkillTreeButtonControl(tree.Color, Loc.GetString(tree.Name), learnedPoints);
-            treeButton2.ToolTip = Loc.GetString(tree.Desc ?? string.Empty);
+            var treeButton2 = new CP14SkillTreeButtonControl(indexedTree.Color, Loc.GetString(indexedTree.Name), learnedPoints);
+            treeButton2.ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty);
             treeButton2.OnPressed += () =>
             {
-                SelectTree(tree, storage);
+                SelectTree(indexedTree);
             };
 
             _window.TreeTabsContainer.AddChild(treeButton2);
         }
     }
 
-    private void SelectTree(CP14SkillTreePrototype tree, CP14SkillStorageComponent storage)
+    private void SelectTree(ProtoId<CP14SkillTreePrototype> tree)
     {
         if (_window == null)
             return;
 
-        _selectedSkillTree = tree;
-        _window.ParallaxBackground.ParallaxPrototype = tree.Parallax;
-        _window.TreeName.Text = Loc.GetString(tree.Name);
+        if (!_proto.TryIndex(tree, out var indexedTree))
+            return;
+
+        _selectedSkillTree = indexedTree;
+        _window.ParallaxBackground.ParallaxPrototype = indexedTree.Parallax;
+        _window.TreeName.Text = Loc.GetString(indexedTree.Name);
 
         UpdateGraphControl();
     }
