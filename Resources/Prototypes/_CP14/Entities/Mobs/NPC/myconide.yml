@@ -66,9 +66,20 @@
   - type: Butcherable
     spawned:
     - id: CP14AgaricMushroom
-      amount: 3
+      amount: 2
+    - id: CP14ClothingHeadaAgaricHelmet
+      amount: 1
+      prob: 0.3
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 7
   - type: Bloodstream
-    bloodMaxVolume: 60
+    bloodMaxVolume: 50
     bloodReagent: CP14AgaricMushroom
   - type: Grammar
     attributes:
@@ -151,9 +162,17 @@
   - type: Butcherable
     spawned:
     - id: CP14LumiMushroom
-      amount: 3
+      amount: 2
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: CP14LumiMushroom
+          Quantity: 7
   - type: Bloodstream
-    bloodMaxVolume: 60
+    bloodMaxVolume: 50
     bloodReagent: CP14LumiMushroom
   - type: Grammar
     attributes:
