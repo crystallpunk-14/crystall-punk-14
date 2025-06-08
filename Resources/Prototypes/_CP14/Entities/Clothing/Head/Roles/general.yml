@@ -122,27 +122,3 @@
   #  graph: CP14StrawHat
   #  node: cp14headstrawhat
 
-- type: entity
-  parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadFishMask
-  name: fish mask
-  description: SALUTATIONS!!!
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Head/Roles/General/fish_mask.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Head/Roles/General/fish_mask.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Cold: 0.92
-  - type: FactionClothing
-    faction: CP14Fishies
-  - type: HideLayerClothing
-    slots:
-    - Hair
-  - type: TypingIndicatorClothing
-    proto: alien
-  - type: IdentityBlocker
-  - type: IngestionBlocker
