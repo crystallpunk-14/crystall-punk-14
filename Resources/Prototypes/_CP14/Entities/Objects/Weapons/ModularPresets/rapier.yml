@@ -14,7 +14,7 @@
     - BladeIronRapier
 
 - type: entity
-  id: CP14ModularCopperapier
+  id: CP14ModularCopperRapier
   parent: CP14ModularGripWooden
   name: iron rapier
   description: You'll be lucky if it even pierces the paper.
