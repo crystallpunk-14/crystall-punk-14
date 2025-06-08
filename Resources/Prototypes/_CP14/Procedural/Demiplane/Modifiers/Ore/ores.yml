@@ -91,42 +91,19 @@
   levels:
     min: 2
     max: 10
-  name: cp14-modifier-gold-ore
   unique: false
   categories:
     Ore: 0.25
   requiredTags:
   - CP14DemiplaneOres
-  - CP14DemiplaneOpenSky
   layers:
     - !type:CP14OreDunGen
       entityMask:
       - CP14WallStone
       entity: CP14WallStoneGoldOre
-      count: 10
-      minGroupSize: 2
-      maxGroupSize: 4
-
-- type: cp14DemiplaneModifier
-  id: GoldOreUnderground
-  levels:
-    min: 2
-    max: 10
-  name: cp14-modifier-gold-ore
-  unique: false
-  categories:
-    Ore: 0.25
-  requiredTags:
-  - CP14DemiplaneOres
-  - CP14DemiplaneUnderground
-  layers:
-    - !type:CP14OreDunGen
-      entityMask:
-      - CP14WallStone
-      entity: CP14WallStoneGoldOre
-      count: 15
-      minGroupSize: 2
-      maxGroupSize: 4
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 2
 
 - type: cp14DemiplaneModifier
   id: MithrilOre

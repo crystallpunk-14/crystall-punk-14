@@ -35,6 +35,8 @@
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14PaperFolderBlue

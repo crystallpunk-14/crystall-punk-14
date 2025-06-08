@@ -22,7 +22,7 @@
         mask:
         - HighImpassable
   - type: Sprite
-    drawdepth: Overdoors
+    drawdepth: Mobs
     offset: "0.0,0.3"
     noRot: true
     sprite: _CP14/Structures/Furniture/flowerpots.rsi
@@ -49,6 +49,8 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/plant_rustle.ogg
+  - type: StaticPrice
+    price: 15
 
 - type: entity
   id: CP14PottedPlant1

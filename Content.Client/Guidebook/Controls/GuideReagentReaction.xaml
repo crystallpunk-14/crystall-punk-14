@@ -26,27 +26,6 @@
                 <!-- Products will be added as children here -->
             </BoxContainer>
         </BoxContainer>
-        <!-- CP14 random reactions begin -->
-        <!--<BoxContainer Name="RandomVariations"
-                      Orientation="Vertical"
-                      VerticalExpand="True"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Center">
-            <controls:SplitBar MinHeight="10">
-            </controls:SplitBar>
-            <Label Name="RandomVariationsLabel"
-                   Text="{Loc 'cp14-guidebook-random-variations-title'}"
-                   Visible="False"
-                   HorizontalAlignment="Center"
-                   FontColorOverride="#1e6651" />
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
-                <BoxContainer Name="RandomProductsContainer" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
-                    ~1~ Random products will be added as children here @1@
-                </BoxContainer>
-            </BoxContainer>
-        </BoxContainer>-->
-        <!-- CP14 random reactions end -->
-
     </BoxContainer>
     <PanelContainer StyleClasses="LowDivider" Margin="0 5 0 5" />
 </BoxContainer>

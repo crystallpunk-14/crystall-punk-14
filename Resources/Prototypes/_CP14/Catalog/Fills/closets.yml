@@ -46,6 +46,8 @@
       - id: HandLabeler #TODO custom cp14 labeler
       - id: CP14StampDenied
       - id: CP14StampApproved
+      - id: CP14ManaOperationGlove
+      - id: AppraisalTool
       - id: CP14PaperFolderRed
         amount: 2
       - id: CP14PaperFolderBlue
@@ -73,11 +75,10 @@
   - type: StorageFill
     contents:
       - id: HandLabeler #TODO custom cp14 labeler
-      - id: CP14WoodenPlanks10
+      - id: CP14WoodenPlanks20
       - id: CP14CopperBar10
       - id: CP14CopperBar10
       - id: CP14IronBar10
-      - id: CP14GoldBar5
       - id: CP14PaperFolderRed
       - id: CP14PenFeather
         amount: 1

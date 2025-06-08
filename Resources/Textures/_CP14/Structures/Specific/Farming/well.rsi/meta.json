@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by omsoyk",
+    "copyright": "Created by omsoyk and gogenych",
     "size": {
         "x": 64,
         "y": 64
@@ -9,6 +9,12 @@
     "states": [
         {
             "name": "icon"
+        },
+        {
+            "name": "grovelling"
+        },
+        {
+            "name": "broken"
         }
     ]
 }

@@ -39,6 +39,29 @@
   layers:
     - !type:BiomeMetaLayer
       template: CP14GrassFill
+    - !type:BiomeDecalLayer #Rock decal
+      allowedTiles:
+      - CP14FloorGrass
+      - CP14FloorGrassLight
+      - CP14FloorGrassTall
+      threshold: 0.6
+      divisions: 1
+      noise:
+        seed: 18
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.11
+        octaves: 3
+        lacunarity: 1.7
+        gain: 0.8
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      decals:
+        - CP14FloraRock01
+        - CP14FloraRock02
+        - CP14FloraRock03
+        - CP14FloraRock04
+        - CP14FloraRock05
     - !type:BiomeDecalLayer #Grass decal
       allowedTiles:
       - CP14FloorGrass
