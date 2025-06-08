@@ -1,0 +1,16 @@
+- type: job
+  id: CP14GodNature
+  name: cp14-job-name-god-nature
+  description: cp14-job-desc-god-nature
+  setPreference: true
+  playTimeTracker: CP14GodNature
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  canBeAntag: false
+  icon: CP14JobIconGodNature
+  jobEntity: CP14MobGodNature
+  joinNotifyCrew: false
+  requireAdminNotify: true
+  jobPreviewEntity: CP14MobGodNature
+  applyTraits: false

@@ -37,3 +37,6 @@
 - type: playTimeTracker
   id: CP14JobMerchant
 
+# Gods
+- type: playTimeTracker
+  id: CP14GodNature

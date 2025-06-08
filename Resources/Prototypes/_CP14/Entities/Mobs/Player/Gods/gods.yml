@@ -58,11 +58,12 @@
   components:
   - type: Sprite
     sprite: Mobs/Ghosts/revenant.rsi
+    color: Green
     layers:
     - state: active
   - type: PointLight
     color: "#51cf72"
-    radius: 20
+    radius: 10
     softness: 1
     castShadows: false
   - type: CP14SkillStorage

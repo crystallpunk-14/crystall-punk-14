@@ -34,4 +34,9 @@ cp14-job-name-blacksmith = Blacksmith
 cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! You have the power of metal and fire in your hands, and only you know how to use them carefully to create masterpieces.
 
 cp14-job-name-apprentice = Apprentice
-cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.
+cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Try to help others in their work, in exchange for a salary and invaluable experience.
+
+# Gods
+
+cp14-job-name-god-nature = God of nature
+cp14-job-desc-god-nature = TODO

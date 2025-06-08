@@ -1,0 +1,7 @@
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGodNature
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_god_icons.rsi
+    state: Nature
+  jobName: cp14-job-name-god-nature
