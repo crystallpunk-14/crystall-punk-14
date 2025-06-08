@@ -54,10 +54,10 @@
   - !type:ProtoIdResource
     protoId: CP14PlatePie
   - !type:ProtoIdResource
+      protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
     protoId: CP14FoodMeatFlemTorso
   - !type:ProtoIdResource
     protoId: CP14FoodMeatFlemLeg
     count: 2
-    protoId: CP14FoodDoughMediumFlat
-  - !type:ProtoIdResource
   result: CP14FoodPieFishRaw
