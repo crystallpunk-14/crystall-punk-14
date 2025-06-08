@@ -1,5 +1,5 @@
 - type: cp14SkillTree
   id: NatureGod
-  name: cp14-skill-tree-god-nature-name
-  desc: cp14-skill-tree-god-nature-desc
+  name: cp14-skill-tree-god-desc
+  desc: cp14-skill-tree-god-name
   color: "#51cf72"

@@ -62,8 +62,9 @@
     - state: active
   - type: PointLight
     color: "#51cf72"
-    radius: 2
+    radius: 20
     softness: 1
+    castShadows: false
   - type: CP14SkillStorage
     availableSkillTrees:
     - NatureGod

@@ -20,7 +20,7 @@ public sealed class CP14ReligionVisionOverlay : Overlay
     ///     Maximum number of observers zones that can be shown on screen at a time.
     ///     If this value is changed, the shader itself also needs to be updated.
     /// </summary>
-    public const int MaxCount = 32;
+    public const int MaxCount = 64;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -52,6 +52,8 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             return false;
 
         _count = 0;
+
+        var clusters = new List<Cluster>();
         var religionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionObserverComponent, TransformComponent>();
         while (religionQuery.MoveNext(out var uid, out var rel, out var xform))
         {
@@ -68,12 +70,31 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             var tempCoords = args.Viewport.WorldToLocal(mapPos);
             tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y; // Local space to fragment space.
 
-            _positions[_count] = tempCoords;
-            _radii[_count] = rel.Range;
-            _count++;
+            // try find cluster to merge with
+            bool merged = false;
+            foreach (var cluster in clusters)
+            {
+                if ((cluster.Position - tempCoords).Length() < 200f)
+                {
+                    cluster.Add(tempCoords, rel.Range);
+                    merged = true;
+                    break;
+                }
+            }
 
-            if (_count == MaxCount)
+            if (!merged)
+                clusters.Add(new Cluster(tempCoords, rel.Range));
+
+            if (clusters.Count >= MaxCount)
                 break;
+        }
+
+        _count = 0;
+        foreach (var cluster in clusters)
+        {
+            _positions[_count] = cluster.Position;
+            _radii[_count] = cluster.Radius;
+            _count++;
         }
 
         return true;
@@ -94,5 +115,26 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         worldHandle.UseShader(_religionShader);
         worldHandle.DrawRect(args.WorldAABB, Color.White);
         worldHandle.UseShader(null);
+    }
+
+    private sealed class Cluster
+    {
+        public Vector2 Position;
+        public float Radius;
+        public int Count;
+
+        public Cluster(Vector2 pos, float radius)
+        {
+            Position = pos;
+            Radius = radius;
+            Count = 1;
+        }
+
+        public void Add(Vector2 pos, float radius)
+        {
+            Position = (Position * Count + pos) / (Count + 1);
+            Radius = Math.Max(Radius, radius) + radius * 0.25f; // Радиус берется максимальный среди кластеров + надбавка.
+            Count++;
+        }
     }
 }
