@@ -1,0 +1,8 @@
+- type: entity
+  parent: CP14ModularIronPickaxe
+  id: CP14TestReligionObserver
+  name: test observer
+  components:
+  - type: CP14ReligionObserver
+    religion: Test
+    range: 10

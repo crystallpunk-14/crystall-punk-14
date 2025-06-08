@@ -19,3 +19,8 @@
     FalloffStrength: 0.75
     FalloffPow: 3.0
     HDR: 1.5
+
+- type: shader
+  id: CP14ReligionVision
+  kind: source
+  path: "/Textures/_CP14/Shaders/religion.swsl"
