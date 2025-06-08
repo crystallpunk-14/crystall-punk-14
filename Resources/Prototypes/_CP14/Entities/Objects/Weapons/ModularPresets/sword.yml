@@ -14,6 +14,21 @@
     - BladeIronSword
 
 - type: entity
+  id: CP14ModularCopperSword
+  parent: CP14ModularGripWooden
+  name: iron sword
+  description: You'll be lucky if it even pierces the paper.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeCopperSword
+
+- type: entity
   id: CP14ModularGuardHalberd
   parent: CP14ModularGripIronLongGuard
   name: "guard's halberd"
