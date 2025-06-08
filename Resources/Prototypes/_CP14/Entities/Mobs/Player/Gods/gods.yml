@@ -26,8 +26,6 @@
     layer: 2 #ghost vis layer
   - type: ContentEye
     maxZoom: 1.4, 1.4
-  - type: NameIdentifier
-    group: GenericNumber
   - type: Speech
     speechVerb: Ghost
   #- type: GhostRole #TODO
