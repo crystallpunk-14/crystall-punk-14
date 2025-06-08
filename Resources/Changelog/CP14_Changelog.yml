@@ -245,3 +245,12 @@
   id: 8075
   time: '2025-06-07T11:04:41.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1397
+- author: Viator-MV
+  changes:
+  - message: Raider's skeleton fireball replaced by flame creation!
+    type: Tweak
+  - message: Fixed dodger's skeleton loadout, now it have skimitars instead daggers!
+    type: Fix
+  id: 8076
+  time: '2025-06-08T07:52:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1394
