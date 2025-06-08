@@ -34,7 +34,7 @@
 
 - type: entity
   parent: CP14ClothingBackpackBase
-  id: CP14ClothingBackpackLeather
+  id: CP14ClothingBackLeatherBackpack
   name: leather backpack
   description: You wear this on your back and put items into it.
   components:

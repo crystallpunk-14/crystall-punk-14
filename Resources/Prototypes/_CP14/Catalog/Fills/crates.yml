@@ -110,7 +110,7 @@
       - id: CP14ClothingHeadBeretMercenary
       - id: CP14ClothingPantsMercenaryTrousers
       - id: CP14ClothingShirtMercenary
-      - id: CP14ClothingYellowWizardDress
+      - id: CP14ClothingShirtYellowWizardDress
     - !type:GroupSelector
       children:
       - id: CP14DyeYellow

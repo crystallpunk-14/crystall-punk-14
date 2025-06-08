@@ -40,7 +40,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingBlueCollarDress
+  id: CP14ClothingShirtBlueCollarDress
   name: cotton blue collar dress
   components:
   - type: Sprite
@@ -71,7 +71,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingBlueOpenDress
+  id: CP14ClothingShirtBlueOpenDress
   name: cotton blue open dress
   components:
   - type: Sprite
@@ -91,7 +91,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingRedOpenDress
+  id: CP14ClothingShirtRedOpenDress
   name: cotton red open dress
   components:
   - type: Sprite
@@ -111,7 +111,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingYellowOpenDress
+  id: CP14ClothingShirtYellowOpenDress
   name: cotton yellow open dress
   components:
   - type: Sprite
@@ -141,7 +141,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingCottonRedDress
+  id: CP14ClothingShirtCottonRedDress
   name: cotton red dress
   components:
   - type: Sprite
@@ -161,7 +161,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingCottonWhiteDress
+  id: CP14ClothingShirtCottonWhiteDress
   name: cotton white dress
   components:
   - type: Sprite
@@ -181,7 +181,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingCottonWhiteCollarDress
+  id: CP14ClothingShirtCottonWhiteCollarDress
   name: cotton white collar dress
   components:
   - type: Sprite
@@ -222,7 +222,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingCottonYellowCollarDress
+  id: CP14ClothingShirtCottonYellowCollarDress
   name: cotton yellow collar dress
   components:
   - type: Sprite
@@ -232,7 +232,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingYellowWizardDress
+  id: CP14ClothingShirtYellowWizardDress
   name: yellow wizard robe
   description: A loose magician's shirt, comfortable and nice looking.
   components:
@@ -243,7 +243,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothinGreenBeltDress
+  id: CP14ClothingShirtGreenBeltDress
   name: green skirt with belt
   components:
   - type: Sprite
@@ -253,7 +253,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothinGreenBeltDress2
+  id: CP14ClothingShirtGreenBeltDress2
   name: green skirt with belt
   components:
   - type: Sprite
@@ -263,7 +263,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothinGreenLightDress
+  id: CP14ClothingShirtGreenLightDress
   name: light green dress
   components:
   - type: Sprite
@@ -273,7 +273,7 @@
 
 - type: entity
   parent: CP14ClothingShirtBase
-  id: CP14ClothingWarriorsGarbDress
+  id: CP14ClothingShirtWarriorsGarbDress
   name: warrior's garb
   description: show your strength.
   components:

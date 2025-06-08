@@ -12,7 +12,7 @@
 
 - type: entity
   parent: CP14ClothingSatchelBase
-  id: CP14ClothingSatchelLeather
+  id: CP14ClothingBackLeatherSatchel
   name: leather satchel
   description: You wear this on your back and put items into it.
   components:

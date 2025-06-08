@@ -359,40 +359,40 @@
   - CP14ClothinShirtMaidDress
   - CP14ClothingShirtCottonBlue
   - CP14ClothingShirtCottonBlueCollar
-  - CP14ClothingBlueCollarDress
+  - CP14ClothingShirtBlueCollarDress
   - CP14ClothingShirtBlueOpen
-  - CP14ClothingBlueOpenDress
+  - CP14ClothingShirtBlueOpenDress
   - CP14ClothinShirtWhiteBlueDress
   - CP14ClothinShirtWhiteBlue2Dress
   - CP14ClothinShirtRedBlueDress
   - CP14ClothingShirtJestersAttire
   - CP14ClothingShirtRedOpen
-  - CP14ClothingRedOpenDress
+  - CP14ClothingShirtRedOpenDress
   - CP14ClothingShirtYellowOpen
-  - CP14ClothingYellowOpenDress
+  - CP14ClothingShirtYellowOpenDress
   - CP14ClothinShirtBlueYellowDress
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
-  - CP14ClothingCottonRedDress
+  - CP14ClothingShirtCottonRedDress
   - CP14ClothingShirtCottonWhite
-  - CP14ClothingCottonWhiteDress
+  - CP14ClothingShirtCottonWhiteDress
   - CP14ClothingShirtCottonWhiteCollar
-  - CP14ClothingCottonWhiteCollarDress
+  - CP14ClothingShirtCottonWhiteCollarDress
   - CP14ClothinShirtWhiteBrown
   - CP14ClothinShirtBrown2Dress
   - CP14ClothinShirtBrown3Dress
-  - CP14ClothinGreenBeltDress
-  - CP14ClothinGreenBeltDress2
+  - CP14ClothingShirtGreenBeltDress
+  - CP14ClothingShirtGreenBeltDress2
   - CP14ClothinShirtWhiteGreenDress
   - CP14ClothinShirtwhiteGreenYellowDress
   - CP14ClothinShirtGreenYellow
   - CP14ClothinShirtBlueGreen
-  - CP14ClothinGreenLightDress
+  - CP14ClothingShirtGreenLightDress
   - CP14ClothingShirtCottonYellow
   - CP14ClothingShirtCottonYellowCollar
-  - CP14ClothingCottonYellowCollarDress
+  - CP14ClothingShirtCottonYellowCollarDress
   - CP14ClothinShirtYellowBlueDress
-  - CP14ClothingWarriorsGarbDress
+  - CP14ClothingShirtWarriorsGarbDress
 
 - type: loadout
   id: CP14ClothingShirtCottonBlack
@@ -420,9 +420,9 @@
     shirt: CP14ClothingShirtCottonBlueCollar
 
 - type: loadout
-  id: CP14ClothingBlueCollarDress
+  id: CP14ClothingShirtBlueCollarDress
   equipment:
-    shirt: CP14ClothingBlueCollarDress
+    shirt: CP14ClothingShirtBlueCollarDress
 
 - type: loadout
   id: CP14ClothingShirtBlueOpen
@@ -430,9 +430,9 @@
     shirt: CP14ClothingShirtBlueOpen
 
 - type: loadout
-  id: CP14ClothingBlueOpenDress
+  id: CP14ClothingShirtBlueOpenDress
   equipment:
-    shirt: CP14ClothingBlueOpenDress
+    shirt: CP14ClothingShirtBlueOpenDress
 
 - type: loadout
   id: CP14ClothingShirtJestersAttire
@@ -445,9 +445,9 @@
     shirt: CP14ClothingShirtRedOpen
 
 - type: loadout
-  id: CP14ClothingRedOpenDress
+  id: CP14ClothingShirtRedOpenDress
   equipment:
-    shirt: CP14ClothingRedOpenDress
+    shirt: CP14ClothingShirtRedOpenDress
 
 - type: loadout
   id: CP14ClothingShirtYellowOpen
@@ -455,9 +455,9 @@
     shirt: CP14ClothingShirtYellowOpen
 
 - type: loadout
-  id: CP14ClothingYellowOpenDress
+  id: CP14ClothingShirtYellowOpenDress
   equipment:
-    shirt: CP14ClothingYellowOpenDress
+    shirt: CP14ClothingShirtYellowOpenDress
 
 - type: loadout
   id: CP14ClothingShirtCottonPurple
@@ -470,9 +470,9 @@
     shirt: CP14ClothingShirtCottonRed
 
 - type: loadout
-  id: CP14ClothingCottonRedDress
+  id: CP14ClothingShirtCottonRedDress
   equipment:
-    shirt: CP14ClothingCottonRedDress
+    shirt: CP14ClothingShirtCottonRedDress
 
 - type: loadout
   id: CP14ClothingShirtCottonWhite
@@ -480,9 +480,9 @@
     shirt: CP14ClothingShirtCottonWhite
 
 - type: loadout
-  id: CP14ClothingCottonWhiteDress
+  id: CP14ClothingShirtCottonWhiteDress
   equipment:
-    shirt: CP14ClothingCottonWhiteDress
+    shirt: CP14ClothingShirtCottonWhiteDress
 
 - type: loadout
   id: CP14ClothingShirtCottonWhiteCollar
@@ -490,24 +490,24 @@
     shirt: CP14ClothingShirtCottonWhiteCollar
 
 - type: loadout
-  id: CP14ClothingCottonWhiteCollarDress
+  id: CP14ClothingShirtCottonWhiteCollarDress
   equipment:
-    shirt: CP14ClothingCottonWhiteCollarDress
+    shirt: CP14ClothingShirtCottonWhiteCollarDress
 
 - type: loadout
-  id: CP14ClothinGreenBeltDress
+  id: CP14ClothingShirtGreenBeltDress
   equipment:
-    shirt: CP14ClothinGreenBeltDress
+    shirt: CP14ClothingShirtGreenBeltDress
 
 - type: loadout
-  id: CP14ClothinGreenBeltDress2
+  id: CP14ClothingShirtGreenBeltDress2
   equipment:
-    shirt: CP14ClothinGreenBeltDress2
+    shirt: CP14ClothingShirtGreenBeltDress2
 
 - type: loadout
-  id: CP14ClothinGreenLightDress
+  id: CP14ClothingShirtGreenLightDress
   equipment:
-    shirt: CP14ClothinGreenLightDress
+    shirt: CP14ClothingShirtGreenLightDress
 
 - type: loadout
   id: CP14ClothingShirtCottonYellow
@@ -520,14 +520,14 @@
     shirt: CP14ClothingShirtCottonYellowCollar
 
 - type: loadout
-  id: CP14ClothingCottonYellowCollarDress
+  id: CP14ClothingShirtCottonYellowCollarDress
   equipment:
-    shirt: CP14ClothingCottonYellowCollarDress
+    shirt: CP14ClothingShirtCottonYellowCollarDress
 
 - type: loadout
-  id: CP14ClothingWarriorsGarbDress
+  id: CP14ClothingShirtWarriorsGarbDress
   equipment:
-    shirt: CP14ClothingWarriorsGarbDress
+    shirt: CP14ClothingShirtWarriorsGarbDress
 
 - type: loadout
   id: CP14ClothinShirtBlueYellowDress
@@ -603,7 +603,7 @@
   - CP14ShoesBlack
   - CP14ShoesAristocraticBlack
   - CP14ShoesSandals
-  - CP14LongLeatherBoots
+  - CP14ClothingShoesLongLeatherBoots
   - CP14ClothingShoesJestersRingers
 
 - type: loadout
@@ -622,9 +622,9 @@
     shoes: CP14ClothingShoesSandals
 
 - type: loadout
-  id: CP14LongLeatherBoots
+  id: CP14ClothingShoesLongLeatherBoots
   equipment:
-    shoes: CP14LongLeatherBoots
+    shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: loadout
   id: CP14ClothingShoesJestersRingers
@@ -637,18 +637,18 @@
   id: CP14GeneralBack
   name: cp14-loadout-general-back
   loadouts:
-  - CP14ClothingBackpackLeather
-  - CP14ClothingSatchelLeather
+  - CP14ClothingBackLeatherBackpack
+  - CP14ClothingBackLeatherSatchel
 
 - type: loadout
-  id: CP14ClothingBackpackLeather
+  id: CP14ClothingBackLeatherBackpack
   equipment:
-    back: CP14ClothingBackpackLeather
+    back: CP14ClothingBackLeatherBackpack
 
 - type: loadout
-  id: CP14ClothingSatchelLeather
+  id: CP14ClothingBackLeatherSatchel
   equipment:
-    back: CP14ClothingSatchelLeather
+    back: CP14ClothingBackLeatherSatchel
 
 # Trinkets
 

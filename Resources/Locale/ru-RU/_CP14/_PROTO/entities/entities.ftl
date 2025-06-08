@@ -648,10 +648,10 @@ ent-CP14SpellScrollWaterCreation = свиток заклинания созда�
 ent-CP14HeadSkeleton = череп
     .desc = Бедный Йорик...
 
-ent-CP14ClothingBackpackLeather = кожаный рюкзак
+ent-CP14ClothingBackLeatherBackpack = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
-ent-CP14ClothingSatchelLeather = кожаная сумка
+ent-CP14ClothingBackLeatherSatchel = кожаная сумка
     .desc = Вы носите его на спине и кладете в него предметы.
 
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий
@@ -1107,7 +1107,7 @@ ent-CP14ClothingShirtCottonBlue = холщовая синяя рубашка
 ent-CP14ClothingShirtCottonBlueCollar = холщовая синяя рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingBlueCollarDress = хлопковое платье с голубым воротником
+ent-CP14ClothingShirtBlueCollarDress = хлопковое платье с голубым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtMercenary = рубашка наемника
@@ -1116,19 +1116,19 @@ ent-CP14ClothingShirtMercenary = рубашка наемника
 ent-CP14ClothingShirtBlueOpen = холщовая открытая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingBlueOpenDress = хлопковое голубое открытое платье
+ent-CP14ClothingShirtBlueOpenDress = хлопковое голубое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtRedOpen = холщовая открытая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingRedOpenDress = хлопковое красное открытое платье
+ent-CP14ClothingShirtRedOpenDress = хлопковое красное открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtYellowOpen = холщовая открытая желтая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingYellowOpenDress = хлопковое желтое открытое платье
+ent-CP14ClothingShirtYellowOpenDress = хлопковое желтое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonPurple = холщовая фиолетовая рубашка
@@ -1137,19 +1137,19 @@ ent-CP14ClothingShirtCottonPurple = холщовая фиолетовая руб
 ent-CP14ClothingShirtCottonRed = холщовая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingCottonRedDress = хлопковое красное платье
+ent-CP14ClothingShirtCottonRedDress = хлопковое красное платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonWhite = холщовая белая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingCottonWhiteDress = хлопковое белое платье
+ent-CP14ClothingShirtCottonWhiteDress = хлопковое белое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonWhiteCollar = хлопковая рубашка с белым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingCottonWhiteCollarDress = хлопковое платье с белым воротником
+ent-CP14ClothingShirtCottonWhiteCollarDress = хлопковое платье с белым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonYellow = холщовая желтая рубашка
@@ -1161,22 +1161,22 @@ ent-CP14ClothingShirtJestersAttire = шутовской наряд
 ent-CP14ClothingShirtCottonYellowCollar = холщовая желтая рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingCottonYellowCollarDress = хлопковое платье с желтым воротником
+ent-CP14ClothingShirtCottonYellowCollarDress = хлопковое платье с желтым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingYellowWizardDress = желтая мантия волшебника
+ent-CP14ClothingShirtYellowWizardDress = желтая мантия волшебника
     .desc = Свободная рубашка мага, удобная и приятная на вид.
 
-ent-CP14ClothinGreenBeltDress = зеленая юбка с поясом
+ent-CP14ClothingShirtGreenBeltDress = зеленая юбка с поясом
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothinGreenBeltDress2 = зеленая юбка с поясом
+ent-CP14ClothingShirtGreenBeltDress2 = зеленая юбка с поясом
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothinGreenLightDress = светло-зеленое платье
+ent-CP14ClothingShirtGreenLightDress = светло-зеленое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingWarriorsGarbDress = воинское одеяние
+ent-CP14ClothingShirtWarriorsGarbDress = воинское одеяние
     .desc = Покажите свою силу.
 
 ent-CP14ClothinShirtMaidDress = платье горничной
@@ -1250,7 +1250,7 @@ ent-CP14ClothingShoesArtifactSpeedboots = ботинки Гермеса
     .desc = Зачарованные ботинки, позволяющие их владельцу быстро передвигаться по земле. Это выглядит увлекательно!
     .suffix = Артефакт
 
-ent-CP14LongLeatherBoots = длинные кожаные сапоги
+ent-CP14ClothingShoesLongLeatherBoots = длинные кожаные сапоги
     .desc = Удобная обувь для ударов ногой налево и направо.
 
 ent-CP14ClothingShoesJestersRingers = шутовские звонари

@@ -202,7 +202,7 @@
   result: CP14ClothingShirtMercenary
 
 - type: CP14Recipe
-  id: CP14ClothingYellowWizardDress
+  id: CP14ClothingShirtYellowWizardDress
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
@@ -217,7 +217,7 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 3
-  result: CP14ClothingYellowWizardDress
+  result: CP14ClothingShirtYellowWizardDress
 
 - type: CP14Recipe
   id: CP14ClothingHeadBeretMercenary

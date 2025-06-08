@@ -1665,8 +1665,8 @@
         "parent": "CP14RightFootHuman",
         "suffix": null
     },
-    "CP14ClothingBackpackLeather": {
-        "id": "CP14ClothingBackpackLeather",
+    "CP14ClothingBackLeatherBackpack": {
+        "id": "CP14ClothingBackLeatherBackpack",
         "name": "leather backpack",
         "description": "You wear this on your back and put items into it.",
         "parent": "CP14ClothingBackpackBase",
@@ -1679,8 +1679,8 @@
         "parent": "CP14ClothingBackpackBase",
         "suffix": null
     },
-    "CP14ClothingSatchelLeather": {
-        "id": "CP14ClothingSatchelLeather",
+    "CP14ClothingBackLeatherSatchel": {
+        "id": "CP14ClothingBackLeatherSatchel",
         "name": "leather satchel",
         "description": "You wear this on your back and put items into it.",
         "parent": "CP14ClothingSatchelBase",
@@ -2827,8 +2827,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingBlueCollarDress": {
-        "id": "CP14ClothingBlueCollarDress",
+    "CP14ClothingShirtBlueCollarDress": {
+        "id": "CP14ClothingShirtBlueCollarDress",
         "name": "cotton blue collar dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2848,8 +2848,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingBlueOpenDress": {
-        "id": "CP14ClothingBlueOpenDress",
+    "CP14ClothingShirtBlueOpenDress": {
+        "id": "CP14ClothingShirtBlueOpenDress",
         "name": "cotton blue open dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2862,8 +2862,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingRedOpenDress": {
-        "id": "CP14ClothingRedOpenDress",
+    "CP14ClothingShirtRedOpenDress": {
+        "id": "CP14ClothingShirtRedOpenDress",
         "name": "cotton red open dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2876,8 +2876,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingYellowOpenDress": {
-        "id": "CP14ClothingYellowOpenDress",
+    "CP14ClothingShirtYellowOpenDress": {
+        "id": "CP14ClothingShirtYellowOpenDress",
         "name": "cotton yellow open dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2897,8 +2897,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingCottonRedDress": {
-        "id": "CP14ClothingCottonRedDress",
+    "CP14ClothingShirtCottonRedDress": {
+        "id": "CP14ClothingShirtCottonRedDress",
         "name": "cotton red dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2911,8 +2911,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingCottonWhiteDress": {
-        "id": "CP14ClothingCottonWhiteDress",
+    "CP14ClothingShirtCottonWhiteDress": {
+        "id": "CP14ClothingShirtCottonWhiteDress",
         "name": "cotton white dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2925,8 +2925,8 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingCottonWhiteCollarDress": {
-        "id": "CP14ClothingCottonWhiteCollarDress",
+    "CP14ClothingShirtCottonWhiteCollarDress": {
+        "id": "CP14ClothingShirtCottonWhiteCollarDress",
         "name": "cotton white collar dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
@@ -2953,43 +2953,43 @@
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingCottonYellowCollarDress": {
-        "id": "CP14ClothingCottonYellowCollarDress",
+    "CP14ClothingShirtCottonYellowCollarDress": {
+        "id": "CP14ClothingShirtCottonYellowCollarDress",
         "name": "cotton yellow collar dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingYellowWizardDress": {
-        "id": "CP14ClothingYellowWizardDress",
+    "CP14ClothingShirtYellowWizardDress": {
+        "id": "CP14ClothingShirtYellowWizardDress",
         "name": "yellow wizard robe",
         "description": "A loose magician's shirt, comfortable and nice looking.",
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothinGreenBeltDress": {
-        "id": "CP14ClothinGreenBeltDress",
+    "CP14ClothingShirtGreenBeltDress": {
+        "id": "CP14ClothingShirtGreenBeltDress",
         "name": "green skirt with belt",
         "description": null,
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothinGreenBeltDress2": {
-        "id": "CP14ClothinGreenBeltDress2",
+    "CP14ClothingShirtGreenBeltDress2": {
+        "id": "CP14ClothingShirtGreenBeltDress2",
         "name": "green skirt with belt",
         "description": null,
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothinGreenLightDress": {
-        "id": "CP14ClothinGreenLightDress",
+    "CP14ClothingShirtGreenLightDress": {
+        "id": "CP14ClothingShirtGreenLightDress",
         "name": "light green dress",
         "description": null,
         "parent": "CP14ClothingShirtBase",
         "suffix": null
     },
-    "CP14ClothingWarriorsGarbDress": {
-        "id": "CP14ClothingWarriorsGarbDress",
+    "CP14ClothingShirtWarriorsGarbDress": {
+        "id": "CP14ClothingShirtWarriorsGarbDress",
         "name": "warrior's garb",
         "description": "show your strength.",
         "parent": "CP14ClothingShirtBase",
@@ -3072,8 +3072,8 @@
         "parent": "CP14ClothingShoesBase",
         "suffix": "Artifact"
     },
-    "CP14LongLeatherBoots": {
-        "id": "CP14LongLeatherBoots",
+    "CP14ClothingShoesLongLeatherBoots": {
+        "id": "CP14ClothingShoesLongLeatherBoots",
         "name": "long leather boots",
         "description": "the perfect tool for kicking left and right",
         "parent": "CP14ClothingShoesBase",
