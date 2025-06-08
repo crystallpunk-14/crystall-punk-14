@@ -254,3 +254,12 @@
   id: 8076
   time: '2025-06-08T07:52:14.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1394
+- author: Nimfar11
+  changes:
+  - message: Adds a chance to drop a mushroom hat from agaric myconids.
+    type: Add
+  - message: Myconids can now be consumed in food.
+    type: Tweak
+  id: 8077
+  time: '2025-06-08T07:53:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1398
