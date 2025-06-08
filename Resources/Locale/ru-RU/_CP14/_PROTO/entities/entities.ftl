@@ -2863,6 +2863,15 @@ ent-CP14ModularBladeCopperMace = медный шар булавы
 ent-CP14ModularBladeMithrilMace = мифриловый шар булавы
     .desc = { ent-CP14ModularBladeMaceBase.desc }
 
+ent-CP14ModularBladeMopBase = насадка для швабры
+    .desc = Насадка для швабры без рукояти. Прикрепите ее к рукояти, чтобы сделать швабру.
+
+ent-CP14ModularBladeWoodMop = насадка для швабры
+    .desc = { ent-CP14ModularBladeMopBase.desc }
+
+ent-CP14ModularBladeLucensMop = люценовая насадка для швабры
+    .desc = { ent-CP14ModularBladeMopBase.desc }
+
 ent-CP14ModularBladePickaxeBase = головка кирки
     .desc = Массивная острая головка кирки без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
 
@@ -3273,6 +3282,9 @@ ent-CP14RitualChalk = ритуальный мелок
 
 ent-CP14Bucket = ведро
     .desc = Старое скучное ведро
+
+ent-CP14Bucket = люценовая ведро
+    .desc = Скучное старое ведро, но оно синее.
 
 ent-CP14BaseDemiplaneKey = ключ координат демиплана
     .desc = Временный сгусток энергии, соединяющий реальный мир и демипланетный. Используйте его, пока он не рассеялся.
@@ -4626,7 +4638,7 @@ ent-CP14MagicHealingStaff = посох исцеления
 ent-CP14BaseShield = щит
     .desc = Деревянный щит, способный выдержать несколько ударов.
 
-ent-CP14BaseMop = деревянная швабра
+ent-CP14ModularWoodMop = деревянная швабра
     .desc = Швабра для мытья полов от различных неприятных жидкостей
 
 ent-CP14BaseWrench = гаечный ключ

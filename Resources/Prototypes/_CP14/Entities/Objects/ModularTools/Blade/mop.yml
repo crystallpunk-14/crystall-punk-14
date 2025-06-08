@@ -3,7 +3,7 @@
   id: CP14ModularBladeMopBase
   categories: [ ForkFiltered ]
   abstract: true
-  description: A mophead without a hilt. Attach it to a hilt to make a mop.
+  description: A mop head without a hilt. Attach it to a hilt to make a mop.
   components:
   - type: Item
     storedRotation: 45
@@ -14,7 +14,7 @@
 - type: entity
   parent: CP14ModularBladeMopBase
   id: CP14ModularBladeWoodMop
-  name: wooden mophead
+  name: wooden mop head
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Mop/mop.rsi
@@ -27,7 +27,7 @@
 - type: entity
   parent: CP14ModularBladeMopBase
   id: CP14ModularBladeLucensMop
-  name: lucens mophead
+  name: lucens mop head
   components:
   - type: Sprite
     sprite: _CP14/Objects/ModularTools/Blade/Mop/lucens_mop.rsi
