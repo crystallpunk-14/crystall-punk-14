@@ -27,7 +27,6 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: cp14rope
   id: cp14ropegrass
   graph: CP14Rope
   startNode: start
@@ -37,7 +36,6 @@
 
 - type: construction
   crystallPunkAllowed: true
-  name: rope
   id: cp14ropecloth
   graph: CP14Rope
   startNode: start
