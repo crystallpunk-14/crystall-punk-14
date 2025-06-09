@@ -57,7 +57,10 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         var religionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionObserverComponent, TransformComponent>();
         while (religionQuery.MoveNext(out var uid, out var rel, out var xform))
         {
-            if (_religion is not null && _religion != rel.Religion)
+            if (_religion is null)
+                continue;
+
+            if (!rel.Observation.ContainsKey(_religion.Value))
                 continue;
 
             if (!rel.Active || xform.MapID != args.MapId)
@@ -74,16 +77,16 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             bool merged = false;
             foreach (var cluster in clusters)
             {
-                if ((cluster.Position - tempCoords).Length() < 200f)
+                if ((cluster.Position - tempCoords).Length() < 150f)
                 {
-                    cluster.Add(tempCoords, rel.Range);
+                    cluster.Add(tempCoords, rel.Observation[_religion.Value]);
                     merged = true;
                     break;
                 }
             }
 
             if (!merged)
-                clusters.Add(new Cluster(tempCoords, rel.Range));
+                clusters.Add(new Cluster(tempCoords, rel.Observation[_religion.Value]));
 
             if (clusters.Count >= MaxCount)
                 break;

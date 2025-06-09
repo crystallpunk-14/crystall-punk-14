@@ -134,8 +134,8 @@
     tags:
     - CP14AmbientForest
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -156,8 +156,8 @@
         tree05: ""
         tree06: ""
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -222,8 +222,8 @@
     tags:
     - CP14AmbientForest
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 
 - type: entity
   id: CP14BaseLucensTree
@@ -282,8 +282,8 @@
             min: 1
             max: 3
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 8
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseLucensTree
@@ -336,8 +336,8 @@
             min: 3
             max: 6
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 8
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -388,8 +388,8 @@
             min: 1
             max: 2
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -440,8 +440,8 @@
             min: 2
             max: 4
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -492,6 +492,6 @@
             min: 3
             max: 6
   - type: CP14ReligionObserver
-    religion: Nature
-    range: 5
+    observation:
+      Nature: 5
 

@@ -98,8 +98,8 @@
       params:
         volume: -100 #Yes, it's stupid, but it's easier
   - type: CP14ReligionObserver
-    religion: Light
-    range: 5
+    observation:
+      Light: 5
 
 - type: entity
   parent: CP14BaseSpellScrollLight

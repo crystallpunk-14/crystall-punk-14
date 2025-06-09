@@ -47,12 +47,15 @@ public abstract partial class CP14SharedReligionGodSystem : EntitySystem
             if (xform.MapID != userXform.MapID)
                 continue;
 
-            if (user.Comp.Religion is not null & user.Comp.Religion != observer.Religion)
+            if (user.Comp.Religion is null)
+                continue;
+
+            if (!observer.Observation.ContainsKey(user.Comp.Religion.Value))
                 continue;
 
             var obsPos = _transform.GetWorldPosition(uid);
             var targetPos = _transform.GetWorldPosition(target);
-            if (Vector2.Distance(obsPos, targetPos) <= observer.Range)
+            if (Vector2.Distance(obsPos, targetPos) <= observer.Observation[user.Comp.Religion.Value])
             {
                 // If the observer is within range of the target, they can see it.
                 return true;

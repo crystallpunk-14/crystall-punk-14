@@ -10,11 +10,8 @@ namespace Content.Shared._CP14.Religion.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CP14ReligionObserverComponent : Component
 {
-    [DataField(required: true), AutoNetworkedField]
-    public ProtoId<CP14ReligionPrototype>? Religion;
-
     [DataField, AutoNetworkedField]
-    public float Range = 5f;
+    public Dictionary<ProtoId<CP14ReligionPrototype>, float> Observation = new(); //DAMNATION
 
     [DataField, AutoNetworkedField]
     public bool Active = true;
