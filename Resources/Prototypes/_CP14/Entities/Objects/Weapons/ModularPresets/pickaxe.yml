@@ -14,17 +14,3 @@
     details:
     - BladeIronPickaxe
 
-- type: entity
-  id: CP14ModularCopperPickaxe
-  parent: CP14ModularGripWoodenLong
-  name: copper pickaxe
-  description: It's better than by hand
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
-      state: icon
-  - type: CP14ModularCraftAutoAssemble
-    details:
-    - BladeCopperPickaxe

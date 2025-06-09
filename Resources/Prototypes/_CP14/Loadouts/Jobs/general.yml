@@ -666,7 +666,7 @@
   - CP14SilverCoin
   - CP14ModularIronDagger
   - CP14ModularIronSickle
-  - CP14ModularCopperPickaxe
+  - CP14ModularIronPickaxe
   - CP14Lighter
   - CP14Torch
   - CP14SmokingPipeFilledTobacco
@@ -723,10 +723,10 @@
     - CP14ModularIronSickle
 
 - type: loadout
-  id: CP14ModularCopperPickaxe
+  id: CP14ModularIronPickaxe
   storage:
     back:
-    - CP14ModularCopperPickaxe
+    - CP14ModularIronPickaxe
 
 - type: loadout
   id: CP14Lighter
