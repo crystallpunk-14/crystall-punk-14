@@ -45,6 +45,7 @@
       entries:
       - jobs:
         - CP14GodNature
+        - CP14GodLight
         count:
           min: 2
           max: 3

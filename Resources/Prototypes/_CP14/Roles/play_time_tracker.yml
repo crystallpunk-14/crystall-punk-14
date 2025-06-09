@@ -40,3 +40,6 @@
 # Gods
 - type: playTimeTracker
   id: CP14GodNature
+
+- type: playTimeTracker
+  id: CP14GodLight

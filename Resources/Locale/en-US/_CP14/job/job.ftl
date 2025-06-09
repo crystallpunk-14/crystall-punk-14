@@ -40,3 +40,6 @@ cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to l
 
 cp14-job-name-god-nature = God of nature
 cp14-job-desc-god-nature = TODO
+
+cp14-job-name-god-light = God of light and knowledge (Luxian)
+cp14-job-desc-god-light = Spread your influence among mortals, lighting their path and pushing their boundaries of possibility.

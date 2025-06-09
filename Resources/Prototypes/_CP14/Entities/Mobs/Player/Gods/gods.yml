@@ -66,6 +66,28 @@
     castShadows: false
   - type: CP14SkillStorage
     availableSkillTrees:
-    - NatureGod
+    - GodNature
   - type: CP14ReligionVision
     religion: Nature
+
+- type: entity
+  parent: CP14MobGodBase
+  id: CP14MobGodLight
+  name: Luxian
+  description: The god of light and knowledge, Luxian.
+  components:
+  - type: Sprite
+    sprite: Mobs/Ghosts/revenant.rsi
+    color: Blue
+    layers:
+    - state: active
+  - type: PointLight
+    color: "#4367ba"
+    radius: 10
+    softness: 1
+    castShadows: false
+  - type: CP14SkillStorage
+    availableSkillTrees:
+    - LightGod
+  - type: CP14ReligionVision
+    religion: Light

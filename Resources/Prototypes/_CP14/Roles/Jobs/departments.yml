@@ -5,6 +5,7 @@
   weight: 666 # >:)
   color: "#ffffff"
   roles:
+  - CP14GodLight
   - CP14GodNature
 
 - type: department
