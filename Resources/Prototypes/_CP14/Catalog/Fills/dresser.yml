@@ -20,6 +20,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14ClothingEyesMerchantMonocle
       - id: CP14ClothingHeadBowler
         prob: 0.5
       - id: CP14ClothingPantsAristocratic

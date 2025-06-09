@@ -26,6 +26,19 @@
   equipment:
     cloak: CP14ClothingCloakCommandantJacket
 
+# Eyes
+
+- type: loadoutGroup
+  id: CP14MerchantEyes
+  name: cp14-loadout-merchant-eyes
+  loadouts:
+  - CP14ClothingEyesMerchantMonocle
+
+- type: loadout
+  id: CP14ClothingEyesMerchantMonocle
+  equipment:
+    eyes: CP14ClothingEyesMerchantMonocle
+
 # OuterClothing
 
 - type: loadoutGroup

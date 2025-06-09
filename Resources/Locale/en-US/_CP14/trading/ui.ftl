@@ -9,3 +9,7 @@ cp14-trading-faction-prefix = Trading with:
 cp14-trading-failure-popup-money = Not enough funds on the platform!
 
 cp14-trading-contract-use = Trade with "{$name}" unlocked!
+
+cp14-trading-item-price = The value of this item on the imperial market:
+
+cp14-trading-empty-price = None!

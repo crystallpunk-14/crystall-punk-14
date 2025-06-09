@@ -84,3 +84,8 @@
   desc: cp14-skill-tree-blacksmithing-desc
   color: "#6b3200"
 
+- type: cp14SkillTree
+  id: Trading
+  name: cp14-skill-tree-trading-name
+  desc: cp14-skill-tree-trading-desc
+  color: "#f5edaa"

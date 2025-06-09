@@ -122,3 +122,16 @@
     sprite: _CP14/Clothing/Eyes/eye_patch.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/eye_patch.rsi
+
+- type: entity
+  parent: CP14ClothingEyesBase
+  id: CP14ClothingEyesMerchantMonocle
+  name: merchant's monocle
+  description: High-quality magnifiyng monocle infused with magic to help you determine the exact price of any item.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Eyes/merchant_monocle.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Eyes/merchant_monocle.rsi
+  - type: CP14ExaminePrice
+  - type: VisionCorrection

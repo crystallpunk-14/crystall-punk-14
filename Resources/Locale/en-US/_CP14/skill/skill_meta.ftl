@@ -32,3 +32,6 @@ cp14-skill-iron-melt-name = Iron melting
 cp14-skill-gold-melt-name = Gold melting
 cp14-skill-mithril-melt-name = Mithril melting
 cp14-skill-glass-melt-name = Glasswork
+
+cp14-skill-trader-wit-name = Trader's wit
+cp14-skill-trader-wit-desc = You are able to estimate the exact value of any item in the empire at a first glance.

@@ -49,6 +49,7 @@ cp14-loadout-guard-spells = Заклинания стражи
 
 cp14-loadout-merchant-head = Шляпа торговца
 cp14-loadout-merchant-cloak = Накидка торговца
+cp14-loadout-merchant-eyes = Очки торговца
 cp14-loadout-merchant-outer = Жилет торговца
 cp14-loadout-merchant-shirt = Рубашка торговца
 cp14-loadout-merchant-pants = Штаны торговца

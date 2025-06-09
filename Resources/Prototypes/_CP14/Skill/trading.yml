@@ -1,0 +1,14 @@
+- type: cp14Skill
+  id: TraderWit
+  skillUiPosition: 0, 0
+  tree: Trading
+  name: cp14-skill-trader-wit-name
+  desc: cp14-skill-trader-wit-desc
+  learnCost: 1
+  icon:
+    sprite: _CP14/Objects/Economy/pp_coin.rsi
+    state: coin8
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CP14ExaminePrice

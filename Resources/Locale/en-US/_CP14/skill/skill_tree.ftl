@@ -34,3 +34,6 @@ cp14-skill-tree-thaumaturgy-desc = The art of creating magical potions that can 
 
 cp14-skill-tree-blacksmithing-name = Blacksmithing
 cp14-skill-tree-blacksmithing-desc = The art of turning metal into various useful things.
+
+cp14-skill-tree-trading-name = Trading
+cp14-skill-tree-trading-desc = The art of understanding where, when and for how much to sell and buy different items.
