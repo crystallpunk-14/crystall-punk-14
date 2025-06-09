@@ -24,6 +24,7 @@
     - state: icon
     - sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
       state: icon
+      color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeCopperPickaxe
