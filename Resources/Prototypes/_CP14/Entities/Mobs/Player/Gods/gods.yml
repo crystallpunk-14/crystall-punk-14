@@ -12,8 +12,8 @@
     context: "ghost"
   - type: Spectral
   - type: MovementSpeedModifier
-    baseWalkSpeed: 6
-    baseSprintSpeed: 8
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
     friction: 0.5
     acceleration: 3
   - type: NoSlip
@@ -25,7 +25,7 @@
   - type: Visibility
     layer: 2 #ghost vis layer
   - type: ContentEye
-    maxZoom: 1.4, 1.4
+    maxZoom: 1.2, 1.2
   - type: Speech
     speechVerb: Ghost
   #- type: GhostRole #TODO
@@ -37,7 +37,7 @@
   #  - MindRoleGhostRoleSoloAntagonist
   #  raffle:
   #    settings: default
-  - type: GhostTakeoverAvailable
+  #- type: GhostTakeoverAvailable
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 1000
@@ -45,8 +45,17 @@
     unsafeSupport: false
   - type: CP14MagicEnergyDraw
     energy: 5
-    delay: 3 # 10m to full restore
+    delay: 6 # 20m to full restore
   - type: CP14ReligionVision
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - CP14Gods
+  - type: IntrinsicRadioReceiver
+  - type: ActiveRadio
+    receiveAllChannels: true
+    globalReceive: true
+    channels:
+    - CP14Gods
 
 - type: entity
   parent: CP14MobGodBase
