@@ -280,3 +280,13 @@
   id: 8079
   time: '2025-06-09T05:56:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1408
+- author: Sefaia
+  changes:
+  - message: Iron, Gold and Mithril Aventails recipes to be at their respected metal
+      category
+    type: Fix
+  - message: Iron and Gold Greaves recipes to be at their respected metal category
+    type: Fix
+  id: 8080
+  time: '2025-06-09T10:25:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1409
