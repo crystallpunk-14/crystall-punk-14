@@ -180,7 +180,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         )
     {
         //CP14 Zone
-        if (HasComp<CP14ReligionVisionComponent>(source))
+        if (HasComp<CP14ReligionEntityComponent>(source))
         {
             TryProccessRadioMessage(source, message, out var modMessage, out var channel);
             _radio.SendRadioMessage(source, modMessage, "CP14Gods", source);

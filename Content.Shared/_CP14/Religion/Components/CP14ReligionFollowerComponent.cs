@@ -6,14 +6,14 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Religion.Components;
 
 /// <summary>
-/// Allows the god of a particular religion to see within a radius around the observer.
+/// Determines whether the entity is a follower of God, or may never be able to become one
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedReligionGodSystem))]
-public sealed partial class CP14ReligionObserverComponent : Component
+public sealed partial class CP14ReligionFollowerComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<CP14ReligionPrototype>, float> Observation = new(); //DAMNATION
+    public ProtoId<CP14ReligionPrototype>? Religion;
 
     [DataField, AutoNetworkedField]
-    public bool Active = true;
+    public bool CanBecomeFollower = true;
 }

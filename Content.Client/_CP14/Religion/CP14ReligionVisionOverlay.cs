@@ -39,7 +39,7 @@ public sealed class CP14ReligionVisionOverlay : Overlay
 
         _transform = _entManager.System<SharedTransformSystem>();
 
-        if (_entManager.TryGetComponent<CP14ReligionVisionComponent>(_player.LocalEntity, out var vision))
+        if (_entManager.TryGetComponent<CP14ReligionEntityComponent>(_player.LocalEntity, out var vision))
         {
             _religion = vision.Religion;
         }
@@ -60,7 +60,8 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             if (_religion is null)
                 continue;
 
-            if (!rel.Observation.ContainsKey(_religion.Value))
+            var observation = rel.Observation;
+            if (!observation.ContainsKey(_religion.Value))
                 continue;
 
             if (!rel.Active || xform.MapID != args.MapId)

@@ -38,6 +38,7 @@
   #  raffle:
   #    settings: default
   #- type: GhostTakeoverAvailable
+  - type: CP14ReligionVision
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 1000
@@ -76,7 +77,7 @@
   - type: CP14SkillStorage
     availableSkillTrees:
     - GodNature
-  - type: CP14ReligionVision
+  - type: CP14ReligionEntity
     religion: Nature
 
 - type: entity
@@ -98,5 +99,5 @@
   - type: CP14SkillStorage
     availableSkillTrees:
     - LightGod
-  - type: CP14ReligionVision
+  - type: CP14ReligionEntity
     religion: Light
