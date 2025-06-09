@@ -17,7 +17,7 @@
   id: CP14ModularCopperSkimitar
   parent: CP14ModularGripWooden
   name: copper skimitar
-  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  description: You'll be lucky if it even pierces the paper.
   components:
   - type: Sprite
     layers:

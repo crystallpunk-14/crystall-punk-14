@@ -263,3 +263,20 @@
   id: 8077
   time: '2025-06-08T07:53:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1398
+- author: gogenych
+  changes:
+  - message: Iron weapons and pickaxe in loadouts are now copper.
+    type: Tweak
+  - message: Iron pickaxes in boxes around the map now spawn much less often, but
+      copper ones have appeared.
+    type: Tweak
+  id: 8078
+  time: '2025-06-08T16:16:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1403
+- author: Katzenminer
+  changes:
+  - message: Demiplanes Now Also End if players are SSD
+    type: Tweak
+  id: 8079
+  time: '2025-06-09T05:56:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1408

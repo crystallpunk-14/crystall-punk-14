@@ -58,7 +58,7 @@
       - id: CP14ModularCopperPickaxe
       - id: CP14ModularIronSickle
       - id: CP14ModularIronPickaxe
-        weight: 0.3
+      - id: CP14ModularIronSickle
       - !type:GroupSelector
         children:
         - id: CP14FluteInstrument
