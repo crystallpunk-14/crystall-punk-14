@@ -297,3 +297,10 @@
   id: 8081
   time: '2025-06-09T11:34:38.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1370
+- author: Viator-MV
+  changes:
+  - message: Added cool magic druid staff to adventurer loadout
+    type: Add
+  id: 8082
+  time: '2025-06-09T11:35:56.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1396
