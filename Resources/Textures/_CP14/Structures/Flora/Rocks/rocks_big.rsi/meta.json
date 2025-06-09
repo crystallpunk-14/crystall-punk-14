@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "All right reserved",
-  "copyright": "created by vladimir.s",
+  "copyright": "Created by vladimir.s, moss_rock by gogenych",
   "size": {
     "x": 48,
     "y": 64
@@ -21,6 +21,24 @@
     },
     {
       "name": "rock4"
+    },
+    {
+      "name": "rock5"
+    },
+    {
+      "name": "moss_rock1"
+    },
+    {
+      "name": "moss_rock2"
+    },
+    {
+      "name": "moss_rock3"
+    },
+    {
+      "name": "moss_rock4"
+    },
+    {
+      "name": "moss_rock5"
     }
   ]
 }
