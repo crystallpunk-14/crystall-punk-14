@@ -16,7 +16,7 @@
 - type: entity
   id: CP14ModularCopperSword
   parent: CP14ModularGripWooden
-  name: iron sword
+  name: copper sword
   description: You'll be lucky if it even pierces the paper.
   components:
   - type: Sprite

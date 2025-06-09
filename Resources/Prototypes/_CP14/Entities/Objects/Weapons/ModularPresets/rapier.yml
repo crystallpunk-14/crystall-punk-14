@@ -16,7 +16,7 @@
 - type: entity
   id: CP14ModularCopperRapier
   parent: CP14ModularGripWooden
-  name: iron rapier
+  name: copper rapier
   description: You'll be lucky if it even pierces the paper.
   components:
   - type: Sprite
