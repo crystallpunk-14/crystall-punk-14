@@ -290,3 +290,10 @@
   id: 8080
   time: '2025-06-09T10:25:40.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1409
+- author: jimmy12or
+  changes:
+  - message: Wooden fences and gates are now buildable!
+    type: Tweak
+  id: 8081
+  time: '2025-06-09T11:34:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1370
