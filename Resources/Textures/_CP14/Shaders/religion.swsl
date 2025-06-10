@@ -39,36 +39,49 @@ highp vec3 gradientColor(highp float t) {
 void fragment() {
     highp vec2 fragPos = FRAGCOORD.xy;
     highp float visibility = 0.0;
+    highp float edgeHighlight = 0.0;
     highp float scale = renderScale.x;
 
-    // Подготовим UV и шум
     highp vec2 uv = fragPos * SCREEN_PIXEL_SIZE;
     highp float t = TIME * timeScale;
     highp vec2 noiseUV = uv * noiseScale + vec2(t);
 
-    // Плавающий noise для цвета
     highp float n = noise(noiseUV);
     highp vec3 colorOverlay = gradientColor(n);
 
-    // Дополнительно: направление искажения (единичный вектор, зависящий от шума)
     highp float nX = noise(noiseUV + vec2(3.1, 7.7));
     highp float nY = noise(noiseUV + vec2(9.3, 2.4));
     highp vec2 distortion = vec2(nX - 0.5, nY - 0.5) * 15.0 * scale;
 
     for (lowp int i = 0; i < 64 && i < count; i++) {
         highp float scaledRadius = radius[i] * 30.0 * scale;
-
-        // Добавляем искажение к позиции пикселя
         highp float dist = length((fragPos + distortion) - position[i]);
-
+    
         highp float fade = smoothstep(scaledRadius - radiusFalloff * scale, scaledRadius, dist);
         visibility = max(visibility, 1.0 - fade);
+    
+        // Узкая кромка по расстоянию до радиуса
+        highp float offset = -60; 
+        highp float edgeWidth = 16.0 * scale; // ширина кромки в пикселях
+        highp float edgeDist = abs(dist - (scaledRadius + offset));
+        highp float edge = smoothstep(edgeWidth, 0.0, edgeDist);
+        edgeHighlight = max(edgeHighlight, edge);
     }
+
 
     highp vec4 baseColor = zTextureSpec(SCREEN_TEXTURE, fragPos * SCREEN_PIXEL_SIZE);
     highp vec3 finalColor = mix(colorOverlay, baseColor.rgb, visibility);
 
-    highp float minAlpha = 0.8; // минимальная прозрачность вне зоны видимости
+    // Наложим бордовую кромку
+    highp vec3 edgeColor = vec3(0.3, 0.0, 0.05); // бордовый
+    finalColor = mix(
+        finalColor,
+        edgeColor,
+        edgeHighlight * step(0.5, 1.0 - visibility)
+    );
+
+    highp float minAlpha = 0.8;
     COLOR = vec4(finalColor, mix(minAlpha, 1.0, visibility));
 }
+
 
