@@ -23,7 +23,7 @@
   - type: Body
     prototype: CP14Dwarf
     requiredLegs: 2
-    - type: CP14SkillStorage # +1 memory point
+  - type: CP14SkillStorage # +1 memory point
     experienceMaxCap: 6
   - type: Inventory
     templateId: CP14Human
