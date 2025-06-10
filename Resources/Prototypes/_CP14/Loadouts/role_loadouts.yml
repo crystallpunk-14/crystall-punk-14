@@ -34,7 +34,7 @@
   groups:
   - CP14AlchemistHead #
   - CP14GeneralOuterClothing
-  - CP14AlchemistEyes #
+  - CP14GeneralEyes #
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -129,7 +129,7 @@
   groups:
   - CP14MerchantHead
   - CP14MerchantOuterClothing
-  - CP14MerchantEyes
+  - CP14GeneralEyes
   - CP14MerchantShirt
   - CP14MerchantPants
   - CP14MerchantShoes

@@ -139,6 +139,28 @@
   service: !type:CP14BuyItemsService
     product: CP14Syringe
 
+- type: cp14TradingPosition
+  id: CP14ClothingEyesAlchemyGlasses
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Clothing/Eyes/alchemy_glasses.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingEyesAlchemyGlasses
+
+- type: cp14TradingPosition
+  id: CP14ClothingEyesAlchemyMonocle
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Clothing/Eyes/alchemy_monocle.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingEyesAlchemyGlasses
+
 # Rep 2
 
 - type: cp14TradingPosition

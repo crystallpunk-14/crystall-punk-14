@@ -10,6 +10,4 @@ cp14-trading-failure-popup-money = Недостаточно средств на 
 
 cp14-trading-contract-use = Торговля с "{$name}" разблокирована!
 
-cp14-trading-item-price = Стоимость этого предмета на имперском рынке:
-
 cp14-trading-empty-price = Отсутствует!
