@@ -15,6 +15,6 @@ public sealed partial class CP14ReligionEntityComponent : Component
     [DataField(required: true)]
     public ProtoId<CP14ReligionPrototype>? Religion;
 
-    public HashSet<EntityUid> PvsOverridedAltars = new();
+    public HashSet<EntityUid> PvsOverridedObservers = new();
     public ICommonSession? Session;
 }

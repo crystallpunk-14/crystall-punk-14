@@ -18,8 +18,8 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14ReligionAltarComponent, ComponentInit>(OnAltarInit);
-        SubscribeLocalEvent<CP14ReligionAltarComponent, CP14ReligionChangedEvent>(OnAltarReligionChanged);
+        SubscribeLocalEvent<CP14ReligionObserverComponent, ComponentInit>(OnObserverInit);
+        SubscribeLocalEvent<CP14ReligionObserverComponent, AfterAutoHandleStateEvent>(OnObserverHandleState);
 
         SubscribeLocalEvent<CP14ReligionEntityComponent, ComponentInit>(OnGodInit);
         SubscribeLocalEvent<CP14ReligionEntityComponent, ComponentShutdown>(OnGodShutdown);
@@ -29,36 +29,25 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
     }
 
-    private void OnAltarReligionChanged(Entity<CP14ReligionAltarComponent> ent, ref CP14ReligionChangedEvent args)
+    private void OnObserverHandleState(Entity<CP14ReligionObserverComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        if (args.OldReligion is not null)
+        var query = EntityQueryEnumerator<CP14ReligionEntityComponent>();
+        while (query.MoveNext(out var uid, out var god))
         {
-            var oldGods = GetGods(args.OldReligion.Value);
-            foreach (var god in oldGods)
-            {
-                UpdatePvsOverrides(god);
-            }
-        }
-        if (args.NewReligion is not null)
-        {
-            var newGods = GetGods(args.NewReligion.Value);
-            foreach (var god in newGods)
-            {
-                UpdatePvsOverrides(god);
-            }
+            UpdatePvsOverrides(new Entity<CP14ReligionEntityComponent>(uid, god));
         }
     }
 
-    private void OnAltarInit(Entity<CP14ReligionAltarComponent> ent, ref ComponentInit args)
+    private void OnObserverInit(Entity<CP14ReligionObserverComponent> ent, ref ComponentInit args)
     {
-        if (ent.Comp.Religion is null)
-            return;
-
-        var gods = GetGods(ent.Comp.Religion.Value);
-
-        foreach (var god in gods)
+        foreach (var (religion, _) in ent.Comp.Observation)
         {
-            UpdatePvsOverrides(god);
+            var gods = GetGods(religion);
+
+            foreach (var god in gods)
+            {
+                UpdatePvsOverrides(god);
+            }
         }
     }
 
@@ -113,13 +102,16 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
 
         ent.Comp.Session = actor.PlayerSession;
 
-        var query = EntityQueryEnumerator<CP14ReligionAltarComponent>();
-        while (query.MoveNext(out var uid, out var altar))
+        var query = EntityQueryEnumerator<CP14ReligionObserverComponent>();
+        while (query.MoveNext(out var uid, out var observer))
         {
-            if (altar.Religion != ent.Comp.Religion)
+            if (!observer.Observation.ContainsKey(ent.Comp.Religion.Value))
                 continue;
 
-            ent.Comp.PvsOverridedAltars.Add(uid);
+            if (observer.Observation[ent.Comp.Religion.Value] <= 6.5f) //Maybe there is a variable for the distance outside the screen in PVS, I don't know. This number works best
+                continue;
+
+            ent.Comp.PvsOverridedObservers.Add(uid);
             _pvs.AddSessionOverride(uid, actor.PlayerSession);
         }
     }
@@ -132,13 +124,13 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         if (ent.Comp.Session is null)
             return;
 
-        foreach (var altar in ent.Comp.PvsOverridedAltars)
+        foreach (var altar in ent.Comp.PvsOverridedObservers)
         {
             _pvs.RemoveSessionOverride(altar, ent.Comp.Session);
         }
 
         ent.Comp.Session = null;
-        ent.Comp.PvsOverridedAltars.Clear();
+        ent.Comp.PvsOverridedObservers.Clear();
     }
 
     private void UpdatePvsOverrides(Entity<CP14ReligionEntityComponent> ent)

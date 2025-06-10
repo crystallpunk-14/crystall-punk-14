@@ -8,7 +8,7 @@ namespace Content.Shared._CP14.Religion.Components;
 /// <summary>
 /// Allows the god of a particular religion to see within a radius around the observer.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedReligionGodSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(CP14SharedReligionGodSystem))]
 public sealed partial class CP14ReligionObserverComponent : Component
 {
     [DataField, AutoNetworkedField]
