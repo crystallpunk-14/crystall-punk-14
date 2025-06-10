@@ -48,9 +48,6 @@
     color: "#eea911"
   - type: Sprite
     layers:
-    - state: sun
-      color: "#eea911"
-      shader: unshaded
     - state: medium_circle
       color: "#fdda5d"
       shader: unshaded
