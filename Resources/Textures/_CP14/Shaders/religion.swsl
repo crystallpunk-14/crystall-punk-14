@@ -68,6 +68,7 @@ void fragment() {
     highp vec4 baseColor = zTextureSpec(SCREEN_TEXTURE, fragPos * SCREEN_PIXEL_SIZE);
     highp vec3 finalColor = mix(colorOverlay, baseColor.rgb, visibility);
 
-    COLOR = vec4(finalColor, 1.0);
+    highp float minAlpha = 0.8; // минимальная прозрачность вне зоны видимости
+    COLOR = vec4(finalColor, mix(minAlpha, 1.0, visibility));
 }
 

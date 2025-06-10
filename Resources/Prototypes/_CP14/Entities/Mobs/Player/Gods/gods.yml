@@ -47,7 +47,6 @@
   - type: CP14MagicEnergyDraw
     energy: 5
     delay: 6 # 20m to full restore
-  - type: CP14ReligionVision
   - type: IntrinsicRadioTransmitter
     channels:
     - CP14Gods
