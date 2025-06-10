@@ -24,6 +24,7 @@
     - state: icon
     - sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
       state: icon
+      color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeCopperSkimitar
