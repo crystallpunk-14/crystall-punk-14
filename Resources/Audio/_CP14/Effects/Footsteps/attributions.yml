@@ -2,3 +2,8 @@
   license: "CC0-1.0"
   copyright: "Sound from D.jones: https://freesound.org/people/D.jones/"
   source: "https://freesound.org/people/D.jones/sounds/527846/"
+
+- files: ["slippers1.ogg", "slippers2.ogg", "slippers3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Sound from brumxyz: https://freesound.org/people/brumxyz/"
+  source: "https://freesound.org/people/brumxyz/sounds/560728/"

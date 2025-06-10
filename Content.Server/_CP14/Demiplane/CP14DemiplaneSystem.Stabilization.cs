@@ -1,6 +1,7 @@
 using Content.Server.Body.Systems;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.SSDIndicator;
 
 namespace Content.Server._CP14.Demiplane;
 
@@ -50,7 +51,8 @@ public sealed partial class CP14DemiplaneSystem
 
             if (stabilizedMaps.Contains(map.Value))
                 continue;
-
+            if (TryComp(uid, out SSDIndicatorComponent? ssd) && ssd.IsSSD)
+                continue;
             stabilizedMaps.Add(map.Value);
         }
 
