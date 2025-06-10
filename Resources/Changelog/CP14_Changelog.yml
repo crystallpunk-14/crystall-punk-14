@@ -304,3 +304,19 @@
   id: 8082
   time: '2025-06-09T11:35:56.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1396
+- author: Nimfar11
+  changes:
+  - message: Adds a two-handed crossbow.
+    type: Add
+  - message: Changes the size of the bow.
+    type: Tweak
+  id: 8083
+  time: '2025-06-10T08:08:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1315
+- author: Nimfar11
+  changes:
+  - message: Adds new big rocks with moss.
+    type: Add
+  id: 8084
+  time: '2025-06-10T08:07:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1412
