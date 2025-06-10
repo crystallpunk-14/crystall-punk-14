@@ -22,11 +22,16 @@ public abstract partial class CP14SharedReligionGodSystem
         if (!follower.CanBeConverted)
             return false;
 
+        var oldReligion = follower.Religion;
         follower.Religion = religion;
         follower.CanBeConverted = false;
         Dirty(target, follower);
 
         EditObservation(target, religion, indexedReligion.FollowerObservationRadius);
+
+        var ev = new CP14ReligionChangedEvent(oldReligion, religion);
+        RaiseLocalEvent(target, ev);
+
         return true;
     }
 
@@ -42,7 +47,13 @@ public abstract partial class CP14SharedReligionGodSystem
             return;
 
         EditObservation(target, follower.Religion.Value, -indexedReligion.FollowerObservationRadius);
+
+        var oldReligion = follower.Religion;
         follower.Religion = null;
+
+        var ev = new CP14ReligionChangedEvent(oldReligion, null);
+        RaiseLocalEvent(target, ev);
+
         Dirty(target, follower);
     }
 }

@@ -34,3 +34,12 @@ public abstract partial class CP14SharedReligionGodSystem : EntitySystem
         return gods;
     }
 }
+
+/// <summary>
+/// It is invoked on altars and followers when they change their religion.
+/// </summary>
+public sealed class CP14ReligionChangedEvent(ProtoId<CP14ReligionPrototype>? oldRel, ProtoId<CP14ReligionPrototype>? newRel) : EntityEventArgs
+{
+    public ProtoId<CP14ReligionPrototype>? OldReligion = oldRel;
+    public ProtoId<CP14ReligionPrototype>? NewReligion = newRel;
+}
