@@ -1,0 +1,13 @@
+- type: entity
+  parent: CP14BaseAltarPrimordial
+  id: CP14AltarPrimordialLight
+  name: primordial statue of Luxian
+  description: A majestic statue of the one called Luxian, the bearer of light. Speak quietly, he may hear you.
+  components:
+  - type: CP14ReligionAltar
+    religion: Light
+  - type: CP14ReligionObserver
+    observation:
+      Light: 25
+  - type: SpawnPoint
+    job_id: CP14GodLight

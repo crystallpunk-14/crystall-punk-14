@@ -1,0 +1,1 @@
+cp14-altar-wrapped-message = [color=gold][bold]{$name}[/bold] молится, {$msg}[/color]

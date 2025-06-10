@@ -19,30 +19,30 @@ public abstract partial class CP14SharedReligionGodSystem
 
         EnsureComp<CP14ReligionFollowerComponent>(target, out var follower);
 
-        if (!follower.CanBecomeFollower)
+        if (!follower.CanBeConverted)
             return false;
 
         follower.Religion = religion;
-        follower.CanBecomeFollower = false;
+        follower.CanBeConverted = false;
         Dirty(target, follower);
 
         EditObservation(target, religion, indexedReligion.FollowerObservationRadius);
         return true;
     }
 
-    public void ToDisbelieve(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
+    public void ToDisbelieve(EntityUid target)
     {
-        if (!_proto.TryIndex(religion, out var indexedReligion))
+        if (!TryComp<CP14ReligionFollowerComponent>(target, out var follower))
             return;
 
-        EnsureComp<CP14ReligionFollowerComponent>(target, out var follower);
-
-        if (follower.Religion != religion)
+        if (follower.Religion is null)
             return;
 
+        if (!_proto.TryIndex(follower.Religion, out var indexedReligion))
+            return;
+
+        EditObservation(target, follower.Religion.Value, -indexedReligion.FollowerObservationRadius);
         follower.Religion = null;
         Dirty(target, follower);
-
-        EditObservation(target, religion, -indexedReligion.FollowerObservationRadius);
     }
 }

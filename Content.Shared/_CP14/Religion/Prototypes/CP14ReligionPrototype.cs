@@ -12,4 +12,7 @@ public sealed partial class CP14ReligionPrototype : IPrototype
 
     [DataField]
     public float FollowerObservationRadius = 8f;
+
+    [DataField]
+    public float AltarObservationRadius = 25f;
 }
