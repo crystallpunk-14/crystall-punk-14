@@ -327,3 +327,10 @@
   id: 8085
   time: '2025-06-10T10:40:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1414
+- author: firebat4321
+  changes:
+  - message: Added new combat-focused T2 Pryokinetic spell, Firebolt!
+    type: Add
+  id: 8086
+  time: '2025-06-10T11:14:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1354
