@@ -5,6 +5,7 @@ using Content.Server.Popups;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
+using Content.Shared.Tag;
 using Content.Shared._CP14.Trading.Components;
 
 
@@ -13,6 +14,7 @@ namespace Content.Server._CP14.Trading;
 public sealed class ExaminePriceSystem : CP14SharedCurrencySystem
 {
     [Dependency] private readonly PricingSystem _price = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private PopupSystem _popup = default!;
 
@@ -40,6 +42,10 @@ public sealed class ExaminePriceSystem : CP14SharedCurrencySystem
     private void OnExamined(EntityUid eid, MetaDataComponent component, ExaminedEvent args)
     {
         if (!IsAbleExamine(args.Examiner))
+        {
+            return;
+        }
+        else if (_tag.HasTag(args.Examined, "CP14Coin"))
         {
             return;
         }

@@ -159,7 +159,7 @@
     sprite: _CP14/Clothing/Eyes/alchemy_monocle.rsi
     state: icon
   service: !type:CP14BuyItemsService
-    product: CP14ClothingEyesAlchemyGlasses
+    product: CP14ClothingEyesAlchemyMonocle
 
 # Rep 2
 
