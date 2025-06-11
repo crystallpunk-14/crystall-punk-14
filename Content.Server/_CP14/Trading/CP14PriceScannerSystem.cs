@@ -11,7 +11,7 @@ using Content.Shared._CP14.Trading.Components;
 
 namespace Content.Server._CP14.Trading;
 
-public sealed class ExaminePriceSystem : CP14SharedCurrencySystem
+public sealed class CP14PriceScannerSystem : CP14SharedCurrencySystem
 {
     [Dependency] private readonly PricingSystem _price = default!;
     [Dependency] private readonly TagSystem _tag = default!;
@@ -27,11 +27,11 @@ public sealed class ExaminePriceSystem : CP14SharedCurrencySystem
     private bool IsAbleExamine(EntityUid uid)
     {
         if (_invSystem.TryGetSlotEntity(uid, "eyes", out var huds)
-            && HasComp<CP14ExaminePriceComponent>(huds))
+            && HasComp<CP14PriceScannerComponent>(huds))
         {
             return true;
         }
-        else if (HasComp<CP14ExaminePriceComponent>(uid))
+        else if (HasComp<CP14PriceScannerComponent>(uid))
         {
             return true;
         }

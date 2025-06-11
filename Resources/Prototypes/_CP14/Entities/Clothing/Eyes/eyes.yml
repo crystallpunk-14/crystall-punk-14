@@ -137,7 +137,7 @@
     sprite: _CP14/Clothing/Eyes/merchant_monocle.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Eyes/merchant_monocle.rsi
-  - type: CP14ExaminePrice
+  - type: CP14PriceScanner
   - type: StaticPrice
     price: 30
   - type: VisionCorrection

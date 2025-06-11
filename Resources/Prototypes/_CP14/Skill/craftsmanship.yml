@@ -11,7 +11,7 @@
   effects:
   - !type:AddComponents
     components:
-    - type: CP14ExaminePrice
+    - type: CP14PriceScanner
 
 - type: cp14Skill
   id: CopperMelting
