@@ -3,6 +3,7 @@ using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared.Alert;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -16,6 +17,20 @@ public abstract partial class CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, ComponentShutdown>(OnPendingFollowerShutdown);
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, CP14BreakDivineOfferEvent>(OnBreakDivineOffer);
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, CP14GodTouchEvent>(OnGodTouch);
+        SubscribeLocalEvent<CP14ReligionAltarComponent, CP14AltarOfferDoAfter>(OnOfferDoAfter);
+    }
+
+    private void OnOfferDoAfter(Entity<CP14ReligionAltarComponent> ent, ref CP14AltarOfferDoAfter args)
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        if (ent.Comp.Religion is null)
+            return;
+
+        TryAddPendingFollower(args.User, ent.Comp.Religion.Value);
+
+        args.Handled = true;
     }
 
     private void OnGodTouch(Entity<CP14ReligionPendingFollowerComponent> ent, ref CP14GodTouchEvent args)
@@ -48,9 +63,11 @@ public abstract partial class CP14SharedReligionGodSystem
 
     public bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
     {
+        if (HasComp<CP14ReligionEntityComponent>(target))
+            return false;
+
         if (!TryComp<CP14ReligionFollowerComponent>(target, out var follower))
             return true;
-
         if (follower.CanBeConverted)
             return true;
 
@@ -59,9 +76,6 @@ public abstract partial class CP14SharedReligionGodSystem
 
     public void TryAddPendingFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
     {
-        if (!_proto.TryIndex(religion, out var indexedReligion))
-            return;
-
         if (!CanBecomeFollower(target, religion))
             return;
 
@@ -95,6 +109,7 @@ public abstract partial class CP14SharedReligionGodSystem
         RaiseLocalEvent(pending, ev);
 
         RemCompDeferred<CP14ReligionPendingFollowerComponent>(pending);
+        SendMessageToGods(pending.Comp.Religion.Value, Loc.GetString("cp14-become-follower-message", ("name", MetaData(pending).EntityName)), pending);
         return true;
     }
 
@@ -109,6 +124,7 @@ public abstract partial class CP14SharedReligionGodSystem
         if (!_proto.TryIndex(follower.Religion, out var indexedReligion))
             return;
 
+        SendMessageToGods(follower.Religion.Value, Loc.GetString("cp14-remove-follower-message", ("name", MetaData(target).EntityName)), target);
         EditObservation(target, follower.Religion.Value, -indexedReligion.FollowerObservationRadius);
 
         var oldReligion = follower.Religion;

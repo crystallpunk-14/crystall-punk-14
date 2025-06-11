@@ -97,7 +97,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
             channels.Add(godActor.PlayerSession.Channel);
         }
 
-        _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Goldenrod);
+        _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Aqua);
     }
 
     private void AddPvsOverrides(Entity<CP14ReligionEntityComponent> ent)

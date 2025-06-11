@@ -1,13 +1,16 @@
 
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
+using Content.Shared.DoAfter;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Religion.Systems;
 
 public abstract partial class CP14SharedReligionGodSystem
 {
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     private void InitializeAltars()
     {
         SubscribeLocalEvent<CP14ReligionAltarComponent, GetVerbsEvent<ActivationVerb>>(GetBaseVerb);
@@ -37,11 +40,15 @@ public abstract partial class CP14SharedReligionGodSystem
         {
             Text = Loc.GetString("cp14-altar-become-follower"),
             Message = Loc.GetString("cp14-altar-become-follower-desc"),
-            ConfirmationPopup = true,
             Disabled = disabled,
             Act = () =>
             {
-                TryAddPendingFollower(user, ent.Comp.Religion.Value);
+                var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new CP14AltarOfferDoAfter(), ent, used: ent)
+                {
+                    BreakOnDamage = true,
+                    BreakOnMove = true,
+                };
+                _doAfter.TryStartDoAfter(doAfterArgs);
             },
         });
     }
@@ -89,4 +96,9 @@ public abstract partial class CP14SharedReligionGodSystem
 
         Dirty(target, altar);
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class CP14AltarOfferDoAfter : SimpleDoAfterEvent
+{
 }
