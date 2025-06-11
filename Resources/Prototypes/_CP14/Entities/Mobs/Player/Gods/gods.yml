@@ -56,6 +56,11 @@
     globalReceive: true
     channels:
     - CP14Gods
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionZLevelUp
+    - CP14ActionZLevelDown
 
 - type: entity
   parent: CP14MobGodBase
@@ -78,6 +83,8 @@
     - GodNature
   - type: CP14ReligionEntity
     religion: Nature
+  - type: CP14ReligionVision
+    shaderColor:  0.02, 0.36, 0.05
 
 - type: entity
   parent: CP14MobGodBase

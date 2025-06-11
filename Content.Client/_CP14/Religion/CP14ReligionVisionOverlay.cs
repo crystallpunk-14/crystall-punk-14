@@ -109,6 +109,10 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         if (ScreenTexture == null || args.Viewport.Eye == null)
             return;
 
+        if (!_entManager.TryGetComponent<CP14ReligionVisionComponent>(_player.LocalEntity, out var visionComponent))
+            return;
+
+        _religionShader?.SetParameter("shaderColor", visionComponent.ShaderColor);
         _religionShader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
         _religionShader?.SetParameter("count", _count);
         _religionShader?.SetParameter("position", _positions);
@@ -137,7 +141,7 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         public void Add(Vector2 pos, float radius)
         {
             Position = (Position * Count + pos) / (Count + 1);
-            Radius = Math.Max(Radius, radius) + radius * 0.25f; // Радиус берется максимальный среди кластеров + надбавка.
+            Radius = Math.Max(Radius, radius);
             Count++;
         }
     }

@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Shared._CP14.ZLevel;
 using Content.Shared.Ghost;
 using Robust.Shared.Map;
@@ -9,11 +8,11 @@ public sealed partial class CP14StationZLevelsSystem
 {
     private void InitActions()
     {
-        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionUp>(OnZLevelUp);
-        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionDown>(OnZLevelDown);
+        SubscribeLocalEvent<SpectralComponent, CP14ZLevelActionUp>(OnZLevelUp);
+        SubscribeLocalEvent<SpectralComponent, CP14ZLevelActionDown>(OnZLevelDown);
     }
 
-    private void OnZLevelDown(Entity<GhostComponent> ent, ref CP14ZLevelActionDown args)
+    private void OnZLevelDown(Entity<SpectralComponent> ent, ref CP14ZLevelActionDown args)
     {
         if (args.Handled)
             return;
@@ -23,7 +22,7 @@ public sealed partial class CP14StationZLevelsSystem
         args.Handled = true;
     }
 
-    private void OnZLevelUp(Entity<GhostComponent> ent, ref CP14ZLevelActionUp args)
+    private void OnZLevelUp(Entity<SpectralComponent> ent, ref CP14ZLevelActionUp args)
     {
         if (args.Handled)
             return;

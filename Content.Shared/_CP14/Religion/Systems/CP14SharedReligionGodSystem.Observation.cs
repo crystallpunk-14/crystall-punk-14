@@ -27,8 +27,6 @@ public abstract partial class CP14SharedReligionGodSystem
         args.Visibility &= ~MenuVisibility.NoFov;
     }
 
-    #region Public API
-
     public void EditObservation(EntityUid target, ProtoId<CP14ReligionPrototype> religion, float range)
     {
         EnsureComp<CP14ReligionObserverComponent>(target, out var observer);
@@ -54,7 +52,6 @@ public abstract partial class CP14SharedReligionGodSystem
         Dirty(target, observer);
     }
 
-    #endregion
     protected bool InVision(EntityUid target, Entity<CP14ReligionEntityComponent> user)
     {
         if (!HasComp<CP14ReligionVisionComponent>(user))

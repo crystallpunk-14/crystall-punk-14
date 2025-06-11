@@ -9,4 +9,6 @@ namespace Content.Shared._CP14.Religion.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(CP14SharedReligionGodSystem))]
 public sealed partial class CP14ReligionVisionComponent : Component
 {
+    [DataField]
+    public Vector3 ShaderColor = new (1f, 1f, 1f);
 }
