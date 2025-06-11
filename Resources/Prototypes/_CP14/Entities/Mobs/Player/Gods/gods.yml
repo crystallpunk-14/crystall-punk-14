@@ -61,6 +61,8 @@
     spells:
     - CP14ActionZLevelUp
     - CP14ActionZLevelDown
+    - ActionToggleLighting
+    - ActionToggleFov
 
 - type: entity
   parent: CP14MobGodBase

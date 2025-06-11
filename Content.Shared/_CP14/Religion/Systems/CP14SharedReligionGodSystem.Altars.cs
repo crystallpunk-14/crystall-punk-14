@@ -21,7 +21,29 @@ public abstract partial class CP14SharedReligionGodSystem
 
     private void GetAltVerb(Entity<CP14ReligionAltarComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
+        if (ent.Comp.Religion is null)
+            return;
 
+        bool disabled = !CanBecomeFollower(args.User, ent.Comp.Religion.Value);
+
+        if (!disabled && TryComp<CP14ReligionPendingFollowerComponent>(args.User, out var pendingFollower))
+        {
+            if (pendingFollower.Religion is not null)
+                disabled = true;
+        }
+
+        var user = args.User;
+        args.Verbs.Add(new AlternativeVerb()
+        {
+            Text = Loc.GetString("cp14-altar-become-follower"),
+            Message = Loc.GetString("cp14-altar-become-follower-desc"),
+            ConfirmationPopup = true,
+            Disabled = disabled,
+            Act = () =>
+            {
+                TryAddPendingFollower(user, ent.Comp.Religion.Value);
+            },
+        });
     }
 
     public bool TryConvertAltar(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
