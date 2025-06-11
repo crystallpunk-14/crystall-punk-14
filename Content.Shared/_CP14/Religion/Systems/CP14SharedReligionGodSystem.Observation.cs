@@ -3,6 +3,7 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -52,7 +53,14 @@ public abstract partial class CP14SharedReligionGodSystem
         Dirty(target, observer);
     }
 
-    protected bool InVision(EntityUid target, Entity<CP14ReligionEntityComponent> user)
+    public bool InVision(EntityUid target, Entity<CP14ReligionEntityComponent> user)
+    {
+        var position = Transform(target).Coordinates;
+
+        return InVision(position, user);
+    }
+
+    public bool InVision(EntityCoordinates coords, Entity<CP14ReligionEntityComponent> user)
     {
         if (!HasComp<CP14ReligionVisionComponent>(user))
             return true;
@@ -73,8 +81,9 @@ public abstract partial class CP14SharedReligionGodSystem
             if (!observer.Observation.ContainsKey(user.Comp.Religion.Value))
                 continue;
 
+
             var obsPos = _transform.GetWorldPosition(uid);
-            var targetPos = _transform.GetWorldPosition(target);
+            var targetPos = coords.Position;
             if (Vector2.Distance(obsPos, targetPos) <= observer.Observation[user.Comp.Religion.Value])
             {
                 // If the observer is within range of the target, they can see it.

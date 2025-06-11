@@ -1,0 +1,11 @@
+- type: cp14Skill
+  id: GodLightTouch
+  skillUiPosition: 0, 0
+  tree: GodLight
+  learnCost: 0.0
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLightTouch

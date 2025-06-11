@@ -4,6 +4,10 @@
   name: primordial statue of Luxian
   description: A majestic statue of the one called Luxian, the bearer of light. Speak quietly, he may hear you.
   components:
+  - type: Sprite
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    layers:
+    - state: white
   - type: CP14ReligionAltar
     religion: Light
   - type: CP14ReligionObserver
@@ -11,3 +15,21 @@
       Light: 25
   - type: SpawnPoint
     job_id: CP14GodLight
+
+- type: entity
+  parent: CP14BaseAltarPrimordial
+  id: CP14AltarPrimordialNature
+  name: primordial statue of Silvania
+  description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
+  components:
+  - type: Sprite
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    layers:
+    - state: druid
+  - type: CP14ReligionAltar
+    religion: Nature
+  - type: CP14ReligionObserver
+    observation:
+      Nature: 25
+  - type: SpawnPoint
+    job_id: CP14GodNature

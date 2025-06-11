@@ -104,6 +104,6 @@
     castShadows: false
   - type: CP14SkillStorage
     availableSkillTrees:
-    - LightGod
+    - GodLight
   - type: CP14ReligionEntity
     religion: Light

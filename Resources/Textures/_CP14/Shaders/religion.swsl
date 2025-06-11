@@ -52,7 +52,7 @@ void fragment() {
     highp vec2 distortion = vec2(nX - 0.5, nY - 0.5) * 15.0 * scale;
 
     for (lowp int i = 0; i < 64 && i < count; i++) {
-        highp float scaledRadius = radius[i] * 30.0 * scale;
+        highp float scaledRadius = radius[i] * 33.0 * scale;
         highp float dist = length((fragPos + distortion) - position[i]);
     
         highp float fade = smoothstep(scaledRadius - radiusFalloff * scale, scaledRadius, dist);
