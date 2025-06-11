@@ -10,12 +10,26 @@
     speedMultiplier: 0.3
   - type: CP14MagicEffect
     effects:
+    - !type:CP14SpellArea
+      range: 4
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectTieflingRevenge
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:FlammableReaction
+          multiplier: 1
+        - !type:AdjustTemperature
+          amount: 6000
+        - !type:Ignite
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14AreaEntityEffectJellyIgnite
-  #      - !type:CP14SpellSpawnEntityOnUser
-  #        spawns:
-  #        - CP14ImpactEffectFireball
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireSlime
   - type: CP14MagicEffectPacifiedBlock
@@ -49,20 +63,20 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.2
-  - type: CP14AreaEntityEffect
-    range: 4
-    whitelist:
-      components:
-      - MobState
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectTieflingRevenge
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-      - !type:FlammableReaction
-        multiplier: 1
-      - !type:AdjustTemperature
-        amount: 6000
-      - !type:Ignite
+#  - type: CP14AreaEntityEffect
+#    range: 4
+#    whitelist:
+#      components:
+#      - MobState
+#    effects:
+#    - !type:CP14SpellSpawnEntityOnTarget
+#      spawns:
+#      - CP14ImpactEffectTieflingRevenge
+#    - !type:CP14SpellApplyEntityEffect
+#      effects:
+#      - !type:Jitter
+#      - !type:FlammableReaction
+#        multiplier: 1
+#      - !type:AdjustTemperature
+#        amount: 6000
+#      - !type:Ignite

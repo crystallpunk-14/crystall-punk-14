@@ -10,12 +10,23 @@
     speedMultiplier: 0.3
   - type: CP14MagicEffect
     effects:
+    - !type:CP14SpellArea
+      range: 4
+      whitelist:
+        components:
+        - Damageable
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ElectrifiedEffect
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Electrocute
+          electrocuteTime: 2
+          electrocuteDamageScale: 1
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14AreaEntityEffectJellyShock
-  #      - !type:CP14SpellSpawnEntityOnUser
-  #        spawns:
-  #        - CP14ImpactEffectFireball
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireSlime
   - type: CP14MagicEffectPacifiedBlock
@@ -49,17 +60,17 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.2
-  - type: CP14AreaEntityEffect
-    range: 4
-    whitelist:
-      components:
-      - Damageable
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ElectrifiedEffect
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Electrocute
-        electrocuteTime: 2
-        electrocuteDamageScale: 1
+#  - type: CP14AreaEntityEffect
+#    range: 4
+#    whitelist:
+#      components:
+#      - Damageable
+#    effects:
+#    - !type:CP14SpellSpawnEntityOnTarget
+#      spawns:
+#      - CP14ElectrifiedEffect
+#    - !type:CP14SpellApplyEntityEffect
+#      effects:
+#      - !type:Electrocute
+#        electrocuteTime: 2
+#        electrocuteDamageScale: 1
