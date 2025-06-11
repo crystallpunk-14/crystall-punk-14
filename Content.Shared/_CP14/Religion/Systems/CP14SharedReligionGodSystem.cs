@@ -1,6 +1,5 @@
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -33,6 +32,8 @@ public abstract partial class CP14SharedReligionGodSystem : EntitySystem
 
         return gods;
     }
+
+    public abstract void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source);
 }
 
 /// <summary>

@@ -1,11 +1,13 @@
 using Content.Server.Chat.Managers;
 using Content.Server.Speech;
 using Content.Shared._CP14.Religion.Components;
+using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Religion;
 
@@ -76,9 +78,15 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         if (ent.Comp.Religion is null)
             return;
 
-        var gods = GetGods(ent.Comp.Religion.Value);
         var wrappedMessage =
             Loc.GetString("cp14-altar-wrapped-message", ("name", MetaData(args.Source).EntityName), ("msg", args.Message));
+
+        SendMessageToGods(ent.Comp.Religion.Value, wrappedMessage, args.Source);
+    }
+
+    public override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source)
+    {
+        var gods = GetGods(religion);
 
         HashSet<INetChannel> channels = new();
         foreach (var god in gods)
@@ -89,7 +97,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
             channels.Add(godActor.PlayerSession.Channel);
         }
 
-        _chat.ChatMessageToMany(ChatChannel.Notifications, args.Message, wrappedMessage, args.Source, false, true, channels);
+        _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Goldenrod);
     }
 
     private void AddPvsOverrides(Entity<CP14ReligionEntityComponent> ent)

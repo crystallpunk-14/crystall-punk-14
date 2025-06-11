@@ -29,6 +29,11 @@ public abstract partial class CP14SharedReligionGodSystem
     private void OnBreakDivineOffer(Entity<CP14ReligionPendingFollowerComponent> ent, ref CP14BreakDivineOfferEvent args)
     {
         RemCompDeferred<CP14ReligionPendingFollowerComponent>(ent);
+
+        if (ent.Comp.Religion is null)
+            return;
+
+        SendMessageToGods(ent.Comp.Religion.Value, Loc.GetString("cp14-unoffer-soul-god-message", ("name", MetaData(ent).EntityName)), ent);
     }
 
     private void OnPendingFollowerInit(Entity<CP14ReligionPendingFollowerComponent> ent, ref MapInitEvent args)
@@ -62,6 +67,8 @@ public abstract partial class CP14SharedReligionGodSystem
 
         EnsureComp<CP14ReligionPendingFollowerComponent>(target, out var pendingFollower);
         pendingFollower.Religion = religion;
+
+        SendMessageToGods(religion, Loc.GetString("cp14-offer-soul-god-message", ("name", MetaData(target).EntityName)), target);
     }
 
     public bool TryToBelieve(Entity<CP14ReligionPendingFollowerComponent> pending)

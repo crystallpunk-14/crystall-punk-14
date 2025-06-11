@@ -1,4 +1,6 @@
-cp14-altar-wrapped-message = [color=gold][bold]{$name}[/bold] молится, {$msg}[/color]
+cp14-altar-wrapped-message = [bold]{$name}[/bold] молится, {$msg}
+cp14-offer-soul-god-message = [bold]{$name}[/bold] хочет стать вашим последователем, и предлагает вам свою душу. Прикоснитесь к нему, чтобы установить связь.
+cp14-unoffer-soul-god-message = [bold]{$name}[/bold] передумал становиться вашим последователем.
 
 cp14-altar-become-follower = Предложить свою душу
 cp14-altar-become-follower-desc = Вы предлагаете высшей сущности свою душу. Если она согласится, ваша связь укрепится. За свою жизнь вы можете стать последователем бога только 1 раз.
