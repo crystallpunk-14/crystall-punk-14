@@ -8,8 +8,30 @@ public sealed partial class CP14StationZLevelsSystem
 {
     private void InitActions()
     {
+        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionUp>(OnZLevelUpGhost);
+        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionDown>(OnZLevelDownGhost);
         SubscribeLocalEvent<SpectralComponent, CP14ZLevelActionUp>(OnZLevelUp);
         SubscribeLocalEvent<SpectralComponent, CP14ZLevelActionDown>(OnZLevelDown);
+    }
+
+    private void OnZLevelDownGhost(Entity<GhostComponent> ent, ref CP14ZLevelActionDown args)
+    {
+        if (args.Handled)
+            return;
+
+        ZLevelMove(ent, -1);
+
+        args.Handled = true;
+    }
+
+    private void OnZLevelUpGhost(Entity<GhostComponent> ent, ref CP14ZLevelActionUp args)
+    {
+        if (args.Handled)
+            return;
+
+        ZLevelMove(ent, 1);
+
+        args.Handled = true;
     }
 
     private void OnZLevelDown(Entity<SpectralComponent> ent, ref CP14ZLevelActionDown args)
