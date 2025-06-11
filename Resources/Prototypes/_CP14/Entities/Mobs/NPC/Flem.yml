@@ -35,8 +35,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: ReplacementAccent
-    accent: Slimes
   - type: Appearance
   - type: Body
     prototype: Animal
@@ -100,5 +98,3 @@
     tags:
       - FootstepSound
       - CP14Mosquito
-  - type: StealTarget
-    stealGroup: CP14Flem
