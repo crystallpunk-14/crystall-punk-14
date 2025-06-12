@@ -66,6 +66,8 @@
       types:
         - Knife
     - type: CP14WallpaperRemover
+    - type: Execution
+      doAfterDuration: 4.0
 
 - type: modularPart
   id: BaseWeaponRangedChemical
