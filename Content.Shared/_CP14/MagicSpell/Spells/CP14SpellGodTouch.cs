@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -5,14 +6,15 @@ namespace Content.Shared._CP14.MagicSpell.Spells;
 
 public sealed partial class CP14SpellGodTouch : CP14SpellEffect
 {
-    [DataField]
-    public ProtoId<CP14ReligionPrototype> Religion = default!;
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         if (args.Target is null)
             return;
 
-        var ev = new CP14GodTouchEvent(Religion);
+        if (!entManager.TryGetComponent<CP14ReligionEntityComponent>(args.User, out var god) || god.Religion is null)
+            return;
+
+        var ev = new CP14GodTouchEvent(god.Religion.Value);
         entManager.EventBus.RaiseLocalEvent(args.Target.Value, ev);
     }
 }

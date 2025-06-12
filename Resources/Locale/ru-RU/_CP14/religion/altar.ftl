@@ -4,6 +4,9 @@ cp14-unoffer-soul-god-message = [bold]{$name}[/bold] [color=red]передума
 cp14-become-follower-message = [bold]{$name}[/bold] [color=green]становится вашим последователем[/color]!
 cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]отвергает вас, и больше никогда не сможет вернться к вам![/color]
 
+cp14-god-ui-follower = Последователи
+cp14-god-ui-altars = Алтари
+
 cp14-altar-become-follower = Стать последователем
 cp14-altar-become-follower-desc = Вы предлагаете себя в службу покровителю. Если он согласится, ваша связь укрепится.
 

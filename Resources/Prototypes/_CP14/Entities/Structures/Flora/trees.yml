@@ -133,9 +133,6 @@
   - type: Tag
     tags:
     - CP14AmbientForest
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -155,9 +152,6 @@
         tree04: ""
         tree05: ""
         tree06: ""
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -221,9 +215,6 @@
   - type: Tag
     tags:
     - CP14AmbientForest
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   id: CP14BaseLucensTree
@@ -281,9 +272,6 @@
           CP14LucensWoodLog:
             min: 1
             max: 3
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseLucensTree
@@ -335,9 +323,6 @@
           CP14LucensWoodLog:
             min: 3
             max: 6
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -387,9 +372,6 @@
           CP14BirchWoodLog:
             min: 1
             max: 2
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -439,9 +421,6 @@
           CP14BirchWoodLog:
             min: 2
             max: 4
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
 
 - type: entity
   parent: CP14BaseTree
@@ -491,7 +470,3 @@
           CP14BirchWoodLog:
             min: 3
             max: 6
-  - type: CP14ReligionObserver
-    observation:
-      Nature: 5
-

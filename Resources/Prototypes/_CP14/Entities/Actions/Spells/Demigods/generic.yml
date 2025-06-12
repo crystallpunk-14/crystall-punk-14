@@ -1,0 +1,12 @@
+- type: entity
+  id: CP14DemigodUiToggle
+  name: Fast travel
+  description: Allows you to quickly teleport to your altars and followers.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: crew_monitor
+    priority: -8
+    event: !type:ToggleIntrinsicUIEvent 
+      key: enum.CP14ReligionEntityUiKey.Key

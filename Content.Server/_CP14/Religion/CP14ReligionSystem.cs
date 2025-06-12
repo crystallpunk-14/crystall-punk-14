@@ -19,6 +19,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeUI();
 
         SubscribeLocalEvent<CP14ReligionObserverComponent, ComponentInit>(OnObserverInit);
         SubscribeLocalEvent<CP14ReligionObserverComponent, AfterAutoHandleStateEvent>(OnObserverHandleState);

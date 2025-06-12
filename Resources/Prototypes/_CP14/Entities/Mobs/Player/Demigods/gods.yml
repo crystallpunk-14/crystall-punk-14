@@ -35,16 +35,6 @@
     maxZoom: 1.2, 1.2
   - type: Speech
     speechVerb: Ghost
-  #- type: GhostRole #TODO
-  #  makeSentient: true
-  #  name: ghost-role-information-revenant-name
-  #  description: ghost-role-information-revenant-description
-  #  rules: ghost-role-information-antagonist-rules
-  #  mindRoles:
-  #  - MindRoleGhostRoleSoloAntagonist
-  #  raffle:
-  #    settings: default
-  #- type: GhostTakeoverAvailable
   - type: CP14ReligionVision
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
@@ -70,6 +60,14 @@
     - CP14ActionZLevelDown
     - ActionToggleLighting
     - ActionToggleFov
+  - type: UserInterface
+    interfaces:
+      enum.CP14ReligionEntityUiKey.Key:
+        type: CP14ReligionEntityBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.CP14ReligionEntityUiKey.Key:
+        toggleAction: CP14DemigodUiToggle
 
 - type: entity
   parent: CP14MobGodBase

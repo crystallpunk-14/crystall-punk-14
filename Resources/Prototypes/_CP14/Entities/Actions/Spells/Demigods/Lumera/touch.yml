@@ -15,7 +15,6 @@
       spawns:
       - CP14SpawnEffectFlashLight
     - !type:CP14SpellGodTouch
-      religion: Lumera
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Jitter

@@ -4,6 +4,10 @@ cp14-unoffer-soul-god-message = [bold]{$name}[/bold] [color=red]has changed his 
 cp14-become-follower-message = [bold]{$name}[/bold] [color=green]becomes your follower[/color]!
 cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]rejects you and will never be able to return to you![/color]
 
+cp14-god-ui-title = Fast Travel
+cp14-god-ui-follower = Followers
+cp14-god-ui-altars = Altars
+
 cp14-altar-become-follower = Become a follower
 cp14-altar-become-follower-desc = You offer yourself into the service of your patron. If he agrees, your bond will be strengthened.
 
