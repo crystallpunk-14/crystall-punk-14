@@ -36,10 +36,10 @@ cp14-job-desc-blacksmith = Создавайте и улучшайте экипи
 cp14-job-name-apprentice = Подмастерье
 cp14-job-desc-apprentice = Мирный житель империи, только начинающий постигать тонкости различных наук. Постарайтесь помочь другим в их работе, в обмен на зарплату и бесценный опыт.
 
-# Gods
+# Demigods
 
 cp14-job-name-god-nature = Богиня природы (Сильвания)
 cp14-job-desc-god-nature = TODO
 
-cp14-job-name-god-light = Бог света и знаний (Люксиан)
-cp14-job-desc-god-light = Распространяйте свое влияние среди смертных, освещая их путь и расширяя их границы возможностей.
+cp14-job-name-god-lumera = Лумера
+cp14-job-desc-god-lumera = Покровительница ночи и звёздного неба. TODO

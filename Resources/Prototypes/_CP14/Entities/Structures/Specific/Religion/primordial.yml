@@ -1,20 +1,20 @@
 - type: entity
   parent: CP14BaseAltarPrimordial
-  id: CP14AltarPrimordialLight
-  name: primordial statue of Luxian
-  description: A majestic statue of the one called Luxian, the bearer of light. Speak quietly, he may hear you.
+  id: CP14AltarPrimordialLumera
+  name: primordial statue of Lumera
+  description: "The enchanting statue of Lumera, patroness of the starry sky, night, and mysteries. She does not demand worship—she simply observes. And waits for you to ask."
   components:
   - type: Sprite
     sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
     layers:
     - state: white
   - type: CP14ReligionAltar
-    religion: Light
+    religion: Lumera
   - type: CP14ReligionObserver
     observation:
-      Light: 25
+      Lumera: 25
   - type: SpawnPoint
-    job_id: CP14GodLight
+    job_id: CP14GodLumera
 
 - type: entity
   parent: CP14BaseAltarPrimordial

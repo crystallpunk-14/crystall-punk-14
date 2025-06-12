@@ -36,10 +36,10 @@ cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! Yo
 cp14-job-name-apprentice = Apprentice
 cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Try to help others in their work, in exchange for a salary and invaluable experience.
 
-# Gods
+# Demigods
 
 cp14-job-name-god-nature = God of nature
 cp14-job-desc-god-nature = TODO
 
-cp14-job-name-god-light = God of light and knowledge (Luxian)
-cp14-job-desc-god-light = Spread your influence among mortals, lighting their path and pushing their boundaries of possibility.
+cp14-job-name-god-lumera = Lumera
+cp14-job-desc-god-lumera = Spread your influence among mortals, lighting their path and pushing their boundaries of possibility.

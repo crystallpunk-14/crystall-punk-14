@@ -1,11 +1,11 @@
 - type: department
-  id: CP14Gods
-  name: department-CP14Gods
-  description: department-CP14Gods-desc
+  id: CP14Demigods
+  name: department-CP14Demigods
+  description: department-CP14Demigods-desc
   weight: 666 # >:)
   color: "#ffffff"
   roles:
-  - CP14GodLight
+  - CP14GodLumera
   - CP14GodNature
 
 - type: department

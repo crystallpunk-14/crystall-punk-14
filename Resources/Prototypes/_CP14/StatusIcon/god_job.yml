@@ -8,8 +8,8 @@
 
 - type: jobIcon
   parent: CP14JobIcon
-  id: CP14JobIconGodLight
+  id: CP14JobIconGodLumera
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_god_icons.rsi
-    state: Light
-  jobName: cp14-job-name-god-light
+    state: Lumera
+  jobName: cp14-job-name-god-lumera

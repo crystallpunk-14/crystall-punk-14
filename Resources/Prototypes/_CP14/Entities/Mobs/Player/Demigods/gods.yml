@@ -90,9 +90,9 @@
 
 - type: entity
   parent: CP14MobGodBase
-  id: CP14MobGodLight
-  name: Luxian
-  description: The god of light and knowledge, Luxian.
+  id: CP14MobGodLumera
+  name: Lumera
+  description: The goddess of the night and the night sky. Her stars hold so many secrets, which she protects with her wings.
   components:
   - type: Sprite
     sprite: Mobs/Ghosts/revenant.rsi
@@ -106,6 +106,8 @@
     castShadows: false
   - type: CP14SkillStorage
     availableSkillTrees:
-    - GodLight
+    - GodLumera
   - type: CP14ReligionEntity
-    religion: Light
+    religion: Lumera
+  - type: CP14ReligionVision
+    shaderColor:  0.29, 0.66, 0.87

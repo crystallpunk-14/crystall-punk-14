@@ -5,7 +5,7 @@
   color: "#51cf72"
 
 - type: cp14SkillTree
-  id: GodLight
-  name: cp14-skill-tree-god-desc
-  desc: cp14-skill-tree-god-name
-  color: "#4367ba"
+  id: GodLumera
+  name: cp14-job-name-god-lumera
+  desc: cp14-job-desc-god-lumera
+  color: "#5632a8"
