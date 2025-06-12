@@ -60,14 +60,12 @@
     - CP14ActionZLevelDown
     - ActionToggleLighting
     - ActionToggleFov
+  - type: CP14DemiplaneStabilizer # teleports gods outside when the demiplane closes
+    enabled: false
   - type: UserInterface
     interfaces:
       enum.CP14ReligionEntityUiKey.Key:
         type: CP14ReligionEntityBoundUserInterface
-  - type: IntrinsicUI
-    uis:
-      enum.CP14ReligionEntityUiKey.Key:
-        toggleAction: CP14DemigodUiToggle
 
 - type: entity
   parent: CP14MobGodBase
@@ -108,3 +106,7 @@
     religion: Lumera
   - type: CP14ReligionVision
     shaderColor:  0.29, 0.66, 0.87
+  - type: IntrinsicUI
+    uis:
+      enum.CP14ReligionEntityUiKey.Key:
+        toggleAction: CP14ActionSpellGodLumeraWarp

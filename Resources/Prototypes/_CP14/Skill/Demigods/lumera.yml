@@ -1,11 +1,11 @@
 - type: cp14Skill
-  id: GodLightTouch
+  id: LumeraTouch
   skillUiPosition: 0, 0
   tree: GodLumera
   learnCost: 0.0
   icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: heal
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: touch
   effects:
   - !type:AddAction
     action: CP14ActionSpellGodLumeraTouch

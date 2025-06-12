@@ -17,6 +17,7 @@ public abstract partial class CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, ComponentShutdown>(OnPendingFollowerShutdown);
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, CP14BreakDivineOfferEvent>(OnBreakDivineOffer);
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, CP14GodTouchEvent>(OnGodTouch);
+
         SubscribeLocalEvent<CP14ReligionAltarComponent, CP14AltarOfferDoAfter>(OnOfferDoAfter);
     }
 
