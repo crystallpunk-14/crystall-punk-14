@@ -8,9 +8,6 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
-    layers:
-    - state: white
     drawdepth: Mobs
   - type: Fixtures
     fixtures:
@@ -25,7 +22,7 @@
         - MachineLayer
   - type: CP14ReligionAltar
   - type: ActiveListener
-    range: 3
+    range: 1
 
 - type: entity
   parent: CP14BaseAltar

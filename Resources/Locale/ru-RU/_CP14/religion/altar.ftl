@@ -1,11 +1,11 @@
 cp14-altar-wrapped-message = [bold]{$name}[/bold] молится, {$msg}
 cp14-offer-soul-god-message = [bold]{$name}[/bold] [color=green]хочет стать вашим последователем[/color]. Прикоснитесь к нему, чтобы установить связь.
 cp14-unoffer-soul-god-message = [bold]{$name}[/bold] [color=red]передумал становиться вашим последователем.[/color]
-cp14-become-follower-message = [bold]{$name}[/bold] [color=green]становится вашим последователем[/color]! Количество последователей: {$count}
-cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]отвергает вас![/color] Количество последователей: {$count}
+cp14-become-follower-message = [bold]{$name}[/bold] [color=green]становится вашим последователем[/color]!
+cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]отвергает вас, и больше никогда не сможет вернться к вам![/color]
 
-cp14-altar-become-follower = Предложить свою душу
-cp14-altar-become-follower-desc = Вы предлагаете высшей сущности свою душу. Если она согласится, ваша связь укрепится. За свою жизнь вы можете стать последователем бога только 1 раз.
+cp14-altar-become-follower = Стать последователем
+cp14-altar-become-follower-desc = Вы предлагаете себя в службу покровителю. Если он согласится, ваша связь укрепится.
 
-cp14-alert-offer = Предложенная душа
-cp14-alert-offer-desc = Вы хотите стать последователем бога, но пока нот него нет ответа. Нажмите, чтобы отменить предложение.
+cp14-alert-offer = Предложение о покровительстве
+cp14-alert-offer-desc = Вы хотите стать последователем покровителя, но пока от него нет ответа. Нажмите, чтобы отменить предложение.

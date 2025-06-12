@@ -1,5 +1,5 @@
 - type: job
-  id: CP14GodCP14GodMerkas
+  id: CP14GodMerkas
   name: cp14-job-name-god-merkas
   description: cp14-job-desc-god-merkas
   setPreference: true

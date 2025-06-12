@@ -15,5 +15,5 @@ public sealed partial class CP14ReligionFollowerComponent : Component
     public ProtoId<CP14ReligionPrototype>? Religion;
 
     [DataField, AutoNetworkedField]
-    public bool CanBeConverted = true;
+    public HashSet<ProtoId<CP14ReligionPrototype>> RejectedReligions = new();
 }

@@ -1,6 +1,6 @@
 - type: entity
   parent: CP14BaseAltarPrimordial
-  id: CP14AltarPrimordialLumera
+  id: CP14AltarPrimordialGodLumera
   name: primordial statue of Lumera
   description: "The enchanting statue of Lumera, patroness of the starry sky, night, and mysteries. She does not demand worship—she simply observes. And waits for you to ask."
   components:
@@ -18,7 +18,7 @@
 
 - type: entity
   parent: CP14BaseAltarPrimordial
-  id: CP14AltarPrimordialMerkas
+  id: CP14AltarPrimordialGodMerkas
   name: primordial statue of Merkas
   description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
   components:

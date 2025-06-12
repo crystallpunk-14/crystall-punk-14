@@ -66,12 +66,9 @@ public abstract partial class CP14SharedReligionGodSystem
         if (HasComp<CP14ReligionEntityComponent>(target))
             return false;
 
-        if (!TryComp<CP14ReligionFollowerComponent>(target, out var follower))
-            return true;
-        if (follower.CanBeConverted)
-            return true;
+        EnsureComp<CP14ReligionFollowerComponent>(target, out var follower);
 
-        return false;
+        return !follower.RejectedReligions.Contains(religion);
     }
 
     public void TryAddPendingFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
@@ -100,7 +97,6 @@ public abstract partial class CP14SharedReligionGodSystem
 
         var oldReligion = follower.Religion;
         follower.Religion = pending.Comp.Religion;
-        follower.CanBeConverted = false;
         Dirty(pending, follower);
 
         EditObservation(pending, pending.Comp.Religion.Value, indexedReligion.FollowerObservationRadius);
@@ -129,6 +125,8 @@ public abstract partial class CP14SharedReligionGodSystem
 
         var oldReligion = follower.Religion;
         follower.Religion = null;
+        if (oldReligion is not null)
+            follower.RejectedReligions.Add(oldReligion.Value);
 
         var ev = new CP14ReligionChangedEvent(oldReligion, null);
         RaiseLocalEvent(target, ev);

@@ -27,7 +27,7 @@ public abstract partial class CP14SharedReligionGodSystem
         if (ent.Comp.Religion is null)
             return;
 
-        bool disabled = !CanBecomeFollower(args.User, ent.Comp.Religion.Value);
+        var disabled = !CanBecomeFollower(args.User, ent.Comp.Religion.Value);
 
         if (!disabled && TryComp<CP14ReligionPendingFollowerComponent>(args.User, out var pendingFollower))
         {
@@ -35,12 +35,14 @@ public abstract partial class CP14SharedReligionGodSystem
                 disabled = true;
         }
 
+        if (disabled)
+            return;
+
         var user = args.User;
         args.Verbs.Add(new AlternativeVerb()
         {
             Text = Loc.GetString("cp14-altar-become-follower"),
             Message = Loc.GetString("cp14-altar-become-follower-desc"),
-            Disabled = disabled,
             Act = () =>
             {
                 var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new CP14AltarOfferDoAfter(), ent, used: ent)
