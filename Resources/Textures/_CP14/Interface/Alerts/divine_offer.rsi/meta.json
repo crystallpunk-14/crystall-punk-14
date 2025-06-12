@@ -9,12 +9,11 @@
   "states": [
     {
       "name": "offer",
-      "directions": 1,
-      "delays": [
-        [
-          1
-        ]
-      ]
+      "directions": 1
+    },
+    {
+      "name": "unoffer",
+      "directions": 1
     }
   ]
 }

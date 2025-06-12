@@ -1,9 +1,8 @@
-
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
+using Content.Shared.Actions;
 using Content.Shared.Alert;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -11,6 +10,7 @@ namespace Content.Shared._CP14.Religion.Systems;
 public abstract partial class CP14SharedReligionGodSystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     private void InitializeFollowers()
     {
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, MapInitEvent>(OnPendingFollowerInit);
@@ -19,6 +19,13 @@ public abstract partial class CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, CP14GodTouchEvent>(OnGodTouch);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, CP14AltarOfferDoAfter>(OnOfferDoAfter);
+
+        SubscribeLocalEvent<CP14ReligionFollowerComponent, CP14RenounceFromGodEvent>(OnRenounceFromGod);
+    }
+
+    private void OnRenounceFromGod(Entity<CP14ReligionFollowerComponent> ent, ref CP14RenounceFromGodEvent args)
+    {
+        ToDisbelieve(ent);
     }
 
     private void OnOfferDoAfter(Entity<CP14ReligionAltarComponent> ent, ref CP14AltarOfferDoAfter args)
@@ -107,6 +114,8 @@ public abstract partial class CP14SharedReligionGodSystem
 
         RemCompDeferred<CP14ReligionPendingFollowerComponent>(pending);
         SendMessageToGods(pending.Comp.Religion.Value, Loc.GetString("cp14-become-follower-message", ("name", MetaData(pending).EntityName)), pending);
+
+        _actions.AddAction(pending, ref follower.RenounceAction, follower.RenounceActionProto);
         return true;
     }
 
@@ -133,7 +142,11 @@ public abstract partial class CP14SharedReligionGodSystem
         RaiseLocalEvent(target, ev);
 
         Dirty(target, follower);
+
+        _actions.RemoveAction(target, follower.RenounceAction);
     }
 }
 
 public sealed partial class CP14BreakDivineOfferEvent : BaseAlertEvent;
+
+public sealed partial class CP14RenounceFromGodEvent : InstantActionEvent;

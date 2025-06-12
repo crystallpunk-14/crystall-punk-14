@@ -16,4 +16,10 @@ public sealed partial class CP14ReligionFollowerComponent : Component
 
     [DataField, AutoNetworkedField]
     public HashSet<ProtoId<CP14ReligionPrototype>> RejectedReligions = new();
+
+    [DataField]
+    public EntProtoId RenounceActionProto = "CP14ActionRenounceFromGod";
+
+    [DataField]
+    public EntityUid? RenounceAction;
 }
