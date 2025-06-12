@@ -5,6 +5,7 @@ cp14-become-follower-message = [bold]{$name}[/bold] [color=green]becomes your fo
 cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]rejects you and will never be able to return to you![/color]
 
 cp14-renounce-action-popup = YOU ARE RENOUNCING YOUR PATRON! To confirm, perform the action again.
+cp-renounce-action-god-popup = YOU ARE REJECTING YOUR FOLLOWER! To confirm, perform the action again.
 
 cp14-god-ui-title = Fast Travel
 cp14-god-ui-follower = Followers

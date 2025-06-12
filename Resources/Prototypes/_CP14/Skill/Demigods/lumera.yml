@@ -9,3 +9,15 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellGodLumeraTouch
+
+- type: cp14Skill
+  id: LumeraRenounce
+  skillUiPosition: 0, 2
+  tree: GodLumera
+  learnCost: 0.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: renounce
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraRenounce
