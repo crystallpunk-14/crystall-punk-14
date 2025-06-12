@@ -44,8 +44,8 @@
     - type: CP14StationRandomJobs
       entries:
       - jobs:
-        - CP14GodNature
+        - CP14GodMerkas
         - CP14GodLumera
         count:
           min: 2
-          max: 3
+          max: 2

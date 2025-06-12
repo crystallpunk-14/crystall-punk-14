@@ -1,7 +1,7 @@
 - type: cp14SkillTree
-  id: GodNature
-  name: cp14-skill-tree-god-desc
-  desc: cp14-skill-tree-god-name
+  id: GodMerkas
+  name: cp14-job-name-god-merkas
+  desc: cp14-job-desc-god-merkas
   color: "#51cf72"
 
 - type: cp14SkillTree

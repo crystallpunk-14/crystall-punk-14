@@ -6,7 +6,7 @@
   color: "#ffffff"
   roles:
   - CP14GodLumera
-  - CP14GodNature
+  - CP14GodMerkas
 
 - type: department
   id: CP14Command

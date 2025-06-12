@@ -18,8 +18,8 @@
 
 - type: entity
   parent: CP14BaseAltarPrimordial
-  id: CP14AltarPrimordialNature
-  name: primordial statue of Silvania
+  id: CP14AltarPrimordialMerkas
+  name: primordial statue of Merkas
   description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
   components:
   - type: Sprite
@@ -27,9 +27,9 @@
     layers:
     - state: druid
   - type: CP14ReligionAltar
-    religion: Nature
+    religion: Merkas
   - type: CP14ReligionObserver
     observation:
-      Nature: 25
+      Merkas: 25
   - type: SpawnPoint
-    job_id: CP14GodNature
+    job_id: CP14GodMerkas

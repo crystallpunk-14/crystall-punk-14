@@ -8,6 +8,13 @@
   description: The supreme entity formed from the beliefs, desires, and fears of the human race.
   abstract: true
   components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Demigods/temp_icons.rsi
+    color: "#ffffff99"
+  - type: PointLight
+    radius: 10
+    softness: 1
+    castShadows: false
   - type: Input
     context: "ghost"
   - type: Spectral
@@ -66,26 +73,22 @@
 
 - type: entity
   parent: CP14MobGodBase
-  id: CP14MobGodNature
-  name: Silvania
-  description: Lady Silvania, Her Majesty Nature. 
+  id: CP14MobGodMerkas
+  name: Merkas
+  description: Merkas is the god of purity and healing. In his presence, decay is destroyed. He does not save — he purifies. Those who remain can start anew.
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/revenant.rsi
-    color: Green
     layers:
-    - state: active
+    - state: merkas
+      shader: unshaded
   - type: PointLight
-    color: "#51cf72"
-    radius: 10
-    softness: 1
-    castShadows: false
+    color: "#9bf2b5"
   - type: CP14SkillStorage
     availableSkillTrees:
-    - GodNature
+    - GodMerkas
   - type: CP14ReligionEntity
-    religion: Nature
-  - type: CP14ReligionVision
+    religion: Merkas
+  - type: CP14ReligionVision 
     shaderColor:  0.02, 0.36, 0.05
 
 - type: entity
@@ -95,15 +98,11 @@
   description: The goddess of the night and the night sky. Her stars hold so many secrets, which she protects with her wings.
   components:
   - type: Sprite
-    sprite: Mobs/Ghosts/revenant.rsi
-    color: Blue
     layers:
-    - state: active
+    - state: lumera
+      shader: unshaded
   - type: PointLight
     color: "#4367ba"
-    radius: 10
-    softness: 1
-    castShadows: false
   - type: CP14SkillStorage
     availableSkillTrees:
     - GodLumera

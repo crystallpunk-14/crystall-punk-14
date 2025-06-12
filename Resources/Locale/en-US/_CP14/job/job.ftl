@@ -38,8 +38,8 @@ cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to l
 
 # Demigods
 
-cp14-job-name-god-nature = God of nature
-cp14-job-desc-god-nature = TODO
+cp14-job-name-god-merkas = Merkas
+cp14-job-desc-god-merkas = God of purity and healing. TODO
 
 cp14-job-name-god-lumera = Lumera
-cp14-job-desc-god-lumera = Spread your influence among mortals, lighting their path and pushing their boundaries of possibility.
+cp14-job-desc-god-lumera = Patroness of the night and the starry sky. TODO

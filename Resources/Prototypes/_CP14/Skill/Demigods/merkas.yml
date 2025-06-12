@@ -1,7 +1,7 @@
 - type: cp14Skill
   id: NatureGodT1
   skillUiPosition: 1, 0
-  tree: GodNature
+  tree: GodMerkas
   name: cp14-skill-life-t1-name
   learnCost: 0.5
   icon:

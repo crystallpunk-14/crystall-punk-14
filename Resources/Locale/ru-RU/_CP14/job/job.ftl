@@ -38,8 +38,8 @@ cp14-job-desc-apprentice = Мирный житель империи, тольк�
 
 # Demigods
 
-cp14-job-name-god-nature = Богиня природы (Сильвания)
-cp14-job-desc-god-nature = TODO
+cp14-job-name-god-merkas = Меркас
+cp14-job-desc-god-merkas = Бог света и исцеления. TODO
 
 cp14-job-name-god-lumera = Лумера
 cp14-job-desc-god-lumera = Покровительница ночи и звёздного неба. TODO

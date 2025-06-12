@@ -1,0 +1,16 @@
+- type: job
+  id: CP14GodCP14GodMerkas
+  name: cp14-job-name-god-merkas
+  description: cp14-job-desc-god-merkas
+  setPreference: true
+  playTimeTracker: CP14GodMerkas
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  canBeAntag: false
+  icon: CP14JobIconGodMerkas
+  jobEntity: CP14MobGodMerkas
+  joinNotifyCrew: false
+  requireAdminNotify: true
+  jobPreviewEntity: CP14MobGodMerkas
+  applyTraits: false
