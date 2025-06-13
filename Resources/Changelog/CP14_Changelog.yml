@@ -360,3 +360,14 @@
   id: 8088
   time: '2025-06-13T09:24:36.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1413
+- author: Fr0goo
+  changes:
+  - message: Added new creature named Flem! You can find them in demiplanes.
+    type: Add
+  - message: Added fish suit and mask!
+    type: Add
+  - message: Added a probaly temporary way to make fish pie!
+    type: Add
+  id: 8089
+  time: '2025-06-13T10:25:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1402
