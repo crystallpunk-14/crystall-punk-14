@@ -1,17 +1,15 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Server._CP14.Religion;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
-using Content.Server.Radio.EntitySystems;
 using Content.Server.Speech.Prototypes;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
-using Content.Shared._CP14.Religion.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -62,9 +60,6 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
-    //CP14
-    [Dependency] private readonly RadioSystem _radio = default!;
-    //CP14 end
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -179,15 +174,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool ignoreActionBlocker = false
         )
     {
-        //CP14 Zone
-        if (HasComp<CP14ReligionEntityComponent>(source))
-        {
-            TryProccessRadioMessage(source, message, out var modMessage, out var channel);
-            _radio.SendRadioMessage(source, modMessage, "CP14Gods", source);
-            return;
-        }
-        //CP14 Zone end
-
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
@@ -206,6 +192,13 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (!CanSendInGame(message, shell, player))
             return;
+
+        //CP14 Prevent god from default speaking. In waiting of chatcode refactor
+        var ev = new CP14SpokeAttemptEvent(message, desiredType, player);
+        RaiseLocalEvent(source, ev);
+        if (ev.Cancelled)
+            return;
+        //CP14 end
 
         ignoreActionBlocker = CheckIgnoreSpeechBlocker(source, ignoreActionBlocker);
 

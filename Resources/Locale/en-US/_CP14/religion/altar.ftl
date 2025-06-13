@@ -11,6 +11,7 @@ cp14-god-ui-title = Fast Travel
 cp14-god-ui-follower = Followers
 cp14-god-ui-altars = Altars
 cp14-god-ui-follower-percentage = Follower percentage: {$count}%
+cp14-god-ui-mana-percentage = Divine energy: {$count}%
 
 cp14-altar-become-follower = Become a follower
 cp14-altar-become-follower-desc = You offer yourself into the service of your patron. If he agrees, your bond will be strengthened.

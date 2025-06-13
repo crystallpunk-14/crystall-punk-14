@@ -136,3 +136,5 @@
     uis:
       enum.CP14ReligionEntityUiKey.Key:
         toggleAction: CP14ActionSpellGodLumeraWarp
+  - type: CP14ReligionSpeaker
+    speaker: CP14LumeraSpeakImpact
