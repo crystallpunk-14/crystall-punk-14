@@ -9,3 +9,5 @@ cp14-trading-faction-prefix = Торговля с:
 cp14-trading-failure-popup-money = Недостаточно средств на платформе!
 
 cp14-trading-contract-use = Торговля с "{$name}" разблокирована!
+
+cp14-trading-empty-price = Отсутствует!

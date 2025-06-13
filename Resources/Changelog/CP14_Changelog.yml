@@ -344,3 +344,19 @@
   id: 8087
   time: '2025-06-13T07:34:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1418
+- author: SenorJaba
+  changes:
+  - message: Merchant's monocle has been added to replace appraisal tool.
+    type: Add
+  - message: Added a new trader's wit skill which works similarly to merchant's monocle.
+    type: Add
+  - message: Alchemist's glasses and monocle, and merchant's monocle were added into
+      the buying platform.
+    type: Add
+  - message: Appraisal tool has been removed from the merchant's closet.
+    type: Remove
+  - message: Alchemist's glasses and monocle were removed from the alchemist's loadout.
+    type: Remove
+  id: 8088
+  time: '2025-06-13T09:24:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1413
