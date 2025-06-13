@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by TheShuEd",
+  "states": [
+    {
+      "name": "touch"
+    },
+    {
+      "name": "warp"
+    },
+    {
+      "name": "renounce"
+    },
+    {
+      "name": "t1"
+    },
+    {
+      "name": "t2"
+    },
+    {
+      "name": "t3"
+    }
+  ]
+}

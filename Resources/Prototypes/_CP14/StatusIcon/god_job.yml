@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGodMerkas
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_god_icons.rsi
+    state: Merkas
+  jobName: cp14-job-name-god-merkas
+
+- type: jobIcon
+  parent: CP14JobIcon
+  id: CP14JobIconGodLumera
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_god_icons.rsi
+    state: Lumera
+  jobName: cp14-job-name-god-lumera

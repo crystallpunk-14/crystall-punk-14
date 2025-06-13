@@ -1,0 +1,13 @@
+- type: entity
+  id: CP14ActionRenounceFromGod
+  name: Renounce patron
+  description: You renounce your patron by severing your connection with him. After that, you can never become his follower again, but you can become a follower of another patron.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: _CP14/Interface/Alerts/divine_offer.rsi
+      state: unoffer
+    priority: -8
+    event: !type:CP14RenounceFromGodEvent
+  - type: ConfirmableAction
+    popup: cp14-renounce-action-popup

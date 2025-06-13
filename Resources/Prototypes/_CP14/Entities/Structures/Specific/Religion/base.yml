@@ -1,0 +1,35 @@
+- type: entity
+  id: CP14BaseAltar
+  parent: BaseStructure
+  abstract: true
+  name: altar
+  description: TODO
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: CP14ReligionAltar
+  - type: ActiveListener
+    range: 1
+
+- type: entity
+  parent: CP14BaseAltar
+  id: CP14BaseAltarPrimordial
+  abstract: true
+  components:
+  - type: CP14ReligionAltar
+    canBeConverted: false
+  - type: SpawnPoint
+    spawn_type: Always
