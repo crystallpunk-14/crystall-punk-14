@@ -46,7 +46,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         if (!TryComp<CP14ReligionEntityComponent>(ent, out var god) || god.Religion is null)
             return;
 
-        if (!InVision(ent, (ent, god)))
+        if (ent.Comp.RestrictedReligionZone && !InVision(ent, (ent, god)))
             return;
 
         _magicEnergy.ChangeEnergy(ent.Owner, -ent.Comp.ManaCost, out _, out _);
