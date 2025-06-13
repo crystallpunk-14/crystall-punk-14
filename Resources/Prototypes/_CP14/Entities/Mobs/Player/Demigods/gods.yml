@@ -69,15 +69,6 @@
     energy: -1.5
     delay: 3
     safe: false
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - CP14Gods
-  - type: IntrinsicRadioReceiver
-  - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
-    channels:
-    - CP14Gods
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
