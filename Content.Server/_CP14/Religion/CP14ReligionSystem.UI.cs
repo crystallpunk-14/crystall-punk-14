@@ -78,6 +78,6 @@ public sealed partial class CP14ReligionGodSystem
             manaPercentage = manaContainerComponent.Energy / manaContainerComponent.MaxEnergy;
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers, followerPercentage, (float)manaPercentage));
+        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers, followerPercentage, manaPercentage));
     }
 }

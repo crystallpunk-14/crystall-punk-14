@@ -1,4 +1,3 @@
-
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared.DoAfter;
@@ -13,13 +12,7 @@ public abstract partial class CP14SharedReligionGodSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     private void InitializeAltars()
     {
-        SubscribeLocalEvent<CP14ReligionAltarComponent, GetVerbsEvent<ActivationVerb>>(GetBaseVerb);
         SubscribeLocalEvent<CP14ReligionAltarComponent, GetVerbsEvent<AlternativeVerb>>(GetAltVerb);
-    }
-
-    private void GetBaseVerb(Entity<CP14ReligionAltarComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
-    {
-
     }
 
     private void GetAltVerb(Entity<CP14ReligionAltarComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)

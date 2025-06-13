@@ -7,6 +7,7 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
+using Content.Shared.FixedPoint;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -140,7 +141,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SendMessageToGods(ent.Comp.Religion.Value, wrappedMessage, args.Source);
     }
 
-    protected override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source)
+    public override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source)
     {
         var gods = GetGods(religion);
 
@@ -156,7 +157,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Aqua);
     }
 
-    public float GetFollowerPercentage(Entity<CP14ReligionEntityComponent> god)
+    public FixedPoint2 GetFollowerPercentage(Entity<CP14ReligionEntityComponent> god)
     {
         var total = 0;
         var followers = 0;
@@ -177,7 +178,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         if (total == 0)
             return 0f;
 
-        return (float)followers / total;
+        return followers / total;
     }
 
     private void AddPvsOverrides(Entity<CP14ReligionEntityComponent> ent)

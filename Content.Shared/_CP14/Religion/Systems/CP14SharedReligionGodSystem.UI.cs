@@ -1,3 +1,4 @@
+using Content.Shared.FixedPoint;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -9,12 +10,12 @@ public enum CP14ReligionEntityUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14ReligionEntityUiState(Dictionary<NetEntity, string> altars, Dictionary<NetEntity, string> followers, float followerPercentage, float manaPercentage) : BoundUserInterfaceState
+public sealed class CP14ReligionEntityUiState(Dictionary<NetEntity, string> altars, Dictionary<NetEntity, string> followers, FixedPoint2 followerPercentage, FixedPoint2 manaPercentage) : BoundUserInterfaceState
 {
     public Dictionary<NetEntity, string> Altars = altars;
     public Dictionary<NetEntity, string> Followers = followers;
-    public float FollowerPercentage = followerPercentage;
-    public float ManaPercentage = manaPercentage;
+    public FixedPoint2 FollowerPercentage = followerPercentage;
+    public FixedPoint2 ManaPercentage = manaPercentage;
 }
 
 [Serializable, NetSerializable]
