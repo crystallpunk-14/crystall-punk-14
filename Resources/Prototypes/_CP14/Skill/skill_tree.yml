@@ -72,15 +72,26 @@
 
 #
 
-- type: cp14SkillTree
-  id: Thaumaturgy
-  name: cp14-skill-tree-thaumaturgy-name
-  desc: cp14-skill-tree-thaumaturgy-desc
-  color: "#7c52bf"
+#- type: cp14SkillTree
+#  id: Thaumaturgy
+#  name: cp14-skill-tree-thaumaturgy-name
+#  desc: cp14-skill-tree-thaumaturgy-desc
+#  color: "#7c52bf"
+
+#- type: cp14SkillTree
+#  id: Blacksmithing
+#  name: cp14-skill-tree-blacksmithing-name
+#  desc: cp14-skill-tree-blacksmithing-desc
+#  color: "#6b3200"
+
+#- type: cp14SkillTree
+#  id: Trading
+#  name: cp14-skill-tree-trading-name
+#  desc: cp14-skill-tree-trading-desc
+#  color: "#f5edaa"
 
 - type: cp14SkillTree
-  id: Blacksmithing
-  name: cp14-skill-tree-blacksmithing-name
-  desc: cp14-skill-tree-blacksmithing-desc
-  color: "#6b3200"
-
+  id: Craftsmanship
+  name: cp14-skill-tree-craftsman-name
+  desc: cp14-skill-tree-craftsman-desc
+  color: "#a04b00"
