@@ -97,9 +97,6 @@
       path: /Audio/Effects/drop.ogg
       params:
         volume: -100 #Yes, it's stupid, but it's easier
-  - type: CP14ReligionObserver
-    observation:
-      Light: 5
 
 - type: entity
   parent: CP14BaseSpellScrollLight
