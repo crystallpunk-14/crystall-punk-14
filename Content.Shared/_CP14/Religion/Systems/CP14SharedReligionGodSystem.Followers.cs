@@ -17,6 +17,7 @@ public abstract partial class CP14SharedReligionGodSystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] protected readonly SharedMindSystem Mind = default!;
     [Dependency] private readonly FollowerSystem _follower = default!;
+
     private void InitializeFollowers()
     {
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, MapInitEvent>(OnPendingFollowerInit);
@@ -114,12 +115,13 @@ public abstract partial class CP14SharedReligionGodSystem
 
     private bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
     {
-        if (HasComp<CP14ReligionPendingFollowerComponent>(target))
-            return false;
         if (HasComp<CP14ReligionEntityComponent>(target))
             return false;
 
         EnsureComp<CP14ReligionFollowerComponent>(target, out var follower);
+
+        if (follower.Religion is not null)
+            return false;
 
         return !follower.RejectedReligions.Contains(religion);
     }
