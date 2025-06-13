@@ -4,7 +4,6 @@
   - !type:AddComponents
     override: true
     components:
-    - type: CP14Execution
     - type: Tool
       qualities:
         - Prying

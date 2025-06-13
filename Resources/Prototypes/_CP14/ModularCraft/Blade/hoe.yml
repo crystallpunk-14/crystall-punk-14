@@ -7,7 +7,6 @@
     copyFrom:
     - BaseWeaponChemical
     - BaseWeaponThrowable
-    - BaseWeaponExecution
     #components: TODO Add gathering tag
   - !type:AddComponents
     override: true

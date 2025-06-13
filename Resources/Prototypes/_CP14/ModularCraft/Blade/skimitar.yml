@@ -10,7 +10,6 @@
     copyFrom:
     - BaseWeaponChemical
     - BaseWeaponSharp
-    - BaseWeaponExecution
   - !type:AddComponents
     components:
     - type: CP14MeleeWeaponSkillRequired

@@ -7,7 +7,6 @@
     copyFrom:
     - BaseWeaponChemical
     - BaseWeaponSharp
-    - BaseWeaponExecution
     #components: TODO Add gathering tag
   - !type:EditMeleeWeapon
     attackRateMultiplier: 1.5

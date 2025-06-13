@@ -66,6 +66,7 @@
       types:
         - Knife
     - type: CP14WallpaperRemover
+    - type: Execution
 
 - type: modularPart
   id: BaseWeaponRangedChemical
@@ -104,4 +105,4 @@
   modifiers:
   - !type:AddComponents
     components:
-    - type: CP14Execution
+    - type: Execution
