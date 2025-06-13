@@ -9,10 +9,11 @@ public enum CP14ReligionEntityUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14ReligionEntityUiState(Dictionary<NetEntity, string> altars, Dictionary<NetEntity, string> followers) : BoundUserInterfaceState
+public sealed class CP14ReligionEntityUiState(Dictionary<NetEntity, string> altars, Dictionary<NetEntity, string> followers, float followerPercentage) : BoundUserInterfaceState
 {
     public Dictionary<NetEntity, string> Altars = altars;
     public Dictionary<NetEntity, string> Followers = followers;
+    public float FollowerPercentage = followerPercentage;
 }
 
 [Serializable, NetSerializable]

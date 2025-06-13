@@ -3,6 +3,7 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
+using Content.Shared.Mind;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -11,6 +12,7 @@ public abstract partial class CP14SharedReligionGodSystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] protected readonly SharedMindSystem Mind = default!;
     private void InitializeFollowers()
     {
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, MapInitEvent>(OnPendingFollowerInit);
@@ -69,7 +71,7 @@ public abstract partial class CP14SharedReligionGodSystem
         _alerts.ClearAlert(ent, "CP14DivineOffer");
     }
 
-    public bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
+    private bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
     {
         if (HasComp<CP14ReligionEntityComponent>(target))
             return false;
@@ -79,7 +81,7 @@ public abstract partial class CP14SharedReligionGodSystem
         return !follower.RejectedReligions.Contains(religion);
     }
 
-    public void TryAddPendingFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
+    private void TryAddPendingFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
     {
         if (!CanBecomeFollower(target, religion))
             return;
@@ -90,7 +92,7 @@ public abstract partial class CP14SharedReligionGodSystem
         SendMessageToGods(religion, Loc.GetString("cp14-offer-soul-god-message", ("name", MetaData(target).EntityName)), target);
     }
 
-    public bool TryToBelieve(Entity<CP14ReligionPendingFollowerComponent> pending)
+    private bool TryToBelieve(Entity<CP14ReligionPendingFollowerComponent> pending)
     {
         if (pending.Comp.Religion is null)
             return false;

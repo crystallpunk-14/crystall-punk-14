@@ -85,7 +85,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SendMessageToGods(ent.Comp.Religion.Value, wrappedMessage, args.Source);
     }
 
-    public override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source)
+    protected override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source)
     {
         var gods = GetGods(religion);
 
@@ -99,6 +99,30 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         }
 
         _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Aqua);
+    }
+
+    public float GetFollowerPercentage(Entity<CP14ReligionEntityComponent> god)
+    {
+        var total = 0;
+        var followers = 0;
+
+        var allHumans = Mind.GetAliveHumans();
+        foreach (var human in allHumans)
+        {
+            total++;
+
+            if (!TryComp<CP14ReligionFollowerComponent>(human.Comp.CurrentEntity, out var relFollower))
+                continue;
+            if (relFollower.Religion != god.Comp.Religion)
+                continue;
+
+            followers++;
+        }
+
+        if (total == 0)
+            return 0f;
+
+        return (float)followers / total;
     }
 
     private void AddPvsOverrides(Entity<CP14ReligionEntityComponent> ent)

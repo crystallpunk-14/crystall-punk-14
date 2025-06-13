@@ -11,7 +11,7 @@ public sealed partial class CP14ReligionGodSystem
     [Dependency] private readonly FollowerSystem _follower = default!;
     private void InitializeUI()
     {
-        SubscribeLocalEvent<CP14ReligionEntityComponent, OpenBoundInterfaceMessage>(OnBeforeActivatableUIOpen);
+        SubscribeLocalEvent<CP14ReligionEntityComponent, OpenBoundInterfaceMessage>(OnOpenInterface);
         SubscribeLocalEvent<CP14ReligionEntityComponent, CP14ReligionEntityTeleportAttempt>(OnTeleportAttempt);
     }
 
@@ -41,7 +41,7 @@ public sealed partial class CP14ReligionGodSystem
         _follower.StartFollowingEntity(ent, target);
     }
 
-    private void OnBeforeActivatableUIOpen(Entity<CP14ReligionEntityComponent> ent, ref OpenBoundInterfaceMessage args)
+    private void OnOpenInterface(Entity<CP14ReligionEntityComponent> ent, ref OpenBoundInterfaceMessage args)
     {
         if (ent.Comp.Religion is null)
             return;
@@ -66,6 +66,10 @@ public sealed partial class CP14ReligionGodSystem
             followers.TryAdd(GetNetEntity(uid), meta.EntityName);
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers));
+        var followerPercentage = GetFollowerPercentage(ent);
+        ent.Comp.FollowerPercentage = followerPercentage;
+        Dirty(ent);
+
+        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers, followerPercentage));
     }
 }

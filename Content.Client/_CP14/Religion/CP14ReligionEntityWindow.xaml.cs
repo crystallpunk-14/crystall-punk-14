@@ -59,5 +59,11 @@ public sealed partial class CP14ReligionEntityWindow : DefaultWindow
             };
             FollowersContainer.AddChild(btn);
         }
+        Status.Text = GetStatusText(state);
+    }
+
+    private string GetStatusText(CP14ReligionEntityUiState state)
+    {
+        return Loc.GetString("cp14-god-ui-follower-percentage", ("count", state.FollowerPercentage * 100));
     }
 }
