@@ -15,7 +15,7 @@ public sealed class CP14PriceScannerSystem : EntitySystem
     [Dependency] private readonly PricingSystem _price = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly InventorySystem _invSystem = default!;
-    [Dependency] private CP14SharedCurrencySystem _currency = default!;
+    [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
 
 
     public override void Initialize()
