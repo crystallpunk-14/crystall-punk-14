@@ -1,5 +1,8 @@
+using Content.Server._CP14.MagicEnergy;
 using Content.Server.Chat.Managers;
+using Content.Server.Chat.Systems;
 using Content.Server.Speech;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
@@ -8,13 +11,18 @@ using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Religion;
 
 public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
 {
     [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly ChatSystem _chatSys = default!;
     [Dependency] private readonly PvsOverrideSystem _pvs = default!;
+    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public override void Initialize()
     {
@@ -28,8 +36,55 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionEntityComponent, ComponentShutdown>(OnGodShutdown);
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<CP14ReligionSpeakerComponent, CP14SpokeAttemptEvent>(OnSpokeAttempt);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<CP14ReligionFollowerComponent, CP14MagicEnergyContainerComponent>();
+        while (query.MoveNext(out var uid, out var follower, out var energy))
+        {
+            if (follower.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (follower.Religion is null)
+                continue;
+
+            follower.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(follower.ManaTransferDelay);
+
+            foreach (var god in GetGods(follower.Religion.Value))
+            {
+                _magicEnergy.TransferEnergy((uid, energy), god.Owner, follower.EnergyToGodTransfer, out _, out _, safe: true);
+            }
+        }
+    }
+
+    private void OnSpokeAttempt(Entity<CP14ReligionSpeakerComponent> ent, ref CP14SpokeAttemptEvent args)
+    {
+        args.Cancel();
+
+        if (!TryComp<CP14ReligionEntityComponent>(ent, out var god) || god.Religion is null)
+            return;
+
+        if (ent.Comp.RestrictedReligionZone && !InVision(ent, (ent, god)))
+            return;
+
+        _magicEnergy.ChangeEnergy(ent.Owner, -ent.Comp.ManaCost, out _, out _);
+
+        var speaker = Spawn(ent.Comp.Speaker);
+        _transform.DropNextTo(speaker, ent.Owner);
+
+        var message = args.Message;
+        var type = args.Type;
+        Timer.Spawn(333,
+            () =>
+            {
+                _chatSys.TrySendInGameICMessage(speaker, message, type, ChatTransmitRange.Normal, nameOverride: MetaData(ent).EntityName, ignoreActionBlocker: true);
+            });
     }
 
     private void OnObserverHandleState(Entity<CP14ReligionObserverComponent> ent, ref AfterAutoHandleStateEvent args)
@@ -175,3 +230,11 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         AddPvsOverrides(ent);
     }
 }
+
+public sealed class CP14SpokeAttemptEvent(string message, InGameICChatType type, ICommonSession? player) : CancellableEntityEventArgs
+{
+    public string Message = message;
+    public InGameICChatType Type = type;
+    public ICommonSession? Player = player;
+}
+

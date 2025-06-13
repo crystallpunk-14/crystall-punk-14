@@ -12,7 +12,7 @@
     religion: Lumera
   - type: CP14ReligionObserver
     observation:
-      Lumera: 25
+      Lumera: 10
   - type: SpawnPoint
     job_id: CP14GodLumera
 
@@ -30,6 +30,6 @@
     religion: Merkas
   - type: CP14ReligionObserver
     observation:
-      Merkas: 25
+      Merkas: 10
   - type: SpawnPoint
     job_id: CP14GodMerkas

@@ -1,5 +1,7 @@
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Systems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Follower;
 using Robust.Server.GameObjects;
 
@@ -70,6 +72,12 @@ public sealed partial class CP14ReligionGodSystem
         ent.Comp.FollowerPercentage = followerPercentage;
         Dirty(ent);
 
-        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers, followerPercentage));
+        FixedPoint2 manaPercentage = 0f;
+        if (TryComp<CP14MagicEnergyContainerComponent>(ent, out var manaContainerComponent))
+        {
+            manaPercentage = manaContainerComponent.Energy / manaContainerComponent.MaxEnergy;
+        }
+
+        _userInterface.SetUiState(ent.Owner, CP14ReligionEntityUiKey.Key, new CP14ReligionEntityUiState(altars, followers, followerPercentage, (float)manaPercentage));
     }
 }

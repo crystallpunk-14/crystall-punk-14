@@ -1,7 +1,0 @@
-- type: radioChannel
-  id: CP14Gods
-  name: cp14-chat-radio-gods
-  keycode: 'g'
-  frequency: 666
-  color: "#fad634"
-  longRange: true

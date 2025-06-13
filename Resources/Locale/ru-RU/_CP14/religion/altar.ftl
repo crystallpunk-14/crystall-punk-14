@@ -11,6 +11,7 @@ cp14-god-ui-title = Быстрое перемещение
 cp14-god-ui-follower = Последователи
 cp14-god-ui-altars = Алтари
 cp14-god-ui-follower-percentage = Процент последователей: {$count}%
+cp14-god-ui-mana-percentage = Божественная энергия: {$count}%
 
 cp14-altar-become-follower = Стать последователем
 cp14-altar-become-follower-desc = Вы предлагаете себя в службу покровителю. Если он согласится, ваша связь укрепится.
