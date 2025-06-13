@@ -40,10 +40,35 @@
     magicAlert: CP14MagicEnergy
     maxEnergy: 1000
     energy: 1000
-    unsafeSupport: false
+    unsafeSupport: true
+  - type: Damageable
+    damageContainer: CP14Spectral
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CP14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        CP14ManaDepletion: 1
   - type: CP14MagicEnergyDraw
-    energy: 5
-    delay: 6 # 20m to full restore
+    energy: -3
+    delay: 2 # 10m to empty
+    safe: false
   - type: IntrinsicRadioTransmitter
     channels:
     - CP14Gods
