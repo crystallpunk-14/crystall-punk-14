@@ -64,21 +64,3 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.2
-#  - type: CP14AreaEntityEffect
-#    range: 4
-#    whitelist:
-#      components:
-#      - MobState
-#    effects:
-#    - !type:CP14SpellSpawnEntityOnTarget
-#      spawns:
-#      - CP14ImpactEffectFreeze
-#    - !type:CP14SpellApplyEntityEffect
-#      effects:
-#      - !type:MovespeedModifier
-#        walkSpeedModifier: 0.5
-#        sprintSpeedModifier: 0.5
-#        statusLifetime: 5
-#      - !type:AdjustTemperature
-#        amount: -82000
-#      - !type:ExtinguishReaction

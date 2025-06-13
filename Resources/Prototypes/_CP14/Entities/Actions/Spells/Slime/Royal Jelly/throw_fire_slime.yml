@@ -10,11 +10,9 @@
     speedMultiplier: 0.3
   - type: CP14MagicEffect
     effects:
-    #    - !type:CP14SpellSpawnEntityOnUser
-    #      spawns:
-    #      - CP14ImpactEffectFireball
-    - !type:CP14SpellProjectile
-      prototype: CP14ProjectileSlimeFire
+    - !type:CP14SpellSpawnEntityOnUserAndThrowTo
+      spawns:
+      - CP14MobSlimeFire
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireSlime
   - type: CP14MagicEffectPacifiedBlock

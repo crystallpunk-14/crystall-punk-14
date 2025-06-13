@@ -63,20 +63,3 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.2
-#  - type: CP14AreaEntityEffect
-#    range: 4
-#    whitelist:
-#      components:
-#      - MobState
-#    effects:
-#    - !type:CP14SpellSpawnEntityOnTarget
-#      spawns:
-#      - CP14ImpactEffectTieflingRevenge
-#    - !type:CP14SpellApplyEntityEffect
-#      effects:
-#      - !type:Jitter
-#      - !type:FlammableReaction
-#        multiplier: 1
-#      - !type:AdjustTemperature
-#        amount: 6000
-#      - !type:Ignite

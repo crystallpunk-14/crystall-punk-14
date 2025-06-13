@@ -60,17 +60,3 @@
       shader: unshaded
   - type: TimedDespawn
     lifetime: 0.2
-#  - type: CP14AreaEntityEffect
-#    range: 4
-#    whitelist:
-#      components:
-#      - Damageable
-#    effects:
-#    - !type:CP14SpellSpawnEntityOnTarget
-#      spawns:
-#      - CP14ElectrifiedEffect
-#    - !type:CP14SpellApplyEntityEffect
-#      effects:
-#      - !type:Electrocute
-#        electrocuteTime: 2
-#        electrocuteDamageScale: 1
