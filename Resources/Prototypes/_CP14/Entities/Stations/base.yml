@@ -10,7 +10,7 @@
   - CP14BaseStationCommonObjectives
   - CP14BaseStationDemiplaneMap
   - CP14BaseStationEconomy
-  - CP14BaseStationGods
+  #- CP14BaseStationGods
 
 - type: entity
   id: CP14BaseStationCommonObjectives
@@ -37,15 +37,15 @@
   components:
     - type: CP14StationEconomy
 
-- type: entity
-  id: CP14BaseStationGods
-  abstract: true
-  components:
-    - type: CP14StationRandomJobs
-      entries:
-      - jobs:
-        - CP14GodMerkas
-        - CP14GodLumera
-        count:
-          min: 2
-          max: 2
+#- type: entity
+#  id: CP14BaseStationGods
+#  abstract: true
+#  components:
+#    - type: CP14StationRandomJobs
+#      entries:
+#      - jobs:
+#        - CP14GodMerkas
+#        - CP14GodLumera
+#        count:
+#          min: 2
+#          max: 2
