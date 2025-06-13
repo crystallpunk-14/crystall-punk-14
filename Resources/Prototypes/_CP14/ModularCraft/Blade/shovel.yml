@@ -3,6 +3,7 @@
   modifiers:
   - !type:AddComponents
     components:
+    - type: CP14Execution
     - type: Shovel
     - type: ToolTileCompatible
     - type: Tool
