@@ -4,6 +4,7 @@
   description: department-CP14Demigods-desc
   weight: 666 # >:)
   color: "#ffffff"
+  editorHidden: true #temp
   roles:
   - CP14GodLumera
   - CP14GodMerkas

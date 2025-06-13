@@ -67,25 +67,25 @@
       enum.CP14ReligionEntityUiKey.Key:
         type: CP14ReligionEntityBoundUserInterface
 
-- type: entity
-  parent: CP14MobGodBase
-  id: CP14MobGodMerkas
-  name: Merkas
-  description: Merkas is the god of purity and healing. In his presence, decay is destroyed. He does not save — he purifies. Those who remain can start anew.
-  components:
-  - type: Sprite
-    layers:
-    - state: merkas
-      shader: unshaded
-  - type: PointLight
-    color: "#9bf2b5"
-  - type: CP14SkillStorage
-    availableSkillTrees:
-    - GodMerkas
-  - type: CP14ReligionEntity
-    religion: Merkas
-  - type: CP14ReligionVision 
-    shaderColor:  0.02, 0.36, 0.05
+#- type: entity
+#  parent: CP14MobGodBase
+#  id: CP14MobGodMerkas
+#  name: Merkas
+#  description: Merkas is the god of purity and healing. In his presence, decay is destroyed. He does not save — he purifies. Those who remain can start anew.
+#  components:
+#  - type: Sprite
+#    layers:
+#    - state: merkas
+#      shader: unshaded
+#  - type: PointLight
+#    color: "#9bf2b5"
+#  - type: CP14SkillStorage
+#    availableSkillTrees:
+#    - GodMerkas
+#  - type: CP14ReligionEntity
+#    religion: Merkas
+#  - type: CP14ReligionVision 
+#    shaderColor:  0.02, 0.36, 0.05
 
 - type: entity
   parent: CP14MobGodBase
