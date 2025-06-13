@@ -2,6 +2,7 @@ using Content.Server._CP14.MagicEnergy;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
@@ -21,6 +22,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly PvsOverrideSystem _pvs = default!;
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public override void Initialize()
     {
@@ -37,6 +39,28 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionSpeakerComponent, CP14SpokeAttemptEvent>(OnSpokeAttempt);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<CP14ReligionFollowerComponent, CP14MagicEnergyContainerComponent>();
+        while (query.MoveNext(out var uid, out var follower, out var energy))
+        {
+            if (follower.NextUpdateTime >= _gameTiming.CurTime)
+                continue;
+
+            if (follower.Religion is null)
+                continue;
+
+            follower.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(follower.ManaTransferDelay);
+
+            foreach (var god in GetGods(follower.Religion.Value))
+            {
+                _magicEnergy.TransferEnergy((uid, energy), god.Owner, follower.EnergyToGodTransfer, out _, out _, safe: true);
+            }
+        }
     }
 
     private void OnSpokeAttempt(Entity<CP14ReligionSpeakerComponent> ent, ref CP14SpokeAttemptEvent args)

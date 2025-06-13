@@ -38,8 +38,8 @@
   - type: CP14ReligionVision
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
-    maxEnergy: 1000
-    energy: 1000
+    maxEnergy: 500
+    energy: 500
     unsafeSupport: true
   - type: Damageable
     damageContainer: CP14Spectral
@@ -66,8 +66,8 @@
       types:
         CP14ManaDepletion: 1
   - type: CP14MagicEnergyDraw
-    energy: -3
-    delay: 2 # 10m to empty
+    energy: -1.5
+    delay: 3
     safe: false
   - type: IntrinsicRadioTransmitter
     channels:
