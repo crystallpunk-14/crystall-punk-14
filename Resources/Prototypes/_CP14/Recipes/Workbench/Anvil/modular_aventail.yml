@@ -9,7 +9,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -23,7 +23,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -51,7 +51,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -67,7 +67,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -81,7 +81,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -109,7 +109,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1

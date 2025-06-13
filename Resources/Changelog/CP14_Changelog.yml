@@ -263,3 +263,84 @@
   id: 8077
   time: '2025-06-08T07:53:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1398
+- author: gogenych
+  changes:
+  - message: Iron weapons and pickaxe in loadouts are now copper.
+    type: Tweak
+  - message: Iron pickaxes in boxes around the map now spawn much less often, but
+      copper ones have appeared.
+    type: Tweak
+  id: 8078
+  time: '2025-06-08T16:16:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1403
+- author: Katzenminer
+  changes:
+  - message: Demiplanes Now Also End if players are SSD
+    type: Tweak
+  id: 8079
+  time: '2025-06-09T05:56:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1408
+- author: Sefaia
+  changes:
+  - message: Iron, Gold and Mithril Aventails recipes to be at their respected metal
+      category
+    type: Fix
+  - message: Iron and Gold Greaves recipes to be at their respected metal category
+    type: Fix
+  id: 8080
+  time: '2025-06-09T10:25:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1409
+- author: jimmy12or
+  changes:
+  - message: Wooden fences and gates are now buildable!
+    type: Tweak
+  id: 8081
+  time: '2025-06-09T11:34:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1370
+- author: Viator-MV
+  changes:
+  - message: Added cool magic druid staff to adventurer loadout
+    type: Add
+  id: 8082
+  time: '2025-06-09T11:35:56.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1396
+- author: Nimfar11
+  changes:
+  - message: Adds a two-handed crossbow.
+    type: Add
+  - message: Changes the size of the bow.
+    type: Tweak
+  id: 8083
+  time: '2025-06-10T08:08:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1315
+- author: Nimfar11
+  changes:
+  - message: Adds new big rocks with moss.
+    type: Add
+  id: 8084
+  time: '2025-06-10T08:07:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1412
+- author: gogenych
+  changes:
+  - message: Copper tools and weapons are now displayed correctly in loadout
+    type: Fix
+  id: 8085
+  time: '2025-06-10T10:40:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1414
+- author: firebat4321
+  changes:
+  - message: Added new combat-focused T2 Pryokinetic spell, Firebolt!
+    type: Add
+  id: 8086
+  time: '2025-06-10T11:14:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1354
+- author: Sefaia
+  changes:
+  - message: Added Quiver filled with Big Iron Crossbow Bolts to Entity Spawn Menu
+      for Admins/Testers
+    type: Add
+  - message: Fixed Quiver to hold Big Crossbow Bolts.
+    type: Fix
+  id: 8087
+  time: '2025-06-13T07:34:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1418

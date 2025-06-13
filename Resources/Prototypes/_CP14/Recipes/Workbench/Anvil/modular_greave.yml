@@ -9,7 +9,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 2
@@ -23,7 +23,7 @@
   requirements:
   - !type:SkillRequired
     skills:
-    - CopperMelting
+    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 2
