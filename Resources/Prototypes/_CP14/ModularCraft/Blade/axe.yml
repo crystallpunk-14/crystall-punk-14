@@ -9,6 +9,7 @@
     copyFrom:
     - BaseWeaponChemical
     - BaseWeaponSharp
+    - BaseWeaponExecution
   - !type:EditMeleeWeapon
     resetOnHandSelected: true # Disable fast swap
     attackRateMultiplier: 0.6

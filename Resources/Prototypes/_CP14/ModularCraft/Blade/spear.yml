@@ -11,6 +11,7 @@
     - BaseWeaponThrowable
     - BaseWeaponChemical
     - BaseWeaponSharp
+    - BaseWeaponExecution
   - !type:AddComponents
     override: true
     components:

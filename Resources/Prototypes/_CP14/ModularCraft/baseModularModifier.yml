@@ -98,3 +98,10 @@
     components:
     - type: Item
       size: Small
+
+- type: modularPart
+  id: BaseWeaponExecution
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: CP14Execution
