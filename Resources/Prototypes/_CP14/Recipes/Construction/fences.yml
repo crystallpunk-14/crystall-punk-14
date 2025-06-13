@@ -1,0 +1,103 @@
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceBigWooden
+  graph: CP14FenceBigWooden
+  startNode: start
+  targetNode: CP14FenceBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceBigWoodenBirch
+  graph: CP14FenceBigWoodenBirch
+  startNode: start
+  targetNode: CP14FenceBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateBigWooden
+  graph: CP14FenceGateBigWooden
+  startNode: start
+  targetNode: CP14FenceGateBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateBigWoodenBirch
+  graph: CP14FenceGateBigWoodenBirch
+  startNode: start
+  targetNode: CP14FenceGateBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceWooden
+  graph: CP14FenceWooden
+  startNode: start
+  targetNode: CP14FenceWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceWoodenBirch
+  graph: CP14FenceWoodenBirch
+  startNode: start
+  targetNode: CP14FenceWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateWooden
+  graph: CP14FenceGateWooden
+  startNode: start
+  targetNode: CP14FenceGateWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14FenceGateWoodenBirch
+  graph: CP14FenceGateWoodenBirch
+  startNode: start
+  targetNode: CP14FenceGateWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
