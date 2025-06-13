@@ -25,7 +25,7 @@ public sealed partial class CP14ClientReligionGodSystem : CP14SharedReligionGodS
         SubscribeLocalEvent<CP14ReligionVisionComponent, ComponentRemove>(OnOverlayRemove);
     }
 
-    protected override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source) { }
+    public override void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source) { }
 
     public override void Shutdown()
     {

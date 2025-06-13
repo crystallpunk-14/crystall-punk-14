@@ -57,6 +57,21 @@
   - !type:GodFollowerPercentage
     percentage: 0.3
 
+- type: cp14Skill
+  id: LumeraDarkMist
+  skillUiPosition: 6, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mist
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraDarkmist
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+
 # T3
 
 - type: cp14Skill

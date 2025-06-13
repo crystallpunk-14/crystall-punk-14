@@ -33,7 +33,7 @@ public abstract partial class CP14SharedReligionGodSystem : EntitySystem
         return gods;
     }
 
-    protected abstract void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source);
+    public abstract void SendMessageToGods(ProtoId<CP14ReligionPrototype> religion, string msg, EntityUid source);
 }
 
 /// <summary>

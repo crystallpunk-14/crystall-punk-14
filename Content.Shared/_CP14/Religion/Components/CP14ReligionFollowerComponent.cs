@@ -22,7 +22,13 @@ public sealed partial class CP14ReligionFollowerComponent : Component
     public EntProtoId RenounceActionProto = "CP14ActionRenounceFromGod";
 
     [DataField]
+    public EntProtoId AppealToGofProto = "CP14ActionAppealToGod";
+
+    [DataField]
     public EntityUid? RenounceAction;
+
+    [DataField]
+    public EntityUid? AppealAction;
 
     /// <summary>
     /// how much energy does the entity transfer to its god

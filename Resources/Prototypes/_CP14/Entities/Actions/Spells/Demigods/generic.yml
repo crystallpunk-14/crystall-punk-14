@@ -11,3 +11,29 @@
     event: !type:CP14RenounceFromGodEvent
   - type: ConfirmableAction
     popup: cp14-renounce-action-popup
+
+- type: entity
+  id: CP14ActionAppealToGod
+  name: Appeal to god
+  description: You call upon your patron! He will hear your call wherever he may be.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectSphereOfLight
+    - !type:CP14SpellTransferManaToGod
+      amount: 20
+      safe: false
+    - !type:CP14SpellSendMessageToGod
+  - type: InstantAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/generic.rsi
+      state: appeal
+    priority: -8
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 15
+      castDelay: 1.5
+      breakOnMove: true

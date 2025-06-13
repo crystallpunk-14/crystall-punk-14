@@ -3,6 +3,9 @@ cp14-offer-soul-god-message = [bold]{$name}[/bold] [color=green]wants to become 
 cp14-unoffer-soul-god-message = [bold]{$name}[/bold] [color=red]has changed his mind about becoming your follower.[/color]
 cp14-become-follower-message = [bold]{$name}[/bold] [color=green]becomes your follower[/color]!
 cp14-remove-follower-message = [bold]{$name}[/bold] [color=red]rejects you and will never be able to return to you![/color]
+cp14-call-follower-message = [bold]{$name}[/bold] appeals to you!
+cp14-critical-follower-message = [bold]{$name}[/bold] is falling into critical condition!
+cp14-dead-follower-message = [bold]{$name}[/bold] is dead!
 
 cp14-renounce-action-popup = YOU ARE RENOUNCING YOUR PATRON! To confirm, perform the action again.
 cp-renounce-action-god-popup = YOU ARE REJECTING YOUR FOLLOWER! To confirm, perform the action again.

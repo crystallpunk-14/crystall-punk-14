@@ -3,7 +3,10 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
+using Content.Shared.Follower;
 using Content.Shared.Mind;
+using Content.Shared.Mobs;
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Religion.Systems;
@@ -13,6 +16,8 @@ public abstract partial class CP14SharedReligionGodSystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] protected readonly SharedMindSystem Mind = default!;
+    [Dependency] private readonly FollowerSystem _follower = default!;
+
     private void InitializeFollowers()
     {
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, MapInitEvent>(OnPendingFollowerInit);
@@ -23,6 +28,43 @@ public abstract partial class CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionAltarComponent, CP14AltarOfferDoAfter>(OnOfferDoAfter);
 
         SubscribeLocalEvent<CP14ReligionFollowerComponent, CP14RenounceFromGodEvent>(OnRenounceFromGod);
+        SubscribeLocalEvent<CP14ReligionFollowerComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
+        SubscribeLocalEvent<CP14ReligionFollowerComponent, MobStateChangedEvent>(OnFollowerStateChange);
+    }
+
+    private void OnFollowerStateChange(Entity<CP14ReligionFollowerComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (ent.Comp.Religion is null)
+            return;
+
+        switch (args.NewMobState)
+        {
+            case MobState.Critical:
+                SendMessageToGods(ent.Comp.Religion.Value, Loc.GetString("cp14-critical-follower-message", ("name", MetaData(ent).EntityName)), ent);
+                break;
+
+            case MobState.Dead:
+                SendMessageToGods(ent.Comp.Religion.Value, Loc.GetString("cp14-dead-follower-message", ("name", MetaData(ent).EntityName)), ent);
+                break;
+        }
+    }
+
+    private void OnGetAltVerbs(EntityUid uid, CP14ReligionFollowerComponent component, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!TryComp<CP14ReligionEntityComponent>(args.User, out var god))
+            return;
+
+        if (god.Religion != component.Religion)
+            return;
+
+        args.Verbs.Add(new AlternativeVerb
+        {
+            Text = Loc.GetString("admin-player-actions-follow"),
+            Act = () =>
+            {
+                _follower.StartFollowingEntity(args.User, uid);
+            },
+        });
     }
 
     private void OnRenounceFromGod(Entity<CP14ReligionFollowerComponent> ent, ref CP14RenounceFromGodEvent args)
@@ -78,6 +120,9 @@ public abstract partial class CP14SharedReligionGodSystem
 
         EnsureComp<CP14ReligionFollowerComponent>(target, out var follower);
 
+        if (follower.Religion is not null)
+            return false;
+
         return !follower.RejectedReligions.Contains(religion);
     }
 
@@ -118,6 +163,7 @@ public abstract partial class CP14SharedReligionGodSystem
         SendMessageToGods(pending.Comp.Religion.Value, Loc.GetString("cp14-become-follower-message", ("name", MetaData(pending).EntityName)), pending);
 
         _actions.AddAction(pending, ref follower.RenounceAction, follower.RenounceActionProto);
+        _actions.AddAction(pending, ref follower.AppealAction, follower.AppealToGofProto);
         return true;
     }
 
@@ -146,6 +192,7 @@ public abstract partial class CP14SharedReligionGodSystem
         Dirty(target, follower);
 
         _actions.RemoveAction(target, follower.RenounceAction);
+        _actions.RemoveAction(target, follower.AppealAction);
     }
 }
 
