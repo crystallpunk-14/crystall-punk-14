@@ -26,6 +26,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 10
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14CopperBar5
@@ -73,6 +75,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14IronBar5
@@ -119,6 +123,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 10
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14GoldBar5
@@ -210,6 +216,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14MithrilBar5
