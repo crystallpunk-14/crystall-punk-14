@@ -22,7 +22,7 @@ public interface ICP14DelayedMagicEffect
     public bool RequireCanInteract { get; }
 }
 
-public sealed partial class CP14DelayedEntityWorldTargetActionEvent : EntityWorldTargetActionEvent,
+public sealed partial class CP14DelayedEntityWorldTargetActionEvent : WorldTargetActionEvent,
     ICP14DelayedMagicEffect
 {
     [DataField]

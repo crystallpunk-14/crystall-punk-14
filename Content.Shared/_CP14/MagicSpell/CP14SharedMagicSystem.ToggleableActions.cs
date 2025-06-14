@@ -107,7 +107,7 @@ public abstract partial class CP14SharedMagicSystem
     private void EndToggleableAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
     {
         if (cooldown is not null)
-            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
+            _action.SetCooldown(action.Owner, TimeSpan.FromSeconds(cooldown.Value));
         RemCompDeferred<CP14MagicEffectToggledComponent>(action);
 
         var endEv = new CP14EndCastMagicEffectEvent(performer);
@@ -161,10 +161,10 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14ToggleableEntityWorldTargetActionDoAfterEvent(
-            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetCoordinates(args.Target),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
-        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Coords);
+        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Target);
 
         args.Handled = true;
     }
