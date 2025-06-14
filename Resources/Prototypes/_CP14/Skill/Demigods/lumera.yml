@@ -40,6 +40,24 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT1
 
+- type: cp14Skill
+  id: LumeraMindScan
+  name: cp14-skill-lumera-mind-scan-name
+  desc: cp14-skill-lumera-mind-scan-desc
+  skillUiPosition: 0, 5
+  tree: GodLumera
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mind_scan
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CP14SkillScanner
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
 # T2
 
 - type: cp14Skill
