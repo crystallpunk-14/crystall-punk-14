@@ -23,6 +23,7 @@
   - type: CP14ReligionAltar
   - type: ActiveListener
     range: 1
+  - type: InteractionOutline
 
 - type: entity
   parent: CP14BaseAltar
