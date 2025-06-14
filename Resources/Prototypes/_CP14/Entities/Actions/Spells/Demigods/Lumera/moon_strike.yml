@@ -5,7 +5,7 @@
   components:
   - type: CP14MagicEffectReligionRestricted
   - type: CP14MagicEffectManaCost
-    manaCost: 50
+    manaCost: 20
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget

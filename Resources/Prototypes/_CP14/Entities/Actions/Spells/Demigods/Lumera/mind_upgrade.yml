@@ -15,7 +15,7 @@
       effects:
       - !type:ChemVomit
       - !type:Jitter
-        time: 16.5
+        time: 16
       - !type:HealthChange
         damage:
           types:
@@ -34,9 +34,9 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Jitter
-        time: 16.5
+        time: 16
       - !type:Paralyze
-        paralyzeTime: 16.5
+        paralyzeTime: 16
       - !type:Drunk
         boozePower: 20
       - !type:HealthChange
@@ -67,7 +67,7 @@
       state: mind_upgrade
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 300
-      castDelay: 16.5
+      castDelay: 16
       breakOnMove: false
       breakOnDamage: false
 
