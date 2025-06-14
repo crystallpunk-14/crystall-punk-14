@@ -159,20 +159,20 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
 
     public FixedPoint2 GetFollowerPercentage(Entity<CP14ReligionEntityComponent> god)
     {
-        var total = 0;
-        var followers = 0;
+        FixedPoint2 total = 0;
+        FixedPoint2 followers = 0;
 
         var allHumans = Mind.GetAliveHumans();
         foreach (var human in allHumans)
         {
-            total++;
+            total += 1;
 
             if (!TryComp<CP14ReligionFollowerComponent>(human.Comp.CurrentEntity, out var relFollower))
                 continue;
             if (relFollower.Religion != god.Comp.Religion)
                 continue;
 
-            followers++;
+            followers += 1;
         }
 
         if (total == 0)

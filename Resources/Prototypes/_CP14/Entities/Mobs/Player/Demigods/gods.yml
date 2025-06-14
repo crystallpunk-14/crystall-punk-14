@@ -65,10 +65,6 @@
     damagePerEnergy:
       types:
         CP14ManaDepletion: 1
-  - type: CP14MagicEnergyDraw
-    energy: -1.5
-    delay: 3
-    safe: false
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:

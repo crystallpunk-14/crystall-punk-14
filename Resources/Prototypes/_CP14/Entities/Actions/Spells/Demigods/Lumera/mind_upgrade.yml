@@ -97,8 +97,7 @@
 
 - type: entity
   id: CP14LumeraMindImproveImpact
-  categories: [ ForkFiltered ]
-  name: fese
+  categories: [ HideSpawnMenu ]
   parent: CP14BaseMagicImpact
   save: false
   components:

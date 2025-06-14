@@ -24,7 +24,7 @@
       - CP14ImpactEffectSphereOfLight
     - !type:CP14SpellTransferManaToGod
       amount: 20
-      safe: false
+      safe: true
     - !type:CP14SpellSendMessageToGod
   - type: InstantAction
     sound: !type:SoundPathSpecifier
