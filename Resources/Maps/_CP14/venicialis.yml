@@ -33924,7 +33924,7 @@ entities:
     - type: Transform
       pos: -25.5,-33.5
       parent: 2
-- proto: CP14ClothingSatchelLeather
+- proto: CP14ClothingBackLeatherSatchel
   entities:
   - uid: 1484
     components:
