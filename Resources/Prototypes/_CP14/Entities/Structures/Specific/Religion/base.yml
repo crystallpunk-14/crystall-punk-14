@@ -8,7 +8,7 @@
   components:
   - type: Sprite
     noRot: true
-    drawdepth: Mobs
+    #drawdepth: Mobs
   - type: Fixtures
     fixtures:
       fix1:

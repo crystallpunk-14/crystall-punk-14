@@ -16,20 +16,20 @@
   - type: SpawnPoint
     job_id: CP14GodLumera
 
-- type: entity
-  parent: CP14BaseAltarPrimordial
-  id: CP14AltarPrimordialGodMerkas
-  name: primordial statue of Merkas
-  description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
-  components:
-  - type: Sprite
-    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
-    layers:
-    - state: druid
-  - type: CP14ReligionAltar
-    religion: Merkas
-  - type: CP14ReligionObserver
-    observation:
-      Merkas: 10
-  - type: SpawnPoint
-    job_id: CP14GodMerkas
+#- type: entity
+#  parent: CP14BaseAltarPrimordial
+#  id: CP14AltarPrimordialGodMerkas
+#  name: primordial statue of Merkas
+#  description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
+#  components:
+#  - type: Sprite
+#    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+#    layers:
+#    - state: druid
+#  - type: CP14ReligionAltar
+#    religion: Merkas
+#  - type: CP14ReligionObserver
+#    observation:
+#      Merkas: 10
+#  - type: SpawnPoint
+#    job_id: CP14GodMerkas
