@@ -37956,7 +37956,7 @@ entities:
     - type: Transform
       pos: -19.266253,22.560314
       parent: 1
-- proto: CP14LongLeatherBoots
+- proto: CP14ClothingShoesLongLeatherBoots
   entities:
   - uid: 6106
     components:
