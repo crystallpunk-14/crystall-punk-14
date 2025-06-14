@@ -1,0 +1,12 @@
+# Aghost
+- type: startingGear
+  id: CP14MobAghostGear
+  equipment:
+    back: ClothingBackpackSatchelHolding
+    id: AdminPDA
+  storage:
+    back:
+    - CP14AdminCheatCube
+    - CP14AdminMapCrystal
+    - AppraisalTool
+    - CP14BookGuildMoral
