@@ -1,0 +1,67 @@
+# Concept: the mop
+# Cleans puddles
+# Standard attack speed
+# Reasonable blunt damage (mop-fu real)
+# Fragile; not a real weapon, should not take the place of one long-term
+- type: modularPart
+  id: BaseBladeMop
+  modifiers:
+  - !type:AddComponents
+    override: true
+    components:
+    - type: Spillable
+      solution: absorbed
+    - type: Absorbent
+    - type: SolutionContainerManager
+      solutions:
+        absorbed:
+          maxVol: 50
+  - !type:EditMeleeWeapon
+    bonusDamage:
+      types:
+        Blunt: 5
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Blunt: 5
+  - !type:EditDamageableModifier # Improvised weapon
+    multiplier: 1.2
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde # Remember, Ed asked for this
+    - BladeInlay # Ed didn't ask for this, but it's REALLY funny
+
+- type: modularPart
+  id: BladeWoodMop
+  slots:
+  - Blade
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mop/mop.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMop
+    - BaseBladeIron # TODO wood weapons are planned, revisit this when they're done
+  - !type:EditDamageableModifier
+    multiplier: 2 # For now, we treat it as weaker iron
+
+- type: modularPart
+  id: BladeLucensMop
+  slots:
+  - Blade
+  rsiPath: _CP14/Objects/ModularTools/Blade/Mop/lucens_mop.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseBladeMop
+    - BaseBladeMithril # TODO wood weapons might mean lucens weapons?
+  - !type:AddComponents
+    override: true
+    components:
+    - type: SolutionContainerManager
+      solutions:
+        absorbed:
+          maxVol: 100
