@@ -157,11 +157,18 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
-
         if (!TryComp<CP14ReligionEntityComponent>(args.Performer, out var religionComp))
             return;
 
-        if (args.Position is not null && _god.InVision(args.Position.Value, (args.Performer, religionComp)))
+        var position = args.Position;
+
+        if (args.Target is not null)
+            position ??= Transform(args.Target.Value).Coordinates;
+
+        if (position is null)
+            return;
+
+        if (_god.InVision(position.Value, (args.Performer, religionComp)))
             return;
 
         args.Cancel();

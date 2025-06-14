@@ -92,3 +92,8 @@
   license: "CC0-1.0"
   copyright: 'Created by Zott820 on Freesound.org'
   source: "https://freesound.org/people/Zott820/sounds/209578/"
+
+- files: ["ritual_begin.ogg", "ritual_end.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by SilverIllusionist on Freesound.org'
+  source: "https://freesound.org/people/SilverIllusionist/sounds/671928/"

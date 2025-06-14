@@ -15,3 +15,5 @@ cp14-research-craft = Исследовать
 
 cp14-skill-desc-add-mana = Увеличивает объем маны вашего персонажа на {$mana}.
 cp14-skill-desc-unlock-recipes = Открывает возможность создания:
+
+cp14-skill-popup-added-points = Границы вашего сознания расширяются. Новых очков памяти: {$count}

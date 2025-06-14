@@ -88,3 +88,18 @@
     prerequisite: LumeraT2
   - !type:GodFollowerPercentage
     percentage: 0.6
+
+- type: cp14Skill
+  id: LumeraMindUpgrade
+  skillUiPosition: 12, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mind_upgrade
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMindUpgrade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT3
