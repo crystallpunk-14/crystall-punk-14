@@ -13,6 +13,9 @@ namespace Content.Client._CP14.UserInterface.Systems.NodeTree;
 [GenerateTypedNameReferences]
 public sealed partial class CP14NodeTreeGraphControl : BoxContainer
 {
+    private const float LocalUIScaleMax = 4f;
+    private const float LocalUIScaleMin = 1f;
+
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     private CP14NodeTreeUiState? _state;
@@ -25,6 +28,9 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
     private bool _dragging = false;
     private Vector2 _previousMousePosition = Vector2.Zero;
     private Vector2 _globalOffset = new (60,60);
+    private float _localUIScale = LocalUIScaleMin;
+
+    private float Scale => UIScale * _localUIScale;
 
     public event Action<CP14NodeTreeElement?>? OnNodeSelected;
     public event Action<Vector2>? OnOffsetChanged;
@@ -50,6 +56,16 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         OnOffsetChanged?.Invoke(_globalOffset);
     }
 
+    protected override void MouseWheel(GUIMouseWheelEventArgs args)
+    {
+        base.MouseWheel(args);
+
+        if (args.Handled)
+            return;
+
+        _localUIScale = MathHelper.Clamp(_localUIScale + 0.1f * args.Delta.Y, LocalUIScaleMin, LocalUIScaleMax);
+    }
+
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
         base.KeyBindDown(args);
@@ -72,6 +88,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         if (args.Function == EngineKeyFunctions.UIRightClick)
         {
             _globalOffset = new Vector2(60, 60); // Reset offset on right click
+            _localUIScale = LocalUIScaleMin;
             OnOffsetChanged?.Invoke(_globalOffset);
         }
     }
@@ -107,7 +124,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         if (_dragging)
         {
             var delta = cursor - _previousMousePosition;
-            _globalOffset += delta;
+            _globalOffset +=  delta;
             OnOffsetChanged?.Invoke(_globalOffset);
         }
 
@@ -118,8 +135,8 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         {
             var node1 = _nodeDict[edge.Item1];
             var node2 = _nodeDict[edge.Item2];
-            var fromPos = node1.UiPosition * UIScale + _globalOffset;
-            var toPos = node2.UiPosition * UIScale + _globalOffset;
+            var fromPos = node1.UiPosition * Scale + _globalOffset;
+            var toPos = node2.UiPosition * Scale + _globalOffset;
 
             var lineColor = node1.Gained || node2.Gained ? _state.ActiveLineColor : _state.LineColor;
             handle.DrawLine(fromPos, toPos, lineColor);
@@ -128,11 +145,11 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         //Draw Node icons over lines
         foreach (var node in _state.Nodes)
         {
-            var pos = node.UiPosition * UIScale + _globalOffset;
+            var pos = node.UiPosition * Scale + _globalOffset;
 
             // Frame
             var frameTexture = _state.FrameIcon.Frame0();
-            var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 1.5f * UIScale;
+            var frameSize = new Vector2(frameTexture.Width, frameTexture.Height) * 1.5f * Scale;
             var frameQuad = new UIBox2(pos - frameSize / 2, pos + frameSize / 2);
             handle.DrawTextureRect(frameTexture, frameQuad);
 
@@ -140,7 +157,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             if (_selectedNode == node)
             {
                 var selectedTexture = _state.SelectedIcon.Frame0();
-                var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 1.5f * UIScale;
+                var selectedSize = new Vector2(selectedTexture.Width, selectedTexture.Height) * 1.5f * Scale;
                 var selectedQuad = new UIBox2(pos - selectedSize / 2, pos + selectedSize / 2);
                 handle.DrawTextureRect(selectedTexture, selectedQuad);
             }
@@ -151,7 +168,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             {
                 _hoveredNode = node;
                 var hoveredTexture = _state.HoveredIcon.Frame0();
-                var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 1.5f * UIScale;
+                var hoveredSize = new Vector2(hoveredTexture.Width, hoveredTexture.Height) * 1.5f * Scale;
                 var hoveredQuad = new UIBox2(pos - hoveredSize / 2, pos + hoveredSize / 2);
                 handle.DrawTextureRect(hoveredTexture, hoveredQuad);
             }
@@ -160,7 +177,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             if (node.Gained)
             {
                 var learnedTexture = _state.LearnedIcon.Frame0();
-                var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 1.5f * UIScale;
+                var learnedSize = new Vector2(learnedTexture.Width, learnedTexture.Height) * 1.5f * Scale;
                 var learnedQuad = new UIBox2(pos - learnedSize / 2, pos + learnedSize / 2);
                 handle.DrawTextureRect(learnedTexture, learnedQuad);
             }
@@ -169,7 +186,7 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
             if (node.Icon is not null)
             {
                 var baseTexture = node.Icon.Frame0();
-                var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * UIScale;
+                var baseSize = new Vector2(baseTexture.Width, baseTexture.Height) * 1.5f * Scale;
                 var baseQuad = new UIBox2(pos - baseSize / 2, pos + baseSize / 2);
                 var tint = node.Gained || node.Active ? Color.White : Color.FromSrgb(new Color(0.6f, 0.6f, 0.6f));
                 handle.DrawTextureRect(baseTexture, baseQuad, tint);
