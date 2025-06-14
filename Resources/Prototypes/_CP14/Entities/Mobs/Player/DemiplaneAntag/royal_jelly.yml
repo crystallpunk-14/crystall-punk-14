@@ -63,6 +63,14 @@
         Caustic: 2
         Structural: 15
     range: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+        Heat: 3
+        Cold: 3
+        Shock: 3
+        Caustic: 2
   - type: GhostTakeoverAvailable
   - type: NoSlip
   - type: SolutionContainerManager

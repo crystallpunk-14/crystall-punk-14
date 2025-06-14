@@ -27,6 +27,11 @@
       types:
         Blunt: 3
         Shock: 3
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
+        Shock: 3
   - type: CP14SpellEffectOnHit
     prob: 0.15
     effects:
