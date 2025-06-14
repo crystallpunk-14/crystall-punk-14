@@ -1,6 +1,6 @@
 using Content.Shared._CP14.MagicEssence;
 using Content.Shared._CP14.MagicSpell.Events;
-using Content.Shared._CP14.ResearchTable;
+using Content.Shared._CP14.Skill;
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;

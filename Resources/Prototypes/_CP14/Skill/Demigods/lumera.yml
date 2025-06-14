@@ -73,7 +73,7 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT1
   - !type:GodFollowerPercentage
-    percentage: 0.3
+    percentage: 0.25
 
 - type: cp14Skill
   id: LumeraDarkMist
@@ -105,7 +105,7 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT2
   - !type:GodFollowerPercentage
-    percentage: 0.6
+    percentage: 0.5
 
 - type: cp14Skill
   id: LumeraMindUpgrade
