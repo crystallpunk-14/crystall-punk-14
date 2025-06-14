@@ -303,3 +303,23 @@
     group: WoodenPlanks
     count: 2
   result: CP14OpenSign
+
+- type: CP14Recipe
+  id: CP14RopeFromGrass
+  tag: CP14RecipeWorkbench
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 4
+  result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14RopeFromCloth
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14Rope
