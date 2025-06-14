@@ -65,6 +65,8 @@ public abstract class CP14SharedResearchSystem : EntitySystem
             var skillName = _skill.GetSkillName(skill);
             sb.Append($"• [color={indexedTree.Color.ToHex()}]{skillName}[/color]\n");
         }
+
+        sb.Append($"\n{Loc.GetString("cp14-skill-menu-level")} {ent.Comp.SkillsSumExperience}/{ent.Comp.ExperienceMaxCap}\n");
         msg.AddMarkupOrThrow(sb.ToString());
         return msg;
     }
