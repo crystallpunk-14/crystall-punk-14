@@ -1,0 +1,23 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraMoonStrike
+  name: Lunar strike
+  description: You focus the concentrated light of the stars into a single point, blinding and damaging everything that comes within reach of the angry goddess.
+  components:
+  - type: CP14MagicEffectReligionRestricted
+  - type: CP14MagicEffectManaCost
+    manaCost: 50
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SkyLumeraStrike
+  - type: WorldTargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 100
+    itemIconStyle: BigAction
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: moon_beam
+    event: !type:CP14WorldTargetActionEvent
+      cooldown: 0.5

@@ -90,6 +90,21 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT2
 
+- type: cp14Skill
+  id: LumeraMoonStrike
+  skillUiPosition: 8, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: moon_beam
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMoonStrike
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+
 # T3
 
 - type: cp14Skill
