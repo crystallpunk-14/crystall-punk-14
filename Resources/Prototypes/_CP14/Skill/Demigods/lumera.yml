@@ -73,7 +73,7 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT1
   - !type:GodFollowerPercentage
-    percentage: 0.3
+    percentage: 0.25
 
 - type: cp14Skill
   id: LumeraDarkMist
@@ -86,6 +86,21 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellGodLumeraDarkmist
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+
+- type: cp14Skill
+  id: LumeraMoonStrike
+  skillUiPosition: 8, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: moon_beam
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMoonStrike
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: LumeraT2
@@ -105,7 +120,7 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT2
   - !type:GodFollowerPercentage
-    percentage: 0.6
+    percentage: 0.5
 
 - type: cp14Skill
   id: LumeraMindUpgrade

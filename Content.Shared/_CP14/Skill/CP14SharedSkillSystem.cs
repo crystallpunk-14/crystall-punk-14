@@ -3,7 +3,6 @@ using System.Text;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
-using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill;
@@ -22,6 +21,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         InitializeAdmin();
         InitializeChecks();
+        InitializeScanning();
     }
 
     private void OnMapInit(Entity<CP14SkillStorageComponent> ent, ref MapInitEvent args)
