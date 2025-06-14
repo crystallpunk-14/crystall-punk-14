@@ -124,3 +124,19 @@
               doAfter: 2
     - node: CP14WorkbenchSewing
       entity: CP14WorkbenchSewing
+
+- type: constructionGraph
+  id: CP14WorkbenchLeather
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WorkbenchLeather
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 2
+    - node: CP14WorkbenchLeather
+      entity: CP14WorkbenchLeather

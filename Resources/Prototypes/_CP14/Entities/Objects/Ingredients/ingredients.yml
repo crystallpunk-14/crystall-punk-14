@@ -1,0 +1,59 @@
+- type: entity
+  id: CP14IngredientBase # An item intended for crafting
+  parent: BaseItem
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Tiny
+
+# Buckle
+- type: entity
+  id: CP14IronBuckle
+  parent: CP14IngredientBase
+  name: Iron Buckle
+  description: A sturdy metal buckle for fastening straps and belts.
+  components:
+  - type: Sprite
+    sprite: _CP14/Ingredients/buckle.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14IronBar: 0.2
+  - type: StaticPrice
+    price: 2
+
+# Salt
+- type: entity
+  id: CP14Salt
+  parent: CP14IngredientBase
+  name: Salt
+  description: A crystalline mineral used to season and preserve food.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Objects/Materials/ore.rsi
+    state: salt
+  - type: Stack
+    stackType: CP14Salt
+    count: 1
+    baseLayer: base
+  - type: StaticPrice
+    price: 2
+
+- type: entity
+  id: CP14Salt5
+  parent: CP14Salt
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14Salt10
+  parent: CP14Salt
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
