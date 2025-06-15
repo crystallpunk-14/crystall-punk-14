@@ -20,7 +20,7 @@
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: moon_beam
     event: !type:CP14WorldTargetActionEvent
-      cooldown: 0.5
+      cooldown: 15
 
 - type: entity
   id: CP14SkyLumeraStrike
@@ -58,7 +58,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 10
+            Heat: 30
   - type: TriggerOnSpawn
   - type: FlashOnTrigger
     range: 2
