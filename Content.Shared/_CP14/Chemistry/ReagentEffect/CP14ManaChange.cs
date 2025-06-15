@@ -1,11 +1,11 @@
-using Content.Server._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Chemistry.ReagentEffect;
+namespace Content.Shared._CP14.Chemistry.ReagentEffect;
 
 [UsedImplicitly]
 [DataDefinition]
@@ -35,7 +35,7 @@ public sealed partial class CP14ManaChange : EntityEffect
         if (args is EntityEffectReagentArgs reagentArgs)
             scale = ScaleByQuantity ? reagentArgs.Quantity * reagentArgs.Scale : reagentArgs.Scale;
 
-        var magicSystem = entityManager.System<CP14MagicEnergySystem>();
+        var magicSystem = entityManager.System<SharedCP14MagicEnergySystem>();
         magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, out var changed, out var overload, safe: Safe);
 
         scale -= FixedPoint2.Abs(changed + overload);
@@ -43,7 +43,7 @@ public sealed partial class CP14ManaChange : EntityEffect
         if (!args.EntityManager.TryGetComponent<CP14MagicEnergyCrystalSlotComponent>(args.TargetEntity, out var crystalSlot))
             return;
 
-        var slotSystem = entityManager.System<CP14MagicEnergyCrystalSlotSystem>();
+        var slotSystem = entityManager.System<SharedCP14MagicEnergyCrystalSlotSystem>();
         slotSystem.TryChangeEnergy((args.TargetEntity, crystalSlot), ManaDelta * scale);
     }
 }

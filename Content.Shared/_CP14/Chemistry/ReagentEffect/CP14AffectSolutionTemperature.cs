@@ -2,7 +2,7 @@ using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Chemistry.ReagentEffect;
+namespace Content.Shared._CP14.Chemistry.ReagentEffect;
 
 [UsedImplicitly]
 [DataDefinition]
@@ -12,8 +12,7 @@ public sealed partial class CP14AffectSolutionTemperature : EntityEffect
     /// Temperature added to the solution. If negative, the solution is cooling.
     /// </summary>
     [DataField]
-    private float AddTemperature = -300f;
-
+    public float AddTemperature = -300f;
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {

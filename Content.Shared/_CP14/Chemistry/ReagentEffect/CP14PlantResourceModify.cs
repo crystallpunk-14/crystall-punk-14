@@ -5,7 +5,7 @@ using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Chemistry.ReagentEffect;
+namespace Content.Shared._CP14.Chemistry.ReagentEffect;
 
 [UsedImplicitly]
 [DataDefinition]
