@@ -26,10 +26,10 @@
     repeat: true
     checkCanAccess: false
     range: 100
-  - type: EntityWorldTargetAction
-    event: !type:CP14EntityWorldTargetActionEvent
+  - type: EntityTargetAction
+  - type: WorldTargetAction
+    event: !type:CP14EntityTargetActionEvent
       cooldown: 0.5
-
 - type: entity
   id: CP14LumeraTouchImpact
   categories: [ HideSpawnMenu ]
