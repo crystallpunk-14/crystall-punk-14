@@ -82,10 +82,12 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -2.0
-  - type: EntityWorldTargetAction
-    useDelay: 1
+  - type: Action
+    cooldown: 1
+  - type: TargetAction
     checkCanAccess: true
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 0.5
       castDelay: 0.2
       breakOnMove: false
