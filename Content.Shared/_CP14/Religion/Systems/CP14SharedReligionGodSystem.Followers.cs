@@ -18,6 +18,9 @@ public abstract partial class CP14SharedReligionGodSystem
     [Dependency] protected readonly SharedMindSystem Mind = default!;
     [Dependency] private readonly FollowerSystem _follower = default!;
 
+    [ValidatePrototypeId<EntityPrototype>]
+    public const string AlertProto = "CP14DivineOffer";
+
     private void InitializeFollowers()
     {
         SubscribeLocalEvent<CP14ReligionPendingFollowerComponent, MapInitEvent>(OnPendingFollowerInit);
@@ -105,12 +108,12 @@ public abstract partial class CP14SharedReligionGodSystem
 
     private void OnPendingFollowerInit(Entity<CP14ReligionPendingFollowerComponent> ent, ref MapInitEvent args)
     {
-        _alerts.ShowAlert(ent, "CP14DivineOffer");
+        _alerts.ShowAlert(ent, AlertProto);
     }
 
     private void OnPendingFollowerShutdown(Entity<CP14ReligionPendingFollowerComponent> ent, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(ent, "CP14DivineOffer");
+        _alerts.ClearAlert(ent, AlertProto);
     }
 
     private bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)

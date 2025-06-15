@@ -25,16 +25,12 @@ public sealed partial class CP14ReligionGodSystem
         if (TryComp<CP14ReligionAltarComponent>(target, out var altar))
         {
             if (altar.Religion == ent.Comp.Religion)
-            {
                 canTeleport = true;
-            }
         }
         else if (TryComp<CP14ReligionFollowerComponent>(target, out var follower))
         {
             if (follower.Religion == ent.Comp.Religion)
-            {
                 canTeleport = true;
-            }
         }
 
         if (!canTeleport)

@@ -10,6 +10,7 @@ namespace Content.Shared._CP14.Religion.Systems;
 public abstract partial class CP14SharedReligionGodSystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+
     private void InitializeAltars()
     {
         SubscribeLocalEvent<CP14ReligionAltarComponent, GetVerbsEvent<AlternativeVerb>>(GetAltVerb);
