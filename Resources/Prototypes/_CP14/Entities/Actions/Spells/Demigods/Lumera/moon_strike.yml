@@ -5,7 +5,7 @@
   components:
   - type: CP14MagicEffectReligionRestricted
   - type: CP14MagicEffectManaCost
-    manaCost: 50
+    manaCost: 30
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -20,7 +20,7 @@
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: moon_beam
     event: !type:CP14WorldTargetActionEvent
-      cooldown: 10
+      cooldown: 15
 
 - type: entity
   id: CP14SkyLumeraStrike
