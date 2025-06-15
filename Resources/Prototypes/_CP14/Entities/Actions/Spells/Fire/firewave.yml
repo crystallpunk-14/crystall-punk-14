@@ -1,11 +1,11 @@
 - type: entity
-  id: CP14ActionSpellFirebolt
-  name: Firebolt
-  description: A staple of a pyrokinetic's arsenal - a small but potent bolt of fire.
+  id: CP14ActionSpellFirewave
+  name: Firewave
+  description: You release a wave of hot fire that strikes multiple targets in an area.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/fire.rsi
-    state: fireball
+    state: firewave
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.75
   - type: CP14MagicEffectManaCost
@@ -15,9 +15,9 @@
     effects:
     - !type:CP14SpellProjectile
       prototype: CP14Firebolt
-    - !type:CP14SpellSpawnEntityOnUser
-      spawns:
-      - CP14ImpactEffectFirebolt
+      spread: 2
+      projectileSpeed: 5
+      projectileCount: 6
   - type: CP14MagicEffectVerbalAspect
     endSpeech: "Ignis acus!"
   - type: CP14MagicEffectCastingVisual
@@ -33,10 +33,9 @@
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
-      state: firebolt
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      state: firewave
+    event: !type:CP14EntityWorldTargetActionEvent
       cooldown: 1.0
-      breakOnMove: false
 
 - type: entity
   id: CP14RuneFirebolt
@@ -58,11 +57,11 @@
   categories: [ HideSpawnMenu ]
   save: false
   components:
-  - type: Sprite
-    layers:
-    - state: wave_up
-      color: "#eea911"
-      shader: unshaded
+  - type: PointLight
+    color: "#E25822"
+    radius: 2.0
+    energy: 2.0
+  - type: LightFade
 
 - type: entity
   id: CP14Firebolt
@@ -71,28 +70,35 @@
   categories: [ HideSpawnMenu ]
   save: false
   components:
+  - type: TimedDespawn
+    lifetime: 1
+  - type: SpawnOnDespawn
+    prototype: CP14ImpactEffectFirebolt
   - type: PointLight
     color: "#E25822"
-    radius: 1.1
-    energy: 1.0
+    radius: 2.0
+    energy: 2.0
   - type: Projectile
+    impactEffect: CP14ImpactEffectFirebolt
     damage:
       types:
-        Heat: 10
+        Heat: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/energy_metal1.ogg
   - type: Sprite
-    sprite: _CP14/Effects/Magic/firebolt.rsi
+    sprite: _CP14/Effects/fire.rsi
     layers:
-    - state: firebolt
+    - state: small
       shader: unshaded
+  - type: ChangeTemperatureOnCollide
+    heat: 10000
 
 - type: entity
   parent: CP14BaseSpellScrollFire
-  id: CP14SpellScrollFirebolt
-  name: firebolt spell scroll
+  id: CP14SpellScrollFirewave
+  name: firewave spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellFirebolt
+    - CP14ActionSpellFirewave
 

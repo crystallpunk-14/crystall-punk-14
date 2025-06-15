@@ -31,6 +31,7 @@ public sealed class CP14ReligionVisionOverlay : Overlay
     private readonly Vector2[] _positions = new Vector2[MaxCount];
     private readonly float[] _radii = new float[MaxCount];
     private int _count = 0;
+
     public CP14ReligionVisionOverlay()
     {
         IoCManager.InjectDependencies(this);
@@ -40,11 +41,8 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         _transform = _entManager.System<SharedTransformSystem>();
 
         if (_entManager.TryGetComponent<CP14ReligionEntityComponent>(_player.LocalEntity, out var vision))
-        {
             _religion = vision.Religion;
-        }
     }
-
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {

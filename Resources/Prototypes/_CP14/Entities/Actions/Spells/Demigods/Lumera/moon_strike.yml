@@ -61,7 +61,7 @@
             Heat: 10
   - type: TriggerOnSpawn
   - type: FlashOnTrigger
-    range: 4
+    range: 2
   - type: CP14FarSound
     closeSound:
       collection: CP14MoonStrike
