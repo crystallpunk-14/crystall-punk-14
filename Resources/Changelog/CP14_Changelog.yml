@@ -371,3 +371,12 @@
   id: 8089
   time: '2025-06-13T10:25:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1402
+- author: TheShuEd
+  changes:
+  - message: A patron system has been added. By interacting with the primordial statues, you can become a follower of a patron. For more details, please refer to the in-game guidebooks.
+    type: Add
+  - message: The divine patron of the night sky and knowledge, “Lumera,” has been added. This is a game role that gains new abilities based on the number of followers and is capable of interacting with areas of visibility and granting (or taking away) memory points from other players.
+    type: Add
+  id: 8090
+  time: '2025-06-15T15:00:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1427
