@@ -33,8 +33,8 @@
       state: earth_wall
   - type: TargetAction
     range: 10
-  - type: EntityWorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 10
 
 - type: entity

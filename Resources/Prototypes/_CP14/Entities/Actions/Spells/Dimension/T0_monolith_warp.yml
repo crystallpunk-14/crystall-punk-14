@@ -31,8 +31,8 @@
       state: demi_arrow
   - type: TargetAction
     range: 7
-  - type: EntityWorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 50
 
 - type: entity

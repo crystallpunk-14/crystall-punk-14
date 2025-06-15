@@ -31,8 +31,8 @@
       state: flash_light
   - type: TargetAction
     range: 10
-  - type: EntityWorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 5
       castDelay: 0.5
       breakOnMove: false

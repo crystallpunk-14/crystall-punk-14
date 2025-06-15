@@ -29,8 +29,8 @@
     itemIconStyle: BigAction
   - type: TargetAction
     range: 7
-  - type: EntityWorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 30
       hidden: true
       breakOnMove: false
