@@ -62,7 +62,7 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         CastSpell((args.Action, magicEffect), spellArgs);
-        _action.CP14StartCustomDelay(args.Action, args.Cooldown);
+        _action.SetCooldown(args.Action.Owner, args.Cooldown);
     }
 
     private void OnMagicEntityTargetAction(CP14EntityTargetActionEvent args)
