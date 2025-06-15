@@ -1,6 +1,9 @@
 - type: modularPart
   id: BaseBladePickaxe
   modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponExecution
   - !type:AddComponents
     override: true
     components:

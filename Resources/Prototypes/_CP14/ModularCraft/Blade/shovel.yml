@@ -1,6 +1,9 @@
 - type: modularPart
   id: BaseBladeShovel
   modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponExecution
   - !type:AddComponents
     components:
     - type: Shovel

@@ -9,6 +9,7 @@
   - !type:Inherit
     copyFrom:
     - BaseWeaponThrowable
+    - BaseWeaponExecution
   - !type:AddComponents
     components:
     - type: Tool
