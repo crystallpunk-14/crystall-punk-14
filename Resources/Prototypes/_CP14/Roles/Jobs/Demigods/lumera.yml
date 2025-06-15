@@ -2,7 +2,7 @@
   id: CP14GodLumera
   name: cp14-job-name-god-lumera
   description: cp14-job-desc-god-lumera
-  setPreference: false
+  setPreference: true
   playTimeTracker: CP14GodLumera
   requirements:
     - !type:OverallPlaytimeRequirement
