@@ -11,7 +11,6 @@ public sealed class CP14ReligionEntityBoundUserInterface : BoundUserInterface
 
     public CP14ReligionEntityBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        IoCManager.InjectDependencies(this);
     }
 
     protected override void Open()

@@ -33,7 +33,7 @@ public sealed class SpawnPointSystem : EntitySystem
                 continue;
 
             //CP14 always spawn gods on gods spawnpoints
-            if (spawnPoint.SpawnType == SpawnPointType.Always && (args.Job == null || spawnPoint.Job == args.Job))
+            if (spawnPoint.SpawnType == SpawnPointType.Unset && (args.Job == null || spawnPoint.Job == args.Job))
             {
                 possiblePositions.Clear();
                 possiblePositions.Add(xform.Coordinates);

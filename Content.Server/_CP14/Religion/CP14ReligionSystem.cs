@@ -25,6 +25,12 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
+    /// <summary>
+    /// If ReligionObserver receives a radius higher than this value, this entity will automatically be placed in PvsOverride for the god in order to function correctly outside of the player's PVS.
+    /// </summary>
+    /// <remarks> Maybe there is a variable for the distance outside the screen in PVS, I don't know. This number works best</remarks>
+    private const float ObservationOverrideRadius = 6.5f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -197,7 +203,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
             if (!observer.Observation.ContainsKey(ent.Comp.Religion.Value))
                 continue;
 
-            if (observer.Observation[ent.Comp.Religion.Value] <= 6.5f) //Maybe there is a variable for the distance outside the screen in PVS, I don't know. This number works best
+            if (observer.Observation[ent.Comp.Religion.Value] <= ObservationOverrideRadius)
                 continue;
 
             ent.Comp.PvsOverridedObservers.Add(uid);

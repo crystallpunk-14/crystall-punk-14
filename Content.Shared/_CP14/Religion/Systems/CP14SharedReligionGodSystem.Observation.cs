@@ -37,19 +37,16 @@ public abstract partial class CP14SharedReligionGodSystem
             var newRange = Math.Clamp(observer.Observation[religion] + range, 0, float.MaxValue);
 
             if (newRange <= 0)
-            {
                 observer.Observation.Remove(religion);
-            }
             else
-            {
                 observer.Observation[religion] = newRange;
-            }
         }
         else
         {
             // Otherwise, add a new observation for the religion.
             observer.Observation.Add(religion, range);
         }
+
         Dirty(target, observer);
     }
 

@@ -30,7 +30,7 @@
 
 - type: entity
   id: CP14LumeraTouchImpact
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   parent: CP14BaseMagicImpact
   save: false
   components:

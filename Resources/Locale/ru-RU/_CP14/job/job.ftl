@@ -42,4 +42,4 @@ cp14-job-name-god-merkas = Меркас
 cp14-job-desc-god-merkas = Бог света и исцеления. TODO
 
 cp14-job-name-god-lumera = Лумера
-cp14-job-desc-god-lumera = Покровительница ночи и звёздного неба. TODO
+cp14-job-desc-god-lumera = Покровительница ночного неба и знаний. Расширяйте свое влияние, помогая смертным обретать новые знания.
