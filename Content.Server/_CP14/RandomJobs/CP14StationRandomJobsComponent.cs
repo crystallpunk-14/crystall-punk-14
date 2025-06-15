@@ -16,7 +16,7 @@ public sealed partial class CP14StationRandomJobsComponent : Component
 public sealed partial class CP14RandomJobEntry
 {
     [DataField(required: true)]
-    public List<ProtoId<JobPrototype>> Jobs = default!;
+    public List<ProtoId<JobPrototype>> Jobs = new();
 
     [DataField(required: true)]
     public MinMax Count = new(1, 1);

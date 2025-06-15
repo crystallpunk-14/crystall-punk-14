@@ -18,6 +18,7 @@ public sealed partial class CP14SpellGodTouch : CP14SpellEffect
         entManager.EventBus.RaiseLocalEvent(args.Target.Value, ev);
     }
 }
+
 public sealed class CP14GodTouchEvent(ProtoId<CP14ReligionPrototype> religion) : EntityEventArgs
 {
     public ProtoId<CP14ReligionPrototype> Religion = religion;
