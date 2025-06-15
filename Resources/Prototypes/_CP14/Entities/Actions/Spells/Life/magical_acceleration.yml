@@ -16,13 +16,13 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14MagicAccelerationDustEffect
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/misc.rsi
       state: magical_acceleration
+  - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 0.2
       cooldown: 2

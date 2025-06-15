@@ -27,19 +27,19 @@
         safe: true
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - CP14MagicEnergyContainer
-      - ExaminableSolution
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    range: 60
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell
+  - type: TargetAction
+    range: 60
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - ExaminableSolution
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 15
       castDelay: 0.25

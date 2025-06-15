@@ -25,17 +25,18 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
   - type: CP14MagicEffectPacifiedBlock
-  - type: EntityWorldTargetAction
-    checkCanAccess: false
-    raiseOnUser: true
-    range: 60
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: fireball
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 25
       castDelay: 2.5
       breakOnMove: false

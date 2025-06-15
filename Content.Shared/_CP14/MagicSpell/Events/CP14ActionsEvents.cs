@@ -7,12 +7,6 @@ public interface ICP14MagicEffect
     public TimeSpan Cooldown { get; }
 }
 
-public sealed partial class CP14EntityWorldTargetActionEvent : WorldTargetActionEvent, ICP14MagicEffect
-{
-    [DataField]
-    public TimeSpan Cooldown { get; private set; } = TimeSpan.FromSeconds(1f);
-}
-
 public sealed partial class CP14WorldTargetActionEvent : WorldTargetActionEvent, ICP14MagicEffect
 {
     [DataField]

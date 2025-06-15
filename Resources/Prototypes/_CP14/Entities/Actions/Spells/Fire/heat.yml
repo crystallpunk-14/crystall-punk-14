@@ -27,15 +27,16 @@
     startSpeech: "Vos adepto calidum..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHeat
-  - type: EntityTargetAction
-    range: 8
-    interactOnMiss: false
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: heat
+  - type: TargetAction
+    range: 8
+    interactOnMiss: false
+  - type: EntityTargetAction
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 8
       castTime: 10

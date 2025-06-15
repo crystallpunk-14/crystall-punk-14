@@ -20,14 +20,16 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: EntityWorldTargetAction
-    range: 7
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: shadow_step
+    itemIconStyle: BigAction
+  - type: TargetAction
+    range: 7
+  - type: EntityWorldTargetAction
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 30
       hidden: true

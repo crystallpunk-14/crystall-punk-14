@@ -35,13 +35,14 @@
     startEmote: cp14-kick-lurker-start
     endEmote: cp14-kick-lurker
   - type: CP14MagicEffectPacifiedBlock
-  - type: EntityTargetAction
-    canTargetSelf: false
-    range: 2
-    itemIconStyle: BigAction
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: kick
+  - type: TargetAction
+    canTargetSelf: false
+    range: 2
+  - type: EntityTargetAction
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 20
       castDelay: 2.5

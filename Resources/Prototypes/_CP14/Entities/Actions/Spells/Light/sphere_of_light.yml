@@ -23,13 +23,13 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSphereOfLight
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: sphere_of_light
+  - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 30
       castDelay: 0.5

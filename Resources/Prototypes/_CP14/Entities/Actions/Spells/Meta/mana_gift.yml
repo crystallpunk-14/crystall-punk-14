@@ -26,19 +26,20 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaGift
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - CP14MagicEnergyContainer
-      - CP14MagicEnergyCrystalSlot
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    canTargetSelf: true
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_gift
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - CP14MagicEnergyCrystalSlot
+    canTargetSelf: true
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 2
       castTime: 10

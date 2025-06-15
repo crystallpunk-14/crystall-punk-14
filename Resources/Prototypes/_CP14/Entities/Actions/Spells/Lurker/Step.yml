@@ -19,16 +19,17 @@
       - CP14LurkerRitualSound
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneLurkerFear
-  - type: EntityWorldTargetAction
-    checkCanAccess: false
-    range: 10
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: step
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 30
       hidden: true
       breakOnMove: false

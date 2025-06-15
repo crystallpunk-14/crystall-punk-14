@@ -11,7 +11,7 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeDelayedActions()
     {
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
-        SubscribeLocalEvent<CP14DelayedEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
         SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
@@ -108,7 +108,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnEntityWorldTargetAction(CP14DelayedEntityWorldTargetActionEvent args)
+    private void OnWorldTargetAction(CP14DelayedWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;

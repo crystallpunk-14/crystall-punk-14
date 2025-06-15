@@ -31,15 +31,16 @@
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantFreeze
-  - type: EntityTargetAction
-    range: 5
-    interactOnMiss: false
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: freeze
+  - type: TargetAction
+    range: 5
+    interactOnMiss: false
+  - type: EntityTargetAction
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5
       castTime: 3

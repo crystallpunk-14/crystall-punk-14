@@ -53,19 +53,20 @@
     startSpeech: "Plantae durant..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantGrowth
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - CP14Plant
-      - CP14MagicEnergyPhotosynthesis
-    range: 2
-    itemIconStyle: BigAction
-    interactOnMiss: false
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: plant_growth
+  - type: TargetAction
+    range: 2
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14Plant
+      - CP14MagicEnergyPhotosynthesis
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 2
       castTime: 10

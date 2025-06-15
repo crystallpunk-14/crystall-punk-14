@@ -11,16 +11,18 @@
     - !type:CP14SpellGodRenounce
   - type: ConfirmableAction
     popup: cp-renounce-action-god-popup
-  - type: EntityWorldTargetAction
-    repeat: true
-    checkCanAccess: false
-    itemIconStyle: BigAction
-    range: 100
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: renounce
+    itemIconStyle: BigAction
+  - type: TargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 100
+  - type: EntityWorldTargetAction
     event: !type:CP14EntityWorldTargetActionEvent
       cooldown: 0.5
 

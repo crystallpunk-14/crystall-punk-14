@@ -24,14 +24,16 @@
     endSpeech: "de profundis terrae"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneEarthWall
-  - type: EntityWorldTargetAction
-    range: 10
+  - type: Action
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/earth.rsi
       state: earth_wall
+  - type: TargetAction
+    range: 10
+  - type: EntityWorldTargetAction
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 10
 

@@ -33,13 +33,13 @@
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSpeedBallade
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: speed_music
+  - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 1
       cooldown: 15

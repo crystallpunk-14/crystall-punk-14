@@ -20,19 +20,21 @@
     endSpeech: "salvabo socios meos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDemiplaneInfiltration
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - CP14DemiplaneRift
-    canTargetSelf: false
-    checkCanAccess: true
-    range: 3
+  - type: Action
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: rift_arrow
+  - type: TargetAction
+    whitelist:
+      components:
+      - CP14DemiplaneRift
+    canTargetSelf: false
+    checkCanAccess: true
+    range: 3
+  - type: EntityTargetAction
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 50
       castDelay: 5

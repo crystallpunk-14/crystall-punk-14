@@ -40,13 +40,14 @@
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHealBallade
-  - type: InstantAction
+  - type: Action
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: heal_music
+  - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 1
       cooldown: 15

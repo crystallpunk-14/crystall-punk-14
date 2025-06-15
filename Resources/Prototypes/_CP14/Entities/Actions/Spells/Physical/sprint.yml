@@ -15,13 +15,13 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14DustEffect
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: sprint
+  - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 0.2
       cooldown: 2

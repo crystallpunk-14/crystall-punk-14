@@ -23,14 +23,15 @@
     endSpeech: "excaecant inimicos meos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlashLight
-  - type: EntityWorldTargetAction
-    range: 10
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: flash_light
+  - type: TargetAction
+    range: 10
+  - type: EntityWorldTargetAction
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 5
       castDelay: 0.5

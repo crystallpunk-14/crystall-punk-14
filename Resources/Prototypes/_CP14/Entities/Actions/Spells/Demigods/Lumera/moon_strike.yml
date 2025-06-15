@@ -11,14 +11,16 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14SkyLumeraStrike
-  - type: WorldTargetAction
-    repeat: true
-    checkCanAccess: false
-    range: 100
+  - type: Action
+  - type: TargetAction
     itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: moon_beam
+    repeat: true
+    checkCanAccess: false
+    range: 100
+  - type: WorldTargetAction
     event: !type:CP14WorldTargetActionEvent
       cooldown: 0.5
 

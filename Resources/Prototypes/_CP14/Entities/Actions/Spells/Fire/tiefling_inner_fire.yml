@@ -28,13 +28,13 @@
         walkSpeedModifier: 1.2
         sprintSpeedModifier: 1.2
         statusLifetime: 5
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: tiefling_revenge
+  - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 10
       breakOnMove: false

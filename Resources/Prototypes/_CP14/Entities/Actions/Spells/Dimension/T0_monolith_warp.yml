@@ -22,14 +22,16 @@
     endSpeech: "vado ad vos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDemiplaneInfiltration
-  - type: EntityWorldTargetAction
-    range: 7
+  - type: Action
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: demi_arrow
+  - type: TargetAction
+    range: 7
+  - type: EntityWorldTargetAction
     event: !type:CP14DelayedEntityWorldTargetActionEvent
       cooldown: 50
 

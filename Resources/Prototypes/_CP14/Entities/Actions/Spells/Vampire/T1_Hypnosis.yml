@@ -27,19 +27,20 @@
         type: Add
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneVampireHypnosis
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - MobState
-    range: 5
-    itemIconStyle: BigAction
-    canTargetSelf: false
-    interactOnMiss: false
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: blood_moon
+  - type: TargetAction
+    interactOnMiss: false
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 30
       castDelay: 1.5

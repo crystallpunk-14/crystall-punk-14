@@ -11,7 +11,7 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeToggleableActions()
     {
         SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnToggleableInstantAction);
-        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14ToggleableWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
         SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnToggleableEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
@@ -149,7 +149,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnToggleableEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    private void OnToggleableEntityWorldTargetAction(CP14ToggleableWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;

@@ -3,10 +3,11 @@
   name: Toggle Night Vision
   description: You begin to see the world in a special way that allows you to see even in total darkness.
   components:
-  - type: InstantAction
+  - type: Action
     icon: Interface/VerbIcons/light.svg.192dpi.png
     clientExclusive: true
     checkCanInteract: false
+  - type: InstantAction
     event: !type:CP14ToggleNightVisionEvent
 
 - type: entity

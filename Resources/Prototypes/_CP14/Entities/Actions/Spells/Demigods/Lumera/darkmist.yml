@@ -15,16 +15,18 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14LumeraDarkMist
-  - type: WorldTargetAction
-    repeat: true
-    checkCanAccess: false
-    range: 100
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/Eldritch/voidblink.ogg
+    itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: mist
+  - type: TargetAction
+    checkCanAccess: false
+    repeat: true
+    range: 100
+  - type: WorldTargetAction
     event: !type:CP14WorldTargetActionEvent
       cooldown: 0.15
 

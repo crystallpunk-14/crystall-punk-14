@@ -23,18 +23,18 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
   - type: CP14MagicEffectPacifiedBlock
-  - type: EntityWorldTargetAction
-    repeat: true
-    checkCanAccess: false
-    raiseOnUser: true
-    range: 60
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_shards
-    event: !type:CP14EntityWorldTargetActionEvent
+  - type: TargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
       cooldown: 0.5
 
 - type: entity

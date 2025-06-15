@@ -49,8 +49,15 @@
         walkSpeedModifier: 0.5
         sprintSpeedModifier: 0.5
         statusLifetime: 30
-  - type: EntityTargetAction
-    canTargetSelf: false
+  - type: Action
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: wrath
+  - type: TargetAction
+    checkCanAccess: false
     blacklist:
       components:
       - CP14ReligionEntity
@@ -58,13 +65,8 @@
       components:
       - CP14SkillStorage
     range: 100
-    itemIconStyle: BigAction
-    checkCanAccess: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
-      state: wrath
+  - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 300
       castDelay: 16

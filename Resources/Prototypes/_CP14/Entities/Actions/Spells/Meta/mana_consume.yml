@@ -20,17 +20,17 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaConsume
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - CP14MagicEnergyContainer
-    itemIconStyle: BigAction
-    interactOnMiss: false
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_consume
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5
       castTime: 10

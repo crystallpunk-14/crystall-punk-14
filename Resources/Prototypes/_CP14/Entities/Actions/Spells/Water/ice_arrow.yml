@@ -23,13 +23,13 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
-  - type: InstantAction
-    itemIconStyle: BigAction
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_arrow
+  - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 10
       breakOnMove: false

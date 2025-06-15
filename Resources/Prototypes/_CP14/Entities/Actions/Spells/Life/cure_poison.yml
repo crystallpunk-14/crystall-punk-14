@@ -36,18 +36,19 @@
     endSpeech: "sta il veleno"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneBloodPurification
-  - type: EntityTargetAction
-    whitelist:
-      components:
-      - MobState
-    range: 7
-    itemIconStyle: BigAction
-    interactOnMiss: false
+  - type: Action
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_poison
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 1.5
