@@ -1,0 +1,127 @@
+- type: entity
+  id: CP14MobGodBase
+  parent:
+  - Incorporeal
+  - BaseMob
+  - CP14MobMagical
+  name: god
+  description: The supreme entity formed from the beliefs, desires, and fears of the human race.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Mobs/Demigods/temp_icons.rsi
+    color: "#ffffff99"
+  - type: PointLight
+    radius: 10
+    softness: 1
+    castShadows: false
+  - type: Input
+    context: "ghost"
+  - type: Spectral
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+    friction: 0.5
+    acceleration: 3
+  - type: NoSlip
+  - type: Eye
+    drawFov: false
+    visMask:
+      - Normal
+      - Ghost
+  - type: Visibility
+    layer: 2 #ghost vis layer
+  - type: ContentEye
+    maxZoom: 1.2, 1.2
+  - type: Speech
+    speechVerb: Ghost
+  - type: CP14ReligionVision
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 500
+    energy: 500
+    unsafeSupport: true
+  - type: Damageable
+    damageContainer: CP14Spectral
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: CP14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        CP14ManaDepletion: 1
+  - type: CP14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - CP14ActionZLevelUp
+    - CP14ActionZLevelDown
+    - ActionToggleLighting
+    - ActionToggleFov
+  - type: CP14DemiplaneStabilizer # teleports gods outside when the demiplane closes
+    enabled: false
+  - type: UserInterface
+    interfaces:
+      enum.CP14ReligionEntityUiKey.Key:
+        type: CP14ReligionEntityBoundUserInterface
+
+- type: entity
+  parent: CP14MobGodBase
+  id: CP14MobGodMerkas
+  name: Merkas
+  categories: [ HideSpawnMenu ]
+  description: Merkas is the god of purity and healing. In his presence, decay is destroyed. He does not save — he purifies. Those who remain can start anew.
+  components:
+  - type: Sprite
+    layers:
+    - state: merkas
+      shader: unshaded
+  - type: PointLight
+    color: "#9bf2b5"
+  - type: CP14SkillStorage
+    availableSkillTrees:
+    - GodMerkas
+  - type: CP14ReligionEntity
+    religion: Merkas
+  - type: CP14ReligionVision 
+    shaderColor:  0.02, 0.36, 0.05
+
+- type: entity
+  parent: CP14MobGodBase
+  id: CP14MobGodLumera
+  name: Lumera
+  description: The goddess of the night and the night sky. Her stars hold so many secrets, which she protects with her wings.
+  components:
+  - type: Sprite
+    layers:
+    - state: lumera
+      shader: unshaded
+  - type: PointLight
+    color: "#4367ba"
+  - type: CP14SkillStorage
+    availableSkillTrees:
+    - GodLumera
+  - type: CP14ReligionEntity
+    religion: Lumera
+  - type: CP14ReligionVision
+    shaderColor:  0.29, 0.66, 0.87
+  - type: IntrinsicUI
+    uis:
+      enum.CP14ReligionEntityUiKey.Key:
+        toggleAction: CP14ActionSpellGodLumeraWarp
+  - type: CP14ReligionSpeaker
+    speaker: CP14LumeraSpeakImpact

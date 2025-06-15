@@ -930,3 +930,235 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+
+  #Flem meat
+
+- type: entity
+  id: CP14FoodMeatFlemHead
+  parent: CP14FoodMeatBase
+  name: raw flem head
+  description: honestly looks quite tasty
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: flem_head
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 18
+        - ReagentId: Fat
+          Quantity: 5
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatFlemHeadCooked
+
+- type: entity
+  id: CP14FoodMeatFlemHeadCooked
+  parent: CP14FoodMeatFlemHead
+  name: cooked flem head
+  components:
+  - type: Sprite
+    state: flem_head_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Protein
+          Quantity: 18
+        - ReagentId: Fat
+          Quantity: 5
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatFlemTorso
+  parent: CP14FoodMeatBase
+  name: raw flem torso
+  description: seems to be hollow
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: flem_torso
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodMeatFlemTorsoCut
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 24
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatFlemTorsoCooked
+
+- type: entity
+  id: CP14FoodMeatFlemTorsoCooked
+  parent: CP14FoodMeatFlemTorso
+  name: cooked flem torso
+  components:
+  - type: Sprite
+    state: flem_torso_cooked
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodMeatFlemTorsoCookedCut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 24
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatFlemTorsoCut
+  parent: CP14FoodMeatSliceBase
+  name: raw flem ring
+  description: onions not included
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    layers:
+      - state: flem_torso_cut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Fat
+          Quantity: 0.5
+  - type: Tag
+    tags:
+    - CP14RawMeatSlice
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatFlemTorsoCookedCut
+
+- type: entity
+  id: CP14FoodMeatFlemTorsoCookedCut
+  parent: CP14FoodMeatFlemTorsoCut
+  name: fishy rings
+  components:
+  - type: Sprite
+    layers:
+      - state: flem_torso_cut_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Fat
+          Quantity: 0.5
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodMeatFlemLeg
+  parent: CP14FoodMeatBase
+  name: raw flem leg
+  description: probally not the best part to eat. but you never know until you try
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: flem_leg
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 0.2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Fat
+          Quantity: 0.1
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodMeatFlemLegCooked
+
+- type: entity
+  id: CP14FoodMeatFlemLegCooked
+  parent: CP14FoodMeatFlemLeg
+  name: fish sticks
+  description: like freis. but fish!
+  components:
+  - type: Sprite
+    state: flem_leg_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 0.2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Fat
+          Quantity: 0.1
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

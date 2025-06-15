@@ -21,10 +21,10 @@
             CP14Alchemist: [ 2, 2 ]
             CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 2, 3 ]
-            #CP14Merchant: [2, 2]
+            CP14Merchant: [2, 2]
             #Guard
-            CP14Guard: [5, 5]
-            CP14GuardCommander: [1, 1]
+            #CP14Guard: [5, 5]
+            #CP14GuardCommander: [1, 1]
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:

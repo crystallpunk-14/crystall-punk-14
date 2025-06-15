@@ -27,4 +27,7 @@ public enum SpawnPointType
     LateJoin,
     Job,
     Observer,
+    //CP14
+    Always, //Always use only these spawn point, and latejoin, and roundstart
+    //CP14 end
 }

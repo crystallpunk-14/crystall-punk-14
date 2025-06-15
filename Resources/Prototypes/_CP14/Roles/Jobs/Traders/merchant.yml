@@ -12,6 +12,9 @@
       time: 3600 # 1 hours
   special:
     - !type:CP14AddGlobalReputationSpecial
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - TraderWit
 
 - type: startingGear
   id: CP14MerchantGear

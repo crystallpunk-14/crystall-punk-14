@@ -49,12 +49,6 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null);
 
         public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
-
-        public static readonly VerbCategory CP14AdminSkillAdd =
-            new ("cp14-verb-categories-admin-skill-add", null, iconsOnly: true) { Columns = 6 };
-
-        public static readonly VerbCategory CP14AdminSkillRemove =
-            new ("cp14-verb-categories-admin-skill-remove", null, iconsOnly: true) { Columns = 6 };
         //CP14 verbs
 
         public static readonly VerbCategory Admin =

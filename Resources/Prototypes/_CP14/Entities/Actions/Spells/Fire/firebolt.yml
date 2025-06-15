@@ -1,0 +1,98 @@
+- type: entity
+  id: CP14ActionSpellFirebolt
+  name: Firebolt
+  description: A staple of a pyrokinetic's arsenal - a small but potent bolt of fire.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.75
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    magicType: Fire
+    effects:
+    - !type:CP14SpellProjectile
+      prototype: CP14Firebolt
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectFirebolt
+  - type: CP14MagicEffectVerbalAspect
+    endSpeech: "Ignis acus!"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFirebolt
+  - type: CP14MagicEffectPacifiedBlock
+  - type: EntityWorldTargetAction
+    repeat: true
+    checkCanAccess: false
+    raiseOnUser: true
+    range: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: firebolt
+    event: !type:CP14DelayedEntityWorldTargetActionEvent
+      cooldown: 1.0
+      breakOnMove: false
+
+- type: entity
+  id: CP14RuneFirebolt
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#fdda5d"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFirebolt
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14Firebolt
+  parent: BaseBullet
+  name: firebolt
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 1.1
+    energy: 1.0
+  - type: Projectile
+    damage:
+      types:
+        Heat: 10
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_metal1.ogg
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/firebolt.rsi
+    layers:
+    - state: firebolt
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFirebolt
+  name: firebolt spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFirebolt
+
