@@ -4,6 +4,7 @@
   description: "You expand the boundaries of what is possible for the chosen creature, revealing to it the secrets of the universe. The target gains +0.5 memory points, up to a maximum of 6.5"
   components:
   - type: CP14MagicEffectReligionRestricted
+    onlyOnFollowers: true
   - type: CP14MagicEffectManaCost
     manaCost: 300
   - type: CP14MagicEffect
