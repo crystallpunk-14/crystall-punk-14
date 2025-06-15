@@ -136,3 +136,18 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: LumeraT3
+
+- type: cp14Skill
+  id: LumeraMindDegrade
+  skillUiPosition: 14, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: wrath
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMindDegrade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT3

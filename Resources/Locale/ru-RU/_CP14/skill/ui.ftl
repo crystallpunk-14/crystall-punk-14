@@ -17,5 +17,6 @@ cp14-skill-desc-add-mana = Увеличивает объем маны вашег
 cp14-skill-desc-unlock-recipes = Открывает возможность создания:
 
 cp14-skill-popup-added-points = Границы вашего сознания расширяются. Новых очков памяти: {$count}
+cp14-skill-popup-forced-remove-skill = Вы начинаете забывать свое прошлое... Потеряно очков памяти: {$count}
 
 cp14-skill-examine-title = Этот персонаж владеет следующими навыками:
