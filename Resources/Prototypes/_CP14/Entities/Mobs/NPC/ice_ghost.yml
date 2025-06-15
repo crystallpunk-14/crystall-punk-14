@@ -83,7 +83,7 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -2.0
   - type: Action
-    cooldown: 1
+    useDelay: 1
   - type: TargetAction
     checkCanAccess: true
   - type: WorldTargetAction

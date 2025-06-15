@@ -17,7 +17,7 @@
       spawns:
       - CP14ImpactSpiderTrap
   - type: Action
-    cooldown: 20
+    useDelay: 20
     sound: !type:SoundPathSpecifier
       path: /Audio/Animals/snake_hiss.ogg
     icon:
