@@ -42,4 +42,4 @@ cp14-job-name-god-merkas = Merkas
 cp14-job-desc-god-merkas = God of purity and healing. TODO
 
 cp14-job-name-god-lumera = Lumera
-cp14-job-desc-god-lumera = Patroness of the night and the starry sky. TODO
+cp14-job-desc-god-lumera = Patroness of the night sky and knowledge. Expand your influence by helping mortals gain new knowledge.
