@@ -1,6 +1,6 @@
 - type: entity
   id: CP14LumeraSpeakImpact
-  categories: [ ForkFiltered ]
+  categories: [ HideSpawnMenu ]
   parent: CP14BaseMagicImpact
   save: false
   components:

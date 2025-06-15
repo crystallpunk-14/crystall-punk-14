@@ -2,8 +2,10 @@ using System.Linq;
 using System.Text;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared._CP14.Skill.Restrictions;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Skill;
 
@@ -249,6 +251,39 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         return sb.ToString();
     }
+
+    /// <summary>
+    /// Obtaining all skills that are not prerequisites for other skills of this creature
+    /// </summary>
+    public HashSet<ProtoId<CP14SkillPrototype>> GetFrontierSkills(EntityUid target,
+        CP14SkillStorageComponent? component = null)
+    {
+        var skills = new HashSet<ProtoId<CP14SkillPrototype>>();
+        if (!Resolve(target, ref component, false))
+            return skills;
+
+        var frontier = component.LearnedSkills.ToHashSet();
+        foreach (var skill in component.LearnedSkills)
+        {
+            if (!_proto.TryIndex(skill, out var indexedSkill))
+                continue;
+
+            if (HaveFreeSkill(target, skill))
+                continue;
+
+            foreach (var req in indexedSkill.Restrictions)
+            {
+                if (req is NeedPrerequisite prerequisite)
+                {
+                    if (frontier.Contains(prerequisite.Prerequisite))
+                        frontier.Remove(prerequisite.Prerequisite);
+                }
+            }
+        }
+
+        return frontier;
+    }
+
     /// <summary>
     ///  Helper function to reset skills to only learned skills
     /// </summary>
@@ -282,6 +317,31 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         Dirty(target, component);
 
         _popup.PopupEntity(Loc.GetString("cp14-skill-popup-added-points", ("count", points)), target, target);
+    }
+
+    /// <summary>
+    /// Removes memory points. If a character has accumulated skills exceeding the new memory limit, random skills will be removed.
+    /// </summary>
+    public void RemoveMemoryPoints(EntityUid target, FixedPoint2 points, CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component, false))
+            return;
+
+        component.ExperienceMaxCap = FixedPoint2.Max(component.ExperienceMaxCap - points, 0);
+        Dirty(target, component);
+
+        _popup.PopupEntity(Loc.GetString("cp14-skill-popup-removed-points", ("count", points)), target, target);
+
+        while (component.SkillsSumExperience > component.ExperienceMaxCap)
+        {
+            var frontier = GetFrontierSkills(target, component);
+            if (frontier.Count == 0)
+                break;
+
+            //Randomly remove one of the frontier skills
+            var skill = _random.Pick(frontier);
+            TryRemoveSkill(target, skill, component);
+        }
     }
 }
 

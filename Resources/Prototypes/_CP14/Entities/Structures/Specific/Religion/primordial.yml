@@ -5,9 +5,11 @@
   description: "The enchanting statue of Lumera, patroness of the starry sky, night, and mysteries. She does not demand worship—she simply observes. And waits for you to ask."
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    drawdepth: Mobs
+    offset: "0.0,0.8"
+    sprite: _CP14/Structures/Specific/Religion/lumera_statue.rsi
     layers:
-    - state: white
+    - state: statue1
   - type: CP14ReligionAltar
     religion: Lumera
   - type: CP14ReligionObserver
