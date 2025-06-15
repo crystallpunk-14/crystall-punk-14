@@ -95,10 +95,10 @@
 
 - type: entity
   parent: CP14BaseSpellScrollFire
-  id: CP14SpellScrollFirebolt
-  name: firebolt spell scroll
+  id: CP14SpellScrollFirewave
+  name: firewave spell scroll
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellFirebolt
+    - CP14ActionSpellFirewave
 
