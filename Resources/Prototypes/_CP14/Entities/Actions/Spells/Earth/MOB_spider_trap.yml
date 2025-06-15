@@ -17,6 +17,7 @@
       spawns:
       - CP14ImpactSpiderTrap
   - type: Action
+    itemIconStyle: BigAction
     useDelay: 20
     sound: !type:SoundPathSpecifier
       path: /Audio/Animals/snake_hiss.ogg

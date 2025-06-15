@@ -7,6 +7,7 @@
     icon:
       sprite: _CP14/Interface/Alerts/divine_offer.rsi
       state: unoffer
+    itemIconStyle: BigAction
     priority: -8
     checkCanInteract: false
     checkConsciousness: false
@@ -17,6 +18,7 @@
 
 - type: entity
   id: CP14ActionAppealToGod
+  parent: CP14ActionSpellBase
   name: Appeal to god
   description: You call upon your patron! He will hear your call wherever he may be.
   components:
@@ -29,13 +31,12 @@
       amount: 20
       safe: true
     - !type:CP14SpellSendMessageToGod
-  - type: InstantAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/DemigodSpells/generic.rsi
       state: appeal
     priority: -8
+  - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 15
       castDelay: 1.5

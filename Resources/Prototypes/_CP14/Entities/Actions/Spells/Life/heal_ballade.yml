@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellHealBallade
+  parent: CP14ActionSpellBase
   name: Healing ballade
   description: Your music is filled with healing magic, slowly healing all the creatures around you.
   components:
@@ -41,9 +42,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHealBallade
   - type: Action
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: heal_music

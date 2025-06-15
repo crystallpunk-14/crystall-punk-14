@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellTieflingInnerFire
+  parent: CP14ActionSpellBase
   name: Inner fire
   description: You unleash your inner fire, setting yourself on fire and temporarily speeding up your movement.
   components:
@@ -29,8 +30,6 @@
         sprintSpeedModifier: 1.2
         statusLifetime: 5
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: tiefling_revenge

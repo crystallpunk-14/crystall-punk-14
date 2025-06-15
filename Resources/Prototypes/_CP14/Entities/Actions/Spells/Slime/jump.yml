@@ -13,6 +13,7 @@
     - !type:CP14SpellThrowUserTo
       throwPower: 8
   - type: Action
+    itemIconStyle: BigAction
     useDelay: 8
     icon:
       sprite: _CP14/Actions/Spells/slime.rsi
@@ -26,4 +27,3 @@
       breakOnMove: false
       breakOnDamage: false
       castDelay: 1
-    raiseOnUser: true

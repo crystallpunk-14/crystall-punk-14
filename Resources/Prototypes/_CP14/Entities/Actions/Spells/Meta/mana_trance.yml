@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellManaTrance
+  parent: CP14ActionSpellBase
   name: Mana trance
   description: You go into a trance for a while, restoring mana.
   components:

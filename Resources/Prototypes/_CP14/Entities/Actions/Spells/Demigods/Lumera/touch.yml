@@ -16,12 +16,9 @@
       effects:
       - !type:Jitter
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: touch
-    itemIconStyle: BigAction
   - type: TargetAction
     repeat: true
     checkCanAccess: false

@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellLurkerFear
+  parent: CP14ActionSpellBase
   name: Primal terror
   description: You plunge the target into primal terror, robbing them of the ability to fight and speak.
   components:
@@ -32,16 +33,14 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneLurkerFear
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: fear
   - type: TargetAction
     range: 15
-    canTargetSelf: false
     interactOnMiss: false
   - type: EntityTargetAction
+    canTargetSelf: false
     whitelist:
       components:
       - MobState

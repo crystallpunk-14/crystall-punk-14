@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellShadowSwap
+  parent: CP14ActionSpellBase
   name: Shadow swap
   description: A warp of space between two living beings
   components:
@@ -25,19 +26,16 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectAliveTargetRequired
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: shadow_swap
-    itemIconStyle: BigAction
   - type: TargetAction
-    whitelist:
-      components:
-      - MobState
     range: 5
     interactOnMiss: false
   - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 30
       hidden: true

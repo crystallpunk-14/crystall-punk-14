@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellMagicSplitting
+  parent: CP14ActionSpellBase
   name: Magic splitting
   description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
@@ -28,8 +29,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell

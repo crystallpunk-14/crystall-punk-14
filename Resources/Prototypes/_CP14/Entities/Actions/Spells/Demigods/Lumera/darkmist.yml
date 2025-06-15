@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellGodLumeraDarkmist
+  parent: CP14ActionSpellBase
   name: Impenetrable darkness
   description: You summon a thick fog that obscures vision and disorients mortals.
   components:
@@ -16,9 +17,6 @@
       spawns:
       - CP14LumeraDarkMist
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/Eldritch/voidblink.ogg
-    itemIconStyle: BigAction
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: mist

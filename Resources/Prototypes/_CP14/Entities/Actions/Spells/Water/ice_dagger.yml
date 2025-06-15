@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellIceDagger
+  parent: CP14ActionSpellBase
   name: Ice dagger
   description: You form an icy sharp dagger that will do for temporary use.
   components:
@@ -24,8 +25,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_dagger

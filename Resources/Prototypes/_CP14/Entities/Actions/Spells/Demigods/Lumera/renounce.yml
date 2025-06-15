@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellGodLumeraRenounce
+  parent: CP14ActionSpellBase
   name: Renunciation of a follower
   description: You are rejecting the chosen follower. They lose the opportunity to become your follower at any time.
   components:
@@ -12,12 +13,9 @@
   - type: ConfirmableAction
     popup: cp-renounce-action-god-popup
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: renounce
-    itemIconStyle: BigAction
   - type: TargetAction
     repeat: true
     checkCanAccess: false

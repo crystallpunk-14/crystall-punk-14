@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellGodLumeraMindDegrade
+  parent: CP14ActionSpellBase
   name: The Wrath of Lumera
   description: "You unleash your anger on the creature, stunning it, inflicting damage, and burning its mind, removing 0.5 memory points."
   components:
@@ -50,22 +51,19 @@
         sprintSpeedModifier: 0.5
         statusLifetime: 30
   - type: Action
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: wrath
   - type: TargetAction
     checkCanAccess: false
+    range: 100
+  - type: EntityTargetAction
     blacklist:
       components:
       - CP14ReligionEntity
     whitelist:
       components:
       - CP14SkillStorage
-    range: 100
-  - type: EntityTargetAction
     canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 300

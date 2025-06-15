@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellLurkerKick
+  parent: CP14ActionSpellBase
   name: Crushing attack
   description: You prepare a powerful melee strike that will knock your target back with force and stun them for a long time.
   components:
@@ -40,9 +41,9 @@
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: kick
   - type: TargetAction
-    canTargetSelf: false
     range: 2
   - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 20
       castDelay: 2.5

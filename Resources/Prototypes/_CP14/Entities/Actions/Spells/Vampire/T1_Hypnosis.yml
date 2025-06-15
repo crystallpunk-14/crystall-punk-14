@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellVampireHypnosis
+  parent: CP14ActionSpellBase
   name: Hypnosis
   description: You look at the victim with your OWN gaze, shutting down their consciousness and putting them to sleep.
   components:
@@ -28,8 +29,6 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneVampireHypnosis
   - type: Action
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: blood_moon
