@@ -24,6 +24,7 @@ cp14-modifier-air-lily = air lilies
 cp14-modifier-shadow-kudzu = spreading astral haze
 cp14-modifier-night = darkness
 cp14-modifier-spiders = spider's web
+cp14-modifier-flem = flemings
 
 cp14-modifier-storm = storm
 cp14-modifier-fire-storm = fire storm

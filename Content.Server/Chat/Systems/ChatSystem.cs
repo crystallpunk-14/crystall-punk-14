@@ -1,11 +1,11 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Server._CP14.Religion;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
 using Content.Server.Speech.Prototypes;
 using Content.Server.Speech.EntitySystems;
 using Content.Server.Station.Components;
@@ -192,6 +192,13 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (!CanSendInGame(message, shell, player))
             return;
+
+        //CP14 Prevent god from default speaking. In waiting of chatcode refactor
+        var ev = new CP14SpokeAttemptEvent(message, desiredType, player);
+        RaiseLocalEvent(source, ev);
+        if (ev.Cancelled)
+            return;
+        //CP14 end
 
         ignoreActionBlocker = CheckIgnoreSpeechBlocker(source, ignoreActionBlocker);
 

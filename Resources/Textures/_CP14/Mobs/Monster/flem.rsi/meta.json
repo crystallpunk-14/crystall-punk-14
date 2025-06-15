@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "All right reserved",
+  "copyright": "Created by Frogoo (discord)",
+  "states": [
+    {
+      "name": "flem_live",
+      "directions": 4
+    },
+    {
+      "name": "flem_dead"
+    }
+  ]
+}

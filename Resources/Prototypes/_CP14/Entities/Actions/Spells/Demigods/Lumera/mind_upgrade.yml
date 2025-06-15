@@ -1,0 +1,123 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraMindUpgrade
+  name: Expansion of consciousness
+  description: "You expand the boundaries of what is possible for the chosen creature, revealing to it the secrets of the universe. The target gains +0.5 memory points, up to a maximum of 6.5"
+  components:
+  - type: CP14MagicEffectReligionRestricted
+    onlyOnFollowers: true
+  - type: CP14MagicEffectManaCost
+    manaCost: 300
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14RuneMindImprove
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:ChemVomit
+      - !type:Jitter
+        time: 16
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: 10
+            Blunt: 10
+            Piercing: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.02
+        sprintSpeedModifier: 0.02
+        statusLifetime: 19
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14LumeraMindImproveImpact
+    - !type:CP14SpellAddMemoryPoint
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+        time: 16
+      - !type:Paralyze
+        paralyzeTime: 16
+      - !type:Drunk
+        boozePower: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: 10
+            Blunt: 10
+            Piercing: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+        statusLifetime: 30
+  - type: EntityTargetAction
+    canTargetSelf: false
+    blacklist:
+      components:
+      - CP14ReligionEntity
+    whitelist:
+      components:
+      - CP14SkillStorage
+    range: 100
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: mind_upgrade
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 300
+      castDelay: 16
+      breakOnMove: false
+      breakOnDamage: false
+
+- type: entity
+  id: CP14RuneMindImprove
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 16
+  - type: PointLight
+    color: "#586dcc"
+    radius: 5
+    energy: 8
+  - type: LightFade
+    duration: 10
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      scale: 1.5, 1.5
+      color: "#586dcc"
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Effects/ritual_begin.ogg
+
+- type: entity
+  id: CP14LumeraMindImproveImpact
+  categories: [ HideSpawnMenu ]
+  parent: CP14BaseMagicImpact
+  save: false
+  components:
+  - type: PointLight
+    color: "#3843a8"
+    enabled: true
+    radius: 15
+    energy: 8
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: stars
+      scale: 2, 2
+      color: "#9fb0fc"
+      shader: unshaded
+  - type: LightFade
+    duration: 1
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:  
+      path: /Audio/_CP14/Effects/ritual_end.ogg

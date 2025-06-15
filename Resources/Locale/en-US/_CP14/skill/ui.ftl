@@ -15,3 +15,8 @@ cp14-research-craft = Research
 
 cp14-skill-desc-add-mana = Increases your character's mana amount by {$mana}.
 cp14-skill-desc-unlock-recipes = Opens up the possibility of crafting:
+
+cp14-skill-popup-added-points = The boundaries of your consciousness are expanding. New memory points: {$count}
+
+cp14-skill-examine-title = This character has the following skills:
+cp14-skill-popup-forced-remove-skill = You are beginning to forget your past... Memory points lost: {$count}

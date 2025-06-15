@@ -320,3 +320,93 @@
   id: 8084
   time: '2025-06-10T08:07:13.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1412
+- author: gogenych
+  changes:
+  - message: Copper tools and weapons are now displayed correctly in loadout
+    type: Fix
+  id: 8085
+  time: '2025-06-10T10:40:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1414
+- author: firebat4321
+  changes:
+  - message: Added new combat-focused T2 Pryokinetic spell, Firebolt!
+    type: Add
+  id: 8086
+  time: '2025-06-10T11:14:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1354
+- author: Sefaia
+  changes:
+  - message: Added Quiver filled with Big Iron Crossbow Bolts to Entity Spawn Menu
+      for Admins/Testers
+    type: Add
+  - message: Fixed Quiver to hold Big Crossbow Bolts.
+    type: Fix
+  id: 8087
+  time: '2025-06-13T07:34:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1418
+- author: SenorJaba
+  changes:
+  - message: Merchant's monocle has been added to replace appraisal tool.
+    type: Add
+  - message: Added a new trader's wit skill which works similarly to merchant's monocle.
+    type: Add
+  - message: Alchemist's glasses and monocle, and merchant's monocle were added into
+      the buying platform.
+    type: Add
+  - message: Appraisal tool has been removed from the merchant's closet.
+    type: Remove
+  - message: Alchemist's glasses and monocle were removed from the alchemist's loadout.
+    type: Remove
+  id: 8088
+  time: '2025-06-13T09:24:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1413
+- author: Fr0goo
+  changes:
+  - message: Added new creature named Flem! You can find them in demiplanes.
+    type: Add
+  - message: Added fish suit and mask!
+    type: Add
+  - message: Added a probaly temporary way to make fish pie!
+    type: Add
+  id: 8089
+  time: '2025-06-13T10:25:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1402
+- author: TheShuEd
+  changes:
+  - message: A patron system has been added. By interacting with the primordial statues,
+      you can become a follower of a patron. For more details, please refer to the
+      in-game guidebooks.
+    type: Add
+  - message: "The divine patron of the night sky and knowledge, \u201CLumera,\u201D\
+      \ has been added. This is a game role that gains new abilities based on the\
+      \ number of followers and is capable of interacting with areas of visibility\
+      \ and granting (or taking away) memory points from other players."
+    type: Add
+  id: 8090
+  time: '2025-06-15T15:00:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1427
+- author: TheShuEd
+  changes:
+  - message: Added firewave spell. Now it looks like a shotgun, only made of fire.
+    type: Add
+  - message: Removed firebolt spell.
+    type: Remove
+  - message: Spiders' health reduced by half
+    type: Tweak
+  id: 8091
+  time: '2025-06-15T15:03:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1430
+- author: TheShuEd
+  changes:
+  - message: you can buy wheat and cotton into victorian gardens trade faction
+    type: Add
+  - message: Demiplanes can no longer devour patrons if they close while the patron
+      is inside the demoplan.
+    type: Fix
+  - message: Patron saints can no longer occupy entry slots into the demiplane.
+    type: Fix
+  - message: Passports removed from the gods-patrons
+    type: Fix
+  id: 8092
+  time: '2025-06-15T18:25:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1432

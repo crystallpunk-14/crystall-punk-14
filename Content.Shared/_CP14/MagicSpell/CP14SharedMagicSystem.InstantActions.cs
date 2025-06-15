@@ -10,6 +10,7 @@ public abstract partial class CP14SharedMagicSystem
     {
        SubscribeLocalEvent<CP14InstantActionEvent>(OnMagicInstantAction);
        SubscribeLocalEvent<CP14EntityWorldTargetActionEvent>(OnMagicEntityWorldTargetAction);
+       SubscribeLocalEvent<CP14WorldTargetActionEvent>(OnMagicWorldTargetAction);
        SubscribeLocalEvent<CP14EntityTargetActionEvent>(OnMagicEntityTargetAction);
     }
 
@@ -45,6 +46,23 @@ public abstract partial class CP14SharedMagicSystem
 
         CastSpell((args.Action, magicEffect), spellArgs);
         _action.SetCooldown(args.Action.Owner, args.Cooldown);
+    }
+
+    private void OnMagicWorldTargetAction(CP14WorldTargetActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<CP14MagicEffectComponent>(args.Action, out var magicEffect))
+            return;
+
+        var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, null, args.Target);
+
+        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
+            return;
+
+        CastSpell((args.Action, magicEffect), spellArgs);
+        _action.CP14StartCustomDelay(args.Action, args.Cooldown);
     }
 
     private void OnMagicEntityTargetAction(CP14EntityTargetActionEvent args)

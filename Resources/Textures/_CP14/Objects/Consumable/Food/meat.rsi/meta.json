@@ -147,6 +147,30 @@
         },
         {
             "name": "different_meat_slice"
+        },
+        {
+            "name": "flem_head"
+        },
+        {
+            "name": "flem_head_cooked"
+        },
+        {
+            "name": "flem_torso"
+        },
+        {
+            "name": "flem_torso_cut"
+        },
+        {
+            "name": "flem_torso_cut_cooked"
+        },
+        {
+            "name": "flem_torso_cooked"
+        },
+        {
+            "name": "flem_leg"
+        },
+        {
+            "name": "flem_leg_cooked"
         }
     ]
 }

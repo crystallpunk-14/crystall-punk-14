@@ -251,6 +251,34 @@
     count: 2
   result: CP14ClothingPantsMercenaryTrousers
 
+- type: CP14Recipe
+  id: CP14ClothingOuterClothingFish
+  tag: CP14RecipeSewing
+  craftTime: 4
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatFlemTorso
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingOuterClothingFish
+
+- type: CP14Recipe
+  id: CP14ClothingHeadFishMask
+  tag: CP14RecipeSewing
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatFlemHead
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14ClothingHeadFishMask
+
 # Misc
 
 - type: CP14Recipe
