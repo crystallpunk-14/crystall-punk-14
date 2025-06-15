@@ -18,7 +18,7 @@ public abstract partial class CP14SharedReligionGodSystem
     [Dependency] protected readonly SharedMindSystem Mind = default!;
     [Dependency] private readonly FollowerSystem _follower = default!;
 
-    [ValidatePrototypeId<EntityPrototype>]
+    [ValidatePrototypeId<AlertPrototype>]
     public const string AlertProto = "CP14DivineOffer";
 
     private void InitializeFollowers()
