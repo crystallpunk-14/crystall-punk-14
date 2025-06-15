@@ -747,12 +747,12 @@
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
-# Mole Meat
+# Monster Meat
 
 - type: entity
   id: CP14FoodMeatMole
   parent: CP14FoodMeatBase
-  name: raw mole meat
+  name: raw monster meat
   description: The colour is quite suspicious, not everyone would dare to try it out, perhaps give it to a goblin?
   components:
   - type: Sprite
@@ -791,7 +791,7 @@
 - type: entity
   id: CP14FoodMeatMoleCooked
   parent: CP14FoodMeatMole
-  name: cooked mole meat
+  name: cooked monster meat
   components:
   - type: Sprite
     layers:
@@ -827,7 +827,7 @@
 - type: entity
   id: CP14FoodMeatMoleLeg
   parent: CP14FoodMeatBase
-  name: raw mole leg meat
+  name: raw monster leg meat
   description: The suspicious colour of the meat makes you question its edibility, but if you're really hungry...
   components:
   - type: Sprite
@@ -854,7 +854,7 @@
 - type: entity
   id: CP14FoodMeatMoleLegCooked
   parent: CP14FoodMeatMoleLeg
-  name: cooked mole leg meat # Jamon? - Хамон?
+  name: cooked monster leg meat # Jamon? - Хамон?
   components:
   - type: Sprite
     state: mole_meat5 # We need fried sprites

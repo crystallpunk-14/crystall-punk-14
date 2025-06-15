@@ -1872,16 +1872,16 @@ ent-CP14FoodMeatPigSlice = кусочки мяса
 ent-CP14FoodMeatPigCookedSlice = кусочки приготовленного мяса
     .desc = { ent-CP14FoodMeatPigSlice.desc }
 
-ent-CP14FoodMeatMole = сырое мясо крота
+ent-CP14FoodMeatMole = сырое мясо монстра
     .desc = Цвет довольно подозрительный, не каждый решится его опробовать, может, отдать гоблину?
 
-ent-CP14FoodMeatMoleCooked = приготовленное мясо крота
+ent-CP14FoodMeatMoleCooked = приготовленное мясо монстра
     .desc = { ent-CP14FoodMeatMole.desc }
 
-ent-CP14FoodMeatMoleLeg = сырое мясо ноги крота
+ent-CP14FoodMeatMoleLeg = сырое мясо ноги монстра
     .desc = Подозрительный цвет мяса заставляет усомниться в его съедобности, но если вы действительно голодны...
 
-ent-CP14FoodMeatMoleLegCooked = приготовленное мясо ноги крота
+ent-CP14FoodMeatMoleLegCooked = приготовленное мясо ноги монстра
     .desc = { ent-CP14FoodMeatMoleLeg.desc }
 
 ent-CP14FoodMeatMoleSlice = кусочек мяса монстра
