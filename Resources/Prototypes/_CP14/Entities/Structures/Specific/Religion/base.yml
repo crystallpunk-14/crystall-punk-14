@@ -27,6 +27,10 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Rock
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Patrons
+    - CP14_EN_Patrons
 
 - type: entity
   parent: CP14BaseAltar
