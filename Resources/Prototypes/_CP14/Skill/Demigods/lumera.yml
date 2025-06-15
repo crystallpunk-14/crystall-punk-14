@@ -5,7 +5,7 @@
   skillUiPosition: 1, 0
   tree: GodLumera
   name: cp14-skill-lumera-t1-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Actions/DemigodSpells/lumera.rsi
     state: t1
@@ -65,7 +65,7 @@
   skillUiPosition: 7, 0
   tree: GodLumera
   name: cp14-skill-lumera-t2-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Actions/DemigodSpells/lumera.rsi
     state: t2
@@ -112,7 +112,7 @@
   skillUiPosition: 13, 0
   tree: GodLumera
   name: cp14-skill-lumera-t3-name
-  learnCost: 0.5
+  learnCost: 0
   icon:
     sprite: _CP14/Actions/DemigodSpells/lumera.rsi
     state: t3

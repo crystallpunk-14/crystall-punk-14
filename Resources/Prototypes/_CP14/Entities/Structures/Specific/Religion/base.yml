@@ -24,6 +24,9 @@
   - type: ActiveListener
     range: 1
   - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
 
 - type: entity
   parent: CP14BaseAltar
