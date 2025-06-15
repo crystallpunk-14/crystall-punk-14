@@ -21,7 +21,7 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectDigging
   - type: Action
-    cooldown: 8
+    useDelay: 8
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/gib3.ogg
@@ -32,7 +32,7 @@
     checkCanAccess: false
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+    event: !type:CP14DelayedWorldTargetActionEvent
       hidden: true
       breakOnMove: false
 
