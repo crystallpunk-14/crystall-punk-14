@@ -108,4 +108,3 @@
       effects:
       - !type:Electrocute
         electrocuteTime: 3
-        volume: -5
