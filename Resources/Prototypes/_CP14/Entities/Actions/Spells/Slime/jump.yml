@@ -21,7 +21,7 @@
     checkCanAccess: false
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+    event: !type:CP14DelayedWorldTargetActionEvent
       hidden: true
       breakOnMove: false
       breakOnDamage: false
