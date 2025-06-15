@@ -16,23 +16,24 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactSpiderTrap
-  - type: EntityWorldTargetAction
-    useDelay: 20
-    range: 10
-    checkCanAccess: false
+  - type: Action
     itemIconStyle: BigAction
+    useDelay: 20
     sound: !type:SoundPathSpecifier
       path: /Audio/Animals/snake_hiss.ogg
     icon:
       sprite: _CP14/Structures/Dungeon/floor_web.rsi
       state: full
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    range: 10
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       hidden: true
       breakOnMove: false
       breakOnDamage: false
       cooldown: 20
       castDelay: 0.5
-    raiseOnUser: true
 
 - type: entity
   id: CP14ImpactSpiderTrap

@@ -11,7 +11,7 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeToggleableActions()
     {
         SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnToggleableInstantAction);
-        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14ToggleableWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
         SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnToggleableEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
@@ -107,7 +107,7 @@ public abstract partial class CP14SharedMagicSystem
     private void EndToggleableAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
     {
         if (cooldown is not null)
-            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
+            _action.SetCooldown(action.Owner, TimeSpan.FromSeconds(cooldown.Value));
         RemCompDeferred<CP14MagicEffectToggledComponent>(action);
 
         var endEv = new CP14EndCastMagicEffectEvent(performer);
@@ -149,7 +149,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnToggleableEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    private void OnToggleableEntityWorldTargetAction(CP14ToggleableWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -161,10 +161,10 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14ToggleableEntityWorldTargetActionDoAfterEvent(
-            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetCoordinates(args.Target),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
-        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Coords);
+        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Target);
 
         args.Handled = true;
     }
