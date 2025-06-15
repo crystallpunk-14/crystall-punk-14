@@ -14,8 +14,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10
-  - type: StaticPrice
-    price: 15
 
 - type: entity
   parent: CP14ModularGreaveBase
@@ -34,8 +32,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 10
-  - type: StaticPrice
-    price: 15
 
 - type: entity
   parent: CP14ModularGreaveBase
@@ -54,8 +50,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Copper: 10
-  - type: StaticPrice
-    price: 15
 
 - type: entity
   parent: CP14ModularGreaveBase
@@ -74,5 +68,3 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
-  - type: StaticPrice
-    price: 15

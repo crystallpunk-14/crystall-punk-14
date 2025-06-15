@@ -10,7 +10,7 @@
     shape:
     - 0,0,0,0
   - type: StaticPrice
-    price: 15
+    price: 10
 
 - type: entity
   parent: CP14ModularGreaveBase
