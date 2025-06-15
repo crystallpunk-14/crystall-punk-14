@@ -76,7 +76,7 @@
   - type: Climbing
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatDino
+    - id: CP14FoodMeatMonster
       amount: 4
     - id: CP14ClothingMaskBoneHornedMask
       amount: 1

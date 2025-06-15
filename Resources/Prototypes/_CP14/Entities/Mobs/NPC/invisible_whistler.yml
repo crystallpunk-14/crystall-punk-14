@@ -68,7 +68,7 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole
+    - id: CP14FoodMeatMonster
       amount: 3
     - id: CP14PartsMonsterGlands
       amount: 1
