@@ -17,7 +17,6 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
     public override void Initialize()
     {
         base.Initialize();
-        InitPriceEvents();
 
         SubscribeLocalEvent<CP14StationEconomyComponent, StationPostInitEvent>(OnStationPostInit);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
