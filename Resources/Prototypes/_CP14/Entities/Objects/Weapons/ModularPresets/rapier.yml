@@ -14,6 +14,22 @@
     - BladeIronRapier
 
 - type: entity
+  id: CP14ModularCopperRapier
+  parent: CP14ModularGripWooden
+  name: copper rapier
+  description: You'll be lucky if it even pierces the paper.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+      state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeCopperRapier
+
+- type: entity
   id: CP14ModularGuildmasterRapier
   parent: CP14ModularGripGuildmaster
   name: guildmaster's personal rapier

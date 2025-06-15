@@ -177,3 +177,236 @@
   id: 8069
   time: '2025-06-04T11:34:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1382
+- author: TheShuEd
+  changes:
+  - message: "Beer spell now creates a special \u201Cmagical beer\u201D that costs\
+      \ nothing - infinite money exploit fixed"
+    type: Fix
+  - message: Alcohol prices have plummeted, so barrels of beer from the tavern can
+      no longer be sold for platinum coins
+    type: Fix
+  - message: Removed personal earning 5 gp objectives
+    type: Remove
+  id: 8070
+  time: '2025-06-04T15:40:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1384
+- author: TheShuEd
+  changes:
+  - message: The Guardian Department (Guard and Guard Commander) have been removed
+      from the game for rework.
+    type: Remove
+  - message: You can't buy mithril anymore
+    type: Remove
+  - message: 'Experimental change: public selling platforms have been removed. Buying
+      platforms are now located in the merchant''s lobby, in the public area. Selling
+      platforms exist only in the merchant''s private chambers.'
+    type: Tweak
+  - message: Sharpening stones can no longer be found in demiplanes and crates in
+      town. The Dwarf Steel faction now sells sharpening stones, including the large
+      station one.
+    type: Tweak
+  - message: The stationary sharpening stone can now be unscrewed and screwed on with
+      a wrench
+    type: Fix
+  id: 8071
+  time: '2025-06-04T21:58:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1386
+- author: Katzenminer
+  changes:
+  - message: Removed the scream action from the hotbar. Yelling can still be done
+      through the emotion wheel and chat.
+    type: Remove
+  id: 8072
+  time: '2025-06-05T08:46:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1348
+- author: TheShuEd
+  changes:
+  - message: Removed both ring slots from inventory
+    type: Remove
+  - message: Fireball ring artifact replaced with fire magic staff
+    type: Tweak
+  id: 8073
+  time: '2025-06-05T09:46:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1389
+- author: gogenych
+  changes:
+  - message: Now artifacts have a fair price!
+    type: Add
+  - message: Selling bones from the graveyard no longer yields platinum at the start
+      of the game!
+    type: Fix
+  id: 8074
+  time: '2025-06-06T15:06:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1392
+- author: TheShuEd
+  changes:
+  - message: Added new map "Venicialis fort"!
+    type: Add
+  id: 8075
+  time: '2025-06-07T11:04:41.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1397
+- author: Viator-MV
+  changes:
+  - message: Raider's skeleton fireball replaced by flame creation!
+    type: Tweak
+  - message: Fixed dodger's skeleton loadout, now it have skimitars instead daggers!
+    type: Fix
+  id: 8076
+  time: '2025-06-08T07:52:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1394
+- author: Nimfar11
+  changes:
+  - message: Adds a chance to drop a mushroom hat from agaric myconids.
+    type: Add
+  - message: Myconids can now be consumed in food.
+    type: Tweak
+  id: 8077
+  time: '2025-06-08T07:53:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1398
+- author: gogenych
+  changes:
+  - message: Iron weapons and pickaxe in loadouts are now copper.
+    type: Tweak
+  - message: Iron pickaxes in boxes around the map now spawn much less often, but
+      copper ones have appeared.
+    type: Tweak
+  id: 8078
+  time: '2025-06-08T16:16:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1403
+- author: Katzenminer
+  changes:
+  - message: Demiplanes Now Also End if players are SSD
+    type: Tweak
+  id: 8079
+  time: '2025-06-09T05:56:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1408
+- author: Sefaia
+  changes:
+  - message: Iron, Gold and Mithril Aventails recipes to be at their respected metal
+      category
+    type: Fix
+  - message: Iron and Gold Greaves recipes to be at their respected metal category
+    type: Fix
+  id: 8080
+  time: '2025-06-09T10:25:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1409
+- author: jimmy12or
+  changes:
+  - message: Wooden fences and gates are now buildable!
+    type: Tweak
+  id: 8081
+  time: '2025-06-09T11:34:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1370
+- author: Viator-MV
+  changes:
+  - message: Added cool magic druid staff to adventurer loadout
+    type: Add
+  id: 8082
+  time: '2025-06-09T11:35:56.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1396
+- author: Nimfar11
+  changes:
+  - message: Adds a two-handed crossbow.
+    type: Add
+  - message: Changes the size of the bow.
+    type: Tweak
+  id: 8083
+  time: '2025-06-10T08:08:07.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1315
+- author: Nimfar11
+  changes:
+  - message: Adds new big rocks with moss.
+    type: Add
+  id: 8084
+  time: '2025-06-10T08:07:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1412
+- author: gogenych
+  changes:
+  - message: Copper tools and weapons are now displayed correctly in loadout
+    type: Fix
+  id: 8085
+  time: '2025-06-10T10:40:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1414
+- author: firebat4321
+  changes:
+  - message: Added new combat-focused T2 Pryokinetic spell, Firebolt!
+    type: Add
+  id: 8086
+  time: '2025-06-10T11:14:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1354
+- author: Sefaia
+  changes:
+  - message: Added Quiver filled with Big Iron Crossbow Bolts to Entity Spawn Menu
+      for Admins/Testers
+    type: Add
+  - message: Fixed Quiver to hold Big Crossbow Bolts.
+    type: Fix
+  id: 8087
+  time: '2025-06-13T07:34:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1418
+- author: SenorJaba
+  changes:
+  - message: Merchant's monocle has been added to replace appraisal tool.
+    type: Add
+  - message: Added a new trader's wit skill which works similarly to merchant's monocle.
+    type: Add
+  - message: Alchemist's glasses and monocle, and merchant's monocle were added into
+      the buying platform.
+    type: Add
+  - message: Appraisal tool has been removed from the merchant's closet.
+    type: Remove
+  - message: Alchemist's glasses and monocle were removed from the alchemist's loadout.
+    type: Remove
+  id: 8088
+  time: '2025-06-13T09:24:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1413
+- author: Fr0goo
+  changes:
+  - message: Added new creature named Flem! You can find them in demiplanes.
+    type: Add
+  - message: Added fish suit and mask!
+    type: Add
+  - message: Added a probaly temporary way to make fish pie!
+    type: Add
+  id: 8089
+  time: '2025-06-13T10:25:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1402
+- author: TheShuEd
+  changes:
+  - message: A patron system has been added. By interacting with the primordial statues,
+      you can become a follower of a patron. For more details, please refer to the
+      in-game guidebooks.
+    type: Add
+  - message: "The divine patron of the night sky and knowledge, \u201CLumera,\u201D\
+      \ has been added. This is a game role that gains new abilities based on the\
+      \ number of followers and is capable of interacting with areas of visibility\
+      \ and granting (or taking away) memory points from other players."
+    type: Add
+  id: 8090
+  time: '2025-06-15T15:00:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1427
+- author: TheShuEd
+  changes:
+  - message: Added firewave spell. Now it looks like a shotgun, only made of fire.
+    type: Add
+  - message: Removed firebolt spell.
+    type: Remove
+  - message: Spiders' health reduced by half
+    type: Tweak
+  id: 8091
+  time: '2025-06-15T15:03:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1430
+- author: TheShuEd
+  changes:
+  - message: you can buy wheat and cotton into victorian gardens trade faction
+    type: Add
+  - message: Demiplanes can no longer devour patrons if they close while the patron
+      is inside the demoplan.
+    type: Fix
+  - message: Patron saints can no longer occupy entry slots into the demiplane.
+    type: Fix
+  - message: Passports removed from the gods-patrons
+    type: Fix
+  id: 8092
+  time: '2025-06-15T18:25:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1432

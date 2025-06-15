@@ -57,6 +57,16 @@
     delay: 3 # 5m to full restore
   - type: CP14MagicUnsafeDamage
   - type: CP14MagicUnsafeSleep
+  - type: CP14SkillStorage
+    availableSkillTrees:
+    - Pyrokinetic
+    - Hydrosophistry
+    - Illusion
+    - Metamagic
+    - Healing
+    - Atlethic
+    - MartialArts
+    - Craftsmanship
 
 
 - type: entity

@@ -47,7 +47,6 @@
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14ManaOperationGlove
-      - id: AppraisalTool
       - id: CP14PaperFolderRed
         amount: 2
       - id: CP14PaperFolderBlue

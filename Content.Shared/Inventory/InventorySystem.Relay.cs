@@ -1,5 +1,6 @@
 using Content.Shared._CP14.MagicEssence;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.Skill;
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -37,6 +38,7 @@ public partial class InventorySystem
         //CP14 Relayed events
         SubscribeLocalEvent<InventoryComponent, CP14MagicEssenceScanEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, CP14CalculateManacostEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, CP14SkillScanEvent>(RelayInventoryEvent);
         //CP14 End
 
         SubscribeLocalEvent<InventoryComponent, DamageModifyEvent>(RelayInventoryEvent);

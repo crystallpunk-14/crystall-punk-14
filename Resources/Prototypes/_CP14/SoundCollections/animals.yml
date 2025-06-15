@@ -11,3 +11,11 @@
   - /Audio/_CP14/Animals/frog1.ogg
   - /Audio/_CP14/Animals/frog2.ogg
   - /Audio/_CP14/Animals/frog3.ogg
+
+- type: soundCollection
+  id: CP14Flem
+  files:
+  - /Audio/_CP14/Animals/flem1.ogg
+  - /Audio/_CP14/Animals/flem2.ogg
+  - /Audio/_CP14/Animals/flem3.ogg
+  - /Audio/_CP14/Effects/bubbles.ogg

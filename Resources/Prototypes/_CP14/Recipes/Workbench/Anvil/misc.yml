@@ -163,6 +163,66 @@
   resultCount: 3
 
 - type: CP14Recipe
+  id: CP14BigCrossboltCopper
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14BigCrossboltCopper
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14BigCrossboltIron
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14BigCrossboltIron
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14BigCrossboltGold
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14BigCrossboltGold
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14BigCrossboltMithril
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - MithrilMelting
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  result: CP14BigCrossboltMithril
+  resultCount: 2
+
+- type: CP14Recipe
   id: CP14BaseLockpick
   tag: CP14RecipeAnvil
   category: Tools
@@ -210,6 +270,23 @@
     protoId: CP14String
     count: 1
   result: CP14BaseLightCrossbow
+
+- type: CP14Recipe
+  id: CP14BaseCrossbow
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 4
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 5
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2
+  result: CP14BaseCrossbow
 
 - type: CP14Recipe
   id: CP14ClothingMaskSteelMask

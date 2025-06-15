@@ -25,6 +25,9 @@ public sealed partial class CP14PassportSystem : EntitySystem
 
     private void OnPlayerSpawning(PlayerSpawnCompleteEvent ev)
     {
+        if (!TryComp<InventoryComponent>(ev.Mob, out var inventory))
+            return;
+
         var passport = Spawn(PassportProto, Transform(ev.Mob).Coordinates);
 
         if (!TryComp<PaperComponent>(passport, out var paper))
@@ -39,7 +42,7 @@ public sealed partial class CP14PassportSystem : EntitySystem
                 StampedName = Loc.GetString("cp14-passport-stamp")
             },
             "");
-        _inventory.TryEquip(ev.Mob, passport, "pocket1");
+        _inventory.TryEquip(ev.Mob, passport, "pocket1", inventory: inventory);
     }
 
     private string GeneratePassportText(PlayerSpawnCompleteEvent ev)

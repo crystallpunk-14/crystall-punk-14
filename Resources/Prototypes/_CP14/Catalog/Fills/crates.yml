@@ -55,8 +55,12 @@
       - id: CP14KeyFile
       - id: CP14BaseMop
       - id: CP14LockCopper
-      - id: CP14ModularIronPickaxe
+      - id: CP14ModularCopperPickaxe
       - id: CP14ModularIronSickle
+      - id: CP14ModularIronPickaxe
+        weight: 0.3
+
+
       - !type:GroupSelector
         children:
         - id: CP14FluteInstrument
@@ -86,7 +90,6 @@
       - id: CP14d6Dice
       - id: CP14CopperCoin5
         weight: 0.5
-      - id: CP14BaseSharpeningStone
       - !type:NestedSelector
         tableId: CP14RandomVials
 

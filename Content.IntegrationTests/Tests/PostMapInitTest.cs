@@ -70,6 +70,7 @@ namespace Content.IntegrationTests.Tests
             "Dev",
             "MeteorArena",
             "Comoss",
+            "Venicialis",
             "Frigid_Coast",
             //CrystallEdge Map replacement end
         };
@@ -400,7 +401,7 @@ namespace Content.IntegrationTests.Tests
                     var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
-                        .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
+                        .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null) //CP14 Job or Unset (only Job in upstream)
                         .Select(x => x.Job.Value);
 
                     jobs.ExceptWith(spawnPoints);

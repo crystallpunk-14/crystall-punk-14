@@ -1,0 +1,43 @@
+- type: gameMap
+  id: Venicialis
+  mapName: "Venicialis fort"
+  mapPath: /Maps/_CP14/venicialis.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Venicialis:
+      stationProto: CP14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Venicialis fort"
+        - type: StationJobs
+          availableJobs:
+            #Demigods
+            CP14GodLumera: [ 1, 1 ]
+            #Mercenary
+            #CP14Guildmaster: [1, 1]
+            CP14Adventurer: [ -1, -1 ]
+            #Artisans
+            CP14Apprentice: [ 3, 3 ]
+            CP14Alchemist: [ 2, 2 ]
+            CP14Blacksmith: [ 2, 2 ]
+            CP14Innkeeper: [ 2, 3 ]
+            CP14Merchant: [2, 2]
+            #Guard
+            #CP14Guard: [8, 8]
+            #CP14GuardCommander: [1, 1]
+        - type: CP14StationKeyDistribution
+          keys:
+          - Alchemy1
+          - Alchemy2
+          - Blacksmith1
+          - Blacksmith2
+          - Shop1
+          - Shop2
+          - PersonalHouse1
+          - PersonalHouse2
+          - PersonalHouse3
+          - PersonalHouse4
+          - PersonalHouse5
+          - PersonalHouse6

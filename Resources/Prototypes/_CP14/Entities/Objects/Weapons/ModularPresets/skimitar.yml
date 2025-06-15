@@ -17,7 +17,23 @@
   id: CP14ModularCopperSkimitar
   parent: CP14ModularGripWooden
   name: copper skimitar
-  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  description: You'll be lucky if it even pierces the paper.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
+      state: icon
+      color: "#e28f08"
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - BladeCopperSkimitar
+
+- type: entity
+  id: CP14ModularCopperSkimitarTundra
+  parent: CP14ModularGripWooden
+  name: Skimitar Tundra
+  description: the gold standard of edged weapons. Medium length, comfortable grip. It has "tundra" engraved on it.
   components:
   - type: Sprite
     layers:
@@ -27,21 +43,6 @@
   - type: CP14ModularCraftAutoAssemble
     details:
     - BladeCopperSkimitar
-
-- type: entity
-  id: CP14ModularIronSkimitarTundra
-  parent: CP14ModularGripWooden
-  name: Skimitar Tundra
-  description: the gold standard of edged weapons. Medium length, comfortable grip. It has "tundra" engraved on it.
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
-      state: icon
-  - type: CP14ModularCraftAutoAssemble
-    details:
-    - BladeIronSkimitar
     - InlayQuartzWater
 
 - type: entity
@@ -53,7 +54,7 @@
   - type: Sprite
     layers:
     - state: icon
-    - sprite: _CP14/Objects/ModularTools/Blade/Dagger/metall_dagger.rsi
+    - sprite: _CP14/Objects/ModularTools/Blade/Skimitar/metall_skimitar.rsi
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
