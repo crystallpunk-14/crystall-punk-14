@@ -22,12 +22,15 @@
       state: touch
   - type: TargetAction
     repeat: true
-    checkCanAccess: false
+    interactOnMiss: false
+    #checkCanAccess: false
     range: 100
   - type: EntityTargetAction
     event: !type:CP14EntityTargetActionEvent
       cooldown: 0.5
-  #- type: WorldTargetAction
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
+      cooldown: 0.5
 
 - type: entity
   id: CP14LumeraTouchImpact

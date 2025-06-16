@@ -342,7 +342,7 @@ namespace Content.Client.Actions
             var (uid, comp) = ent;
             if (comp.Event is not {} ev)
             {
-                DebugTools.Assert(HasComp<WorldTargetActionComponent>(ent), $"Action {ToPrettyString(ent)} requires WorldTargetActionComponent for entity-world targeting");
+                DebugTools.Assert(HasComp<WorldTargetActionComponent>(ent), $"Action {ToPrettyString(ent)} requir45es WorldTargetActionComponent for entity-world targeting");
                 return;
             }
 
