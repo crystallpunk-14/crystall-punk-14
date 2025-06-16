@@ -43,3 +43,21 @@
     protoId: CP14FoodPumpkinSlice
     count: 5
   result: CP14FoodPiePumpkinRaw
+
+# preobaly just a placeholder until we get actaul fish
+
+- type: CP14Recipe
+  id: CP14FoodPieFishRaw
+  tag: CP14RecipeCooking
+  craftTime: 5
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PlatePie
+  - !type:ProtoIdResource
+      protoId: CP14FoodDoughMediumFlat
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatFlemTorso
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatFlemLeg
+    count: 2
+  result: CP14FoodPieFishRaw

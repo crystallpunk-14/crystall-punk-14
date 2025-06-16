@@ -23,3 +23,4 @@ cp14-magic-spell-pacified = Это может навредить кому либ
 cp14-magic-spell-target-not-mob = Цель должна быть живым существом!
 cp14-magic-spell-target-dead = Нельзя использовать на мертвых!
 cp14-magic-spell-target-alive = Нельзя использовать на живых!
+cp14-magic-spell-target-god-follower = Цель должна быть вашим последователем!

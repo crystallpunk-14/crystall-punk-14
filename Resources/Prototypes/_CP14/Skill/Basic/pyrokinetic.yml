@@ -1,0 +1,136 @@
+# T1
+
+- type: cp14Skill
+  id: PyrokineticT1
+  skillUiPosition: 1, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t1-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro
+
+- type: cp14Skill
+  id: CP14ActionSpellFlameCreation
+  skillUiPosition: 0, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: flame_creation
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellFlameCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+
+- type: cp14Skill
+  id: CP14ActionSpellHeat
+  skillUiPosition: 0, 6
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: heat
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellHeat
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+
+- type: cp14Skill
+  id: CP14ActionSpellHellBallade
+  skillUiPosition: 2, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fire_music
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellHellBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:SpeciesWhitelist
+    species: CP14Tiefling
+
+- type: cp14Skill
+  id: CP14ActionSpellTieflingInnerFire
+  skillUiPosition: 2, 6
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellTieflingInnerFire
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:SpeciesWhitelist
+    species: CP14Tiefling
+
+# T2
+
+- type: cp14Skill
+  id: PyrokineticT2
+  skillUiPosition: 7, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro2
+  effects:
+  - !type:ModifyManacost
+    modifiers:
+      Fire: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+
+- type: cp14Skill
+  id: CP14ActionSpellFireball
+  skillUiPosition: 6, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: fireball
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellFireball
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+
+- type: cp14Skill
+  id: CP14ActionSpellFirewave
+  skillUiPosition: 8, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _CP14/Actions/Spells/fire.rsi
+    state: firewave
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellFirewave
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+
+# T3
+
+- type: cp14Skill
+  id: PyrokineticT3
+  skillUiPosition: 13, 0
+  tree: Pyrokinetic
+  name: cp14-skill-pyro-t3-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: pyro3
+  effects:
+  - !type:ModifyManacost
+    modifiers:
+      Fire: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+

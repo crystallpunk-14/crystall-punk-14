@@ -346,6 +346,13 @@ CP14ClothingRingIceShards: null
 # 2025-06-04
 CP14BaseMop: CP14ModularWoodMop
 
+#2025-06-15
+CP14FoodMeatMole: CP14FoodMeatMonster
+CP14FoodMeatMoleCooked: CP14FoodMeatMonsterCooked
+CP14FoodMeatMoleLeg: CP14FoodMeatMonsterLeg
+CP14FoodMeatMoleLegCooked: CP14FoodMeatMonsterLegCooked
+CP14FoodMeatMoleSlice: CP14FoodMeatMonsterSlice
+CP14FoodMeatMoleCookedSlice: CP14FoodMeatMonsterCookedSlice
 # <---> CrystallEdge migration zone end
 
 

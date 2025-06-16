@@ -1,0 +1,21 @@
+- type: entity
+  id: CP14LumeraSpeakImpact
+  categories: [ HideSpawnMenu ]
+  parent: CP14BaseMagicImpact
+  save: false
+  components:
+  - type: PointLight
+    color: "#3843a8"
+    enabled: true
+    radius: 5
+    energy: 4
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: stars
+      color: "#3843a8"
+      shader: unshaded
+  - type: LightFade
+    duration: 1
+  - type: TimedDespawn
+    lifetime: 2

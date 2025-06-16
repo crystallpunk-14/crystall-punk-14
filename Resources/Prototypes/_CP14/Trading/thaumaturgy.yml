@@ -114,6 +114,17 @@
 # Rep 1
 
 - type: cp14TradingPosition
+  id: CP14ClothingEyesMerchantMonocle
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Clothing/Eyes/merchant_monocle.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingEyesMerchantMonocle
+
+- type: cp14TradingPosition
   id: CP14ManaOperationGlove
   faction: Thaumaturgy
   reputationLevel: 1

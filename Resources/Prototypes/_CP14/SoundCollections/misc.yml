@@ -42,3 +42,11 @@
     - /Audio/_CP14/Effects/coin_impact2.ogg
     - /Audio/_CP14/Effects/coin_impact3.ogg
 
+- type: soundCollection
+  id: CP14MoonStrike
+  files:
+    - /Audio/_CP14/Effects/moon_strike1.ogg
+    - /Audio/_CP14/Effects/moon_strike2.ogg
+    - /Audio/_CP14/Effects/moon_strike3.ogg
+    - /Audio/_CP14/Effects/moon_strike4.ogg
+
