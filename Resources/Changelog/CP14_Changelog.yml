@@ -410,3 +410,11 @@
   id: 8092
   time: '2025-06-15T18:25:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1432
+- author: KittyCat432
+  changes:
+  - message: Changed Lunar Strike to deal 30 heat damage from 10 and have a 15 second
+      cooldown.
+    type: Tweak
+  id: 8093
+  time: '2025-06-16T07:37:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1433
