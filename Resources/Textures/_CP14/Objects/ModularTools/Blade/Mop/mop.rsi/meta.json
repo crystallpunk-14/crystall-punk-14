@@ -1,12 +1,24 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-4.0",
-  "copyright": "Created by omsoyk (Discord)", 
   "size": {
     "x": 32,
     "y": 32
   },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Icon by frogoo. (Discord), recolored by paige404. Additional sprites created by paige404 based on that icon.",
   "states": [
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "equipped-BELT2",
+      "directions": 4
+    },
+    {
+      "name": "equipped-NECK",
+      "directions": 4
+    },
     {
       "name": "icon"
     },
@@ -24,10 +36,6 @@
     },
     {
       "name": "wielded-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "equipped-NECK",
       "directions": 4
     }
   ]
