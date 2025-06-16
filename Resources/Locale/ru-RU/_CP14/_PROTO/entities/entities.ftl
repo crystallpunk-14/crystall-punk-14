@@ -1872,22 +1872,22 @@ ent-CP14FoodMeatPigSlice = кусочки мяса
 ent-CP14FoodMeatPigCookedSlice = кусочки приготовленного мяса
     .desc = { ent-CP14FoodMeatPigSlice.desc }
 
-ent-CP14FoodMeatMole = сырое мясо крота
+ent-CP14FoodMeatMonster = сырое мясо монстра
     .desc = Цвет довольно подозрительный, не каждый решится его опробовать, может, отдать гоблину?
 
-ent-CP14FoodMeatMoleCooked = приготовленное мясо крота
+ent-CP14FoodMeatMonsterCooked = приготовленное мясо монстра
     .desc = { ent-CP14FoodMeatMole.desc }
 
-ent-CP14FoodMeatMoleLeg = сырое мясо ноги крота
+ent-CP14FoodMeatMonsterLeg = сырое мясо ноги монстра
     .desc = Подозрительный цвет мяса заставляет усомниться в его съедобности, но если вы действительно голодны...
 
-ent-CP14FoodMeatMoleLegCooked = приготовленное мясо ноги крота
+ent-CP14FoodMeatMonsterLegCooked = приготовленное мясо ноги монстра
     .desc = { ent-CP14FoodMeatMoleLeg.desc }
 
-ent-CP14FoodMeatMoleSlice = кусочек мяса монстра
+ent-CP14FoodMeatMonsterSlice = кусочек мяса монстра
     .desc = Мясные шарики-монстры с фирменным подозрительным цветом.
 
-ent-CP14FoodMeatMoleCookedSlice = кусочки приготовленного мяса монстра
+ent-CP14FoodMeatMonsterCookedSlice = кусочки приготовленного мяса монстра
     .desc = { ent-CP14FoodMeatMoleSlice.desc }
 
 ent-CP14FoodPieAppleRaw = сырой яблочный пирог
