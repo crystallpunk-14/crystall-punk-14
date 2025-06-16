@@ -25,6 +25,8 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
+    private EntityQuery<CP14ReligionEntityComponent> _godQuery;
+
     /// <summary>
     /// If ReligionObserver receives a radius higher than this value, this entity will automatically be placed in PvsOverride for the god in order to function correctly outside of the player's PVS.
     /// </summary>
@@ -36,6 +38,8 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         base.Initialize();
         InitializeUI();
 
+        _godQuery = GetEntityQuery<CP14ReligionEntityComponent>();
+
         SubscribeLocalEvent<CP14ReligionObserverComponent, ComponentInit>(OnObserverInit);
         SubscribeLocalEvent<CP14ReligionObserverComponent, AfterAutoHandleStateEvent>(OnObserverHandleState);
 
@@ -44,8 +48,25 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<CP14ReligionSpeakerComponent, CP14SpokeAttemptEvent>(OnSpokeAttempt);
+        SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandRecipients);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+    }
+
+    private void OnExpandRecipients(ExpandICChatRecipientsEvent ev)
+    {
+        foreach (var recipient in ev.Recipients)
+        {
+            var recipientEntity = recipient.Key.AttachedEntity;
+            if (!_godQuery.TryComp(recipientEntity, out var god) || god.Religion is null)
+                continue;
+
+            if (!InVision(ev.Source, (recipientEntity.Value, god)))
+            {
+                // If the recipient is not in vision, we don't want to send them the message.
+                ev.Recipients.Remove(recipient.Key);
+            }
+        }
     }
 
     public override void Update(float frameTime)
@@ -74,7 +95,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     {
         args.Cancel();
 
-        if (!TryComp<CP14ReligionEntityComponent>(ent, out var god) || god.Religion is null)
+        if (!_godQuery.TryComp(ent, out var god) || god.Religion is null)
             return;
 
         if (ent.Comp.RestrictedReligionZone && !InVision(ent, (ent, god)))
