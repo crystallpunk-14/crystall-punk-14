@@ -450,3 +450,16 @@
   id: 8096
   time: '2025-06-16T16:39:33.0000000+00:00'
   url: https://youtu.be/dQw4w9WgXcQ
+- author: Wizden
+  changes:
+  - message: Fork synced with new stable upstream version! Added many new unknown bugs!
+    type: Add
+  - message: A lot of new features have been added(but I don't know which ones)! Word highlighting in chat has definitely been added.
+    type: Add
+  - message: Perhaps old bugs have been removed?
+    type: Remove
+  - message: Bugs are particularly likely to occur in the area of spell usage, due to the refactoring of the action system in the upstream.
+    type: Fix
+  id: 8097
+  time: '2025-06-17T00:05:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1416
