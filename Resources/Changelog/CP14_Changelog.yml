@@ -425,3 +425,21 @@
   id: 8094
   time: '2025-06-16T07:39:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1426
+- author: paige404
+  changes:
+  - message: Added modular mop heads for building one and two handed mops. Mops aren't
+      designed to be used as weapons, and break more quickly. The new lucens mop head
+      carries twice as much water--and deals more damage. Go chop down some lucens
+      trees for the innkeeps!
+    type: Add
+  - message: Added lucens buckets. They are blue.
+    type: Add
+  - message: Buckets can now be worn on the head as shitty helmets. Enjoy.
+    type: Tweak
+  - message: The shovel and hoe now break more quickly when used as weapons.
+    type: Tweak
+  - message: Ropes can now be crafted from cloth or flora material.
+    type: Add
+  id: 8095
+  time: '2025-06-16T08:30:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1387
