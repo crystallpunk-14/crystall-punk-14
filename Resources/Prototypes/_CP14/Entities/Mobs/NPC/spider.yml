@@ -30,9 +30,9 @@
         - MobLayer
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole #TODO
+    - id: CP14FoodMeatMonster #TODO
       amount: 2
-    - id: CP14FoodMeatMoleLeg #TODO
+    - id: CP14FoodMeatMonsterLeg #TODO
       amount: 1
       prob: 0.6
   - type: CombatMode
