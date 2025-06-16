@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellFlashLight
+  parent: CP14ActionSpellBase
   name: Flash Light
   description: Creates a flash of bright, blinding light.
   components:
@@ -23,15 +24,14 @@
     endSpeech: "excaecant inimicos meos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlashLight
-  - type: EntityWorldTargetAction
-    range: 10
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: flash_light
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 5
       castDelay: 0.5
       breakOnMove: false

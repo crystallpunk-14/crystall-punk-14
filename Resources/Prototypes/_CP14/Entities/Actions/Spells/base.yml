@@ -1,4 +1,13 @@
 - type: entity
+  id: CP14ActionSpellBase
+  abstract: true
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+
+- type: entity
   id: CP14BaseMagicRune
   name: magic rune
   description: manifestation of magical energy in the physical plane
