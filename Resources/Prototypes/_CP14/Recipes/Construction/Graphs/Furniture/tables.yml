@@ -8,7 +8,7 @@
       edges:
         - to: CP14TableWoodenFrame
           steps:
-            - material: CP14WoodenPlanks
+            - stackGroup: WoodenPlanks # TODO: Birch wooden frame? Lucens wooden frame? Need sprites
               amount: 1
               doAfter: 1
 
@@ -21,13 +21,18 @@
               doAfter: 1
           completed:
             - !type:SpawnPrototype
-              prototype: CP14WoodenPlanks1
+              prototype: CP14WoodenPlanks1 # TODO FIX: can use birch or lucens to make frame, and it disassembles to normal wood
               amount: 1
         - to: CP14TableWooden
           steps:
             - material: CP14WoodenPlanks
               amount: 1
               doAfter: 1
+        - to: CP14TableWoodenBirch
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 1
+            doAfter: 1
 
     - node: CP14TableWooden
       entity: CP14TableWooden
@@ -46,6 +51,23 @@
               amount: 1
               doAfter: 1
 
+    - node: CP14TableWoodenBirch
+      entity: CP14TableWoodenBirch
+      edges:
+      - to: CP14TableWoodenFrame
+        steps:
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 1
+      - to: CP14TableWoodenBirchCounter
+        steps:
+        - material: CP14BirchWoodenPlanks
+          amount: 1
+          doAfter: 1
+
     - node: CP14TableWoodenCounter
       entity: CP14TableWoodenCounter
       edges:
@@ -57,6 +79,18 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 1
+
+    - node: CP14TableWoodenBirchCounter
+      entity: CP14TableWoodenBirchCounter
+      edges:
+      - to: CP14TableWoodenBirch
+        steps:
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 1
 
 
 

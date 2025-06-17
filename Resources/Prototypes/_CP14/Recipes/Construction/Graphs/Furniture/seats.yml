@@ -8,11 +8,18 @@
       edges:
         - to: CP14ChairWooden
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
+        - to: CP14ChairWoodenBirch
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 2
+            doAfter: 2
     - node: CP14ChairWooden
       entity: CP14ChairWooden
+    - node: CP14ChairWoodenBirch
+      entity: CP14ChairWoodenBirch
 
 - type: constructionGraph
   id: CP14BenchWood
@@ -24,9 +31,15 @@
       edges:
         - to: CP14BenchWood
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 3
               doAfter: 2
+        - to: CP14BenchWoodBirch
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 3
+            doAfter: 2
     - node: CP14BenchWood
       entity: CP14BenchWood
-
+    - node: CP14BenchWoodBirch
+      entity: CP14BenchWoodBirch

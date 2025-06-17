@@ -4277,6 +4277,9 @@ ent-CP14TableWoodenRound = круглый деревянный стол
 ent-CP14TableWoodenCounter = деревянная стойка
     .desc = { ent-CP14TableWooden.desc }
 
+ent-CP14TableWoodenBirchCounter = деревянная стойка
+    .desc = { ent-CP14TableWooden.desc }
+
 ent-CP14TableMarble = мраморный стол
     .desc = Изысканный стол из белого мрамора.
 

@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "All rights reserved",
+    "copyright": "Created by goblinsable (SS14), recolored from wooden_bed by jaraten (Discord), vladimir.s, and omsoyk (Discord)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
+}
