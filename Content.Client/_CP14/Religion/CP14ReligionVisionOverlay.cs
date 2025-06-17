@@ -25,12 +25,15 @@ public sealed class CP14ReligionVisionOverlay : Overlay
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    private readonly ProtoId<CP14ReligionPrototype>? _religion = null;
+    private readonly ProtoId<CP14ReligionPrototype>? _religion;
 
     private readonly ShaderInstance _religionShader;
     private readonly Vector2[] _positions = new Vector2[MaxCount];
     private readonly float[] _radii = new float[MaxCount];
-    private int _count = 0;
+    private int _count;
+    private readonly Vector2[] _antiPositions = new Vector2[MaxCount];
+    private readonly float[] _antiRadii = new float[MaxCount];
+    private int _antiCount;
 
     public CP14ReligionVisionOverlay()
     {
@@ -49,20 +52,18 @@ public sealed class CP14ReligionVisionOverlay : Overlay
         if (args.Viewport.Eye == null)
             return false;
 
-        _count = 0;
-
         var clusters = new List<Cluster>();
         var religionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionObserverComponent, TransformComponent>();
-        while (religionQuery.MoveNext(out var uid, out var rel, out var xform))
+        while (religionQuery.MoveNext(out var uid, out var observer, out var xform))
         {
             if (_religion is null)
                 continue;
 
-            var observation = rel.Observation;
+            var observation = observer.Observation;
             if (!observation.ContainsKey(_religion.Value))
                 continue;
 
-            if (!rel.Active || xform.MapID != args.MapId)
+            if (!observer.Active || xform.MapID != args.MapId)
                 continue;
 
             var mapPos = _transform.GetWorldPosition(uid);
@@ -78,14 +79,14 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             {
                 if ((cluster.Position - tempCoords).Length() < 150f)
                 {
-                    cluster.Add(tempCoords, rel.Observation[_religion.Value]);
+                    cluster.Add(tempCoords, observer.Observation[_religion.Value]);
                     merged = true;
                     break;
                 }
             }
 
             if (!merged)
-                clusters.Add(new Cluster(tempCoords, rel.Observation[_religion.Value]));
+                clusters.Add(new Cluster(tempCoords, observer.Observation[_religion.Value]));
 
             if (clusters.Count >= MaxCount)
                 break;
@@ -97,6 +98,55 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             _positions[_count] = cluster.Position;
             _radii[_count] = cluster.Radius;
             _count++;
+        }
+
+
+        var antiClusters = new List<Cluster>();
+        var antiReligionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionAntiObserverComponent, TransformComponent>();
+        while (antiReligionQuery.MoveNext(out var uid, out var antiObserver, out var xform))
+        {
+            if (_religion is null)
+                continue;
+
+            var observation = antiObserver.Observation;
+            if (!observation.ContainsKey(_religion.Value))
+                continue;
+
+            if (!antiObserver.Active || xform.MapID != args.MapId)
+                continue;
+
+            var mapPos = _transform.GetWorldPosition(uid);
+
+            // To be clear, this needs to use "inside-viewport" pixels.
+            // In other words, specifically NOT IViewportControl.WorldToScreen (which uses outer coordinates).
+            var tempCoords = args.Viewport.WorldToLocal(mapPos);
+            tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y; // Local space to fragment space.
+
+            // try find cluster to merge with
+            bool merged = false;
+            foreach (var cluster in antiClusters)
+            {
+                if ((cluster.Position - tempCoords).Length() < 150f)
+                {
+                    cluster.Add(tempCoords, antiObserver.Observation[_religion.Value]);
+                    merged = true;
+                    break;
+                }
+            }
+
+            if (!merged)
+                antiClusters.Add(new Cluster(tempCoords, antiObserver.Observation[_religion.Value]));
+
+            if (antiClusters.Count >= MaxCount)
+                break;
+        }
+
+        _antiCount = 0;
+        foreach (var antiCluster in antiClusters)
+        {
+            _antiPositions[_antiCount] = antiCluster.Position;
+            _antiRadii[_antiCount] = antiCluster.Radius;
+            _antiCount++;
         }
 
         return true;
@@ -112,9 +162,15 @@ public sealed class CP14ReligionVisionOverlay : Overlay
 
         _religionShader?.SetParameter("shaderColor", visionComponent.ShaderColor);
         _religionShader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
+
         _religionShader?.SetParameter("count", _count);
         _religionShader?.SetParameter("position", _positions);
         _religionShader?.SetParameter("radius", _radii);
+
+        _religionShader?.SetParameter("anticount", _antiCount);
+        _religionShader?.SetParameter("antiposition", _antiPositions);
+        _religionShader?.SetParameter("antiradius", _antiRadii);
+
         _religionShader?.SetParameter("SCREEN_TEXTURE", ScreenTexture);
 
         var worldHandle = args.WorldHandle;

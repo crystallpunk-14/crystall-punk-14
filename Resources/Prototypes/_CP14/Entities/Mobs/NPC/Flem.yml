@@ -98,3 +98,6 @@
     tags:
       - FootstepSound
       - CP14Mosquito
+  - type: CP14ReligionAntiObserver
+    observation:
+      Lumera: 10 
