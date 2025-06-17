@@ -95,6 +95,21 @@
     node: CP14TableWoodenFrame
 
 - type: entity
+  parent: CP14TableWoodenFrame
+  id: CP14TableWoodenBirchFrame
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi # TODO: birch recolor
+    state: frame
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/wood.rsi # TODO: birch recolor
+    state: frame
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenBirchFrame
+
+- type: entity
   parent: CP14WoodenTableBase
   id: CP14TableWooden
   name: wooden table
