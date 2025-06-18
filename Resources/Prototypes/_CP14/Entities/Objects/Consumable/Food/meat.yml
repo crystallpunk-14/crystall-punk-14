@@ -937,7 +937,7 @@
   id: CP14FoodMeatFlemHead
   parent: CP14FoodMeatBase
   name: raw flem head
-  description: honestly looks quite tasty
+  description: Honestly looks quite tasty.
   components:
   - type: FlavorProfile
     flavors:
@@ -992,7 +992,7 @@
   id: CP14FoodMeatFlemTorso
   parent: CP14FoodMeatBase
   name: raw flem torso
-  description: seems to be hollow
+  description: Seems to be hollow.
   components:
   - type: FlavorProfile
     flavors:
@@ -1053,7 +1053,7 @@
   id: CP14FoodMeatFlemTorsoCut
   parent: CP14FoodMeatSliceBase
   name: raw flem ring
-  description: onions not included
+  description: Onions not included.
   components:
   - type: FlavorProfile
     flavors:
@@ -1111,7 +1111,7 @@
   id: CP14FoodMeatFlemLeg
   parent: CP14FoodMeatBase
   name: raw flem leg
-  description: probally not the best part to eat. but you never know until you try
+  description: Probally not the best part to eat. but you never know until you try.
   components:
   - type: FlavorProfile
     flavors:
@@ -1143,7 +1143,7 @@
   id: CP14FoodMeatFlemLegCooked
   parent: CP14FoodMeatFlemLeg
   name: fish sticks
-  description: like freis. but fish!
+  description: Like freis. But fish!
   components:
   - type: Sprite
     state: flem_leg_cooked
