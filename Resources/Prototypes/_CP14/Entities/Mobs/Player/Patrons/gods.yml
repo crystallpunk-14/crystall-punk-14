@@ -12,6 +12,7 @@
     sprite: _CP14/Mobs/Demigods/temp_icons.rsi
     color: "#ffffff99"
   - type: PointLight
+    energy: 2
     radius: 10
     softness: 1
     castShadows: false
