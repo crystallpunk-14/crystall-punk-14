@@ -20,13 +20,15 @@
     angleMultiplier: 1.2
     bonusDamage:
       types:
-        Slash: 2
+        Slash: 3
         Blunt: 3
   - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
         Slash: 1
         Blunt: 3
+  - !type:EditDamageableModifier # Improvised weapon
+    multiplier: 1.2
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

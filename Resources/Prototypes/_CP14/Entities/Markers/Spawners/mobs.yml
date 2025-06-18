@@ -188,3 +188,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterInvisibleWhistler
+
+- type: entity
+  name: flem spawner
+  id: CP14SpawnMobMonsterFlem
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/flem.rsi
+      state: flem_live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterFlem

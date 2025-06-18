@@ -56,7 +56,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
             storage.Comp.SpellEntities.Add(spellEnt.Value);
         }
         if (storage.Comp.GrantAccessToSelf)
-            _actions.GrantActions(storage, storage.Comp.SpellEntities, storage);
+            _actions.GrantActions(storage.Owner, storage.Comp.SpellEntities, storage.Owner);
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
@@ -78,7 +78,7 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
         if (mind.OwnedEntity is null)
             return false;
 
-        _actions.GrantActions(user, storage.Comp.SpellEntities, storage);
+        _actions.GrantActions(user, storage.Comp.SpellEntities, storage.Owner);
         return true;
     }
 }

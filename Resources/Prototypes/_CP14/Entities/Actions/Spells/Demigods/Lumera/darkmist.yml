@@ -1,0 +1,73 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraDarkmist
+  parent: CP14ActionSpellBase
+  name: Impenetrable darkness
+  description: You summon a thick fog that obscures vision and disorients mortals.
+  components:
+  - type: CP14MagicEffectReligionRestricted
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectFlashLight
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14LumeraDarkMist
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: mist
+  - type: TargetAction
+    checkCanAccess: false
+    repeat: true
+    range: 100
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
+      cooldown: 0.15
+
+- type: entity
+  parent: 
+  - BaseStructure
+  - BaseShadow
+  id: CP14LumeraDarkMist
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: SyncSprite
+  - type: TimedDespawn
+    lifetime: 60
+  - type: Occluder
+  - type: Sprite
+    drawdepth: Effects
+    sprite: Effects/spookysmoke.rsi
+    layers:
+    - state: spookysmoke
+      color: "#3266a8"
+      map: [base]
+  - type: OptionsVisualizer
+    visuals:
+      base:
+      - options: Default
+        data: { state: spookysmoke }
+      - options: ReducedMotion
+        data: { state: spookysmoke_static }
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: Tag
+    tags:
+      - HideContextMenu

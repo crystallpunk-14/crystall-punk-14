@@ -71,12 +71,12 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole
+    - id: CP14FoodMeatMonster
       amount: 3
     - id: CP14FoodMeatPig
       amount: 1
       prob: 0.3
-    - id: CP14FoodMeatMoleLeg
+    - id: CP14FoodMeatMonsterLeg
       amount: 1
       prob: 0.6
   - type: Bloodstream

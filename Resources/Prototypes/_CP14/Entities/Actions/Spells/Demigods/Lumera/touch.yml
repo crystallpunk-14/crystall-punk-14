@@ -1,0 +1,53 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraTouch
+  parent: CP14ActionSpellBase
+  name: Touch of Lumera
+  description: "Multitasking effects on the world: depending on what you click on, the effect may vary. Using it on an empty space will create a glowing sign that attracts the attention of mortals."
+  components:
+  - type: CP14MagicEffectReligionRestricted
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14LumeraTouchImpact
+    - !type:CP14SpellGodTouch
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: touch
+  - type: TargetAction
+    repeat: true
+    interactOnMiss: false
+    #checkCanAccess: false
+    range: 100
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetActionEvent
+      cooldown: 0.5
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
+      cooldown: 0.5
+
+- type: entity
+  id: CP14LumeraTouchImpact
+  categories: [ HideSpawnMenu ]
+  parent: CP14BaseMagicImpact
+  save: false
+  components:
+  - type: PointLight
+    color: "#3843a8"
+    enabled: true
+    radius: 5
+    energy: 4
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: stars
+      color: "#3843a8"
+      shader: unshaded
+  - type: LightFade
+    duration: 1

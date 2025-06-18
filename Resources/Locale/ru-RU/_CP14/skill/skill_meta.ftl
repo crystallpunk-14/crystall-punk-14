@@ -32,3 +32,6 @@ cp14-skill-iron-melt-name = Плавка железа
 cp14-skill-gold-melt-name = Плавка золота
 cp14-skill-mithril-melt-name = Плавка мифрила
 cp14-skill-glass-melt-name = Работа со стеклом
+
+cp14-skill-trader-wit-name = Торговая смекалка
+cp14-skill-trader-wit-desc = Вы способны одним взглядом оценить и вычислить точную стоимость предмета в империи.

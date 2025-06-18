@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellShadowStep
+  parent: CP14ActionSpellBase
   name: Shadow step
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
@@ -20,15 +21,14 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: EntityWorldTargetAction
-    range: 7
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: shadow_step
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    range: 7
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 30
       hidden: true
       breakOnMove: false

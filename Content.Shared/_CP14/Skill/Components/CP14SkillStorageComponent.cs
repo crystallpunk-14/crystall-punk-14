@@ -15,8 +15,14 @@ namespace Content.Shared._CP14.Skill.Components;
 public sealed partial class CP14SkillStorageComponent : Component
 {
     /// <summary>
+    /// Skill trees displayed in the skill tree interface. Only skills from these trees can be learned by this player.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<CP14SkillTreePrototype>> AvailableSkillTrees = new();
+
+    /// <summary>
     /// Tracks skills that are learned without spending memory points.
-    /// the skills that are here are DUBLED in the LearnedSkills, 
+    /// the skills that are here are DOUBLED in the LearnedSkills,
     /// </summary>
     [DataField, AutoNetworkedField]
     public List<ProtoId<CP14SkillPrototype>> FreeLearnedSkills = new();

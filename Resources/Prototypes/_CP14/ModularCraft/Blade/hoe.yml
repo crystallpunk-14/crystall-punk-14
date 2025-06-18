@@ -37,6 +37,8 @@
     bonusDamage:
       types:
         Piercing: 3
+  - !type:EditDamageableModifier # Improvised weapon
+    multiplier: 1.2
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
