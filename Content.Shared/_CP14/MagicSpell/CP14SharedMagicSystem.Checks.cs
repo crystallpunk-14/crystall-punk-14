@@ -199,9 +199,6 @@ public abstract partial class CP14SharedMagicSystem
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14MagicEffectConsumeResourceEvent args)
     {
-        //if (_net.IsClient)
-        //    return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
@@ -225,9 +222,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        //if (_net.IsClient)
-        //    return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
