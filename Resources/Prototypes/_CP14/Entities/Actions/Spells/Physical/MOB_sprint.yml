@@ -18,9 +18,12 @@
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: sprint
+  - type: TargetAction
+    checkCanAccess: false
+    range: 15
   - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
       effectFrequency: 0.2
-      cooldown: 10
+      cooldown: 8
       castTime: 3
       hidden: true
