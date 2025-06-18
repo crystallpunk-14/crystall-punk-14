@@ -1143,7 +1143,7 @@
   id: CP14FoodMeatFlemLegCooked
   parent: CP14FoodMeatFlemLeg
   name: fish sticks
-  description: Like freis. But fish!
+  description: Like fries. But fish!
   components:
   - type: Sprite
     state: flem_leg_cooked
