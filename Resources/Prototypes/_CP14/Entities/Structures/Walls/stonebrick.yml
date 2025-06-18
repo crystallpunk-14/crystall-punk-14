@@ -35,6 +35,15 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: DamageOtherOnHit # Damage of this structure
+    damage:
+      types:
+        Blunt: 30
+  - type: DamageOnLand
+    damage:
+      types:
+        Structural: 80
 
 - type: entity
   id: CP14WallStonebrick
@@ -112,6 +121,15 @@
             volume: -6
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: DamageOtherOnHit # Damage of this structure
+    damage:
+      types:
+        Blunt: 30
+  - type: DamageOnLand
+    damage:
+      types:
+        Structural: 80
 
 - type: entity
   id: CP14WallMarbleBrick

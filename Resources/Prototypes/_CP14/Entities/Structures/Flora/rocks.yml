@@ -75,6 +75,15 @@
                 max: 3
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: DamageOtherOnHit # Damage of this structure
+    damage:
+      types:
+        Blunt: 20
+  - type: DamageOnLand
+    damage:
+      types:
+        Structural: 20
 
 - type: entity
   id: CP14RockBig
@@ -129,6 +138,15 @@
                 max: 8
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: DamageOtherOnHit # Damage of this structure
+    damage:
+      types:
+        Blunt: 35
+  - type: DamageOnLand
+    damage:
+      types:
+        Structural: 40
 
 - type: entity
   id: CP14RockBigMoss

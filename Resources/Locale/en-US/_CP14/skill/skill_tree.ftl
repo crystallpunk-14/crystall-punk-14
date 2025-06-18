@@ -19,6 +19,9 @@ cp14-skill-tree-healing-desc = Explore the ways in which magic affects living cr
 cp14-skill-tree-dimension-name = Dimensionomy
 cp14-skill-tree-dimension-desc = Immerse yourself in the nature of space and void.
 
+cp14-skill-tree-geomancy-name = Geomancy
+cp14-skill-tree-geomancy-desc = Master the magic of earth to shape or destroy the world around you.
+
 # Body
 
 cp14-skill-tree-atlethic-name = Athletic
