@@ -516,3 +516,15 @@
   id: 8102
   time: '2025-06-18T10:10:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1419
+- author: TheShuEd
+  changes:
+  - message: 'The area of influence around followers now depends on the follower''s
+      health status: The area drops by 75% when the follower falls into critical condition,
+      and disappears completely when the follower dies.'
+    type: Tweak
+  - message: The standard area of influence around altars and patron followers has
+      been increased.
+    type: Tweak
+  id: 8103
+  time: '2025-06-18T18:46:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1439
