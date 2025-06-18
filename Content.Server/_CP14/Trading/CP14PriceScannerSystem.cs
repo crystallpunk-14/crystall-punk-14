@@ -6,7 +6,6 @@ using Content.Shared.Tag;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared.Mobs.Components;
 
-
 namespace Content.Server._CP14.Trading;
 
 public sealed class CP14PriceScannerSystem : EntitySystem
@@ -16,7 +15,6 @@ public sealed class CP14PriceScannerSystem : EntitySystem
     [Dependency] private readonly InventorySystem _invSystem = default!;
     [Dependency] private readonly CP14SharedCurrencySystem _currency = default!;
 
-
     public override void Initialize()
     {
         SubscribeLocalEvent<MetaDataComponent, ExaminedEvent>(OnExamined);
@@ -24,9 +22,9 @@ public sealed class CP14PriceScannerSystem : EntitySystem
 
     private bool IsAbleExamine(EntityUid uid)
     {
-        if (_invSystem.TryGetSlotEntity(uid, "eyes", out var huds) && HasComp<CP14PriceScannerComponent>(huds))
-            return true;
         if (HasComp<CP14PriceScannerComponent>(uid))
+            return true;
+        if (_invSystem.TryGetSlotEntity(uid, "eyes", out var huds) && HasComp<CP14PriceScannerComponent>(huds))
             return true;
 
         return false;
@@ -51,5 +49,4 @@ public sealed class CP14PriceScannerSystem : EntitySystem
 
         args.PushMarkup(priceMsg);
     }
-
 }
