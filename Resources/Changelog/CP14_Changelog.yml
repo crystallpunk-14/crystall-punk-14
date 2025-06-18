@@ -497,3 +497,15 @@
   id: 8100
   time: '2025-06-16T22:50:54.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1437
+- author: TheShuEd
+  changes:
+  - message: Corpses and living creatures are no longer shown to be worth money (as
+      they cannot be sold)
+    type: Fix
+  - message: Rain no longer fills closed barrels and bottles with water
+    type: Fix
+  - message: The furnace can now be rotated through the verb menu
+    type: Fix
+  id: 8101
+  time: '2025-06-18T09:37:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1440
