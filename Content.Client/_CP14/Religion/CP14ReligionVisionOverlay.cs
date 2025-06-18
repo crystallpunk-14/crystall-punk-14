@@ -53,14 +53,17 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             return false;
 
         var clusters = new List<Cluster>();
+        var antiClusters = new List<Cluster>();
         var religionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionObserverComponent, TransformComponent>();
         while (religionQuery.MoveNext(out var uid, out var observer, out var xform))
         {
             if (_religion is null)
                 continue;
 
-            var observation = observer.Observation;
-            if (!observation.ContainsKey(_religion.Value))
+            if (observer.Religion is null)
+                continue;
+
+            if (observer.Radius <= 0f)
                 continue;
 
             if (!observer.Active || xform.MapID != args.MapId)
@@ -73,23 +76,40 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             var tempCoords = args.Viewport.WorldToLocal(mapPos);
             tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y; // Local space to fragment space.
 
-            // try find cluster to merge with
-            bool merged = false;
-            foreach (var cluster in clusters)
+            if (observer.Religion.Value == _religion.Value)
             {
-                if ((cluster.Position - tempCoords).Length() < 150f)
+                // try find cluster to merge with
+                bool merged = false;
+                foreach (var cluster in clusters)
                 {
-                    cluster.Add(tempCoords, observer.Observation[_religion.Value]);
-                    merged = true;
-                    break;
+                    if ((cluster.Position - tempCoords).Length() < 150f)
+                    {
+                        cluster.Add(tempCoords, observer.Radius);
+                        merged = true;
+                        break;
+                    }
                 }
+
+                if (!merged && clusters.Count < MaxCount)
+                    clusters.Add(new Cluster(tempCoords, observer.Radius));
             }
+            else
+            {
+                // try find cluster to merge with
+                bool merged = false;
+                foreach (var antiCluster in antiClusters)
+                {
+                    if ((antiCluster.Position - tempCoords).Length() < 150f)
+                    {
+                        antiCluster.Add(tempCoords, observer.Radius);
+                        merged = true;
+                        break;
+                    }
+                }
 
-            if (!merged)
-                clusters.Add(new Cluster(tempCoords, observer.Observation[_religion.Value]));
-
-            if (clusters.Count >= MaxCount)
-                break;
+                if (!merged && antiClusters.Count < MaxCount)
+                    antiClusters.Add(new Cluster(tempCoords, observer.Radius));
+            }
         }
 
         _count = 0;
@@ -98,47 +118,6 @@ public sealed class CP14ReligionVisionOverlay : Overlay
             _positions[_count] = cluster.Position;
             _radii[_count] = cluster.Radius;
             _count++;
-        }
-
-
-        var antiClusters = new List<Cluster>();
-        var antiReligionQuery = _entManager.AllEntityQueryEnumerator<CP14ReligionAntiObserverComponent, TransformComponent>();
-        while (antiReligionQuery.MoveNext(out var uid, out var antiObserver, out var xform))
-        {
-            if (_religion is null)
-                continue;
-
-            var observation = antiObserver.Observation;
-            if (!observation.ContainsKey(_religion.Value))
-                continue;
-
-            if (!antiObserver.Active || xform.MapID != args.MapId)
-                continue;
-
-            var mapPos = _transform.GetWorldPosition(uid);
-
-            // To be clear, this needs to use "inside-viewport" pixels.
-            // In other words, specifically NOT IViewportControl.WorldToScreen (which uses outer coordinates).
-            var tempCoords = args.Viewport.WorldToLocal(mapPos);
-            tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y; // Local space to fragment space.
-
-            // try find cluster to merge with
-            bool merged = false;
-            foreach (var cluster in antiClusters)
-            {
-                if ((cluster.Position - tempCoords).Length() < 150f)
-                {
-                    cluster.Add(tempCoords, antiObserver.Observation[_religion.Value]);
-                    merged = true;
-                    break;
-                }
-            }
-
-            if (!merged)
-                antiClusters.Add(new Cluster(tempCoords, antiObserver.Observation[_religion.Value]));
-
-            if (antiClusters.Count >= MaxCount)
-                break;
         }
 
         _antiCount = 0;
