@@ -14,14 +14,9 @@
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: dash
-    sound: !type:SoundPathSpecifier
-      path: /Audio/_CP14/Effects/dash.ogg
-      params:
-        variation: 0.3
   - type: TargetAction
-    repeat: true
     checkCanAccess: false
-    range: 2
+    range: 3.5
   - type: WorldTargetAction
     event: !type:CP14WorldTargetActionEvent
-      cooldown: 0.5
+      cooldown: 5
