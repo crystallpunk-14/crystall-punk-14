@@ -100,10 +100,10 @@
   components:
   - type: Sprite
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi # TODO: birch recolor
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
     state: frame
   - type: Icon
-    sprite: _CP14/Structures/Furniture/Tables/wood.rsi # TODO: birch recolor
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
     state: frame
   - type: Construction
     graph: CP14TableWooden
