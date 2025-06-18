@@ -1,11 +1,10 @@
-using System.Text;
 using Content.Server.Cargo.Systems;
 using Content.Shared._CP14.Currency;
 using Content.Shared.Examine;
-using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Tag;
 using Content.Shared._CP14.Trading.Components;
+using Content.Shared.Mobs.Components;
 
 
 namespace Content.Server._CP14.Trading;
@@ -25,29 +24,22 @@ public sealed class CP14PriceScannerSystem : EntitySystem
 
     private bool IsAbleExamine(EntityUid uid)
     {
-        if (_invSystem.TryGetSlotEntity(uid, "eyes", out var huds)
-            && HasComp<CP14PriceScannerComponent>(huds))
-        {
+        if (_invSystem.TryGetSlotEntity(uid, "eyes", out var huds) && HasComp<CP14PriceScannerComponent>(huds))
             return true;
-        }
-        else if (HasComp<CP14PriceScannerComponent>(uid))
-        {
+        if (HasComp<CP14PriceScannerComponent>(uid))
             return true;
-        }
 
         return false;
     }
 
-    private void OnExamined(EntityUid eid, MetaDataComponent component, ExaminedEvent args)
+    private void OnExamined(EntityUid uid, MetaDataComponent component, ExaminedEvent args)
     {
         if (!IsAbleExamine(args.Examiner))
-        {
             return;
-        }
-        else if (_tag.HasTag(args.Examined, "CP14Coin"))
-        {
+        if (_tag.HasTag(args.Examined, "CP14Coin"))
             return;
-        }
+        if (HasComp<MobStateComponent>(uid))
+            return;
 
         var getPrice = _price.GetPrice(args.Examined);
 
