@@ -274,5 +274,19 @@
       minGroupSize: 5
       maxGroupSize: 15
 
-
-
+- type: cp14DemiplaneModifier
+  id: MobBigBear
+  levels:
+    min: 5
+    max: 10
+  categories:
+    Danger: 0.5
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobBigBear
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1

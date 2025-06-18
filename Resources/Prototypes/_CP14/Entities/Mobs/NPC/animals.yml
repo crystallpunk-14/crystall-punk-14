@@ -420,7 +420,7 @@
       path: /Audio/Animals/goat_bah.ogg
 
 - type: entity
-  id: CP14MobBear
+  id: CP14MobBigBear
   parent: CP14SimpleMobBase
   name: big bear
   description: A big, angry-looking bear. Maybe he didn't get enough sleep.
