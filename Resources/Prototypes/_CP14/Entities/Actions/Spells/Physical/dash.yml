@@ -1,0 +1,27 @@
+- type: entity
+  id: CP14ActionSpellDash
+  parent: CP14ActionSpellBase
+  name: Dash
+  description: You make a quick dash to the chosen position to quickly close the distance or dodge danger.
+  components:
+  - type: CP14MagicEffectStaminaCost
+    stamina: 40
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellDash
+      dashSpeed: 20
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/physical.rsi
+      state: dash
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/dash.ogg
+      params:
+        variation: 0.3
+  - type: TargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 2
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
+      cooldown: 0.5

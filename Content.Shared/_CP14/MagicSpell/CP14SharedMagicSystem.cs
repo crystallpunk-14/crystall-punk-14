@@ -5,14 +5,12 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.Actions;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -25,7 +23,6 @@ namespace Content.Shared._CP14.MagicSpell;
 public abstract partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -165,9 +162,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (_net.IsClient)
-            return;
-
         foreach (var effect in ent.Comp.TelegraphyEffects)
         {
             effect.Effect(EntityManager, args);
@@ -178,9 +172,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     {
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
-
-       if (_net.IsClient)
-            return;
 
         foreach (var effect in ent.Comp.Effects)
         {

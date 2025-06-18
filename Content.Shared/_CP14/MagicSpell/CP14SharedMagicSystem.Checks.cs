@@ -64,7 +64,7 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
+        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true))
             _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
                 args.Performer,
                 args.Performer,
@@ -199,8 +199,8 @@ public abstract partial class CP14SharedMagicSystem
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
+        //if (_net.IsClient)
+        //    return;
 
         var ev = new CP14SpellSpeechEvent
         {
@@ -225,8 +225,8 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
+        //if (_net.IsClient)
+        //    return;
 
         var ev = new CP14SpellSpeechEvent
         {
