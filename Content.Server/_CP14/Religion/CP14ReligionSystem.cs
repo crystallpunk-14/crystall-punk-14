@@ -8,6 +8,7 @@ using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
 using Content.Shared.FixedPoint;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -24,6 +25,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly VisibilitySystem _visibility = default!;
 
     private EntityQuery<CP14ReligionEntityComponent> _godQuery;
 
