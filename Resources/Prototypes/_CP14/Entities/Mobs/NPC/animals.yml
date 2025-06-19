@@ -465,7 +465,7 @@
   - type: MeleeWeapon
     angle: 0
     attackRate: 0.8
-    animation: WeaponArcBite
+    animation: WeaponArcClaw
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
     damage:
