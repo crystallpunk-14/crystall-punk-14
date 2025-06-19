@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Movement.Events;
 using Content.Shared.Throwing;
@@ -11,6 +12,7 @@ public sealed partial class CP14DashSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _blocker = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -46,10 +48,26 @@ public sealed partial class CP14DashSystem : EntitySystem
         args.Cancel();
     }
 
-    public void PerformDash(EntityUid ent, EntityCoordinates targetPosition, float speed = 10f)
+    public void PerformDash(EntityUid ent, EntityCoordinates targetPosition, float speed = 10f, float maxDistance = 3.5f)
     {
         EnsureComp<CP14DashComponent>(ent, out var dash);
         _audio.PlayPredicted(dash.DashSound, ent, ent);
-        _throwing.TryThrow(ent, targetPosition, speed, null, 0f, 10, true, false, false, false, false);
+
+        var entMapPos = _transform.ToMapCoordinates(Transform(ent).Coordinates);
+        var targetMapPos = _transform.ToMapCoordinates(targetPosition);
+
+        var distance = Vector2.Distance(entMapPos.Position, targetMapPos.Position);
+
+        if (distance > maxDistance)
+        {
+            var direction = (targetMapPos.Position - entMapPos.Position).Normalized();
+            var clampedTarget = entMapPos.Position + direction * maxDistance;
+            targetMapPos = new MapCoordinates(clampedTarget, entMapPos.MapId);
+        }
+
+        var finalTarget = _transform.ToCoordinates(targetMapPos);
+
+        _throwing.TryThrow(ent, finalTarget, speed, null, 0f, 10, true, false, false, false, false);
     }
+
 }
