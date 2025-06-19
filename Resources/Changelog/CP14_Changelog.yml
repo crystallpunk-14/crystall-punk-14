@@ -548,3 +548,13 @@
   id: 8105
   time: '2025-06-19T15:41:43.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1448
+- author: KittyCat432
+  changes:
+  - message: Added a telegraph to Lunar strike with a cast time of 1 second.
+    type: Add
+  - message: Changed Lunar strike to have a cooldown of 25 seconds, decrease the flash
+      radius to 1.5 instead of 2.
+    type: Tweak
+  id: 8106
+  time: '2025-06-19T18:26:20.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1449
