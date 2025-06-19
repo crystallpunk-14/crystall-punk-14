@@ -24,6 +24,13 @@
   - type: ActiveListener
     range: 1
   - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: GuideHelp
+    guides:
+    - CP14_RU_Patrons
+    - CP14_EN_Patrons
 
 - type: entity
   parent: CP14BaseAltar
@@ -33,4 +40,4 @@
   - type: CP14ReligionAltar
     canBeConverted: false
   - type: SpawnPoint
-    spawn_type: Always
+    spawn_type: Unset

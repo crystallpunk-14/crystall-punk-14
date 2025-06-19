@@ -64,7 +64,7 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
+        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true))
             _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
                 args.Performer,
                 args.Performer,
@@ -155,7 +155,8 @@ public abstract partial class CP14SharedMagicSystem
         }
     }
 
-    private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
     {
         if (!TryComp<CP14ReligionEntityComponent>(args.Performer, out var religionComp))
             return;
@@ -165,13 +166,22 @@ public abstract partial class CP14SharedMagicSystem
         if (args.Target is not null)
             position ??= Transform(args.Target.Value).Coordinates;
 
-        if (position is null)
-            return;
+        if (ent.Comp.OnlyInReligionZone)
+        {
+            if (position is null || !_god.InVision(position.Value, (args.Performer, religionComp)))
+            {
+                args.Cancel();
+            }
+        }
 
-        if (_god.InVision(position.Value, (args.Performer, religionComp)))
-            return;
-
-        args.Cancel();
+        if (ent.Comp.OnlyOnFollowers)
+        {
+            if (args.Target is null || !TryComp<CP14ReligionFollowerComponent>(args.Target, out var follower) || follower.Religion != religionComp.Religion)
+            {
+                args.PushReason(Loc.GetString("cp14-magic-spell-target-god-follower"));
+                args.Cancel();
+            }
+        }
     }
 
     private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
@@ -189,9 +199,6 @@ public abstract partial class CP14SharedMagicSystem
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
@@ -215,9 +222,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,

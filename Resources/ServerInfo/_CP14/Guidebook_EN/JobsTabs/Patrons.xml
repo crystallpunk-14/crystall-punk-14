@@ -1,0 +1,35 @@
+<Document>
+
+# Patrons
+
+Patrons are a unique game role representing incorporeal spirits capable of helping or hindering mortals.
+
+## Lore
+
+Mortals believe that patrons are gods. This is not true. True gods have no interest in what happens on Silite. Nevertheless, the beliefs, desires, fears, and emotions of mortals can create "patron spirits" — incorporeal energy entities that take on the form and powers associated with what mortals believe in.
+
+Such entities can be described as energetic parasites or symbionts—constantly sucking energy from their followers, they can exist and in return help them with their life problems.
+
+But if those who believe in the patrons spirit die or reject it, the spirit, deprived of energy, gradually dies.
+
+Because of this, patrons try with all their might to spread their influence, because the more people know about them and believe in them, the stronger the spirit becomes, gaining more opportunities to influence the world.
+
+## Area of influence
+
+Patron deities are not omnipotent and can only act within their area of influence. Most often, a patron deity's area of influence is provided by things associated with them: altars, their own followers, or anything directly related to their power.
+
+Outside their area of influence, patron deities can only silently observe.
+
+## Primordial statues and followers
+
+Each patron has an anchor connecting them to the real world. Most often, these are primordial statues depicting that god.
+
+Any intelligent being can become a follower of a god by touching a primordial statue and making an agreement with the patron. This establishes a "communication channel". The follower provides the patron with a zone of influence around themselves, allowing the patron to communicate with the follower at any time or influence the environment around them.
+
+The “channel” between the follower and the patron can be severed at any time, either by renouncing the patron or by expelling the follower. Once an intelligent being has severed its connection with the patron, it can never return to it in that round.
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14AltarPrimordialGodLumera"/>
+  </Box>
+
+</Document>

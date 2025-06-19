@@ -1872,22 +1872,22 @@ ent-CP14FoodMeatPigSlice = кусочки мяса
 ent-CP14FoodMeatPigCookedSlice = кусочки приготовленного мяса
     .desc = { ent-CP14FoodMeatPigSlice.desc }
 
-ent-CP14FoodMeatMole = сырое мясо крота
+ent-CP14FoodMeatMonster = сырое мясо монстра
     .desc = Цвет довольно подозрительный, не каждый решится его опробовать, может, отдать гоблину?
 
-ent-CP14FoodMeatMoleCooked = приготовленное мясо крота
+ent-CP14FoodMeatMonsterCooked = приготовленное мясо монстра
     .desc = { ent-CP14FoodMeatMole.desc }
 
-ent-CP14FoodMeatMoleLeg = сырое мясо ноги крота
+ent-CP14FoodMeatMonsterLeg = сырое мясо ноги монстра
     .desc = Подозрительный цвет мяса заставляет усомниться в его съедобности, но если вы действительно голодны...
 
-ent-CP14FoodMeatMoleLegCooked = приготовленное мясо ноги крота
+ent-CP14FoodMeatMonsterLegCooked = приготовленное мясо ноги монстра
     .desc = { ent-CP14FoodMeatMoleLeg.desc }
 
-ent-CP14FoodMeatMoleSlice = кусочек мяса монстра
+ent-CP14FoodMeatMonsterSlice = кусочек мяса монстра
     .desc = Мясные шарики-монстры с фирменным подозрительным цветом.
 
-ent-CP14FoodMeatMoleCookedSlice = кусочки приготовленного мяса монстра
+ent-CP14FoodMeatMonsterCookedSlice = кусочки приготовленного мяса монстра
     .desc = { ent-CP14FoodMeatMoleSlice.desc }
 
 ent-CP14FoodPieAppleRaw = сырой яблочный пирог
@@ -2866,6 +2866,15 @@ ent-CP14ModularBladeCopperMace = медный шар булавы
 ent-CP14ModularBladeMithrilMace = мифриловый шар булавы
     .desc = { ent-CP14ModularBladeMaceBase.desc }
 
+ent-CP14ModularBladeMopBase = насадка для швабры
+    .desc = Насадка для швабры без рукояти. Прикрепите ее к рукояти, чтобы сделать швабру.
+
+ent-CP14ModularBladeWoodMop = насадка для швабры
+    .desc = { ent-CP14ModularBladeMopBase.desc }
+
+ent-CP14ModularBladeLucensMop = люценовая насадка для швабры
+    .desc = { ent-CP14ModularBladeMopBase.desc }
+
 ent-CP14ModularBladePickaxeBase = головка кирки
     .desc = Массивная острая головка кирки без рукояти. Кузнец может использовать это, чтобы сделать инструмент.
 
@@ -3276,6 +3285,9 @@ ent-CP14RitualChalk = ритуальный мелок
 
 ent-CP14Bucket = ведро
     .desc = Старое скучное ведро
+
+ent-CP14Bucket = люценовая ведро
+    .desc = Скучное старое ведро, но оно синее.
 
 ent-CP14BaseDemiplaneKey = ключ координат демиплана
     .desc = Временный сгусток энергии, соединяющий реальный мир и демипланетный. Используйте его, пока он не рассеялся.
@@ -4629,7 +4641,7 @@ ent-CP14MagicHealingStaff = посох исцеления
 ent-CP14BaseShield = щит
     .desc = Деревянный щит, способный выдержать несколько ударов.
 
-ent-CP14BaseMop = деревянная швабра
+ent-CP14ModularWoodMop = деревянная швабра
     .desc = Швабра для мытья полов от различных неприятных жидкостей
 
 ent-CP14BaseWrench = гаечный ключ

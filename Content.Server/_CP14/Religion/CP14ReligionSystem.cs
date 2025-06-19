@@ -25,10 +25,20 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
+    private EntityQuery<CP14ReligionEntityComponent> _godQuery;
+
+    /// <summary>
+    /// If ReligionObserver receives a radius higher than this value, this entity will automatically be placed in PvsOverride for the god in order to function correctly outside of the player's PVS.
+    /// </summary>
+    /// <remarks> Maybe there is a variable for the distance outside the screen in PVS, I don't know. This number works best</remarks>
+    private const float ObservationOverrideRadius = 6.5f;
+
     public override void Initialize()
     {
         base.Initialize();
         InitializeUI();
+
+        _godQuery = GetEntityQuery<CP14ReligionEntityComponent>();
 
         SubscribeLocalEvent<CP14ReligionObserverComponent, ComponentInit>(OnObserverInit);
         SubscribeLocalEvent<CP14ReligionObserverComponent, AfterAutoHandleStateEvent>(OnObserverHandleState);
@@ -38,8 +48,25 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<CP14ReligionEntityComponent, PlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<CP14ReligionSpeakerComponent, CP14SpokeAttemptEvent>(OnSpokeAttempt);
+        SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandRecipients);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+    }
+
+    private void OnExpandRecipients(ExpandICChatRecipientsEvent ev)
+    {
+        foreach (var recipient in ev.Recipients)
+        {
+            var recipientEntity = recipient.Key.AttachedEntity;
+            if (!_godQuery.TryComp(recipientEntity, out var god) || god.Religion is null)
+                continue;
+
+            if (!InVision(ev.Source, (recipientEntity.Value, god)))
+            {
+                // If the recipient is not in vision, we don't want to send them the message.
+                ev.Recipients.Remove(recipient.Key);
+            }
+        }
     }
 
     public override void Update(float frameTime)
@@ -59,7 +86,12 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
 
             foreach (var god in GetGods(follower.Religion.Value))
             {
-                _magicEnergy.TransferEnergy((uid, energy), god.Owner, follower.EnergyToGodTransfer, out _, out _, safe: true);
+                _magicEnergy.TransferEnergy((uid, energy),
+                    god.Owner,
+                    follower.EnergyToGodTransfer,
+                    out _,
+                    out _,
+                    safe: true);
             }
         }
     }
@@ -68,7 +100,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     {
         args.Cancel();
 
-        if (!TryComp<CP14ReligionEntityComponent>(ent, out var god) || god.Religion is null)
+        if (!_godQuery.TryComp(ent, out var god) || god.Religion is null)
             return;
 
         if (ent.Comp.RestrictedReligionZone && !InVision(ent, (ent, god)))
@@ -84,7 +116,12 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         Timer.Spawn(333,
             () =>
             {
-                _chatSys.TrySendInGameICMessage(speaker, message, type, ChatTransmitRange.Normal, nameOverride: MetaData(ent).EntityName, ignoreActionBlocker: true);
+                _chatSys.TrySendInGameICMessage(speaker,
+                    message,
+                    type,
+                    ChatTransmitRange.Normal,
+                    nameOverride: MetaData(ent).EntityName,
+                    ignoreActionBlocker: true);
             });
     }
 
@@ -99,14 +136,14 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
 
     private void OnObserverInit(Entity<CP14ReligionObserverComponent> ent, ref ComponentInit args)
     {
-        foreach (var (religion, _) in ent.Comp.Observation)
-        {
-            var gods = GetGods(religion);
+        if (ent.Comp.Religion is null)
+            return;
 
-            foreach (var god in gods)
-            {
-                UpdatePvsOverrides(god);
-            }
+        var gods = GetGods(ent.Comp.Religion.Value);
+
+        foreach (var god in gods)
+        {
+            UpdatePvsOverrides(god);
         }
     }
 
@@ -136,7 +173,9 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
             return;
 
         var wrappedMessage =
-            Loc.GetString("cp14-altar-wrapped-message", ("name", MetaData(args.Source).EntityName), ("msg", args.Message));
+            Loc.GetString("cp14-altar-wrapped-message",
+                ("name", MetaData(args.Source).EntityName),
+                ("msg", args.Message));
 
         SendMessageToGods(ent.Comp.Religion.Value, wrappedMessage, args.Source);
     }
@@ -154,7 +193,14 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
             channels.Add(godActor.PlayerSession.Channel);
         }
 
-        _chat.ChatMessageToMany(ChatChannel.Notifications, msg, msg, source, false, true, channels, colorOverride: Color.Aqua);
+        _chat.ChatMessageToMany(ChatChannel.Notifications,
+            msg,
+            msg,
+            source,
+            false,
+            true,
+            channels,
+            colorOverride: Color.Aqua);
     }
 
     public FixedPoint2 GetFollowerPercentage(Entity<CP14ReligionEntityComponent> god)
@@ -194,10 +240,10 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         var query = EntityQueryEnumerator<CP14ReligionObserverComponent>();
         while (query.MoveNext(out var uid, out var observer))
         {
-            if (!observer.Observation.ContainsKey(ent.Comp.Religion.Value))
+            if (!observer.Active)
                 continue;
 
-            if (observer.Observation[ent.Comp.Religion.Value] <= 6.5f) //Maybe there is a variable for the distance outside the screen in PVS, I don't know. This number works best
+            if (observer.Radius <= ObservationOverrideRadius)
                 continue;
 
             ent.Comp.PvsOverridedObservers.Add(uid);
@@ -213,9 +259,9 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         if (ent.Comp.Session is null)
             return;
 
-        foreach (var altar in ent.Comp.PvsOverridedObservers)
+        foreach (var observer in ent.Comp.PvsOverridedObservers)
         {
-            _pvs.RemoveSessionOverride(altar, ent.Comp.Session);
+            _pvs.RemoveSessionOverride(observer, ent.Comp.Session);
         }
 
         ent.Comp.Session = null;
@@ -232,10 +278,10 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     }
 }
 
-public sealed class CP14SpokeAttemptEvent(string message, InGameICChatType type, ICommonSession? player) : CancellableEntityEventArgs
+public sealed class CP14SpokeAttemptEvent(string message, InGameICChatType type, ICommonSession? player)
+    : CancellableEntityEventArgs
 {
     public string Message = message;
     public InGameICChatType Type = type;
     public ICommonSession? Player = player;
 }
-

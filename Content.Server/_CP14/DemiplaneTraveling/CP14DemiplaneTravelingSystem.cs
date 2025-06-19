@@ -117,6 +117,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             {
                 if (HasComp<GhostComponent>(ent))
                     continue;
+                if (HasComp<CP14ReligionEntityComponent>(ent)) //TODO: make some generic way to whitelist entities from teleporting
+                    continue;
 
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))
                     continue;

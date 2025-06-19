@@ -371,3 +371,167 @@
   id: 8089
   time: '2025-06-13T10:25:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1402
+- author: TheShuEd
+  changes:
+  - message: A patron system has been added. By interacting with the primordial statues,
+      you can become a follower of a patron. For more details, please refer to the
+      in-game guidebooks.
+    type: Add
+  - message: "The divine patron of the night sky and knowledge, \u201CLumera,\u201D\
+      \ has been added. This is a game role that gains new abilities based on the\
+      \ number of followers and is capable of interacting with areas of visibility\
+      \ and granting (or taking away) memory points from other players."
+    type: Add
+  id: 8090
+  time: '2025-06-15T15:00:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1427
+- author: TheShuEd
+  changes:
+  - message: Added firewave spell. Now it looks like a shotgun, only made of fire.
+    type: Add
+  - message: Removed firebolt spell.
+    type: Remove
+  - message: Spiders' health reduced by half
+    type: Tweak
+  id: 8091
+  time: '2025-06-15T15:03:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1430
+- author: TheShuEd
+  changes:
+  - message: you can buy wheat and cotton into victorian gardens trade faction
+    type: Add
+  - message: Demiplanes can no longer devour patrons if they close while the patron
+      is inside the demoplan.
+    type: Fix
+  - message: Patron saints can no longer occupy entry slots into the demiplane.
+    type: Fix
+  - message: Passports removed from the gods-patrons
+    type: Fix
+  id: 8092
+  time: '2025-06-15T18:25:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1432
+- author: KittyCat432
+  changes:
+  - message: Changed Lunar Strike to deal 30 heat damage from 10 and have a 15 second
+      cooldown.
+    type: Tweak
+  id: 8093
+  time: '2025-06-16T07:37:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1433
+- author: Nimfar11
+  changes:
+  - message: Changed the name of mole meat to monster meat.
+    type: Tweak
+  id: 8094
+  time: '2025-06-16T07:39:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1426
+- author: paige404
+  changes:
+  - message: Added modular mop heads for building one and two handed mops. Mops aren't
+      designed to be used as weapons, and break more quickly. The new lucens mop head
+      carries twice as much water--and deals more damage. Go chop down some lucens
+      trees for the innkeeps!
+    type: Add
+  - message: Added lucens buckets. They are blue.
+    type: Add
+  - message: Buckets can now be worn on the head as shitty helmets. Enjoy.
+    type: Tweak
+  - message: The shovel and hoe now break more quickly when used as weapons.
+    type: Tweak
+  - message: Ropes can now be crafted from cloth or flora material.
+    type: Add
+  id: 8095
+  time: '2025-06-16T08:30:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1387
+- author: TheShuEd
+  changes:
+  - message: The damage and number of fire wave projectiles has been increased
+    type: Tweak
+  id: 8096
+  time: '2025-06-16T16:39:33.0000000+00:00'
+  url: https://youtu.be/dQw4w9WgXcQ
+- author: Wizden
+  changes:
+  - message: Fork synced with new stable upstream version! Added many new unknown
+      bugs!
+    type: Add
+  - message: A lot of new features have been added(but I don't know which ones)! Word
+      highlighting in chat has definitely been added.
+    type: Add
+  - message: Perhaps old bugs have been removed?
+    type: Remove
+  - message: Bugs are particularly likely to occur in the area of spell usage, due
+      to the refactoring of the action system in the upstream.
+    type: Fix
+  id: 8097
+  time: '2025-06-17T00:05:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1416
+- author: TheShuEd
+  changes:
+  - message: Lumera can no longer see or hear anything outside her area of influence.
+      This is an experimental change and may be reverted.
+    type: Tweak
+  id: 8098
+  time: '2025-06-16T22:19:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1436
+- author: TheShuEd
+  changes:
+  - message: Fork synced with new stable upstream version! Added many new unknown
+      bugs!
+    type: Add
+  - message: A lot of new features have been added(but I don't know which ones)! Word
+      highlighting in chat has definitely been added.
+    type: Add
+  - message: Perhaps old bugs have been removed?
+    type: Remove
+  - message: Bugs are particularly likely to occur in the area of spell usage, due
+      to the refactoring of the action system in the upstream.
+    type: Fix
+  id: 8099
+  time: '2025-06-16T21:00:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1416
+- author: KittyCat432
+  changes:
+  - message: Changed Lunar strike to deal 10 heat damage instead of 30.
+    type: Tweak
+  id: 8100
+  time: '2025-06-16T22:50:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1437
+- author: TheShuEd
+  changes:
+  - message: Corpses and living creatures are no longer shown to be worth money (as
+      they cannot be sold)
+    type: Fix
+  - message: Rain no longer fills closed barrels and bottles with water
+    type: Fix
+  - message: The furnace can now be rotated through the verb menu
+    type: Fix
+  id: 8101
+  time: '2025-06-18T09:37:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1440
+- author: Sefaia
+  changes:
+  - message: Added the ability to Execute to all sharp weapons!
+    type: Add
+  id: 8102
+  time: '2025-06-18T10:10:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1419
+- author: TheShuEd
+  changes:
+  - message: 'The area of influence around followers now depends on the follower''s
+      health status: The area drops by 75% when the follower falls into critical condition,
+      and disappears completely when the follower dies.'
+    type: Tweak
+  - message: The standard area of influence around altars and patron followers has
+      been increased.
+    type: Tweak
+  id: 8103
+  time: '2025-06-18T18:46:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1439
+- author: TheShuEd
+  changes:
+  - message: Added dash physical skill!
+    type: Add
+  id: 8104
+  time: '2025-06-18T21:14:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1445

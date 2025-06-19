@@ -13,6 +13,20 @@
   result: CP14Bucket
 
 - type: CP14Recipe
+  id: CP14BucketLucens
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14Rope
+    count: 1
+  result: CP14BucketLucens
+
+- type: CP14Recipe
   id: CP14WoodenBeerMug
   tag: CP14RecipeWorkbench
   craftTime: 3
@@ -43,17 +57,32 @@
   result: CP14Plate
 
 - type: CP14Recipe
-  id: CP14BaseMop
+  id: CP14ModularBladeWoodMop
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  category: Tools
+  craftTime: 2
   requirements:
   - !type:StackGroupResource
     group: WoodenPlanks
-    count: 2
+    count: 1
   - !type:StackResource
     stack: CP14Cloth
     count: 1
-  result: CP14BaseMop
+  result: CP14ModularBladeWoodMop
+
+- type: CP14Recipe
+  id: CP14ModularBladeLucensMop
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 1
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  result: CP14ModularBladeLucensMop
 
 - type: CP14Recipe
   id: CP14Lighter
@@ -275,3 +304,22 @@
     count: 2
   result: CP14OpenSign
 
+- type: CP14Recipe
+  id: CP14RopeFromGrass
+  tag: CP14RecipeWorkbench
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 4
+  result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14RopeFromCloth
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14Rope

@@ -11,6 +11,7 @@ namespace Content.Client._CP14.Religion;
 public sealed partial class CP14ReligionEntityWindow : DefaultWindow
 {
     [Dependency] private readonly ILogManager _log = default!;
+
     private ISawmill Sawmill { get; init; }
 
     public event Action<NetEntity>? OnTeleportAttempt;

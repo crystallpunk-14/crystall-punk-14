@@ -1,9 +1,11 @@
 - type: entity
   id: CP14ActionSpellGodLumeraMindUpgrade
+  parent: CP14ActionSpellBase
   name: Expansion of consciousness
   description: "You expand the boundaries of what is possible for the chosen creature, revealing to it the secrets of the universe. The target gains +0.5 memory points, up to a maximum of 6.5"
   components:
   - type: CP14MagicEffectReligionRestricted
+    onlyOnFollowers: true
   - type: CP14MagicEffectManaCost
     manaCost: 300
   - type: CP14MagicEffect
@@ -49,22 +51,21 @@
         walkSpeedModifier: 0.5
         sprintSpeedModifier: 0.5
         statusLifetime: 30
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: mind_upgrade
+  - type: TargetAction
+    checkCanAccess: false
+    range: 100
   - type: EntityTargetAction
-    canTargetSelf: false
     blacklist:
       components:
       - CP14ReligionEntity
     whitelist:
       components:
       - CP14SkillStorage
-    range: 100
-    itemIconStyle: BigAction
-    checkCanAccess: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
-      state: mind_upgrade
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 300
       castDelay: 16
