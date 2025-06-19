@@ -9,14 +9,15 @@
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellDash
-      dashSpeed: 20
+      speed: 20
+      range: 3.5
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: dash
   - type: TargetAction
     checkCanAccess: false
-    range: 3.5
+    range: 10 #Thats not dash range, thats interaction clickable zone range
   - type: WorldTargetAction
     event: !type:CP14WorldTargetActionEvent
       cooldown: 5
