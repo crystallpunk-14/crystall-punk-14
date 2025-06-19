@@ -102,6 +102,8 @@
     layers:
       - state: core1
         map: ["random"]
+  - type: StaticPrice
+    price: 10
   - type: RandomSprite
     available:
     - random:
