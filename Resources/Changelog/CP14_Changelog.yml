@@ -535,3 +535,16 @@
   id: 8104
   time: '2025-06-18T21:14:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1445
+- author: TheShuEd
+  changes:
+  - message: Dimension shards drop from the core, and now they cost 1 silver coin
+      each.
+    type: Add
+  - message: The core of the demiplane can no longer be dragged along and pulled out.
+    type: Tweak
+  - message: Destroying the core of the demiplane counts as completing the demiplane
+      in any case.
+    type: Tweak
+  id: 8105
+  time: '2025-06-19T15:41:43.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1448
