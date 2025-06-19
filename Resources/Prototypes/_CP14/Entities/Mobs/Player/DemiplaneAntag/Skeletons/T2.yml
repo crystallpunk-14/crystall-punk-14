@@ -70,7 +70,7 @@
     experienceMaxCap: 2
     freeLearnedSkills:
     - HydrosophistryT1
-    LearnedSkills:
+    learnedSkills:
     - CP14ActionSpellIceArrow
 
 - type: entity
@@ -103,7 +103,7 @@
     - HydrosophistryT2
     - MetamagicT1
     - MetamagicT2
-    LearnedSkills:
+    learnedSkills:
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
     - CP14ActionSpellManaConsumeElf
