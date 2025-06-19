@@ -90,9 +90,6 @@
   description: A fragment of the fabric of reality. An extremely valuable resource for those who know what they can do with it.
   categories: [ ForkFiltered ]
   components:
-  #- type: Tag
-  #  tags:
-  #  - CP14FitInMortar
   - type: Item
     size: Tiny
     shape:
@@ -111,4 +108,3 @@
         core2: ""
         core3: ""
         core4: ""
-
