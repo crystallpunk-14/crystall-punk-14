@@ -301,3 +301,35 @@
     - CP14FitInMortar
     - CP14AlchemicalHerbals
 
+- type: entity
+  id: CP14SilverNeedle
+  parent: CP14WildProduceBase
+  name: silver needle
+  description: Bright orange berries of a frost-resistant plant. Widely used in medicine.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14SilverNeedle
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14SilverNeedle
+          Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals

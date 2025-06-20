@@ -1,0 +1,29 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: CP14DayflinSilverNeedle
+  requiredMixerCategories:
+  - CP14MagicSplitting
+  reactants:
+    CP14SilverNeedle:
+      amount: 1
+  products:
+    CP14EssenceFrost: 0.5
+    CP14EssenceLife: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: CP14SilverNeedleAdmixture1
+  minTemp: 500
+  reactants:
+    CP14SilverNeedle:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectHealMana:
+      amount: 1
+  products:
+    CP14BasicEffectHealCold: 2
+    CP14BasicEffectSpeedDown: 1
