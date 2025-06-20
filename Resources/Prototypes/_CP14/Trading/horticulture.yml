@@ -1,0 +1,83 @@
+# Reputation Level 0 - Basic Herbs
+- type: cp14TradingPosition
+  id: CP14BloodFlower
+  faction: Horticulture
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14BloodFlower
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14WildSage
+  faction: Horticulture
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14WildSage
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14Dayflin
+  faction: Horticulture
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14Dayflin
+    count: 2
+
+# Reputation Level 1 - Advanced Herbs
+- type: cp14TradingPosition
+  id: CP14BlueAmanita
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14BlueAmanita
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14LumiMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14LumiMushroom
+    count: 2
+
+# Reputation Level 2 - Rare Herbs
+- type: cp14TradingPosition
+  id: CP14ChromiumSlime
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14ChromiumSlime
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14SilverNeedle
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14SilverNeedle
+    count: 2
