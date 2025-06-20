@@ -1,0 +1,58 @@
+# Basic Dairy Products
+- type: cp14TradingPosition
+  id: CP14FoodEgg
+  faction: Dairy
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/egg.rsi
+    state: brown
+  service: !type:CP14BuyItemsService
+    product: CP14FoodEgg
+    count: 6
+
+- type: cp14TradingPosition
+  id: CP14FoodCheeseWheel
+  faction: Dairy
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: cheese_wheel
+  service: !type:CP14BuyItemsService
+    product: CP14FoodCheeseWheel
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14FoodCheesePart
+  faction: Dairy
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: cheese_part
+  service: !type:CP14BuyItemsService
+    product: CP14FoodCheesePart
+    count: 3
+
+# Premium Dairy (Requires Reputation)
+- type: cp14TradingPosition
+  id: CP14FoodBlueCheeseWheel
+  faction: Dairy
+  reputationLevel: 1
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: blue_cheese_wheel
+  service: !type:CP14BuyItemsService
+    product: CP14FoodBlueCheeseWheel
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14FoodAgedCheeseWheel
+  faction: Dairy
+  reputationLevel: 2
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/cheese.rsi
+    state: aged_cheese_wheel
+  service: !type:CP14BuyItemsService
+    product: CP14FoodAgedCheeseWheel
+    count: 1

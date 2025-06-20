@@ -1,3 +1,4 @@
+# Cheeses
 - type: entity
   id: CP14FoodCheeseWheel
   parent: FoodInjectableBase
@@ -24,6 +25,8 @@
   - type: SliceableFood
     count: 5
     slice: CP14FoodCheesePart
+  - type: StaticPrice
+    price: 40
 
 - type: entity
   id: CP14FoodCheesePart
@@ -58,6 +61,11 @@
   - type: SliceableFood
     count: 3
     slice: CP14FoodCheeseSlice
+  - type: PhysicalComposition
+    materialComposition:
+      CP14FoodCheeseWheel: 0.2
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   id: CP14FoodCheeseSlice
@@ -92,3 +100,57 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CheeseSandwich
+  - type: PhysicalComposition
+    materialComposition:
+      CP14FoodCheeseWheel: 0.07
+  - type: StaticPrice
+    price: 3
+
+# Special Cheese Types
+- type: entity
+  id: CP14FoodBlueCheeseWheel
+  parent: CP14FoodCheeseWheel
+  name: blue cheese wheel
+  description: A wheel of cheese with distinctive blue veins. Strong aroma!
+  components:
+  - type: Sprite
+    layers:
+      - state: blue_cheese_wheel
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - pungent
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: CP14BlueCheeseCulture
+          Quantity: 3
+  - type: StaticPrice
+    price: 60
+
+- type: entity
+  id: CP14FoodAgedCheeseWheel
+  parent: CP14FoodCheeseWheel
+  name: aged cheese wheel
+  description: Hard cheese aged for months to develop rich flavor.
+  components:
+  - type: Sprite
+    layers:
+      - state: aged_cheese_wheel
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - savory
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: StaticPrice
+    price: 75

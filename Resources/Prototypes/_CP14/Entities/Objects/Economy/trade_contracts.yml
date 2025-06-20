@@ -93,3 +93,14 @@
     state: butchery
   - type: CP14TradingContract
     faction: Butchers
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractDairy
+  description: Trading contract with "Golden Udder Dairy". Allows you to purchase fresh dairy products and eggs.
+  suffix: Dairy
+  components:
+  - type: Sprite
+    state: cheese
+  - type: CP14TradingContract
+    faction: Dairy
