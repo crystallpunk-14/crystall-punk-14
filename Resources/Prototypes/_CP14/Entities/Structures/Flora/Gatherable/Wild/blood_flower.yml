@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
+    sprite: _CP14/Structures/Flora/Wild/blood_flower.rsi
     layers:
       - state: world1
         map: ["random"]
