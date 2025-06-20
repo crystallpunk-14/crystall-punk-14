@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "All right reserved",
-    "copyright": "Created by Artista.rar",
+    "copyright": "Created by Artista.rar. Aged and blue wheel - by PhantomRU",
     "size": {
         "x": 32,
         "y": 32
@@ -27,6 +27,12 @@
         },
         {
             "name": "cheese_wheel"
+        },
+        {
+            "name": "blue_cheese_wheel"
+        },
+        {
+            "name": "aged_cheese_wheel"
         }
     ]
 }
