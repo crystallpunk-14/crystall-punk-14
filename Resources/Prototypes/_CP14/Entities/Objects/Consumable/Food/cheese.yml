@@ -126,9 +126,7 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 18
-        - ReagentId: CP14BlueCheeseCulture
-          Quantity: 3
+          Quantity: 30
   - type: StaticPrice
     price: 60
 
@@ -151,6 +149,6 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 25
+          Quantity: 45
   - type: StaticPrice
     price: 75
