@@ -558,3 +558,11 @@
   id: 8106
   time: '2025-06-19T18:26:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1449
+- author: TheShuEd
+  changes:
+  - message: 'New alchemical precursor: Silver needle berries. Can only be found in
+      snowy locations, helps treat frostbite.'
+    type: Add
+  id: 8107
+  time: '2025-06-20T09:31:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1451
