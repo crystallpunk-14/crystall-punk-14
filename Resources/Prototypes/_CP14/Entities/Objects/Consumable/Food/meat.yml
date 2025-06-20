@@ -30,6 +30,8 @@
   - type: Tag
     tags:
     - CP14Meat
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   id: CP14FoodMeatSliceBase
@@ -51,6 +53,9 @@
   - type: InternalTemperature
     thickness: 0.006
     area: 0.006 # 1\3 of meat value
+  - type: PhysicalComposition
+    materialComposition:
+      CP14FoodMeatBase: 0.3
   - type: Tag
     tags:
     - CP14MeatSlice

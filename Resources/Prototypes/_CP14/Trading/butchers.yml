@@ -1,0 +1,83 @@
+# Reputation Level 0 - Common Meats
+- type: cp14TradingPosition
+  id: CP14FoodMeatLamb
+  faction: Butchers
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: sheepmeat
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatLamb
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatPig
+  faction: Butchers
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatPig
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatRabbit
+  faction: Butchers
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: rabbit_meat1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatRabbit
+    count: 3
+
+# Reputation Level 1 - Special Meats
+- type: cp14TradingPosition
+  id: CP14FoodMeatBoar
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat2
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatBoar
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatFrogLeg
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: frog_leg
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatFrogLeg
+    count: 4
+
+# Reputation Level 2 - Exotic Meats
+- type: cp14TradingPosition
+  id: CP14FoodMeatDino
+  faction: Butchers
+  reputationLevel: 2
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatDino
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatMonster
+  faction: Butchers
+  reputationLevel: 2
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: mole_meat1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatMonster
+    count: 1
