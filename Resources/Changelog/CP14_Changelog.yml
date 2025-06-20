@@ -590,3 +590,16 @@
   id: 8110
   time: '2025-06-20T13:19:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1431
+- author: TheShuEd
+  changes:
+  - message: Skills from skill trees are now added to the mind rather than the body.
+      This means you can use dashes, kicks, and sprints even when you've been turned
+      into a sheep.
+    type: Tweak
+  - message: Fixed a bug that prevented Lumera's T3 skills from working.
+    type: Fix
+  - message: Fixed a bug where patrons lost their skills after reconnecting.
+    type: Fix
+  id: 8111
+  time: '2025-06-20T23:46:01.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1446
