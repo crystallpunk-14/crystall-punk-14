@@ -8,31 +8,88 @@
     },
     "states": [
         {
-            "name": "cheese_part"
+            "name": "cheese_part",
+            "description": "Standard cheese wedge"
         },
         {
-            "name": "cheese_part2"
+            "name": "cheese_part2",
+            "description": "Alternative standard cheese wedge"
         },
         {
-            "name": "cheese_part3"
+            "name": "cheese_part3",
+            "description": "Third variant of standard cheese wedge"
         },
         {
-            "name": "cheese_slice"
+            "name": "cheese_slice",
+            "description": "Standard cheese slice"
         },
         {
-            "name": "cheese_slice2"
+            "name": "cheese_slice2",
+            "description": "Alternative standard cheese slice"
         },
         {
-            "name": "cheese_slice3"
+            "name": "cheese_slice3",
+            "description": "Third variant of standard cheese slice"
         },
         {
-            "name": "cheese_wheel"
+            "name": "cheese_wheel",
+            "description": "Standard cheese wheel"
         },
         {
-            "name": "blue_cheese_wheel"
+            "name": "blue_cheese_wheel",
+            "description": "Blue cheese wheel with visible mold veins"
         },
         {
-            "name": "aged_cheese_wheel"
+            "name": "aged_cheese_wheel",
+            "description": "Aged hard cheese wheel with rustic crust"
+        },
+        {
+            "name": "blue_cheese_part",
+            "description": "Blue cheese wedge with characteristic veins"
+        },
+        {
+            "name": "blue_cheese_part2",
+            "description": "Alternative blue cheese wedge"
+        },
+        {
+            "name": "blue_cheese_part3",
+            "description": "Third variant of blue cheese wedge"
+        },
+        {
+            "name": "blue_cheese_slice",
+            "description": "Blue cheese slice with mold patterns"
+        },
+        {
+            "name": "blue_cheese_slice2",
+            "description": "Alternative blue cheese slice"
+        },
+        {
+            "name": "blue_cheese_slice3",
+            "description": "Third variant of blue cheese slice"
+        },
+        {
+            "name": "aged_cheese_part",
+            "description": "Aged cheese wedge with dense texture"
+        },
+        {
+            "name": "aged_cheese_part2",
+            "description": "Alternative aged cheese wedge"
+        },
+        {
+            "name": "aged_cheese_part3",
+            "description": "Third variant of aged cheese wedge"
+        },
+        {
+            "name": "aged_cheese_slice",
+            "description": "Aged cheese slice with crystalline structure"
+        },
+        {
+            "name": "aged_cheese_slice2",
+            "description": "Alternative aged cheese slice"
+        },
+        {
+            "name": "aged_cheese_slice3",
+            "description": "Third variant of aged cheese slice"
         }
     ]
 }
