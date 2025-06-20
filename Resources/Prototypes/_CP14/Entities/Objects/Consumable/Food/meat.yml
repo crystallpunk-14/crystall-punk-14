@@ -1,5 +1,4 @@
 ﻿# Base
-
 - type: entity
   parent: FoodInjectableBase
   id: CP14FoodMeatBase
@@ -31,7 +30,7 @@
     tags:
     - CP14Meat
   - type: StaticPrice
-    price: 10
+    price: 5
 
 - type: entity
   id: CP14FoodMeatSliceBase
@@ -61,7 +60,6 @@
     - CP14MeatSlice
 
 # Lamb Meat
-
 - type: entity
   id: CP14FoodMeatLamb
   parent: CP14FoodMeatBase
@@ -82,6 +80,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14FoodMeatLambCooked
@@ -108,6 +108,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   id: CP14FoodMeatLambSlice
@@ -135,6 +137,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCookedSlice
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   id: CP14FoodMeatLambCookedSlice
@@ -166,6 +170,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 7
 
 - type: entity
   id: CP14FoodMeatLambCutlet
@@ -196,6 +202,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCutletCooked
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   id: CP14FoodMeatLambCutletCooked
@@ -225,7 +233,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 25
 
+# Frog Leg
 - type: entity
   id: CP14FoodMeatFrogLeg
   parent: CP14FoodMeatBase
@@ -250,6 +261,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFrogLegCooked
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14FoodMeatFrogLegCooked
@@ -273,9 +286,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 15
 
 # Human Meat
-
 - type: entity
   id: CP14FoodMeatHuman
   parent: CP14FoodMeatBase
@@ -309,6 +323,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHumanCooked
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   id: CP14FoodMeatHumanCooked
@@ -339,9 +355,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 10 # Who would buy this?
 
 # Dino Meat
-
 - type: entity
   id: CP14FoodMeatDino
   parent: CP14FoodMeatBase
@@ -368,6 +385,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatDinoCooked
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14FoodMeatDinoCooked
@@ -391,6 +410,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   id: CP14FoodMeatHydra
@@ -416,6 +437,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHydraCooked
+  - type: StaticPrice
+    price: 3
 
 - type: entity
   id: CP14FoodMeatHydraCooked
@@ -437,9 +460,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 8
 
 # Rabbit Meat
-
 - type: entity
   id: CP14FoodMeatRabbit
   parent: CP14FoodMeatBase
@@ -474,6 +498,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatRabbitCooked
+  - type: StaticPrice
+    price: 3
 
 - type: entity
   id: CP14FoodMeatRabbitCooked
@@ -503,9 +529,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 12
 
 # Pig and Boar Meat
-
 - type: entity
   id: CP14FoodMeatPig
   parent: CP14FoodMeatBase
@@ -542,6 +569,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCooked
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14FoodMeatPigCooked
@@ -575,6 +604,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   id: CP14FoodMeatPigLeg
@@ -602,6 +633,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigLegCooked
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   id: CP14FoodMeatPigLegCooked
@@ -625,6 +658,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 30
 
 - type: entity
   id: CP14FoodMeatBoar
@@ -662,6 +697,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatBoarCooked
+  - type: StaticPrice
+    price: 7
 
 - type: entity
   id: CP14FoodMeatBoarCooked
@@ -696,6 +733,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   id: CP14FoodMeatPigSlice
@@ -727,6 +766,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCookedSlice
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   id: CP14FoodMeatPigCookedSlice
@@ -751,9 +792,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 7
 
 # Monster Meat
-
 - type: entity
   id: CP14FoodMeatMonster
   parent: CP14FoodMeatBase
@@ -792,6 +834,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterCooked
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14FoodMeatMonsterCooked
@@ -828,6 +872,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   id: CP14FoodMeatMonsterLeg
@@ -855,6 +901,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterLegCooked
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   id: CP14FoodMeatMonsterLegCooked
@@ -879,6 +927,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 12
 
 - type: entity
   id: CP14FoodMeatMonsterSlice
@@ -910,6 +960,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterCookedSlice
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14FoodMeatMonsterCookedSlice
@@ -935,9 +987,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 12
 
-  #Flem meat
-
+# Flem meat
 - type: entity
   id: CP14FoodMeatFlemHead
   parent: CP14FoodMeatBase
@@ -969,6 +1022,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemHeadCooked
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   id: CP14FoodMeatFlemHeadCooked
@@ -992,6 +1047,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 45
 
 - type: entity
   id: CP14FoodMeatFlemTorso
@@ -1027,6 +1084,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemTorsoCooked
+  - type: StaticPrice
+    price: 25
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCooked
@@ -1053,6 +1112,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 85
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCut
@@ -1087,6 +1148,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemTorsoCookedCut
+  - type: StaticPrice
+    price: 12
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCookedCut
@@ -1111,6 +1174,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 30
 
 - type: entity
   id: CP14FoodMeatFlemLeg
@@ -1143,6 +1208,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemLegCooked
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14FoodMeatFlemLegCooked
@@ -1167,3 +1234,5 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: StaticPrice
+    price: 15
