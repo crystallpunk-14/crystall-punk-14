@@ -52,12 +52,11 @@
   - type: InternalTemperature
     thickness: 0.006
     area: 0.006 # 1\3 of meat value
-  - type: PhysicalComposition
-    materialComposition:
-      CP14FoodMeatBase: 0.3
   - type: Tag
     tags:
     - CP14MeatSlice
+  - type: StaticPrice
+    price: 2
 
 # Lamb Meat
 - type: entity
