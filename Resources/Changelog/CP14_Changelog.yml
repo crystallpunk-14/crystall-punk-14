@@ -535,3 +535,58 @@
   id: 8104
   time: '2025-06-18T21:14:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1445
+- author: TheShuEd
+  changes:
+  - message: Dimension shards drop from the core, and now they cost 1 silver coin
+      each.
+    type: Add
+  - message: The core of the demiplane can no longer be dragged along and pulled out.
+    type: Tweak
+  - message: Destroying the core of the demiplane counts as completing the demiplane
+      in any case.
+    type: Tweak
+  id: 8105
+  time: '2025-06-19T15:41:43.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1448
+- author: KittyCat432
+  changes:
+  - message: Added a telegraph to Lunar strike with a cast time of 1 second.
+    type: Add
+  - message: Changed Lunar strike to have a cooldown of 25 seconds, decrease the flash
+      radius to 1.5 instead of 2.
+    type: Tweak
+  id: 8106
+  time: '2025-06-19T18:26:20.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1449
+- author: TheShuEd
+  changes:
+  - message: 'New alchemical precursor: Silver needle berries. Can only be found in
+      snowy locations, helps treat frostbite.'
+    type: Add
+  id: 8107
+  time: '2025-06-20T09:31:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1451
+- author: paige404
+  changes:
+  - message: Lanterns now break easily when struck with weapons or used as a weapon.
+    type: Tweak
+  id: 8108
+  time: '2025-06-20T09:51:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1450
+- author: TheShuEd
+  changes:
+  - message: "The rules for the gambling game \u201CTiefling gambit\u201D can now\
+      \ be found in the crates."
+    type: Add
+  - message: Fixed a bug that prevented collecting chromium slime.
+    type: Fix
+  id: 8109
+  time: '2025-06-20T09:59:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1452
+- author: Nimfar11
+  changes:
+  - message: The two-handed crossbow now shoots faster and more accurately.
+    type: Tweak
+  id: 8110
+  time: '2025-06-20T13:19:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1431
