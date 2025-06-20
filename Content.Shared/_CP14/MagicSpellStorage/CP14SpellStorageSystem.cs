@@ -55,8 +55,19 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
             storage.Comp.SpellEntities.Add(spellEnt.Value);
         }
+
         if (storage.Comp.GrantAccessToSelf)
-            _actions.GrantActions(storage.Owner, storage.Comp.SpellEntities, storage.Owner);
+        {
+            if (!_mind.TryGetMind(storage.Owner, out var mind, out _))
+                _actions.GrantActions(storage.Owner, storage.Comp.SpellEntities, storage.Owner);
+            else
+            {
+                foreach (var spell in storage.Comp.SpellEntities)
+                {
+                    _actionContainer.AddAction(mind, spell);
+                }
+            }
+        }
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
