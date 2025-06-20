@@ -15,7 +15,7 @@
 # Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
 
 - type: reaction
-  id: CP14DayflinAdmixture1
+  id: CP14SilverNeedleAdmixture1
   minTemp: 500
   reactants:
     CP14SilverNeedle:
