@@ -1,0 +1,617 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BasePlushie
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/plushies.rsi
+  - type: Item
+    size: Normal
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnActivate
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnLand
+    sound:
+      collection: ToyFall
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: ToySqueak
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    autoAttack: true
+    attackRate: 0.8
+    wideAnimationRotation: 180
+    cPAnimationLength: 1
+    soundHit:
+      collection: ToySqueak
+    damage:
+      types:
+        Blunt: 0
+    hidden: true
+  - type: StaticPrice
+    price: 2
+
+# Race plushies
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14HumanPlushie
+  name: human plushie
+  description: The most basic one doesn't mean the worst one!
+  components:
+  - type: Sprite
+    state: human
+  - type: EmitSoundOnUse
+    sound:
+      collection: MaleLaugh
+  - type: EmitSoundOnActivate
+    sound:
+      collection: MaleLaugh
+  - type: EmitSoundOnCollide
+    sound:
+      collection: MaleLaugh
+  - type: EmitSoundOnLand
+    sound:
+      collection: MaleScreams
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: MaleLaugh
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: MaleLaugh
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14DwarfPlushie
+  name: dwarf plushie
+  description: A very short, but sturdy lad... A good one to drink with, or from. Rock and stone!
+  components:
+  - type: Sprite
+    state: dwarf
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        variation: 0.1
+        volume: 0.4
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        variation: 0.1
+        volume: 0.4
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        variation: 0.1
+        volume: 0.4
+  - type: EmitSoundOnLand
+    sound:
+      collection: MaleScreams
+      params:
+        pitch: 0.6
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        variation: 0.1
+        volume: 0.4
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        variation: 0.1
+        volume: 0.4
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: CP14SolutionTemperature
+  - type: MixableSolution
+    solution: plushie
+  - type: FitsInDispenser
+    solution: plushie
+  - type: RefillableSolution
+    solution: plushie
+  - type: DrainableSolution
+    solution: plushie
+  - type: ExaminableSolution
+    solution: plushie
+  - type: DrawableSolution
+    solution: plushie
+  - type: InjectableSolution
+    solution: plushie
+  - type: SolutionItemStatus
+    solution: plushie
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Drink
+    solution: plushie
+  - type: Spillable
+    solution: plushie
+  - type: Appearance
+  - type: Injector
+    solutionName: plushie
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 1
+    maxTransferAmount: 10
+    transferAmount: 1
+    toggleState: 1
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14ElfPlushie
+  name: elf plushie
+  description: It is unclear, if that thing is a man or a woman... But it can hold a bit of mana!
+  components:
+  - type: Sprite
+    state: elf
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.1
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.1
+  - type: EmitSoundOnLand
+    sound:
+      collection: FemaleScreams
+      params:
+        pitch: 0.7
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.1
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.1
+  - type: CP14MagicEnergyCrystal
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    energy: 5
+    maxEnergy: 5
+  - type: Tag
+    tags:
+    - CP14EnergyCrystal
+
+- type: entity
+  parent: [ CP14BasePlushie, BaseStorageItem ]
+  id: CP14GoblinPlushie
+  name: goblin plushie
+  description: A sneaky one, for sure... It seems like you can put a coin in it, but it's not clear if you can get it back!
+  components:
+  - type: Sprite
+    state: goblin
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Voice/Goblin/goblin_scream.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
+      params:
+        variation: 0.1
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Voice/Goblin/goblin_laugh.ogg
+      params:
+        variation: 0.1
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,1,1
+    quickInsert: true
+    areaInsert: false
+    whitelist:
+      tags:
+        - CP14Coin
+  - type: UseDelay
+    delay: 0.3
+  - type: Dumpable
+    soundDump:
+      collection: CP14Coins
+    multiplier: 0.8
+
+
+- type: entity
+  parent: [ CP14BasePlushie, BaseStorageItem ]
+  id: CP14SilvaPlushie
+  name: silva plushie
+  description: A little cute bush! You can put some seeds in it, but sadly, they won't grow...
+  components:
+  - type: Sprite
+    state: silva
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Diona/diona_rustle3.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Items/Toys/toy_rustle.ogg
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,2,1
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - CP14FarmSeed
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14TieflingPlushie
+  name: tiefling plushie
+  description: Be careful, don't stab your finger on the horn! So hot...
+  components:
+  - type: Sprite
+    state: tiefling
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        variation: 0.2
+        volume: 5
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        variation: 0.2
+        volume: 5
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        variation: 0.2
+        volume: 5
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        pitch: 0.8
+        variation: 0.2
+        volume: 5
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        variation: 0.2
+        volume: 5
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Items/campfire_whoosh.ogg
+      params:
+        variation: 0.2
+        volume: 5
+  - type: PointLight
+    color: "#8f6a2b"
+    radius: 1.5
+    energy: 8
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14CarcatPlushie
+  name: carcat plushie
+  description: Look at this adorable snout! Likes to be petted, sharpen its claws, and butcher dead bodies...
+  components:
+  - type: Sprite
+    state: carcat
+  - type: EmitSoundOnUse
+    sound:
+      collection: CP14CarcatLaugh
+  - type: EmitSoundOnActivate
+    sound:
+      collection: CP14CarcatLaugh
+  - type: EmitSoundOnCollide
+    sound:
+      collection: CP14CarcatLaugh
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Voice/Carcat/carcat_scream.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: CP14CarcatLaugh
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: CP14CarcatLaugh
+  - type: Sharp
+  - type: Tool
+    qualities:
+      - Slicing
+  - type: Utensil
+    types:
+      - Knife
+
+# Misc plushies
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14FrogPlushie
+  name: frog plushie
+  description: Croak-croak.
+  components:
+  - type: Sprite
+    state: frog
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+        pitch: 0.7
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Animals/frog_ribbit.ogg
+      params:
+        variation: 0.1
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14SkeletonPlushie
+  name: skeleton plushie
+  description: These skeletons are meowing... Weird...
+  components:
+  - type: Sprite
+    state: skeleton
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/bone_rattle.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Voice/Skeleton/skeleton_scream.ogg
+      params:
+        variation: 0.1
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: CatMeows
+      params:
+        variation: 0.1
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14AgaricPlushie
+  name: myconide plushie
+  description: The mushrooms are alive! I swear!
+  components:
+  - type: Sprite
+    state: agaric
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Items/grass_gather.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Items/grass_gather.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Items/grass_gather.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_CP14/Items/grass_gather2.ogg
+      params:
+        variation: 0.1
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Items/grass_gather.ogg
+      params:
+        variation: 0.1
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Items/grass_gather3.ogg
+      params:
+        variation: 0.1
+
+# Secret plushies (Pure admeme material, not obtainable)
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14GregPlushie
+  name: Greg plushie
+  description: This poor soul... What has been done to him...
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/admemeplushies.rsi
+    state: greg
+  - type: Item
+    size: Tiny
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        pitch: 0.3
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        pitch: 0.3
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        pitch: 0.3
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnLand
+    sound:
+      collection: MaleScreams
+      params:
+        pitch: 0.2
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        pitch: 0.3
+        variation: 0.1
+        volume: 0.6
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Voice/Dwarf/dwarf_plushie.ogg
+      params:
+        pitch: 0.3
+        variation: 0.1
+        volume: 0.6
+
+- type: entity
+  parent: CP14BasePlushie
+  id: CP14BradPlushie
+  name: Brad plushie
+  description: The boss of alchemical mafia.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Fun/admemeplushies.rsi
+    state: brad
+  - type: Item
+    size: Tiny
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_CP14/Effects/cash.ogg
+      params:
+        pitch: 0.7
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_CP14/Effects/cash.ogg
+      params:
+        pitch: 0.7
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_CP14/Effects/cash.ogg
+      params:
+        pitch: 0.7
+        variation: 0.1
+        volume: 0.6
+  - type: EmitSoundOnLand
+    sound:
+      collection: MaleScreams
+      params:
+        pitch: 0.2
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_CP14/Effects/cash.ogg
+      params:
+        pitch: 0.7
+        variation: 0.1
+        volume: 0.6
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_CP14/Effects/cash.ogg
+      params:
+        pitch: 0.7
+        variation: 0.1
+        volume: 0.6
+
