@@ -12,6 +12,8 @@
   - type: CP14ModularCraftStartPoint
     startSlots:
     - Greave
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularCuissesBase
