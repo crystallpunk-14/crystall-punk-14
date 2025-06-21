@@ -1,6 +1,6 @@
 using Content.Shared.Damage;
 
-namespace Content.Shared._CP14.MagicSpellStorage.Components;
+namespace Content.Server._CP14.MagicSpellStorage.Components;
 
 /// <summary>
 /// Causes damage to the Spell storage when spells from it are used
