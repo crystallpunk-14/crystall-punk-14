@@ -4,8 +4,8 @@
   description: Release fire in an area around yourself.
   components:
   - type: Sprite
-    sprite: _CP14/Actions/Spells/light.rsi # TODO: sprite
-    state: sphere_of_light
+    sprite: _CP14/Actions/Spells/slime.rsi
+    state: fiery_burst
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffect
