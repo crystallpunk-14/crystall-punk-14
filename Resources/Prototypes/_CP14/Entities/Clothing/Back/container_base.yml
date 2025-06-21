@@ -1,0 +1,33 @@
+- type: entity
+  abstract: true
+  parent:
+  - Clothing
+  - ContentsExplosionResistanceBase
+  id: CP14ClothingBackContainerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Huge
+  - type: Clothing
+    equipDelay: 0.4
+    unequipDelay: 0.2
+    slots:
+    - back
+    quickEquip: false
+    breakOnMove: false
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    maxItemSize: Huge
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UseDelay
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
