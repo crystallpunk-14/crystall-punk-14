@@ -1670,17 +1670,22 @@ ent-SpawnPointGhostDemiplaneLurker = точка спавна роли призр
     .suffix = Луркер
 
 ent-CP14MobUndeadSkeletonDemiplaneT1 = скелет
+    .desc = Хитрый и злобный скелет, испытывающий зависть и злобу к живым и дышащим существам.
 
 ent-CP14MobUndeadSkeletonHalberdT1 = { ent-CP14MobUndeadSkeletonDemiplaneT1 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Алебардщик T1
 
 ent-CP14MobUndeadSkeletonSwordT1 = { ent-CP14MobUndeadSkeletonDemiplaneT1 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Мечник T1
 
 ent-CP14MobUndeadSkeletonDodgerT1 = { ent-CP14MobUndeadSkeletonDemiplaneT1 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Кинжальщик T1
 
 ent-CP14MobUndeadSkeletonArcherT1 = { ent-CP14MobUndeadSkeletonDemiplaneT1 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Лучник T1
 
 ent-CP14SpawnPointGhostDemiplaneSkeletonT1 = точка спавна роли
@@ -1704,23 +1709,30 @@ ent-SpawnPointGhostDemiplaneSkeletonArcherT1 = точка спавна роли
     .suffix = Скелет Лучник T1
 
 ent-CP14MobUndeadSkeletonDemiplaneT2 = скелет
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
 
 ent-CP14MobUndeadSkeletonHalberdT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Алебардщик T2
 
 ent-CP14MobUndeadSkeletonSwordT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Мечник T2
 
 ent-CP14MobUndeadSkeletonDodgerT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Кинжальщик T2
 
 ent-CP14MobUndeadSkeletonArcherT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Лучник T2
 
 ent-CP14MobUndeadSkeletonWizardT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Маг T2
 
 ent-CP14MobUndeadSkeletonBardT2 = { ent-CP14MobUndeadSkeletonDemiplaneT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Бард T2
 
 ent-CP14SpawnPointGhostDemiplaneSkeletonT2 = { ent-CP14SpawnPointGhostDemiplaneSkeletonT1 }
@@ -1758,12 +1770,15 @@ ent-CP14MobGodLumera = Лумера
     .desc = Богиня ночи и ночного неба. Ее звезды хранят столько тайн, которые она оберегает своими крыльями.
 
 ent-CP14SpawnPointTownRaid = городской рейд точка спавна роли призрака
+    .desc = Метка спавна рейда скелетов и зомби.
     .suffix = Городской рейд
 
 ent-CP14MobUndeadSkeletonWizardTownRaid = { ent-CP14MobUndeadSkeletonWizardT2 }
+    .desc = { ent-CP14MobUndeadSkeletonDemiplaneT1.desc }
     .suffix = Маг
 
 ent-CP14SpawnPointTownRaidUndeadEasy = { ent-CP14SpawnPointTownRaid }
+    .desc = { ent-CP14SpawnPointTownRaid.desc }
     .suffix = Городской рейд (Нежить, Легкий)
 
 ent-CP14BaseMobCarcat = мистер Кот
