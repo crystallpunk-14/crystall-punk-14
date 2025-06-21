@@ -34,5 +34,4 @@
   description: Gives the cape wearer the invisibility of the mythical Lurker, but only if standing still.
   components:
   - type: InstantAction
-    useDelay: 3
     event: !type:ToggleActionEvent
