@@ -603,3 +603,13 @@
   id: 8111
   time: '2025-06-20T23:46:01.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1446
+- author: TheShuEd
+  changes:
+  - message: The time until the destruction of the demiplane after the destruction
+      of the core has been increased to 4 minutes.
+    type: Tweak
+  - message: Maybe some spell scrolls bug fixed?
+    type: Fix
+  id: 8112
+  time: '2025-06-21T17:51:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1457
