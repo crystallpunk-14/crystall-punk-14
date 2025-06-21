@@ -929,7 +929,7 @@ ent-CP14ClothingHeadBascinet = бацинет
     .desc = Защищает большую часть головы, но все равно не спасет от удара в лицо.
 
 ent-CP14ClothingHeadFishMask = рыбья маска
-    .desc = ВОСХИЩЕНИЕ!!!
+    .desc = Ну, допустим, ква.
 
 ent-CP14ClothingHeadWreath = цветочный венок
     .desc = Простое украшение из цветов. Это так мило.
