@@ -23,6 +23,10 @@
   - type: Body
     prototype: CP14Dwarf
     requiredLegs: 2
+  - type: CP14SkillStorage #Innate geomancy
+    freeLearnedSkills:
+    - GeomancyT1
+    - GeomancyT2
   - type: Inventory
     templateId: CP14Human
     displacements:

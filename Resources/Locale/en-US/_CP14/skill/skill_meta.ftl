@@ -24,6 +24,10 @@ cp14-skill-meta-t1-name = Basic metamagic
 cp14-skill-meta-t2-name = Advanced metamagic
 cp14-skill-meta-t3-name = Expert metamagic
 
+cp14-skill-geo-t1-name = Basic geomancy
+cp14-skill-geo-t2-name = Advanced geomancy
+cp14-skill-geo-t3-name = Expert geomancy
+
 cp14-skill-alchemy-vision-name = Alchemist's Vision
 cp14-skill-alchemy-vision-desc = You are able to understand what liquids are in containers by visually analyzing them.
 

@@ -29,6 +29,12 @@
   color: "#51cf72"
 
 - type: cp14SkillTree
+  id: Geomancy
+  name: cp14-skill-tree-geomancy-name
+  desc: cp14-skill-tree-geomancy-desc
+  color: "#7b4300"
+
+- type: cp14SkillTree
   id: Atlethic
   name: cp14-skill-tree-atlethic-name
   desc: cp14-skill-tree-atlethic-desc
@@ -70,4 +76,4 @@
   id: Craftsmanship
   name: cp14-skill-tree-craftsman-name
   desc: cp14-skill-tree-craftsman-desc
-  color: "#a04b00"
+  color: "#c1c1c1"

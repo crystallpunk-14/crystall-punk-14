@@ -1,0 +1,130 @@
+- type: entity
+  id: CP14ActionSpellEarthquake
+  parent: CP14ActionSpellBase
+  name: Earthquake
+  description: You make a ground under yourself shake violently and push away anyone near you.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earthquake
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.8
+  - type: CP14MagicEffectManaCost
+    manaCost: 25
+  - type: CP14MagicEffect
+    magicType: Earth
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectEarth
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14SpawnEarthquake
+    - !type:CP14SpellArea
+      range: 2
+      maxTargets: 100
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectEarth
+        - CP14EarthquakeSound
+        - CP14SpawnEarthquakeDecal
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:Paralyze
+          paralyzeTime: 3
+        - !type:HealthChange
+          damage:
+            types:
+              Blunt: 15
+      - !type:CP14SpellThrowFromUser
+        throwPower: 1
+    - !type:CP14SpellArea #Fuck them vials!
+      range: 2
+      maxTargets: 30
+      whitelist:
+        components:
+        - Spillable
+      effects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Blunt: 50
+  - type: CP14MagicEffectVerbalAspect
+    endSpeech: "Terra tremit incipiet!"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneEarthCreation
+  - type: CP14MagicEffectPacifiedBlock
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/earth.rsi
+      state: earthquake
+  - type: InstantAction
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 25
+      castDelay: 1
+      breakOnMove: false
+      breakOnDamage: false
+
+- type: entity
+  id: CP14SpawnEarthquake
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#8f6a2b"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _CP14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#8f6a2b"
+      scale: 2, 2
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+
+- type: entity
+  id: CP14SpawnEarthquakeDecal
+  categories: [ HideSpawnMenu ]
+  save: false
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    offset: 0, 0
+    sprite: _CP14/Effects/Magic/earthquake.rsi
+    state: earthquake
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
+  id: CP14EarthquakeSound
+  parent: CP14DustEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        pitch: 0.7
+
+- type: entity
+  parent: CP14BaseSpellScrollEarth
+  id: CP14SpellScrollEarthquake
+  name: earthquake spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellEarthquake
