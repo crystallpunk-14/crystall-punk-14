@@ -173,3 +173,16 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
+
+- type: entity
+  parent:
+  - CP14ClothingCloakBase
+  - ClothingSlotBase
+  id: CP14ClothingCloakMaidArpon
+  name: maid's apron
+  description: Cleanliness, orderliness and obedience are the main traits of a good maid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/maid_apron.rsi

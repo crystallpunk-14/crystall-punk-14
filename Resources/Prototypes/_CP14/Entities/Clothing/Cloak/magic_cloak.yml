@@ -1,0 +1,37 @@
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakLurkerCape
+  name: lurker cape
+  description: A cloak of Lurker leather, made by an unknown craftsman, which equalled the mythical creature's invisibility abilities.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/lurker_cape.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/lurker_cape.rsi
+  - type: ItemToggle
+  - type: ToggleClothing
+    action: CP14ActionToggleLurkerCape
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: 0.5
+      lastVisibility: 0.5
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.5
+      movementVisibilityRate: 0.5
+  - type: StaticPrice
+    price: 400
+
+- type: entity
+  id: CP14ActionToggleLurkerCape
+  name: Lurker cape
+  description: Gives the cape wearer the invisibility of the mythical Lurker, but only if standing still.
+  components:
+  - type: InstantAction
+    useDelay: 5
+    priority: -9
+    event: !type:ToggleActionEvent
