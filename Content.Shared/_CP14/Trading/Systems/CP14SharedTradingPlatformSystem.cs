@@ -59,14 +59,6 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
             QueueDel(ent);
     }
 
-    protected void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
-    {
-        if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
-            return;
-
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(ent)));
-    }
-
     public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
@@ -99,4 +91,10 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 public sealed class CP14TradingPositionBuyAttempt(ProtoId<CP14TradingPositionPrototype> position) : BoundUserInterfaceMessage
 {
     public readonly ProtoId<CP14TradingPositionPrototype> Position = position;
+}
+
+[Serializable, NetSerializable]
+public sealed class CP14TradingRequestSellAttempt(ProtoId<CP14TradingRequestPrototype> request) : BoundUserInterfaceMessage
+{
+    public readonly ProtoId<CP14TradingRequestPrototype> Position = request;
 }

@@ -5,11 +5,18 @@ namespace Content.Shared._CP14.Trading;
 [Serializable, NetSerializable]
 public enum CP14TradingUiKey
 {
-    Key,
+    Buy,
+    Sell,
 }
 
 [Serializable, NetSerializable]
 public sealed class CP14TradingPlatformUiState(NetEntity platform) : BoundUserInterfaceState
+{
+    public NetEntity Platform = platform;
+}
+
+[Serializable, NetSerializable]
+public sealed class CP14SellingPlatformUiState(NetEntity platform) : BoundUserInterfaceState
 {
     public NetEntity Platform = platform;
 }
