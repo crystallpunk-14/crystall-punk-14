@@ -23,6 +23,8 @@
     - type: StealthOnMove
       passiveVisibilityRate: -0.5
       movementVisibilityRate: 0.5
+  - type: UseDelay
+    delay: 3
   - type: StaticPrice
     price: 400
 
@@ -32,6 +34,5 @@
   description: Gives the cape wearer the invisibility of the mythical Lurker, but only if standing still.
   components:
   - type: InstantAction
-    useDelay: 5
-    priority: -9
+    useDelay: 3
     event: !type:ToggleActionEvent
