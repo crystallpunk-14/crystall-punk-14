@@ -1,8 +1,8 @@
 - type: entity
   id: CP14MobMonsterFlem
   parent: CP14SimpleMobBase
-  name: Flem
-  description: an odd looking fish standing on two stubby legs. you know what that means...
+  name: flem
+  description: An odd looking fish standing on two stubby legs. you know what that means...
   categories: [ ForkFiltered ]
   components:
   - type: HTN
