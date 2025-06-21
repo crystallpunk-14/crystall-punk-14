@@ -27,3 +27,18 @@
   id: HomeDecor
   color: "#95f542"
   name: cp14-trade-faction-home-decor
+
+- type: cp14TradingFaction
+  id: Horticulture
+  color: "#3cb371"
+  name: cp14-trade-faction-horticulture
+
+- type: cp14TradingFaction
+  id: Butchers
+  color: "#c93756"
+  name: cp14-trade-faction-butchers
+
+- type: cp14TradingFaction
+  id: Dairy
+  color: "#f5f5dc"
+  name: cp14-trade-faction-dairy
