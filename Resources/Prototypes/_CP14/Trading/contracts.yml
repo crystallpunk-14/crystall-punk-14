@@ -52,3 +52,36 @@
   service: !type:CP14BuyItemsService
     product: CP14TradeContractHomeDecor
     count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractHorticulture
+  faction: ContractGuild
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: horticulture
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractHorticulture
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractButchers
+  faction: ContractGuild
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: butchers
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractButchers
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractDairy
+  faction: ContractGuild
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: dairy
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractDairy
+    count: 1

@@ -1,5 +1,4 @@
 ﻿# Base
-
 - type: entity
   parent: FoodInjectableBase
   id: CP14FoodMeatBase
@@ -56,7 +55,6 @@
     - CP14MeatSlice
 
 # Lamb Meat
-
 - type: entity
   id: CP14FoodMeatLamb
   parent: CP14FoodMeatBase
@@ -221,6 +219,7 @@
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
+# Frog Leg
 - type: entity
   id: CP14FoodMeatFrogLeg
   parent: CP14FoodMeatBase
@@ -270,7 +269,6 @@
       transformTo: CP14Ash1
 
 # Human Meat
-
 - type: entity
   id: CP14FoodMeatHuman
   parent: CP14FoodMeatBase
@@ -336,7 +334,6 @@
       transformTo: CP14Ash1
 
 # Dino Meat
-
 - type: entity
   id: CP14FoodMeatDino
   parent: CP14FoodMeatBase
@@ -434,7 +431,6 @@
       transformTo: CP14Ash1
 
 # Rabbit Meat
-
 - type: entity
   id: CP14FoodMeatRabbit
   parent: CP14FoodMeatBase
@@ -500,7 +496,6 @@
       transformTo: CP14Ash1
 
 # Pig and Boar Meat
-
 - type: entity
   id: CP14FoodMeatPig
   parent: CP14FoodMeatBase
@@ -748,7 +743,6 @@
       transformTo: CP14Ash1
 
 # Monster Meat
-
 - type: entity
   id: CP14FoodMeatMonster
   parent: CP14FoodMeatBase
@@ -931,8 +925,7 @@
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
-  #Flem meat
-
+# Flem meat
 - type: entity
   id: CP14FoodMeatFlemHead
   parent: CP14FoodMeatBase
