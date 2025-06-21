@@ -100,5 +100,3 @@
       - random:
           brown: ""
           icon: ""
-  - type: StaticPrice
-    price: 3
