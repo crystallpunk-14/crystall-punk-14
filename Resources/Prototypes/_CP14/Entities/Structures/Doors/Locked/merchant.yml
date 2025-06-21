@@ -2,6 +2,24 @@
 
 - type: entity
   parent: CP14WoodenDoor
+  id: CP14WoodenDoorMerchantShopPublic
+  suffix: Merchant public shop
+  components:
+  - type: CP14Lock
+    autoGenerateShape: ShopPublic
+  - type: Lock
+    locked: false #Public shops opened by roundstart
+
+- type: entity
+  parent:
+  - CP14WoodenDoorMerchantShopPublic
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorMerchantShopMirrored1
+  suffix: Merchant public shop, Mirrored
+
+
+- type: entity
+  parent: CP14WoodenDoor
   id: CP14WoodenDoorMerchantShop1
   suffix: Merchant shop 1
   components:
@@ -16,6 +34,7 @@
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorMerchantShopMirrored1
   suffix: Merchant shop 1, Mirrored
+
 
 - type: entity
   parent: CP14WoodenDoor
@@ -33,6 +52,7 @@
   - CP14WoodenDoorMirrored
   id: CP14WoodenDoorMerchantShopMirrored2
   suffix: Merchant shop 2, Mirrored
+
 
 - type: entity
   parent: CP14WoodenDoor

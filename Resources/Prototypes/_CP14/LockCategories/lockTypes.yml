@@ -79,6 +79,11 @@
   name: cp14-lock-shape-blacksmith3
 
 - type: CP14LockType
+  id: ShopPublic
+  complexity: 3
+  name: cp14-lock-shape-merchant-public
+
+- type: CP14LockType
   id: Shop1
   group: Merchant
   complexity: 5
