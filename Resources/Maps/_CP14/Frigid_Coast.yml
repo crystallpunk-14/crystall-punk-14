@@ -58065,7 +58065,7 @@ entities:
     - type: Transform
       pos: 106.5,42.5
       parent: 1
-- proto: DeskBell
+- proto: CP14Bell
   entities:
   - uid: 9141
     components:
