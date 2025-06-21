@@ -33,6 +33,36 @@
     node: CP14WindowWooden
 
 - type: entity
+  id: CP14WindowWoodenBirch
+  parent: CP14WindowWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/birch_window.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/birch_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WindowWoodenBirchBroken
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowWoodenBirch
+
+- type: entity
   id: CP14WindowFrameWooden
   name: wooden window frame
   parent:
@@ -67,6 +97,34 @@
     node: CP14WindowFrameWooden
 
 - type: entity
+  id: CP14WindowFrameWoodenBirch
+  parent: CP14WindowFrameWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/birch_window_frame.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/birch_window_frame.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowFrameWoodenBirch
+
+- type: entity
   id: CP14WindowWoodenBroken
   name: shattered wooden window
   parent:
@@ -81,3 +139,14 @@
     graph: CP14WindowWooden
     node: CP14WindowWoodenBroken
 
+- type: entity
+  id: CP14WindowWoodenBirchBroken
+  parent: CP14WindowWoodenBroken
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Windows/birch_window_broken.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Windows/birch_window_broken.rsi
+  - type: Construction
+    graph: CP14WindowWooden
+    node: CP14WindowWoodenBirchBroken
