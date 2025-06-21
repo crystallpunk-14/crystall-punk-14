@@ -1,0 +1,63 @@
+- type: entity
+  id: CP14ActionSpellAdminNeutralization
+  name: Neutralization
+  description: You make the creature completely harmless for 2 minutes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/AdminSpells.rsi
+    state: neutralization
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -1000
+        safe: true
+      - !type:Paralyze
+        paralyzeTime: 3
+      - !type:GenericStatusEffect
+        key: Pacified
+        component: Pacified
+        type: Add
+        time: 120
+      - !type:Jitter
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectNeutralization
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    range: 50
+    itemIconStyle: BigAction
+    interactOnMiss: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/blink.ogg
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: neutralization
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false
+
+- type: entity
+  id: CP14ImpactEffectNeutralization
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: "#d82bdb"
+      shader: unshaded
+  - type: PointLight
+    color: "#d82bdb"
+    enabled: true
+    radius: 2
+    energy: 2
+    netsync: false
+  - type: LightFade
+    duration: 1
