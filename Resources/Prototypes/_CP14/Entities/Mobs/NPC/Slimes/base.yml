@@ -63,6 +63,10 @@
     damage:
       types:
         Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-slimes
