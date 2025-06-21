@@ -19,3 +19,9 @@
   - /Audio/_CP14/Animals/flem2.ogg
   - /Audio/_CP14/Animals/flem3.ogg
   - /Audio/_CP14/Effects/bubbles.ogg
+
+- type: soundCollection
+  id: CP14Bear
+  files:
+  - /Audio/_CP14/Animals/bear1.ogg
+  - /Audio/_CP14/Animals/bear2.ogg
