@@ -11,6 +11,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/lurker_cape.rsi
   - type: ItemToggle
+    onUse: false
   - type: ToggleClothing
     action: CP14ActionToggleLurkerCape
     disableOnUnequip: true
