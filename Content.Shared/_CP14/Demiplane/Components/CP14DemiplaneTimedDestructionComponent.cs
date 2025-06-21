@@ -10,7 +10,7 @@ namespace Content.Shared._CP14.Demiplane.Components;
 public sealed partial class CP14DemiplaneTimedDestructionComponent : Component
 {
     [DataField]
-    public TimeSpan TimeToDestruction = TimeSpan.FromSeconds(130f);
+    public TimeSpan TimeToDestruction = TimeSpan.FromSeconds(240f);
 
     [DataField, AutoPausedField]
     public TimeSpan EndTime = TimeSpan.Zero;
