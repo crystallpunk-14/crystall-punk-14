@@ -1,24 +1,23 @@
+using Content.Server._CP14.MagicSpellStorage.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
-using Content.Shared._CP14.MagicSpellStorage.Components;
+using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
-using Robust.Shared.Network;
 
-namespace Content.Shared._CP14.MagicSpellStorage;
+namespace Content.Server._CP14.MagicSpellStorage;
 
 /// <summary>
 /// this part of the system is responsible for storing spells in items, and the methods players use to obtain them.
 /// </summary>
-public sealed partial class CP14SpellStorageSystem : EntitySystem
+public sealed partial class CP14SpellStorageSystem : CP14SharedSpellStorageSystem
 {
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()
@@ -41,9 +40,6 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
     /// </summary>
     private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> storage, ref MapInitEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         foreach (var spell in storage.Comp.Spells)
         {
             var spellEnt = _actionContainer.AddAction(storage, spell);
@@ -55,15 +51,23 @@ public sealed partial class CP14SpellStorageSystem : EntitySystem
 
             storage.Comp.SpellEntities.Add(spellEnt.Value);
         }
+
         if (storage.Comp.GrantAccessToSelf)
-            _actions.GrantActions(storage.Owner, storage.Comp.SpellEntities, storage.Owner);
+        {
+            if (!_mind.TryGetMind(storage.Owner, out var mind, out _))
+                _actions.GrantActions(storage.Owner, storage.Comp.SpellEntities, storage.Owner);
+            else
+            {
+                foreach (var spell in storage.Comp.SpellEntities)
+                {
+                    _actionContainer.AddAction(mind, spell);
+                }
+            }
+        }
     }
 
     private void OnMagicStorageShutdown(Entity<CP14SpellStorageComponent> mStorage, ref ComponentShutdown args)
     {
-        if (_net.IsClient)
-            return;
-
         foreach (var spell in mStorage.Comp.SpellEntities)
         {
             QueueDel(spell);
