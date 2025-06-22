@@ -1,0 +1,258 @@
+- type: entity
+  parent: BaseItem
+  id: CP14FloorTileItemBase
+  abstract: true
+  components:
+  - type: Stack
+    count: 1
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/icons.rsi
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemBlue1
+  categories: [ ForkFiltered ]
+  suffix: Blue
+  components:
+  - type: Sprite
+    state: blue
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetBlue
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetBlue
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemRed1
+  categories: [ ForkFiltered ]
+  suffix: Red
+  components:
+  - type: Sprite
+    state: red
+  - type: Item
+    heldPrefix: carpet-Red
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetRed
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetRed
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemCyan1
+  categories: [ ForkFiltered ]
+  suffix: Cyan
+  components:
+  - type: Sprite
+    state: cyan
+  - type: Item
+    heldPrefix: carpet-Cyan
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetCyan
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetCyan
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemGreen1
+  categories: [ ForkFiltered ]
+  suffix: Green
+  components:
+  - type: Sprite
+    state: green
+  - type: Item
+    heldPrefix: carpet-Green
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetGreen
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetGreen
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemOrange1
+  categories: [ ForkFiltered ]
+  suffix: Orange
+  components:
+  - type: Sprite
+    state: orange
+  - type: Item
+    heldPrefix: carpet-Orange
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetOrange
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetOrange
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemPurple1
+  categories: [ ForkFiltered ]
+  suffix: Purple
+  components:
+  - type: Sprite
+    state: purple
+  - type: Item
+    heldPrefix: carpet-Purple
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetPurple
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetPurple
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemBlue1
+  categories: [ ForkFiltered ]
+  suffix: Blue
+  components:
+  - type: Sprite
+    state: blue
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetBlue
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetBlue
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemBlack1
+  categories: [ ForkFiltered ]
+  suffix: Black
+  components:
+  - type: Sprite
+    state: black
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetBlack
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetBlack
+    doAfter: 0.5
+    removeOnInteract: true
+
+- type: entity
+  name: Carpet
+  parent: CP14FloorTileItemBase
+  id: CP14FloorCarpetItemYellow1
+  categories: [ ForkFiltered ]
+  suffix: Yellow
+  components:
+  - type: Sprite
+    state: yellow
+  - type: FloorTile
+    outputs:
+      - Plating
+  - type: Stack
+    stackType: CP14FloorCarpetYellow
+  - type: SpawnAfterInteract 
+    prototype: CP14CarpetYellow
+    doAfter: 0.5
+    removeOnInteract: true
+
+#staks
+
+- type: entity
+  id: CP14FloorCarpetItemBlue10
+  parent: CP14FloorCarpetItemBlue1
+  suffix: Blue 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemRed10
+  parent: CP14FloorCarpetItemRed1
+  suffix: Red 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemCyan10
+  parent: CP14FloorCarpetItemCyan1
+  suffix: Cyan 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemGreen10
+  parent: CP14FloorCarpetItemGreen1
+  suffix: Green 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemOrange10
+  parent: CP14FloorCarpetItemOrange1
+  suffix: Orange 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemPurple10
+  parent: CP14FloorCarpetItemPurple1
+  suffix: Purple 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemBlack10
+  parent: CP14FloorCarpetItemBlack1
+  suffix: Black 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14FloorCarpetItemYellow10
+  parent: CP14FloorCarpetItemYellow1
+  suffix: Yellow 10
+  components:
+  - type: Stack
+    count: 10

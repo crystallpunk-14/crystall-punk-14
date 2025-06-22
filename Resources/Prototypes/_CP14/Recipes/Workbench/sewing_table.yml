@@ -387,3 +387,120 @@
     protoId: CP14DyeYellow
   result: CP14WallpaperYellow
 
+#carpet
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemBlue10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  result: CP14FloorCarpetItemBlue10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemRed10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  result: CP14FloorCarpetItemRed10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemCyan10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:ProtoIdResource
+    protoId: CP14DyeGreen
+  result: CP14FloorCarpetItemCyan10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemGreen10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeGreen
+  result: CP14FloorCarpetItemGreen10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemOrange10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
+  result: CP14FloorCarpetItemOrange10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemPurple10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyePurple
+  result: CP14FloorCarpetItemPurple10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemBlack10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlack
+  result: CP14FloorCarpetItemBlack10
+
+- type: CP14Recipe
+  id: CP14FloorCarpetItemYellow10
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeYellow
+  result: CP14FloorCarpetItemYellow10
