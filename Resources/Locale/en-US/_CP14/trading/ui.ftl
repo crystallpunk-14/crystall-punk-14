@@ -10,6 +10,7 @@ cp14-trading-ui-request-sell-tooltip = You sell the items requested in the reque
 cp14-trading-ui-title = Empire Trade link Platform
 cp14-trading-ui-cooldown = Cooldown:
 cp14-trading-faction-prefix = Trading with:
+cp14-trading-faction-request-prefix = Requests from:
 
 cp14-trading-failure-popup-money = Not enough funds on the platform!
 

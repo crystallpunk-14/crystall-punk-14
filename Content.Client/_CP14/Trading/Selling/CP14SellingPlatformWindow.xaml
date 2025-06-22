@@ -7,9 +7,15 @@
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
         <!-- Left General sell tab -->
-        <BoxContainer Margin="3" Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
+        <BoxContainer Margin="3" MinWidth="300" Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True">
             <PanelContainer Margin="3" HorizontalExpand="True" VerticalExpand="True" RectClipContent="True">
-
+                <BoxContainer Margin="8" VerticalExpand="True" HorizontalExpand="True" VerticalAlignment="Bottom" Orientation="Vertical">
+                    <BoxContainer SetWidth="100" Name="SellPriceHolder" VerticalAlignment="Center" HorizontalExpand="True" HorizontalAlignment="Center" />
+                    <SpriteView Name="SpriteView" Scale="4 4" Access="Public"/>
+                    <Button Name="SellButton" StyleClasses="OpenBoth" Access="Public" MaxWidth="100" SetHeight="30">
+                        <Label Text="{Loc cp14-trading-ui-button-sell}" Margin="-5 0 0 0" HorizontalAlignment="Center"/>
+                    </Button>
+                </BoxContainer>
                 <!-- Tree Tabs -->
                 <BoxContainer Margin="3" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical" VerticalExpand="True">
                     <BoxContainer Name="TreeTabsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Access="Public"/>

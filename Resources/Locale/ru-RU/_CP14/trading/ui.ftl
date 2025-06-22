@@ -10,6 +10,7 @@ cp14-trading-ui-request-sell-tooltip = Вы продаете требуемые 
 cp14-trading-ui-title = Платформа торговой связи с империей
 cp14-trading-ui-cooldown = Перезарядка:
 cp14-trading-faction-prefix = Торговля с:
+cp14-trading-faction-request-prefix = Запросы от:
 
 cp14-trading-failure-popup-money = Недостаточно средств на платформе!
 

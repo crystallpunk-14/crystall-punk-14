@@ -20,3 +20,14 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 1
+
+- type: cp14TradingRequest
+  id: GeneralTest3
+  allFactions: true
+  requirements:
+  - !type:StackResource
+    stack: CP14Stone
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1

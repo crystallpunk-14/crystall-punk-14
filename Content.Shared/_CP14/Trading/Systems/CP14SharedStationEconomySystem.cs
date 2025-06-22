@@ -20,4 +20,19 @@ public abstract partial class CP14SharedStationEconomySystem : EntitySystem
 
         return null;
     }
+
+    public List<ProtoId<CP14TradingRequestPrototype>> GetRequests(ProtoId<CP14TradingFactionPrototype> faction)
+    {
+        var query = EntityQueryEnumerator<CP14StationEconomyComponent>();
+
+        while (query.MoveNext(out var uid, out var economy))
+        {
+            if (!economy.ActiveRequests.TryGetValue(faction, out var requests))
+                continue;
+
+            return requests;
+        }
+
+        return [];
+    }
 }

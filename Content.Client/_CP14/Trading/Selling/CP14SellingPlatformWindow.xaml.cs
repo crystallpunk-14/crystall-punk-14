@@ -71,6 +71,12 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
 
         _cachedPlatform = (plat, platComp);
 
+        //SpriteView
+        SpriteView.SetEntity(_cachedPlatform);
+
+        //SellPrice
+        SellPriceHolder.RemoveAllChildren();
+        SellPriceHolder.AddChild(new CP14PriceControl(154));
 
         //Faction tabs update
         TreeTabsContainer.RemoveAllChildren();
@@ -95,24 +101,13 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
     private void SelectFaction(CP14TradingFactionPrototype faction)
     {
         _selectedFaction = faction;
-        TreeName.Text = Loc.GetString("cp14-trading-faction-prefix") + " " + Loc.GetString(faction.Name);
+        TreeName.Text = Loc.GetString("cp14-trading-faction-request-prefix") + " " + Loc.GetString(faction.Name);
 
         //Update requests
         Requests.RemoveAllChildren();
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
-        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        foreach (var request in _economySystem.GetRequests(faction))
+        {
+            Requests.AddChild(new CP14SellingRequestControl(request));
+        }
     }
 }
