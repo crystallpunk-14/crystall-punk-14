@@ -34,6 +34,18 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
 
         SubscribeLocalEvent<CP14SellingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeSellingUIOpen);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, ItemPlacedEvent>(OnItemPlaced);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, ItemRemovedEvent>(OnItemRemoved);
+    }
+
+    private void OnItemRemoved(Entity<CP14SellingPlatformComponent> ent, ref ItemRemovedEvent args)
+    {
+        UpdateSellingUIState(ent);
+    }
+
+    private void OnItemPlaced(Entity<CP14SellingPlatformComponent> ent, ref ItemPlacedEvent args)
+    {
+        UpdateSellingUIState(ent);
     }
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
@@ -44,10 +56,10 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
     private void OnBeforeSellingUIOpen(Entity<CP14SellingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        UpdateSellingUIState(ent, args.User);
+        UpdateSellingUIState(ent);
     }
 
-    protected void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent, EntityUid user)
+    protected void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent)
     {
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
             return;
