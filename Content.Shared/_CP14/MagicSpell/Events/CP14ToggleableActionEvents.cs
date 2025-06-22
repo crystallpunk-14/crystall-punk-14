@@ -46,7 +46,7 @@ public sealed partial class CP14ToggleableInstantActionEvent : InstantActionEven
     public bool Hidden { get; private set; } = false;
 }
 
-public sealed partial class CP14ToggleableEntityWorldTargetActionEvent : EntityWorldTargetActionEvent, ICP14ToggleableMagicEffect
+public sealed partial class CP14ToggleableWorldTargetActionEvent : WorldTargetActionEvent, ICP14ToggleableMagicEffect
 {
     [DataField]
     public float EffectFrequency { get; private set; } = 1f;

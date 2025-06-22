@@ -16,14 +16,17 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid? user)
     {
+        if (user is null)
+            return false;
+
         var knowledgeSystem = entManager.System<CP14SharedSkillSystem>();
 
         var haveAllSkills = true;
         foreach (var skill in Skills)
         {
-            if (!knowledgeSystem.HaveSkill(user, skill))
+            if (!knowledgeSystem.HaveSkill(user.Value, skill))
             {
                 haveAllSkills = false;
                 break;
@@ -33,7 +36,13 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
         return haveAllSkills;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager)
+    {
+        return 0;
+    }
+
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
     {
     }
 

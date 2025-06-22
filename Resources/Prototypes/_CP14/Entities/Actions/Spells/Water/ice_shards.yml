@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellIceShards
+  parent: CP14ActionSpellBase
   name: Ice Shards
   description: Fast ice needles, for rapid shooting of targets.
   components:
@@ -23,18 +24,16 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards
   - type: CP14MagicEffectPacifiedBlock
-  - type: EntityWorldTargetAction
-    repeat: true
-    checkCanAccess: false
-    raiseOnUser: true
-    range: 60
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_shards
-    event: !type:CP14EntityWorldTargetActionEvent
+  - type: TargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetActionEvent
       cooldown: 0.5
 
 - type: entity

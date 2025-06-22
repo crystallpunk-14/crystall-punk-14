@@ -102,3 +102,8 @@
   license: "CC-BY-4.0"
   copyright: 'Created by EminYILDIRIM on Freesound.org'
   source: "https://freesound.org/people/EminYILDIRIM/sounds/668244/"
+
+- files: ["dash.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by qubodup on Freesound.org'
+  source: "https://freesound.org/people/qubodup/sounds/714258/"

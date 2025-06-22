@@ -40,4 +40,4 @@
   - type: CP14ReligionAltar
     canBeConverted: false
   - type: SpawnPoint
-    spawn_type: Always
+    spawn_type: Unset

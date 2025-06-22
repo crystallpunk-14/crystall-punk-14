@@ -28,31 +28,6 @@ public abstract partial class CP14SharedReligionGodSystem
         args.Visibility &= ~MenuVisibility.NoFov;
     }
 
-    public void EditObservation(EntityUid target, ProtoId<CP14ReligionPrototype> religion, float range)
-    {
-        EnsureComp<CP14ReligionObserverComponent>(target, out var observer);
-
-        if (observer.Observation.ContainsKey(religion))
-        {
-            var newRange = Math.Clamp(observer.Observation[religion] + range, 0, float.MaxValue);
-
-            if (newRange <= 0)
-            {
-                observer.Observation.Remove(religion);
-            }
-            else
-            {
-                observer.Observation[religion] = newRange;
-            }
-        }
-        else
-        {
-            // Otherwise, add a new observation for the religion.
-            observer.Observation.Add(religion, range);
-        }
-        Dirty(target, observer);
-    }
-
     public bool InVision(EntityUid target, Entity<CP14ReligionEntityComponent> user)
     {
         var position = Transform(target).Coordinates;
@@ -65,29 +40,27 @@ public abstract partial class CP14SharedReligionGodSystem
         if (!HasComp<CP14ReligionVisionComponent>(user))
             return true;
 
+        if (user.Comp.Religion is null)
+            return true;
+
         var userXform = Transform(user);
         var query = EntityQueryEnumerator<CP14ReligionObserverComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var observer, out var xform))
         {
-            if (!observer.Active)
+            if (!observer.Active || observer.Religion is null || observer.Radius <= 0f)
                 continue;
 
             if (xform.MapID != userXform.MapID)
                 continue;
 
-            if (user.Comp.Religion is null)
+            if (observer.Religion.Value != user.Comp.Religion.Value)
                 continue;
-
-            if (!observer.Observation.ContainsKey(user.Comp.Religion.Value))
-                continue;
-
 
             var obsPos = _transform.GetWorldPosition(uid);
             var targetPos = coords.Position;
-            if (Vector2.Distance(obsPos, targetPos) <= observer.Observation[user.Comp.Religion.Value])
+            if (Vector2.Distance(obsPos, targetPos) <= observer.Radius)
             {
-                // If the observer is within range of the target, they can see it.
-                return true;
+                return observer.Religion.Value == user.Comp.Religion.Value;
             }
         }
 
