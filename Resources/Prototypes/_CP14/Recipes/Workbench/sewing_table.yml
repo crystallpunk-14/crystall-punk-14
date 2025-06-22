@@ -478,7 +478,7 @@
     protoId: CP14Cotton
     count: 1
   - !type:StackResource
-    stack: CP14WoodenPlanks
+    stack: CP14FloraMaterial
     count: 3
   result: CP14SilvaPlushie
 
