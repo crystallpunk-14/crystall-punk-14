@@ -9,7 +9,7 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
-  pricePerUnit: 0.05
+  pricePerUnit: 0.15
 
 # Basic 6
 
@@ -85,7 +85,7 @@
   parent: CP14EssenceBase
   id: CP14EssenceBaseT1
   abstract: true
-  pricePerUnit: 0.1
+  pricePerUnit: 0.2
 
 - type: reagent
   parent: CP14EssenceBaseT1
@@ -192,7 +192,7 @@
   parent: CP14EssenceBase
   id: CP14EssenceBaseT2
   abstract: true
-  pricePerUnit: 0.2
+  pricePerUnit: 0.4
 
 - type: reagent
   parent: CP14EssenceBaseT2
