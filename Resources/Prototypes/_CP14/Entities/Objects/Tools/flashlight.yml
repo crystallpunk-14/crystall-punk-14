@@ -146,3 +146,31 @@
     color: "#d68f4d"
     energy: 5
 
+- type: entity
+  parent: CP14CrystalLamp
+  id: CP14CrystalLampDemiplaneEmpty
+  name: purple crystal lamp
+  description: A device that converts energy from crystals into a source of directional light.  Convenient for traveling. This one carries the gaze of the demiplane's patron.
+  suffix: Demiplane, Empty
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: light_icon
+      color: "#db85d7"
+      visible: true
+      map: ["crystal"]
+    - state: light_icon
+      color: "#db85d7"
+      visible: true
+      map: ["light"]
+      shader: unshaded
+  - type: PointLight
+    color: "#db85d7"
+    radius: 8
+  - type: CP14MagicEnergyDraw
+    energy: -0.1
+    delay: 4
+  - type: CP14ReligionObserver
+    religion: Tomer
+    radius: 3.5

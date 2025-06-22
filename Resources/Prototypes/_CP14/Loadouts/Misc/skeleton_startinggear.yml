@@ -16,6 +16,7 @@
     pants: CP14ClothingPantsBrown
     shoes: CP14LongLeatherBoots
     belt: CP14ModularSkeletonSwordUpgrade
+    belt2: CP14CrystalLampDemiplaneEmpty
     neck: CP14ModularIronPickaxe
 
 # TIER 1
@@ -116,6 +117,7 @@
     shoes: CP14LongLeatherBoots
     ring2: CP14ClothingCloakAmuletMana
     belt: CP14ModularSkeletonSword
+    belt2: CP14CrystalLampDemiplaneEmpty
 
 - type: startingGear
   id: CP14MobSkeletonBardT2
