@@ -27,10 +27,7 @@ public sealed partial class CP14TradingRequestPrototype : IPrototype
     public int AdditionalReward = 10;
 
     [DataField]
-    public float ReputationReward = 0.25f;
-
-    [DataField]
-    public float RewardFluctuation = 0.6f;
+    public float ReputationCashback = 0.015f;
 
     [DataField(required: true)]
     public List<CP14WorkbenchCraftRequirement> Requirements = new();

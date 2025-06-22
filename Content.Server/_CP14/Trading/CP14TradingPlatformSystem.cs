@@ -88,11 +88,10 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         }
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        _cp14Currency.GenerateMoney(_economy.GetPrice(indexedRequest) ?? 0, Transform(ent).Coordinates);
-        AddReputation(args.Actor, args.Faction, indexedRequest.ReputationReward);
+        var price = _economy.GetPrice(indexedRequest) ?? 0;
+        _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
+        AddReputation(args.Actor, args.Faction, price * indexedRequest.ReputationCashback);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
-
-
 
         UpdateSellingUIState(ent);
     }

@@ -44,15 +44,6 @@
     count: 5
 
 - type: cp14TradingRequest
-  id: BradPotionsDayflin
-  possibleFactions:
-  - BradPotions
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Dayflin
-    count: 5
-
-- type: cp14TradingRequest
   id: BradPotionsBloodFlower
   possibleFactions:
   - BradPotions
@@ -89,7 +80,7 @@
     count: 5
 
 - type: cp14TradingRequest
-  id: BradPotionsBlueAmanita
+  id: BradPotionsQuartz
   possibleFactions:
   - BradPotions
   requirements:

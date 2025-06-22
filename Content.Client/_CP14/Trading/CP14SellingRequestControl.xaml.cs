@@ -40,7 +40,7 @@ public sealed partial class CP14SellingRequestControl : Control
         PriceHolder.AddChild(new CP14PriceControl(price ?? 10000));
 
         //Rep reward
-        Reputation.Text = indexedRequest.ReputationReward.ToString("0.00");
+        Reputation.Text = ((price ?? 0) * indexedRequest.ReputationCashback).ToString("0.00");
 
         RequestButton.OnPressed += _ => OnSellAttempt?.Invoke();
         RequestButton.Disabled = !active;
