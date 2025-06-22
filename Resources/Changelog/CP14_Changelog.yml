@@ -613,3 +613,17 @@
   id: 8112
   time: '2025-06-21T17:51:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1457
+- author: TheShuEd
+  changes:
+  - message: A trading request system has been added, allowing you to sell various
+      goods more profitably and earn reputation in the process.
+    type: Add
+  - message: The selling platform no longer requires magical energy.
+    type: Tweak
+  - message: "A new type of door and lock, \u201CPublic Store,\u201D has been added.\
+      \ The Public Store is open from the start of the round, but all merchants have\
+      \ a key to it, so they can close the Public Store after joining the round."
+    type: Tweak
+  id: 8113
+  time: '2025-06-22T22:21:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1460
