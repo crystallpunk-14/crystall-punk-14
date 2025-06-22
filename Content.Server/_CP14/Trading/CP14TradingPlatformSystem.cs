@@ -82,6 +82,9 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         if (!Proto.TryIndex(args.Request, out var indexedRequest))
             return;
 
+        if (!_economy.TryRerollRequest(args.Faction, args.Request))
+            return;
+
         foreach (var req in indexedRequest.Requirements)
         {
             req.PostCraft(EntityManager, Proto, itemPlacer.PlacedEntities, null);

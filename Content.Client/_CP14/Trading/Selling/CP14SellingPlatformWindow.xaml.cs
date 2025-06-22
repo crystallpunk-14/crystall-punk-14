@@ -25,9 +25,6 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
 
     private readonly CP14ClientTradingPlatformSystem _tradingSystem;
     private readonly CP14ClientStationEconomySystem _economySystem;
-    private readonly SharedAudioSystem _audio = default!;
-
-    private CP14SellingPlatformUiState? _cacheState;
     private Entity<CP14TradingReputationComponent>? _cachedUser;
     private Entity<CP14SellingPlatformComponent>? _cachedPlatform;
 
@@ -46,15 +43,14 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
 
         _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
         _economySystem = _e.System<CP14ClientStationEconomySystem>();
-        _audio = _e.System<SharedAudioSystem>();
 
         SellButton.OnPressed += _ => OnSell?.Invoke();
     }
 
+
+
     public void UpdateState(CP14SellingPlatformUiState state)
     {
-        _cacheState = state;
-
         if (!_e.TryGetComponent<CP14TradingReputationComponent>(_player.LocalEntity, out var repComp))
             return;
 

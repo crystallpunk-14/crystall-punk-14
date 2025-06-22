@@ -92,6 +92,29 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         Dirty(ent);
     }
 
+    public bool TryRerollRequest(ProtoId<CP14TradingFactionPrototype> faction,
+        ProtoId<CP14TradingRequestPrototype> request)
+    {
+        var query = EntityQueryEnumerator<CP14StationEconomyComponent>();
+
+        while (query.MoveNext(out var uid, out var economy))
+        {
+            if (!economy.ActiveRequests.TryGetValue(faction, out var requests))
+                continue;
+
+            if (!requests.Contains(request))
+                continue;
+
+            requests.Add(GetNextRequest(faction, requests) ?? request);
+            requests.Remove(request);
+
+            Dirty(uid, economy);
+            return true;
+        }
+
+        return false;
+    }
+
     private void GenerateStartingRequests(Entity<CP14StationEconomyComponent> ent)
     {
         ent.Comp.ActiveRequests.Clear();
@@ -125,7 +148,7 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
             if (existing.Contains(request))
                 passed = false;
 
-            if (!request.AllFactions && !request.PossibleFactions.Contains(faction))
+            if (!request.PossibleFactions.Contains(faction))
                 passed = false;
 
             var stationTime = _timing.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);

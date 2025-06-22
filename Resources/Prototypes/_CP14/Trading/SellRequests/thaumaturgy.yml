@@ -1,7 +1,7 @@
-
 - type: cp14TradingRequest
-  id: GeneralDimensit
-  allFactions: true
+  id: ThaumaturgyDimensit
+  possibleFactions:
+  - Thaumaturgy
   requirements:
   - !type:ProtoIdResource
     protoId: CP14DimensitCrystal
