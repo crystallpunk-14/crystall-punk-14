@@ -94,7 +94,7 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         {
             var passed = true;
 
-            if (!request.PossibleFactions.Contains(faction))
+            if (!request.AllFactions && !request.PossibleFactions.Contains(faction))
                 passed = false;
 
             if (passed && request.EarliestGenerationTime < _timing.CurTime)

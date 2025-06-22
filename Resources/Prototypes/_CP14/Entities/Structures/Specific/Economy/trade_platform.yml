@@ -22,7 +22,7 @@
   - type: CP14TradingPlatform
   - type: UserInterface
     interfaces:
-      enum.CP14TradingUiKey.Key:
+      enum.CP14TradingUiKey.Buy:
         type: CP14TradingPlatformBoundUserInterface
   - type: PlaceableSurface
   - type: ItemPlacer

@@ -8,7 +8,10 @@ public sealed partial class CP14TradingRequestPrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;
 
-    [DataField(required: true)]
+    [DataField]
+    public bool AllFactions = false;
+
+    [DataField]
     public HashSet<ProtoId<CP14TradingFactionPrototype>> PossibleFactions = [];
 
     [DataField]

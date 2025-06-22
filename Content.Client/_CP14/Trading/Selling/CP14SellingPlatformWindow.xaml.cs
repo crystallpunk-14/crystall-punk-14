@@ -1,3 +1,4 @@
+using Content.Client._CP14.UserInterface;
 using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
@@ -69,20 +70,49 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
             return;
 
         _cachedPlatform = (plat, platComp);
-        UpdateGraphControl();
-    }
 
-    private void UpdateGraphControl()
-    {
-        if (_cachedUser is null)
-            return;
 
+        //Faction tabs update
+        TreeTabsContainer.RemoveAllChildren();
+        foreach (var (faction, rep) in _cachedUser.Value.Comp.Reputation)
+        {
+            if (!_proto.TryIndex(faction, out var indexedFaction))
+                continue;
+            var factionButton = new CP14TradingFactionButtonControl(
+                indexedFaction.Color,
+                Loc.GetString(indexedFaction.Name),
+                rep);
+
+            factionButton.OnPressed += () =>
+            {
+                SelectFaction(indexedFaction);
+            };
+
+            TreeTabsContainer.AddChild(factionButton);
+        }
     }
 
     private void SelectFaction(CP14TradingFactionPrototype faction)
     {
         _selectedFaction = faction;
         TreeName.Text = Loc.GetString("cp14-trading-faction-prefix") + " " + Loc.GetString(faction.Name);
-        UpdateGraphControl();
+
+        //Update requests
+        Requests.RemoveAllChildren();
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralLucens"));
+        Requests.AddChild(new CP14SellingRequestControl("GeneralDimensit"));
     }
 }

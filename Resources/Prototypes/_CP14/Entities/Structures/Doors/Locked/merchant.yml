@@ -14,7 +14,7 @@
   parent:
   - CP14WoodenDoorMerchantShopPublic
   - CP14WoodenDoorMirrored
-  id: CP14WoodenDoorMerchantShopMirrored1
+  id: CP14WoodenDoorMerchantShopPublicMirrored
   suffix: Merchant public shop, Mirrored
 
 
