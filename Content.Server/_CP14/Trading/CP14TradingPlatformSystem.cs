@@ -36,6 +36,35 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         SubscribeLocalEvent<CP14SellingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeSellingUIOpen);
         SubscribeLocalEvent<CP14SellingPlatformComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<CP14SellingPlatformComponent, ItemRemovedEvent>(OnItemRemoved);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14TradingSellAttempt>(OnSellAttempt);
+    }
+
+    private void OnSellAttempt(Entity<CP14SellingPlatformComponent> ent, ref CP14TradingSellAttempt args)
+    {
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        double balance = 0;
+        foreach (var placed in itemPlacer.PlacedEntities)
+        {
+            if (!CanSell(placed))
+                continue;
+
+            var price = _price.GetPrice(placed);
+
+            if (price <= 0)
+                continue;
+
+            balance += _price.GetPrice(placed);
+            QueueDel(placed);
+        }
+
+        if (balance <= 0)
+            return;
+
+        _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(balance, Transform(ent).Coordinates);
+        SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
     }
 
     private void OnItemRemoved(Entity<CP14SellingPlatformComponent> ent, ref ItemRemovedEvent args)
@@ -59,7 +88,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         UpdateSellingUIState(ent);
     }
 
-    protected void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent)
+    private void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent)
     {
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
             return;
@@ -68,21 +97,31 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         double balance = 0;
         foreach (var placed in itemPlacer.PlacedEntities)
         {
-            if (HasComp<MobStateComponent>(placed))
-                continue;
-            if (HasComp<EntityStorageComponent>(placed))
-                continue;
-            if (HasComp<StorageComponent>(placed))
-                continue;
-
-            var proto = MetaData(placed).EntityPrototype;
-            if (proto != null && !proto.ID.StartsWith("CP14")) //Shitfix, we dont wanna sell anything vanilla (like mob organs)
+            if (!CanSell(placed))
                 continue;
 
             balance += _price.GetPrice(placed);
         }
 
         _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)balance));
+    }
+
+    public bool CanSell(EntityUid uid)
+    {
+        if (_tag.HasTag(uid, "CP14Coin")) //Boo hardcoding
+            return false;
+        if (HasComp<MobStateComponent>(uid))
+            return false;
+        if (HasComp<EntityStorageComponent>(uid))
+            return false;
+        if (HasComp<StorageComponent>(uid))
+            return false;
+
+        var proto = MetaData(uid).EntityPrototype;
+        if (proto != null && !proto.ID.StartsWith("CP14")) //Shitfix, we dont wanna sell anything vanilla (like mob organs)
+            return false;
+
+        return true;
     }
 
     public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)

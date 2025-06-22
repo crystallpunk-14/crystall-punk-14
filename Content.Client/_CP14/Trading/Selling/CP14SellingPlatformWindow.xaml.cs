@@ -31,8 +31,8 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
     private Entity<CP14SellingPlatformComponent>? _cachedPlatform;
 
     private ProtoId<CP14TradingFactionPrototype>? _selectedFaction;
-    private CP14TradingRequestPrototype? _selectedPosition;
-    public event Action<ProtoId<CP14TradingRequestPrototype>>? OnSell;
+    public event Action<ProtoId<CP14TradingRequestPrototype>>? OnRequestSell;
+    public event Action? OnSell;
 
     private ISawmill Sawmill { get; init; }
 
@@ -46,14 +46,8 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
         _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
         _economySystem = _e.System<CP14ClientStationEconomySystem>();
         _audio = _e.System<SharedAudioSystem>();
-    }
 
-    private void BuyPressed(BaseButton.ButtonEventArgs obj)
-    {
-        if (_selectedPosition is null)
-            return;
-
-        OnSell?.Invoke(_selectedPosition.ID);
+        SellButton.OnPressed += _ => OnSell?.Invoke();
     }
 
     public void UpdateState(CP14SellingPlatformUiState state)
@@ -77,6 +71,7 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
         //SellPrice
         SellPriceHolder.RemoveAllChildren();
         SellPriceHolder.AddChild(new CP14PriceControl(state.Price));
+        SellButton.Disabled = state.Price == 0;
 
         //Faction tabs update
         TreeTabsContainer.RemoveAllChildren();

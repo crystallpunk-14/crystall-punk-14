@@ -14,7 +14,7 @@ public sealed class CP14SellingPlatformBoundUserInterface(EntityUid owner, Enum 
 
         _window = this.CreateWindow<CP14SellingPlatformWindow>();
 
-        _window.OnSell += pos => SendMessage(new CP14TradingRequestSellAttempt(pos));
+        _window.OnSell += () => SendMessage(new CP14TradingSellAttempt());
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

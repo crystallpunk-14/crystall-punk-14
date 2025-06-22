@@ -98,3 +98,9 @@ public sealed class CP14TradingRequestSellAttempt(ProtoId<CP14TradingRequestProt
 {
     public readonly ProtoId<CP14TradingRequestPrototype> Position = request;
 }
+
+
+[Serializable, NetSerializable]
+public sealed class CP14TradingSellAttempt : BoundUserInterfaceMessage
+{
+}
