@@ -234,8 +234,6 @@ namespace Content.Server.Ghost
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
             //CP14
-            _actions.AddAction(uid, ref component.CP14ZLevelUpActionEntity, component.CP14ZLevelUpAction);
-            _actions.AddAction(uid, ref component.CP14ZLevelDownActionEntity, component.CP14ZLevelDownAction);
             _actions.AddAction(uid, ref component.CP14ToggleRoofActionEntity, component.CP14ToggleRoofAction);
             //CP14 end
         }

@@ -7,7 +7,9 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
+using Content.Shared.Eye;
 using Content.Shared.FixedPoint;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -51,6 +53,12 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandRecipients);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+        SubscribeLocalEvent<CP14ReligionEntityComponent, GetVisMaskEvent>(OnGetVis);
+    }
+
+    private void OnGetVis(Entity<CP14ReligionEntityComponent> ent, ref GetVisMaskEvent args)
+    {
+        args.VisibilityMask |= (int)VisibilityFlags.Ghost;
     }
 
     private void OnExpandRecipients(ExpandICChatRecipientsEvent ev)
