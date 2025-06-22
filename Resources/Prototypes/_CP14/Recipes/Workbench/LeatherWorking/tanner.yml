@@ -1,0 +1,131 @@
+# ================
+# Hide
+# ================
+# Crafting Recipes
+# Leather Processing
+- type: CP14Recipe
+  id: CP14ThinHideRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinAnimalHide
+    count: 2
+  - !type:StackResource
+    stack: CP14Salt
+    count: 1
+  result: CP14ThinLeather
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14HideRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14AnimalHide
+    count: 1
+  - !type:StackResource
+    stack: CP14Salt
+    count: 1
+  result: CP14Leather
+  resultCount: 1
+
+- type: CP14Recipe
+  id: CP14RuggedHideRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14RuggedAnimalHide
+    count: 1
+  - !type:StackResource
+    stack: CP14Salt
+    count: 2
+  result: CP14RuggedLeather
+  resultCount: 1
+
+- type: CP14Recipe
+  id: CP14ScrapHideRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14ScrapAnimalHide
+    count: 3
+  - !type:StackResource
+    stack: CP14String
+    count: 3
+  result: CP14AnimalHide
+  resultCount: 1
+
+# ================
+# Leather Crafting
+- type: CP14Recipe
+  id: CP14ThinToNormalLeatherRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 2
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14Leather
+  resultCount: 1
+
+# ================
+# Straps Crafting
+- type: CP14Recipe
+  id: CP14ThinLeatherStrapRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 1
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14LeatherStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14LeatherStrapRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 1
+  result: CP14LeatherStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14StringedRuggedStrapRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 2
+  - !type:StackResource
+    stack: CP14String
+    count: 8
+  result: CP14RuggedStrap
+  resultCount: 4
+
+- type: CP14Recipe
+  id: CP14RuggedStrapRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14RuggedLeather
+    count: 1
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  result: CP14RuggedStrap
+  resultCount: 4

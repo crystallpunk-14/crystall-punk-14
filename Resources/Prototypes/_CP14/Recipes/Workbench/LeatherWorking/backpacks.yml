@@ -1,0 +1,64 @@
+# Backpacks (heavy on leather)
+- type: CP14Recipe
+  id: CP14ClothingBackpackT0
+  tag: CP14RecipeLeatherWorking
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 10
+  - !type:StackResource
+    stack: CP14String
+    count: 4
+  - !type:StackResource
+    stack: CP14IronBuckle
+    count: 1
+  result: CP14ClothingBackpackT0
+
+- type: CP14Recipe
+  id: CP14ClothingBackpackT1
+  tag: CP14RecipeLeatherWorking
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 8
+  - !type:StackResource
+    stack: CP14LeatherStrap
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBuckle
+    count: 1
+  result: CP14ClothingBackpackT1
+
+- type: CP14Recipe
+  id: CP14ClothingBackpackT2
+  tag: CP14RecipeLeatherWorking
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 8
+  - !type:StackResource
+    stack: CP14LeatherStrap
+    count: 4
+  - !type:StackResource
+    stack: CP14IronBuckle
+    count: 2
+  result: CP14ClothingBackpackT2
+
+- type: CP14Recipe
+  id: CP14ClothingBackpackT3
+  tag: CP14RecipeLeatherWorking
+  craftTime: 10
+  requirements:
+  - !type:StackResource
+    stack: CP14RuggedLeather
+    count: 8
+  - !type:StackResource
+    stack: CP14RuggedStrap
+    count: 4
+  - !type:StackResource
+    stack: CP14IronBuckle
+    count: 2
+  result: CP14ClothingBackpackT3
