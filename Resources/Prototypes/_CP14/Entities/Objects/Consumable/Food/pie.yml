@@ -30,6 +30,11 @@
   - type: Tag
     tags:
     - Pie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14PlatePie: 1
+  - type: StaticPrice
+    price: 8 # price for crafting
 
 - type: entity
   parent: FoodInjectableBase

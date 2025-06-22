@@ -2,6 +2,7 @@
   parent: BaseStructure
   id: CP14TradingPlatform
   name: buying dimensional platform
+  suffix: Trade
   description: Allows you to trade with the outside world, through retail trade transactions.
   categories: [ ForkFiltered ]
   components:
@@ -52,6 +53,7 @@
   parent: BaseStructure
   id: CP14TradingSellingPlatform
   name: selling dimensional platform
+  suffix: Trade
   description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it.
   categories: [ ForkFiltered ]
   components:

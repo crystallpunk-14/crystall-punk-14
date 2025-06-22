@@ -31,3 +31,6 @@
   - type: Tag
     tags:
     - CP14PlatePie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14IronBar: 1
