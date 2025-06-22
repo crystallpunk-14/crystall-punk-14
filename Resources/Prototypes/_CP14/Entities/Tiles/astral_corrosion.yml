@@ -28,4 +28,6 @@
             basalt3: ""
             basalt4: ""
             basalt5: ""
-
+    - type: CP14ReligionObserver
+      religion: Tomer
+      radius: 2.2

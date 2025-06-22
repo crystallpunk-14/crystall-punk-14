@@ -187,3 +187,6 @@
             CP14SkyLightningPurple:
               min: 1
               max: 1
+  - type: CP14ReligionObserver
+    religion: Tomer
+    radius: 5.0

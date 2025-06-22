@@ -77,6 +77,9 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonWizardTownRaid
+  - type: CP14ReligionObserver
+    religion: Tomer
+    radius: 3.5
 
 - type: entity
   id: CP14SpawnPointTownRaidUndeadEasy

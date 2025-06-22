@@ -148,7 +148,7 @@
         weight: 40
         children:
         - id: CP14SpawnPointGhostDemiplaneSkeletonWizardT2
-        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
+#        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
       - !type:GroupSelector
         weight: 60
         children:
