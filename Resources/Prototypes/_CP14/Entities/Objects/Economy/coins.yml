@@ -1,6 +1,5 @@
 - type: entity
   id: CP14BaseCoin
-  suffix: Trade
   parent: BaseItem
   abstract: true
   categories: [ ForkFiltered ]
