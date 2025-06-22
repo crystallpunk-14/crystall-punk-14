@@ -18,7 +18,10 @@ public sealed partial class CP14TradingRequestPrototype : IPrototype
     public float GenerationWeight = 1f;
 
     [DataField]
-    public TimeSpan EarliestGenerationTime = TimeSpan.Zero;
+    public int FromMinutes = 0;
+
+    [DataField]
+    public int? ToMinutes;
 
     [DataField]
     public int AdditionalReward = 10;

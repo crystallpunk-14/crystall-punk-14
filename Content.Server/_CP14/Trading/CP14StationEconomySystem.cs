@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Cargo.Systems;
+using Content.Server.GameTicking;
 using Content.Server.Station.Events;
 using Content.Shared._CP14.Trading.BuyServices;
 using Content.Shared._CP14.Trading.Components;
@@ -17,6 +18,7 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
     [Dependency] private readonly PricingSystem _price = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     public override void Initialize()
     {
@@ -28,19 +30,21 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
     {
-        if (!ev.WasModified<CP14TradingPositionPrototype>())
+        if (!ev.WasModified<CP14TradingPositionPrototype>() && !ev.WasModified<CP14TradingRequestPrototype>())
             return;
 
         var query = EntityQueryEnumerator<CP14StationEconomyComponent>();
         while (query.MoveNext(out var uid, out var economyComponent))
         {
             UpdatePricing((uid, economyComponent));
+            UpdateRequestPricing((uid, economyComponent));
         }
     }
 
     private void OnStationPostInit(Entity<CP14StationEconomyComponent> ent, ref StationPostInitEvent args)
     {
         UpdatePricing(ent);
+        UpdateRequestPricing(ent);
         GenerateStartingRequests(ent);
     }
 
@@ -69,6 +73,25 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         Dirty(ent);
     }
 
+    private void UpdateRequestPricing(Entity<CP14StationEconomyComponent> ent)
+    {
+        ent.Comp.RequestPricing.Clear();
+
+        foreach (var trade in _proto.EnumeratePrototypes<CP14TradingRequestPrototype>())
+        {
+            double price = 0;
+            foreach (var req in trade.Requirements)
+            {
+                price += req.GetPrice(EntityManager, _proto);
+            }
+
+            price += trade.AdditionalReward;
+
+            ent.Comp.RequestPricing.TryAdd(trade, (int) price);
+        }
+        Dirty(ent);
+    }
+
     private void GenerateStartingRequests(Entity<CP14StationEconomyComponent> ent)
     {
         ent.Comp.ActiveRequests.Clear();
@@ -76,16 +99,21 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         var allFactions = _proto.EnumeratePrototypes<CP14TradingFactionPrototype>();
         foreach (var faction in allFactions)
         {
-            var requests = new List<ProtoId<CP14TradingRequestPrototype>>();
+            var requests = new HashSet<ProtoId<CP14TradingRequestPrototype>>();
             for (int i = 0; i < ent.Comp.MaxRequestCount; i++)
             {
-                requests.Add(GetNextRequest(faction.ID));
+                var nextRequest = GetNextRequest(faction.ID, requests);
+
+                if (nextRequest == null)
+                    break; // No more suitable requests
+
+                requests.Add(nextRequest);
             }
             ent.Comp.ActiveRequests.Add(faction, requests);
         }
     }
 
-    private CP14TradingRequestPrototype GetNextRequest(ProtoId<CP14TradingFactionPrototype> faction)
+    private CP14TradingRequestPrototype? GetNextRequest(ProtoId<CP14TradingFactionPrototype> faction, HashSet<ProtoId<CP14TradingRequestPrototype>> existing)
     {
         Dictionary<CP14TradingRequestPrototype, float> suitableRequestsWeights = new();
 
@@ -94,10 +122,18 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
         {
             var passed = true;
 
+            if (existing.Contains(request))
+                passed = false;
+
             if (!request.AllFactions && !request.PossibleFactions.Contains(faction))
                 passed = false;
 
-            if (passed && request.EarliestGenerationTime < _timing.CurTime)
+            var stationTime = _timing.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+
+            if (passed && TimeSpan.FromMinutes(request.FromMinutes) > stationTime)
+                passed = false;
+
+            if (passed && request.ToMinutes.HasValue && TimeSpan.FromMinutes(request.ToMinutes.Value) < stationTime)
                 passed = false;
 
             if (passed)
@@ -110,8 +146,11 @@ public sealed partial class CP14StationEconomySystem : CP14SharedStationEconomyS
     /// <summary>
     /// Optimization moment: avoid re-indexing for weight selection
     /// </summary>
-    private static CP14TradingRequestPrototype RequestPick(Dictionary<CP14TradingRequestPrototype, float> weights, IRobustRandom random)
+    private static CP14TradingRequestPrototype? RequestPick(Dictionary<CP14TradingRequestPrototype, float> weights, IRobustRandom random)
     {
+        if (weights.Count == 0)
+            return null; // No suitable requests
+
         var picks = weights;
         var sum = picks.Values.Sum();
         var accumulated = 0f;

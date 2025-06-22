@@ -16,7 +16,10 @@ public sealed partial class CP14StationEconomyComponent : Component
     public Dictionary<ProtoId<CP14TradingPositionPrototype>, int> Pricing = new();
 
     [DataField, AutoNetworkedField]
-    public Dictionary<ProtoId<CP14TradingFactionPrototype>, List<ProtoId<CP14TradingRequestPrototype>> > ActiveRequests = new();
+    public Dictionary<ProtoId<CP14TradingRequestPrototype>, int> RequestPricing = new();
+
+    [DataField, AutoNetworkedField]
+    public Dictionary<ProtoId<CP14TradingFactionPrototype>, HashSet<ProtoId<CP14TradingRequestPrototype>> > ActiveRequests = new();
 
     [DataField]
     public int MaxRequestCount = 5;

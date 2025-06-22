@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -85,6 +86,23 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         Dirty(user);
     }
+
+    public bool CanFulfillRequest(EntityUid platform, ProtoId<CP14TradingRequestPrototype> request)
+    {
+        if (!TryComp<ItemPlacerComponent>(platform, out var itemPlacer))
+            return false;
+
+        if (!Proto.TryIndex(request, out var indexedRequest))
+            return false;
+
+        foreach (var requirement in indexedRequest.Requirements)
+        {
+            if (!requirement.CheckRequirement(EntityManager, Proto, itemPlacer.PlacedEntities, null))
+                return false;
+        }
+
+        return true;
+    }
 }
 
 [Serializable, NetSerializable]
@@ -94,9 +112,10 @@ public sealed class CP14TradingPositionBuyAttempt(ProtoId<CP14TradingPositionPro
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14TradingRequestSellAttempt(ProtoId<CP14TradingRequestPrototype> request) : BoundUserInterfaceMessage
+public sealed class CP14TradingRequestSellAttempt(ProtoId<CP14TradingRequestPrototype> request, ProtoId<CP14TradingFactionPrototype> faction) : BoundUserInterfaceMessage
 {
-    public readonly ProtoId<CP14TradingRequestPrototype> Position = request;
+    public readonly ProtoId<CP14TradingRequestPrototype> Request = request;
+    public readonly ProtoId<CP14TradingFactionPrototype> Faction = faction;
 }
 
 

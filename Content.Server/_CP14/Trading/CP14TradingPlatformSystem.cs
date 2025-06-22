@@ -36,7 +36,9 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         SubscribeLocalEvent<CP14SellingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeSellingUIOpen);
         SubscribeLocalEvent<CP14SellingPlatformComponent, ItemPlacedEvent>(OnItemPlaced);
         SubscribeLocalEvent<CP14SellingPlatformComponent, ItemRemovedEvent>(OnItemRemoved);
+
         SubscribeLocalEvent<CP14SellingPlatformComponent, CP14TradingSellAttempt>(OnSellAttempt);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14TradingRequestSellAttempt>(OnSellRequestAttempt);
     }
 
     private void OnSellAttempt(Entity<CP14SellingPlatformComponent> ent, ref CP14TradingSellAttempt args)
@@ -65,6 +67,34 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
         _cp14Currency.GenerateMoney(balance, Transform(ent).Coordinates);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
+
+        UpdateSellingUIState(ent);
+    }
+
+    private void OnSellRequestAttempt(Entity<CP14SellingPlatformComponent> ent, ref CP14TradingRequestSellAttempt args)
+    {
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        if (!CanFulfillRequest(ent, args.Request))
+            return;
+
+        if (!Proto.TryIndex(args.Request, out var indexedRequest))
+            return;
+
+        foreach (var req in indexedRequest.Requirements)
+        {
+            req.PostCraft(EntityManager, Proto, itemPlacer.PlacedEntities, null);
+        }
+
+        _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(_economy.GetPrice(indexedRequest) ?? 0, Transform(ent).Coordinates);
+        AddReputation(args.Actor, args.Faction, indexedRequest.ReputationReward);
+        SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
+
+
+
+        UpdateSellingUIState(ent);
     }
 
     private void OnItemRemoved(Entity<CP14SellingPlatformComponent> ent, ref ItemRemovedEvent args)

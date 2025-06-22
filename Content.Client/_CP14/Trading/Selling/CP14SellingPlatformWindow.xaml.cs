@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client._CP14.UserInterface;
 using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;
@@ -30,8 +31,8 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
     private Entity<CP14TradingReputationComponent>? _cachedUser;
     private Entity<CP14SellingPlatformComponent>? _cachedPlatform;
 
-    private ProtoId<CP14TradingFactionPrototype>? _selectedFaction;
-    public event Action<ProtoId<CP14TradingRequestPrototype>>? OnRequestSell;
+    private CP14TradingFactionPrototype? _selectedFaction;
+    public event Action<(ProtoId<CP14TradingRequestPrototype>, ProtoId<CP14TradingFactionPrototype>)>? OnRequestSell;
     public event Action? OnSell;
 
     private ISawmill Sawmill { get; init; }
@@ -91,10 +92,24 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
 
             TreeTabsContainer.AddChild(factionButton);
         }
+
+        if (_selectedFaction == null)
+        {
+            var firstFaction = _cachedUser.Value.Comp.Reputation.Keys.First();
+            if (_proto.TryIndex(firstFaction, out var indexedFaction))
+                SelectFaction(indexedFaction);
+        }
+        else if (_selectedFaction != null)
+        {
+            SelectFaction(_selectedFaction);
+        }
     }
 
     private void SelectFaction(CP14TradingFactionPrototype faction)
     {
+        if (_cachedPlatform is null)
+            return;
+
         _selectedFaction = faction;
         TreeName.Text = Loc.GetString("cp14-trading-faction-request-prefix") + " " + Loc.GetString(faction.Name);
 
@@ -102,7 +117,11 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
         Requests.RemoveAllChildren();
         foreach (var request in _economySystem.GetRequests(faction))
         {
-            Requests.AddChild(new CP14SellingRequestControl(request));
+            var canFullfill = _tradingSystem.CanFulfillRequest(_cachedPlatform.Value, request);
+            var requestControl = new CP14SellingRequestControl(request, canFullfill);
+
+            requestControl.OnSellAttempt += () => OnRequestSell?.Invoke((request, faction));
+            Requests.AddChild(requestControl);
         }
     }
 }
