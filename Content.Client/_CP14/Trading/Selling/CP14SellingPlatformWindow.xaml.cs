@@ -76,7 +76,7 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
 
         //SellPrice
         SellPriceHolder.RemoveAllChildren();
-        SellPriceHolder.AddChild(new CP14PriceControl(154));
+        SellPriceHolder.AddChild(new CP14PriceControl(state.Price));
 
         //Faction tabs update
         TreeTabsContainer.RemoveAllChildren();

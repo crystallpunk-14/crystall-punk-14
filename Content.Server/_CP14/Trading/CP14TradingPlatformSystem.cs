@@ -1,11 +1,17 @@
 using Content.Server._CP14.Currency;
 using Content.Server.Cargo.Systems;
+using Content.Server.Storage.Components;
+using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared._CP14.Trading.Systems;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
 using Content.Shared.Tag;
+using Content.Shared.UserInterface;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
@@ -19,18 +25,52 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
     [Dependency] private readonly CP14CurrencySystem _cp14Currency = default!;
     [Dependency] private readonly CP14StationEconomySystem _economy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
+
+        SubscribeLocalEvent<CP14SellingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeSellingUIOpen);
     }
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
     {
         TryBuyPosition(args.Actor, ent, args.Position);
         UpdateTradingUIState(ent, args.Actor);
+    }
+
+    private void OnBeforeSellingUIOpen(Entity<CP14SellingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    {
+        UpdateSellingUIState(ent, args.User);
+    }
+
+    protected void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent, EntityUid user)
+    {
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        //Calculate
+        double balance = 0;
+        foreach (var placed in itemPlacer.PlacedEntities)
+        {
+            if (HasComp<MobStateComponent>(placed))
+                continue;
+            if (HasComp<EntityStorageComponent>(placed))
+                continue;
+            if (HasComp<StorageComponent>(placed))
+                continue;
+
+            var proto = MetaData(placed).EntityPrototype;
+            if (proto != null && !proto.ID.StartsWith("CP14")) //Shitfix, we dont wanna sell anything vanilla (like mob organs)
+                continue;
+
+            balance += _price.GetPrice(placed);
+        }
+
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)balance));
     }
 
     public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)

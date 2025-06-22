@@ -16,9 +16,10 @@ public sealed class CP14TradingPlatformUiState(NetEntity platform) : BoundUserIn
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14SellingPlatformUiState(NetEntity platform) : BoundUserInterfaceState
+public sealed class CP14SellingPlatformUiState(NetEntity platform, int price) : BoundUserInterfaceState
 {
     public NetEntity Platform = platform;
+    public int Price = price;
 }
 
 [Serializable, NetSerializable]
