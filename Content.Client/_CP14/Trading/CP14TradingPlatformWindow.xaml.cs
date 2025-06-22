@@ -11,7 +11,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -25,19 +24,16 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IEntityManager _e = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
 
     private readonly CP14ClientTradingPlatformSystem _tradingSystem;
     private readonly CP14ClientStationEconomySystem _economySystem;
-    private readonly SharedAudioSystem _audio = default!;
 
     private CP14TradingPlatformUiState? _cacheState;
     private Entity<CP14TradingReputationComponent>? _cachedUser;
     private Entity<CP14TradingPlatformComponent>? _cachedPlatform;
 
     private IEnumerable<CP14TradingPositionPrototype> _allPositions = [];
-    private IEnumerable<CP14TradingFactionPrototype> _allFactions = [];
 
     private ProtoId<CP14TradingFactionPrototype>? _selectedFaction;
     private CP14TradingPositionPrototype? _selectedPosition;
@@ -68,7 +64,6 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
 
         _tradingSystem = _e.System<CP14ClientTradingPlatformSystem>();
         _economySystem = _e.System<CP14ClientStationEconomySystem>();
-        _audio = _e.System<SharedAudioSystem>();
 
         GraphControl.OnOffsetChanged += offset =>
         {
@@ -145,7 +140,6 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
     private void CacheSkillProto()
     {
         _allPositions = _proto.EnumeratePrototypes<CP14TradingPositionPrototype>();
-        _allFactions = _proto.EnumeratePrototypes<CP14TradingFactionPrototype>().OrderBy(tree => Loc.GetString(tree.Name));
         UpdateGraphControl();
     }
 

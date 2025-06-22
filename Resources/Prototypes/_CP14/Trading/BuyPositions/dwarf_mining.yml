@@ -2,16 +2,6 @@
 # Rep 0
 
 - type: cp14TradingPosition
-  id: CP14OreCopper5
-  faction: DwarfMining
-  uiPosition: 0
-  icon:
-    sprite: _CP14/Objects/Materials/copper_ore.rsi
-    state: ore2
-  service: !type:CP14BuyItemsService
-    product: CP14OreCopper5
-
-- type: cp14TradingPosition
   id: CP14CopperBar5
   faction: DwarfMining
   priceMarkup: 5
@@ -31,16 +21,6 @@
     state: glass_2
   service: !type:CP14BuyItemsService
     product: CP14GlassSheet5
-
-- type: cp14TradingPosition
-  id: CP14Torch
-  faction: DwarfMining
-  uiPosition: 7
-  icon:
-    sprite: _CP14/Objects/Tools/torch.rsi
-    state: torch-unlit
-  service: !type:CP14BuyItemsService
-    product: CP14Torch
 
 - type: cp14TradingPosition
   id: CP14ModularIronPickaxe
@@ -77,17 +57,6 @@
 # Rep 1
 
 - type: cp14TradingPosition
-  id: CP14OreIron5
-  faction: DwarfMining
-  reputationLevel: 1
-  uiPosition: 0
-  icon:
-    sprite: _CP14/Objects/Materials/iron_ore.rsi
-    state: ore2
-  service: !type:CP14BuyItemsService
-    product: CP14OreIron5
-
-- type: cp14TradingPosition
   id: CP14IronBar5
   faction: DwarfMining
   reputationLevel: 1
@@ -102,28 +71,6 @@
 # Rep 2
 
 - type: cp14TradingPosition
-  id: CP14OreGold5
-  faction: DwarfMining
-  reputationLevel: 2
-  uiPosition: 0
-  icon:
-    sprite: _CP14/Objects/Materials/gold_ore.rsi
-    state: ore2
-  service: !type:CP14BuyItemsService
-    product: CP14OreGold5
-
-#- type: cp14TradingPosition
-#  id: CP14OreMithril5
-#  faction: DwarfMining
-#  reputationLevel: 2
-#  uiPosition: 1
-#  icon:
-#    sprite: _CP14/Objects/Materials/mithril_ore.rsi
-#    state: ore2
-#  service: !type:CP14BuyItemsService
-#    product: CP14OreMithril5
-
-- type: cp14TradingPosition
   id: CP14GoldBar5
   faction: DwarfMining
   reputationLevel: 2
@@ -134,18 +81,6 @@
     state: bar_2
   service: !type:CP14BuyItemsService
     product: CP14GoldBar5
-
-#- type: cp14TradingPosition
-#  id: CP14MithrilBar5
-#  faction: DwarfMining
-#  reputationLevel: 2
-#  priceMarkup: 5
-#  uiPosition: 5
-#  icon:
-#    sprite: _CP14/Objects/Materials/mithril_bar.rsi
-#    state: bar_2
-#  service: !type:CP14BuyItemsService
-#    product: CP14MithrilBar5
 
 - type: cp14TradingPosition
   id: CP14BaseSharpeningStoneStructure
