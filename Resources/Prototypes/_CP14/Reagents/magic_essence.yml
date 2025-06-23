@@ -9,7 +9,7 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
-  pricePerUnit: 0.15
+  pricePerUnit: 0.25
 
 # Basic 6
 

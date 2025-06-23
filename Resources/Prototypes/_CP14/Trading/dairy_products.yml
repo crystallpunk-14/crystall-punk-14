@@ -37,7 +37,7 @@
   id: CP14FoodBlueCheeseWheel
   faction: Dairy
   reputationLevel: 1
-  uiPosition: 3
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     state: blue_cheese_wheel
@@ -49,7 +49,7 @@
   id: CP14FoodAgedCheeseWheel
   faction: Dairy
   reputationLevel: 2
-  uiPosition: 4
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Consumable/Food/cheese.rsi
     state: aged_cheese_wheel

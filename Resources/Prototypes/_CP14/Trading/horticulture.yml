@@ -49,7 +49,7 @@
   id: CP14BlueAmanita
   faction: Horticulture
   reputationLevel: 1
-  uiPosition: 4
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
     state: base1
@@ -61,7 +61,7 @@
   id: CP14LumiMushroom
   faction: Horticulture
   reputationLevel: 1
-  uiPosition: 5
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
     state: base1
@@ -69,11 +69,13 @@
     product: CP14LumiMushroom
     count: 2
 
+# ui [rep 1| pos 2] free
+
 - type: cp14TradingPosition
   id: CP14ModularIronSickle
   faction: Horticulture
   reputationLevel: 1
-  uiPosition: 6
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     state: icon
@@ -84,25 +86,25 @@
 
 # Reputation Level 2 - Rare Herbs
 - type: cp14TradingPosition
-  id: CP14ChromiumSlime
-  faction: Horticulture
-  reputationLevel: 2
-  uiPosition: 7
-  icon:
-    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
-    state: base1
-  service: !type:CP14BuyItemsService
-    product: CP14ChromiumSlime
-    count: 2
-
-- type: cp14TradingPosition
   id: CP14SilverNeedle
   faction: Horticulture
   reputationLevel: 2
-  uiPosition: 8
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
     state: base1
   service: !type:CP14BuyItemsService
     product: CP14SilverNeedle
+    count: 2
+
+- type: cp14TradingPosition
+  id: CP14ChromiumSlime
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14ChromiumSlime
     count: 2

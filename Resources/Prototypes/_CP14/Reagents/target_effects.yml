@@ -262,7 +262,7 @@
         damage:
           types:
             Bloodloss: -10
-  pricePerUnit: 2
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectBloodAbsorption
@@ -283,7 +283,7 @@
         damage:
           types:
             Bloodloss: 3
-  pricePerUnit: 2
+  pricePerUnit: 3
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
@@ -417,7 +417,7 @@
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
-  pricePerUnit: 3
+  pricePerUnit: 4
 
 - type: reagent
   id: CP14BasicEffectUnsleep

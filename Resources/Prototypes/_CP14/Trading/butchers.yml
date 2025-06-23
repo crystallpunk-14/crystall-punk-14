@@ -3,6 +3,7 @@
   id: CP14FoodMeatLamb
   faction: Butchers
   uiPosition: 0
+  priceMarkup: 5
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
@@ -14,6 +15,7 @@
   id: CP14FoodMeatPig
   faction: Butchers
   uiPosition: 1
+  priceMarkup: 5
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: pig_meat1
@@ -25,6 +27,7 @@
   id: CP14FoodMeatRabbit
   faction: Butchers
   uiPosition: 2
+  priceMarkup: 10
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: rabbit_meat1
@@ -33,11 +36,39 @@
     count: 3
 
 # Reputation Level 1 - Special Meats
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatLambCutlet
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: cutlet
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatLambCutlet
+    count: 3
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatPigLeg
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 1
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat5
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatPigLeg
+    count: 1
+
 - type: cp14TradingPosition
   id: CP14FoodMeatBoar
   faction: Butchers
   reputationLevel: 1
-  uiPosition: 0
+  uiPosition: 2
+  priceMarkup: 5
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: pig_meat2
@@ -49,7 +80,7 @@
   id: CP14FoodMeatFrogLeg
   faction: Butchers
   reputationLevel: 1
-  uiPosition: 1
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: frog_leg
@@ -57,48 +88,12 @@
     product: CP14FoodMeatFrogLeg
     count: 4
 
-- type: cp14TradingPosition
-  id: CP14FoodMeatPigLeg
-  faction: Butchers
-  reputationLevel: 1
-  uiPosition: 2
-  icon:
-    sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: pig_meat5
-  service: !type:CP14BuyItemsService
-    product: CP14FoodMeatPigLeg
-    count: 1
-
-- type: cp14TradingPosition
-  id: CP14FoodMeatLambCutlet
-  faction: Butchers
-  reputationLevel: 1
-  uiPosition: 3
-  icon:
-    sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: cutlet
-  service: !type:CP14BuyItemsService
-    product: CP14FoodMeatLambCutlet
-    count: 3
-
 # Reputation Level 2 - Exotic Meats
-- type: cp14TradingPosition
-  id: CP14FoodMeatDino
-  faction: Butchers
-  reputationLevel: 2
-  uiPosition: 0
-  icon:
-    sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: dino_meat1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodMeatDino
-    count: 1
-
 - type: cp14TradingPosition
   id: CP14FoodMeatHydra
   faction: Butchers
   reputationLevel: 2
-  uiPosition: 1
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: dino_meat2
@@ -110,7 +105,7 @@
   id: CP14FoodMeatMonster
   faction: Butchers
   reputationLevel: 2
-  uiPosition: 2
+  uiPosition: 5
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: mole_meat1
@@ -118,11 +113,27 @@
     product: CP14FoodMeatMonster
     count: 1
 
+
+# Reputation Level 3 - Rare Meats
+
+- type: cp14TradingPosition
+  id: CP14FoodMeatDino
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat1
+  service: !type:CP14BuyItemsService
+    product: CP14FoodMeatDino
+    count: 1
+
 - type: cp14TradingPosition
   id: CP14FoodMeatMonsterLeg
   faction: Butchers
-  reputationLevel: 2
-  uiPosition: 3
+  reputationLevel: 3
+  uiPosition: 5
+  priceMarkup: 5
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: mole_meat5
@@ -130,24 +141,12 @@
     product: CP14FoodMeatMonsterLeg
     count: 1
 
-# Reputation Level 3 - Rare Meats
-- type: cp14TradingPosition
-  id: CP14FoodMeatHuman
-  faction: Butchers
-  reputationLevel: 3
-  uiPosition: 0
-  icon:
-    sprite: _CP14/Objects/Consumable/Food/meat.rsi
-    state: human_meat1
-  service: !type:CP14BuyItemsService
-    product: CP14FoodMeatHuman
-    count: 1
-
 - type: cp14TradingPosition
   id: CP14FoodMeatFlemHead
   faction: Butchers
   reputationLevel: 3
   uiPosition: 1
+  priceMarkup: 15
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: flem_head
@@ -160,6 +159,7 @@
   faction: Butchers
   reputationLevel: 3
   uiPosition: 2
+  priceMarkup: 10
   icon:
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: flem_torso
