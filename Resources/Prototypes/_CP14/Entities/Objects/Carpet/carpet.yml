@@ -137,25 +137,6 @@
 - type: entity
   name: Carpet
   parent: CP14FloorTileItemBase
-  id: CP14FloorCarpetItemBlue1
-  categories: [ ForkFiltered ]
-  suffix: Blue
-  components:
-  - type: Sprite
-    state: blue
-  - type: FloorTile
-    outputs:
-      - Plating
-  - type: Stack
-    stackType: CP14FloorCarpetBlue
-  - type: SpawnAfterInteract 
-    prototype: CP14CarpetBlue
-    doAfter: 0.5
-    removeOnInteract: true
-
-- type: entity
-  name: Carpet
-  parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemBlack1
   categories: [ ForkFiltered ]
   suffix: Black
