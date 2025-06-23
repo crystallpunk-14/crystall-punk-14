@@ -1,4 +1,6 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.MagicVision;
@@ -16,5 +18,11 @@ public sealed partial class CP14MagicVisionMarkerComponent : Component
     public TimeSpan EndTime = TimeSpan.Zero;
 
     [DataField, AutoNetworkedField]
+    public EntityCoordinates? TargetCoordinates;
+
+    [DataField, AutoNetworkedField]
     public SpriteSpecifier? Icon;
+
+    [DataField, AutoNetworkedField]
+    public EntProtoId PointerProto = "CP14ManaVisionPointer";
 }

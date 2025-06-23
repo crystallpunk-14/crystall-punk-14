@@ -10,6 +10,22 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<MetaDataComponent, CP14MagicVisionToggleActionEvent>(OnMagicVisionToggle);
+    }
+
+    private void OnMagicVisionToggle(Entity<MetaDataComponent> ent, ref CP14MagicVisionToggleActionEvent args)
+    {
+        if (!HasComp<CP14MagicVisionComponent>(ent))
+        {
+            AddComp<CP14MagicVisionComponent>(ent);
+            //Todo popup
+        }
+        else
+        {
+            RemCompDeferred<CP14MagicVisionComponent>(ent);
+            //Todo popup
+        }
     }
 
     public override void Update(float frameTime)

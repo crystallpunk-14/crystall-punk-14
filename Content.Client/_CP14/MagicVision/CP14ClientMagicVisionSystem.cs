@@ -1,7 +1,10 @@
 using Content.Shared._CP14.MagicVision;
+using Content.Shared.Examine;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Client.Timing;
 using Robust.Shared.Console;
+using Robust.Shared.Map;
 
 namespace Content.Client._CP14.MagicVision;
 
@@ -9,7 +12,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 {
     [Dependency] private readonly IClientGameTiming _timing = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
-
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private bool _markersVisible;
 
@@ -31,6 +35,45 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ComponentStartup>(OnStartupMarker);
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, AfterAutoHandleStateEvent>(OnHandleStateMarker);
+
+        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentInit>(OnVisionerInit);
+        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentShutdown>(OnVisionerShutdown);
+    }
+
+    protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
+    {
+        base.OnExamined(ent, ref args);
+
+        if (ent.Comp.TargetCoordinates is null)
+            return;
+
+        var originPosition = _transform.GetWorldPosition(ent);
+        var targetPosition = _transform.ToWorldPosition(ent.Comp.TargetCoordinates.Value);
+
+        if ((targetPosition - originPosition).Length() < 0.5f)
+            return;
+
+        Angle angle = new(targetPosition - originPosition);
+
+        var pointer = Spawn(ent.Comp.PointerProto, new MapCoordinates(originPosition, _transform.GetMapId(Transform(ent).Coordinates)));
+
+        _transform.SetWorldRotation(pointer, angle + Angle.FromDegrees(90));
+    }
+
+    private void OnVisionerShutdown(Entity<CP14MagicVisionComponent> ent, ref ComponentShutdown args)
+    {
+        if (_player.LocalEntity != ent.Owner)
+            return;
+
+        MarkersVisible = false;
+    }
+
+    private void OnVisionerInit(Entity<CP14MagicVisionComponent> ent, ref ComponentInit args)
+    {
+        if (_player.LocalEntity != ent.Owner)
+            return;
+
+        MarkersVisible = true;
     }
 
     private void OnHandleStateMarker(Entity<CP14MagicVisionMarkerComponent> ent, ref AfterAutoHandleStateEvent args)

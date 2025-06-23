@@ -14,6 +14,7 @@
 - type: entity
   id: CP14MagicVisionMarker
   categories: [ HideSpawnMenu ]
+  name: mana trace
   components:
   - type: Sprite
     noRot: true

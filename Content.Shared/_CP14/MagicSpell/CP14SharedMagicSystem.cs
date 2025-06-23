@@ -187,15 +187,16 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             effect.Effect(EntityManager, args);
         }
 
-        if (args.User is not null && TryComp<ActionComponent>(ent, out var actionComp))
+        if (args.User is not null
+            && TryComp<ActionComponent>(ent, out var actionComp)
+            && TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
         {
             _magicVision.SpawnMagicVision(
                 Transform(args.User.Value).Coordinates,
                 actionComp.Icon,
-                MetaData(ent).EntityName,
-                "test",
-                TimeSpan.FromMinutes(2)
-                );
+                Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
+                TimeSpan.FromSeconds((float)manaCost.ManaCost * 20),
+                args.Position);
         }
     }
 
