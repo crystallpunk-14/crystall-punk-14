@@ -204,3 +204,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterFlem
+
+- type: entity
+  name: big bear spawner
+  id: CP14SpawnMobBigBear
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/bear.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobBigBear
