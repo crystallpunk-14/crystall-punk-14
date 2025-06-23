@@ -416,7 +416,7 @@ ent-CP14ActionSpellMagicalAcceleration = Магическое ускорение
 
 ent-CP14MagicAccelerationDustEffect = None
 
-ent-CP14SpellScrollMagicalAcceleration = Свиток заклинания магического ускорения
+ent-CP14SpellScrollMagicalAcceleration = свиток заклинания магического ускорения
     .desc = { ent-CP14BaseSpellScrollHealing.desc }
 
 ent-CP14ActionSpellPeaceBallade = Умиротворяющая баллада
