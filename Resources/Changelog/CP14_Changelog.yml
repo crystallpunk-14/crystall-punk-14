@@ -660,3 +660,12 @@
   id: 8117
   time: '2025-06-23T13:42:02.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1463
+- author: TheShuEd
+  changes:
+  - message: Simple ghosts can move beetwen Z-levels again
+    type: Fix
+  - message: Fixed a bug with the display of roofs for ghosts
+    type: Fix
+  id: 8118
+  time: '2025-06-23T19:55:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1466
