@@ -9,10 +9,9 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
-  pricePerUnit: 0.25
+  pricePerUnit: 0.25  # Базовая стоимость всех T0 эссенций
 
-# Basic 6
-
+# Basic 6 (T0)
 - type: reagent
   parent: CP14EssenceBase
   id: CP14EssenceEarth
@@ -20,6 +19,7 @@
   desc: cp14-reagent-desc-essence-earth
   group: CP14MagicEssenceT0
   color: "#70533f"
+  pricePerUnit: 0.25  # Из Wild Sage (0.5) или Lumi Mushroom (0.5)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceEarth
@@ -31,6 +31,7 @@
   desc: cp14-reagent-desc-essence-fire
   group: CP14MagicEssenceT0
   color: "#d9741c"
+  pricePerUnit: 0.25  # Из Yellow Dayflin (0.5) или Blood Flower + Tiefling Blood (1)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceFire
@@ -42,6 +43,7 @@
   desc: cp14-reagent-desc-essence-water
   group: CP14MagicEssenceT0
   color: "#1c94d9"
+  pricePerUnit: 0.25  # Из Air Lily (0.5) или Blood Flower (0.5)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceWater
@@ -53,6 +55,7 @@
   desc: cp14-reagent-desc-essence-air
   group: CP14MagicEssenceT0
   color: "#fdfe86"
+  pricePerUnit: 0.25  # Из Air Lily (0.5)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceAir
@@ -64,6 +67,7 @@
   desc: cp14-reagent-desc-essence-order
   group: CP14MagicEssenceT0
   color: "#d9d9d9"
+  pricePerUnit: 0.25  # Из Wild Sage (0.5) или Blood Flower + Elf Blood (1)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceOrder
@@ -75,17 +79,17 @@
   desc: cp14-reagent-desc-essence-chaos
   group: CP14MagicEssenceT0
   color: "#5c5c5c"
+  pricePerUnit: 0.25  # Из Blood Flower + Goblin Blood (1)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceChaos
 
-# Complex tier 1
-
+# Complex tier 1 (T1)
 - type: reagent
   parent: CP14EssenceBase
   id: CP14EssenceBaseT1
   abstract: true
-  pricePerUnit: 0.2
+  pricePerUnit: 0.20  # Дешевле T0, так как крафтится из них (1+1 → 2)
 
 - type: reagent
   parent: CP14EssenceBaseT1
@@ -94,6 +98,7 @@
   desc: cp14-reagent-desc-essence-frost
   group: CP14MagicEssenceT1
   color: "#4f91bd"
+  pricePerUnit: 0.20  # Из Silver Needle (0.5) или крафт (Огонь + Хаос → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceFrost
@@ -105,6 +110,7 @@
   desc: cp14-reagent-desc-essence-light
   group: CP14MagicEssenceT1
   color: "#ba97b8"
+  pricePerUnit: 0.20  # Из Lumi Mushroom (0.5) или крафт (Огонь + Воздух → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceLight
@@ -116,6 +122,7 @@
   desc: cp14-reagent-desc-essence-motion
   group: CP14MagicEssenceT1
   color: "#575100"
+  pricePerUnit: 0.20  # Из Yellow Dayflin (0.5) или крафт (Порядок + Воздух → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceMotion
@@ -127,6 +134,7 @@
   desc: cp14-reagent-desc-essence-cycle
   group: CP14MagicEssenceT1
   color: "#063b1f"
+  pricePerUnit: 0.20  # Из Chromium Slime (1) или крафт (Порядок + Хаос → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceCycle
@@ -138,6 +146,7 @@
   desc: cp14-reagent-desc-essence-energia
   group: CP14MagicEssenceT1
   color: "#c0ffff"
+  pricePerUnit: 0.20  # Крафт (Порядок + Огонь → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceEnergia
@@ -149,6 +158,7 @@
   desc: cp14-reagent-desc-essence-void
   group: CP14MagicEssenceT1
   color: "#12021c"
+  pricePerUnit: 0.20  # Крафт (Хаос + Воздух → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceVoid
@@ -160,6 +170,7 @@
   desc: cp14-reagent-desc-essence-poison
   group: CP14MagicEssenceT1
   color: "#619e20"
+  pricePerUnit: 0.20  # Из Agaric Mushroom (0.5) или Whistler Poison (1)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssencePoison
@@ -171,6 +182,7 @@
   desc: cp14-reagent-desc-essence-life
   group: CP14MagicEssenceT1
   color: "#eb1a3d"
+  pricePerUnit: 0.20  # Из Blood Flower (0.5) или Silver Needle (0.5)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceLife
@@ -182,17 +194,17 @@
   desc: cp14-reagent-desc-essence-crystal
   group: CP14MagicEssenceT1
   color: "#538cb8"
+  pricePerUnit: 0.20  # Из Ground Quartz (0.5) или крафт (Порядок + Земля → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceCrystal
 
-# Complex tier 2
-
+# Complex tier 2 (T2)
 - type: reagent
   parent: CP14EssenceBase
   id: CP14EssenceBaseT2
   abstract: true
-  pricePerUnit: 0.4
+  pricePerUnit: 0.40  # Дороже, так как требует T1 эссенций
 
 - type: reagent
   parent: CP14EssenceBaseT2
@@ -201,6 +213,7 @@
   desc: cp14-reagent-desc-essence-magic
   group: CP14MagicEssenceT2
   color: "#5497d6"
+  pricePerUnit: 0.40  # Из Blue Amanita (0.5) или крафт (Пустота + Энергия → 2)
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceMagic

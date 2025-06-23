@@ -6,10 +6,9 @@
   flavor: CP14Bitterly
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
+  pricePerUnit: 0  # Базовый пустой раствор, ничего не должен стоить
 
-# T1 / Simple or Basic solutions
-# Have simple effects, shouldn't be able to replace their occupational
-
+# T1 / Простые эффекты (базовые)
 - type: reagent
   id: CP14BasicEffectHealBrute
   name: cp14-reagent-name-basic-heal-brute
@@ -28,7 +27,7 @@
       - !type:EvenHealthChange
         damage:
           Brute: -6
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 2×Жизнь (0.4) + Порядок (0.25) + Вода (0.1) = 1.05 → x3 для баланса
 
 - type: reagent
   id: CP14BasicEffectDamageBrute
@@ -47,7 +46,7 @@
         damage:
           groups:
             Brute: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # Аналогично лечению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectHealHeat
@@ -66,7 +65,7 @@
         damage:
           types:
             Heat: -10
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # 1×Жизнь (0.2) + 1×Огонь (0.25) + 1×Порядок (0.25) + Вода (0.1) = 0.8 → x4.375
 
 - type: reagent
   id: CP14BasicEffectDamageHeat
@@ -89,7 +88,7 @@
       - !type:AdjustTemperature
         amount: 2000
       - !type:Ignite
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # Аналогично лечению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectHealCold
@@ -108,7 +107,7 @@
         damage:
           types:
             Cold: -10
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # 1×Жизнь (0.2) + 1×Мороз (0.2) + 1×Порядок (0.25) + Вода (0.1) = 0.75 → x5.33
 
 - type: reagent
   id: CP14BasicEffectDamageCold
@@ -127,7 +126,7 @@
         damage:
           types:
             Cold: 3
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # Аналогично лечению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectHealPoison
@@ -146,7 +145,7 @@
         damage:
           types:
             Poison: -10
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # 1×Жизнь (0.2) + 1×Яд (0.2) + 1×Порядок (0.25) + Вода (0.1) = 0.75 → x4.66
 
 - type: reagent
   id: CP14BasicEffectDamagePoison
@@ -165,7 +164,7 @@
         damage:
           types:
             Poison: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # Аналогично лечению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectHealAirloss
@@ -184,7 +183,7 @@
         damage:
           types:
             Asphyxiation: -10
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # 1×Жизнь (0.2) + 1×Воздух (0.25) + 1×Порядок (0.25) + Вода (0.1) = 0.8 → x5
 
 - type: reagent
   id: CP14BasicEffectDamageAirloss
@@ -203,7 +202,7 @@
         damage:
           types:
             Asphyxiation: 3
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # Аналогично лечению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectHealManaDepletion
@@ -222,7 +221,7 @@
         damage:
           types:
             CP14ManaDepletion: -10
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 1×Жизнь (0.2) + 2×Энергия (0.4) + Вода (0.1) = 0.7 → x4.28
 
 - type: reagent
   id: CP14BasicEffectDamageManaDepletion
@@ -241,7 +240,7 @@
         damage:
           types:
             CP14ManaDepletion: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 2×Энергия (0.4) + 1×Яд (0.2) + Вода (0.1) = 0.7 → x4.28
 
 - type: reagent
   id: CP14BasicEffectBloodRestore
@@ -262,7 +261,7 @@
         damage:
           types:
             Bloodloss: -10
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # 1×Жизнь (0.2) + 1×Вода (0.25) + 1×Порядок (0.25) + Вода (0.1) = 0.8 → x5
 
 - type: reagent
   id: CP14BasicEffectBloodAbsorption
@@ -283,7 +282,7 @@
         damage:
           types:
             Bloodloss: 3
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # Аналогично восстановлению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
@@ -303,7 +302,7 @@
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
-  pricePerUnit: 1
+  pricePerUnit: 1.5  # Простой эффект, низкая стоимость
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst
@@ -319,7 +318,7 @@
       effects:
       - !type:SatiateThirst
         factor: 15
-  pricePerUnit: 1
+  pricePerUnit: 1.0  # Самый базовый эффект
 
 - type: reagent
   id: CP14BasicEffectHealMana
@@ -336,7 +335,7 @@
       - !type:CP14ManaChange
         manaDelta: 1.5
         safe: true
-  pricePerUnit: 3
+  pricePerUnit: 5.0  # 2×Энергия (0.4) + 1×Движение (0.2) + Вода (0.1) = 0.7 → x7.14 (высокая ценность)
 
 - type: reagent
   id: CP14BasicEffectDamageMana
@@ -353,7 +352,7 @@
       - !type:CP14ManaChange
         manaDelta: -1.5
         safe: false
-  pricePerUnit: 3
+  pricePerUnit: 5.0  # 2×Энергия (0.4) + 1×Пустота (0.2) + Вода (0.1) = 0.7 → x7.14
 
 - type: reagent
   id: CP14BasicEffectSpeedUp
@@ -374,7 +373,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # 2×Движение (0.4) + 1×Порядок (0.25) + Вода (0.1) = 0.75 → x5.33
 
 - type: reagent
   id: CP14BasicEffectSpeedDown
@@ -395,7 +394,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # Аналогично ускорению, но с Хаосом вместо Порядка
 
 - type: reagent
   id: CP14BasicEffectSleep
@@ -417,7 +416,7 @@
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
-  pricePerUnit: 4
+  pricePerUnit: 6.0  # Высокая стоимость из-за мощного эффекта
 
 - type: reagent
   id: CP14BasicEffectUnsleep
@@ -451,10 +450,9 @@
           min: 1
         reagent: CP14BasicEffectSleep
         amount: -10
-  pricePerUnit: 1
+  pricePerUnit: 2.0  # Дешевле, чем сон, так как менее востребован
 
-# Gimmick solutions, otherwise doesn't give a mechanical benefit
-
+# Побочные эффекты (gimmick)
 - type: reagent
   id: CP14BasicEffectRainbow
   name: cp14-reagent-name-see-rainbow
@@ -473,7 +471,7 @@
         type: Add
         time: 25
         refresh: false
-  pricePerUnit: 1
+  pricePerUnit: 0.5  # Чисто декоративный эффект
 
 - type: reagent
   id: CP14BasicEffectEmoteCough
@@ -491,6 +489,7 @@
         showInChat: false
         emote: Cough
         probability: 0.3
+  pricePerUnit: 0.3  # Минимальная стоимость
 
 - type: reagent
   id: CP14BasicEffectVomit
@@ -506,6 +505,7 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
+  pricePerUnit: 0.5  # Негативный эффект, но не смертельный
 
 - type: reagent
   id: CP14BasicEffectDrunk
@@ -521,7 +521,7 @@
       effects:
       - !type:Drunk
         boozePower: 15
-  pricePerUnit: 0.5
+  pricePerUnit: 0.5  # Аналогично рвоте
 
 - type: reagent
   id: CP14BasicEffectJitter
@@ -536,3 +536,4 @@
       metabolismRate: 0.05
       effects:
       - !type:Jitter
+  pricePerUnit: 0.3  # Самый слабый негативный эффект
