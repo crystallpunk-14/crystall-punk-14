@@ -118,7 +118,7 @@
       - id: CP14FoodBlueCheesePart
         weight: 0.5
       - id: CP14FoodCheeseSlice
-      weight: 0.3
+      weight: 0.3 # groop chance
     - id: CP14FoodBlueCheeseSlice
       weight: 0.4
     - id: CP14FoodAgedCheeseSlice
