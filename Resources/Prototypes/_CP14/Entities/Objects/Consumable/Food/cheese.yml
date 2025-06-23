@@ -27,8 +27,6 @@
   - type: SliceableFood
     count: 5
     slice: CP14FoodCheesePart
-  - type: StaticPrice
-    price: 10 # Наценка!
 
 - type: entity
   id: CP14FoodCheesePart
@@ -162,6 +160,8 @@
   - type: SliceableFood
     count: 3
     slice: CP14FoodBlueCheeseSlice
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14FoodBlueCheeseSlice
@@ -192,6 +192,8 @@
           Quantity: 2 # 6/3
         - ReagentId: Protein
           Quantity: 1.5 # 4.5/3
+  - type: StaticPrice
+    price: 2
 
 # Aged Cheese (100% more protein)
 - type: entity
@@ -220,7 +222,7 @@
     count: 5
     slice: CP14FoodAgedCheesePart
   - type: StaticPrice
-    price: 30
+    price: 35
 
 - type: entity
   id: CP14FoodAgedCheesePart
@@ -254,6 +256,8 @@
   - type: SliceableFood
     count: 3
     slice: CP14FoodAgedCheeseSlice
+  - type: StaticPrice
+    price: 7
 
 - type: entity
   id: CP14FoodAgedCheeseSlice
@@ -284,3 +288,5 @@
           Quantity: 3 # 9/3
         - ReagentId: Protein
           Quantity: 2 # 6/3
+  - type: StaticPrice
+    price: 2

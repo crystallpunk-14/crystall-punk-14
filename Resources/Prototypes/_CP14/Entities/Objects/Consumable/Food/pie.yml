@@ -32,6 +32,9 @@
     - Pie
   - type: StaticPrice
     price: 6 # price for crafting and plate
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
 
 - type: entity
   parent: FoodInjectableBase
@@ -60,6 +63,9 @@
   - type: Food
     trash:
     - CP14PlatePie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
 
 # pie
 
