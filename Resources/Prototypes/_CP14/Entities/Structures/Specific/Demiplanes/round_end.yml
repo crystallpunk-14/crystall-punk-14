@@ -106,14 +106,13 @@
 - type: entity
   id: CP14DemiplaneCore
   categories: [ ForkFiltered ]
-  parent: BaseStructureDynamic
+  parent: BaseStructure
   name: demiplane core
-  description: The heart of the demiplane. Your task is to take it out of the demiplane safe and sound and hand it over to the guildmaster.
+  description: The heart of the demiplane. Your task is to break it and escape from this place before it collapses.
   components:
   - type: CP14DemiplaneCore
   - type: Transform
-    anchored: false
-  - type: Pullable
+    anchored: true
   - type: Clickable
   - type: Physics
   - type: Fixtures
@@ -178,14 +177,13 @@
             collection: GlassBreak
         - !type:DoActsBehavior
           acts: ["Destruction"]
-        #- !type:SpawnEntitiesBehavior
-        #  spawn:
-        #    CP14DimensitCrystal:
-        #      min: 4
-        #      max: 6
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14DimensitCrystal:
+              min: 2
+              max: 5
         - !type:SpawnEntitiesBehavior
           spawn:
             CP14SkyLightningPurple:
               min: 1
               max: 1
-

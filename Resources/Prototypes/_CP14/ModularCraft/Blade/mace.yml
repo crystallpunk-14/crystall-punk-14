@@ -8,6 +8,7 @@
   - !type:Inherit
     copyFrom:
     - BaseWeaponChemical
+    - BaseWeaponExecution
   - !type:EditMeleeWeapon
     resetOnHandSelected: true # Disable fast swap
     attackRateMultiplier: 0.85
