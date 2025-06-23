@@ -14,7 +14,7 @@
     collection: FootstepBlood
     params:
       volume: 6
-  pricePerUnit: 0.9
+  pricePerUnit: 1.19
 
 - type: reagent
   id: CP14YellowDayflinPulp
@@ -51,7 +51,7 @@
         showInChat: false
         emote: Cough
         probability: 0.3
-  pricePerUnit: 1.65
+  pricePerUnit: 1.75
 
 - type: reagent
   id: CP14WildSageSap
@@ -74,7 +74,7 @@
         type: Add
         time: 3
         refresh: false
-  pricePerUnit: 1.06
+  pricePerUnit: 0.86
 
 # Fungus based
 
