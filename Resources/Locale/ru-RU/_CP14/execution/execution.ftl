@@ -1,6 +1,3 @@
-cp14-execution-verb-name = Казнить
-cp14-execution-verb-message = Используйте своё оружие, чтобы казнить кого-то.
-
 # All the below localisation strings have access to the following variables
 # attacker (the person committing the execution)
 # victim (the person being executed)
