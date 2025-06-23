@@ -42,7 +42,6 @@
     product: CP14LockCopper
 
 
-
 - type: cp14TradingPosition
   id: CP14WallpaperBlack
   faction: HomeDecor
@@ -120,28 +119,6 @@
   service: !type:CP14BuyItemsService
     product: CP14WallpaperYellow
 
-- type: cp14TradingPosition
-  id: CP14PottedPlant1
-  faction: HomeDecor
-  reputationLevel: 0
-  uiPosition: 14
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant1
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant1
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant3
-  faction: HomeDecor
-  reputationLevel: 0
-  uiPosition: 15
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant3
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant3
-
 # Rep 1
 
 - type: cp14TradingPosition
@@ -188,8 +165,6 @@
   service: !type:CP14BuyItemsService
     product: CP14LockIron
 
-
-
 - type: cp14TradingPosition
   id: CP14WallpaperBank
   faction: HomeDecor
@@ -213,30 +188,6 @@
     state: bank2
   service: !type:CP14BuyItemsService
     product: CP14WallpaperBank2
-
-
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant2
-  faction: HomeDecor
-  reputationLevel: 1
-  uiPosition: 14
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant2
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant2
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant4
-  faction: HomeDecor
-  reputationLevel: 1
-  uiPosition: 15
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant4
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant4
 
 # Rep 2
 

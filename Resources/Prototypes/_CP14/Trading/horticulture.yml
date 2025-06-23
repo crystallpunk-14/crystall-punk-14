@@ -35,7 +35,7 @@
 - type: cp14TradingPosition
   id: CP14ModularIronHoe
   faction: Horticulture
-  uiPosition: 3
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
     state: icon
@@ -43,6 +43,65 @@
     product: CP14ModularIronHoe
     count: 1
   priceModifier: 1.5
+
+- type: cp14TradingPosition
+  id: CP14CrystalLampBlueEmpty
+  faction: Horticulture
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14CrystalLampBlueEmpty
+    count: 1
+  priceModifier: 1.5
+
+
+- type: cp14TradingPosition
+  id: CP14CrystalLampOrangeEmpty
+  faction: Horticulture
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14CrystalLampOrangeEmpty
+    count: 1
+  priceModifier: 1.5
+
+- type: cp14TradingPosition
+  id: CP14WoodenPlanks10
+  faction: Horticulture
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Materials/wood.rsi
+    state: planks_2
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenPlanks10
+    count: 1
+
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant1
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant1
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant1
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant3
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant3
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant3
 
 # Reputation Level 1 - Advanced Herbs & Tools
 - type: cp14TradingPosition
@@ -75,14 +134,48 @@
   id: CP14ModularIronSickle
   faction: Horticulture
   reputationLevel: 1
-  uiPosition: 3
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14ModularIronSickle
     count: 1
-  priceModifier: 1.5
+  priceModifier: 2
+
+- type: cp14TradingPosition
+  id: CP14BirchWoodenPlanks10
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Materials/wood_birch.rsi
+    state: planks_2
+  service: !type:CP14BuyItemsService
+    product: CP14BirchWoodenPlanks10
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant2
+  faction: HomeDecor
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant2
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant2
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant4
+  faction: HomeDecor
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant4
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant4
 
 # Reputation Level 2 - Rare Herbs
 - type: cp14TradingPosition
