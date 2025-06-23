@@ -86,9 +86,10 @@
     product: CP14TradeContractDairy
     count: 1
 
-- type: entity
-  parent: CP14TradeContractBase
+
+- type: cp14TradingPosition
   id: CP14TradeContractTailors
+  faction: ContractGuild
   uiPosition: 8
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
