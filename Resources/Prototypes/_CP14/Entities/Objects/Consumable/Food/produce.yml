@@ -191,6 +191,10 @@
   - type: Tag
     tags:
     - CP14FarmFood
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPotatoHot
 
 - type: entity
   id: CP14FoodCucumber

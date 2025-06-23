@@ -26,3 +26,4 @@ cp14-flavor-complex-ale = like bread
 cp14-flavor-complex-bloody-tear = like sad and alcoholic
 cp14-flavor-complex-bottomless = like semi-divine and dangerous
 cp14-flavor-complex-cucumber = like cucumber
+cp14-flavor-complex-hot-potato = like warm and crispy potatoes
