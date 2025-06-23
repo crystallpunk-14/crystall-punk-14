@@ -43,6 +43,15 @@
     protoId: CP14Torch
     count: 10
 
+- type: cp14TradingRequest
+  id: CP14GlassSheet
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 20
+
 # 30 minutes
 
 - type: cp14TradingRequest
