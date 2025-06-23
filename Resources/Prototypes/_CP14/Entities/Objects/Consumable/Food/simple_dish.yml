@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14FoodPotatoHot
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: hot potato
+  description: Warm and ruddy potatoes cooked over the fire.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14HotPotato
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/hot_potato.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1
