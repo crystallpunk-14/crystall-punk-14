@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSword
+    - CP14ModularBladeIronSword
 
 - type: entity
   id: CP14ModularCopperSword
@@ -27,7 +27,7 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperSword
+    - CP14ModularBladeCopperSword
 
 - type: entity
   id: CP14ModularGuardHalberd
@@ -44,8 +44,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSword
-    - GardeSharpIron
+    - CP14ModularBladeIronSword
+    - CP14ModularGardeSharpIron
 
 - type: entity
   id: CP14ModularSkeletonHalberd
@@ -60,7 +60,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
+    - CP14ModularBladeBoneSword
 
 - type: entity
   id: CP14ModularSkeletonSword
@@ -75,7 +75,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
+    - CP14ModularBladeBoneSword
 
 - type: entity
   id: CP14ModularSkeletonHalberdUpgrade
@@ -91,8 +91,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
-    - GardeSharpIron
+    - CP14ModularBladeBoneSword
+    - CP14ModularGardeSharpIron
 
 - type: entity
   id: CP14ModularSkeletonSwordUpgrade
@@ -108,6 +108,6 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
-    - GardeSharpIron
+    - CP14ModularBladeBoneSword
+    - CP14ModularGardeSharpIron
 

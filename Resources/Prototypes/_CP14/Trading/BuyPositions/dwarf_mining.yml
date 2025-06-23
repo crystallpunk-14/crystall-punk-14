@@ -25,7 +25,6 @@
 - type: cp14TradingPosition
   id: CP14ModularIronPickaxe
   faction: DwarfMining
-  priceMarkup: 15
   uiPosition: 3
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
@@ -36,7 +35,6 @@
 - type: cp14TradingPosition
   id: CP14ModularIronShovel
   faction: DwarfMining
-  priceMarkup: 10
   uiPosition: 4
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi

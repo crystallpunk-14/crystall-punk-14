@@ -10,5 +10,5 @@ namespace Content.Shared._CP14.ModularCraft.Components;
 public sealed partial class CP14ModularCraftAutoAssembleComponent : Component
 {
     [DataField]
-    public List<ProtoId<CP14ModularCraftPartPrototype>> Details = new();
+    public List<EntProtoId> Details = new();
 }
