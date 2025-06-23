@@ -627,3 +627,14 @@
   id: 8113
   time: '2025-06-22T22:21:25.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1460
+- author: TheShuEd
+  changes:
+  - message: Magical energy in items now costs money again at the rate of 1 copper
+      coin per 10 energy.
+    type: Add
+  - message: Modular weapons and armor that have existed in the world since the beginning
+      of the round are now priced correctly, and don't cost a couple of coppers.
+    type: Fix
+  id: 8114
+  time: '2025-06-23T09:19:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1462
