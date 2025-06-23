@@ -123,6 +123,15 @@
     Heat: 0.2
     Cold: 1.4
 
+- type: damageModifierSet
+  id: CP14Fairy
+  coefficients:
+    Blunt: 0.0
+    Slash: 0.0
+    Piercing: 0.0
+    Heat: 0.0
+    Cold: 0.0
+    Poison: 0.0
 # Slimes
 # TODO: upstream a way to get modifier sets to inherit from each other
 

@@ -1,0 +1,132 @@
+- type: entity
+  name: Fairy
+  parent: [ CP14SimpleMobBase ]
+  id: CP14Fairy
+  description: It glows, squeaks and considers itself very important.
+  categories: [ ForkFiltered ]
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 6
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: fairy
+      sprite: _CP14/Mobs/Animals/fairy.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 7.5
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: Fairy
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Bloodstream
+    bloodReagent: InsectBlood
+    bloodMaxVolume: 0.1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_CP14/Effects/fairy_cry.ogg
+          params:
+            volume: -2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PointLight
+    color: "#42AAFF"
+    radius: 1.35
+  - type: SpamEmitSound
+    minInterval: 1
+    maxInterval: 4
+    sound:
+      collection: CP14Fairy
+      params:
+        volume: -8
+        variation: 0.125
+        pitch: 1.1
+  - type: SoundWhileAlive
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 300
+    energy: 1
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
+  - type: CP14MagicUnsafeDamage
+  - type: HTN
+    rootTask:
+      task: CP14ApproachEnemyCompound
+    blackboard:
+      VisionRadius: !type:Single
+        5
+      AggroVisionRadius: !type:Single
+        5
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionFairyManaConsume
+  - type: Damageable
+    damageContainer: CP14Biological
+    damageModifierSet: CP14Fairy
+
+
+- type: entity
+  id: CP14ActionFairyManaConsume
+  name: Fairy Mana consume
+  description: You absorb a small amount of mana from the target.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_consume
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaConsume
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaConsume
+    - !type:CP14SpellConsumeManaEffect
+      safe: false
+      mana: 0.5
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: mana_consume
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      cooldown: 5
+      castDelay: 10
+      castTime: 10
+      breakOnMove: false
+      hidden: true

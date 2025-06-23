@@ -204,3 +204,19 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterFlem
+
+- type: entity
+  name: fairy spawner
+  id: CP14SpawnMobFairy
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+   - type: Sprite
+     layers:
+     - sprite: Markers/cross.rsi
+       state: green
+     - sprite: _CP14/Mobs/Monster/fairy.rsi
+       state: fairy
+   - type: ConditionalSpawner
+     prototypes:
+      - CP14Fairy

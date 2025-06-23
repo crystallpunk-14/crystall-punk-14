@@ -25,7 +25,7 @@
       effects:
       - !type:CP14ManaChange
         manaDelta: -50
-        safe: true
+        safe: false
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting
   - type: Action
