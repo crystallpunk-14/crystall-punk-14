@@ -191,6 +191,11 @@
   - type: Tag
     tags:
     - CP14FarmFood
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
