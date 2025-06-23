@@ -229,18 +229,6 @@
     product: CP14SpellScrollFireball
 
 - type: cp14TradingPosition
-  id: CP14SpellScrollEarthquake
-  faction: Thaumaturgy
-  reputationLevel: 2
-  priceMarkup: 5
-  uiPosition: 7
-  icon:
-    sprite: _CP14/Actions/Spells/earth.rsi
-    state: earthquake
-  service: !type:CP14BuyItemsService
-    product: CP14SpellScrollEarthquake
-
-- type: cp14TradingPosition
   id: CP14SpellScrollBeerCreation
   faction: Thaumaturgy
   priceMarkup: 5
