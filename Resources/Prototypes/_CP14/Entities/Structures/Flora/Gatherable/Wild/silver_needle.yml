@@ -1,0 +1,26 @@
+- type: entity
+  id: CP14GatherableSilverNeedle
+  parent: CP14GatherableBase
+  name: silver needle
+  description: Blue sharp shoots breaking through the snow, with bright orange berries. The ability of this plant to survive even in regions with severe frosts is simply amazing.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Flora/Wild/silver_needle.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+  - type: CP14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: CP14SilverNeedle
+

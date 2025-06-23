@@ -19,6 +19,32 @@
     breakOnMove: false
     slots:
     - belt
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14Metallic
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Structural: 10 #little jank, but Metallic is resistant to Blunt. Breaks in 3 strikes, or 2 fireballs.
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapCopper:
+            min: 1
+            max: 2
+          CP14ScrapIron:
+            min: 0
+            max: 1
   - type: MeleeWeapon
     attackRate: 0.6
     wideAnimationRotation: 10

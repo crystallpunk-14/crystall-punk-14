@@ -29,3 +29,9 @@
   - /Audio/_CP14/Animals/fairy4.ogg
   - /Audio/_CP14/Animals/fairy5.ogg
   - /Audio/_CP14/Animals/fairy6.ogg
+
+- type: soundCollection
+  id: CP14Bear
+  files:
+  - /Audio/_CP14/Animals/bear1.ogg
+  - /Audio/_CP14/Animals/bear2.ogg

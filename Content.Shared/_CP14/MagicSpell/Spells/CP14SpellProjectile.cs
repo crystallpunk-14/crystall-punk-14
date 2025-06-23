@@ -64,7 +64,7 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
                 (float) (random.NextDouble() * 2 - 1) * Spread,
                 (float) (random.NextDouble() * 2 - 1) * Spread));
 
-            var ent = entManager.SpawnAtPosition(Prototype, spawnCoords);
+            var ent = entManager.PredictedSpawnAtPosition(Prototype, spawnCoords);
 
             var direction = offsetedTargetPoint.ToMapPos(entManager, transform) -
                             spawnCoords.ToMapPos(entManager, transform);

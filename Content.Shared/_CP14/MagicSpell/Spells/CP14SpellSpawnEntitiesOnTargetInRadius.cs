@@ -28,7 +28,7 @@ public sealed partial class CP14SpellSpawnEntitiesOnTargetInRadius : CP14SpellEf
             var direction = (DirectionFlag) (1 << i);
             var coords = targetPoint.Value.Offset(direction.AsDir().ToVec());
 
-            entManager.SpawnAtPosition(Spawn, coords);
+            entManager.PredictedSpawnAtPosition(Spawn, coords);
         }
     }
 }
