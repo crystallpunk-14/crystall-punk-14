@@ -11,3 +11,11 @@
       state: pulse
   - type: CP14DemiplaneRift
 
+- type: entity
+  id: CP14MagicVisionMarker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+  - type: Clickable
