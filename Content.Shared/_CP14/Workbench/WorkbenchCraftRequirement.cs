@@ -26,7 +26,7 @@ public abstract partial class CP14WorkbenchCraftRequirement
     public abstract bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user);
+        EntityUid? user);
 
     /// <summary>
     /// An event that is triggered after crafting. This is the place to put important things like removing items, spending stacks or other things.
@@ -34,7 +34,10 @@ public abstract partial class CP14WorkbenchCraftRequirement
     public abstract void PostCraft(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user);
+        EntityUid? user);
+
+    public abstract double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager);
 
     /// <summary>
     /// This text will be displayed in the description of the craft recipe. Write something like ‘Wooden planks: х10’ here

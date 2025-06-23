@@ -22,16 +22,6 @@
     product: CP14GlassSheet5
 
 - type: cp14TradingPosition
-  id: CP14Torch
-  faction: DwarfMining
-  uiPosition: 4
-  icon:
-    sprite: _CP14/Objects/Tools/torch.rsi
-    state: torch-unlit
-  service: !type:CP14BuyItemsService
-    product: CP14Torch
-
-- type: cp14TradingPosition
   id: CP14ModularIronPickaxe
   faction: DwarfMining
   priceMarkup: 15

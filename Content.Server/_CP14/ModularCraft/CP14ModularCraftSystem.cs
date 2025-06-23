@@ -207,9 +207,9 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             }
         }
 
-        if (TryComp<StaticPriceComponent>(part, out var staticPartPrice))
+        if (TryComp<Shared.Cargo.Components.StaticPriceComponent>(part, out var staticPartPrice))
         {
-            var startStaticPrice = EnsureComp<StaticPriceComponent>(start);
+            var startStaticPrice = EnsureComp<Shared.Cargo.Components.StaticPriceComponent>(start);
 
             startStaticPrice.Price += staticPartPrice.Price;
         }
