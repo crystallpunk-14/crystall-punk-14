@@ -89,6 +89,7 @@
   #  range: 500
   #- type: StationLimitedNetwork
   - type: CP14SkillScanner
+  - type: CP14ZLevelMover
   - type: Thieving
     stripTimeReduction: 9999
     stealthy: true

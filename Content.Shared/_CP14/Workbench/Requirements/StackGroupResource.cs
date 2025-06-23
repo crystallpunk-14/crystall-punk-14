@@ -23,7 +23,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid? user)
     {
         if (!protoManager.TryIndex(Group, out var indexedGroup))
             return false;
@@ -48,7 +48,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 
     public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid? user)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -73,6 +73,13 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 
             requiredCount -= count;
         }
+    }
+
+    public override double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager)
+    {
+        //Idk how to price this, so we just return 0.
+        return 0;
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)

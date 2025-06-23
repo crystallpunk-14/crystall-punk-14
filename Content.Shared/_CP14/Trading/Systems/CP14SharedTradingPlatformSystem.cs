@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -59,14 +60,6 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
             QueueDel(ent);
     }
 
-    protected void UpdateUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
-    {
-        if (!TryComp<CP14TradingReputationComponent>(user, out var repComp))
-            return;
-
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Key, new CP14TradingPlatformUiState(GetNetEntity(ent)));
-    }
-
     public bool CanBuyPosition(Entity<CP14TradingReputationComponent?> user, ProtoId<CP14TradingPositionPrototype> position)
     {
         if (!Resolve(user.Owner, ref user.Comp, false))
@@ -93,10 +86,40 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         Dirty(user);
     }
+
+    public bool CanFulfillRequest(EntityUid platform, ProtoId<CP14TradingRequestPrototype> request)
+    {
+        if (!TryComp<ItemPlacerComponent>(platform, out var itemPlacer))
+            return false;
+
+        if (!Proto.TryIndex(request, out var indexedRequest))
+            return false;
+
+        foreach (var requirement in indexedRequest.Requirements)
+        {
+            if (!requirement.CheckRequirement(EntityManager, Proto, itemPlacer.PlacedEntities, null))
+                return false;
+        }
+
+        return true;
+    }
 }
 
 [Serializable, NetSerializable]
 public sealed class CP14TradingPositionBuyAttempt(ProtoId<CP14TradingPositionPrototype> position) : BoundUserInterfaceMessage
 {
     public readonly ProtoId<CP14TradingPositionPrototype> Position = position;
+}
+
+[Serializable, NetSerializable]
+public sealed class CP14TradingRequestSellAttempt(ProtoId<CP14TradingRequestPrototype> request, ProtoId<CP14TradingFactionPrototype> faction) : BoundUserInterfaceMessage
+{
+    public readonly ProtoId<CP14TradingRequestPrototype> Request = request;
+    public readonly ProtoId<CP14TradingFactionPrototype> Faction = faction;
+}
+
+
+[Serializable, NetSerializable]
+public sealed class CP14TradingSellAttempt : BoundUserInterfaceMessage
+{
 }

@@ -157,6 +157,29 @@
             Poison: 0.1
   pricePerUnit: 0.2
 
+- type: reagent
+  id: CP14SilverNeedle
+  group: CP14Precurser
+  name: cp14-reagent-name-silver-needle
+  desc: cp14-reagent-desc-silver-needle
+  flavor: bitter
+  color: "#c2834c"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -0.5
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.1
+  pricePerUnit: 0.2
+
 # Slime based
 
 - type: reagent

@@ -1,7 +1,6 @@
 using Content.Shared._CP14.MagicRitual.Prototypes;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicSpellStorage;
-using Content.Shared._CP14.MagicSpellStorage.Components;
 using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
 
@@ -10,7 +9,7 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 /// <summary>
 /// Stores the results and appearance of the magic effect
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicSystem), typeof(CP14SpellStorageSystem))]
+[RegisterComponent, Access(typeof(CP14SharedMagicSystem), typeof(CP14SharedSpellStorageSystem))]
 public sealed partial class CP14MagicEffectComponent : Component
 {
     /// <summary>

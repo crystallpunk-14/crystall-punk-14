@@ -54,12 +54,13 @@ public sealed partial class CP14StationDemiplaneMapSystem : CP14SharedStationDem
             _demiplane.StartDestructDemiplane((ent.Comp.Demiplane.Value, demiplane));
         }
 
-        var station = _station.GetOwningStation(ent, Transform(ent));
-
-        if (TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap) &&
-            stationMap.Nodes.TryGetValue(ent.Comp.Position, out var node) && ent.Comp.Station == station)
+        var query = EntityQueryEnumerator<CP14StationDemiplaneMapComponent>();
+        while (query.MoveNext(out var uid, out var stationMap))
         {
-            node.Scanned = true;
+            if (stationMap.Nodes.TryGetValue(ent.Comp.Position, out var node))
+            {
+                node.Completed = true;
+            }
         }
     }
 
