@@ -1,6 +1,5 @@
 using Content.Shared._CP14.Roof;
 using Content.Shared.Ghost;
-using Content.Shared.Light.EntitySystems;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Console;
@@ -12,16 +11,15 @@ public sealed class CP14RoofSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedRoofSystem _roof = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
-    private bool _roofVisible = true;
-    public bool DisabledByCommand = false;
+    public bool DisabledByCommand;
 
-    private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<GhostComponent> _ghostQuery;
     private EntityQuery<TransformComponent> _xformQuery;
 
-    public bool RoofVisibility
+    private bool _roofVisible = true;
+    public bool RoofVisible
     {
         get => _roofVisible && !DisabledByCommand;
         set
@@ -37,10 +35,8 @@ public sealed class CP14RoofSystem : EntitySystem
 
         _ghostQuery = GetEntityQuery<GhostComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
-        _gridQuery = GetEntityQuery<MapGridComponent>();
 
         SubscribeLocalEvent<CP14RoofComponent, ComponentStartup>(RoofStartup);
-        SubscribeLocalEvent<CP14RoofComponent, ComponentRemove>(RoofRemove);
 
         SubscribeLocalEvent<GhostComponent, CP14ToggleRoofVisibilityAction>(OnToggleRoof);
     }
@@ -54,31 +50,31 @@ public sealed class CP14RoofSystem : EntitySystem
         if (_ghostQuery.HasComp(player))
             return;
 
-        if (_xformQuery.TryComp(player, out var playerXform))
+        if (!_xformQuery.TryComp(player, out var playerXform))
+            return;
+
+        var grid = playerXform.GridUid;
+        if (grid == null || !TryComp<MapGridComponent>(grid, out var gridComp))
+            return;
+
+        var roofQuery = GetEntityQuery<CP14RoofComponent>();
+        var anchored = _map.GetAnchoredEntities(grid.Value, gridComp, playerXform.Coordinates);
+
+        var underRoof = false;
+        foreach (var ent in anchored)
         {
-            var grid = playerXform.GridUid;
-            if (grid == null || !TryComp<MapGridComponent>(grid, out var gridComp))
-                return;
+            if (!roofQuery.HasComp(ent))
+                continue;
 
-            var roofQuery = GetEntityQuery<CP14RoofComponent>();
-            var anchored = _map.GetAnchoredEntities(grid.Value, gridComp, playerXform.Coordinates);
-
-            var underRoof = false;
-            foreach (var ent in anchored)
-            {
-                if (!roofQuery.HasComp(ent))
-                    continue;
-
-                underRoof = true;
-            }
-            if (underRoof && _roofVisible)
-            {
-                RoofVisibility = false;
-            }
-            if (!underRoof && !_roofVisible)
-            {
-                RoofVisibility = true;
-            }
+            underRoof = true;
+        }
+        if (underRoof && _roofVisible)
+        {
+            RoofVisible = false;
+        }
+        if (!underRoof && !_roofVisible)
+        {
+            RoofVisible = true;
         }
     }
 
@@ -99,35 +95,16 @@ public sealed class CP14RoofSystem : EntitySystem
             return;
 
         UpdateVisibility(ent, sprite);
-
-        //var xform = Transform(ent);
-//
-        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
-        //{
-        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
-        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, true);
-        //}
-    }
-
-    private void RoofRemove(Entity<CP14RoofComponent> ent, ref ComponentRemove args)
-    {
-        //var xform = Transform(ent);
-//
-        //if (_gridQuery.TryComp(xform.GridUid, out var grid))
-        //{
-        //    var index = _map.LocalToTile(xform.GridUid.Value, grid, xform.Coordinates);
-        //    _roof.SetRoof((xform.GridUid.Value, grid, null), index, false);
-        //}
     }
 
     private void UpdateVisibility(Entity<CP14RoofComponent> ent, SpriteComponent sprite)
     {
-        sprite.Visible = RoofVisibility;
+        _sprite.SetVisible((ent, sprite), RoofVisible);
     }
 
     public void UpdateRoofVisibilityAll()
     {
-        var query = EntityQueryEnumerator<CP14RoofComponent, SpriteComponent>();
+        var query = AllEntityQuery<CP14RoofComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var marker, out var sprite))
         {
             UpdateVisibility((uid, marker), sprite);
