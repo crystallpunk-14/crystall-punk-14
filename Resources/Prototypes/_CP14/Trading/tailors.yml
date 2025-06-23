@@ -32,7 +32,7 @@
   uiPosition: 5
   priceMarkup: 10
   icon:
-    sprite: _CP14/Objects/Clothing/Head/beret_mercenary.rsi
+    sprite: _CP14/Clothing/Head/Roles/General/beret_mercenary.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14ClothingHeadBeretMercenary
@@ -44,7 +44,7 @@
   uiPosition: 6
   priceMarkup: 10
   icon:
-    sprite: _CP14/Objects/Clothing/Shirt/mercenary_shirt.rsi
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14ClothingShirtMercenary
@@ -56,7 +56,7 @@
   uiPosition: 7
   priceMarkup: 10
   icon:
-    sprite: _CP14/Objects/Clothing/Pants/mercenary_trousers.rsi
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14ClothingPantsMercenaryTrousers
@@ -70,7 +70,7 @@
   uiPosition: 0
   priceMarkup: 5
   icon:
-    sprite: _CP14/Objects/Tools/scissors.rsi
+    sprite: _CP14/Objects/Tools/rope.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14Rope
@@ -85,7 +85,7 @@
   uiPosition: 6
   priceMarkup: 15
   icon:
-    sprite: _CP14/Objects/Clothing/Dress/yellow_wizard_dress.rsi
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
     state: icon
   service: !type:CP14BuyItemsService
     product: CP14ClothingYellowWizardDress
