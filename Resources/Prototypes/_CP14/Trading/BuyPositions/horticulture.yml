@@ -56,19 +56,6 @@
     count: 1
   priceModifier: 1.5
 
-
-- type: cp14TradingPosition
-  id: CP14CrystalLampOrangeEmpty
-  faction: Horticulture
-  uiPosition: 6
-  icon:
-    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
-    state: icon
-  service: !type:CP14BuyItemsService
-    product: CP14CrystalLampOrangeEmpty
-    count: 1
-  priceModifier: 1.5
-
 - type: cp14TradingPosition
   id: CP14WoodenPlanks10
   faction: Horticulture
@@ -142,6 +129,19 @@
     product: CP14ModularIronSickle
     count: 1
   priceModifier: 2
+
+- type: cp14TradingPosition
+  id: CP14CrystalLampOrangeEmpty
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14CrystalLampOrangeEmpty
+    count: 1
+  priceModifier: 1.5
 
 - type: cp14TradingPosition
   id: CP14BirchWoodenPlanks10

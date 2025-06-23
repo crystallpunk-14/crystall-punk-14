@@ -12,20 +12,20 @@
     product: CP14OreCopper5
 
 - type: cp14TradingPosition
-  id: CP14GlassSheet5
+  id: CP14CrystalShardQuartz
   faction: DwarfMining
-  uiPosition: 2
+  uiPosition: 1
   icon:
-    sprite: _CP14/Objects/Materials/glass.rsi
-    state: glass_2
+    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
+    state: shard3
   service: !type:CP14BuyItemsService
-    product: CP14GlassSheet5
+    product: CP14CrystalShardQuartz
 
 - type: cp14TradingPosition
   id: CP14ModularIronPickaxe
   faction: DwarfMining
   priceMarkup: 15
-  uiPosition: 4
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
     state: tool
@@ -36,7 +36,7 @@
   id: CP14ModularIronShovel
   faction: DwarfMining
   priceMarkup: 10
-  uiPosition: 5
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
     state: tool
@@ -46,7 +46,7 @@
 - type: cp14TradingPosition
   id: CP14BaseSharpeningStone
   faction: DwarfMining
-  uiPosition: 6
+  uiPosition: 5
   icon:
     sprite: _CP14/Objects/sharpening_stone.rsi
     state: base
@@ -70,7 +70,7 @@
   id: CP14Lighter
   faction: DwarfMining
   reputationLevel: 1
-  uiPosition: 6
+  uiPosition: 5
   priceMarkup: 5
   icon:
     sprite: _CP14/Objects/Tools/flint.rsi
@@ -107,7 +107,7 @@
   faction: DwarfMining
   reputationLevel: 2
   priceMarkup: 5
-  uiPosition: 6
+  uiPosition: 5
   icon:
     sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
     state: base
