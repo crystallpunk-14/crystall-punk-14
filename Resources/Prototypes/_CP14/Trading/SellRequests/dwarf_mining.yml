@@ -4,7 +4,7 @@
   - DwarfMining
   requirements:
   - !type:StackResource
-    stack: CP14OreCopper
+    stack: CP14CopperBar
     count: 10
 
 - type: cp14TradingRequest
@@ -13,7 +13,7 @@
   - DwarfMining
   requirements:
   - !type:StackResource
-    stack: CP14OreIron
+    stack: CP14IronBar
     count: 10
 
 - type: cp14TradingRequest
@@ -52,7 +52,7 @@
   fromMinutes: 30
   requirements:
   - !type:StackResource
-    stack: CP14OreGold
+    stack: CP14GoldBar
     count: 10
 
 # 60 minutes
@@ -64,5 +64,5 @@
   fromMinutes: 60
   requirements:
   - !type:StackResource
-    stack: CP14OreMithril
+    stack: CP14MithrilBar
     count: 10
