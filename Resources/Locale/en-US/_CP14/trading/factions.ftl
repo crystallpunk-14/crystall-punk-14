@@ -7,3 +7,4 @@ cp14-trade-faction-home-decor = Cozy home
 cp14-trade-faction-horticulture = Horticulture Consortium
 cp14-trade-faction-butchers = Master Butchers Union
 cp14-trade-faction-dairy = Golden Udder Dairy
+cp14-trade-faction-tailors = Silk & Needle Tailors Guild

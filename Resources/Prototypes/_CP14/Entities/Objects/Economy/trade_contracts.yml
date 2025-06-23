@@ -104,3 +104,14 @@
     state: dairy
   - type: CP14TradingContract
     faction: Dairy
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractTailors
+  description: Trading contract with the "Silk & Needle Tailors Guild". Allows you to purchase fabrics, clothing and tailoring tools.
+  suffix: Tailors
+  components:
+  - type: Sprite
+    state: tailors
+  - type: CP14TradingContract
+    faction: Tailors

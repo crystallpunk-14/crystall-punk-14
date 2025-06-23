@@ -76,6 +76,18 @@
   service: !type:CP14BuyItemsService
     product: CP14OreIron5
 
+- type: cp14TradingPosition
+  id: CP14Lighter
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Tools/flint.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Lighter
+
 # Rep 2
 
 - type: cp14TradingPosition

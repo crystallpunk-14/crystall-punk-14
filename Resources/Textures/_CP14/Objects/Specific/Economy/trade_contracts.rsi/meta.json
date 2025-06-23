@@ -42,6 +42,10 @@
         {
             "name": "dairy",
             "description": "Dairy trade contract"
+        },
+        {
+            "name": "tailors",
+            "description": "Tailors trade contract"
         }
     ]
 }

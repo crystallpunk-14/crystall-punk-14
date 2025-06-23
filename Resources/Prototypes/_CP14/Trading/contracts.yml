@@ -85,3 +85,14 @@
   service: !type:CP14BuyItemsService
     product: CP14TradeContractDairy
     count: 1
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractTailors
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: tailors
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractTailors
+    count: 1

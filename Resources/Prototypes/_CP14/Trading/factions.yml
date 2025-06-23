@@ -42,3 +42,8 @@
   id: Dairy
   color: "#f5f5dc"
   name: cp14-trade-faction-dairy
+
+- type: cp14TradingFaction
+  id: Tailors
+  color: "#d67fd6"
+  name: cp14-trade-faction-tailors
