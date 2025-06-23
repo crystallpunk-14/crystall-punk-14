@@ -645,3 +645,11 @@
   id: 8115
   time: '2025-06-23T09:25:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1442
+- author: SenorJaba
+  changes:
+  - message: Added 10 craftable plushies, each with their own sounds. Several of them
+      have a little fun feature!
+    type: Add
+  id: 8116
+  time: '2025-06-23T09:53:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1456
