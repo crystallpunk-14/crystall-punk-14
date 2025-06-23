@@ -198,7 +198,7 @@
       - !type:SatiateThirst
       - !type:ChemVomit
         probability: 0.05
-  pricePerUnit: 0.70
+  pricePerUnit: 2.20
 
 # Inorganic
 
@@ -241,4 +241,4 @@
         component: ForcedSleeping
         refresh: false
         type: Add
-  pricePerUnit: 1.52
+  pricePerUnit: 3.52
