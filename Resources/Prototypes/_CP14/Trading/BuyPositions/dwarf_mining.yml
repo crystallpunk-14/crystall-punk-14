@@ -15,6 +15,7 @@
   id: CP14CrystalShardQuartz
   faction: DwarfMining
   uiPosition: 1
+  priceMarkup: 3
   icon:
     sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
     state: shard3
