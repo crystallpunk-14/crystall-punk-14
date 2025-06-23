@@ -87,6 +87,7 @@
       - id: CP14Rope
       - id: CP14EnergyCrystalMediumEmpty
       - id: CP14BookTieflingGambit
+        weight: 0.3 # too often
       - id: CP14d20Dice
       - id: CP14d6Dice
       - id: CP14CopperCoin5
@@ -105,6 +106,23 @@
     - id: CP14FoodOnion
     - id: CP14Cloth10
     - id: CP14CrayonWhite
+    # Cheeese!
+    - !type:GroupSelector
+      children:
+      - id: CP14FoodBlueCheeseWheel
+        weight: 0.1
+      - id: CP14FoodAgedCheeseWheel
+        weight: 0.05
+      - id: CP14FoodAgedCheesePart
+        weight: 0.3
+      - id: CP14FoodBlueCheesePart
+        weight: 0.5
+      - id: CP14FoodCheeseSlice
+      weight: 0.3
+    - id: CP14FoodBlueCheeseSlice
+      weight: 0.4
+    - id: CP14FoodAgedCheeseSlice
+      weight: 0.3
     - !type:GroupSelector
       children:
       - id: CP14ClothingCloakGreen

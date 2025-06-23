@@ -193,7 +193,7 @@
         - ReagentId: Protein
           Quantity: 1.5 # 4.5/3
   - type: StaticPrice
-    price: 2
+    price: 1
 
 # Aged Cheese (100% more protein)
 - type: entity
