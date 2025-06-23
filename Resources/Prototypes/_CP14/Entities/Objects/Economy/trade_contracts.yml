@@ -90,7 +90,7 @@
   suffix: Butchers
   components:
   - type: Sprite
-    state: butchery
+    state: butchers
   - type: CP14TradingContract
     faction: Butchers
 
@@ -101,6 +101,6 @@
   suffix: Dairy
   components:
   - type: Sprite
-    state: cheese
+    state: dairy
   - type: CP14TradingContract
     faction: Dairy

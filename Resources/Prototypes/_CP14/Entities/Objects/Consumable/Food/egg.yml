@@ -22,6 +22,8 @@
         reagents:
         - ReagentId: Egg
           Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2
   - type: DrawableSolution
     solution: food
   - type: SolutionSpiker

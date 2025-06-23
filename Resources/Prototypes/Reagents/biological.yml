@@ -197,7 +197,7 @@
     collection: FootstepBlood
     params:
       volume: 6
-  pricePerUnit: 0.1
+  pricePerUnit: 0.5
 
 - type: reagent
   id: Vomit

@@ -33,11 +33,11 @@
         },
         {
             "name": "horticulture",
-            "description": "Horticulture Guild trade contract"
+            "description": "Horticulture trade contract"
         },
         {
             "name": "butchers",
-            "description": "Butchers Guild trade contract"
+            "description": "Butchers trade contract"
         },
         {
             "name": "dairy",

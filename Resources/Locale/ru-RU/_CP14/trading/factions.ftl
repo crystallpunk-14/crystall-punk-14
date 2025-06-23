@@ -4,3 +4,6 @@ cp14-trade-faction-brad-potions = Великолепные зелья Брада
 cp14-trade-faction-dwarf-mining = Шахтерский филиал 'Дворфийская сталь'
 cp14-trade-faction-thaumaturgy = Тауматургическая академия
 cp14-trade-faction-home-decor = Уютный дом
+cp14-trade-faction-horticulture = Консорциум садоводов
+cp14-trade-faction-butchers = Союз мастеровых мясников
+cp14-trade-faction-dairy = Молочная ферма 'Златовымя'

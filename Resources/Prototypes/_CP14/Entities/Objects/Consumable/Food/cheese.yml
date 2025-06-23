@@ -22,6 +22,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 21
+        - ReagentId: Protein
+          Quantity: 15 # 5 parts * 3 slices * 1 protein
   - type: SliceableFood
     count: 5
     slice: CP14FoodCheesePart
@@ -54,10 +56,11 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 6 # 1/5 cheese wheel
         reagents:
         - ReagentId: Nutriment
           Quantity: 4.2
+        - ReagentId: Protein
+          Quantity: 3 # 3 slices * 1 protein
   - type: SliceableFood
     count: 3
     slice: CP14FoodCheeseSlice
@@ -92,11 +95,13 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.4
+        - ReagentId: Protein
+          Quantity: 1
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CheeseSandwich
 
-# Special Cheese Types
+# Blue Cheese (50% more protein)
 - type: entity
   id: CP14FoodBlueCheeseWheel
   parent: CP14FoodCheeseWheel
@@ -117,39 +122,14 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 30
+        - ReagentId: Protein
+          Quantity: 22.5 # 15 * 1.5 (50% more)
   - type: SliceableFood
     count: 5
     slice: CP14FoodBlueCheesePart
   - type: StaticPrice
     price: 20
 
-- type: entity
-  id: CP14FoodAgedCheeseWheel
-  parent: CP14FoodCheeseWheel
-  name: aged cheese wheel
-  description: Hard cheese aged for months to develop rich flavor.
-  components:
-  - type: Sprite
-    layers:
-      - state: aged_cheese_wheel
-  - type: FlavorProfile
-    flavors:
-      - cheesy
-      - savory
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 45
-  - type: SliceableFood
-    count: 5
-    slice: CP14FoodAgedCheesePart
-  - type: StaticPrice
-    price: 30
-
-# Blue Cheese Parts and Slices
 - type: entity
   id: CP14FoodBlueCheesePart
   parent: CP14FoodCheesePart
@@ -177,6 +157,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 6 # 30/5
+        - ReagentId: Protein
+          Quantity: 4.5 # 22.5/5
   - type: SliceableFood
     count: 3
     slice: CP14FoodBlueCheeseSlice
@@ -208,8 +190,38 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2 # 6/3
+        - ReagentId: Protein
+          Quantity: 1.5 # 4.5/3
 
-# Aged Cheese Parts and Slices
+# Aged Cheese (100% more protein)
+- type: entity
+  id: CP14FoodAgedCheeseWheel
+  parent: CP14FoodCheeseWheel
+  name: aged cheese wheel
+  description: Hard cheese aged for months to develop rich flavor.
+  components:
+  - type: Sprite
+    layers:
+      - state: aged_cheese_wheel
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - savory
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 45
+        - ReagentId: Protein
+          Quantity: 30 # 15 * 2 (100% more)
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodAgedCheesePart
+  - type: StaticPrice
+    price: 30
+
 - type: entity
   id: CP14FoodAgedCheesePart
   parent: CP14FoodCheesePart
@@ -237,6 +249,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 9 # 45/5
+        - ReagentId: Protein
+          Quantity: 6 # 30/5
   - type: SliceableFood
     count: 3
     slice: CP14FoodAgedCheeseSlice
@@ -268,3 +282,5 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 3 # 9/3
+        - ReagentId: Protein
+          Quantity: 2 # 6/3

@@ -517,7 +517,7 @@
           type: Vox
         reagent: Protein
         amount: 0.25
-  pricePerUnit: 0.15
+  pricePerUnit: 0.25
 
 - type: reagent
   id: Allicin
