@@ -1,39 +1,47 @@
 - type: stack
   id: CP14FloorCarpetRed
+  name: cp14-stack-red-carpet
   spawn: CP14FloorCarpetItemRed1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetBlue
+  name: cp14-stack-blue-carpet
   spawn: CP14FloorCarpetItemBlue1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetCyan
+  name: cp14-stack-cyan-carpet
   spawn: CP14FloorCarpetItemCyan1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetGreen
+  name: cp14-stack-green-carpet
   spawn: CP14FloorCarpetItemGreen1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetOrange
+  name: cp14-stack-orange-carpet
   spawn: CP14FloorCarpetItemOrange1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetPurple
+  name: cp14-stack-purple-carpet
   spawn: CP14FloorCarpetItemPurple1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetBlack
+  name: cp14-stack-black-carpet
   spawn: CP14FloorCarpetItemBlack1
   maxCount: 30
 
 - type: stack
   id: CP14FloorCarpetYellow
+  name: cp14-stack-yellow-carpet
   spawn: CP14FloorCarpetItemYellow1
   maxCount: 30
