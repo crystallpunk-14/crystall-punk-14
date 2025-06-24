@@ -33,7 +33,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: Fairy
+        Base: fairy
       Critical:
         Base: dead
       Dead:
