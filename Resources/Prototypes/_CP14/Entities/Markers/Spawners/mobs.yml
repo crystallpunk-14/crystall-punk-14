@@ -215,7 +215,7 @@
      layers:
      - sprite: Markers/cross.rsi
        state: green
-     - sprite: _CP14/Mobs/Monster/fairy.rsi
+     - sprite: _CP14/Mobs/Animals/fairy.rsi
        state: fairy
    - type: ConditionalSpawner
      prototypes:
