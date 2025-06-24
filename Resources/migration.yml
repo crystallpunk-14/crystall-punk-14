@@ -342,6 +342,10 @@ CP14WoodenChestFilledCheese: null
 CP14ClothingRingFireball: null
 CP14ClothingRingFlashLight: null
 CP14ClothingRingIceShards: null
+
+#2025-06-24
+CP14CarpetPink: CP14CarpetPurple
+
 # <---> CrystallEdge migration zone end
 
 
