@@ -1,6 +1,6 @@
 - type: entity
-  name: Fairy
-  parent: [ CP14SimpleMobBase ]
+  name: fairy
+  parent: CP14SimpleMobBase
   id: CP14Fairy
   description: It glows, squeaks and considers itself very important.
   categories: [ ForkFiltered ]
@@ -93,6 +93,8 @@
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: CP14Fairy
+  - type: damageContainer
+    id: CP14Spectral
 
 
 - type: entity
