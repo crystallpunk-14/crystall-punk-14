@@ -9,9 +9,14 @@
   "states": [
     {
       "name": "dead",
+      "delays": [
+        [
+          1
+        ]
+      ]
     },
     {
-      "name": "fairy",
+      "name": "mini_mimic_gold",
       "directions": 4,
       "delays": [
         [
