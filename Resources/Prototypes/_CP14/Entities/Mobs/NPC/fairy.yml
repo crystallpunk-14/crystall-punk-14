@@ -93,8 +93,8 @@
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: CP14Fairy
-  - type: damageContainer
-    id: CP14Spectral
+  - type: Damageable
+    damageContainer: CP14Spectral
 
 
 - type: entity
