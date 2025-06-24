@@ -74,47 +74,50 @@
   source: "https://freesound.org/people/mucky_pete7/sounds/574208/"
 
 - files: ["fairy1.ogg"]
-  license: "CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono'
   source: "https://freesound.org/people/BristolStories/sounds/51694/"
 
 - files: ["fairy2.ogg"]
-  license: "CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono'
   source: "https://freesound.org/people/BristolStories/sounds/51698/"
 
 - files: ["fairy3.ogg"]
-  license: "CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono'
   source: "https://freesound.org/people/BristolStories/sounds/51708/"
 
 - files: ["fairy4.ogg"]
-  license: CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono'
   source: "https://freesound.org/people/BristolStories/sounds/51709/"
 
 - files: ["fairy5.ogg"]
-  license: "CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono'
   source: "https://freesound.org/people/BristolStories/sounds/51711/"
 
 - files: ["Fairy6.ogg"]
-  license: "CC BY 4.0"
+  license: "CC-BY-4.0"
   copyright: 'By jorickhoofd offreesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/jorickhoofd/sounds/170623/"
 
 - files: ["fairy_cry.ogg"] #The file consists of 3 sounds
-  license: "CC BY-NC 3.0"
+  license: "CC-BY-NC-3.0"
   copyright: 'By BristolStories offreesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/BristolStories/sounds/51714/"
+  
 - files: ["fairy_cry.ogg"] #The file consists of 3 sounds
-  license: "CC0 1.0"
+  license: "CC0-1.0"
   copyright: 'By JalynCatbtg offreesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/JalynCatbtg/sounds/618193/"
+  
 - files: ["fairy_cry.ogg"] #The file consists of 3 sounds
-  license:  "CC0 1.0"
+  license:  "CC0-1.0"
   copyright: 'By RG2Cents offreesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/RG2Cents/sounds/726867/"
+  
 - files: ["bear1.ogg, bear2.ogg"]
   license: "CC0-1.0"
   copyright: 'by husky70 of Freesound.org. Cropped and mixed from stereo to mono.'
