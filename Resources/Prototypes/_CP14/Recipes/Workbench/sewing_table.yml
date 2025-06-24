@@ -387,120 +387,159 @@
     protoId: CP14DyeYellow
   result: CP14WallpaperYellow
 
-#carpet
+# Plushies
 
 - type: CP14Recipe
-  id: CP14FloorCarpetItemBlue10
+  id: CP14HumanPlushie
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeBlue
-  result: CP14FloorCarpetItemBlue10
+    protoId: CP14Cotton
+    count: 2
+  result: CP14HumanPlushie
 
 - type: CP14Recipe
-  id: CP14FloorCarpetItemRed10
+  id: CP14DwarfPlushie
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeRed
-  result: CP14FloorCarpetItemRed10
+    protoId: CP14Cotton
+    count: 1
+  - !type:StackResource
+    stack: CP14Stone
+    count: 3
+  result: CP14DwarfPlushie
 
 - type: CP14Recipe
-  id: CP14FloorCarpetItemCyan10
+  id: CP14ElfPlushie
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14String
+    protoId: CP14Cotton
+    count: 1
   - !type:ProtoIdResource
-    protoId: CP14DyeBlue
+    protoId: CP14BlueAmanita
+    count: 2
+  result: CP14ElfPlushie
+
+- type: CP14Recipe
+  id: CP14GoblinPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  - !type:StackResource
+    stack: CP14CopperCoin
+    count: 5
+  result: CP14GoblinPlushie
+
+- type: CP14Recipe
+  id: CP14TieflingPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  - !type:StackResource
+    stack: CP14Ash
+    count: 3
+  result: CP14TieflingPlushie
+
+- type: CP14Recipe
+  id: CP14SilvaPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 3
+  result: CP14SilvaPlushie
+
+- type: CP14Recipe
+  id: CP14CarcatPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14WildSage
+    count: 2
+  result: CP14CarcatPlushie
+
+- type: CP14Recipe
+  id: CP14AgaricPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14AgaricMushroom
+    count: 1
+  result: CP14AgaricPlushie
+
+- type: CP14Recipe
+  id: CP14FrogPlushie
+  tag: CP14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14Cotton
+    count: 1
   - !type:ProtoIdResource
     protoId: CP14DyeGreen
-  result: CP14FloorCarpetItemCyan10
+  result: CP14FrogPlushie
 
 - type: CP14Recipe
-  id: CP14FloorCarpetItemGreen10
+  id: CP14SkeletonPlushie
   tag: CP14RecipeSewing
   craftTime: 2
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14String
+    protoId: CP14Cotton
+    count: 1
   - !type:ProtoIdResource
-    protoId: CP14DyeGreen
-  result: CP14FloorCarpetItemGreen10
-
-- type: CP14Recipe
-  id: CP14FloorCarpetItemOrange10
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 10
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeRed
-  - !type:ProtoIdResource
-    protoId: CP14DyeYellow
-  result: CP14FloorCarpetItemOrange10
-
-- type: CP14Recipe
-  id: CP14FloorCarpetItemPurple10
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 10
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyePurple
-  result: CP14FloorCarpetItemPurple10
-
-- type: CP14Recipe
-  id: CP14FloorCarpetItemBlack10
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 10
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeBlack
-  result: CP14FloorCarpetItemBlack10
-
-- type: CP14Recipe
-  id: CP14FloorCarpetItemYellow10
-  tag: CP14RecipeSewing
-  craftTime: 2
-  requirements:
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 10
-  - !type:ProtoIdResource
-    protoId: CP14String
-  - !type:ProtoIdResource
-    protoId: CP14DyeYellow
-  result: CP14FloorCarpetItemYellow10
+    protoId: CP14ClothingMaskBoneMask
+  result: CP14SkeletonPlushie

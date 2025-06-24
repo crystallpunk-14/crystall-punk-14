@@ -747,12 +747,12 @@
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
 
-# Mole Meat
+# Monster Meat
 
 - type: entity
-  id: CP14FoodMeatMole
+  id: CP14FoodMeatMonster
   parent: CP14FoodMeatBase
-  name: raw mole meat
+  name: raw monster meat
   description: The colour is quite suspicious, not everyone would dare to try it out, perhaps give it to a goblin?
   components:
   - type: Sprite
@@ -764,7 +764,7 @@
     size: Small
   - type: SliceableFood
     count: 4
-    slice: CP14FoodMeatMoleSlice
+    slice: CP14FoodMeatMonsterSlice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -786,12 +786,12 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14FoodMeatMoleCooked
+      transformTo: CP14FoodMeatMonsterCooked
 
 - type: entity
-  id: CP14FoodMeatMoleCooked
-  parent: CP14FoodMeatMole
-  name: cooked mole meat
+  id: CP14FoodMeatMonsterCooked
+  parent: CP14FoodMeatMonster
+  name: cooked monster meat
   components:
   - type: Sprite
     layers:
@@ -800,7 +800,7 @@
         color: "#c98367"
   - type: SliceableFood
     count: 4
-    slice: CP14FoodMeatMoleCookedSlice
+    slice: CP14FoodMeatMonsterCookedSlice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -825,9 +825,9 @@
       transformTo: CP14Ash1
 
 - type: entity
-  id: CP14FoodMeatMoleLeg
+  id: CP14FoodMeatMonsterLeg
   parent: CP14FoodMeatBase
-  name: raw mole leg meat
+  name: raw monster leg meat
   description: The suspicious colour of the meat makes you question its edibility, but if you're really hungry...
   components:
   - type: Sprite
@@ -849,12 +849,12 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14FoodMeatMoleLegCooked
+      transformTo: CP14FoodMeatMonsterLegCooked
 
 - type: entity
-  id: CP14FoodMeatMoleLegCooked
-  parent: CP14FoodMeatMoleLeg
-  name: cooked mole leg meat # Jamon? - Хамон?
+  id: CP14FoodMeatMonsterLegCooked
+  parent: CP14FoodMeatMonsterLeg
+  name: cooked monster leg meat # Jamon? - Хамон?
   components:
   - type: Sprite
     state: mole_meat5 # We need fried sprites
@@ -876,7 +876,7 @@
       transformTo: CP14Ash1
 
 - type: entity
-  id: CP14FoodMeatMoleSlice
+  id: CP14FoodMeatMonsterSlice
   parent: CP14FoodMeatSliceBase
   name: monster meat piece
   description: Monster meat balls with their trademark suspicious colour.
@@ -904,11 +904,11 @@
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CP14FoodMeatMoleCookedSlice
+      transformTo: CP14FoodMeatMonsterCookedSlice
 
 - type: entity
-  id: CP14FoodMeatMoleCookedSlice
-  parent: CP14FoodMeatMoleSlice
+  id: CP14FoodMeatMonsterCookedSlice
+  parent: CP14FoodMeatMonsterSlice
   name: cooked monster meat pieces
   components:
   - type: Sprite
@@ -937,7 +937,7 @@
   id: CP14FoodMeatFlemHead
   parent: CP14FoodMeatBase
   name: raw flem head
-  description: honestly looks quite tasty
+  description: Honestly looks quite tasty.
   components:
   - type: FlavorProfile
     flavors:
@@ -992,7 +992,7 @@
   id: CP14FoodMeatFlemTorso
   parent: CP14FoodMeatBase
   name: raw flem torso
-  description: seems to be hollow
+  description: Seems to be hollow.
   components:
   - type: FlavorProfile
     flavors:
@@ -1053,7 +1053,7 @@
   id: CP14FoodMeatFlemTorsoCut
   parent: CP14FoodMeatSliceBase
   name: raw flem ring
-  description: onions not included
+  description: Onions not included.
   components:
   - type: FlavorProfile
     flavors:
@@ -1111,7 +1111,7 @@
   id: CP14FoodMeatFlemLeg
   parent: CP14FoodMeatBase
   name: raw flem leg
-  description: probally not the best part to eat. but you never know until you try
+  description: Probally not the best part to eat. but you never know until you try.
   components:
   - type: FlavorProfile
     flavors:
@@ -1143,7 +1143,7 @@
   id: CP14FoodMeatFlemLegCooked
   parent: CP14FoodMeatFlemLeg
   name: fish sticks
-  description: like freis. but fish!
+  description: Like fries. But fish!
   components:
   - type: Sprite
     state: flem_leg_cooked

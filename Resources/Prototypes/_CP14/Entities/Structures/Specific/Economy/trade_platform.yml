@@ -16,13 +16,13 @@
     sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
     state: base
   - type: ActivatableUI
-    key: enum.CP14TradingUiKey.Key
+    key: enum.CP14TradingUiKey.Buy
   - type: Clickable
   - type: InteractionOutline
   - type: CP14TradingPlatform
   - type: UserInterface
     interfaces:
-      enum.CP14TradingUiKey.Key:
+      enum.CP14TradingUiKey.Buy:
         type: CP14TradingPlatformBoundUserInterface
   - type: PlaceableSurface
   - type: ItemPlacer
@@ -71,6 +71,12 @@
   - type: PlaceableSurface
   - type: ItemPlacer
     maxEntities: 0
+  - type: ActivatableUI
+    key: enum.CP14TradingUiKey.Sell
+  - type: UserInterface
+    interfaces:
+      enum.CP14TradingUiKey.Sell:
+        type: CP14SellingPlatformBoundUserInterface
   - type: Fixtures
     fixtures:
       fix1:
@@ -84,14 +90,6 @@
         - MidImpassable
         - LowImpassable
         hard: false
-  - type: CP14MagicEnergyContainer
-    maxEnergy: 30
-    energy: 0
-    unsafeSupport: true
-  - type: CP14MagicEnergyDraw
-    energy: -1
-    delay: 3 # 5m to full restore
-  - type: CP14MagicEnergyExaminable
 
 - type: entity
   id: CP14CashImpact

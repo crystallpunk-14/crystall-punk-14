@@ -53,7 +53,7 @@
       - id: CP14Lighter
       - id: CP14ModularIronShovel
       - id: CP14KeyFile
-      - id: CP14BaseMop
+      - id: CP14ModularWoodMop
       - id: CP14LockCopper
       - id: CP14ModularCopperPickaxe
       - id: CP14ModularIronSickle
@@ -86,6 +86,7 @@
         - id: CP14CrystalLampOrangeEmpty
       - id: CP14Rope
       - id: CP14EnergyCrystalMediumEmpty
+      - id: CP14BookTieflingGambit
       - id: CP14d20Dice
       - id: CP14d6Dice
       - id: CP14CopperCoin5

@@ -28,11 +28,11 @@
     walkModifier: 0.7
     sprintModifier: 0.7
   - type: UseDelay
-    delay: 3
+    delay: 2
   - type: Gun
-    fireRate: 0.3
-    minAngle: 15
-    maxAngle: 30
+    fireRate: 0.4
+    minAngle: 5
+    maxAngle: 15
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
