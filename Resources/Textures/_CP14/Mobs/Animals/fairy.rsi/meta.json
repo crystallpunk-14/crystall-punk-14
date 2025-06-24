@@ -9,11 +9,6 @@
   "states": [
     {
       "name": "dead",
-      "delays": [
-        [
-          1
-        ]
-      ]
     },
     {
       "name": "fairy",
