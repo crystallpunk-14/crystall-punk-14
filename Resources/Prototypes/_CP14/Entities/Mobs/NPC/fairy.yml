@@ -34,8 +34,6 @@
     states:
       Alive:
         Base: fairy
-      Critical:
-        Base: dead
       Dead:
         Base: dead
   - type: Bloodstream
