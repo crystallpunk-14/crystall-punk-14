@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSpear
+    - CP14ModularBladeIronSpear
 
 - type: entity
   id: CP14ModularIronKunai
@@ -26,5 +26,5 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSpear
+    - CP14ModularBladeIronSpear
 

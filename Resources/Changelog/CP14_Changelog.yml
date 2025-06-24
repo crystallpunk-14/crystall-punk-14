@@ -583,3 +583,89 @@
   id: 8109
   time: '2025-06-20T09:59:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1452
+- author: Nimfar11
+  changes:
+  - message: The two-handed crossbow now shoots faster and more accurately.
+    type: Tweak
+  id: 8110
+  time: '2025-06-20T13:19:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1431
+- author: TheShuEd
+  changes:
+  - message: Skills from skill trees are now added to the mind rather than the body.
+      This means you can use dashes, kicks, and sprints even when you've been turned
+      into a sheep.
+    type: Tweak
+  - message: Fixed a bug that prevented Lumera's T3 skills from working.
+    type: Fix
+  - message: Fixed a bug where patrons lost their skills after reconnecting.
+    type: Fix
+  id: 8111
+  time: '2025-06-20T23:46:01.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1446
+- author: TheShuEd
+  changes:
+  - message: The time until the destruction of the demiplane after the destruction
+      of the core has been increased to 4 minutes.
+    type: Tweak
+  - message: Maybe some spell scrolls bug fixed?
+    type: Fix
+  id: 8112
+  time: '2025-06-21T17:51:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1457
+- author: TheShuEd
+  changes:
+  - message: A trading request system has been added, allowing you to sell various
+      goods more profitably and earn reputation in the process.
+    type: Add
+  - message: The selling platform no longer requires magical energy.
+    type: Tweak
+  - message: "A new type of door and lock, \u201CPublic Store,\u201D has been added.\
+      \ The Public Store is open from the start of the round, but all merchants have\
+      \ a key to it, so they can close the Public Store after joining the round."
+    type: Tweak
+  id: 8113
+  time: '2025-06-22T22:21:25.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1460
+- author: TheShuEd
+  changes:
+  - message: Magical energy in items now costs money again at the rate of 1 copper
+      coin per 10 energy.
+    type: Add
+  - message: Modular weapons and armor that have existed in the world since the beginning
+      of the round are now priced correctly, and don't cost a couple of coppers.
+    type: Fix
+  id: 8114
+  time: '2025-06-23T09:19:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1462
+- author: Nimfar11
+  changes:
+  - message: Adds a big and angry bear.
+    type: Add
+  id: 8115
+  time: '2025-06-23T09:25:20.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1442
+- author: SenorJaba
+  changes:
+  - message: Added 10 craftable plushies, each with their own sounds. Several of them
+      have a little fun feature!
+    type: Add
+  id: 8116
+  time: '2025-06-23T09:53:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1456
+- author: Nimfar11
+  changes:
+  - message: Adds hot potatoes. Now they can be cooked.
+    type: Add
+  id: 8117
+  time: '2025-06-23T13:42:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1463
+- author: TheShuEd
+  changes:
+  - message: Simple ghosts can move beetwen Z-levels again
+    type: Fix
+  - message: Fixed a bug with the display of roofs for ghosts
+    type: Fix
+  id: 8118
+  time: '2025-06-23T19:55:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1466

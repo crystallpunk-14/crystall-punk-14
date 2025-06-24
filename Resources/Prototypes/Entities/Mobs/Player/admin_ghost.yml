@@ -1,5 +1,5 @@
 - type: entity
-  parent: [MobObserverBase, InventoryBase]
+  parent: [MobObserverBase, InventoryBase, CP14MobMagical]
   id: AdminObserver
   name: admin observer
   categories: [ HideSpawnMenu ]
@@ -89,6 +89,8 @@
   #  range: 500
   #- type: StationLimitedNetwork
   - type: CP14SkillScanner
+  - type: CP14PriceScanner
+  - type: CP14ZLevelMover
   - type: Thieving
     stripTimeReduction: 9999
     stealthy: true

@@ -121,3 +121,8 @@
   id: CP14cucumber
   flavorType: Complex
   description: cp14-flavor-complex-cucumber
+
+- type: flavor
+  id: CP14HotPotato
+  flavorType: Complex
+  description: cp14-flavor-complex-hot-potato

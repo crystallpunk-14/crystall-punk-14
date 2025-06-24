@@ -1,0 +1,93 @@
+
+# Rep 0
+
+- type: cp14TradingPosition
+  id: CP14CopperBar5
+  faction: DwarfMining
+  priceMarkup: 5
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Materials/copper_bar.rsi
+    state: bar_2
+  service: !type:CP14BuyItemsService
+    product: CP14CopperBar5
+
+- type: cp14TradingPosition
+  id: CP14GlassSheet5
+  faction: DwarfMining
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Materials/glass.rsi
+    state: glass_2
+  service: !type:CP14BuyItemsService
+    product: CP14GlassSheet5
+
+- type: cp14TradingPosition
+  id: CP14ModularIronPickaxe
+  faction: DwarfMining
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
+    state: tool
+  service: !type:CP14BuyItemsService
+    product: CP14ModularIronPickaxe
+
+- type: cp14TradingPosition
+  id: CP14ModularIronShovel
+  faction: DwarfMining
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
+    state: tool
+  service: !type:CP14BuyItemsService
+    product: CP14ModularIronShovel
+
+- type: cp14TradingPosition
+  id: CP14BaseSharpeningStone
+  faction: DwarfMining
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Objects/sharpening_stone.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSharpeningStone
+
+# Rep 1
+
+- type: cp14TradingPosition
+  id: CP14IronBar5
+  faction: DwarfMining
+  reputationLevel: 1
+  priceMarkup: 5
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Materials/iron_bar.rsi
+    state: bar_2
+  service: !type:CP14BuyItemsService
+    product: CP14IronBar5
+
+# Rep 2
+
+- type: cp14TradingPosition
+  id: CP14GoldBar5
+  faction: DwarfMining
+  reputationLevel: 2
+  priceMarkup: 5
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Materials/gold_bar.rsi
+    state: bar_2
+  service: !type:CP14BuyItemsService
+    product: CP14GoldBar5
+
+- type: cp14TradingPosition
+  id: CP14BaseSharpeningStoneStructure
+  faction: DwarfMining
+  reputationLevel: 2
+  priceMarkup: 5
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSharpeningStoneStructure
