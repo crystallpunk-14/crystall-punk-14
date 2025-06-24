@@ -39,7 +39,7 @@
       Dead:
         Base: dead
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagent: CP14BloodAnimal
     bloodMaxVolume: 0.1
   - type: Destructible
     thresholds:
@@ -92,7 +92,6 @@
     actionId: CP14ActionFairyManaConsume
   - type: Damageable
     damageContainer: CP14Spectral
-    damageModifierSet: CP14Fairy
 
 
 - type: entity
