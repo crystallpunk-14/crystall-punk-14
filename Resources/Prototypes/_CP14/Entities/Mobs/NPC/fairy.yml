@@ -125,7 +125,6 @@
       - CP14MagicEnergyContainer
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5
-      castDelay: 10
       castTime: 10
       breakOnMove: false
       hidden: true
