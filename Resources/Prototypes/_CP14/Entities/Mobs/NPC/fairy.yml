@@ -91,10 +91,8 @@
   - type: NPCUseActionOnTarget
     actionId: CP14ActionFairyManaConsume
   - type: Damageable
-    damageContainer: CP14Biological
-    damageModifierSet: CP14Fairy
-  - type: Damageable
     damageContainer: CP14Spectral
+    damageModifierSet: CP14Fairy
 
 
 - type: entity
