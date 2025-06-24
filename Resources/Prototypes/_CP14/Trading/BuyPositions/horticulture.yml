@@ -42,7 +42,6 @@
   service: !type:CP14BuyItemsService
     product: CP14ModularIronHoe
     count: 1
-  priceModifier: 1.5
 
 - type: cp14TradingPosition
   id: CP14CrystalLampBlueEmpty
@@ -54,7 +53,6 @@
   service: !type:CP14BuyItemsService
     product: CP14CrystalLampBlueEmpty
     count: 1
-  priceModifier: 1.5
 
 - type: cp14TradingPosition
   id: CP14WoodenPlanks10
@@ -128,7 +126,6 @@
   service: !type:CP14BuyItemsService
     product: CP14ModularIronSickle
     count: 1
-  priceModifier: 2
 
 - type: cp14TradingPosition
   id: CP14CrystalLampOrangeEmpty
@@ -141,7 +138,6 @@
   service: !type:CP14BuyItemsService
     product: CP14CrystalLampOrangeEmpty
     count: 1
-  priceModifier: 1.5
 
 - type: cp14TradingPosition
   id: CP14BirchWoodenPlanks10
