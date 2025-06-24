@@ -2,6 +2,7 @@
   id: BradPotionsWildSage
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14WildSage
@@ -11,6 +12,7 @@
   id: BradPotionsAirLily
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14AirLily
@@ -20,6 +22,7 @@
   id: BradPotionsChromiumSlime
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14ChromiumSlime
@@ -29,6 +32,7 @@
   id: BradPotionsAgaricMushroom
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14AgaricMushroom
@@ -38,6 +42,7 @@
   id: BradPotionsDayflin
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Dayflin
@@ -47,6 +52,7 @@
   id: BradPotionsBloodFlower
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14BloodFlower
@@ -56,6 +62,7 @@
   id: BradPotionsSilverNeedle
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14SilverNeedle
@@ -65,6 +72,7 @@
   id: BradPotionsLumiMushroom
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14LumiMushroom
@@ -74,16 +82,8 @@
   id: BradPotionsBlueAmanita
   possibleFactions:
   - BradPotions
+  - Horticulture
   requirements:
   - !type:ProtoIdResource
     protoId: CP14BlueAmanita
-    count: 5
-
-- type: cp14TradingRequest
-  id: BradPotionsQuartz
-  possibleFactions:
-  - BradPotions
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14CrystalShardQuartz
     count: 5

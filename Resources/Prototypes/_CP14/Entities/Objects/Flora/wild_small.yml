@@ -1,0 +1,212 @@
+# Smaller versions of flowers with fewer reagents.
+# Used as supply, but not used to fulfill raw material orders.
+
+# Blood Flower (was: 10, now: 4)
+- type: entity
+  id: CP14BloodFlowerSmall
+  parent: CP14BloodFlower
+  name: small blood rose
+  description: A smaller, less potent version of the scarlet flower that grows where blood has been spilled.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14BloodFlowerSap
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: CP14BloodFlowerSap
+          Quantity: 4
+
+# Agaric Mushroom (was: 3, now: 1)
+- type: entity
+  id: CP14AgaricMushroomSmall
+  parent: CP14AgaricMushroom
+  name: small fly agaric
+  description: A smaller, less toxic version of this poisonous mushroom.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14AgaricMushroom
+        Quantity: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: CP14AgaricMushroom
+          Quantity: 1
+
+# Chromium Slime (was: 4, now: 1)
+- type: entity
+  id: CP14ChromiumSlimeSmall
+  parent: CP14ChromiumSlime
+  name: small chromium slime
+  description: A smaller portion of this rare thick substance.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14ChromiumSlime
+        Quantity: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 1
+
+# Wild Sage (was: 15, now: 6)
+- type: entity
+  id: CP14WildSageSmall
+  parent: CP14WildSage
+  name: small sage
+  description: A smaller bundle of these medicinal flowers.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14WildSageSap
+        Quantity: 6
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: CP14WildSageSap
+          Quantity: 6
+
+# Lumi Mushroom (was: 4, now: 1)
+- type: entity
+  id: CP14LumiMushroomSmall
+  parent: CP14LumiMushroom
+  name: small lumishroom
+  description: A smaller, fainter version of the luminous mushroom.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14LumiMushroom
+        Quantity: 1
+  - type: PointLight
+    color: "#36c98f"
+    radius: 0.8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: CP14LumiMushroom
+          Quantity: 1
+
+# Blue Amanita (was: 5, now: 2)
+- type: entity
+  id: CP14BlueAmanitaSmall
+  parent: CP14BlueAmanita
+  name: small blue Amanita
+  description: A smaller specimen of this sky blue flower.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14BlueAmanita
+        Quantity: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: CP14BlueAmanita
+          Quantity: 2
+
+# Dayflin (was: 8, now: 4)
+- type: entity
+  id: CP14DayflinSmall
+  parent: CP14Dayflin
+  name: small yellow dayflin
+  description: A smaller version of the yellow sun flower.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14YellowDayflinPulp
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14YellowDayflinPulp
+          Quantity: 4
+
+# Air Lily (was: 6, now: 2)
+- type: entity
+  id: CP14AirLilySmall
+  parent: CP14AirLily
+  name: small air lily
+  description: A smaller version of this light, delicate flower.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/water_lilies.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14AirLily
+        Quantity: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: CP14AirLily
+          Quantity: 2
+
+# Silver Needle (was: 4, now: 1)
+- type: entity
+  id: CP14SilverNeedleSmall
+  parent: CP14SilverNeedle
+  name: small silver needle
+  description: A smaller bright orange berries.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
+    state: small
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14SilverNeedle
+        Quantity: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: CP14SilverNeedle
+          Quantity: 1

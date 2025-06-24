@@ -18,6 +18,10 @@
     },
     {
       "name": "base4"
+    },
+    {
+      "name": "small",
+      "description": "small modified version by PhantomRU, used for trade contracts"
     }
   ]
 }

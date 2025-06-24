@@ -23,7 +23,7 @@
   requirements:
   - !type:StackResource
     stack: CP14Dirt
-    count: 50
+    count: 30
 
 - type: cp14TradingRequest
   id: DwarfMiningStone
@@ -32,7 +32,7 @@
   requirements:
   - !type:StackResource
     stack: CP14Stone
-    count: 50
+    count: 30
 
 - type: cp14TradingRequest
   id: DwarfMiningTorch

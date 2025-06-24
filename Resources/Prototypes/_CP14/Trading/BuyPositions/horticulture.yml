@@ -1,35 +1,35 @@
 # Reputation Level 0 - Basic Herbs & Tools
 - type: cp14TradingPosition
-  id: CP14BloodFlower
+  id: CP14BloodFlowerSmall
   faction: Horticulture
   uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14BloodFlower
+    product: CP14BloodFlowerSmall
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14WildSage
+  id: CP14WildSageSmall
   faction: Horticulture
   uiPosition: 1
   icon:
     sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14WildSage
+    product: CP14WildSageSmall
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14Dayflin
+  id: CP14DayflinSmall
   faction: Horticulture
   uiPosition: 2
   icon:
     sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14Dayflin
+    product: CP14DayflinSmall
     count: 2
 
 - type: cp14TradingPosition
@@ -92,27 +92,27 @@
 
 # Reputation Level 1 - Advanced Herbs & Tools
 - type: cp14TradingPosition
-  id: CP14BlueAmanita
+  id: CP14BlueAmanitaSmall
   faction: Horticulture
   reputationLevel: 1
   uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14BlueAmanita
+    product: CP14BlueAmanitaSmall
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14LumiMushroom
+  id: CP14LumiMushroomSmall
   faction: Horticulture
   reputationLevel: 1
   uiPosition: 1
   icon:
     sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14LumiMushroom
+    product: CP14LumiMushroomSmall
     count: 2
 
 # ui [rep 1| pos 2] free
@@ -179,25 +179,25 @@
 
 # Reputation Level 2 - Rare Herbs
 - type: cp14TradingPosition
-  id: CP14SilverNeedle
+  id: CP14SilverNeedleSmall
   faction: Horticulture
   reputationLevel: 2
   uiPosition: 0
   icon:
     sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14SilverNeedle
+    product: CP14SilverNeedleSmall
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14ChromiumSlime
+  id: CP14ChromiumSlimeSmall
   faction: Horticulture
   reputationLevel: 2
   uiPosition: 1
   icon:
     sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
-    state: base1
+    state: small
   service: !type:CP14BuyItemsService
-    product: CP14ChromiumSlime
+    product: CP14ChromiumSlimeSmall
     count: 2

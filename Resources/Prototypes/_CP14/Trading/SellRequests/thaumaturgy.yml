@@ -6,3 +6,63 @@
   - !type:ProtoIdResource
     protoId: CP14DimensitCrystal
     count: 5
+
+# 30 minutes
+- type: cp14TradingRequest
+  id: ThaumaturgyRuby
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  - DwarfMining
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14JewelryRuby
+    count: 1
+
+- type: cp14TradingRequest
+  id: ThaumaturgyEmerald
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  - DwarfMining
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14JewelryEmerald
+    count: 1
+
+- type: cp14TradingRequest
+  id: ThaumaturgySapphire
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  - DwarfMining
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14JewelrySapphire
+    count: 1
+
+- type: cp14TradingRequest
+  id: ThaumaturgyTopaz
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  - DwarfMining
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14JewelryTopaz
+    count: 1
+
+- type: cp14TradingRequest
+  id: ThaumaturgyGoldAmulet
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingCloakAmuletGold
+    count: 2
