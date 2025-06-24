@@ -669,3 +669,19 @@
   id: 8118
   time: '2025-06-23T19:55:26.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1466
+- author: TheShuEd
+  changes:
+  - message: Stable upstream sync happened.
+    type: Add
+  id: 8119
+  time: '2025-06-23T22:05:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1464
+- author: Sefaia
+  changes:
+  - message: Executions for Ice Daggers.
+    type: Add
+  - message: Non-Modular weapons can have execution verbs if added onto them.
+    type: Tweak
+  id: 8120
+  time: '2025-06-24T21:08:20.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1468
