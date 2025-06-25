@@ -730,9 +730,6 @@ ent-CP14ClothingCloakYellowSyurko = жёлтый сюртук
 ent-CP14ClothingCloakAristocraticCloak = аристократический плащ
     .desc = Аристократическое красное пальто с меховым воротником, очень дорогое, очень крутое, немного неудобное.
 
-ent-CP14ClothingCloakHaori = хаори
-    .desc = Просторный жакет путника с далёких земель.
-
 ent-CP14ClothingCloakGuardBase = накидка стражи
     .desc = Наплечная накидка в стандартных цветах Имперской гвардии.
 
@@ -891,9 +888,6 @@ ent-CP14ClothingHeadJagermeisterHat = шапка егермейстера
 
 ent-CP14ClothingHeadStrawHat = соломенная шляпа
     .desc = Легко сделать, не жалко потерять.
-
-ent-CP14ClothingHeadKasaHat = шляпа фермера
-    .desc = Конусная шляпа путника с далёких земель.
 
 ent-CP14ClothingHeadGuardHelmet = шлем стражи
 
@@ -1073,9 +1067,6 @@ ent-CP14ClothingPantsJestersPantaloons = шутовские панталоны
 
 ent-CP14ClothingPantsJagermeisterTrousers = брюки егермейстера
     .desc = { ent-CP14ClothingPantsBase.desc }
-
-ent-CP14ClothingPantsHakama = хакама
-    .desc = Длинные штаны путника с далёких земель.
 
 ent-CP14ClothingPantsGuardsChainmailSkirt = кольчужная юбка стражи
     .desc = Юбка с вшитой подкладкой из кольчуги, окрашенная в стандартные цвета униформы Имперской гвардии.
