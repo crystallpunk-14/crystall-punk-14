@@ -22,7 +22,6 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CP14AuraImprintComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<CP14AuraImprintComponent, ExaminedEvent>(OnAuraHolderExamine);
     }
 
@@ -32,33 +31,6 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
             return;
 
         args.PushMarkup($"{Loc.GetString("cp14-magic-vision-aura")} {ent.Comp.Imprint}");
-    }
-
-    private void OnMobStateChanged(Entity<CP14AuraImprintComponent> ent, ref MobStateChangedEvent args)
-    {
-        switch (args.NewMobState)
-        {
-            case MobState.Critical:
-            {
-                SpawnMagicVision(
-                    Transform(ent).Coordinates,
-                    new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull"),
-                    Loc.GetString("cp14-magic-vision-crit"),
-                    TimeSpan.FromMinutes(10),
-                    ent);
-                break;
-            }
-            case MobState.Dead:
-            {
-                SpawnMagicVision(
-                    Transform(ent).Coordinates,
-                    new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull_red"),
-                    Loc.GetString("cp14-magic-vision-dead"),
-                    TimeSpan.FromMinutes(10),
-                    ent);
-                break;
-            }
-        }
     }
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)

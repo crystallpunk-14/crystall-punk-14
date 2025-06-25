@@ -194,7 +194,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
                 Transform(args.User.Value).Coordinates,
                 actionComp.Icon,
                 Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
-                TimeSpan.FromSeconds((float)manaCost.ManaCost * 20),
+                TimeSpan.FromSeconds((float)manaCost.ManaCost * 50),
                 args.User,
                 args.Position);
         }
