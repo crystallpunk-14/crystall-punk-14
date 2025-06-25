@@ -323,3 +323,63 @@
     stack: CP14Cloth
     count: 2
   result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenAxe
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14ModularBladeWoodenAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenRapier
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularBladeWoodenRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenSpear
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularBladeWoodenSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenSword
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14ModularBladeWoodenSword
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularGardeSharpWooden
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularGardeSturdyWooden

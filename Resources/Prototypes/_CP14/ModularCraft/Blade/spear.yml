@@ -94,3 +94,45 @@
     - BaseBladeSpear
     - BaseBladeMithril
 
+- type: modularPart
+  id: BladeWoodenSpear
+  slots:
+  - Blade
+  rsiPath: _CP14/Objects/ModularTools/Blade/Spear/wooden_spear.rsi
+  modifiers:
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponThrowable
+    - BaseWeaponChemical
+    - BaseBladeWooden
+  - !type:AddComponents
+    override: true
+    components:
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Blunt: 1
+    - type: ThrowingAngle
+      angle: 135
+    - type: EmbeddableProjectile
+      offset: -0.15,-0.15
+      removalTime: 1.5
+  - !type:EditMeleeWeapon
+    newWideAnimation: CP14WeaponArcThrust
+    angleMultiplier: 0
+    bonusRange: 0.2
+    bonusDamage:
+      types:
+        Blunt: 1
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Blunt: 1
+  - !type:EditItem
+    newSize: Normal
+    adjustShape: 0, 1
+    storedOffsetBonus: 0, 5
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay

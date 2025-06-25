@@ -13,3 +13,17 @@
     details:
     - CP14ModularBladeIronAxe
 
+- type: entity
+  id: CP14ModularWoodenAxe
+  parent: CP14ModularGripWoodenLong
+  name: training wooden axe
+  description: Wooden training weapon, a handy tool for practising strokes.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Axe/wooden_axe.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenAxe
