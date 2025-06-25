@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
@@ -196,6 +195,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
                 actionComp.Icon,
                 Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
                 TimeSpan.FromSeconds((float)manaCost.ManaCost * 20),
+                args.User,
                 args.Position);
         }
     }

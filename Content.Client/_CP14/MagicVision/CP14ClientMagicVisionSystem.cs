@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared._CP14.MagicVision;
 using Content.Shared.Examine;
 using Robust.Client.GameObjects;
@@ -85,6 +86,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         var layer = _sprite.AddLayer(ent.Owner, ent.Comp.Icon);
         sprite.LayerSetShader(layer, "unshaded");
+        _sprite.LayerSetScale(ent.Owner, layer, new Vector2(0.5f, 0.5f));
     }
 
     private void OnStartupMarker(Entity<CP14MagicVisionMarkerComponent> ent, ref ComponentStartup args)

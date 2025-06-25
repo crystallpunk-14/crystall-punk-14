@@ -1,5 +1,5 @@
 using System.Text;
-using Content.Shared._CP14.MagicEnergy.Components;
+using Content.Shared._CP14.AuraDNA;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
@@ -22,10 +22,19 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CP14MagicEnergyContainerComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<CP14AuraImprintComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<CP14AuraImprintComponent, ExaminedEvent>(OnAuraHolderExamine);
     }
 
-    private void OnMobStateChanged(Entity<CP14MagicEnergyContainerComponent> ent, ref MobStateChangedEvent args)
+    private void OnAuraHolderExamine(Entity<CP14AuraImprintComponent> ent, ref ExaminedEvent args)
+    {
+        if (!HasComp<CP14MagicVisionComponent>(args.Examiner))
+            return;
+
+        args.PushMarkup($"{Loc.GetString("cp14-magic-vision-aura")} {ent.Comp.Imprint}");
+    }
+
+    private void OnMobStateChanged(Entity<CP14AuraImprintComponent> ent, ref MobStateChangedEvent args)
     {
         switch (args.NewMobState)
         {
@@ -35,7 +44,8 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
                     Transform(ent).Coordinates,
                     new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull"),
                     Loc.GetString("cp14-magic-vision-crit"),
-                    TimeSpan.FromMinutes(10));
+                    TimeSpan.FromMinutes(10),
+                    ent);
                 break;
             }
             case MobState.Dead:
@@ -44,7 +54,8 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
                     Transform(ent).Coordinates,
                     new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull_red"),
                     Loc.GetString("cp14-magic-vision-dead"),
-                    TimeSpan.FromMinutes(10));
+                    TimeSpan.FromMinutes(10),
+                    ent);
                 break;
             }
         }
@@ -55,8 +66,12 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         var sb = new StringBuilder();
 
         var timePassed = _timing.CurTime - ent.Comp.SpawnTime;
+        sb.Append($"{Loc.GetString("cp14-magic-vision-timed-past")} {timePassed.Minutes}:{(timePassed.Seconds < 10 ? "0" : "")}{timePassed.Seconds}\n");
 
-        sb.Append($"{Loc.GetString("cp14-magic-vision-timed-past")} {timePassed.Minutes}:{(timePassed.Seconds < 10 ? "0" : "")}{timePassed.Seconds}");
+        if (ent.Comp.AuraImprint is not null)
+        {
+            sb.Append($"{Loc.GetString("cp14-magic-vision-aura")} {ent.Comp.AuraImprint}");
+        }
 
         args.AddMarkup(sb.ToString());
     }
@@ -70,7 +85,7 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     /// <param name="duration">Duration of the magical trace</param>
     /// <param name="target">Optional: The direction in which this trace “faces.” When studying the trace,
     /// this direction can be seen in order to understand, for example, in which direction the spell was used.</param>
-    public void SpawnMagicVision(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityCoordinates? target = null)
+    public void SpawnMagicVision(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityUid? aura = null, EntityCoordinates? target = null)
     {
         var ent = PredictedSpawnAtPosition(MagicTraceProto, position);
         var markerComp = EnsureComp<CP14MagicVisionMarkerComponent>(ent);
@@ -78,8 +93,12 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         markerComp.SpawnTime = _timing.CurTime;
         markerComp.EndTime = _timing.CurTime + duration;
         markerComp.TargetCoordinates = target;
-
         markerComp.Icon = icon;
+
+        if (aura is not null && TryComp<CP14AuraImprintComponent>(aura, out var auraImprint))
+        {
+            markerComp.AuraImprint = auraImprint.Imprint;
+        }
 
         _meta.SetEntityDescription(ent, description);
 

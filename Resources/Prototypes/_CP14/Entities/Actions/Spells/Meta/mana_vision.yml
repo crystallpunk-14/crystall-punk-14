@@ -2,7 +2,7 @@
   id: CP14ActionToggleMagicVision
   parent: BaseMentalAction
   name: Magical vision
-  description: You focus on magical flows to track recent events.
+  description: You focus on magical flows to track recent events and scan the aura imprints of other living beings.
   components:
   - type: Action
     itemIconStyle: BigAction

@@ -23,6 +23,9 @@ public sealed partial class CP14MagicVisionMarkerComponent : Component
     [DataField, AutoNetworkedField]
     public SpriteSpecifier? Icon;
 
+    [DataField]
+    public string? AuraImprint;
+
     [DataField, AutoNetworkedField]
     public EntProtoId PointerProto = "CP14ManaVisionPointer";
 }
