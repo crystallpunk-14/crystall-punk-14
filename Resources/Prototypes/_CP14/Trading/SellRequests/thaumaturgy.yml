@@ -1,0 +1,8 @@
+- type: cp14TradingRequest
+  id: ThaumaturgyDimensit
+  possibleFactions:
+  - Thaumaturgy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14DimensitCrystal
+    count: 5
