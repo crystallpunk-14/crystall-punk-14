@@ -34,6 +34,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Butcherable
+    butcheringType: Knife
+    butcherDelay: 2
 
 - type: entity
   id: CP14CarpetBlue
@@ -45,8 +48,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/blue_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemBlue1
       amount: 1
@@ -61,8 +62,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemRed1
       amount: 1
@@ -78,8 +77,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/cyan_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemCyan1
       amount: 1
@@ -94,8 +91,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/green_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemGreen1
       amount: 1
@@ -110,8 +105,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/orange_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemOrange1
       amount: 1
@@ -126,8 +119,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/purple_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemPurple1
       amount: 1
@@ -142,8 +133,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/black_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemBlack1
       amount: 1
@@ -158,8 +147,6 @@
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/yellow_carpet.rsi
   - type: Butcherable
-    butcheringType: Knife
-    butcherDelay: 2
     spawned:
     - id: CP14FloorCarpetItemYellow1
       amount: 1
