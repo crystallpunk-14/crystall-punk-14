@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
@@ -51,7 +52,13 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
     {
+        var sb = new StringBuilder();
 
+        var timePassed = _timing.CurTime - ent.Comp.SpawnTime;
+
+        sb.Append($"{Loc.GetString("cp14-magic-vision-timed-past")} {timePassed.Minutes}:{(timePassed.Seconds < 10 ? "0" : "")}{timePassed.Seconds}");
+
+        args.AddMarkup(sb.ToString());
     }
 
     /// <summary>
