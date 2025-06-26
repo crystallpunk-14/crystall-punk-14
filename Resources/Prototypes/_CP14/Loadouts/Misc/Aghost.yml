@@ -7,6 +7,5 @@
   storage:
     back:
     - CP14AdminCheatCube
-    - CP14AdminMapCrystal
-    - AppraisalTool
     - CP14BookGuildMoral
+    - CP14AdminMapCrystal

@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellAdminDisrespect
+  parent: CP14ActionSpellBase
   name: Disrespect
   description: You throw lightning at the creature.
   components:
@@ -18,16 +19,18 @@
         sprintSpeedModifier: 0.88
         statusLifetime: 30
       - !type:Jitter
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: disrespect
+  - type: TargetAction
+    interactOnMiss: false
+    range: 50
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    range: 50
-    itemIconStyle: BigAction
-    interactOnMiss: true
-    icon:
-      sprite: _CP14/Actions/AdminSpells.rsi
-      state: disrespect
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1

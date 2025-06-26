@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellAdminDisadvantage
+  parent: CP14ActionSpellBase
   name: Disadvantage
   description: You're giving disadvantage to a hated player.
   components:
@@ -22,16 +23,18 @@
         manaDelta: -20
         safe: true
       - !type:Jitter
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: disadvantage
+  - type: TargetAction
+    interactOnMiss: false
+    range: 50
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    range: 50
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    icon:
-      sprite: _CP14/Actions/AdminSpells.rsi
-      state: disadvantage
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1

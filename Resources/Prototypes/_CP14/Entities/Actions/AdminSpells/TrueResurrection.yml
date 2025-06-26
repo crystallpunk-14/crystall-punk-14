@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellAdminTrueResurrection
+  parent: CP14ActionSpellBase
   name: True resurrection
   description: You heal the target from all damage and ressurect it.
   components:
@@ -38,18 +39,18 @@
         manaDelta: 1000
         safe: true
       - !type:Jitter
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: true_resurrection
+  - type: TargetAction
+    interactOnMiss: false
+    range: 50
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    range: 50
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/blink.ogg
-    icon:
-      sprite: _CP14/Actions/AdminSpells.rsi
-      state: true_resurrection
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 0
       castDelay: 0.1
@@ -75,3 +76,8 @@
     netsync: false
   - type: LightFade
     duration: 1
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/blink.ogg
+      params:
+        pitch: 1
