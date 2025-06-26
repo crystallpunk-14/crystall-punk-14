@@ -100,4 +100,5 @@
         children:
         - id: CP14SpellScrollResurrection
         - id: CP14ClothingCloakAmuletMana
+        - id: CP14CrystalLampDemiplaneEmpty
 
