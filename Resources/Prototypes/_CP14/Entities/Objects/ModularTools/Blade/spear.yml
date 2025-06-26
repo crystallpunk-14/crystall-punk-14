@@ -91,8 +91,6 @@
     sprite: _CP14/Objects/ModularTools/Blade/Spear/wooden_spear.rsi
     layers:
     - state: icon
-  - type: StaminaDamageOnHit
-    damage: 7
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeWoodenSpear

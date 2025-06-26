@@ -92,6 +92,10 @@
   - Blade
   rsiPath: _CP14/Objects/ModularTools/Blade/Rapier/wooden_rapier.rsi
   modifiers:
+  - !type:AddComponents
+    components:
+    - type: StaminaDamageOnHit
+      damage: 3
   - !type:Inherit
     copyFrom:
     - BaseWeaponChemical

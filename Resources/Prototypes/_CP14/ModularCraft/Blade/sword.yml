@@ -106,6 +106,10 @@
   - Blade
   rsiPath: _CP14/Objects/ModularTools/Blade/Sword/wooden_sword.rsi
   modifiers:
+  - !type:AddComponents
+    components:
+    - type: StaminaDamageOnHit
+      damage: 4
   - !type:Inherit
     copyFrom:
     - BaseWeaponChemical

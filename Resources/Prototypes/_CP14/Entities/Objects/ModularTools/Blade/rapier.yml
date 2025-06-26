@@ -87,8 +87,6 @@
     sprite: _CP14/Objects/ModularTools/Blade/Rapier/wooden_rapier.rsi
     layers:
     - state: icon
-  - type: StaminaDamageOnHit
-    damage: 6
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeWoodenRapier

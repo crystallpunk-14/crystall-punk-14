@@ -100,6 +100,10 @@
   - Blade
   rsiPath: _CP14/Objects/ModularTools/Blade/Spear/wooden_spear.rsi
   modifiers:
+  - !type:AddComponents
+    components:
+    - type: StaminaDamageOnHit
+      damage: 3
   - !type:Inherit
     copyFrom:
     - BaseWeaponThrowable

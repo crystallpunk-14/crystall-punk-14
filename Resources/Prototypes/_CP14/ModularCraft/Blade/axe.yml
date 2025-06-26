@@ -87,6 +87,10 @@
   - Blade
   rsiPath: _CP14/Objects/ModularTools/Blade/Axe/wooden_axe.rsi
   modifiers:
+  - !type:AddComponents
+    components:
+    - type: StaminaDamageOnHit
+      damage: 4
   - !type:Inherit
     copyFrom:
     - BaseWeaponChemical

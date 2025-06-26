@@ -87,8 +87,6 @@
     sprite: _CP14/Objects/ModularTools/Blade/Axe/wooden_axe.rsi
     layers:
     - state: icon
-  - type: StaminaDamageOnHit
-    damage: 7
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeWoodenAxe
