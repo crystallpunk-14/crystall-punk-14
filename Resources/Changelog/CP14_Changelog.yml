@@ -750,3 +750,16 @@
   id: 8126
   time: '2025-06-26T17:17:23.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1476
+- author: TheShuEd
+  changes:
+  - message: Lumera have T1 magical vision skill now!
+    type: Add
+  - message: Orders for precious stones have been removed, as they cannot be obtained
+      in the game.
+    type: Remove
+  - message: "The inscription \u201CMarket price: None\u201D is no longer displayed\
+      \ on everything in a row if the object is worthless."
+    type: Tweak
+  id: 8127
+  time: '2025-06-26T19:20:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1477
