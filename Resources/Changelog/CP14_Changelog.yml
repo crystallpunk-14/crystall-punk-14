@@ -763,3 +763,11 @@
   id: 8127
   time: '2025-06-26T19:20:19.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1477
+- author: TheShuEd
+  changes:
+  - message: Removed ability to buy mithril locks and keys from Cozy House fraction.
+      They can be melted.
+    type: Remove
+  id: 8128
+  time: '2025-06-26T21:25:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1478
