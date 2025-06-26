@@ -212,27 +212,3 @@
     state: lock_gold
   service: !type:CP14BuyItemsService
     product: CP14LockGold
-
-# Rep 3
-
-- type: cp14TradingPosition
-  id: CP14KeyMithrilBlank
-  faction: HomeDecor
-  reputationLevel: 3
-  uiPosition: 3
-  icon:
-    sprite: _CP14/Objects/keys.rsi
-    state: key_mithril
-  service: !type:CP14BuyItemsService
-    product: CP14KeyMithrilBlank
-
-- type: cp14TradingPosition
-  id: CP14LockMithril
-  faction: HomeDecor
-  reputationLevel: 3
-  uiPosition: 4
-  icon:
-    sprite: _CP14/Objects/keys.rsi
-    state: lock_mithril
-  service: !type:CP14BuyItemsService
-    product: CP14LockMithril
