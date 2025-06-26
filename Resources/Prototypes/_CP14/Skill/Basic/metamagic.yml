@@ -138,6 +138,20 @@
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2
 
+- type: cp14Skill
+  id: CP14ActionToggleMagicVision
+  skillUiPosition: 6, 4
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_vision
+  effects:
+  - !type:AddAction
+    action: CP14ActionToggleMagicVision
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
 # T3
 
 - type: cp14Skill
