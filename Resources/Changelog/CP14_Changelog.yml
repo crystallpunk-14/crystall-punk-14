@@ -721,3 +721,25 @@
   id: 8124
   time: '2025-06-26T13:31:50.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1475
+- author: PhantornRU
+  changes:
+  - message: 'Added 4 new contracts: Butchers, Gardeners, Dairy Farm, and Tailors.'
+    type: Add
+  - message: Dwarves now sell lighters at T1.
+    type: Add
+  - message: Added orders for various contracts.
+    type: Add
+  - message: Added "small" versions of flowers imported through contracts.
+    type: Add
+  - message: Removed ingots from Dwarves and moved flowers from Cozy Home.
+    type: Remove
+  - message: Rebalanced food nutrition and pricing (raw food is less nutritious, high-tier
+      food is more valuable).
+    type: Tweak
+  - message: Increased prices for certain plants and reagents.
+    type: Tweak
+  - message: Cheese loot.
+    type: Tweak
+  id: 8125
+  time: '2025-06-26T15:18:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1453
