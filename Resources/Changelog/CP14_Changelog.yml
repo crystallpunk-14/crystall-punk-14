@@ -685,3 +685,19 @@
   id: 8120
   time: '2025-06-24T21:08:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1468
+- author: Nimfar11
+  changes:
+  - message: Adds slices of pepper, cucumber and onion. They can now be added to the
+      sandwich.
+    type: Add
+  id: 8121
+  time: '2025-06-26T10:45:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1472
+- author: SenorJaba
+  changes:
+  - message: 'Added a set of clothing from an asian culture into loadout: asian conical
+      hat, haori, hakama.'
+    type: Add
+  id: 8122
+  time: '2025-06-26T10:46:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1459
