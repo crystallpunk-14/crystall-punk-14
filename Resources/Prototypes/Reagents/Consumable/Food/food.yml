@@ -114,7 +114,6 @@
   metamorphicMaxFillLevels: 7
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  pricePerUnit: 0.65
 
 - type: reagent
   id: PumpkinFlesh #Just so pumpkins spill orange stuff when smashed
