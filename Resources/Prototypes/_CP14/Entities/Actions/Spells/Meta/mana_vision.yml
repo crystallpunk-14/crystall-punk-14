@@ -21,15 +21,33 @@
   name: pointer
   categories: [ HideSpawnMenu ]
   components:
-    - type: Sprite
-      sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
-      offset: 0, -1
-      layers:
-        - state: pointer
-          shader: unshaded
-      drawdepth: LowFloors
-    - type: TimedDespawn
-      lifetime: 2
-    - type: Tag
-      tags:
-      - HideContextMenu
+  - type: Sprite
+    color: "#42a4f5"
+    sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
+    offset: 0, -1
+    layers:
+      - state: pointer
+        shader: unshaded
+    drawdepth: LowFloors
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: CP14MagicVisionMarker
+  categories: [ HideSpawnMenu ]
+  name: mana trace
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    layers:
+      - state: sphere
+        sprite: /Textures/_CP14/Effects/Magic/pointer_sphere.rsi
+        shader: unshaded
+        color: "#42a4f5"
+  - type: Clickable
+  - type: Visibility
+    layer: 8 #magic vision only

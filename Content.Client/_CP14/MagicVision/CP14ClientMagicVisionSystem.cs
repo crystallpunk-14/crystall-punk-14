@@ -19,6 +19,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
 
     private CP14MagicVisionOverlay? _overlay;
+    private CP14MagicVisionNoirOverlay? _overlay2;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
 
@@ -39,11 +40,16 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     {
         if (_player.LocalEntity != ent)
             return;
-        if (_overlay == null)
-            return;
-
-        _overlayMan.RemoveOverlay(_overlay);
-        _overlay = null;
+        if (_overlay != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay);
+            _overlay = null;
+        }
+        if (_overlay2 != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay2);
+            _overlay2 = null;
+        }
     }
 
     private void OnComponentInit(Entity<CP14MagicVisionComponent> ent, ref ComponentInit args)
@@ -54,6 +60,9 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _overlay = new CP14MagicVisionOverlay();
         _overlayMan.AddOverlay(_overlay);
         _overlay.StartOverlay = _timing.CurTime;
+
+        _overlay2 = new CP14MagicVisionNoirOverlay();
+        _overlayMan.AddOverlay(_overlay2);
     }
 
     private void OnPlayerAttached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerAttachedEvent args)
@@ -61,15 +70,23 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _overlay = new CP14MagicVisionOverlay();
         _overlayMan.AddOverlay(_overlay);
         _overlay.StartOverlay = _timing.CurTime;
+
+        _overlay2 = new CP14MagicVisionNoirOverlay();
+        _overlayMan.AddOverlay(_overlay2);
     }
 
     private void OnPlayerDetached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerDetachedEvent args)
     {
-        if (_overlay == null)
-            return;
-
-        _overlayMan.RemoveOverlay(_overlay);
-        _overlay = null;
+        if (_overlay != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay);
+            _overlay = null;
+        }
+        if (_overlay2 != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay2);
+            _overlay2 = null;
+        }
     }
 
     protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
