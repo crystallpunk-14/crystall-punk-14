@@ -1,5 +1,5 @@
 # Smaller versions of flowers with fewer reagents.
-# Used as supply, but not used to fulfill raw material orders.
+# Not used anymore =(
 
 # Blood Flower (was: 10, now: 4)
 - type: entity

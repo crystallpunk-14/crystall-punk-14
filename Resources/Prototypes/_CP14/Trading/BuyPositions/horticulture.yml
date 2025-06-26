@@ -1,35 +1,35 @@
 # Reputation Level 0 - Basic Herbs & Tools
 - type: cp14TradingPosition
-  id: CP14BloodFlowerSmall
+  id: CP14VialBloodFlowerSap
   faction: Horticulture
   uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14BloodFlowerSmall
+    product: CP14VialBloodFlowerSap
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14WildSageSmall
+  id: CP14VialWildSageSap
   faction: Horticulture
   uiPosition: 1
   icon:
-    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14WildSageSmall
+    product: CP14VialWildSageSap
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14DayflinSmall
+  id: CP14VialYellowDayflinPulp
   faction: Horticulture
   uiPosition: 2
   icon:
-    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14DayflinSmall
+    product: CP14VialYellowDayflinPulp
     count: 2
 
 - type: cp14TradingPosition
@@ -65,7 +65,6 @@
     product: CP14WoodenPlanks10
     count: 1
 
-
 - type: cp14TradingPosition
   id: CP14PottedPlant1
   faction: Horticulture
@@ -90,30 +89,28 @@
 
 # Reputation Level 1 - Advanced Herbs & Tools
 - type: cp14TradingPosition
-  id: CP14BlueAmanitaSmall
+  id: CP14VialBlueAmanita
   faction: Horticulture
   reputationLevel: 1
   uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14BlueAmanitaSmall
+    product: CP14VialBlueAmanita
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14LumiMushroomSmall
+  id: CP14VialLumiMushroom
   faction: Horticulture
   reputationLevel: 1
   uiPosition: 1
   icon:
-    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14LumiMushroomSmall
+    product: CP14VialLumiMushroom
     count: 2
-
-# ui [rep 1| pos 2] free
 
 - type: cp14TradingPosition
   id: CP14ModularIronSickle
@@ -175,25 +172,25 @@
 
 # Reputation Level 2 - Rare Herbs
 - type: cp14TradingPosition
-  id: CP14SilverNeedleSmall
+  id: CP14VialSilverNeedle
   faction: Horticulture
   reputationLevel: 2
   uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14SilverNeedleSmall
+    product: CP14VialSilverNeedle
     count: 2
 
 - type: cp14TradingPosition
-  id: CP14ChromiumSlimeSmall
+  id: CP14VialChromiumSlime
   faction: Horticulture
   reputationLevel: 2
   uiPosition: 1
   icon:
-    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
-    state: small
+    sprite: _CP14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
   service: !type:CP14BuyItemsService
-    product: CP14ChromiumSlimeSmall
+    product: CP14VialChromiumSlime
     count: 2
