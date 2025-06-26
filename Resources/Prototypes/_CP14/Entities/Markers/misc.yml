@@ -20,3 +20,5 @@
     noRot: true
     drawdepth: Effects
   - type: Clickable
+  - type: Visibility
+    layer: 8 #magic vision only
