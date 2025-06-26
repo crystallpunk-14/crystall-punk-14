@@ -7,8 +7,8 @@
     count: 1
   - type: Sprite
     sprite: _CP14/Structures/Furniture/Carpets/icons.rsi
-  - type: StaticPrice
-    price: 10
+  - type: StackPrice
+    price: 0.5
   - type: SpawnAfterInteract 
     doAfter: 0.5
     removeOnInteract: true
