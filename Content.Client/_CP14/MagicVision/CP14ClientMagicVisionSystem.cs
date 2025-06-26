@@ -2,10 +2,11 @@ using System.Numerics;
 using Content.Shared._CP14.MagicVision;
 using Content.Shared.Examine;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.Timing;
-using Robust.Shared.Console;
 using Robust.Shared.Map;
+using Robust.Shared.Player;
 
 namespace Content.Client._CP14.MagicVision;
 
@@ -15,6 +16,9 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IOverlayManager _overlayMan = default!;
+
+    private CP14MagicVisionOverlay? _overlay;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
 
@@ -23,6 +27,49 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, AfterAutoHandleStateEvent>(OnHandleStateMarker);
+
+        SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+
+        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentInit>(OnComponentInit);
+        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentShutdown>(OnComponentShutdown);
+    }
+
+    private void OnComponentShutdown(Entity<CP14MagicVisionComponent> ent, ref ComponentShutdown args)
+    {
+        if (_player.LocalEntity != ent)
+            return;
+        if (_overlay == null)
+            return;
+
+        _overlayMan.RemoveOverlay(_overlay);
+        _overlay = null;
+    }
+
+    private void OnComponentInit(Entity<CP14MagicVisionComponent> ent, ref ComponentInit args)
+    {
+        if (_player.LocalEntity != ent)
+            return;
+
+        _overlay = new CP14MagicVisionOverlay();
+        _overlayMan.AddOverlay(_overlay);
+        _overlay.StartOverlay = _timing.CurTime;
+    }
+
+    private void OnPlayerAttached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerAttachedEvent args)
+    {
+        _overlay = new CP14MagicVisionOverlay();
+        _overlayMan.AddOverlay(_overlay);
+        _overlay.StartOverlay = _timing.CurTime;
+    }
+
+    private void OnPlayerDetached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerDetachedEvent args)
+    {
+        if (_overlay == null)
+            return;
+
+        _overlayMan.RemoveOverlay(_overlay);
+        _overlay = null;
     }
 
     protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)

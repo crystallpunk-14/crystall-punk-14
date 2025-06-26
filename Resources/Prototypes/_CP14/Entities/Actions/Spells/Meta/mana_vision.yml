@@ -5,6 +5,7 @@
   description: You focus on magical flows to track recent events and scan the aura imprints of other living beings.
   components:
   - type: Action
+    useDelay: 5
     itemIconStyle: BigAction
     checkCanInteract: false
     sound: !type:SoundPathSpecifier
