@@ -150,8 +150,8 @@
   parent: CP14CrystalLamp
   id: CP14CrystalLampDemiplaneEmpty
   name: purple crystal lamp
-  description: A device that converts energy from crystals into a source of directional light.  Convenient for traveling. This one carries the gaze of the demiplane's patron.
-  suffix: Demiplane, Empty
+  description: A device that converts energy from crystals into a source of directional light.  Convenient for traveling. contains dimensit crystals.
+  suffix: Dimensit, Empty
   components:
   - type: Sprite
     layers:
@@ -168,9 +168,39 @@
   - type: PointLight
     color: "#db85d7"
     radius: 8
+    energy: 6
   - type: CP14MagicEnergyDraw
     energy: -0.1
     delay: 4
   - type: CP14ReligionObserver
     religion: Tomer
     radius: 3.5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+          CP14DimensitCrystal:
+            min: 0
+            max: 1
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14MagicSlotVisuals.Powered:
+        light:
+          True: { visible: true }
+          False: { visible: true }
