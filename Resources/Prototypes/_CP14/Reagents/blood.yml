@@ -73,6 +73,7 @@
     collection: FootstepBlood
     params:
       volume: 6
+  pricePerUnit: 0.45
 
 - type: reagent
   id: CP14BloodTiefling
@@ -122,6 +123,7 @@
         conditions:
         - !type:OrganType
           type: CP14Vampire
+  pricePerUnit: 0.15
 
 - type: reagent
   id: CP14BloodElf
@@ -163,6 +165,7 @@
           groups:
             Brute: -3
             Burn: -3
+  pricePerUnit: 0.25
 
 - type: reagent
   id: CP14BloodGoblin
@@ -205,4 +208,5 @@
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
         statusLifetime: 1.5
+  pricePerUnit: 0.05
 
