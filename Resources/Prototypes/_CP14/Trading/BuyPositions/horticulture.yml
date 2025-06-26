@@ -8,7 +8,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialBloodFlowerSap
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14VialWildSageSap
@@ -19,7 +19,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialWildSageSap
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14VialYellowDayflinPulp
@@ -30,7 +30,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialYellowDayflinPulp
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14ModularIronHoe
@@ -98,7 +98,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialBlueAmanita
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14VialLumiMushroom
@@ -110,7 +110,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialLumiMushroom
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14ModularIronSickle
@@ -181,7 +181,7 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialSilverNeedle
-    count: 2
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14VialChromiumSlime
@@ -193,4 +193,4 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialChromiumSlime
-    count: 2
+    count: 1
