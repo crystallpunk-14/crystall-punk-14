@@ -701,3 +701,16 @@
   id: 8122
   time: '2025-06-26T10:46:38.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1459
+- author: TheShuEd
+  changes:
+  - message: "The \u201CAura Imprint\u201D mechanic has been added. All living creatures\
+      \ have an \u201CAura\u201D that can be seen if you have magical vision. This\
+      \ imprint is unique to each character and varies slightly between races."
+    type: Add
+  - message: "Added a new skill, \u201CMagical Vision.\u201D Allows you to see where\
+      \ and what spells were used in the recent past, as well as a copy of the aura\
+      \ of the person who used the spell."
+    type: Add
+  id: 8123
+  time: '2025-06-26T10:49:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1467
