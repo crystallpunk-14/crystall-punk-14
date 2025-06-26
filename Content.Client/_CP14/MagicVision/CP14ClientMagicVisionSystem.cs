@@ -5,8 +5,11 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.Timing;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.MagicVision;
 
@@ -17,11 +20,15 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private CP14MagicVisionOverlay? _overlay;
     private CP14MagicVisionNoirOverlay? _overlay2;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
+
+    private SoundSpecifier _startSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_open.ogg"));
+    private SoundSpecifier _endSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_close.ogg"));
 
     public override void Initialize()
     {
@@ -50,6 +57,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
             _overlayMan.RemoveOverlay(_overlay2);
             _overlay2 = null;
         }
+
+        _audio.PlayGlobal(_endSound, ent);
     }
 
     private void OnComponentInit(Entity<CP14MagicVisionComponent> ent, ref ComponentInit args)
@@ -63,6 +72,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         _overlay2 = new CP14MagicVisionNoirOverlay();
         _overlayMan.AddOverlay(_overlay2);
+
+        _audio.PlayGlobal(_startSound, ent);
     }
 
     private void OnPlayerAttached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerAttachedEvent args)
@@ -73,6 +84,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         _overlay2 = new CP14MagicVisionNoirOverlay();
         _overlayMan.AddOverlay(_overlay2);
+
+        _audio.PlayGlobal(_startSound, ent);
     }
 
     private void OnPlayerDetached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerDetachedEvent args)
@@ -87,6 +100,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
             _overlayMan.RemoveOverlay(_overlay2);
             _overlay2 = null;
         }
+        _audio.PlayGlobal(_endSound, ent);
     }
 
     protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
