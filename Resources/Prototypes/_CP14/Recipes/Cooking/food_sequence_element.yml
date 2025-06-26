@@ -70,7 +70,7 @@
   name: cp14-food-sequence-content-cucumber
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
-    state: base1
+    state: slice1
   tags:
   - Vegetable
 
