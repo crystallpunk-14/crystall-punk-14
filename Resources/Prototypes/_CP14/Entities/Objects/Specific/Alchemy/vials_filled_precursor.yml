@@ -1,6 +1,6 @@
 - type: entity
   id: CP14VialBloodFlowerSap
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of blood rose sap
   description: A tiny vial containing concentrated blood rose sap.
   components:
@@ -13,7 +13,7 @@
 
 - type: entity
   id: CP14VialWildSageSap
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of wild sage sap
   description: A tiny vial containing concentrated wild sage sap.
   components:
@@ -26,7 +26,7 @@
 
 - type: entity
   id: CP14VialYellowDayflinPulp
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of dayflin pulp
   description: A tiny vial containing concentrated yellow dayflin pulp.
   components:
@@ -39,7 +39,7 @@
 
 - type: entity
   id: CP14VialBlueAmanita
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of blue amanita extract
   description: A tiny vial containing concentrated blue amanita extract.
   components:
@@ -52,7 +52,7 @@
 
 - type: entity
   id: CP14VialLumiMushroom
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of lumishroom extract
   description: A tiny vial containing concentrated lumishroom extract.
   components:
@@ -65,7 +65,7 @@
 
 - type: entity
   id: CP14VialSilverNeedle
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of silver needle extract
   description: A tiny vial containing concentrated silver needle extract.
   components:
@@ -78,7 +78,7 @@
 
 - type: entity
   id: CP14VialChromiumSlime
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of chromium slime
   description: A tiny vial containing concentrated chromium slime.
   components:
@@ -91,7 +91,7 @@
 
 - type: entity
   id: CP14VialAgaricMushroom
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of fly agaric extract
   description: A tiny vial containing concentrated fly agaric extract.
   components:
@@ -104,7 +104,7 @@
 
 - type: entity
   id: CP14VialAirLily
-  parent: CP14VialTiny
+  parent: CP14VialSmall
   name: vial of air lily extract
   description: A tiny vial containing concentrated air lily extract.
   components:
