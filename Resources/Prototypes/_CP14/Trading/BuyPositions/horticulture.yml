@@ -113,6 +113,18 @@
     count: 1
 
 - type: cp14TradingPosition
+  id: CP14VialAgaricMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+    state: base3
+  service: !type:CP14BuyItemsService
+    product: CP14VialAgaricMushroom
+    count: 1
+
+- type: cp14TradingPosition
   id: CP14ModularIronSickle
   faction: Horticulture
   reputationLevel: 1

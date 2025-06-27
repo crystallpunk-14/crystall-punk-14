@@ -41,12 +41,6 @@
         damage:
           groups:
             Airloss: -2
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 0.6
       - !type:Emote
         showInChat: false
         emote: Cough
@@ -149,12 +143,6 @@
         damage:
           types:
             CP14ManaDepletion: -0.5
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 0.1
   pricePerUnit: 0.86
 
 - type: reagent
@@ -171,13 +159,7 @@
       - !type:HealthChange
         damage:
           types:
-            Cold: -0.5
-    Poison:
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 0.1
+            Cold: -1
   pricePerUnit: 1.20
 
 # Slime based
@@ -210,11 +192,6 @@
   flavor: CP14Quartz
   color: "#9aa6ad"
   physicalDesc: cp14-reagent-physical-desc-colorless
-  metabolisms:
-    Food:
-      effects:
-      - !type:ChemVomit
-        probability: 0.05
   pricePerUnit: 0.15
 
 - type: reagent
