@@ -1,116 +1,116 @@
 - type: entity
   id: CP14VialBloodFlowerSap
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of blood rose sap
-  description: A tiny vial containing concentrated blood rose sap.
+  description: A medium vial containing concentrated blood rose sap.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14BloodFlowerSap
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialWildSageSap
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of wild sage sap
-  description: A tiny vial containing concentrated wild sage sap.
+  description: A medium vial containing concentrated wild sage sap.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14WildSageSap
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialYellowDayflinPulp
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of dayflin pulp
-  description: A tiny vial containing concentrated yellow dayflin pulp.
+  description: A medium vial containing concentrated yellow dayflin pulp.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14YellowDayflinPulp
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialBlueAmanita
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of blue amanita extract
-  description: A tiny vial containing concentrated blue amanita extract.
+  description: A medium vial containing concentrated blue amanita extract.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14BlueAmanita
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialLumiMushroom
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of lumishroom extract
-  description: A tiny vial containing concentrated lumishroom extract.
+  description: A medium vial containing concentrated lumishroom extract.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14LumiMushroom
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialSilverNeedle
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of silver needle extract
-  description: A tiny vial containing concentrated silver needle extract.
+  description: A medium vial containing concentrated silver needle extract.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14SilverNeedle
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialChromiumSlime
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of chromium slime
-  description: A tiny vial containing concentrated chromium slime.
+  description: A medium vial containing concentrated chromium slime.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14ChromiumSlime
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialAgaricMushroom
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of fly agaric extract
-  description: A tiny vial containing concentrated fly agaric extract.
+  description: A medium vial containing concentrated fly agaric extract.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14AgaricMushroom
-          Quantity: 10
+          Quantity: 50
 
 - type: entity
   id: CP14VialAirLily
-  parent: CP14VialSmall
+  parent: CP14VialMedium
   name: vial of air lily extract
-  description: A tiny vial containing concentrated air lily extract.
+  description: A medium vial containing concentrated air lily extract.
   components:
   - type: SolutionContainerManager
     solutions:
       vial:
         reagents:
         - ReagentId: CP14AirLily
-          Quantity: 10
+          Quantity: 50
