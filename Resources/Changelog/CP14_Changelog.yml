@@ -771,3 +771,16 @@
   id: 8128
   time: '2025-06-26T21:25:47.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1478
+- author: TheShuEd
+  changes:
+  - message: Added missing fly agaric juice purchase position
+    type: Add
+  - message: All raw precursor reagent purchase postiions are now sold in 10u vials
+      rather than 5u. The price has also increased
+    type: Tweak
+  - message: Most raw plants that can be harvested in the world no longer deal poison
+      damage and can be used as ghetto methods to treat different types of damage
+    type: Tweak
+  id: 8129
+  time: '2025-06-27T09:55:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1479
