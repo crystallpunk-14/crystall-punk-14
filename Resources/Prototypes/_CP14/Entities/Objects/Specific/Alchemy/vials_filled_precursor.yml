@@ -9,7 +9,7 @@
       vial:
         reagents:
         - ReagentId: CP14BloodFlowerSap
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialWildSageSap
@@ -22,7 +22,7 @@
       vial:
         reagents:
         - ReagentId: CP14WildSageSap
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialYellowDayflinPulp
@@ -35,7 +35,7 @@
       vial:
         reagents:
         - ReagentId: CP14YellowDayflinPulp
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialBlueAmanita
@@ -48,7 +48,7 @@
       vial:
         reagents:
         - ReagentId: CP14BlueAmanita
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialLumiMushroom
@@ -61,7 +61,7 @@
       vial:
         reagents:
         - ReagentId: CP14LumiMushroom
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialSilverNeedle
@@ -74,7 +74,7 @@
       vial:
         reagents:
         - ReagentId: CP14SilverNeedle
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialChromiumSlime
@@ -87,7 +87,7 @@
       vial:
         reagents:
         - ReagentId: CP14ChromiumSlime
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialAgaricMushroom
@@ -100,7 +100,7 @@
       vial:
         reagents:
         - ReagentId: CP14AgaricMushroom
-          Quantity: 5
+          Quantity: 10
 
 - type: entity
   id: CP14VialAirLily
@@ -113,4 +113,4 @@
       vial:
         reagents:
         - ReagentId: CP14AirLily
-          Quantity: 5
+          Quantity: 10
