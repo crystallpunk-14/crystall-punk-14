@@ -34,11 +34,12 @@
     Food:
       effects:
       - !type:CP14ManaChange
-        manaDelta: 2
+        manaDelta: -3
+        safe: false
       - !type:HealthChange
         probability: 0.5
         damage:
           types:
-            CP14ManaDepletion: 2
-            Poison: 1
+            CP14ManaDepletion: -0.5
+            Poison: 0.5
       - !type:SatiateHunger
