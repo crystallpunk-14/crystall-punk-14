@@ -66,7 +66,7 @@
         key: SeeingRainbows
         component: SeeingRainbows
         type: Add
-        time: 3
+        time: 9
         refresh: false
   pricePerUnit: 0.44
 
