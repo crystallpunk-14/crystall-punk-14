@@ -10,22 +10,21 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.7
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 10
   - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectMagicSplitting
     effects:
     - !type:CP14SpellMixSolution
       reactionTypes:
       - CP14MagicSplitting
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectMagicSplitting
     - !type:CP14SpellInterruptSpell
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: -50
-        safe: true
+        manaDelta: -15
+        safe: false
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting
   - type: Action
@@ -39,9 +38,10 @@
       components:
       - CP14MagicEnergyContainer
       - ExaminableSolution
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 15
-      castDelay: 0.25
+      castTime: 15
+      distanceThreshold: 10
       breakOnMove: false
 
 - type: entity
@@ -51,11 +51,11 @@
   save: false
   components:
   - type: PointLight
-    color: "#5096d4"
+    color: "#601fc2"
   - type: Sprite
     layers:
     - state: medium_circle
-      color: "#5096d4"
+      color: "#601fc2"
       shader: unshaded
 
 - type: entity
