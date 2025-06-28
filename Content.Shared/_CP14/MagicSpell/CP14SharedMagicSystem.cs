@@ -164,9 +164,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
         foreach (var effect in ent.Comp.TelegraphyEffects)
         {
             effect.Effect(EntityManager, args);
@@ -175,9 +172,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
 
