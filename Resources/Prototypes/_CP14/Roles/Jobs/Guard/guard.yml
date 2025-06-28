@@ -1,6 +1,6 @@
 - type: job
   id: CP14Guard
-  setPreference: false #Temp disabled
+  setPreference: true
   name: cp14-job-name-guard
   description: cp14-job-desc-guard
   playTimeTracker: CP14JobGuard
