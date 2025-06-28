@@ -41,6 +41,7 @@
     spells:
     - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsume
+    - CP14ActionSpellMagicSplittingSmall
   - type: ThrowingAngle #Fun
     angle: 225
   - type: MeleeWeapon

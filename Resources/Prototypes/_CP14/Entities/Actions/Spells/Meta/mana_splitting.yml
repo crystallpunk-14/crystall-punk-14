@@ -4,9 +4,6 @@
   name: Magic splitting
   description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: counter_spell
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.7
   - type: CP14MagicEffectManaCost
@@ -32,7 +29,7 @@
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell
   - type: TargetAction
-    range: 60
+    range: 5
   - type: EntityTargetAction
     whitelist:
       components:
@@ -78,13 +75,3 @@
     netsync: false
   - type: LightFade
     duration: 1
-
-- type: entity
-  parent: CP14BaseSpellScrollMeta
-  id: CP14SpellScrollMagicSplitting
-  name: magic splitting spell scroll
-  components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellMagicSplitting
-
