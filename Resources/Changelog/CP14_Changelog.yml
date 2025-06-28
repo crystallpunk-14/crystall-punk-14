@@ -784,3 +784,10 @@
   id: 8129
   time: '2025-06-27T09:55:36.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1479
+- author: TheShuEd
+  changes:
+  - message: Fixed dash prediction!
+    type: Fix
+  id: 8130
+  time: '2025-06-28T11:04:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1482
