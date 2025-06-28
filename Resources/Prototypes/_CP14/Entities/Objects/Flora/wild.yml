@@ -34,14 +34,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14BloodFlowerSap
-        Quantity: 12
+        Quantity: 10
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 14
         reagents:
         - ReagentId: CP14BloodFlowerSap
-          Quantity: 12
+          Quantity: 10
   - type: Tag
     tags:
     - CP14FitInMortar
@@ -255,14 +255,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14YellowDayflinPulp
-        Quantity: 4
+        Quantity: 8
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
         - ReagentId: CP14YellowDayflinPulp
-          Quantity: 4
+          Quantity: 8
   - type: Tag
     tags:
     - CP14FitInMortar
@@ -288,14 +288,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14AirLily
-        Quantity: 4
+        Quantity: 6
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
         - ReagentId: CP14AirLily
-          Quantity: 4
+          Quantity: 6
   - type: Tag
     tags:
     - CP14FitInMortar

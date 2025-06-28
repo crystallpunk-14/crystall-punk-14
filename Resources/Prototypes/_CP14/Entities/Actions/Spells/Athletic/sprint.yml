@@ -26,31 +26,3 @@
       cooldown: 2
       castTime: 10
       hidden: true
-
-- type: entity
-  parent: CP14ActionSpellSprint
-  id: CP14ActionSpellSprintGoblin
-  name: Goblin agility
-  components:
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 1.5
-  - type: CP14MagicEffectStaminaCost
-    stamina: 5
-
-
-- type: entity
-  parent: CP14ActionSpellSprint
-  id: CP14ActionSpellSprintSkeleton
-  name: Sprint
-  description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
-  components:
-  - type: Sprite
-    state: sprint_skull
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 1.4
-  - type: CP14MagicEffectStaminaCost
-    stamina: 2
-  - type: Action
-    icon:
-      sprite: _CP14/Actions/Spells/physical.rsi
-      state: sprint_skull

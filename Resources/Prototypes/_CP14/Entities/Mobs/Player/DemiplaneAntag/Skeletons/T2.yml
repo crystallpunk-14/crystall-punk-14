@@ -21,7 +21,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
+    - CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonSwordT2
@@ -35,7 +35,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
+    - CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonDodgerT2
@@ -49,8 +49,8 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
-    - CP14ActionSpellSprintSkeleton
+    - CP14ActionSpellKick
+    - CP14ActionSpellSprint
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2

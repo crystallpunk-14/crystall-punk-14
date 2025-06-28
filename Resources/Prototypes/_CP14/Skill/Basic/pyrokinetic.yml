@@ -77,6 +77,7 @@
   skillUiPosition: 7, 0
   tree: Pyrokinetic
   name: cp14-skill-pyro-t2-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
@@ -123,6 +124,7 @@
   skillUiPosition: 13, 0
   tree: Pyrokinetic
   name: cp14-skill-pyro-t3-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro3

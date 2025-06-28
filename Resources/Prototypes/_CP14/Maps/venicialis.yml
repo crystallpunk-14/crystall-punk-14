@@ -25,7 +25,8 @@
             CP14Innkeeper: [ 2, 3 ]
             CP14Merchant: [2, 2]
             #Guard
-            #CP14Guard: [8, 8]
+            #CP14Guard: [4, 4]
+            #CP14Investigator: [2, 2]
             #CP14GuardCommander: [1, 1]
         - type: CP14StationKeyDistribution
           keys:

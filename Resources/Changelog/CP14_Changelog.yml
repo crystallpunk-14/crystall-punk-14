@@ -685,3 +685,137 @@
   id: 8120
   time: '2025-06-24T21:08:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1468
+- author: Nimfar11
+  changes:
+  - message: Adds slices of pepper, cucumber and onion. They can now be added to the
+      sandwich.
+    type: Add
+  id: 8121
+  time: '2025-06-26T10:45:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1472
+- author: SenorJaba
+  changes:
+  - message: 'Added a set of clothing from an asian culture into loadout: asian conical
+      hat, haori, hakama.'
+    type: Add
+  id: 8122
+  time: '2025-06-26T10:46:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1459
+- author: TheShuEd
+  changes:
+  - message: "The \u201CAura Imprint\u201D mechanic has been added. All living creatures\
+      \ have an \u201CAura\u201D that can be seen if you have magical vision. This\
+      \ imprint is unique to each character and varies slightly between races."
+    type: Add
+  - message: "Added a new skill, \u201CMagical Vision.\u201D Allows you to see where\
+      \ and what spells were used in the recent past, as well as a copy of the aura\
+      \ of the person who used the spell."
+    type: Add
+  id: 8123
+  time: '2025-06-26T10:49:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1467
+- author: Fr0goo
+  changes:
+  - message: Changed Flem Sprites!
+    type: Tweak
+  id: 8124
+  time: '2025-06-26T13:31:50.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1475
+- author: PhantornRU
+  changes:
+  - message: 'Added 4 new contracts: Butchers, Gardeners, Dairy Farm, and Tailors.'
+    type: Add
+  - message: Dwarves now sell lighters at T1.
+    type: Add
+  - message: Added orders for various contracts.
+    type: Add
+  - message: Added "small" versions of flowers imported through contracts.
+    type: Add
+  - message: Removed ingots from Dwarves and moved flowers from Cozy Home.
+    type: Remove
+  - message: Rebalanced food nutrition and pricing (raw food is less nutritious, high-tier
+      food is more valuable).
+    type: Tweak
+  - message: Increased prices for certain plants and reagents.
+    type: Tweak
+  - message: Cheese loot.
+    type: Tweak
+  id: 8125
+  time: '2025-06-26T15:18:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1453
+- author: Nimfar11
+  changes:
+  - message: Fixed the appearance of the sliced cucumber on the sandwich.
+    type: Fix
+  id: 8126
+  time: '2025-06-26T17:17:23.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1476
+- author: TheShuEd
+  changes:
+  - message: Lumera have T1 magical vision skill now!
+    type: Add
+  - message: Orders for precious stones have been removed, as they cannot be obtained
+      in the game.
+    type: Remove
+  - message: "The inscription \u201CMarket price: None\u201D is no longer displayed\
+      \ on everything in a row if the object is worthless."
+    type: Tweak
+  id: 8127
+  time: '2025-06-26T19:20:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1477
+- author: TheShuEd
+  changes:
+  - message: Removed ability to buy mithril locks and keys from Cozy House fraction.
+      They can be melted.
+    type: Remove
+  id: 8128
+  time: '2025-06-26T21:25:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1478
+- author: TheShuEd
+  changes:
+  - message: Added missing fly agaric juice purchase position
+    type: Add
+  - message: All raw precursor reagent purchase postiions are now sold in 10u vials
+      rather than 5u. The price has also increased
+    type: Tweak
+  - message: Most raw plants that can be harvested in the world no longer deal poison
+      damage and can be used as ghetto methods to treat different types of damage
+    type: Tweak
+  id: 8129
+  time: '2025-06-27T09:55:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1479
+- author: TheShuEd
+  changes:
+  - message: Fixed dash prediction!
+    type: Fix
+  id: 8130
+  time: '2025-06-28T11:04:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1482
+- author: TheShuEd
+  changes:
+  - message: Ballad of Peace now applies pacifism to the musician.
+    type: Tweak
+  - message: Mana Split is now a toggleable spell that lasts up to 15 seconds and
+      burns mana unsafely (capable of dealing damage).
+    type: Tweak
+  - message: All basic T2 and T3 skills that unlock magic tiers now cost 0.5 memory
+      points instead of 1 memory point.
+    type: Tweak
+  - message: The athletics skill tree is now divided into 3 tiers. Basic T1, T2, and
+      T3 athletics skills increase the maximum stamina level by 25 each.
+    type: Add
+  - message: "New skill in the Athletics branch: \u201CSecond Wind.\u201D Deals moderate\
+      \ physical damage to the owner, restores almost all stamina, and removes stun\
+      \ status."
+    type: Add
+  - message: People bonus to memory descreased from +1 memory to +0.5 memory
+    type: Tweak
+  - message: Carkat not have innate T1 and T2 athletic
+    type: Tweak
+  - message: Carkat night vision radius nerfed significally
+    type: Tweak
+  - message: Removed goblin agility skill
+    type: Remove
+  id: 8131
+  time: '2025-06-28T21:02:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1484

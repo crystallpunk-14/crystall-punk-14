@@ -20,8 +20,8 @@ cp14-skill-tree-dimension-desc = Погрузитесь в природу про
 
 # Body
 
-cp14-skill-tree-atlethic-name = Атлетика
-cp14-skill-tree-atlethic-desc = Развивайте свое тело, расширяя границы доступного.
+cp14-skill-tree-athletic-name = Атлетика
+cp14-skill-tree-athletic-desc = Развивайте свое тело, расширяя границы доступного.
 
 cp14-skill-tree-martial-name = Боевые исскуства
 cp14-skill-tree-martial-desc = Овладейте секретами смертельного оружия, или сделайте оружием свое собственное тело.

@@ -16,7 +16,7 @@
   primary: false
   weight: 10
   color: "#3ec8fa"
-  editorHidden: true #temp
+  editorHidden: true
   roles:
   - CP14GuardCommander
   - CP14Guildmaster
@@ -27,9 +27,10 @@
   description: department-CP14Guard-desc
   weight: 9
   color: "#576384"
-  editorHidden: true #temp
+  editorHidden: true
   roles:
   - CP14GuardCommander
+  - CP14Investigator
   - CP14Guard
 
 - type: department
