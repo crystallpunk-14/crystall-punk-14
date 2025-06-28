@@ -211,3 +211,5 @@
         light:
           True: { visible: true }
           False: { visible: true }
+  - type: StaticPrice
+    price: 50
