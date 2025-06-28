@@ -52,9 +52,10 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT1
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - AthleticT1
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
 

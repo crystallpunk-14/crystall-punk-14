@@ -192,9 +192,12 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14ScrapIron:
+          CP14ScrapCopper:
             min: 1
             max: 2
+          CP14ScrapIron:
+            min: 0
+            max: 1
           CP14DimensitCrystal:
             min: 0
             max: 1

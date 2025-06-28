@@ -46,11 +46,14 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT2
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
+    - CP14ActionSpellDash
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2
