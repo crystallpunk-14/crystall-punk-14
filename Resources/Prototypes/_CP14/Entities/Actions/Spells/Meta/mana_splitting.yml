@@ -41,7 +41,7 @@
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 15
       castTime: 15
-      distanceThreshold: 10
+      distanceThreshold: 5
       breakOnMove: false
 
 - type: entity
