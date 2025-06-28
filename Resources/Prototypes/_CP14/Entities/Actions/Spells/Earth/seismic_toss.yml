@@ -1,0 +1,46 @@
+- type: entity
+  id: CP14ActionSpellEarthToss
+  parent: CP14ActionSpellBase
+  name: Seismic toss
+  description: You push earth and rocks with a great force to hit anything in front of them.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_toss
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectEarth
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectEarth
+    effects:
+    - !type:CP14SpellThrowWall
+      throwPower: 10
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectEarth
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Salire a terra..."
+    endSpeech: "deinceps!"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneEarthCreation
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/earth.rsi
+      state: earth_toss
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14WallProjectile
+    canTargetSelf: false
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 1
+      breakOnMove: false

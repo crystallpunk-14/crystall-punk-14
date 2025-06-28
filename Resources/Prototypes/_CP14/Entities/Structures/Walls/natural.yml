@@ -128,6 +128,15 @@
   - type: Construction
     graph: CP14WallDirt
     node: WallDirt
+  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: DamageOtherOnHit # Damage of this structure
+    damage:
+      types:
+        Blunt: 25
+  - type: DamageOnLand
+    damage:
+      types:
+        Structural: 20
 
 - type: entity
   id: CP14WallLeaf

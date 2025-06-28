@@ -1,0 +1,103 @@
+# T1
+
+- type: cp14Skill
+  id: GeomancyT1
+  skillUiPosition: 1, 0
+  tree: Geomancy
+  name: cp14-skill-geo-t1-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: geo
+
+- type: cp14Skill
+  id: CP14ActionSpellEarthGauntlets
+  skillUiPosition: 2, 4
+  tree: Geomancy
+  icon:
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_gauntlet
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellEarthGauntlets
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT1
+
+- type: cp14Skill
+  id: CP14ActionSpellEarthWall
+  skillUiPosition: 0, 4
+  tree: Geomancy
+  icon:
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_wall
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellEarthWall
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT1
+
+# T2
+
+- type: cp14Skill
+  id: GeomancyT2
+  skillUiPosition: 7, 0
+  tree: Geomancy
+  name: cp14-skill-geo-t2-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: geo2
+  effects:
+  - !type:ModifyManacost
+    modifiers:
+      Earth: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT1
+
+- type: cp14Skill
+  id: CP14ActionSpellEarthquake
+  skillUiPosition: 6, 4
+  tree: Geomancy
+  icon:
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earthquake
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellEarthquake
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT2
+
+- type: cp14Skill
+  id: CP14ActionSpellEarthToss
+  skillUiPosition: 8, 4
+  tree: Geomancy
+  icon:
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_toss
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellEarthToss
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT2
+
+# T3
+
+- type: cp14Skill
+  id: GeomancyT3
+  skillUiPosition: 13, 0
+  tree: Geomancy
+  name: cp14-skill-geo-t3-name
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: geo3
+  effects:
+  - !type:ModifyManacost
+    modifiers:
+      Earth: -0.25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: GeomancyT2

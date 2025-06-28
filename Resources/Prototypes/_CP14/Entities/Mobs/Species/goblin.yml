@@ -123,8 +123,8 @@
     critThreshold: 120 # 100 default
     stunTime: 4 #6 default
   - type: CP14MagicEnergyContainer #SMALL mana container
-    maxEnergy: 25
-    energy: 25
+    maxEnergy: 50
+    energy: 50
   - type: CP14MagicEnergyDraw #Cool x3 mana regen!
     energy: 1.5
     delay: 3

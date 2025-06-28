@@ -1,0 +1,87 @@
+- type: entity
+  id: CP14ActionSpellEarthGauntlets
+  parent: CP14ActionSpellBase
+  name: Earth gauntlets
+  description: You shape earth into gauntlets to aid you in mining, digging, and prying.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/earth.rsi
+    state: earth_gauntlet
+  - type: CP14MagicEffectManaCost
+    manaCost: 25
+  - type: CP14MagicEffect
+    magicType: Earth
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectEarth
+    - !type:CP14SpellSpawnInHandEntity
+      spawns:
+      - CP14EarthGauntlets
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Manus meae tam durae..."
+    endSpeech: "sunt quam saxum"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneEarthCreation
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/earth.rsi
+      state: earth_gauntlet
+  - type: InstantAction
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 10
+      breakOnMove: false
+
+- type: entity
+  name: earth gauntlet
+  parent: BaseItem
+  id: CP14EarthGauntlets
+  description: A sturdy gauntlet made of earth, strong enough to crush rocks, or goblin skulls.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/earth_gauntlet.rsi
+    state: icon
+  - type: MeleeWeapon
+    resetOnHandSelected: false #Fast swap
+    autoAttack: true
+    range: 1.5 # 1.5 standart
+    cPAnimationOffset: -0.75 #-1 standart
+    attackRate: 0.8 # 1 standart
+    angle: 0
+    wideAnimationRotation: -120
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 9
+        Structural: 15
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+  - type: ExaminableDamage
+    messages: CP14WeaponMessages
+  - type: Item
+    shape:
+    - 0,0,1,2
+    storedOffset: 0, 0
+    storedRotation: -70
+    size: Normal
+  - type: Tool
+    qualities:
+      - CP14Digging
+      - Prying
+    useSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 3
+  - type: Prying
+  - type: Shovel
+  - type: ToolTileCompatible
+  - type: CP14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1
+  - type: TimedDespawn
+    lifetime: 60
