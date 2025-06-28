@@ -35,3 +35,45 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodStuffedPotato
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: stuffed potato
+  description: Baked potatoes stuffed with juicy meat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14HotPotato
+      - meaty
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/hot_potato.rsi
+    layers:
+      - state: stuffed_potato1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          stuffed_potato1: ""
+          stuffed_potato2: ""
+          stuffed_potato3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Protein
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Fat
+          Quantity: 2
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

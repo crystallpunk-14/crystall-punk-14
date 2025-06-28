@@ -444,3 +444,31 @@
     stack: CP14CopperBar
     count: 1
   result: CP14EnergyCrystalMediumEmpty
+
+- type: CP14Recipe
+  id: CP14Fork
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14Fork
+  resultCount: 2
+
+- type: CP14Recipe
+  id: CP14Spoon
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14Spoon
+  resultCount: 2
