@@ -41,24 +41,6 @@
   - !type:NeedPrerequisite
     prerequisite: AthleticT1
 
-- type: cp14Skill
-  id: CP14ActionSpellSprintGoblin
-  skillUiPosition: 0, 4
-  learnCost: 0
-  tree: Athletic
-  icon:
-    sprite: _CP14/Actions/Spells/physical.rsi
-    state: sprint
-  effects:
-  - !type:ReplaceAction
-    oldAction: CP14ActionSpellSprint
-    newAction: CP14ActionSpellSprintGoblin
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: CP14ActionSpellSprint
-  - !type:SpeciesWhitelist
-    species: CP14Goblin
-
 # T2
 
 - type: cp14Skill

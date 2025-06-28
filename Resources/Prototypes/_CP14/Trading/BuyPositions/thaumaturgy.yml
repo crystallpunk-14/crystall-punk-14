@@ -193,17 +193,6 @@
     product: CP14SpellScrollFlashLight
 
 - type: cp14TradingPosition
-  id: CP14SpellScrollMagicSplitting
-  faction: Thaumaturgy
-  reputationLevel: 1
-  uiPosition: 13
-  icon:
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: counter_spell
-  service: !type:CP14BuyItemsService
-    product: CP14SpellScrollMagicSplitting
-
-- type: cp14TradingPosition
   id: CP14SpellScrollIceShards
   faction: Thaumaturgy
   reputationLevel: 1
