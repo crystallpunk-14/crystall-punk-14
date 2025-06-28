@@ -23,7 +23,7 @@
       - !type:HealthChange
         damage:
           types:
-            Blunt: 15
+            Blunt: 20
       - !type:GenericStatusEffect
         key: Stun
         time: 6

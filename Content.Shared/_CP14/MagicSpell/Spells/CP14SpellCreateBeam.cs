@@ -7,6 +7,7 @@ public sealed partial class CP14SpellCreateBeam : CP14SpellEffect
 {
     [DataField(required: true)]
     public EntProtoId BeamProto = default!;
+
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         if (args.Target is null || args.User is null)

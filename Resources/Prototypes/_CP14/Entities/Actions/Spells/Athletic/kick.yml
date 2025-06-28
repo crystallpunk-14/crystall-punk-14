@@ -59,7 +59,7 @@
       params:
         pitch: 1
 
-
+#TODO: delete this
 - type: entity
   parent: CP14ActionSpellKick
   id: CP14ActionSpellKickSkeleton
