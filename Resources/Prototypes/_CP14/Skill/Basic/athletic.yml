@@ -28,6 +28,20 @@
     prerequisite: AthleticT1
 
 - type: cp14Skill
+  id: CP14ActionSpellSecondWind
+  skillUiPosition: 2, 2
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: second_wind
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellSecondWind
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT1
+
+- type: cp14Skill
   id: CP14ActionSpellSprintGoblin
   skillUiPosition: 0, 4
   learnCost: 0
