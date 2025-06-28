@@ -791,3 +791,31 @@
   id: 8130
   time: '2025-06-28T11:04:18.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1482
+- author: TheShuEd
+  changes:
+  - message: Ballad of Peace now applies pacifism to the musician.
+    type: Tweak
+  - message: Mana Split is now a toggleable spell that lasts up to 15 seconds and
+      burns mana unsafely (capable of dealing damage).
+    type: Tweak
+  - message: All basic T2 and T3 skills that unlock magic tiers now cost 0.5 memory
+      points instead of 1 memory point.
+    type: Tweak
+  - message: The athletics skill tree is now divided into 3 tiers. Basic T1, T2, and
+      T3 athletics skills increase the maximum stamina level by 25 each.
+    type: Add
+  - message: "New skill in the Athletics branch: \u201CSecond Wind.\u201D Deals moderate\
+      \ physical damage to the owner, restores almost all stamina, and removes stun\
+      \ status."
+    type: Add
+  - message: People bonus to memory descreased from +1 memory to +0.5 memory
+    type: Tweak
+  - message: Carkat not have innate T1 and T2 athletic
+    type: Tweak
+  - message: Carkat night vision radius nerfed significally
+    type: Tweak
+  - message: Removed goblin agility skill
+    type: Remove
+  id: 8131
+  time: '2025-06-28T21:02:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1484
