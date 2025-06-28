@@ -1,0 +1,13 @@
+
+# Cloak
+
+- type: loadoutGroup
+  id: CP14InvestigatorCloak
+  name: cp14-loadout-investigator-cloak
+  loadouts:
+  - CP14ClothingCloakGuardInvestigator
+
+- type: loadout
+  id: CP14ClothingCloakGuardInvestigator
+  equipment:
+    cloak: CP14ClothingCloakGuardInvestigator
