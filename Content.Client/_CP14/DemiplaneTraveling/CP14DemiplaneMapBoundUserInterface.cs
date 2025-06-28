@@ -19,7 +19,7 @@ public sealed class CP14DemiplaneMapBoundUserInterface : BoundUserInterface
         _window = this.CreateWindow<CP14DemiplaneMapWindow>();
 
         _window.OnEject += pos => SendMessage(new CP14DemiplaneMapEjectMessage(pos));
-        _window.OnRevoke += pos => SendMessage(new CP14DemiplaneMapRevokeMessage(pos));
+        //_window.OnRevoke += pos => SendMessage(new CP14DemiplaneMapRevokeMessage(pos));
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)

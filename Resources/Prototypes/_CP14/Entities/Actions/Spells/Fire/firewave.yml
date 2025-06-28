@@ -56,6 +56,12 @@
   categories: [ HideSpawnMenu ]
   save: false
   components:
+  - type: Sprite
+    sprite: _CP14/Effects/fire.rsi
+    layers:
+    - state: small
+      visible: false
+      map: ["enum.EffectLayers.Unshaded"]
   - type: PointLight
     color: "#E25822"
     radius: 2.0

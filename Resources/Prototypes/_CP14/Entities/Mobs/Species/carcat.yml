@@ -42,6 +42,12 @@
   - type: CP14NightVision #Night vision
   - type: FootstepModifier
     footstepSoundCollection: null # Silent footstep
+  - type: CP14AuraImprint
+    imprintColor: "#9e7e5d"
+  - type: CP14SkillStorage #Innate athletic
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
   - type: Inventory
     templateId: CP14Carcat # Cant wear shoes
     speciesId: carcat

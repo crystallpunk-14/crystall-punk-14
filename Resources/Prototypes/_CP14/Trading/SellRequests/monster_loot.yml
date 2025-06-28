@@ -1,0 +1,9 @@
+# - type: cp14TradingRequest
+#   id: BradPotionsMonsterGlands
+#   possibleFactions:
+#   - BradPotions
+#   - Butchers
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14PartsMonsterGlands
+#     count: 4
