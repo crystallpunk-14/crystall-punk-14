@@ -839,3 +839,11 @@
   id: 8133
   time: '2025-06-29T10:38:05.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1489
+- author: JustSome1Nearby
+  changes:
+  - message: You can now make Birch grips, no loger will Blacksmiths laugh at this
+      great material!
+    type: Add
+  id: 8134
+  time: '2025-06-29T12:34:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1488
