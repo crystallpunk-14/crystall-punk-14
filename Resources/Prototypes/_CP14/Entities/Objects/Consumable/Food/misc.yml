@@ -1,0 +1,20 @@
+- type: entity
+  id: CP14FoodShroomTea
+  parent: CP14FoodMeatLamb
+  name: Shroom Tea
+  components:
+  - type: Sprite
+    state: sheepmeat_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Protein
+          Quantity: 7
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

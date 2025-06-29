@@ -5,10 +5,10 @@
   description: A hand labeler, used to label items and objects.
   components:
     - type: Sprite
-      sprite: Objects/Tools/hand_labeler.rsi
+      sprite: _CP14/Objects/Tools/hand_labeler.rsi
       state: hand_labeler
     - type: Item
-      sprite: Objects/Tools/hand_labeler.rsi
+      sprite: _CP14/Objects/Tools/hand_labeler.rsi
       storedRotation: -90
     - type: UseDelay
       delay: 2.0
