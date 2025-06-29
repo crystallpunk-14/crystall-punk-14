@@ -87,10 +87,13 @@ public sealed partial class CP14RoundEndSystem
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var allowedPlaytime = now.Hour is >= 18 and < 22;
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
+
+        var allowedRuPlaytime = now.Hour is >= 18 and < 22;
+        var allowedEngPlaytime = now.Hour is >= 20 and < 24;
         var isMonday = now.DayOfWeek is DayOfWeek.Monday;
 
-        if (allowedPlaytime && !isMonday)
+        if (((ruDays && allowedRuPlaytime) || (!ruDays && allowedEngPlaytime)) && !isMonday)
         {
             if (_ticker.Paused)
                 _ticker.TogglePause();
@@ -107,10 +110,15 @@ public sealed partial class CP14RoundEndSystem
 
     private void ApplyAnnouncements(DateTime now)
     {
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
+
         var timeMap = new (int Hour, int Minute, Action Action)[]
         {
             (21, 45, () =>
             {
+                if (!ruDays)
+                    return;
+
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
                     announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
@@ -119,6 +127,27 @@ public sealed partial class CP14RoundEndSystem
             }),
             (22, 2, () =>
             {
+                if (!ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("golobby");
+            }),
+            (23, 44, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _chatSystem.DispatchGlobalAnnouncement(
+                    Loc.GetString("cp14-cbt-close-15m"),
+                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                    sender: "Server"
+                );
+            }),
+            (23, 59, () =>
+            {
+                if (ruDays)
+                    return;
+
                 _consoleHost.ExecuteCommand("golobby");
             }),
         };
