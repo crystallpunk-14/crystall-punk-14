@@ -60,6 +60,10 @@
     - MetamagicT2
     - HydrosophistryT1
     - HydrosophistryT2
+    - PyrokineticT1
+    - PyrokineticT2
+    learnedSkills:
+    - CP14ActionSpellFirewave
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
     - CP14ActionSpellManaConsumeElf
