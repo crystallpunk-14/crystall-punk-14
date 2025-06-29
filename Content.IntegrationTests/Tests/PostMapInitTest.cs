@@ -201,6 +201,7 @@ namespace Content.IntegrationTests.Tests
                 // TODO MAP TESTS
                 // Move this to some separate test?
                 CheckDoNotMap(map, root, protoManager);
+                CP14CheckOnlyForkFiltered(map, root, protoManager);
 
                 if (version >= 7)
                 {
@@ -265,6 +266,32 @@ namespace Content.IntegrationTests.Tests
 
                     Assert.That(!proto.Categories.Contains(dnmCategory),
                         $"\nMap {map} contains entities in the DO NOT MAP category ({proto.Name})");
+                }
+            });
+        }
+
+        private void CP14CheckOnlyForkFiltered(ResPath map, YamlNode node, IPrototypeManager protoManager)
+        {
+            //ignore all vanilla maps
+            if (!map.ToString().Contains("CP14"))
+                return;
+
+            var yamlEntities = node["entities"];
+            if (!protoManager.TryIndex<EntityCategoryPrototype>("ForkFiltered", out var filterCategory))
+                return;
+
+            Assert.Multiple(() =>
+            {
+                foreach (var yamlEntity in (YamlSequenceNode)yamlEntities)
+                {
+                    var protoId = yamlEntity["proto"].AsString();
+
+                    // This doesn't properly handle prototype migrations, but thats not a significant issue.
+                    if (!protoManager.TryIndex(protoId, out var proto, false))
+                        continue;
+
+                    Assert.That(proto.Categories.Contains(filterCategory),
+                        $"\nMap {map} contains entities without FORK FILTERED category ({proto.Name})");
                 }
             });
         }
