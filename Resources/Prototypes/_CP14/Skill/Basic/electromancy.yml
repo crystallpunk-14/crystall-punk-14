@@ -13,7 +13,7 @@
 # T2
 
 - type: cp14Skill
-  id: PElectromancyT2
+  id: ElectromancyT2
   skillUiPosition: 7, 0
   tree: Electromancy
   name: cp14-skill-electric-t2-name
@@ -28,6 +28,21 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT1
+
+- type: cp14Skill
+  id: CP14ActionSpellLightningStrike
+  skillUiPosition: 6, 4
+  tree: Electromancy
+  icon:
+    sprite: _CP14/Actions/Spells/electromancy.rsi
+    state: lightning_strike
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellLightningStrike
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: ElectromancyT2
+
 
 # T3
 
@@ -46,5 +61,5 @@
       Energia: -0.25
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: PElectromancyT2
+    prerequisite: ElectromancyT2
 
