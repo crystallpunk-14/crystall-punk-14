@@ -163,7 +163,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14BirchWoodenPlanks: 10
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -384,7 +384,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14BirchWoodenPlanks: 20
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripLong
