@@ -830,3 +830,12 @@
   id: 8132
   time: '2025-06-29T09:51:10.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1481
+- author: TheShuEd
+  changes:
+  - message: The furnace can now be destroyed and rebuilt using iron ingots.
+    type: Add
+  - message: Fixed a bug that caused gates in fences to only be built straight
+    type: Fix
+  id: 8133
+  time: '2025-06-29T10:38:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1489
