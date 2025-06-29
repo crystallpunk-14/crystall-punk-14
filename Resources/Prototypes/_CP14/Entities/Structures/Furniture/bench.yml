@@ -41,3 +41,31 @@
   - type: Construction
     graph: CP14BenchWood
     node: CP14BenchWood
+
+- type: entity
+  id: CP14BenchWoodBirch
+  parent: CP14BenchWood
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/bench.rsi
+    layers:
+    - state: birch
+  - type: Construction
+    graph: CP14BenchWood
+    node: CP14BenchWoodBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 2
