@@ -27,6 +27,11 @@
       types:
         Blunt: 3
         Cold: 3
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
+        Cold: 3
   - type: CP14SpellEffectOnHit
     whitelist:
       components:

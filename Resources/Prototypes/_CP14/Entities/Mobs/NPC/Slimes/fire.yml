@@ -29,6 +29,11 @@
       types:
         Blunt: 3
         Heat: 3
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
+        Heat: 3
   - type: Damageable
     damageModifierSet: CP14SlimeFire
   - type: Temperature
