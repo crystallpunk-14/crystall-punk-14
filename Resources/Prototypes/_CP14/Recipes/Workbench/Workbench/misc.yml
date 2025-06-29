@@ -139,7 +139,7 @@
   requirements:
   - !type:StackResource
     stack: CP14BirchWoodenPlanks
-    count: 10
+    count: 4
   result: CP14ModularGripBirchLong
 
 - type: CP14Recipe
