@@ -46,6 +46,11 @@
       distanceThreshold: 1.5
       breakOnMove: false
       breakOnDamage: false
+    whitelist:
+      components:
+      - Body
+      - Item
+      - Anchorable
 
 - type: entity
   id: CP14DustEffectKickSound
