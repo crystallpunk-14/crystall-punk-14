@@ -819,3 +819,14 @@
   id: 8131
   time: '2025-06-28T21:02:04.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1484
+- author: Nimfar11
+  changes:
+  - message: Adds its own type of blood to monsters, replenishing mana but inflicting
+      mana depletion.
+    type: Add
+  - message: Adds a special substance to the raw meat of monsters that inflicts poisons
+      and wastes mana, but cures mana depletion.
+    type: Add
+  id: 8132
+  time: '2025-06-29T09:51:10.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1481
