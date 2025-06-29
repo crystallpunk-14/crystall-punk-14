@@ -12,7 +12,7 @@
   stackEntity: CP14BirchWoodenPlanks1
   name: cp14-material-birch-planks
   unit: materials-unit-plank
-  icon: { sprite: _CP14/Objects/Materials/birch.rsi, state: planks_2 }
+  icon: { sprite: _CP14/Objects/Materials/wood_birch.rsi, state: planks_2 }
   color: "#874d3a"
   price: 0.1
 
