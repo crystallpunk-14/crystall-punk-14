@@ -90,3 +90,21 @@
       params:
         variation: 0.2
         volume: -5
+
+- type: entity
+  id: CP14SkyLightningRed
+  parent: CP14SkyLightningPurple
+  suffix: Red
+  components:
+  - type: PointLight
+    color: "#e22315"
+  - type: Sprite
+    color: "#e22315"
+  - type: CP14AreaEntityEffect
+    range: 1.5
+    effects:
+    - !type:CP14SpellThrowFromUser
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 3
