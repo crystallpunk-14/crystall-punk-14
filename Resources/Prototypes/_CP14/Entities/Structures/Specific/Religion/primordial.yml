@@ -13,8 +13,8 @@
   - type: CP14ReligionAltar
     religion: Lumera
   - type: CP14ReligionObserver
-    observation:
-      Lumera: 10
+    religion: Lumera
+    radius: 15
   - type: SpawnPoint
     job_id: CP14GodLumera
 
@@ -31,7 +31,7 @@
 #  - type: CP14ReligionAltar
 #    religion: Merkas
 #  - type: CP14ReligionObserver
-#    observation:
-#      Merkas: 10
+#    religion: Merkas
+#    radius: 10
 #  - type: SpawnPoint
 #    job_id: CP14GodMerkas

@@ -1,8 +1,8 @@
-using Content.Shared._CP14.MagicSpellStorage.Components;
+using Content.Server._CP14.MagicSpellStorage.Components;
 using Content.Shared.Clothing;
 using Content.Shared.Hands;
 
-namespace Content.Shared._CP14.MagicSpellStorage;
+namespace Content.Server._CP14.MagicSpellStorage;
 
 public sealed partial class CP14SpellStorageSystem
 {

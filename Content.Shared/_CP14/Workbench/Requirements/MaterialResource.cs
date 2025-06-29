@@ -24,7 +24,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid? user)
     {
         var count = 0;
         foreach (var ent in placedEntities)
@@ -56,7 +56,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -97,6 +97,17 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
                 }
             }
         }
+    }
+
+    public override double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager)
+    {
+        if (protoManager.TryIndex(Material, out var indexedMaterial))
+        {
+            return indexedMaterial.Price * Count;
+        }
+
+        return 0;
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)

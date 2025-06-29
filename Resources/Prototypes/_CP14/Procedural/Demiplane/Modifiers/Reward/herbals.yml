@@ -1,5 +1,3 @@
-# TIER 1
-
 - type: cp14DemiplaneModifier
   id: Dayflin
   levels:
@@ -18,6 +16,27 @@
       - CP14FloorGrassLight
       - CP14FloorGrassTall
       entity: CP14GatherableDayflin
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: SilverNeedle
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-silver-needle
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
+      entity: CP14GatherableSilverNeedle
       count: 10
       minGroupSize: 3
       maxGroupSize: 5

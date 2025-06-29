@@ -30,7 +30,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         EntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        EntityUid? user)
     {
         var tagSystem = entManager.System<TagSystem>();
 
@@ -49,7 +49,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
     {
         var tagSystem = entManager.System<TagSystem>();
 
@@ -65,6 +65,12 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
             requiredCount--;
             entManager.DeleteEntity(placedEntity);
         }
+    }
+    public override double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager)
+    {
+        //Idk how to price tags, so just return 0 for now.
+        return 0;
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)

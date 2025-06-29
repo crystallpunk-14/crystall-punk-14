@@ -21,6 +21,17 @@
     action: CP14ActionSpellSprint
 
 - type: cp14Skill
+  id: CP14ActionSpellDash
+  skillUiPosition: 0, 4
+  tree: Atlethic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: dash
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellDash
+
+- type: cp14Skill
   id: CP14ActionSpellSprintGoblin
   skillUiPosition: 2, 2
   learnCost: 0

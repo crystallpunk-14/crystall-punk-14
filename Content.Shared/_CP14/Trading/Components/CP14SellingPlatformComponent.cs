@@ -1,7 +1,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Trading;
+namespace Content.Shared._CP14.Trading.Components;
 
 /// <summary>
 /// Allows you to sell items by overloading the platform with energy

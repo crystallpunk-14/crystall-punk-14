@@ -18,6 +18,9 @@
     },
     {
       "name": "kick_skull"
+    },
+    {
+      "name": "dash"
     }
   ]
 }

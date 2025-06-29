@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.MagicSpellStorage.Components;
+namespace Content.Server._CP14.MagicSpellStorage.Components;
 
 /// <summary>
 /// A component that allows you to store spells in items

@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronRapier
+    - CP14ModularBladeIronRapier
 
 - type: entity
   id: CP14ModularCopperRapier
@@ -27,7 +27,7 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperRapier
+    - CP14ModularBladeCopperRapier
 
 - type: entity
   id: CP14ModularGuildmasterRapier
@@ -44,6 +44,6 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronRapier
-    - GardeGuildmaster
+    - CP14ModularBladeIronRapier
+    - CP14ModularGardeGuildmaster
 
