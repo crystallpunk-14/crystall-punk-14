@@ -1,8 +1,8 @@
 - type: entity
   name: fairy
   parent: CP14SimpleMobBase
-  id: CP14Fairy
-  description: It glows, squeaks and considers itself very important.
+  id: CP14MobFairy
+  description: It glows, squeaks and considers itself very important. It seems that ordinary weapons are incapable of killing her, and only the dissipation of magic will help.
   categories: [ ForkFiltered ]
   components:
   - type: MovementSpeedModifier
@@ -10,6 +10,7 @@
     baseSprintSpeed : 6
   - type: Sprite
     drawdepth: Mobs
+    color: "#42AAFF"
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: fairy
@@ -72,8 +73,9 @@
     energy: 1
     unsafeSupport: true
   - type: CP14MagicEnergyDraw
-    energy: 0
-    delay: 0
+    energy: -10
+    delay: 5
+    safe: true # infinity mana sucking
   - type: CP14MagicUnsafeDamage
   - type: HTN
     rootTask:

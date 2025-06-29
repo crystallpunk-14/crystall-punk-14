@@ -217,9 +217,10 @@
        state: green
      - sprite: _CP14/Mobs/Animals/fairy.rsi
        state: fairy
+       color: "#42AAFF"
    - type: ConditionalSpawner
      prototypes:
-      - CP14Fairy
+      - CP14MobFairy
 
 - type: entity
   name: big bear spawner
