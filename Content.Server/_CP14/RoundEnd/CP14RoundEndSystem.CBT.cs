@@ -13,7 +13,7 @@ public sealed partial class CP14RoundEndSystem
     [Dependency] private readonly IBaseServer _baseServer = default!;
 
     private TimeSpan _nextUpdateTime = TimeSpan.Zero;
-    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(50f);
+    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(60f);
 
     private bool _enabled;
 
@@ -36,22 +36,22 @@ public sealed partial class CP14RoundEndSystem
         _nextUpdateTime = _timing.CurTime + _updateFrequency;
         var now = DateTime.UtcNow.AddHours(3); // Moscow time
 
-        OpenSaturdayRule(now);
+        OpenWeekendRule(now);
         LanguageRule(now);
         LimitPlaytimeRule(now);
         ApplyAnnouncements(now);
     }
 
-    private void OpenSaturdayRule(DateTime now)
+    private void OpenWeekendRule(DateTime now)
     {
-        var curWhitelist = _cfg.GetCVar(CCVars.WhitelistEnabled);
-        var isOpenWeened = now.DayOfWeek is DayOfWeek.Saturday;
+        var whitelistEnabled = _cfg.GetCVar(CCVars.WhitelistEnabled);
+        var isOpenWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
 
-        if (isOpenWeened && curWhitelist)
+        if (isOpenWeekend && whitelistEnabled)
         {
             _cfg.SetCVar(CCVars.WhitelistEnabled, false);
         }
-        else if (!isOpenWeened && !curWhitelist)
+        else if (!isOpenWeekend && !whitelistEnabled)
         {
             _cfg.SetCVar(CCVars.WhitelistEnabled, true);
         }
@@ -61,10 +61,9 @@ public sealed partial class CP14RoundEndSystem
     {
         var curLang = _cfg.GetCVar(CCVars.Language);
 
-        var ruHalfDay = now.Hour < 19 && now.Hour >= 9;
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
 
-
-        if (ruHalfDay && curLang != "ru-RU")
+        if (ruDays && curLang != "ru-RU")
         {
             _cfg.SetCVar(CCVars.Language, "ru-RU");
 
@@ -74,7 +73,7 @@ public sealed partial class CP14RoundEndSystem
                 sender: "Server"
             );
         }
-        else if (!ruHalfDay && curLang != "en-US")
+        else if (!ruDays && curLang != "en-US")
         {
             _cfg.SetCVar(CCVars.Language, "en-US");
 
@@ -88,9 +87,10 @@ public sealed partial class CP14RoundEndSystem
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var playtime = (now.Hour is >= 15 and < 19) || (now.Hour is >= 20 and < 24);
+        var allowedPlaytime = now.Hour is >= 18 and < 22;
+        var isMonday = now.DayOfWeek is DayOfWeek.Monday;
 
-        if (playtime)
+        if (allowedPlaytime && !isMonday)
         {
             if (_ticker.Paused)
                 _ticker.TogglePause();
@@ -109,7 +109,7 @@ public sealed partial class CP14RoundEndSystem
     {
         var timeMap = new (int Hour, int Minute, Action Action)[]
         {
-            (18, 45, () =>
+            (21, 45, () =>
             {
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
@@ -117,19 +117,7 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (19, 2, () =>
-            {
-                _baseServer.Shutdown("Русский ОБТ подошел к концу. Следующие 3 часа будет английский ОБТ. Просьба не мешать англоязычным ребятам играть в свое время :)");
-            }),
-            (23, 45, () =>
-            {
-                _chatSystem.DispatchGlobalAnnouncement(
-                    Loc.GetString("cp14-cbt-close-15m"),
-                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
-                    sender: "Server"
-                );
-            }),
-            (00, 2, () =>
+            (22, 2, () =>
             {
                 _consoleHost.ExecuteCommand("golobby");
             }),
