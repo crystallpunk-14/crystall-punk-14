@@ -87,7 +87,7 @@ public sealed partial class CP14RoundEndSystem
 
     private void LimitPlaytimeRule(DateTime now)
     {
-        var allowedPlaytime = now.Hour is >= 18 and < 21;
+        var allowedPlaytime = now.Hour is >= 18 and < 22;
         var isMonday = now.DayOfWeek is DayOfWeek.Monday;
 
         if (allowedPlaytime && !isMonday)
@@ -109,7 +109,7 @@ public sealed partial class CP14RoundEndSystem
     {
         var timeMap = new (int Hour, int Minute, Action Action)[]
         {
-            (20, 45, () =>
+            (21, 45, () =>
             {
                 _chatSystem.DispatchGlobalAnnouncement(
                     Loc.GetString("cp14-cbt-close-15m"),
@@ -117,7 +117,7 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (21, 2, () =>
+            (22, 2, () =>
             {
                 _consoleHost.ExecuteCommand("golobby");
             }),
