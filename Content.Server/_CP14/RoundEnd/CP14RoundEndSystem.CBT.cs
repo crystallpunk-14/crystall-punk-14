@@ -45,7 +45,7 @@ public sealed partial class CP14RoundEndSystem
     private void OpenWeekendRule(DateTime now)
     {
         var whitelistEnabled = _cfg.GetCVar(CCVars.WhitelistEnabled);
-        var isOpenWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
+        var isOpenWeekend = now.DayOfWeek is DayOfWeek.Saturday; //|| now.DayOfWeek is DayOfWeek.Sunday;
 
         if (isOpenWeekend && whitelistEnabled)
         {
