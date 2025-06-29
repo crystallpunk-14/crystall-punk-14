@@ -355,6 +355,38 @@
   pricePerUnit: 5.0  # 2×Energia (0.4) + 1×Void (0.2) + Water (0.1) = 0.7 → x7.14
 
 - type: reagent
+  id: CP14BasicEffectHealStam
+  name: cp14-reagent-name-basic-heal-stam
+  desc: cp14-reagent-desc-basic-heal-stam
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#ebff6f"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14StaminaChange
+        staminaDelta: 3
+  pricePerUnit: 5.0  # 1×Life (0.2) + 1×Motion (0.2) + 1xAir (0.25) + Water (0.1) = 0.75 → x6.67 (high value)
+
+- type: reagent
+  id: CP14BasicEffectDamageStam
+  name: cp14-reagent-name-basic-damage-stam
+  desc: cp14-reagent-desc-basic-damage-stam
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#686400"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14StaminaChange
+        staminaDelta: -3
+  pricePerUnit: 5.0  # 1×Void (0.2) + 1×Motion (0.2) + 1xAir (0.25) + Water (0.1) = 0.75 → x6.67 (high value)
+
+- type: reagent
   id: CP14BasicEffectSpeedUp
   name: cp14-reagent-name-basic-speed-up
   desc: cp14-reagent-desc-basic-speed-up
