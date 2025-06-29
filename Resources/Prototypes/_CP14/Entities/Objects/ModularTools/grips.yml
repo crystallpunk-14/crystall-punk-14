@@ -140,6 +140,33 @@
 
 - type: entity
   parent: CP14ModularGripShort
+  id: CP14ModularGripBirch
+  name: birch grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/birch_grip.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripWooden
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14BirchWoodenPlanks: 10
+
+- type: entity
+  parent: CP14ModularGripShort
   id: CP14ModularGripIron
   name: iron grip
   components:
@@ -331,6 +358,33 @@
   - type: PhysicalComposition
     materialComposition:
       CP14LucensWoodenPlanks: 20
+
+- type: entity
+  parent: CP14ModularGripLong
+  id: CP14ModularGripBirchLong
+  name: long birch grip
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/GripLong/birch_grip_long.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripWoodenLong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14BirchWoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripLong
