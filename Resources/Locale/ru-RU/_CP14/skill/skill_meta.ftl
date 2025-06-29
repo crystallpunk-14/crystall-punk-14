@@ -24,10 +24,6 @@ cp14-skill-meta-t1-name = Базовая метамагия
 cp14-skill-meta-t2-name = Продвинутая метамагия
 cp14-skill-meta-t3-name = Экспертная метамагия
 
-cp14-skill-geo-t1-name = Базовая геомантия
-cp14-skill-geo-t2-name = Продвинутая геомантия
-cp14-skill-geo-t3-name = Экспертная геомантия
-
 cp14-skill-alchemy-vision-name = Взор алхимика
 cp14-skill-alchemy-vision-desc = Вы способны понимать какие именно жидкости находятся в емкостях, при помощи визуального анализа.
 

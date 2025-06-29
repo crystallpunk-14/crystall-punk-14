@@ -18,8 +18,6 @@ cp14-skill-tree-healing-desc = Изучайте способы влияния м
 cp14-skill-tree-dimension-name = Дименсиум
 cp14-skill-tree-dimension-desc = Погрузитесь в природу пространства и пустоты.
 
-cp14-skill-tree-geomancy-name = Геомантия
-cp14-skill-tree-geomancy-desc = Овладейте магией земли, чтобы формировать или разрушать мир, окружающий вас.
 # Body
 
 cp14-skill-tree-atlethic-name = Атлетика
