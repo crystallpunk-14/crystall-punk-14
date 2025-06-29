@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14Furnace
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14Furnace
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14IronBar
+              amount: 3
+              doAfter: 2
+    - node: CP14Furnace
+      entity: CP14Furnace

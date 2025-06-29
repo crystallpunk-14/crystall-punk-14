@@ -14,6 +14,9 @@
   - type: Tag
     tags:
     - CP14Plate
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20 # 2 wooden plank in craft
 
 - type: entity
   id: CP14PlatePie
@@ -31,3 +34,6 @@
   - type: Tag
     tags:
     - CP14PlatePie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft

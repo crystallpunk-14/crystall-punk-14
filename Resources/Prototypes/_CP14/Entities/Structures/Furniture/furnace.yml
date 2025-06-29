@@ -1,0 +1,153 @@
+- type: entity
+  id: CP14BaseFireplace
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  - type: CP14FlammableAmbientSound
+  - type: AmbientSound
+    enabled: false
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 0.5
+    damage:
+      types:
+        Heat: 0
+  - type: ItemPlacer
+    maxEntities: 4
+  - type: CP14FlammableEntityHeater
+  - type: CP14FlammableSolutionHeater
+  - type: CP14Fireplace
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,2,2
+    cP14Ignorelist:
+      components:
+        - IgnitionSource
+        - CP14DelayedIgnitionSource
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: CP14IgnitionModifier
+    hideCaution: true
+
+- type: entity
+  id: CP14Furnace
+  name: furnace
+  parent: CP14BaseFireplace
+  description: A furnace fueled by wood, coal, or any other burning material. Handy for heating your food or drinks.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/furnace.rsi
+    layers:
+      - state: base
+      - state: fuel1
+        visible: false
+        map: ["fuel"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14ScrapIron:
+                min: 1
+                max: 3
+  - type: GenericVisualizer
+    visuals:
+      enum.FireplaceFuelVisuals.Status:
+        fuel:
+          Empty: { visible: false }
+          Medium: { visible: true, state: fuel1 }
+          Full: { visible: true, state: fuel2 }
+  - type: FireVisuals
+    sprite: _CP14/Structures/Furniture/furnace.rsi
+    normalState: burning
+  - type: Climbable
+  - type: Anchorable
+  - type: Rotatable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Storage
+    grid:
+    - 0,0,2,2
+    whitelist:
+      tags:
+      - CP14FireplaceFuel
+  - type: Construction
+    graph: CP14Furnace
+    node: CP14Furnace
+
+- type: entity
+  parent: CP14Furnace
+  id: CP14FurnaceDebug
+  suffix: Ignited, Infinity
+  categories: [ DoNotMap ]
+  components:
+  - type: CP14AutoIgnite
+  - type: CP14Fireplace
+    fuelDrainingPerUpdate: 0

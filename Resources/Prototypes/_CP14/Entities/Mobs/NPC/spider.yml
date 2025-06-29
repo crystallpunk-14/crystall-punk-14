@@ -76,7 +76,7 @@
   - type: IgnoreSpiderWeb
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CP14BloodAnimal
+    bloodReagent: CP14BloodMonster
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid

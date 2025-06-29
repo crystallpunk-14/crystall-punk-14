@@ -4,27 +4,23 @@
   name: Magic splitting
   description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: counter_spell
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.7
   - type: CP14MagicEffectManaCost
-    manaCost: 15
+    manaCost: 10
   - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectMagicSplitting
     effects:
     - !type:CP14SpellMixSolution
       reactionTypes:
       - CP14MagicSplitting
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectMagicSplitting
     - !type:CP14SpellInterruptSpell
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: -50
+        manaDelta: -15
         safe: false
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting
@@ -33,15 +29,16 @@
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell
   - type: TargetAction
-    range: 60
+    range: 5
   - type: EntityTargetAction
     whitelist:
       components:
       - CP14MagicEnergyContainer
       - ExaminableSolution
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 15
-      castDelay: 0.25
+      castTime: 15
+      distanceThreshold: 5
       breakOnMove: false
 
 - type: entity
@@ -51,11 +48,11 @@
   save: false
   components:
   - type: PointLight
-    color: "#5096d4"
+    color: "#601fc2"
   - type: Sprite
     layers:
     - state: medium_circle
-      color: "#5096d4"
+      color: "#601fc2"
       shader: unshaded
 
 - type: entity
@@ -78,13 +75,3 @@
     netsync: false
   - type: LightFade
     duration: 1
-
-- type: entity
-  parent: CP14BaseSpellScrollMeta
-  id: CP14SpellScrollMagicSplitting
-  name: magic splitting spell scroll
-  components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellMagicSplitting
-

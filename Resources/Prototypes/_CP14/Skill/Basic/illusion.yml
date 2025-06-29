@@ -46,6 +46,7 @@
   skillUiPosition: 7, 0
   tree: Illusion
   name: cp14-skill-illusion-t2-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light2
@@ -92,6 +93,7 @@
   skillUiPosition: 13, 0
   tree: Illusion
   name: cp14-skill-illusion-t3-name
+  learnCost: 0.5
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light3

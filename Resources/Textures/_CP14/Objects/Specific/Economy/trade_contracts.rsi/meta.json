@@ -1,29 +1,51 @@
 {
-  "version": 1,
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd (Github) ",
-  "states": [
-    {
-      "name": "blank"
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "victoria_garden"
-    },
-    {
-      "name": "brad_potions"
-    },
-    {
-      "name": "dwarf_mining"
-    },
-    {
-      "name": "magic"
-    },
-    {
-      "name": "house"
-    }
-  ]
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by TheShuEd (Github) and PhantomRU (Diary, Butchers, horticulture)",
+    "states": [
+        {
+            "name": "blank",
+            "description": "Empty contract template"
+        },
+        {
+            "name": "victoria_garden",
+            "description": "Victoria Gardens trade contract"
+        },
+        {
+            "name": "brad_potions",
+            "description": "Brad's Potions trade contract"
+        },
+        {
+            "name": "dwarf_mining",
+            "description": "Dwarf Mining trade contract"
+        },
+        {
+            "name": "magic",
+            "description": "Thaumaturgy trade contract"
+        },
+        {
+            "name": "house",
+            "description": "Home Decor trade contract"
+        },
+        {
+            "name": "horticulture",
+            "description": "Horticulture trade contract"
+        },
+        {
+            "name": "butchers",
+            "description": "Butchers trade contract"
+        },
+        {
+            "name": "dairy",
+            "description": "Dairy trade contract"
+        },
+        {
+            "name": "tailors",
+            "description": "Tailors trade contract"
+        }
+    ]
 }

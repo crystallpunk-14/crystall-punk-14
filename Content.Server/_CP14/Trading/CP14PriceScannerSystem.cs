@@ -39,9 +39,10 @@ public sealed class CP14PriceScannerSystem : EntitySystem
         if (HasComp<MobStateComponent>(uid))
             return;
 
-        var getPrice = _price.GetPrice(args.Examined);
+        var price = Math.Round(_price.GetPrice(args.Examined));
 
-        var price = Math.Round(getPrice);
+        if (price <= 0)
+            return;
 
         var priceMsg = Loc.GetString("cp14-currency-examine-title");
 

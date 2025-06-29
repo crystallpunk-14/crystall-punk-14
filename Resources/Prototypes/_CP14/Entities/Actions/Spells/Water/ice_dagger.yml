@@ -135,6 +135,7 @@
         acts: ["Destruction"]
   - type: TimedDespawn
     lifetime: 60
+  - type: Execution
 
 - type: entity
   parent: CP14BaseSpellScrollWater

@@ -42,7 +42,6 @@
     product: CP14LockCopper
 
 
-
 - type: cp14TradingPosition
   id: CP14WallpaperBlack
   faction: HomeDecor
@@ -120,28 +119,6 @@
   service: !type:CP14BuyItemsService
     product: CP14WallpaperYellow
 
-- type: cp14TradingPosition
-  id: CP14PottedPlant1
-  faction: HomeDecor
-  reputationLevel: 0
-  uiPosition: 14
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant1
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant1
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant3
-  faction: HomeDecor
-  reputationLevel: 0
-  uiPosition: 15
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant3
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant3
-
 # Rep 1
 
 - type: cp14TradingPosition
@@ -188,8 +165,6 @@
   service: !type:CP14BuyItemsService
     product: CP14LockIron
 
-
-
 - type: cp14TradingPosition
   id: CP14WallpaperBank
   faction: HomeDecor
@@ -214,30 +189,6 @@
   service: !type:CP14BuyItemsService
     product: CP14WallpaperBank2
 
-
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant2
-  faction: HomeDecor
-  reputationLevel: 1
-  uiPosition: 14
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant2
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant2
-
-- type: cp14TradingPosition
-  id: CP14PottedPlant4
-  faction: HomeDecor
-  reputationLevel: 1
-  uiPosition: 15
-  icon:
-    sprite: _CP14/Structures/Furniture/flowerpots.rsi
-    state: plant4
-  service: !type:CP14BuyItemsService
-    product: CP14PottedPlant4
-
 # Rep 2
 
 - type: cp14TradingPosition
@@ -261,27 +212,3 @@
     state: lock_gold
   service: !type:CP14BuyItemsService
     product: CP14LockGold
-
-# Rep 3
-
-- type: cp14TradingPosition
-  id: CP14KeyMithrilBlank
-  faction: HomeDecor
-  reputationLevel: 3
-  uiPosition: 3
-  icon:
-    sprite: _CP14/Objects/keys.rsi
-    state: key_mithril
-  service: !type:CP14BuyItemsService
-    product: CP14KeyMithrilBlank
-
-- type: cp14TradingPosition
-  id: CP14LockMithril
-  faction: HomeDecor
-  reputationLevel: 3
-  uiPosition: 4
-  icon:
-    sprite: _CP14/Objects/keys.rsi
-    state: lock_mithril
-  service: !type:CP14BuyItemsService
-    product: CP14LockMithril

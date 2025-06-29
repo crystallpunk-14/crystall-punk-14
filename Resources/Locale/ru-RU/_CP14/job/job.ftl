@@ -6,6 +6,9 @@ cp14-job-desc-guard-commander = Самая опасная личность в о
 cp14-job-name-guard = Стражник
 cp14-job-desc-guard = Боевая единица империи, поклявшаяся защищать ее народ. Следите за безопасностью, и обороняйте других от возможных опасностей.
 
+cp14-job-name-investigator = Дознаватель
+cp14-job-desc-investigator = Специалист по ловле и обезвреживанию особо опасных магических преступников. 
+
 # Trade guild
 
 cp14-job-name-commandant = Комендант
@@ -36,7 +39,7 @@ cp14-job-desc-blacksmith = Создавайте и улучшайте экипи
 cp14-job-name-apprentice = Подмастерье
 cp14-job-desc-apprentice = Мирный житель империи, только начинающий постигать тонкости различных наук. Постарайтесь помочь другим в их работе, в обмен на зарплату и бесценный опыт.
 
-# Demigods
+# Patrons
 
 cp14-job-name-god-merkas = Меркас
 cp14-job-desc-god-merkas = Бог света и исцеления. TODO
