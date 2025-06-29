@@ -25,6 +25,9 @@
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -75
+    - !type:CP14SpellThrowFromUser
+      throwPower: 4
+      distance: 1
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "A fulgur percutiens... "
     endSpeech: "erit ledo vobis!"
@@ -46,6 +49,7 @@
 - type: entity
   name: lightning
   id: CP14LightningStrikeBeam
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Effects/Beams/lightning.rsi
@@ -96,9 +100,6 @@
     color: "#e8ff4c"
   - type: Sprite
     layers:
-    - state: sun
-      color: "#e8ff4c"
-      shader: unshaded
     - state: medium_circle
       color: "#e8ff4c"
       shader: unshaded

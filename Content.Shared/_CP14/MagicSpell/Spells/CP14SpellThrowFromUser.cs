@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 
@@ -7,6 +8,9 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
 {
     [DataField]
     public float ThrowPower = 10f;
+
+    [DataField]
+    public float Distance = 2.5f;
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
@@ -25,7 +29,7 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
             return;
 
         var worldPos = xform.GetWorldPosition(args.User.Value);
-        var foo = xform.GetWorldPosition(args.Target.Value) - worldPos;
+        var foo = Vector2.Normalize(xform.GetWorldPosition(args.Target.Value) - worldPos);
 
         if (entManager.TryGetComponent<EmbeddableProjectileComponent>(targetEntity, out var embeddable))
         {
@@ -34,6 +38,6 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
             projectile.EmbedDetach(targetEntity, embeddable);
         }
 
-        throwing.TryThrow(targetEntity, foo * 2.5f, ThrowPower, args.User, doSpin: true);
+        throwing.TryThrow(targetEntity, foo * Distance, ThrowPower, args.User, doSpin: true);
     }
 }
