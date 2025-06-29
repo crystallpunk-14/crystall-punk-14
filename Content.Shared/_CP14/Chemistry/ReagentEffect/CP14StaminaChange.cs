@@ -35,7 +35,7 @@ public sealed partial class CP14StaminaChange : EntityEffect
         if (StaminaDelta < 0) //Damage
         {
             var staminaSys = entityManager.System<SharedStaminaSystem>();
-            staminaSys.TakeStaminaDamage(args.TargetEntity, (float)(StaminaDelta * scale));
+            staminaSys.TakeStaminaDamage(args.TargetEntity, (float)(-StaminaDelta * scale));
         }
         else //Restore
         {

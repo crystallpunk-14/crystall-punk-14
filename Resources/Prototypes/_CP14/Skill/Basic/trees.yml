@@ -41,6 +41,12 @@
 #  color: "#ac66be"
 
 - type: cp14SkillTree
+  id: Electromancy
+  name: cp14-skill-tree-electric-name
+  desc: cp14-skill-tree-electric-desc
+  color: "#e8ff4c"
+
+- type: cp14SkillTree
   id: MartialArts
   name: cp14-skill-tree-martial-name
   desc: cp14-skill-tree-martial-desc
