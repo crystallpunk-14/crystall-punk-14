@@ -847,3 +847,12 @@
   id: 8134
   time: '2025-06-29T12:34:27.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1488
+- author: Tudibidab
+  changes:
+  - message: New mob Fairy. Magic parasite.
+    type: Add
+  - message: Mana Splitting now deals damage when the target has no mana.
+    type: Tweak
+  id: 8135
+  time: '2025-06-29T14:06:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1465
