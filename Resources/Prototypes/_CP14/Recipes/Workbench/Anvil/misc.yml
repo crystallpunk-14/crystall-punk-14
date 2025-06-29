@@ -472,3 +472,42 @@
     count: 1
   result: CP14Spoon
   resultCount: 2
+
+- type: CP14Recipe
+  id: CP14SteelGobletCopper
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - CopperMelting
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  result: CP14SteelGobletCopper
+
+- type: CP14Recipe
+  id: CP14SteelGobletIron
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - IronMelting
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14SteelGobletIron
+
+- type: CP14Recipe
+  id: CP14SteelGobletGold
+  tag: CP14RecipeAnvil
+  craftTime: 2
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GoldMelting
+  - !type:StackResource
+    stack: CP14GoldBar
+    count: 1
+  result: CP14SteelGobletGold
