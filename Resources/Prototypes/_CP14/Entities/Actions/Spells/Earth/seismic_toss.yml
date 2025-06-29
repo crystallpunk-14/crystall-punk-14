@@ -18,8 +18,9 @@
       spawns:
       - CP14ImpactEffectEarth
     effects:
-    - !type:CP14SpellThrowWall
+    - !type:CP14SpellThrowFromUser
       throwPower: 10
+      isWall: true
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectEarth
@@ -37,7 +38,7 @@
     range: 2
   - type: EntityTargetAction
     whitelist:
-      components:
+      tags:
       - CP14WallProjectile
     canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent

@@ -128,7 +128,9 @@
   - type: Construction
     graph: CP14WallDirt
     node: WallDirt
-  - type: CP14WallProjectile # Filter for earth toss spell
+  - type: Tag # Filter for earth toss spell
+    tags:
+    - CP14WallProjectile
   - type: DamageOtherOnHit # Damage of this structure
     damage:
       types:

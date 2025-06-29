@@ -211,19 +211,7 @@ ent-CP14ImpactEffectDigging = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14ActionSpellEarthWall = Земляная стена
-    .desc = Вы поднимаете из недр прочную стену земли.
-
-ent-CP14ActionSpellEarthGauntlets = Земляные перчатки
-    .desc = Вы придаёте земле форму перчаток, которые помогут вам в добыче руды, копании, и вскрытия вещей.
-
-ent-CP14EarthDrill = земляная перчатка
-    .desc = Прочная перчатка из земли, достаточно сильная, чтобы крушить камни, или черепа гоблинов.
-
-ent-CP14ActionSpellEarthquake = Землетрясение
-    .desc = Вы заставляете землю под вашими ногами сильно пошатнуться и оттолкнуть любого, кто стоит рядом с вами.
-
-ent-CP14ActionSpellEarthToss = Сейсмический бросок
-    .desc = Вы толкаете землю, булыжники, и так далее с огромной силой, чтобы ударить по всему, что находится перед ними.
+    .desc = Поднимает из недр прочную стену земли.
 
 ent-CP14RuneEarthWall = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }

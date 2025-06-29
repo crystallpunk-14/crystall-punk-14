@@ -56,6 +56,9 @@
         layer:
         - WallLayer
         density: 1000
+  - type: Tag # Filter for earth toss spell
+    tags:
+    - CP14WallProjectile
 
 - type: entity
   id: CP14WallWoodenPalisade

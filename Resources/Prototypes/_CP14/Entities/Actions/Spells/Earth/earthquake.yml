@@ -96,13 +96,10 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Transform
-    anchored: True
   - type: InteractionOutline
   - type: Physics
     bodyType: Static
   - type: Sprite
-    offset: 0, 0
     sprite: _CP14/Effects/Magic/earthquake.rsi
     state: earthquake
   - type: TimedDespawn

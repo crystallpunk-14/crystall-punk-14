@@ -79,9 +79,6 @@
   - type: Prying
   - type: Shovel
   - type: ToolTileCompatible
-  - type: CP14MeleeSelfDamage
-    damageToSelf:
-      types:
-        Blunt: 1
   - type: TimedDespawn
-    lifetime: 60
+    lifetime: 50
+  - type: Unremoveable

@@ -1,5 +1,6 @@
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
+using Content.Shared._CP14.MagicSpell.Components;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 
@@ -7,6 +8,9 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
 {
     [DataField]
     public float ThrowPower = 10f;
+
+    [DataField]
+    public bool IsWall = false;
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
@@ -16,7 +20,7 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         var targetEntity = args.Target.Value;
 
         var throwing = entManager.System<ThrowingSystem>();
-        var xform = entManager.System<SharedTransformSystem>();
+        var _transform = entManager.System<SharedTransformSystem>();
 
         if (!entManager.TryGetComponent<TransformComponent>(args.User, out var userTransform))
             return;
@@ -24,14 +28,20 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         if (!entManager.TryGetComponent<TransformComponent>(targetEntity, out var targetTransform))
             return;
 
-        var worldPos = xform.GetWorldPosition(args.User.Value);
-        var foo = xform.GetWorldPosition(args.Target.Value) - worldPos;
+        var worldPos = _transform.GetWorldPosition(args.User.Value);
+        var foo = _transform.GetWorldPosition(args.Target.Value) - worldPos;
 
         if (entManager.TryGetComponent<EmbeddableProjectileComponent>(targetEntity, out var embeddable))
         {
             var projectile = entManager.System<SharedProjectileSystem>();
 
             projectile.EmbedDetach(targetEntity, embeddable);
+        }
+
+        if (IsWall)
+        {
+            var xform = entManager.GetComponent<TransformComponent>(targetEntity);
+            _transform.Unanchor(targetEntity, xform);
         }
 
         throwing.TryThrow(targetEntity, foo * 2.5f, ThrowPower, args.User, doSpin: true);
