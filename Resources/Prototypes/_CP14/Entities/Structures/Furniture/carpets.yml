@@ -8,6 +8,8 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: PlacementReplacement
+    key: floorTile
   - type: Sprite
     drawdepth: FloorTiles
   - type: Icon
@@ -35,9 +37,6 @@
   - type: Butcherable
     butcheringType: Knife
     butcherDelay: 2
-    spawned:
-    - id: CP14Cloth1
-      amount: 1
 
 - type: entity
   id: CP14CarpetBlue
@@ -48,6 +47,10 @@
     sprite: _CP14/Structures/Furniture/Carpets/blue_carpet.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/blue_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemBlue1
+      amount: 1
 
 - type: entity
   id: CP14CarpetRed
@@ -58,6 +61,11 @@
     sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/red_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemRed1
+      amount: 1
+
 
 - type: entity
   id: CP14CarpetCyan
@@ -68,6 +76,10 @@
     sprite: _CP14/Structures/Furniture/Carpets/cyan_carpet.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/cyan_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemCyan1
+      amount: 1
 
 - type: entity
   id: CP14CarpetGreen
@@ -78,7 +90,11 @@
     sprite: _CP14/Structures/Furniture/Carpets/green_carpet.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/green_carpet.rsi
-
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemGreen1
+      amount: 1
+ 
 - type: entity
   id: CP14CarpetOrange
   parent: CP14CarpetBase
@@ -88,13 +104,49 @@
     sprite: _CP14/Structures/Furniture/Carpets/orange_carpet.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/Carpets/orange_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemOrange1
+      amount: 1
 
 - type: entity
-  id: CP14CarpetPink
+  id: CP14CarpetPurple
   parent: CP14CarpetBase
-  suffix: Pink
+  suffix: Purple
   components:
   - type: Sprite
-    sprite: _CP14/Structures/Furniture/Carpets/pink_carpet.rsi
+    sprite: _CP14/Structures/Furniture/Carpets/purple_carpet.rsi
   - type: Icon
-    sprite: _CP14/Structures/Furniture/Carpets/pink_carpet.rsi
+    sprite: _CP14/Structures/Furniture/Carpets/purple_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemPurple1
+      amount: 1
+
+- type: entity
+  id: CP14CarpetBlack
+  parent: CP14CarpetBase
+  suffix: Black
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/black_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/black_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemBlack1
+      amount: 1
+
+- type: entity
+  id: CP14CarpetYellow
+  parent: CP14CarpetBase
+  suffix: Yellow
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Carpets/yellow_carpet.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Carpets/yellow_carpet.rsi
+  - type: Butcherable
+    spawned:
+    - id: CP14FloorCarpetItemYellow1
+      amount: 1
