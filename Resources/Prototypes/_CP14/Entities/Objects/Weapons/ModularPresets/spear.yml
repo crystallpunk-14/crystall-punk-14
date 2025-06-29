@@ -28,3 +28,17 @@
     details:
     - CP14ModularBladeIronSpear
 
+- type: entity
+  id: CP14ModularWoodenSpear
+  parent: CP14ModularGripWoodenLong
+  name: training wooden spear
+  description: A training wooden spear, no more complicated than a mop.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Spear/wooden_spear.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenSpear
