@@ -14,19 +14,13 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
-        if (args.Target is null)
+        if (args.Target is null || args.User is null)
             return;
 
         var targetEntity = args.Target.Value;
 
         var throwing = entManager.System<ThrowingSystem>();
         var xform = entManager.System<SharedTransformSystem>();
-
-        if (!entManager.TryGetComponent<TransformComponent>(args.User, out var userTransform))
-            return;
-
-        if (!entManager.TryGetComponent<TransformComponent>(targetEntity, out var targetTransform))
-            return;
 
         var worldPos = xform.GetWorldPosition(args.User.Value);
         var foo = Vector2.Normalize(xform.GetWorldPosition(args.Target.Value) - worldPos);

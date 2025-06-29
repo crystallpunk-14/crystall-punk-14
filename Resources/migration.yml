@@ -361,6 +361,8 @@ CP14SpellscrollSignalLightYellow: null
 
 #2025-28-06
 CP14SpellScrollMagicSplitting: null
+CP14AlchemyFurnaceDebug: CP14FurnaceDebug
+CP14AlchemyFurnace: CP14Furnace
 
 # <---> CrystallEdge migration zone end
 
