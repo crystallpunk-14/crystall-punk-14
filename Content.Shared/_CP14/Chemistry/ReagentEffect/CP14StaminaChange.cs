@@ -32,9 +32,10 @@ public sealed partial class CP14StaminaChange : EntityEffect
         if (args is EntityEffectReagentArgs reagentArgs)
             scale = ScaleByQuantity ? reagentArgs.Quantity * reagentArgs.Scale : reagentArgs.Scale;
 
+        var staminaSys = entityManager.System<SharedStaminaSystem>();
+
         if (StaminaDelta < 0) //Damage
         {
-            var staminaSys = entityManager.System<SharedStaminaSystem>();
             staminaSys.TakeStaminaDamage(args.TargetEntity, (float)(-StaminaDelta * scale));
         }
         else //Restore
@@ -44,6 +45,7 @@ public sealed partial class CP14StaminaChange : EntityEffect
 
             staminaComp.StaminaDamage = Math.Max(0, staminaComp.StaminaDamage - (float)(StaminaDelta * scale));
             entityManager.Dirty(args.TargetEntity, staminaComp);
+            staminaSys.SetStaminaAlert(args.TargetEntity, staminaComp);
         }
     }
 }
