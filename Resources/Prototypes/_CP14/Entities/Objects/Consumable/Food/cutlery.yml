@@ -1,0 +1,105 @@
+- type: entity
+  id: CP14Plate
+  parent: BaseItem
+  name: plate
+  description: This is your plate for a delicious meal!
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/plates.rsi
+    state: plate
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Tag
+    tags:
+    - CP14Plate
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20 # 2 wooden plank in craft
+
+- type: entity
+  id: CP14PlatePie
+  parent: BaseItem
+  name: pie plate
+  description: A mould for making a delicious pie.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/pie.rsi
+    state: tin
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: Tag
+    tags:
+    - CP14PlatePie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
+
+- type: entity
+  parent: BaseItem
+  id: CP14Fork
+  name: fork
+  description: Thousands of years of progress, and there it is, the fork.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - Hoe
+    - Metal
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/cutlery.rsi
+    state: fork
+  - type: Item
+    sprite: _CP14/Objects/Consumable/Food/cutlery.rsi
+    heldPrefix: fork
+  - type: Utensil
+    types:
+    - Fork
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 1.5
+    damage:
+      types:
+        Piercing: 1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 4
+
+- type: entity
+  parent: BaseItem
+  id: CP14Spoon
+  name: spoon
+  description: It is considered the first tool for eating, not counting the hands.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - Metal
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/cutlery.rsi
+    state: spoon
+  - type: Item
+    sprite: _CP14/Objects/Consumable/Food/cutlery.rsi
+    heldPrefix: spoon
+  - type: Utensil
+    types:
+    - Spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 1
+  - type: Shovel
+    speedModifier: 0.1 # you can try
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 4

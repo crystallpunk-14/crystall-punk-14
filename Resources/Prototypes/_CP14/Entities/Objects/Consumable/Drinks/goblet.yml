@@ -1,0 +1,54 @@
+﻿- type: entity
+  parent: CP14DrinkBaseMug
+  id: CP14DrinkBaseGoblet
+  name: goblet
+  description: A metal goblet for those who want to drink exquisitely.
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+
+- type: entity
+  parent: CP14DrinkBaseCup
+  id: CP14SteelGobletIron
+  name: iron goblet
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+      - state: iron_goblet
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-5
+        visible: false
+
+- type: entity
+  parent: CP14DrinkBaseGoblet
+  id: CP14SteelGobletCopper
+  name: copper goblet
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+      - state: copper_goblet
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-5
+        visible: false
+
+- type: entity
+  parent: CP14DrinkBaseGoblet
+  id: CP14SteelGobletGold
+  name: gold goblet
+  description: A goblet made of solid gold to show how rich its owner is.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+      - state: gold_goblet
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-5
+        visible: false
