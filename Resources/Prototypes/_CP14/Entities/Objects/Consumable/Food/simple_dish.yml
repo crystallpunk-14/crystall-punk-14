@@ -1,6 +1,8 @@
 - type: entity
   id: CP14FoodPotatoHot
-  parent: FoodInjectableBase
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
   categories: [ ForkFiltered ]
   name: hot potato
   description: Warm and ruddy potatoes cooked over the fire.
@@ -25,25 +27,18 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 11
+        maxVol: 8
         reagents:
         - ReagentId: Nutriment
-          Quantity: 7
+          Quantity: 4
         - ReagentId: Vitamin
           Quantity: 2
-  - type: Temperature
-    currentTemperature: 300
-  - type: InternalTemperature
-    thickness: 0.02
-    area: 0.02
-  - type: CP14TemperatureTransformation
-    entries:
-    - temperatureRange: 420, 520
-      transformTo: CP14Ash1
 
 - type: entity
   id: CP14FoodStuffedPotato
-  parent: FoodInjectableBase
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
   categories: [ ForkFiltered ]
   name: stuffed potato
   description: Baked potatoes stuffed with juicy meat.
@@ -78,15 +73,6 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 2
-  - type: Temperature
-    currentTemperature: 300
-  - type: InternalTemperature
-    thickness: 0.02
-    area: 0.02
-  - type: CP14TemperatureTransformation
-    entries:
-    - temperatureRange: 420, 520
-      transformTo: CP14Ash1
 
 - type: entity
   id: CP14FoodChromiumJelly
