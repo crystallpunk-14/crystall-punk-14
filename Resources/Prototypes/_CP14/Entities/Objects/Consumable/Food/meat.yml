@@ -796,8 +796,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 20
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 2
         - ReagentId: Nutriment
           Quantity: 2
         - ReagentId: UncookedAnimalProteins
@@ -832,7 +834,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        maxVol: 20
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
@@ -866,8 +868,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 20
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 2
         - ReagentId: Nutriment
           Quantity: 3.25
         - ReagentId: UncookedAnimalProteins
@@ -890,7 +894,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        maxVol: 20
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
@@ -921,8 +925,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 5
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 0.5
         - ReagentId: Nutriment
           Quantity: 0.5
         - ReagentId: UncookedAnimalProteins

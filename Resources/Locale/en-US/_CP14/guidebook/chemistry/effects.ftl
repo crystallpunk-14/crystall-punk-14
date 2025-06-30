@@ -45,3 +45,15 @@ cp14-reagent-effect-guidebook-plant-remove-energy =
         [1] Absorbes {$amount} plant energy
         *[other] to abrorb {$amount} plant energy
     }
+
+cp14-reagent-effect-guidebook-stamina-add =
+    { $chance ->
+        [1] Restores {$amount} stamina
+        *[other] to restore {$amount} stamina
+    }
+
+cp14-reagent-effect-guidebook-stamina-remove =
+    { $chance ->
+        [1] Burns off {$amount} stamina
+        *[other] to burn {$amount} stamina
+    }

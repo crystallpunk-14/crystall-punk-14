@@ -4,9 +4,6 @@
   name: Inner fire
   description: You unleash your inner fire, setting yourself on fire and temporarily speeding up your movement.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: tiefling_revenge
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectCastingVisual

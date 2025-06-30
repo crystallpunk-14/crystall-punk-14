@@ -55,6 +55,14 @@
 
 - type: jobIcon
   parent: CP14JobIcon
+  id: CP14JobIconInvestigator
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi
+    state: Investigator
+  jobName: cp14-job-name-investigator
+
+- type: jobIcon
+  parent: CP14JobIcon
   id: CP14JobIconMerchant
   icon:
     sprite: /Textures/_CP14/Interface/Misc/job_icons.rsi

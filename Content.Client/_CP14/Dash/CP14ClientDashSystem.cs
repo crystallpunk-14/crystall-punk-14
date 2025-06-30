@@ -2,7 +2,7 @@ using Content.Shared._CP14.Dash;
 
 namespace Content.Client._CP14.Dash;
 
-public sealed partial class CP14DClientDashSystem : EntitySystem
+public sealed partial class CP14ClientDashSystem : EntitySystem
 {
     public override void Update(float frameTime)
     {

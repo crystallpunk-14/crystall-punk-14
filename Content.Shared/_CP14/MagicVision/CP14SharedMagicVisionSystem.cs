@@ -2,8 +2,8 @@ using System.Text;
 using Content.Shared._CP14.AuraDNA;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
-using Content.Shared.Mobs;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -14,6 +14,7 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public readonly EntProtoId MagicTraceProto = "CP14MagicVisionMarker";
 
@@ -59,7 +60,10 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     /// this direction can be seen in order to understand, for example, in which direction the spell was used.</param>
     public void SpawnMagicVision(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityUid? aura = null, EntityCoordinates? target = null)
     {
-        var ent = PredictedSpawnAtPosition(MagicTraceProto, position);
+        if (_net.IsClient)
+            return;
+
+        var ent = SpawnAtPosition(MagicTraceProto, position);
         var markerComp = EnsureComp<CP14MagicVisionMarkerComponent>(ent);
 
         markerComp.SpawnTime = _timing.CurTime;

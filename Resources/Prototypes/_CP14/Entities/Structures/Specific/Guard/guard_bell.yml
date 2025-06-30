@@ -7,6 +7,8 @@
   components:
   - type: Sprite
     drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
     sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
     layers:
     - state: base

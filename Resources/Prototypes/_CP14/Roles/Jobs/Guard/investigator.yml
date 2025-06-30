@@ -1,0 +1,21 @@
+- type: job
+  id: CP14Investigator
+  setPreference: true
+  name: cp14-job-name-investigator
+  description: cp14-job-desc-investigator
+  playTimeTracker: CP14JobInvestigator
+  startingGear: CP14InvestigatorGear
+  icon: "CP14JobIconInvestigator"
+  supervisors: cp14-job-supervisors-guard-commander
+  special:
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - CP14ActionSpellMagicSplitting
+      - CP14ActionToggleMagicVision
+
+- type: startingGear
+  id: CP14InvestigatorGear
+  equipment:
+    keys: CP14KeyRingGuard
+    belt: CP14WalletFilledTest
+
