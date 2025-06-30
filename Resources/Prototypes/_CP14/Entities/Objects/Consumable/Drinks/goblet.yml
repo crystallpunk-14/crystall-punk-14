@@ -11,7 +11,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: CP14DrinkBaseCup
+  parent: CP14DrinkBaseGoblet
   id: CP14SteelGobletIron
   name: iron goblet
   categories: [ ForkFiltered ]
