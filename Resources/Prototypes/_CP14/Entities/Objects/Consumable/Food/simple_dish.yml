@@ -31,9 +31,14 @@
           Quantity: 7
         - ReagentId: Vitamin
           Quantity: 2
+  - type: Temperature
+    currentTemperature: 300
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 400, 500
+    - temperatureRange: 420, 520
       transformTo: CP14Ash1
 
 - type: entity
@@ -73,7 +78,47 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 2
+  - type: Temperature
+    currentTemperature: 300
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
   - type: CP14TemperatureTransformation
     entries:
-    - temperatureRange: 400, 500
+    - temperatureRange: 420, 520
       transformTo: CP14Ash1
+
+- type: entity
+  id: CP14FoodChromiumJelly
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: chromium jelly
+  description: At first glance unremarkable, but tastier than it looks, the main thing is not to overeat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - jelly
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/jelly.rsi
+    layers:
+      - state: chromium_jelly
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Temperature
+    currentTemperature: 250
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 380, 450
+      transformTo: CP14ChromiumSlime
