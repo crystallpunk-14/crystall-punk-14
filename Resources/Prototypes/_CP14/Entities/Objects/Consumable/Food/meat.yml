@@ -639,6 +639,9 @@
           Quantity: 10
         - ReagentId: Fat
           Quantity: 12
+  - type: Tag
+    tags:
+    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -895,6 +898,9 @@
           Quantity: 3
         - ReagentId: Fat
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500

@@ -1,0 +1,35 @@
+- type: entity
+  name: ham in cheese
+  parent: FoodInjectableBase
+  id: CP14FoodHamCheese
+  description: Juicy and oozy ham, in cheese and lettuce leaves. Just like in the best restaurants.
+  categories: [ ForkFiltered ]
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - cabbage
+      - cheesy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 32
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 13
+        - ReagentId: Protein
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 2.5
+  - type: Sprite
+    layers:
+    - sprite: _CP14/Objects/Consumable/Food/plates.rsi
+      state: plate
+    - sprite: _CP14/Objects/Consumable/Food/pig_cheese.rsi
+      state: pig_cheese
+  - type: Tag
+    tags:
+    - Meat
+  - type: Food
+    trash:
+    - CP14Plate
