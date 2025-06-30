@@ -61,9 +61,6 @@
     - node: start
       edges:
         - to: CP14FenceGateBigWooden
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
           steps:
             - material: CP14WoodenPlanks
               amount: 4
@@ -89,9 +86,6 @@
     - node: start
       edges:
         - to: CP14FenceGateBigWoodenBirch
-          completed:
-            - !type:SnapToGrid
-              southRotation: true
           steps:
             - material: CP14BirchWoodenPlanks
               amount: 4

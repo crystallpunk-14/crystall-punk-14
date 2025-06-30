@@ -100,16 +100,15 @@
   - !type:AddComponents
     components:
     - type: CP14SpellEffectOnHit
-      prob: 0.15
       effects:
-      - !type:CP14SpellApplyEntityEffect
-        effects:
-        - !type:Electrocute
-          electrocuteTime: 0.5
-          electrocuteDamageScale: 1
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:
         - CP14ElectrifiedEffect
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:CP14StaminaChange
+          staminaDelta: -5
 
 - type: modularPart
   id: InlayQuartzDarkness

@@ -38,6 +38,20 @@
       - state: green
       - state: guard
 
+- type: entity
+  id: CP14SpawnPointInvestigator
+  parent: CP14SpawnPointJobBase
+  name: investigator
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Investigator
+  - type: Sprite
+    layers:
+      - state: green
+      - state: investigator
+
 # Mercenary
 
 - type: entity

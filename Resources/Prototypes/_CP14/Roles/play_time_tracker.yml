@@ -29,6 +29,9 @@
 - type: playTimeTracker
   id: CP14JobGuard
 
+- type: playTimeTracker
+  id: CP14JobInvestigator
+
 # Trade guild
 
 - type: playTimeTracker

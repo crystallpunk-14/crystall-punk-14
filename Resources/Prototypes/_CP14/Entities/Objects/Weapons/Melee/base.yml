@@ -83,6 +83,7 @@
     types:
       - Knife
   - type: CP14WallpaperRemover
+  - type: Execution
 
 - type: entity
   abstract: true
@@ -115,3 +116,18 @@
     damageToSelf:
       types:
         Blunt: 0.5 # 100 hits
+
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponExecution
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: Execution
+    internalMeleeExecutionMessage: "cp14-execution-popup-melee-initial-internal"
+    externalMeleeExecutionMessage: "cp14-execution-popup-melee-initial-external"
+    completeInternalMeleeExecutionMessage: "cp14-execution-popup-melee-complete-internal"
+    completeExternalMeleeExecutionMessage: "cp14-execution-popup-melee-complete-external"
+    internalSelfExecutionMessage: "cp14-execution-popup-self-initial-internal"
+    externalSelfExecutionMessage: "cp14-execution-popup-self-initial-external"
+    completeInternalSelfExecutionMessage: "cp14-execution-popup-self-complete-internal"
+    completeExternalSelfExecutionMessage: "cp14-execution-popup-self-complete-external"

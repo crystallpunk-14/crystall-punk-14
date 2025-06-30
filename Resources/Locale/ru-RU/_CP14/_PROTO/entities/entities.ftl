@@ -2789,6 +2789,10 @@ ent-CP14WoodenPlanks1 = деревянные доски
     .desc = Обработанное и готовое к использованию дерево.
     .suffix = 1
 
+ent-CP14BirchWoodenPlanks1 = березовые доски
+    .desc = Обработанное и готовое к использованию дерево.
+    .suffix = 1
+
 ent-CP14WoodenPlanks10 = { ent-CP14WoodenPlanks1 }
     .desc = { ent-CP14WoodenPlanks1.desc }
     .suffix = 10
@@ -3020,6 +3024,9 @@ ent-CP14ModularGripLong = длинная рукоять
 ent-CP14ModularGripWooden = деревянная рукоять
     .desc = { ent-CP14ModularGripShort.desc }
 
+ent-CP14ModularGripBirch = березовая рукоять
+    .desc = { ent-CP14ModularGripShort.desc }
+
 ent-CP14ModularGripLucens = люценовая рукоять
     .desc = { ent-CP14ModularGripShort.desc }
 
@@ -3039,6 +3046,9 @@ ent-CP14ModularGripGuildmaster = рукоять рапиры гильдмаст�
     .desc = { ent-CP14ModularGripShort.desc }
 
 ent-CP14ModularGripWoodenLong = длинная деревянная рукоять
+    .desc = { ent-CP14ModularGripLong.desc }
+
+ent-CP14ModularGripBirchLong = длинная березовая рукоять
     .desc = { ent-CP14ModularGripLong.desc }
 
 ent-CP14ModularGripLucensLong = длинная люценовая рукоять

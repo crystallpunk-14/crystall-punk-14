@@ -8,7 +8,13 @@
   "copyright": "Created by TheShuEd",
   "states": [
     {
-      "name": "atlethic"
+      "name": "athletic"
+    },
+    {
+      "name": "athletic2"
+    },
+    {
+      "name": "athletic3"
     },
     {
       "name": "dimension"
@@ -60,6 +66,15 @@
     },
     {
       "name": "water3"
+    },
+    {
+      "name": "electro"
+    },
+    {
+      "name": "electro2"
+    },
+    {
+      "name": "electro3"
     }
   ]
 }

@@ -83,6 +83,8 @@
       right:
       - state: inhand-right
         color: "#a12349"
+  - type: StaticPrice
+    price: 3
 
 - type: entity
   name: blue candle

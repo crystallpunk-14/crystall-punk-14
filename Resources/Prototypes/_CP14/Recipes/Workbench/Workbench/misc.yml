@@ -110,6 +110,17 @@
   result: CP14ModularGripWooden
 
 - type: CP14Recipe
+  id: CP14ModularGripBirchShort
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 2
+  result: CP14ModularGripBirch
+
+- type: CP14Recipe
   id: CP14ModularGripWoodenLong
   tag: CP14RecipeWorkbench
   category: Tools
@@ -119,6 +130,17 @@
     stack: CP14WoodenPlanks
     count: 4
   result: CP14ModularGripWoodenLong
+
+- type: CP14Recipe
+  id: CP14ModularGripBirchLong
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 4
+  result: CP14ModularGripBirchLong
 
 - type: CP14Recipe
   id: CP14ModularGripLucens

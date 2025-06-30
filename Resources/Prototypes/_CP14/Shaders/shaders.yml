@@ -24,3 +24,9 @@
   id: CP14ReligionVision
   kind: source
   path: "/Textures/_CP14/Shaders/religion.swsl"
+
+
+- type: shader
+  id: CP14BlueNoir
+  kind: source
+  path: "/Textures/_CP14/Shaders/blue_noir.swsl"

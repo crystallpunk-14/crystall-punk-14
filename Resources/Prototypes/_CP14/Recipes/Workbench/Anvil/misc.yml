@@ -38,7 +38,7 @@
     skills:
     - IronMelting
   - !type:StackResource
-    stack: CP14IronBar
+    stack: CP14IronBar # Physical Composition in item
     count: 1
   result: CP14PlatePie
 
@@ -53,7 +53,7 @@
     - CopperMelting
     - IronMelting
   - !type:StackResource
-    stack: CP14CopperBar
+    stack: CP14CopperBar  # Physical Composition in item
     count: 2
   - !type:StackResource
     stack: CP14IronBar

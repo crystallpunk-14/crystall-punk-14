@@ -102,6 +102,10 @@
         whitelist:
           components:
           - CP14MagicEnergyCrystal
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 20 # 2 copper bar
+      CP14Iron: 10 # 1 iron bar
 
 - type: entity
   parent: CP14CrystalLamp
