@@ -343,11 +343,11 @@ CP14ClothingRingFireball: null
 CP14ClothingRingFlashLight: null
 CP14ClothingRingIceShards: null
 
-# 2025-06-04
+# 2025-04-06
 CP14BaseMop: CP14ModularWoodMop
 CP14CarpetPink: CP14CarpetPurple
 
-#2025-06-15
+#2025-15-06
 CP14FoodMeatMole: CP14FoodMeatMonster
 CP14FoodMeatMoleCooked: CP14FoodMeatMonsterCooked
 CP14FoodMeatMoleLeg: CP14FoodMeatMonsterLeg
@@ -355,10 +355,13 @@ CP14FoodMeatMoleLegCooked: CP14FoodMeatMonsterLegCooked
 CP14FoodMeatMoleSlice: CP14FoodMeatMonsterSlice
 CP14FoodMeatMoleCookedSlice: CP14FoodMeatMonsterCookedSlice
 
-#2025-06-16
+#2025-16-06
 CP14SpellscrollSignalLightBlue: null
 CP14SpellscrollSignalLightRed: null
 CP14SpellscrollSignalLightYellow: null
+
+#2025-28-06
+CP14SpellScrollMagicSplitting: null
 
 # <---> CrystallEdge migration zone end
 

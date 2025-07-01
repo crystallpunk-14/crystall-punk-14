@@ -1,0 +1,165 @@
+# Reputation Level 0 - Basic & Tools
+- type: cp14TradingPosition
+  id: CP14Cloth10
+  faction: Tailors
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/cloth.rsi
+    state: cloth_3
+  service: !type:CP14BuyItemsService
+    product: CP14Cloth10
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14Scissors
+  faction: Tailors
+  uiPosition: 2
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Tools/scissors.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Scissors
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14DyeRed
+  faction: Tailors
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyeRed
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14DyeBlue
+  faction: Tailors
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyeBlue
+    count: 5
+
+# Clothing rep 0
+- type: cp14TradingPosition
+  id: CP14ClothingHeadBeretMercenary
+  faction: Tailors
+  uiPosition: 7
+  priceMarkup: 10
+  icon:
+    sprite: _CP14/Clothing/Head/Roles/General/beret_mercenary.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingHeadBeretMercenary
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ClothingShirtMercenary
+  faction: Tailors
+  uiPosition: 8
+  priceMarkup: 10
+  icon:
+    sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingShirtMercenary
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ClothingPantsMercenaryTrousers
+  faction: Tailors
+  uiPosition: 9
+  priceMarkup: 10
+  icon:
+    sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingPantsMercenaryTrousers
+    count: 1
+
+# Reputation Level 1 - Advanced
+- type: cp14TradingPosition
+  id: CP14Rope
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Tools/rope.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Rope
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14DyeYellow
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyeYellow
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14DyeGreen
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyeGreen
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14ClothingYellowWizardDress
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 8
+  priceMarkup: 15
+  icon:
+    sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingYellowWizardDress
+    count: 1
+
+# Reputation Level 2
+- type: cp14TradingPosition
+  id: CP14DyePurple
+  faction: Tailors
+  reputationLevel: 2
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyePurple
+    count: 5
+
+- type: cp14TradingPosition
+  id: CP14DyeBlack
+  faction: Tailors
+  reputationLevel: 2
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14DyeBlack
+    count: 5

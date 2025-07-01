@@ -100,7 +100,7 @@
       - state: core1
         map: ["random"]
   - type: StaticPrice
-    price: 10
+    price: 15
   - type: RandomSprite
     available:
     - random:

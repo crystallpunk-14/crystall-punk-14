@@ -20,6 +20,9 @@
     unlitIcon: unlit-icon
   - type: CP14IgnitionModifier
     hideCaution: true
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20 # 2 wooden plank in craft
 
 - type: entity
   id: CP14SmokingPipeFilledTobacco
