@@ -76,7 +76,9 @@
 
 - type: entity
   id: CP14FoodChromiumJelly
-  parent: FoodInjectableBase
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
   categories: [ ForkFiltered ]
   name: chromium jelly
   description: At first glance unremarkable, but tastier than it looks, the main thing is not to overeat.
@@ -101,10 +103,3 @@
           Quantity: 6
   - type: Temperature
     currentTemperature: 250
-  - type: InternalTemperature
-    thickness: 0.02
-    area: 0.02
-  - type: CP14TemperatureTransformation
-    entries:
-    - temperatureRange: 380, 450
-      transformTo: CP14ChromiumSlime
