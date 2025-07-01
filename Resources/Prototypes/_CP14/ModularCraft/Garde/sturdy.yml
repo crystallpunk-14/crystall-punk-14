@@ -55,3 +55,14 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSturdy
+
+- type: modularPart
+  id: GardeSturdyWooden
+  slots:
+  - Garde
+  rsiPath: _CP14/Objects/ModularTools/Garde/wooden_sturdy.rsi
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 0.9
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 0.9

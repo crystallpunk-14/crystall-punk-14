@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by omsoyk (Github/discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "black"
+    },
+    {
+      "name": "green"
+    },
+    {
+      "name": "purple"
+    },
+    {
+      "name": "red"
+    },
+    {
+      "name": "blue"
+    },
+    {
+      "name": "cyan"
+    },
+    {
+      "name": "orange"
+    },
+    {
+      "name": "yellow"
+    }
+  ]
+}

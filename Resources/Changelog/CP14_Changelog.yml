@@ -863,3 +863,28 @@
   id: 8136
   time: '2025-06-29T17:58:38.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1493
+- author: Nimfar11
+  changes:
+  - message: Adds wooden blades and a weapon garde, allowing you to make wooden weapons.
+    type: Add
+  id: 8137
+  time: '2025-07-01T10:07:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1471
+- author: KittyCat432
+  changes:
+  - message: Added 2 new solutions, Refreshing Solution and Exhausting Solution the
+      recipes can be found in the guidebook.
+    type: Add
+  id: 8138
+  time: '2025-07-01T10:10:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1492
+- author: gogenych
+  changes:
+  - message: '2 new carpets: black and yellow. Now you can craft all carpets on sewing
+      table.'
+    type: Add
+  - message: You can remove carpets from the floor with any sharp tool.
+    type: Fix
+  id: 8139
+  time: '2025-07-01T13:24:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1461
