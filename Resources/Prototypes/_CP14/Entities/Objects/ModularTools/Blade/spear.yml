@@ -82,3 +82,15 @@
     materialComposition:
       CP14Mithril: 10
 
+- type: entity
+  parent: CP14ModularBladeSpearBase
+  id: CP14ModularBladeWoodenSpear
+  name: wooden spearhead
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Spear/wooden_spear.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeWoodenSpear
