@@ -870,3 +870,11 @@
   id: 8137
   time: '2025-07-01T10:07:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1471
+- author: KittyCat432
+  changes:
+  - message: Added 2 new solutions, Refreshing Solution and Exhausting Solution the
+      recipes can be found in the guidebook.
+    type: Add
+  id: 8138
+  time: '2025-07-01T10:10:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1492
