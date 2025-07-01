@@ -14,7 +14,7 @@
     removeOnInteract: true
 
 - type: entity
-  name: Carpet
+  name: blue carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemBlue1
   categories: [ ForkFiltered ]
@@ -28,7 +28,7 @@
     prototype: CP14CarpetBlue
 
 - type: entity
-  name: Carpet
+  name: red carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemRed1
   categories: [ ForkFiltered ]
@@ -44,7 +44,7 @@
     prototype: CP14CarpetRed
 
 - type: entity
-  name: Carpet
+  name: cyan carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemCyan1
   categories: [ ForkFiltered ]
@@ -60,7 +60,7 @@
     prototype: CP14CarpetCyan
 
 - type: entity
-  name: Carpet
+  name: green carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemGreen1
   categories: [ ForkFiltered ]
@@ -76,7 +76,7 @@
     prototype: CP14CarpetGreen
 
 - type: entity
-  name: Carpet
+  name: orange carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemOrange1
   categories: [ ForkFiltered ]
@@ -92,7 +92,7 @@
     prototype: CP14CarpetOrange
 
 - type: entity
-  name: Carpet
+  name: purpule carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemPurple1
   categories: [ ForkFiltered ]
@@ -108,7 +108,7 @@
     prototype: CP14CarpetPurple
 
 - type: entity
-  name: Carpet
+  name: black carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemBlack1
   categories: [ ForkFiltered ]
@@ -122,7 +122,7 @@
     prototype: CP14CarpetBlack
 
 - type: entity
-  name: Carpet
+  name: yellow carpet
   parent: CP14FloorTileItemBase
   id: CP14FloorCarpetItemYellow1
   categories: [ ForkFiltered ]
