@@ -888,3 +888,18 @@
   id: 8139
   time: '2025-07-01T13:24:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1461
+- author: Nimfar11
+  changes:
+  - message: 'Adds different dishes and cutlery: fork, spoon, goblets, stuffed potatoes,
+      stuffed pumpkin, jelly and ham in cheese.'
+    type: Add
+  id: 8140
+  time: '2025-07-02T14:17:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1483
+- author: Viator-MV
+  changes:
+  - message: Added z-level to venicicalis fort map.
+    type: Add
+  id: 8141
+  time: '2025-07-02T14:16:50.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1494
