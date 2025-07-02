@@ -177,6 +177,9 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 6
+  - type: Tag
+    tags:
+    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -512,6 +515,9 @@
       - random:
           rabbit_meat1_cooked: ""
           rabbit_meat2_cooked: ""
+  - type: Tag
+    tags:
+    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -633,6 +639,9 @@
           Quantity: 10
         - ReagentId: Fat
           Quantity: 12
+  - type: Tag
+    tags:
+    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -759,6 +768,9 @@
           Quantity: 1
         - ReagentId: Fat
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -890,6 +902,9 @@
           Quantity: 3
         - ReagentId: Fat
           Quantity: 4
+  - type: Tag
+    tags:
+    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -948,6 +963,9 @@
           Quantity: 0.5
         - ReagentId: Fat
           Quantity: 1.5
+  - type: Tag
+    tags:
+    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500

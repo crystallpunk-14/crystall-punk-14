@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by Dinazewwr",
+    "copyright": "Created by Dinazewwr, stuffed_potato by prazat911",
     "size": {
       "x": 32,
       "y": 32
@@ -18,6 +18,15 @@
       },
       {
         "name": "base4"
+      },
+      {
+        "name": "stuffed_potato1"
+      },
+      {
+        "name": "stuffed_potato2"
+      },
+      {
+        "name": "stuffed_potato3"
       }
     ]
 }

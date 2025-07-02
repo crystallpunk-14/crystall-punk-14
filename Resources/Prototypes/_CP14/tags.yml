@@ -156,3 +156,9 @@
 
 - type: Tag
   id: CP14Sandwich
+
+- type: Tag
+  id: CP14CookedMeatSlice
+
+- type: Tag
+  id: CP14CookedMeatLeg
