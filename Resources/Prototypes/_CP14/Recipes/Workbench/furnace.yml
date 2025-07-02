@@ -88,7 +88,6 @@
     stack: CP14GlassSheet
     count: 1
   result: CP14VialTiny
-  resultCount: 2
 
 - type: CP14Recipe
   id: CP14VialTinyReinforced
@@ -105,7 +104,6 @@
     stack: CP14GlassSheet
     count: 1
   result: CP14VialTinyReinforced
-  resultCount: 2
 
 - type: CP14Recipe
   id: CP14VialSmall
