@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14HandLabeler
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
       - id: CP14Syringe
@@ -43,7 +44,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14ManaOperationGlove
@@ -73,7 +74,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14WoodenPlanks20
       - id: CP14CopperBar10
       - id: CP14CopperBar10
@@ -131,7 +132,7 @@
   - type: StorageFill
     contents:
       - id: CP14StampGuildmaster
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue
