@@ -25,6 +25,8 @@
         amount: 1
       - id: CP14VialSmall
         amount: 3
+      - id: CP14VialSkull
+        prob: 0.5
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1

@@ -88,6 +88,7 @@
     stack: CP14GlassSheet
     count: 1
   result: CP14VialTiny
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14VialTinyReinforced
@@ -104,6 +105,7 @@
     stack: CP14GlassSheet
     count: 1
   result: CP14VialTinyReinforced
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14VialSmall
@@ -162,6 +164,35 @@
     stack: CP14GlassSheet
     count: 4
   result: CP14VialMediumReinforced
+
+- type: CP14Recipe
+  id: CP14VialStar
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStar
+
+- type: CP14Recipe
+  id: CP14VialStarReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStarReinforced
 
 - type: CP14Recipe
   id: CP14BaseAlchemyBomb
