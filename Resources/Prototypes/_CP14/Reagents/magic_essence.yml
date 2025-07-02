@@ -217,3 +217,15 @@
   tileReactions:
   - !type:CreateEntityTileReaction
     entity: CP14EssenceMagic
+
+- type: reagent
+  parent: CP14EssenceBaseT2
+  id: CP14EssenceBeast
+  name: cp14-reagent-name-essence-beast
+  desc: cp14-reagent-desc-essence-beast
+  group: CP14MagicEssenceT2
+  color: "#5c3c0f"
+  pricePerUnit: 0.40  # craft (motion + life → 2)
+  tileReactions:
+  - !type:CreateEntityTileReaction
+    entity: CP14EssenceBeast
