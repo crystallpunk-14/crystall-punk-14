@@ -101,7 +101,7 @@
   essenceProto: CP14EssenceMagic
 
 - type: magicType
-  id: Magic
+  id: Beast
   name: cp14-essence-beast
   color: "#5c3c0f"
   essenceProto: CP14EssenceBeast
