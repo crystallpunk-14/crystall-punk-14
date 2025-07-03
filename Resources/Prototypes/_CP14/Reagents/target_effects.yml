@@ -120,6 +120,19 @@
         damage:
           types:
             Cold: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        amount: 5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 4.0  # 1×Life (0.2) + 1×Frost (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x5.33
 
 - type: reagent
