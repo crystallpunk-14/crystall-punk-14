@@ -151,7 +151,14 @@
       - !type:HealthChange
         damage:
           types:
-            Cold: 3
+            Cold: 1.5
+      - !type:AdjustTemperature
+        amount: -5000
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
