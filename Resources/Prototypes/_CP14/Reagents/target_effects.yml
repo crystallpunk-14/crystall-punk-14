@@ -65,6 +65,19 @@
         damage:
           types:
             Heat: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 295
+        amount: -5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          min: 295
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 3.5  # 1×Life (0.2) + 1×Fire (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x4.375
 
 - type: reagent
