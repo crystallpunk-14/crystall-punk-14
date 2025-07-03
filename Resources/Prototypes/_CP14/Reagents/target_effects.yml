@@ -99,7 +99,7 @@
       - !type:FlammableReaction
         multiplier: 1.5
       - !type:AdjustTemperature
-        amount: 2000
+        amount: 4000
       - !type:Ignite
   pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
 
