@@ -293,7 +293,7 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: -10
+            Bloodloss: -5
   pricePerUnit: 4.0  # 1×Life (0.2) + 1×Water (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
 
 - type: reagent
@@ -314,7 +314,7 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: 3
+            Bloodloss: 2
   pricePerUnit: 4.0  # Similar to restoration but with Chaos instead of Order
 
 - type: reagent
