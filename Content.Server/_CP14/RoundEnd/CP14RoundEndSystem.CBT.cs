@@ -89,7 +89,9 @@ public sealed partial class CP14RoundEndSystem
     {
         var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
 
-        var allowedRuPlaytime = now.Hour is >= 18 and < 22;
+        var isWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
+
+        var allowedRuPlaytime = isWeekend ? now.Hour is >= 16 and < 20 : now.Hour is >= 18 and < 22;
         var allowedEngPlaytime = now.Hour is >= 20 and < 24;
         var isMonday = now.DayOfWeek is DayOfWeek.Monday;
 
