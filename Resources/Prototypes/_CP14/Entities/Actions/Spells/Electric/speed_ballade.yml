@@ -4,9 +4,6 @@
   name: Speed ballade
   description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: speed_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1
   - type: CP14MagicEffectManaCost
@@ -36,7 +33,7 @@
     proto: CP14RuneSpeedBallade
   - type: Action
     icon:
-      sprite: _CP14/Actions/Spells/healing.rsi
+      sprite: _CP14/Actions/Spells/electromancy.rsi
       state: speed_music
   - type: InstantAction
     event: !type:CP14ToggleableInstantActionEvent
