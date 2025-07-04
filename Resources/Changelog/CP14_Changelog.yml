@@ -913,3 +913,15 @@
   id: 8142
   time: '2025-07-04T14:29:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1496
+- author: Nimfar11
+  changes:
+  - message: Adds birch doors, as well as resprite all doors.
+    type: Add
+  - message: Adds a hand labeler tool with a sprite.
+    type: Add
+  - message: Adds two new star-shaped and skull-shaped vials. Skull vials can be purchased
+      at the shop.
+    type: Add
+  id: 8143
+  time: '2025-07-04T14:35:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1495
