@@ -104,11 +104,7 @@
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
-    - CP14ActionSpellResurrectionDead
-    - CP14ActionSpellShadowStep
+
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
@@ -121,7 +117,6 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellHealFromDeathBallade
     - CP14ActionSpellMagicBallade
     - CP14ActionSpellSpeedBallade
     - CP14ActionSpellPeaceBallade
