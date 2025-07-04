@@ -12,7 +12,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 1
   - type: CP14MagicEffect
-    magicType: Life
+    magicType: Energia
     effects:
     - !type:CP14SpellArea
       affectCaster: true

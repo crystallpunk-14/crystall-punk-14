@@ -12,6 +12,16 @@
     product: CP14EnergyCrystalMediumEmpty
 
 - type: cp14TradingPosition
+  id: CP14BrassBar5
+  faction: Thaumaturgy
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Materials/brass_bar.rsi
+    state: bar_2
+  service: !type:CP14BuyItemsService
+    product: CP14BrassBar5
+
+- type: cp14TradingPosition
   id: CP14Paper
   faction: Thaumaturgy
   reputationLevel: 0

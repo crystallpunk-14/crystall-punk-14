@@ -93,7 +93,7 @@
   parent: BaseItem
   name: brass bar
   suffix: 1
-  description: A shiny piece of vibrating brass
+  description: The best friend for magotechnology. The secrets of its production are hidden.
   categories: [ ForkFiltered ]
   components:
   - type: Item
