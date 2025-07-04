@@ -1,0 +1,14 @@
+- type: entity
+  abstract: true
+  id: CP14BurnsAsh
+  categories: [ ForkFiltered ]
+  components:
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14Ash1

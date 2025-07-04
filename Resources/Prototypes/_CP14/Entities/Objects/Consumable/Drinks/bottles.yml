@@ -1,6 +1,6 @@
 ﻿#Base for future bottles
 - type: entity
-  name: green Bottle
+  name: green bottle
   parent: CP14BaseVialFragile
   id: CP14GreenBottle
   suffix: Empty
@@ -74,7 +74,7 @@
     sprite: _CP14/Objects/Consumable/Drinks/orange_bottle.rsi
 
 - type: entity
-  name: red Bottle
+  name: red bottle
   parent: CP14GreenBottle
   id: CP14RedBottle
   description: A red bottle perfect for drinking wine.

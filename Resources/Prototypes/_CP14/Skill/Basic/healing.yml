@@ -52,20 +52,6 @@
   - !type:NeedPrerequisite
     prerequisite: HealingT1
 
-- type: cp14Skill
-  id: CP14ActionSpellSpeedBallade
-  skillUiPosition: 0, 6
-  tree: Healing
-  icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: speed_music
-  effects:
-  - !type:AddAction
-    action: CP14ActionSpellSpeedBallade
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: HealingT1
-
 # T2
 
 - type: cp14Skill
