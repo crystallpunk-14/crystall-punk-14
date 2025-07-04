@@ -66,10 +66,6 @@
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
-    - CP14ActionSpellResurrectionDead
   - type: Loadout
     prototypes:
     - CP14MobSkeletonWizardTownRaid
