@@ -3,7 +3,7 @@
 - type: magicType
   id: Earth
   name: cp14-essence-earth
-  color: "#70533f"
+  color: "#1cea42"
   essenceProto: CP14EssenceEarth
 
 - type: magicType
