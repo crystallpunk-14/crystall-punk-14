@@ -164,6 +164,35 @@
   result: CP14VialMediumReinforced
 
 - type: CP14Recipe
+  id: CP14VialStar
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStar
+
+- type: CP14Recipe
+  id: CP14VialStarReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requirements:
+  - !type:SkillRequired
+    skills:
+    - GlassMelting
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStarReinforced
+
+- type: CP14Recipe
   id: CP14BaseAlchemyBomb
   tag: CP14RecipeMeltingFurnace
   craftTime: 4

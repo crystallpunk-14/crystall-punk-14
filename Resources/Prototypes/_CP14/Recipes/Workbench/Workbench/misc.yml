@@ -27,6 +27,29 @@
   result: CP14BucketLucens
 
 - type: CP14Recipe
+  id: CP14HandLabeler
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 3
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14CrayonBlack
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14PenFeather
+    count: 1
+  result: CP14HandLabeler
+
+- type: CP14Recipe
   id: CP14WoodenBeerMug
   tag: CP14RecipeWorkbench
   craftTime: 3
