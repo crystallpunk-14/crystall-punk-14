@@ -65,6 +65,19 @@
         damage:
           types:
             Heat: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 295
+        amount: -5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          min: 295
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 3.5  # 1×Life (0.2) + 1×Fire (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x4.375
 
 - type: reagent
@@ -86,7 +99,7 @@
       - !type:FlammableReaction
         multiplier: 1.5
       - !type:AdjustTemperature
-        amount: 2000
+        amount: 4000
       - !type:Ignite
   pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
 
@@ -107,6 +120,19 @@
         damage:
           types:
             Cold: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        amount: 5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 4.0  # 1×Life (0.2) + 1×Frost (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x5.33
 
 - type: reagent
@@ -125,7 +151,14 @@
       - !type:HealthChange
         damage:
           types:
-            Cold: 3
+            Cold: 1.5
+      - !type:AdjustTemperature
+        amount: -5000
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
   pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
@@ -260,7 +293,7 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: -10
+            Bloodloss: -5
   pricePerUnit: 4.0  # 1×Life (0.2) + 1×Water (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
 
 - type: reagent
@@ -281,7 +314,7 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: 3
+            Bloodloss: 2
   pricePerUnit: 4.0  # Similar to restoration but with Chaos instead of Order
 
 - type: reagent
