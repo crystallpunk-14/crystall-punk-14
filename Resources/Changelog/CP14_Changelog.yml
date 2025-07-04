@@ -925,3 +925,18 @@
   id: 8143
   time: '2025-07-04T14:35:59.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1495
+- author: KittyCat432
+  changes:
+  - message: Changed warming solution to now actually warm people. Soothing now cools,
+      and ice now freezes people.
+    type: Tweak
+  - message: Changed blood healing and absorption have had thier healing and damage
+      values nerfed now 5 healing and 2 damage respectively.
+    type: Tweak
+  - message: Changed Incendiary solution now heats the target up more.
+    type: Tweak
+  - message: Added Stamina solutions now interact with chromium slime.
+    type: Add
+  id: 8144
+  time: '2025-07-04T15:32:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1497
