@@ -50,7 +50,7 @@
   name: terra
   components:
   - type: Sprite
-    color: "#70533f"
+    color: "#1cea42"
   - type: SolutionContainerManager
     solutions:
       essence:

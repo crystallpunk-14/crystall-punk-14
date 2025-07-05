@@ -18,7 +18,7 @@
   name: cp14-reagent-name-essence-earth
   desc: cp14-reagent-desc-essence-earth
   group: CP14MagicEssenceT0
-  color: "#70533f"
+  color: "#1cea42"
   pricePerUnit: 0.25  # From Wild Sage (0.5) or Lumi Mushroom (0.5)
   tileReactions:
   - !type:CreateEntityTileReaction
