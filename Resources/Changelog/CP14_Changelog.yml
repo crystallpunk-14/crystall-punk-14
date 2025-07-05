@@ -963,3 +963,14 @@
   id: 8147
   time: '2025-07-05T14:38:05.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1501
+- author: TheShuEd
+  changes:
+  - message: Elemental crystals imbued with a specific type of magic can now be found
+      in demiplanes. Useful for alchemy.
+    type: Add
+  - message: Workbench UI now automatically updates when items are placed on or removed
+      from the workbench
+    type: Fix
+  id: 8148
+  time: '2025-07-05T17:44:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1502
