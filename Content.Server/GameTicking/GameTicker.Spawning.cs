@@ -296,7 +296,7 @@ namespace Content.Server.GameTicking
                 else
                 {
                     _chatSystem.DispatchStationAnnouncement(station,
-                        Loc.GetString("latejoin-arrival-announcement",
+                        Loc.GetString("cp14-latejoin-arrival-announcement",//CrystallEdge
                             ("character", MetaData(mob).EntityName),
                             ("gender", character.Gender), // CrystallEdge-LastnameGender
                             ("entity", mob),
