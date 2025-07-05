@@ -947,3 +947,12 @@
   id: 8145
   time: '2025-07-05T07:07:15.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1500
+- author: TheShuEd
+  changes:
+  - message: New "Brass" material, available only in merchant stores.
+    type: Add
+  - message: Speed ballad and resurrection spells moved to electromancy tree
+    type: Tweak
+  id: 8146
+  time: '2025-07-05T11:54:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1498
