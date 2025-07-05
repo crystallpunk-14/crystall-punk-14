@@ -113,3 +113,11 @@
     tags:
       - HideContextMenu
 
+- type: entity
+  id: CP14LiquidDropDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/liquid_drop.rsi
+    layers:
+      - state: liq-1

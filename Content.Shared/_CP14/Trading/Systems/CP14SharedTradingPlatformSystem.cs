@@ -97,7 +97,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
 
         foreach (var requirement in indexedRequest.Requirements)
         {
-            if (!requirement.CheckRequirement(EntityManager, Proto, itemPlacer.PlacedEntities, null))
+            if (!requirement.CheckRequirement(EntityManager, Proto, itemPlacer.PlacedEntities))
                 return false;
         }
 

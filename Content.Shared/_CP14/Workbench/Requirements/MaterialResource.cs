@@ -12,8 +12,6 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public ProtoId<MaterialPrototype> Material;
 
@@ -23,8 +21,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(
         EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+        HashSet<EntityUid> placedEntities)
     {
         var count = 0;
         foreach (var ent in placedEntities)
@@ -56,7 +53,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -116,11 +113,6 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
             return "Error material";
 
         return $"{Loc.GetString(indexedMaterial.Name)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

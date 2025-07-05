@@ -87,7 +87,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         foreach (var req in indexedRequest.Requirements)
         {
-            req.PostCraft(EntityManager, Proto, itemPlacer.PlacedEntities, null);
+            req.PostCraft(EntityManager, Proto, itemPlacer.PlacedEntities);
         }
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
