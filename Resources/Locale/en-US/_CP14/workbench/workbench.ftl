@@ -5,4 +5,4 @@ cp14-workbench-recipe-list = Recipe:
 
 cp14-workbench-cant-craft = Craft failed!
 
-cp14-workbench-reagent-req = {$count}u {$reagent} with {$purity}% purity
+cp14-workbench-reagent-req = {$count}u {$reagent} with {$purity}%+ purity
