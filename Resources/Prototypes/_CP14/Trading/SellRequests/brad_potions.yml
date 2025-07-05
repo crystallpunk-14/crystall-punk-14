@@ -1,0 +1,239 @@
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealBrute
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealBrute
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageBrute
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageBrute
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealHeat
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealHeat
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageHeat
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageHeat
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealCold
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealCold
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageCold
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageCold
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealPoison
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealPoison
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamagePoison
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamagePoison
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealAirloss
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealAirloss
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageAirloss
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageAirloss
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealManaDepletion
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealManaDepletion
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageManaDepletion
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageManaDepletion
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectBloodRestore
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectBloodRestore
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectBloodAbsorption
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectBloodAbsorption
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectSatiateHunger
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectSatiateHunger
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectSatiateThirst
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectSatiateThirst
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealMana
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealMana
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageMana
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageMana
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectHealStam
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectHealStam
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectDamageStam
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectDamageStam
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectSpeedUp
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectSpeedUp
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectSpeedDown
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectSpeedDown
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectSleep
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectSleep
+    amount: 10
+    purity: 0.75
+
+- type: cp14TradingRequest
+  id: CP14BasicEffectUnsleep
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: CP14BasicEffectUnsleep
+    amount: 10
+    purity: 0.75
