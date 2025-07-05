@@ -36,20 +36,12 @@ public sealed partial class UnlockRecipes : CP14SkillEffect
         var affectedRecipes = new List<CP14WorkbenchRecipePrototype>();
         foreach (var recipe in allRecipes)
         {
-            foreach (var req in recipe.Requirements)
+            foreach (var req in recipe.RequiredSkills)
             {
-                switch (req)
+                if (req == skill)
                 {
-                    case SkillRequired skillReq:
-                        foreach (var skillReqSkill in skillReq.Skills)
-                        {
-                            if (skillReqSkill == skill)
-                            {
-                                affectedRecipes.Add(recipe);
-                                break;
-                            }
-                        }
-                        break;
+                    affectedRecipes.Add(recipe);
+                    break;
                 }
             }
         }

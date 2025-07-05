@@ -6,6 +6,7 @@
 using System.Numerics;
 using Content.Server.DoAfter;
 using Content.Server.Popups;
+using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.DoAfter;
@@ -85,7 +86,7 @@ public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
             ent.Comp.WorkbenchRadius,
             LookupFlags.Uncontained);
 
-        if (!CanCraftRecipe(recipe, placedEntities))
+        if (!CanCraftRecipe(recipe, placedEntities, args.User))
         {
             _popup.PopupEntity(Loc.GetString("cp14-workbench-cant-craft"), ent, args.User);
             return;
@@ -138,8 +139,13 @@ public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
         _audio.PlayPvs(recipe.OverrideCraftSound ?? workbench.Comp.CraftSound, workbench);
     }
 
-    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities)
+    private bool CanCraftRecipe(CP14WorkbenchRecipePrototype recipe, HashSet<EntityUid> entities, EntityUid user)
     {
+        foreach (var skill in recipe.RequiredSkills)
+        {
+            if (!_skill.HaveSkill(user, skill))
+                return false;
+        }
         foreach (var req in recipe.Requirements)
         {
             if (!req.CheckRequirement(EntityManager, _proto, entities))
