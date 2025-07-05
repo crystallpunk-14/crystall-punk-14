@@ -4,7 +4,7 @@ meta:
   engineVersion: 262.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/02/2025 10:28:02
+  time: 07/05/2025 20:37:15
   entityCount: 19196
 maps:
 - 2
@@ -59352,7 +59352,7 @@ entities:
       pos: 14.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13599.846
+      secondsUntilStateChange: -13613.509
       state: Closing
   - uid: 1792
     components:
@@ -78632,16 +78632,22 @@ entities:
     - type: Transform
       pos: 4.5506587,-30.291777
       parent: 2
+    - type: CollisionWake
+      enabled: False
   - uid: 2510
     components:
     - type: Transform
       pos: 4.3631587,-30.236221
       parent: 2
+    - type: CollisionWake
+      enabled: False
   - uid: 2511
     components:
     - type: Transform
       pos: 4.4395475,-30.361221
       parent: 2
+    - type: CollisionWake
+      enabled: False
 - proto: CP14FoodMeatLamb
   entities:
   - uid: 2508
@@ -78668,6 +78674,8 @@ entities:
     - type: Transform
       pos: 5.3909364,-30.305666
       parent: 2
+    - type: CollisionWake
+      enabled: False
 - proto: CP14FoodTomatoes
   entities:
   - uid: 1486
@@ -103770,6 +103778,8 @@ entities:
     - type: Transform
       pos: 0.42527747,-27.375025
       parent: 2
+    - type: CollisionWake
+      enabled: False
 - proto: CP14SafeMerchant1
   entities:
   - uid: 7835
@@ -104976,18 +104986,15 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -20.5,-34.5
       parent: 2
-  - uid: 15205
-    components:
-    - type: Transform
-      pos: -29.5,-32.5
-      parent: 2
-- proto: CP14TradingSellingPlatform
+- proto: CP14TradingPlatformPublic
   entities:
   - uid: 3220
     components:
     - type: Transform
       pos: -33.5,-32.5
       parent: 2
+- proto: CP14TradingSellingPlatform
+  entities:
   - uid: 7817
     components:
     - type: Transform
@@ -104997,6 +105004,13 @@ entities:
     components:
     - type: Transform
       pos: -20.5,-36.5
+      parent: 2
+- proto: CP14TradingSellingPlatformPublic
+  entities:
+  - uid: 5726
+    components:
+    - type: Transform
+      pos: -29.5,-32.5
       parent: 2
 - proto: CP14VentCritterMarker
   entities:
@@ -106643,6 +106657,8 @@ entities:
     - type: Transform
       pos: -33.429523,-42.402264
       parent: 2
+    - type: CollisionWake
+      enabled: False
 - proto: CP14WallStonebrick
   entities:
   - uid: 1621
@@ -113896,12 +113912,20 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-30.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 2509
+      - 2510
+      - 2511
   - uid: 2309
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,-30.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 2282
 - proto: CP14WorkbenchFurnace
   entities:
   - uid: 1797
@@ -113924,11 +113948,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-27.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 2982
   - uid: 8056
     components:
     - type: Transform
       pos: -33.5,-42.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 8197
 - proto: SpawnPointLatejoin
   entities:
   - uid: 1315

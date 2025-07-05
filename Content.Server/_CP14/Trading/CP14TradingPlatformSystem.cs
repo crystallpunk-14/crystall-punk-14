@@ -65,7 +65,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             return;
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        _cp14Currency.GenerateMoney(balance, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(balance * ent.Comp.PlatformMarkupProcent, Transform(ent).Coordinates);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
 
         UpdateSellingUIState(ent);
@@ -91,7 +91,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         }
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        var price = _economy.GetPrice(indexedRequest) ?? 0;
+        var price = _economy.GetPrice(indexedRequest) * ent.Comp.PlatformMarkupProcent ?? 0;
         _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
         AddReputation(args.Actor, args.Faction, price * indexedRequest.ReputationCashback);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
@@ -135,7 +135,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placed);
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)balance));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)(balance * ent.Comp.PlatformMarkupProcent)));
     }
 
     public bool CanSell(EntityUid uid)
@@ -182,7 +182,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placedEntity);
         }
 
-        var price = _economy.GetPrice(position) ?? 10000;
+        var price = _economy.GetPrice(position) * platform.Comp.PlatformMarkupProcent ?? 10000;
         if (balance < price)
         {
             // Not enough balance to buy the position
@@ -205,7 +205,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
 
-        AddReputation(user, indexedPosition.Faction, (float)price / 100);
+        AddReputation(user, indexedPosition.Faction, price / 100);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
 

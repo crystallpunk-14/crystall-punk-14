@@ -50,6 +50,20 @@
   #  - CP14_EN_Trading
 
 - type: entity
+  parent: CP14TradingPlatform
+  id: CP14TradingPlatformPublic
+  name: public buying dimensional platform
+  description: Allows you to trade with the outside world, through retail trade transactions. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: CP14TradingPlatform
+    platformMarkupProcent: 1.5
+  - type: Sprite
+    layers:
+    - state: base
+    - state: old
+    - state: buy
+
+- type: entity
   parent: BaseStructure
   id: CP14TradingSellingPlatform
   name: selling dimensional platform
@@ -92,6 +106,20 @@
         - MidImpassable
         - LowImpassable
         hard: false
+
+- type: entity
+  parent: CP14TradingSellingPlatform
+  id: CP14TradingSellingPlatformPublic
+  name: public selling dimensional platform
+  description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: CP14SellingPlatform
+    platformMarkupProcent: 0.5
+  - type: Sprite
+    layers:
+    - state: base
+    - state: old
+    - state: sell
 
 - type: entity
   id: CP14CashImpact

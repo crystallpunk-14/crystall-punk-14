@@ -127,7 +127,8 @@ public sealed partial class CP14TradingPlatformWindow : DefaultWindow
         UnlockCost.Text = _selectedPosition.ReputationLevel.ToString();
 
         BuyPriceHolder.RemoveAllChildren();
-        BuyPriceHolder.AddChild(new CP14PriceControl(_economySystem.GetPrice(_selectedPosition) ?? 0));
+        var price = _economySystem.GetPrice(_selectedPosition) * _cachedPlatform.Value.Comp.PlatformMarkupProcent ?? 0;
+        BuyPriceHolder.AddChild(new CP14PriceControl((int)price));
     }
 
     private void DeselectNode()

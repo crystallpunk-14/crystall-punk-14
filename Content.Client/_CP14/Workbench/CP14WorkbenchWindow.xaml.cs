@@ -87,7 +87,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
                 if (!skilled)
                     continue;
             }
-            
+
             recipes.Add(entry);
         }
 

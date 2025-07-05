@@ -60,21 +60,20 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
             if (!solutionSys.TryGetDrawableSolution(ent, out var soln, out var solution))
                 continue;
 
-
             var volume = solution.Volume;
+            if (volume < Amount)
+                continue;
+
             foreach (var (id, quantity) in solution.Contents)
             {
                 if (id.Prototype != Reagent)
-                    continue;
-
-                if (quantity < Amount)
                     continue;
 
                 //Purity check
                 if (quantity / volume < Purity)
                     continue;
 
-                solutionSys.RemoveEachReagent(soln.Value, Amount);
+                solutionSys.Draw(ent, soln.Value, Amount);
                 return;
             }
         }
