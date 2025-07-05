@@ -58,9 +58,6 @@
   - type: CP14TradingPlatform
     platformMarkupProcent: 1.5
   - type: Sprite
-    drawdepth: FloorTiles
-    snapCardinals: true
-    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
     layers:
     - state: base
     - state: old
@@ -109,6 +106,20 @@
         - MidImpassable
         - LowImpassable
         hard: false
+
+- type: entity
+  parent: CP14TradingSellingPlatform
+  id: CP14TradingSellingPlatformPublic
+  name: public selling dimensional platform
+  description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: CP14SellingPlatform
+    platformMarkupProcent: 0.5
+  - type: Sprite
+    layers:
+    - state: base
+    - state: old
+    - state: sell
 
 - type: entity
   id: CP14CashImpact

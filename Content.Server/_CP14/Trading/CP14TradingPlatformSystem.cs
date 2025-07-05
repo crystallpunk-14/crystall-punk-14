@@ -91,7 +91,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         }
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        var price = _economy.GetPrice(indexedRequest) ?? 0;
+        var price = _economy.GetPrice(indexedRequest) * ent.Comp.PlatformMarkupProcent ?? 0;
         _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
         AddReputation(args.Actor, args.Faction, price * indexedRequest.ReputationCashback);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
@@ -135,7 +135,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placed);
         }
 
-        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)balance));
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)(balance * ent.Comp.PlatformMarkupProcent)));
     }
 
     public bool CanSell(EntityUid uid)
