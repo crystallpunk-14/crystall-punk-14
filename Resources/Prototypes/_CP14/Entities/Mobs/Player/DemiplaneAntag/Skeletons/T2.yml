@@ -46,11 +46,14 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT2
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
+    - CP14ActionSpellDash
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2
@@ -64,8 +67,13 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellSprint
     - CP14ActionSpellShadowStep
+    - CP14ActionSpellSprint
+  - type: CP14SkillStorage
+    experienceMaxCap: 2
+    freeLearnedSkills:
+    - HydrosophistryT1
+    learnedSkills:
     - CP14ActionSpellIceArrow
 
 - type: entity
@@ -89,7 +97,7 @@
       types:
         CP14ManaDepletion: -0.1
   - type: CP14SkillStorage
-    experienceMaxCap: 0
+    experienceMaxCap: 4
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
@@ -98,6 +106,7 @@
     - HydrosophistryT2
     - MetamagicT1
     - MetamagicT2
+    learnedSkills:
     - CP14ActionSpellFreeze
     - CP14ActionSpellIceShards
     - CP14ActionSpellManaConsumeElf
@@ -137,7 +146,7 @@
         weight: 40
         children:
         - id: CP14SpawnPointGhostDemiplaneSkeletonWizardT2
-        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
+#        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
       - !type:GroupSelector
         weight: 60
         children:
