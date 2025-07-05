@@ -1,0 +1,37 @@
+- type: entity
+  id: CP14ActionSpellAdminDisrespect
+  parent: CP14ActionSpellBase
+  name: Disrespect
+  description: You throw lightning at the creature.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/AdminSpells.rsi
+    state: disrespect
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SkyLightningPurple
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier 
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.88
+        statusLifetime: 30
+      - !type:Jitter
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/AdminSpells.rsi
+      state: disrespect
+  - type: TargetAction
+    interactOnMiss: false
+    range: 50
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    canTargetSelf: false
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 0
+      castDelay: 0.1
+      breakOnMove: false
