@@ -108,7 +108,7 @@ public sealed partial class CP14SellingPlatformWindow : DefaultWindow
         foreach (var request in _economySystem.GetRequests(faction))
         {
             var canFullfill = _tradingSystem.CanFulfillRequest(_cachedPlatform.Value, request);
-            var requestControl = new CP14SellingRequestControl(request, canFullfill);
+            var requestControl = new CP14SellingRequestControl(request, _cachedPlatform.Value.Comp.PlatformMarkupProcent, canFullfill);
 
             requestControl.OnSellAttempt += () => OnRequestSell?.Invoke((request, faction));
             Requests.AddChild(requestControl);

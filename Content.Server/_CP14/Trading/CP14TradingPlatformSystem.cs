@@ -65,7 +65,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             return;
 
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        _cp14Currency.GenerateMoney(balance, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(balance * ent.Comp.PlatformMarkupProcent, Transform(ent).Coordinates);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
 
         UpdateSellingUIState(ent);
