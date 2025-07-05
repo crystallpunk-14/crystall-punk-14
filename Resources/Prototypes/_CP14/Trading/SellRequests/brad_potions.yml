@@ -217,23 +217,3 @@
     reagent: CP14BasicEffectSpeedDown
     amount: 10
     purity: 0.75
-
-- type: cp14TradingRequest
-  id: CP14BasicEffectSleep
-  possibleFactions:
-  - BradPotions
-  requirements:
-  - !type:SolutionResource
-    reagent: CP14BasicEffectSleep
-    amount: 10
-    purity: 0.75
-
-- type: cp14TradingRequest
-  id: CP14BasicEffectUnsleep
-  possibleFactions:
-  - BradPotions
-  requirements:
-  - !type:SolutionResource
-    reagent: CP14BasicEffectUnsleep
-    amount: 10
-    purity: 0.75
