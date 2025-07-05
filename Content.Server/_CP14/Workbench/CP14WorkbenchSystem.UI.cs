@@ -4,6 +4,7 @@
  */
 
 using Content.Shared._CP14.Workbench;
+using Content.Shared.Placeable;
 
 namespace Content.Server._CP14.Workbench;
 
@@ -20,9 +21,12 @@ public sealed partial class CP14WorkbenchSystem
         StartCraft(entity, args.Actor, prototype);
     }
 
-    private void UpdateUIRecipes(Entity<CP14WorkbenchComponent> entity, EntityUid user)
+    private void UpdateUIRecipes(Entity<CP14WorkbenchComponent> entity)
     {
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(entity).Coordinates, entity.Comp.WorkbenchRadius);
+        if (!TryComp<ItemPlacerComponent>(entity.Owner, out var placer))
+            return;
+
+        var placedEntities = placer.PlacedEntities;
 
         var recipes = new List<CP14WorkbenchUiRecipesEntry>();
         foreach (var recipeId in entity.Comp.Recipes)
@@ -31,20 +35,14 @@ public sealed partial class CP14WorkbenchSystem
                 continue;
 
             var canCraft = true;
-            var hidden = false;
 
             foreach (var requirement in indexedRecipe.Requirements)
             {
-                if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities, user))
+                if (!requirement.CheckRequirement(EntityManager, _proto, placedEntities))
                 {
                     canCraft = false;
-                    if (requirement.HideRecipe)
-                        hidden = true;
                 }
             }
-
-            if (hidden)
-                continue;
 
             var entry = new CP14WorkbenchUiRecipesEntry(recipeId, canCraft);
 

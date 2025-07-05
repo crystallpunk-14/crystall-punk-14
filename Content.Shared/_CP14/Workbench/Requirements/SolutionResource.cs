@@ -1,9 +1,7 @@
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
-using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
@@ -24,12 +22,9 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
     [DataField]
     public EntProtoId DummyEntityIcon = "CP14LiquidDropDummy";
 
-    public override bool HideRecipe { get; set; } = false;
-
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+        HashSet<EntityUid> placedEntities)
     {
         var solutionSys = entManager.System<SharedSolutionContainerSystem>();
         foreach (var ent in placedEntities)
@@ -57,7 +52,7 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
         return false;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var solutionSys = entManager.System<SharedSolutionContainerSystem>();
         foreach (var ent in placedEntities)

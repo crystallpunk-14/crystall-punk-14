@@ -11,8 +11,6 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class TagResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public ProtoId<TagPrototype> Tag;
 
@@ -28,8 +26,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
     public override bool CheckRequirement(
         EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+        HashSet<EntityUid> placedEntities)
     {
         var tagSystem = entManager.System<TagSystem>();
 
@@ -48,7 +45,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
+    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var tagSystem = entManager.System<TagSystem>();
 
