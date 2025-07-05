@@ -956,3 +956,10 @@
   id: 8146
   time: '2025-07-05T11:54:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1498
+- author: gogenych
+  changes:
+  - message: Arrival notifications no longer mention the station.
+    type: Tweak
+  id: 8147
+  time: '2025-07-05T14:38:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1501
