@@ -50,6 +50,23 @@
   #  - CP14_EN_Trading
 
 - type: entity
+  parent: CP14TradingPlatform
+  id: CP14TradingPlatformPublic
+  name: public buying dimensional platform
+  description: Allows you to trade with the outside world, through retail trade transactions. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: CP14TradingPlatform
+    platformMarkupProcent: 1.5
+  - type: Sprite
+    drawdepth: FloorTiles
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: old
+    - state: buy
+
+- type: entity
   parent: BaseStructure
   id: CP14TradingSellingPlatform
   name: selling dimensional platform

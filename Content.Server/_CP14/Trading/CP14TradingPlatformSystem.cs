@@ -182,7 +182,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placedEntity);
         }
 
-        var price = _economy.GetPrice(position) ?? 10000;
+        var price = _economy.GetPrice(position) * platform.Comp.PlatformMarkupProcent ?? 10000;
         if (balance < price)
         {
             // Not enough balance to buy the position
@@ -205,7 +205,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
 
-        AddReputation(user, indexedPosition.Faction, (float)price / 100);
+        AddReputation(user, indexedPosition.Faction, price / 100);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
 
