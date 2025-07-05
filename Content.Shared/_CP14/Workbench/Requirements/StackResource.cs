@@ -92,11 +92,6 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         return $"{Loc.GetString(indexedStack.Name)} x{Count}";
     }
 
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
-    }
-
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
         return !protoManager.TryIndex(Stack, out var indexedStack) ? null : indexedStack.Icon;

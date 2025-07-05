@@ -77,11 +77,6 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
         return indexedProto;
     }
 
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
-    {
-        return null;
-    }
-
     private Dictionary<EntProtoId, int> IndexIngredients(EntityManager entManager, HashSet<EntityUid> ingredients)
     {
         var indexedIngredients = new Dictionary<EntProtoId, int>();

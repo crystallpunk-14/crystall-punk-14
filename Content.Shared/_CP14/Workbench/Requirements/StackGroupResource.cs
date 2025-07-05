@@ -75,23 +75,11 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager,
-        IPrototypeManager protoManager)
-    {
-        //Idk how to price this, so we just return 0.
-        return 0;
-    }
-
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
         var indexedGroup = protoManager.Index(Group);
 
         return $"{Loc.GetString(indexedGroup.Name)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

@@ -3,7 +3,6 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
-using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -66,12 +65,6 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
             entManager.DeleteEntity(placedEntity);
         }
     }
-    public override double GetPrice(EntityManager entManager,
-        IPrototypeManager protoManager)
-    {
-        //Idk how to price tags, so just return 0 for now.
-        return 0;
-    }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
@@ -79,11 +72,6 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
             return "Error tag name";
 
         return $"{Loc.GetString(Title)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

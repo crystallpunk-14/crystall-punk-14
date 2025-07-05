@@ -118,11 +118,6 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         return $"{Loc.GetString(indexedMaterial.Name)} x{Count}";
     }
 
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
-    }
-
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
     {
         return !protoManager.TryIndex(Material, out var indexedMaterial) ? null : indexedMaterial.Icon;

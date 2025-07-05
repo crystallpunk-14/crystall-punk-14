@@ -35,29 +35,4 @@ public sealed partial class SkillRequired : CP14WorkbenchCraftRequirement
 
         return haveAllSkills;
     }
-
-    public override double GetPrice(EntityManager entManager,
-        IPrototypeManager protoManager)
-    {
-        return 0;
-    }
-
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
-    {
-    }
-
-    public override string GetRequirementTitle(IPrototypeManager protoManager)
-    {
-        return string.Empty;
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
-    }
-
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
-    {
-        return null;
-    }
 }
