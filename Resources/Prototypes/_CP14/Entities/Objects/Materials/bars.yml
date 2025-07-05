@@ -43,8 +43,6 @@
   - type: Stack
     count: 10
 
-
-
 - type: entity
   id: CP14IronBar1
   parent: BaseItem
@@ -90,6 +88,50 @@
   - type: Stack
     count: 10
 
+- type: entity
+  id: CP14BrassBar1
+  parent: BaseItem
+  name: brass bar
+  suffix: 1
+  description: The best friend for magotechnology. The secrets of its production are hidden.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/brass_bar.rsi
+    layers:
+      - state: bar
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14BrassBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Brass: 10
+
+- type: entity
+  id: CP14BrassBar5
+  parent: CP14BrassBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14BrassBar10
+  parent: CP14BrassBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
 
 
 - type: entity
@@ -133,51 +175,6 @@
   id: CP14GoldBar10
   parent: CP14GoldBar1
   categories: [ DoNotMap ]
-  suffix: 10
-  components:
-  - type: Stack
-    count: 10
-
-
-- type: entity
-  id: CP14GlassSheet1
-  parent: BaseItem
-  name: glass sheet
-  description: Treated quartz glass, transmits light well, and is nice to look at!
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Normal
-  - type: Sprite
-    sprite: _CP14/Objects/Materials/glass.rsi
-    layers:
-      - state: glass
-        map: ["base"]
-  - type: Appearance
-  - type: Stack
-    stackType: CP14GlassSheet
-    count: 1
-    baseLayer: base
-    layerStates:
-    - glass
-    - glass_2
-    - glass_3
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Glass: 10
-
-- type: entity
-  id: CP14GlassSheet5
-  parent: CP14GlassSheet1
-  suffix: 5
-  components:
-  - type: Stack
-    count: 5
-
-- type: entity
-  id: CP14GlassSheet10
-  parent: CP14GlassSheet1
   suffix: 10
   components:
   - type: Stack
@@ -228,3 +225,5 @@
   components:
   - type: Stack
     count: 10
+
+

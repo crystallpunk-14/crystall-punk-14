@@ -9,6 +9,12 @@
   "states": [
     {
       "name": "lightning_strike"
+    },
+    {
+      "name": "speed_music"
+    },
+    {
+      "name": "defib"
     }
   ]
 }

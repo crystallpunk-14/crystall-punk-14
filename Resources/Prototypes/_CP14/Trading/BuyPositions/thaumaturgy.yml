@@ -12,6 +12,16 @@
     product: CP14EnergyCrystalMediumEmpty
 
 - type: cp14TradingPosition
+  id: CP14BrassBar5
+  faction: Thaumaturgy
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Materials/brass_bar.rsi
+    state: bar_2
+  service: !type:CP14BuyItemsService
+    product: CP14BrassBar5
+
+- type: cp14TradingPosition
   id: CP14Paper
   faction: Thaumaturgy
   reputationLevel: 0
@@ -238,8 +248,8 @@
   priceMarkup: 5
   uiPosition: 9
   icon:
-    sprite: _CP14/Actions/Spells/necromancy.rsi
-    state: resurrection
+    sprite: _CP14/Actions/Spells/electromancy.rsi
+    state: defib
   service: !type:CP14BuyItemsService
     product: CP14SpellScrollResurrection
 

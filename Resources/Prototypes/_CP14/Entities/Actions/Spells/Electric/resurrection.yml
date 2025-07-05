@@ -1,20 +1,17 @@
 - type: entity
   id: CP14ActionSpellResurrection
   parent: CP14ActionSpellBase
-  name: Resurrection
-  description: You're trying to put the soul back into the body.
+  name: Revitalizing discharge
+  description: You strike the dying target with a safe electric shock, causing its heart to beat again.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/necromancy.rsi
-    state: resurrection
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.2
   - type: CP14MagicEffectManaCost
-    manaCost: 100
+    manaCost: 50
   - type: CP14MagicEffectAliveTargetRequired
     inverted: true
   - type: CP14MagicEffect
-    magicType: Life
+    magicType: Energia
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -23,20 +20,15 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectResurrection
+      - CP14ElectrifiedEffect
     - !type:CP14SpellResurrectionEffect
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:ChemVomit
-        probability: 0.25
-      - !type:Emote
-        showInChat: false
-        emote: Cough
-        probability: 0.3
       - !type:HealthChange
         damage:
           types:
             Asphyxiation: -500
-            Bloodloss: -10
+            Shock: 10
       - !type:Jitter
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Redi animam meam..."
@@ -45,8 +37,8 @@
     proto: CP14RuneResurrection
   - type: Action
     icon:
-      sprite: _CP14/Actions/Spells/necromancy.rsi
-      state: resurrection
+      sprite: _CP14/Actions/Spells/electromancy.rsi
+      state: defib
   - type: TargetAction
     range: 7
     interactOnMiss: false
@@ -56,8 +48,8 @@
       components:
       - MobState
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 300
-      castDelay: 10
+      cooldown: 150
+      castDelay: 5
       breakOnMove: true
 
 - type: entity
@@ -86,7 +78,7 @@
   - type: Sprite
     layers:
     - state: wave_up
-      color: "#55877a"
+      color: "#e8ff4c"
       shader: unshaded
 
 - type: entity

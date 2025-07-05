@@ -15,7 +15,7 @@
   skillUiPosition: 0, 4
   tree: Electromancy
   icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
+    sprite: _CP14/Actions/Spells/electromancy.rsi
     state: speed_music
   effects:
   - !type:AddAction
@@ -76,4 +76,18 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT2
+
+- type: cp14Skill
+  id: CP14ActionSpellResurrection
+  skillUiPosition: 12, 4
+  tree: Electromancy
+  icon:
+    sprite: _CP14/Actions/Spells/electromancy.rsi
+    state: defib
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellResurrection
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: ElectromancyT3
 
