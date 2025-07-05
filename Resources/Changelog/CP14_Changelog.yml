@@ -974,3 +974,17 @@
   id: 8148
   time: '2025-07-05T17:44:38.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1502
+- author: TheShuEd
+  changes:
+  - message: "The \u201CBrad\u201D faction now places buying orders for pure potions\
+      \ that can be brewed by alchemists."
+    type: Add
+  - message: Public trading platforms are now 50% less profitable (they sell goods
+      at a higher price and buy them at a lower price). This is because adventurers
+      are willing to break into a locked public store that a merchant has locked to
+      sell items without the merchant's markup. Now there is a markup even so, and
+      it may even be more profitable to trade through a merchant.
+    type: Tweak
+  id: 8149
+  time: '2025-07-05T21:09:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1503
