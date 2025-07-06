@@ -1002,3 +1002,12 @@
   id: 8150
   time: '2025-07-06T11:28:57.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1504
+- author: TheShuEd
+  changes:
+  - message: "A new trading faction, \u201CImperial Guard,\u201D has been added, where\
+      \ you can buy items related to guard work. Its contract cannot be purchased\
+      \ publicly, only from this faction. All guard roles have this contract by default."
+    type: Add
+  id: 8151
+  time: '2025-07-06T14:35:50.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1505
