@@ -47,3 +47,8 @@
   id: Tailors
   color: "#d67fd6"
   name: cp14-trade-faction-tailors
+
+- type: cp14TradingFaction
+  id: Guards
+  color: "#385573"
+  name: cp14-trade-faction-guard
