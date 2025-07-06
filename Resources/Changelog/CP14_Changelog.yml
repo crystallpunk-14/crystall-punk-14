@@ -1011,3 +1011,10 @@
   id: 8151
   time: '2025-07-06T14:35:50.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1505
+- author: TheShuEd
+  changes:
+  - message: MRP rules are now applied to the game server.
+    type: Add
+  id: 8152
+  time: '2025-07-06T14:37:43.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1334
