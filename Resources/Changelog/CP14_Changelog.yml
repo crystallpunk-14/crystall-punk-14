@@ -988,3 +988,17 @@
   id: 8149
   time: '2025-07-05T21:09:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1503
+- author: TheShuEd
+  changes:
+  - message: The Guard Department has been brought back into the game. For now, only
+      on Komoss.
+    type: Add
+  - message: "A new game role, \u201CInvestigator,\u201D has been added. It has built-in\
+      \ magical vision for investigating magical crimes."
+    type: Add
+  - message: "Added \u201Csalary platform\u201D. Some roles (currently only the guard\
+      \ department) can collect their salary from this platform every 20 minutes."
+    type: Add
+  id: 8150
+  time: '2025-07-06T11:28:57.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1504
