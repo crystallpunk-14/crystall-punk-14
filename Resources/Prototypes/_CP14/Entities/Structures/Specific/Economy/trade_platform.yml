@@ -122,6 +122,43 @@
     - state: sell
 
 - type: entity
+  parent: BaseStructure
+  id: CP14SalaryPlatform
+  name: salary dimensional platform
+  description: allows you to quickly receive the salary you are entitled to (if, of course, you are supposed to receive a salary from the empire)
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    snapCardinals: true
+    sprite: _CP14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: salary
+  - type: Clickable
+  - type: InteractionOutline
+  - type: CP14SalaryPairoll
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+    whitelist:
+      tags:
+      - CP14Coin
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+
+- type: entity
   id: CP14CashImpact
   categories: [ HideSpawnMenu ]
   save: false

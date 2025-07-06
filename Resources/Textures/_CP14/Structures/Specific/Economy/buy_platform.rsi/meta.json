@@ -20,6 +20,9 @@
       "name": "sell"
     },
     {
+      "name": "salary"
+    },
+    {
       "name": "impact",
       "delays": [
         [

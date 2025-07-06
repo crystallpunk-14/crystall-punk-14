@@ -7,11 +7,19 @@
   startingGear: CP14InvestigatorGear
   icon: "CP14JobIconInvestigator"
   supervisors: cp14-job-supervisors-guard-commander
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: CP14Guard
+      time: 3600 # 1 hours
   special:
     - !type:CP14LearnSkillsSpecial
       skills:
       - CP14ActionSpellMagicSplitting
       - CP14ActionToggleMagicVision
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 75
 
 - type: startingGear
   id: CP14InvestigatorGear

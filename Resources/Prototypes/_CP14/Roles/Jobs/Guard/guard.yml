@@ -11,6 +11,10 @@
     - !type:CP14LearnSkillsSpecial
       skills:
       - SwordMastery
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 50
 
 - type: startingGear
   id: CP14GuardGear

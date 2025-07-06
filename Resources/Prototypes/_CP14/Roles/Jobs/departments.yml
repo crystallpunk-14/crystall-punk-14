@@ -27,7 +27,7 @@
   description: department-CP14Guard-desc
   weight: 9
   color: "#576384"
-  editorHidden: true
+  editorHidden: false
   roles:
   - CP14GuardCommander
   - CP14Investigator
