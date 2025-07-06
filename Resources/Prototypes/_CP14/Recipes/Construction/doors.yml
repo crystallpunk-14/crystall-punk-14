@@ -56,6 +56,62 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14WoodenBirchDoor
+  graph: CP14WoodenBirchDoor
+  startNode: start
+  targetNode: CP14WoodenBirchDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WoodenBirchDoorMirrored
+  graph: CP14WoodenBirchDoor
+  startNode: start
+  targetNode: CP14WoodenBirchDoorMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WoodenBirchDoorWindowed
+  graph: CP14WoodenBirchDoor
+  startNode: start
+  targetNode: CP14WoodenBirchDoorWindowed
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WoodenBirchDoorWindowedMirrored
+  graph: CP14WoodenBirchDoor
+  startNode: start
+  targetNode: CP14WoodenBirchDoorWindowedMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14IronDoor
   graph: CP14IronDoor
   startNode: start
@@ -109,3 +165,4 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+

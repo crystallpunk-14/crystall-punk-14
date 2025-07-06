@@ -1,8 +1,7 @@
 - type: cp14TradingPosition
   id: CP14TradeContractVictoriaGardens
   faction: ContractGuild
-  uiPosition: 0, 0
-  unlockReputationCost: 1
+  uiPosition: 0
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: victoria_garden
@@ -13,11 +12,88 @@
 - type: cp14TradingPosition
   id: CP14TradeContractBradPotions
   faction: ContractGuild
-  uiPosition: 0, 1
-  unlockReputationCost: 1
+  uiPosition: 1
   icon:
     sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
     state: brad_potions
   service: !type:CP14BuyItemsService
     product: CP14TradeContractBradPotions
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractDwarfMining
+  faction: ContractGuild
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: dwarf_mining
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractDwarfMining
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractThaumaturgy
+  faction: ContractGuild
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: magic
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractThaumaturgy
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractHomeDecor
+  faction: ContractGuild
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: house
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractHomeDecor
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractHorticulture
+  faction: ContractGuild
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: horticulture
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractHorticulture
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractButchers
+  faction: ContractGuild
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: butchers
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractButchers
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14TradeContractDairy
+  faction: ContractGuild
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: dairy
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractDairy
+    count: 1
+
+
+- type: cp14TradingPosition
+  id: CP14TradeContractTailors
+  faction: ContractGuild
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: tailors
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractTailors
     count: 1

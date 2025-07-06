@@ -2,10 +2,10 @@
   id: CP14WallmountLampEmpty
   name: crystal wall lamp
   suffix: Empty
-  parent: 
+  parent:
   - CP14BaseWallmount
   - CP14BaseCrystalSlot
-  description: A simple wallmount magical device that converts crystal energy into bright light. 
+  description: A simple wallmount magical device that converts crystal energy into bright light.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Wallmount/wallmount_lamp.rsi
@@ -36,7 +36,8 @@
           True: { visible: true }
           False: { visible: false }
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
       - trigger:
@@ -45,6 +46,14 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14ScrapCopper:
+                min: 1
+                max: 3
   - type: CP14MagicLantern
   - type: CP14MagicEnergyDraw
     energy: -0.1
@@ -76,11 +85,11 @@
     slots:
       crystal_slot:
         startingItem: CP14EnergyCrystalMedium
-        insertSound: 
+        insertSound:
           path: /Audio/_CP14/Items/crystal_insert.ogg
           params:
             variation: 0.05
-        ejectSound: 
+        ejectSound:
           path: /Audio/_CP14/Items/crystal_eject.ogg
           params:
             variation: 0.05
@@ -89,3 +98,4 @@
         whitelist:
           components:
           - CP14MagicEnergyCrystal
+

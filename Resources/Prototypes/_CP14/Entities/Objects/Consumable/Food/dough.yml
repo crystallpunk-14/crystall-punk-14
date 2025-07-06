@@ -20,7 +20,7 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 21
+          Quantity: 10
         - ReagentId: UncookedAnimalProteins
           Quantity: 2
   - type: SliceableFood
@@ -100,7 +100,7 @@
         maxVol: 7 # 1/4 large dough
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.2
+          Quantity: 1.3
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.5
   - type: CP14TemperatureTransformation
@@ -216,7 +216,7 @@
         maxVol: 7 # 1/4 large dough
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.2
+          Quantity: 1.3
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.5
   - type: CP14TemperatureTransformation

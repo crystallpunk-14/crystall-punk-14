@@ -16,6 +16,9 @@ cp14-reagent-desc-blood-elf = The life energy of a magical creature.
 cp14-reagent-name-blood-goblin = Goblin blood
 cp14-reagent-desc-blood-goblin = The life energy of green-skinned creatures.
 
+cp14-reagent-name-blood-monster = Monster blood
+cp14-reagent-desc-blood-monster = The life energy of various monsters.
+
 cp14-reagent-name-bloodflowersap = Bloodrose nectar
 cp14-reagent-desc-bloodflowersap = The nectar of the bloody flowers that grow in former battlefields. When properly mixed with blood, it can produce interesting results.
 
@@ -48,3 +51,6 @@ cp14-reagent-desc-grounded-quartz = A powder obtained from grinding quartz fragm
 
 cp14-reagent-name-chromium-slime = Chromium slime
 cp14-reagent-desc-chromium-slime = A rare substance found in water streams, it has unique properties that allow it to invert the effects of reagents, but can completely ruin a potion if dosed incorrectly.
+
+cp14-reagent-name-silver-needle = Silver needle berries
+cp14-reagent-desc-silver-needle = The berries of a plant that survives the harshest frosts. The juice of these berries slows down metabolism and can treat frostbite.

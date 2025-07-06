@@ -47,7 +47,6 @@
   - Alchemy bomb: 10u vessel that creates effect clouds when thrown
   - Thaumaturgy glasses: Scan items to see their essences
   - Essence collector: Being powered by the energy crystal, it will start sucking in all the essence floating in the air and converting it into useful liquid.
-  - Essence splitter: A device capable of splitting objects into magical essence when overloaded with energy.
 
   <Box>
     <GuideEntityEmbed Entity="CP14Dropper"/>
@@ -59,7 +58,7 @@
   <Box>
     <GuideEntityEmbed Entity="CP14Cauldron"/>
     <GuideEntityEmbed Entity="CP14BaseVat"/>
-    <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
   </Box>
 
   <Box>
@@ -71,7 +70,6 @@
   <Box>
     <GuideEntityEmbed Entity="CP14ClothingEyesThaumaturgyGlasses"/>
     <GuideEntityEmbed Entity="CP14EssenceCollector"/>
-    <GuideEntityEmbed Entity="CP14EssenceSplitter"/>
   </Box>
 
   ## Random Reaction Generation

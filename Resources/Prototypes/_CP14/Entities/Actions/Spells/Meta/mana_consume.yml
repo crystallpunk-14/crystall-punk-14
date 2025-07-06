@@ -1,7 +1,8 @@
 - type: entity
   id: CP14ActionSpellManaConsume
+  parent: CP14ActionSpellBase
   name: Mana consume
-  description: You absorb a small amount of mana from the target. 
+  description: You absorb a small amount of mana from the target.
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
@@ -20,17 +21,15 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaConsume
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: mana_consume
+  - type: TargetAction
   - type: EntityTargetAction
     whitelist:
       components:
       - CP14MagicEnergyContainer
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/Spells/meta.rsi
-      state: mana_consume
     event: !type:CP14ToggleableEntityTargetActionEvent
       cooldown: 5
       castTime: 10
@@ -79,3 +78,4 @@
     - state: particles_down
       color: "#5096d4"
       shader: unshaded
+

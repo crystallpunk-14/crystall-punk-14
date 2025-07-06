@@ -11,7 +11,7 @@
       shader: unshaded
   - type: PointLight
     color: "#f7f00c"
-    energy: 5
+    energy: 2
     radius: 1.8
   - type: SolutionContainerManager
     solutions:
@@ -23,26 +23,22 @@
         - ReagentId: CP14EssenceEnergia
           Quantity: 30
   - type: MeleeWeapon
-    altDisarm: false
-    soundHit:
-        path: /Audio/Weapons/punch3.ogg
-    angle: 0
-    animation: WeaponArcPunch
     damage:
       types:
         Blunt: 3
         Shock: 3
   - type: CP14SpellEffectOnHit
-    prob: 0.3
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Electrocute
-        electrocuteTime: 1
-        electrocuteDamageScale: 1
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -10
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ElectrifiedEffect
+  - type: Damageable
+    damageModifierSet: CP14SlimeElectric
   - type: Destructible
     thresholds:
     - trigger:
@@ -101,6 +97,6 @@
       - CP14ElectrifiedEffect
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Electrocute
-        electrocuteTime: 3.5
-        electrocuteDamageScale: 1
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -30

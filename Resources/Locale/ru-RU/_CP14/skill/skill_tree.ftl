@@ -1,6 +1,3 @@
-cp14-skill-tree-blaksmithing-name = Кузнечное дело
-cp14-skill-tree-blaksmithing-desc = Исследуйте и создавайте новые предметы из металла.
-
 # Magic
 
 cp14-skill-tree-pyrokinetic-name = Пирокинетика
@@ -21,18 +18,27 @@ cp14-skill-tree-healing-desc = Изучайте способы влияния м
 cp14-skill-tree-dimension-name = Дименсиум
 cp14-skill-tree-dimension-desc = Погрузитесь в природу пространства и пустоты.
 
+cp14-skill-tree-electric-name = Электромантия
+cp14-skill-tree-electric-desc = Познайте природу оглушающего шторма, ветра и грозы.
+
 # Body
 
-cp14-skill-tree-atlethic-name = Атлетика
-cp14-skill-tree-atlethic-desc = Развивайте свое тело, расширяя границы доступного.
+cp14-skill-tree-athletic-name = Атлетика
+cp14-skill-tree-athletic-desc = Развивайте свое тело, расширяя границы доступного.
 
 cp14-skill-tree-martial-name = Боевые исскуства
 cp14-skill-tree-martial-desc = Овладейте секретами смертельного оружия, или сделайте оружием свое собственное тело.
 
 # Job
 
-cp14-skill-tree-thaumaturgy-name = Алхимия
-cp14-skill-tree-thaumaturgy-desc = Исскуство создания волшебных зелий, способных убивать, воскрешать из мертвых или превращать существ в овечек. 
+#cp14-skill-tree-thaumaturgy-name = Алхимия
+#cp14-skill-tree-thaumaturgy-desc = Исскуство создания волшебных зелий, способных убивать, воскрешать из мертвых или превращать существ в овечек. 
 
-cp14-skill-tree-blacksmithing-name = Кузнечное дело
-cp14-skill-tree-blacksmithing-desc = Исскуство превращения металла в различные полезные вещи.
+#cp14-skill-tree-blacksmithing-name = Кузнечное дело
+#cp14-skill-tree-blacksmithing-desc = Исскуство превращения металла в различные полезные вещи.
+
+#cp14-skill-tree-trading-name = Торговля
+#cp14-skill-tree-trading-desc = Исскуство познания где, когда, и за сколько продавать и покупать различные предметы.
+
+cp14-skill-tree-craftsman-name = Ремесленничество
+cp14-skill-tree-craftsman-desc = Изучайте навыки и умения для создания и использования различных полезных вещей.

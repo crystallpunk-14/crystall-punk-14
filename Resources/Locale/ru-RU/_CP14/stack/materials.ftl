@@ -9,6 +9,7 @@ cp14-stack-compost = кучи компоста
 
 cp14-stack-copper-bars = медные слитки
 cp14-stack-iron-bars = железные слитки
+cp14-stack-brass-bars = латунные слитки
 cp14-stack-gold-bars = золотые слитки
 cp14-stack-mithril-bars = мифриловые слитки
 

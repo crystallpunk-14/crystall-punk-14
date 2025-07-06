@@ -6,6 +6,18 @@
   equipment:
     pants: CP14ClothingPantsLoincloth
 
+- type: startingGear
+  id: CP14MobSkeletonWizardTownRaid
+  equipment:
+    outerClothing: CP14ClothingOuterClothingBoneArmor
+    cloak: CP14ClothingCloakBoneMage
+    head: CP14ClothingHeadTriangularHatGolden
+    shirt: CP14ClothingShirtCottonBlack
+    pants: CP14ClothingPantsBrown
+    shoes: CP14LongLeatherBoots
+    belt: CP14ModularSkeletonSwordUpgrade
+    neck: CP14ModularIronPickaxe
+
 # TIER 1
 
 - type: startingGear
@@ -24,7 +36,7 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     cloak: CP14ClothingCloakBone
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularSkeletonSword
+    belt: CP14ModularSkeletonSword
     shoes: CP14ClothingShoesSandals
     head: CP14ClothingHeadMetalHeadband
   inhand:
@@ -35,7 +47,7 @@
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularIronDagger
+    belt: CP14ModularCopperSkimitar
     belt2: CP14ModularIronDagger
 
 - type: startingGear
@@ -44,7 +56,7 @@
     shirt: CP14ClothingWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14BowCombat
-    belt1: CP14ClothingBeltQuiverCopperArrow
+    belt: CP14ClothingBeltQuiverCopperArrow
 
 # TIER 2
 
@@ -66,7 +78,7 @@
     cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularSkeletonSwordUpgrade
+    belt: CP14ModularSkeletonSwordUpgrade
     shoes: CP14ClothingShoesSandals
   inhand:
     - CP14BaseShield
@@ -77,8 +89,8 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
-    belt1: CP14ModularIronDaggerTundra
-    belt2: CP14ModularIronDaggerAgony
+    belt: CP14ModularCopperSkimitarTundra
+    belt2: CP14ModularGoldSkimitarAgony
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -89,7 +101,7 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     neck: CP14BowCombat
-    belt1: CP14ClothingBeltQuiverIronArrow
+    belt: CP14ClothingBeltQuiverIronArrow
     belt2: CP14ModularSkeletonSword
     shoes: CP14LongLeatherBoots
 
@@ -103,9 +115,7 @@
     pants: CP14ClothingPantsBrown
     shoes: CP14LongLeatherBoots
     ring2: CP14ClothingCloakAmuletMana
-    belt1: CP14ModularSkeletonSword
-  inhand:
-    - CP14ManaOperationGlove
+    belt: CP14ModularSkeletonSword
 
 - type: startingGear
   id: CP14MobSkeletonBardT2
@@ -115,3 +125,4 @@
     pants: CP14ClothingPantsMercenaryTrousers
     shoes: CP14ClothingShoesAristocraticBlack
     neck: SkeletonGuitarInstrument
+

@@ -24,6 +24,14 @@ cp14-skill-meta-t1-name = Базовая метамагия
 cp14-skill-meta-t2-name = Продвинутая метамагия
 cp14-skill-meta-t3-name = Экспертная метамагия
 
+cp14-skill-athletic-t1-name = Базовая атлетика
+cp14-skill-athletic-t2-name = Продвинутая атлетика
+cp14-skill-athletic-t3-name = Экспертная атлетика
+
+cp14-skill-electric-t1-name = Базовая электромансия
+cp14-skill-electric-t2-name = Продвинутая электромансия
+cp14-skill-electric-t3-name = Экспертная электромансия
+
 cp14-skill-alchemy-vision-name = Взор алхимика
 cp14-skill-alchemy-vision-desc = Вы способны понимать какие именно жидкости находятся в емкостях, при помощи визуального анализа.
 
@@ -32,3 +40,6 @@ cp14-skill-iron-melt-name = Плавка железа
 cp14-skill-gold-melt-name = Плавка золота
 cp14-skill-mithril-melt-name = Плавка мифрила
 cp14-skill-glass-melt-name = Работа со стеклом
+
+cp14-skill-trader-wit-name = Торговая смекалка
+cp14-skill-trader-wit-desc = Вы способны одним взглядом оценить и вычислить точную стоимость предмета в империи.

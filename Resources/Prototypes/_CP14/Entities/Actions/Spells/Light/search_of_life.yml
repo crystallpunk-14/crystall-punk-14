@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellSearchOfLife
+  parent: CP14ActionSpellBase
   name: Search of life
   description: Detects all living things in a large radius around you.
   components:
@@ -23,13 +24,11 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSearchOfLife
-  - type: InstantAction
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: search_of_life
+  - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 30
       castDelay: 1.5
@@ -88,3 +87,12 @@
     - type: Tag
       tags:
       - HideContextMenu
+
+- type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellScrollSearchOfLife
+  name: search of life spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSearchOfLife

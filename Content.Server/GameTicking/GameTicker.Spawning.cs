@@ -275,7 +275,7 @@ namespace Content.Server.GameTicking
 
             _mind.TransferTo(newMind, mob);
 
-            _roles.MindAddJobRole(newMind, silent: silent, jobPrototype:jobId);
+            _roles.MindAddJobRole(newMind, silent: silent, jobPrototype: jobId);
             var jobName = _jobs.MindTryGetJobName(newMind);
             _admin.UpdatePlayerList(player);
 
@@ -296,7 +296,7 @@ namespace Content.Server.GameTicking
                 else
                 {
                     _chatSystem.DispatchStationAnnouncement(station,
-                        Loc.GetString("latejoin-arrival-announcement",
+                        Loc.GetString("cp14-latejoin-arrival-announcement",//CrystallEdge
                             ("character", MetaData(mob).EntityName),
                             ("gender", character.Gender), // CrystallEdge-LastnameGender
                             ("entity", mob),
@@ -477,17 +477,17 @@ namespace Content.Server.GameTicking
                 return spawn;
             }
 
-            if (_mapManager.MapExists(DefaultMap))
+            if (_map.MapExists(DefaultMap))
             {
-                var mapUid = _mapManager.GetMapEntityId(DefaultMap);
+                var mapUid = _map.GetMapOrInvalid(DefaultMap);
                 if (!TerminatingOrDeleted(mapUid))
                     return new EntityCoordinates(mapUid, Vector2.Zero);
             }
 
             // Just pick a point at this point I guess.
-            foreach (var map in _mapManager.GetAllMapIds())
+            foreach (var map in _map.GetAllMapIds())
             {
-                var mapUid = _mapManager.GetMapEntityId(map);
+                var mapUid = _map.GetMapOrInvalid(map);
 
                 if (!metaQuery.TryGetComponent(mapUid, out var meta)
                     || meta.EntityPaused

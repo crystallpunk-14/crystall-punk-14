@@ -6,6 +6,8 @@
   children:
   - CP14_RU_JobAdventurer
   - CP14_RU_JobAlchemist
+  - CP14_RU_JobInnkeeper
+  - CP14_RU_Patrons
   filterEnabled: True
 
 
@@ -26,4 +28,18 @@
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Alchemist.xml"
   children:
   - CP14_RU_Alchemy
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_JobInnkeeper
+  name: Трактирщик
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Innkeepers.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Patrons
+  name: Покровители
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Patrons.xml"
   filterEnabled: True

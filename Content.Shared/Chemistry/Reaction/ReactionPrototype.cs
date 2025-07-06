@@ -51,47 +51,16 @@ namespace Content.Shared.Chemistry.Reaction
         [DataField("requiredMixerCategories")]
         public List<ProtoId<MixingCategoryPrototype>>? MixingCategories;
 
-        // CP14 random reactions begin
         /// <summary>
         /// Reagents created when the reaction occurs.
         /// </summary>
         [DataField("products", customTypeSerializer:typeof(PrototypeIdDictionarySerializer<FixedPoint2, ReagentPrototype>))]
-        public Dictionary<string, FixedPoint2> _products = new(); // CP14 random reactions
-
-        public Dictionary<string, FixedPoint2> Products
-        {
-            get {
-                if (Cp14RandomProducts.Count == 0)
-                    return _products;
-                // New dict because we don't want to modify original products dict
-                Dictionary<string, FixedPoint2> res = new(_products);
-                foreach (var product in Cp14RandomProducts[Cp14RandomProductIndex])
-                {
-                    if (res.ContainsKey(product.Key))
-                        res[product.Key] += product.Value;
-                    else
-                        res[product.Key] = product.Value;
-                }
-                return res;
-            }
-            set {
-                _products = value;
-            }
-        }
-
-        public int Cp14RandomProductIndex = 0;
-
-        /// <summary>
-        /// Random reagents groups, one of which will be selected at the roundstart and will be used as a reaction product.
-        /// </summary>
-        [DataField("cp14RandomProducts")]
-        public List<Dictionary<string, FixedPoint2>> Cp14RandomProducts = new();
-        // CP14 random reactions end
+        public Dictionary<string, FixedPoint2> Products = new();
 
         /// <summary>
         /// Effects to be triggered when the reaction occurs.
         /// </summary>
-        [DataField("effects", serverOnly: true)] public List<EntityEffect> Effects = new();
+        [DataField("effects")] public List<EntityEffect> Effects = new();
 
         /// <summary>
         /// How dangerous is this effect? Stuff like bicaridine should be low, while things like methamphetamine

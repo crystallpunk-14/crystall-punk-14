@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14HandLabeler
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
       - id: CP14Syringe
@@ -24,6 +25,10 @@
         amount: 1
       - id: CP14VialSmall
         amount: 3
+      - id: CP14VialSkullReinforced
+        prob: 0.3
+      - id: CP14VialSkull
+        prob: 0.5
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
@@ -43,9 +48,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
+      - id: CP14ManaOperationGlove
       - id: CP14PaperFolderRed
         amount: 2
       - id: CP14PaperFolderBlue
@@ -72,12 +78,11 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
-      - id: CP14WoodenPlanks10
+      - id: CP14HandLabeler
+      - id: CP14WoodenPlanks20
       - id: CP14CopperBar10
       - id: CP14CopperBar10
       - id: CP14IronBar10
-      - id: CP14GoldBar5
       - id: CP14PaperFolderRed
       - id: CP14PenFeather
         amount: 1
@@ -131,14 +136,8 @@
   - type: StorageFill
     contents:
       - id: CP14StampGuildmaster
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue
-      - id: CP14SpellscrollSignalLightBlue
-        amount: 4
-      - id: CP14SpellscrollSignalLightYellow
-        amount: 4
-      - id: CP14SpellscrollSignalLightRed
-        amount: 4
       - id: CP14ArmorIronChainmailPresets

@@ -7,3 +7,17 @@
     - Airloss
     - Genetic
     - CP14Magic
+
+- type: damageContainer
+  id: CP14BiologicalAnaerobic
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Genetic
+  - CP14Magic
+
+- type: damageContainer
+  id: CP14Spectral
+  supportedGroups:
+  - CP14Magic

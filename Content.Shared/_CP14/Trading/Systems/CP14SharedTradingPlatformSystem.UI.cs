@@ -8,19 +8,17 @@ public abstract partial class CP14SharedTradingPlatformSystem
 {
     private void InitializeUI()
     {
-        SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionUnlockAttempt>(OnUnlockAttempt);
-        SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeUIOpen);
+        SubscribeLocalEvent<CP14TradingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeTradingUIOpen);
     }
 
-    private void OnUnlockAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionUnlockAttempt args)
+    private void OnBeforeTradingUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
-        TryUnlockPosition(args.Actor, args.Position);
-        UpdateUIState(ent, args.Actor);
+        UpdateTradingUIState(ent, args.User);
     }
 
-    private void OnBeforeUIOpen(Entity<CP14TradingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    protected void UpdateTradingUIState(Entity<CP14TradingPlatformComponent> ent, EntityUid user)
     {
-        UpdateUIState(ent, args.User);
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Buy, new CP14TradingPlatformUiState(GetNetEntity(ent)));
     }
 
     public string GetTradeDescription(CP14TradingPositionPrototype position)

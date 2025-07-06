@@ -4,7 +4,7 @@
   name: bucket
   description: It's a boring old bucket.
   categories: [ ForkFiltered ]
-  components: 
+  components:
   - type: Drink
     solution: bucket
     ignoreEmpty: true
@@ -17,6 +17,25 @@
       visible: false
   - type: Item
     size: Ginormous
+  - type: Clothing
+    sprite: _CP14/Objects/Tools/wooden_bucket.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - head
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.98
+        Slash: 0.96
+  - type: ClothingSpeedModifier
+    walkModifier: 0.96
+    sprintModifier: 0.80
   - type: SolutionContainerManager
     solutions:
       bucket:
@@ -61,3 +80,21 @@
   - type: Tag
     tags:
       - Bucket
+
+- type: entity
+  parent: CP14Bucket
+  id: CP14BucketLucens
+  name: lucens bucket
+  description: It's a boring old bucket, made less boring by being blue.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/lucens_bucket.rsi
+  - type: Clothing
+    sprite: _CP14/Objects/Tools/lucens_bucket.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.94
+        Slash: 0.93
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98

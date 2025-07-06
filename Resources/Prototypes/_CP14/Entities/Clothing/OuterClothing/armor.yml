@@ -54,3 +54,23 @@
         Blunt: 0.85
         Slash: 0.80
         Piercing: 0.90
+
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingFish
+  name: fish suit
+  description: smells horible....
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/fish_suit.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/fish_suit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Cold: 0.9
+        Slash: 0.92
+  - type: FactionClothing
+    faction: CP14Fishies
+

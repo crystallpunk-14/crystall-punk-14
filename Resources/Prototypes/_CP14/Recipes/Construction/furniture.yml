@@ -185,3 +185,16 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14Furnace
+  graph: CP14Furnace
+  startNode: start
+  targetNode: CP14Furnace
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

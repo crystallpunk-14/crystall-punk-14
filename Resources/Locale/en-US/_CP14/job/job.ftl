@@ -6,6 +6,9 @@ cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. M
 cp14-job-name-guard = Guard
 cp14-job-desc-guard = A fighting unit of the Empire, sworn to protect its people. Watch for safety, and defend others from possible dangers.
 
+cp14-job-name-investigator = Investigator
+cp14-job-desc-investigator = Specialist in capturing and neutralizing particularly dangerous magical criminals.
+
 # Trade guild
 
 cp14-job-name-commandant = Commandant
@@ -34,4 +37,12 @@ cp14-job-name-blacksmith = Blacksmith
 cp14-job-desc-blacksmith = Create and improve equipment for everyone in need! You have the power of metal and fire in your hands, and only you know how to use them carefully to create masterpieces.
 
 cp14-job-name-apprentice = Apprentice
-cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Choose a specialisation in equipment, and try to help others in their work, in exchange for a salary and invaluable experience.
+cp14-job-desc-apprentice = A peaceful citizen of the empire, just beginning to learn the subtleties of various sciences. Try to help others in their work, in exchange for a salary and invaluable experience.
+
+# Demigods
+
+cp14-job-name-god-merkas = Merkas
+cp14-job-desc-god-merkas = God of purity and healing. TODO
+
+cp14-job-name-god-lumera = Lumera
+cp14-job-desc-god-lumera = Patroness of the night sky and knowledge. Expand your influence by helping mortals gain new knowledge.

@@ -88,3 +88,16 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeBoneSword
+
+- type: entity
+  parent: CP14ModularBladeSwordBase
+  id: CP14ModularBladeWoodenSword
+  name: wooden sword blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Sword/wooden_sword.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeWoodenSword

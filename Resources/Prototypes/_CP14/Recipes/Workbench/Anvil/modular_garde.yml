@@ -5,10 +5,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -19,10 +18,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -33,10 +31,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -47,10 +44,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
@@ -63,10 +59,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -77,10 +72,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
@@ -91,10 +85,9 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
@@ -105,11 +98,11 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 4
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
   result: CP14ModularGardeSturdyMithril
+

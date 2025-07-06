@@ -72,16 +72,9 @@
     speed: 3.5
     dis: 2
 
-- type: entityLootTable
-  id: CP14GatherAirLily
-  entries:
-  - id: CP14AirLily
-    amount: 2
-    maxAmount: 3
-
 - type: entity
   id: CP14GatherableWaterAirLily
-  parent: 
+  parent:
   - CP14GatherableBase
   - CP14WaterLilies
   name: air lily
@@ -107,7 +100,10 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherAirLily
+      All: !type:AllSelector
+        children:
+        - id: CP14AirLily
+        - id: CP14AirLily
 
 
 
@@ -149,5 +145,4 @@
         big8: ""
   - type: CP14WaveShader
     speed: 2.5
-    dis: 3 
-  
+    dis: 3

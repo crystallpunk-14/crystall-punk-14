@@ -38,7 +38,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -128,6 +128,9 @@
   - type: CP14MagicEnergyDraw #Cool x3 mana regen!
     energy: 1.5
     delay: 3
+  - type: CP14AuraImprint
+    imprintLength: 6 #Short imprint hehe
+    imprintColor: "#919e19"
   - type: Hands
     handDisplacement:
       sizeMaps:

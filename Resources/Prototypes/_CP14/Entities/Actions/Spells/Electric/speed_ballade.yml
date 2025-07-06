@@ -1,0 +1,72 @@
+- type: entity
+  id: CP14ActionSpellSpeedBallade
+  parent: CP14ActionSpellBase
+  name: Speed ballade
+  description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 1
+  - type: CP14MagicEffectManaCost
+    manaCost: 1
+  - type: CP14MagicEffect
+    magicType: Energia
+    effects:
+    - !type:CP14SpellArea
+      affectCaster: true
+      range: 5
+      maxTargets: 4
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectSpeedBallade
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.2
+          sprintSpeedModifier: 1.2
+          statusLifetime: 1.8
+  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneSpeedBallade
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/electromancy.rsi
+      state: speed_music
+  - type: InstantAction
+    event: !type:CP14ToggleableInstantActionEvent
+      effectFrequency: 1
+      cooldown: 15
+      castTime: 120
+      hidden: true
+
+- type: entity
+  id: CP14ImpactEffectSpeedBallade
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_5
+      color: "#e8cb56"
+      shader: unshaded
+
+- type: entity
+  id: CP14RuneSpeedBallade
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#e8cb56"
+  - type: Sprite
+    sprite: _CP14/Effects/music.rsi
+    layers:
+    - state: notes_3
+      color: "#e8cb56"
+      shader: unshaded
+

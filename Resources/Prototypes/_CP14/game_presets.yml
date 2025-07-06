@@ -19,7 +19,7 @@
   showInVote: false
   cP14Allowed: true
   rules:
-    - CP14RoundObjectivesRule
+    #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
     - Sandbox
 
@@ -30,7 +30,7 @@
   showInVote: true
   cP14Allowed: true
   rules:
-    - CP14RoundObjectivesRule
+    #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
 
 - type: gamePreset
@@ -40,6 +40,7 @@
   showInVote: true
   cP14Allowed: true
   rules:
-    - CP14RoundObjectivesRule
+    #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
     - CP14BloodMoonRule
+

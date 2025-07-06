@@ -43,7 +43,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -210,7 +210,7 @@
     attributes:
       proper: true
   - type: MobPrice
-    price: 1500 # Kidnapping a living person and selling them for cred is a good move.
+    price: 150 # Kidnapping a living person and selling them for cred is a good move.
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
   - type: Tag
     tags:
@@ -231,8 +231,8 @@
       types:
         Cold: 0.25
         Bloodloss: 0.25
-  - type: CP14SkillStorage
   - type: CP14TradingReputation
+  - type: CP14AuraImprint
 
 
 - type: entity
@@ -365,7 +365,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -400,6 +400,7 @@
   - BaseMob
   - CP14MobDamageable
   - CP14MobMagical
+  - CP14BaseMobSpecies
   id: CP14BaseMobSpeciesNoLife
   categories: [ ForkFiltered ]
   abstract: true
@@ -438,7 +439,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]

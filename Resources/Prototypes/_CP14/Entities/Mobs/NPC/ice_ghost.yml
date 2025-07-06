@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobIceSpectre
-  parent: 
+  parent:
   - BaseMob
   - MobCombat
   categories: [ ForkFiltered ]
@@ -27,7 +27,7 @@
         mask:
         - FlyingMobMask
         layer:
-        - FlyingMobLayer 
+        - FlyingMobLayer
         - Opaque
   - type: NPCUseActionOnTarget
     actionId: CP14ActionSpellIceShardsGhost
@@ -82,11 +82,14 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -2.0
-  - type: EntityWorldTargetAction
+  - type: Action
     useDelay: 1
+  - type: TargetAction
     checkCanAccess: true
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 0.5
       castDelay: 0.2
       breakOnMove: false
       hidden: true
+

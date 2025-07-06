@@ -54,9 +54,9 @@
   suffix: terra
   components:
   - type: PointLight
-    color: "#70533f"
+    color: "#1cea42"
   - type: Sprite
-    color: "#70533f"
+    color: "#1cea42"
   - type: TimedSpawner
     prototypes:
     - CP14EssenceEarth
@@ -125,7 +125,8 @@
   - type: TimedSpawner
     prototypes:
     - CP14EssenceChaos
-    
+
 # Complex tier 1
 
 #TODO
+

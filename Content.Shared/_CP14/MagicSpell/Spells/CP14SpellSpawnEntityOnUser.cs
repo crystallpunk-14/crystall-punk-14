@@ -15,7 +15,7 @@ public sealed partial class CP14SpellSpawnEntityOnUser : CP14SpellEffect
 
         foreach (var spawn in Spawns)
         {
-            entManager.SpawnAtPosition(spawn, transformComponent.Coordinates);
+            entManager.PredictedSpawnAtPosition(spawn, transformComponent.Coordinates);
         }
     }
 }

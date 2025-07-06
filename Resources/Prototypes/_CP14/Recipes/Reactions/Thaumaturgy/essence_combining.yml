@@ -141,3 +141,17 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
+
+- type: reaction
+  id: CP14EssenceBeast
+  minTemp: 600
+  reactants:
+    CP14EssenceMotion:
+      amount: 1
+    CP14EssenceLife:
+      amount: 1
+  products:
+    CP14EssenceBeast: 2
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150

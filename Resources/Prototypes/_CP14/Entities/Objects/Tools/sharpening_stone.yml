@@ -29,3 +29,5 @@
   - type: Tag
     tags:
     - CP14SharpeningStone
+  - type: StaticPrice
+    price: 3

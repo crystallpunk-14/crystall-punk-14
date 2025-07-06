@@ -10,9 +10,7 @@
       amount: 1
   products:
     CP14EssenceFire: 0.5
-  cp14RandomProducts:
-  - CP14EssenceLife: 0.5
-  - CP14EssenceMotion: 0.5
+    CP14EssenceMotion: 0.5
 
 # Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
 
@@ -42,4 +40,32 @@
       amount: 1
   products:
     CP14BasicEffectSpeedUp: 2
+    CP14BasicEffectJitter: 1
+
+- type: reaction
+  id: CP14DayflinAdmixture3
+  minTemp: 500
+  reactants:
+    CP14YellowDayflinPulp:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectHealStam:
+      amount: 1
+  products:
+    CP14BasicEffectDamageStam: 2
+    CP14BasicEffectJitter: 1
+
+- type: reaction
+  id: CP14DayflinAdmixture4
+  minTemp: 500
+  reactants:
+    CP14YellowDayflinPulp:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectDamageStam:
+      amount: 1
+  products:
+    CP14BasicEffectHealStam: 2
     CP14BasicEffectJitter: 1

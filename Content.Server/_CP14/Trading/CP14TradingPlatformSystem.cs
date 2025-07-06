@@ -1,15 +1,17 @@
 using Content.Server._CP14.Currency;
-using Content.Server._CP14.MagicEnergy;
 using Content.Server.Cargo.Systems;
-using Content.Shared._CP14.MagicEnergy;
+using Content.Server.Storage.Components;
+using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
 using Content.Shared._CP14.Trading.Systems;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
 using Content.Shared.Tag;
+using Content.Shared.UserInterface;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
@@ -23,53 +25,143 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
     [Dependency] private readonly CP14CurrencySystem _cp14Currency = default!;
     [Dependency] private readonly CP14StationEconomySystem _economy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14TradingPlatformComponent, CP14TradingPositionBuyAttempt>(OnBuyAttempt);
-        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14MagicEnergyOverloadEvent>(OnMagicOverload);
+
+        SubscribeLocalEvent<CP14SellingPlatformComponent, BeforeActivatableUIOpenEvent>(OnBeforeSellingUIOpen);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, ItemPlacedEvent>(OnItemPlaced);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, ItemRemovedEvent>(OnItemRemoved);
+
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14TradingSellAttempt>(OnSellAttempt);
+        SubscribeLocalEvent<CP14SellingPlatformComponent, CP14TradingRequestSellAttempt>(OnSellRequestAttempt);
     }
 
-    private void OnMagicOverload(Entity<CP14SellingPlatformComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    private void OnSellAttempt(Entity<CP14SellingPlatformComponent> ent, ref CP14TradingSellAttempt args)
     {
-        _magicEnergy.ClearEnergy(ent.Owner);
-
         if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
             return;
 
-        double price = 0;
+        double balance = 0;
         foreach (var placed in itemPlacer.PlacedEntities)
         {
-            if (HasComp<MobStateComponent>(placed))
+            if (!CanSell(placed))
                 continue;
 
-            var placedPrice = _price.GetPrice(placed);
+            var price = _price.GetPrice(placed);
 
-            if (placedPrice <= 0)
+            if (price <= 0)
                 continue;
 
-            price += placedPrice;
+            balance += _price.GetPrice(placed);
             QueueDel(placed);
         }
 
+        if (balance <= 0)
+            return;
+
         _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
-        _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
+        _cp14Currency.GenerateMoney(balance * ent.Comp.PlatformMarkupProcent, Transform(ent).Coordinates);
         SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
+
+        UpdateSellingUIState(ent);
+    }
+
+    private void OnSellRequestAttempt(Entity<CP14SellingPlatformComponent> ent, ref CP14TradingRequestSellAttempt args)
+    {
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        if (!CanFulfillRequest(ent, args.Request))
+            return;
+
+        if (!Proto.TryIndex(args.Request, out var indexedRequest))
+            return;
+
+        if (!_economy.TryRerollRequest(args.Faction, args.Request))
+            return;
+
+        foreach (var req in indexedRequest.Requirements)
+        {
+            req.PostCraft(EntityManager, Proto, itemPlacer.PlacedEntities);
+        }
+
+        _audio.PlayPvs(ent.Comp.SellSound, Transform(ent).Coordinates);
+        var price = _economy.GetPrice(indexedRequest) * ent.Comp.PlatformMarkupProcent ?? 0;
+        _cp14Currency.GenerateMoney(price, Transform(ent).Coordinates);
+        AddReputation(args.Actor, args.Faction, price * indexedRequest.ReputationCashback);
+        SpawnAtPosition(ent.Comp.SellVisual, Transform(ent).Coordinates);
+
+        UpdateSellingUIState(ent);
+    }
+
+    private void OnItemRemoved(Entity<CP14SellingPlatformComponent> ent, ref ItemRemovedEvent args)
+    {
+        UpdateSellingUIState(ent);
+    }
+
+    private void OnItemPlaced(Entity<CP14SellingPlatformComponent> ent, ref ItemPlacedEvent args)
+    {
+        UpdateSellingUIState(ent);
     }
 
     private void OnBuyAttempt(Entity<CP14TradingPlatformComponent> ent, ref CP14TradingPositionBuyAttempt args)
     {
         TryBuyPosition(args.Actor, ent, args.Position);
-        UpdateUIState(ent, args.Actor);
+        UpdateTradingUIState(ent, args.Actor);
+    }
+
+    private void OnBeforeSellingUIOpen(Entity<CP14SellingPlatformComponent> ent, ref BeforeActivatableUIOpenEvent args)
+    {
+        UpdateSellingUIState(ent);
+    }
+
+    private void UpdateSellingUIState(Entity<CP14SellingPlatformComponent> ent)
+    {
+        if (!TryComp<ItemPlacerComponent>(ent, out var itemPlacer))
+            return;
+
+        //Calculate
+        double balance = 0;
+        foreach (var placed in itemPlacer.PlacedEntities)
+        {
+            if (!CanSell(placed))
+                continue;
+
+            balance += _price.GetPrice(placed);
+        }
+
+        _userInterface.SetUiState(ent.Owner, CP14TradingUiKey.Sell, new CP14SellingPlatformUiState(GetNetEntity(ent), (int)(balance * ent.Comp.PlatformMarkupProcent)));
+    }
+
+    public bool CanSell(EntityUid uid)
+    {
+        if (_tag.HasTag(uid, "CP14Coin")) //Boo hardcoding
+            return false;
+        if (HasComp<MobStateComponent>(uid))
+            return false;
+        if (HasComp<EntityStorageComponent>(uid))
+            return false;
+        if (HasComp<StorageComponent>(uid))
+            return false;
+
+        var proto = MetaData(uid).EntityPrototype;
+        if (proto != null && !proto.ID.StartsWith("CP14")) //Shitfix, we dont wanna sell anything vanilla (like mob organs)
+            return false;
+
+        return true;
     }
 
     public bool TryBuyPosition(Entity<CP14TradingReputationComponent?> user, Entity<CP14TradingPlatformComponent> platform, ProtoId<CP14TradingPositionPrototype> position)
     {
-        if (!CanBuyPosition(user, platform!, position))
+        if (Timing.CurTime < platform.Comp.NextBuyTime)
+            return false;
+
+        if (!CanBuyPosition(user, position))
             return false;
 
         if (!Proto.TryIndex(position, out var indexedPosition))
@@ -90,7 +182,7 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
             balance += _price.GetPrice(placedEntity);
         }
 
-        var price = _economy.GetPrice(position) ?? 10000;
+        var price = _economy.GetPrice(position) * platform.Comp.PlatformMarkupProcent ?? 10000;
         if (balance < price)
         {
             // Not enough balance to buy the position
@@ -112,8 +204,8 @@ public sealed partial class CP14TradingPlatformSystem : CP14SharedTradingPlatfor
 
         if (indexedPosition.Service is not null)
             indexedPosition.Service.Buy(EntityManager, Proto, platform);
-        user.Comp.Reputation[indexedPosition.Faction] += (float)price / 10;
-        Dirty(user);
+
+        AddReputation(user, indexedPosition.Faction, price / 100);
 
         _audio.PlayPvs(platform.Comp.BuySound, Transform(platform).Coordinates);
 

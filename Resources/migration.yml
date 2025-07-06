@@ -188,7 +188,7 @@ CP14VialTinyChromiumSlime: CP14VialSmall
 CP14VialTinyLumiMushroom: CP14VialSmall
 CP14VialSmallHealthPotion: CP14VialSmall
 CP14VialSmallManaPotion: CP14VialSmall
-CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting 
+CP14SpellScrollCounterSpell: CP14ActionSpellMagicSplitting
 
 #2025-04-03
 CP14TravelingStoreshipAnchor: null
@@ -265,7 +265,7 @@ CP14FenceWoodSmallGate: CP14FenceGateWooden
 CP14FenceIronGrilleStraight: CP14FenceBigIron
 CP14FenceIronGrilleGate: CP14FenceGateBigIron
 CP14FenceIronGrilleGateGuard: CP14FenceGateBigIronGuardBarracks
-CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIronGuildmaster 
+CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIronGuildmaster
 CP14FenceIronGrilleGateDemiplaneCrystal: CP14FenceGateBigIronDemiplaneCrystal
 CP14FenceIronGrilleWindowStraight: CP14FenceWindowIron
 
@@ -337,6 +337,33 @@ CP14WoodenChestFilledFarmSeeds: CP14SackFarmingSeedFull
 CP14WoodenChestFilledEnergyCrystals: null
 CP14WoodenChestFilledAlchemy: null
 CP14WoodenChestFilledCheese: null
+
+#2025-05-06
+CP14ClothingRingFireball: null
+CP14ClothingRingFlashLight: null
+CP14ClothingRingIceShards: null
+
+# 2025-04-06
+CP14BaseMop: CP14ModularWoodMop
+CP14CarpetPink: CP14CarpetPurple
+
+#2025-15-06
+CP14FoodMeatMole: CP14FoodMeatMonster
+CP14FoodMeatMoleCooked: CP14FoodMeatMonsterCooked
+CP14FoodMeatMoleLeg: CP14FoodMeatMonsterLeg
+CP14FoodMeatMoleLegCooked: CP14FoodMeatMonsterLegCooked
+CP14FoodMeatMoleSlice: CP14FoodMeatMonsterSlice
+CP14FoodMeatMoleCookedSlice: CP14FoodMeatMonsterCookedSlice
+
+#2025-16-06
+CP14SpellscrollSignalLightBlue: null
+CP14SpellscrollSignalLightRed: null
+CP14SpellscrollSignalLightYellow: null
+
+#2025-28-06
+CP14SpellScrollMagicSplitting: null
+CP14AlchemyFurnaceDebug: CP14FurnaceDebug
+CP14AlchemyFurnace: CP14Furnace
 
 # <---> CrystallEdge migration zone end
 
@@ -479,15 +506,14 @@ SalvagePartsT4Spawner: SalvageLootSpawner
 SalvagePartsT3Spawner: SalvageLootSpawner
 SalvagePartsT3T4Spawner: SalvageLootSpawner
 SalvagePartsT2Spawner: SalvageLootSpawner
-AdvancedCapacitorStockPart: CapacitorStockPart
-SuperCapacitorStockPart: CapacitorStockPart
-QuadraticCapacitorStockPart: CapacitorStockPart
-NanoManipulatorStockPart: MicroManipulatorStockPart
+#SuperCapacitorStockPart: CapacitorStockPart
+#QuadraticCapacitorStockPart: CapacitorStockPart
+#NanoManipulatorStockPart: MicroManipulatorStockPart
 PicoManipulatorStockPart: MicroManipulatorStockPart
 FemtoManipulatorStockPart: MicroManipulatorStockPart
-AdvancedMatterBinStockPart: MatterBinStockPart
-SuperMatterBinStockPart: MatterBinStockPart
-BluespaceMatterBinStockPart: MatterBinStockPart
+#AdvancedMatterBinStockPart: MatterBinStockPart
+#SuperMatterBinStockPart: MatterBinStockPart
+#BluespaceMatterBinStockPart: MatterBinStockPart
 AnsibleSubspaceStockPart: null
 FilterSubspaceStockPart: null
 AmplifierSubspaceStockPart: null
@@ -962,3 +988,66 @@ AirlockMaintIntLocked: AirlockMaintLocked
 # 2025-04-26
 ComputerCargoShuttle: ComputerShuttleCargo
 CargoShuttleComputerCircuitboard: CargoShuttleConsoleCircuitboard
+
+# 2025-05-02
+CigPackMixedNasty: CigPackMixed
+CigPackMixedMedical: CigPackMixed
+CigaretteIpecac: CigaretteNutriment
+CigarettePax: CigaretteSaline
+CigaretteTHC: CigaretteRobustHarvest
+CigaretteMuteToxin: CigaretteSodiumPolyacrylate
+CigaretteSpaceDrugs: CigaretteLipolicide
+CigaretteMilk: CigaretteHaloperidol
+CigaretteBread: CigaretteBbqSauce
+
+# 2025-05-09
+ClothingOuterHardsuitBasic: ClothingOuterHardsuitEVA
+ClothingHeadHelmetHardsuitBasic: null
+SuitStorageBasic: SuitStorageEVA
+
+# 2025-05-18
+ClothingNeckCloakMiner: null
+
+# 2025-05-22
+MatterBinStockPart: MicroManipulatorStockPart
+CapacitorStockPart: MicroManipulatorStockPart
+
+# 2025-05-26 Turrets
+WeaponEnergyTurretStation: WeaponEnergyTurretSecurity
+WeaponEnergyTurretStationControlPanel: WeaponEnergyTurretSecurityControlPanel
+WeaponEnergyTurretStationMachineCircuitboard: WeaponEnergyTurretSecurityMachineCircuitboard
+
+# 2025-05-30
+SpawnHonkBot: SpawnMobHonkBot
+
+# 2025-06-01
+CrateFoodPizzaLarge: CrateFoodPizza
+CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
+
+# 2025-06-09
+BarSignAlignTile: BarSign
+BarSignComboCafeAlignTile: BarSignComboCafe
+BarSignEmergencyRumPartyAlignTile: BarSignEmergencyRumParty
+BarSignLV426AlignTile: BarSignLV426
+BarSignMaidCafeAlignTile: BarSignMaidCafe
+BarSignMalteseFalconAlignTile: BarSignMalteseFalcon
+BarSignOfficerBeerskyAlignTile: BarSignOfficerBeersky
+BarSignRobustaCafeAlignTile: BarSignRobustaCafe
+BarSignTheAleNathAlignTile: BarSignTheAleNath
+BarSignTheBirdCageAlignTile: BarSignTheBirdCage
+BarSignTheCoderbusAlignTile: BarSignTheCoderbus
+BarSignTheDrunkCarpAlignTile: BarSignTheDrunkCarp
+BarSignEngineChangeAlignTile: BarSignEngineChange
+BarSignTheHarmbatonAlignTile: BarSignTheHarmbaton
+BarSignTheLightbulbAlignTile: BarSignTheLightbulb
+BarSignTheLooseGooseAlignTile: BarSignTheLooseGoose
+BarSignTheNetAlignTile: BarSignTheNet
+BarSignTheOuterSpessAlignTile: BarSignTheOuterSpess
+BarSignTheSinguloAlignTile: BarSignTheSingulo
+BarSignTheSunAlignTile: BarSignTheSun
+BarSignWiggleRoomAlignTile: BarSignWiggleRoom
+BarSignZocaloAlignTile: BarSignZocalo
+BarSignEmprahAlignTile: BarSignEmprah
+BarSignSpacebucksAlignTile: BarSignSpacebucks
+BarSignMaltroachAlignTile: BarSignMaltroach
+BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes

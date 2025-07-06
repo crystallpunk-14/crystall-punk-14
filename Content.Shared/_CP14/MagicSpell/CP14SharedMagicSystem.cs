@@ -1,18 +1,17 @@
-using System.Linq;
 using System.Text;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared._CP14.MagicSpellStorage;
+using Content.Shared._CP14.MagicVision;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -25,7 +24,6 @@ namespace Content.Shared._CP14.MagicSpell;
 public abstract partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -35,6 +33,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly CP14SharedMagicVisionSystem _magicVision = default!;
 
     private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;
     private EntityQuery<CP14MagicEffectComponent> _magicEffectQuery;
@@ -165,9 +164,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
-        if (_net.IsClient)
-            return;
-
         foreach (var effect in ent.Comp.TelegraphyEffects)
         {
             effect.Effect(EntityManager, args);
@@ -179,12 +175,22 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
 
-       if (_net.IsClient)
-            return;
-
         foreach (var effect in ent.Comp.Effects)
         {
             effect.Effect(EntityManager, args);
+        }
+
+        if (args.User is not null
+            && TryComp<ActionComponent>(ent, out var actionComp)
+            && TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
+        {
+            _magicVision.SpawnMagicVision(
+                Transform(args.User.Value).Coordinates,
+                actionComp.Icon,
+                Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
+                TimeSpan.FromSeconds((float)manaCost.ManaCost * 50),
+                args.User,
+                args.Position);
         }
     }
 

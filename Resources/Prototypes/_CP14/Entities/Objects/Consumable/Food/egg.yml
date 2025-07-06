@@ -8,7 +8,7 @@
   categories: [ ForkFiltered ]
   components:
   - type: Food
-    trash: 
+    trash:
     - CP14Eggshells
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Food/egg.rsi
@@ -22,6 +22,8 @@
         reagents:
         - ReagentId: Egg
           Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2
   - type: DrawableSolution
     solution: food
   - type: SolutionSpiker

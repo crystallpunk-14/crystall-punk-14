@@ -1,3 +1,4 @@
+# Cheeses
 - type: entity
   id: CP14FoodCheeseWheel
   parent: FoodInjectableBase
@@ -21,6 +22,8 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 21
+        - ReagentId: Protein
+          Quantity: 15 # 5 parts * 3 slices * 1 protein
   - type: SliceableFood
     count: 5
     slice: CP14FoodCheesePart
@@ -51,10 +54,11 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 6 # 1/5 cheese wheel
         reagents:
         - ReagentId: Nutriment
           Quantity: 4.2
+        - ReagentId: Protein
+          Quantity: 3 # 3 slices * 1 protein
   - type: SliceableFood
     count: 3
     slice: CP14FoodCheeseSlice
@@ -89,6 +93,200 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.4
+        - ReagentId: Protein
+          Quantity: 1
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CheeseSandwich
+
+# Blue Cheese (50% more protein)
+- type: entity
+  id: CP14FoodBlueCheeseWheel
+  parent: CP14FoodCheeseWheel
+  name: blue cheese wheel
+  description: A wheel of cheese with distinctive blue veins. Strong aroma!
+  components:
+  - type: Sprite
+    layers:
+      - state: blue_cheese_wheel
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - pungent
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: Protein
+          Quantity: 22.5 # 15 * 1.5 (50% more)
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodBlueCheesePart
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: CP14FoodBlueCheesePart
+  parent: CP14FoodCheesePart
+  name: blue cheese wedge
+  description: A triangle of pungent blue-veined cheese.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - pungent
+  - type: Sprite
+    layers:
+      - state: blue_cheese_part
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          blue_cheese_part: ""
+          blue_cheese_part2: ""
+          blue_cheese_part3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 of wheel
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6 # 30/5
+        - ReagentId: Protein
+          Quantity: 4.5 # 22.5/5
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodBlueCheeseSlice
+  - type: StaticPrice
+    price: 4
+
+- type: entity
+  id: CP14FoodBlueCheeseSlice
+  parent: CP14FoodCheeseSlice
+  name: blue cheese slice
+  description: A thin slice of pungent blue cheese.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - pungent
+  - type: Sprite
+    layers:
+      - state: blue_cheese_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          blue_cheese_slice: ""
+          blue_cheese_slice2: ""
+          blue_cheese_slice3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2 # 1/3 of part
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2 # 6/3
+        - ReagentId: Protein
+          Quantity: 1.5 # 4.5/3
+  - type: StaticPrice
+    price: 1
+
+# Aged Cheese (100% more protein)
+- type: entity
+  id: CP14FoodAgedCheeseWheel
+  parent: CP14FoodCheeseWheel
+  name: aged cheese wheel
+  description: Hard cheese aged for months to develop rich flavor.
+  components:
+  - type: Sprite
+    layers:
+      - state: aged_cheese_wheel
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - savory
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 45
+        - ReagentId: Protein
+          Quantity: 30 # 15 * 2 (100% more)
+  - type: SliceableFood
+    count: 5
+    slice: CP14FoodAgedCheesePart
+  - type: StaticPrice
+    price: 35
+
+- type: entity
+  id: CP14FoodAgedCheesePart
+  parent: CP14FoodCheesePart
+  name: aged cheese wedge
+  description: A triangle of richly flavored aged cheese.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - savory
+  - type: Sprite
+    layers:
+      - state: aged_cheese_part
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          aged_cheese_part: ""
+          aged_cheese_part2: ""
+          aged_cheese_part3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6 # 1/5 of wheel
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9 # 45/5
+        - ReagentId: Protein
+          Quantity: 6 # 30/5
+  - type: SliceableFood
+    count: 3
+    slice: CP14FoodAgedCheeseSlice
+  - type: StaticPrice
+    price: 7
+
+- type: entity
+  id: CP14FoodAgedCheeseSlice
+  parent: CP14FoodCheeseSlice
+  name: aged cheese slice
+  description: A thin slice of richly flavored aged cheese.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - savory
+  - type: Sprite
+    layers:
+      - state: aged_cheese_slice
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          aged_cheese_slice: ""
+          aged_cheese_slice2: ""
+          aged_cheese_slice3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2 # 1/3 of part
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3 # 9/3
+        - ReagentId: Protein
+          Quantity: 2 # 6/3
+  - type: StaticPrice
+    price: 2

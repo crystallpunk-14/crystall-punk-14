@@ -7,6 +7,14 @@
     group: Merchant
 
 - type: entity
+  parent: CP14KeyCopperBlank
+  id: CP14KeyMercantShopPublic
+  suffix: Merchant public shop
+  components:
+  - type: CP14Key
+    autoGenerateShape: ShopPublic
+
+- type: entity
   parent: CP14KeyIronBlank
   id: CP14KeyMercantShop1
   suffix: Merchant shop 1
@@ -29,3 +37,4 @@
   components:
   - type: CP14Key
     autoGenerateShape: Shop3
+

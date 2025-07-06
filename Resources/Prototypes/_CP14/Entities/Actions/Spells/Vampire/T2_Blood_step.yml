@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellVampireBloodStep
+  parent: CP14ActionSpellBase
   name: Blood step
   description: A step through the gash of reality that allows you to cover a small of distance quickly
   components:
@@ -18,16 +19,15 @@
       needVision: false
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectBloodStep
-  - type: EntityWorldTargetAction
-    checkCanAccess: false
-    range: 10
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: blood_step
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 40
       hidden: true
       breakOnMove: false
@@ -42,3 +42,4 @@
     layers:
     - state: wave_up
       color: red
+

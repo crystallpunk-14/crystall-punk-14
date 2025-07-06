@@ -78,3 +78,14 @@
     sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/jagermeister_trousers.rsi
+
+- type: entity
+  parent: CP14ClothingPantsBase
+  id: CP14ClothingPantsHakama
+  name: hakama
+  description: Traditional long pants of a traveler from distant lands.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Pants/hakama.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Pants/hakama.rsi

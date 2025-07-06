@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellSheepPolymorph
+  parent: CP14ActionSpellBase
   name: Sheep polymorph
   description: You curse the target, turning it into a silly sheep for a short period of time.
   components:
@@ -30,23 +31,22 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSheepPolymorph
   - type: CP14MagicEffectAliveTargetRequired
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/misc.rsi
+      state: polymorph
+  - type: TargetAction
+    range: 3
+    interactOnMiss: false
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    range: 3
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/Spells/misc.rsi
-      state: polymorph
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 30
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneSheepPolymorph
   parent: CP14BaseMagicRune
@@ -73,3 +73,12 @@
     - state: particles_up
       color: "#db35c8"
       shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollHealing
+  id: CP14SpellScrollSheepPolymorph
+  name: sheep polymorph spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSheepPolymorph

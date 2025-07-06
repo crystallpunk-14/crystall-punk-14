@@ -231,6 +231,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: liq-
+  - type: Item
+    size: Tiny
 
 - type: entity
   id: CP14Syringe
@@ -278,3 +280,4 @@
     materialComposition:
       CP14Glass: 10
       CP14Iron: 10
+

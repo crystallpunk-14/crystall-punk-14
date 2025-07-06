@@ -24,7 +24,7 @@
   - type: EmitSoundOnSpawn
     sound:
       collection: CP14Digging
-  
+
 - type: entity
   id: CP14SnowEffect
   parent: CP14DirtEffect
@@ -112,3 +112,12 @@
   - type: Tag
     tags:
       - HideContextMenu
+
+- type: entity
+  id: CP14LiquidDropDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/liquid_drop.rsi
+    layers:
+      - state: liq-1

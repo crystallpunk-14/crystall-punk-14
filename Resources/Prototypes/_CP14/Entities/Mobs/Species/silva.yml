@@ -42,7 +42,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -83,6 +83,8 @@
   - type: Body
     prototype: CP14Silva
     requiredLegs: 2
+  - type: CP14AuraImprint
+    imprintColor: "#31cc3b"
   - type: Bloodstream
     bloodReagent: CP14BloodFlowerSap #Lol
   - type: Inventory
@@ -154,7 +156,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -200,3 +202,4 @@
           32:
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: female_shirt
+

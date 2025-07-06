@@ -10,6 +10,11 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours
+  special:
+    - !type:CP14AddGlobalReputationSpecial
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - TraderWit
 
 - type: startingGear
   id: CP14MerchantGear
@@ -18,5 +23,6 @@
     - CP14EnergyCrystalMedium
     - CP14EnergyCrystalMedium
   equipment:
-    belt1: CP14WalletFilledMerchant
+    belt: CP14WalletFilledTest
     keys: CP14KeyRingMerchant
+

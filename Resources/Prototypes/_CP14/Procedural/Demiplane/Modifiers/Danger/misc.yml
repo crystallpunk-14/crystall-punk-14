@@ -1,30 +1,9 @@
 # TIER 1
 
 - type: cp14DemiplaneModifier
-  id: Chasm
-  levels:
-    min: 3
-    max: 10
-  name: cp14-modifier-chasm
-  generationWeight: 0.6
-  categories:
-    Danger: 0.25
-  layers:
-    - !type:OreDunGen
-      entity: CP14Chasm
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorSnow
-      - CP14FloorSnowDeep
-      - CP14FloorSnowDeepDeep
-      count: 4
-      minGroupSize: 5
-      maxGroupSize: 8
-
-- type: cp14DemiplaneModifier
   id: Lava
   levels:
-    min: 4
+    min: 2
     max: 10
   generationWeight: 0.3
   categories:
@@ -33,7 +12,7 @@
   - CP14DemiplaneCold
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14FloorLava
       tileMask:
       - CP14FloorBase
@@ -46,14 +25,14 @@
 - type: cp14DemiplaneModifier
   id: Explosive
   levels:
-    min: 6
+    min: 5
     max: 10
   name: cp14-modifier-explosive
   generationWeight: 0.25
   categories:
     Danger: 0.2
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: LandMineExplosive
       count: 20
       minGroupSize: 1
@@ -62,13 +41,13 @@
 - type: cp14DemiplaneModifier
   id: ShadowKudzu
   levels:
-    min: 7
+    min: 5
     max: 10
   name: cp14-modifier-shadow-kudzu
   categories:
     Danger: 0.25
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14AstralHaze
       count: 10
       minGroupSize: 1

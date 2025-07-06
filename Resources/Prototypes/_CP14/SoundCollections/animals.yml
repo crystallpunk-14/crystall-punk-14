@@ -11,3 +11,27 @@
   - /Audio/_CP14/Animals/frog1.ogg
   - /Audio/_CP14/Animals/frog2.ogg
   - /Audio/_CP14/Animals/frog3.ogg
+
+- type: soundCollection
+  id: CP14Flem
+  files:
+  - /Audio/_CP14/Animals/flem1.ogg
+  - /Audio/_CP14/Animals/flem2.ogg
+  - /Audio/_CP14/Animals/flem3.ogg
+  - /Audio/_CP14/Effects/bubbles.ogg
+
+- type: soundCollection
+  id: CP14Fairy
+  files:
+  - /Audio/_CP14/Animals/fairy1.ogg
+  - /Audio/_CP14/Animals/fairy2.ogg
+  - /Audio/_CP14/Animals/fairy3.ogg
+  - /Audio/_CP14/Animals/fairy4.ogg
+  - /Audio/_CP14/Animals/fairy5.ogg
+  - /Audio/_CP14/Animals/fairy6.ogg
+
+- type: soundCollection
+  id: CP14Bear
+  files:
+  - /Audio/_CP14/Animals/bear1.ogg
+  - /Audio/_CP14/Animals/bear2.ogg

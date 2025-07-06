@@ -102,3 +102,27 @@
   spawn: CP14FloorTileBirchWoodplanksStairs
   icon: { sprite: _CP14/Objects/Tile/tile.rsi, state: birch_woodplanks_stairways }
   maxCount: 30
+
+- type: stack
+  id: CP14FloorTileGrassBag
+  name: cp14-tiles-grass
+  spawn: CP14FloorTileGrassBag
+  icon: { sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi, state: grass }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileGrassBagLight
+  name: cp14-tiles-grass-light
+  spawn: CP14FloorTileGrassBagLight
+  icon: { sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi, state: grass2 }
+  maxCount: 30
+
+- type: stack
+  id: CP14FloorTileGrassBagTall
+  name: cp14-tiles-grass-tall
+  spawn: CP14FloorTileGrassBagTall
+  icon: { sprite: _CP14/Objects/Specific/Farming/grass_seeds.rsi, state: grass3 }
+  maxCount: 30
+
+
+

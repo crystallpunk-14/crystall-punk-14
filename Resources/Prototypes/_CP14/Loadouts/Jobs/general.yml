@@ -21,6 +21,7 @@
   - CP14ClothingCloakGreenSyurko
   - CP14ClothingCloakWhiteSyurko
   - CP14ClothingCloakYellowSyurko
+  - CP14ClothingCloakHaori
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -101,7 +102,12 @@
   id: CP14ClothingCloakYellowSyurko
   equipment:
     cloak: CP14ClothingCloakYellowSyurko
-    
+
+- type: loadout
+  id: CP14ClothingCloakHaori
+  equipment:
+    cloak: CP14ClothingCloakHaori
+
 # OuterClothing
 
 - type: loadoutGroup
@@ -164,8 +170,8 @@
 - type: loadout
   id: CP14ClothingEyesGlasses
   equipment:
-    eyes: CP14ClothingEyesGlasses 
-  
+    eyes: CP14ClothingEyesGlasses
+
 - type: loadout
   id: CP14ClothingEyesEyePatch
   equipment:
@@ -251,6 +257,7 @@
   - CP14ClothingHeadRedHuntersHat
   - CP14ClothingHeadJagermeisterHat
   - CP14ClothingHeadStrawHat
+  - CP14ClothingHeadKasaHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -297,6 +304,11 @@
   equipment:
     head: CP14ClothingHeadRedHuntersHat
 
+- type: loadout
+  id: CP14ClothingHeadKasaHat
+  equipment:
+    head: CP14ClothingHeadKasaHat
+
 
 # Pants
 
@@ -311,6 +323,7 @@
   - CP14ClothingPantsJagermeisterTrousers
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
+  - CP14ClothingPantsHakama
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -347,6 +360,11 @@
   equipment:
     pants: CP14ClothingPantsJagermeisterTrousers
 
+- type: loadout
+  id: CP14ClothingPantsHakama
+  equipment:
+    pants: CP14ClothingPantsHakama
+
 # Shirt
 
 - type: loadoutGroup
@@ -364,13 +382,13 @@
   - CP14ClothingBlueOpenDress
   - CP14ClothinShirtWhiteBlueDress
   - CP14ClothinShirtWhiteBlue2Dress
-  - CP14ClothinShirtRedBlueDress 
+  - CP14ClothinShirtRedBlueDress
   - CP14ClothingShirtJestersAttire
   - CP14ClothingShirtRedOpen
   - CP14ClothingRedOpenDress
   - CP14ClothingShirtYellowOpen
   - CP14ClothingYellowOpenDress
-  - CP14ClothinShirtBlueYellowDress 
+  - CP14ClothinShirtBlueYellowDress
   - CP14ClothingShirtCottonPurple
   - CP14ClothingShirtCottonRed
   - CP14ClothingCottonRedDress
@@ -530,19 +548,19 @@
     shirt: CP14ClothingWarriorsGarbDress
 
 - type: loadout
-  id: CP14ClothinShirtBlueYellowDress 
+  id: CP14ClothinShirtBlueYellowDress
   equipment:
-    shirt: CP14ClothinShirtBlueYellowDress 
+    shirt: CP14ClothinShirtBlueYellowDress
 
 - type: loadout
-  id: CP14ClothinShirtWhiteBlueDress 
+  id: CP14ClothinShirtWhiteBlueDress
   equipment:
-    shirt: CP14ClothinShirtWhiteBlueDress 
+    shirt: CP14ClothinShirtWhiteBlueDress
 
 - type: loadout
-  id: CP14ClothinShirtWhiteBlue2Dress 
+  id: CP14ClothinShirtWhiteBlue2Dress
   equipment:
-    shirt: CP14ClothinShirtWhiteBlue2Dress 
+    shirt: CP14ClothinShirtWhiteBlue2Dress
 
 - type: loadout
   id: CP14ClothinShirtBrown2Dress
@@ -666,7 +684,7 @@
   - CP14SilverCoin
   - CP14ModularIronDagger
   - CP14ModularIronSickle
-  - CP14ModularIronPickaxe
+  - CP14ModularCopperPickaxe
   - CP14Lighter
   - CP14Torch
   - CP14SmokingPipeFilledTobacco
@@ -723,10 +741,10 @@
     - CP14ModularIronSickle
 
 - type: loadout
-  id: CP14ModularIronPickaxe
+  id: CP14ModularCopperPickaxe
   storage:
     back:
-    - CP14ModularIronPickaxe
+    - CP14ModularCopperPickaxe
 
 - type: loadout
   id: CP14Lighter

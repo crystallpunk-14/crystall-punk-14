@@ -68,3 +68,17 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
+
+- type: entity
+  parent: CP14ModularGardeBase
+  id: CP14ModularGardeSturdyWooden
+  categories: [ ForkFiltered ]
+  name: sturdy wooden garde
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Garde/wooden_sturdy.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - GardeSturdyWooden

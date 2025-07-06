@@ -1,0 +1,79 @@
+- type: cp14SkillTree
+  id: Pyrokinetic
+  name: cp14-skill-tree-pyrokinetic-name
+  desc: cp14-skill-tree-pyrokinetic-desc
+  color: "#d6933c"
+
+- type: cp14SkillTree
+  id: Hydrosophistry
+  name: cp14-skill-tree-hydrosophistry-name
+  desc: cp14-skill-tree-hydrosophistry-desc
+  color: "#1554a1"
+
+- type: cp14SkillTree
+  id: Illusion
+  name: cp14-skill-tree-illusion-name
+  desc: cp14-skill-tree-illusion-desc
+  color: "#f55faf"
+
+- type: cp14SkillTree
+  id: Metamagic
+  name: cp14-skill-tree-metamagic-name
+  desc: cp14-skill-tree-metamagic-desc
+  color: "#56e5f5"
+
+- type: cp14SkillTree
+  id: Healing
+  name: cp14-skill-tree-healing-name
+  desc: cp14-skill-tree-healing-desc
+  color: "#51cf72"
+
+- type: cp14SkillTree
+  id: Athletic
+  name: cp14-skill-tree-athletic-name
+  desc: cp14-skill-tree-athletic-desc
+  color: "#b32e37"
+
+#- type: cp14SkillTree
+#  id: Dimension
+#  name: cp14-skill-tree-dimension-name
+#  desc: cp14-skill-tree-dimension-desc
+#  color: "#ac66be"
+
+- type: cp14SkillTree
+  id: Electromancy
+  name: cp14-skill-tree-electric-name
+  desc: cp14-skill-tree-electric-desc
+  color: "#e8ff4c"
+
+- type: cp14SkillTree
+  id: MartialArts
+  name: cp14-skill-tree-martial-name
+  desc: cp14-skill-tree-martial-desc
+  color: "#f54242"
+
+#
+
+#- type: cp14SkillTree
+#  id: Thaumaturgy
+#  name: cp14-skill-tree-thaumaturgy-name
+#  desc: cp14-skill-tree-thaumaturgy-desc
+#  color: "#7c52bf"
+
+#- type: cp14SkillTree
+#  id: Blacksmithing
+#  name: cp14-skill-tree-blacksmithing-name
+#  desc: cp14-skill-tree-blacksmithing-desc
+#  color: "#6b3200"
+
+#- type: cp14SkillTree
+#  id: Trading
+#  name: cp14-skill-tree-trading-name
+#  desc: cp14-skill-tree-trading-desc
+#  color: "#f5edaa"
+
+- type: cp14SkillTree
+  id: Craftsmanship
+  name: cp14-skill-tree-craftsman-name
+  desc: cp14-skill-tree-craftsman-desc
+  color: "#a04b00"

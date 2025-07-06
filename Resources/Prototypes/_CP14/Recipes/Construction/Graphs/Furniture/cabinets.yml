@@ -10,6 +10,7 @@
           steps:
             - stackGroup: WoodenPlanks
               amount: 3
+              doAfter: 2
     - node: CP14WoodenCabinet
       entity: CP14WoodenCabinet
 
@@ -25,5 +26,6 @@
           steps:
             - material: CP14IronBar
               amount: 3
+              doAfter: 2
     - node: CP14IronCabinet
       entity: CP14IronCabinet

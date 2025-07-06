@@ -1,0 +1,45 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraRenounce
+  parent: CP14ActionSpellBase
+  name: Renunciation of a follower
+  description: You are rejecting the chosen follower. They lose the opportunity to become your follower at any time.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14LumeraRenounceImpact
+    - !type:CP14SpellGodRenounce
+  - type: ConfirmableAction
+    popup: cp-renounce-action-god-popup
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: renounce
+  - type: TargetAction
+    repeat: true
+    checkCanAccess: false
+    range: 100
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetActionEvent
+      cooldown: 0.5
+
+- type: entity
+  id: CP14LumeraRenounceImpact
+  categories: [ HideSpawnMenu ]
+  parent: CP14BaseMagicImpact
+  save: false
+  components:
+  - type: PointLight
+    color: "#94154e"
+    enabled: true
+    radius: 5
+    energy: 4
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: stars
+      color: "#94154e"
+      shader: unshaded
+  - type: LightFade
+    duration: 1

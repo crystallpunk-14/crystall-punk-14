@@ -12,7 +12,7 @@
   blacklistTags:
   - CP14DemiplaneHot
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnMobUndeadZombieRandom
       count: 4
       minGroupSize: 3
@@ -30,7 +30,7 @@
   - CP14DemiplaneOpenSky
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnMobDinoYumkaraptor
       count: 5
       minGroupSize: 1
@@ -49,11 +49,27 @@
   blacklistTags:
   - CP14DemiplaneHot
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14SpawnMobMonsterMosquito
       count: 4
       minGroupSize: 2
       maxGroupSize: 6
+
+- type: cp14DemiplaneModifier
+  id: Fairy
+  levels:
+    min: 2
+    max: 5
+  categories:
+    Danger: 0.20
+  requiredTags:
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobFairy
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
 
 - type: cp14DemiplaneModifier
   id: SmallHydra
@@ -66,11 +82,30 @@
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobDinoSmallHydra
       count: 4
       minGroupSize: 2
       maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: EnemyFlem
+  levels:
+    min: 1
+    max: 8
+  name: cp14-modifier-flem
+  generationWeight: 0.33
+  categories:
+    Danger: 0.25
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobMonsterFlem
+      count: 3
+      minGroupSize: 3
+      maxGroupSize: 4
 
 # TIER 2
 
@@ -85,7 +120,7 @@
   requiredTags:
   - CP14DemiplaneUnderground
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobMonsterMole
       count: 6
       minGroupSize: 1
@@ -104,7 +139,7 @@
   blacklistTags:
   - CP14DemiplaneHot
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobIceSpectre
       count: 6
       minGroupSize: 1
@@ -121,7 +156,7 @@
 #  requiredTags:
 #  - CP14DemiplaneUnderground
 #  layers:
-#    - !type:OreDunGen
+#    - !type:CP14OreDunGen
 #      entity: CP14MobMonsterInvisibleWhistler
 #      count: 2
 #      minGroupSize: 1
@@ -136,7 +171,7 @@
   categories:
     Danger: 0.35
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobSlimeElectric
       count: 6
       minGroupSize: 1
@@ -153,7 +188,7 @@
   requiredTags:
   - CP14DemiplaneHot
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobSlimeFire
       count: 6
       minGroupSize: 1
@@ -170,7 +205,7 @@
   requiredTags:
   - CP14DemiplaneCold
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobSlimeIce
       count: 6
       minGroupSize: 1
@@ -184,7 +219,7 @@
   categories:
     Danger: 0.25
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobSlimeBase
       count: 6
       minGroupSize: 1
@@ -203,7 +238,7 @@
   blacklistTags:
   - CP14DemiplaneHot
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobWatcherIce
       count: 8
       minGroupSize: 2
@@ -222,8 +257,52 @@
   blacklistTags:
   - CP14DemiplaneCold
   layers:
-    - !type:OreDunGen
+    - !type:CP14OreDunGen
       entity: CP14MobWatcherMagma
       count: 8
       minGroupSize: 2
       maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
+  id: MobSpiders
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-spiders
+  categories:
+    Danger: 0.3
+  blacklistTags:
+  - CP14DemiplaneHot
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobSpiderBlackHunter
+      count: 8
+      minGroupSize: 2
+      maxGroupSize: 3
+    - !type:CP14OreDunGen
+      entity: CP14WebCocoon
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 3
+    - !type:CP14OreDunGen
+      entity: CP14SpiderWeb
+      count: 10
+      minGroupSize: 5
+      maxGroupSize: 15
+
+- type: cp14DemiplaneModifier
+  id: MobBigBear
+  levels:
+    min: 5
+    max: 10
+  categories:
+    Danger: 0.5
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobBigBear
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1

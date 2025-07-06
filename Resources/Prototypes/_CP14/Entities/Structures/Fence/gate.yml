@@ -48,7 +48,7 @@
   - type: CP14Lock #Empty, for installing new locks
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFenceGate
   - CP14BaseFlammableSpreading
   id: CP14FenceGateWooden
@@ -77,6 +77,9 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14FenceGateWooden
+    node: CP14FenceGateWooden
 
 - type: entity
   parent: CP14FenceGateWooden
@@ -87,3 +90,6 @@
     sprite: _CP14/Structures/Fence/wooden_birch.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch.rsi
+  - type: Construction
+    graph: CP14FenceGateWooden
+    node: CP14FenceGateWooden

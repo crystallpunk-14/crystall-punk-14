@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd (Github) ",
+  "copyright": "Created by TheShuEd (Github), lockpick_skeleton by Vojner (discord)",
   "states": [
     {
       "name": "file"
@@ -39,6 +39,9 @@
     },
     {
       "name": "lockpick_mithril"
+    },
+    {
+      "name": "lockpick_skeleton"
     },
     {
       "name": "keyring"

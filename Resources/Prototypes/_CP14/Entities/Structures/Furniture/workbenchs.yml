@@ -21,7 +21,6 @@
   - type: CP14Workbench
     craftSpeed: 1
   - type: InteractionOutline
-  - type: PlaceableSurface
   - type: UserInterface
     interfaces:
       enum.CP14WorkbenchUiKey.Key:
@@ -55,6 +54,31 @@
           CP14WoodenPlanks1:
             min: 1
             max: 2
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
 
 - type: entity
   parent:
@@ -122,3 +146,4 @@
       collection: CP14Sawing #TODO
     recipeTags:
     - CP14RecipeSewing
+

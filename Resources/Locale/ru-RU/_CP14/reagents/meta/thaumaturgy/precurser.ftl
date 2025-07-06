@@ -16,6 +16,9 @@ cp14-reagent-desc-blood-elf = Жизненная энергия волшебно
 cp14-reagent-name-blood-goblin = Кровь гоблина
 cp14-reagent-desc-blood-goblin = Жизненная энергия зеленокожих существ.
 
+cp14-reagent-name-blood-monster = Кровь монстра
+cp14-reagent-desc-blood-monster = Жизненная энергия различных монстров.
+
 cp14-reagent-name-bloodflowersap = Нектар кровавых роз
 cp14-reagent-desc-bloodflowersap = Сок кровавых цветов, растущих в местах былых битв. При правильном смешивании с кровью, может давать интересные результаты.
 
@@ -45,3 +48,6 @@ cp14-reagent-desc-grounded-quartz = Порошок, получаемый из р
 
 cp14-reagent-name-chromium-slime = Хромиевая слизь
 cp14-reagent-desc-chromium-slime = Редкая субстанция, которую можно встретить в водных потоках, имеет уникальные свойства, позволяющие инвертировать эффекты реагентов, но при неправильной дозировке может полностью испортить зелье.
+
+cp14-reagent-name-silver-needle = Ягоды серебрянной иглы
+cp14-reagent-desc-silver-needle = Ягоды растения, переживающие самые стойкие морозы. Сок этих ягод замедляет метаболизм и способен лечить обморожения.

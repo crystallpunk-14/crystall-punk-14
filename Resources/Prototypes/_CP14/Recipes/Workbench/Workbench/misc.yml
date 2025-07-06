@@ -13,6 +13,43 @@
   result: CP14Bucket
 
 - type: CP14Recipe
+  id: CP14BucketLucens
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14Rope
+    count: 1
+  result: CP14BucketLucens
+
+- type: CP14Recipe
+  id: CP14HandLabeler
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 3
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14CrayonWhite
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14CrayonBlack
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14PenFeather
+    count: 1
+  result: CP14HandLabeler
+
+- type: CP14Recipe
   id: CP14WoodenBeerMug
   tag: CP14RecipeWorkbench
   craftTime: 3
@@ -43,17 +80,32 @@
   result: CP14Plate
 
 - type: CP14Recipe
-  id: CP14BaseMop
+  id: CP14ModularBladeWoodMop
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  category: Tools
+  craftTime: 2
   requirements:
   - !type:StackGroupResource
     group: WoodenPlanks
-    count: 2
+    count: 1
   - !type:StackResource
     stack: CP14Cloth
     count: 1
-  result: CP14BaseMop
+  result: CP14ModularBladeWoodMop
+
+- type: CP14Recipe
+  id: CP14ModularBladeLucensMop
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14LucensWoodenPlanks
+    count: 1
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 1
+  result: CP14ModularBladeLucensMop
 
 - type: CP14Recipe
   id: CP14Lighter
@@ -81,6 +133,17 @@
   result: CP14ModularGripWooden
 
 - type: CP14Recipe
+  id: CP14ModularGripBirchShort
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 2
+  result: CP14ModularGripBirch
+
+- type: CP14Recipe
   id: CP14ModularGripWoodenLong
   tag: CP14RecipeWorkbench
   category: Tools
@@ -90,6 +153,17 @@
     stack: CP14WoodenPlanks
     count: 4
   result: CP14ModularGripWoodenLong
+
+- type: CP14Recipe
+  id: CP14ModularGripBirchLong
+  tag: CP14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: CP14BirchWoodenPlanks
+    count: 4
+  result: CP14ModularGripBirchLong
 
 - type: CP14Recipe
   id: CP14ModularGripLucens
@@ -264,3 +338,93 @@
     protoId: CP14String
     count: 1
   result: CP14LuteInstrument
+
+- type: CP14Recipe
+  id: CP14OpenSign
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14OpenSign
+
+- type: CP14Recipe
+  id: CP14RopeFromGrass
+  tag: CP14RecipeWorkbench
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 4
+  result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14RopeFromCloth
+  tag: CP14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenAxe
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14ModularBladeWoodenAxe
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenRapier
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularBladeWoodenRapier
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenSpear
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularBladeWoodenSpear
+
+- type: CP14Recipe
+  id: CP14ModularBladeWoodenSword
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14ModularBladeWoodenSword
+
+- type: CP14Recipe
+  id: CP14ModularGardeSharpWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularGardeSharpWooden
+
+- type: CP14Recipe
+  id: CP14ModularGardeSturdyWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: CP14ModularGardeSturdyWooden

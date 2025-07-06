@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Markers/jobs.rsi
     snapCardinals: true
-      
+
 # Security
 
 - type: entity
@@ -37,6 +37,20 @@
     layers:
       - state: green
       - state: guard
+
+- type: entity
+  id: CP14SpawnPointInvestigator
+  parent: CP14SpawnPointJobBase
+  name: investigator
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: CP14Investigator
+  - type: Sprite
+    layers:
+      - state: green
+      - state: investigator
 
 # Mercenary
 
@@ -139,3 +153,4 @@
     layers:
       - state: green
       - state: workman #TODO Replace
+

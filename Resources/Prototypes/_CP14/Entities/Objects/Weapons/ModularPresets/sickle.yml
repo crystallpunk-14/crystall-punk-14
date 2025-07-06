@@ -11,4 +11,5 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSickle
+    - CP14ModularBladeIronSickle
+

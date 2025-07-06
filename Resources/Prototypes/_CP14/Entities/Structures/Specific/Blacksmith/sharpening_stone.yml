@@ -5,6 +5,7 @@
   categories: [ ForkFiltered ]
   parent: BaseStructure
   components:
+  - type: Anchorable
   - type: Clickable
   - type: UseDelay
   - type: InteractionOutline
@@ -54,3 +55,6 @@
     targetDamage:
       types:
         blunt: 0.5
+  - type: StaticPrice
+    price: 15
+

@@ -20,14 +20,9 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 20
-        - ReagentId: CP14EssenceWater
+        - ReagentId: CP14EssenceFrost
           Quantity: 30
   - type: MeleeWeapon
-    altDisarm: false
-    soundHit:
-        path: /Audio/Weapons/punch3.ogg
-    angle: 0
-    animation: WeaponArcPunch
     damage:
       types:
         Blunt: 3
@@ -49,6 +44,15 @@
       - !type:AdjustTemperature
         amount: -6000
       - !type:ExtinguishReaction
+  - type: Damageable
+    damageModifierSet: CP14SlimeIce
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 0
+    heatDamage:
+      types:
+        Heat: 3
   - type: Destructible
     thresholds:
     - trigger:
@@ -77,7 +81,7 @@
           - id: CP14Snowball
           - id: CP14CopperCoin1
           - id: CP14ModularInlayQuartzWater
- 
+
 - type: entity
   id: CP14AreaEntityEffectSlimeFroze
   parent: CP14BaseMagicImpact

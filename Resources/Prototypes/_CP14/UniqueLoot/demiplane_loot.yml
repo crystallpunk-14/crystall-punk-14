@@ -14,8 +14,8 @@
   - CP14UniqueSpawnDemiplanetLoot
 
 - type: uniqueSpawn
-  id: CP14ClothingRingFireball
-  entity: CP14ClothingRingFireball
+  id: CP14MagicFireStaff
+  entity: CP14MagicFireStaff
   tags:
   - CP14UniqueSpawnDemiplanetLoot
 
@@ -46,5 +46,11 @@
 - type: uniqueSpawn
   id: CP14BowIceArtifact
   entity: CP14BowIceArtifact
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: CP14LockpickSkeletonArtifact
+  entity: CP14LockpickSkeletonArtifact
   tags:
   - CP14UniqueSpawnDemiplanetLoot

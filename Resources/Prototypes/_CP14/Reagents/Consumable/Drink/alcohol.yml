@@ -56,7 +56,7 @@
       - !type:Drunk
         boozePower: 2
   fizziness: 0.8
-  pricePerUnit: 2
+  pricePerUnit: 4
 
 - type: reagent
   id: CP14Beer
@@ -75,7 +75,7 @@
       - !type:Emote
         emote: Laugh
         probability: 0.05
-  pricePerUnit: 1
+  pricePerUnit: 0.23
 
 - type: reagent
   id: CP14BeerGerbil
@@ -93,7 +93,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.2
-  pricePerUnit: 1.33
+  pricePerUnit: 0.26
 
 - type: reagent
   id: CP14BeerBreeze
@@ -111,7 +111,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.2
-  pricePerUnit: 0.44
+  pricePerUnit: 0.15
 
 - type: reagent
   id: CP14BeerBlowLaw
@@ -129,7 +129,7 @@
       - !type:AdjustReagent
         reagent: CP14Beer
         amount: 0.3
-  pricePerUnit: 1.67
+  pricePerUnit: 0.35
 
 - type: reagent
   id: CP14Wine
@@ -145,7 +145,7 @@
       effects:
       - !type:ModifyBloodLevel
         amount: 0.4
-  pricePerUnit: 1.98
+  pricePerUnit: 0.5
 
 - type: reagent
   id: CP14WineZellasianPleasure
@@ -164,7 +164,7 @@
       - !type:AdjustReagent
         reagent: CP14Wine
         amount: 0.3
-  pricePerUnit: 1.12
+  pricePerUnit: 1.5
 
 - type: reagent
   id: CP14WineLeeks
@@ -182,7 +182,7 @@
       - !type:AdjustReagent
         reagent: CP14Wine
         amount: 0.2
-  pricePerUnit: 1
+  pricePerUnit: 0.2
 
 - type: reagent
   id: CP14WineDurandate
@@ -200,7 +200,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: CP14Wine
-        amount: 0.1
+        amount: 0.01
   pricePerUnit: 1
 
 - type: reagent
@@ -220,7 +220,7 @@
       - !type:Emote
         emote: Laugh
         probability: 0.05
-  pricePerUnit: 0.5
+  pricePerUnit: 0.1
 
 - type: reagent
   id: CP14AleBloodyTear
@@ -238,7 +238,7 @@
       - !type:AdjustReagent
         reagent: CP14Ale
         amount: 0.2
-  pricePerUnit: 1
+  pricePerUnit: 0.2
 
 - type: reagent
   id: CP14AleBottomless
@@ -257,4 +257,24 @@
       - !type:AdjustReagent
         reagent: CP14Ale
         amount: 0.2
-  pricePerUnit: 2
+  pricePerUnit: 0.35
+
+# Magic beer from spell, cost nothing
+- type: reagent
+  id: CP14MagicBeer
+  name: cp14-reagent-name-bottomless
+  parent: BaseAlcohol
+  desc: cp14-reagent-desc-ale
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: CP14bottomless
+  color: "#2d1914"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: CP14Ale
+        amount: 0.2
+  pricePerUnit: 0

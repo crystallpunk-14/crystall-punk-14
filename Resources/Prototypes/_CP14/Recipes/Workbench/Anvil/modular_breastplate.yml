@@ -6,10 +6,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 5
@@ -20,10 +19,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 5
@@ -34,10 +32,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 5
@@ -48,10 +45,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 5
@@ -64,10 +60,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 6
@@ -78,10 +73,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 6
@@ -92,10 +86,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 6
@@ -106,10 +99,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 6
@@ -122,10 +114,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 8
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 4
@@ -136,10 +127,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 8
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 4
@@ -150,10 +140,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 8
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 4
@@ -164,10 +153,9 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 8
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 4

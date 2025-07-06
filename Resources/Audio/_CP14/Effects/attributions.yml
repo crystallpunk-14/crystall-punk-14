@@ -92,3 +92,23 @@
   license: "CC0-1.0"
   copyright: 'Created by Zott820 on Freesound.org'
   source: "https://freesound.org/people/Zott820/sounds/209578/"
+
+- files: ["ritual_begin.ogg", "ritual_end.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by SilverIllusionist on Freesound.org'
+  source: "https://freesound.org/people/SilverIllusionist/sounds/671928/"
+
+- files: ["moon_strike1.ogg", "moon_strike2.ogg", "moon_strike3.ogg", "moon_strike4.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by EminYILDIRIM on Freesound.org'
+  source: "https://freesound.org/people/EminYILDIRIM/sounds/668244/"
+
+- files: ["dash.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'Created by qubodup on Freesound.org'
+  source: "https://freesound.org/people/qubodup/sounds/714258/"
+
+- files: ["heartbeat.ogg"]
+  license: "CC0-1.0"
+  copyright: 'Created by MickBoere on Freesound.org'
+  source: "https://freesound.org/people/MickBoere/sounds/276578/"

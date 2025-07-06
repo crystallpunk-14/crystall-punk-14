@@ -1,0 +1,55 @@
+- type: entity
+  id: CP14WoodenBirchDoorWindowed
+  parent:
+  - CP14BaseDoor
+  - CP14BaseFlammableSpreading
+  name: wooden birch windowed door
+  description: Not the most solid construction, but it's better than nothing.
+  suffix: Opened
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Doors/wooden_birch_windowed_door.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Occluder
+    enabled: false
+  - type: Door
+    occludes: false
+    openSound:
+      path: /Audio/Effects/door_open.ogg
+    closeSound:
+      path: /Audio/Effects/door_close.ogg
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WoodenDoorFrame
+  - type: Construction
+    graph: CP14WoodenBirchDoor
+    node: CP14WoodenBirchDoorWindowed
+
+- type: entity
+  id: CP14WoodenBirchDoorWindowedMirrored
+  parent: CP14WoodenBirchDoorWindowed
+  suffix: Opened, Mirrored
+  components:
+  - type: Door
+    openSpriteState: open_mirrored
+    closedSpriteState: closed_mirrored
+  - type: Construction
+    graph: CP14WoodenBirchDoor
+    node: CP14WoodenBirchDoorWindowedMirrored

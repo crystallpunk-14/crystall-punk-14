@@ -99,3 +99,39 @@
     copyFrom:
     - BaseBladeSword
     - BaseBladeBone
+
+- type: modularPart
+  id: BladeWoodenSword
+  slots:
+  - Blade
+  rsiPath: _CP14/Objects/ModularTools/Blade/Sword/wooden_sword.rsi
+  modifiers:
+  - !type:AddComponents
+    components:
+    - type: StaminaDamageOnHit
+      damage: 4
+  - !type:Inherit
+    copyFrom:
+    - BaseWeaponChemical
+    - BaseBladeWooden
+  - !type:AddComponents
+    components:
+  - !type:EditMeleeWeapon
+    resetOnHandSelected: true # Disable fast swap
+    bonusRange: 0.2
+    angleMultiplier: 1.2
+    bonusDamage:
+      types:
+        Blunt: 1
+  - !type:EditIncreaseDamageOnWield
+    bonusDamage:
+      types:
+        Blunt: 1
+  - !type:EditItem
+    newSize: Large
+    adjustShape: 0, 2
+    storedOffsetBonus: 0, 10
+  - !type:EditModularSlots
+    addSlots:
+    - Garde
+    - BladeInlay

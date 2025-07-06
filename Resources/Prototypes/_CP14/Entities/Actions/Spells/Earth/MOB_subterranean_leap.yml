@@ -20,20 +20,21 @@
       - CP14ImpactEffectDigging
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectDigging
-  - type: EntityWorldTargetAction
+  - type: Action
     useDelay: 8
-    range: 10
-    checkCanAccess: false
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/gib3.ogg
     icon:
       sprite: _CP14/Actions/Spells/earth.rsi
       state: subterranean_leap
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       hidden: true
       breakOnMove: false
-    raiseOnUser: true
 
 - type: entity
   id: CP14ImpactEffectDigging
@@ -45,3 +46,4 @@
     sprite: _CP14/Effects/material_splash.rsi
     layers:
     - state: dirt1
+

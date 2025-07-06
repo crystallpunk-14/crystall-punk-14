@@ -249,9 +249,44 @@
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150
-    
-# CP14BasicEffectSatiateHunger
-# CP14BasicEffectSatiateThirst
+
+- type: reaction
+  id: CP14WaterBrewingSatiateHunger
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceBeast:
+      amount: 2
+    CP14EssenceLife:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
+    CP14BasicEffectSatiateHunger: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingSatiateThirst
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceWater:
+      amount: 1
+    CP14EssenceLife:
+      amount: 1
+    Water:
+      amount: 2
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectRainbow: 1
+    CP14BasicEffectSatiateThirst: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
 
 - type: reaction
   id: CP14WaterBrewingHealMana
@@ -287,6 +322,48 @@
     CP14BasicEffectEmpty: 2
     CP14BasicEffectDrunk: 1
     CP14BasicEffectDamageMana: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingHealStam
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceMotion:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectHealStam: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingDamageStam
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceVoid:
+      amount: 1
+    CP14EssenceMotion:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectDrunk: 1
+    CP14BasicEffectDamageStam: 1
   effects:
   - !type:CP14AffectSolutionTemperature
     addTemperature: -150

@@ -29,6 +29,9 @@
   id: CP14AmbientWater
 
 - type: Tag
+  id: CP14AmbientForest
+
+- type: Tag
   id: CP14AmbientLurker
 
 - type: Tag
@@ -149,4 +152,13 @@
   id: CP14EnergyCrystal
 
 - type: Tag
+  id: CP14BigCrossbowBolt
+
+- type: Tag
   id: CP14Sandwich
+
+- type: Tag
+  id: CP14CookedMeatSlice
+
+- type: Tag
+  id: CP14CookedMeatLeg

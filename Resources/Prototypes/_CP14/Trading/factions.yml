@@ -5,8 +5,45 @@
 
 - type: cp14TradingFaction
   id: VictoriaGardens
+  color: "#67db67"
   name: cp14-trade-faction-victoria-gardens
 
 - type: cp14TradingFaction
   id: BradPotions
+  color: "#ad67db"
   name: cp14-trade-faction-brad-potions
+
+- type: cp14TradingFaction
+  id: DwarfMining
+  color: "#b05a3e"
+  name: cp14-trade-faction-dwarf-mining
+
+- type: cp14TradingFaction
+  id: Thaumaturgy
+  color: "#a43ae0"
+  name: cp14-trade-faction-thaumaturgy
+
+- type: cp14TradingFaction
+  id: HomeDecor
+  color: "#95f542"
+  name: cp14-trade-faction-home-decor
+
+- type: cp14TradingFaction
+  id: Horticulture
+  color: "#3cb371"
+  name: cp14-trade-faction-horticulture
+
+- type: cp14TradingFaction
+  id: Butchers
+  color: "#c93756"
+  name: cp14-trade-faction-butchers
+
+- type: cp14TradingFaction
+  id: Dairy
+  color: "#f5f5dc"
+  name: cp14-trade-faction-dairy
+
+- type: cp14TradingFaction
+  id: Tailors
+  color: "#d67fd6"
+  name: cp14-trade-faction-tailors

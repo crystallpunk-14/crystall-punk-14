@@ -89,7 +89,7 @@
     state: icons
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -101,11 +101,12 @@
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14IronBar1:
+          CP14ScrapIron:
             min: 1
             max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Construction
-    graph: CP14WoodenCabinet
-    node: CP14WoodenCabinet
+    graph: CP14IronCabinet
+    node: CP14IronCabinet
+

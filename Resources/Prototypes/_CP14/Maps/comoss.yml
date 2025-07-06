@@ -13,6 +13,8 @@
           mapNameTemplate: "Comoss island"
         - type: StationJobs
           availableJobs:
+            #Demigods
+            CP14GodLumera: [ 1, 1 ]
             #Mercenary
             #CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
@@ -21,10 +23,11 @@
             CP14Alchemist: [ 2, 2 ]
             CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 3, 4 ]
-            #CP14Merchant: [2, 2]
+            CP14Merchant: [2, 2]
             #Guard
-            CP14Guard: [8, 8]
-            CP14GuardCommander: [1, 1]
+            #CP14Guard: [4, 4]
+            #CP14Investigator: [2, 2]
+            #CP14GuardCommander: [1, 1]
         - type: CP14StationZLevels
           defaultMapLevel: 0
           levels:
@@ -48,4 +51,3 @@
           - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
-          - PersonalHouse11

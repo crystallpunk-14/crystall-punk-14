@@ -6,6 +6,7 @@ cp14-material-stone-block = stone
 cp14-material-cloth = cloth
 cp14-material-copper = copper
 cp14-material-iron = iron
+cp14-material-brass = brass
 cp14-material-gold = gold
 cp14-material-mithril = mithril
 cp14-material-lucens-planks = lucens planks

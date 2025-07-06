@@ -25,7 +25,7 @@
   components:
   - type: Sprite
     state: victoria_garden
-  - type: CP14TradingContract 
+  - type: CP14TradingContract
     faction: VictoriaGardens
 
 - type: entity
@@ -36,5 +36,82 @@
   components:
   - type: Sprite
     state: brad_potions
-  - type: CP14TradingContract 
+  - type: CP14TradingContract
     faction: BradPotions
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractDwarfMining
+  description: Trading contract with the "Dwarf Steel" mining branch. Allows you to purchase various ore and mining tools.
+  suffix: Dwarf Miners
+  components:
+  - type: Sprite
+    state: dwarf_mining
+  - type: CP14TradingContract
+    faction: DwarfMining
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractThaumaturgy
+  description: Trading contract with the "Academy of Thaumaturgy". Allows you to purchase various magic device, tools and scrolls.
+  suffix: Thaumaturgy
+  components:
+  - type: Sprite
+    state: magic
+  - type: CP14TradingContract
+    faction: Thaumaturgy
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractHomeDecor
+  description: Trading contract with the "Cozy House" store. Allows you to buy various decorations and nice things to furnish your home.
+  suffix: Home Decor
+  components:
+  - type: Sprite
+    state: house
+  - type: CP14TradingContract
+    faction: HomeDecor
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractHorticulture
+  description: Trading contract with "Horticulture Consortium". Allows you to purchase seeds, plants and gardening tools.
+  suffix: Horticulture
+  components:
+  - type: Sprite
+    state: horticulture
+  - type: CP14TradingContract
+    faction: Horticulture
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractButchers
+  description: Trading contract with "Master Butchers Union". Allows you to purchase fresh meat products and butchering equipment.
+  suffix: Butchers
+  components:
+  - type: Sprite
+    state: butchers
+  - type: CP14TradingContract
+    faction: Butchers
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractDairy
+  description: Trading contract with "Golden Udder Dairy". Allows you to purchase fresh dairy products and eggs.
+  suffix: Dairy
+  components:
+  - type: Sprite
+    state: dairy
+  - type: CP14TradingContract
+    faction: Dairy
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractTailors
+  description: Trading contract with the "Silk & Needle Tailors Guild". Allows you to purchase fabrics, clothing and tailoring tools.
+  suffix: Tailors
+  components:
+  - type: Sprite
+    state: tailors
+  - type: CP14TradingContract
+    faction: Tailors

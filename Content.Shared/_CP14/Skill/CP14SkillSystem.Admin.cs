@@ -6,6 +6,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.FixedPoint;
 using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Skill;
 
@@ -50,44 +51,16 @@ public abstract partial class CP14SharedSkillSystem
 
         var target = args.Target;
 
-        //Add Skill
-        foreach (var skill in _allSkills)
+        //Reset/Remove All Skills
+        args.Verbs.Add(new Verb
         {
-            if (ent.Comp.LearnedSkills.Contains(skill))
-                continue;
-
-            var name = Loc.GetString(GetSkillName(skill));
-            args.Verbs.Add(new Verb
+            Text = "Reset skills",
+            Message = "Remove all learned skills",
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_CP14/Interface/Misc/reroll.rsi"), "reroll"),
+            Act = () =>
             {
-                Text = name,
-                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
-                Category = VerbCategory.CP14AdminSkillAdd,
-                Icon = skill.Icon,
-                Act = () =>
-                {
-                    TryAddSkill(target, skill);
-                },
-            });
-        }
-
-        //Remove Skill
-        foreach (var skill in ent.Comp.LearnedSkills)
-        {
-            if (!_proto.TryIndex(skill, out var indexedSkill))
-                continue;
-
-            var name = Loc.GetString(GetSkillName(skill));
-            args.Verbs.Add(new Verb
-            {
-                Text = name,
-                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
-                Category = VerbCategory.CP14AdminSkillRemove,
-                Icon = indexedSkill.Icon,
-                Act = () =>
-                {
-                    TryRemoveSkill(target, skill);
-                },
-            });
-        }
+                TryResetSkills(target);
+            },
+        });
     }
 }

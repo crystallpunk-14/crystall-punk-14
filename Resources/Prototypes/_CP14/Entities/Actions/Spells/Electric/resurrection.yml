@@ -1,0 +1,92 @@
+- type: entity
+  id: CP14ActionSpellResurrection
+  parent: CP14ActionSpellBase
+  name: Revitalizing discharge
+  description: You strike the dying target with a safe electric shock, causing its heart to beat again.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.2
+  - type: CP14MagicEffectManaCost
+    manaCost: 50
+  - type: CP14MagicEffectAliveTargetRequired
+    inverted: true
+  - type: CP14MagicEffect
+    magicType: Energia
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectResurrection
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectResurrection
+      - CP14ElectrifiedEffect
+    - !type:CP14SpellResurrectionEffect
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -500
+            Shock: 10
+      - !type:Jitter
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Redi animam meam..."
+    endSpeech: "Eu rezei por ti"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneResurrection
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/electromancy.rsi
+      state: defib
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 150
+      castDelay: 5
+      breakOnMove: true
+
+- type: entity
+  id: CP14RuneResurrection
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#366357"
+      shader: unshaded
+    - state: medium_circle
+      color: "#55877a"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectResurrection
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#e8ff4c"
+      shader: unshaded
+
+- type: entity
+  parent: CP14BaseSpellScrollNecromancy
+  id: CP14SpellScrollResurrection
+  name: resurrection spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellResurrection
+

@@ -1,0 +1,125 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraMindDegrade
+  parent: CP14ActionSpellBase
+  name: The Wrath of Lumera
+  description: "You unleash your anger on the creature, stunning it, inflicting damage, and burning its mind, removing 0.5 memory points."
+  components:
+  - type: CP14MagicEffectReligionRestricted
+  - type: CP14MagicEffectManaCost
+    manaCost: 300
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14RuneMindDegrade
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:ChemVomit
+      - !type:Jitter
+        time: 16
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: 10
+            Blunt: 10
+            Piercing: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.02
+        sprintSpeedModifier: 0.02
+        statusLifetime: 19
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14LumeraMindDegradeImpact
+    - !type:CP14SpellRemoveMemoryPoint
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+        time: 16
+      - !type:Paralyze
+        paralyzeTime: 16
+      - !type:Drunk
+        boozePower: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Slash: 10
+            Blunt: 10
+            Piercing: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+        statusLifetime: 30
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: wrath
+  - type: TargetAction
+    range: 100
+  - type: EntityTargetAction
+    blacklist:
+      components:
+      - CP14ReligionEntity
+    whitelist:
+      components:
+      - CP14SkillStorage
+    canTargetSelf: false
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 300
+      castDelay: 16
+      breakOnMove: false
+      breakOnDamage: false
+
+- type: entity
+  id: CP14RuneMindDegrade
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 16
+  - type: PointLight
+    color: "#ae424d"
+    radius: 5
+    energy: 8
+  - type: LightFade
+    duration: 10
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      scale: 1.5, 1.5
+      color: "#ae424d"
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Effects/ritual_begin.ogg
+      params:
+        pitch: 1
+
+- type: entity
+  id: CP14LumeraMindDegradeImpact
+  categories: [ HideSpawnMenu ]
+  parent: CP14BaseMagicImpact
+  save: false
+  components:
+  - type: PointLight
+    color: "#ae424d"
+    enabled: true
+    radius: 15
+    energy: 8
+    netsync: false
+  - type: Sprite
+    layers:
+    - state: stars
+      scale: 2, 2
+      color: "#ae424d"
+      shader: unshaded
+  - type: LightFade
+    duration: 1
+  - type: TimedDespawn
+    lifetime: 3
+  - type: EmitSoundOnSpawn
+    sound:  
+      path: /Audio/Effects/inneranomaly.ogg
+      params:
+        pitch: 1

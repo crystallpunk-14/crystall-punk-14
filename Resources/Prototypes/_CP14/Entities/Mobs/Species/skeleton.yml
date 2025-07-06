@@ -34,7 +34,7 @@
     - map: [ "outerClothing" ]
     - map: [ "cloak" ]
     - map: [ "eyes" ]
-    - map: [ "belt1" ]
+    - map: [ "belt" ]
     - map: [ "belt2" ]
     - map: [ "neck" ]
     - map: [ "back" ]
@@ -88,6 +88,8 @@
           - MobMask
         layer:
           - MobLayer
+  - type: CP14AuraImprint
+    imprintColor: "#a81b5d"
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: CP14Skeleton

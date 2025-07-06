@@ -49,9 +49,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: MapAtmosphere
       space: False
       mixture:
@@ -177526,7 +177524,7 @@ entities:
     - type: Transform
       pos: 28.5,43.5
       parent: 1
-- proto: CP14WallStoneGoldOre
+- proto: CP14WallStoneCopperOre
   entities:
   - uid: 29488
     components:

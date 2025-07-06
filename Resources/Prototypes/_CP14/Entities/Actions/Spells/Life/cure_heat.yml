@@ -1,11 +1,9 @@
 - type: entity
   id: CP14ActionSpellCureBurn
+  parent: CP14ActionSpellBase
   name: Cure burn
   description: You heal skin damage caused by excessive cooling or heating.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_burn
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
@@ -34,23 +32,22 @@
     endSpeech: "non novit"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureBurn
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/healing.rsi
+      state: cure_burn
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
-    range: 7
-    itemIconStyle: BigAction
-    interactOnMiss: false
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
-    icon:
-      sprite: _CP14/Actions/Spells/healing.rsi
-      state: cure_burn
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 5
       castDelay: 1.5
       breakOnMove: false
- 
+
 - type: entity
   id: CP14RuneCureBurn
   parent: CP14BaseMagicRune

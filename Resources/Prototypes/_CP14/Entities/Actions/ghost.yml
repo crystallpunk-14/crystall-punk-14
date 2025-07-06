@@ -3,11 +3,12 @@
   name: Move up
   description: Move up one Z-Level
   components:
-  - type: InstantAction
+  - type: Action
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: up
+  - type: InstantAction
     event: !type:CP14ZLevelActionUp
 
 - type: entity
@@ -15,11 +16,12 @@
   name: Move down
   description: Move down one Z-Level
   components:
-  - type: InstantAction
+  - type: Action
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: down
+  - type: InstantAction
     event: !type:CP14ZLevelActionDown
 
 - type: entity
@@ -27,10 +29,12 @@
   name: Toggle roofs
   description: Show or hide roofs
   components:
-  - type: InstantAction
+  - type: Action
     clientExclusive: true
     checkCanInteract: false
-    icon: 
+    icon:
       sprite: _CP14/Actions/zLevel.rsi
       state: roof
+  - type: InstantAction
     event: !type:CP14ToggleRoofVisibilityAction
+

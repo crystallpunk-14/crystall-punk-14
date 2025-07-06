@@ -25,3 +25,4 @@
   spawn: CP14OreMithril1
   icon: { sprite: _CP14/Objects/Materials/mithril_ore.rsi, state: ore3 }
   maxCount: 10
+

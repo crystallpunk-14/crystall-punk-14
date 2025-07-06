@@ -130,6 +130,9 @@
         tree04: ""
         tree05: ""
         tree06: ""
+  - type: Tag
+    tags:
+    - CP14AmbientForest
 
 - type: entity
   parent: CP14BaseTree
@@ -209,6 +212,9 @@
         treelarge04: ""
         treelarge05: ""
         treelarge06: ""
+  - type: Tag
+    tags:
+    - CP14AmbientForest
 
 - type: entity
   id: CP14BaseLucensTree
@@ -464,4 +470,3 @@
           CP14BirchWoodLog:
             min: 3
             max: 6
-

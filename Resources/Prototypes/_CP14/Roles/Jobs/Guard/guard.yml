@@ -1,5 +1,6 @@
 - type: job
   id: CP14Guard
+  setPreference: true
   name: cp14-job-name-guard
   description: cp14-job-desc-guard
   playTimeTracker: CP14JobGuard
@@ -15,4 +16,5 @@
   id: CP14GuardGear
   equipment:
     keys: CP14KeyRingGuard
-    belt1: CP14WalletFilledTest
+    belt: CP14WalletFilledTest
+

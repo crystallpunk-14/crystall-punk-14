@@ -1,0 +1,48 @@
+- type: entity
+  id: CP14ActionSpiderTrap
+  name: web trap
+  description: You wrap a web around the target, slowing its movement.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactSpiderTrap
+    effects:
+    - !type:CP14SpellSpawnEntitiesOnTargetInRadius
+      spawn: CP14SpiderWeb
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactSpiderTrap
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 20
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Animals/snake_hiss.ogg
+    icon:
+      sprite: _CP14/Structures/Dungeon/floor_web.rsi
+      state: full
+  - type: TargetAction
+    range: 10
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      hidden: true
+      breakOnMove: false
+      breakOnDamage: false
+      cooldown: 20
+      castDelay: 0.5
+
+- type: entity
+  id: CP14ImpactSpiderTrap
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+    - sprite: _CP14/Effects/Magic/area_impact.rsi
+      state: area_impact_out

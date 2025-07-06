@@ -1,19 +1,33 @@
-using System.Numerics;
 using Content.Shared._CP14.ZLevel;
-using Content.Shared.Ghost;
+using Content.Shared.Actions;
 using Robust.Shared.Map;
 
 namespace Content.Server._CP14.ZLevels.EntitySystems;
 
 public sealed partial class CP14StationZLevelsSystem
 {
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     private void InitActions()
     {
-        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionUp>(OnZLevelUp);
-        SubscribeLocalEvent<GhostComponent, CP14ZLevelActionDown>(OnZLevelDown);
+        SubscribeLocalEvent<CP14ZLevelMoverComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14ZLevelMoverComponent, ComponentRemove>(OnRemove);
+        SubscribeLocalEvent<CP14ZLevelMoverComponent, CP14ZLevelActionUp>(OnZLevelUpGhost);
+        SubscribeLocalEvent<CP14ZLevelMoverComponent, CP14ZLevelActionDown>(OnZLevelDownGhost);
     }
 
-    private void OnZLevelDown(Entity<GhostComponent> ent, ref CP14ZLevelActionDown args)
+    private void OnMapInit(Entity<CP14ZLevelMoverComponent> ent, ref MapInitEvent args)
+    {
+        _actions.AddAction(ent, ref ent.Comp.CP14ZLevelUpActionEntity, ent.Comp.UpActionProto);
+        _actions.AddAction(ent, ref ent.Comp.CP14ZLevelDownActionEntity, ent.Comp.DownActionProto);
+    }
+
+    private void OnRemove(Entity<CP14ZLevelMoverComponent> ent, ref ComponentRemove args)
+    {
+        _actions.RemoveAction(ent.Comp.CP14ZLevelUpActionEntity);
+        _actions.RemoveAction(ent.Comp.CP14ZLevelDownActionEntity);
+    }
+
+    private void OnZLevelDownGhost(Entity<CP14ZLevelMoverComponent> ent, ref CP14ZLevelActionDown args)
     {
         if (args.Handled)
             return;
@@ -23,7 +37,7 @@ public sealed partial class CP14StationZLevelsSystem
         args.Handled = true;
     }
 
-    private void OnZLevelUp(Entity<GhostComponent> ent, ref CP14ZLevelActionUp args)
+    private void OnZLevelUpGhost(Entity<CP14ZLevelMoverComponent> ent, ref CP14ZLevelActionUp args)
     {
         if (args.Handled)
             return;

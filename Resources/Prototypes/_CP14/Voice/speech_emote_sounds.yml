@@ -30,3 +30,11 @@
       path: /Audio/_CP14/Voice/Carcat/carcat_gasp.ogg
     Whistle:
       collection: Whistles
+
+- type: emoteSounds
+  id: CP14Bear
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_CP14/Voice/Animal/bear_scream.ogg

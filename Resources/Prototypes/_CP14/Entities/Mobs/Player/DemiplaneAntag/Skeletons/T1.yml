@@ -1,5 +1,5 @@
-- type: entity 
-  id: CP14MobUndeadSkeletonDemiplaneT1 
+- type: entity
+  id: CP14MobUndeadSkeletonDemiplaneT1
   parent: CP14BaseMobSkeleton
   name: skeleton
   abstract: true
@@ -8,6 +8,12 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
+  - type: CP14SkillStorage
+    experienceMaxCap: 0
+    freeLearnedSkills:
+    - SwordMastery
+    - RapierMastery
+    - SkimitarMastery
 
 - type: entity
   id: CP14MobUndeadSkeletonHalberdT1
@@ -162,3 +168,4 @@
     prototype: CP14MobUndeadSkeletonArcherT1
   - type: GhostRole
     name: cp14-ghost-role-information-name-skeleton
+

@@ -1,0 +1,29 @@
+- type: entity
+  id: CP14ActionSpellSlimeJump
+  name: Slime jump
+  description: Jump! JUMP!
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/slime.rsi
+    state: jump
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.1
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellThrowUserTo
+      throwPower: 8
+  - type: Action
+    itemIconStyle: BigAction
+    useDelay: 8
+    icon:
+      sprite: _CP14/Actions/Spells/slime.rsi
+      state: jump
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      hidden: true
+      breakOnMove: false
+      breakOnDamage: false
+      castDelay: 1

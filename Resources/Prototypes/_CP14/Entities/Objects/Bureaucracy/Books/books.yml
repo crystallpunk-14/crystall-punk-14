@@ -18,4 +18,26 @@
     - state: bookmark_short
       map: [ "overlay" ]
   - type: Paper
-    content: cp14-book-text-guild_moral
+    content: cp14-book-text-guild-moral
+
+- type: entity
+  id: CP14BookTieflingGambit
+  parent: CP14BookWriteableBase
+  name: "Tiefling's Gambit"
+  description: Rules for gambling with dice, created by Callista Zyanur
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#911c1c"
+      map: [ "cover" ]
+    - state: decor_frame
+      color: "#e28f08"
+      map: [ "decor" ]
+    - state: icon_moon
+      map: [ "icon" ]
+    - state: bookmark_short
+      map: [ "overlay" ]
+  - type: Paper
+    content: cp14-book-text-tiefling-gambit

@@ -37,25 +37,6 @@
   equipment:
     cloak: CP14ClothingCloakAlchemistMantle
 
-# Eyes
-
-- type: loadoutGroup
-  id: CP14AlchemistEyes
-  name: cp14-loadout-alchemist-eyes
-  loadouts:
-  - CP14ClothingEyesAlchemyGlasses
-  - CP14ClothingEyesAlchemyMonocle
-  
-- type: loadout
-  id: CP14ClothingEyesAlchemyGlasses
-  equipment:
-    eyes: CP14ClothingEyesAlchemyGlasses
-
-- type: loadout
-  id: CP14ClothingEyesAlchemyMonocle
-  equipment:
-    eyes: CP14ClothingEyesAlchemyMonocle
-
 # Belt
 
 - type: loadoutGroup

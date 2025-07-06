@@ -1,0 +1,163 @@
+- type: entity
+  id: CP14SpiderWeb
+  name: spider web
+  parent: CP14BaseFlammableSpreadingStrong
+  description: It's stringy and sticky.
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/slash.ogg"
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _CP14/Structures/Dungeon/floor_web.rsi
+    color: "#ffffffdd"
+  - type: Icon
+    sprite: _CP14/Structures/Dungeon/floor_web.rsi
+    state: full
+  - type: IconSmooth
+    key: web
+    additionalKeys:
+    - CP14wall
+    base: carpet_
+  - type: Clickable
+  - type: Transform
+    anchored: true
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        density: 7
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - MidImpassable
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Web:
+            min: 0
+            max: 1
+  - type: SpiderWebObject
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.3
+    sprintSpeedModifier: 0.3
+    ignoreWhitelist:
+      components:
+        - IgnoreSpiderWeb
+
+- type: entity
+  id: CP14WebCocoon
+  parent: 
+  - BaseStructure
+  - CP14BaseFlammableSpreadingStrong
+  categories: [ ForkFiltered ]
+  name: cocoon
+  components:
+  - type: Transform
+    anchored: True
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 500
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _CP14/Structures/Dungeon/web_cocoon.rsi
+    layers:
+      - state: full
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        full: ""
+        full2: ""
+        full3: ""
+        full4: ""
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: GlassTable
+    climberDamage:
+      types:
+        Blunt: 1
+    tableDamage:
+      types:
+        Blunt: 65
+    tableMassLimit: 60
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/gib1.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Web:
+            min: 4
+            max: 5
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SpawnerWebCocoonLoot:
+            min: 1
+            max: 1
+
+- type: entityTable
+  id: CP14TableWebCocoonLoot
+  table: !type:GroupSelector
+    rolls: !type:RangeNumberSelector
+      range: 1, 2
+    children:
+      - !type:NestedSelector
+        weight: 75
+        tableId: CP14TableDemiplaneLootT1
+      - !type:GroupSelector
+        weight: 25
+        children:
+        - id: CP14MobSpiderBlackHunter
+
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerWebCocoonLoot
+  name: Web Cocoon T1 Loot
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: CP14TableWebCocoonLoot

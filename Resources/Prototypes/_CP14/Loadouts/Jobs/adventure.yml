@@ -4,32 +4,33 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - CP14ModularIronSkimitar
-  - CP14ModularIronSword
-  - CP14ModularIronRapier
+  - CP14ModularCopperSkimitar
+  - CP14ModularCopperSword
+  - CP14ModularCopperRapier
   - CP14BowCombat
+  - CP14MagicDruidStaff
 
 - type: loadout
-  id: CP14ModularIronSkimitar
-  dummyEntity: CP14ModularIronSkimitar
+  id: CP14ModularCopperSkimitar
+  dummyEntity: CP14ModularCopperSkimitar
   equipment:
-    belt2: CP14ModularIronSkimitar
+    belt2: CP14ModularCopperSkimitar
   skills:
   - SkimitarMastery
 
 - type: loadout
-  id: CP14ModularIronSword
-  dummyEntity: CP14ModularIronSword
+  id: CP14ModularCopperSword
+  dummyEntity: CP14ModularCopperSword
   equipment:
-    belt2: CP14ModularIronSword
+    belt2: CP14ModularCopperSword
   skills:
   - SwordMastery
 
 - type: loadout
-  id: CP14ModularIronRapier
-  dummyEntity: CP14ModularIronRapier
+  id: CP14ModularCopperRapier
+  dummyEntity: CP14ModularCopperRapier
   equipment:
-    belt2: CP14ModularIronRapier
+    belt2: CP14ModularCopperRapier
   skills:
   - RapierMastery
 
@@ -39,3 +40,9 @@
   equipment:
     belt2: CP14ClothingBeltQuiverCopperArrow
     neck: CP14BowCombat
+
+- type: loadout
+  id: CP14MagicDruidStaff
+  dummyEntity: CP14MagicDruidStaff
+  equipment:
+    neck: CP14MagicDruidStaff

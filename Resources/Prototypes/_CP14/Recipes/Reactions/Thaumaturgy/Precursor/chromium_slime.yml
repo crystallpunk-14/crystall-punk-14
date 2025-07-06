@@ -60,3 +60,6 @@
       #
       CP14BasicEffectRainbow: CP14BasicEffectEmoteCough
       CP14BasicEffectEmoteCough: CP14BasicEffectRainbow
+      #
+      CP14BasicEffectHealStam: CP14BasicEffectDamageStam
+      CP14BasicEffectDamageStam: CP14BasicEffectHealStam

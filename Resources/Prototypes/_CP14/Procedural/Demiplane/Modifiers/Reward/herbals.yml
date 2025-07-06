@@ -1,5 +1,3 @@
-# TIER 1
-
 - type: cp14DemiplaneModifier
   id: Dayflin
   levels:
@@ -12,12 +10,33 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
       entity: CP14GatherableDayflin
+      count: 10
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: SilverNeedle
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-silver-needle
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneCold
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorSnow
+      - CP14FloorSnowDeep
+      - CP14FloorSnowDeepDeep
+      entity: CP14GatherableSilverNeedle
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
@@ -33,8 +52,8 @@
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorBase
       - CP14FloorGrass
       - CP14FloorGrassLight
@@ -55,8 +74,8 @@
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -76,8 +95,8 @@
   requiredTags:
   - CP14DemiplaneHerbals
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -98,8 +117,8 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
@@ -120,8 +139,8 @@
   - CP14DemiplaneHerbals
   - CP14DemiplaneWater
   layers:
-    - !type:OreDunGen
-      entityMask: 
+    - !type:CP14OreDunGen
+      entityMask:
       - CP14FloorWater
       - CP14FloorWaterLilies
       entity: CP14FloorWaterAirLily
@@ -141,9 +160,11 @@
     Reward: 0.15
   requiredTags:
   - CP14DemiplaneUnderground
+  blacklistTags:
+  - CP14DemiplaneCold
   layers:
-    - !type:OreDunGen
-      tileMask: 
+    - !type:CP14OreDunGen
+      tileMask:
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall

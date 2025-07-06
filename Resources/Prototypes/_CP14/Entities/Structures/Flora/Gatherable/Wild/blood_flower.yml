@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _CP14/Structures/Flora/Flowers/red_rose.rsi
+    sprite: _CP14/Structures/Flora/Wild/blood_flower.rsi
     layers:
       - state: world1
         map: ["random"]
@@ -20,11 +20,7 @@
   - type: CP14PlantGatherable
     deleteAfterHarvest: true
     loot:
-      All: CP14GatherBloodFlower
+      All: !type:GroupSelector
+        children:
+        - id: CP14BloodFlower
 
-- type: entityLootTable
-  id: CP14GatherBloodFlower
-  entries:
-  - id: CP14BloodFlower
-    amount: 1
-    maxAmount: 1

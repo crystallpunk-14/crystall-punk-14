@@ -34,7 +34,7 @@ public sealed class VocalSystem : EntitySystem
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
     {
         // try to add scream action when vocal comp added
-        _actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction);
+        //_actions.AddAction(uid, ref component.ScreamActionEntity, component.ScreamAction); //CP14 Remove The Scream Action from the Action bar
         LoadSounds(uid, component);
     }
 
@@ -43,13 +43,13 @@ public sealed class VocalSystem : EntitySystem
         // remove scream action when component removed
         if (component.ScreamActionEntity != null)
         {
-            _actions.RemoveAction(uid, component.ScreamActionEntity);
+            //_actions.RemoveAction(uid, component.ScreamActionEntity);  //CP14 Remove The Scream Action from the Action bar
         }
     }
 
     private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
     {
-        LoadSounds(uid, component);
+        LoadSounds(uid, component, args.NewSex);
     }
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)

@@ -18,16 +18,11 @@
         world2: ""
         world3: ""
   - type: CP14PlantGatherable
+    gatherSound:
+      collection: FootstepSlime
     deleteAfterHarvest: true
-    toolWhitelist:
-      components:
-        - Hands
     loot:
-      All: CP14GatherChromiumSlime
+      All: !type:GroupSelector
+        children:
+        - id: CP14ChromiumSlime
 
-- type: entityLootTable
-  id: CP14GatherChromiumSlime
-  entries:
-  - id: CP14ChromiumSlime
-    amount: 1
-    maxAmount: 1

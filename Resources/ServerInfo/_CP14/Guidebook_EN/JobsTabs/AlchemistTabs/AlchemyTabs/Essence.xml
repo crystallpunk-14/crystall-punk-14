@@ -35,6 +35,7 @@ Minimal units of being. By obtaining them from splitting items and precursers, a
 ## Second Compound Essences:
 <Box>
 <GuideEntityEmbed Entity="CP14EssenceMagic"/>
+<GuideEntityEmbed Entity="CP14EssenceBeast"/>
 </Box>
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT2"/>
 

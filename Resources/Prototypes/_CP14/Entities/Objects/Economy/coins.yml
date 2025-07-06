@@ -29,7 +29,7 @@
   - type: CP14CurrencyExaminable
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_CP14/Items/coins_fall.ogg  
+      path: /Audio/_CP14/Items/coins_fall.ogg
   - type: EmitSoundOnDrop
     sound:
       collection: CP14Coins
@@ -44,7 +44,7 @@
   parent: CP14BaseCoin
   name: copper coin
   description: The smallest denomination coin. Copper.
-  suffix: 10 coins
+  suffix: 10 coins - trade
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/cp_coin.rsi
@@ -60,7 +60,7 @@
 - type: entity
   id: CP14CopperCoin5
   parent: CP14CopperCoin
-  suffix: 5 coins
+  suffix: 5 coins - trade
   components:
   - type: Sprite
     state: coin5
@@ -70,7 +70,7 @@
 - type: entity
   id: CP14CopperCoin1
   parent: CP14CopperCoin
-  suffix: 1 coin
+  suffix: 1 coin - trade
   components:
   - type: Sprite
     state: coin1
@@ -84,7 +84,7 @@
   parent: CP14BaseCoin
   name: silver coin
   description: A valuable coin made from a precisely calibrated silver alloy..... and something else. Equal in value to ten coppers.
-  suffix: 10 coins
+  suffix: 10 coins - trade
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/sp_coin.rsi
@@ -100,7 +100,7 @@
 - type: entity
   id: CP14SilverCoin5
   parent: CP14SilverCoin
-  suffix: 5 coins
+  suffix: 5 coins - trade
   components:
   - type: Sprite
     state: coin5
@@ -124,7 +124,7 @@
   parent: CP14BaseCoin
   name: gold coin
   description: A gold, big, beautiful coin. Valuable enough to be stolen by bandits. Equal in value to ten silver coins.
-  suffix: 10 coins
+  suffix: 10 coins - trade
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/gp_coin.rsi
@@ -140,7 +140,7 @@
 - type: entity
   id: CP14GoldCoin5
   parent: CP14GoldCoin
-  suffix: 5 coins
+  suffix: 5 coins - trade
   components:
   - type: Sprite
     state: coin5
@@ -150,7 +150,7 @@
 - type: entity
   id: CP14GoldCoin1
   parent: CP14GoldCoin
-  suffix: 1 coin
+  suffix: 1 coin - trade
   components:
   - type: Sprite
     state: coin1
@@ -164,7 +164,7 @@
   parent: CP14BaseCoin
   name: platinum coin
   description: A platinum coin? It's so rare. Ten gold pieces is the price of one.
-  suffix: 10 coins
+  suffix: 10 coins - trade
   components:
   - type: Sprite
     sprite: /Textures/_CP14/Objects/Economy/pp_coin.rsi
@@ -180,7 +180,7 @@
 - type: entity
   id: CP14PlatinumCoin5
   parent: CP14PlatinumCoin
-  suffix: 5 coins
+  suffix: 5 coins - trade
   components:
   - type: Sprite
     state: coin5
@@ -190,7 +190,7 @@
 - type: entity
   id: CP14PlatinumCoin1
   parent: CP14PlatinumCoin
-  suffix: 1 coin
+  suffix: 1 coin - trade
   components:
   - type: Sprite
     state: coin1

@@ -27,9 +27,9 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 3
         - ReagentId: Vitamin
-          Quantity: 1
+          Quantity: 0.5
   - type: SliceableFood
     count: 4
     sliceTime: 1.5
@@ -43,7 +43,7 @@
   parent: FoodInjectableBase
   categories: [ ForkFiltered ]
   name: cabbage leaf
-  description: Time to make green salads
+  description: Time to make green salads.
   components:
   - type: Item
     size: Tiny
@@ -68,9 +68,9 @@
         maxVol: 3 # 1/4 cabbage
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.5
+          Quantity: 0.83
         - ReagentId: Vitamin
-          Quantity: 0.25
+          Quantity: 0.14
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CabbageSandwich
@@ -105,9 +105,9 @@
         maxVol: 30
         reagents:
         - ReagentId: PumpkinFlesh
-          Quantity: 20
+          Quantity: 10
         - ReagentId: Vitamin
-          Quantity: 5
+          Quantity: 2
   - type: SliceableFood
     count: 5
     sliceTime: 2
@@ -146,9 +146,9 @@
         maxVol: 6 # 1/5 pumpkin
         reagents:
         - ReagentId: PumpkinFlesh
-          Quantity: 4
+          Quantity: 1.33
         - ReagentId: Vitamin
-          Quantity: 1
+          Quantity: 0.57
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14PumpkinSandwich
@@ -158,7 +158,7 @@
   parent: FoodInjectableBase
   categories: [ ForkFiltered ]
   name: potato
-  description: Cute potato
+  description: Cute potato.
   components:
   - type: Item
     size: Tiny
@@ -183,14 +183,23 @@
         maxVol: 11
         reagents:
         - ReagentId: Nutriment
-          Quantity: 7
+          Quantity: 2.33
         - ReagentId: Vitamin
-          Quantity: 2
+          Quantity: 1.14
   - type: CP14Seed
     plantProto: CP14PlantPotato #TODO sliceable potato
   - type: Tag
     tags:
     - CP14FarmFood
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodPotatoHot
 
 - type: entity
   id: CP14FoodCucumber
@@ -223,14 +232,47 @@
         maxVol: 11
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
+          Quantity: 1.33
         - ReagentId: Vitamin
-          Quantity: 2
+          Quantity: 1.14
         - ReagentId: Water
           Quantity: 3
+  - type: SliceableFood
+    count: 2
+    sliceTime: 1
+    slice: CP14FoodCucumberSlice
   - type: Tag
     tags:
     - CP14FarmFood
+
+- type: entity
+  id: CP14FoodCucumberSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: cucumber slice
+  description: An evenly cut cucumber, still as green and watery.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14Water
+      - CP14cucumber
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
+    layers:
+      - state: slice1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Water
+          Quantity: 1.5
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CucumberSandwich
@@ -264,9 +306,9 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 1
         - ReagentId: Vitamin
-          Quantity: 3
+          Quantity: 1.71
         - ReagentId: JuiceTomato
           Quantity: 6
   - type: SliceableFood
@@ -330,9 +372,9 @@
         maxVol: 3 # 1/3 pumpkin
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1
+          Quantity: 0.33
         - ReagentId: Vitamin
-          Quantity: 1
+          Quantity: 0.57
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14TomatoesSandwich
@@ -355,9 +397,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 3.33
         - ReagentId: Vitamin
-          Quantity: 4
+          Quantity: 2.29
   - type: Sprite
     sprite: _CP14/Objects/Flora/Farm/apple.rsi
     layers:
@@ -397,9 +439,9 @@
         maxVol: 4
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.5
+          Quantity: 0.83
         - ReagentId: Vitamin
-          Quantity: 1
+          Quantity: 0.57
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14AppleSandwich
@@ -427,18 +469,51 @@
           base1: ""
           base2: ""
           base3: ""
+  - type: SliceableFood
+    count: 4
+    sliceTime: 2
+    slice: CP14FoodPepperSlice
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8
+          Quantity: 2.67
         - ReagentId: Vitamin
-          Quantity: 6
+          Quantity: 3.43
   - type: Tag
     tags:
     - CP14FarmFood
+
+- type: entity
+  id: CP14FoodPepperSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: pepper slice
+  description: Still as red and sweetish.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - peppery
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/pepper.rsi
+    layers:
+      - state: slice1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3.5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      CP14Sandwich: CP14PepperSandwich
 
 - type: entity
   id: CP14FoodOnion
@@ -469,13 +544,48 @@
         maxVol: 17
         reagents:
         - ReagentId: Nutriment
-          Quantity: 9
+          Quantity: 3
         - ReagentId: Vitamin
-          Quantity: 4
+          Quantity: 2.29
         - ReagentId: Allicin
           Quantity: 3
+  - type: SliceableFood
+    count: 4
+    sliceTime: 2
+    slice: CP14FoodOnionSlice
   - type: CP14Seed
     plantProto: CP14PlantOnion
   - type: Tag
     tags:
     - CP14FarmFood
+
+- type: entity
+  id: CP14FoodOnionSlice
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: onion ring
+  description: A more tolerable and easy to eat onion ring.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Farm/onion.rsi
+    layers:
+      - state: slice1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Allicin
+          Quantity: 0.8
+  - type: FoodSequenceElement
+    entries:
+      CP14Sandwich: CP14OnionSandwich

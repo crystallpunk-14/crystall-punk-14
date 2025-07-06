@@ -16,6 +16,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.MagicSpell;
@@ -37,6 +38,7 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
 
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
+        SubscribeLocalEvent<CP14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14SpellSpeechEvent>(OnSpellSpoken);
 
@@ -46,6 +48,20 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
 
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
+    }
+
+    private void OnStartCollide(Entity<CP14SpellEffectOnCollideComponent> ent, ref StartCollideEvent args)
+    {
+        if (!_random.Prob(ent.Comp.Prob))
+            return;
+
+        if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, args.OtherEntity))
+            return;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new CP14SpellEffectBaseArgs(null, ent, args.OtherEntity, Transform(args.OtherEntity).Coordinates));
+        }
     }
 
     private void OnProjectileHit(Entity<CP14SpellEffectOnHitComponent> ent, ref ThrowDoHitEvent args)

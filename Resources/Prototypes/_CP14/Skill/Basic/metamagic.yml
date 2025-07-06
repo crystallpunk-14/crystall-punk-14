@@ -1,0 +1,172 @@
+# T1
+
+- type: cp14Skill
+  id: MetamagicT1
+  skillUiPosition: 1, 0
+  tree: Metamagic
+  name: cp14-skill-meta-t1-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: meta
+  effects:
+  - !type:AddManaMax
+    additionalMana: 25
+
+- type: cp14Skill
+  id: CP14ActionSpellManaGift
+  skillUiPosition: 0, 2
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_gift
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellManaGift
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT1
+
+- type: cp14Skill
+  id: CP14ActionSpellManaGiftElf
+  skillUiPosition: 0, 4
+  learnCost: 0
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_gift
+  effects:
+  - !type:ReplaceAction
+    oldAction: CP14ActionSpellManaGift
+    newAction: CP14ActionSpellManaGiftElf
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellManaGift
+  - !type:SpeciesWhitelist
+    species: CP14Elf
+
+- type: cp14Skill
+  id: CP14ActionSpellManaConsume
+  skillUiPosition: 2, 2
+  learnCost: 0.5
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_consume
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellManaConsume
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT1
+
+- type: cp14Skill
+  id: CP14ActionSpellManaConsumeElf
+  skillUiPosition: 2, 4
+  learnCost: 0
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_consume
+  effects:
+  - !type:ReplaceAction
+    oldAction: CP14ActionSpellManaConsume
+    newAction: CP14ActionSpellManaConsumeElf
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: CP14ActionSpellManaConsume
+  - !type:SpeciesWhitelist
+    species: CP14Elf
+
+- type: cp14Skill
+  id: CP14ActionSpellMagicBallade
+  skillUiPosition: 1, 6
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_music
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellMagicBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT1
+
+# T2
+
+- type: cp14Skill
+  id: MetamagicT2
+  skillUiPosition: 7, 0
+  tree: Metamagic
+  name: cp14-skill-meta-t2-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: meta2
+  effects:
+  - !type:AddManaMax
+    additionalMana: 25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT1
+
+- type: cp14Skill
+  id: CP14ActionSpellMagicSplitting
+  skillUiPosition: 6, 2
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: counter_spell
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellMagicSplitting
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
+- type: cp14Skill
+  id: CP14ActionSpellManaTrance
+  skillUiPosition: 8, 2
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: mana_trance
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellManaTrance
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
+- type: cp14Skill
+  id: CP14ActionToggleMagicVision
+  skillUiPosition: 6, 4
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_vision
+  effects:
+  - !type:AddAction
+    action: CP14ActionToggleMagicVision
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
+# T3
+
+- type: cp14Skill
+  id: MetamagicT3
+  skillUiPosition: 13, 0
+  tree: Metamagic
+  name: cp14-skill-meta-t3-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: meta3
+  effects:
+  - !type:AddManaMax
+    additionalMana: 25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2

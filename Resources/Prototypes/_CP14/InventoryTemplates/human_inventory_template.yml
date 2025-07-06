@@ -3,12 +3,12 @@
   slots:
     # Left hotbar
     # 0, y
-    - name: ring1
-      slotTexture: ring
-      slotFlags: RING
+    - name: gloves
+      slotTexture: gloves
+      slotFlags: GLOVES
       uiWindowPos: 0,1
-      strippingWindowPos: 0,3
-      displayName: Ring
+      strippingWindowPos: 0,2
+      displayName: Gloves
     - name: mask
       slotTexture: mask
       slotFlags: MASK
@@ -22,12 +22,6 @@
       strippingWindowPos: 0,1
       displayName: Eyes
     # 1, y
-    - name: shoes
-      slotTexture: shoes
-      slotFlags: FEET
-      uiWindowPos: 1,0
-      strippingWindowPos: 1,5
-      displayName: Shoes
     - name: pants
       slotTexture: pants
       slotFlags: PANTS
@@ -47,18 +41,12 @@
       strippingWindowPos: 1,1
       displayName: Head
     # 2, y
-    - name: gloves
-      slotTexture: gloves
-      slotFlags: GLOVES
-      uiWindowPos: 2,0
-      strippingWindowPos: 0,2
-      displayName: Gloves
-    - name: ring2
-      slotTexture: ring
-      slotFlags: RING
+    - name: shoes
+      slotTexture: shoes
+      slotFlags: FEET
       uiWindowPos: 2,1
-      strippingWindowPos: 2,3
-      displayName: Ring
+      strippingWindowPos: 1,5
+      displayName: Shoes
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING
@@ -72,7 +60,7 @@
       strippingWindowPos: 2,2
       displayName: Cloak
     # Main hotbar
-    - name: belt1
+    - name: belt
       slotTexture: belt
       slotFlags: BELT
       slotGroup: SecondHotbar

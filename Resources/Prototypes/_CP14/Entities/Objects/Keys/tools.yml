@@ -33,6 +33,21 @@
       CP14Mithril: 10
 
 - type: entity
+  parent: CP14BaseLockpick
+  id: CP14LockpickSkeletonArtifact
+  name: lockpick skeleton
+  description: A lockpick made from the bone of an unknown creature, it can open anything... though not immediately.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: CP14Lockpick
+    health: 1000
+  - type: Sprite
+    state: lockpick_skeleton
+  - type: StaticPrice
+    price: 400
+
+- type: entity
   parent: BaseItem
   id: CP14KeyFile
   name: key file

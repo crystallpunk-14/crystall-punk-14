@@ -46,7 +46,7 @@
     - CP14wall
 
 - type: entity
-  parent: 
+  parent:
   - CP14BaseFenceBig
   - CP14BaseFlammableSpreading
   id: CP14FenceBigWooden
@@ -75,6 +75,9 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14FenceBigWooden
+    node: CP14FenceBigWooden
 
 - type: entity
   parent: CP14FenceBigWooden
@@ -85,11 +88,14 @@
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
+  - type: Construction
+    graph: CP14FenceBigWoodenBirch
+    node: CP14FenceBigWoodenBirch
 
 - type: entity
   parent: CP14BaseFenceBig
   id: CP14FenceBigIron
-  suffix: Iron 
+  suffix: Iron
   components:
   - type: Sprite
     sprite: _CP14/Structures/Fence/iron_big.rsi
@@ -97,7 +103,7 @@
     sprite: _CP14/Structures/Fence/iron_big.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -106,7 +112,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: WoodDestroy
+          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14ScrapIron:
@@ -114,3 +120,4 @@
             max: 2
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+

@@ -49,40 +49,6 @@
   - type: Stack
     count: 3
 
-
-- type: entity
-  parent: BaseItem
-  id: CP14CrystalShardQuartz
-  name: quartz shard
-  description: Natural quartz crystals that can absorb the magical energy of the world around them.
-  categories: [ ForkFiltered ]
-  components:
-  - type: Tag
-    tags:
-    - CP14FitInMortar
-  - type: Item
-    size: Tiny
-  - type: Sprite
-    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
-    layers:
-      - state: shard0
-        map: ["random"]
-  - type: RandomSprite
-    available:
-    - random:
-        shard0: ""
-        shard1: ""
-        shard2: ""
-        shard3: ""
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: CP14GroundQuartz
-        Quantity: 7
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Glass: 10
-
 - type: entity
   parent: BaseItem
   id: CP14DimensitCrystal
@@ -90,9 +56,6 @@
   description: A fragment of the fabric of reality. An extremely valuable resource for those who know what they can do with it.
   categories: [ ForkFiltered ]
   components:
-  #- type: Tag
-  #  tags:
-  #  - CP14FitInMortar
   - type: Item
     size: Tiny
     shape:
@@ -102,6 +65,8 @@
     layers:
       - state: core1
         map: ["random"]
+  - type: StaticPrice
+    price: 15
   - type: RandomSprite
     available:
     - random:
@@ -109,3 +74,47 @@
         core2: ""
         core3: ""
         core4: ""
+
+- type: entity
+  id: CP14GlassSheet1
+  parent: BaseItem
+  name: glass sheet
+  description: Treated quartz glass, transmits light well, and is nice to look at!
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/glass.rsi
+    layers:
+      - state: glass
+        map: ["base"]
+  - type: Appearance
+  - type: Stack
+    stackType: CP14GlassSheet
+    count: 1
+    baseLayer: base
+    layerStates:
+    - glass
+    - glass_2
+    - glass_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 10
+
+- type: entity
+  id: CP14GlassSheet5
+  parent: CP14GlassSheet1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14GlassSheet10
+  parent: CP14GlassSheet1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

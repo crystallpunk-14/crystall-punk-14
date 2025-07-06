@@ -1,0 +1,37 @@
+- type: entity
+  parent: CP14BaseAltarPrimordial
+  id: CP14AltarPrimordialGodLumera
+  name: primordial statue of Lumera
+  description: "The enchanting statue of Lumera, patroness of the starry sky, night, and mysteries. She does not demand worship—she simply observes. And waits for you to ask."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    offset: "0.0,0.8"
+    sprite: _CP14/Structures/Specific/Religion/lumera_statue.rsi
+    layers:
+    - state: statue1
+  - type: CP14ReligionAltar
+    religion: Lumera
+  - type: CP14ReligionObserver
+    religion: Lumera
+    radius: 15
+  - type: SpawnPoint
+    job_id: CP14GodLumera
+
+#- type: entity
+#  parent: CP14BaseAltarPrimordial
+#  id: CP14AltarPrimordialGodMerkas
+#  name: primordial statue of Merkas
+#  description: A beautiful, overgrown statue of Sylvania, revered as a goddess of nature.
+#  components:
+#  - type: Sprite
+#    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+#    layers:
+#    - state: druid
+#  - type: CP14ReligionAltar
+#    religion: Merkas
+#  - type: CP14ReligionObserver
+#    religion: Merkas
+#    radius: 10
+#  - type: SpawnPoint
+#    job_id: CP14GodMerkas

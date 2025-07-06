@@ -29,6 +29,9 @@
 - type: playTimeTracker
   id: CP14JobGuard
 
+- type: playTimeTracker
+  id: CP14JobInvestigator
+
 # Trade guild
 
 - type: playTimeTracker
@@ -36,3 +39,10 @@
 
 - type: playTimeTracker
   id: CP14JobMerchant
+
+# Gods
+- type: playTimeTracker
+  id: CP14GodMerkas
+
+- type: playTimeTracker
+  id: CP14GodLumera

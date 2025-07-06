@@ -1,11 +1,9 @@
 - type: entity
   id: CP14ActionSpellFireball
+  parent: CP14ActionSpellBase
   name: Fireball
   description: An effective method of destruction - an explosive fireball
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: fireball
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffectManaCost
@@ -25,17 +23,15 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
   - type: CP14MagicEffectPacifiedBlock
-  - type: EntityWorldTargetAction
-    checkCanAccess: false
-    raiseOnUser: true
-    range: 60
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: fireball
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 25
       castDelay: 2.5
       breakOnMove: false
@@ -108,3 +104,4 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellFireball
+

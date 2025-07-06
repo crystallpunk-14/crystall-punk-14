@@ -11,6 +11,18 @@
     damageMultiplier: 0.75
 
 - type: modularPart
+  id: BaseBladeWooden
+  modifiers:
+  - !type:EditDamageableModifier
+    multiplier: 3
+  - !type:EditSharpened
+    sharpnessDamageMultiplier: 3
+  - !type:EditMeleeWeapon
+    damageMultiplier: 0.25
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 0.25
+
+- type: modularPart
   id: BaseBladeIron
   modifiers:
   - !type:EditDamageableModifier
@@ -45,3 +57,4 @@
     damageMultiplier: 1.25
   - !type:EditIncreaseDamageOnWield
     damageMultiplier: 1.25
+

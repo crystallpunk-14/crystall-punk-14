@@ -75,7 +75,7 @@
       - !type:SatiateHunger
         factor: 1
   footstepSound:
-    collection: FootstepBlood
+    collection: FootstepSlime # makes sense
     params:
       volume: 6
 
@@ -100,7 +100,7 @@
       - !type:SatiateThirst
         factor: 1
   footstepSound:
-    collection: FootstepBlood
+    collection: FootstepSlime
     params:
       volume: 6
 
@@ -197,6 +197,7 @@
     collection: FootstepBlood
     params:
       volume: 6
+  pricePerUnit: 0.5
 
 - type: reagent
   id: Vomit

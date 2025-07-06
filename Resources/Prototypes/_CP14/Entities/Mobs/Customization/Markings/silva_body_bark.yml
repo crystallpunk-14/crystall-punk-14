@@ -3,7 +3,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -17,7 +17,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -31,7 +31,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -45,7 +45,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -59,7 +59,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -73,7 +73,7 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [ CP14Silva ]
-  coloring: 
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -81,3 +81,4 @@
   sprites:
   - sprite: _CP14/Mobs/Customization/silva_body_bark.rsi
     state: bark6
+
