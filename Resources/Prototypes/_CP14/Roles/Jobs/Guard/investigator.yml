@@ -20,6 +20,10 @@
       components:
       - type: CP14SalaryCounter
         salary: 75
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - Guards
+      - Thaumaturgy
 
 - type: startingGear
   id: CP14InvestigatorGear
