@@ -365,6 +365,10 @@ CP14SpellScrollMagicSplitting: null
 CP14AlchemyFurnaceDebug: CP14FurnaceDebug
 CP14AlchemyFurnace: CP14Furnace
 
+#2025-06-07
+CP14WoodenClosetGuardFilled: null
+CP14WoodenClosetGuardCommanderFilled: null
+
 # <---> CrystallEdge migration zone end
 
 
