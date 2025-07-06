@@ -89,47 +89,6 @@
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetGuardFilled
-  suffix: Guard, Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14Rope
-        amount: 2
-      - id: Bola
-        amount: 2
-      - id: CP14ModularGuardHalberd
-      - id: CP14BaseShield
-      - id: CP14ModularGripIronLongGuard
-        amount: 2
-      - id: CP14BaseLightCrossbow
-      - id: CP14CrossboltIron
-        amount: 5
-      - id: CP14EnergyCrystalMedium
-      - id: CP14CrystalLampBlueEmpty
-
-- type: entity
-  parent: CP14WoodenCloset
-  id: CP14WoodenClosetGuardCommanderFilled
-  suffix: Guard Commander, Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14Rope
-        amount: 2
-      - id: Bola
-      - id: Bola
-      - id: CP14ModularGuardHalberd
-      - id: CP14BaseShield
-      - id: CP14ModularGripIronLongGuard
-        amount: 2
-      - id: CP14EnergyCrystalMedium
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14StampGuardCommander
-      - id: CP14ClothingCloakAristocraticCloak
-
-- type: entity
-  parent: CP14WoodenCloset
   id: CP14WoodenClosetGuildmasterFilled
   suffix: Guildmaster, Filled
   components:

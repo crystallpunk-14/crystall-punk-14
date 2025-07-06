@@ -14,11 +14,15 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Guard
-      time: 3600 # 1 hours
+      time: 10980 # 3 hours
   special:
     - !type:CP14LearnSkillsSpecial
       skills:
       - SwordMastery
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 400
 
 - type: startingGear
   id: CP14GuardCommanderGear

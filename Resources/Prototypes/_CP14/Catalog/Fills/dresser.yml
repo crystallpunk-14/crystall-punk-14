@@ -82,6 +82,25 @@
 
 - type: entity
   parent: CP14WoodenCabinet
+  id: CP14WoodenCabinetInvestigator
+  suffix: Investigator, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14GuidebookImperialLaws
+      - id: CP14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: CP14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: CP14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: CP14ClothingCloakGuardInvestigator
+        prob: 1
+      - id: CP14ManaOperationGlove
+        prob: 1
+
+- type: entity
+  parent: CP14WoodenCabinet
   id: CP14WoodenCabinetGuardCommander
   suffix: Guard Commander, Filled
   components:
@@ -96,6 +115,7 @@
         prob: 0.7
       - id: CP14ClothingCloakGuardCommander
         prob: 1
+      - id: CP14StampGuardCommander
 
 - type: entity
   parent: CP14WoodenCabinet
