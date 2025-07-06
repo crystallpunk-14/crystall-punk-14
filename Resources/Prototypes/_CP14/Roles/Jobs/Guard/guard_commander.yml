@@ -23,6 +23,9 @@
       components:
       - type: CP14SalaryCounter
         salary: 400
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - Guards
 
 - type: startingGear
   id: CP14GuardCommanderGear

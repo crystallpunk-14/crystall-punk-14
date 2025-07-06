@@ -106,6 +106,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14TradeContractGuards
       - id: CP14GuidebookImperialLaws
       - id: CP14ClothingHeadGuardHelmet
         prob: 0.7
@@ -131,4 +132,3 @@
         prob: 1
       - id: CP14ClothingOuterClothingGreenVest
         prob: 0.6
-

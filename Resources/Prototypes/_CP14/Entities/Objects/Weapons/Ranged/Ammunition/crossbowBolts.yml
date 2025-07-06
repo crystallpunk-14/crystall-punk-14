@@ -4,6 +4,11 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
   - type: Item
     size: Tiny
     shape:
@@ -18,6 +23,11 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
   - type: Item
     size: Small
     shape:
@@ -33,13 +43,10 @@
   description: Rod with a pointed spike in iron. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 20
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
     - state: solution1
@@ -56,13 +63,10 @@
   description: Rod with a pointed spike in gold. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 15
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#ffe269"
@@ -80,13 +84,10 @@
   description: Rod with a pointed spike in copper. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 15
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#e28f08"
@@ -104,13 +105,10 @@
   description: Rod with a pointed spike in mithril. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 25
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#38f0b3"
@@ -128,13 +126,10 @@
   description: A large rod without plumage, for large crossbows. 
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 35
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: big_rod
   - type: PhysicalComposition
@@ -148,13 +143,10 @@
   description: A large rod without plumage, for large crossbows. 
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 25
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: big_rod
       color: "#ffe269"
@@ -169,13 +161,10 @@
   description: A large rod without plumage, for large crossbows. 
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 25
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: big_rod
       color: "#e28f08"
@@ -190,13 +179,10 @@
   description: A large rod without plumage, for large crossbows. 
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 40
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: big_rod
       color: "#38f0b3"

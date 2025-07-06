@@ -11,7 +11,17 @@
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours
   special:
-    - !type:CP14AddGlobalReputationSpecial
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - BradPotions
+      - DwarfMining
+      - Thaumaturgy
+      - HomeDecor
+      - Horticulture
+      - Butchers
+      - Dairy
+      - Tailors
     - !type:CP14LearnSkillsSpecial
       skills:
       - TraderWit
