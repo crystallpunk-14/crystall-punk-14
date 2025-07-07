@@ -40,7 +40,7 @@ public sealed class CP14Economy
                     var result = entManager.Spawn(recipe.Result);
                     var resultPrice = pricingSystem.GetPrice(result) * recipe.ResultCount;
 
-                    Assert.That(resourcePrice < resultPrice, $"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Expected result price is {resourcePrice}+, but it is {resultPrice}.");
+                    Assert.That(resourcePrice <= resultPrice, $"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Expected result price is {resourcePrice}+, but it is {resultPrice}.");
                     entManager.DeleteEntity(result);
                 }
             });
