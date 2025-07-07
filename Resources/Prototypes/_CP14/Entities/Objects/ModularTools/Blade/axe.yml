@@ -25,7 +25,7 @@
     - BladeIronAxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 10
+      CP14Iron: 20
 
 - type: entity
   parent: CP14ModularBladeAxeBase
@@ -42,7 +42,7 @@
     - BladeGoldAxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 10
+      CP14Gold: 20
 
 - type: entity
   parent: CP14ModularBladeAxeBase
@@ -59,7 +59,7 @@
     - BladeCopperAxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 10
+      CP14Copper: 20
 
 - type: entity
   parent: CP14ModularBladeAxeBase
@@ -76,7 +76,7 @@
     - BladeMithrilAxe
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 10
+      CP14Mithril: 20
 
 - type: entity
   parent: CP14ModularBladeAxeBase
