@@ -39,20 +39,22 @@ public sealed class CP14Workbench
                     var result = entManager.Spawn(recipe.Result);
                     var resultPrice = pricingSystem.GetPrice(result) * recipe.ResultCount;
 
-                    resourcePrice = Math.Round(resourcePrice, 2);
-                    resultPrice = Math.Round(resultPrice, 2);
+                    resourcePrice = Math.Round(resourcePrice, 3);
+                    resultPrice = Math.Round(resultPrice, 3);
 
                     if (resourcePrice == 0 && resultPrice == 0)
                         continue;
 
-                    if (resourcePrice > resultPrice)
+                    var minLimit = resourcePrice;
+                    var maxLimit = resourcePrice * 2;
+                    if (resultPrice < minLimit)
                     {
-                        Assert.Fail($"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price is more then {resourcePrice}, but it is {resultPrice}");
+                        Assert.Fail($"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected price range: from {minLimit} to {maxLimit}. Current price: {resultPrice}");
                     }
 
-                    if (resultPrice > resourcePrice * 2)
+                    if (resultPrice > maxLimit)
                     {
-                        Assert.Fail($"The result of crafting [{recipe.ID}] is too expensive! After crafting, the final cost exceeds the cost of all resources more than 2 times! Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price < {resourcePrice * 2}, but it is {resultPrice}");
+                        Assert.Fail($"The result of crafting [{recipe.ID}] is too expensive! After crafting, the final cost exceeds the cost of all resources more than 2 times! Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected price range: from {minLimit} to {maxLimit}. Current price: {resultPrice}");
                     }
                     entManager.DeleteEntity(result);
                 }
