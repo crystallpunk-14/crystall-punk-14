@@ -57683,13 +57683,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 107.5,40.5
       parent: 1
-- proto: CP14WoodenClosetGuardCommanderFilled
-  entities:
-  - uid: 9078
-    components:
-    - type: Transform
-      pos: 105.5,54.5
-      parent: 1
 - proto: CP14WoodenClosetGuardFilled
   entities:
   - uid: 9079

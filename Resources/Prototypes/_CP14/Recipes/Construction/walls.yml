@@ -52,6 +52,19 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14WindowWoodenBirch
+  graph: CP14WindowWooden
+  startNode: start
+  targetNode: CP14WindowWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14WallDirt
   graph: CP14WallDirt
   startNode: start

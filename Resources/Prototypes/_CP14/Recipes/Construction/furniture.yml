@@ -13,6 +13,19 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14ChairWoodenBirch
+  graph: CP14Seat
+  startNode: start
+  targetNode: CP14ChairWoodenBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14TableWooden
   graph: CP14TableWooden
   startNode: start
@@ -23,6 +36,19 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14TableWoodenBirch
+  graph: CP14TableWooden
+  startNode: start
+  targetNode: CP14TableWoodenBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
@@ -49,6 +75,19 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14TableWoodenBirchCounter
+  graph: CP14TableWooden
+  startNode: start
+  targetNode: CP14TableWoodenBirchCounter
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
@@ -135,6 +174,20 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14BirchWoodenBed
+  graph: CP14WoodenBed
+  startNode: start
+  targetNode: CP14BirchWoodenBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14BenchWood
   graph: CP14BenchWood
   startNode: start
@@ -146,6 +199,20 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14BenchWoodBirch
+  graph: CP14BenchWood
+  startNode: start
+  targetNode: CP14BenchWoodBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true
@@ -179,6 +246,19 @@
   graph: CP14IronCabinet
   startNode: start
   targetNode: CP14IronCabinet
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14Furnace
+  graph: CP14Furnace
+  startNode: start
+  targetNode: CP14Furnace
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

@@ -111,3 +111,17 @@
     - CP14ModularBladeBoneSword
     - CP14ModularGardeSharpIron
 
+- type: entity
+  id: CP14ModularWoodenSword
+  parent: CP14ModularGripWooden
+  name: training wooden sword
+  description: A wooden sword, light and easy to use, even a complete inept, will be able to use it.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/wooden_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenSword

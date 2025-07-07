@@ -29,9 +29,9 @@
   color: "#51cf72"
 
 - type: cp14SkillTree
-  id: Atlethic
-  name: cp14-skill-tree-atlethic-name
-  desc: cp14-skill-tree-atlethic-desc
+  id: Athletic
+  name: cp14-skill-tree-athletic-name
+  desc: cp14-skill-tree-athletic-desc
   color: "#b32e37"
 
 #- type: cp14SkillTree
@@ -39,6 +39,12 @@
 #  name: cp14-skill-tree-dimension-name
 #  desc: cp14-skill-tree-dimension-desc
 #  color: "#ac66be"
+
+- type: cp14SkillTree
+  id: Electromancy
+  name: cp14-skill-tree-electric-name
+  desc: cp14-skill-tree-electric-desc
+  color: "#e8ff4c"
 
 - type: cp14SkillTree
   id: MartialArts

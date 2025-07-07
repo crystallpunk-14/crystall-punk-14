@@ -60,3 +60,6 @@
         whitelist:
           tags:
             - CP14BigCrossbowBolt
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 50

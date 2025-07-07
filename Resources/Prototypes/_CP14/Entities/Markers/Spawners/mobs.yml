@@ -206,6 +206,23 @@
     - CP14MobMonsterFlem
 
 - type: entity
+  name: fairy spawner
+  id: CP14SpawnMobFairy
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+   - type: Sprite
+     layers:
+     - sprite: Markers/cross.rsi
+       state: green
+     - sprite: _CP14/Mobs/Animals/fairy.rsi
+       state: fairy
+       color: "#42AAFF"
+   - type: ConditionalSpawner
+     prototypes:
+      - CP14MobFairy
+
+- type: entity
   name: big bear spawner
   id: CP14SpawnMobBigBear
   parent: MarkerBase

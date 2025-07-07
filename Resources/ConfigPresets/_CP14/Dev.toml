@@ -18,7 +18,7 @@ max_connections = 100
 log_late_msg = false
 
 [game]
-hostname = "⚔️ CrystallEdge ⚔️"
+hostname = "⚔️ CrystallEdge ⚔️ [MRP]"
 desc = "History of the City of Sword and Magic. A social economic sandbox reinventing the Space Station 14 concept in fantasy style"
 lobbyenabled = true
 soft_max_players = 40
@@ -27,7 +27,7 @@ lobbyduration = 300
 role_timers = true
 
 [server]
-rules_file = "CP14SandboxRU"
+rules_file = "CP14Rules"
 
 [hub]
 advertise = true

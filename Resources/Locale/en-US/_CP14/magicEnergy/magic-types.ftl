@@ -19,6 +19,7 @@ cp14-essence-crystal = Vitreus
 
 # Complex tier 2
 cp14-essence-magic = Praecantatio
+cp14-essence-beast = Bestia
 
 cp14-magic-manacost = Manacost
 cp14-magic-essence = Magic type

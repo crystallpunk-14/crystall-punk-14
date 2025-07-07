@@ -2,10 +2,9 @@
   id: CP14CopperBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:MaterialResource
     material: CP14Copper
     count: 10
@@ -15,10 +14,9 @@
   id: CP14IronBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:MaterialResource
     material: CP14Iron
     count: 10
@@ -28,10 +26,9 @@
   id: CP14GoldBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:MaterialResource
     material: CP14Gold
     count: 10
@@ -41,10 +38,9 @@
   id: CP14MithrilBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:MaterialResource
     material: CP14Mithril
     count: 10
@@ -54,10 +50,9 @@
   id: CP14GlassSheet1
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:ProtoIdResource
     protoId: CP14CrystalShardQuartz
     count: 1
@@ -67,10 +62,9 @@
   id: CP14GlassSheetShard1
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:ProtoIdResource
     protoId: CP14GlassShard
     count: 2
@@ -80,10 +74,9 @@
   id: CP14VialTiny
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 1
@@ -93,10 +86,9 @@
   id: CP14VialTinyReinforced
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -109,10 +101,9 @@
   id: CP14VialSmall
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 2
@@ -122,10 +113,9 @@
   id: CP14VialSmallReinforced
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -138,10 +128,9 @@
   id: CP14VialMedium
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 4
@@ -151,10 +140,9 @@
   id: CP14VialMediumReinforced
   tag: CP14RecipeMeltingFurnace
   craftTime: 3
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
@@ -164,13 +152,39 @@
   result: CP14VialMediumReinforced
 
 - type: CP14Recipe
+  id: CP14VialStar
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requiredSkills:
+  - GlassMelting
+  requirements:
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStar
+
+- type: CP14Recipe
+  id: CP14VialStarReinforced
+  tag: CP14RecipeMeltingFurnace
+  craftTime: 3
+  requiredSkills:
+  - GlassMelting
+  requirements:
+  - !type:StackResource
+    stack: CP14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: CP14GlassSheet
+    count: 2
+  result: CP14VialStarReinforced
+
+- type: CP14Recipe
   id: CP14BaseAlchemyBomb
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  requiredSkills:
+  - GlassMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GlassMelting
   - !type:StackResource
     stack: CP14GlassSheet
     count: 9

@@ -23,12 +23,4 @@ Nature has deprived goblins of the gift of magic:
 - Maximum mana reserve reduced by 75%
 - Mana regeneration rate increased by 1.5 times
 
-## Goblin Agility
-
-Goblins cannot take the Sprint spell, but they have an improved version of it that speeds up more than usual
-
-<Box>
-<GuideEntityEmbed Entity="CP14ActionSpellSprintGoblin"/>
-</Box>
-
 </Document>

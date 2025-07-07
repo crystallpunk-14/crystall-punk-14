@@ -78,3 +78,15 @@
     materialComposition:
       CP14Mithril: 10
 
+- type: entity
+  parent: CP14ModularBladeAxeBase
+  id: CP14ModularBladeWoodenAxe
+  name: wooden axe blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Axe/wooden_axe.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeWoodenAxe

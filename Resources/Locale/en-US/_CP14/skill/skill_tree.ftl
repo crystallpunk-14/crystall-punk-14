@@ -19,10 +19,13 @@ cp14-skill-tree-healing-desc = Explore the ways in which magic affects living cr
 cp14-skill-tree-dimension-name = Dimensionomy
 cp14-skill-tree-dimension-desc = Immerse yourself in the nature of space and void.
 
+cp14-skill-tree-electric-name = Electromancy
+cp14-skill-tree-electric-desc = Discover the nature of deafening storms, winds, and thunderstorms.
+
 # Body
 
-cp14-skill-tree-atlethic-name = Athletic
-cp14-skill-tree-atlethic-desc = Develop your body by pushing the boundaries of what is available.
+cp14-skill-tree-athletic-name = Athletic
+cp14-skill-tree-athletic-desc = Develop your body by pushing the boundaries of what is available.
 
 cp14-skill-tree-martial-name = Martial arts
 cp14-skill-tree-martial-desc = Master the secrets of deadly weapons, or make your own body a weapon.

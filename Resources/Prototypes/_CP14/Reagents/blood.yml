@@ -73,6 +73,7 @@
     collection: FootstepBlood
     params:
       volume: 6
+  pricePerUnit: 0.45
 
 - type: reagent
   id: CP14BloodTiefling
@@ -122,6 +123,7 @@
         conditions:
         - !type:OrganType
           type: CP14Vampire
+  pricePerUnit: 0.15
 
 - type: reagent
   id: CP14BloodElf
@@ -163,6 +165,7 @@
           groups:
             Brute: -3
             Burn: -3
+  pricePerUnit: 0.25
 
 - type: reagent
   id: CP14BloodGoblin
@@ -205,4 +208,47 @@
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
         statusLifetime: 1.5
+  pricePerUnit: 0.05
 
+- type: reagent
+  id: CP14BloodMonster
+  group: CP14Precurser
+  name: cp14-reagent-name-blood-monster
+  desc: cp14-reagent-desc-blood-monster
+  flavor: CP14Metallic
+  color: "#800058"
+  recognizable: true
+  physicalDesc: cp14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: CP14Vampire
+        damage:
+          types:
+            CP14ManaDepletion: -5
+    Poison:
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: 1
+      - !type:HealthChange
+        damage:
+          types:
+            CP14ManaDepletion: 1
+  pricePerUnit: 0.30

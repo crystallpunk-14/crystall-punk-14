@@ -1,6 +1,6 @@
 - type: job
   id: CP14Guard
-  setPreference: false #Temp disabled
+  setPreference: true
   name: cp14-job-name-guard
   description: cp14-job-desc-guard
   playTimeTracker: CP14JobGuard
@@ -11,6 +11,13 @@
     - !type:CP14LearnSkillsSpecial
       skills:
       - SwordMastery
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 50
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - Guards
 
 - type: startingGear
   id: CP14GuardGear

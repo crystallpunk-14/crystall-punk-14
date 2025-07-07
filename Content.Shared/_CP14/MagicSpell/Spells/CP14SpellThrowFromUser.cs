@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 
@@ -8,9 +9,12 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
     [DataField]
     public float ThrowPower = 10f;
 
+    [DataField]
+    public float Distance = 2.5f;
+
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
-        if (args.Target is null)
+        if (args.Target is null || args.User is null)
             return;
 
         var targetEntity = args.Target.Value;
@@ -18,14 +22,8 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         var throwing = entManager.System<ThrowingSystem>();
         var xform = entManager.System<SharedTransformSystem>();
 
-        if (!entManager.TryGetComponent<TransformComponent>(args.User, out var userTransform))
-            return;
-
-        if (!entManager.TryGetComponent<TransformComponent>(targetEntity, out var targetTransform))
-            return;
-
         var worldPos = xform.GetWorldPosition(args.User.Value);
-        var foo = xform.GetWorldPosition(args.Target.Value) - worldPos;
+        var foo = Vector2.Normalize(xform.GetWorldPosition(args.Target.Value) - worldPos);
 
         if (entManager.TryGetComponent<EmbeddableProjectileComponent>(targetEntity, out var embeddable))
         {
@@ -34,6 +32,6 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
             projectile.EmbedDetach(targetEntity, embeddable);
         }
 
-        throwing.TryThrow(targetEntity, foo * 2.5f, ThrowPower, args.User, doSpin: true);
+        throwing.TryThrow(targetEntity, foo * Distance, ThrowPower, args.User, doSpin: true);
     }
 }

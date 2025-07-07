@@ -1,3 +1,4 @@
-cp14-salary-title = [head=3]     Sponsorship order [/head]
-
-cp14-salary-entry = {$dep} receives funding in the amount of {$total}. Give these funds to the department head, he/she has the right to distribute them as he/she sees fit.
+cp14-salary-payroll-examine-unsupported-job = You are not sponsored by the empire.
+cp14-salary-payroll-examine = You can receive your salary: {$count}
+cp14-salary-payroll-examine-empty = All your salary has already been paid.
+cp14-salary-payroll-examine-timer = Next salary in: {$time}

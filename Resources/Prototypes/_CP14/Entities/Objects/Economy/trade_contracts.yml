@@ -72,3 +72,57 @@
   - type: CP14TradingContract
     faction: HomeDecor
 
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractHorticulture
+  description: Trading contract with "Horticulture Consortium". Allows you to purchase seeds, plants and gardening tools.
+  suffix: Horticulture
+  components:
+  - type: Sprite
+    state: horticulture
+  - type: CP14TradingContract
+    faction: Horticulture
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractButchers
+  description: Trading contract with "Master Butchers Union". Allows you to purchase fresh meat products and butchering equipment.
+  suffix: Butchers
+  components:
+  - type: Sprite
+    state: butchers
+  - type: CP14TradingContract
+    faction: Butchers
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractDairy
+  description: Trading contract with "Golden Udder Dairy". Allows you to purchase fresh dairy products and eggs.
+  suffix: Dairy
+  components:
+  - type: Sprite
+    state: dairy
+  - type: CP14TradingContract
+    faction: Dairy
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractTailors
+  description: Trading contract with the "Silk & Needle Tailors Guild". Allows you to purchase fabrics, clothing and tailoring tools.
+  suffix: Tailors
+  components:
+  - type: Sprite
+    state: tailors
+  - type: CP14TradingContract
+    faction: Tailors
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractGuards
+  description: Trading contract with the "Imperial Guard". Allows you to purchase items that are important for maintaining law and order.
+  suffix: Guards
+  components:
+  - type: Sprite
+    state: guard
+  - type: CP14TradingContract
+    faction: Guards
