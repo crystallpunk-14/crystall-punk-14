@@ -1018,3 +1018,12 @@
   id: 8152
   time: '2025-07-06T14:37:43.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1334
+- author: paige404
+  changes:
+  - message: Birch wood can now be used to make birch-palette versions of various
+      furniture. Enjoy your new birch wood beds, tables, chairs, benches, counters,
+      windows, and roofs. Sprites by goblinsable.
+    type: Add
+  id: 8153
+  time: '2025-07-07T08:50:38.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1438
