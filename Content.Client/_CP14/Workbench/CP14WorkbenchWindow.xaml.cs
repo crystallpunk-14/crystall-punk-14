@@ -93,7 +93,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             AddRecipeListToGrid(category.Value, gridContainer);
         }
 
-        if (_selectedEntry is not null)
+        if (_selectedEntry is not null && _cachedState.Recipes.Contains(_selectedEntry.Value))
             RecipeSelectNull();
     }
 
