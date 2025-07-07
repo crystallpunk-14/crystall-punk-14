@@ -12,8 +12,6 @@
   - type: Tag
     tags:
     - CP14FarmSeed
-  - type: StaticPrice
-    price: 0.5
 
 - type: entity
   id: CP14SeedWheat
@@ -42,6 +40,8 @@
     - state: pumpkin
   - type: CP14Seed
     plantProto: CP14PlantPumpkin
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14SeedCabbage
