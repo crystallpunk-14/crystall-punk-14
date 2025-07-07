@@ -80,6 +80,10 @@
   - type: Tag
     tags:
       - Bucket
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
+      CP14FloraMaterial: 40
 
 - type: entity
   parent: CP14Bucket
@@ -98,3 +102,7 @@
         Slash: 0.93
   - type: ClothingSpeedModifier
     walkModifier: 0.98
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 30
+      CP14FloraMaterial: 40

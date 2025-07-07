@@ -30,6 +30,8 @@
     tags:
     - CP14Dye
     - CP14DyeRed
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   id: CP14DyeYellow
@@ -45,6 +47,8 @@
     tags:
     - CP14Dye
     - CP14DyeYellow
+  - type: StaticPrice
+    price: 3.5
 
 - type: entity
   id: CP14DyeBlue
@@ -60,6 +64,8 @@
     tags:
     - CP14Dye
     - CP14DyeBlue
+  - type: StaticPrice
+    price: 8.6
 
 - type: entity
   id: CP14DyeGreen
@@ -90,6 +96,8 @@
     tags:
     - CP14Dye
     - CP14DyePurple
+  - type: StaticPrice
+    price: 4.4
 
 - type: entity
   id: CP14DyeBlack
@@ -105,4 +113,3 @@
     tags:
     - CP14Dye
     - CP14DyeBlack
-

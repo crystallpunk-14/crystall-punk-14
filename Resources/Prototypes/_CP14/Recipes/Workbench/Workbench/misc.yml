@@ -211,7 +211,7 @@
     stack: CP14WoodenPlanks
     count: 1
   result: CP14ModularRodWooden
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularRodLucens
@@ -223,7 +223,7 @@
     stack: CP14LucensWoodenPlanks
     count: 1
   result: CP14ModularRodLucens
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14CrayonWhite

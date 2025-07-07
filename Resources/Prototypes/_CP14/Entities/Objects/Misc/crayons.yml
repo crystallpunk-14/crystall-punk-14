@@ -132,6 +132,8 @@
         color: "#ed5f5f"
   - type: Crayon
     color: "#ed5f5f"
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   parent: CP14Crayon
@@ -155,6 +157,8 @@
         color: "#ebe46e"
   - type: Crayon
     color: "#ebe46e"
+  - type: StaticPrice
+    price: 7.5
 
 - type: entity
   parent: CP14Crayon
@@ -201,6 +205,8 @@
         color: "#6eaaeb"
   - type: Crayon
     color: "#6eaaeb"
+  - type: StaticPrice
+    price: 12.6
 
 - type: entity
   parent: CP14Crayon
@@ -224,3 +230,5 @@
         color: "#d46eeb"
   - type: Crayon
     color: "#d46eeb"
+  - type: StaticPrice
+    price: 8.4
