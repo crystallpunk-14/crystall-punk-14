@@ -101,3 +101,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeWoodenSword
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20

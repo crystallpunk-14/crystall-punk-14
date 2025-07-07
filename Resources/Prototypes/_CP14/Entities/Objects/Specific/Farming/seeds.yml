@@ -13,7 +13,7 @@
     tags:
     - CP14FarmSeed
   - type: StaticPrice
-    price: 3
+    price: 0.5
 
 - type: entity
   id: CP14SeedWheat
@@ -27,6 +27,8 @@
     - state: wheat
   - type: CP14Seed
     plantProto: CP14PlantWheat
+  - type: StaticPrice
+    price: 0.4
 
 - type: entity
   id: CP14SeedPumpkin
@@ -79,6 +81,8 @@
     - state: tomato
   - type: CP14Seed
     plantProto: CP14PlantTomatoes
+  - type: StaticPrice
+    price: 0.4
 
 - type: entity
   id: CP14SeedPepper
@@ -92,6 +96,8 @@
     - state: pepper
   - type: CP14Seed
     plantProto: CP14PlantPepper
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   id: CP14SeedSage
@@ -106,7 +112,7 @@
   - type: CP14Seed
     plantProto: CP14PlantSage
   - type: StaticPrice
-    price: 7
+    price: 5
 
 - type: entity
   id: CP14SeedCotton
@@ -121,4 +127,4 @@
   - type: CP14Seed
     plantProto: CP14PlantCotton
   - type: StaticPrice
-    price: 2
+    price: 1

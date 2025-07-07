@@ -23,6 +23,9 @@
       - map: ["enum.SolutionContainerLayers.Fill"]
         state: fill-5
         visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14DrinkBaseGoblet
@@ -37,6 +40,9 @@
       - map: ["enum.SolutionContainerLayers.Fill"]
         state: fill-5
         visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 10
 
 - type: entity
   parent: CP14DrinkBaseGoblet
@@ -52,3 +58,6 @@
       - map: ["enum.SolutionContainerLayers.Fill"]
         state: fill-5
         visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 10

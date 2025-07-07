@@ -107,7 +107,7 @@
     stack: CP14CopperBar
     count: 1
   result: CP14CrossboltCopper
-  resultCount: 3
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14CrossboltIron
@@ -121,7 +121,7 @@
     stack: CP14IronBar
     count: 1
   result: CP14CrossboltIron
-  resultCount: 3
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14CrossboltGold
@@ -135,7 +135,7 @@
     stack: CP14GoldBar
     count: 1
   result: CP14CrossboltGold
-  resultCount: 3
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14CrossboltMithril
@@ -149,7 +149,7 @@
     stack: CP14MithrilBar
     count: 1
   result: CP14CrossboltMithril
-  resultCount: 3
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14BigCrossboltCopper
@@ -426,7 +426,7 @@
     stack: CP14IronBar
     count: 1
   result: CP14Fork
-  resultCount: 2
+  resultCount: 3
 
 - type: CP14Recipe
   id: CP14Spoon
@@ -439,7 +439,7 @@
     stack: CP14IronBar
     count: 1
   result: CP14Spoon
-  resultCount: 2
+  resultCount: 3
 
 - type: CP14Recipe
   id: CP14SteelGobletCopper
