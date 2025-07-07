@@ -39,7 +39,18 @@ public sealed class CP14Workbench
                     var result = entManager.Spawn(recipe.Result);
                     var resultPrice = pricingSystem.GetPrice(result) * recipe.ResultCount;
 
-                    Assert.That(resourcePrice <= resultPrice, $"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price is {resourcePrice}+, but it is {resultPrice}.");
+                    if (resourcePrice == 0 && resultPrice == 0)
+                        continue;
+
+                    if (resourcePrice <= resultPrice)
+                    {
+                        Assert.Fail($"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price is more then {resourcePrice}, but it is {resultPrice}.");
+                    }
+
+                    if (resultPrice > resourcePrice * 2)
+                    {
+                        Assert.Fail($"The result of crafting [{recipe.ID}] is too expensive! After crafting, the final cost exceeds the cost of all resources more than 2 times! Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price < {resourcePrice * 2}, but it is {resultPrice}.");
+                    }
                     entManager.DeleteEntity(result);
                 }
             });
