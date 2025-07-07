@@ -54,7 +54,7 @@ public sealed class CP14Workbench
 
                     if (resultPrice > maxLimit)
                     {
-                        Assert.Fail($"The result of crafting [{recipe.ID}] is too expensive! After crafting, the final cost exceeds the cost of all resources more than 2 times! Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected price range: from {minLimit} to {maxLimit}. Current price: {resultPrice}");
+                        Assert.Fail($"The result of crafting [{recipe.ID}] is too expensive! After crafting, the final cost exceeds the cost of all resources more than 2 times! \nCrafting: [{recipe.Result.Id} x{recipe.ResultCount}]. \nExpected price range: from {minLimit} to {maxLimit}. \nCurrent price: {resultPrice}");
                     }
                     entManager.DeleteEntity(result);
                 }
