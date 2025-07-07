@@ -7,6 +7,10 @@
   name: cp14-recipe-category-tool
 
 - type: CP14RecipeCategory
+  id: Materials
+  name: cp14-recipe-category-materials
+
+- type: CP14RecipeCategory
   id: Weapon
   name: cp14-recipe-category-weapon
 

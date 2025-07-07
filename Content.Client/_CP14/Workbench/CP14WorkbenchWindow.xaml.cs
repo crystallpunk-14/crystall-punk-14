@@ -34,7 +34,8 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
     /// </summary>
     private readonly Dictionary<int, LocId> _categoryIndexes = new();
 
-    private Dictionary<LocId, List<CP14WorkbenchUiRecipesEntry>> _categories = new ();
+    private Dictionary<LocId, List<CP14WorkbenchUiRecipesEntry>> _categories = new();
+    private List<CP14WorkbenchUiRecipesEntry> _uncategorized = new();
 
     private CP14WorkbenchUiRecipesState? _cachedState;
     private CP14WorkbenchUiRecipesEntry? _selectedEntry;
@@ -63,9 +64,20 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         CraftsContainer.RemoveAllChildren();
 
+        if (_uncategorized.Count > 0 && OptionCategories.SelectedId == AllCategoryId)
+        {
+            var uncategorizedGridContainer = new GridContainer();
+            uncategorizedGridContainer.Columns = 5;
+            uncategorizedGridContainer.VerticalExpand = true;
+
+            CraftsContainer.AddChild(uncategorizedGridContainer);
+            AddRecipeListToGrid(_uncategorized, uncategorizedGridContainer);
+        }
+
         foreach (var category in _categories)
         {
-            if (category.Value.Count <= 0)
+            if (_categoryIndexes.TryGetValue(OptionCategories.SelectedId, out var selectedCategory) &&
+                category.Key != selectedCategory)
                 continue;
 
             var categoryLabel = new RichTextLabel();
@@ -78,44 +90,50 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             gridContainer.VerticalExpand = true;
             CraftsContainer.AddChild(gridContainer);
 
-            foreach (var entry in category.Value)
-            {
-                if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
-                {
-                    Sawmill.Error($"No recipe prototype {entry.ProtoId} retrieved from cache found");
-                    continue;
-                }
-                if (!ProcessSearchFilter(entry, indexedEntry))
-                    continue;
-
-                if (!ProcessSearchCategoryFilter(indexedEntry))
-                    continue;
-
-                if (_player.LocalEntity is not null)
-                {
-                    var skilled = true;
-                    foreach (var skill in indexedEntry.RequiredSkills)
-                    {
-                        if (!_skill.HaveSkill(_player.LocalEntity.Value, skill))
-                        {
-                            skilled = false;
-                            break;
-                        }
-                    }
-
-                    if (!skilled)
-                        continue;
-                }
-
-                var control = new CP14WorkbenchRecipeControl(entry);
-                control.OnSelect += RecipeSelect;
-
-                gridContainer.AddChild(control);
-            }
+            AddRecipeListToGrid(category.Value, gridContainer);
         }
 
         if (_selectedEntry is not null)
             RecipeSelectNull();
+    }
+
+    private void AddRecipeListToGrid(List<CP14WorkbenchUiRecipesEntry> category, GridContainer gridContainer)
+    {
+        foreach (var entry in category)
+        {
+            if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
+            {
+                Sawmill.Error($"No recipe prototype {entry.ProtoId} retrieved from cache found");
+                continue;
+            }
+
+            if (!ProcessSearchFilter(entry, indexedEntry))
+                continue;
+
+            if (!ProcessSearchCategoryFilter(indexedEntry))
+                continue;
+
+            if (_player.LocalEntity is not null)
+            {
+                var skilled = true;
+                foreach (var skill in indexedEntry.RequiredSkills)
+                {
+                    if (!_skill.HaveSkill(_player.LocalEntity.Value, skill))
+                    {
+                        skilled = false;
+                        break;
+                    }
+                }
+
+                if (!skilled)
+                    continue;
+            }
+
+            var control = new CP14WorkbenchRecipeControl(entry);
+            control.OnSelect += RecipeSelect;
+
+            gridContainer.AddChild(control);
+        }
     }
 
     public void UpdateState(CP14WorkbenchUiRecipesState recipesState)
@@ -127,31 +145,31 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         _categoryIndexes.Clear();
         _categories.Clear();
+        _uncategorized.Clear();
         OptionCategories.Clear();
         OptionCategories.AddItem(Loc.GetString("cp14-recipe-category-all"), AllCategoryId);
-
-        var count = 0;
 
         foreach (var entry in recipesState.Recipes.OrderByDescending(e => e.Craftable))
         {
             if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
                 continue;
 
-            // Populate categories
-            if (indexedEntry.Category is null)
-                continue;
-
             if (!_prototype.TryIndex(indexedEntry.Category, out var indexedCategory))
+            {
+                _uncategorized.Add(entry);
                 continue;
+            }
 
             if (!_categories.TryGetValue(indexedCategory.Name, out var entries))
             {
                 entries = new List<CP14WorkbenchUiRecipesEntry>();
                 _categories[indexedCategory.Name] = entries;
             }
+
             entries.Add(entry);
         }
 
+        var count = 0;
         foreach (var category in _categories)
         {
             OptionCategories.AddItem(Loc.GetString(category.Key), count);

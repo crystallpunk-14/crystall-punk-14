@@ -16,7 +16,7 @@
                 </BoxContainer>
                 <!-- Crafts container -->
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" MinSize="0 200" HScrollEnabled="False">
-                    <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True" />
+                    <BoxContainer Name="CraftsContainer" Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Top"/>
                 </ScrollContainer>
             </BoxContainer>
 
