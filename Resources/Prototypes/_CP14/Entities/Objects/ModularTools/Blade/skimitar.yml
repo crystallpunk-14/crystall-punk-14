@@ -24,7 +24,7 @@
     - BladeIronSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 10
+      CP14Iron: 20
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -41,7 +41,7 @@
     - BladeGoldSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 10
+      CP14Gold: 20
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -58,7 +58,7 @@
     - BladeCopperSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 10
+      CP14Copper: 20
 
 - type: entity
   parent: CP14ModularBladeSkimitarBase
@@ -75,4 +75,4 @@
     - BladeMithrilSkimitar
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 10
+      CP14Mithril: 20
