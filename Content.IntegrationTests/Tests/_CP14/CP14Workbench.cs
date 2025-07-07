@@ -49,7 +49,7 @@ public sealed class CP14Workbench
                     var maxLimit = resourcePrice * 2;
                     if (resultPrice < minLimit)
                     {
-                        Assert.Fail($"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected price range: from {minLimit} to {maxLimit}. Current price: {resultPrice}");
+                        Assert.Fail($"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. \nCrafting: [{recipe.Result.Id} x{recipe.ResultCount}]. \nExpected price range: from {minLimit} to {maxLimit}. \nCurrent price: {resultPrice}");
                     }
 
                     if (resultPrice > maxLimit)
