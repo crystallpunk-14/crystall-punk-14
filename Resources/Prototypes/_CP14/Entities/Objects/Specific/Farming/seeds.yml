@@ -55,6 +55,8 @@
     - state: cabbage
   - type: CP14Seed
     plantProto: CP14PlantCabbage
+  - type: StaticPrice
+    price: 0.6
 
 - type: entity
   id: CP14SeedCucumber

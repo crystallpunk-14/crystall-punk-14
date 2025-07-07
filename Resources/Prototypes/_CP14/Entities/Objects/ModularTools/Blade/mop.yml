@@ -26,7 +26,7 @@
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 10
-      CP14Cloth: 5
+      CP14Cloth: 10
 
 - type: entity
   parent: CP14ModularBladeMopBase
@@ -43,4 +43,4 @@
   - type: PhysicalComposition
     materialComposition:
       CP14LucensWoodenPlanks: 10
-      CP14Cloth: 5
+      CP14Cloth: 10
