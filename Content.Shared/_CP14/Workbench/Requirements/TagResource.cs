@@ -24,7 +24,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
     public SpriteSpecifier? Texture;
 
     public override bool CheckRequirement(
-        EntityManager entManager,
+        IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -45,7 +45,7 @@ public sealed partial class TagResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
+    public override void PostCraft(IEntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var tagSystem = entManager.System<TagSystem>();
 

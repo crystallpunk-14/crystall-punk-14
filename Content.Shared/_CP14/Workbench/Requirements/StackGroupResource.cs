@@ -18,7 +18,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -43,7 +43,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
+    public override void PostCraft(IEntityManager entManager, IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();

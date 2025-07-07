@@ -18,7 +18,7 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -40,7 +40,8 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
+    public override void PostCraft(IEntityManager entManager,
+        IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
@@ -65,7 +66,7 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager,
+    public override double GetPrice(IEntityManager entManager,
         IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(Stack, out var indexedStack))

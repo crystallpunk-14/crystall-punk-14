@@ -19,7 +19,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
     public int Count = 1;
 
     public override bool CheckRequirement(
-        EntityManager entManager,
+        IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -53,7 +53,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
+    public override void PostCraft(IEntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -96,7 +96,7 @@ public sealed partial class MaterialResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager,
+    public override double GetPrice(IEntityManager entManager,
         IPrototypeManager protoManager)
     {
         if (protoManager.TryIndex(Material, out var indexedMaterial))

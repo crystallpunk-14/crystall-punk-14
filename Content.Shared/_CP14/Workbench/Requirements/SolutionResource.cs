@@ -22,7 +22,7 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
     [DataField]
     public EntProtoId DummyEntityIcon = "CP14LiquidDropDummy";
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -52,7 +52,7 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
         return false;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
+    public override void PostCraft(IEntityManager entManager, IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var solutionSys = entManager.System<SharedSolutionContainerSystem>();
         foreach (var ent in placedEntities)
@@ -79,7 +79,7 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager, IPrototypeManager protoManager)
+    public override double GetPrice(IEntityManager entManager, IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(Reagent, out var indexedReagent))
             return 0;
