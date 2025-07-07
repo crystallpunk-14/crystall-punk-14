@@ -2,6 +2,7 @@
   id: CP14CopperBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  category: Materials
   requiredSkills:
   - CopperMelting
   requirements:
@@ -14,6 +15,7 @@
   id: CP14IronBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  category: Materials
   requiredSkills:
   - IronMelting
   requirements:
@@ -26,6 +28,7 @@
   id: CP14GoldBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  category: Materials
   requiredSkills:
   - GoldMelting
   requirements:
@@ -38,6 +41,7 @@
   id: CP14MithrilBar1
   tag: CP14RecipeMeltingFurnace
   craftTime: 4
+  category: Materials
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -50,6 +54,7 @@
   id: CP14GlassSheet1
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
+  category: Materials
   requiredSkills:
   - GlassMelting
   requirements:
@@ -62,6 +67,7 @@
   id: CP14GlassSheetShard1
   tag: CP14RecipeMeltingFurnace
   craftTime: 2
+  category: Materials
   requiredSkills:
   - GlassMelting
   requirements:
