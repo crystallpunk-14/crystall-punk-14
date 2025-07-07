@@ -57,7 +57,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         OptionCategories.OnItemSelected += OnCategoryItemSelected;
     }
 
-    public void UpdateRecipesVisibility()
+    private void UpdateRecipesVisibility()
     {
         if (_cachedState is null)
             return;
