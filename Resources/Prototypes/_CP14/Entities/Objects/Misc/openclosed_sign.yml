@@ -82,3 +82,6 @@
       signState:
         ru-RU: ru_close_sign
         en-US: en_close_sign
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20

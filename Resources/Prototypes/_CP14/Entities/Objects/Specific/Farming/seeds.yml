@@ -68,6 +68,8 @@
     - state: cucumber
   - type: CP14Seed
     plantProto: CP14PlantCucumber
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14SeedTomato

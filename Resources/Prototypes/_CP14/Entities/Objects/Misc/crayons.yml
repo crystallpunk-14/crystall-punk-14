@@ -24,8 +24,6 @@
         type: CrayonBoundUserInterface
   - type: Crayon
     capacity: 15
-  - type: StaticPrice
-    price: 5
 
 - type: entity
   parent: CP14Crayon
@@ -49,6 +47,8 @@
         color: white
   - type: Crayon
     color: white
+  - type: StaticPrice
+    price: 8
 
 - type: entity
   parent: CP14Crayon
