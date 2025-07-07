@@ -14,7 +14,7 @@
     tags:
     - CP14Dye
   - type: StaticPrice
-    price: 7
+    price: 3
 
 - type: entity
   id: CP14DyeRed
