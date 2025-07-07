@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using System.Linq;
 using Content.Client._CP14.Skill;
 using Content.Shared._CP14.Workbench;
 using Content.Shared._CP14.Workbench.Prototypes;
@@ -28,7 +29,12 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
     public event Action<CP14WorkbenchUiRecipesEntry>? OnCraft;
 
-    private readonly Dictionary<int, LocId> _categories = new();
+    /// <summary>
+    /// Used for category dropdown filtering.
+    /// </summary>
+    private readonly Dictionary<int, LocId> _categoryIndexes = new();
+
+    private Dictionary<LocId, List<CP14WorkbenchUiRecipesEntry>> _categories = new ();
 
     private CP14WorkbenchUiRecipesState? _cachedState;
     private CP14WorkbenchUiRecipesEntry? _selectedEntry;
@@ -57,51 +63,58 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         CraftsContainer.RemoveAllChildren();
 
-        var recipes = new List<CP14WorkbenchUiRecipesEntry>();
-        foreach (var entry in _cachedState.Recipes)
+        foreach (var category in _categories)
         {
-            if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
+            if (category.Value.Count <= 0)
+                continue;
+
+            var categoryLabel = new RichTextLabel();
+            categoryLabel.Margin = new Thickness(5);
+            categoryLabel.Text = Loc.GetString(category.Key);
+            CraftsContainer.AddChild(categoryLabel);
+
+            var gridContainer = new GridContainer();
+            gridContainer.Columns = 5;
+            gridContainer.VerticalExpand = true;
+            CraftsContainer.AddChild(gridContainer);
+
+            foreach (var entry in category.Value)
             {
-                Sawmill.Error($"No recipe prototype {entry.ProtoId} retrieved from cache found");
-                continue;
-            }
-
-            if (!ProcessSearchFilter(entry, indexedEntry))
-                continue;
-
-            if (!ProcessSearchCategoryFilter(indexedEntry))
-                continue;
-
-            if (_player.LocalEntity is not null)
-            {
-                var skilled = true;
-                foreach (var skill in indexedEntry.RequiredSkills)
+                if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
                 {
-                    if (!_skill.HaveSkill(_player.LocalEntity.Value, skill))
+                    Sawmill.Error($"No recipe prototype {entry.ProtoId} retrieved from cache found");
+                    continue;
+                }
+                if (!ProcessSearchFilter(entry, indexedEntry))
+                    continue;
+
+                if (!ProcessSearchCategoryFilter(indexedEntry))
+                    continue;
+
+                if (_player.LocalEntity is not null)
+                {
+                    var skilled = true;
+                    foreach (var skill in indexedEntry.RequiredSkills)
                     {
-                        skilled = false;
-                        break;
+                        if (!_skill.HaveSkill(_player.LocalEntity.Value, skill))
+                        {
+                            skilled = false;
+                            break;
+                        }
                     }
+
+                    if (!skilled)
+                        continue;
                 }
 
-                if (!skilled)
-                    continue;
+                var control = new CP14WorkbenchRecipeControl(entry);
+                control.OnSelect += RecipeSelect;
+
+                gridContainer.AddChild(control);
             }
-
-            recipes.Add(entry);
         }
 
-        recipes.Sort(CP14WorkbenchUiRecipesEntry.CompareTo);
-
-        foreach (var recipe in recipes)
-        {
-            var control = new CP14WorkbenchRecipeControl(recipe);
-            control.OnSelect += RecipeSelect;
-
-            CraftsContainer.AddChild(control);
-        }
-
-        if (_selectedEntry is not null && !recipes.Contains(_selectedEntry.Value))
+        if (_selectedEntry is not null)
             RecipeSelectNull();
     }
 
@@ -112,14 +125,14 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
         _cachedState = recipesState;
 
+        _categoryIndexes.Clear();
         _categories.Clear();
         OptionCategories.Clear();
         OptionCategories.AddItem(Loc.GetString("cp14-recipe-category-all"), AllCategoryId);
 
-        var categories = new List<LocId>();
         var count = 0;
 
-        foreach (var entry in recipesState.Recipes)
+        foreach (var entry in recipesState.Recipes.OrderByDescending(e => e.Craftable))
         {
             if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
                 continue;
@@ -131,18 +144,18 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             if (!_prototype.TryIndex(indexedEntry.Category, out var indexedCategory))
                 continue;
 
-            if (categories.Contains(indexedCategory.Name))
-                continue;
-
-            categories.Add(indexedCategory.Name);
+            if (!_categories.TryGetValue(indexedCategory.Name, out var entries))
+            {
+                entries = new List<CP14WorkbenchUiRecipesEntry>();
+                _categories[indexedCategory.Name] = entries;
+            }
+            entries.Add(entry);
         }
 
-        categories.Sort((a, b) => string.Compare(Loc.GetString(a), Loc.GetString(b), StringComparison.Ordinal));
-
-        foreach (var category in categories)
+        foreach (var category in _categories)
         {
-            OptionCategories.AddItem(Loc.GetString(category), count);
-            _categories.Add(count, category);
+            OptionCategories.AddItem(Loc.GetString(category.Key), count);
+            _categoryIndexes.Add(count, category.Key);
             count++;
         }
 
@@ -188,7 +201,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         if (OptionCategories.SelectedId == AllCategoryId)
             return true;
 
-        if (!_categories.TryGetValue(OptionCategories.SelectedId, out var selectedCategory))
+        if (!_categoryIndexes.TryGetValue(OptionCategories.SelectedId, out var selectedCategory))
         {
             Sawmill.Error($"Non-existent {OptionCategories.SelectedId} category id selected. Filter skipped");
             return true;
