@@ -38,6 +38,8 @@
     - state: pumpkin
   - type: CP14Seed
     plantProto: CP14PlantPumpkin
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   id: CP14SeedCabbage
@@ -103,6 +105,8 @@
     - state: sage
   - type: CP14Seed
     plantProto: CP14PlantSage
+  - type: StaticPrice
+    price: 7
 
 - type: entity
   id: CP14SeedCotton
@@ -116,3 +120,5 @@
     - state: cotton
   - type: CP14Seed
     plantProto: CP14PlantCotton
+  - type: StaticPrice
+    price: 1
