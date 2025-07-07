@@ -1,0 +1,1 @@
+cp14-workbench-condition-mana-in-w = Станция должна быть полна маной на {$count}%
