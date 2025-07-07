@@ -70,14 +70,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 18
+        maxVol: 20
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: UncookedAnimalProteins
           Quantity: 4
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 8
   - type: Item
     size: Small
     shape:
