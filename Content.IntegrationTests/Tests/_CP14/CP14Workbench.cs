@@ -8,10 +8,10 @@ namespace Content.IntegrationTests.Tests._CP14;
 #nullable enable
 
 [TestFixture]
-public sealed class CP14Economy
+public sealed class CP14Workbench
 {
     /// <summary>
-    /// checks that crafting on workbenches does not reduce the value of the original items
+    /// Check that the price of all resources to craft the item on the workbench is lower than the price of the result.
     /// </summary>
     [Test]
     public async Task CheckRecipePricingReduction()
@@ -26,7 +26,6 @@ public sealed class CP14Economy
 
         await server.WaitAssertion(() =>
         {
-
             Assert.Multiple(() =>
             {
                 foreach (var recipe in protoMan.EnumeratePrototypes<CP14WorkbenchRecipePrototype>())
@@ -40,7 +39,7 @@ public sealed class CP14Economy
                     var result = entManager.Spawn(recipe.Result);
                     var resultPrice = pricingSystem.GetPrice(result) * recipe.ResultCount;
 
-                    Assert.That(resourcePrice <= resultPrice, $"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Expected result price is {resourcePrice}+, but it is {resultPrice}.");
+                    Assert.That(resourcePrice <= resultPrice, $"The ingredients to craft the [{recipe.ID}] cost more than the result of the crafting. Crafting: [{recipe.Result.Id} x{recipe.ResultCount}]. Expected result price is {resourcePrice}+, but it is {resultPrice}.");
                     entManager.DeleteEntity(result);
                 }
             });

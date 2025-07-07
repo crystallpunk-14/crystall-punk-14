@@ -5,7 +5,6 @@
 
 using Content.Shared._CP14.Trading.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
