@@ -18,7 +18,6 @@ public abstract partial class CP14SharedFarmingSystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly EntityTableSystem _entityTable = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
 
     private void InitializeInteractions()
     {
@@ -187,9 +186,12 @@ public abstract partial class CP14SharedFarmingSystem
         if (!TryComp<MapGridComponent>(map, out var gridComp))
             return false;
 
-        var tileRef = _map.GetTileRef(map.Value, gridComp, position);
+        var tileRef = position.GetTileRef();
 
-        var tile = _turf.GetContentTileDefinition(tileRef);
+        if (tileRef is null)
+            return false;
+
+        var tile = tileRef.Value.Tile.GetContentTileDefinition();
 
         if (!seed.Comp.SoilTile.Contains(tile))
         {

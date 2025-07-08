@@ -15,7 +15,6 @@ public sealed class CP14EditTileToolSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
 
     public override void Initialize()
     {
@@ -56,9 +55,12 @@ public sealed class CP14EditTileToolSystem : EntitySystem
         if (!TryComp<MapGridComponent>(map, out var gridComp))
             return;
 
-        var tileRef = _map.GetTileRef(map.Value, gridComp, location);
+        var tileRef = location.GetTileRef();
 
-        var tile = _turf.GetContentTileDefinition(tileRef);
+        if (tileRef is null)
+            return;
+
+        var tile = tileRef.Value.Tile.GetContentTileDefinition();
 
         if (!ent.Comp.TileReplace.TryGetValue(tile, out var replaceTile))
             return;
