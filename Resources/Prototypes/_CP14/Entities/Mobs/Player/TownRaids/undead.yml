@@ -51,7 +51,7 @@
     - FootstepSound
     - CP14RaidLeader
   - type: CP14SkillStorage
-    experienceMaxCap: 0
+    experienceMaxCap: 4
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
@@ -62,10 +62,8 @@
     - HydrosophistryT2
     - PyrokineticT1
     - PyrokineticT2
-    learnedSkills:
-    - CP14ActionSpellFirewave
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellIceShards
+    - CP14ActionSpellManaConsume
+    - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
