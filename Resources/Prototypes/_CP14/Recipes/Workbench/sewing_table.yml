@@ -2,6 +2,7 @@
   id: CP14ClothMaterialCotton
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Materials
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Cotton
@@ -22,6 +23,7 @@
   id: CP14ClothMaterialString
   tag: CP14RecipeSewing
   craftTime: 1
+  category: Materials
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -32,6 +34,7 @@
   id: CP14StringFromWeb
   tag: CP14RecipeSewing
   craftTime: 1
+  category: Materials
   requirements:
   - !type:ProtoIdResource
     protoId: CP14Web
@@ -42,6 +45,7 @@
   id: CP14StringCottonCloth
   tag: CP14RecipeSewing
   craftTime: 1
+  category: Materials
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -53,6 +57,7 @@
   id: CP14ClothingShirtCottonBlue
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -67,6 +72,7 @@
   id: CP14ClothingShirtCottonBlack
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -81,6 +87,7 @@
   id: CP14ClothingShirtCottonPurple
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -95,6 +102,7 @@
   id: CP14ClothingShirtCottonRed
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -109,6 +117,7 @@
   id: CP14ClothingShirtCottonWhite
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -121,6 +130,7 @@
   id: CP14ClothingShirtCottonYellow
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -135,6 +145,7 @@
   id: CP14ClothingShirtBlackDress
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -149,6 +160,7 @@
   id: CP14ClothingPantsTrouserWhite
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -161,6 +173,7 @@
   id: CP14ClothingPantsTrouserDarkBlue
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -175,6 +188,7 @@
   id: CP14ClothingHeadHuntersHat
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -189,6 +203,7 @@
   id: CP14ClothingShirtMercenary
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -205,6 +220,7 @@
   id: CP14ClothingYellowWizardDress
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -223,6 +239,7 @@
   id: CP14ClothingHeadBeretMercenary
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -239,6 +256,7 @@
   id: CP14ClothingPantsMercenaryTrousers
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14String
@@ -255,6 +273,7 @@
   id: CP14ClothingOuterClothingFish
   tag: CP14RecipeSewing
   craftTime: 4
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14FoodMeatFlemTorso
@@ -269,6 +288,7 @@
   id: CP14ClothingHeadFishMask
   tag: CP14RecipeSewing
   craftTime: 5
+  category: Clothing
   requirements:
   - !type:ProtoIdResource
     protoId: CP14FoodMeatFlemHead
@@ -311,6 +331,7 @@
   id: CP14WallpaperBlack
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -323,6 +344,7 @@
   id: CP14WallpaperGreen
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -335,6 +357,7 @@
   id: CP14WallpaperPurple
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -347,6 +370,7 @@
   id: CP14WallpaperRed
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -359,6 +383,7 @@
   id: CP14WallpaperWhite
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -369,6 +394,7 @@
   id: CP14WallpaperWhite2
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -379,6 +405,7 @@
   id: CP14WallpaperYellow
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Wallpaper
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -550,6 +577,7 @@
   id: CP14FloorCarpetItemBlue10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -564,6 +592,7 @@
   id: CP14FloorCarpetItemRed10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -578,6 +607,7 @@
   id: CP14FloorCarpetItemCyan10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -594,6 +624,7 @@
   id: CP14FloorCarpetItemGreen10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -608,6 +639,7 @@
   id: CP14FloorCarpetItemOrange10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -624,6 +656,7 @@
   id: CP14FloorCarpetItemPurple10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -638,6 +671,7 @@
   id: CP14FloorCarpetItemBlack10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth
@@ -652,6 +686,7 @@
   id: CP14FloorCarpetItemYellow10
   tag: CP14RecipeSewing
   craftTime: 2
+  category: Carpet
   requirements:
   - !type:StackResource
     stack: CP14Cloth

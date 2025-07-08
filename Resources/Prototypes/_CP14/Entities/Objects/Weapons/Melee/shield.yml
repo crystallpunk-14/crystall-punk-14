@@ -86,7 +86,6 @@
               CP14WoodenPlanks1:
                 min: 1
                 max: 2
-  - type: CP14MeleeParry
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 20

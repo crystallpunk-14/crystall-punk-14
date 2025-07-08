@@ -7,6 +7,10 @@
   name: cp14-recipe-category-tool
 
 - type: CP14RecipeCategory
+  id: Materials
+  name: cp14-recipe-category-materials
+
+- type: CP14RecipeCategory
   id: Weapon
   name: cp14-recipe-category-weapon
 
@@ -14,3 +18,14 @@
   id: Armor
   name: cp14-recipe-category-armor
 
+- type: CP14RecipeCategory
+  id: Carpet
+  name: cp14-recipe-category-carpet
+
+- type: CP14RecipeCategory
+  id: Wallpaper
+  name: cp14-recipe-category-wallpaper
+
+- type: CP14RecipeCategory
+  id: Clothing
+  name: cp14-recipe-category-clothing
