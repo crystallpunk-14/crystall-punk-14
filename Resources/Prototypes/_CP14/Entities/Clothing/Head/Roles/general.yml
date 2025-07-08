@@ -8,6 +8,11 @@
     sprite: _CP14/Clothing/Head/Roles/General/beret_mercenary.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/beret_mercenary.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 12.6
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -63,6 +68,9 @@
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/hunter_hat.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -132,4 +140,3 @@
     sprite: _CP14/Clothing/Head/Roles/General/kasa_hat.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/kasa_hat.rsi
-

@@ -35,6 +35,8 @@
   - type: Food
     trash:
     - CP14Plate
+  - type: StaticPrice
+    price: 12
 
 - type: entity
   name: Klanir stuffed pumpkin
