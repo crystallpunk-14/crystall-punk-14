@@ -39,9 +39,9 @@
       sprite: _CP14/Actions/Spells/electromancy.rsi
       state: lightning_strike
   - type: TargetAction
-    canTargetSelf: false
     range: 5
   - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
       castDelay: 2.0
