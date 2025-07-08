@@ -22,7 +22,9 @@
         - ReagentId: Protein
           Quantity: 12
         - ReagentId: Vitamin
-          Quantity: 2.5
+          Quantity: 0.5
+        - ReagentId: Fat
+          Quantity: 6
   - type: Sprite
     layers:
     - sprite: _CP14/Objects/Consumable/Food/plates.rsi
@@ -35,8 +37,6 @@
   - type: Food
     trash:
     - CP14Plate
-  - type: StaticPrice
-    price: 0
 
 - type: entity
   name: Klanir stuffed pumpkin

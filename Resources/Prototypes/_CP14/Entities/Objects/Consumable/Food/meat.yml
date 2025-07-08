@@ -70,12 +70,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: UncookedAnimalProteins
-          Quantity: 4
+          Quantity: 5
         - ReagentId: Fat
           Quantity: 8
   - type: Item
@@ -102,14 +102,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 18
+        maxVol: 25
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Protein
-          Quantity: 4
+          Quantity: 5
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 8
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -140,9 +140,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
+          Quantity: 2.75
+        - ReagentId: UncookedAnimalProteins
           Quantity: 2
-        - ReagentId: Protein
-          Quantity: 1
         - ReagentId: Fat
           Quantity: 4
   - type: Tag
@@ -174,11 +174,11 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 2.75
         - ReagentId: Protein
           Quantity: 2
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 4
   - type: Tag
     tags:
     - CP14CookedMeatSlice
@@ -199,14 +199,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 5
         - ReagentId: UncookedAnimalProteins
-          Quantity: 0.66
-        - ReagentId: Fat
           Quantity: 2
+        - ReagentId: Fat
+          Quantity: 4
         - ReagentId: Egg
           Quantity: 6
   - type: FoodSequenceElement
@@ -228,12 +228,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
+          Quantity: 5
         - ReagentId: Protein
-          Quantity: 0.66
+          Quantity: 2
         - ReagentId: Fat
           Quantity: 4
         - ReagentId: EggCooked
