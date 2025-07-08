@@ -39,7 +39,6 @@ public sealed partial class CP14WorkbenchRecipeControl : Control
         Button.OnPressed += _ => OnSelect?.Invoke(entry, _recipePrototype);
 
         UpdateColor();
-        UpdateName();
         UpdateView();
     }
 
@@ -49,13 +48,6 @@ public sealed partial class CP14WorkbenchRecipeControl : Control
             return;
 
         Button.ModulateSelfOverride = Color.FromHex("#302622");
-    }
-
-    private void UpdateName()
-    {
-        var result = _prototype.Index(_recipePrototype.Result);
-        var counter = _recipePrototype.ResultCount > 1 ? $" x{_recipePrototype.ResultCount}" : "";
-        Name.Text = $"{Loc.GetString(result.Name)} {counter}" ;
     }
 
     private void UpdateView()

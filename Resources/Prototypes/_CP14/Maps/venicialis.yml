@@ -28,6 +28,11 @@
             #CP14Guard: [4, 4]
             #CP14Investigator: [2, 2]
             #CP14GuardCommander: [1, 1]
+        - type: CP14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_CP14/venicialis_d.yml
         - type: CP14StationKeyDistribution
           keys:
           - Alchemy1

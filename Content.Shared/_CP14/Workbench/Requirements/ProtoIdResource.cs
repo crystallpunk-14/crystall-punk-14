@@ -11,8 +11,6 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public EntProtoId ProtoId;
 
@@ -21,15 +19,14 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
 
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+        HashSet<EntityUid> placedEntities)
     {
         var indexedIngredients = IndexIngredients(entManager, placedEntities);
 
         return indexedIngredients.TryGetValue(ProtoId, out var availableQuantity) && availableQuantity >= Count;
     }
 
-    public override void PostCraft(EntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid? user)
+    public override void PostCraft(EntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var requiredCount = Count;
 
@@ -75,11 +72,6 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
             return null;
 
         return indexedProto;
-    }
-
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     private Dictionary<EntProtoId, int> IndexIngredients(EntityManager entManager, HashSet<EntityUid> ingredients)

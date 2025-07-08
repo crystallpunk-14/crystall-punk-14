@@ -79,6 +79,15 @@
   price: 2
 
 - type: material
+  id: CP14Brass
+  stackEntity: CP14IronBar1
+  name: cp14-material-brass
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/brass_bar.rsi, state: bar_2 }
+  color: "#bb7547"
+  price: 2.5
+
+- type: material
   id: CP14Gold
   stackEntity: CP14GoldBar1
   name: cp14-material-gold

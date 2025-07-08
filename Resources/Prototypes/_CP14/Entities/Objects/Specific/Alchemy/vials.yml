@@ -317,3 +317,128 @@
       CP14Glass: 40
       CP14Copper: 10
 
+- type: entity
+  id: CP14VialStar
+  parent: CP14BaseVialFragile
+  name: star vial
+  description: A fragile glass vial in the shape of a star, an unusual but symbolic shape.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_star.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_star.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 20
+
+- type: entity
+  id: CP14VialStarReinforced
+  parent: CP14BaseVial
+  name: reinforced star vial
+  description: A reinforced glass star-shaped vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_star.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_star.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 20
+      CP14Copper: 10
+
+- type: entity
+  id: CP14VialSkull
+  parent: CP14BaseVialFragile
+  name: skull vial
+  description: A fragile skull-shaped vial in which to conveniently store poisonous liquids.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 25
+
+- type: entity
+  id: CP14VialSkullReinforced
+  parent: CP14BaseVial
+  name: reinforced skull vial
+  description: A skull-shaped reinforced glass vial to hold a small amount of liquid, now the poison is sure not to accidentally spill onto your skin.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Glass: 25
+      CP14Copper: 10

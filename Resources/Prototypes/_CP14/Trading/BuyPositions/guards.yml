@@ -1,0 +1,44 @@
+# Rep 0
+
+- type: cp14TradingPosition
+  id: CP14TradeContractGuards
+  faction: Guards
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Economy/trade_contracts.rsi
+    state: guard
+  service: !type:CP14BuyItemsService
+    product: CP14TradeContractGuards
+
+- type: cp14TradingPosition
+  id: CP14BaseCrossbow
+  faction: Guards
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Weapons/Ranged/crossbow.rsi
+    state: unwielded
+  service: !type:CP14BuyItemsService
+    product: CP14BaseCrossbow
+
+- type: cp14TradingPosition
+  id: CP14BigCrossboltIron
+  faction: Guards
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+    state: big_rod
+  service: !type:CP14BuyItemsService
+    product: CP14BigCrossboltIron
+    count: 5
+
+- type: cp14TradingPosition
+  id: Bola
+  faction: Guards
+  uiPosition: 3
+  priceMarkup: 10
+  icon:
+    sprite: Objects/Weapons/Throwable/bola.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: Bola
+    count: 1

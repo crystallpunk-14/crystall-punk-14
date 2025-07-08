@@ -1,0 +1,1 @@
+cp14-construction-condition-mana-filled = The structure must be fully powered by mana.

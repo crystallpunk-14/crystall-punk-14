@@ -86,7 +86,6 @@
     product: CP14TradeContractDairy
     count: 1
 
-
 - type: cp14TradingPosition
   id: CP14TradeContractTailors
   faction: ContractGuild

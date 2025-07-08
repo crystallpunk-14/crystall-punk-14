@@ -62,6 +62,13 @@
   maxCount: 10
 
 - type: stack
+  id: CP14BrassBar
+  name: cp14-stack-brass-bars
+  spawn: CP14BrassBar1
+  icon: { sprite: _CP14/Objects/Materials/brass_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
   id: CP14GoldBar
   name: cp14-stack-gold-bars
   spawn: CP14GoldBar1

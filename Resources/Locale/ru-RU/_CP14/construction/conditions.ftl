@@ -1,0 +1,1 @@
+cp14-construction-condition-mana-filled = Структура должна быть полностью запитана маной.

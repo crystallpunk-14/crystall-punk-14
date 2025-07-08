@@ -212,7 +212,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
     }
 
-    private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
+    public void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null) //CP14 public. Need proper RestoreStaminaFunction in upstream.
     {
         if (!Resolve(uid, ref component, false) || component.Deleted)
             return;

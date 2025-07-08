@@ -115,3 +115,14 @@
     state: tailors
   - type: CP14TradingContract
     faction: Tailors
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractGuards
+  description: Trading contract with the "Imperial Guard". Allows you to purchase items that are important for maintaining law and order.
+  suffix: Guards
+  components:
+  - type: Sprite
+    state: guard
+  - type: CP14TradingContract
+    faction: Guards

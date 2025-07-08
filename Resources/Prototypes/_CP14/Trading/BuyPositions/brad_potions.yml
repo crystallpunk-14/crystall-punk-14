@@ -256,3 +256,27 @@
     state: vial
   service: !type:CP14BuyItemsService
     product: CP14VialSmallRainbow
+
+- type: cp14TradingPosition
+  id: CP14VialSkull
+  reputationLevel: 3
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSkull
+
+- type: cp14TradingPosition
+  id: CP14VialSkullReinforced
+  reputationLevel: 3
+  priceMarkup: 3
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14VialSkullReinforced

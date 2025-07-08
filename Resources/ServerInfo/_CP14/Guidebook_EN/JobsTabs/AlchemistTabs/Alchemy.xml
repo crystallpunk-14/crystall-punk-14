@@ -58,7 +58,7 @@
   <Box>
     <GuideEntityEmbed Entity="CP14Cauldron"/>
     <GuideEntityEmbed Entity="CP14BaseVat"/>
-    <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
   </Box>
 
   <Box>

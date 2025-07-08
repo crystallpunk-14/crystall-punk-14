@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by goblinsable (SS14), recolored from wooden roof by TheShuEd (Github)",
+  "states": [
+    {
+      "name": "roof0",
+      "directions": 4
+    },
+    {
+      "name": "roof1",
+      "directions": 4
+    },
+    {
+      "name": "roof2",
+      "directions": 4
+    },
+    {
+      "name": "roof3",
+      "directions": 4
+    },
+    {
+      "name": "roof4",
+      "directions": 4
+    },
+    {
+      "name": "roof5",
+      "directions": 4
+    },
+    {
+      "name": "roof6",
+      "directions": 4
+    },
+    {
+      "name": "roof7",
+      "directions": 4
+    },
+    {
+      "name": "full"
+    }
+  ]
+}

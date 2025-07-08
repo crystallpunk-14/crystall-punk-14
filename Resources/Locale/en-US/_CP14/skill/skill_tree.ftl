@@ -19,6 +19,9 @@ cp14-skill-tree-healing-desc = Explore the ways in which magic affects living cr
 cp14-skill-tree-dimension-name = Dimensionomy
 cp14-skill-tree-dimension-desc = Immerse yourself in the nature of space and void.
 
+cp14-skill-tree-electric-name = Electromancy
+cp14-skill-tree-electric-desc = Discover the nature of deafening storms, winds, and thunderstorms.
+
 # Body
 
 cp14-skill-tree-athletic-name = Athletic

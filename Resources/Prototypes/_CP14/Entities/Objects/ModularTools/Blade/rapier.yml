@@ -77,3 +77,16 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Mithril: 10
+
+- type: entity
+  parent: CP14ModularBladeRapierBase
+  id: CP14ModularBladeWoodenRapier
+  name: wooden rapier blade
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Blade/Rapier/wooden_rapier.rsi
+    layers:
+    - state: icon
+  - type: CP14ModularCraftPart
+    possibleParts:
+    - BladeWoodenRapier

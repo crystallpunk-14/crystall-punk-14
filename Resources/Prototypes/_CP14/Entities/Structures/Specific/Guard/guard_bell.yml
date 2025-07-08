@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14GuardBell
+  name: guard bell
+  description: A strong bell to alert the entire settlement of a possible threat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: CommunicationsConsole
+    title: cp14-guard-bell-menu-title
+  - type: UserInterface
+    interfaces:
+      enum.CommunicationsConsoleUiKey.Key:
+        type: GuardBellBoundUserInterface

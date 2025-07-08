@@ -37,12 +37,14 @@ public sealed partial class CP14WorkbenchRequirementControl : Control
         {
             View.Visible = true;
             View.Texture = _sprite.Frame0(texture);
+            View.Modulate = requirement.GetRequirementColor(_proto);
         }
 
         var entityView = requirement.GetRequirementEntityView(_proto);
         if (entityView is not null)
         {
             EntityView.Visible = true;
+            EntityView.Modulate = requirement.GetRequirementColor(_proto);
             EntityView.SetPrototype(entityView);
         }
     }

@@ -8,44 +8,37 @@
     "copyright": "Created by TheShuEd (Github) and PhantomRU (Diary, Butchers, horticulture)",
     "states": [
         {
-            "name": "blank",
-            "description": "Empty contract template"
+            "name": "blank"
         },
         {
-            "name": "victoria_garden",
-            "description": "Victoria Gardens trade contract"
+            "name": "victoria_garden"
         },
         {
-            "name": "brad_potions",
-            "description": "Brad's Potions trade contract"
+            "name": "brad_potions"
         },
         {
-            "name": "dwarf_mining",
-            "description": "Dwarf Mining trade contract"
+            "name": "dwarf_mining"
         },
         {
-            "name": "magic",
-            "description": "Thaumaturgy trade contract"
+            "name": "guard"
         },
         {
-            "name": "house",
-            "description": "Home Decor trade contract"
+            "name": "magic"
         },
         {
-            "name": "horticulture",
-            "description": "Horticulture trade contract"
+            "name": "house"
         },
         {
-            "name": "butchers",
-            "description": "Butchers trade contract"
+            "name": "horticulture"
         },
         {
-            "name": "dairy",
-            "description": "Dairy trade contract"
+            "name": "butchers"
         },
         {
-            "name": "tailors",
-            "description": "Tailors trade contract"
+            "name": "dairy"
+        },
+        {
+            "name": "tailors"
         }
     ]
 }

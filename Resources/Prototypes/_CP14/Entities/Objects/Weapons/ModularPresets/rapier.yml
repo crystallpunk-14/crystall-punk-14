@@ -2,7 +2,7 @@
   id: CP14ModularIronRapier
   parent: CP14ModularGripWooden
   name: iron rapier
-  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  description: The gold standard of edged weapons. Medium length, comfortable grip. No frills.
   components:
   - type: Sprite
     layers:
@@ -47,3 +47,17 @@
     - CP14ModularBladeIronRapier
     - CP14ModularGardeGuildmaster
 
+- type: entity
+  id: CP14ModularWoodenRapier
+  parent: CP14ModularGripWooden
+  name: training wooden rapier
+  description: A training wooden rapier that even a complete inept can handle.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/wooden_rapier.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenRapier

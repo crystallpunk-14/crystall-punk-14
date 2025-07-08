@@ -4,9 +4,6 @@
   name: Fireball
   description: An effective method of destruction - an explosive fireball
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: fireball
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffectManaCost

@@ -113,6 +113,15 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 4
+  - type: Temperature
+    currentTemperature: 250
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 100, 200
+      transformTo: CP14FoodChromiumJelly
 
 - type: entity
   id: CP14WildSage

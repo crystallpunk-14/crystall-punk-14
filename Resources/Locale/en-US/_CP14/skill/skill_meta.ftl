@@ -28,6 +28,10 @@ cp14-skill-athletic-t1-name = Basic athletic
 cp14-skill-athletic-t2-name = Advanced athletic
 cp14-skill-athletic-t3-name = Expert athletic
 
+cp14-skill-electric-t1-name = Basic electromancy
+cp14-skill-electric-t2-name = Advanced electromancy
+cp14-skill-electric-t3-name = Expert electromancy
+
 cp14-skill-alchemy-vision-name = Alchemist's Vision
 cp14-skill-alchemy-vision-desc = You are able to understand what liquids are in containers by visually analyzing them.
 

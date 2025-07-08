@@ -18,6 +18,9 @@ cp14-skill-tree-healing-desc = Изучайте способы влияния м
 cp14-skill-tree-dimension-name = Дименсиум
 cp14-skill-tree-dimension-desc = Погрузитесь в природу пространства и пустоты.
 
+cp14-skill-tree-electric-name = Электромантия
+cp14-skill-tree-electric-desc = Познайте природу оглушающего шторма, ветра и грозы.
+
 # Body
 
 cp14-skill-tree-athletic-name = Атлетика
