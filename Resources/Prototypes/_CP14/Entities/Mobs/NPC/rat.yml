@@ -1,0 +1,120 @@
+- type: entity
+  id: CP14MobRat
+  parent: CP14SimpleMobBase
+  name: rat
+  description: An adorable rat. You see valor in it's eyes fit for a squire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14PeacefulAnimals
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Pets/rat.rsi
+      state: rat
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 8
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Tag
+    tags:
+    - CP14Rat
+  # Yeah probably no
+  # - type: Reproductive
+  #   partnerWhitelist:
+  #     tags:
+  #     - CP14Rat
+  #   offspring:
+  #   - id: CP14MobRat
+  #     maxAmount: 4
+  # - type: ReproductivePartner
+  - type: Item
+  - type: Clothing
+    quickEquip: false
+    # sprite: _CP14/Mobs/Animals/frog_helmet.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+    size: Tiny
+  - type: CanEscapeInventory
+    baseResistTime: 1
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Critical
+      40: Dead
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 12
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 8
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rat
+      Dead:
+        Base: rat_dead
+  # - type: Butcherable
+  #   spawned:
+  #   - id: CP14FoodMeatRabbit
+  #     amount: 4
+  - type: Bloodstream
+    bloodMaxVolume: 50
+    bloodReagent: CP14BloodAnimal
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: cp14-petting-success-rat
+    interactFailureString: cp14-petting-failure-rat
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: CP14Rat
+    templateId: CP14Rat
+  - type: Puller
+    needsHands: false
+  - type: CP14DemiplaneStabilizer
+    requireAlive: true
+  - type: CP14NightVision
+  - type: Climbing
+  # Hands required to be able to climb
+  - type: Hands

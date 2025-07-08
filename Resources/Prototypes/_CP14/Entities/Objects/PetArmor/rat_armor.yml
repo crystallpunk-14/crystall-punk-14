@@ -1,0 +1,28 @@
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14RatArmor
+  name: rat armor
+  description: A sturdy armor, suit for a noble rat squire
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/PetArmor/rat_armor.rsi
+  - type: Clothing
+    sprite: _CP14/Objects/PetArmor/rat_armor.rsi
+    unequipDelay: 1
+  - type: Tag
+    tags:
+    - CP14RatWearable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.62
+        Slash: 0.55
+        Piercing: 0.61
+        Heat: 0.74
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 60
+

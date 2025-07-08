@@ -56,6 +56,12 @@
   id: CP14Rabbit
 
 - type: Tag
+  id: CP14Rat
+
+- type: Tag
+  id: CP14RatWearable
+
+- type: Tag
   id: CP14Pig
 
 - type: Tag

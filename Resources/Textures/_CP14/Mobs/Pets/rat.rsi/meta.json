@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by 4g10w",
+  "size":
+  {
+    "x": 32,
+    "y": 32
+  },
+  "states":
+  [
+    {
+      "name": "rat",
+      "directions": 4
+    },
+    {
+      "name": "rat_armored",
+      "directions": 4
+    },
+    {
+      "name": "rat_dead",
+      "directions": 1
+    },
+    {
+      "name": "rat_armored_dead",
+      "directions": 1
+    }
+  ]
+}
