@@ -232,6 +232,7 @@
         Cold: 0.25
         Bloodloss: 0.25
   - type: CP14TradingReputation
+  - type: CP14AuraImprint
 
 
 - type: entity

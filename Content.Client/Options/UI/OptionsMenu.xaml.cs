@@ -23,7 +23,7 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(5, Loc.GetString("ui-options-tab-admin"));
 
             // CP14-options-menu-start
-            Tabs.SetTabTitle(5, Loc.GetString("cp14-ui-options-tab-main"));
+            Tabs.SetTabTitle(6, Loc.GetString("cp14-ui-options-tab-main"));
             // CP14-options-menu-end
 
             UpdateTabs();

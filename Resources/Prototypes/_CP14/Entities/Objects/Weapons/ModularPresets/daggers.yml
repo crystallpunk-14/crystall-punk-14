@@ -11,4 +11,4 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronDagger
+    - CP14ModularBladeIronDagger

@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronPickaxe
+    - CP14ModularBladeIronPickaxe
 
 - type: entity
   id: CP14ModularCopperPickaxe
@@ -27,4 +27,4 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperPickaxe
+    - CP14ModularBladeCopperPickaxe

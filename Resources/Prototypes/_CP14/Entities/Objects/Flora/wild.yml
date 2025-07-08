@@ -34,14 +34,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14BloodFlowerSap
-        Quantity: 12
+        Quantity: 10
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 14
         reagents:
         - ReagentId: CP14BloodFlowerSap
-          Quantity: 12
+          Quantity: 10
   - type: Tag
     tags:
     - CP14FitInMortar
@@ -113,6 +113,15 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 4
+  - type: Temperature
+    currentTemperature: 250
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 100, 200
+      transformTo: CP14FoodChromiumJelly
 
 - type: entity
   id: CP14WildSage
@@ -255,14 +264,14 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14YellowDayflinPulp
-        Quantity: 4
+        Quantity: 8
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
         - ReagentId: CP14YellowDayflinPulp
-          Quantity: 4
+          Quantity: 8
   - type: Tag
     tags:
     - CP14FitInMortar
@@ -288,16 +297,48 @@
     juiceSolution:
       reagents:
       - ReagentId: CP14AirLily
-        Quantity: 4
+        Quantity: 6
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
         - ReagentId: CP14AirLily
-          Quantity: 4
+          Quantity: 6
   - type: Tag
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
 
+- type: entity
+  id: CP14SilverNeedle
+  parent: CP14WildProduceBase
+  name: silver needle
+  description: Bright orange berries of a frost-resistant plant. Widely used in medicine.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
+    layers:
+      - state: base1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ""
+        base2: ""
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CP14SilverNeedle
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CP14SilverNeedle
+          Quantity: 4
+  - type: Tag
+    tags:
+    - CP14FitInMortar
+    - CP14AlchemicalHerbals

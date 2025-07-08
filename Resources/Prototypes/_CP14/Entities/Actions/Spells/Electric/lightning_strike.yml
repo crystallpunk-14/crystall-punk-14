@@ -1,0 +1,105 @@
+- type: entity
+  id: CP14ActionSpellLightningStrike
+  parent: CP14ActionSpellBase
+  name: Lightning strike
+  description: You charge a powerful lightning bolt that burns a large amount of stamina from the target.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    magicType: Energia
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ElectrifiedEffect
+    - !type:CP14SpellCreateBeam
+      beamProto: CP14LightningStrikeBeam
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 15
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -75
+    - !type:CP14SpellThrowFromUser
+      throwPower: 4
+      distance: 1
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "A fulgur percutiens... "
+    endSpeech: "erit ledo vobis!"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneLightningStrike
+  - type: CP14MagicEffectPacifiedBlock
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/electromancy.rsi
+      state: lightning_strike
+  - type: TargetAction
+    range: 15
+  - type: EntityTargetAction
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 2.0
+      breakOnMove: false
+
+- type: entity
+  name: lightning
+  id: CP14LightningStrikeBeam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_CP14/Effects/Beams/lightning.rsi
+    drawdepth: Effects
+    layers:
+    - state: lightning
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: PointLight
+    enabled: true
+    color: "#e8ff4c"
+    radius: 1.5
+    softness: 1
+    autoRot: true
+    castShadows: false
+  - type: Beam
+    sound: /Audio/Effects/Lightning/lightningshock.ogg
+  - type: TimedDespawn
+    lifetime: 2
+  - type: LightFade
+    duration: 2
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: CP14SpellEffectOnCollide
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ElectrifiedEffect
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 5
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -15
+
+- type: entity
+  id: CP14RuneLightningStrike
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#e8ff4c"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#e8ff4c"
+      shader: unshaded

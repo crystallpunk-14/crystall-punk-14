@@ -42,3 +42,30 @@
     CP14BasicEffectSpeedUp: 2
     CP14BasicEffectJitter: 1
 
+- type: reaction
+  id: CP14DayflinAdmixture3
+  minTemp: 500
+  reactants:
+    CP14YellowDayflinPulp:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectHealStam:
+      amount: 1
+  products:
+    CP14BasicEffectDamageStam: 2
+    CP14BasicEffectJitter: 1
+
+- type: reaction
+  id: CP14DayflinAdmixture4
+  minTemp: 500
+  reactants:
+    CP14YellowDayflinPulp:
+      amount: 1
+    CP14BasicEffectEmpty:
+      amount: 1
+    CP14BasicEffectDamageStam:
+      amount: 1
+  products:
+    CP14BasicEffectHealStam: 2
+    CP14BasicEffectJitter: 1

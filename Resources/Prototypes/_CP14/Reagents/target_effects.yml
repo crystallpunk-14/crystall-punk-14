@@ -6,10 +6,9 @@
   flavor: CP14Bitterly
   color: "#858585"
   physicalDesc: cp14-reagent-physical-desc-colorless
+  pricePerUnit: 0  # Basic empty solution, should cost nothing
 
-# T1 / Simple or Basic solutions
-# Have simple effects, shouldn't be able to replace their occupational
-
+# T1 / Simple effects (basic)
 - type: reagent
   id: CP14BasicEffectHealBrute
   name: cp14-reagent-name-basic-heal-brute
@@ -28,7 +27,7 @@
       - !type:EvenHealthChange
         damage:
           Brute: -6
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 2×Life (0.4) + Order (0.25) + Water (0.1) = 1.05 → x3 for balance
 
 - type: reagent
   id: CP14BasicEffectDamageBrute
@@ -47,7 +46,7 @@
         damage:
           groups:
             Brute: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectHealHeat
@@ -66,7 +65,20 @@
         damage:
           types:
             Heat: -10
-  pricePerUnit: 2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 295
+        amount: -5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          min: 295
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
+  pricePerUnit: 3.5  # 1×Life (0.2) + 1×Fire (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x4.375
 
 - type: reagent
   id: CP14BasicEffectDamageHeat
@@ -87,9 +99,9 @@
       - !type:FlammableReaction
         multiplier: 1.5
       - !type:AdjustTemperature
-        amount: 2000
+        amount: 4000
       - !type:Ignite
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectHealCold
@@ -108,7 +120,20 @@
         damage:
           types:
             Cold: -10
-  pricePerUnit: 2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        amount: 5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Frost (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x5.33
 
 - type: reagent
   id: CP14BasicEffectDamageCold
@@ -126,8 +151,15 @@
       - !type:HealthChange
         damage:
           types:
-            Cold: 3
-  pricePerUnit: 2
+            Cold: 1.5
+      - !type:AdjustTemperature
+        amount: -5000
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
+  pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectHealPoison
@@ -146,7 +178,7 @@
         damage:
           types:
             Poison: -10
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # 1×Life (0.2) + 1×Poison (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x4.66
 
 - type: reagent
   id: CP14BasicEffectDamagePoison
@@ -165,7 +197,7 @@
         damage:
           types:
             Poison: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectHealAirloss
@@ -184,7 +216,7 @@
         damage:
           types:
             Asphyxiation: -10
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Air (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
 
 - type: reagent
   id: CP14BasicEffectDamageAirloss
@@ -203,7 +235,7 @@
         damage:
           types:
             Asphyxiation: 3
-  pricePerUnit: 3
+  pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectHealManaDepletion
@@ -222,7 +254,7 @@
         damage:
           types:
             CP14ManaDepletion: -10
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 1×Life (0.2) + 2×Energia (0.4) + Water (0.1) = 0.7 → x4.28
 
 - type: reagent
   id: CP14BasicEffectDamageManaDepletion
@@ -241,7 +273,7 @@
         damage:
           types:
             CP14ManaDepletion: 3
-  pricePerUnit: 2
+  pricePerUnit: 3.0  # 2×Energia (0.4) + 1×Poison (0.2) + Water (0.1) = 0.7 → x4.28
 
 - type: reagent
   id: CP14BasicEffectBloodRestore
@@ -261,8 +293,8 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: -10
-  pricePerUnit: 2
+            Bloodloss: -5
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Water (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
 
 - type: reagent
   id: CP14BasicEffectBloodAbsorption
@@ -282,8 +314,8 @@
       - !type:HealthChange
         damage:
           types:
-            Bloodloss: 3
-  pricePerUnit: 2
+            Bloodloss: 2
+  pricePerUnit: 4.0  # Similar to restoration but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectSatiateHunger
@@ -303,7 +335,7 @@
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
-  pricePerUnit: 1
+  pricePerUnit: 1.5  # Simple effect, low cost
 
 - type: reagent
   id: CP14BasicEffectSatiateThirst
@@ -319,7 +351,7 @@
       effects:
       - !type:SatiateThirst
         factor: 15
-  pricePerUnit: 1
+  pricePerUnit: 1.0  # Most basic effect
 
 - type: reagent
   id: CP14BasicEffectHealMana
@@ -336,7 +368,7 @@
       - !type:CP14ManaChange
         manaDelta: 1.5
         safe: true
-  pricePerUnit: 3
+  pricePerUnit: 5.0  # 2×Energia (0.4) + 1×Motion (0.2) + Water (0.1) = 0.7 → x7.14 (high value)
 
 - type: reagent
   id: CP14BasicEffectDamageMana
@@ -353,7 +385,39 @@
       - !type:CP14ManaChange
         manaDelta: -1.5
         safe: false
-  pricePerUnit: 3
+  pricePerUnit: 5.0  # 2×Energia (0.4) + 1×Void (0.2) + Water (0.1) = 0.7 → x7.14
+
+- type: reagent
+  id: CP14BasicEffectHealStam
+  name: cp14-reagent-name-basic-heal-stam
+  desc: cp14-reagent-desc-basic-heal-stam
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#ebff6f"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14StaminaChange
+        staminaDelta: 3
+  pricePerUnit: 5.0  # 1×Life (0.2) + 1×Motion (0.2) + 1xAir (0.25) + Water (0.1) = 0.75 → x6.67 (high value)
+
+- type: reagent
+  id: CP14BasicEffectDamageStam
+  name: cp14-reagent-name-basic-damage-stam
+  desc: cp14-reagent-desc-basic-damage-stam
+  group: CP14BasicEffect
+  flavor: CP14Magic
+  color: "#686400"
+  physicalDesc: cp14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:CP14StaminaChange
+        staminaDelta: -3
+  pricePerUnit: 5.0  # 1×Void (0.2) + 1×Motion (0.2) + 1xAir (0.25) + Water (0.1) = 0.75 → x6.67 (high value)
 
 - type: reagent
   id: CP14BasicEffectSpeedUp
@@ -374,7 +438,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # 2×Motion (0.4) + 1×Order (0.25) + Water (0.1) = 0.75 → x5.33
 
 - type: reagent
   id: CP14BasicEffectSpeedDown
@@ -395,7 +459,7 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-  pricePerUnit: 2
+  pricePerUnit: 4.0  # Similar to speed up but with Chaos instead of Order
 
 - type: reagent
   id: CP14BasicEffectSleep
@@ -417,7 +481,7 @@
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
-  pricePerUnit: 3
+  pricePerUnit: 6.0  # High cost due to powerful effect
 
 - type: reagent
   id: CP14BasicEffectUnsleep
@@ -451,10 +515,9 @@
           min: 1
         reagent: CP14BasicEffectSleep
         amount: -10
-  pricePerUnit: 1
+  pricePerUnit: 2.0  # Cheaper than sleep as it's less in demand
 
-# Gimmick solutions, otherwise doesn't give a mechanical benefit
-
+# Side effects (gimmick)
 - type: reagent
   id: CP14BasicEffectRainbow
   name: cp14-reagent-name-see-rainbow
@@ -473,7 +536,7 @@
         type: Add
         time: 25
         refresh: false
-  pricePerUnit: 1
+  pricePerUnit: 0.5  # Purely decorative effect
 
 - type: reagent
   id: CP14BasicEffectEmoteCough
@@ -491,6 +554,7 @@
         showInChat: false
         emote: Cough
         probability: 0.3
+  pricePerUnit: 0.3  # Minimal cost
 
 - type: reagent
   id: CP14BasicEffectVomit
@@ -506,6 +570,7 @@
       effects:
       - !type:ChemVomit
         probability: 0.25
+  pricePerUnit: 0.5  # Negative effect but not lethal
 
 - type: reagent
   id: CP14BasicEffectDrunk
@@ -521,7 +586,7 @@
       effects:
       - !type:Drunk
         boozePower: 15
-  pricePerUnit: 0.5
+  pricePerUnit: 0.5  # Similar to vomit
 
 - type: reagent
   id: CP14BasicEffectJitter
@@ -536,3 +601,4 @@
       metabolismRate: 0.05
       effects:
       - !type:Jitter
+  pricePerUnit: 0.3  # Weakest negative effect

@@ -30,6 +30,11 @@
   - type: Tag
     tags:
     - Pie
+  - type: StaticPrice
+    price: 6 # price for crafting and plate
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
 
 - type: entity
   parent: FoodInjectableBase
@@ -58,6 +63,9 @@
   - type: Food
     trash:
     - CP14PlatePie
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
 
 # pie
 
@@ -77,7 +85,7 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 6
         - ReagentId: UncookedAnimalProteins
           Quantity: 2
         - ReagentId: Vitamin
@@ -110,11 +118,11 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 15
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 4
         - ReagentId: Vitamin
-          Quantity: 5
+          Quantity: 14
   - type: Sprite
     layers:
     - state: tin
@@ -159,6 +167,17 @@
   - type: FlavorProfile
     flavors:
       - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 2
   - type: Sprite
     layers:
     - state: tin
@@ -203,6 +222,17 @@
   - type: FlavorProfile
     flavors:
       - fishy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 8
+        - ReagentId: Vitamin
+          Quantity: 6
   - type: Sprite
     layers:
     - state: tin
@@ -236,11 +266,11 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
           Quantity: 2
         - ReagentId: PumpkinFlesh
-          Quantity: 5
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
   - type: Tag
@@ -270,11 +300,11 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 4
         - ReagentId: Protein
           Quantity: 2
         - ReagentId: PumpkinFlesh
-          Quantity: 5
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
   - type: Tag

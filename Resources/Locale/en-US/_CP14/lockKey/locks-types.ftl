@@ -14,6 +14,7 @@ cp14-lock-shape-blacksmith1 = forge №1
 cp14-lock-shape-blacksmith2 = forge №2
 cp14-lock-shape-blacksmith3 = forge №3
 
+cp14-lock-shape-merchant-public = public shop
 cp14-lock-shape-merchant1 = shop №1
 cp14-lock-shape-merchant2 = shop №2
 cp14-lock-shape-merchant3 = shop №3

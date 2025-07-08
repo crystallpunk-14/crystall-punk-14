@@ -1,0 +1,30 @@
+- type: cp14TradingRequest
+  id: VictoriaGardensGreenSalad
+  possibleFactions:
+  - VictoriaGardens
+  - Dairy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodSaladGreen
+    count: 5
+
+- type: cp14TradingRequest
+  id: VictoriaGardensBreadBuns
+  possibleFactions:
+  - VictoriaGardens
+  - Dairy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodBreadBun
+    count: 6
+
+- type: cp14TradingRequest
+  id: ButchersBread
+  possibleFactions:
+  - VictoriaGardens
+  - Dairy
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodBread
+    count: 2

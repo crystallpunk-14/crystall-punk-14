@@ -1,0 +1,105 @@
+- type: entity
+  id: CP14FoodPotatoHot
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
+  categories: [ ForkFiltered ]
+  name: hot potato
+  description: Warm and ruddy potatoes cooked over the fire.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14HotPotato
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/hot_potato.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 2
+
+- type: entity
+  id: CP14FoodStuffedPotato
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
+  categories: [ ForkFiltered ]
+  name: stuffed potato
+  description: Baked potatoes stuffed with juicy meat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - CP14HotPotato
+      - meaty
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/hot_potato.rsi
+    layers:
+      - state: stuffed_potato1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          stuffed_potato1: ""
+          stuffed_potato2: ""
+          stuffed_potato3: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Protein
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 2
+        - ReagentId: Fat
+          Quantity: 2
+
+- type: entity
+  id: CP14FoodChromiumJelly
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
+  categories: [ ForkFiltered ]
+  name: chromium jelly
+  description: At first glance unremarkable, but tastier than it looks, the main thing is not to overeat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - jelly
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/jelly.rsi
+    layers:
+      - state: chromium_jelly
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: CP14ChromiumSlime
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Temperature
+    currentTemperature: 250

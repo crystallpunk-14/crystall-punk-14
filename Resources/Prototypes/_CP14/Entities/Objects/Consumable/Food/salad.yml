@@ -18,7 +18,7 @@
         - ReagentId: PumpkinFlesh
           Quantity: 12
         - ReagentId: Nutriment
-          Quantity: 22
+          Quantity: 16
         - ReagentId: Vitamin
           Quantity: 10
   - type: Sprite

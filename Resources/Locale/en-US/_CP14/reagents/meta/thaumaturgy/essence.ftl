@@ -24,7 +24,7 @@ cp14-reagent-name-essence-frost = Gelum essence
 cp14-reagent-desc-essence-frost = The liquid embodiment of the elements of ice, frost and cold.
 
 cp14-reagent-name-essence-light = Lux essence
-cp14-reagent-desc-essence-light = The liquid embodiment of the elements of light.
+cp14-reagent-desc-essence-light = The liquid embodiment of the element of light.
 
 cp14-reagent-name-essence-motion = Motus essence
 cp14-reagent-desc-essence-motion = The liquid embodiment of the elements of movement and animation.
@@ -51,3 +51,6 @@ cp14-reagent-desc-essence-crystal = The liquid embodiment of the elements of gla
 
 cp14-reagent-name-essence-magic = Praecantatio essence
 cp14-reagent-desc-essence-magic = The liquid embodiment of the elements of magic, enchantment and sorcery.
+
+cp14-reagent-name-essence-beast = Bestia essence
+cp14-reagent-desc-essence-beast = The liquid embodiment of the element of animals.

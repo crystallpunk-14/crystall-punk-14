@@ -1,0 +1,58 @@
+- type: cp14TradingRequest
+  id: DairyApplePie
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPieApple
+    count: 3
+
+- type: cp14TradingRequest
+  id: DairyPumpkinPie
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPiePumpkin
+    count: 3
+
+- type: cp14TradingRequest
+  id: ButchersMeatPie
+  possibleFactions:
+  - Butchers
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPieMeat
+    count: 1
+
+- type: cp14TradingRequest
+  id: ButchersFishPie
+  possibleFactions:
+  - Butchers
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPieFish
+    count: 1
+
+# 30 minutes
+
+- type: cp14TradingRequest
+  id: HorticulturePumpkinPie
+  possibleFactions:
+  - Horticulture
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPiePumpkin
+    count: 2
+
+# 60 minutes
+- type: cp14TradingRequest
+  id: HorticultureApplePie
+  possibleFactions:
+  - Horticulture
+  fromMinutes: 60
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPieApple
+    count: 2

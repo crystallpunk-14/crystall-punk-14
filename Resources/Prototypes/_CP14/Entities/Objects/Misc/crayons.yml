@@ -24,6 +24,8 @@
         type: CrayonBoundUserInterface
   - type: Crayon
     capacity: 15
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   parent: CP14Crayon

@@ -20,7 +20,7 @@
     amount: 1.5
   - !type:PlantAdjustHealth
     amount: 0.75
-  pricePerUnit: 0.05
+  pricePerUnit: 0.35
 
 - type: reagent
   id: Vitamin #Anything "healthy"
@@ -53,7 +53,7 @@
     amount: 0.5
   - !type:PlantAdjustHealth
     amount: 1.5
-  pricePerUnit: 0.07
+  pricePerUnit: 0.34
 
 - type: reagent
   id: Protein #Meat and beans
@@ -78,7 +78,7 @@
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
-  pricePerUnit: 0.1
+  pricePerUnit: 1.13
 
 - type: reagent
   id: Sugar #Candy and grains
@@ -122,3 +122,4 @@
   desc: reagent-desc-pumpkin-flesh
   flavor: pumpkin
   color: "#fc9300"
+  pricePerUnit: 0.15

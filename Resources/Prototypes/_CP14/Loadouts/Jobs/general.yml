@@ -21,6 +21,7 @@
   - CP14ClothingCloakGreenSyurko
   - CP14ClothingCloakWhiteSyurko
   - CP14ClothingCloakYellowSyurko
+  - CP14ClothingCloakHaori
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -101,6 +102,11 @@
   id: CP14ClothingCloakYellowSyurko
   equipment:
     cloak: CP14ClothingCloakYellowSyurko
+
+- type: loadout
+  id: CP14ClothingCloakHaori
+  equipment:
+    cloak: CP14ClothingCloakHaori
 
 # OuterClothing
 
@@ -251,6 +257,7 @@
   - CP14ClothingHeadRedHuntersHat
   - CP14ClothingHeadJagermeisterHat
   - CP14ClothingHeadStrawHat
+  - CP14ClothingHeadKasaHat
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -297,6 +304,11 @@
   equipment:
     head: CP14ClothingHeadRedHuntersHat
 
+- type: loadout
+  id: CP14ClothingHeadKasaHat
+  equipment:
+    head: CP14ClothingHeadKasaHat
+
 
 # Pants
 
@@ -311,6 +323,7 @@
   - CP14ClothingPantsJagermeisterTrousers
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
+  - CP14ClothingPantsHakama
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -346,6 +359,11 @@
   id: CP14ClothingPantsJagermeisterTrousers
   equipment:
     pants: CP14ClothingPantsJagermeisterTrousers
+
+- type: loadout
+  id: CP14ClothingPantsHakama
+  equipment:
+    pants: CP14ClothingPantsHakama
 
 # Shirt
 

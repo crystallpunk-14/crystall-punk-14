@@ -3,6 +3,7 @@ using Content.Server.Item;
 using Content.Shared._CP14.ModularCraft;
 using Content.Shared._CP14.ModularCraft.Components;
 using Content.Shared._CP14.ModularCraft.Prototypes;
+using Content.Shared.Cargo.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Examine;
 using Content.Shared.Materials;
@@ -108,7 +109,13 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         {
             foreach (var detail in autoAssemble.Details)
             {
-                TryAddPartToFirstSlot(ent, detail);
+                var detailEnt = Spawn(detail);
+                if (!TryComp<CP14ModularCraftPartComponent>(detailEnt, out var partComp))
+                {
+                    QueueDel(detailEnt);
+                    continue;
+                }
+                TryAddPartToFirstSlot(ent, (detailEnt, partComp));
             }
         }
     }
@@ -140,28 +147,8 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
         return false;
     }
 
-    private bool TryAddPartToFirstSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        ProtoId<CP14ModularCraftPartPrototype> partProto)
-    {
-        if (!_proto.TryIndex(partProto, out var partIndexed))
-            return false;
-
-        if (partIndexed.Slots.Count == 0)
-            return false;
-
-        foreach (var slot in partIndexed.Slots)
-        {
-            if (!start.Comp.FreeSlots.Contains(slot))
-                continue;
-
-            return TryAddPartToSlot(start, null, partProto, slot);
-        }
-
-        return false;
-    }
-
     private bool TryAddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        Entity<CP14ModularCraftPartComponent>? part,
+        Entity<CP14ModularCraftPartComponent> part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,
         ProtoId<CP14ModularCraftSlotPrototype> slot)
     {
@@ -175,7 +162,7 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
     }
 
     private void AddPartToSlot(Entity<CP14ModularCraftStartPointComponent> start,
-        Entity<CP14ModularCraftPartComponent>? part,
+        Entity<CP14ModularCraftPartComponent> part,
         ProtoId<CP14ModularCraftPartPrototype> partProto,
         ProtoId<CP14ModularCraftSlotPrototype> slot)
     {
@@ -207,11 +194,13 @@ public sealed class CP14ModularCraftSystem : CP14SharedModularCraftSystem
             }
         }
 
-        if (TryComp<StaticPriceComponent>(part, out var staticPartPrice))
-        {
-            var startStaticPrice = EnsureComp<StaticPriceComponent>(start);
+        var startStaticPrice = EnsureComp<StaticPriceComponent>(start);
+        startStaticPrice.Price += part.Comp.AddPrice;
 
-            startStaticPrice.Price += staticPartPrice.Price;
+        if (TryComp<StaticPriceComponent>(part, out var partStaticPrice))
+        {
+
+            startStaticPrice.Price += partStaticPrice.Price;
         }
 
         foreach (var modifier in indexedPart.Modifiers)

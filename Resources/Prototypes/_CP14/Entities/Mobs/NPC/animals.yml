@@ -418,3 +418,102 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/goat_bah.ogg
+
+- type: entity
+  id: CP14MobBigBear
+  parent: CP14SimpleMobBase
+  name: big bear
+  description: A big, angry-looking bear. Maybe he didn't get enough sleep.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - CP14AggressiveAnimals
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionBearSpellSprint
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Animals/bear.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 350
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    attackRate: 0.8
+    animation: WeaponArcClaw
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Structural: 60
+        Piercing: 5
+        Slash: 6
+        Blunt: 5
+    bluntStaminaDamageFactor: 2.0
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Stamina
+    critThreshold: 300
+  - type: CP14MagicCasterSlowdown
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatPig # TODO 
+      amount: 5
+  - type: Bloodstream
+    bloodMaxVolume: 350
+    bloodReagent: CP14BloodAnimal
+  - type: Puller
+    needsHands: false
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Vocal
+    sounds:
+      Unsexed: CP14Bear
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 40
+    sound:
+      collection: CP14Bear
+      params:
+        volume: -2
+        variation: 0.125
+  - type: SoundWhileAlive
+  - type: FloorOcclusion

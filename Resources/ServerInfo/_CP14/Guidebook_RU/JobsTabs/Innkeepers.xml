@@ -49,7 +49,7 @@
   </Box>
 
   <Box>
-      <GuideEntityEmbed Entity="CP14AlchemyFurnace"/>
+      <GuideEntityEmbed Entity="CP14Furnace"/>
       <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
       <GuideEntityEmbed Entity="CP14Workbench"/>
   </Box>

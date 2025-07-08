@@ -7,7 +7,9 @@ using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
+using Content.Shared.Eye;
 using Content.Shared.FixedPoint;
+using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -24,6 +26,7 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedEyeSystem _eye = default!;
 
     private EntityQuery<CP14ReligionEntityComponent> _godQuery;
 
@@ -51,6 +54,12 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandRecipients);
 
         SubscribeLocalEvent<CP14ReligionAltarComponent, ListenEvent>(OnListen);
+        SubscribeLocalEvent<CP14ReligionEntityComponent, GetVisMaskEvent>(OnGetVis);
+    }
+
+    private void OnGetVis(Entity<CP14ReligionEntityComponent> ent, ref GetVisMaskEvent args)
+    {
+        args.VisibilityMask |= (int)VisibilityFlags.Ghost;
     }
 
     private void OnExpandRecipients(ExpandICChatRecipientsEvent ev)
@@ -150,11 +159,13 @@ public sealed partial class CP14ReligionGodSystem : CP14SharedReligionGodSystem
     private void OnGodInit(Entity<CP14ReligionEntityComponent> ent, ref ComponentInit args)
     {
         AddPvsOverrides(ent);
+        _eye.RefreshVisibilityMask(ent.Owner);
     }
 
     private void OnGodShutdown(Entity<CP14ReligionEntityComponent> ent, ref ComponentShutdown args)
     {
         RemovePvsOverrides(ent);
+        _eye.RefreshVisibilityMask(ent.Owner);
     }
 
     private void OnPlayerAttached(Entity<CP14ReligionEntityComponent> ent, ref PlayerAttachedEvent args)

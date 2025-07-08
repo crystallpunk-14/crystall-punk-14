@@ -45,6 +45,9 @@
     freeLearnedSkills:
     - MetamagicT1
     - MetamagicT2
+  - type: CP14AuraImprint
+    imprintLength: 10 #Long imprint hehe
+    imprintColor: "#42aaf5"
   - type: Inventory
     templateId: CP14Human
     displacements:

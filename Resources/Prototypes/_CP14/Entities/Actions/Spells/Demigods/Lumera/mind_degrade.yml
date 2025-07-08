@@ -55,7 +55,6 @@
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: wrath
   - type: TargetAction
-    checkCanAccess: false
     range: 100
   - type: EntityTargetAction
     blacklist:

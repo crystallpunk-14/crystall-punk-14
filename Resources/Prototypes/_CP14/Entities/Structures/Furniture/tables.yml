@@ -95,6 +95,21 @@
     node: CP14TableWoodenFrame
 
 - type: entity
+  parent: CP14TableWoodenFrame
+  id: CP14TableWoodenBirchFrame
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
+    state: frame
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
+    state: frame
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenBirchFrame
+
+- type: entity
   parent: CP14WoodenTableBase
   id: CP14TableWooden
   name: wooden table
@@ -111,6 +126,45 @@
   - type: IconSmooth
     key: state
     base: state
+
+- type: entity
+  parent: CP14TableWooden
+  id: CP14TableWoodenBirch
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/birch.rsi
+    state: full
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 1
 
 - type: entity
   parent: CP14WoodenTableBase
@@ -142,6 +196,20 @@
   - type: Construction
     graph: CP14TableWooden
     node: CP14TableWoodenCounter
+
+- type: entity
+  parent: CP14TableWoodenBirch
+  id: CP14TableWoodenBirchCounter
+  name: wooden counter
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/Tables/birch_counter.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/Tables/birch_counter.rsi
+    state: full
+  - type: Construction
+    graph: CP14TableWooden
+    node: CP14TableWoodenBirchCounter
 
 - type: entity
   parent: CP14TableBase

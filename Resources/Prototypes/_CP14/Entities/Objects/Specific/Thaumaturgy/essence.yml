@@ -50,7 +50,7 @@
   name: terra
   components:
   - type: Sprite
-    color: "#70533f"
+    color: "#1cea42"
   - type: SolutionContainerManager
     solutions:
       essence:
@@ -286,4 +286,19 @@
         maxVol: 1
         reagents:
         - ReagentId: CP14EssenceMagic
+          Quantity: 1
+
+- type: entity
+  parent: CP14BaseEssence
+  id: CP14EssenceBeast
+  name: bestia
+  components:
+  - type: Sprite
+    color: "#5c3c0f"
+  - type: SolutionContainerManager
+    solutions:
+      essence:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14EssenceBeast
           Quantity: 1

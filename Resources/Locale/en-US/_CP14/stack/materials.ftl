@@ -9,6 +9,7 @@ cp14-stack-compost = compost piles
 
 cp14-stack-copper-bars = copper bars
 cp14-stack-iron-bars = iron bars
+cp14-stack-brass-bars = brass bars
 cp14-stack-gold-bars = gold bars
 cp14-stack-mithril-bars = mithril bars
 

@@ -107,3 +107,8 @@
   license: "CC-BY-4.0"
   copyright: 'Created by qubodup on Freesound.org'
   source: "https://freesound.org/people/qubodup/sounds/714258/"
+
+- files: ["heartbeat.ogg"]
+  license: "CC0-1.0"
+  copyright: 'Created by MickBoere on Freesound.org'
+  source: "https://freesound.org/people/MickBoere/sounds/276578/"

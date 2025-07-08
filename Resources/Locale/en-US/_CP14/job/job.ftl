@@ -6,6 +6,9 @@ cp14-job-desc-guard-commander = The most dangerous person in the neighborhood. M
 cp14-job-name-guard = Guard
 cp14-job-desc-guard = A fighting unit of the Empire, sworn to protect its people. Watch for safety, and defend others from possible dangers.
 
+cp14-job-name-investigator = Investigator
+cp14-job-desc-investigator = Specialist in capturing and neutralizing particularly dangerous magical criminals.
+
 # Trade guild
 
 cp14-job-name-commandant = Commandant

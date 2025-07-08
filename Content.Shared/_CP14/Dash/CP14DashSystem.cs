@@ -69,5 +69,4 @@ public sealed partial class CP14DashSystem : EntitySystem
 
         _throwing.TryThrow(ent, finalTarget, speed, null, 0f, 10, true, false, false, false, false);
     }
-
 }

@@ -6,6 +6,7 @@ cp14-material-stone-block = камень
 cp14-material-cloth = ткань
 cp14-material-copper = медь
 cp14-material-iron = железо
+cp14-material-brass = латунь
 cp14-material-gold = золото
 cp14-material-mithril = мифрил
 cp14-material-lucens-planks = люценсовые доски

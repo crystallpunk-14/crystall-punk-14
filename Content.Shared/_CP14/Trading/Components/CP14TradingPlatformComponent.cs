@@ -23,4 +23,8 @@ public sealed partial class CP14TradingPlatformComponent : Component
 
     [DataField]
     public EntProtoId BuyVisual = "CP14CashImpact";
+
+
+    [DataField]
+    public float PlatformMarkupProcent = 1f;
 }

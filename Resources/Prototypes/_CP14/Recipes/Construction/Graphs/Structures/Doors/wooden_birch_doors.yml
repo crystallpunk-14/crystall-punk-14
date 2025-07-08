@@ -1,0 +1,127 @@
+- type: constructionGraph
+  id: CP14WoodenBirchDoor
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14WoodenBirchDoorFrame
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WoodenBirchDoorFrame
+      entity: CP14WoodenBirchDoorFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4
+        - to: CP14WoodenBirchDoorFrameMirrored
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14WoodenBirchDoor
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14WoodenBirchDoorWindowed
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WoodenBirchDoorFrameMirrored
+      entity: CP14WoodenBirchDoorFrameMirrored
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4
+        - to: CP14WoodenBirchDoorFrame
+          steps:
+            - tool: CP14Hammering
+              doAfter: 1
+        - to: CP14WoodenBirchDoorMirrored
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: CP14WoodenBirchDoorWindowedMirrored
+          steps:
+            - material: CP14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: CP14WoodenBirchDoor
+      entity: CP14WoodenBirchDoor
+      edges:
+        - to: CP14WoodenBirchDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: CP14WoodenBirchDoorMirrored
+      entity: CP14WoodenBirchDoorMirrored
+      edges:
+        - to: CP14WoodenBirchDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: CP14WoodenBirchDoorWindowed
+      entity: CP14WoodenBirchDoorWindowed
+      edges:
+        - to: CP14WoodenBirchDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: CP14WoodenBirchDoorWindowedMirrored
+      entity: CP14WoodenBirchDoorWindowedMirrored
+      edges:
+        - to: CP14WoodenBirchDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4

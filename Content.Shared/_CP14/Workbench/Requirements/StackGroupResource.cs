@@ -12,8 +12,6 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public ProtoId<CP14StackGroupPrototype> Group;
 
@@ -22,8 +20,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        HashSet<EntityUid> placedEntities)
     {
         if (!protoManager.TryIndex(Group, out var indexedGroup))
             return false;
@@ -47,8 +44,7 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
     }
 
     public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -80,11 +76,6 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
         var indexedGroup = protoManager.Index(Group);
 
         return $"{Loc.GetString(indexedGroup.Name)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

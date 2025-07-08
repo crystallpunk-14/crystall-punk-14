@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: CP14HandLabeler
       - id: CP14Lighter
       - id: CP14ManaOperationGlove
       - id: CP14Syringe
@@ -24,6 +25,10 @@
         amount: 1
       - id: CP14VialSmall
         amount: 3
+      - id: CP14VialSkullReinforced
+        prob: 0.3
+      - id: CP14VialSkull
+        prob: 0.5
       - id: CP14PaperFolderBlue
       - id: CP14PenFeather
         amount: 1
@@ -43,7 +48,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14ManaOperationGlove
@@ -73,7 +78,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14WoodenPlanks20
       - id: CP14CopperBar10
       - id: CP14CopperBar10
@@ -84,54 +89,13 @@
 
 - type: entity
   parent: CP14WoodenCloset
-  id: CP14WoodenClosetGuardFilled
-  suffix: Guard, Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14Rope
-        amount: 2
-      - id: Bola
-        amount: 2
-      - id: CP14ModularGuardHalberd
-      - id: CP14BaseShield
-      - id: CP14ModularGripIronLongGuard
-        amount: 2
-      - id: CP14BaseLightCrossbow
-      - id: CP14CrossboltIron
-        amount: 5
-      - id: CP14EnergyCrystalMedium
-      - id: CP14CrystalLampBlueEmpty
-
-- type: entity
-  parent: CP14WoodenCloset
-  id: CP14WoodenClosetGuardCommanderFilled
-  suffix: Guard Commander, Filled
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14Rope
-        amount: 2
-      - id: Bola
-      - id: Bola
-      - id: CP14ModularGuardHalberd
-      - id: CP14BaseShield
-      - id: CP14ModularGripIronLongGuard
-        amount: 2
-      - id: CP14EnergyCrystalMedium
-      - id: CP14CrystalLampBlueEmpty
-      - id: CP14StampGuardCommander
-      - id: CP14ClothingCloakAristocraticCloak
-
-- type: entity
-  parent: CP14WoodenCloset
   id: CP14WoodenClosetGuildmasterFilled
   suffix: Guildmaster, Filled
   components:
   - type: StorageFill
     contents:
       - id: CP14StampGuildmaster
-      - id: HandLabeler #TODO custom cp14 labeler
+      - id: CP14HandLabeler
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue

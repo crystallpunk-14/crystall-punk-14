@@ -55,3 +55,14 @@
   - !type:Inherit
     copyFrom:
     - BaseGardeSharp
+
+- type: modularPart
+  id: GardeSharpWooden
+  slots:
+  - Garde
+  rsiPath: _CP14/Objects/ModularTools/Garde/wooden_sharp.rsi
+  modifiers:
+  - !type:EditMeleeWeapon
+    damageMultiplier: 1.1
+  - !type:EditIncreaseDamageOnWield
+    damageMultiplier: 1.0

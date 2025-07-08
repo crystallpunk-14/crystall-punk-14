@@ -3,7 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
-using Content.Shared._CP14.Workbench.Prototypes;
+using Content.Shared._CP14.Trading.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -11,8 +11,6 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public EntProtoId ProtoId;
 
@@ -21,15 +19,14 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
 
     public override bool CheckRequirement(EntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        HashSet<EntityUid> placedEntities)
     {
         var indexedIngredients = IndexIngredients(entManager, placedEntities);
 
         return indexedIngredients.TryGetValue(ProtoId, out var availableQuantity) && availableQuantity >= Count;
     }
 
-    public override void PostCraft(EntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities, EntityUid user)
+    public override void PostCraft(EntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var requiredCount = Count;
 
@@ -50,6 +47,17 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
         }
     }
 
+    public override double GetPrice(EntityManager entManager,
+        IPrototypeManager protoManager)
+    {
+        if (!protoManager.TryIndex(ProtoId, out var indexedProto))
+            return 0;
+
+        var priceSys = entManager.System<CP14SharedStationEconomySystem>();
+
+        return priceSys.GetEstimatedPrice(indexedProto) * Count;
+    }
+
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(ProtoId, out var indexedProto))
@@ -64,11 +72,6 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
             return null;
 
         return indexedProto;
-    }
-
-    public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     private Dictionary<EntProtoId, int> IndexIngredients(EntityManager entManager, HashSet<EntityUid> ingredients)

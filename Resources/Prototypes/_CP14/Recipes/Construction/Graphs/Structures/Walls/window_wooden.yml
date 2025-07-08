@@ -12,6 +12,14 @@
             - material: CP14WoodenPlanks
               amount: 2
               doAfter: 2
+        - to: CP14WindowFrameWoodenBirch
+          completed:
+          - !type:SnapToGrid
+            southRotation: true
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 2
+            doAfter: 2
 
     - node: CP14WindowFrameWooden
       entity: CP14WindowFrameWooden
@@ -31,6 +39,21 @@
               amount: 2
               doAfter: 2
 
+    - node: CP14WindowFrameWoodenBirch
+      entity: CP14WindowFrameWoodenBirch
+      edges:
+        - to: start
+          completed:
+          - !type:SpawnPrototype
+            prototype: CP14BirchWoodenPlanks1
+            amount: 2
+          - !type:DeleteEntity { }
+        - to: CP14WindowWoodenBirch
+          steps:
+          - material: CP14GlassSheet
+            amount: 2
+            doAfter: 2
+
     - node: CP14WindowWooden
       entity: CP14WindowWooden
       edges:
@@ -45,6 +68,20 @@
               prototype: CP14GlassSheet1
               amount: 2
 
+    - node: CP14WindowWoodenBirch
+      entity: CP14WindowWoodenBirch
+      edges:
+      - to: CP14WindowFrameWoodenBirch
+        steps:
+        - tool: Screwing
+          doAfter: 1
+        - tool: Anchoring
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14GlassSheet1
+          amount: 2
+
     - node: CP14WindowWoodenBroken
       entity: CP14WindowWoodenBroken
       edges:
@@ -56,4 +93,16 @@
             - !type:SpawnPrototype
               prototype: CP14GlassShard
               amount: 1
+
+    - node: CP14WindowWoodenBirchBroken
+      entity: CP14WindowWoodenBirchBroken
+      edges:
+      - to: CP14WindowFrameWoodenBirch
+        steps:
+        - tool: Anchoring
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14GlassShard
+          amount: 1
 

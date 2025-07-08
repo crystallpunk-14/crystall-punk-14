@@ -56,7 +56,6 @@
       sprite: _CP14/Actions/DemigodSpells/lumera.rsi
       state: mind_upgrade
   - type: TargetAction
-    checkCanAccess: false
     range: 100
   - type: EntityTargetAction
     blacklist:
