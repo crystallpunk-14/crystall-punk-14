@@ -1034,3 +1034,12 @@
   id: 8154
   time: '2025-07-07T21:42:34.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1508
+- author: TheShuEd
+  changes:
+  - message: Upstream sync happened
+    type: Add
+  - message: Shield parry system removed due to conflicts
+    type: Remove
+  id: 8155
+  time: '2025-07-08T08:59:20.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1509
