@@ -70,7 +70,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 25
+        maxVol: 24
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
@@ -86,8 +86,6 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
-  - type: StaticPrice
-    price: 12.7
 
 - type: entity
   id: CP14FoodMeatLambCooked
@@ -102,7 +100,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 25
+        maxVol: 24
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
