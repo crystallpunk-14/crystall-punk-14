@@ -30,7 +30,6 @@
     unequipDelay: 0.25
     quickEquip: false
     breakOnMove: false
-  - type: CP14MeleeParriable
   - type: CP14LabeledRenaming
 
 - type: entity

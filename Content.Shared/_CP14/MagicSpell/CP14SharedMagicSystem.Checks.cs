@@ -6,6 +6,7 @@ using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -18,6 +19,7 @@ public abstract partial class CP14SharedMagicSystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
+    [Dependency] private readonly SharedHandsSystem _hand = default!;
 
     private void InitializeChecks()
     {
@@ -89,14 +91,7 @@ public abstract partial class CP14SharedMagicSystem
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
-            var freeHand = 0;
-            foreach (var hand in hands.Hands)
-            {
-                if (hand.Value.IsEmpty)
-                    freeHand++;
-            }
-
-            if (freeHand >= ent.Comp.FreeHandRequired)
+            if (_hand.CountFreeableHands((args.Performer, hands)) >= ent.Comp.FreeHandRequired)
                 return;
         }
 
