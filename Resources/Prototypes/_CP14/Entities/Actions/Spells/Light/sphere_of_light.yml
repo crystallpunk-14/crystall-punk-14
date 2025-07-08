@@ -35,6 +35,7 @@
       components:
       - MobState
       - Item
+      - Anchorable
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 30
       castDelay: 0.5

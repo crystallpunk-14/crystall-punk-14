@@ -3,5 +3,9 @@
   icons:
   - sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
-  name: ent-CP14ActionSpellSphereOfLight.name
-  description: ent-CP14ActionSpellSphereOfLight.desc
+
+- type: alert
+  id: CP14MagicArmor
+  icons:
+  - sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_armor

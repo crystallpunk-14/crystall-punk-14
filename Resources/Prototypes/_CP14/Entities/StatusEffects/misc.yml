@@ -15,3 +15,31 @@
     radius: 5.0
     energy: 1
     color: "#efedff"
+
+- type: entity
+  id: CP14StatusEffectMagicArmor
+  components:
+  - type: StatusEffect
+    alert: CP14MagicArmor
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Effects/Magic/cast_rune.rsi
+    noRot: true
+    layers:
+    - state: sphere
+      shader: unshaded
+      color: "#5096d488"
+    - state: circle_increase
+      sprite: _CP14/Effects/Magic/cast_impact.rsi
+      shader: unshaded
+      color: "#74eaf222"
+  - type: PointLight
+    radius: 2.5
+    energy: 0.9
+    color: "#5096d4"
+  - type: CP14DamageModifierStatusEffect
+    globalDefence: 0.6
+    #defence: #TODO When stone armor spell appears, divide responsibilities: magical armor protects against elemental damage, stone armor protects against physical damage.
+    #  Cold: 0.5
+    #  Heat: 0.5
+    #  Shock: 0.5

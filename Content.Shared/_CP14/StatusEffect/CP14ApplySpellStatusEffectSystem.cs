@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicSpell.Spells;
+using Content.Shared.Damage;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Timing;
@@ -14,6 +15,23 @@ public sealed partial class CP14ApplySpellStatusEffectSystem : EntitySystem
 
         SubscribeLocalEvent<CP14ApplySpellStatusEffectComponent, StatusEffectAppliedEvent>(SpellEffectApply);
         SubscribeLocalEvent<CP14ApplySpellStatusEffectComponent, StatusEffectRemovedEvent>(SpellEffectRemove);
+
+        SubscribeLocalEvent<CP14DamageModifierStatusEffectComponent, StatusEffectRelayedEvent<DamageModifyEvent>>(OnDamageModify);
+    }
+
+    private void OnDamageModify(Entity<CP14DamageModifierStatusEffectComponent> ent, ref StatusEffectRelayedEvent<DamageModifyEvent> args)
+    {
+        DamageSpecifier newDamage = new();
+        foreach (var (type, damage) in args.Args.Damage.DamageDict)
+        {
+            var dmg = damage * ent.Comp.GlobalDefence;
+
+            if (ent.Comp.Defence is not null && ent.Comp.Defence.TryGetValue(type, out var typeDefence))
+                dmg *= typeDefence;
+
+            newDamage.DamageDict[type] = dmg;
+        }
+        args.Args.Damage = newDamage;
     }
 
     public override void Update(float frameTime)
