@@ -67,7 +67,6 @@
     breakOnMove: false
     slots:
     - belt
-  - type: CP14MeleeParriable
   - type: Item
     shape:
     - 0,0,0,1

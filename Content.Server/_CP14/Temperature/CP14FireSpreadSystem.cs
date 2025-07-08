@@ -24,10 +24,11 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
     [Dependency] private readonly SmokingSystem _smoking = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     private readonly EntProtoId _fireProto = "CP14Fire";
 
@@ -160,7 +161,7 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
             return;
 
         var localPos = xform.Coordinates.Position;
-        var tileRefs = _mapSystem.GetLocalTilesIntersecting(xform.ParentUid,
+        var tileRefs = _map.GetLocalTilesIntersecting(xform.ParentUid,
                 grid,
                 new Box2(
                     localPos + new Vector2(-spread.Comp.Radius, -spread.Comp.Radius),
@@ -172,12 +173,12 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
             if (!_random.Prob(spread.Comp.ProbTile))
                 continue;
 
-            var tile = tileRef.Tile.GetContentTileDefinition();
+            var tile = _turf.GetContentTileDefinition(tileRef);
 
             if (tile.BurnedTile is null)
                 continue;
 
-            Spawn(_fireProto, _mapSystem.ToCenterCoordinates(tileRef, grid));
+            Spawn(_fireProto, _map.ToCenterCoordinates(tileRef, grid));
             _tile.ReplaceTile(tileRef, (ContentTileDefinition)_tileDef[tile.BurnedTile]);
         }
     }
