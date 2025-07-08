@@ -106,14 +106,13 @@
     - HydrosophistryT2
     - MetamagicT1
     - MetamagicT2
-    learnedSkills:
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellIceShards
+    - PyrokineticT1
+    - CP14ActionSpellManaConsume
+    - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
-
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
