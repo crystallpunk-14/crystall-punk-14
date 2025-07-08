@@ -74,7 +74,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: StaticPrice
-    price: 4
+    price: 0
 
 - type: entity
   id: CP14FoodChromiumJelly

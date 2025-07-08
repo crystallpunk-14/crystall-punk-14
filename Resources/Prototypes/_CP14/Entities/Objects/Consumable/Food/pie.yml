@@ -212,6 +212,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodPieFish
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   name: fish pie

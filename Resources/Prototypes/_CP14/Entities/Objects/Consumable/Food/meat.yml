@@ -86,6 +86,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
+  - type: StaticPrice
+    price: 12.7
 
 - type: entity
   id: CP14FoodMeatLambCooked

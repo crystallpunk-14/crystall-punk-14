@@ -134,11 +134,6 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Cloth: 35
-  - type: StaticPrice
-    price: 4.5
 
 - type: entity
   parent: CP14ClothingShirtBase
@@ -149,6 +144,11 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 35
+  - type: StaticPrice
+    price: 4.4
 
 - type: entity
   parent: CP14ClothingShirtBase
@@ -278,7 +278,7 @@
     materialComposition:
       CP14Cloth: 35
   - type: StaticPrice
-    price: 16
+    price: 16.6
 
 - type: entity
   parent: CP14ClothingShirtBase
