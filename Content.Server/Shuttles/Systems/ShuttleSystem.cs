@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Systems;
 using Content.Server.Buckle.Systems;
 using Content.Server.Parallax;
@@ -28,7 +29,6 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Maps;
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -41,6 +41,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly BiomeSystem _biomes = default!;
     [Dependency] private readonly BodySystem _bobby = default!;
     [Dependency] private readonly BuckleSystem _buckle = default!;
@@ -62,7 +63,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly AtmosphereSystem _atmos = default!; //CP14 FTL atmos
 
     private EntityQuery<BuckleComponent> _buckleQuery;
     private EntityQuery<MapGridComponent> _gridQuery;
@@ -109,12 +110,12 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     private void OnShuttleStartup(EntityUid uid, ShuttleComponent component, ComponentStartup args)
     {
-        if (!HasComp<MapGridComponent>(uid))
+        if (!EntityManager.HasComponent<MapGridComponent>(uid))
         {
             return;
         }
 
-        if (!TryComp(uid, out PhysicsComponent? physicsComponent))
+        if (!EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent))
         {
             return;
         }
@@ -129,7 +130,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 
     public void Toggle(EntityUid uid, ShuttleComponent component)
     {
-        if (!TryComp(uid, out PhysicsComponent? physicsComponent))
+        if (!EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent))
             return;
 
         component.Enabled = !component.Enabled;
@@ -167,7 +168,7 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
     private void OnShuttleShutdown(EntityUid uid, ShuttleComponent component, ComponentShutdown args)
     {
         // None of the below is necessary for any cleanup if we're just deleting.
-        if (Comp<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
+        if (EntityManager.GetComponent<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return;
 
         Disable(uid);

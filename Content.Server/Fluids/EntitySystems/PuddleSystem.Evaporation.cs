@@ -11,6 +11,7 @@ namespace Content.Server.Fluids.EntitySystems;
 
 public sealed partial class PuddleSystem
 {
+    [Dependency] private readonly SharedMapSystem _maps = default!; //CP14
     [Dependency] private readonly WeatherSystem _weather = default!; //CP14
     private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
 
@@ -23,7 +24,7 @@ public sealed partial class PuddleSystem
         var xform = Transform(entity);
         if (TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
         {
-            var tileRef = _map.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
+            var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
             entity.Comp.CP14ForceEvaporation = _weather.CanWeatherAffect(xform.GridUid.Value, mapGrid, tileRef);
         }
         //CP14 End force evaporation under sky

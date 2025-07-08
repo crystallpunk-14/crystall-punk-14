@@ -3,13 +3,16 @@ using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
-using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffect;
 
 namespace Content.Shared._CP14.MagicWeakness;
 
 public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [ValidatePrototypeId<StatusEffectPrototype>]
+    private const string StatusEffectKey = "ForcedSleep";
+
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
@@ -33,10 +36,10 @@ public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
                 ent,
                 ent,
                 PopupType.LargeCaution);
-            _statusEffects.TryAddStatusEffectDuration(
-                ent,
-                SleepingSystem.StatusEffectForcedSleeping,
-                TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.BurnOutEnergy));
+            _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent,
+                StatusEffectKey,
+                TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.BurnOutEnergy),
+                false);
         }
     }
 
@@ -49,10 +52,10 @@ public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
                 ent,
                 ent,
                 PopupType.LargeCaution);
-            _statusEffects.TryAddStatusEffectDuration(
-                ent,
-                SleepingSystem.StatusEffectForcedSleeping,
-                TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.OverloadEnergy));
+            _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent,
+                StatusEffectKey,
+                TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.OverloadEnergy),
+                false);
         }
     }
 

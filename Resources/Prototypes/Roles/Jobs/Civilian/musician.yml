@@ -32,6 +32,6 @@
   equipment:
     head: ClothingHeadHatTophat
     mask: ClothingMaskBreath
-    neck: ClothingMultipleHeadphones
+    neck: ClothingNeckHeadphones
     outerClothing: ClothingOuterWinterMusician
     gloves: ClothingHandsGlovesColorBlack
