@@ -25,6 +25,11 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_black.rsi
   - type: Stack
     stackType: CP14WallpaperBlack
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   id: CP14WallpaperGreen
@@ -37,6 +42,11 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_green.rsi
   - type: Stack
     stackType: CP14WallpaperGreen
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   id: CP14WallpaperPurple
@@ -49,6 +59,11 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_purple.rsi
   - type: Stack
     stackType: CP14WallpaperPurple
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
+  - type: StackPrice
+    price: 4.4
 
 - type: entity
   id: CP14WallpaperRed
@@ -61,6 +76,11 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_red.rsi
   - type: Stack
     stackType: CP14WallpaperRed
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
+  - type: StackPrice
+    price: 4
 
 - type: entity
   id: CP14WallpaperWhite
@@ -73,6 +93,9 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_white.rsi
   - type: Stack
     stackType: CP14WallpaperWhite
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
 
 - type: entity
   id: CP14WallpaperWhite2
@@ -85,6 +108,9 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_white2.rsi
   - type: Stack
     stackType: CP14WallpaperWhite2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
 
 - type: entity
   id: CP14WallpaperYellow
@@ -97,4 +123,8 @@
     rsiPath: _CP14/Structures/Wallpaper/wallpaper_yellow.rsi
   - type: Stack
     stackType: CP14WallpaperYellow
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 100
+  - type: StackPrice
+    price: 3.5
