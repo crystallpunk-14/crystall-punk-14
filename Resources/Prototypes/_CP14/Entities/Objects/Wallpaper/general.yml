@@ -11,8 +11,6 @@
     sprite: _CP14/Structures/Wallpaper/icons.rsi
   - type: Stack
     count: 30
-  - type: StackPrice
-    price: 0.5
 
 - type: entity
   id: CP14WallpaperBlack
@@ -28,8 +26,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
-  - type: StaticPrice
-    price: 6
 
 - type: entity
   id: CP14WallpaperGreen
@@ -45,8 +41,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
-  - type: StaticPrice
-    price: 6
 
 - type: entity
   id: CP14WallpaperPurple
@@ -62,8 +56,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
-  - type: StackPrice
-    price: 4.4
 
 - type: entity
   id: CP14WallpaperRed
@@ -79,8 +71,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
-  - type: StackPrice
-    price: 4
 
 - type: entity
   id: CP14WallpaperWhite
@@ -126,5 +116,3 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 10
-  - type: StackPrice
-    price: 3.5

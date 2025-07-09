@@ -52,6 +52,9 @@
       - CP14FloorFoundation
   - type: Stack
     stackType: CP14FloorTileFoundation
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -65,6 +68,9 @@
       - CP14FloorMarble
   - type: Stack
     stackType: CP14FloorTileMarbleBrick
+  - type: PhysicalComposition
+    materialComposition:
+      CP14MarbleStone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -78,6 +84,9 @@
       - CP14FloorMarbleSmallbricks
   - type: Stack
     stackType: CP14FloorTileMarbleSmallbricks
+  - type: PhysicalComposition
+    materialComposition:
+      CP14MarbleStone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -96,6 +105,9 @@
       - CP14FloorOakWoodPlanks
   - type: Stack
     stackType: CP14FloorTileOakWoodplanks
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -114,6 +126,9 @@
       - CP14FloorOakWoodPlanksBig
   - type: Stack
     stackType: CP14FloorTileOakWoodplanksBig
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -132,6 +147,9 @@
       - CP14FloorOakWoodPlanksCruciform
   - type: Stack
     stackType: CP14FloorTileOakWoodplanksCruciform
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -150,6 +168,9 @@
       - CP14FloorOakWoodPlanksStairways
   - type: Stack
     stackType: CP14FloorTileOakWoodplanksStairs
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -163,6 +184,9 @@
       - CP14FloorStonebricks
   - type: Stack
     stackType: CP14FloorTileStonebricks
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -176,6 +200,9 @@
       - CP14FloorStonebricksSmallCarved1
   - type: Stack
     stackType: CP14FloorTileStonebricksSmallCarved
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -189,6 +216,9 @@
       - CP14FloorStonebricksSmallCarved2
   - type: Stack
     stackType: CP14FloorTileStonebricksSmallCarved2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -202,7 +232,9 @@
       - CP14FloorStonebricksSquareCarved
   - type: Stack
     stackType: CP14FloorTileStonebricksSquareCarved
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -221,6 +253,9 @@
       - CP14FloorBirchWoodPlanks
   - type: Stack
     stackType: CP14FloorTileBirchWoodplanks
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -239,6 +274,9 @@
       - CP14FloorBirchWoodPlanksBig
   - type: Stack
     stackType: CP14FloorTileBirchWoodplanksBig
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -257,6 +295,9 @@
       - CP14FloorBirchWoodPlanksCruciform
   - type: Stack
     stackType: CP14FloorTileBirchWoodplanksCruciform
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: CP14FloorTileBase
@@ -275,4 +316,6 @@
       - CP14FloorBirchWoodPlanksStairways
   - type: Stack
     stackType: CP14FloorTileBirchWoodplanksStairs
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
