@@ -25,7 +25,7 @@
     stackType: CP14WallpaperBlack
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperGreen
@@ -40,7 +40,7 @@
     stackType: CP14WallpaperGreen
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperPurple
@@ -55,7 +55,7 @@
     stackType: CP14WallpaperPurple
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperRed
@@ -70,7 +70,7 @@
     stackType: CP14WallpaperRed
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperWhite
@@ -85,7 +85,7 @@
     stackType: CP14WallpaperWhite
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperWhite2
@@ -100,7 +100,7 @@
     stackType: CP14WallpaperWhite2
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
 
 - type: entity
   id: CP14WallpaperYellow
@@ -115,4 +115,4 @@
     stackType: CP14WallpaperYellow
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 10
+      CP14Cloth: 5
