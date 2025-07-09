@@ -153,6 +153,20 @@
   - !type:NeedPrerequisite
     prerequisite: MetamagicT2
 
+- type: cp14Skill
+  id: CP14ActionSpellMagicArmor
+  skillUiPosition: 8, 4
+  tree: Metamagic
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_armor
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellMagicArmor
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: MetamagicT2
+
 # T3
 
 - type: cp14Skill
