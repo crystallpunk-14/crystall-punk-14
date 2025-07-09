@@ -1043,3 +1043,36 @@
   id: 8155
   time: '2025-07-08T08:59:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1509
+- author: gogenych
+  changes:
+  - message: Fixed the price of artifact staves
+    type: Fix
+  id: 8156
+  time: '2025-07-09T06:17:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1515
+- author: TheShuEd
+  changes:
+  - message: Ropes are now sold at the guards' special trade faction
+    type: Add
+  id: 8157
+  time: '2025-07-09T13:32:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1518
+- author: TheShuEd
+  changes:
+  - message: "New spell \u201CMagical Armor\u201D T2 metamagic. Applies a short-lived\
+      \ shield to the target (object or creature) that absorbs 40% of any damage."
+    type: Add
+  - message: "The \u201CSphere of Light\u201D spell no longer creates a ball in your\
+      \ hand, but instead applies a glowing status effect in the form of a ball floating\
+      \ above your head. The effect can be applied to objects and other creatures."
+    type: Tweak
+  id: 8158
+  time: '2025-07-09T06:16:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1516
+- author: Viator-MV
+  changes:
+  - message: Lightning strike now has a limited radius and cannot be self-casted
+    type: Fix
+  id: 8159
+  time: '2025-07-09T06:18:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1514

@@ -42,3 +42,14 @@
   service: !type:CP14BuyItemsService
     product: Bola
     count: 1
+
+- type: cp14TradingPosition
+  id: CP14Rope
+  faction: Guards
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Tools/rope.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Rope
+    count: 1
