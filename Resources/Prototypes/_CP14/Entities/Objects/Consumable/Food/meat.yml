@@ -135,7 +135,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
           Quantity: 2.75
@@ -169,7 +169,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
           Quantity: 2.75
@@ -197,14 +197,16 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 5.5
         - ReagentId: UncookedAnimalProteins
+          Quantity: 4
+        - ReagentId: Protein
           Quantity: 2
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 8
         - ReagentId: Egg
           Quantity: 6
   - type: FoodSequenceElement
@@ -226,14 +228,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 5.5
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 6
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 8
         - ReagentId: EggCooked
           Quantity: 6
   - type: FoodSequenceElement
