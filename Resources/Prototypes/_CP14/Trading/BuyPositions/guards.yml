@@ -44,7 +44,7 @@
     count: 1
 
 - type: cp14TradingPosition
-  id: CP14Rope
+  id: CP14RopeGuards
   faction: Guards
   uiPosition: 4
   icon:
