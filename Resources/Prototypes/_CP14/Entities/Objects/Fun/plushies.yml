@@ -36,8 +36,6 @@
       types:
         Blunt: 0
     hidden: true
-  - type: StaticPrice
-    price: 2
 
 # Race plushies
 
@@ -68,6 +66,9 @@
     wideAnimationRotation: 180
     soundHit:
       collection: MaleLaugh
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14BasePlushie
@@ -151,6 +152,10 @@
     maxTransferAmount: 10
     transferAmount: 1
     toggleState: 1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+      CP14Stone: 30
 
 - type: entity
   parent: CP14BasePlushie
@@ -204,6 +209,11 @@
   - type: Tag
     tags:
     - CP14EnergyCrystal
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   parent: [ CP14BasePlushie, BaseStorageItem ]
@@ -259,7 +269,11 @@
     soundDump:
       collection: CP14Coins
     multiplier: 0.8
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   parent: [ CP14BasePlushie, BaseStorageItem ]
@@ -297,6 +311,9 @@
     whitelist:
       tags:
         - CP14FarmSeed
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14BasePlushie
@@ -348,6 +365,9 @@
     color: "#8f6a2b"
     radius: 1.5
     energy: 8
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14BasePlushie
@@ -383,6 +403,11 @@
   - type: Utensil
     types:
       - Knife
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 9
 
 # Misc plushies
 
@@ -426,6 +451,11 @@
       path: /Audio/Animals/frog_ribbit.ogg
       params:
         variation: 0.1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   parent: CP14BasePlushie
@@ -466,6 +496,11 @@
       collection: CatMeows
       params:
         variation: 0.1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14BasePlushie
@@ -506,3 +541,8 @@
       path: /Audio/_CP14/Items/grass_gather3.ogg
       params:
         variation: 0.1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
+  - type: StaticPrice
+    price: 0.5
