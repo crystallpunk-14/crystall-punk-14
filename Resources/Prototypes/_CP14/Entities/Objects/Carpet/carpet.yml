@@ -26,6 +26,11 @@
     stackType: CP14FloorCarpetBlue
   - type: SpawnAfterInteract 
     prototype: CP14CarpetBlue
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 8.6
 
 - type: entity
   name: red carpet
@@ -42,6 +47,11 @@
     stackType: CP14FloorCarpetRed
   - type: SpawnAfterInteract 
     prototype: CP14CarpetRed
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 4
 
 - type: entity
   name: cyan carpet
@@ -58,6 +68,11 @@
     stackType: CP14FloorCarpetCyan
   - type: SpawnAfterInteract 
     prototype: CP14CarpetCyan
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 14.6
 
 - type: entity
   name: green carpet
@@ -74,6 +89,11 @@
     stackType: CP14FloorCarpetGreen
   - type: SpawnAfterInteract 
     prototype: CP14CarpetGreen
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   name: orange carpet
@@ -90,6 +110,11 @@
     stackType: CP14FloorCarpetOrange
   - type: SpawnAfterInteract 
     prototype: CP14CarpetOrange
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 7.5
 
 - type: entity
   name: purpule carpet
@@ -106,6 +131,11 @@
     stackType: CP14FloorCarpetPurple
   - type: SpawnAfterInteract 
     prototype: CP14CarpetPurple
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 4.4
 
 - type: entity
   name: black carpet
@@ -120,6 +150,11 @@
     stackType: CP14FloorCarpetBlack
   - type: SpawnAfterInteract 
     prototype: CP14CarpetBlack
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 6
 
 - type: entity
   name: yellow carpet
@@ -134,6 +169,11 @@
     stackType: CP14FloorCarpetYellow
   - type: SpawnAfterInteract 
     prototype: CP14CarpetYellow
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 15
+  - type: StaticPrice
+    price: 3.5
 
 #staks
 
