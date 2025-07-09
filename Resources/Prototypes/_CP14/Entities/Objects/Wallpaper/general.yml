@@ -27,7 +27,7 @@
     stackType: CP14WallpaperBlack
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
   - type: StaticPrice
     price: 6
 
@@ -44,7 +44,7 @@
     stackType: CP14WallpaperGreen
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
   - type: StaticPrice
     price: 6
 
@@ -61,7 +61,7 @@
     stackType: CP14WallpaperPurple
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
   - type: StackPrice
     price: 4.4
 
@@ -78,7 +78,7 @@
     stackType: CP14WallpaperRed
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
   - type: StackPrice
     price: 4
 
@@ -95,7 +95,7 @@
     stackType: CP14WallpaperWhite
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
 
 - type: entity
   id: CP14WallpaperWhite2
@@ -110,7 +110,7 @@
     stackType: CP14WallpaperWhite2
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
 
 - type: entity
   id: CP14WallpaperYellow
@@ -125,6 +125,6 @@
     stackType: CP14WallpaperYellow
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 100
+      CP14Cloth: 10
   - type: StackPrice
     price: 3.5
