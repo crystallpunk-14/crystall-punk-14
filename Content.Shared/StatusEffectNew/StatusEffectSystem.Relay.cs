@@ -1,3 +1,5 @@
+using Content.Shared.Damage;
+using Content.Shared.Damage.Events;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Player;
 
@@ -7,6 +9,10 @@ public abstract partial class SharedStatusEffectsSystem
 {
     protected void InitializeRelay()
     {
+        //CP14 Zone
+        SubscribeLocalEvent<StatusEffectContainerComponent, DamageModifyEvent>(RelayStatusEffectEvent);
+        //CP14 Zone end
+
         SubscribeLocalEvent<StatusEffectContainerComponent, LocalPlayerAttachedEvent>(RelayStatusEffectEvent);
         SubscribeLocalEvent<StatusEffectContainerComponent, LocalPlayerDetachedEvent>(RelayStatusEffectEvent);
     }
