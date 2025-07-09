@@ -85,6 +85,8 @@
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
   - type: Clothing
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   id: CP14MagicFireStaff
@@ -103,6 +105,8 @@
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
   - type: Clothing
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   id: CP14MagicDruidStaff
