@@ -15,17 +15,19 @@
   - type: Sprite
     sprite: _CP14/Tiles/Water/water.rsi
     drawdepth: BelowFloor
-  - type: Icon
-    sprite: _CP14/Tiles/Water/water.rsi
-    state: full
+    color: "#ffffffee"
   - type: IconSmooth
     key: CP14Water
     additionalKeys:
     - CP14wall
     base: water
+  - type: Icon
+    sprite: _CP14/Tiles/Water/water.rsi
+    state: full
   - type: FloorOccluder
   - type: Transform
     anchored: true
+    noRot: true
   - type: SyncSprite
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.5
@@ -77,7 +79,7 @@
   suffix: Deep, Air damage
   components:
   - type: Sprite
-    color: "#869dc2"
+    color: "#fffffffd"
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.2
     sprintSpeedModifier: 0.2
