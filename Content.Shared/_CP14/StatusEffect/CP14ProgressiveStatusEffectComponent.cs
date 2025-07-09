@@ -2,13 +2,13 @@ using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Wounds;
+namespace Content.Shared._CP14.StatusEffect;
 
 /// <summary>
 /// This status effect can be compounded or alleviated by moving into other stages
 /// Use only in conjunction with <see cref="StatusEffectComponent"/>, on the status effect entity.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true)]
 public sealed partial class CP14ProgressiveStatusEffectComponent : Component
 {
     [DataField(required: true), AutoNetworkedField]
