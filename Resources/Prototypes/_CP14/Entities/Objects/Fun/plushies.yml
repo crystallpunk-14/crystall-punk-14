@@ -36,6 +36,8 @@
       types:
         Blunt: 0
     hidden: true
+  - type: StaticPrice
+    price: 2
 
 # Race plushies
 
@@ -68,7 +70,7 @@
       collection: MaleLaugh
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
 
 - type: entity
   parent: CP14BasePlushie
@@ -156,6 +158,8 @@
     materialComposition:
       CP14Cloth: 20
       CP14Stone: 30
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   parent: CP14BasePlushie
@@ -211,9 +215,9 @@
     - CP14EnergyCrystal
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
   - type: StaticPrice
-    price: 2
+    price: 12
 
 - type: entity
   parent: [ CP14BasePlushie, BaseStorageItem ]
@@ -271,7 +275,7 @@
     multiplier: 0.8
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
   - type: StaticPrice
     price: 5
 
@@ -367,7 +371,7 @@
     energy: 8
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
 
 - type: entity
   parent: CP14BasePlushie
@@ -405,9 +409,9 @@
       - Knife
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
   - type: StaticPrice
-    price: 9
+    price: 15
 
 # Misc plushies
 
@@ -498,9 +502,9 @@
         variation: 0.1
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 20
+      CP14Cloth: 25
   - type: StaticPrice
-    price: 10
+    price: 11
 
 - type: entity
   parent: CP14BasePlushie
