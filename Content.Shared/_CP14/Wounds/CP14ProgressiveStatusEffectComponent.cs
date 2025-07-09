@@ -5,20 +5,26 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.Wounds;
 
 /// <summary>
-///
+/// This status effect can be compounded or alleviated by moving into other stages
 /// Use only in conjunction with <see cref="StatusEffectComponent"/>, on the status effect entity.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class CP14WoundStatusEffectComponent : Component
+public sealed partial class CP14ProgressiveStatusEffectComponent : Component
 {
     [DataField(required: true), AutoNetworkedField]
     public CP14WoundSeverity Severity = CP14WoundSeverity.Minor;
 
     /// <summary>
-    /// Possible complications of this wound (the current status effect will be replaced with a more dangerous one)
+    /// Possible complications of this wound (the current status effect will be replaced with a more dangerous one). If null, the status effect will no longer be worsened
     /// </summary>
     [DataField, AutoNetworkedField]
     public HashSet<EntProtoId> Complications = new();
+
+    /// <summary>
+    /// Possible wound regeneration (the current status effect will be replaced with a less dangerous one). If empty, the status effect is completely lost
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<EntProtoId> Restorations = new();
 
     /// <summary>
     /// Current wound health. If health drops to 0, the wound heals and becomes 1 stage easier.
@@ -47,6 +53,5 @@ public enum CP14WoundSeverity : byte
 {
     Minor,
     Moderate,
-    Severe,
-    Critical
+    Severe
 }
