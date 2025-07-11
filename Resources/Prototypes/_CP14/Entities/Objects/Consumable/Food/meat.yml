@@ -474,12 +474,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1.5
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
           Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 2
   - type: RandomSprite
     available:
       - random:
@@ -506,12 +508,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 2
         - ReagentId: Protein
           Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 2
   - type: RandomSprite
     available:
       - random:
