@@ -20,7 +20,7 @@
         - ReagentId: Nutriment
           Quantity: 9
         - ReagentId: Protein
-          Quantity: 9
+          Quantity: 8
         - ReagentId: Vitamin
           Quantity: 0.5
         - ReagentId: Fat

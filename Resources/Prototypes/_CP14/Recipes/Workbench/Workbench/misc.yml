@@ -356,17 +356,23 @@
   requirements:
   - !type:StackResource
     stack: CP14FloraMaterial
-    count: 4
+    count: 10
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 10
+  - !type:StackResource
+    stack: CP14FloraMaterial
+    count: 10
   result: CP14Rope
 
 - type: CP14Recipe
   id: CP14RopeFromCloth
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  craftTime: 4
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 2
+    count: 1
   result: CP14Rope
 
 - type: CP14Recipe
