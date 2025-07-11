@@ -11,13 +11,9 @@
   - !type:ProtoIdResource
     protoId: CP14FoodCheeseSlice
     count: 2
-  - !type:TagResource
-    tag: CP14CookedMeatLeg
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatPigLegCooked
     count: 1
-    title: cp14-recipe-title-meat-cooked-leg
-    texture:
-      sprite: _CP14/Objects/Consumable/Food/meat.rsi
-      state: different_meat_leg
   result: CP14FoodHamCheese
 
 - type: CP14Recipe
@@ -30,11 +26,7 @@
   - !type:ProtoIdResource
     protoId: CP14FoodPotatoHot
     count: 2
-  - !type:TagResource
-    tag: CP14CookedMeatSlice
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatPigCookedSlice
     count: 2
-    title: cp14-recipe-title-meat-cooked
-    texture:
-      sprite: _CP14/Objects/Consumable/Food/meat.rsi
-      state: different_meat_slice
   result: CP14FoodStuffedPumpkin

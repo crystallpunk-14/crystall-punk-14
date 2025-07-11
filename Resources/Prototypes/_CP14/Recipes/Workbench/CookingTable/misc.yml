@@ -47,11 +47,6 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14FoodPotatoHot
-  - !type:TagResource
-    tag: CP14CookedMeatSlice
-    count: 1
-    title: cp14-recipe-title-meat-cooked
-    texture:
-      sprite: _CP14/Objects/Consumable/Food/meat.rsi
-      state: different_meat_slice
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatPigCookedSlice
   result: CP14FoodStuffedPotato
