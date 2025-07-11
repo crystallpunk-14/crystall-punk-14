@@ -66,13 +66,13 @@
         maxVol: 14
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.5
+          Quantity: 6
         - ReagentId: Protein
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3
 
 - type: entity
   id: CP14FoodChromiumJelly

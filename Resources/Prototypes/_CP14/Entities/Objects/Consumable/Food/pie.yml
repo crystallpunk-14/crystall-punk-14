@@ -146,6 +146,17 @@
     flavors:
       - raw dough
       - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 2
   - type: Sprite
     layers:
     - state: tin
