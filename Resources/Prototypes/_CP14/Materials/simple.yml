@@ -109,7 +109,7 @@
   id: CP14Coal
   stackEntity: CP14Coal1
   name: cp14-material-coal
-  icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore_2 }
+  icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore2 }
   color: "#232526"
   price: 1.5
 

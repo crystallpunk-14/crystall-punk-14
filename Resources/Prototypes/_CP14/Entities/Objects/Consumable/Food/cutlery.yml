@@ -133,9 +133,7 @@
         - CP14RawMeatSlice
         - Meat
         - Pie
-  - type: InternalTemperature
-    thickness: 0.05
-    area: 4
+  - type: Temperature
   - type: CP14TemperatureTransmission
     containerId: storagebase
   - type: UseDelay
