@@ -8,12 +8,11 @@ namespace Content.Server._CP14.Temperature;
 /// <summary>
 /// Allows you to transfer heat from object to objects in the container.
 /// </summary>
-
-//TODO: When the temperature control system is updated, it will need to be replaced with Update.
 public sealed class CP14TemperatureTransmissionSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
+    //TODO: When the temperature control system is updated, it will need to be replaced with Update.
     public override void Initialize()
     {
         base.Initialize();
