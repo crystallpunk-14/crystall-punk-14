@@ -32,10 +32,11 @@ public sealed class CP14TemperatureTransmissionSystem : EntitySystem
 
         foreach (var ent in container.ContainedEntities )
         {
-            if (CompOrNull<TemperatureComponent>(ent) is { CurrentTemperature: var currentTemp } tempComp)
-            {
-                tempComp.CurrentTemperature = currentTemp + (args.CurrentTemperature - currentTemp) * tempTrans.Comp.TransmissionRate;
-            }
+            if (!TryComp<TemperatureComponent>(ent, out var temperature))
+                return;
+
+            var currentTemp = temperature.CurrentTemperature;
+            temperature.CurrentTemperature = currentTemp + (args.CurrentTemperature - currentTemp) * tempTrans.Comp.TransmissionRate;
         }
 
     }

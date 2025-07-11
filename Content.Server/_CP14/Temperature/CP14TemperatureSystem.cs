@@ -23,11 +23,8 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
 
-    // list of delayed object transformation requests.
-    private readonly List<(Entity<CP14TemperatureTransformationComponent> start,
-        BaseContainer?,
-        EntProtoId? TransformTo,
-        string Solution)> _pendingTransforms = new();
+    // list of delayed transformations
+    private readonly List<(Entity<CP14TemperatureTransformationComponent>, EntProtoId, string)> _transformQuery = new();
 
     public override void Initialize()
     {
@@ -45,22 +42,17 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                 args.CurrentTemperature < entry.TemperatureRange.Y &&
                 entry.TransformTo is not null)
             {
-                var hasContainer = _container.TryGetContainingContainer(start.Owner, out var container);
-                _pendingTransforms.Add((start,
-                    hasContainer ? container : null,
-                    entry.TransformTo,
-                    start.Comp.Solution));
+                //We add an object that will need to be transformed later
+                _transformQuery.Add((start, (EntProtoId)entry.TransformTo, start.Comp.Solution));
                 break;
             }
         }
     }
-    // TODO: Ideally, you should just enable container recognition in DropNextTo
-    private void PendingTemperatureTransforms()
+
+    // At the moment, this is the most optimal solution, as other options may be either too ineffective or affect the entire system.
+    private void DeferredTemperatureTransforms()
     {
-        foreach (var (start,
-                     containerUid,
-                     transformTo,
-                     solutionName) in _pendingTransforms)
+        foreach (var (start, transformTo, solutionName) in _transformQuery)
         {
             if (!EntityManager.EntityExists(start))
                 continue;
@@ -68,16 +60,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             var xform = Transform(start);
             var result = Spawn(transformTo, xform.Coordinates);
 
-            //a temporary stub, as DropNextTo does not work with containers
-            if (containerUid is not null)
-            {
-                _container.Remove(start.Owner, containerUid);
-                _container.Insert(result, containerUid);
-            }
-            else
-            {
-                _transform.DropNextTo(result, (start, xform));
-            }
+            _transform.DropNextTo(result, (start, xform));
 
             if (_solutionContainer.TryGetSolution(result, solutionName, out var resultSoln, out _) &&
                 _solutionContainer.TryGetSolution(start.Owner, solutionName, out var startSoln, out var startSolution))
@@ -86,11 +69,9 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                 resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
                 _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
             }
-
             Del(start);
         }
-
-        _pendingTransforms.Clear();
+        _transformQuery.Clear();
     }
     public override void Update(float frameTime)
     {
@@ -105,8 +86,8 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         FlammableSolutionHeating();
         NormalizeSolutionTemperature();
 
-        //to make everything work properly, we transform objects only after all EntityQueries are completed
-        PendingTemperatureTransforms();
+        //we call the method at the end of the main loop to avoid conflicts with transformation
+        DeferredTemperatureTransforms();
     }
 
     private float GetTargetTemperature(FlammableComponent flammable, CP14FlammableSolutionHeaterComponent heater)

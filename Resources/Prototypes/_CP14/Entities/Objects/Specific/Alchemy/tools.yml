@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: BaseStorageItem
   id: CP14Cauldron
   name: cauldron
   description: A heavy cauldron. It is not as bulky as a vat, but can be carried in your hands.
@@ -19,11 +19,30 @@
       - state: liq-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,5
+    quickInsert: true
+    areaInsert: false
+    storageOpenSound:
+      collection: storageRustle
+    storageInsertSound:
+      collection: storageRustle
+    whitelist:
+      tags:
+        - CP14Meat
+        - CP14FarmFood
+        - CP14MeatSlice
+        - CP14RawMeatSlice
   - type: CP14SolutionTemperature
   - type: SolutionContainerManager
     solutions:
       vat:
         maxVol: 100
+  - type: Temperature
+  - type: CP14TemperatureTransmission
+    containerId: storagebase
   - type: Spillable
     solution: vat
   - type: DrainableSolution
