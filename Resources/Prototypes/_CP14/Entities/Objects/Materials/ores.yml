@@ -184,3 +184,60 @@
   - type: Stack
     count: 10
 
+- type: entity
+  id: CP14OreCoal1
+  parent: BaseItem
+  name: coal
+  description: delicious and burns well.
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/coal_ore.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
+  - type: Tag
+    tags:
+    - CP14FireplaceFuel
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 30
+    damage:
+      types:
+        Heat: 2
+  - type: Appearance
+  - type: Stack
+    stackType: CP14OreCoal
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Coal: 2
+
+- type: entity
+  id: CP14OreCoal5
+  parent: CP14OreCoal1
+  categories: [ DoNotMap ]
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  id: CP14OreCoal10
+  parent: CP14OreCoal1
+  categories: [ DoNotMap ]
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

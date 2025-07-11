@@ -106,6 +106,14 @@
   price: 5
 
 - type: material
+  id: CP14Coal
+  stackEntity: CP14Coal1
+  name: cp14-material-coal
+  icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore_2 }
+  color: "#232526"
+  price: 1.5
+
+- type: material
   id: CP14FloraMaterial
   stackEntity: CP14FloraMaterial1
   name: cp14-material-flora

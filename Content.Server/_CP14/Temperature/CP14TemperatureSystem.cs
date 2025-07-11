@@ -55,7 +55,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         }
     }
     // TODO: Ideally, you should just enable container recognition in DropNextTo
-    private void ProcessPendingTemperatureTransforms()
+    private void PendingTemperatureTransforms()
     {
         foreach (var (start,
                      containerUid,
@@ -106,7 +106,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         NormalizeSolutionTemperature();
 
         //to make everything work properly, we transform objects only after all EntityQueries are completed
-        ProcessPendingTemperatureTransforms();
+        PendingTemperatureTransforms();
     }
 
     private float GetTargetTemperature(FlammableComponent flammable, CP14FlammableSolutionHeaterComponent heater)
