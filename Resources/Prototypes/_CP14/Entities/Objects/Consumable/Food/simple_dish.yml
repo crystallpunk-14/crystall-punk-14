@@ -63,12 +63,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 14
+        maxVol: 13
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 1.5
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Fat

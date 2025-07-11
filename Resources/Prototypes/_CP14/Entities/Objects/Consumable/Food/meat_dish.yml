@@ -24,7 +24,7 @@
         - ReagentId: Vitamin
           Quantity: 0.5
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 6
   - type: Sprite
     layers:
     - sprite: _CP14/Objects/Consumable/Food/plates.rsi

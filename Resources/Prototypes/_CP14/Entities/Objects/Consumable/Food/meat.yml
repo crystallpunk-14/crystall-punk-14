@@ -65,7 +65,7 @@
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
   - type: SliceableFood
-    count: 3
+    count: 4
     slice: CP14FoodMeatLambSlice
   - type: SolutionContainerManager
     solutions:
@@ -75,7 +75,7 @@
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: UncookedAnimalProteins
-          Quantity: 5
+          Quantity: 6
         - ReagentId: Fat
           Quantity: 8
   - type: Item
@@ -95,7 +95,7 @@
   - type: Sprite
     state: sheepmeat_cooked
   - type: SliceableFood
-    count: 3
+    count: 4
     slice: CP14FoodMeatLambCookedSlice
   - type: SolutionContainerManager
     solutions:
@@ -105,7 +105,7 @@
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 6
         - ReagentId: Fat
           Quantity: 8
   - type: CP14TemperatureTransformation
@@ -138,11 +138,11 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.75
-        - ReagentId: UncookedAnimalProteins
           Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1.5
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 2
   - type: Tag
     tags:
     - CP14RawMeatSlice
@@ -172,11 +172,11 @@
         maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.75
-        - ReagentId: Protein
           Quantity: 2
+        - ReagentId: Protein
+          Quantity: 1.5
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 2
   - type: Tag
     tags:
     - CP14CookedMeatSlice
@@ -200,13 +200,13 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.5
-        - ReagentId: UncookedAnimalProteins
           Quantity: 4
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
         - ReagentId: Protein
           Quantity: 2
         - ReagentId: Fat
-          Quantity: 8
+          Quantity: 4
         - ReagentId: Egg
           Quantity: 6
   - type: FoodSequenceElement
@@ -231,11 +231,11 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.5
+          Quantity: 4
         - ReagentId: Protein
-          Quantity: 6
+          Quantity: 5
         - ReagentId: Fat
-          Quantity: 8
+          Quantity: 4
         - ReagentId: EggCooked
           Quantity: 6
   - type: FoodSequenceElement
@@ -477,7 +477,7 @@
         maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1.15
+          Quantity: 1.5
         - ReagentId: UncookedAnimalProteins
           Quantity: 1.5
   - type: RandomSprite
@@ -610,14 +610,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3.5
+          Quantity: 8
         - ReagentId: UncookedAnimalProteins
           Quantity: 10
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 10
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -633,14 +633,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: Protein
           Quantity: 10
         - ReagentId: Fat
-          Quantity: 12
+          Quantity: 10
   - type: Tag
     tags:
     - CP14CookedMeatLeg
@@ -668,14 +668,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.25
+          Quantity: 6
         - ReagentId: UncookedAnimalProteins
           Quantity: 8
         - ReagentId: Fat
-          Quantity: 7
+          Quantity: 10
   - type: RandomSprite
     available:
       - random:
@@ -702,14 +702,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: Protein
           Quantity: 8
         - ReagentId: Fat
-          Quantity: 12
+          Quantity: 10
   - type: RandomSprite
     available:
       - random:
@@ -735,12 +735,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 6
         reagents:
         - ReagentId: Nutriment
-          Quantity: 1.45
+          Quantity: 1.5
         - ReagentId: UncookedAnimalProteins
-          Quantity: 1
+          Quantity: 2
         - ReagentId: Fat
           Quantity: 2
   - type: Tag
@@ -762,14 +762,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 6
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2.75
+          Quantity: 1.5
         - ReagentId: Protein
-          Quantity: 1
+          Quantity: 2
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 2
   - type: Tag
     tags:
     - CP14CookedMeatSlice
