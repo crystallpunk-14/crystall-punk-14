@@ -222,7 +222,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      CP14Coal: 2
+      CP14OreCoal: 2
 
 - type: entity
   id: CP14OreCoal5
