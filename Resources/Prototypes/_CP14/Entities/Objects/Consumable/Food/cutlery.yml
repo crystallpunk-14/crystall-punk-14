@@ -127,10 +127,10 @@
       collection: storageRustle
     whitelist:
       tags:
-        - CP14Meat
-        - CP14FarmFood
-        - CP14MeatSlice
-        - CP14RawMeatSlice
+      - CP14Meat
+      - CP14FarmFood
+      - CP14MeatSlice
+      - CP14RawMeatSlice
   - type: Temperature
   - type: CP14TemperatureTransmission
     containerId: storagebase
