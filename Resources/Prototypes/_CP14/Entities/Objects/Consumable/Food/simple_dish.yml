@@ -66,9 +66,9 @@
         maxVol: 13
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 5
         - ReagentId: Protein
-          Quantity: 1.5
+          Quantity: 1.25
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Fat
