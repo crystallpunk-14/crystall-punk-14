@@ -103,3 +103,47 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 4
+
+- type: entity
+  name: Kitchen Cauldron
+  description: It's sturdy yet lightweight, making it perfect for cooking and keeping food hot and delicious!
+  id: CP14KitchenCauldron
+  parent: BaseStorageItem
+  suffix: Empty
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/kitchen_cauldron.rsi
+    state: base
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,4,4
+    quickInsert: true
+    areaInsert: false
+    storageOpenSound:
+      collection: storageRustle
+    storageInsertSound:
+      collection: storageRustle
+    whitelist:
+      tags:
+        - CP14Meat
+        - CP14FarmFood
+        - CP14MeatSlice
+        - CP14RawMeatSlice
+        - Meat
+        - Pie
+  - type: InternalTemperature
+    thickness: 0.05
+    area: 4
+  - type: CP14TemperatureTransmission
+    containerId: storagebase
+  - type: UseDelay
+    delay: 0.4
+  - type: Appearance
+  - type: Clothing
+    slots: [belt]
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,2
