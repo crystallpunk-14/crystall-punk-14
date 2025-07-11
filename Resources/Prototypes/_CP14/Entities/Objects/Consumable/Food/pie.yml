@@ -146,6 +146,17 @@
     flavors:
       - raw dough
       - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 34
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 16
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 13
+        - ReagentId: Vitamin
+          Quantity: 2
   - type: Sprite
     layers:
     - state: tin
@@ -170,12 +181,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 34
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15
+          Quantity: 16
         - ReagentId: Protein
-          Quantity: 12
+          Quantity: 13
         - ReagentId: Vitamin
           Quantity: 2
   - type: Sprite
@@ -212,6 +223,8 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodPieFish
+  - type: StaticPrice
+    price: 20
 
 - type: entity
   name: fish pie
@@ -225,7 +238,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 15

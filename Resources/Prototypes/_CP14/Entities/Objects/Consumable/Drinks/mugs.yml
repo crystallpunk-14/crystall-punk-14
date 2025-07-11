@@ -88,6 +88,9 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_1.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14DrinkBaseMug

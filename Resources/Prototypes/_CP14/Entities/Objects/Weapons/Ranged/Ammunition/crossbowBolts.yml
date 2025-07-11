@@ -54,7 +54,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 3
+      CP14Iron: 2
 
 - type: entity
   id: CP14CrossboltGold
@@ -75,7 +75,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 3
+      CP14Gold: 2
 
 - type: entity
   id: CP14CrossboltCopper
@@ -96,7 +96,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 3
+      CP14Copper: 2
 
 - type: entity
   id: CP14CrossboltMithril
@@ -117,7 +117,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 3
+      CP14Mithril: 2
 
 - type: entity
   id: CP14BigCrossboltIron

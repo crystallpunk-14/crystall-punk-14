@@ -31,6 +31,9 @@
         Blunt: 0.99
         Slash: 0.98
         Piercing: 0.99
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
 
 - type: entity
   parent: CP14ClothingGlovesBase

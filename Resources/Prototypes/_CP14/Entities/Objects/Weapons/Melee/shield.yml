@@ -86,4 +86,7 @@
               CP14WoodenPlanks1:
                 min: 1
                 max: 2
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
+      CP14Iron: 20

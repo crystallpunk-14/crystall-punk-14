@@ -17,6 +17,11 @@
     sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/Trousers/dark_blue.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 25
+  - type: StaticPrice
+    price: 8.6
 
 - type: entity
   parent: CP14ClothingPantsBase
@@ -37,6 +42,11 @@
     sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 25
+  - type: StaticPrice
+    price: 12.6
 
 - type: entity
   parent: CP14ClothingPantsBase

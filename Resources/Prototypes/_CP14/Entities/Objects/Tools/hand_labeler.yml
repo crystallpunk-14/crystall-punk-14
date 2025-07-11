@@ -26,3 +26,5 @@
           - Item
         tags:
           - Structure
+    - type: StaticPrice
+      price: 16

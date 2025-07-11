@@ -90,3 +90,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeWoodenRapier
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10

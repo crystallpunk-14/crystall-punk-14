@@ -15,14 +15,16 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 32
+        maxVol: 42
         reagents:
         - ReagentId: Nutriment
-          Quantity: 13
+          Quantity: 16
         - ReagentId: Protein
-          Quantity: 12
+          Quantity: 13
         - ReagentId: Vitamin
-          Quantity: 2.5
+          Quantity: 0.5
+        - ReagentId: Fat
+          Quantity: 12
   - type: Sprite
     layers:
     - sprite: _CP14/Objects/Consumable/Food/plates.rsi
@@ -68,9 +70,9 @@
         - ReagentId: PumpkinFlesh
           Quantity: 4
         - ReagentId: Protein
-          Quantity: 2
+          Quantity: 6
         - ReagentId: Nutriment
-          Quantity: 13
+          Quantity: 14
         - ReagentId: Vitamin
           Quantity: 6
         - ReagentId: Fat

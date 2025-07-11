@@ -63,16 +63,16 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 14
         reagents:
         - ReagentId: Nutriment
-          Quantity: 9
+          Quantity: 6
         - ReagentId: Protein
-          Quantity: 1
+          Quantity: 2
         - ReagentId: Vitamin
           Quantity: 2
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 3
 
 - type: entity
   id: CP14FoodChromiumJelly

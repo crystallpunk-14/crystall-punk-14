@@ -95,9 +95,6 @@
   id: CP14MeatSlice
 
 - type: Tag
-  id: CP14RawMeatSlice
-
-- type: Tag
   id: CP14Torch
 
 - type: Tag
@@ -156,9 +153,3 @@
 
 - type: Tag
   id: CP14Sandwich
-
-- type: Tag
-  id: CP14CookedMeatSlice
-
-- type: Tag
-  id: CP14CookedMeatLeg

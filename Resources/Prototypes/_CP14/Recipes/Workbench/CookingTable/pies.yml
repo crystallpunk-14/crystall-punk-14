@@ -21,13 +21,9 @@
     protoId: CP14PlatePie
   - !type:ProtoIdResource
     protoId: CP14FoodDoughMediumFlat
-  - !type:TagResource
-    tag: CP14RawMeatSlice
+  - !type:ProtoIdResource
+    protoId: CP14FoodMeatPigSlice
     count: 3
-    title: cp14-recipe-title-meat
-    texture:
-      sprite: _CP14/Objects/Consumable/Food/meat.rsi
-      state: different_meat_slice
   result: CP14FoodPieMeatRaw
 
 - type: CP14Recipe
