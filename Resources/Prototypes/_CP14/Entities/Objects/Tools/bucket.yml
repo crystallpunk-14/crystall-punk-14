@@ -83,7 +83,7 @@
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 30
-      CP14FloraMaterial: 40
+      CP14FloraMaterial: 300
 
 - type: entity
   parent: CP14Bucket
@@ -105,4 +105,4 @@
   - type: PhysicalComposition
     materialComposition:
       CP14LucensWoodenPlanks: 30
-      CP14FloraMaterial: 40
+      CP14FloraMaterial: 300
