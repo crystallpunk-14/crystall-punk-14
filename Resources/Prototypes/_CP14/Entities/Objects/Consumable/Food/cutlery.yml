@@ -118,7 +118,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,4,4
+    - 0,0,6,5
     quickInsert: true
     areaInsert: false
     storageOpenSound:
@@ -131,8 +131,6 @@
         - CP14FarmFood
         - CP14MeatSlice
         - CP14RawMeatSlice
-        - Meat
-        - Pie
   - type: Temperature
   - type: CP14TemperatureTransmission
     containerId: storagebase
@@ -142,6 +140,6 @@
   - type: Clothing
     slots: [belt]
   - type: Item
-    size: Normal
+    size: Large
     shape:
-    - 0,0,2,2
+    - 0,0,4,4
