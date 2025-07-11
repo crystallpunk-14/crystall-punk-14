@@ -35,4 +35,4 @@
     delay: 3
   - type: PhysicalComposition
     materialComposition:
-      CP14FloraMaterial: 300
+      CP14Cloth: 20
