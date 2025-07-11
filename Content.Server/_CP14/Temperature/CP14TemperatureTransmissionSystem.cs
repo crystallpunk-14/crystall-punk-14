@@ -1,10 +1,15 @@
-using System.Linq;
+
 using Content.Server.Temperature.Components;
 using Content.Shared.Temperature;
 using Robust.Shared.Containers;
 
 namespace Content.Server._CP14.Temperature;
 
+/// <summary>
+/// Allows you to transfer heat from object to objects in the container.
+/// </summary>
+
+//TODO: When the temperature control system is updated, it will need to be replaced with Update.
 public sealed class CP14TemperatureTransmissionSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -21,6 +26,9 @@ public sealed class CP14TemperatureTransmissionSystem : EntitySystem
     {
 
         if (!_container.TryGetContainer(tempTrans, tempTrans.Comp.ContainerId, out var container))
+            return;
+
+        if (container.ContainedEntities.Count == 0)
             return;
 
         foreach (var ent in container.ContainedEntities )

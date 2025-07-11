@@ -22,7 +22,13 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
 
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
-    private readonly List<(Entity<CP14TemperatureTransformationComponent> start, BaseContainer?, EntProtoId? TransformTo, string Solution)> _pendingTransforms = new();
+
+    // list of delayed object transformation requests.
+    private readonly List<(Entity<CP14TemperatureTransformationComponent> start,
+        BaseContainer?,
+        EntProtoId? TransformTo,
+        string Solution)> _pendingTransforms = new();
+
     public override void Initialize()
     {
         base.Initialize();
@@ -40,15 +46,21 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                 entry.TransformTo is not null)
             {
                 var hasContainer = _container.TryGetContainingContainer(start.Owner, out var container);
-                _pendingTransforms.Add((start, hasContainer ? container : null, entry.TransformTo, start.Comp.Solution));
+                _pendingTransforms.Add((start,
+                    hasContainer ? container : null,
+                    entry.TransformTo,
+                    start.Comp.Solution));
                 break;
             }
         }
     }
-
+    // TODO: Ideally, you should just enable container recognition in DropNextTo
     private void ProcessPendingTemperatureTransforms()
     {
-        foreach (var (start, containerUid, transformTo, solutionName) in _pendingTransforms)
+        foreach (var (start,
+                     containerUid,
+                     transformTo,
+                     solutionName) in _pendingTransforms)
         {
             if (!EntityManager.EntityExists(start))
                 continue;
@@ -56,6 +68,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             var xform = Transform(start);
             var result = Spawn(transformTo, xform.Coordinates);
 
+            //a temporary stub, as DropNextTo does not work with containers
             if (containerUid is not null)
             {
                 _container.Remove(start.Owner, containerUid);
@@ -91,6 +104,8 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         FlammableEntityHeating();
         FlammableSolutionHeating();
         NormalizeSolutionTemperature();
+
+        //to make everything work properly, we transform objects only after all EntityQueries are completed
         ProcessPendingTemperatureTransforms();
     }
 
