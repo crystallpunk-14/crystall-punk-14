@@ -6,6 +6,8 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
+using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
@@ -16,10 +18,11 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
-
+    private readonly List<(Entity<CP14TemperatureTransformationComponent> start, BaseContainer?, EntProtoId? TransformTo, string Solution)> _pendingTransforms = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -30,40 +33,52 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start,
         ref OnTemperatureChangeEvent args)
     {
-        var xform = Transform(start);
         foreach (var entry in start.Comp.Entries)
         {
             if (args.CurrentTemperature > entry.TemperatureRange.X &&
-                args.CurrentTemperature < entry.TemperatureRange.Y)
+                args.CurrentTemperature < entry.TemperatureRange.Y &&
+                entry.TransformTo is not null)
             {
-                if (entry.TransformTo is not null)
-                {
-                    var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
-
-                    //Try putting in container
-                    _transform.DropNextTo(result, (start, xform));
-
-                    if (_solutionContainer.TryGetSolution(result,
-                            start.Comp.Solution,
-                            out var resultSoln,
-                            out _)
-                        && _solutionContainer.TryGetSolution(start.Owner,
-                            start.Comp.Solution,
-                            out var startSoln,
-                            out var startSolution))
-                    {
-                        _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
-                        resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
-                    }
-                }
-
-                Del(start);
+                var hasContainer = _container.TryGetContainingContainer(start.Owner, out var container);
+                _pendingTransforms.Add((start, hasContainer ? container : null, entry.TransformTo, start.Comp.Solution));
                 break;
             }
         }
     }
 
+    private void ProcessPendingTemperatureTransforms()
+    {
+        foreach (var (start, containerUid, transformTo, solutionName) in _pendingTransforms)
+        {
+            if (!EntityManager.EntityExists(start))
+                continue;
+
+            var xform = Transform(start);
+            var result = Spawn(transformTo, xform.Coordinates);
+
+            if (containerUid is not null)
+            {
+                _container.Remove(start.Owner, containerUid);
+                _container.Insert(result, containerUid);
+            }
+            else
+            {
+                _transform.DropNextTo(result, (start, xform));
+            }
+
+            if (_solutionContainer.TryGetSolution(result, solutionName, out var resultSoln, out _) &&
+                _solutionContainer.TryGetSolution(start.Owner, solutionName, out var startSoln, out var startSolution))
+            {
+                _solutionContainer.RemoveAllSolution(resultSoln.Value);
+                resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
+                _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+            }
+
+            Del(start);
+        }
+
+        _pendingTransforms.Clear();
+    }
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -76,6 +91,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         FlammableEntityHeating();
         FlammableSolutionHeating();
         NormalizeSolutionTemperature();
+        ProcessPendingTemperatureTransforms();
     }
 
     private float GetTargetTemperature(FlammableComponent flammable, CP14FlammableSolutionHeaterComponent heater)
@@ -154,3 +170,5 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         return true;
     }
 }
+
+
