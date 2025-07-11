@@ -149,12 +149,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 34
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15
+          Quantity: 16
         - ReagentId: UncookedAnimalProteins
-          Quantity: 12
+          Quantity: 13
         - ReagentId: Vitamin
           Quantity: 2
   - type: Sprite
@@ -181,12 +181,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 34
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15
+          Quantity: 16
         - ReagentId: Protein
-          Quantity: 12
+          Quantity: 13
         - ReagentId: Vitamin
           Quantity: 2
   - type: Sprite
@@ -238,7 +238,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 15

@@ -143,9 +143,6 @@
           Quantity: 1.5
         - ReagentId: Fat
           Quantity: 2
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -177,9 +174,6 @@
           Quantity: 1.5
         - ReagentId: Fat
           Quantity: 2
-  - type: Tag
-    tags:
-    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -487,9 +481,6 @@
       - random:
           rabbit_meat1: ""
           rabbit_meat2: ""
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -521,9 +512,6 @@
       - random:
           rabbit_meat1_cooked: ""
           rabbit_meat2_cooked: ""
-  - type: Tag
-    tags:
-    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -645,9 +633,6 @@
           Quantity: 10
         - ReagentId: Fat
           Quantity: 10
-  - type: Tag
-    tags:
-    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -747,9 +732,6 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 3
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -774,9 +756,6 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 3
-  - type: Tag
-    tags:
-    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -908,9 +887,6 @@
           Quantity: 10
         - ReagentId: Fat
           Quantity: 10
-  - type: Tag
-    tags:
-    - CP14CookedMeatLeg
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -941,9 +917,6 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 2
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
@@ -969,9 +942,6 @@
           Quantity: 2
         - ReagentId: Fat
           Quantity: 2
-  - type: Tag
-    tags:
-    - CP14CookedMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
