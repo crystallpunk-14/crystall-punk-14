@@ -60,7 +60,18 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             var xform = Transform(start);
             var result = Spawn(transformTo, xform.Coordinates);
 
-            _transform.DropNextTo(result, (start, xform));
+            // DropNextTo has one problem, with a large number of objects, they may not be placed initially in the container, but spawned under it.
+            // This happens because DropNextTo initially spawns outside the container and then attempts to place it in the container.
+
+            if (_container.TryGetContainingContainer(start.Owner, out var container))
+            {
+                _container.Remove(start.Owner, container);
+                _container.Insert(result, container);
+            }
+            else
+            {
+                _transform.DropNextTo(result, (start, xform));
+            }
 
             if (_solutionContainer.TryGetSolution(result, solutionName, out var resultSoln, out _) &&
                 _solutionContainer.TryGetSolution(start.Owner, solutionName, out var startSoln, out var startSolution))

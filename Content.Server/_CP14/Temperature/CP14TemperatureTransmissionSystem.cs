@@ -35,10 +35,16 @@ public sealed class CP14TemperatureTransmissionSystem : EntitySystem
             if (!TryComp<TemperatureComponent>(ent, out var temperature))
                 return;
 
+            // TODO: A temporary plug that will need to be removed when the temperature system is updated and the cauldron cannot be heated to 1000000
+            if (tempTrans.Comp.MaxTemperature <= temperature.CurrentTemperature)
+                return;
+
             var currentTemp = temperature.CurrentTemperature;
-            temperature.CurrentTemperature = currentTemp + (args.CurrentTemperature - currentTemp) * tempTrans.Comp.TransmissionRate;
+            var temperTransfer = (args.CurrentTemperature - currentTemp) * tempTrans.Comp.TransmissionRate;
+
+            // Yes
+            temperature.CurrentTemperature += Math.Clamp(temperTransfer, -10f, 10f);
         }
 
     }
 }
-
