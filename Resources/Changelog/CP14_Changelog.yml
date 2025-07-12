@@ -1083,3 +1083,10 @@
   id: 8160
   time: '2025-07-11T15:54:37.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1507
+- author: Dinazzewr
+  changes:
+  - message: Many new hats are now available for guards in the loadout menu.
+    type: Add
+  id: 8161
+  time: '2025-07-12T10:10:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1524
