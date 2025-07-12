@@ -130,7 +130,6 @@
       - CP14Meat
       - CP14FarmFood
       - CP14MeatSlice
-      - CP14RawMeatSlice
   - type: Temperature
   - type: CP14TemperatureTransmission
     containerId: storagebase

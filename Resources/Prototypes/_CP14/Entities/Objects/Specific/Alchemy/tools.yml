@@ -34,7 +34,6 @@
       - CP14Meat
       - CP14FarmFood
       - CP14MeatSlice
-      - CP14RawMeatSlice
   - type: CP14SolutionTemperature
   - type: SolutionContainerManager
     solutions:
