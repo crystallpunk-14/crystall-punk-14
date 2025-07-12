@@ -4,6 +4,7 @@
   categories: [ HideSpawnMenu, ForkFiltered ]
   name: Chest
   description: Chest.
+  abstract: true
   components:
   - type: Transform
     noRot: true
@@ -39,9 +40,6 @@
       path: /Audio/Effects/woodenclosetopen.ogg
   - type: StaticPrice
     price: 0
-  - type: Construction
-    containers:
-    - entity_storage
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: Appearance
