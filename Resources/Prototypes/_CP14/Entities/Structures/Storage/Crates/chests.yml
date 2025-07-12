@@ -38,6 +38,8 @@
   - type: Construction
     graph: CP14WoodenChest
     node: CP14WoodenChest
+    containers:
+    - entity_storage
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 50
@@ -116,6 +118,8 @@
   - type: Construction
     graph: CP14GoldChest
     node: CP14GoldChest
+    containers:
+    - entity_storage
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 50
