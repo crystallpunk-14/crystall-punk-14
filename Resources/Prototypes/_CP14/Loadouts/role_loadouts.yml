@@ -85,6 +85,7 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GuardEquip
 
 - type: roleLoadout
   id: JobCP14Investigator
@@ -99,6 +100,7 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GuardEquip 
 
 - type: roleLoadout
   id: JobCP14Guard
@@ -113,6 +115,7 @@
   - CP14GeneralShoes
   - CP14GeneralBack
   - CP14GeneralTrinkets
+  - CP14GuardEquip
 
 - type: roleLoadout
   id: JobCP14Commandant
