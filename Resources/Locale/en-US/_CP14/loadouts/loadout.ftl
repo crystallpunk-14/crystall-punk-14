@@ -49,6 +49,7 @@ cp14-loadout-guard-head = Guard's head
 cp14-loadout-guard-pants = Guard's pants
 cp14-loadout-guard-shirt = Guard's shirt
 cp14-loadout-guard-spells = Guard's spells
+cp14-loadout-guard-equip = Guard's equipment
 
 cp14-loadout-merchant-head = Merchant's hat
 cp14-loadout-merchant-cloak = Merchant's cloak

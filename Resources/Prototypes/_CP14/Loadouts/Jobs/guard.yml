@@ -76,3 +76,46 @@
   id: CP14ClothingShirtGuardsChainmailShirtB
   equipment:
     shirt: CP14ClothingShirtGuardsChainmailShirtB
+
+# Weapon
+
+- type: loadoutGroup
+  id: CP14GuardEquip
+  name: cp14-loadout-guard-equip
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CP14ModularGuardSword
+  - CP14ModularGuardHalberd
+  - CP14ModularGuardRapier
+  - CP14BowCombat
+  - CP14MagicGuardElectroStaff
+
+- type: loadout
+  id: CP14ModularGuardSword
+  dummyEntity: CP14ModularGuardSword
+  equipment:
+    belt2: CP14ModularGuardSword
+  skills:
+  - SwordMastery
+
+- type: loadout
+  id: CP14MagicGuardElectroStaff
+  equipment:
+    belt2: CP14MagicGuardElectroStaff
+
+- type: loadout
+  id: CP14ModularGuardHalberd
+  dummyEntity: CP14ModularGuardHalberd
+  equipment:
+    belt2: CP14ModularGuardHalberd
+  skills:
+  - SwordMastery
+
+- type: loadout
+  id: CP14ModularGuardRapier
+  dummyEntity: CP14ModularGuardRapier
+  equipment:
+    belt2: CP14ModularGuardRapier
+  skills:
+  - RapierMastery
