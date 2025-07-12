@@ -1,17 +1,17 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by TheShuEd, recolored by Dinazewwr",
+    "copyright": "Created by dinazewwr",
     "size": {
-        "x": 32,
-        "y": 32
+        "x": 48,
+        "y": 48
     },
     "states": [
         {
             "name": "icon"
         },
         {
-            "name": "equipped-CLOAK",
+            "name": "equipped-HELMET",
             "directions": 4
         }
     ]

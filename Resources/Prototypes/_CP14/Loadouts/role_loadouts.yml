@@ -89,7 +89,7 @@
 - type: roleLoadout
   id: JobCP14Investigator
   groups:
-  - CP14GuardHead
+  - CP14InvestigatorHead
   - CP14GeneralOuterClothing
   - CP14GeneralEyes
   - CP14InvestigatorCloak #

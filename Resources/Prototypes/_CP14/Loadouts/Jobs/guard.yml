@@ -27,11 +27,29 @@
   minLimit: 1
   loadouts:
   - CP14ClothingHeadGuardHelmet
+  - CP14ClothingHeadGuardCorinthianHelmet
+  - CP14ClothingHeadGuardCap
+  - CP14ClothingHeadGuardFedora
 
 - type: loadout
   id: CP14ClothingHeadGuardHelmet
   equipment:
     head: CP14ClothingHeadGuardHelmet
+
+- type: loadout
+  id: CP14ClothingHeadGuardCorinthianHelmet
+  equipment:
+    head: CP14ClothingHeadGuardCorinthianHelmet
+
+- type: loadout
+  id: CP14ClothingHeadGuardCap
+  equipment:
+    head: CP14ClothingHeadGuardCap
+
+- type: loadout
+  id: CP14ClothingHeadGuardFedora
+  equipment:
+    head: CP14ClothingHeadGuardFedora
 
 # Pants
 
