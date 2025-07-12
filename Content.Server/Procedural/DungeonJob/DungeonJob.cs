@@ -220,6 +220,9 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
             case CP14OreDunGen cp14OreDunGen:
                 await PostGen(cp14OreDunGen, dungeons, reservedTiles, random);
                 break;
+            case CP14RoomsDunGen cp14RoomsDunGen:
+                await PostGen(cp14RoomsDunGen, dungeons, reservedTiles, random);
+                break;
             //CP14 zone end
             case AutoCablingDunGen cabling:
                 await PostGen(cabling, dungeons[^1], reservedTiles, random);

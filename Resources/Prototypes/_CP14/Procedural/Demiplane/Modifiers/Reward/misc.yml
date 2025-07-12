@@ -100,11 +100,10 @@
     Reward: 0.2
   generationProb: 0.8
   layers:
-    - !type:CP14OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
+    - !type:CP14RoomsDunGen
       count: 8
-      minGroupSize: 1
-      maxGroupSize: 1
+      tags:
+      - CP14DemiplaneRuinss
 
 # TIER 2
 

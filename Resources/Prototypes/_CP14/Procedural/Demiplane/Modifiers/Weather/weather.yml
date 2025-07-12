@@ -46,11 +46,10 @@
     entries:
     - visuals: CP14Storm
   layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuinss
 
 - type: cp14DemiplaneModifier
   id: WeatherSnow
@@ -95,11 +94,10 @@
         min: 30
         max: 60
   layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuinss
 
 - type: cp14DemiplaneModifier
   id: CP14ManaMist
@@ -114,11 +112,10 @@
     entries:
     - visuals: CP14ManaMist
   layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuinss
 
 - type: cp14DemiplaneModifier
   id: CP14AntiManaMist
@@ -133,11 +130,10 @@
     entries:
     - visuals: CP14AntiManaMist
   layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuinss
 
 - type: cp14DemiplaneModifier
   id: CP14FireStormPeriod
@@ -161,9 +157,8 @@
         min: 30
         max: 60
   layers:
-    - !type:OreDunGen
-      entity: CP14DemiplaneRuinsRoomSpawner
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuinss
 

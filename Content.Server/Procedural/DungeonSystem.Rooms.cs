@@ -78,7 +78,7 @@ public sealed partial class DungeonSystem
         Vector2i origin,
         DungeonRoomPrototype room,
         Random random,
-        HashSet<Vector2i>? reservedTiles,
+        HashSet<Vector2i>? reservedTiles = null, //CP14 default null
         bool clearExisting = false,
         bool rotation = false)
     {
