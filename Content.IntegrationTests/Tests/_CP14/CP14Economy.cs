@@ -8,8 +8,42 @@ namespace Content.IntegrationTests.Tests._CP14;
 #nullable enable
 
 [TestFixture]
-public sealed class CP14Workbench
+public sealed class CP14Economy
 {
+    /// <summary>
+    /// Checks that StaticPrice is not used together with PhysicalComposition to evaluate an item.
+    /// </summary>
+    [Test]
+    public async Task CheckStaticPriceUnique()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+
+        var protoMan = server.ResolveDependency<IPrototypeManager>();
+
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                foreach (var proto in protoMan.EnumeratePrototypes<EntityPrototype>())
+                {
+                    //We dont check vanilla entities
+                    if (!proto.ID.StartsWith("CP14"))
+                        continue;
+
+                    if (!proto.Components.ContainsKey("StaticPrice"))
+                        continue;
+
+                    if (proto.Components.ContainsKey("PhysicalComposition"))
+                    {
+                        Assert.Fail($"The prototype [{proto.ID}] contains both StaticPrice and PhysicalComposition components. Only one method of evaluating the entity should be used.");
+                    }
+                }
+            });
+        });
+    }
+
     /// <summary>
     /// Check that the price of all resources to craft the item on the workbench is lower than the price of the result.
     /// </summary>
