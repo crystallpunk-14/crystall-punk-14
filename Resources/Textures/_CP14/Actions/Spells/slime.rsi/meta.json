@@ -5,10 +5,19 @@
     "y": 32
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by omsoyk (Discord) & paige404 (GitHub)",
+  "copyright": "Jump created by omsoyk (Discord) & paige404 (GitHub). Bursts created by goblinsable (SS14).",
   "states": [
     {
       "name": "jump"
+    },
+    {
+      "name": "fiery_burst"
+    },
+    {
+      "name": "icy_burst"
+    },
+    {
+      "name": "shocking_burst"
     }
   ]
 }
