@@ -29,6 +29,19 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14GoldChest
+  graph: CP14GoldChest
+  startNode: start
+  targetNode: CP14GoldChest
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14SmallWoodenCrate
   graph: CP14SmallWoodenCrate
   startNode: start
