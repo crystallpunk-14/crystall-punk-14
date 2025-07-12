@@ -27,12 +27,21 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.29"
-        density: 50
+        density: 500
         mask:
         - SmallMobMask #this is so they can go under plastic flaps
         layer:
         - MachineLayer
   - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: StaticPrice
+    price: 0
+  - type: Construction
+    containers:
+    - entity_storage
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: Appearance
@@ -51,8 +60,6 @@
       entity_storage: !type:Container
       paper_label: !type:ContainerSlot
   - type: ItemSlots
-  - type: StaticPrice
-    price: 5
   - type: CP14Lock #Empty, for installing new locks
   - type: Lock
     locked: false
