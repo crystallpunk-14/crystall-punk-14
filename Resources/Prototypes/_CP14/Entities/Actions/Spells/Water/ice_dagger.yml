@@ -58,7 +58,7 @@
         Piercing: 5
         Cold: 3
     soundHit:
-      collection: MetalThud
+      path: /Audio/Weapons/bladeslice.ogg
     cPAnimationLength: 0.25
   - type: Clothing
     equipDelay: 0.25
