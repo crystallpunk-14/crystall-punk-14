@@ -1,6 +1,7 @@
 cp14-modifier-iron-ore = железная руда
 cp14-modifier-copper-ore = медная руда
 cp14-modifier-mithril-ore = мифриловая руда
+cp14-modifier-coal-ore = каменный уголь
 cp14-modifier-dayflin = днецветы
 cp14-modifier-fly-agaric = мухоморы
 cp14-modifier-blue-amanita = лазурная аманита
