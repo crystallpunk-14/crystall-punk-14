@@ -1,0 +1,9 @@
+- type: htnCompound
+  id: CP14ChickCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: FollowCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
