@@ -1090,3 +1090,14 @@
   id: 8161
   time: '2025-07-12T10:10:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1524
+- author: TheShuEd
+  changes:
+  - message: Added a minor lightning spell
+    type: Add
+  - message: Added a lightning staff for guards
+    type: Add
+  - message: Guards can take weapons (and corresponding skills) from the loadout menu
+    type: Add
+  id: 8162
+  time: '2025-07-12T11:52:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1525
