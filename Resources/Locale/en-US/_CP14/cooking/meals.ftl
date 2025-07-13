@@ -21,3 +21,12 @@ cp14-meal-recipe-pig-cheese-desc = Juicy and oozy ham, in cheese and lettuce lea
 
 cp14-meal-recipe-stuffed-potato-name = stuffed cheese potato
 cp14-meal-recipe-stuffed-potato-desc = Potatoes stuffed with stringy cheese and slices of meat.
+
+cp14-meal-recipe-meat-plate-name = meat plate
+cp14-meal-recipe-meat-plate-desc = For real beasts. For those who need nothing but meat.
+
+cp14-meal-recipe-mashed-potato-meat-name = mashed potatoes with meat
+cp14-meal-recipe-mashed-potato-meat-desc = Today we have morally smashed potatoes on plate. The meat next to them, however, looks more optimistic.
+
+cp14-meal-recipe-mashed-potato-name = mashed potatoes
+cp14-meal-recipe-mashed-potato-desc = Today we have morally smashed potatoes on plate.

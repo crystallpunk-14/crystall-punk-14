@@ -21,3 +21,12 @@ cp14-meal-recipe-pig-cheese-desc = Сочный и нежный окорок, в
 
 cp14-meal-recipe-stuffed-potato-name = запеченый сырный картофель
 cp14-meal-recipe-stuffed-potato-desc = Картошка, фаршированная тягучим сыром и мясными ломтиками.
+
+cp14-meal-recipe-meat-plate-name = мясная тарелка
+cp14-meal-recipe-meat-plate-desc = Для настоящих зверей. Для тех, кому кроме мяса ничего не нужно.
+
+cp14-meal-recipe-mashed-potato-meat-name = картофельная пюрешка с мясом
+cp14-meal-recipe-mashed-potato-meat-desc = Сегодня у нас на столе морально подавленный картофель. Мясо рядом, тем не менее, выглядит более оптимистично.
+
+cp14-meal-recipe-mashed-potato-name = картофельная пюрешка
+cp14-meal-recipe-mashed-potato-desc = Сегодня у нас на столе морально подавленный картофель.

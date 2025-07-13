@@ -30,6 +30,15 @@
         },
         {
             "name": "green_salad_meat"
+        },
+        {
+            "name": "meat_plate"
+        },
+        {
+            "name": "mashed_potato_meat"
+        },
+        {
+            "name": "mashed_potato"
         }
     ]
 }

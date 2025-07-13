@@ -10,6 +10,8 @@
   requirements:
   - !type:AlwaysMet
 
+# 1 ingredient types
+
 - type: CP14CookingRecipe
   id: GreenSalad
   foodData:
@@ -21,9 +23,54 @@
       state: green_salad
   requirements:
   - !type:TagRequired
-    tags: 
+    tags:
     - CP14Salad
     - CP14Vegetable
+
+- type: CP14CookingRecipe
+  id: MeatPlate
+  foodData:
+    name: cp14-meal-recipe-meat-plate-name
+    desc: cp14-meal-recipe-meat-plate-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: meat_plate
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Meat
+    - CP14MeatSlice
+
+- type: CP14CookingRecipe
+  id: BreadPlate
+  foodData:
+    name: cp14-meal-recipe-bread-plate-name
+    desc: cp14-meal-recipe-bread-plate-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: bread_plate
+  requirements:
+  - !type:TagRequired
+    tags:
+    - CP14Dough
+
+- type: CP14CookingRecipe
+  id: MashedPotato
+  foodData:
+    name: cp14-meal-recipe-mashed-potato-name
+    desc: cp14-meal-recipe-mashed-potato-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: mashed_potato
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Potato
+
+# 2 ingredient types
 
 - type: CP14CookingRecipe
   id: GreenSaladMeat
@@ -39,26 +86,6 @@
     tags: 
     - CP14Salad
     - CP14Vegetable
-  - !type:TagRequired
-    tags: 
-    - CP14Meat
-
-- type: CP14CookingRecipe
-  id: ZellasianBreakfast
-  foodData:
-    name: cp14-meal-recipe-zellasian-breakfast-name
-    desc: cp14-meal-recipe-zellasian-breakfast-desc
-    foodType: Meal
-    visuals:
-    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
-      state: zellasian_breakfast
-  requirements:
-  - !type:TagRequired
-    tags: 
-    - CP14Egg
-  - !type:TagRequired
-    tags: 
-    - CP14Dough
   - !type:TagRequired
     tags: 
     - CP14Meat
@@ -81,19 +108,65 @@
     - CP14MeatMonster
 
 - type: CP14CookingRecipe
-  id: BreadPlate
+  id: MashedPotatoMeat
   foodData:
-    name: cp14-meal-recipe-bread-plate-name
-    desc: cp14-meal-recipe-bread-plate-desc
+    name: cp14-meal-recipe-mashed-potato-meat-name
+    desc: cp14-meal-recipe-mashed-potato-meat-desc
     foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
-      state: bread_plate
+      state: mashed_potato_meat
   requirements:
   - !type:TagRequired
-    allowOtherTags: false
+    tags: 
+    - CP14Potato
+  - !type:TagRequired
     tags:
+    - CP14Meat
+
+# 3 ingredient types
+
+- type: CP14CookingRecipe
+  id: ZellasianBreakfast
+  foodData:
+    name: cp14-meal-recipe-zellasian-breakfast-name
+    desc: cp14-meal-recipe-zellasian-breakfast-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: zellasian_breakfast
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Egg
+  - !type:TagRequired
+    tags: 
     - CP14Dough
+  - !type:TagRequired
+    tags: 
+    - CP14Meat
+
+- type: CP14CookingRecipe
+  id: StuffedPotato
+  foodData:
+    name: cp14-meal-recipe-stuffed-potato-name
+    desc: cp14-meal-recipe-stuffed-potato-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: stuffed_potato
+  requirements:
+  - !type:TagRequired
+    tags:
+    - CP14MeatSlice
+  - !type:TagRequired
+    tags:
+    - CP14Cheese
+  - !type:TagRequired
+    tags:
+    - CP14Potato
+
+# 4 ingredient types
 
 - type: CP14CookingRecipe
   id: HamInCheese
@@ -117,23 +190,3 @@
   - !type:TagRequired
     tags:
     - CP14Salad
-
-- type: CP14CookingRecipe
-  id: StuffedPotato
-  foodData:
-    name: cp14-meal-recipe-stuffed-potato-name
-    desc: cp14-meal-recipe-stuffed-potato-desc
-    foodType: Meal
-    visuals:
-    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
-      state: stuffed_potato
-  requirements:
-  - !type:TagRequired
-    tags:
-    - CP14MeatSlice
-  - !type:TagRequired
-    tags:
-    - CP14Cheese
-  - !type:TagRequired
-    tags:
-    - CP14Potato
