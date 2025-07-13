@@ -12,7 +12,9 @@ using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Temperature;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._CP14.Cooking;
 
@@ -25,6 +27,8 @@ public abstract class CP14SharedCookingSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     /// <summary>
     /// Stores a list of all recipes sorted by complexity: the most complex ones at the beginning.
@@ -136,7 +140,23 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         }
 
         //Trash
-        foodComp.Trash.AddRange(cooker.Comp.FoodData.Trash);
+        //If we have a lot of trash, we put 1 random trash in each plate. If it's a last plate (out of solution in cooker), we put all the remaining trash in it.
+        if (cooker.Comp.FoodData.Trash.Count > 0)
+        {
+            if (cookerSolution.Volume <= 0)
+            {
+                foodComp.Trash.AddRange(cooker.Comp.FoodData.Trash);
+            }
+            else
+            {
+                if (_net.IsServer)
+                {
+                    var newTrash = _random.Pick(cooker.Comp.FoodData.Trash);
+                    cooker.Comp.FoodData.Trash.Remove(newTrash);
+                    foodComp.Trash.Add(newTrash);
+                }
+            }
+        }
 
         //Name and Description
         if (cooker.Comp.FoodData.Name is not null)

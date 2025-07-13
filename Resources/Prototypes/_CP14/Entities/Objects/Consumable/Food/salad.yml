@@ -23,8 +23,8 @@
           Quantity: 10
   - type: Sprite
     layers:
-    - sprite: _CP14/Objects/Consumable/Food/plates.rsi
-      state: plate
+    - sprite: _CP14/Objects/Consumable/Food/Meals/plates.rsi
+      state: wooden
     - sprite: _CP14/Objects/Consumable/Food/salad.rsi
       state: green_salad
   - type: Tag
