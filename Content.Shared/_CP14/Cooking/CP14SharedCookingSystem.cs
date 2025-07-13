@@ -1,7 +1,9 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Examine;
+using Content.Shared.Fluids;
 using Content.Shared.Interaction;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
@@ -22,6 +24,7 @@ public abstract class CP14SharedCookingSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
+    [Dependency] private readonly SharedPuddleSystem _puddle = default!;
 
     /// <summary>
     /// Stores a list of all recipes sorted by complexity: the most complex ones at the beginning.
@@ -64,10 +67,13 @@ public abstract class CP14SharedCookingSystem : EntitySystem
 
     private void OnExaminedEvent(Entity<CP14FoodCookerComponent> ent, ref ExaminedEvent args)
     {
-        if (ent.Comp.FoodData is null || ent.Comp.FoodData.Name is null)
+        if (ent.Comp.FoodData?.Name is null)
             return;
 
-        var remaining = ent.Comp.FoodData.Solution.Volume;
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
+            return;
+
+        var remaining = solution.Volume;
 
         args.PushMarkup(Loc.GetString("cp14-cooking-examine",
             ("name", Loc.GetString(ent.Comp.FoodData.Name)),
@@ -113,16 +119,20 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         if (cooker.Comp.FoodData is null)
             return;
 
+        if (!_solution.TryGetSolution(cooker.Owner, cooker.Comp.SolutionId, out var cookerSoln, out var cookerSolution))
+            return;
+
         //Solutions
         if (_solution.TryGetSolution(ent.Owner, foodComp.Solution, out var soln, out var solution))
         {
             if (solution.Volume > 0)
             {
-                _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(ent).EntityName)), ent);
+                _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(ent).EntityName)),
+                    ent);
                 return;
             }
 
-            _solution.TryTransferSolution(soln.Value, cooker.Comp.FoodData.Solution, solution.MaxVolume);
+            _solution.TryTransferSolution(soln.Value, cookerSolution, solution.MaxVolume);
         }
 
         //Trash
@@ -147,10 +157,8 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         Dirty(ent);
 
         //Clear cooker data
-        if (cooker.Comp.FoodData.Solution.Volume <= 0)
-        {
+        if (cookerSolution.Volume <= 0)
             cooker.Comp.FoodData = null;
-        }
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
@@ -217,8 +225,11 @@ public abstract class CP14SharedCookingSystem : EntitySystem
 
     private void CookFood(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
-        _container.TryGetContainer(ent, ent.Comp.ContainerId, out var container);
-        _solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution);
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
+            return;
+
+        if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
+            return;
 
         var newData = new CP14FoodData
         {
@@ -227,14 +238,13 @@ public abstract class CP14SharedCookingSystem : EntitySystem
             Flavors = new HashSet<LocId>(recipe.FoodData.Flavors),
             Name = recipe.FoodData.Name,
             Desc = recipe.FoodData.Desc,
-            Solution = recipe.FoodData.Solution
         };
 
         newData.Name = recipe.FoodData.Name;
         newData.Desc = recipe.FoodData.Desc;
 
         //Process entities
-        foreach (var contained in container?.ContainedEntities ?? [])
+        foreach (var contained in container.ContainedEntities)
         {
             if (TryComp<FoodComponent>(contained, out var food))
             {
@@ -244,8 +254,11 @@ public abstract class CP14SharedCookingSystem : EntitySystem
                 //Merge solutions
                 if (_solution.TryGetSolution(contained, food.Solution, out _, out var foodSolution))
                 {
-                    newData.Solution.MaxVolume += foodSolution.Volume;
-                    newData.Solution.AddSolution(foodSolution, _proto);
+                    _solution.TryMixAndOverflow(soln.Value, foodSolution, solution.MaxVolume, out var overflowed);
+                    if (overflowed is not null)
+                    {
+                        _puddle.TrySplashSpillAt(ent, Transform(ent).Coordinates, overflowed, out _);
+                    }
                 }
             }
 
@@ -259,16 +272,6 @@ public abstract class CP14SharedCookingSystem : EntitySystem
             }
 
             QueueDel(contained);
-        }
-
-        //Process solution
-        if (soln is not null && solution is not null)
-        {
-            //Merge solution
-            newData.Solution.MaxVolume += solution.Volume;
-            newData.Solution.AddSolution(solution, _proto);
-
-            _solution.RemoveAllSolution(soln.Value);
         }
 
         ent.Comp.FoodData = newData;

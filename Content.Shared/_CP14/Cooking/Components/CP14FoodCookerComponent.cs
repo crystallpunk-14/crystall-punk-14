@@ -44,9 +44,6 @@ public sealed partial class CP14FoodData
 
     [DataField]
     public HashSet<LocId> Flavors = new();
-
-    [DataField]
-    public Solution Solution = new();
 }
 
 public enum CP14FoodType

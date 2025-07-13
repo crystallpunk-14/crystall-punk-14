@@ -50,7 +50,7 @@
   - type: SolutionContainerManager
     solutions:
       pan:
-        maxVol: 30
+        maxVol: 100
   - type: CP14FoodCooker
     foodType: Meal
     containerId: storagebase
