@@ -1,24 +1,4 @@
 - type: entity
-  id: CP14Plate
-  parent: BaseItem
-  name: plate
-  description: This is your plate for a delicious meal!
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    sprite: _CP14/Objects/Consumable/Food/plates.rsi
-    state: plate
-  - type: Item
-    shape:
-    - 0,0,1,0
-  - type: Tag
-    tags:
-    - CP14Plate
-  - type: PhysicalComposition
-    materialComposition:
-      CP14WoodenPlanks: 20 # 2 wooden plank in craft
-
-- type: entity
   id: CP14PlatePie
   parent: BaseItem
   name: pie plate

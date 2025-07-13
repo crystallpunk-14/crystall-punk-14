@@ -369,6 +369,10 @@ CP14AlchemyFurnace: CP14Furnace
 CP14WoodenClosetGuardFilled: null
 CP14WoodenClosetGuardCommanderFilled: null
 
+#2025-13-07
+CP14Plate: CP14PlateWooden
+
+
 # <---> CrystallEdge migration zone end
 
 

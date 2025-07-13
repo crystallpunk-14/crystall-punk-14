@@ -1,0 +1,12 @@
+- type: entity
+  id: CP14RecipeInedibleMeal
+  name: inedible slop
+  description: Just the sight of it makes you feel nauseous.
+  components:
+  - type: CP14FoodRecipe
+    foodType: Meal
+    conditions:
+    - !type:AlwaysMet
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: trash

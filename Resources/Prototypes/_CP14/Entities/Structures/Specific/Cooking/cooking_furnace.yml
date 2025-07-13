@@ -1,0 +1,51 @@
+- type: entity
+  id: CP14FryingPan
+  parent: BaseStorageItem
+  categories: [ ForkFiltered ]
+  name: frying pan
+  description: "You can always watch three things: how fire burns, how water flows, and how delicious meat is cooked."
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Cooking/frying_pan.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: [ base ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: opened }
+          False: { state: closed }
+  - type: Item
+  - type: MultiHandedItem
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+    size: Ginormous
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: Storage
+    maxItemSize: Normal
+    storageOpenSound: /Audio/Items/toolbox_open.ogg
+    storageCloseSound: /Audio/Items/toolbox_close.ogg
+    storageInsertSound: /Audio/Items/toolbox_insert.ogg
+    storageRemoveSound: /Audio/Items/toolbox_remove.ogg
+    grid:
+    - 0,0,3,3
+  - type: SolutionContainerManager
+    solutions:
+      pan:
+        maxVol: 30
+  - type: CP14FoodCooker
+    foodType: Meal
+    containerId: storagebase
+    solutionId: pan
+  - type: Temperature
