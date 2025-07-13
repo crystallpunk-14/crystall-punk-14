@@ -89,9 +89,6 @@
   id: CP14DyeBlack
 
 - type: Tag
-  id: CP14Meat
-
-- type: Tag
   id: CP14MeatSlice
 
 - type: Tag
@@ -150,6 +147,3 @@
 
 - type: Tag
   id: CP14BigCrossbowBolt
-
-- type: Tag
-  id: CP14Sandwich

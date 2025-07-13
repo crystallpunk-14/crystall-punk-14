@@ -1,11 +1,49 @@
 - type: CP14CookingRecipe
-  id: RecipeInedibleMeal
-  requirements:
-  - !type:AlwaysMet
+  id: InedibleMeal
   foodData:
-    name: cp14-meal-recipe-name
-    desc: cp14-meal-recipe-desc
+    name: cp14-meal-recipe-trash-name
+    desc: cp14-meal-recipe-trash-desc
     foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: trash
+  requirements:
+  - !type:AlwaysMet
+
+- type: CP14CookingRecipe
+  id: ZellasianBreakfast
+  foodData:
+    name: cp14-meal-recipe-zellasian-breakfast-name
+    desc: cp14-meal-recipe-zellasian-breakfast-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: zellasian_breakfast
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Egg
+  - !type:TagRequired
+    tags: 
+    - CP14Dough
+  - !type:TagRequired
+    tags: 
+    - CP14Meat
+    - CP14MeatSlice
+
+- type: CP14CookingRecipe
+  id: MonsterEgg
+  foodData:
+    name: cp14-meal-recipe-monster-egg-name
+    desc: cp14-meal-recipe-monster-egg-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: monster_egg
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Egg
+  - !type:TagRequired
+    tags: 
+    - CP14MeatMonster

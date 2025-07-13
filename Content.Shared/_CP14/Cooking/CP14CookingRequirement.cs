@@ -1,4 +1,5 @@
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
@@ -18,6 +19,7 @@ public abstract partial class CP14CookingCraftRequirement
     public abstract bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         IReadOnlyList<EntityUid> placedEntities,
+        List<ProtoId<TagPrototype>> placedTags,
         Solution? solution = null);
 
     public abstract float GetComplexity();

@@ -30,6 +30,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodBread
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBread
@@ -56,6 +59,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadSlice
@@ -78,6 +84,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: null
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodDoughMedium
@@ -107,6 +116,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodBreadBun
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBun
@@ -137,6 +149,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBunBottom
@@ -174,6 +189,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBunTop
@@ -200,6 +218,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodDoughMediumFlat
@@ -223,3 +244,6 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1 #TODO: лаваш?
+  - type: Tag
+    tags:
+    - CP14Dough

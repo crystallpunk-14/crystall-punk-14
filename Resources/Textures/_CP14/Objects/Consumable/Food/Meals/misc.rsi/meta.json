@@ -9,6 +9,12 @@
     "states": [
         {
             "name": "trash"
+        },
+        {
+            "name": "zellasian_breakfast"
+        },
+        {
+            "name": "monster_egg"
         }
     ]
 }

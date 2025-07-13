@@ -7,6 +7,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Tag;
 using Content.Shared.Temperature;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
@@ -209,8 +210,20 @@ public abstract class CP14SharedCookingSystem : EntitySystem
 
     private CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
     {
-        _container.TryGetContainer(ent, ent.Comp.ContainerId, out var container);
+        if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
+            return null;
+
         _solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var solution);
+
+        //Get all tags
+        var allTags = new List<ProtoId<TagPrototype>>();
+        foreach (var contained in container.ContainedEntities)
+        {
+            if (!TryComp<TagComponent>(contained, out var tags))
+                continue;
+
+            allTags.AddRange(tags.Tags);
+        }
 
         if (_orderedRecipes.Count == 0)
             throw new InvalidOperationException(
@@ -224,7 +237,7 @@ public abstract class CP14SharedCookingSystem : EntitySystem
             var conditionsMet = true;
             foreach (var condition in recipe.Requirements)
             {
-                if (!condition.CheckRequirement(EntityManager, _proto, container?.ContainedEntities ?? [], solution))
+                if (!condition.CheckRequirement(EntityManager, _proto, container.ContainedEntities, allTags, solution))
                 {
                     conditionsMet = false;
                     break;

@@ -45,9 +45,13 @@
     whitelist:
       components:
         - Food
+      tags:
+        - CP14FitInFryingPan
     cP14Ignorelist:
       components:
         - CP14FoodHolder
+        - FoodSequenceElement
+        - FoodSequenceStartPoint
   - type: SolutionContainerManager
     solutions:
       pan:
