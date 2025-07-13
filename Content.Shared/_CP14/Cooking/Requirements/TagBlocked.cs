@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
@@ -7,7 +8,7 @@ namespace Content.Shared._CP14.Cooking.Requirements;
 public sealed partial class TagBlocked : CP14CookingCraftRequirement
 {
     [DataField(required: true)]
-    public ProtoId<TagPrototype> Tag = default!;
+    public HashSet<ProtoId<TagPrototype>> Tags = default!;
 
     public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
@@ -17,10 +18,8 @@ public sealed partial class TagBlocked : CP14CookingCraftRequirement
     {
         foreach (var placedTag in placedTags)
         {
-            if (placedTag == Tag)
-            {
+            if (Tags.Contains(placedTag))
                 return false;
-            }
         }
 
         return true;

@@ -86,6 +86,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatLambCooked
@@ -112,6 +115,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatLambSlice
@@ -147,6 +153,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCookedSlice
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
 
 - type: entity
   id: CP14FoodMeatLambCookedSlice
@@ -178,6 +188,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
 
 - type: entity
   id: CP14FoodMeatLambCutlet
@@ -210,6 +224,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCutletCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatCutlet
 
 - type: entity
   id: CP14FoodMeatLambCutletCooked
@@ -239,6 +257,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatCutlet
 
 # Frog Leg
 - type: entity
@@ -265,6 +287,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFrogLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
 
 - type: entity
   id: CP14FoodMeatFrogLegCooked
@@ -288,6 +314,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
 
 # Human Meat
 - type: entity
@@ -323,6 +353,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHumanCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHumanCooked
@@ -353,6 +386,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Dino Meat
 - type: entity
@@ -381,6 +417,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatDinoCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatDinoCooked
@@ -404,6 +443,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHydra
@@ -429,6 +471,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHydraCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHydraCooked
@@ -450,6 +495,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Rabbit Meat
 - type: entity
@@ -485,6 +533,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatRabbitCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatRabbitCooked
@@ -516,6 +567,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Pig and Boar Meat
 - type: entity
@@ -554,6 +608,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigCooked
@@ -587,6 +645,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigLeg
@@ -614,6 +676,11 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigLegCooked
@@ -637,6 +704,11 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatBoar
@@ -674,6 +746,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatBoarCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatBoarCooked
@@ -708,6 +784,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigSlice
@@ -736,6 +816,11 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCookedSlice
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigCookedSlice
@@ -760,6 +845,11 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatPig
 
 # Monster Meat
 - type: entity
@@ -878,6 +968,7 @@
   - type: Tag
     tags:
     - CP14Meat
+    - CP14MeatLeg
     - CP14MeatMonster
 
 - type: entity
@@ -906,6 +997,7 @@
   - type: Tag
     tags:
     - CP14Meat
+    - CP14MeatLeg
     - CP14MeatMonster
 
 - type: entity
@@ -939,6 +1031,7 @@
       transformTo: CP14FoodMeatMonsterCookedSlice
   - type: Tag
     tags:
+    - CP14Meat
     - CP14MeatSlice
     - CP14MeatMonster
 
@@ -968,6 +1061,7 @@
       transformTo: CP14Ash1
   - type: Tag
     tags:
+    - CP14Meat
     - CP14MeatSlice
     - CP14MeatMonster
 
@@ -1136,6 +1230,7 @@
       transformTo: CP14FoodMeatFlemTorsoCookedCut
   - type: Tag
     tags:
+    - CP14Meat
     - CP14MeatSlice
     - CP14MeatMonster
 
@@ -1164,6 +1259,7 @@
       transformTo: CP14Ash1
   - type: Tag
     tags:
+    - CP14Meat
     - CP14MeatSlice
     - CP14MeatMonster
 
@@ -1201,6 +1297,7 @@
   - type: Tag
     tags:
     - CP14Meat
+    - CP14MeatLeg
     - CP14MeatMonster
 
 - type: entity
@@ -1229,4 +1326,5 @@
   - type: Tag
     tags:
     - CP14Meat
+    - CP14MeatLeg
     - CP14MeatMonster

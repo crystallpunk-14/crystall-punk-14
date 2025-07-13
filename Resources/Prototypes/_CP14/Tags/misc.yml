@@ -62,34 +62,7 @@
   id: CP14Boar
 
 - type: Tag
-  id: CP14Wheat
-
-- type: Tag
   id: CP14Mosquito
-
-- type: Tag
-  id: CP14Dye
-
-- type: Tag
-  id: CP14DyeRed
-
-- type: Tag
-  id: CP14DyeYellow
-
-- type: Tag
-  id: CP14DyeBlue
-
-- type: Tag
-  id: CP14DyeGreen
-
-- type: Tag
-  id: CP14DyePurple
-
-- type: Tag
-  id: CP14DyeBlack
-
-- type: Tag
-  id: CP14MeatSlice
 
 - type: Tag
   id: CP14Torch

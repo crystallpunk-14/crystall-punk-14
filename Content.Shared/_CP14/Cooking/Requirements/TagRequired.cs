@@ -15,6 +15,12 @@ public sealed partial class TagRequired : CP14CookingCraftRequirement
     [DataField]
     public byte Min = 1;
 
+    [DataField]
+    public byte Max = 255;
+
+    [DataField]
+    public bool AllowOtherTags = true;
+
     public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         IReadOnlyList<EntityUid> placedEntities,
@@ -28,9 +34,14 @@ public sealed partial class TagRequired : CP14CookingCraftRequirement
             {
                 count++;
             }
+            else
+            {
+                if (!AllowOtherTags)
+                    return false; // If we don't allow other tags, and we found one that isn't in the required list, fail.
+            }
         }
 
-        return count >= Min;
+        return count >= Min && count <= Max;
     }
 
     public override float GetComplexity()

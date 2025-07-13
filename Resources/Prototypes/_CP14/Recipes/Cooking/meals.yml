@@ -29,7 +29,6 @@
   - !type:TagRequired
     tags: 
     - CP14Meat
-    - CP14MeatSlice
 
 - type: CP14CookingRecipe
   id: MonsterEgg
@@ -47,3 +46,61 @@
   - !type:TagRequired
     tags: 
     - CP14MeatMonster
+
+- type: CP14CookingRecipe
+  id: BreadPlate
+  foodData:
+    name: cp14-meal-recipe-bread-plate-name
+    desc: cp14-meal-recipe-bread-plate-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: bread_plate
+  requirements:
+  - !type:TagRequired
+    allowOtherTags: false
+    tags:
+    - CP14Dough
+
+- type: CP14CookingRecipe
+  id: HamInCheese
+  foodData:
+    name: cp14-meal-recipe-pig-cheese-name
+    desc: cp14-meal-recipe-pig-cheese-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: pig_cheese
+  requirements:
+  - !type:TagRequired
+    tags:
+    - CP14MeatPig
+  - !type:TagRequired
+    tags:
+    - CP14MeatLeg
+  - !type:TagRequired
+    tags:
+    - CP14Cheese
+  - !type:TagRequired
+    tags:
+    - CP14Salad
+
+- type: CP14CookingRecipe
+  id: StuffedPotato
+  foodData:
+    name: cp14-meal-recipe-stuffed-potato-name
+    desc: cp14-meal-recipe-stuffed-potato-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: stuffed_potato
+  requirements:
+  - !type:TagRequired
+    tags:
+    - CP14MeatSlice
+  - !type:TagRequired
+    tags:
+    - CP14Cheese
+  - !type:TagRequired
+    tags:
+    - CP14Potato

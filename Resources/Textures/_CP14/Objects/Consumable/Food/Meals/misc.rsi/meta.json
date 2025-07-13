@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "All right reserved",
-    "copyright": "Created by TheShuEd",
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Created by prazat911, trash by TheShuEd",
     "size": {
         "x": 32,
         "y": 32
@@ -15,6 +15,15 @@
         },
         {
             "name": "monster_egg"
+        },
+        {
+            "name": "bread_plate"
+        },
+        {
+            "name": "pig_cheese"
+        },
+        {
+            "name": "stuffed_potato"
         }
     ]
 }

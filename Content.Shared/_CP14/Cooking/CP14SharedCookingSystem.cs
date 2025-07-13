@@ -76,6 +76,9 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
             return;
 
+        if (solution.Volume == 0)
+            return;
+
         var remaining = solution.Volume;
 
         args.PushMarkup(Loc.GetString("cp14-cooking-examine",
@@ -173,11 +176,12 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         //Visuals
         ent.Comp.Visuals = cooker.Comp.FoodData.Visuals;
 
-        Dirty(ent);
-
         //Clear cooker data
         if (cookerSolution.Volume <= 0)
             cooker.Comp.FoodData = null;
+
+        Dirty(ent);
+        Dirty(cooker);
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)

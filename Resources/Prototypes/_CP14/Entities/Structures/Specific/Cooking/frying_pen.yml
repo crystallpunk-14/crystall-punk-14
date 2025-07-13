@@ -50,7 +50,6 @@
     cP14Ignorelist:
       components:
         - CP14FoodHolder
-        - FoodSequenceElement
         - FoodSequenceStartPoint
   - type: SolutionContainerManager
     solutions:
