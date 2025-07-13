@@ -1,13 +1,12 @@
 using Content.Server.Atmos.Components;
+using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Placeable;
-using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
@@ -23,67 +22,64 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
 
-    // list of delayed transformations
-    private readonly List<(Entity<CP14TemperatureTransformationComponent>, EntProtoId, string)> _transformQuery = new();
+    // The event was removed because it could have been triggered during an iteration
 
-    public override void Initialize()
+    private void DeferredTemperatureTransforms()
     {
-        base.Initialize();
+        //Yes.. it's a crutch.
+        //Unfortunately, the conversion system has strict requirements for requests.
+        //And we technically can't request a conversion or deletion during integration, or everything will go to hell...
+        var uids = new List<EntityUid>();
+        var query = EntityQueryEnumerator<CP14TemperatureTransformationComponent, TemperatureComponent, TransformComponent>();
 
-        SubscribeLocalEvent<CP14TemperatureTransformationComponent, OnTemperatureChangeEvent>(OnTemperatureChanged);
-    }
-
-    private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start,
-        ref OnTemperatureChangeEvent args)
-    {
-        foreach (var entry in start.Comp.Entries)
+        while (query.MoveNext(out var uid, out _, out _, out _))
         {
-            if (args.CurrentTemperature > entry.TemperatureRange.X &&
-                args.CurrentTemperature < entry.TemperatureRange.Y &&
-                entry.TransformTo is not null)
+            uids.Add(uid);
+        }
+
+        foreach (var start in uids)
+        {
+            if (!TryComp<CP14TemperatureTransformationComponent>(start, out var trans))
+                continue;
+            if (!TryComp<TemperatureComponent>(start, out var temp))
+                continue;
+            if (!TryComp<TransformComponent>(start, out var xform))
+                continue;
+
+            foreach (var entry in trans.Entries)
             {
-                //We add an object that will need to be transformed later
-                _transformQuery.Add((start, (EntProtoId)entry.TransformTo, start.Comp.Solution));
+                if (!(temp.CurrentTemperature > entry.TemperatureRange.X) ||
+                    !(temp.CurrentTemperature < entry.TemperatureRange.Y) ||
+                    entry.TransformTo == null)
+                    continue;
+                var result = Spawn(entry.TransformTo, xform.Coordinates);
+
+                // DropNextTo has one problem, with a large number of objects, they may not be placed initially in the container, but spawned under it.
+                // This happens because DropNextTo initially spawns outside the container and then attempts to place it in the container.
+                if (_container.TryGetContainingContainer(start, out var container))
+                {
+                    _container.Remove(start, container);
+                    _container.Insert(result, container);
+                }
+                else
+                {
+                    _transform.DropNextTo(result, (start, xform));
+                }
+
+                if (_solutionContainer.TryGetSolution(result, trans.Solution, out var resultSoln, out _) &&
+                    _solutionContainer.TryGetSolution(start, trans.Solution, out var startSoln, out var startSolution))
+                {
+                    _solutionContainer.RemoveAllSolution(resultSoln.Value);
+                    resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
+                    _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
+                }
+
+                QueueDel(start);
                 break;
             }
         }
     }
 
-    // At the moment, this is the most optimal solution, as other options may be either too ineffective or affect the entire system.
-    private void DeferredTemperatureTransforms()
-    {
-        foreach (var (start, transformTo, solutionName) in _transformQuery)
-        {
-            if (!EntityManager.EntityExists(start))
-                continue;
-
-            var xform = Transform(start);
-            var result = Spawn(transformTo, xform.Coordinates);
-
-            // DropNextTo has one problem, with a large number of objects, they may not be placed initially in the container, but spawned under it.
-            // This happens because DropNextTo initially spawns outside the container and then attempts to place it in the container.
-
-            if (_container.TryGetContainingContainer(start.Owner, out var container))
-            {
-                _container.Remove(start.Owner, container);
-                _container.Insert(result, container);
-            }
-            else
-            {
-                _transform.DropNextTo(result, (start, xform));
-            }
-
-            if (_solutionContainer.TryGetSolution(result, solutionName, out var resultSoln, out _) &&
-                _solutionContainer.TryGetSolution(start.Owner, solutionName, out var startSoln, out var startSolution))
-            {
-                _solutionContainer.RemoveAllSolution(resultSoln.Value);
-                resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
-            }
-            Del(start);
-        }
-        _transformQuery.Clear();
-    }
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -97,7 +93,6 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         FlammableSolutionHeating();
         NormalizeSolutionTemperature();
 
-        //we call the method at the end of the main loop to avoid conflicts with transformation
         DeferredTemperatureTransforms();
     }
 
@@ -122,7 +117,6 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             }
         }
     }
-
     private void FlammableEntityHeating()
     {
         var flammableQuery =
@@ -133,9 +127,22 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
                 continue;
 
             var energy = flammable.FireStacks * heater.DegreesPerStack;
+
             foreach (var ent in itemPlacer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy);
+
+                if (!TryComp<CP14TemperatureTransmissionComponent>(ent, out var transmission))
+                    continue;
+
+                if (!_container.TryGetContainer(ent, transmission.ContainerId, out var container))
+                    continue;
+
+                foreach (var containedEntity in container.ContainedEntities)
+                {
+                    _temperature.ChangeHeat(containedEntity, energy);
+
+                }
             }
         }
     }

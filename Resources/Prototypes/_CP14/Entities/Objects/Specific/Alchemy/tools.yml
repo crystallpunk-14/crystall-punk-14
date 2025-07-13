@@ -39,7 +39,6 @@
     solutions:
       vat:
         maxVol: 100
-  - type: Temperature
   - type: CP14TemperatureTransmission
     containerId: storagebase
   - type: Spillable
