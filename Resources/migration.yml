@@ -138,10 +138,10 @@ CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
 CP14ClothingCloakCuirassLeg: CP14ArmorIronCuirass
 
 #2025-21-01
-CP14PlateWooden: CP14Plate
-CP14PlateWooden2: CP14Plate
-CP14PlateCeramic: CP14Plate
-CP14PlateIron: CP14Plate
+CP14PlateWooden: CP14PlateWooden
+CP14PlateWooden2: CP14PlateWooden
+CP14PlateCeramic: CP14PlateWooden
+CP14PlateIron: CP14PlateIron
 
 #2025-22-01
 CP14BaseLightHammer: CP14ModularIronHammer
