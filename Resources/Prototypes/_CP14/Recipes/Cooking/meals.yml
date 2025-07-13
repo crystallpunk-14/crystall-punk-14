@@ -1,9 +1,9 @@
 - type: CP14CookingRecipe
   id: InedibleMeal
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-trash-name
     desc: cp14-meal-recipe-trash-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: trash
@@ -14,10 +14,10 @@
 
 - type: CP14CookingRecipe
   id: GreenSalad
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-green-salad-name
     desc: cp14-meal-recipe-green-salad-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: green_salad
@@ -29,10 +29,10 @@
 
 - type: CP14CookingRecipe
   id: MeatPlate
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-meat-plate-name
     desc: cp14-meal-recipe-meat-plate-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: meat_plate
@@ -44,10 +44,10 @@
 
 - type: CP14CookingRecipe
   id: BreadPlate
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-bread-plate-name
     desc: cp14-meal-recipe-bread-plate-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: bread_plate
@@ -58,10 +58,10 @@
 
 - type: CP14CookingRecipe
   id: MashedPotato
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-mashed-potato-name
     desc: cp14-meal-recipe-mashed-potato-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: mashed_potato
@@ -74,10 +74,10 @@
 
 - type: CP14CookingRecipe
   id: GreenSaladMeat
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-green-salad-meat-name
     desc: cp14-meal-recipe-green-salad-meat-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: green_salad_meat
@@ -92,10 +92,10 @@
 
 - type: CP14CookingRecipe
   id: MonsterEgg
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-monster-egg-name
     desc: cp14-meal-recipe-monster-egg-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: monster_egg
@@ -109,10 +109,10 @@
 
 - type: CP14CookingRecipe
   id: MashedPotatoMeat
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-mashed-potato-meat-name
     desc: cp14-meal-recipe-mashed-potato-meat-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: mashed_potato_meat
@@ -126,10 +126,10 @@
 
 - type: CP14CookingRecipe
   id: MashedPotatoSalad
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-mashed-potato-salad-name
     desc: cp14-meal-recipe-mashed-potato-salad-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: mashed_potato_salad
@@ -146,10 +146,10 @@
 
 - type: CP14CookingRecipe
   id: ZellasianBreakfast
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-zellasian-breakfast-name
     desc: cp14-meal-recipe-zellasian-breakfast-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: zellasian_breakfast
@@ -166,10 +166,10 @@
 
 - type: CP14CookingRecipe
   id: StuffedPotato
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-stuffed-potato-name
     desc: cp14-meal-recipe-stuffed-potato-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: stuffed_potato
@@ -188,10 +188,10 @@
 
 - type: CP14CookingRecipe
   id: HamInCheese
+  foodType: Meal
   foodData:
     name: cp14-meal-recipe-pig-cheese-name
     desc: cp14-meal-recipe-pig-cheese-desc
-    foodType: Meal
     visuals:
     - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
       state: pig_cheese
