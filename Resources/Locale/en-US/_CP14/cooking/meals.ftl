@@ -1,6 +1,12 @@
 cp14-meal-recipe-trash-name = inedible slop
 cp14-meal-recipe-trash-desc = One glance makes you feel nauseous.
 
+cp14-meal-recipe-green-salad-name = vegetable salad
+cp14-meal-recipe-green-salad-desc = Green salad made from various herbs and vegetables.
+
+cp14-meal-recipe-green-salad-meat-name = vegetable salad with meat
+cp14-meal-recipe-green-salad-meat-desc = Green salad made from various herbs and vegetables, with added meat for extra nutrition.
+
 cp14-meal-recipe-zellasian-breakfast-name =zellasian breakfast
 cp14-meal-recipe-zellasian-breakfast-desc = Scrambled eggs with meat and bread. Delicious, traditional, consistent.
 

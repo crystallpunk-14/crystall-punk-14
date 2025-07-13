@@ -1,6 +1,12 @@
 cp14-meal-recipe-trash-name = несьедобная бурда
 cp14-meal-recipe-trash-desc = Один взгляд вызывает у вас рвотные спазмы.
 
+cp14-meal-recipe-green-salad-name = овощной салат
+cp14-meal-recipe-green-salad-desc = Зеленый салат из различных трав и овощей.
+
+cp14-meal-recipe-green-salad-meat-name = овощной салат с мясом
+cp14-meal-recipe-green-salad-meat-desc = Зеленый салат из различных трав и овощей, с добавлением мяска для дополнительной питательности.
+
 cp14-meal-recipe-zellasian-breakfast-name = зелласианский завтрак
 cp14-meal-recipe-zellasian-breakfast-desc = Яишница с мясом и хлебом. Вкусно, традиционно, стабильно.
 

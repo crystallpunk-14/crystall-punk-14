@@ -11,6 +11,39 @@
   - !type:AlwaysMet
 
 - type: CP14CookingRecipe
+  id: GreenSalad
+  foodData:
+    name: cp14-meal-recipe-green-salad-name
+    desc: cp14-meal-recipe-green-salad-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: green_salad
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Salad
+    - CP14Vegetable
+
+- type: CP14CookingRecipe
+  id: GreenSaladMeat
+  foodData:
+    name: cp14-meal-recipe-green-salad-meat-name
+    desc: cp14-meal-recipe-green-salad-meat-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: green_salad_meat
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Salad
+    - CP14Vegetable
+  - !type:TagRequired
+    tags: 
+    - CP14Meat
+
+- type: CP14CookingRecipe
   id: ZellasianBreakfast
   foodData:
     name: cp14-meal-recipe-zellasian-breakfast-name
