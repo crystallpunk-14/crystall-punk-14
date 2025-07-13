@@ -19,7 +19,7 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-        if (ent.Comp.FoodData is null)
+        if (ent.Comp.Visuals is null)
             return;
 
         //Remove old layers
@@ -32,7 +32,7 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
 
         //Add new layers
         var counter = 0;
-        foreach (var layer in ent.Comp.FoodData.Visuals)
+        foreach (var layer in ent.Comp.Visuals)
         {
             var keyCode = $"cp14-food-layer-{counter}";
             ent.Comp.RevealedLayers.Add(keyCode);

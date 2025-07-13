@@ -1,6 +1,4 @@
-using Content.Shared.Chemistry.Components;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
@@ -11,7 +9,7 @@ namespace Content.Shared._CP14.Cooking.Components;
 public sealed partial class CP14FoodHolderComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public CP14FoodData? FoodData;
+    public List<PrototypeLayerData>? Visuals = null;
 
     [DataField(required: true)]
     public CP14FoodType FoodType = default!;
@@ -19,11 +17,11 @@ public sealed partial class CP14FoodHolderComponent : Component
     [DataField]
     public string? SolutionId;
 
-    public HashSet<string> RevealedLayers = new();
-
     /// <summary>
     /// target layer, where new layers will be added. This allows you to control the order of generative layers and static layers.
     /// </summary>
     [DataField]
     public string TargetLayerMap = "cp14_foodLayers";
+
+    public HashSet<string> RevealedLayers = new();
 }

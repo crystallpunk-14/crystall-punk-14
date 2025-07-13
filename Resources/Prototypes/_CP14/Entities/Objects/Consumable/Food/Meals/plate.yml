@@ -15,7 +15,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 20
   - type: CP14FoodHolder
     foodType: Meal
     solutionId: food
