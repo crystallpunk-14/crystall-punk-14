@@ -28,5 +28,8 @@ cp14-meal-recipe-meat-plate-desc = For real beasts. For those who need nothing b
 cp14-meal-recipe-mashed-potato-meat-name = mashed potatoes with meat
 cp14-meal-recipe-mashed-potato-meat-desc = Today we have morally smashed potatoes on plate. The meat next to them, however, looks more optimistic.
 
+cp14-meal-recipe-mashed-potato-salad-name = mashed potatoes with herbs
+cp14-meal-recipe-mashed-potato-salad-desc = Today we have morally smashed potatoes on plate. Their sadness is embellished with greens.
+
 cp14-meal-recipe-mashed-potato-name = mashed potatoes
 cp14-meal-recipe-mashed-potato-desc = Today we have morally smashed potatoes on plate.

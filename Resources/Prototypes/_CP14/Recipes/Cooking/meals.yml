@@ -124,6 +124,24 @@
     tags:
     - CP14Meat
 
+- type: CP14CookingRecipe
+  id: MashedPotatoSalad
+  foodData:
+    name: cp14-meal-recipe-mashed-potato-salad-name
+    desc: cp14-meal-recipe-mashed-potato-salad-desc
+    foodType: Meal
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
+      state: mashed_potato_salad
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Potato
+  - !type:TagRequired
+    tags:
+    - CP14Salad
+    - CP14Vegetable
+
 # 3 ingredient types
 
 - type: CP14CookingRecipe
