@@ -7,7 +7,7 @@ namespace Content.Shared._CP14.Cooking.Components;
 /// <summary>
 ///
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(CP14CookingSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodCookerComponent : Component
 {
     [DataField, AutoNetworkedField]
@@ -31,6 +31,12 @@ public sealed partial class CP14FoodCookerComponent : Component
 public sealed partial class CP14FoodData
 {
     [DataField]
+    public LocId? Name = null;
+
+    [DataField]
+    public LocId? Desc = null;
+
+    [DataField]
     public List<PrototypeLayerData> Visuals = new();
 
     [DataField]
@@ -40,11 +46,10 @@ public sealed partial class CP14FoodData
     public HashSet<LocId> Flavors = new();
 
     [DataField]
-    public string? Name = null;
-
-    [DataField]
-    public LocId? Desc = null;
-
-    [DataField]
     public Solution Solution = new();
+}
+
+public enum CP14FoodType
+{
+    Meal,
 }

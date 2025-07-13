@@ -12,6 +12,14 @@
   - type: Tag
     tags:
     - CP14Plate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+  - type: CP14FoodHolder
+    foodType: Meal
+    solutionId: food
+  - type: Food
 
 - type: entity
   id: CP14PlateWooden
@@ -19,10 +27,15 @@
   name: wooden plate
   components:
   - type: Sprite
-    state: wooden
+    layers:
+    - state: wooden
+    - map: ["cp14_foodLayers"]
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 20
+  - type: Food
+    trash: 
+    - CP14PlateWooden
 
 - type: entity
   id: CP14PlateIron
@@ -30,10 +43,15 @@
   name: iron plate
   components:
   - type: Sprite
-    state: iron
+    layers:
+    - state: iron
+    - map: ["cp14_foodLayers"]
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10
+  - type: Food
+    trash: 
+    - CP14PlateIron
 
 - type: entity
   id: CP14PlateGold
@@ -41,7 +59,12 @@
   name: gold plate
   components:
   - type: Sprite
-    state: gold
+    layers:
+    - state: gold
+    - map: ["cp14_foodLayers"]
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 10
+  - type: Food
+    trash: 
+    - CP14PlateGold

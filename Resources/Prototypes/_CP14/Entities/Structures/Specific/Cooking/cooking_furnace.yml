@@ -34,12 +34,16 @@
         ents: []
   - type: Storage
     maxItemSize: Normal
-    storageOpenSound: /Audio/Items/toolbox_open.ogg
-    storageCloseSound: /Audio/Items/toolbox_close.ogg
+    storageOpenSound: /Audio/_CP14/Effects/pan_open.ogg
+    storageCloseSound: /Audio/_CP14/Effects/pan_close.ogg
     storageInsertSound: /Audio/Items/toolbox_insert.ogg
-    storageRemoveSound: /Audio/Items/toolbox_remove.ogg
+    storageRemoveSound: /Audio/Items/toolbox_insert.ogg
     grid:
     - 0,0,3,3
+    - 0,0,2,2
+    cP14Ignorelist:
+      components:
+        - CP14FoodHolder
   - type: SolutionContainerManager
     solutions:
       pan:
@@ -49,3 +53,7 @@
     containerId: storagebase
     solutionId: pan
   - type: Temperature
+  - type: RefillableSolution
+    solution: pan
+  - type: Spillable
+    solution: pan

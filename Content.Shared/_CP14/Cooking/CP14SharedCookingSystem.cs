@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Interaction;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Temperature;
 using Robust.Shared.Containers;
@@ -8,11 +9,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking;
 
-public sealed class CP14CookingSystem : EntitySystem
+public abstract class CP14SharedCookingSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
 
     /// <summary>
     /// Stores a list of all recipes sorted by complexity: the most complex ones at the beginning.
@@ -21,7 +23,7 @@ public sealed class CP14CookingSystem : EntitySystem
     /// The easiest recipes are usually the most “abstract,”
     /// so they will be suitable for the largest number of recipes.
     /// </summary>
-    private List<(EntityPrototype, CP14FoodRecipeComponent)> _orderedRecipes = [];
+    private List<CP14CookingRecipePrototype> _orderedRecipes = [];
 
     public override void Initialize()
     {
@@ -31,6 +33,68 @@ public sealed class CP14CookingSystem : EntitySystem
 
         SubscribeLocalEvent<CP14FoodCookerComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+        SubscribeLocalEvent<CP14FoodCookerComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<CP14FoodHolderComponent, AfterInteractEvent>(OnAfterInteract);
+    }
+
+    private void OnAfterInteract(Entity<CP14FoodHolderComponent> ent, ref AfterInteractEvent args)
+    {
+        if (!TryComp<CP14FoodCookerComponent>(args.Target, out var cooker))
+            return;
+
+        if (cooker.FoodData is null)
+            return;
+
+        if (ent.Comp.FoodData is not null)
+            return;
+
+        MoveFoodToHolder(ent, cooker.FoodData);
+    }
+
+    private void OnInteractUsing(Entity<CP14FoodCookerComponent> ent, ref InteractUsingEvent args)
+    {
+        if (!TryComp<CP14FoodHolderComponent>(args.Used, out var holder))
+            return;
+
+        if (holder.FoodData is not null)
+            return;
+
+        if (ent.Comp.FoodData is null)
+            return;
+
+        MoveFoodToHolder((args.Used,holder), ent.Comp.FoodData);
+    }
+
+    /// <summary>
+    /// Transfer food data from cooker to holder
+    /// </summary>
+    private void MoveFoodToHolder(Entity<CP14FoodHolderComponent> ent, CP14FoodData data)
+    {
+        //Name and Description
+        if (data.Name is not null)
+            _metaData.SetEntityName(ent, data.Name);
+        if (data.Desc is not null)
+            _metaData.SetEntityDescription(ent, data.Desc);
+
+
+        if (TryComp<FoodComponent>(ent, out var foodComp))
+        {
+            //Trash
+            foodComp.Trash.AddRange(data.Trash);
+
+            //Solutions
+            if (_solution.TryGetSolution(ent.Owner, foodComp.Solution, out var soln, out var solution))
+                _solution.TryAddSolution(soln.Value, data.Solution);
+        }
+
+        //Flavors
+        EnsureComp<FlavorProfileComponent>(ent, out var flavorComp);
+        foreach (var flavor in data.Flavors)
+        {
+            flavorComp.Flavors.Add(flavor);
+        }
+
+        Dirty(ent);
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
@@ -43,48 +107,39 @@ public sealed class CP14CookingSystem : EntitySystem
 
     private void CacheAndOrderRecipes()
     {
-
-        foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
-        {
-            if (!ent.TryGetComponent(out CP14FoodRecipeComponent? recipe, Factory))
-                continue;
-
-            _orderedRecipes.Add((ent, recipe));
-        }
-
-        _orderedRecipes.Sort((a, b) =>
-        {
-            var aComplexity = a.Item2.Conditions.Sum(condition => condition.GetComplexity());
-            var bComplexity = b.Item2.Conditions.Sum(condition => condition.GetComplexity());
-            return bComplexity.CompareTo(aComplexity); // Sort descending
-        });
+        _orderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
+            .OrderByDescending(recipe => recipe.Requirements.Sum(condition => condition.GetComplexity()))
+            .ToList();
     }
 
     private void OnTemperatureChange(Entity<CP14FoodCookerComponent> ent, ref OnTemperatureChangeEvent args)
     {
+        if (ent.Comp.FoodData is not null)
+            return;
+
         if (args.CurrentTemperature > 500)
         {
             var recipe = GetRecipe(ent);
             if (recipe is not null)
-                CookFood(ent, recipe.Value);
+                CookFood(ent, recipe);
         }
     }
 
-    private (EntityPrototype, CP14FoodRecipeComponent)? GetRecipe(Entity<CP14FoodCookerComponent> ent)
+    private CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
     {
         _container.TryGetContainer(ent, ent.Comp.ContainerId, out var container);
         _solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var solution);
 
         if (_orderedRecipes.Count == 0)
             throw new InvalidOperationException("No cooking recipes found. Please ensure that the CP14CookingRecipePrototype is defined and loaded.");
-        (EntityPrototype, CP14FoodRecipeComponent)? selectedRecipe = null;
+        CP14CookingRecipePrototype? selectedRecipe = null;
         foreach (var recipe in _orderedRecipes)
         {
-            if (recipe.Item2.FoodType != ent.Comp.FoodType)
+            if (recipe.FoodType != ent.Comp.FoodType)
                 continue;
 
             var conditionsMet = true;
-            foreach (var condition in recipe.Item2.Conditions)
+            foreach (var condition in recipe.Requirements)
             {
                 if (!condition.CheckRequirement(EntityManager, _proto, container?.ContainedEntities ?? [], solution))
                 {
@@ -103,23 +158,23 @@ public sealed class CP14CookingSystem : EntitySystem
         return selectedRecipe;
     }
 
-    private void CookFood(Entity<CP14FoodCookerComponent> ent, (EntityPrototype, CP14FoodRecipeComponent) recipe)
+    private void CookFood(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
         _container.TryGetContainer(ent, ent.Comp.ContainerId, out var container);
         _solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution);
 
         var newData = new CP14FoodData
         {
-            Visuals = new List<PrototypeLayerData>(recipe.Item2.FoodData.Visuals),
-            Trash = new List<EntProtoId>(recipe.Item2.FoodData.Trash),
-            Flavors = new HashSet<LocId>(recipe.Item2.FoodData.Flavors),
-            Name = recipe.Item2.FoodData.Name,
-            Desc = recipe.Item2.FoodData.Desc,
-            Solution = recipe.Item2.FoodData.Solution
+            Visuals = new List<PrototypeLayerData>(recipe.FoodData.Visuals),
+            Trash = new List<EntProtoId>(recipe.FoodData.Trash),
+            Flavors = new HashSet<LocId>(recipe.FoodData.Flavors),
+            Name = recipe.FoodData.Name,
+            Desc = recipe.FoodData.Desc,
+            Solution = recipe.FoodData.Solution
         };
 
-        newData.Name = recipe.Item1.Name;
-        newData.Desc = recipe.Item1.Description;
+        newData.Name = recipe.FoodData.Name;
+        newData.Desc = recipe.FoodData.Desc;
 
         //Process entities
         foreach (var contained in container?.ContainedEntities ?? [])
@@ -128,6 +183,13 @@ public sealed class CP14CookingSystem : EntitySystem
             {
                 //Merge trash
                 newData.Trash.AddRange(food.Trash);
+
+                //Merge solutions
+                if (_solution.TryGetSolution(contained, food.Solution, out _, out var foodSolution))
+                {
+                    newData.Solution.MaxVolume += foodSolution.Volume;
+                    newData.Solution.AddSolution(foodSolution, _proto);
+                }
             }
             else
             {
