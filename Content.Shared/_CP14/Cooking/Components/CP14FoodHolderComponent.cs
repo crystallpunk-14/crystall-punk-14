@@ -2,9 +2,6 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
-/// <summary>
-///
-/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodHolderComponent : Component
 {

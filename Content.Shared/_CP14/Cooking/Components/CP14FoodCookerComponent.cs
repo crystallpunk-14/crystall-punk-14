@@ -1,12 +1,8 @@
-using Content.Shared.Chemistry.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
-/// <summary>
-///
-/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodCookerComponent : Component
 {
@@ -23,9 +19,6 @@ public sealed partial class CP14FoodCookerComponent : Component
     public string? SolutionId;
 }
 
-/// <summary>
-///
-/// </summary>
 [Serializable]
 [DataDefinition]
 public sealed partial class CP14FoodData
