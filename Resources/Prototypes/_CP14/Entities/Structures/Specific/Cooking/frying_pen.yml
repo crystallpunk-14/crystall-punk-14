@@ -20,6 +20,7 @@
           True: { state: opened }
           False: { state: closed }
   - type: Item
+    size: Ginormous
   - type: MultiHandedItem
   - type: MeleeWeapon
     wideAnimationRotation: 270
@@ -28,7 +29,6 @@
         Blunt: 6
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
-    size: Ginormous
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
