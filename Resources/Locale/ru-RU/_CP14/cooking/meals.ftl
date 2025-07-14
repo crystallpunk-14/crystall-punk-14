@@ -1,6 +1,9 @@
 cp14-meal-recipe-trash-name = несьедобная бурда
 cp14-meal-recipe-trash-desc = Один взгляд вызывает у вас рвотные спазмы.
 
+cp14-meal-recipe-burned-trash-name = сгоревшая масса
+cp14-meal-recipe-burned-trash-desc = Это могло быть вкусной едой, но повар перестарался с термической обработкой.
+
 cp14-meal-recipe-green-salad-name = овощной салат
 cp14-meal-recipe-green-salad-desc = Зеленый салат из различных трав и овощей.
 

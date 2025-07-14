@@ -55,16 +55,21 @@
     solutions:
       pan:
         maxVol: 100
-  #- type: CP14FoodCooker
-  #  foodType: Meal
-  #  containerId: storagebase
-  #  solutionId: pan
-  - type: Temperature
-  - type: CP14TemperatureTransmission
+  - type: CP14FoodCooker
+    foodType: Meal
     containerId: storagebase
+    solutionId: pan
+  - type: Temperature
   - type: RefillableSolution
     solution: pan
   - type: DrainableSolution
     solution: pan
   - type: Spillable
     solution: pan
+  - type: DoAfter
+  - type: AmbientSound
+    enabled: false
+    volume: 5
+    range: 5
+    sound:
+      path: /Audio/_CP14/Ambience/pan_frying.ogg

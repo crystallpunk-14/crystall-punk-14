@@ -1,6 +1,9 @@
 cp14-meal-recipe-trash-name = inedible slop
 cp14-meal-recipe-trash-desc = One glance makes you feel nauseous.
 
+cp14-meal-recipe-burned-trash-name = burnt mass
+cp14-meal-recipe-burned-trash-desc = This could have been a delicious meal, but the cook overdid it with the heat treatment.
+
 cp14-meal-recipe-green-salad-name = vegetable salad
 cp14-meal-recipe-green-salad-desc = Green salad made from various herbs and vegetables.
 

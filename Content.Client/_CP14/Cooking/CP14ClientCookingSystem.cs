@@ -1,12 +1,15 @@
+using System.Numerics;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Robust.Client.GameObjects;
+using Robust.Shared.Random;
 
 namespace Content.Client._CP14.Cooking;
 
 public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -42,6 +45,8 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
             _sprite.AddBlankLayer((ent.Owner, sprite), index);
             _sprite.LayerMapSet((ent.Owner, sprite), keyCode, index);
             _sprite.LayerSetData((ent.Owner, sprite), index, layer);
+            if (_random.Prob(0.5f)) //50% invert chance
+                _sprite.LayerSetScale((ent.Owner, sprite), index, new Vector2(-1, 1));
 
             counter++;
         }

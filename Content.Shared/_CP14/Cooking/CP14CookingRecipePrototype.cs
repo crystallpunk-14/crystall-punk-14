@@ -12,7 +12,7 @@ public sealed class CP14CookingRecipePrototype : IPrototype
     /// <summary>
     /// Mandatory conditions, without which the craft button will not even be active
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public List<CP14CookingCraftRequirement> Requirements = new();
 
     [DataField]

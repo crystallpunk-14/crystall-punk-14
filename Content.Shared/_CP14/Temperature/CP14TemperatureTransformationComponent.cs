@@ -1,12 +1,13 @@
 using System.Numerics;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Temperature;
+namespace Content.Shared._CP14.Temperature;
 
 /// <summary>
 /// passively returns the solution temperature to the standard
 /// </summary>
-[RegisterComponent, Access(typeof(CP14TemperatureSystem))]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class CP14TemperatureTransformationComponent : Component
 {
     [DataField(required: true)]
@@ -17,6 +18,12 @@ public sealed partial class CP14TemperatureTransformationComponent : Component
     /// </summary>
     [DataField]
     public string Solution = "food";
+
+    /// <summary>
+    /// The transformation will occur instantly if the entity was in FoodCookerComponent at the moment cooking ended.
+    /// </summary>
+    [DataField]
+    public bool AutoTransformOnCooked = true;
 }
 
 [DataRecord]

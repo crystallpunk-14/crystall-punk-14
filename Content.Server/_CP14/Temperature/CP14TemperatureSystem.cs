@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Server.Temperature.Systems;
+using Content.Shared._CP14.Temperature;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;

@@ -1,6 +1,9 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared._CP14.Temperature;
+using Content.Shared.Audio;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Fluids;
 using Content.Shared.Interaction;
@@ -8,16 +11,16 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
-using Content.Shared.Temperature;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Cooking;
 
-public abstract class CP14SharedCookingSystem : EntitySystem
+public abstract partial class CP14SharedCookingSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
@@ -28,6 +31,8 @@ public abstract class CP14SharedCookingSystem : EntitySystem
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
 
     /// <summary>
     /// Stores a list of all recipes sorted by complexity: the most complex ones at the beginning.
@@ -41,32 +46,30 @@ public abstract class CP14SharedCookingSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitTransfer();
+        InitDoAfter();
 
         CacheAndOrderRecipes();
 
-        SubscribeLocalEvent<CP14FoodCookerComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
-        SubscribeLocalEvent<CP14FoodCookerComponent, AfterInteractEvent>(OnInteractUsing);
         SubscribeLocalEvent<CP14FoodCookerComponent, ExaminedEvent>(OnExaminedEvent);
-        SubscribeLocalEvent<CP14FoodHolderComponent, AfterInteractEvent>(OnAfterInteract);
-
-        SubscribeLocalEvent<CP14FoodCookerComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
         SubscribeLocalEvent<CP14FoodCookerComponent, LandEvent>(OnLand);
     }
 
-    private void OnLand(Entity<CP14FoodCookerComponent> ent, ref LandEvent args)
+    private void CacheAndOrderRecipes()
     {
-        ent.Comp.FoodData = null;
-        Dirty(ent);
+        _orderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
+            .Where(recipe => recipe.Requirements.Count > 0) // Only include recipes with requirements
+            .OrderByDescending(recipe => recipe.Requirements.Sum(condition => condition.GetComplexity()))
+            .ToList();
     }
 
-    private void OnInsertAttempt(Entity<CP14FoodCookerComponent> ent, ref ContainerIsInsertingAttemptEvent args)
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
     {
-        if (ent.Comp.FoodData is not null)
-        {
-            _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(ent).EntityName)), ent);
-            args.Cancel();
-        }
+        if (!ev.WasModified<EntityPrototype>())
+            return;
+
+        CacheAndOrderRecipes();
     }
 
     private void OnExaminedEvent(Entity<CP14FoodCookerComponent> ent, ref ExaminedEvent args)
@@ -74,7 +77,7 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         if (ent.Comp.FoodData?.Name is null)
             return;
 
-        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var solution))
             return;
 
         if (solution.Volume == 0)
@@ -87,33 +90,13 @@ public abstract class CP14SharedCookingSystem : EntitySystem
             ("count", remaining)));
     }
 
-    private void OnAfterInteract(Entity<CP14FoodHolderComponent> ent, ref AfterInteractEvent args)
+    private void OnLand(Entity<CP14FoodCookerComponent> ent, ref LandEvent args)
     {
-        if (!TryComp<CP14FoodCookerComponent>(args.Target, out var cooker))
-            return;
-
-        if (cooker.FoodData is null)
-            return;
-
-        if (ent.Comp.Visuals is not null)
-            return;
-
-        MoveFoodToHolder(ent, (args.Target.Value, cooker));
+        ent.Comp.FoodData = null;
+        Dirty(ent);
     }
 
-    private void OnInteractUsing(Entity<CP14FoodCookerComponent> ent, ref AfterInteractEvent args)
-    {
-        if (!TryComp<CP14FoodHolderComponent>(args.Target, out var holder))
-            return;
 
-        if (holder.Visuals is not null)
-            return;
-
-        if (ent.Comp.FoodData is null)
-            return;
-
-        MoveFoodToHolder((args.Target.Value, holder), ent);
-    }
 
     /// <summary>
     /// Transfer food data from cooker to holder
@@ -126,7 +109,7 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         if (cooker.Comp.FoodData is null)
             return;
 
-        if (!_solution.TryGetSolution(cooker.Owner, cooker.Comp.SolutionId, out var cookerSoln, out var cookerSolution))
+        if (!_solution.TryGetSolution(cooker.Owner, cooker.Comp.SolutionId, out _, out var cookerSolution))
             return;
 
         //Solutions
@@ -185,34 +168,6 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         Dirty(cooker);
     }
 
-    private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
-    {
-        if (!ev.WasModified<EntityPrototype>())
-            return;
-
-        CacheAndOrderRecipes();
-    }
-
-    private void CacheAndOrderRecipes()
-    {
-        _orderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
-            .OrderByDescending(recipe => recipe.Requirements.Sum(condition => condition.GetComplexity()))
-            .ToList();
-    }
-
-    private void OnTemperatureChange(Entity<CP14FoodCookerComponent> ent, ref OnTemperatureChangeEvent args)
-    {
-        if (ent.Comp.FoodData is not null)
-            return;
-
-        if (args.CurrentTemperature > 500)
-        {
-            var recipe = GetRecipe(ent);
-            if (recipe is not null)
-                CookFood(ent, recipe);
-        }
-    }
-
     private CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
     {
         if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
@@ -231,8 +186,11 @@ public abstract class CP14SharedCookingSystem : EntitySystem
         }
 
         if (_orderedRecipes.Count == 0)
+        {
             throw new InvalidOperationException(
                 "No cooking recipes found. Please ensure that the CP14CookingRecipePrototype is defined and loaded.");
+        }
+
         CP14CookingRecipePrototype? selectedRecipe = null;
         foreach (var recipe in _orderedRecipes)
         {
@@ -310,7 +268,15 @@ public abstract class CP14SharedCookingSystem : EntitySystem
             QueueDel(contained);
         }
 
+        if (solution.Volume <= 0)
+            return;
+
         ent.Comp.FoodData = newData;
         Dirty(ent);
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class CP14CookingDoAfter : SimpleDoAfterEvent
+{
 }
