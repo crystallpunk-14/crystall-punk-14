@@ -1,4 +1,5 @@
 using Content.Shared._CP14.Cooking.Components;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking;
@@ -20,4 +21,10 @@ public sealed class CP14CookingRecipePrototype : IPrototype
 
     [DataField]
     public CP14FoodType FoodType = CP14FoodType.Meal;
+
+    [DataField]
+    public TimeSpan CookingTime = TimeSpan.FromSeconds(20f);
+
+    [DataField]
+    public SoundSpecifier CookingAmbient = new SoundPathSpecifier("/Audio/_CP14/Ambience/pan_frying.ogg");
 }

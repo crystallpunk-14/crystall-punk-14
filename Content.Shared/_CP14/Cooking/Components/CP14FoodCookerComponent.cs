@@ -27,6 +27,9 @@ public sealed partial class CP14FoodCookerComponent : Component
 public sealed partial class CP14FoodData
 {
     [DataField]
+    public ProtoId<CP14CookingRecipePrototype>? CurrentRecipe = null;
+
+    [DataField]
     public LocId? Name = null;
 
     [DataField]

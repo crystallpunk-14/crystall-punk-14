@@ -232,6 +232,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             Flavors = new HashSet<LocId>(recipe.FoodData.Flavors),
             Name = recipe.FoodData.Name,
             Desc = recipe.FoodData.Desc,
+            CurrentRecipe = recipe
         };
 
         newData.Name = recipe.FoodData.Name;

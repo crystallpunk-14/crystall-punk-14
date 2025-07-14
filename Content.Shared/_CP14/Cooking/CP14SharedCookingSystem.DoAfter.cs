@@ -8,41 +8,40 @@ namespace Content.Shared._CP14.Cooking;
 
 public abstract partial class CP14SharedCookingSystem
 {
-    private readonly ProtoId<CP14CookingRecipePrototype> _burnedRecipe = "BurnedMeal"; //TODO add support to different meal types
+    private readonly ProtoId<CP14CookingRecipePrototype>
+        _burnedRecipe = "BurnedMeal"; //TODO add support to different meal types
+
     private void InitDoAfter()
     {
         SubscribeLocalEvent<CP14FoodCookerComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
         SubscribeLocalEvent<CP14FoodCookerComponent, EntParentChangedMessage>(OnParentChanged);
 
         SubscribeLocalEvent<CP14FoodCookerComponent, CP14CookingDoAfter>(OnCookFinished);
-        SubscribeLocalEvent<CP14FoodCookerComponent, CP14BurningDoAfter>(OnCookBurned);
     }
 
-    private void StartCooking(Entity<CP14FoodCookerComponent> ent)
+    private void StartCooking(Entity<CP14FoodCookerComponent> ent, ProtoId<CP14CookingRecipePrototype> recipe)
     {
-        DoAfterArgs? doAfterArgs = null;
-        if (ent.Comp.FoodData is null)
+        if (!_proto.TryIndex(recipe, out var indexedRecipe))
+            return;
+
+        StartCooking(ent, indexedRecipe);
+    }
+    private void StartCooking(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
+    {
+        if (ent.Comp.DoAfterId is not null)
+            return;
+
+        var doAfterArgs = new DoAfterArgs(EntityManager, ent, recipe.CookingTime, new CP14CookingDoAfter(recipe.ID), ent)
         {
-            doAfterArgs = new DoAfterArgs(EntityManager, ent, 20, new CP14CookingDoAfter(), ent)
-            {
-                NeedHand = false,
-                BreakOnWeightlessMove = false,
-                RequireCanInteract = false,
-            };
-        }
-        else
-        {
-            doAfterArgs = new DoAfterArgs(EntityManager, ent, 20, new CP14BurningDoAfter(), ent)
-            {
-                NeedHand = false,
-                BreakOnWeightlessMove = false,
-                RequireCanInteract = false,
-            };
-        }
+            NeedHand = false,
+            BreakOnWeightlessMove = false,
+            RequireCanInteract = false,
+        };
 
         _doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId);
         ent.Comp.DoAfterId = doAfterId;
         _ambientSound.SetAmbience(ent, true);
+        _ambientSound.SetSound(ent, recipe.CookingAmbient);
     }
 
     private void StopCooking(Entity<CP14FoodCookerComponent> ent)
@@ -58,7 +57,14 @@ public abstract partial class CP14SharedCookingSystem
         {
             if (ent.Comp.DoAfterId is null)
             {
-                StartCooking(ent);
+                var recipe = GetRecipe(ent);
+                if (recipe is not null)
+                    StartCooking(ent, recipe);
+            }
+            else
+            {
+                if (ent.Comp.FoodData?.CurrentRecipe != _burnedRecipe)
+                    StartCooking(ent, _burnedRecipe);
             }
         }
         else
@@ -77,42 +83,26 @@ public abstract partial class CP14SharedCookingSystem
         if (args.Cancelled || args.Handled)
             return;
 
-        var recipe = GetRecipe(ent);
-        if (recipe is not null)
-            CookFood(ent, recipe);
+        if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
+            return;
 
+        CookFood(ent, indexedRecipe);
         StopCooking(ent);
 
         args.Handled = true;
     }
-
-    private void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
-    {
-        if (args.Cancelled || args.Handled)
-            return;
-
-        ForceCook(ent, _burnedRecipe);
-
-        args.Handled = true;
-    }
-
-    private void ForceCook(Entity<CP14FoodCookerComponent> ent, ProtoId<CP14CookingRecipePrototype> forcedRecipe)
-    {
-        if (!_proto.TryIndex(forcedRecipe, out var indexedRecipe))
-            return;
-
-        CookFood(ent, indexedRecipe);
-    }
 }
 
-
 [Serializable, NetSerializable]
-public sealed partial class CP14CookingDoAfter : SimpleDoAfterEvent
+public sealed partial class CP14CookingDoAfter : DoAfterEvent
 {
-}
+    [DataField]
+    public ProtoId<CP14CookingRecipePrototype> Recipe;
 
+    public CP14CookingDoAfter(ProtoId<CP14CookingRecipePrototype> recipe)
+    {
+        Recipe = recipe;
+    }
 
-[Serializable, NetSerializable]
-public sealed partial class CP14BurningDoAfter : SimpleDoAfterEvent
-{
+    public override DoAfterEvent Clone() => this;
 }
