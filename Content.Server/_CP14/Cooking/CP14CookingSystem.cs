@@ -14,6 +14,17 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14FoodCookerComponent, CP14CookingDoAfter>(OnCookFinished);
+        SubscribeLocalEvent<CP14FoodCookerComponent, CP14BurningDoAfter>(OnCookBurned);
+    }
+
+    private void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
+    {
+        if (args.Cancelled || args.Handled)
+            return;
+
+        BurntFood(ent);
+
+        args.Handled = true;
     }
 
     private void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)

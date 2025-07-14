@@ -10,17 +10,6 @@
   requirements:
   - !type:AlwaysMet
 
-- type: CP14CookingRecipe
-  id: BurnedMeal
-  foodType: Meal
-  foodData:
-    name: cp14-meal-recipe-burned-trash-name
-    desc: cp14-meal-recipe-burned-trash-desc
-    visuals:
-    - sprite: _CP14/Objects/Consumable/Food/Meals/misc.rsi
-      state: mashed_potato
-      color: "#212121"
-
 # 1 ingredient types
 
 - type: CP14CookingRecipe

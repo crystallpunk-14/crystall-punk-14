@@ -1,6 +1,4 @@
-using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
-using Content.Shared._CP14.Temperature;
 using Content.Shared.DoAfter;
 using Content.Shared.Temperature;
 using Robust.Shared.Prototypes;
@@ -44,6 +42,24 @@ public abstract partial class CP14SharedCookingSystem
         _ambientSound.SetSound(ent, recipe.CookingAmbient);
     }
 
+    private void StartBurning(Entity<CP14FoodCookerComponent> ent)
+    {
+        if (ent.Comp.DoAfterId is not null)
+            return;
+
+        var doAfterArgs = new DoAfterArgs(EntityManager, ent, 20, new CP14BurningDoAfter(), ent)
+        {
+            NeedHand = false,
+            BreakOnWeightlessMove = false,
+            RequireCanInteract = false,
+        };
+
+        _doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId);
+        ent.Comp.DoAfterId = doAfterId;
+        _ambientSound.SetAmbience(ent, true);
+        //_ambientSound.SetSound(ent, recipe.CookingAmbient); TODO
+    }
+
     protected void StopCooking(Entity<CP14FoodCookerComponent> ent)
     {
         if (ent.Comp.DoAfterId is null)
@@ -75,8 +91,7 @@ public abstract partial class CP14SharedCookingSystem
             }
             else
             {
-                if (ent.Comp.FoodData?.CurrentRecipe != _burnedRecipe)
-                    StartCooking(ent, _burnedRecipe);
+                StartBurning(ent);
             }
         }
         else
@@ -104,3 +119,6 @@ public sealed partial class CP14CookingDoAfter : DoAfterEvent
 
     public override DoAfterEvent Clone() => this;
 }
+
+[Serializable, NetSerializable]
+public sealed partial class CP14BurningDoAfter : SimpleDoAfterEvent;

@@ -270,4 +270,22 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         ent.Comp.FoodData = newData;
         Dirty(ent);
     }
+
+    protected void BurntFood(Entity<CP14FoodCookerComponent> ent)
+    {
+        if (ent.Comp.FoodData is null)
+            return;
+
+        //Brown visual
+        foreach (var visuals in ent.Comp.FoodData.Visuals)
+        {
+            visuals.Color = Color.FromHex("#212121");
+        }
+
+        ent.Comp.FoodData.Name = Loc.GetString("cp14-meal-recipe-burned-trash-name");
+        ent.Comp.FoodData.Desc = Loc.GetString("cp14-meal-recipe-burned-trash-desc");
+
+        //TODO reagent fuck up here
+        Dirty(ent);
+    }
 }
