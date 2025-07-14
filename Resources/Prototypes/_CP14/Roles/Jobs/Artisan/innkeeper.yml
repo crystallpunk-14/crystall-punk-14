@@ -14,5 +14,4 @@
     - CP14EnergyCrystalMedium
   equipment:
     belt: CP14WalletFilledTest
-    belt2: CP14KitchenCauldron
     keys: CP14KeyRingInnkeeper
