@@ -1,33 +1,28 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
-using Content.Shared._CP14.Temperature;
 using Content.Shared.Audio;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Fluids;
-using Content.Shared.Interaction;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
-using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Cooking;
 
 public abstract partial class CP14SharedCookingSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] protected readonly IPrototypeManager _proto = default!;
+    [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -217,7 +212,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         return selectedRecipe;
     }
 
-    private void CookFood(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
+    protected void CookFood(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
         if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
             return;

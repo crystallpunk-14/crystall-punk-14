@@ -112,6 +112,7 @@
         - ReagentId: Fat
           Quantity: 8
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -185,6 +186,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -254,6 +256,7 @@
     entries:
       CP14Sandwich: CP14CutletCookedSandwich
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -311,6 +314,7 @@
         - ReagentId: Protein
           Quantity: 1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -383,6 +387,7 @@
           human_meat1_cooked: ""
           human_meat2_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -440,6 +445,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -492,6 +498,7 @@
         - ReagentId: Protein
           Quantity: 3
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -564,6 +571,7 @@
           rabbit_meat1_cooked: ""
           rabbit_meat2_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -642,6 +650,7 @@
           pig_meat1_cooked: ""
           pig_meat4_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -701,6 +710,7 @@
         - ReagentId: Fat
           Quantity: 10
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -781,6 +791,7 @@
           pig_meat2_cooked: ""
           pig_meat3_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -842,6 +853,7 @@
         - ReagentId: Fat
           Quantity: 3
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -929,6 +941,7 @@
           mole_meat3: CP14cookedMeat
           mole_meat4: CP14cookedMeat
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -991,6 +1004,7 @@
         - ReagentId: Fat
           Quantity: 10
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -1056,6 +1070,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -1121,6 +1136,7 @@
         - ReagentId: Fat
           Quantity: 5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -1190,6 +1206,7 @@
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -1254,6 +1271,7 @@
         - ReagentId: Fat
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -1320,6 +1338,7 @@
         - ReagentId: Fat
           Quantity: 0.1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
