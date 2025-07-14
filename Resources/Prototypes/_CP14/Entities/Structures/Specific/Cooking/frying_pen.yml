@@ -55,11 +55,13 @@
     solutions:
       pan:
         maxVol: 100
-  - type: CP14FoodCooker
-    foodType: Meal
-    containerId: storagebase
-    solutionId: pan
+  #- type: CP14FoodCooker
+  #  foodType: Meal
+  #  containerId: storagebase
+  #  solutionId: pan
   - type: Temperature
+  - type: CP14TemperatureTransmission
+    containerId: storagebase
   - type: RefillableSolution
     solution: pan
   - type: DrainableSolution

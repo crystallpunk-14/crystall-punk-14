@@ -1,13 +1,13 @@
+using System.Linq;
 using Content.Server.Atmos.Components;
-using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
-using Content.Shared.Nutrition.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
+using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
@@ -18,6 +18,7 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
@@ -27,6 +28,29 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14TemperatureTransformationComponent, OnTemperatureChangeEvent>(OnTemperatureChanged);
+        SubscribeLocalEvent<CP14TemperatureTransmissionComponent, OnTemperatureChangeEvent>(OnTemperatureTransmite);
+    }
+
+    /// <summary>
+    /// The main idea is that we do not simulate the interaction between the temperature of the container and its contents.
+    /// We directly change the temperature of the entire contents of the container.
+    /// </summary>
+    private void OnTemperatureTransmite(Entity<CP14TemperatureTransmissionComponent> ent,
+        ref OnTemperatureChangeEvent args)
+    {
+        if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
+            return;
+
+        var heatAmount = args.TemperatureDelta * _temperature.GetHeatCapacity(ent);
+
+        // copy the list to avoid modifying it while iterating
+        var containedEntities = container.ContainedEntities.ToList();
+
+        var entityCount = containedEntities.Count;
+        foreach (var contained in containedEntities)
+        {
+            _temperature.ChangeHeat(contained, heatAmount / entityCount);
+        }
     }
 
     private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start,
@@ -38,29 +62,12 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             if (args.CurrentTemperature > entry.TemperatureRange.X &&
                 args.CurrentTemperature < entry.TemperatureRange.Y)
             {
-                if (entry.TransformTo is not null)
-                {
-                    var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
+                if (entry.TransformTo == null)
+                    continue;
 
-                    //Try putting in container
-                    _transform.DropNextTo(result, (start, xform));
-
-                    if (_solutionContainer.TryGetSolution(result,
-                            start.Comp.Solution,
-                            out var resultSoln,
-                            out _)
-                        && _solutionContainer.TryGetSolution(start.Owner,
-                            start.Comp.Solution,
-                            out var startSoln,
-                            out var startSolution))
-                    {
-                        _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
-                        resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
-                    }
-                }
-
+                SpawnNextToOrDrop(entry.TransformTo, start);
                 Del(start);
+
                 break;
             }
         }

@@ -1,6 +1,5 @@
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Nutrition.Components;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 

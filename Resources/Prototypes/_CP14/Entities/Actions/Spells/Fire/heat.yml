@@ -18,7 +18,7 @@
       spawns:
       - CP14ImpactEffectHeat
     - !type:CP14AdjustAllSolutionThermalEnergy
-      delta: 1500
+      delta: 2500
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:AdjustTemperature
