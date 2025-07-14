@@ -10,7 +10,7 @@ cp14-meal-recipe-green-salad-meat-desc = Green salad made from various herbs and
 cp14-meal-recipe-zellasian-breakfast-name =zellasian breakfast
 cp14-meal-recipe-zellasian-breakfast-desc = Scrambled eggs with meat and bread. Delicious, traditional, consistent.
 
-cp14-meal-recipe-monster-egg-name = monster Eggs
+cp14-meal-recipe-monster-egg-name = monster omelette
 cp14-meal-recipe-monster-egg-desc = A terrifying combination of monster meat and fried eggs. Thankfully, these aren't monster eggs.
 
 cp14-meal-recipe-bread-plate-name = bread plate

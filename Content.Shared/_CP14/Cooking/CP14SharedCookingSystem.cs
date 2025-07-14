@@ -57,6 +57,7 @@ public abstract class CP14SharedCookingSystem : EntitySystem
     private void OnLand(Entity<CP14FoodCookerComponent> ent, ref LandEvent args)
     {
         ent.Comp.FoodData = null;
+        Dirty(ent);
     }
 
     private void OnInsertAttempt(Entity<CP14FoodCookerComponent> ent, ref ContainerIsInsertingAttemptEvent args)

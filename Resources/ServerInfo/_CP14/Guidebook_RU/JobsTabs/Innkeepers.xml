@@ -37,7 +37,7 @@
     <GuideEntityEmbed Entity="CP14FoodCabbageSlice"/>
     <GuideEntityEmbed Entity="CP14FoodCucumber"/>
     <GuideEntityEmbed Entity="CP14FoodPumpkinSlice"/>
-    <GuideEntityEmbed Entity="CP14Plate"/>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
   </Box>
 
 
