@@ -46,6 +46,9 @@ public abstract partial class CP14SharedCookingSystem
 
     protected void StopCooking(Entity<CP14FoodCookerComponent> ent)
     {
+        if (ent.Comp.DoAfterId is null)
+            return;
+
         _doAfter.Cancel(ent.Comp.DoAfterId);
         ent.Comp.DoAfterId = null;
         _ambientSound.SetAmbience(ent, false);
@@ -53,9 +56,18 @@ public abstract partial class CP14SharedCookingSystem
 
     private void OnTemperatureChange(Entity<CP14FoodCookerComponent> ent, ref OnTemperatureChangeEvent args)
     {
+        if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
+            return;
+
+        if (container.ContainedEntities.Count <= 0 && ent.Comp.FoodData is null)
+        {
+            StopCooking(ent);
+            return;
+        }
+
         if (args.TemperatureDelta > 0)
         {
-            if (ent.Comp.DoAfterId is null)
+            if (ent.Comp.DoAfterId is null && ent.Comp.FoodData is null)
             {
                 var recipe = GetRecipe(ent);
                 if (recipe is not null)
