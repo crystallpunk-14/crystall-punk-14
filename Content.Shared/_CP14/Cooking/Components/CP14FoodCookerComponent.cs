@@ -19,12 +19,6 @@ public sealed partial class CP14FoodCookerComponent : Component
     [DataField]
     public string? SolutionId;
 
-    [DataField]
-    public float CookingTempThreshold = 600.00f;
-
-    [DataField]
-    public float BurningTempThreshold = 800.00f;
-
     public DoAfterId? DoAfterId = null;
 }
 

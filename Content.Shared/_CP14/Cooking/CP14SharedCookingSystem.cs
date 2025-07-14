@@ -275,8 +275,3 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         Dirty(ent);
     }
 }
-
-[Serializable, NetSerializable]
-public sealed partial class CP14CookingDoAfter : SimpleDoAfterEvent
-{
-}
