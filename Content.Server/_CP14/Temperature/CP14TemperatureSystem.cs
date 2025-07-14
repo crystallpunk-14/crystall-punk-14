@@ -1,8 +1,10 @@
 using Content.Server.Atmos.Components;
+using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
 using Robust.Server.GameObjects;
@@ -123,11 +125,11 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             EntityQueryEnumerator<CP14FlammableSolutionHeaterComponent, ItemPlacerComponent, FlammableComponent>();
         while (query.MoveNext(out _, out var heater, out var itemPlacer, out var flammable))
         {
+            if (!flammable.OnFire)
+                continue;
+
             foreach (var heatingEntity in itemPlacer.PlacedEntities)
             {
-                if (!flammable.OnFire)
-                    continue;
-
                 if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
                     continue;
 
