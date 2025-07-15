@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStorageItem
+  parent: BaseItem
   id: CP14Cauldron
   name: cauldron
   description: A heavy cauldron. It is not as bulky as a vat, but can be carried in your hands.
