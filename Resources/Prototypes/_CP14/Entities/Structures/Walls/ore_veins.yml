@@ -152,7 +152,7 @@
   suffix: coal ore
   parent: CP14WallStone
   categories: [ DoNotMap ]
-  description: A solid stone natural wall. You see the tantalizing particles of mithril in it.
+  description: A solid stone natural wall. You see the tantalizing particles of coal in it.
   components:
   - type: Sprite
     sprite: _CP14/Structures/Walls/Natural/cave_stone_coal.rsi
