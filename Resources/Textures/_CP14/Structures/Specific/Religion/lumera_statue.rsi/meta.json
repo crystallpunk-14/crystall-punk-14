@@ -8,7 +8,10 @@
   },
   "states": [
     {
-      "name": "statue1"
+      "name": "statue"
+    },
+    {
+      "name": "statue_mirrored"
     }
   ]
 }
