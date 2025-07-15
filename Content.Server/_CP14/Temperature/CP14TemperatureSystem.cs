@@ -154,5 +154,3 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         return true;
     }
 }
-
-
