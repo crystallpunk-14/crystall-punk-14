@@ -81,6 +81,7 @@ public sealed partial class CP14FoodData
 public enum CP14FoodType
 {
     Meal,
+    Soup,
 }
 
 [Serializable, NetSerializable]
