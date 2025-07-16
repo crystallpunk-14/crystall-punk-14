@@ -47,6 +47,12 @@ public sealed partial class CP14FoodCookerComponent : Component
     /// </remarks>
     [DataField]
     public TimeSpan HeatingFrequencyRequired = TimeSpan.FromSeconds(2f);
+
+    [DataField]
+    public EntProtoId? BurntAdditionalSpawn = "CP14Fire";
+
+    [DataField]
+    public float BurntAdditionalSpawnProb = 0.2f;
 }
 
 [Serializable]

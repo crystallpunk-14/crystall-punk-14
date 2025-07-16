@@ -8,6 +8,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Temperature;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Cooking;
 
@@ -24,16 +25,23 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
     private void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
     {
+        StopCooking(ent);
+
         if (args.Cancelled || args.Handled)
             return;
 
         BurntFood(ent);
+
+        if (_random.Prob(ent.Comp.BurntAdditionalSpawnProb))
+            Spawn(ent.Comp.BurntAdditionalSpawn, Transform(ent).Coordinates);
 
         args.Handled = true;
     }
 
     private void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
     {
+        StopCooking(ent);
+
         if (args.Cancelled || args.Handled)
             return;
 
@@ -42,7 +50,6 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
         TryTransformAll(ent);
         CookFood(ent, indexedRecipe);
-        StopCooking(ent);
 
         args.Handled = true;
     }

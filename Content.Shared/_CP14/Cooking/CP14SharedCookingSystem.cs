@@ -26,15 +26,15 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 {
     [Dependency] protected readonly IPrototypeManager _proto = default!;
     [Dependency] protected readonly SharedContainerSystem _container = default!;
+    [Dependency] protected readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] protected readonly SharedAppearanceSystem _appearance = default!;
 
     /// <summary>
     /// When overcooking food, we will replace the reagents inside with this reagent.
@@ -308,7 +308,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         var replacedVolume = solution.Volume / 2;
         solution.SplitSolution(replacedVolume);
         solution.AddReagent(_burntFoodReagent, replacedVolume);
-        
+
         DirtyField(ent.Owner, ent.Comp, nameof(CP14FoodCookerComponent.FoodData));
     }
 }

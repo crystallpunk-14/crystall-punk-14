@@ -49,6 +49,9 @@ public abstract partial class CP14SharedCookingSystem
 
     private void OnInsertAttempt(Entity<CP14FoodCookerComponent> ent, ref ContainerIsInsertingAttemptEvent args)
     {
+        if (args.Cancelled)
+            return;
+
         if (ent.Comp.FoodData is not null)
         {
             _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(ent).EntityName)), ent);
