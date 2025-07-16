@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/11/2025 11:57:25
-  entityCount: 19196
+  time: 07/16/2025 04:57:56
+  entityCount: 19206
 maps:
 - 2
 grids:
@@ -59352,7 +59352,7 @@ entities:
       pos: 14.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13667.896
+      secondsUntilStateChange: -13845.33
       state: Closing
   - uid: 1792
     components:
@@ -60892,12 +60892,6 @@ entities:
     components:
     - type: Transform
       pos: 12.5,-17.5
-      parent: 2
-  - uid: 5722
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -1.5,-27.5
       parent: 2
 - proto: CP14FloorTorch
   entities:
@@ -76245,38 +76239,12 @@ entities:
     - type: Transform
       pos: 41.42377,-34.32005
       parent: 2
-- proto: CP14FoodBreadSlice
-  entities:
-  - uid: 2318
-    components:
-    - type: Transform
-      pos: 7.308227,-21.98852
-      parent: 2
-- proto: CP14FoodCabbageSlice
-  entities:
-  - uid: 2320
-    components:
-    - type: Transform
-      pos: -0.63027596,-22.27597
-      parent: 2
 - proto: CP14FoodCheesePart
   entities:
-  - uid: 2319
-    components:
-    - type: Transform
-      pos: -0.5515399,-25.286625
-      parent: 2
   - uid: 2321
     components:
     - type: Transform
       pos: 9.42285,-24.259884
-      parent: 2
-- proto: CP14FoodCheeseSlice
-  entities:
-  - uid: 2324
-    components:
-    - type: Transform
-      pos: 7.381567,-21.496378
       parent: 2
 - proto: CP14FoodMeatDino
   entities:
@@ -76284,6 +76252,13 @@ entities:
     components:
     - type: Transform
       pos: 3.0940614,-30.361221
+      parent: 2
+- proto: CP14FoodMeatFlemHeadCooked
+  entities:
+  - uid: 11886
+    components:
+    - type: Transform
+      pos: 5.138539,-32.355686
       parent: 2
 - proto: CP14FoodMeatFrogLeg
   entities:
@@ -76322,11 +76297,6 @@ entities:
     - type: Transform
       pos: 6.912213,-26.203783
       parent: 2
-  - uid: 2323
-    components:
-    - type: Transform
-      pos: 3.5989685,-21.309408
-      parent: 2
 - proto: CP14FoodPieApple
   entities:
   - uid: 2282
@@ -76343,6 +76313,51 @@ entities:
     - type: Transform
       pos: 42.107338,-34.496113
       parent: 2
+- proto: CP14Fork
+  entities:
+  - uid: 11879
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.322892,-21.417997
+      parent: 2
+  - uid: 11880
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 4.6571183,-21.654129
+      parent: 2
+  - uid: 11881
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.62943745,-25.162376
+      parent: 2
+  - uid: 11882
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.3824203,-30.361307
+      parent: 2
+    - type: CollisionWake
+      enabled: False
+  - uid: 11883
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5511405,-30.203886
+      parent: 2
+    - type: CollisionWake
+      enabled: False
+- proto: CP14FryingPan
+  entities:
+  - uid: 11887
+    components:
+    - type: Transform
+      pos: 9.415325,-29.152672
+      parent: 2
+    - type: CollisionWake
+      enabled: False
 - proto: CP14Furnace
   entities:
   - uid: 2505
@@ -76351,12 +76366,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,-28.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 11887
   - uid: 2506
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,-29.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 11887
   - uid: 2844
     components:
     - type: Transform
@@ -76384,6 +76405,18 @@ entities:
     components:
     - type: Transform
       pos: 22.5,-30.5
+      parent: 2
+- proto: CP14GoldChest
+  entities:
+  - uid: 7865
+    components:
+    - type: Transform
+      pos: -20.5,-23.5
+      parent: 2
+  - uid: 7936
+    components:
+    - type: Transform
+      pos: -18.5,-36.5
       parent: 2
 - proto: CP14IronDoor
   entities:
@@ -77134,32 +77167,58 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-36.5
       parent: 2
-- proto: CP14Plate
+- proto: CP14PlateIron
   entities:
-  - uid: 2283
+  - uid: 11884
     components:
     - type: Transform
-      pos: 7.5331874,-22.337095
+      pos: 0.5972259,-27.179148
       parent: 2
+    - type: CollisionWake
+      enabled: False
+  - uid: 11885
+    components:
+    - type: Transform
+      pos: 0.68720937,-27.370302
+      parent: 2
+    - type: CollisionWake
+      enabled: False
+- proto: CP14PlateWoodenRandom
+  entities:
   - uid: 2284
     components:
     - type: Transform
-      pos: 8.433026,-22.269629
+      pos: 3.6833415,-21.535347
       parent: 2
   - uid: 2294
     components:
     - type: Transform
-      pos: -0.40167212,-23.337002
+      pos: -0.26470375,-23.18827
       parent: 2
   - uid: 2296
     components:
     - type: Transform
-      pos: 3.569388,-21.290525
+      pos: -0.43342304,-25.392168
       parent: 2
-  - uid: 2406
+  - uid: 2313
     components:
     - type: Transform
-      pos: 3.6947498,-22.223633
+      pos: 7.4514184,-22.277475
+      parent: 2
+  - uid: 2319
+    components:
+    - type: Transform
+      pos: 6.1354036,-26.257986
+      parent: 2
+  - uid: 2320
+    components:
+    - type: Transform
+      pos: 8.45249,-21.332949
+      parent: 2
+  - uid: 2323
+    components:
+    - type: Transform
+      pos: -0.4784155,-22.536097
       parent: 2
 - proto: CP14PortalFrameCrystal
   entities:
@@ -101431,12 +101490,12 @@ entities:
     - type: Transform
       pos: 32.5,32.5
       parent: 2
-- proto: CP14SackFarmingSeedFull
+- proto: CP14SackFarmingSeed
   entities:
   - uid: 2982
     components:
     - type: Transform
-      pos: 0.42527747,-27.375025
+      pos: 0.31348777,-27.316204
       parent: 2
     - type: CollisionWake
       enabled: False
@@ -101963,6 +102022,31 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 3.5,-42.5
       parent: 2
+- proto: CP14Spoon
+  entities:
+  - uid: 2318
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5414248,-25.409752
+      parent: 2
+  - uid: 2324
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.4832139,-22.160128
+      parent: 2
+  - uid: 2406
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.3973436,-21.923996
+      parent: 2
+  - uid: 11878
+    components:
+    - type: Transform
+      pos: 8.683899,-22.227592
+      parent: 2
 - proto: CP14StatueAngel
   entities:
   - uid: 6637
@@ -102475,12 +102559,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-30.5
-      parent: 2
-  - uid: 2313
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-27.5
       parent: 2
   - uid: 2315
     components:
@@ -111167,16 +111245,6 @@ entities:
     - type: Transform
       pos: -20.5,-24.5
       parent: 2
-  - uid: 7865
-    components:
-    - type: Transform
-      pos: -20.5,-23.5
-      parent: 2
-  - uid: 7936
-    components:
-    - type: Transform
-      pos: -18.5,-36.5
-      parent: 2
   - uid: 7942
     components:
     - type: Transform
@@ -111258,6 +111326,18 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 30.5,-27.5
+      parent: 2
+- proto: CP14WoodenClosetChefFilled
+  entities:
+  - uid: 2283
+    components:
+    - type: Transform
+      pos: -0.5,-27.5
+      parent: 2
+  - uid: 5722
+    components:
+    - type: Transform
+      pos: -1.5,-27.5
       parent: 2
 - proto: CP14WoodenClosetMerchantFilled
   entities:
@@ -111519,12 +111599,12 @@ entities:
   - uid: 2512
     components:
     - type: Transform
-      pos: -0.59833705,-27.353706
+      pos: 6.2311254,-32.280533
       parent: 2
   - uid: 2513
     components:
     - type: Transform
-      pos: -0.3621297,-27.44366
+      pos: 2.448766,-30.314747
       parent: 2
 - proto: CP14Workbench
   entities:
@@ -111545,6 +111625,10 @@ entities:
     - type: Transform
       pos: -1.5,-30.5
       parent: 2
+    - type: ItemPlacer
+      placedEntities:
+      - 11882
+      - 11883
   - uid: 8057
     components:
     - type: Transform
@@ -111611,6 +111695,8 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 2982
+      - 11884
+      - 11885
   - uid: 8056
     components:
     - type: Transform
