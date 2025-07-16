@@ -67,7 +67,8 @@
   id: CP14SteelGobletBottomless
   name: bottomless goblet
   description: A jeweled goblet enchanted to have no bottom, fit for a never ending king's banquet.
-  categories: [ ForkFiltered ]
+  categories: [ DoNotMap ]
+  suffix: Artifact
   components:
   - type: SolutionContainerVisuals
     maxFillLevels: 2
