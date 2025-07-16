@@ -22,6 +22,7 @@
   - type: SolutionContainerVisuals
   - type: Food
     utensil: Spoon
+    transferAmount: 2.5
 
 - type: entity
   id: CP14BowlWooden

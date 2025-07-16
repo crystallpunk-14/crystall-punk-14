@@ -15,11 +15,13 @@
       food:
         maxVol: 20
   - type: CP14FoodHolder
+    displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement.rsi
     foodType: Meal
     solutionId: food
   - type: Appearance
   - type: SolutionContainerVisuals
   - type: Food
+    transferAmount: 2.5
 
 - type: entity
   id: CP14PlateWooden
