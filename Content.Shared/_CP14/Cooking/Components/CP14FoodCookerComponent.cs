@@ -1,3 +1,8 @@
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -11,7 +16,7 @@ public sealed partial class CP14FoodCookerComponent : Component
     public CP14FoodData? FoodData;
 
     [DataField(required: true)]
-    public CP14FoodType FoodType = default!;
+    public CP14FoodType FoodType;
 
     [DataField]
     public string ContainerId;
@@ -27,13 +32,13 @@ public sealed partial class CP14FoodCookerComponent : Component
 public sealed partial class CP14FoodData
 {
     [DataField]
-    public ProtoId<CP14CookingRecipePrototype>? CurrentRecipe = null;
+    public ProtoId<CP14CookingRecipePrototype>? CurrentRecipe;
 
     [DataField]
-    public LocId? Name = null;
+    public LocId? Name;
 
     [DataField]
-    public LocId? Desc = null;
+    public LocId? Desc;
 
     [DataField]
     public List<PrototypeLayerData> Visuals = new();

@@ -1,3 +1,8 @@
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._CP14.Cooking.Components;
@@ -6,10 +11,10 @@ namespace Content.Shared._CP14.Cooking.Components;
 public sealed partial class CP14FoodHolderComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public List<PrototypeLayerData>? Visuals = null;
+    public List<PrototypeLayerData>? Visuals;
 
     [DataField(required: true)]
-    public CP14FoodType FoodType = default!;
+    public CP14FoodType FoodType;
 
     [DataField]
     public string? SolutionId;

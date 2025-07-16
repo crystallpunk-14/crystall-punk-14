@@ -1,4 +1,8 @@
-using System.Linq;
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;

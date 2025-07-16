@@ -1,3 +1,8 @@
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.Audio;
