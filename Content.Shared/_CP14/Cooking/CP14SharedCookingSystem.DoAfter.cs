@@ -72,14 +72,12 @@ public abstract partial class CP14SharedCookingSystem
 
     protected void StopCooking(Entity<CP14FoodCookerComponent> ent)
     {
-        if (!_doAfter.IsRunning(ent.Comp.DoAfterId))
-            return;
+        if (_doAfter.IsRunning(ent.Comp.DoAfterId))
+            _doAfter.Cancel(ent.Comp.DoAfterId);
 
         _appearance.SetData(ent, CP14CookingVisuals.Cooking, false);
         _appearance.SetData(ent, CP14CookingVisuals.Burning, false);
 
-        _doAfter.Cancel(ent.Comp.DoAfterId);
-        ent.Comp.DoAfterId = null;
         _ambientSound.SetAmbience(ent, false);
     }
 

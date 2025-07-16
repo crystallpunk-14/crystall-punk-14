@@ -88,3 +88,7 @@
     range: 5
     sound:
       path: /Audio/_CP14/Ambience/pan_frying.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20
+      CP14WoodenPlanks: 10
