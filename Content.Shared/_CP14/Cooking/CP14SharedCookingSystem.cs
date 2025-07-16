@@ -27,8 +27,8 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
     [Dependency] protected readonly IPrototypeManager _proto = default!;
     [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
+    [Dependency] protected readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -48,7 +48,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
     /// The easiest recipes are usually the most “abstract,”
     /// so they will be suitable for the largest number of recipes.
     /// </summary>
-    private List<CP14CookingRecipePrototype> _orderedRecipes = [];
+    protected List<CP14CookingRecipePrototype> OrderedRecipes = [];
 
     public override void Initialize()
     {
@@ -70,7 +70,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
     private void CacheAndOrderRecipes()
     {
-        _orderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
+        OrderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
             .Where(recipe => recipe.Requirements.Count > 0) // Only include recipes with requirements
             .OrderByDescending(recipe => recipe.Requirements.Sum(condition => condition.GetComplexity()))
             .ToList();
@@ -197,14 +197,14 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             allTags.AddRange(tags.Tags);
         }
 
-        if (_orderedRecipes.Count == 0)
+        if (OrderedRecipes.Count == 0)
         {
             throw new InvalidOperationException(
                 "No cooking recipes found. Please ensure that the CP14CookingRecipePrototype is defined and loaded.");
         }
 
         CP14CookingRecipePrototype? selectedRecipe = null;
-        foreach (var recipe in _orderedRecipes)
+        foreach (var recipe in OrderedRecipes)
         {
             if (recipe.FoodType != ent.Comp.FoodType)
                 continue;

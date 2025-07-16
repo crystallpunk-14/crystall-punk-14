@@ -8,6 +8,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Temperature;
+using Content.Shared.Random.Helpers;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Cooking;
@@ -15,6 +16,34 @@ namespace Content.Server._CP14.Cooking;
 public sealed class CP14CookingSystem : CP14SharedCookingSystem
 {
     [Dependency] private readonly TemperatureSystem _temperature = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CP14RandomFoodDataComponent, MapInitEvent>(OnRandomFoodMapInit);
+    }
+
+    private void OnRandomFoodMapInit(Entity<CP14RandomFoodDataComponent> ent, ref MapInitEvent args)
+    {
+        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
+            return;
+
+        if (!_random.Prob(ent.Comp.Prob))
+            return;
+
+        var randomFood = _random.Pick(OrderedRecipes.Where(r => r.FoodType == holder.FoodType).ToList());
+
+        //Name and Description
+        if (randomFood.FoodData.Name is not null)
+            _metaData.SetEntityName(ent, Loc.GetString(randomFood.FoodData.Name));
+        if (randomFood.FoodData.Desc is not null)
+            _metaData.SetEntityDescription(ent, Loc.GetString(randomFood.FoodData.Desc));
+
+        //Visuals
+        holder.Visuals = randomFood.FoodData.Visuals;
+        Dirty(ent.Owner, holder);
+    }
 
     protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
     {
