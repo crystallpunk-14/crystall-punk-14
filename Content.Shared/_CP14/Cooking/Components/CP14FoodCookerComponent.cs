@@ -6,6 +6,7 @@
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
@@ -74,4 +75,11 @@ public sealed partial class CP14FoodData
 public enum CP14FoodType
 {
     Meal,
+}
+
+[Serializable, NetSerializable]
+public enum CP14CookingVisuals : byte
+{
+    Cooking,
+    Burning,
 }

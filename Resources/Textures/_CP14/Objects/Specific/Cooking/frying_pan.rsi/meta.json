@@ -1,20 +1,31 @@
 {
-    "version": 1,
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd (Github)",
+  "states": [
+    {
+      "name": "base"
     },
-    "license": "CC-BY-SA-4.0",
-    "copyright": "Created by TheShuEd (Github)",
-    "states": [
-        {
-            "name": "base"
-        },
-        {
-            "name": "closed"
-        },
-        {
-            "name": "opened"
-        }
-    ]
+    {
+      "name": "closed"
+    },
+    {
+      "name": "opened"
+    },
+    {
+      "name": "cooking",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
 }

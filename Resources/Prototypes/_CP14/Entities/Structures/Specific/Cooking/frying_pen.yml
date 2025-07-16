@@ -12,6 +12,13 @@
       map: ["enum.StorageVisualLayers.Base"]
     - state: closed
       map: [ base ]
+    - state: cooking
+      visible: false
+      map: [ cook ]
+    - state: cooking
+      visible: false
+      color: "#38312e"
+      map: [ burn ]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -19,6 +26,14 @@
         base:
           True: { state: opened }
           False: { state: closed }
+      enum.CP14CookingVisuals.Cooking:
+        cook:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14CookingVisuals.Burning:
+        burn:
+          True: { visible: true }
+          False: { visible: false }
   - type: Item
     size: Ginormous
   - type: MultiHandedItem

@@ -34,8 +34,10 @@ public abstract partial class CP14SharedCookingSystem
 
     private void StartCooking(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
-        if (ent.Comp.DoAfterId is not null)
+        if (_doAfter.IsRunning(ent.Comp.DoAfterId))
             return;
+
+        _appearance.SetData(ent, CP14CookingVisuals.Cooking, true);
 
         var doAfterArgs = new DoAfterArgs(EntityManager, ent, recipe.CookingTime, new CP14CookingDoAfter(recipe.ID), ent)
         {
@@ -52,8 +54,10 @@ public abstract partial class CP14SharedCookingSystem
 
     private void StartBurning(Entity<CP14FoodCookerComponent> ent)
     {
-        if (ent.Comp.DoAfterId is not null)
+        if (_doAfter.IsRunning(ent.Comp.DoAfterId))
             return;
+
+        _appearance.SetData(ent, CP14CookingVisuals.Burning, true);
 
         var doAfterArgs = new DoAfterArgs(EntityManager, ent, 20, new CP14BurningDoAfter(), ent)
         {
@@ -71,6 +75,9 @@ public abstract partial class CP14SharedCookingSystem
     {
         if (!_doAfter.IsRunning(ent.Comp.DoAfterId))
             return;
+
+        _appearance.SetData(ent, CP14CookingVisuals.Cooking, false);
+        _appearance.SetData(ent, CP14CookingVisuals.Burning, false);
 
         _doAfter.Cancel(ent.Comp.DoAfterId);
         ent.Comp.DoAfterId = null;
@@ -93,7 +100,7 @@ public abstract partial class CP14SharedCookingSystem
             ent.Comp.LastHeatingTime = _timing.CurTime;
             DirtyField(ent.Owner,ent.Comp, nameof(CP14FoodCookerComponent.LastHeatingTime));
 
-            if (ent.Comp.DoAfterId is null && ent.Comp.FoodData is null)
+            if (!_doAfter.IsRunning(ent.Comp.DoAfterId) && ent.Comp.FoodData is null)
             {
                 var recipe = GetRecipe(ent);
                 if (recipe is not null)
