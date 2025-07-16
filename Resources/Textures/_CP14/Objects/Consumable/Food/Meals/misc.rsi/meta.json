@@ -8,22 +8,10 @@
     },
     "states": [
         {
-            "name": "trash"
-        },
-        {
-            "name": "zellasian_breakfast"
-        },
-        {
-            "name": "monster_egg"
-        },
-        {
             "name": "bread_plate"
         },
         {
-            "name": "pig_cheese"
-        },
-        {
-            "name": "stuffed_potato"
+            "name": "cheese_bread"
         },
         {
             "name": "green_salad"
@@ -32,16 +20,31 @@
             "name": "green_salad_meat"
         },
         {
-            "name": "meat_plate"
+            "name": "mashed_potato"
         },
         {
             "name": "mashed_potato_meat"
         },
         {
-            "name": "mashed_potato"
+            "name": "mashed_potato_salad"
         },
         {
-            "name": "mashed_potato_salad"
+            "name": "meat_plate"
+        },
+        {
+            "name": "monster_egg"
+        },
+        {
+            "name": "pig_cheese"
+        },
+        {
+            "name": "stuffed_potato"
+        },
+        {
+            "name": "trash"
+        },
+        {
+            "name": "zellasian_breakfast"
         }
     ]
 }

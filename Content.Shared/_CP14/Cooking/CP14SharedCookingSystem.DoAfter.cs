@@ -15,7 +15,6 @@ namespace Content.Shared._CP14.Cooking;
 public abstract partial class CP14SharedCookingSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-
     private void InitDoAfter()
     {
         SubscribeLocalEvent<CP14FoodCookerComponent, OnTemperatureChangeEvent>(OnTemperatureChange);

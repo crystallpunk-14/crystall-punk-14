@@ -13,7 +13,7 @@ cp14-meal-recipe-green-salad-meat-desc = Зеленый салат из разл
 cp14-meal-recipe-zellasian-breakfast-name = зелласианский завтрак
 cp14-meal-recipe-zellasian-breakfast-desc = Яишница с мясом и хлебом. Вкусно, традиционно, стабильно.
 
-cp14-meal-recipe-monster-egg-name = монстромлет
+cp14-meal-recipe-monster-egg-name = чудовищный омлет
 cp14-meal-recipe-monster-egg-desc = Ужасающее сочетание мяса монстров и глазуньи. Хорошо, что это все таки не яйца монстров.
 
 cp14-meal-recipe-bread-plate-name = хлебная тарелка
@@ -36,3 +36,6 @@ cp14-meal-recipe-mashed-potato-salad-desc = Сегодня у нас на сто
 
 cp14-meal-recipe-mashed-potato-name = картофельная пюрешка
 cp14-meal-recipe-mashed-potato-desc = Сегодня у нас на столе морально подавленный картофель.
+
+cp14-meal-recipe-cheese-bread-name = бутерброды с плавленным сыром
+cp14-meal-recipe-cheese-bread-desc = Хрустящий поджаренный хлеб, с таящим, тянущимся горячим сыром сверху.
