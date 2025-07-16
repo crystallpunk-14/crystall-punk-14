@@ -15,43 +15,23 @@ namespace Content.Server._CP14.Cooking;
 public sealed class CP14CookingSystem : CP14SharedCookingSystem
 {
     [Dependency] private readonly TemperatureSystem _temperature = default!;
-    public override void Initialize()
+
+    protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<CP14FoodCookerComponent, CP14CookingDoAfter>(OnCookFinished);
-        SubscribeLocalEvent<CP14FoodCookerComponent, CP14BurningDoAfter>(OnCookBurned);
-    }
-
-    private void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
-    {
-        StopCooking(ent);
-
-        if (args.Cancelled || args.Handled)
-            return;
-
-        BurntFood(ent);
+        base.OnCookBurned(ent, ref args);
 
         if (_random.Prob(ent.Comp.BurntAdditionalSpawnProb))
             Spawn(ent.Comp.BurntAdditionalSpawn, Transform(ent).Coordinates);
-
-        args.Handled = true;
     }
 
-    private void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
+    protected override void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
     {
-        StopCooking(ent);
+        base.OnCookFinished(ent, ref args);
 
         if (args.Cancelled || args.Handled)
             return;
 
-        if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
-            return;
-
         TryTransformAll(ent);
-        CookFood(ent, indexedRecipe);
-
-        args.Handled = true;
     }
 
     private void TryTransformAll(Entity<CP14FoodCookerComponent> ent)

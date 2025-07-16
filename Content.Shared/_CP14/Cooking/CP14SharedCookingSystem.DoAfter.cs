@@ -7,6 +7,7 @@ using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Temperature;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -19,6 +20,9 @@ public abstract partial class CP14SharedCookingSystem
     {
         SubscribeLocalEvent<CP14FoodCookerComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
         SubscribeLocalEvent<CP14FoodCookerComponent, EntParentChangedMessage>(OnParentChanged);
+
+        SubscribeLocalEvent<CP14FoodCookerComponent, CP14CookingDoAfter>(OnCookFinished);
+        SubscribeLocalEvent<CP14FoodCookerComponent, CP14BurningDoAfter>(OnCookBurned);
     }
 
     private void UpdateDoAfter(float frameTime)
@@ -29,6 +33,34 @@ public abstract partial class CP14SharedCookingSystem
             if (_timing.CurTime > cooker.LastHeatingTime + cooker.HeatingFrequencyRequired && _doAfter.IsRunning(cooker.DoAfterId))
                 _doAfter.Cancel(cooker.DoAfterId);
         }
+    }
+
+
+    protected virtual void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
+    {
+        StopCooking(ent);
+
+        if (args.Cancelled || args.Handled)
+            return;
+
+        BurntFood(ent);
+
+        args.Handled = true;
+    }
+
+    protected virtual void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
+    {
+        StopCooking(ent);
+
+        if (args.Cancelled || args.Handled)
+            return;
+
+        if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
+            return;
+
+        CookFood(ent, indexedRecipe);
+
+        args.Handled = true;
     }
 
     private void StartCooking(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
