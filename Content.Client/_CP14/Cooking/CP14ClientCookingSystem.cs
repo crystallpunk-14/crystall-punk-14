@@ -1,3 +1,8 @@
+/*
+ * This file is sublicensed under MIT License
+ * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
+ */
+
 using System.Numerics;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;

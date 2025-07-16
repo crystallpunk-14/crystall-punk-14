@@ -8,13 +8,13 @@ using Content.Shared.DoAfter;
 using Content.Shared.Temperature;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Cooking;
 
 public abstract partial class CP14SharedCookingSystem
 {
-    private readonly ProtoId<CP14CookingRecipePrototype>
-        _burnedRecipe = "BurnedMeal"; //TODO add support to different meal types
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private void InitDoAfter()
     {
@@ -22,13 +22,16 @@ public abstract partial class CP14SharedCookingSystem
         SubscribeLocalEvent<CP14FoodCookerComponent, EntParentChangedMessage>(OnParentChanged);
     }
 
-    private void StartCooking(Entity<CP14FoodCookerComponent> ent, ProtoId<CP14CookingRecipePrototype> recipe)
+    private void UpdateDoAfter(float frameTime)
     {
-        if (!_proto.TryIndex(recipe, out var indexedRecipe))
-            return;
-
-        StartCooking(ent, indexedRecipe);
+        var query = EntityQueryEnumerator<CP14FoodCookerComponent>();
+        while(query.MoveNext(out var uid, out var cooker))
+        {
+            if (_timing.CurTime > cooker.LastHeatingTime + cooker.HeatingFrequencyRequired && _doAfter.IsRunning(cooker.DoAfterId))
+                _doAfter.Cancel(cooker.DoAfterId);
+        }
     }
+
     private void StartCooking(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
         if (ent.Comp.DoAfterId is not null)
@@ -62,12 +65,11 @@ public abstract partial class CP14SharedCookingSystem
         _doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId);
         ent.Comp.DoAfterId = doAfterId;
         _ambientSound.SetAmbience(ent, true);
-        //_ambientSound.SetSound(ent, recipe.CookingAmbient); TODO
     }
 
     protected void StopCooking(Entity<CP14FoodCookerComponent> ent)
     {
-        if (ent.Comp.DoAfterId is null)
+        if (!_doAfter.IsRunning(ent.Comp.DoAfterId))
             return;
 
         _doAfter.Cancel(ent.Comp.DoAfterId);
@@ -88,6 +90,9 @@ public abstract partial class CP14SharedCookingSystem
 
         if (args.TemperatureDelta > 0)
         {
+            ent.Comp.LastHeatingTime = _timing.CurTime;
+            DirtyField(ent.Owner,ent.Comp, nameof(CP14FoodCookerComponent.LastHeatingTime));
+
             if (ent.Comp.DoAfterId is null && ent.Comp.FoodData is null)
             {
                 var recipe = GetRecipe(ent);

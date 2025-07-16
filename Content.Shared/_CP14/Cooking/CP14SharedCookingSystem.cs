@@ -56,6 +56,11 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         SubscribeLocalEvent<CP14FoodCookerComponent, LandEvent>(OnLand);
     }
 
+    public override void Update(float frameTime)
+    {
+        UpdateDoAfter(frameTime);
+    }
+
     private void CacheAndOrderRecipes()
     {
         _orderedRecipes = _proto.EnumeratePrototypes<CP14CookingRecipePrototype>()
