@@ -1115,3 +1115,10 @@
   id: 8164
   time: '2025-07-14T08:32:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1527
+- author: gogenych
+  changes:
+  - message: new glow portal frame
+    type: Add
+  id: 8165
+  time: '2025-07-16T02:51:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1533
