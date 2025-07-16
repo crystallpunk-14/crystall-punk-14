@@ -35,46 +35,6 @@
           Quantity: 2
 
 - type: entity
-  id: CP14FoodStuffedPotato
-  parent: 
-  - FoodInjectableBase
-  - CP14BurnsAsh
-  categories: [ ForkFiltered ]
-  name: stuffed potato
-  description: Baked potatoes stuffed with juicy meat.
-  components:
-  - type: Item
-    size: Tiny
-  - type: FlavorProfile
-    flavors:
-      - CP14HotPotato
-      - meaty
-  - type: Sprite
-    sprite: _CP14/Objects/Consumable/Food/hot_potato.rsi
-    layers:
-      - state: stuffed_potato1
-        map: [ "random" ]
-  - type: RandomSprite
-    available:
-      - random:
-          stuffed_potato1: ""
-          stuffed_potato2: ""
-          stuffed_potato3: ""
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 14
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Protein
-          Quantity: 2
-        - ReagentId: Vitamin
-          Quantity: 2
-        - ReagentId: Fat
-          Quantity: 3
-
-- type: entity
   id: CP14FoodChromiumJelly
   parent: 
   - FoodInjectableBase

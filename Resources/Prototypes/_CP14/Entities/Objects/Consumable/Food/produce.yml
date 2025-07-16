@@ -37,6 +37,9 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
+    - CP14Salad
+    - CP14Cabbage
 
 - type: entity
   id: CP14FoodCabbageSlice
@@ -74,6 +77,13 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CabbageSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
+    - CP14Salad
+    - CP14SaladSlice
+    - CP14Cabbage
 
 - type: entity
   id: CP14FoodPumpkin
@@ -115,6 +125,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodPumpkinSlice
@@ -152,6 +163,10 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14PumpkinSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodPotato
@@ -188,9 +203,6 @@
           Quantity: 1.14
   - type: CP14Seed
     plantProto: CP14PlantPotato #TODO sliceable potato
-  - type: Tag
-    tags:
-    - CP14FarmFood
   - type: Temperature
     currentTemperature: 290
   - type: InternalTemperature
@@ -200,6 +212,11 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodPotatoHot
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
+    - CP14Potato
 
 - type: entity
   id: CP14FoodCucumber
@@ -244,6 +261,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodCucumberSlice
@@ -276,6 +294,10 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CucumberSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodTomatoes
@@ -344,6 +366,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodTomatoesSlice
@@ -378,6 +401,10 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14TomatoesSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodApple
@@ -416,6 +443,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Fruits
 
 - type: entity
   id: CP14FoodAppleSlice
@@ -445,6 +473,10 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14AppleSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Fruits
 
 - type: entity
   id: CP14FoodPepper
@@ -485,6 +517,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodPepperSlice
@@ -514,6 +547,10 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14PepperSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodOnion
@@ -558,6 +595,7 @@
   - type: Tag
     tags:
     - CP14FarmFood
+    - CP14Vegetable
 
 - type: entity
   id: CP14FoodOnionSlice
@@ -589,3 +627,7 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14OnionSandwich
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable

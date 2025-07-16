@@ -23,6 +23,11 @@
   copyright: 'by be-steele of Freesound.org.'
   source: "https://freesound.org/people/be-steele/sounds/130753/"
 
+- files: ["pan_frying.ogg"]
+  license: "CC0-1.0"
+  copyright: 'by NachtmahrTV of Freesound.org.'
+  source: "https://freesound.org/people/NachtmahrTV/sounds/571670/"
+
 - files: ["blood_moon_raise.ogg"]
   license: "CC-BY-4.0"
   copyright: 'by xkeril of Freesound.org.'

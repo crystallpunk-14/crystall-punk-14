@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/11/2025 11:56:20
-  entityCount: 14817
+  time: 07/16/2025 04:54:40
+  entityCount: 14827
 maps:
 - 1
 grids:
@@ -798,11 +798,6 @@ entities:
     components:
     - type: Transform
       pos: -12.38047,-29.118898
-      parent: 1
-  - uid: 28
-    components:
-    - type: Transform
-      pos: -14.360294,-14.934297
       parent: 1
   - uid: 29
     components:
@@ -45644,11 +45639,6 @@ entities:
       parent: 1
 - proto: CP14FoodApple
   entities:
-  - uid: 8722
-    components:
-    - type: Transform
-      pos: -14.461581,-16.665932
-      parent: 1
   - uid: 8723
     components:
     - type: Transform
@@ -45659,10 +45649,10 @@ entities:
     - type: Transform
       pos: -17.664963,-19.691994
       parent: 1
-  - uid: 8725
+  - uid: 9676
     components:
     - type: Transform
-      pos: -10.379791,-23.153708
+      pos: -14.689453,-16.273108
       parent: 1
   - uid: 11643
     components:
@@ -45688,11 +45678,6 @@ entities:
     - type: Transform
       pos: -8.455805,-4.242589
       parent: 1
-  - uid: 8729
-    components:
-    - type: Transform
-      pos: -4.64024,-22.501534
-      parent: 1
   - uid: 8730
     components:
     - type: Transform
@@ -45709,11 +45694,6 @@ entities:
     components:
     - type: Transform
       pos: -14.427665,5.521161
-      parent: 1
-  - uid: 8733
-    components:
-    - type: Transform
-      pos: -7.4199834,-22.816376
       parent: 1
 - proto: CP14FoodCabbage
   entities:
@@ -45802,11 +45782,6 @@ entities:
       enabled: False
 - proto: CP14FoodMeatLambCooked
   entities:
-  - uid: 8751
-    components:
-    - type: Transform
-      pos: -7.3074436,-23.187439
-      parent: 1
   - uid: 8752
     components:
     - type: Transform
@@ -45819,24 +45794,12 @@ entities:
     - type: Transform
       pos: -17.282326,-21.007586
       parent: 1
-  - uid: 8754
-    components:
-    - type: Transform
-      pos: -4.572716,-23.311129
-      parent: 1
 - proto: CP14FoodPieApple
   entities:
   - uid: 8758
     components:
     - type: Transform
       pos: -17.327341,-20.09679
-      parent: 1
-- proto: CP14FoodPieFish
-  entities:
-  - uid: 8759
-    components:
-    - type: Transform
-      pos: -11.595931,-21.455805
       parent: 1
 - proto: CP14FoodPotatoHot
   entities:
@@ -45855,6 +45818,53 @@ entities:
     - type: Transform
       pos: 17.61832,-16.268383
       parent: 1
+- proto: CP14Fork
+  entities:
+  - uid: 9668
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -7.782056,-22.78113
+      parent: 1
+  - uid: 9669
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -7.320888,-23.287128
+      parent: 1
+  - uid: 9670
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.598874,-22.80362
+      parent: 1
+  - uid: 9671
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.4606848,-23.590725
+      parent: 1
+  - uid: 9674
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -14.399505,-16.982975
+      parent: 1
+  - uid: 9675
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -14.389506,-16.803066
+      parent: 1
+- proto: CP14FryingPan
+  entities:
+  - uid: 8722
+    components:
+    - type: Transform
+      pos: -15.524707,-19.24207
+      parent: 1
+    - type: CollisionWake
+      enabled: False
 - proto: CP14Furnace
   entities:
   - uid: 2
@@ -45870,6 +45880,9 @@ entities:
     - type: Transform
       pos: -15.5,-19.5
       parent: 1
+    - type: ItemPlacer
+      placedEntities:
+      - 8722
   - uid: 4
     components:
     - type: Transform
@@ -46010,6 +46023,18 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-40.5
+      parent: 1
+- proto: CP14GoldChest
+  entities:
+  - uid: 9665
+    components:
+    - type: Transform
+      pos: -5.5,18.5
+      parent: 1
+  - uid: 9666
+    components:
+    - type: Transform
+      pos: 3.5,19.5
       parent: 1
 - proto: CP14GreenBottle
   entities:
@@ -47259,7 +47284,42 @@ entities:
     - type: Transform
       pos: -23.5,-20.5
       parent: 1
-- proto: CP14Plate
+- proto: CP14PlateGold
+  entities:
+  - uid: 28
+    components:
+    - type: Transform
+      pos: 16.62023,-16.163067
+      parent: 1
+- proto: CP14PlateIron
+  entities:
+  - uid: 8751
+    components:
+    - type: Transform
+      pos: -13.513987,-23.309616
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+  - uid: 9667
+    components:
+    - type: Transform
+      pos: -13.817682,-23.42206
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+- proto: CP14PlatePie
+  entities:
+  - uid: 9054
+    components:
+    - type: Transform
+      pos: -14.687898,-20.121904
+      parent: 1
+  - uid: 9055
+    components:
+    - type: Transform
+      pos: -14.327769,-20.256838
+      parent: 1
+- proto: CP14PlateWooden
   entities:
   - uid: 9050
     components:
@@ -47281,17 +47341,32 @@ entities:
     - type: Transform
       pos: -14.597865,-19.278576
       parent: 1
-- proto: CP14PlatePie
+- proto: CP14PlateWoodenRandom
   entities:
-  - uid: 9054
+  - uid: 8725
     components:
     - type: Transform
-      pos: -14.687898,-20.121904
+      pos: -7.6855574,-22.511265
       parent: 1
-  - uid: 9055
+  - uid: 8729
     components:
     - type: Transform
-      pos: -14.327769,-20.256838
+      pos: -4.5473676,-22.488777
+      parent: 1
+  - uid: 8733
+    components:
+    - type: Transform
+      pos: -1.7128735,-23.354593
+      parent: 1
+  - uid: 8754
+    components:
+    - type: Transform
+      pos: -7.2581334,-22.949797
+      parent: 1
+  - uid: 8759
+    components:
+    - type: Transform
+      pos: -10.553796,-23.287128
       parent: 1
 - proto: CP14PortalFrameCrystal
   entities:
@@ -63608,11 +63683,6 @@ entities:
       parent: 1
 - proto: CP14SackFarmingSeedFull
   entities:
-  - uid: 15063
-    components:
-    - type: Transform
-      pos: -19.5,-14.5
-      parent: 1
   - uid: 15064
     components:
     - type: Transform
@@ -64285,6 +64355,20 @@ entities:
       pos: 24.655243,14.690253
       parent: 1
     - type: DamagedByContact
+- proto: CP14Spoon
+  entities:
+  - uid: 9672
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -14.449496,-17.202866
+      parent: 1
+  - uid: 9673
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -15.403179,-17.420208
+      parent: 1
 - proto: CP14SteelBeerMug
   entities:
   - uid: 11423
@@ -65893,13 +65977,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-  - uid: 11746
-    components:
-    - type: Transform
-      pos: -13.5,-19.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
   - uid: 11747
     components:
     - type: Transform
@@ -65917,6 +65994,13 @@ entities:
       fixtures: {}
 - proto: CP14WallmountBarShelfB
   entities:
+  - uid: 9677
+    components:
+    - type: Transform
+      pos: -13.5,-19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 11683
     components:
     - type: Transform
@@ -66814,14 +66898,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-20.5
-      parent: 1
-    - type: Fixtures
-      fixtures: {}
-  - uid: 11907
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,-17.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -83544,11 +83620,6 @@ entities:
     - type: Transform
       pos: 3.5,18.5
       parent: 1
-  - uid: 11704
-    components:
-    - type: Transform
-      pos: -5.5,18.5
-      parent: 1
   - uid: 11717
     components:
     - type: Transform
@@ -83558,11 +83629,6 @@ entities:
     components:
     - type: Transform
       pos: -1.5,21.5
-      parent: 1
-  - uid: 15057
-    components:
-    - type: Transform
-      pos: 3.5,19.5
       parent: 1
   - uid: 15058
     components:
@@ -83641,6 +83707,20 @@ entities:
     components:
     - type: Transform
       pos: 31.5,16.5
+      parent: 1
+- proto: CP14WoodenClosetChefFilled
+  entities:
+  - uid: 9663
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -14.5,-15.5
+      parent: 1
+  - uid: 9664
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,-17.5
       parent: 1
 - proto: CP14WoodenClosetGuildmasterFilled
   entities:
@@ -84118,6 +84198,8 @@ entities:
       - 8748
       - 8749
       - 8750
+      - 8751
+      - 9667
 - proto: CP14WorkbenchFurnace
   entities:
   - uid: 15176
