@@ -28,7 +28,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
     [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
     [Dependency] protected readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] protected readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly INetManager _net = default!;

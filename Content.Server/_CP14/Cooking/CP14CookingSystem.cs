@@ -4,6 +4,7 @@
  */
 
 using System.Linq;
+using System.Numerics;
 using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
@@ -42,6 +43,14 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
         //Visuals
         holder.Visuals = randomFood.FoodData.Visuals;
+
+        //Some randomize
+        foreach (var layer in holder.Visuals)
+        {
+            if (_random.Prob(0.5f))
+                layer.Scale = new Vector2(-1, 1);
+        }
+
         Dirty(ent.Owner, holder);
     }
 

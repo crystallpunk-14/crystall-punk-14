@@ -4,8 +4,11 @@
  */
 
 using System.Numerics;
+using Content.Client.DisplacementMap;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared.DisplacementMap;
+using Content.Shared.Rounding;
 using Robust.Client.GameObjects;
 using Robust.Shared.Random;
 
@@ -14,17 +17,32 @@ namespace Content.Client._CP14.Cooking;
 public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly DisplacementMapSystem _displacement = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14FoodHolderComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
+        SubscribeLocalEvent<CP14FoodHolderComponent, AppearanceChangeEvent>(OnAppearanceChange);
+    }
+
+    private void OnAppearanceChange(Entity<CP14FoodHolderComponent> ent, ref AppearanceChangeEvent args)
+    {
+        UpdateVisuals(ent);
     }
 
     private void OnAfterHandleState(Entity<CP14FoodHolderComponent> ent, ref AfterAutoHandleStateEvent args)
     {
+        UpdateVisuals(ent);
+    }
+
+    private void UpdateVisuals(Entity<CP14FoodHolderComponent> ent)
+    {
         if (!TryComp<SpriteComponent>(ent, out var sprite))
+            return;
+
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
             return;
 
         if (ent.Comp.Visuals is null)
@@ -35,23 +53,53 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
         {
             _sprite.RemoveLayer((ent.Owner, sprite), key);
         }
+
         ent.Comp.RevealedLayers.Clear();
 
+        _sprite.LayerMapTryGet((ent.Owner, sprite), ent.Comp.TargetLayerMap, out var index, false);
+
+        var fillLevel = (float)solution.Volume / (float)solution.MaxVolume;
+        if (fillLevel > 1)
+            fillLevel = 1;
+
+        var closestFillSprite = ContentHelpers.RoundToLevels(fillLevel, 1, ent.Comp.MaxDisplacementFillLevels + 1);
 
         //Add new layers
         var counter = 0;
         foreach (var layer in ent.Comp.Visuals)
         {
+            var layerIndex = index + counter;
             var keyCode = $"cp14-food-layer-{counter}";
             ent.Comp.RevealedLayers.Add(keyCode);
 
-            _sprite.LayerMapTryGet((ent.Owner, sprite), ent.Comp.TargetLayerMap, out var index, false);
+            _sprite.AddBlankLayer((ent.Owner, sprite), layerIndex);
+            _sprite.LayerMapSet((ent.Owner, sprite), keyCode, layerIndex);
+            _sprite.LayerSetData((ent.Owner, sprite), layerIndex, layer);
 
-            _sprite.AddBlankLayer((ent.Owner, sprite), index);
-            _sprite.LayerMapSet((ent.Owner, sprite), keyCode, index);
-            _sprite.LayerSetData((ent.Owner, sprite), index, layer);
-            if (_random.Prob(0.5f)) //50% invert chance
-                _sprite.LayerSetScale((ent.Owner, sprite), index, new Vector2(-1, 1));
+            if (ent.Comp.DisplacementRsiPath is not null)
+            {
+                var displaceData = new DisplacementData
+                {
+                    SizeMaps = new Dictionary<int, PrototypeLayerData>
+                    {
+                        {
+                            32, new PrototypeLayerData
+                            {
+                                RsiPath = ent.Comp.DisplacementRsiPath,
+                                State = "fill-" + closestFillSprite,
+                            }
+                        },
+                    }
+                };
+                if (_displacement.TryAddDisplacement(displaceData,
+                        (ent, sprite),
+                        layerIndex,
+                        keyCode,
+                        out var displacementKey))
+                {
+                    ent.Comp.RevealedLayers.Add(displacementKey);
+                }
+            }
 
             counter++;
         }

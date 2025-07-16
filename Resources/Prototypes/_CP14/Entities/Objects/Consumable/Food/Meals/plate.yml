@@ -17,6 +17,8 @@
   - type: CP14FoodHolder
     foodType: Meal
     solutionId: food
+  - type: Appearance
+  - type: SolutionContainerVisuals
   - type: Food
 
 - type: entity

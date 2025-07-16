@@ -15,8 +15,11 @@
       food:
         maxVol: 30
   - type: CP14FoodHolder
+    displacementRsiPath: _CP14/Objects/Consumable/Food/Soups/displacement.rsi
     foodType: Soup
     solutionId: food
+  - type: Appearance
+  - type: SolutionContainerVisuals
   - type: Food
     utensil: Spoon
 

@@ -4,6 +4,7 @@
  */
 
 using Robust.Shared.GameStates;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
@@ -18,6 +19,12 @@ public sealed partial class CP14FoodHolderComponent : Component
 
     [DataField]
     public string? SolutionId;
+
+    [DataField]
+    public int MaxDisplacementFillLevels = 8;
+
+    [DataField]
+    public string? DisplacementRsiPath = null;
 
     /// <summary>
     /// target layer, where new layers will be added. This allows you to control the order of generative layers and static layers.
