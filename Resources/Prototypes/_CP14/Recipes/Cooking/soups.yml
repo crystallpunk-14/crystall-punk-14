@@ -1,0 +1,35 @@
+- type: CP14CookingRecipe
+  id: InedibleSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-trash-name
+    desc: cp14-soup-recipe-trash-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: trash
+  requirements:
+  - !type:AlwaysMet
+
+# 1 ingredient types
+
+- type: CP14CookingRecipe
+  id: VegSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-veg-name
+    desc: cp14-soup-recipe-veg-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: veg_stew
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14Salad
+    - CP14Vegetable
+  - !type:TagBlocked
+    tags:
+    - CP14Meat

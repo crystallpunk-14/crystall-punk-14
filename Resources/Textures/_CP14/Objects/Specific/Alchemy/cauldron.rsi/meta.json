@@ -72,54 +72,6 @@
     {
       "name": "inhand-right-fill5",
       "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left-fill1",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left-fill2",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left-fill3",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left-fill4",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-left-fill5",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right-fill1",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right-fill2",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right-fill3",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right-fill4",
-      "directions": 4
-    },
-    {
-      "name": "wielded-inhand-right-fill5",
-      "directions": 4
     }
   ]
 }
