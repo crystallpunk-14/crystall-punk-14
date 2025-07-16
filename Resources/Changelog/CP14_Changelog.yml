@@ -1122,3 +1122,12 @@
   id: 8165
   time: '2025-07-16T02:51:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1533
+- author: TheShuEd
+  changes:
+  - message: A new cooking system has been added. No more recipes on the workbench!
+      Now you put things in the pan and fry them until you get something tasty! Be
+      careful not to burn down your tavern.
+    type: Add
+  id: 8166
+  time: '2025-07-16T05:15:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1529
