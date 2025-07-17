@@ -18,10 +18,6 @@
       beamProto: CP14LightningStrikeSmallBeam
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Shock: 8
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -15
@@ -80,7 +76,7 @@
       - !type:HealthChange
         damage:
           types:
-            Shock: 7
+            Shock: 2
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -8

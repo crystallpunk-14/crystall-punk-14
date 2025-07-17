@@ -21,7 +21,7 @@
       - !type:HealthChange
         damage:
           types:
-            Shock: 20
+            Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -75
@@ -86,7 +86,7 @@
       - !type:HealthChange
         damage:
           types:
-            Shock: 10
+            Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -20
