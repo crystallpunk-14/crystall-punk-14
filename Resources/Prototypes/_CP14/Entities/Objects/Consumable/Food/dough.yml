@@ -56,6 +56,7 @@
     count: 4
     slice: CP14FoodBreadSlice
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -81,6 +82,7 @@
         - ReagentId: Protein
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: null
@@ -146,6 +148,7 @@
       - id: CP14FoodBreadBunTop
         amount: 1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -186,6 +189,7 @@
         - ReagentId: Protein
           Quantity: 0.25
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -215,6 +219,7 @@
     entries:
       CP14Sandwich: CP14BunTopSandwich
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
@@ -241,6 +246,7 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1 #TODO: лаваш?

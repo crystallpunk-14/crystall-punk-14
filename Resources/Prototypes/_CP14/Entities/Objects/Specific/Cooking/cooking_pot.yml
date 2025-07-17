@@ -19,8 +19,6 @@
       visible: false
       color: "#38312e"
       map: [ burn ]
-  - type: ThrowInsertContainer
-    containerId: storagebase
   - type: SolutionContainerManager
     solutions:
       cooker:
@@ -42,7 +40,7 @@
     solution: cooker
   - type: AmbientSound
     sound:
-      path: /Audio/_CP14/Ambience/pan_frying.ogg
+      path: /Audio/_CP14/Ambience/pot_brewing.ogg
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 30

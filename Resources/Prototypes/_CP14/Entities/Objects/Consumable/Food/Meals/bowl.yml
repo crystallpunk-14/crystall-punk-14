@@ -23,6 +23,8 @@
   - type: Appearance
   - type: SolutionContainerVisuals
   - type: Food
+    useSound: 
+      path: /Audio/Items/drink.ogg
     utensil: Spoon
     transferAmount: 2.5
 
