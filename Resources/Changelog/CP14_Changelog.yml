@@ -1131,3 +1131,20 @@
   id: 8166
   time: '2025-07-16T05:15:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1529
+- author: TheShuEd
+  changes:
+  - message: A pot and the ability to cook soups have been added! Soup bowls have
+      been added. Now there are 7 types of soups and 12 types of dishes on the plate
+      in the game.
+    type: Add
+  - message: 'Added support for food displacement maps: Now dishes visually decrease
+      in size as you eat them.'
+    type: Add
+  - message: Added trade orders for dishes. Merchants may now be interested in cooking
+      specific dishes.
+    type: Add
+  - message: Fixed a bug with raw reagents in ready-made dishes
+    type: Fix
+  id: 8167
+  time: '2025-07-17T14:35:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1535
