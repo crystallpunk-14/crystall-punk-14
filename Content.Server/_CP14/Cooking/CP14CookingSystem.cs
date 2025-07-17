@@ -56,6 +56,9 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
     protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
     {
+        if (args.Cancelled || args.Handled)
+            return;
+
         base.OnCookBurned(ent, ref args);
 
         if (_random.Prob(ent.Comp.BurntAdditionalSpawnProb))
@@ -64,12 +67,13 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
     protected override void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
     {
-        base.OnCookFinished(ent, ref args);
-
         if (args.Cancelled || args.Handled)
             return;
 
+        //We need transform all BEFORE Shared cooking code
         TryTransformAll(ent);
+
+        base.OnCookFinished(ent, ref args);
     }
 
     private void TryTransformAll(Entity<CP14FoodCookerComponent> ent)
@@ -92,7 +96,8 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
             var entry = transformable.Entries[0];
 
-            _temperature.ForceChangeTemperature(contained, entry.TemperatureRange.X);
+            var newTemp = (entry.TemperatureRange.X + entry.TemperatureRange.Y) / 2;
+            _temperature.ForceChangeTemperature(contained, newTemp);
         }
     }
 }
