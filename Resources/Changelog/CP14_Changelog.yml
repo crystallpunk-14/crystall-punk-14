@@ -1148,3 +1148,17 @@
   id: 8167
   time: '2025-07-17T14:35:13.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1535
+- author: gogenych
+  changes:
+  - message: radio chat can no longer be selected
+    type: Remove
+  id: 8168
+  time: '2025-07-17T22:03:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1537
+- author: Viator-MV
+  changes:
+  - message: Lightning strikes now deal less damage.
+    type: Tweak
+  id: 8169
+  time: '2025-07-17T22:02:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1538
