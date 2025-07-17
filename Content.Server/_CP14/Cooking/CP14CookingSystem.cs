@@ -9,7 +9,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Temperature;
-using Content.Shared.Random.Helpers;
+using Content.Shared.Nutrition.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Cooking;
@@ -33,6 +33,7 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         if (!_random.Prob(ent.Comp.Prob))
             return;
 
+        //TODO: Fuck this dublication logic, and randomization visual
         var randomFood = _random.Pick(OrderedRecipes.Where(r => r.FoodType == holder.FoodType).ToList());
 
         //Name and Description
@@ -41,11 +42,12 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         if (randomFood.FoodData.Desc is not null)
             _metaData.SetEntityDescription(ent, Loc.GetString(randomFood.FoodData.Desc));
 
+        var foodVisuals = EnsureComp<CP14FoodVisualsComponent>(ent);
         //Visuals
-        holder.Visuals = randomFood.FoodData.Visuals;
+        foodVisuals.FoodData = randomFood.FoodData;
 
         //Some randomize
-        foreach (var layer in holder.Visuals)
+        foreach (var layer in foodVisuals.FoodData.Visuals)
         {
             if (_random.Prob(0.5f))
                 layer.Scale = new Vector2(-1, 1);
