@@ -71,5 +71,7 @@ public sealed class CP14Cooking
                 }
             });
         });
+        
+        await pair.CleanReturnAsync();
     }
 }
