@@ -136,3 +136,24 @@
     tags:
     - CP14Salad
     - CP14Vegetable
+
+- type: CP14CookingRecipe
+  id: MonsterBrew
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-monster-brew-name
+    desc: cp14-soup-recipe-monster-brew-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: mole
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14MeatMonster
+  - !type:TagRequired
+    tags:
+    - CP14Egg

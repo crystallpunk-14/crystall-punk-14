@@ -18,3 +18,6 @@ cp14-soup-recipe-meat-salad-desc = Delicious meat broth seasoned with herbs.
 
 cp14-soup-recipe-pumpkin-puree-name = pumpkin soup puree
 cp14-soup-recipe-pumpkin-puree-desc = The delicate creamy taste of sweet pumpkin. Perfect with crispy bread.
+
+cp14-soup-recipe-monster-brew-name = monstrous bibimbap
+cp14-soup-recipe-monster-brew-desc = Exotic soup made from monster meat and eggs.

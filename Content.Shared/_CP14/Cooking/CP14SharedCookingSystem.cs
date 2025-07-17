@@ -4,6 +4,7 @@
  */
 
 using System.Linq;
+using System.Numerics;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.Audio;
 using Content.Shared.Chemistry.Components;
@@ -114,17 +115,17 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         if (holder.Comp.FoodType != cooker.Comp.FoodType)
             return;
 
-        if (!TryComp<FoodComponent>(holder, out var foodComp))
+        if (!TryComp<FoodComponent>(holder, out var holderFoodComp))
             return;
 
         if (!TryComp<CP14FoodVisualsComponent>(cooker, out var cookerFoodVisuals) || cookerFoodVisuals.FoodData is null)
             return;
 
-        if (!_solution.TryGetSolution(cooker.Owner, cooker.Comp.SolutionId, out _, out var cookerSolution))
+        if (!_solution.TryGetSolution(cooker.Owner, cooker.Comp.SolutionId, out var cookerSoln, out var cookerSolution))
             return;
 
         //Solutions
-        if (_solution.TryGetSolution(holder.Owner, foodComp.Solution, out var soln, out var solution))
+        if (_solution.TryGetSolution(holder.Owner, holderFoodComp.Solution, out var holderSoln, out var solution))
         {
             if (solution.Volume > 0)
             {
@@ -133,7 +134,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
                 return;
             }
 
-            _solution.TryTransferSolution(soln.Value, cookerSolution, solution.MaxVolume);
+            _solution.TryTransferSolution(holderSoln.Value, cookerSolution, solution.MaxVolume);
         }
 
         //Trash
@@ -142,7 +143,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         {
             if (cookerSolution.Volume <= 0)
             {
-                foodComp.Trash.AddRange(cookerFoodVisuals.FoodData.Trash);
+                holderFoodComp.Trash.AddRange(cookerFoodVisuals.FoodData.Trash);
             }
             else
             {
@@ -150,7 +151,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
                 {
                     var newTrash = _random.Pick(cookerFoodVisuals.FoodData.Trash);
                     cookerFoodVisuals.FoodData.Trash.Remove(newTrash);
-                    foodComp.Trash.Add(newTrash);
+                    holderFoodComp.Trash.Add(newTrash);
                 }
             }
         }
@@ -169,8 +170,15 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         }
 
         //Visuals
-        var holderFoodData = EnsureComp<CP14FoodVisualsComponent>(holder);
-        holderFoodData.FoodData = new CP14FoodData(cookerFoodVisuals.FoodData);
+        var holderFoodVisuals = EnsureComp<CP14FoodVisualsComponent>(holder);
+        holderFoodVisuals.FoodData = new CP14FoodData(cookerFoodVisuals.FoodData);
+
+        //Visual random
+        foreach (var layer in holderFoodVisuals.FoodData.Visuals)
+        {
+            if (_random.Prob(0.5f))
+                layer.Scale = new Vector2(-1, 1);
+        }
 
         //Clear cooker data
         if (cookerSolution.Volume <= 0)
@@ -181,11 +189,13 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         holder.Comp.HoldFood = true;
 
-        Dirty(holder, holderFoodData);
+        Dirty(holder, holderFoodVisuals);
         Dirty(cooker, cookerFoodVisuals);
 
         Dirty(holder);
         Dirty(cooker);
+
+        _solution.UpdateChemicals(cookerSoln.Value);
     }
 
     public CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
@@ -302,6 +312,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         ent.Comp.HoldFood = true;
 
+        Dirty(ent);
         Dirty(ent, foodVisuals);
     }
 
@@ -324,7 +335,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         var replacedVolume = solution.Volume / 2;
         solution.SplitSolution(replacedVolume);
-        solution.AddReagent(_burntFoodReagent, replacedVolume);
+        solution.AddReagent(_burntFoodReagent, replacedVolume / 2);
 
         DirtyField(ent.Owner, foodVisuals, nameof(CP14FoodVisualsComponent.FoodData));
     }

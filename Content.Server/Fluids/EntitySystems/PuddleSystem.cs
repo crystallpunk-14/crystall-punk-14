@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._CP14.Cooking;
 using Content.Server.Administration.Logs;
 using Content.Server.Chemistry.TileReactions;
 using Content.Server.DoAfter;
@@ -671,6 +672,11 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             puddleUid = EntityUid.Invalid;
             return false;
         }
+
+        //CP14 spill event for cooking subscription
+        var ev = new CP14BeforeSpillEvent();
+        RaiseLocalEvent(uid, ev);
+        //CP14 end
 
         return TrySpillAt(transformComponent.Coordinates, solution, out puddleUid, sound: sound);
     }

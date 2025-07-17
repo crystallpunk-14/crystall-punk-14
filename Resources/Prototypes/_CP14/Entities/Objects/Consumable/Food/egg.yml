@@ -118,7 +118,7 @@
       food:
         maxVol: 6
         reagents:
-        - ReagentId: CookedEgg
+        - ReagentId: EggCooked
           Quantity: 6
         - ReagentId: Protein
           Quantity: 2

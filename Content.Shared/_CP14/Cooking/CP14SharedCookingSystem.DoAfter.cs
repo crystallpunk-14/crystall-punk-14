@@ -80,7 +80,6 @@ public abstract partial class CP14SharedCookingSystem
         _doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId);
         ent.Comp.DoAfterId = doAfterId;
         _ambientSound.SetAmbience(ent, true);
-        _ambientSound.SetSound(ent, recipe.CookingAmbient);
     }
 
     private void StartBurning(Entity<CP14FoodCookerComponent> ent)
