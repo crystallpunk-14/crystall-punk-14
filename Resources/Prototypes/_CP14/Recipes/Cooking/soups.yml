@@ -10,7 +10,67 @@
   requirements:
   - !type:AlwaysMet
 
-# 1 ingredient types
+# 1 req
+
+# We dont have 1 req for soups because all soups is water + something
+
+# 2 req
+
+- type: CP14CookingRecipe
+  id: MeatSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-meat-name
+    desc: cp14-soup-recipe-meat-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: meat
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14Meat
+
+- type: CP14CookingRecipe
+  id: CheeseSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-cheese-name
+    desc: cp14-soup-recipe-cheese-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: cheese
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14Cheese
+
+- type: CP14CookingRecipe
+  id: PumpkinPuree
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-pumpkin-puree-name
+    desc: cp14-soup-recipe-pumpkin-puree-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: pumpkin
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water #TODO: Milk Cream!!
+  - !type:TagRequired
+    tags:
+    - CP14Pumpkin
+
+# 3 req
 
 - type: CP14CookingRecipe
   id: VegSoup
@@ -33,3 +93,46 @@
   - !type:TagBlocked
     tags:
     - CP14Meat
+
+- type: CP14CookingRecipe
+  id: MeatCheeseSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-meat-cheese-name
+    desc: cp14-soup-recipe-meat-cheese-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: meat2
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14Meat
+  - !type:TagRequired
+    tags:
+    - CP14Cheese
+
+- type: CP14CookingRecipe
+  id: MeatSaladSoup
+  foodType: Soup
+  foodData:
+    name: cp14-soup-recipe-meat-salad-name
+    desc: cp14-soup-recipe-meat-salad-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Soups/misc.rsi
+      state: meat_salad
+  requirements:
+  - !type:ReagentRequired
+    amount: 20
+    reagents:
+    - Water
+  - !type:TagRequired
+    tags:
+    - CP14Meat
+  - !type:TagRequired
+    tags:
+    - CP14Salad
+    - CP14Vegetable

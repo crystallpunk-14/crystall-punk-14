@@ -51,6 +51,6 @@ public sealed partial class TagRequired : CP14CookingCraftRequirement
 
     public override float GetComplexity()
     {
-        return Min;
+        return Min + (AllowOtherTags ? 2 : 0);
     }
 }
