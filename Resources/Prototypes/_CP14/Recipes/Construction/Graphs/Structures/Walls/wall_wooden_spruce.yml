@@ -9,7 +9,7 @@
             - !type:SnapToGrid
               southRotation: true
           steps:
-            - material: CP14SpruceWoodenPlanks1
+            - material: CP14SpruceWoodenPlanks
               amount: 2
               doAfter: 2
 
@@ -27,7 +27,7 @@
               doAfter: 2
         - to: CP14WallWoodenSpruce
           steps:
-            - material: CP14SpruceWoodenPlanks1
+            - material: CP14SpruceWoodenPlanks
               amount: 2
               doAfter: 2
         #- to: WindowWooden
