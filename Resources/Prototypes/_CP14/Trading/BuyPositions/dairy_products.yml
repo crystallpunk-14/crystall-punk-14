@@ -58,6 +58,18 @@
     product: CP14FryingPan
     count: 1
 
+- type: cp14TradingPosition
+  id: CP14CookingPot
+  faction: Dairy
+  reputationLevel: 1
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Specific/Cooking/cooking_pot.rsi
+    state: base
+  service: !type:CP14BuyItemsService
+    product: CP14CookingPot
+    count: 1
+
 # Rep 2
 - type: cp14TradingPosition
   id: CP14FoodAgedCheeseWheel

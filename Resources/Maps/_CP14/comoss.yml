@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/16/2025 04:54:40
+  time: 07/17/2025 14:19:23
   entityCount: 14827
 maps:
 - 1
@@ -37710,6 +37710,34 @@ entities:
       parent: 7135
     - type: Physics
       canCollide: False
+- proto: CP14BowlWooden
+  entities:
+  - uid: 8733
+    components:
+    - type: Transform
+      pos: -14.758736,-23.37167
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+  - uid: 9054
+    components:
+    - type: Transform
+      pos: -14.387552,-23.191761
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+- proto: CP14BowlWoodenRandom
+  entities:
+  - uid: 9055
+    components:
+    - type: Transform
+      pos: -1.738586,-23.281715
+      parent: 1
+  - uid: 9668
+    components:
+    - type: Transform
+      pos: -7.7900057,-22.2135
+      parent: 1
 - proto: CP14Bucket
   entities:
   - uid: 7155
@@ -45820,12 +45848,6 @@ entities:
       parent: 1
 - proto: CP14Fork
   entities:
-  - uid: 9668
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.782056,-22.78113
-      parent: 1
   - uid: 9669
     components:
     - type: Transform
@@ -45856,15 +45878,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -14.389506,-16.803066
       parent: 1
-- proto: CP14FryingPan
-  entities:
-  - uid: 8722
-    components:
-    - type: Transform
-      pos: -15.524707,-19.24207
-      parent: 1
-    - type: CollisionWake
-      enabled: False
 - proto: CP14Furnace
   entities:
   - uid: 2
@@ -45880,9 +45893,6 @@ entities:
     - type: Transform
       pos: -15.5,-19.5
       parent: 1
-    - type: ItemPlacer
-      placedEntities:
-      - 8722
   - uid: 4
     components:
     - type: Transform
@@ -47307,18 +47317,6 @@ entities:
       parent: 1
     - type: CollisionWake
       enabled: False
-- proto: CP14PlatePie
-  entities:
-  - uid: 9054
-    components:
-    - type: Transform
-      pos: -14.687898,-20.121904
-      parent: 1
-  - uid: 9055
-    components:
-    - type: Transform
-      pos: -14.327769,-20.256838
-      parent: 1
 - proto: CP14PlateWooden
   entities:
   - uid: 9050
@@ -47343,20 +47341,10 @@ entities:
       parent: 1
 - proto: CP14PlateWoodenRandom
   entities:
-  - uid: 8725
-    components:
-    - type: Transform
-      pos: -7.6855574,-22.511265
-      parent: 1
   - uid: 8729
     components:
     - type: Transform
       pos: -4.5473676,-22.488777
-      parent: 1
-  - uid: 8733
-    components:
-    - type: Transform
-      pos: -1.7128735,-23.354593
       parent: 1
   - uid: 8754
     components:
@@ -63681,6 +63669,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -17.5,-85.5
       parent: 1
+- proto: CP14SackFarming
+  entities:
+  - uid: 8725
+    components:
+    - type: Transform
+      pos: -14.298834,-17.542446
+      parent: 1
 - proto: CP14SackFarmingSeedFull
   entities:
   - uid: 15064
@@ -64357,6 +64352,12 @@ entities:
     - type: DamagedByContact
 - proto: CP14Spoon
   entities:
+  - uid: 8722
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -7.707367,-22.646742
+      parent: 1
   - uid: 9672
     components:
     - type: Transform
@@ -84188,6 +84189,10 @@ entities:
     - type: Transform
       pos: -14.5,-23.5
       parent: 1
+    - type: ItemPlacer
+      placedEntities:
+      - 9054
+      - 8733
   - uid: 15175
     components:
     - type: Transform
