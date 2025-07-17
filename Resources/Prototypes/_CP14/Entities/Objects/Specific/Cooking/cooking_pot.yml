@@ -24,10 +24,6 @@
   - type: SolutionContainerManager
     solutions:
       pan:
-        maxVol: 100
-  - type: SolutionContainerManager
-    solutions:
-      cooker:
         maxVol: 150
   - type: CP14FoodVisuals
     solutionId: cooker
