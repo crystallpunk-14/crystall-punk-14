@@ -28,6 +28,9 @@
       ]
     },
     {
+      "name": "dirt"
+    },
+    {
       "name": "inhand-left",
       "directions": 4
     },
