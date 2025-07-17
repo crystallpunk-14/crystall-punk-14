@@ -82,7 +82,6 @@
     - CP14FarmFood
     - CP14Vegetable
     - CP14Salad
-    - CP14SaladSlice
     - CP14Cabbage
 
 - type: entity
@@ -126,6 +125,7 @@
     tags:
     - CP14FarmFood
     - CP14Vegetable
+    - CP14Pumpkin
 
 - type: entity
   id: CP14FoodPumpkinSlice
@@ -167,6 +167,7 @@
     tags:
     - CP14FarmFood
     - CP14Vegetable
+    - CP14Pumpkin
 
 - type: entity
   id: CP14FoodPotato

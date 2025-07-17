@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/16/2025 04:57:56
-  entityCount: 19206
+  time: 07/17/2025 14:20:12
+  entityCount: 19207
 maps:
 - 2
 grids:
@@ -54744,6 +54744,25 @@ entities:
     - type: ItemPlacer
       placedEntities:
       - 2745
+- proto: CP14BowlWooden
+  entities:
+  - uid: 11888
+    components:
+    - type: Transform
+      pos: 5.710745,-26.339146
+      parent: 2
+- proto: CP14BowlWoodenRandom
+  entities:
+  - uid: 2313
+    components:
+    - type: Transform
+      pos: 7.542921,-22.193312
+      parent: 2
+  - uid: 11887
+    components:
+    - type: Transform
+      pos: 3.4486523,-21.41745
+      parent: 2
 - proto: CP14Bucket
   entities:
   - uid: 2503
@@ -59352,7 +59371,7 @@ entities:
       pos: 14.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13845.33
+      secondsUntilStateChange: -13883.739
       state: Closing
   - uid: 1792
     components:
@@ -76349,15 +76368,6 @@ entities:
       parent: 2
     - type: CollisionWake
       enabled: False
-- proto: CP14FryingPan
-  entities:
-  - uid: 11887
-    components:
-    - type: Transform
-      pos: 9.415325,-29.152672
-      parent: 2
-    - type: CollisionWake
-      enabled: False
 - proto: CP14Furnace
   entities:
   - uid: 2505
@@ -76366,18 +76376,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,-28.5
       parent: 2
-    - type: ItemPlacer
-      placedEntities:
-      - 11887
   - uid: 2506
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,-29.5
       parent: 2
-    - type: ItemPlacer
-      placedEntities:
-      - 11887
   - uid: 2844
     components:
     - type: Transform
@@ -77185,11 +77189,6 @@ entities:
       enabled: False
 - proto: CP14PlateWoodenRandom
   entities:
-  - uid: 2284
-    components:
-    - type: Transform
-      pos: 3.6833415,-21.535347
-      parent: 2
   - uid: 2294
     components:
     - type: Transform
@@ -77199,11 +77198,6 @@ entities:
     components:
     - type: Transform
       pos: -0.43342304,-25.392168
-      parent: 2
-  - uid: 2313
-    components:
-    - type: Transform
-      pos: 7.4514184,-22.277475
       parent: 2
   - uid: 2319
     components:
@@ -101489,6 +101483,13 @@ entities:
     components:
     - type: Transform
       pos: 32.5,32.5
+      parent: 2
+- proto: CP14SackFarming
+  entities:
+  - uid: 2284
+    components:
+    - type: Transform
+      pos: 5.701355,-32.448044
       parent: 2
 - proto: CP14SackFarmingSeed
   entities:

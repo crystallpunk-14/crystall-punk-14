@@ -72,12 +72,22 @@
 - type: CP14Recipe
   id: CP14PlateWooden
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  craftTime: 2
   requirements:
   - !type:StackGroupResource
     group: WoodenPlanks
     count: 2
   result: CP14PlateWooden
+
+- type: CP14Recipe
+  id: CP14BowlWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14BowlWooden
 
 - type: CP14Recipe
   id: CP14ModularBladeWoodMop

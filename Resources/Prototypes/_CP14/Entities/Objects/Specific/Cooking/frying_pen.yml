@@ -1,0 +1,57 @@
+- type: entity
+  id: CP14FryingPan
+  parent: CP14CookerBase
+  name: frying pan
+  description: "You can always watch three things: how fire burns, how water flows, and how delicious meat is cooked."
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Specific/Cooking/frying_pan.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - map: ["cp14_foodLayers"]
+    - state: closed
+      map: [ base ]
+    - state: cooking
+      visible: false
+      map: [ cook ]
+    - state: cooking
+      visible: false
+      color: "#38312e"
+      map: [ burn ]
+  - type: MeleeWeapon
+    wideAnimationRotation: 270
+    damage:
+      types:
+        Blunt: 6
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+  - type: Storage
+    storageOpenSound: /Audio/_CP14/Effects/pan_open.ogg
+    storageCloseSound: /Audio/_CP14/Effects/pan_close.ogg
+    storageInsertSound: /Audio/Items/toolbox_insert.ogg
+    storageRemoveSound: /Audio/Items/toolbox_insert.ogg
+  - type: SolutionContainerManager
+    solutions:
+      cooker:
+        maxVol: 100
+  - type: CP14FoodVisuals
+    solutionId: cooker
+    displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement_pan.rsi
+    maxDisplacementFillLevels: 2
+  - type: CP14FoodCooker
+    foodType: Meal
+    solutionId: cooker
+  - type: RefillableSolution
+    solution: cooker
+  - type: DrainableSolution
+    solution: cooker
+  - type: Spillable
+    solution: cooker
+  - type: AmbientSound
+    sound:
+      path: /Audio/_CP14/Ambience/pan_frying.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20
+      CP14WoodenPlanks: 10

@@ -102,3 +102,23 @@
       - random:
           brown: ""
           icon: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodEgg
+
+- type: entity
+  id: CP14FoodEggCooked
+  parent: CP14FoodEgg
+  name: cooked egg
+  components:
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: EggCooked
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2

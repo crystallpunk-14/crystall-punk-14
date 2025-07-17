@@ -1,58 +1,101 @@
 - type: cp14TradingRequest
-  id: DairyApplePie
+  id: MeatSoup
   possibleFactions:
   - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPieApple
-    count: 3
+  - !type:FoodResource
+    recipe: MeatSoup
+    count: 20
 
 - type: cp14TradingRequest
-  id: DairyPumpkinPie
+  id: CheeseSoup
   possibleFactions:
   - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPiePumpkin
-    count: 3
+  - !type:FoodResource
+    recipe: CheeseSoup
+    count: 20
 
 - type: cp14TradingRequest
-  id: ButchersMeatPie
+  id: PumpkinPuree
   possibleFactions:
-  - Butchers
+  - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPieMeat
-    count: 1
+  - !type:FoodResource
+    recipe: PumpkinPuree
+    count: 20
 
 - type: cp14TradingRequest
-  id: ButchersFishPie
+  id: VegSoup
   possibleFactions:
-  - Butchers
+  - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPieFish
-    count: 1
+  - !type:FoodResource
+    recipe: VegSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: GreenSaladMeat
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: GreenSaladMeat
+    count: 20
+
+- type: cp14TradingRequest
+  id: CheeseBread
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: CheeseBread
+    count: 20
+
 
 # 30 minutes
 
 - type: cp14TradingRequest
-  id: HorticulturePumpkinPie
+  id: MeatCheeseSoup
   possibleFactions:
-  - Horticulture
-  fromMinutes: 30
+  - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPiePumpkin
-    count: 2
+  - !type:FoodResource
+    recipe: MeatCheeseSoup
+    count: 20
 
-# 60 minutes
 - type: cp14TradingRequest
-  id: HorticultureApplePie
+  id: MeatSaladSoup
   possibleFactions:
-  - Horticulture
-  fromMinutes: 60
+  - Dairy
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPieApple
-    count: 2
+  - !type:FoodResource
+    recipe: MeatSaladSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: MonsterEgg
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: MonsterEgg
+    count: 20
+
+- type: cp14TradingRequest
+  id: ZellasianBreakfast
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: ZellasianBreakfast
+    count: 20
+
+- type: cp14TradingRequest
+  id: HamInCheese
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: HamInCheese
+    count: 20
