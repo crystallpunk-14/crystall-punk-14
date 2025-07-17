@@ -14,8 +14,10 @@
     solutions:
       food:
         maxVol: 30
-  - type: CP14FoodHolder
+  - type: CP14FoodVisuals
     displacementRsiPath: _CP14/Objects/Consumable/Food/Soups/displacement.rsi
+    solutionId: food
+  - type: CP14FoodHolder
     foodType: Soup
     solutionId: food
   - type: Appearance

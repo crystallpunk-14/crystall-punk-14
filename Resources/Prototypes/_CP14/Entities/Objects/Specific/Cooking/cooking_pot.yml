@@ -23,7 +23,7 @@
     containerId: storagebase
   - type: SolutionContainerManager
     solutions:
-      pan:
+      cooker:
         maxVol: 150
   - type: CP14FoodVisuals
     solutionId: cooker
@@ -34,9 +34,11 @@
     solutionId: cooker
   - type: RefillableSolution
     solution: cooker
-  - type: DrainableSolution
-    solution: cooker
   - type: Spillable
+    solution: cooker
+  - type: SolutionItemStatus
+    solution: cooker
+  - type: ExaminableSolution
     solution: cooker
   - type: AmbientSound
     sound:
@@ -45,8 +47,13 @@
     materialComposition:
       CP14Iron: 30
   - type: Storage
+    storageOpenSound: /Audio/_CP14/Effects/pan_open.ogg
+    storageCloseSound: /Audio/_CP14/Effects/pan_close.ogg
+    storageInsertSound: /Audio/Items/toolbox_insert.ogg
+    storageRemoveSound: /Audio/Items/toolbox_insert.ogg
     cP14Ignorelist:
       components:
         - CP14FoodHolder
         - FoodSequenceStartPoint
         - Injector
+        - SolutionTransfer

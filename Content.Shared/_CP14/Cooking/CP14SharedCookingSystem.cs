@@ -110,6 +110,9 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         if (holder.Comp.HoldFood || !cooker.Comp.HoldFood)
             return;
 
+        if (holder.Comp.FoodType != cooker.Comp.FoodType)
+            return;
+
         if (!TryComp<FoodComponent>(holder, out var foodComp))
             return;
 
