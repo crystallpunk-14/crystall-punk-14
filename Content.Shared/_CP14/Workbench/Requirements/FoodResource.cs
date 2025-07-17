@@ -6,6 +6,7 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -31,7 +32,7 @@ public sealed partial class FoodResource : CP14WorkbenchCraftRequirement
             if (!entManager.TryGetComponent<CP14FoodVisualsComponent>(ent, out var foodVisuals))
                 continue;
 
-            if (entManager.HasComponent<CP14FoodHolderComponent>(ent))
+            if (!entManager.HasComponent<CP14FoodHolderComponent>(ent))
                 continue;
 
             if (foodVisuals.FoodData?.CurrentRecipe != Recipe)
@@ -60,7 +61,7 @@ public sealed partial class FoodResource : CP14WorkbenchCraftRequirement
             if (!entManager.TryGetComponent<CP14FoodVisualsComponent>(ent, out var foodVisuals))
                 continue;
 
-            if (entManager.HasComponent<CP14FoodHolderComponent>(ent))
+            if (!entManager.HasComponent<CP14FoodHolderComponent>(ent))
                 continue;
 
             if (foodVisuals.FoodData?.CurrentRecipe != Recipe)

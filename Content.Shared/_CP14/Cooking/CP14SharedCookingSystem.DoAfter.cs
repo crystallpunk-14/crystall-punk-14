@@ -4,6 +4,7 @@
  */
 
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Temperature;
 using Robust.Shared.Prototypes;

@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -17,7 +18,7 @@ public sealed partial class CP14FoodCookerComponent : Component
     public bool HoldFood = false;
 
     [DataField(required: true)]
-    public CP14FoodType FoodType;
+    public ProtoId<CP14FoodTypePrototype> FoodType;
 
     [DataField]
     public string ContainerId;
@@ -83,12 +84,6 @@ public sealed partial class CP14FoodData
 
     [DataField]
     public HashSet<LocId> Flavors = new();
-}
-
-public enum CP14FoodType
-{
-    Meal,
-    Soup,
 }
 
 [Serializable, NetSerializable]

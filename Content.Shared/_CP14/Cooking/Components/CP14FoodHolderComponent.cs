@@ -3,8 +3,9 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Cooking.Prototypes;
 using Robust.Shared.GameStates;
-using Robust.Shared.Utility;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
@@ -15,7 +16,7 @@ public sealed partial class CP14FoodHolderComponent : Component
     public bool HoldFood = false;
 
     [DataField(required: true)]
-    public CP14FoodType FoodType;
+    public ProtoId<CP14FoodTypePrototype> FoodType;
 
     [DataField]
     public string? SolutionId;

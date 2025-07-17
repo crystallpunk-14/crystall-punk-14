@@ -6,6 +6,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.Audio;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -218,7 +219,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         return GetRecipe(ent.Comp.FoodType, solution, allTags);
     }
 
-    public CP14CookingRecipePrototype? GetRecipe(CP14FoodType foodType, Solution? solution, List<ProtoId<TagPrototype>> allTags)
+    public CP14CookingRecipePrototype? GetRecipe(ProtoId<CP14FoodTypePrototype> foodType, Solution? solution, List<ProtoId<TagPrototype>> allTags)
     {
         if (OrderedRecipes.Count == 0)
         {

@@ -76,6 +76,7 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         }
 
         Dirty(ent.Owner, holder);
+        Dirty(ent.Owner, foodVisuals);
     }
 
     protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
