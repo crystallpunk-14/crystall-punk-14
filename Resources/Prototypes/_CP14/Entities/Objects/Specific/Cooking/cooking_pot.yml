@@ -5,7 +5,7 @@
   description: Container for cooking Grand Soup.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Cooking/cooking_pot.rsi
+    sprite: _CP14/Objects/Consumable/Food/Soups/cooking_pot.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
