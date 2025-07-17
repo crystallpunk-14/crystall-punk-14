@@ -29,7 +29,7 @@
   id: CP14WoodenWallSpruce
   graph: CP14WallWoodenSpruce
   startNode: start
-  targetNode: CP14WallWoodenBirch
+  targetNode: CP14WallWoodenSpruce
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
