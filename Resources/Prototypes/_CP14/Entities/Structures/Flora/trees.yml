@@ -491,6 +491,10 @@
     - random:
         tree01: ""
         tree02: ""
+        tree03: ""
+        tree04: ""
+        tree05: ""
+        tree06: ""
   - type: Destructible
     thresholds:
     - trigger:
@@ -591,10 +595,6 @@
     - random:
         tree01: ""
         tree02: ""
-        tree03: ""
-        tree04: ""
-        tree05: ""
-        tree06: ""
   - type: Destructible
     thresholds:
     - trigger:
