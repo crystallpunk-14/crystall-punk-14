@@ -6,6 +6,7 @@
 using System.Linq;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.Audio;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.DoAfter;
@@ -187,7 +188,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         Dirty(cooker);
     }
 
-    private CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
+    public CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
     {
         if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
             return null;
@@ -204,6 +205,11 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             allTags.AddRange(tags.Tags);
         }
 
+        return GetRecipe(ent.Comp.FoodType, solution, allTags);
+    }
+
+    public CP14CookingRecipePrototype? GetRecipe(CP14FoodType foodType, Solution? solution, List<ProtoId<TagPrototype>> allTags)
+    {
         if (OrderedRecipes.Count == 0)
         {
             throw new InvalidOperationException(
@@ -213,13 +219,13 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         CP14CookingRecipePrototype? selectedRecipe = null;
         foreach (var recipe in OrderedRecipes)
         {
-            if (recipe.FoodType != ent.Comp.FoodType)
+            if (recipe.FoodType != foodType)
                 continue;
 
             var conditionsMet = true;
             foreach (var condition in recipe.Requirements)
             {
-                if (!condition.CheckRequirement(EntityManager, _proto, container.ContainedEntities, allTags, solution))
+                if (!condition.CheckRequirement(EntityManager, _proto, allTags, solution))
                 {
                     conditionsMet = false;
                     break;

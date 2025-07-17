@@ -22,7 +22,6 @@ public sealed partial class ReagentRequired : CP14CookingCraftRequirement
 
     public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
-        IReadOnlyList<EntityUid> placedEntities,
         List<ProtoId<TagPrototype>> placedTags,
         Solution? solution = null)
     {
