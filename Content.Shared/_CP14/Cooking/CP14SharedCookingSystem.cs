@@ -27,17 +27,17 @@ namespace Content.Shared._CP14.Cooking;
 
 public abstract partial class CP14SharedCookingSystem : EntitySystem
 {
-    [Dependency] protected readonly IPrototypeManager _proto = default!;
     [Dependency] protected readonly SharedContainerSystem _container = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
     [Dependency] protected readonly MetaDataSystem _metaData = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
-    [Dependency] protected readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     /// <summary>
     /// When overcooking food, we will replace the reagents inside with this reagent.
