@@ -1,14 +1,15 @@
 ---
 name: Report an Issue / Сообщить об ошибке
-about: Create a report to help us improve / Создайте отчет, чтобы помочь нам улучшить проект
+about: Report a bug or problem you have found / Сообщите о найденной ошибке или проблеме
 title: ''
 labels: ''
+type: 'Bug'
 assignees: ''
 ---
 
 ## Description / Описание
 <!-- Explain your issue in detail. Issues without proper explanation are liable to be closed by maintainers. -->
-<!-- Подробно опишите вашу проблему. Проблемы без должного описания могут быть закрыты. -->
+<!-- Подробно опишите вашу проблему. Проблемы без должного описания будут закрыты. -->
 
 **Reproduction / Шаги воспроизведения**
 <!-- Include the steps to reproduce if applicable. -->
