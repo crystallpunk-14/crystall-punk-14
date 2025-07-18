@@ -41,7 +41,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 3
+        Slash: 1.5
         Piercing: 3
         Structural: 3
   - type: Body
