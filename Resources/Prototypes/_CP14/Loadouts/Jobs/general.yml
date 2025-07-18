@@ -258,6 +258,7 @@
   - CP14ClothingHeadJagermeisterHat
   - CP14ClothingHeadStrawHat
   - CP14ClothingHeadKasaHat
+  - CP14ClothingHeadBeretMercenary
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -309,6 +310,10 @@
   equipment:
     head: CP14ClothingHeadKasaHat
 
+- type: loadout
+  id: CP14ClothingHeadBeretMercenary
+  equipment:
+    head: CP14ClothingHeadBeretMercenary
 
 # Pants
 
@@ -324,6 +329,7 @@
   - CP14ClothingPantsGreen
   - CP14ClothingPantsBrown
   - CP14ClothingPantsHakama
+  - CP14ClothingPantsMercenaryTrousers
 
 - type: loadout
   id: CP14ClothingPantsTrouserWhite
@@ -364,6 +370,11 @@
   id: CP14ClothingPantsHakama
   equipment:
     pants: CP14ClothingPantsHakama
+
+- type: loadout
+  id: CP14ClothingPantsMercenaryTrousers
+  equipment:
+    pants: CP14ClothingPantsMercenaryTrousers
 
 # Shirt
 
@@ -411,6 +422,7 @@
   - CP14ClothingCottonYellowCollarDress
   - CP14ClothinShirtYellowBlueDress
   - CP14ClothingWarriorsGarbDress
+  - CP14ClothingShirtMercenary
 
 - type: loadout
   id: CP14ClothingShirtCottonBlack
@@ -611,6 +623,11 @@
   id: CP14ClothinShirtWhiteBrown
   equipment:
     shirt: CP14ClothinShirtWhiteBrown
+
+- type: loadout
+  id: CP14ClothingShirtMercenary
+  equipment:
+    shirt: CP14ClothingShirtMercenary
 
 # Shoes
 
