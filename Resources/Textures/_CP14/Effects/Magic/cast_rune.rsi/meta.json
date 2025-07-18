@@ -5,7 +5,7 @@
     "y": 48
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd, medium_circle by AftrLite(Github)",
+  "copyright": "Created by TheShuEd, medium_circle & double_outer_small by AftrLite(Github)",
   "states": [
     {
       "name": "double_outer",
@@ -19,6 +19,43 @@
           0.2,
           0.2,
           0.2
+        ]
+      ]
+    },
+    {
+      "name": "double_outer_small",
+      "delays": [
+        [
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075,
+          0.075
         ]
       ]
     },
