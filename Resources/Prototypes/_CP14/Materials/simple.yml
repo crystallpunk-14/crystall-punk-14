@@ -111,7 +111,7 @@
   name: cp14-material-coal
   icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore2 }
   color: "#232526"
-  price: 1.5
+  price: 0.8
 
 - type: material
   id: CP14FloraMaterial
