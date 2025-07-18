@@ -151,7 +151,6 @@
   id: CP14WallStoneCoalOre
   suffix: coal ore
   parent: CP14WallStone
-  categories: [ DoNotMap ]
   description: A solid stone natural wall. You see the tantalizing particles of coal in it.
   components:
   - type: Sprite
