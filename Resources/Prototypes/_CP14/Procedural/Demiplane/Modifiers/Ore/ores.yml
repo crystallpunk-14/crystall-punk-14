@@ -102,8 +102,8 @@
       - CP14WallStone
       entity: CP14WallStoneCoalOre
       count: 20
-      minGroupSize: 2
-      maxGroupSize: 4
+      minGroupSize: 4
+      maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
   id: CoalOreUnderground
@@ -123,8 +123,8 @@
       - CP14WallStone
       entity: CP14WallStoneCoalOre
       count: 15
-      minGroupSize: 4
-      maxGroupSize: 6
+      minGroupSize: 6
+      maxGroupSize: 8
 
 # TIER 2
 
