@@ -25,6 +25,8 @@
   - type: SolutionContainerVisuals
   - type: Food
     transferAmount: 2.5
+  - type: Spillable
+    solution: food
 
 - type: entity
   id: CP14PlateWooden

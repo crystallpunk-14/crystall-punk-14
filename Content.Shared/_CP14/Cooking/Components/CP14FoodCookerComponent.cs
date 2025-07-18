@@ -14,7 +14,7 @@ namespace Content.Shared._CP14.Cooking.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodCookerComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool HoldFood = false;
 
     [DataField(required: true)]

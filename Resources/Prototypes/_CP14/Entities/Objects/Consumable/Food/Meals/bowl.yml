@@ -27,6 +27,8 @@
       path: /Audio/Items/drink.ogg
     utensil: Spoon
     transferAmount: 2.5
+  - type: Spillable
+    solution: food
 
 - type: entity
   id: CP14BowlWooden

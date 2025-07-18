@@ -9,6 +9,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Temperature;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Random;
 
@@ -24,25 +25,34 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
         SubscribeLocalEvent<CP14RandomFoodDataComponent, MapInitEvent>(OnRandomFoodMapInit);
 
-        SubscribeLocalEvent<CP14FoodVisualsComponent, CP14BeforeSpillEvent>(OnSpilled);
-        SubscribeLocalEvent<CP14FoodHolderComponent, CP14BeforeSpillEvent>(OnHolderSpilled);
-        SubscribeLocalEvent<CP14FoodCookerComponent, CP14BeforeSpillEvent>(OnCookerSpilled);
+        SubscribeLocalEvent<CP14FoodVisualsComponent, SolutionContainerChangedEvent>(OnVisualsChanged);
+        SubscribeLocalEvent<CP14FoodHolderComponent, SolutionContainerChangedEvent>(OnHolderChanged);
+        SubscribeLocalEvent<CP14FoodCookerComponent, SolutionContainerChangedEvent>(OnCookerChanged);
     }
 
-    private void OnCookerSpilled(Entity<CP14FoodCookerComponent> ent, ref CP14BeforeSpillEvent args)
+    private void OnCookerChanged(Entity<CP14FoodCookerComponent> ent, ref SolutionContainerChangedEvent args)
     {
+        if (args.Solution.Volume != 0)
+            return;
+
         ent.Comp.HoldFood = false;
         Dirty(ent);
     }
 
-    private void OnHolderSpilled(Entity<CP14FoodHolderComponent> ent, ref CP14BeforeSpillEvent args)
+    private void OnHolderChanged(Entity<CP14FoodHolderComponent> ent, ref SolutionContainerChangedEvent args)
     {
+        if (args.Solution.Volume != 0)
+            return;
+
         ent.Comp.HoldFood = false;
         Dirty(ent);
     }
 
-    private void OnSpilled(Entity<CP14FoodVisualsComponent> ent, ref CP14BeforeSpillEvent args)
+    private void OnVisualsChanged(Entity<CP14FoodVisualsComponent> ent, ref SolutionContainerChangedEvent args)
     {
+        if (args.Solution.Volume != 0)
+            return;
+
         ent.Comp.FoodData = null;
         Dirty(ent);
     }
@@ -125,11 +135,4 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
             _temperature.ForceChangeTemperature(contained, newTemp);
         }
     }
-}
-
-/// <summary>
-/// It is invoked on the entity from which all reagents are spilled.
-/// </summary>
-public sealed class CP14BeforeSpillEvent : EntityEventArgs
-{
 }

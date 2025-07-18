@@ -9,10 +9,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
-[RegisterComponent, NetworkedComponent, Access(typeof(CP14SharedCookingSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodHolderComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool HoldFood = false;
 
     [DataField(required: true)]
