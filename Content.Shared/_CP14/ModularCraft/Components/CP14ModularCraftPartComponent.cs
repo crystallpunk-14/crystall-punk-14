@@ -12,5 +12,11 @@ public sealed partial class CP14ModularCraftPartComponent : Component
     [DataField]
     public float DoAfter = 1f;
 
+    /// <summary>
+    /// Attaching this piece adds an additional price to the target object.
+    /// </summary>
+    [DataField]
+    public double AddPrice = 5;
+
     //TODO: Sound
 }

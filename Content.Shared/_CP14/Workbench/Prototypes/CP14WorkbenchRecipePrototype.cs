@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -16,7 +17,7 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
-    public ProtoId<TagPrototype> Tag = default!;
+    public ProtoId<TagPrototype> Tag;
 
     [DataField]
     public TimeSpan CraftTime = TimeSpan.FromSeconds(1f);
@@ -24,8 +25,25 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
     [DataField]
     public SoundSpecifier? OverrideCraftSound;
 
+    /// <summary>
+    /// Mandatory conditions, without which the craft button will not even be active
+    /// </summary>
     [DataField(required: true)]
     public List<CP14WorkbenchCraftRequirement> Requirements = new();
+
+    /// <summary>
+    /// Mandatory conditions for completion, but not blocking the craft button.
+    /// Players must monitor compliance themselves.
+    /// If the conditions are not met, negative effects occur.
+    /// </summary>
+    [DataField]
+    public List<CP14WorkbenchCraftCondition> Conditions = new();
+
+    /// <summary>
+    /// What skills do you need to know to see this recipe in the interface?
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<CP14SkillPrototype>> RequiredSkills = new();
 
     [DataField(required: true)]
     public EntProtoId Result;

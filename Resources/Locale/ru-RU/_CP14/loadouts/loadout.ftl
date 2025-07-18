@@ -41,11 +41,15 @@ cp14-loadout-guard-commander-cloak = Накидка командира стра�
 
 # Guard
 
+cp14-loadout-investigator-cloak = Накидка дознавателя
+cp14-loadout-investigator-head = Шляпа дознавателя
+
 cp14-loadout-guard-cloak  = Накидка стражи
 cp14-loadout-guard-head = Шляпа стражи
 cp14-loadout-guard-pants = Штаны стражи
 cp14-loadout-guard-shirt = Рубашка стражи
 cp14-loadout-guard-spells = Заклинания стражи
+cp14-loadout-guard-equip = Экипировка стражи
 
 cp14-loadout-merchant-head = Шляпа торговца
 cp14-loadout-merchant-cloak = Накидка торговца

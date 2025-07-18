@@ -95,3 +95,192 @@
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
 
+# Basic 6
+
+- type: entity
+  id: CP14CrystalQuartzEarth
+  suffix: Earth
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#1cea42"
+  - type: PointLight
+    color: "#1cea42"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzEarth:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceEarth:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalQuartzFire
+  suffix: Fire
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#d9741c"
+  - type: PointLight
+    color: "#d9741c"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzFire:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceFire:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalQuartzWater
+  suffix: Water
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#1c94d9"
+  - type: PointLight
+    color: "#1c94d9"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzWater:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceWater:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalQuartzAir
+  suffix: Air
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#fdfe86"
+  - type: PointLight
+    color: "#fdfe86"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzAir:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceAir:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalQuartzOrder
+  suffix: Order
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: PointLight
+    color: "#d9d9d9"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzOrder:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceOrder:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14CrystalQuartzChaos
+  suffix: Chaos
+  parent: CP14CrystalBase
+  components:
+  - type: Sprite
+    color: "#4d4d4d"
+  - type: PointLight
+    color: "#4d4d4d"
+  - type: Destructible
+    thresholds:
+      - trigger:
+            !type:DamageTrigger
+            damage: 15
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14CrystalShardQuartzChaos:
+                min: 1
+                max: 2
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14EssenceChaos:
+                min: 3
+                max: 5
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+
+# Complex tier 1

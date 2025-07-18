@@ -102,7 +102,7 @@
     damageModifierSet: CP14WatcherIce
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole
+    - id: CP14FoodMeatMonster
       amount: 1
     - id: CP14ModularInlayQuartzWater
       amount: 1
@@ -137,7 +137,7 @@
     fireCost: 50
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole
+    - id: CP14FoodMeatMonster
       amount: 1
     - id: CP14ModularInlayQuartzFire
       amount: 1

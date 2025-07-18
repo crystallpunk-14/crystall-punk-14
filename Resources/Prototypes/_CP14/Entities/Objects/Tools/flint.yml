@@ -16,3 +16,7 @@
   - type: Tag
     tags:
     - CP14Lighter
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Stone: 20
+      CP14Iron: 10

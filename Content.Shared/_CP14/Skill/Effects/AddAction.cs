@@ -1,5 +1,6 @@
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Actions;
+using Content.Shared.Mind;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill.Effects;
@@ -12,13 +13,20 @@ public sealed partial class AddAction : CP14SkillEffect
     public override void AddSkill(IEntityManager entManager, EntityUid target)
     {
         var actionsSystem = entManager.System<SharedActionsSystem>();
+        var actionsContainerSys = entManager.System<ActionContainerSystem>();
+        var mindSys = entManager.System<SharedMindSystem>();
 
-        actionsSystem.AddAction(target, Action);
+        if (!mindSys.TryGetMind(target, out var mind, out _))
+            actionsSystem.AddAction(target, Action);
+        else
+            actionsContainerSys.AddAction(mind, Action);
     }
 
     public override void RemoveSkill(IEntityManager entManager, EntityUid target)
     {
         var actionsSystem = entManager.System<SharedActionsSystem>();
+        var actionsContainerSys = entManager.System<ActionContainerSystem>();
+        var mindSys = entManager.System<SharedMindSystem>();
 
         foreach (var (uid, _) in actionsSystem.GetActions(target))
         {
@@ -31,7 +39,10 @@ public sealed partial class AddAction : CP14SkillEffect
             if (metaData.EntityPrototype != Action)
                 continue;
 
-            actionsSystem.RemoveAction(target, uid);
+            if (!mindSys.TryGetMind(target, out var mind, out _))
+                actionsSystem.RemoveAction(target, uid);
+            else
+                actionsContainerSys.RemoveAction(uid);
         }
     }
 

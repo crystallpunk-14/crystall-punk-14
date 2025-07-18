@@ -104,6 +104,7 @@
         rock2: ""
         rock3: ""
         rock4: ""
+        rock5: ""
   - type: Destructible
     thresholds:
       - trigger:
@@ -128,3 +129,23 @@
                 max: 8
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14RockBigMoss
+  parent: CP14RockBig
+  suffix: Big. Moss.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/Rocks/rocks_big.rsi
+    offset: 0,0.5
+    layers:
+      - state: moss_rock1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        moss_rock1: ""
+        moss_rock2: ""
+        moss_rock3: ""
+        moss_rock4: ""
+        moss_rock5: ""

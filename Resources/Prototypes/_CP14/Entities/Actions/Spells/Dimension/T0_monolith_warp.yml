@@ -1,5 +1,6 @@
 - type: entity
   id: CP14ActionSpellMonolithWarp
+  parent: CP14ActionSpellBase
   name: Monolith warp
   description: You open a dimensional rift that transports the creatures around it to the demiplane link crystal
   components:
@@ -22,15 +23,14 @@
     endSpeech: "vado ad vos"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneDemiplaneInfiltration
-  - type: EntityWorldTargetAction
-    range: 7
-    itemIconStyle: BigAction
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/rumble.ogg
+  - type: Action
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: demi_arrow
-    event: !type:CP14DelayedEntityWorldTargetActionEvent
+  - type: TargetAction
+    range: 7
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
       cooldown: 50
 
 - type: entity

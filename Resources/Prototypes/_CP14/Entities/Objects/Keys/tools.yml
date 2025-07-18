@@ -44,6 +44,8 @@
     health: 1000
   - type: Sprite
     state: lockpick_skeleton
+  - type: StaticPrice
+    price: 400
 
 - type: entity
   parent: BaseItem

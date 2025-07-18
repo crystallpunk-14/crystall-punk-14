@@ -1,4 +1,3 @@
-using Content.Shared._CP14.ResearchTable;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
@@ -11,12 +10,18 @@ namespace Content.Shared._CP14.Skill.Components;
 /// Component that stores the skills learned by a player and their progress in the skill trees.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(CP14SharedSkillSystem), typeof(CP14SharedResearchSystem))]
+[Access(typeof(CP14SharedSkillSystem))]
 public sealed partial class CP14SkillStorageComponent : Component
 {
     /// <summary>
+    /// Skill trees displayed in the skill tree interface. Only skills from these trees can be learned by this player.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<CP14SkillTreePrototype>> AvailableSkillTrees = new();
+
+    /// <summary>
     /// Tracks skills that are learned without spending memory points.
-    /// the skills that are here are DUBLED in the LearnedSkills, 
+    /// the skills that are here are DOUBLED in the LearnedSkills,
     /// </summary>
     [DataField, AutoNetworkedField]
     public List<ProtoId<CP14SkillPrototype>> FreeLearnedSkills = new();

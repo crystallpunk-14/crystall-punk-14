@@ -56,3 +56,22 @@
         density: 1000
         hard: false
 
+- type: entity
+  parent: CP14RoundLeaver
+  id: CP14RoundLeaverDarkFog
+  components:
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+      - state: spookysmoke
+        color: "#793a80dd"
+        map: [base]
+    - type: OptionsVisualizer
+      visuals:
+        base:
+        - options: Default
+          data: { state: spookysmoke }
+        - options: ReducedMotion
+          data: { state: spookysmoke_static }

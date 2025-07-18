@@ -11,7 +11,7 @@ public sealed class CP14WeatherData
     public ProtoId<WeatherPrototype>? Visuals { get; set; } = null;
 
     [DataField]
-    public MinMax Duration { get; set; } = new(30, 300);
+    public MinMax Duration { get; set; } = new(120, 600);
 
     [DataField]
     public float Weight { get; set; } = 1f;

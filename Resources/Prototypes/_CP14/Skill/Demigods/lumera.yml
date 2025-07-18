@@ -1,0 +1,167 @@
+# T1
+
+- type: cp14Skill
+  id: LumeraT1
+  skillUiPosition: 1, 0
+  tree: GodLumera
+  name: cp14-skill-lumera-t1-name
+  learnCost: 0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: t1
+
+- type: cp14Skill
+  id: LumeraTouch
+  skillUiPosition: 0, 3
+  tree: GodLumera
+  learnCost: 0.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: touch
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraTouch
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
+- type: cp14Skill
+  id: LumeraRenounce
+  skillUiPosition: 2, 3
+  tree: GodLumera
+  learnCost: 0.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: renounce
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraRenounce
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
+- type: cp14Skill
+  id: LumeraMindScan
+  name: cp14-skill-lumera-mind-scan-name
+  desc: cp14-skill-lumera-mind-scan-desc
+  skillUiPosition: 0, 5
+  tree: GodLumera
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mind_scan
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CP14SkillScanner
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
+- type: cp14Skill
+  id: LumeraMagicVision
+  skillUiPosition: 2, 5
+  tree: GodLumera
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_vision
+  effects:
+  - !type:AddAction
+    action: CP14ActionToggleMagicVision
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
+# T2
+
+- type: cp14Skill
+  id: LumeraT2
+  skillUiPosition: 7, 0
+  tree: GodLumera
+  name: cp14-skill-lumera-t2-name
+  learnCost: 0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: t2
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+  - !type:GodFollowerPercentage
+    percentage: 0.25
+
+- type: cp14Skill
+  id: LumeraDarkMist
+  skillUiPosition: 6, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mist
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraDarkmist
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+
+- type: cp14Skill
+  id: LumeraMoonStrike
+  skillUiPosition: 8, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: moon_beam
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMoonStrike
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+
+# T3
+
+- type: cp14Skill
+  id: LumeraT3
+  skillUiPosition: 13, 0
+  tree: GodLumera
+  name: cp14-skill-lumera-t3-name
+  learnCost: 0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: t3
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT2
+  - !type:GodFollowerPercentage
+    percentage: 0.5
+
+- type: cp14Skill
+  id: LumeraMindUpgrade
+  skillUiPosition: 12, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: mind_upgrade
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMindUpgrade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT3
+
+- type: cp14Skill
+  id: LumeraMindDegrade
+  skillUiPosition: 14, 3
+  tree: GodLumera
+  learnCost: 1.0
+  icon:
+    sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+    state: wrath
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellGodLumeraMindDegrade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT3

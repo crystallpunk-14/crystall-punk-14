@@ -83,6 +83,8 @@
   - type: Body
     prototype: CP14Silva
     requiredLegs: 2
+  - type: CP14AuraImprint
+    imprintColor: "#31cc3b"
   - type: Bloodstream
     bloodReagent: CP14BloodFlowerSap #Lol
   - type: Inventory

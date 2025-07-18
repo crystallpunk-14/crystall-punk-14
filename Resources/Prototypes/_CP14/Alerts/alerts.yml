@@ -48,3 +48,11 @@
   name: alerts-hunger-name
   description: alerts-hunger-desc
 
+- type: alert
+  id: CP14DivineOffer
+  icons:
+  - sprite: /Textures/_CP14/Interface/Alerts/divine_offer.rsi
+    state: offer
+  name: cp14-alert-offer
+  description: cp14-alert-offer-desc
+  clickEvent: !type:CP14BreakDivineOfferEvent

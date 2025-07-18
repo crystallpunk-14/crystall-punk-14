@@ -8,9 +8,14 @@
       edges:
         - to: CP14RoofWooden
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 1
               doAfter: 2
+        - to: CP14RoofWoodenBirch
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 1
+            doAfter: 2
 
     - node: CP14RoofWooden
       entity: CP14RoofWooden
@@ -24,6 +29,19 @@
           steps:
             - tool: Prying
               doAfter: 2
+
+    - node: CP14RoofWoodenBirch
+      entity: CP14RoofWoodenBirch
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 1
+        - !type:DeleteEntity { }
+        steps:
+        - tool: Prying
+          doAfter: 2
 
 - type: constructionGraph
   id: CP14RoofStone

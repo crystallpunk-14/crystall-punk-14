@@ -45,3 +45,15 @@ cp14-reagent-effect-guidebook-plant-remove-energy =
         [1] Поглощает {$amount} энергии растения
         *[other] поглотить {$amount} энергии растения
     }
+
+cp14-reagent-effect-guidebook-stamina-add =
+    { $chance ->
+        [1] Восстанавливает {$amount} единиц стамины
+        *[other] восстановить {$amount} единиц стамины
+    }
+
+cp14-reagent-effect-guidebook-stamina-remove =
+    { $chance ->
+        [1] Выжигает {$amount} единиц стамины
+        *[other] выжечь {$amount} единиц стамины
+    }

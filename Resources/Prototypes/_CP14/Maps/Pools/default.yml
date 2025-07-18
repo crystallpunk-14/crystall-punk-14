@@ -2,6 +2,7 @@
   id: DefaultMapPool
   maps:
    - Comoss
+   - Venicialis
    #- Frigid_Coast
 
 - type: gameMapPool

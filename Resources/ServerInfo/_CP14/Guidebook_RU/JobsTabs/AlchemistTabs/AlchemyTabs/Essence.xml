@@ -34,6 +34,7 @@
 ## Эссенции второго сложения:
 <Box>
 <GuideEntityEmbed Entity="CP14EssenceMagic"/>
+<GuideEntityEmbed Entity="CP14EssenceBeast"/>
 </Box>
 <GuideReagentGroupEmbed Group="CP14MagicEssenceT2"/>
 

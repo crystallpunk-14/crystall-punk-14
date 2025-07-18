@@ -1,0 +1,43 @@
+# TODO remove amulets from the game and replace with something not-wearable visually
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: CP14ClothingJewelleryBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: CP14ClothingJewelleryBase
+  id: CP14ClothingCloakAmuletGold
+  name: gold amulet
+  description: A gold amulet, a valuable trinket.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/Amulet/amulet.rsi
+    layers:
+    - state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 5
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: CP14ClothingJewelleryBase
+  id: CP14ClothingCloakAmuletMana
+  name: strange amulet
+  description: A gold amulet with a magical stone inside.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/Amulet/amulet_mana.rsi
+    layers:
+    - state: icon
+    - state: amethyst_stone
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 5
+  - type: StaticPrice
+    price: 30

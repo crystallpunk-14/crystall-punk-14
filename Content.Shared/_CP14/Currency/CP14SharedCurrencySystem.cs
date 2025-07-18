@@ -14,8 +14,7 @@ public partial class CP14SharedCurrencySystem : EntitySystem
     {
         var total = currency;
 
-        if (total <= 0)
-            return string.Empty;
+        var sb = new StringBuilder();
 
         var gp = total / 100;
         total %= 100;
@@ -25,14 +24,15 @@ public partial class CP14SharedCurrencySystem : EntitySystem
 
         var cp = total;
 
-        var sb = new StringBuilder();
-
         if (gp > 0)
-            sb.Append( " " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp)));
+            sb.Append(" " + Loc.GetString("cp14-currency-examine-gp", ("coin", gp)));
         if (sp > 0)
-            sb.Append( " " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp)));
+            sb.Append(" " + Loc.GetString("cp14-currency-examine-sp", ("coin", sp)));
         if (cp > 0)
-            sb.Append( " " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp)));
+            sb.Append(" " + Loc.GetString("cp14-currency-examine-cp", ("coin", cp)));
+        if (gp <= 0 && sp <= 0 && cp <= 0)
+            sb.Append(" " + Loc.GetString("cp14-trading-empty-price"));
+            return sb.ToString();
 
         return sb.ToString();
     }

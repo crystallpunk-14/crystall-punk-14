@@ -11,7 +11,7 @@
       shader: unshaded
   - type: PointLight
     color: "#f7f00c"
-    energy: 5
+    energy: 2
     radius: 1.8
   - type: SolutionContainerManager
     solutions:
@@ -28,13 +28,12 @@
         Blunt: 3
         Shock: 3
   - type: CP14SpellEffectOnHit
-    prob: 0.15
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Electrocute
-        electrocuteTime: 0.5
-        electrocuteDamageScale: 1
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -10
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ElectrifiedEffect
@@ -98,6 +97,6 @@
       - CP14ElectrifiedEffect
     - !type:CP14SpellApplyEntityEffect
       effects:
-      - !type:Electrocute
-        electrocuteTime: 2
-        electrocuteDamageScale: 1
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -30

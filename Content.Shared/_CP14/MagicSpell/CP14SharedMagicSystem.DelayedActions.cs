@@ -11,7 +11,7 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeDelayedActions()
     {
         SubscribeLocalEvent<CP14DelayedInstantActionEvent>(OnInstantAction);
-        SubscribeLocalEvent<CP14DelayedEntityWorldTargetActionEvent>(OnEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14DelayedWorldTargetActionEvent>(OnWorldTargetAction);
         SubscribeLocalEvent<CP14DelayedEntityTargetActionEvent>(OnEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14DelayedInstantActionDoAfterEvent>(OnDelayedInstantActionDoAfter);
@@ -54,7 +54,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(action, ref endEv);
 
         if (cooldown is not null)
-            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
+            _action.SetCooldown(action.Owner, TimeSpan.FromSeconds(cooldown.Value));
     }
 
     private bool UseDelayedAction(ICP14DelayedMagicEffect delayedEffect, Entity<CP14MagicEffectComponent> action, DoAfterEvent doAfter, EntityUid performer, EntityUid? target = null, EntityCoordinates? worldTarget = null)
@@ -108,7 +108,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnEntityWorldTargetAction(CP14DelayedEntityWorldTargetActionEvent args)
+    private void OnWorldTargetAction(CP14DelayedWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -120,11 +120,11 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14DelayedEntityWorldTargetActionDoAfterEvent(
-            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetCoordinates(args.Target),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
 
-        if (!UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Entity, args.Coords))
+        if (!UseDelayedAction(delayedEffect, (args.Action, magicEffect), doAfter, args.Performer, args.Entity, args.Target))
             return;
 
         args.Handled = true;

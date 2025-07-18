@@ -13,8 +13,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesIronPlate
-    - GreaveIronPlate
+    - CP14ModularCuissesIronPlate
+    - CP14ModularGreaveIronPlate
 
 - type: entity
   id: CP14ArmorGoldCuirassPresets
@@ -34,8 +34,8 @@
       color: "#ffaf47"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesGoldPlate
-    - GreaveGoldPlate
+    - CP14ModularCuissesGoldPlate
+    - CP14ModularGreaveGoldPlate
 
 - type: entity
   id: CP14ArmorCopperCuirassPresets
@@ -55,8 +55,8 @@
       color: "#bd712f"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesCopperPlate
-    - GreaveCopperPlate
+    - CP14ModularCuissesCopperPlate
+    - CP14ModularGreaveCopperPlate
 
 - type: entity
   id: CP14ArmorMithrilCuirassPresets
@@ -76,8 +76,8 @@
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesMithrilPlate
-    - GreaveMithrilPlate
+    - CP14ModularCuissesMithrilPlate
+    - CP14ModularGreaveMithrilPlate
 
 - type: entity
   id: CP14ArmorIronChainmailPresets
@@ -94,8 +94,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesIronChainmail
-    - GreaveIronChainmail
+    - CP14ModularCuissesIronChainmail
+    - CP14ModularGreaveIronChainmail
 
 - type: entity
   id: CP14ArmorMithrilChainmailPresets
@@ -115,5 +115,5 @@
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - CuissesMithrilChainmail
-    - GreaveMithrilChainmail
+    - CP14ModularCuissesMithrilChainmail
+    - CP14ModularGreaveMithrilChainmail

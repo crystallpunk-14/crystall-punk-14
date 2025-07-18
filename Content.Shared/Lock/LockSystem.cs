@@ -300,7 +300,7 @@ public sealed class LockSystem : EntitySystem
     {
         //CrystallEdge Lock System Adapt
 
-        //if (!args.CanAccess || !args.CanInteract)
+        //if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract)
         //    return;
         //
         //AlternativeVerb verb = new()

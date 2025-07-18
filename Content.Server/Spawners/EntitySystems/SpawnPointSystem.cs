@@ -32,6 +32,15 @@ public sealed class SpawnPointSystem : EntitySystem
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
+            //CP14 always spawn gods on gods spawnpoints
+            if (spawnPoint.SpawnType == SpawnPointType.Unset && (args.Job == null || spawnPoint.Job == args.Job))
+            {
+                possiblePositions.Clear();
+                possiblePositions.Add(xform.Coordinates);
+                break;
+            }
+            //CP14end
+
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
             {
                 possiblePositions.Add(xform.Coordinates);

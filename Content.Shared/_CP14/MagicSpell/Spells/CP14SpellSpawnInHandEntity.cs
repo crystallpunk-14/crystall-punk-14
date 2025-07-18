@@ -23,7 +23,7 @@ public sealed partial class CP14SpellSpawnInHandEntity : CP14SpellEffect
 
         foreach (var spawn in Spawns)
         {
-            var item = entManager.SpawnAtPosition(spawn, transformComponent.Coordinates);
+            var item = entManager.PredictedSpawnAtPosition(spawn, transformComponent.Coordinates);
             if (!handSystem.TryPickupAnyHand(args.Target.Value, item) && DeleteIfCantPickup)
                 entManager.QueueDeleteEntity(item);
         }

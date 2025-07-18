@@ -13,6 +13,8 @@
         Quantity: 3
       - ReagentId: Blood
         Quantity: 10
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -30,6 +32,8 @@
         Quantity: 10
       - ReagentId: Blood
         Quantity: 20
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -47,6 +51,8 @@
         Quantity: 5
       - ReagentId: Blood
         Quantity: 10
+  - type: StaticPrice
+    price: 0
 
 - type: entity
   categories: [ HideSpawnMenu ]

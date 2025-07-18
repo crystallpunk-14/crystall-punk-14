@@ -1,5 +1,6 @@
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Nutrition.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -16,6 +17,9 @@ public sealed partial class RefillSolutions : CP14WeatherEffect
             return;
 
         if (!entManager.TryGetComponent<CP14WeatherRefillableComponent>(target, out var refillable))
+            return;
+
+        if (entManager.TryGetComponent<OpenableComponent>(target, out var openable) && !openable.Opened)
             return;
 
         var solutionSystem = entManager.System<SharedSolutionContainerSystem>();

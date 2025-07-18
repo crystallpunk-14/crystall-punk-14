@@ -21,7 +21,7 @@ public abstract class CP14SharedNightVisionSystem : EntitySystem
 
     protected virtual void OnRemove(Entity<CP14NightVisionComponent> ent, ref ComponentRemove args)
     {
-        _actions.RemoveAction(ent, ent.Comp.ActionEntity);
+        _actions.RemoveAction(ent.Owner, ent.Comp.ActionEntity);
     }
 }
 

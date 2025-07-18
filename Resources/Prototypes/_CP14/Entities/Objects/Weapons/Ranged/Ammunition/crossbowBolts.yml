@@ -4,6 +4,11 @@
   categories: [ ForkFiltered ]
   abstract: true
   components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
   - type: Item
     size: Tiny
     shape:
@@ -13,19 +18,35 @@
     - CP14CrossbowBolt
 
 - type: entity
+  parent: BaseArrow
+  id: CP14BaseBigCrossbolt
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Tag
+    tags:
+    - CP14BigCrossbowBolt
+
+- type: entity
   id: CP14CrossboltIron
   parent: CP14BaseCrossbolt
   name: iron crossbow bolt
   description: Rod with a pointed spike in iron. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 20
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
     - state: solution1
@@ -33,7 +54,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 3
+      CP14Iron: 2
 
 - type: entity
   id: CP14CrossboltGold
@@ -42,13 +63,10 @@
   description: Rod with a pointed spike in gold. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 15
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#ffe269"
@@ -57,7 +75,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Gold: 3
+      CP14Gold: 2
 
 - type: entity
   id: CP14CrossboltCopper
@@ -66,13 +84,10 @@
   description: Rod with a pointed spike in copper. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 15
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#e28f08"
@@ -81,7 +96,7 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Copper: 3
+      CP14Copper: 2
 
 - type: entity
   id: CP14CrossboltMithril
@@ -90,13 +105,10 @@
   description: Rod with a pointed spike in mithril. No plumage, they're not bows.
   components:
   - type: Projectile
-    deleteOnCollide: false
-    onlyCollideWhenShot: true
     damage:
       types:
         Piercing: 25
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
     layers:
     - state: rod
       color: "#38f0b3"
@@ -105,4 +117,75 @@
       visible: false
   - type: PhysicalComposition
     materialComposition:
-      CP14Mithril: 3
+      CP14Mithril: 2
+
+- type: entity
+  id: CP14BigCrossboltIron
+  parent: CP14BaseBigCrossbolt
+  name: iron big crossbow bolt
+  description: A large rod without plumage, for large crossbows. 
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+  - type: Sprite
+    layers:
+    - state: big_rod
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 5
+
+- type: entity
+  id: CP14BigCrossboltGold
+  parent: CP14BaseBigCrossbolt
+  name: gold big crossbow bolt
+  description: A large rod without plumage, for large crossbows. 
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: "#ffe269"
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Gold: 5
+
+- type: entity
+  id: CP14BigCrossboltCopper
+  parent: CP14BaseBigCrossbolt
+  name: copper big crossbow bolt
+  description: A large rod without plumage, for large crossbows. 
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 25
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: "#e28f08"
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 5
+
+- type: entity
+  id: CP14BigCrossboltMithril
+  parent: CP14BaseBigCrossbolt
+  name: mithril big crossbow bolt
+  description: A large rod without plumage, for large crossbows. 
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 40
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: "#38f0b3"
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Mithril: 5

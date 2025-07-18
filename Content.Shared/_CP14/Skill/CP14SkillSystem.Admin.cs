@@ -51,58 +51,16 @@ public abstract partial class CP14SharedSkillSystem
 
         var target = args.Target;
 
-        //Add Skill
-        foreach (var skill in _allSkills)
-        {
-            if (ent.Comp.LearnedSkills.Contains(skill))
-                continue;
-
-            var name = Loc.GetString(GetSkillName(skill));
-            args.Verbs.Add(new Verb
-            {
-                Text = name,
-                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
-                Category = VerbCategory.CP14AdminSkillAdd,
-                Icon = skill.Icon,
-                Act = () =>
-                {
-                    TryAddSkill(target, skill);
-                },
-            });
-        }
-
-        //Remove Skill
-        foreach (var skill in ent.Comp.LearnedSkills)
-        {
-            if (!_proto.TryIndex(skill, out var indexedSkill))
-                continue;
-
-            var name = Loc.GetString(GetSkillName(skill));
-            args.Verbs.Add(new Verb
-            {
-                Text = name,
-                Message = name + ": " + Loc.GetString(GetSkillDescription(skill)),
-                Category = VerbCategory.CP14AdminSkillRemove,
-                Icon = indexedSkill.Icon,
-                Act = () =>
-                {
-                    TryRemoveSkill(target, skill);
-                },
-            });
-        }
-
         //Reset/Remove All Skills
         args.Verbs.Add(new Verb
         {
             Text = "Reset skills",
             Message = "Remove all learned skills",
-            Category = VerbCategory.CP14AdminSkillRemove,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_CP14/Interface/Misc/reroll.rsi"), "reroll"),
             Act = () =>
             {
                 TryResetSkills(target);
             },
         });
-
     }
 }

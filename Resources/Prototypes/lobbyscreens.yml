@@ -12,8 +12,8 @@
   background: /Textures/_CP14/LobbyScreens/tiefling.webp
 
 - type: lobbyBackground
-  id: CuteCat
-  background: /Textures/_CP14/LobbyScreens/cutecat.webp
+  id: WeRich
+  background: /Textures/_CP14/LobbyScreens/we_rich.webp
 
 - type: lobbyBackground
   id: GobWay
@@ -22,3 +22,7 @@
 - type: lobbyBackground
   id: Angel
   background: /Textures/_CP14/LobbyScreens/angel.webp
+
+- type: lobbyBackground
+  id: Carcatoro
+  background: /Textures/_CP14/LobbyScreens/carcatoro.webp

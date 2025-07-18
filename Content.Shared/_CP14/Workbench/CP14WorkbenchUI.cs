@@ -16,39 +16,25 @@ public enum CP14WorkbenchUiKey
 }
 
 [Serializable, NetSerializable]
-public sealed class CP14WorkbenchUiCraftMessage : BoundUserInterfaceMessage
+public sealed class CP14WorkbenchUiCraftMessage(ProtoId<CP14WorkbenchRecipePrototype> recipe)
+    : BoundUserInterfaceMessage
 {
-    public readonly ProtoId<CP14WorkbenchRecipePrototype> Recipe;
-
-    public CP14WorkbenchUiCraftMessage(ProtoId<CP14WorkbenchRecipePrototype> recipe)
-    {
-        Recipe = recipe;
-    }
+    public readonly ProtoId<CP14WorkbenchRecipePrototype> Recipe = recipe;
 }
 
 
 [Serializable, NetSerializable]
-public sealed class CP14WorkbenchUiRecipesState : BoundUserInterfaceState
+public sealed class CP14WorkbenchUiRecipesState(List<CP14WorkbenchUiRecipesEntry> recipes) : BoundUserInterfaceState
 {
-    public readonly List<CP14WorkbenchUiRecipesEntry> Recipes;
-
-    public CP14WorkbenchUiRecipesState(List<CP14WorkbenchUiRecipesEntry> recipes)
-    {
-        Recipes = recipes;
-    }
+    public readonly List<CP14WorkbenchUiRecipesEntry> Recipes = recipes;
 }
 
 [Serializable, NetSerializable]
-public readonly struct CP14WorkbenchUiRecipesEntry : IEquatable<CP14WorkbenchUiRecipesEntry>
+public readonly struct CP14WorkbenchUiRecipesEntry(ProtoId<CP14WorkbenchRecipePrototype> protoId, bool craftable)
+    : IEquatable<CP14WorkbenchUiRecipesEntry>
 {
-    public readonly ProtoId<CP14WorkbenchRecipePrototype> ProtoId;
-    public readonly bool Craftable;
-
-    public CP14WorkbenchUiRecipesEntry(ProtoId<CP14WorkbenchRecipePrototype> protoId, bool craftable)
-    {
-        ProtoId = protoId;
-        Craftable = craftable;
-    }
+    public readonly ProtoId<CP14WorkbenchRecipePrototype> ProtoId = protoId;
+    public readonly bool Craftable = craftable;
 
     public int CompareTo(CP14WorkbenchUiRecipesEntry other)
     {

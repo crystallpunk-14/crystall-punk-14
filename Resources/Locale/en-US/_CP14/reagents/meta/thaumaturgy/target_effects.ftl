@@ -55,6 +55,12 @@ cp14-reagent-desc-basic-heal-mana = A substance that causes a rapid regeneration
 cp14-reagent-name-basic-damage-mana = Antimagic solution
 cp14-reagent-desc-basic-damage-mana = A substance that rapidly drains all magical energy from the body.
 
+cp14-reagent-name-basic-heal-stam = Refreshing solution
+cp14-reagent-desc-basic-heal-stam = A substance that causes a rapid regeneration of stamina in the body.
+
+cp14-reagent-name-basic-damage-stam = Exhausting solution
+cp14-reagent-desc-basic-damage-stam = A substance that rapidly drains all stamina from the body.
+
 cp14-reagent-name-basic-speed-up = Accelerating solution
 cp14-reagent-desc-basic-speed-up = Increases muscle tone, allowing creatures to move and react faster than normal.
 

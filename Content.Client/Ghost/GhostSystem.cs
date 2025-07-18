@@ -135,8 +135,6 @@ namespace Content.Client.Ghost
             _actions.RemoveAction(uid, component.ToggleGhostsActionEntity);
             //_actions.RemoveAction(uid, component.ToggleGhostHearingActionEntity); //Dont need in CP14
             //CP14
-            _actions.RemoveAction(uid, component.CP14ZLevelUpActionEntity);
-            _actions.RemoveAction(uid, component.CP14ZLevelDownActionEntity);
             _actions.RemoveAction(uid, component.CP14ToggleRoofActionEntity);
             //CP14 end
 

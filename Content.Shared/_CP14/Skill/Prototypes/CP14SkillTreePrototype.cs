@@ -41,7 +41,4 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
 
     [DataField]
     public SoundSpecifier LearnSound = new SoundCollectionSpecifier("CP14LearnSkill");
-
-    [DataField]
-    public SpriteSpecifier? Icon = null;
 }

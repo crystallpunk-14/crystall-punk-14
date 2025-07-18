@@ -1,6 +1,5 @@
 using Content.Server._CP14.GameTicking.Rules;
 using Content.Shared._CP14.WeatherControl;
-using Content.Shared.Destructible.Thresholds;
 
 namespace Content.Server._CP14.WeatherControl;
 

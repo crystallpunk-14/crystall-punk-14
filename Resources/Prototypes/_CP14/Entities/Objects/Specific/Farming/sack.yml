@@ -1,8 +1,8 @@
 - type: entity
-  name: sack
+  name: produce sack
   id: CP14SackFarming
   parent: BaseStorageItem
-  description: A bag for various fruits, vegetables, plants and anything else that grows in the bed.
+  description: A bag for various fruits, vegetables, plants and anything else that grows in the garden.
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
@@ -21,6 +21,9 @@
         - CP14FarmFood
         - CP14FitInMortar
   - type: Dumpable
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 35
 
 - type: entity
   id: CP14SackFarmingVegetables
@@ -63,8 +66,6 @@
 
 - type: entity
   id: CP14SackFarmingWheat
-  name: seed sack
-  description: Sack for various plant seeds.
   parent: CP14SackFarming
   suffix: Wheat
   components:
@@ -82,7 +83,8 @@
 - type: entity
   id: CP14SackFarmingSeed
   parent: CP14SackFarming
-  suffix: Seed
+  name: seed sack
+  description: A sack for various plant seeds.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Storage/sack.rsi
@@ -98,6 +100,9 @@
     whitelist:
       tags:
         - CP14FarmSeed
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 25
 
 - type: entity
   id: CP14SackFarmingSeedFull
@@ -137,4 +142,3 @@
       - id: CP14SeedCotton
         amount: 1
         prob: 0.4
-

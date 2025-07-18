@@ -1,4 +1,4 @@
-﻿[game]
+[game]
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
@@ -42,3 +42,6 @@ see_own_notes = true
 random_characters = true
 random_species_weights = ""
 ssd_sleep_time = 3600
+
+[server]
+rules_file = "CP14Rules"

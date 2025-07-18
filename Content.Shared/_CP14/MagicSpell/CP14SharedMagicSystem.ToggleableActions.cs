@@ -3,6 +3,7 @@ using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.DoAfter;
 using Robust.Shared.Map;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.MagicSpell;
 
@@ -11,7 +12,7 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeToggleableActions()
     {
         SubscribeLocalEvent<CP14ToggleableInstantActionEvent>(OnToggleableInstantAction);
-        SubscribeLocalEvent<CP14ToggleableEntityWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
+        SubscribeLocalEvent<CP14ToggleableWorldTargetActionEvent>(OnToggleableEntityWorldTargetAction);
         SubscribeLocalEvent<CP14ToggleableEntityTargetActionEvent>(OnToggleableEntityTargetAction);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14ToggleableInstantActionDoAfterEvent>(OnToggleableInstantActionDoAfterEvent);
@@ -106,8 +107,18 @@ public abstract partial class CP14SharedMagicSystem
 
     private void EndToggleableAction(Entity<CP14MagicEffectComponent> action, EntityUid performer, float? cooldown = null)
     {
-        if (cooldown is not null)
-            _action.CP14StartCustomDelay(action, TimeSpan.FromSeconds(cooldown.Value));
+        //This is an extremely dirty hack. I added it only because I know that in the coming weeks we will be rewriting this entire system.
+        // But until then, the game just needs to work as intended. The refactoring of actions hit us all hard...
+        //The main problem is that my stupid spell system has its own separate cooldown, which works independently of the official system (to support doAfters).
+        //And at this point in the code, the cooldown was first set by my system, and then reset to 0 by the official system.
+        //Previously, I edited the official system a little so that it would not reset the cooldowns, but I don't want to repeat this after refactoring the actions.
+        //So I just delay installing the cooldown from my fucked-up system for a split second. This is evil! And we will destroy this evil!
+        Timer.Spawn(50,
+            () =>
+            {
+                if (cooldown is not null)
+                    _action.SetCooldown(action.Owner, TimeSpan.FromSeconds(cooldown.Value));
+            });
         RemCompDeferred<CP14MagicEffectToggledComponent>(action);
 
         var endEv = new CP14EndCastMagicEffectEvent(performer);
@@ -149,7 +160,7 @@ public abstract partial class CP14SharedMagicSystem
     /// <summary>
     /// Target action used from hotkey event
     /// </summary>
-    private void OnToggleableEntityWorldTargetAction(CP14ToggleableEntityWorldTargetActionEvent args)
+    private void OnToggleableEntityWorldTargetAction(CP14ToggleableWorldTargetActionEvent args)
     {
         if (args.Handled)
             return;
@@ -161,10 +172,10 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var doAfter = new CP14ToggleableEntityWorldTargetActionDoAfterEvent(
-            EntityManager.GetNetCoordinates(args.Coords),
+            EntityManager.GetNetCoordinates(args.Target),
             EntityManager.GetNetEntity(args.Entity),
             args.Cooldown);
-        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Coords);
+        ToggleToggleableAction(toggleable, doAfter, (args.Action, magicEffect), args.Performer, args.Entity, args.Target);
 
         args.Handled = true;
     }

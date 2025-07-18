@@ -9,7 +9,7 @@ public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
         if (!nodes.TryGetValue(key, out var node))
             return false;
 
-        if (node.Scanned || node.Start)
+        if (node.Completed || node.Start)
             return false;
 
         //return false if no finished or start nodes near
@@ -22,7 +22,7 @@ public abstract partial class CP14SharedStationDemiplaneMapSystem : EntitySystem
             if (node1 != node && node2 != node)
                 continue;
 
-            if (node1.Scanned || node1.Start || node2.Scanned || node2.Start)
+            if (node1.Completed || node1.Start || node2.Completed || node2.Start)
             {
                 return true;
             }

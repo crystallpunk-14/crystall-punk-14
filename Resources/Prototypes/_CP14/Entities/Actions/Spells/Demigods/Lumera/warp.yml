@@ -1,0 +1,13 @@
+- type: entity
+  id: CP14ActionSpellGodLumeraWarp
+  name: Fast travel
+  description: Allows you to quickly teleport to your altars and followers.
+  components:
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/DemigodSpells/lumera.rsi
+      state: warp
+    priority: -8
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent 
+      key: enum.CP14ReligionEntityUiKey.Key

@@ -1,0 +1,28 @@
+<religion:CP14ReligionEntityWindow
+    xmlns="https://spacestation14.io"
+    xmlns:religion="clr-namespace:Content.Client._CP14.Religion"
+    Title="{Loc 'cp14-god-ui-title'}"
+    SetSize="600 500"
+    MinSize="600 100">
+
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <Label Name="Altars" Text="{Loc 'cp14-god-ui-altars'}" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center" HorizontalExpand="True" HorizontalAlignment="Center"/>
+            <BoxContainer
+                Name="AltarsContainer"
+                Orientation="Vertical"
+                HorizontalExpand="True" />
+
+            <Label Name="Followers" Text="{Loc 'cp14-god-ui-follower'}" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center" HorizontalExpand="True" HorizontalAlignment="Center" Margin="0, 30, 0, 0"/>
+            <BoxContainer
+                Name="FollowersContainer"
+                Orientation="Vertical"
+                HorizontalExpand="True" />
+            </BoxContainer>
+        </ScrollContainer>
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+            <RichTextLabel Name="Status"/>
+        </BoxContainer>
+    </BoxContainer>
+</religion:CP14ReligionEntityWindow>

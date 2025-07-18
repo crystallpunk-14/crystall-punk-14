@@ -34,7 +34,7 @@
   groups:
   - CP14AlchemistHead #
   - CP14GeneralOuterClothing
-  - CP14AlchemistEyes #
+  - CP14GeneralEyes #
   - CP14AlchemistCloak #
   - CP14GeneralGloves
   - CP14GeneralShirt
@@ -85,6 +85,22 @@
   - CP14GeneralShoes
   - CP14GeneralVillagerHighBack
   - CP14GeneralTrinkets
+  - CP14GuardEquip
+
+- type: roleLoadout
+  id: JobCP14Investigator
+  groups:
+  - CP14InvestigatorHead
+  - CP14GeneralOuterClothing
+  - CP14GeneralEyes
+  - CP14InvestigatorCloak #
+  - CP14GeneralGloves
+  - CP14GuardShirt
+  - CP14GuardPants
+  - CP14GeneralShoes
+  - CP14GeneralBack
+  - CP14GeneralTrinkets
+  - CP14GuardEquip 
 
 - type: roleLoadout
   id: JobCP14Guard
@@ -99,6 +115,7 @@
   - CP14GeneralShoes
   - CP14GeneralVillagerBack
   - CP14GeneralTrinkets
+  - CP14GuardEquip
 
 - type: roleLoadout
   id: JobCP14Commandant

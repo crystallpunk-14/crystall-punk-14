@@ -26,6 +26,7 @@
       tags:
       - CP14CrossbowBolt
       - CP14Arrow
+      - CP14BigCrossbowBolt
   - type: Appearance
   - type: StorageContainerVisuals
     maxFillLevels: 3
@@ -74,3 +75,14 @@
     contents:
       - id: CP14CrossboltIron
         amount: 32
+
+- type: entity
+  parent: CP14ClothingBeltQuiver
+  id: CP14ClothingBeltQuiverBigCrossbolt
+  categories: [ ForkFiltered ]
+  suffix: Full. Iron. BigCrossbolt
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14BigCrossboltIron
+      amount: 16

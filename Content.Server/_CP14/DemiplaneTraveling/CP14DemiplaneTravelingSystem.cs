@@ -6,6 +6,7 @@ using Content.Server.Popups;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.DemiplaneTraveling;
+using Content.Shared._CP14.Religion.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Item;
 using Content.Shared.Movement.Pulling.Components;
@@ -57,6 +58,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             foreach (var ent in nearestEnts)
             {
                 if (HasComp<GhostComponent>(ent))
+                    continue;
+                if (HasComp<CP14ReligionEntityComponent>(ent)) //TODO: make some generic way to whitelist entities from teleporting
                     continue;
 
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))
@@ -113,6 +116,8 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
             foreach (var ent in nearestEnts)
             {
                 if (HasComp<GhostComponent>(ent))
+                    continue;
+                if (HasComp<CP14ReligionEntityComponent>(ent)) //TODO: make some generic way to whitelist entities from teleporting
                     continue;
 
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))

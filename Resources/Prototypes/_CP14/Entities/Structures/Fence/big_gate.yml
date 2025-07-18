@@ -77,6 +77,9 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14FenceGateBigWooden
+    node: CP14FenceGateBigWooden
 
 - type: entity
   parent: CP14FenceGateBigWooden
@@ -87,6 +90,9 @@
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
   - type: Icon
     sprite: _CP14/Structures/Fence/wooden_birch_big.rsi
+  - type: Construction
+    graph: CP14FenceGateBigWoodenBirch
+    node: CP14FenceGateBigWoodenBirch
 
 - type: entity
   parent:

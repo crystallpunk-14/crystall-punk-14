@@ -1,0 +1,107 @@
+# T1
+
+- type: cp14Skill
+  id: AthleticT1
+  skillUiPosition: 1, 0
+  tree: Athletic
+  name: cp14-skill-athletic-t1-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: athletic
+  effects:
+  - !type:AddManaStamina
+    additionalStamina: 25
+
+- type: cp14Skill
+  id: CP14ActionSpellSprint
+  skillUiPosition: 0, 2
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: sprint
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellSprint
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT1
+
+- type: cp14Skill
+  id: CP14ActionSpellSecondWind
+  skillUiPosition: 2, 2
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: second_wind
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellSecondWind
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT1
+
+# T2
+
+- type: cp14Skill
+  id: AthleticT2
+  skillUiPosition: 7, 0
+  tree: Athletic
+  name: cp14-skill-athletic-t2-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: athletic2
+  effects:
+  - !type:AddManaStamina
+    additionalStamina: 25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT1
+
+- type: cp14Skill
+  id: CP14ActionSpellDash
+  skillUiPosition: 6, 2
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: dash
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellDash
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT2
+
+- type: cp14Skill
+  id: CP14ActionSpellKick
+  skillUiPosition: 8, 2
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: kick
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellKick
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT2
+
+# T3
+
+- type: cp14Skill
+  id: AthleticT3
+  skillUiPosition: 13, 0
+  tree: Athletic
+  name: cp14-skill-athletic-t3-name
+  learnCost: 0.5
+  icon:
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: athletic3
+  effects:
+  - !type:AddManaStamina
+    additionalStamina: 25
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT2
+

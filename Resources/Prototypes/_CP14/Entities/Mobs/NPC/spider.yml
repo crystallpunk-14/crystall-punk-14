@@ -30,9 +30,9 @@
         - MobLayer
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatMole #TODO
+    - id: CP14FoodMeatMonster #TODO
       amount: 2
-    - id: CP14FoodMeatMoleLeg #TODO
+    - id: CP14FoodMeatMonsterLeg #TODO
       amount: 1
       prob: 0.6
       # TODO: Chitin drops
@@ -50,7 +50,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      90: Dead
+      40: Dead
   #- type: SolutionContainerManager
   #  solutions:
   #    melee:
@@ -77,7 +77,7 @@
   - type: IgnoreSpiderWeb
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CP14BloodAnimal
+    bloodReagent: CP14BloodMonster
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid

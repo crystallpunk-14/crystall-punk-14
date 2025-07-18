@@ -12,3 +12,6 @@ department-CP14Guard-desc = Protectors and warriors who oversee security and law
 
 department-CP14Artisan = Artisans
 department-CP14Artisan-desc = People who have learnt peaceful professions, people who help the settlement with their knowledge and skills.
+
+department-CP14Demigods = Patrons
+department-CP14Demigods-desc = Higher beings playing their own games, where ordinary creatures are merely pawns in their plans.

@@ -1,18 +1,25 @@
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.Religion.Components;
+using Content.Shared._CP14.Religion.Prototypes;
+using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell;
 
 public abstract partial class CP14SharedMagicSystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
+    [Dependency] private readonly SharedHandsSystem _hand = default!;
 
     private void InitializeChecks()
     {
@@ -22,12 +29,14 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
         SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
+        SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
+
     }
 
     /// <summary>
@@ -57,7 +66,7 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true) && _net.IsServer)
+        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true))
             _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
                 args.Performer,
                 args.Performer,
@@ -82,14 +91,7 @@ public abstract partial class CP14SharedMagicSystem
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
-            var freeHand = 0;
-            foreach (var hand in hands.Hands)
-            {
-                if (hand.Value.IsEmpty)
-                    freeHand++;
-            }
-
-            if (freeHand >= ent.Comp.FreeHandRequired)
+            if (_hand.CountFreeableHands((args.Performer, hands)) >= ent.Comp.FreeHandRequired)
                 return;
         }
 
@@ -148,6 +150,35 @@ public abstract partial class CP14SharedMagicSystem
         }
     }
 
+    private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent,
+        ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (!TryComp<CP14ReligionEntityComponent>(args.Performer, out var religionComp))
+            return;
+
+        var position = args.Position;
+
+        if (args.Target is not null)
+            position ??= Transform(args.Target.Value).Coordinates;
+
+        if (ent.Comp.OnlyInReligionZone)
+        {
+            if (position is null || !_god.InVision(position.Value, (args.Performer, religionComp)))
+            {
+                args.Cancel();
+            }
+        }
+
+        if (ent.Comp.OnlyOnFollowers)
+        {
+            if (args.Target is null || !TryComp<CP14ReligionFollowerComponent>(args.Target, out var follower) || follower.Religion != religionComp.Religion)
+            {
+                args.PushReason(Loc.GetString("cp14-magic-spell-target-god-follower"));
+                args.Cancel();
+            }
+        }
+    }
+
     private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14StartCastMagicEffectEvent args)
     {
@@ -163,9 +194,6 @@ public abstract partial class CP14SharedMagicSystem
     private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
         ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,
@@ -189,9 +217,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         var ev = new CP14SpellSpeechEvent
         {
             Performer = args.Performer,

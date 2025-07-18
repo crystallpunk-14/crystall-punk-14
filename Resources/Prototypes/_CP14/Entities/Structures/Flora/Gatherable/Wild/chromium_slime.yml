@@ -18,12 +18,11 @@
         world2: ""
         world3: ""
   - type: CP14PlantGatherable
+    gatherSound:
+      collection: FootstepSlime
     deleteAfterHarvest: true
-    toolWhitelist:
-      components:
-        - Hands
     loot:
       All: !type:GroupSelector
         children:
-        - id: CP14BloodFlower
+        - id: CP14ChromiumSlime
 
