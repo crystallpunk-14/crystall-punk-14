@@ -73,7 +73,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     {
         if (!_net.IsServer)
             return;
-        
+
         if (!TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
             return;
 
