@@ -9,7 +9,7 @@
   id: CP14ClothingExplorerBackpackT0
   name: Scout Pouch
   suffix: backpack T0
-  description: You wear this on your back and put items into it.
+  description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
@@ -32,7 +32,7 @@
   id: CP14ClothingExplorerBackpackT1
   name: Explorer Backpack
   suffix: Trail Bag
-  description: You wear this on your back and put items into it.
+  description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
@@ -55,7 +55,7 @@
   id: CP14ClothingExplorerBackpackT2
   name: Reliquary Backpack
   suffix: Explorer Pack
-  description: You wear this on your back and put items into it.
+  description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
@@ -73,13 +73,12 @@
     - 11,0,12,1
     - 11,3,12,5
 
-
 - type: entity
   parent: CP14ClothingExplorerBackpackT2
   id: CP14ClothingExplorerBackpackT3
   name: Artifact Hunter Rucksack
   suffix: backpack T3
-  description: You wear this on your back and put items into it.
+  description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi

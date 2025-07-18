@@ -10,9 +10,9 @@
 - type: entity
   parent: CP14ClothingBackpackBase
   id: CP14ClothingBackpackT0
-  name: Cargo Pouch
+  name: Sack
   suffix: backpack T0
-  description: You wear this on your back and put items into it.
+  description: A simple cloth sack with basic storage capacity. Lightweight but not very secure.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
@@ -24,9 +24,9 @@
 - type: entity
   parent: CP14ClothingBackpackT0
   id: CP14ClothingBackpackT1
-  name: Cargo Backpack
+  name: Backpack
   suffix: backpack T1
-  description: You wear this on your back and put items into it.
+  description: A standard backpack with decent storage space. Perfect for everyday use.
   components:
   - type: Sprite
     state: iconT1
@@ -37,9 +37,9 @@
 - type: entity
   parent: CP14ClothingBackpackT1
   id: CP14ClothingBackpackT2
-  name: Reinforced Rucksack
+  name: Extended Backpack
   suffix: backpack T2
-  description: You wear this on your back and put items into it.
+  description: An expanded backpack with increased capacity. Ideal for longer trips.
   components:
   - type: Sprite
     state: iconT2
@@ -52,9 +52,9 @@
 - type: entity
   parent: CP14ClothingBackpackT2
   id: CP14ClothingBackpackT3
-  name: Massive Haversack
+  name: Traveler Backpack
   suffix: backpack T3
-  description: You wear this on your back and put items into it.
+  description: A large, well-organized backpack designed for extensive traveling with multiple compartments.
   components:
   - type: Sprite
     state: iconT3
@@ -63,3 +63,52 @@
     - 0,0,8,1
     - 2,2,6,2
     - 0,3,8,6
+
+# ========================
+# Special
+# ========================
+
+- type: entity
+  parent: CP14ClothingBackpackT2
+  id: CP14ClothingBackpackReinforced
+  name: Reinforced Backpack
+  suffix: backpack T2
+  description: A durable backpack with reinforced stitching and materials for extra protection of your belongings.
+  components:
+  - type: Sprite
+    state: iconT2_reinforced
+  - type: Storage
+    grid:
+    - 1,0,5,0
+    - 1,0,6,2
+    - 0,4,2,5
+    - 1,6,2,6
+    - 4,4,6,5
+    - 4,6,5,6
+
+- type: entity
+  parent: CP14ClothingBackpackReinforced
+  id: CP14ClothingBackpackReinforcedGuard
+  name: Guard Backpack
+  suffix: backpack T2
+  description: A tactical backpack used by guards, featuring additional straps and compartments for equipment.
+  components:
+  - type: Sprite
+    state: iconT2_reinforced_guard
+
+- type: entity
+  parent: CP14ClothingBackpackT2
+  id: CP14ClothingBackpackCargo
+  name: Cargo Bag
+  suffix: backpack T2
+  description: A utilitarian cargo bag designed for heavy-duty use.
+  components:
+  - type: Sprite
+    state: iconT2_cargo
+  - type: Storage
+    grid:
+    - 3,0,4,0
+    - 2,1,5,2
+    - 1,3,6,3
+    - 0,4,7,5
+    - 1,6,6,6
