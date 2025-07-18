@@ -15,12 +15,11 @@
     solutions:
       food:
         maxVol: 20
-  - type: CP14FoodVisuals
-    displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement.rsi
-    solutionId: food
   - type: CP14FoodHolder
+    displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement.rsi
     foodType: Meal
     solutionId: food
+    canAcceptFood: true
   - type: Appearance
   - type: SolutionContainerVisuals
   - type: Food

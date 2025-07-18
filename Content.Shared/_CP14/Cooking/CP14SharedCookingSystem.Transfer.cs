@@ -14,25 +14,25 @@ public abstract partial class CP14SharedCookingSystem
     private void InitTransfer()
     {
         SubscribeLocalEvent<CP14FoodHolderComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<CP14FoodCookerComponent, AfterInteractEvent>(OnInteractUsing);
+        SubscribeLocalEvent<CP14FoodHolderComponent, InteractUsingEvent>(OnInteractUsing);
 
         SubscribeLocalEvent<CP14FoodCookerComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
     }
 
-    private void OnAfterInteract(Entity<CP14FoodHolderComponent> ent, ref AfterInteractEvent args)
+    private void OnInteractUsing(Entity<CP14FoodHolderComponent> target, ref InteractUsingEvent args)
     {
-        if (!TryComp<CP14FoodCookerComponent>(args.Target, out var cooker))
+        if (!TryComp<CP14FoodHolderComponent>(args.Used, out var used))
             return;
 
-        MoveFoodToHolder(ent, (args.Target.Value, cooker));
+        TransferFood(target, (args.Used, used));
     }
 
-    private void OnInteractUsing(Entity<CP14FoodCookerComponent> ent, ref AfterInteractEvent args)
+    private void OnAfterInteract(Entity<CP14FoodHolderComponent> ent, ref AfterInteractEvent args)
     {
-        if (!TryComp<CP14FoodHolderComponent>(args.Target, out var holder))
+        if (!TryComp<CP14FoodHolderComponent>(args.Target, out var target))
             return;
 
-        MoveFoodToHolder((args.Target.Value, holder), ent);
+        TransferFood(ent, (args.Target.Value, target));
     }
 
     private void OnInsertAttempt(Entity<CP14FoodCookerComponent> ent, ref ContainerIsInsertingAttemptEvent args)
@@ -40,7 +40,10 @@ public abstract partial class CP14SharedCookingSystem
         if (args.Cancelled)
             return;
 
-        if (ent.Comp.HoldFood)
+        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
+            return;
+
+        if (holder.FoodData is not null)
         {
             _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(ent).EntityName)), ent);
             args.Cancel();

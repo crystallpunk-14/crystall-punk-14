@@ -11,12 +11,12 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Cooking.Components;
 
+/// <summary>
+/// Prepares food from ingredients and places it in the FoodHolderComponent
+/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodCookerComponent : Component
 {
-    [DataField, AutoNetworkedField]
-    public bool HoldFood = false;
-
     [DataField(required: true)]
     public ProtoId<CP14FoodTypePrototype> FoodType;
 
@@ -65,6 +65,8 @@ public sealed partial class CP14FoodData
         Visuals = new List<PrototypeLayerData>(data.Visuals);
         Trash = new List<EntProtoId>(data.Trash);
         Flavors = new HashSet<LocId>(data.Flavors);
+        SliceProto = data.SliceProto;
+        SliceCount = data.SliceCount;
     }
 
     [DataField]
@@ -84,6 +86,12 @@ public sealed partial class CP14FoodData
 
     [DataField]
     public HashSet<LocId> Flavors = new();
+
+    [DataField]
+    public EntProtoId? SliceProto;
+
+    [DataField]
+    public int SliceCount = 5;
 }
 
 [Serializable, NetSerializable]

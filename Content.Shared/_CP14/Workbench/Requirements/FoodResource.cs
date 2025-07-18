@@ -9,6 +9,7 @@ using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Nutrition.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -29,16 +30,16 @@ public sealed partial class FoodResource : CP14WorkbenchCraftRequirement
         var solutionSys = entManager.System<SharedSolutionContainerSystem>();
         foreach (var ent in placedEntities)
         {
-            if (!entManager.TryGetComponent<CP14FoodVisualsComponent>(ent, out var foodVisuals))
+            if (!entManager.TryGetComponent<CP14FoodHolderComponent>(ent, out var foodHolder))
                 continue;
 
-            if (!entManager.HasComponent<CP14FoodHolderComponent>(ent))
+            if (!entManager.HasComponent<FoodComponent>(ent))
                 continue;
 
-            if (foodVisuals.FoodData?.CurrentRecipe != Recipe)
+            if (foodHolder.FoodData?.CurrentRecipe != Recipe)
                 continue;
 
-            if (!solutionSys.TryGetSolution(ent, foodVisuals.SolutionId, out _, out var solution))
+            if (!solutionSys.TryGetSolution(ent, foodHolder.SolutionId, out _, out var solution))
                 continue;
 
             if (solution.Volume < Count)
@@ -58,16 +59,16 @@ public sealed partial class FoodResource : CP14WorkbenchCraftRequirement
 
         foreach (var ent in placedEntities)
         {
-            if (!entManager.TryGetComponent<CP14FoodVisualsComponent>(ent, out var foodVisuals))
+            if (!entManager.TryGetComponent<CP14FoodHolderComponent>(ent, out var foodHolder))
                 continue;
 
-            if (!entManager.HasComponent<CP14FoodHolderComponent>(ent))
+            if (!entManager.HasComponent<FoodComponent>(ent))
                 continue;
 
-            if (foodVisuals.FoodData?.CurrentRecipe != Recipe)
+            if (foodHolder.FoodData?.CurrentRecipe != Recipe)
                 continue;
 
-            if (!solutionSys.TryGetSolution(ent, foodVisuals.SolutionId, out _, out var solution))
+            if (!solutionSys.TryGetSolution(ent, foodHolder.SolutionId, out _, out var solution))
                 continue;
 
             if (solution.Volume < Count)

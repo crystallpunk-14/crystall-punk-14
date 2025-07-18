@@ -23,10 +23,12 @@
     solutions:
       cooker:
         maxVol: 150
-  - type: CP14FoodVisuals
+  - type: CP14FoodHolder
+    foodType: Soup
     solutionId: cooker
     displacementRsiPath: _CP14/Objects/Consumable/Food/Soups/displacement_pot.rsi
     maxDisplacementFillLevels: 2
+    canGiveFood: true
   - type: CP14FoodCooker
     foodType: Soup
     solutionId: cooker

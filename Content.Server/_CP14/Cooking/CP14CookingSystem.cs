@@ -10,7 +10,6 @@ using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
 using Content.Shared._CP14.Temperature;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Nutrition.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Cooking;
@@ -25,30 +24,10 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
         SubscribeLocalEvent<CP14RandomFoodDataComponent, MapInitEvent>(OnRandomFoodMapInit);
 
-        SubscribeLocalEvent<CP14FoodVisualsComponent, SolutionContainerChangedEvent>(OnVisualsChanged);
         SubscribeLocalEvent<CP14FoodHolderComponent, SolutionContainerChangedEvent>(OnHolderChanged);
-        SubscribeLocalEvent<CP14FoodCookerComponent, SolutionContainerChangedEvent>(OnCookerChanged);
-    }
-
-    private void OnCookerChanged(Entity<CP14FoodCookerComponent> ent, ref SolutionContainerChangedEvent args)
-    {
-        if (args.Solution.Volume != 0)
-            return;
-
-        ent.Comp.HoldFood = false;
-        Dirty(ent);
     }
 
     private void OnHolderChanged(Entity<CP14FoodHolderComponent> ent, ref SolutionContainerChangedEvent args)
-    {
-        if (args.Solution.Volume != 0)
-            return;
-
-        ent.Comp.HoldFood = false;
-        Dirty(ent);
-    }
-
-    private void OnVisualsChanged(Entity<CP14FoodVisualsComponent> ent, ref SolutionContainerChangedEvent args)
     {
         if (args.Solution.Volume != 0)
             return;
@@ -74,19 +53,17 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         if (randomFood.FoodData.Desc is not null)
             _metaData.SetEntityDescription(ent, Loc.GetString(randomFood.FoodData.Desc));
 
-        var foodVisuals = EnsureComp<CP14FoodVisualsComponent>(ent);
         //Visuals
-        foodVisuals.FoodData = randomFood.FoodData;
+        holder.FoodData = randomFood.FoodData;
 
         //Some randomize
-        foreach (var layer in foodVisuals.FoodData.Visuals)
+        foreach (var layer in holder.FoodData.Visuals)
         {
             if (_random.Prob(0.5f))
                 layer.Scale = new Vector2(-1, 1);
         }
 
         Dirty(ent.Owner, holder);
-        Dirty(ent.Owner, foodVisuals);
     }
 
     protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)
