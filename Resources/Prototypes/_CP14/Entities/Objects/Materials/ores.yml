@@ -188,8 +188,8 @@
   id: CP14OreCoal1
   parent: BaseItem
   name: coal
-  description: delicious and burns well.
-  categories: [ ForkFiltered, DoNotMap ]
+  description: This is coal! It burns very well!
+  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Normal
@@ -227,7 +227,6 @@
 - type: entity
   id: CP14OreCoal5
   parent: CP14OreCoal1
-  categories: [ DoNotMap ]
   suffix: 5
   components:
   - type: Stack
@@ -236,7 +235,6 @@
 - type: entity
   id: CP14OreCoal10
   parent: CP14OreCoal1
-  categories: [ DoNotMap ]
   suffix: 10
   components:
   - type: Stack
