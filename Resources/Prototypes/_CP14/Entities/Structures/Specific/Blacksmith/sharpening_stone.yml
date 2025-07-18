@@ -16,7 +16,7 @@
   - type: ItemPlacer
     whitelist:
       components:
-        CP14Sharpened
+        - CP14Sharpened
   - type: Fixtures
     fixtures:
       fix1:
