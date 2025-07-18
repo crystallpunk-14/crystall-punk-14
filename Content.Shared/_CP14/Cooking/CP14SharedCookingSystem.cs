@@ -17,7 +17,6 @@ using Content.Shared.Fluids;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
-using Content.Shared.Throwing;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -108,22 +107,22 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
     /// <summary>
     /// Transfer food data from cooker to holder
     /// </summary>
-    private void TransferFood(Entity<CP14FoodHolderComponent> target, Entity<CP14FoodHolderComponent> source)
+    protected virtual bool TryTransferFood(Entity<CP14FoodHolderComponent> target, Entity<CP14FoodHolderComponent> source)
     {
         if (!source.Comp.CanGiveFood || !target.Comp.CanAcceptFood)
-            return;
+            return false;
 
         if (target.Comp.FoodType != source.Comp.FoodType)
-            return;
+            return false;
 
         if (source.Comp.FoodData is null)
-            return;
+            return false;
 
         if (!TryComp<FoodComponent>(target, out var holderFoodComp))
-            return;
+            return false;
 
         if (!_solution.TryGetSolution(source.Owner, source.Comp.SolutionId, out var cookerSoln, out var cookerSolution))
-            return;
+            return false;
 
         //Solutions
         if (_solution.TryGetSolution(target.Owner, holderFoodComp.Solution, out var holderSoln, out var solution))
@@ -132,7 +131,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             {
                 _popup.PopupEntity(Loc.GetString("cp14-cooking-popup-not-empty", ("name", MetaData(target).EntityName)),
                     target);
-                return;
+                return false;
             }
 
             _solution.TryTransferSolution(holderSoln.Value, cookerSolution, solution.MaxVolume);
@@ -164,6 +163,8 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         Dirty(source);
 
         _solution.UpdateChemicals(cookerSoln.Value);
+
+        return true;
     }
 
     private void ApplyFoodVisuals(Entity<CP14FoodHolderComponent> ent, CP14FoodData data)
@@ -257,18 +258,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
             return;
 
-        var newData = new CP14FoodData
-        {
-            Visuals = new List<PrototypeLayerData>(recipe.FoodData.Visuals),
-            Trash = new List<EntProtoId>(recipe.FoodData.Trash),
-            Flavors = new HashSet<LocId>(recipe.FoodData.Flavors),
-            Name = recipe.FoodData.Name,
-            Desc = recipe.FoodData.Desc,
-            CurrentRecipe = recipe
-        };
-
-        newData.Name = recipe.FoodData.Name;
-        newData.Desc = recipe.FoodData.Desc;
+        var newData = new CP14FoodData(recipe.FoodData);
 
         //Process entities
         foreach (var contained in container.ContainedEntities)

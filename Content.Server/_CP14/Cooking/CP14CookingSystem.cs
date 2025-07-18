@@ -5,6 +5,7 @@
 
 using System.Linq;
 using System.Numerics;
+using Content.Server.Nutrition.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Cooking;
 using Content.Shared._CP14.Cooking.Components;
@@ -25,6 +26,22 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         SubscribeLocalEvent<CP14RandomFoodDataComponent, MapInitEvent>(OnRandomFoodMapInit);
 
         SubscribeLocalEvent<CP14FoodHolderComponent, SolutionContainerChangedEvent>(OnHolderChanged);
+    }
+
+    protected override bool TryTransferFood(Entity<CP14FoodHolderComponent> target, Entity<CP14FoodHolderComponent> source)
+    {
+        if (base.TryTransferFood(target, source))
+        {
+            //Sliceable
+            if (source.Comp.FoodData?.SliceProto is not null)
+            {
+                var sliceable = EnsureComp<SliceableFoodComponent>(target);
+                sliceable.Slice = source.Comp.FoodData.SliceProto;
+                sliceable.TotalCount = source.Comp.FoodData.SliceCount;
+            }
+        }
+
+        return true;
     }
 
     private void OnHolderChanged(Entity<CP14FoodHolderComponent> ent, ref SolutionContainerChangedEvent args)
@@ -86,6 +103,17 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         TryTransformAll(ent);
 
         base.OnCookFinished(ent, ref args);
+
+        //Sliceable
+        if (TryComp<CP14FoodHolderComponent>(ent, out var holder) && ent.Comp.BecomeSliceable)
+        {
+            if (holder.FoodData?.SliceProto is not null)
+            {
+                var sliceable = EnsureComp<SliceableFoodComponent>(ent);
+                sliceable.Slice = holder.FoodData.SliceProto;
+                sliceable.TotalCount = holder.FoodData.SliceCount;
+            }
+        }
     }
 
     private void TryTransformAll(Entity<CP14FoodCookerComponent> ent)

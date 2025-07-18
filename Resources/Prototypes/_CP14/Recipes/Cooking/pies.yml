@@ -1,0 +1,12 @@
+- type: CP14CookingRecipe
+  id: InediblePie
+  foodType: Pie
+  foodData:
+    name: cp14-soup-recipe-pie-name
+    desc: cp14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Pies/misc.rsi
+      state: veg
+    sliceProto: CP14FoodPiePieceTrash
+  requirements:
+  - !type:AlwaysMet

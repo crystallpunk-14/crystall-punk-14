@@ -24,7 +24,7 @@ public abstract partial class CP14SharedCookingSystem
         if (!TryComp<CP14FoodHolderComponent>(args.Used, out var used))
             return;
 
-        TransferFood(target, (args.Used, used));
+        TryTransferFood(target, (args.Used, used));
     }
 
     private void OnAfterInteract(Entity<CP14FoodHolderComponent> ent, ref AfterInteractEvent args)
@@ -32,7 +32,7 @@ public abstract partial class CP14SharedCookingSystem
         if (!TryComp<CP14FoodHolderComponent>(args.Target, out var target))
             return;
 
-        TransferFood(ent, (args.Target.Value, target));
+        TryTransferFood(ent, (args.Target.Value, target));
     }
 
     private void OnInsertAttempt(Entity<CP14FoodCookerComponent> ent, ref ContainerIsInsertingAttemptEvent args)

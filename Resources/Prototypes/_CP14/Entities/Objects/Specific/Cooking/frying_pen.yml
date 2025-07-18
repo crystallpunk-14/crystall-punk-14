@@ -41,6 +41,9 @@
     displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement_pan.rsi
     maxDisplacementFillLevels: 2
     canGiveFood: true
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
   - type: CP14FoodCooker
     foodType: Meal
     solutionId: cooker
