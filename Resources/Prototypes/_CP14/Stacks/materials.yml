@@ -41,6 +41,13 @@
   maxCount: 20
 
 - type: stack
+  id: CP14SpruceWoodenPlanks
+  name: cp14-material-spruce-planks
+  spawn: CP14SpruceWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_spruce.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
   id: CP14Cloth
   name: cp14-stack-cloth
   spawn: CP14Cloth1

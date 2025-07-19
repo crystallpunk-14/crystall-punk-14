@@ -135,3 +135,62 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
+# Wooden spruce
+
+- type: entity
+  id: CP14WallFrameWoodenSpruce
+  parent: CP14WallFrameWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Construction
+    graph: CP14WallWoodenSpruce
+    node: CP14WallFrameWoodenSpruce
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SpruceWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14WallWoodenSpruce
+  parent: CP14WallWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Icon
+    sprite: _CP14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Construction
+    graph: CP14WallWoodenSpruce
+    node: CP14WallWoodenSpruce
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14SpruceWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14WallFrameWoodenSpruce
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
