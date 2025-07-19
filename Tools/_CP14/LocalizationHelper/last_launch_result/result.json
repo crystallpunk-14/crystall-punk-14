@@ -1665,25 +1665,25 @@
         "parent": "CP14RightFootHuman",
         "suffix": null
     },
-    "CP14ClothingBackpackLeather": {
-        "id": "CP14ClothingBackpackLeather",
+    "CP14ClothingBackpackBase": {
+        "id": "CP14ClothingBackpackBase",
         "name": "leather backpack",
         "description": "You wear this on your back and put items into it.",
-        "parent": "CP14ClothingBackpackBase",
+        "parent": "CP14ClothingBackContainerBase",
+        "suffix": null
+    },
+    "CP14ClothingExplorerBackpackBase": {
+        "id": "CP14ClothingExplorerBackpackBase",
+        "name": "leather backpack",
+        "description": "You wear this on yourself and put items into it.",
+        "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
     "CP14ClothingSatchelBase": {
         "id": "CP14ClothingSatchelBase",
-        "name": null,
-        "description": null,
-        "parent": "CP14ClothingBackpackBase",
-        "suffix": null
-    },
-    "CP14ClothingSatchelLeather": {
-        "id": "CP14ClothingSatchelLeather",
         "name": "leather satchel",
-        "description": "You wear this on your back and put items into it.",
-        "parent": "CP14ClothingSatchelBase",
+        "description": "You wear this on your shoulder and put items into it.",
+        "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
     "CP14ClothingBeltPouchPotions": {
@@ -10365,13 +10365,6 @@
         "description": "A clot of liquid held in the shape of a ball by magic",
         "parent": null,
         "suffix": "Water"
-    },
-    "CP14ClothingBackpackBase": {
-        "id": "CP14ClothingBackpackBase",
-        "name": null,
-        "description": null,
-        "parent": null,
-        "suffix": null
     },
     "CP14ClothingCloakMaidArpon": {
         "id": "CP14ClothingCloakMaidArpon",

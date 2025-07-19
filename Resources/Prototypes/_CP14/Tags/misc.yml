@@ -53,6 +53,9 @@
   id: CP14RecipeMeltingFurnace
 
 - type: Tag
+  id: CP14RecipeLeatherWorking
+
+- type: Tag
   id: CP14Rabbit
 
 - type: Tag

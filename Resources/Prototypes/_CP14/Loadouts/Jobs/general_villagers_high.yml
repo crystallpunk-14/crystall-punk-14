@@ -1,0 +1,24 @@
+# Back
+
+- type: loadoutGroup
+  id: CP14GeneralVillagerHighBack
+  name: cp14-loadout-general-villager-high-back
+  loadouts:
+  - CP14ClothingBackpackT2
+  - CP14ClothingSatchelT2
+  - CP14ClothingExplorerBackpackT2
+
+- type: loadout
+  id: CP14ClothingBackpackT2
+  equipment:
+    back: CP14ClothingBackpackT2
+
+- type: loadout
+  id: CP14ClothingSatchelT2
+  equipment:
+    back: CP14ClothingSatchelT2
+
+- type: loadout
+  id: CP14ClothingExplorerBackpackT2
+  equipment:
+    back: CP14ClothingExplorerBackpackT2

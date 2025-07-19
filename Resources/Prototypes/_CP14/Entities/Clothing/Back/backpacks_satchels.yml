@@ -1,0 +1,124 @@
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingSatchelBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,3
+    - 3,0,6,3
+    - 8,0,9,3
+
+- type: entity
+  parent: CP14ClothingSatchelBase
+  id: CP14ClothingSatchelT0
+  name: Pouch
+  suffix: backpack T0
+  description: A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.
+  components:
+  - type: Sprite
+    state: iconT0
+  - type: Storage
+    grid:
+    - 1,0,1,0
+    - 0,1,1,2
+    - 3,0,5,2
+    - 7,0,7,0
+    - 7,1,8,2
+
+- type: entity
+  parent: CP14ClothingSatchelT0
+  id: CP14ClothingSatchelT1
+  name: Rustic Satchel
+  suffix: backpack T1
+  description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling.
+  components:
+  - type: Sprite
+    state: iconT1
+  - type: Storage
+    grid:
+    - 0,1,1,3
+    - 3,0,3,3
+    - 5,0,7,3
+    - 9,0,9,3
+    - 11,1,12,3
+
+- type: entity
+  parent: CP14ClothingSatchelT1
+  id: CP14ClothingSatchelT2
+  name: Courier Satchel
+  suffix: backpack T2
+  description: A professional-grade satchel designed for messengers, with organized compartments for quick access.
+  components:
+  - type: Sprite
+    state: iconT2
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    - 0,3,1,4
+    - 3,0,5,4
+    - 7,0,9,4
+    - 11,0,12,1
+    - 11,3,12,4
+
+- type: entity
+  parent: CP14ClothingSatchelT2
+  id: CP14ClothingSatchelT3
+  name: Haversack
+  suffix: backpack T3
+  description: A sturdy military-style haversack with ample capacity, designed for extended field use.
+  components:
+  - type: Sprite
+    state: iconT3
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    - 0,3,1,6
+    - 3,0,5,6
+    - 7,0,9,6
+    - 11,0,12,1
+    - 11,3,12,6
+
+# ========================
+# Special
+# ========================
+
+- type: entity
+  parent: CP14ClothingSatchelT2
+  id: CP14ClothingSatchelReinforced
+  name: Reinforced Satchel
+  suffix: backpack T2
+  description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions.
+  components:
+  - type: Sprite
+    state: iconT2_reinforced
+  - type: Storage
+    grid:
+    - 1,0,3,0
+    - 0,1,3,1
+    - 0,3,3,4
+    - 1,5,3,5
+    - 5,0,7,0
+    - 5,1,8,1
+    - 5,3,8,4
+    - 5,5,7,5
+
+- type: entity
+  parent: CP14ClothingSatchelReinforced
+  id: CP14ClothingSatchelReinforcedGuard
+  name: Guard Satchel
+  suffix: backpack T2
+  description: A tactical satchel used by guards, featuring quick-access compartments and durable construction.
+  components:
+  - type: Sprite
+    state: iconT2_reinforced_guard

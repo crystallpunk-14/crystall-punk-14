@@ -37,3 +37,15 @@
   conditions:
     - !type:TileNotBlocked
 
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WorkbenchLeather
+  graph: CP14WorkbenchLeather
+  startNode: start
+  targetNode: CP14WorkbenchLeather
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

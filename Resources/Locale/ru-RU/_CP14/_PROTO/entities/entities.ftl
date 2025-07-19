@@ -706,13 +706,14 @@ ent-CP14ImpactEffectWaterCreation = { ent-CP14BaseMagicImpact }
 ent-CP14SpellScrollWaterCreation = свиток заклинания создания воды
     .desc = { ent-CP14BaseSpellScrollWater.desc }
 
-ent-CP14ClothingBackpackLeather = кожаный рюкзак
+ent-CP14ClothingSatchelBase = кожаная сумка
+    .desc = Вы носите его на плече и кладете в него предметы.
+
+ent-CP14ClothingBackpackBase = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
-ent-CP14ClothingSatchelBase = None
-
-ent-CP14ClothingSatchelLeather = кожаная сумка
-    .desc = Вы носите его на спине и кладете в него предметы.
+ent-CP14ClothingExplorerBackpackBase = кожаная разгрузка
+    .desc = Вы носите его на себе и кладете в него предметы.
 
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий
     .desc = Мешочек для хранения зелий - здесь они точно не разобьются.
@@ -1420,7 +1421,7 @@ ent-CP14MobGroupSpawnerFlem = { ent-CP14BaseMobGroupSpawner }
     .desc = { ent-CP14BaseMobGroupSpawner.desc }
     .suffix = 2-3 Флема
 
-ent-CP14SpawnPointJobBase = маркер спавна игроков 
+ent-CP14SpawnPointJobBase = маркер спавна игроков
 
 ent-CP14SpawnPointGuardCommander = командир стражи
     .desc = { ent-CP14SpawnPointJobBase.desc }
