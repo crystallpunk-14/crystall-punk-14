@@ -1176,3 +1176,17 @@
   id: 8171
   time: '2025-07-18T18:38:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1546
+- author: cooldolphin
+  changes:
+  - message: The mercenary outfit is now available for equipping in the loadout menu.
+    type: Add
+  id: 8172
+  time: '2025-07-18T23:59:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1550
+- author: KittyCat432
+  changes:
+  - message: Innkeepers now start with Tiefling's gambit in their closet.
+    type: Tweak
+  id: 8173
+  time: '2025-07-18T23:59:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1549
