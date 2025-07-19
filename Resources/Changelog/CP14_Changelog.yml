@@ -1190,3 +1190,13 @@
   id: 8173
   time: '2025-07-18T23:59:44.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1549
+- author: Deserty0
+  changes:
+  - message: Many Russian words blocked on Twitch have been added to the chat sanitizer.
+    type: Remove
+  - message: "\u042F \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u044E \u0432\u0430\
+      \u043C \u043C\u0430\u0442\u044E\u043A\u0430\u0442\u044C\u0441\u044F"
+    type: Remove
+  id: 8174
+  time: '2025-07-19T00:03:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1548
