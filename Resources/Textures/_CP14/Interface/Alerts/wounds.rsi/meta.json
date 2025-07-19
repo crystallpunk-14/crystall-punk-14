@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by TheShuEd",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "lhand_1"
+    },
+    {
+      "name": "lhand_2"
+    },
+    {
+      "name": "lhand_3"
+    },
+    {
+      "name": "rhand_1"
+    },
+    {
+      "name": "rhand_2"
+    },
+    {
+      "name": "rhand_3"
+    }
+  ]
+}
