@@ -1200,3 +1200,14 @@
   id: 8174
   time: '2025-07-19T00:03:30.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1548
+- author: Nyranu
+  changes:
+  - message: Added hard coal - new efficient fuel in the game.
+    type: Add
+  - message: Wood is now less efficient fuel.
+    type: Tweak
+  - message: Hard coal now can be found in demiplanes
+    type: Add
+  id: 8175
+  time: '2025-07-19T10:24:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1521
