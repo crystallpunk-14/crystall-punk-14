@@ -1,0 +1,8 @@
+- type: CP14FoodType
+  id: Meal
+
+- type: CP14FoodType
+  id: Soup
+
+- type: CP14FoodType
+  id: Pie

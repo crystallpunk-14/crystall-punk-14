@@ -371,7 +371,11 @@ CP14WoodenClosetGuardCommanderFilled: null
 
 #2025-13-07
 CP14Plate: CP14PlateWooden
-
+CP14FoodPieApple: null
+CP14FoodPieAppleRaw: null
+CP14FoodPieFish: null
+CP14FoodPieFishRaw: null
+CP14FoodPieMeat: null
 
 # <---> CrystallEdge migration zone end
 

@@ -5,7 +5,7 @@
   description: "You can always watch three things: how fire burns, how water flows, and how delicious meat is cooked."
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Specific/Cooking/frying_pan.rsi
+    sprite: _CP14/Objects/Consumable/Food/Meals/frying_pan.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]
@@ -35,10 +35,15 @@
     solutions:
       cooker:
         maxVol: 100
-  - type: CP14FoodVisuals
+  - type: CP14FoodHolder
+    foodType: Meal
     solutionId: cooker
     displacementRsiPath: _CP14/Objects/Consumable/Food/Meals/displacement_pan.rsi
     maxDisplacementFillLevels: 2
+    canGiveFood: true
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
   - type: CP14FoodCooker
     foodType: Meal
     solutionId: cooker

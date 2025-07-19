@@ -23,18 +23,16 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14FoodVisualsComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
-        SubscribeLocalEvent<CP14FoodVisualsComponent, AppearanceChangeEvent>(OnAppearanceChange);
+        SubscribeLocalEvent<CP14FoodHolderComponent, AfterAutoHandleStateEvent>(OnAfterHandleState);
+        SubscribeLocalEvent<CP14FoodHolderComponent, AppearanceChangeEvent>(OnAppearanceChange);
     }
 
-    private void OnAppearanceChange(Entity<CP14FoodVisualsComponent> ent, ref AppearanceChangeEvent args)
+    private void OnAppearanceChange(Entity<CP14FoodHolderComponent> ent, ref AppearanceChangeEvent args)
     {
         var solutionId = string.Empty;
 
         if (TryComp<CP14FoodHolderComponent>(ent, out var holder))
             solutionId = holder.SolutionId;
-        else if (TryComp<CP14FoodCookerComponent>(ent, out var cooker))
-            solutionId = cooker.SolutionId;
 
         UpdateVisuals(
             ent,
@@ -46,14 +44,12 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
             ent.Comp.FoodData);
     }
 
-    private void OnAfterHandleState(Entity<CP14FoodVisualsComponent> ent, ref AfterAutoHandleStateEvent args)
+    private void OnAfterHandleState(Entity<CP14FoodHolderComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         var solutionId = string.Empty;
 
         if (TryComp<CP14FoodHolderComponent>(ent, out var holder))
             solutionId = holder.SolutionId;
-        else if (TryComp<CP14FoodCookerComponent>(ent, out var cooker))
-            solutionId = cooker.SolutionId;
 
         UpdateVisuals(
             ent,

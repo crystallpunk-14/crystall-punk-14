@@ -7,7 +7,7 @@ using Content.Shared._CP14.Cooking.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Cooking;
+namespace Content.Shared._CP14.Cooking.Prototypes;
 
 [Prototype("CP14CookingRecipe")]
 public sealed class CP14CookingRecipePrototype : IPrototype
@@ -28,8 +28,8 @@ public sealed class CP14CookingRecipePrototype : IPrototype
     [DataField]
     public CP14FoodData FoodData = new();
 
-    [DataField]
-    public CP14FoodType FoodType = CP14FoodType.Meal;
+    [DataField(required: true)]
+    public ProtoId<CP14FoodTypePrototype> FoodType;
 
     [DataField]
     public TimeSpan CookingTime = TimeSpan.FromSeconds(20f);

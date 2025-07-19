@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.Shared._CP14.Cooking;
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared._CP14.Cooking.Requirements;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Tag;
@@ -20,7 +21,6 @@ namespace Content.IntegrationTests.Tests._CP14;
 [TestFixture]
 public sealed class CP14Cooking
 {
-
     [Test]
     public async Task TestAllCookingRecipeIsCookable()
     {
