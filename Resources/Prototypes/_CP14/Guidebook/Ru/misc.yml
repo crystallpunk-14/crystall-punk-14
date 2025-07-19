@@ -28,3 +28,9 @@
   text: "/ServerInfo/_CP14/Guidebook_RU/Lockpicking.xml"
   filterEnabled: True
 
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_Monster_Toxins
+  name: Monster Toxins
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AdventurersTabs/MonsterToxins.xml"
+  filterEnabled: True
