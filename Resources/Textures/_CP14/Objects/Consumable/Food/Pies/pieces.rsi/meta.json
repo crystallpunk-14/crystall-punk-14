@@ -11,7 +11,16 @@
       "name": "blank"
     },
     {
+      "name": "meat"
+    },
+    {
+      "name": "pumpkin"
+    },
+    {
       "name": "trash"
+    },
+    {
+      "name": "veg"
     }
   ]
 }

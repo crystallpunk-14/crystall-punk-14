@@ -10,3 +10,52 @@
     sliceProto: CP14FoodPiePieceTrash
   requirements:
   - !type:AlwaysMet
+
+# 1 Req
+
+- type: CP14CookingRecipe
+  id: PieVeg
+  foodType: Pie
+  foodData:
+    name: cp14-soup-recipe-pie-name
+    desc: cp14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Pies/misc.rsi
+      state: veg
+    sliceProto: CP14FoodPiePieceVeg
+  requirements:
+  - !type:TagRequired
+    tags:
+    - CP14Salad
+    - CP14Vegetable
+
+- type: CP14CookingRecipe
+  id: PieMeat
+  foodType: Pie
+  foodData:
+    name: cp14-soup-recipe-pie-name
+    desc: cp14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Pies/misc.rsi
+      state: meat
+    sliceProto: CP14FoodPiePieceMeat
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Meat
+    - CP14MeatSlice
+
+- type: CP14CookingRecipe
+  id: PiePumpkin
+  foodType: Pie
+  foodData:
+    name: cp14-soup-recipe-pie-name
+    desc: cp14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _CP14/Objects/Consumable/Food/Pies/misc.rsi
+      state: meat
+    sliceProto: CP14FoodPiePiecePumpkin
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - CP14Pumpkin
