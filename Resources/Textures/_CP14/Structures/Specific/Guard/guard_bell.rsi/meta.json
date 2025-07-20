@@ -5,10 +5,19 @@
     "y": 64
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by Jaba",
+  "copyright": "Created by Jaba. Variant 2, 3 and 4 by Kryyto.",
   "states": [
     {
       "name": "base"
+    },
+    {
+      "name": "base-2"
+    },
+    {
+      "name": "base-3"
+    },
+    {
+      "name": "base-4"
     }
   ]
 }

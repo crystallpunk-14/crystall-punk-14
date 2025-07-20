@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructure
   id: CP14GuardBell
-  name: guard bell
+  name: guard bell east
   description: A strong bell to alert the entire settlement of a possible threat.
   categories: [ ForkFiltered ]
   components:
@@ -12,11 +12,121 @@
     sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
     layers:
     - state: base
-  - type: ActivatableUI
-    key: enum.CommunicationsConsoleUiKey.Key
-  - type: CommunicationsConsole
-    title: cp14-guard-bell-menu-title
-  - type: UserInterface
-    interfaces:
-      enum.CommunicationsConsoleUiKey.Key:
-        type: GuardBellBoundUserInterface
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14PvsOverride
+  - type: TriggerOnActivate
+  - type: TriggerOnDamage
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+        volume: 10
+        maxDistance: 20
+    farSound:
+      path: /Audio/_CP14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  parent: BaseStructure
+  id: CP14GuardBell2
+  name: guard bell west
+  description: A strong bell to alert the entire settlement of a possible threat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base-2
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14PvsOverride
+  - type: TriggerOnActivate
+  - type: TriggerOnDamage
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Misc/doom-bell-short.ogg
+      params:
+        variation: 0.1
+        volume: 10
+        maxDistance: 20
+    farSound:
+      path: /Audio/_CP14/Misc/doom-bell-short.ogg
+      params:
+        variation: 0.1
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  parent: BaseStructure
+  id: CP14GuardBell3
+  name: guard bell north
+  description: A strong bell to alert the entire settlement of a possible threat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base-3
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14PvsOverride
+  - type: TriggerOnActivate
+  - type: TriggerOnDamage
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Misc/minor-alert-short.ogg
+      params:
+        variation: 0.1
+        volume: 15
+        maxDistance: 20
+    farSound:
+      path: /Audio/_CP14/Misc/minor-alert-short.ogg
+      params:
+        volume: 5
+        variation: 0.1
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  parent: BaseStructure
+  id: CP14GuardBell4
+  name: guard bell south
+  description: A strong bell to alert the entire settlement of a possible threat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base-4
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: CP14PvsOverride
+  - type: TriggerOnActivate
+  - type: TriggerOnDamage
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Misc/major-alert-short.ogg
+      params:
+        variation: 0.1
+        volume: 10
+        maxDistance: 20
+    farSound:
+      path: /Audio/_CP14/Misc/major-alert-short.ogg
+      params:
+        variation: 0.1
+  - type: UseDelay
+    delay: 0.5
