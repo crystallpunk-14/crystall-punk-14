@@ -1211,3 +1211,15 @@
   id: 8175
   time: '2025-07-19T10:24:30.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1521
+- author: TheShuEd
+  changes:
+  - message: Fixed various cooking bugs
+    type: Fix
+  - message: Old pie recipes have been completely removed
+    type: Remove
+  - message: Modular pies have been added to the new cooking system (only 4 pie recipe
+      rn)
+    type: Add
+  id: 8176
+  time: '2025-07-20T12:45:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1540
