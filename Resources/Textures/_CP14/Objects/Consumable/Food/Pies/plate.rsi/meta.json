@@ -8,19 +8,16 @@
     },
     "states": [
         {
-            "name": "dirt"
-        },
-        {
-            "name": "wooden"
-        },
-        {
-            "name": "copper"
-        },
-        {
             "name": "iron"
         },
         {
-            "name": "gold"
+            "name": "raw-0"
+        },
+        {
+            "name": "raw-1"
+        },
+        {
+            "name": "raw-2"
         }
     ]
 }
