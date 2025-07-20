@@ -57,6 +57,9 @@ public sealed partial class CP14FoodCookerComponent : Component
     /// </summary>
     [DataField]
     public bool BecomeSliceable = false;
+
+    [DataField]
+    public bool RenameCooker = false;
 }
 
 [Serializable]

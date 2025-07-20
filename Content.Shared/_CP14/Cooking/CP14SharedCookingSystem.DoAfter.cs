@@ -55,10 +55,14 @@ public abstract partial class CP14SharedCookingSystem
         if (args.Cancelled || args.Handled)
             return;
 
+        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
+            return;
+
         if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
             return;
 
-        CookFood(ent, indexedRecipe);
+        CreateFoodData(ent, indexedRecipe);
+        UpdateFoodDataVisuals((ent, holder), ent.Comp.RenameCooker);
 
         args.Handled = true;
     }

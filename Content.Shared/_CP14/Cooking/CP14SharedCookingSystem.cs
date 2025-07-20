@@ -107,7 +107,8 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
     /// <summary>
     /// Transfer food data from cooker to holder
     /// </summary>
-    protected virtual bool TryTransferFood(Entity<CP14FoodHolderComponent> target, Entity<CP14FoodHolderComponent> source)
+    protected virtual bool TryTransferFood(Entity<CP14FoodHolderComponent> target,
+        Entity<CP14FoodHolderComponent> source)
     {
         if (!source.Comp.CanGiveFood || !target.Comp.CanAcceptFood)
             return false;
@@ -157,7 +158,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         }
 
         if (source.Comp.FoodData is not null)
-            ApplyFoodVisuals(target, source.Comp.FoodData);
+            UpdateFoodDataVisuals(target, source.Comp.FoodData);
 
         Dirty(target);
         Dirty(source);
@@ -167,13 +168,31 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         return true;
     }
 
-    private void ApplyFoodVisuals(Entity<CP14FoodHolderComponent> ent, CP14FoodData data)
+    private void UpdateFoodDataVisuals(
+        Entity<CP14FoodHolderComponent> ent,
+        bool rename = true)
+    {
+        var data = ent.Comp.FoodData;
+
+        if (data is null)
+            return;
+
+        UpdateFoodDataVisuals(ent, data, rename);
+    }
+
+    private void UpdateFoodDataVisuals(
+        Entity<CP14FoodHolderComponent> ent,
+        CP14FoodData data,
+        bool rename = true)
     {
         //Name and Description
-        if (data.Name is not null)
-            _metaData.SetEntityName(ent, Loc.GetString(data.Name));
-        if (data.Desc is not null)
-            _metaData.SetEntityDescription(ent, Loc.GetString(data.Desc));
+        if (rename)
+        {
+            if (data.Name is not null)
+                _metaData.SetEntityName(ent, Loc.GetString(data.Name));
+            if (data.Desc is not null)
+                _metaData.SetEntityDescription(ent, Loc.GetString(data.Desc));
+        }
 
         //Flavors
         EnsureComp<FlavorProfileComponent>(ent, out var flavorComp);
@@ -185,8 +204,6 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         //Visuals
         ent.Comp.FoodData = new CP14FoodData(data);
-
-        //Visual random
         foreach (var layer in data.Visuals)
         {
             if (_random.Prob(0.5f))
@@ -250,7 +267,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         return selectedRecipe;
     }
 
-    protected void CookFood(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
+    private void CreateFoodData(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
         if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
             return;
