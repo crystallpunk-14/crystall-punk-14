@@ -8,6 +8,8 @@
   components:
   - type: Item
     size: Huge
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t2.rsi
   - type: Clothing
     equipDelay: 0.4
     unequipDelay: 0.2

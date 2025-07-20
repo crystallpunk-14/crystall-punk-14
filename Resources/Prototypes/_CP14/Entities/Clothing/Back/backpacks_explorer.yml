@@ -1,99 +1,102 @@
-- type: entity
-  abstract: true
-  parent: CP14ClothingBackContainerBase
-  id: CP14ClothingExplorerBackpackBase
-  categories: [ ForkFiltered ]
+# TODO
 
-- type: entity
-  parent: CP14ClothingExplorerBackpackBase
-  id: CP14ClothingExplorerBackpackT0
-  name: Scout Pouch
-  suffix: backpack T0
-  description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid:
-    - 0,0,1,0
-    - 0,2,1,2
-    - 3,0,4,0
-    - 3,2,4,2
-    - 6,0,6,2
-    - 8,0,8,2
-    - 10,0,11,0
-    - 10,2,11,2
-    - 13,0,14,0
-    - 13,2,14,2
 
-- type: entity
-  parent: CP14ClothingExplorerBackpackT0
-  id: CP14ClothingExplorerBackpackT1
-  name: Explorer Backpack
-  suffix: Trail Bag
-  description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid:
-    - 0,0,0,1
-    - 0,3,0,4
-    - 2,0,3,1
-    - 2,3,3,4
-    - 5,0,7,1
-    - 5,3,7,4
-    - 9,0,10,1
-    - 9,3,10,4
-    - 12,0,12,1
-    - 12,3,12,4
+# - type: entity
+#   abstract: true
+#   parent: CP14ClothingBackContainerBase
+#   id: CP14ClothingExplorerBackpackBase
+#   categories: [ ForkFiltered ]
 
-- type: entity
-  parent: CP14ClothingExplorerBackpackT1
-  id: CP14ClothingExplorerBackpackT2
-  name: Reliquary Backpack
-  suffix: Explorer Pack
-  description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid:
-    - 0,0,0,1
-    - 0,3,0,5
-    - 2,0,3,1
-    - 2,3,3,5
-    - 5,0,6,1
-    - 5,3,6,5
-    - 8,0,9,1
-    - 8,3,9,5
-    - 11,0,12,1
-    - 11,3,12,5
+# - type: entity
+#   parent: CP14ClothingExplorerBackpackBase
+#   id: CP14ClothingExplorerBackpackT0
+#   name: Scout Pouch
+#   suffix: backpack T0
+#   description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+#     state: icon
+#   - type: Storage
+#     grid:
+#     - 0,0,1,0
+#     - 0,2,1,2
+#     - 3,0,4,0
+#     - 3,2,4,2
+#     - 6,0,6,2
+#     - 8,0,8,2
+#     - 10,0,11,0
+#     - 10,2,11,2
+#     - 13,0,14,0
+#     - 13,2,14,2
 
-- type: entity
-  parent: CP14ClothingExplorerBackpackT2
-  id: CP14ClothingExplorerBackpackT3
-  name: Artifact Hunter Rucksack
-  suffix: backpack T3
-  description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid:
-    - 0,0,0,2
-    - 0,4,0,6
-    - 2,0,3,2
-    - 2,4,3,6
-    - 5,0,7,2
-    - 5,4,7,6
-    - 9,0,11,2
-    - 9,4,11,6
-    - 13,0,14,2
-    - 13,4,14,6
-    - 16,0,16,2
-    - 16,4,16,6
+# - type: entity
+#   parent: CP14ClothingExplorerBackpackT0
+#   id: CP14ClothingExplorerBackpackT1
+#   name: Explorer Backpack
+#   suffix: Trail Bag
+#   description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+#     state: icon
+#   - type: Storage
+#     grid:
+#     - 0,0,0,1
+#     - 0,3,0,4
+#     - 2,0,3,1
+#     - 2,3,3,4
+#     - 5,0,7,1
+#     - 5,3,7,4
+#     - 9,0,10,1
+#     - 9,3,10,4
+#     - 12,0,12,1
+#     - 12,3,12,4
+
+# - type: entity
+#   parent: CP14ClothingExplorerBackpackT1
+#   id: CP14ClothingExplorerBackpackT2
+#   name: Reliquary Backpack
+#   suffix: Explorer Pack
+#   description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+#     state: icon
+#   - type: Storage
+#     grid:
+#     - 0,0,0,1
+#     - 0,3,0,5
+#     - 2,0,3,1
+#     - 2,3,3,5
+#     - 5,0,6,1
+#     - 5,3,6,5
+#     - 8,0,9,1
+#     - 8,3,9,5
+#     - 11,0,12,1
+#     - 11,3,12,5
+
+# - type: entity
+#   parent: CP14ClothingExplorerBackpackT2
+#   id: CP14ClothingExplorerBackpackT3
+#   name: Artifact Hunter Rucksack
+#   suffix: backpack T3
+#   description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+#     state: icon
+#   - type: Storage
+#     grid:
+#     - 0,0,0,2
+#     - 0,4,0,6
+#     - 2,0,3,2
+#     - 2,4,3,6
+#     - 5,0,7,2
+#     - 5,4,7,6
+#     - 9,0,11,2
+#     - 9,4,11,6
+#     - 13,0,14,2
+#     - 13,4,14,6
+#     - 16,0,16,2
+#     - 16,4,16,6

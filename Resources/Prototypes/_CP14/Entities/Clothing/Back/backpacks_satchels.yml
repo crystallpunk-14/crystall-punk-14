@@ -12,7 +12,7 @@
     foldedEquippedPrefix: flipped
     foldedHeldPrefix: flipped
   - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
   - type: Storage
     grid:
     - 0,0,1,3
@@ -27,7 +27,7 @@
   description: A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.
   components:
   - type: Sprite
-    state: iconT0
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
   - type: Storage
     grid:
     - 1,0,1,0
@@ -44,7 +44,7 @@
   description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling.
   components:
   - type: Sprite
-    state: iconT1
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t1.rsi
   - type: Storage
     grid:
     - 0,1,1,3
@@ -61,7 +61,7 @@
   description: A professional-grade satchel designed for messengers, with organized compartments for quick access.
   components:
   - type: Sprite
-    state: iconT2
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t2.rsi
   - type: Storage
     grid:
     - 0,0,1,1
@@ -79,7 +79,7 @@
   description: A sturdy military-style haversack with ample capacity, designed for extended field use.
   components:
   - type: Sprite
-    state: iconT3
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t3.rsi
   - type: Storage
     grid:
     - 0,0,1,1
@@ -101,7 +101,7 @@
   description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions.
   components:
   - type: Sprite
-    state: iconT2_reinforced
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t2_reinforced.rsi
   - type: Storage
     grid:
     - 1,0,3,0
@@ -112,13 +112,3 @@
     - 5,1,8,1
     - 5,3,8,4
     - 5,5,7,5
-
-- type: entity
-  parent: CP14ClothingSatchelReinforced
-  id: CP14ClothingSatchelReinforcedGuard
-  name: Guard Satchel
-  suffix: backpack T2
-  description: A tactical satchel used by guards, featuring quick-access compartments and durable construction.
-  components:
-  - type: Sprite
-    state: iconT2_reinforced_guard
