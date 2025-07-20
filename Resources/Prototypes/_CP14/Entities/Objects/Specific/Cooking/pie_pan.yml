@@ -20,7 +20,6 @@
   - type: CP14FoodCooker
     foodType: Pie
     solutionId: cooker
-    becomeSliceable: true
   - type: CP14FoodHolder
     foodType: Pie
     solutionId: cooker
