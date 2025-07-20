@@ -378,6 +378,25 @@ CP14FoodPieFishRaw: null
 CP14FoodPieMeat: null
 CP14FoodPieMeatRaw: null
 
+# 2025-07-20
+CP14ClothingBackpackLeather: CP14ClothingBackLeatherBackpack
+CP14ClothingSatchelLeather:  CP14ClothingBackLeatherSatchel
+CP14ClothingBlueCollarDress:  CP14ClothingShirtBlueCollarDress
+CP14ClothingBlueOpenDress:  CP14ClothingShirtBlueOpenDress
+CP14ClothingRedOpenDress:  CP14ClothingShirtRedOpenDress
+CP14ClothingYellowOpenDress:  CP14ClothingShirtYellowOpenDress
+CP14ClothingCottonRedDress:  CP14ClothingShirtCottonRedDress
+CP14ClothingCottonWhiteDress:  CP14ClothingShirtCottonWhiteDress
+CP14ClothingCottonWhiteCollarDress:  CP14ClothingShirtCottonWhiteCollarDress
+CP14ClothingCottonYellowCollarDress:  CP14ClothingShirtCottonYellowCollarDress
+CP14ClothingYellowWizardDress:  CP14ClothingShirtYellowWizardDress
+CP14ClothinGreenBeltDress:  CP14ClothingShirtGreenBeltDress
+CP14ClothinGreenBeltDress2:  CP14ClothingShirtGreenBeltDress2
+CP14ClothinGreenLightDress:  CP14ClothingShirtGreenLightDress
+CP14ClothingWarriorsGarbDress:  CP14ClothingShirtWarriorsGarbDress
+CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
+
+
 # <---> CrystallEdge migration zone end
 
 
