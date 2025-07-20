@@ -9,6 +9,15 @@
     "states": [
         {
             "name": "iron"
+        },
+        {
+            "name": "raw-0"
+        },
+        {
+            "name": "raw-1"
+        },
+        {
+            "name": "raw-2"
         }
     ]
 }

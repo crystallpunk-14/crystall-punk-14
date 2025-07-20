@@ -10,6 +10,7 @@
     layers:
     - state: iron
     - map: ["cp14_foodLayers"]
+    - map: ["enum.StorageFillLayers.Fill"]
   - type: Item
     size: Normal
     shape:
@@ -33,6 +34,10 @@
         - FoodSequenceStartPoint
         - Sharp
         - CP14Sharpened
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 3
+    fillBaseName: raw
   - type: SolutionContainerManager
     solutions:
       cooker:
