@@ -59,3 +59,22 @@
   - type: Spillable
     solution: cooker
   - type: SolutionContainerVisuals
+  - type: SliceableFood
+
+- type: entity
+  id: CP14PlatePieRandom
+  suffix: Random food
+  parent: CP14PlatePie
+  components:
+  - type: CP14RandomFoodData
+  - type: SolutionContainerManager
+    solutions:
+      cooker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 20
+        - ReagentId: Fat
+          Quantity: 10

@@ -18,6 +18,7 @@ namespace Content.Server._CP14.Cooking;
 public sealed class CP14CookingSystem : CP14SharedCookingSystem
 {
     [Dependency] private readonly TemperatureSystem _temperature = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -61,24 +62,16 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         if (!_random.Prob(ent.Comp.Prob))
             return;
 
-        //TODO: Fuck this dublication logic, and randomization visual
-        var randomFood = _random.Pick(OrderedRecipes.Where(r => r.FoodType == holder.FoodType).ToList());
-
-        //Name and Description
-        if (randomFood.FoodData.Name is not null)
-            _metaData.SetEntityName(ent, Loc.GetString(randomFood.FoodData.Name));
-        if (randomFood.FoodData.Desc is not null)
-            _metaData.SetEntityDescription(ent, Loc.GetString(randomFood.FoodData.Desc));
-
-        //Visuals
-        holder.FoodData = randomFood.FoodData;
-
-        //Some randomize
-        foreach (var layer in holder.FoodData.Visuals)
+        var filteredRecipes = OrderedRecipes.Where(r => r.FoodType == holder.FoodType).ToList();
+        if (filteredRecipes.Count == 0)
         {
-            if (_random.Prob(0.5f))
-                layer.Scale = new Vector2(-1, 1);
+            Log.Error($"No recipes found for food type {holder.FoodType}");
+            return;
         }
+
+        var randomFood = _random.Pick(filteredRecipes);
+
+        UpdateFoodDataVisuals((ent, holder), randomFood.FoodData, ent.Comp.Rename);
 
         Dirty(ent.Owner, holder);
     }
@@ -94,6 +87,20 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
             Spawn(ent.Comp.BurntAdditionalSpawn, Transform(ent).Coordinates);
     }
 
+    protected override void UpdateFoodDataVisuals(Entity<CP14FoodHolderComponent> ent, CP14FoodData data, bool rename = true)
+    {
+        base.UpdateFoodDataVisuals(ent, data, rename);
+
+        if (ent.Comp.FoodData?.SliceProto is null)
+            return;
+
+        if (!TryComp<SliceableFoodComponent>(ent, out var sliceable))
+            return;
+
+        sliceable.Slice = ent.Comp.FoodData.SliceProto;
+        sliceable.TotalCount = ent.Comp.FoodData.SliceCount;
+    }
+
     protected override void OnCookFinished(Entity<CP14FoodCookerComponent> ent, ref CP14CookingDoAfter args)
     {
         if (args.Cancelled || args.Handled)
@@ -103,17 +110,6 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
         TryTransformAll(ent);
 
         base.OnCookFinished(ent, ref args);
-
-        //Sliceable
-        if (TryComp<CP14FoodHolderComponent>(ent, out var holder) && ent.Comp.BecomeSliceable)
-        {
-            if (holder.FoodData?.SliceProto is not null)
-            {
-                var sliceable = EnsureComp<SliceableFoodComponent>(ent);
-                sliceable.Slice = holder.FoodData.SliceProto;
-                sliceable.TotalCount = holder.FoodData.SliceCount;
-            }
-        }
     }
 
     private void TryTransformAll(Entity<CP14FoodCookerComponent> ent)

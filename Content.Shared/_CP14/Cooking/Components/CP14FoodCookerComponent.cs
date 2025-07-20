@@ -52,12 +52,6 @@ public sealed partial class CP14FoodCookerComponent : Component
     [DataField]
     public float BurntAdditionalSpawnProb = 0.2f;
 
-    /// <summary>
-    /// If FoodData have sliceable proto, cooker ent can be sliceable too!
-    /// </summary>
-    [DataField]
-    public bool BecomeSliceable = false;
-
     [DataField]
     public bool RenameCooker = false;
 }

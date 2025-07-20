@@ -27,9 +27,9 @@ namespace Content.Shared._CP14.Cooking;
 public abstract partial class CP14SharedCookingSystem : EntitySystem
 {
     [Dependency] protected readonly SharedContainerSystem _container = default!;
-    [Dependency] protected readonly IRobustRandom _random = default!;
-    [Dependency] protected readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
@@ -180,7 +180,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         UpdateFoodDataVisuals(ent, data, rename);
     }
 
-    private void UpdateFoodDataVisuals(
+    protected virtual void UpdateFoodDataVisuals(
         Entity<CP14FoodHolderComponent> ent,
         CP14FoodData data,
         bool rename = true)
@@ -196,7 +196,6 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         //Flavors
         EnsureComp<FlavorProfileComponent>(ent, out var flavorComp);
-
         foreach (var flavor in data.Flavors)
         {
             flavorComp.Flavors.Add(flavor);
@@ -209,6 +208,9 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             if (_random.Prob(0.5f))
                 layer.Scale = new Vector2(-1, 1);
         }
+
+        //Sliceable
+        // > on server overrided side
     }
 
     public CP14CookingRecipePrototype? GetRecipe(Entity<CP14FoodCookerComponent> ent)
@@ -267,7 +269,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         return selectedRecipe;
     }
 
-    private void CreateFoodData(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
+    protected void CreateFoodData(Entity<CP14FoodCookerComponent> ent, CP14CookingRecipePrototype recipe)
     {
         if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
             return;
