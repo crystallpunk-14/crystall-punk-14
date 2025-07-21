@@ -41,7 +41,7 @@
   - type: Sprite
     state: leather
   - type: StaticPrice
-    price: 40
+    price: 30
 
 - type: entity
   id: CP14RuggedLeather
@@ -54,7 +54,7 @@
   - type: Sprite
     state: rugged_leather
   - type: StaticPrice
-    price: 60
+    price: 50
 
 # ================
 # Straps

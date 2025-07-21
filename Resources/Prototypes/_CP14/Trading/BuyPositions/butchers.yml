@@ -187,7 +187,6 @@
   faction: Butchers
   reputationLevel: 2
   uiPosition: 7
-  priceMarkup: 10
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: hide
@@ -200,7 +199,6 @@
   faction: Butchers
   reputationLevel: 3
   uiPosition: 7
-  priceMarkup: 20
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: rugged_hide
