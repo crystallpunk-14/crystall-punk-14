@@ -62,3 +62,70 @@
     protoId: CP14IronBuckle
     count: 2
   result: CP14ClothingBackpackT3
+
+# ======================================
+# Crafts with using low tier backpacks
+# ======================================
+
+# Backpack T1 (Precise Leather Calculation)
+- type: CP14Recipe
+  id: CP14ClothingBackpackT1_Upgrade
+  tag: CP14RecipeLeatherWorking
+  craftTime: 6
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackpackT0  # Contains 10 cloth = 5 leather equiv
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14Leather             # +3 leather (original 8 minus 5 from T0)
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14LeatherStrap        # 2 straps = 0.5 leather (1 leather makes 4 straps)
+    count: 2
+  result: CP14ClothingBackpackT1
+  # Calculation:
+  # T0: 10 cloth (5 leather) + 4 string (negligible)
+  # T1 needs 8 leather total: 5 (from T0) + 3 new
+  # Straps not reduced as they're structural additions
+
+# Backpack T2 (Exact Leather Carryover)
+- type: CP14Recipe
+  id: CP14ClothingBackpackT2_Upgrade
+  tag: CP14RecipeLeatherWorking
+  craftTime: 8
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackpackT1  # 8 leather (3 new + 5 from T0)
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14Leather             # +4 leather (original 8 minus 4 carried)
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14LeatherStrap        # 4 straps = 1 leather
+    count: 4
+  result: CP14ClothingBackpackT2
+  # Leather Flow:
+  # T1 provides 8/8 needed leather (full value)
+  # But we add 4 new since T2 needs 12 total (8+4)
+  # Strap count unchanged as they're new components
+
+# Backpack T3 (Rugged Conversion)
+- type: CP14Recipe
+  id: CP14ClothingBackpackT3_Upgrade
+  tag: CP14RecipeLeatherWorking
+  craftTime: 12
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackpackT2  # 12 leather (8 from T1 + 4 new)
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14RuggedLeather       # 4 rugged = 8 normal leather (2:1 conversion)
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14RuggedStrap         # 4 straps = 2 rugged leather
+    count: 4
+  result: CP14ClothingBackpackT3
+  # Leather Economy:
+  # T2's 12 leather becomes 6 rugged (2:1 ratio)
+  # We add 4 rugged (net 10 rugged equiv)
+  # Matches original 8 rugged requirement when counting conversion

@@ -62,3 +62,71 @@
 #     ProtoId: CP14IronBuckle
 #     count: 12
 #   result: CP14ClothingExplorerBackpackT3
+
+
+
+# # ======================================
+# # Crafts with using low tier backpacks
+# # ======================================
+
+# # Explorer T1 (Leather Carryover)
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT1_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 6
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingExplorerBackpackT0  # 6 cloth = 3 leather
+#     count: 1
+#   - !type:ProtoIdResource
+#     protoId: CP14ThinLeather                 # +3 thin (1.5 normal)
+#     count: 3
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle                  # +8 buckles (original 10 minus 2 carried)
+#     count: 8
+#   result: CP14ClothingExplorerBackpackT1
+#   # Leather Logic:
+#   # T0 provides 3 leather, needs 6 total (3 new thin = 1.5 normal)
+#   # Net 4.5/6 leather (75%) since buckles are main cost
+
+# # Explorer T2 (Leather Accumulation)
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT2_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 8
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingExplorerBackpackT1  # 4.5 leather (3+1.5)
+#     count: 1
+#   - !type:ProtoIdResource
+#     protoId: CP14Leather                     # +3 (original 6 minus 3 carried)
+#     count: 3
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle                  # +10 buckles (original 12 minus 2)
+#     count: 10
+#   result: CP14ClothingExplorerBackpackT2
+#   # Progression:
+#   # T1 provides 4.5/6 leather (75%)
+#   # T2 adds 3/6 (50%) for total 7.5/12 (62.5%)
+#   # Buckles reduced by 16% to compensate
+
+# # Explorer T3 (Rugged Premium)
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT3_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 12
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingExplorerBackpackT2  # 7.5 leather equiv
+#     count: 1
+#   - !type:ProtoIdResource
+#     protoId: CP14RuggedLeather               # +3 rugged = 6 normal
+#     count: 3
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle                  # +10 buckles (original 12)
+#     count: 10
+#   result: CP14ClothingExplorerBackpackT3
+#   # Final Balance:
+#   # T2's 7.5 normal = 3.75 rugged
+#   # Add 3 new rugged = 6.75 total vs original 6
+#   # Slight overpayment compensates for buckle savings
