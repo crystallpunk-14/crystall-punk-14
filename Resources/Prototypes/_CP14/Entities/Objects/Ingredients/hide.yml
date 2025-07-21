@@ -20,7 +20,7 @@
   - type: Sprite
     state: thin_hide
   - type: StaticPrice
-    price: 5
+    price: 10
 
 - type: entity
   id: CP14AnimalHide
@@ -31,7 +31,7 @@
   - type: Sprite
     state: hide
   - type: StaticPrice
-    price: 15
+    price: 30
 
 - type: entity
   id: CP14RuggedHide
@@ -46,7 +46,7 @@
   - type: Sprite
     state: rugged_hide
   - type: StaticPrice
-    price: 25
+    price: 50
 
 # Pieces of hide to assemble whole hide.
 - type: entity
@@ -60,4 +60,4 @@
   - type: Sprite
     state: scrap_hide
   - type: StaticPrice
-    price: 3
+    price: 5
