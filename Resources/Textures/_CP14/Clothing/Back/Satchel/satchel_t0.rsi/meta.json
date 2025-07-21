@@ -15,7 +15,15 @@
       "directions": 4
     },
     {
+      "name": "equipped-BACKPACK-goblin",
+      "directions": 4
+    },
+    {
       "name": "flipped-equipped-BACKPACK",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-BACKPACK-goblin",
       "directions": 4
     },
     {
