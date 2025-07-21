@@ -68,8 +68,6 @@
     - 5,0,7,3 # 3x4=12
     - 9,0,9,3 # 1x4=4
     - 11,1,12,3 # 2x3=6
-  - type: ClothingSpeedModifier
-    sprintModifier: 0.96
 
 - type: entity
   parent: CP14ClothingSatchelT1
@@ -97,8 +95,7 @@
         Heat: 0.98
         Caustic: 0.96
   - type: ClothingSpeedModifier
-    walkModifier: 0.98
-    sprintModifier: 0.94
+    sprintModifier: 0.98
   - type: CP14MagicManacostModify
     globalModifier: 1.02
 
@@ -127,8 +124,7 @@
         Heat: 0.94
         Caustic: 0.90
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.90
+    sprintModifier: 0.96
   - type: CP14MagicManacostModify
     globalModifier: 1.05
 
