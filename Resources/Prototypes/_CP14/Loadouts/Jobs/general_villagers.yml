@@ -6,7 +6,7 @@
   loadouts:
   - CP14ClothingBackpackT1
   - CP14ClothingSatchelT1
-  - CP14ClothingExplorerBackpackT1
+#  - CP14ClothingExplorerBackpackT1
 
 - type: loadout
   id: CP14ClothingBackpackT1
@@ -18,7 +18,15 @@
   equipment:
     back: CP14ClothingSatchelT1
 
-- type: loadout
-  id: CP14ClothingExplorerBackpackT1
-  equipment:
-    back: CP14ClothingExplorerBackpackT1
+# - type: loadout
+#   id: CP14ClothingExplorerBackpackT1
+#   equipment:
+#     back: CP14ClothingExplorerBackpackT1
+
+- type: loadoutGroup
+  id: CP14WorkerVillagerBack
+  name: cp14-loadout-general-villager-back
+  loadouts:
+  - CP14ClothingBackpackT2
+  - CP14ClothingSatchelT2
+  - CP14ClothingExplorerBackpackT2

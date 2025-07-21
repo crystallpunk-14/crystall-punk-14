@@ -27,10 +27,6 @@
   components:
   - type: Sprite
     state: thin_leather
-  - type: PhysicalComposition
-    materialComposition:
-      CP14ThinHide: 1
-      CP14Salt: 2
   - type: StaticPrice
     price: 5
 
@@ -44,12 +40,8 @@
     size: Normal
   - type: Sprite
     state: leather
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Hide: 1
-      CP14Salt: 2
   - type: StaticPrice
-    price: 10
+    price: 15
 
 - type: entity
   id: CP14RuggedLeather
@@ -61,12 +53,8 @@
     size: Normal
   - type: Sprite
     state: rugged_leather
-  - type: PhysicalComposition
-    materialComposition:
-      CP14RuggedHide: 1
-      CP14Salt: 2
   - type: StaticPrice
-    price: 15
+    price: 25
 
 # ================
 # Straps
@@ -82,10 +70,6 @@
     - 0,0,1,0 # 2x1
   - type: Sprite
     state: strap
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Leather: 0.25
-      CP14String: 1
   - type: StaticPrice
     price: 5
 
@@ -101,9 +85,5 @@
     - 0,0,1,0 # 2x1
   - type: Sprite
     state: rugged_strap
-  - type: PhysicalComposition
-    materialComposition:
-      CP14RuggedLeather: 0.25
-      CP14String: 1
   - type: StaticPrice
     price: 10

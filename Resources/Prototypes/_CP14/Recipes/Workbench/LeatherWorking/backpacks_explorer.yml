@@ -1,64 +1,64 @@
-# Explorer Backpacks (heavy on buckles)
-- type: CP14Recipe
-  id: CP14ClothingExplorerBackpackT0
-  tag: CP14RecipeLeatherWorking
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14Cloth
-    count: 6
-  - !type:StackResource
-    stack: CP14String
-    count: 4
-  - !type:StackResource
-    stack: CP14IronBuckle
-    count: 8
-  result: CP14ClothingExplorerBackpackT0
+# # Explorer Backpacks (heavy on buckles)
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT0
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14Cloth
+#     count: 6
+#   - !type:StackResource
+#     stack: CP14String
+#     count: 4
+#   - !type:StackResource
+#     stack: CP14IronBuckle
+#     count: 8
+#   result: CP14ClothingExplorerBackpackT0
 
-- type: CP14Recipe
-  id: CP14ClothingExplorerBackpackT1
-  tag: CP14RecipeLeatherWorking
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14ThinLeather
-    count: 6
-  - !type:StackResource
-    stack: CP14LeatherStrap
-    count: 2
-  - !type:StackResource
-    stack: CP14IronBuckle
-    count: 10
-  result: CP14ClothingExplorerBackpackT1
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT1
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14ThinLeather
+#     count: 6
+#   - !type:StackResource
+#     stack: CP14LeatherStrap
+#     count: 2
+#   - !type:StackResource
+#     stack: CP14IronBuckle
+#     count: 10
+#   result: CP14ClothingExplorerBackpackT1
 
-- type: CP14Recipe
-  id: CP14ClothingExplorerBackpackT2
-  tag: CP14RecipeLeatherWorking
-  craftTime: 6
-  requirements:
-  - !type:StackResource
-    stack: CP14Leather
-    count: 6
-  - !type:StackResource
-    stack: CP14LeatherStrap
-    count: 4
-  - !type:StackResource
-    stack: CP14IronBuckle
-    count: 12
-  result: CP14ClothingExplorerBackpackT2
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT2
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 6
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14Leather
+#     count: 6
+#   - !type:StackResource
+#     stack: CP14LeatherStrap
+#     count: 4
+#   - !type:StackResource
+#     stack: CP14IronBuckle
+#     count: 12
+#   result: CP14ClothingExplorerBackpackT2
 
-- type: CP14Recipe
-  id: CP14ClothingExplorerBackpackT3
-  tag: CP14RecipeLeatherWorking
-  craftTime: 10
-  requirements:
-  - !type:StackResource
-    stack: CP14RuggedLeather
-    count: 6
-  - !type:StackResource
-    stack: CP14RuggedStrap
-    count: 4
-  - !type:StackResource
-    stack: CP14IronBuckle
-    count: 12
-  result: CP14ClothingExplorerBackpackT3
+# - type: CP14Recipe
+#   id: CP14ClothingExplorerBackpackT3
+#   tag: CP14RecipeLeatherWorking
+#   craftTime: 10
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14RuggedLeather
+#     count: 6
+#   - !type:StackResource
+#     stack: CP14RuggedStrap
+#     count: 4
+#   - !type:StackResource
+#     stack: CP14IronBuckle
+#     count: 12
+#   result: CP14ClothingExplorerBackpackT3
