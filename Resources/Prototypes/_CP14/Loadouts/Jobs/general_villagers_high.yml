@@ -4,48 +4,48 @@
   id: CP14GeneralVillagerCargo
   name: cp14-loadout-general-villager-high-back
   loadouts:
-  - CP14ClothingBackpackT2
-  - CP14ClothingBackpackCargo
-  - CP14ClothingSatchelT2
-#  - CP14ClothingExplorerBackpackT2
+  - CP14ClothingBackBackpackT2
+  - CP14ClothingBackBackpackCargo
+  - CP14ClothingBackSatchelT2
+#  - CP14ClothingBackExplorerBackpackT2
 
 - type: loadout
-  id: CP14ClothingBackpackT2
+  id: CP14ClothingBackBackpackT2
   equipment:
-    back: CP14ClothingBackpackT2
+    back: CP14ClothingBackBackpackT2
 
 - type: loadout
-  id: CP14ClothingBackpackCargo
+  id: CP14ClothingBackBackpackCargo
   equipment:
-    back: CP14ClothingBackpackCargo
+    back: CP14ClothingBackBackpackCargo
 
 - type: loadout
-  id: CP14ClothingSatchelT2
+  id: CP14ClothingBackSatchelT2
   equipment:
-    back: CP14ClothingSatchelT2
+    back: CP14ClothingBackSatchelT2
 
 # - type: loadout
-#   id: CP14ClothingExplorerBackpackT2
+#   id: CP14ClothingBackExplorerBackpackT2
 #   equipment:
-#     back: CP14ClothingExplorerBackpackT2
+#     back: CP14ClothingBackExplorerBackpackT2
 
 
 - type: loadoutGroup
   id: CP14GeneralVillagerCargo
   name: cp14-loadout-general-villager-high-back
   loadouts:
-  - CP14ClothingBackpackT2
-  - CP14ClothingBackpackReinforced
-  - CP14ClothingSatchelT2
-  - CP14ClothingSatchelReinforced
-#  - CP14ClothingExplorerBackpackT2
+  - CP14ClothingBackBackpackT2
+  - CP14ClothingBackBackpackReinforced
+  - CP14ClothingBackSatchelT2
+  - CP14ClothingBackSatchelReinforced
+#  - CP14ClothingBackExplorerBackpackT2
 
 - type: loadout
-  id: CP14ClothingBackpackReinforced
+  id: CP14ClothingBackBackpackReinforced
   equipment:
-    back: CP14ClothingBackpackReinforced
+    back: CP14ClothingBackBackpackReinforced
 
 - type: loadout
-  id: CP14ClothingSatchelReinforced
+  id: CP14ClothingBackSatchelReinforced
   equipment:
-    back: CP14ClothingSatchelReinforced
+    back: CP14ClothingBackSatchelReinforced

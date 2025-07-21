@@ -7,7 +7,7 @@
 # - type: entity
 #   abstract: true
 #   parent: CP14ClothingBackContainerBase
-#   id: CP14ClothingExplorerBackpackBase
+#   id: CP14ClothingBackExplorerBackpackBase
 #   categories: [ ForkFiltered ]
 
 # ========================
@@ -15,8 +15,8 @@
 # ========================
 
 # - type: entity
-#   parent: CP14ClothingExplorerBackpackBase
-#   id: CP14ClothingExplorerBackpackT0
+#   parent: CP14ClothingBackExplorerBackpackBase
+#   id: CP14ClothingBackExplorerBackpackT0
 #   name: Scout Pouch
 #   suffix: backpack T0
 #   description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
@@ -38,8 +38,8 @@
 #     - 13,2,14,2 # 2x1=2
 
 # - type: entity
-#   parent: CP14ClothingExplorerBackpackT0
-#   id: CP14ClothingExplorerBackpackT1
+#   parent: CP14ClothingBackExplorerBackpackT0
+#   id: CP14ClothingBackExplorerBackpackT1
 #   name: Explorer Backpack
 #   suffix: Trail Bag
 #   description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
@@ -57,8 +57,8 @@
 #     - 5,3,7,4 # 3x2=6
 
 # - type: entity
-#   parent: CP14ClothingExplorerBackpackT1
-#   id: CP14ClothingExplorerBackpackT2
+#   parent: CP14ClothingBackExplorerBackpackT1
+#   id: CP14ClothingBackExplorerBackpackT2
 #   name: Reliquary Backpack
 #   suffix: Explorer Pack
 #   description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
@@ -80,8 +80,8 @@
 #     - 11,3,12,5 # 2x3=6
 
 # - type: entity
-#   parent: CP14ClothingExplorerBackpackT2
-#   id: CP14ClothingExplorerBackpackT3
+#   parent: CP14ClothingBackExplorerBackpackT2
+#   id: CP14ClothingBackExplorerBackpackT3
 #   name: Artifact Hunter Rucksack
 #   suffix: backpack T3
 #   description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.

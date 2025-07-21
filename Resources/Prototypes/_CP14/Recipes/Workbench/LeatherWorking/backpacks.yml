@@ -1,6 +1,6 @@
 # Backpacks (heavy on leather)
 - type: CP14Recipe
-  id: CP14ClothingBackpackT0
+  id: CP14ClothingBackBackpackT0
   tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
@@ -13,10 +13,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 1
-  result: CP14ClothingBackpackT0
+  result: CP14ClothingBackBackpackT0
 
 - type: CP14Recipe
-  id: CP14ClothingBackpackT1
+  id: CP14ClothingBackBackpackT1
   tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
@@ -29,10 +29,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 1
-  result: CP14ClothingBackpackT1
+  result: CP14ClothingBackBackpackT1
 
 - type: CP14Recipe
-  id: CP14ClothingBackpackT2
+  id: CP14ClothingBackBackpackT2
   tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
@@ -45,10 +45,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 2
-  result: CP14ClothingBackpackT2
+  result: CP14ClothingBackBackpackT2
 
 - type: CP14Recipe
-  id: CP14ClothingBackpackT3
+  id: CP14ClothingBackBackpackT3
   tag: CP14RecipeLeatherWorking
   craftTime: 10
   requirements:
@@ -61,7 +61,7 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 2
-  result: CP14ClothingBackpackT3
+  result: CP14ClothingBackBackpackT3
 
 # ======================================
 # Crafts with using low tier backpacks
@@ -69,12 +69,12 @@
 
 # Backpack T1 (Precise Leather Calculation)
 - type: CP14Recipe
-  id: CP14ClothingBackpackT1_Upgrade
+  id: CP14ClothingBackBackpackT1_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingBackpackT0  # Contains 10 cloth = 5 leather equiv
+    protoId: CP14ClothingBackBackpackT0  # Contains 10 cloth = 5 leather equiv
     count: 1
   - !type:ProtoIdResource
     protoId: CP14Leather             # +3 leather (original 8 minus 5 from T0)
@@ -82,7 +82,7 @@
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap        # 2 straps = 0.5 leather (1 leather makes 4 straps)
     count: 2
-  result: CP14ClothingBackpackT1
+  result: CP14ClothingBackBackpackT1
   # Calculation:
   # T0: 10 cloth (5 leather) + 4 string (negligible)
   # T1 needs 8 leather total: 5 (from T0) + 3 new
@@ -90,12 +90,12 @@
 
 # Backpack T2 (Exact Leather Carryover)
 - type: CP14Recipe
-  id: CP14ClothingBackpackT2_Upgrade
+  id: CP14ClothingBackBackpackT2_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 8
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingBackpackT1  # 8 leather (3 new + 5 from T0)
+    protoId: CP14ClothingBackBackpackT1  # 8 leather (3 new + 5 from T0)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14Leather             # +4 leather (original 8 minus 4 carried)
@@ -103,7 +103,7 @@
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap        # 4 straps = 1 leather
     count: 4
-  result: CP14ClothingBackpackT2
+  result: CP14ClothingBackBackpackT2
   # Leather Flow:
   # T1 provides 8/8 needed leather (full value)
   # But we add 4 new since T2 needs 12 total (8+4)
@@ -111,12 +111,12 @@
 
 # Backpack T3 (Rugged Conversion)
 - type: CP14Recipe
-  id: CP14ClothingBackpackT3_Upgrade
+  id: CP14ClothingBackBackpackT3_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 12
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingBackpackT2  # 12 leather (8 from T1 + 4 new)
+    protoId: CP14ClothingBackBackpackT2  # 12 leather (8 from T1 + 4 new)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14RuggedLeather       # 4 rugged = 8 normal leather (2:1 conversion)
@@ -124,7 +124,7 @@
   - !type:ProtoIdResource
     protoId: CP14RuggedStrap         # 4 straps = 2 rugged leather
     count: 4
-  result: CP14ClothingBackpackT3
+  result: CP14ClothingBackBackpackT3
   # Leather Economy:
   # T2's 12 leather becomes 6 rugged (2:1 ratio)
   # We add 4 rugged (net 10 rugged equiv)

@@ -1665,22 +1665,22 @@
         "parent": "CP14RightFootHuman",
         "suffix": null
     },
-    "CP14ClothingBackpackBase": {
-        "id": "CP14ClothingBackpackBase",
+    "CP14ClothingBackBackpackBase": {
+        "id": "CP14ClothingBackBackpackBase",
         "name": "leather backpack",
         "description": "You wear this on your back and put items into it.",
         "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
-    "CP14ClothingExplorerBackpackBase": {
-        "id": "CP14ClothingExplorerBackpackBase",
+    "CP14ClothingBackExplorerBackpackBase": {
+        "id": "CP14ClothingBackExplorerBackpackBase",
         "name": "leather backpack",
         "description": "You wear this on yourself and put items into it.",
         "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
-    "CP14ClothingSatchelBase": {
-        "id": "CP14ClothingSatchelBase",
+    "CP14ClothingBackSatchelBase": {
+        "id": "CP14ClothingBackSatchelBase",
         "name": "leather satchel",
         "description": "You wear this on your shoulder and put items into it.",
         "parent": "CP14ClothingBackContainerBase",

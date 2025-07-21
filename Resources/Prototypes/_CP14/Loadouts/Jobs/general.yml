@@ -674,7 +674,7 @@
   loadouts:
   - CP14ClothingBackBackpackT0
   - CP14ClothingBackSatchelT0
-#  - CP14ClothingExplorerBackpackT0
+#  - CP14ClothingBackExplorerBackpackT0
 
 - type: loadout
   id: CP14ClothingBackBackpackT0
@@ -687,9 +687,9 @@
     back: CP14ClothingBackSatchelT0
 
 # - type: loadout
-#   id: CP14ClothingExplorerBackpackT0
+#   id: CP14ClothingBackExplorerBackpackT0
 #   equipment:
-#     back: CP14ClothingExplorerBackpackT0
+#     back: CP14ClothingBackExplorerBackpackT0
 
 # Trinkets
 

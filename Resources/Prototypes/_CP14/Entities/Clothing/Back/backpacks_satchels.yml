@@ -5,7 +5,7 @@
 - type: entity
   abstract: true
   parent: CP14ClothingBackContainerBase
-  id: CP14ClothingSatchelBase
+  id: CP14ClothingBackSatchelBase
   categories: [ ForkFiltered ]
   components:
   - type: Foldable
@@ -28,8 +28,8 @@
 # ========================
 
 - type: entity
-  parent: CP14ClothingSatchelBase
-  id: CP14ClothingSatchelT0
+  parent: CP14ClothingBackSatchelBase
+  id: CP14ClothingBackSatchelT0
   name: Pouch
   suffix: backpack T0
   description: A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.
@@ -49,8 +49,8 @@
     - 7,1,8,2 # 2x2=4
 
 - type: entity
-  parent: CP14ClothingSatchelT0
-  id: CP14ClothingSatchelT1
+  parent: CP14ClothingBackSatchelT0
+  id: CP14ClothingBackSatchelT1
   name: Rustic Satchel
   suffix: backpack T1
   description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling. Can be worn on the belt or over the shoulder. Interferes with sprinting.
@@ -70,8 +70,8 @@
     - 11,1,12,3 # 2x3=6
 
 - type: entity
-  parent: CP14ClothingSatchelT1
-  id: CP14ClothingSatchelT2
+  parent: CP14ClothingBackSatchelT1
+  id: CP14ClothingBackSatchelT2
   name: Courier Satchel
   suffix: backpack T2
   description: A professional-grade satchel designed for messengers, with organized compartments for quick access. Interferes with sprinting.
@@ -100,8 +100,8 @@
     globalModifier: 1.02
 
 - type: entity
-  parent: CP14ClothingSatchelBase
-  id: CP14ClothingSatchelT3
+  parent: CP14ClothingBackSatchelBase
+  id: CP14ClothingBackSatchelT3
   name: Haversack
   suffix: backpack T3
   description: A sturdy military-style haversack with ample capacity, designed for extended field use. Interferes with sprinting.
@@ -133,8 +133,8 @@
 # ========================
 
 - type: entity
-  parent: CP14ClothingSatchelT2
-  id: CP14ClothingSatchelReinforced
+  parent: CP14ClothingBackSatchelT2
+  id: CP14ClothingBackSatchelReinforced
   name: Reinforced Satchel
   suffix: backpack T2
   description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions. Interferes with sprinting.

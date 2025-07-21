@@ -1,6 +1,6 @@
 # Satchels (heavy on straps)
 - type: CP14Recipe
-  id: CP14ClothingSatchelT0
+  id: CP14ClothingBackSatchelT0
   tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
@@ -13,10 +13,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 3
-  result: CP14ClothingSatchelT0
+  result: CP14ClothingBackSatchelT0
 
 - type: CP14Recipe
-  id: CP14ClothingSatchelT1
+  id: CP14ClothingBackSatchelT1
   tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
@@ -29,10 +29,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 4
-  result: CP14ClothingSatchelT1
+  result: CP14ClothingBackSatchelT1
 
 - type: CP14Recipe
-  id: CP14ClothingSatchelT2
+  id: CP14ClothingBackSatchelT2
   tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
@@ -45,10 +45,10 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 6
-  result: CP14ClothingSatchelT2
+  result: CP14ClothingBackSatchelT2
 
 - type: CP14Recipe
-  id: CP14ClothingSatchelT3
+  id: CP14ClothingBackSatchelT3
   tag: CP14RecipeLeatherWorking
   craftTime: 10
   requirements:
@@ -61,7 +61,7 @@
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 6
-  result: CP14ClothingSatchelT3
+  result: CP14ClothingBackSatchelT3
 
 
 # ======================================
@@ -69,12 +69,12 @@
 # ======================================
 # Satchel T1 (Leather Inheritance)
 - type: CP14Recipe
-  id: CP14ClothingSatchelT1_Upgrade
+  id: CP14ClothingBackSatchelT1_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingSatchelT0  # 8 cloth = 4 leather + 8 string (2 leather equiv)
+    protoId: CP14ClothingBackSatchelT0  # 8 cloth = 4 leather + 8 string (2 leather equiv)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14ThinLeather        # +2 thin (4 normal leather equiv)
@@ -82,7 +82,7 @@
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap       # 10 straps = 2.5 leather
     count: 10
-  result: CP14ClothingSatchelT1
+  result: CP14ClothingBackSatchelT1
   # Math:
   # T0: 4 leather (cloth) + 2 leather (string->straps) = 6
   # T1 needs 6 thin (3 normal) + 10 straps (2.5)
@@ -90,12 +90,12 @@
 
 # Satchel T2 (Leather Optimization)
 - type: CP14Recipe
-  id: CP14ClothingSatchelT2_Upgrade
+  id: CP14ClothingBackSatchelT2_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 8
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingSatchelT1  # 6 thin (3 normal) + 10 straps (2.5)
+    protoId: CP14ClothingBackSatchelT1  # 6 thin (3 normal) + 10 straps (2.5)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14Leather            # +3 (original 6 minus 3 carried)
@@ -103,19 +103,19 @@
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap       # +12 straps = 3 leather
     count: 12
-  result: CP14ClothingSatchelT2
+  result: CP14ClothingBackSatchelT2
   # Balance:
   # T1 provides 5.5 leather equiv (3+2.5)
   # T2 needs 6+3=9 total: 5.5 + 3 new = 8.5 (close to original)
 
 # Satchel T3 (Rugged Transition)
 - type: CP14Recipe
-  id: CP14ClothingSatchelT3_Upgrade
+  id: CP14ClothingBackSatchelT3_Upgrade
   tag: CP14RecipeLeatherWorking
   craftTime: 12
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingSatchelT2  # 9 leather equiv (6+3)
+    protoId: CP14ClothingBackSatchelT2  # 9 leather equiv (6+3)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14RuggedLeather       # 3 rugged = 6 normal (2:1)
@@ -123,7 +123,7 @@
   - !type:ProtoIdResource
     protoId: CP14RuggedStrap         # 12 straps = 3 rugged
     count: 12
-  result: CP14ClothingSatchelT3
+  result: CP14ClothingBackSatchelT3
   # Conversion:
   # T2's 9 normal = 4.5 rugged
   # Add 3 new rugged + 3 from straps = 10.5 rugged equiv

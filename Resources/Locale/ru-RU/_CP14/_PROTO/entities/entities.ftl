@@ -712,7 +712,7 @@ ent-CP14ClothingBackSatchelBase = кожаная сумка
 ent-CP14ClothingBackBackpackBase = кожаный рюкзак
     .desc = Вы носите его на спине и кладете в него предметы.
 
-ent-CP14ClothingExplorerBackpackBase = кожаная разгрузка
+ent-CP14ClothingBackExplorerBackpackBase = кожаная разгрузка
     .desc = Вы носите его на себе и кладете в него предметы.
 
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий
