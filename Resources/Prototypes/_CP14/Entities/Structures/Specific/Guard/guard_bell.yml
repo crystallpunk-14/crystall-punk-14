@@ -1,9 +1,10 @@
 - type: entity
   parent: BaseStructure
-  id: CP14GuardBell
-  name: guard bell east
+  id: CP14BaseGuardBell
+  name: guard bell
   description: A strong bell to alert the entire settlement of a possible threat.
   categories: [ ForkFiltered ]
+  abstract: true
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -14,119 +15,117 @@
     - state: base
   - type: Damageable
     damageContainer: Inorganic
-  - type: CP14PvsOverride
   - type: TriggerOnActivate
-  - type: TriggerOnDamage
-  - type: CP14FarSound
-    closeSound:
-      path: /Audio/_CP14/Misc/scary-bell-short.ogg
-      params:
-        variation: 0.1
-        volume: 10
-        maxDistance: 20
-    farSound:
-      path: /Audio/_CP14/Misc/scary-bell-short.ogg
-      params:
-        variation: 0.1
+  - type: TriggerOnDamageReceived
+  - type: SpawnOnTrigger
+    proto: GuardBellEffect1
   - type: UseDelay
-    delay: 0.5
+    delay: 2.0
 
 - type: entity
-  parent: BaseStructure
-  id: CP14GuardBell2
-  name: guard bell west
-  description: A strong bell to alert the entire settlement of a possible threat.
-  categories: [ ForkFiltered ]
+  id: CP14GuardBell1
+  parent: CP14BaseGuardBell
   components:
   - type: Sprite
-    drawdepth: Mobs
-    noRot: true
-    offset: 0, 0.2
-    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base
+  - type: SpawnOnTrigger
+    proto: CP14GuardBellEffect1
+
+- type: entity
+  id: CP14GuardBell2
+  parent: CP14BaseGuardBell
+  components:
+  - type: Sprite
     layers:
     - state: base-2
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: CP14PvsOverride
-  - type: TriggerOnActivate
-  - type: TriggerOnDamage
-  - type: CP14FarSound
-    closeSound:
-      path: /Audio/_CP14/Misc/doom-bell-short.ogg
-      params:
-        variation: 0.1
-        volume: 10
-        maxDistance: 20
-    farSound:
-      path: /Audio/_CP14/Misc/doom-bell-short.ogg
-      params:
-        variation: 0.1
-  - type: UseDelay
-    delay: 0.5
+  - type: SpawnOnTrigger
+    proto: CP14GuardBellEffect2
 
 - type: entity
-  parent: BaseStructure
   id: CP14GuardBell3
-  name: guard bell north
-  description: A strong bell to alert the entire settlement of a possible threat.
-  categories: [ ForkFiltered ]
+  parent: CP14BaseGuardBell
   components:
   - type: Sprite
-    drawdepth: Mobs
-    noRot: true
-    offset: 0, 0.2
-    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
     layers:
     - state: base-3
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: CP14PvsOverride
-  - type: TriggerOnActivate
-  - type: TriggerOnDamage
-  - type: CP14FarSound
-    closeSound:
-      path: /Audio/_CP14/Misc/minor-alert-short.ogg
-      params:
-        variation: 0.1
-        volume: 15
-        maxDistance: 20
-    farSound:
-      path: /Audio/_CP14/Misc/minor-alert-short.ogg
-      params:
-        volume: 5
-        variation: 0.1
-  - type: UseDelay
-    delay: 0.5
+  - type: SpawnOnTrigger
+    proto: CP14GuardBellEffect3
 
 - type: entity
-  parent: BaseStructure
   id: CP14GuardBell4
-  name: guard bell south
-  description: A strong bell to alert the entire settlement of a possible threat.
-  categories: [ ForkFiltered ]
+  parent: CP14BaseGuardBell
   components:
   - type: Sprite
-    drawdepth: Mobs
-    noRot: true
-    offset: 0, 0.2
-    sprite: _CP14/Structures/Specific/Guard/guard_bell.rsi
     layers:
     - state: base-4
-  - type: Damageable
-    damageContainer: Inorganic
+  - type: SpawnOnTrigger
+    proto: CP14GuardBellEffect4
+
+# Effects
+- type: entity
+  id: CP14BaseGuardBellEffect
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  components:
   - type: CP14PvsOverride
-  - type: TriggerOnActivate
-  - type: TriggerOnDamage
-  - type: CP14FarSound
-    closeSound:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+  - type: TimedDespawn
+    lifetime: 4.8
+  - type: Sprite
+    drawdepth: Effects
+    offset: 0, 0.5
+    layers:
+    - state: circle_increase
+      sprite: _CP14/Effects/Magic/cast_impact.rsi
+      shader: unshaded
+
+- type: entity
+  id: CP14GuardBellEffect1
+  parent: CP14BaseGuardBellEffect
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+
+- type: entity
+  id: CP14GuardBellEffect2
+  parent: CP14BaseGuardBellEffect
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Misc/doom-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+
+- type: entity
+  id: CP14GuardBellEffect3
+  parent: CP14BaseGuardBellEffect
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Misc/minor-alert-short.ogg
+      params:
+        volume: 20
+        variation: 0.1
+        maxDistance: 200
+
+- type: entity
+  id: CP14GuardBellEffect4
+  parent: CP14BaseGuardBellEffect
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
       path: /Audio/_CP14/Misc/major-alert-short.ogg
       params:
         variation: 0.1
-        volume: 10
-        maxDistance: 20
-    farSound:
-      path: /Audio/_CP14/Misc/major-alert-short.ogg
-      params:
-        variation: 0.1
-  - type: UseDelay
-    delay: 0.5
+        maxDistance: 200
