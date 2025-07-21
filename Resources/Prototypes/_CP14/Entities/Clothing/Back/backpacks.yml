@@ -7,7 +7,7 @@
 - type: entity
   abstract: true
   parent: CP14ClothingBackContainerBase
-  id: CP14ClothingBackpackBase
+  id: CP14ClothingBackBackpackBase
   categories: [ ForkFiltered ]
 
 # ========================
@@ -15,8 +15,8 @@
 # ========================
 
 - type: entity
-  parent: CP14ClothingBackpackBase
-  id: CP14ClothingBackpackT0
+  parent: CP14ClothingBackBackpackBase
+  id: CP14ClothingBackBackpackT0
   name: Sack
   suffix: backpack T0
   description: A simple cloth sack with basic storage capacity. Lightweight but not very secure.
@@ -34,8 +34,8 @@
     - 0,0,4,2 # 5*3=15
 
 - type: entity
-  parent: CP14ClothingBackpackT0
-  id: CP14ClothingBackpackT1
+  parent: CP14ClothingBackBackpackT0
+  id: CP14ClothingBackBackpackT1
   name: Backpack
   suffix: backpack T1
   description: A standard backpack with decent storage space. Perfect for everyday use. It restricts movement a little, but it protects your back from blows!
@@ -62,8 +62,8 @@
     globalModifier: 1.02
 
 - type: entity
-  parent: CP14ClothingBackpackT1
-  id: CP14ClothingBackpackT2
+  parent: CP14ClothingBackBackpackT1
+  id: CP14ClothingBackBackpackT2
   name: Extended Backpack
   suffix: backpack T2
   description: An expanded backpack with increased capacity. Ideal for longer trips. It restricts movement, but it protects your back from blows and keeps you warm!
@@ -89,8 +89,8 @@
     globalModifier: 1.04
 
 - type: entity
-  parent: CP14ClothingBackpackT2
-  id: CP14ClothingBackpackT3
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackT3
   name: Traveler Backpack
   suffix: backpack T3
   description: A large, well-organized backpack designed for extensive traveling with multiple compartments. It greatly restricts movement, but it protects your back!
@@ -124,8 +124,8 @@
 # ========================
 
 - type: entity
-  parent: CP14ClothingBackpackT2
-  id: CP14ClothingBackpackReinforced
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackReinforced
   name: Reinforced Backpack
   suffix: backpack T2
   description: A durable backpack with reinforced stitching and materials for extra protection of your belongings. It restricts movement, but it protects your back from blows and keeps you warm!
@@ -154,8 +154,8 @@
     globalModifier: 1.04
 
 - type: entity
-  parent: CP14ClothingBackpackT2
-  id: CP14ClothingBackpackCargo
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackCargo
   name: Cargo Bag
   suffix: backpack T2
   description: A utilitarian cargo bag designed for heavy-duty use. Convenient for carrying and storing work stuff.

@@ -52,7 +52,7 @@
   reputationLevel: 1
   uiPosition: 2
   icon:
-    sprite: _CP14/Objects/Specific/Cooking/frying_pan.rsi
+    sprite: _CP14/Objects/Consumable/Food/Meals/frying_pan.rsi
     state: base
   service: !type:CP14BuyItemsService
     product: CP14FryingPan
@@ -64,7 +64,7 @@
   reputationLevel: 1
   uiPosition: 3
   icon:
-    sprite: _CP14/Objects/Specific/Cooking/cooking_pot.rsi
+    sprite: _CP14/Objects/Consumable/Food/Soups/cooking_pot.rsi
     state: base
   service: !type:CP14BuyItemsService
     product: CP14CookingPot

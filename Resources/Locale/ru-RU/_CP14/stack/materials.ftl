@@ -13,6 +13,7 @@ cp14-stack-brass-bars = латунные слитки
 cp14-stack-gold-bars = золотые слитки
 cp14-stack-mithril-bars = мифриловые слитки
 
+cp14-stack-coal-ore = каменный уголь
 cp14-stack-copper-ore = медная руда
 cp14-stack-iron-ore = железная руда
 cp14-stack-gold-ore = золотая руда

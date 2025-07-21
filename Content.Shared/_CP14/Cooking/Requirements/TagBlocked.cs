@@ -30,6 +30,6 @@ public sealed partial class TagBlocked : CP14CookingCraftRequirement
 
     public override float GetComplexity()
     {
-        return 1;
+        return Tags.Count * -1;
     }
 }

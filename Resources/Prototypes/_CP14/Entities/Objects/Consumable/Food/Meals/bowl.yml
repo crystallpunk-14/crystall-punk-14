@@ -14,12 +14,11 @@
     solutions:
       food:
         maxVol: 30
-  - type: CP14FoodVisuals
-    displacementRsiPath: _CP14/Objects/Consumable/Food/Soups/displacement.rsi
-    solutionId: food
   - type: CP14FoodHolder
     foodType: Soup
     solutionId: food
+    displacementRsiPath: _CP14/Objects/Consumable/Food/Soups/displacement.rsi
+    canAcceptFood: true
   - type: Appearance
   - type: SolutionContainerVisuals
   - type: Food
@@ -27,6 +26,8 @@
       path: /Audio/Items/drink.ogg
     utensil: Spoon
     transferAmount: 2.5
+  - type: Spillable
+    solution: food
 
 - type: entity
   id: CP14BowlWooden

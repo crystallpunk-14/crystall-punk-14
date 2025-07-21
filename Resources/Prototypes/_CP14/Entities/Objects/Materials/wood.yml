@@ -29,7 +29,7 @@
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
-    cP14FireplaceFuel: 30
+    cP14FireplaceFuel: 10
     damage:
       types:
         Heat: 1
@@ -79,7 +79,7 @@
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
-    cP14FireplaceFuel: 12
+    cP14FireplaceFuel: 8
     damage:
       types:
         Heat: 1

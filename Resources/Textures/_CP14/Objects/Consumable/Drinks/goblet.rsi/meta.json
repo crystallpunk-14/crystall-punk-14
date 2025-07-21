@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "Created by prazat911",
+    "copyright": "Created by prazat911, Bottomless goblet by Afrokada",
     "size": {
         "x": 32,
         "y": 32
@@ -30,6 +30,33 @@
         },
         {
             "name": "fill-5"
-        }
+        },
+		{
+			"name": "bottomless_goblet"
+		},
+		{
+			"name": "bottomless-fill-1",
+			"delays": [
+				[
+					0.3,
+					0.3,
+					0.3,
+					0.3,
+					0.3
+				]
+			]
+		},
+		{
+			"name": "bottomless-fill-2",
+			"delays": [
+				[
+					0.1,
+					0.1,
+					0.1,
+					0.1,
+					0.1
+				]
+			]
+		}
     ]
 }

@@ -673,11 +673,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             return false;
         }
 
-        //CP14 spill event for cooking subscription
-        var ev = new CP14BeforeSpillEvent();
-        RaiseLocalEvent(uid, ev);
-        //CP14 end
-
         return TrySpillAt(transformComponent.Coordinates, solution, out puddleUid, sound: sound);
     }
 

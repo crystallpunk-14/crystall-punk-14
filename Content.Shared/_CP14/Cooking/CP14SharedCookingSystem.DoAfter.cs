@@ -4,10 +4,10 @@
  */
 
 using Content.Shared._CP14.Cooking.Components;
+using Content.Shared._CP14.Cooking.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Temperature;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -55,10 +55,14 @@ public abstract partial class CP14SharedCookingSystem
         if (args.Cancelled || args.Handled)
             return;
 
+        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
+            return;
+
         if (!_proto.TryIndex(args.Recipe, out var indexedRecipe))
             return;
 
-        CookFood(ent, indexedRecipe);
+        CreateFoodData(ent, indexedRecipe);
+        UpdateFoodDataVisuals((ent, holder), ent.Comp.RenameCooker);
 
         args.Handled = true;
     }
@@ -117,7 +121,10 @@ public abstract partial class CP14SharedCookingSystem
         if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
             return;
 
-        if (container.ContainedEntities.Count <= 0 && !ent.Comp.HoldFood)
+        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
+            return;
+
+        if (container.ContainedEntities.Count <= 0 && holder.FoodData is null)
         {
             StopCooking(ent);
             return;
@@ -128,7 +135,7 @@ public abstract partial class CP14SharedCookingSystem
             ent.Comp.LastHeatingTime = _timing.CurTime;
             DirtyField(ent.Owner,ent.Comp, nameof(CP14FoodCookerComponent.LastHeatingTime));
 
-            if (!_doAfter.IsRunning(ent.Comp.DoAfterId) && !ent.Comp.HoldFood)
+            if (!_doAfter.IsRunning(ent.Comp.DoAfterId) && holder.FoodData is null)
             {
                 var recipe = GetRecipe(ent);
                 if (recipe is not null)

@@ -125,7 +125,7 @@
     count: 5
 
 - type: cp14TradingPosition
-  id: CP14ClothingYellowWizardDress
+  id: CP14ClothingShirtYellowWizardDress
   faction: Tailors
   reputationLevel: 1
   uiPosition: 8
@@ -134,7 +134,7 @@
     sprite: _CP14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
     state: icon
   service: !type:CP14BuyItemsService
-    product: CP14ClothingYellowWizardDress
+    product: CP14ClothingShirtYellowWizardDress
     count: 1
 
 # Reputation Level 2
