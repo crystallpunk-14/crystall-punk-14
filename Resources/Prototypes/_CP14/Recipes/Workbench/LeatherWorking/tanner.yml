@@ -8,8 +8,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:StackResource
-    stack: CP14ThinAnimalHide
+  - !type:ProtoIdResource
+    ProtoId: CP14ThinAnimalHide
     count: 2
   - !type:StackResource
     stack: CP14Salt
@@ -22,8 +22,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:StackResource
-    stack: CP14AnimalHide
+  - !type:ProtoIdResource
+    ProtoId: CP14AnimalHide
     count: 1
   - !type:StackResource
     stack: CP14Salt
@@ -36,8 +36,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14RuggedAnimalHide
+  - !type:ProtoIdResource
+    ProtoId: CP14RuggedAnimalHide
     count: 1
   - !type:StackResource
     stack: CP14Salt
@@ -50,8 +50,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14ScrapAnimalHide
+  - !type:ProtoIdResource
+    ProtoId: CP14ScrapAnimalHide
     count: 3
   - !type:StackResource
     stack: CP14String
@@ -66,8 +66,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14ThinLeather
+  - !type:ProtoIdResource
+    protoId: CP14ThinLeather
     count: 2
   - !type:StackResource
     stack: CP14String
@@ -82,8 +82,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:StackResource
-    stack: CP14ThinLeather
+  - !type:ProtoIdResource
+    protoId: CP14ThinLeather
     count: 1
   - !type:StackResource
     stack: CP14String
@@ -96,8 +96,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:StackResource
-    stack: CP14Leather
+  - !type:ProtoIdResource
+    protoId: CP14Leather
     count: 1
   result: CP14LeatherStrap
   resultCount: 4
@@ -107,8 +107,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14Leather
+  - !type:ProtoIdResource
+    protoId: CP14Leather
     count: 2
   - !type:StackResource
     stack: CP14String
@@ -121,8 +121,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:StackResource
-    stack: CP14RuggedLeather
+  - !type:ProtoIdResource
+    protoId: CP14RuggedLeather
     count: 1
   - !type:StackResource
     stack: CP14String

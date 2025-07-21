@@ -10,8 +10,8 @@
 #   - !type:StackResource
 #     stack: CP14String
 #     count: 4
-#   - !type:StackResource
-#     stack: CP14IronBuckle
+#   - !type:ProtoIdResource
+#     ProtoId: CP14IronBuckle
 #     count: 8
 #   result: CP14ClothingExplorerBackpackT0
 
@@ -20,14 +20,14 @@
 #   tag: CP14RecipeLeatherWorking
 #   craftTime: 4
 #   requirements:
-#   - !type:StackResource
-#     stack: CP14ThinLeather
+#   - !type:ProtoIdResource
+#     ProtoId: CP14ThinLeather
 #     count: 6
-#   - !type:StackResource
-#     stack: CP14LeatherStrap
+#   - !type:ProtoIdResource
+#     ProtoId: CP14LeatherStrap
 #     count: 2
-#   - !type:StackResource
-#     stack: CP14IronBuckle
+#   - !type:ProtoIdResource
+#     ProtoId: CP14IronBuckle
 #     count: 10
 #   result: CP14ClothingExplorerBackpackT1
 
@@ -36,14 +36,14 @@
 #   tag: CP14RecipeLeatherWorking
 #   craftTime: 6
 #   requirements:
-#   - !type:StackResource
-#     stack: CP14Leather
+#   - !type:ProtoIdResource
+#     ProtoId: CP14Leather
 #     count: 6
-#   - !type:StackResource
-#     stack: CP14LeatherStrap
+#   - !type:ProtoIdResource
+#     ProtoId: CP14LeatherStrap
 #     count: 4
-#   - !type:StackResource
-#     stack: CP14IronBuckle
+#   - !type:ProtoIdResource
+#     ProtoId: CP14IronBuckle
 #     count: 12
 #   result: CP14ClothingExplorerBackpackT2
 
@@ -52,13 +52,13 @@
 #   tag: CP14RecipeLeatherWorking
 #   craftTime: 10
 #   requirements:
-#   - !type:StackResource
-#     stack: CP14RuggedLeather
+#   - !type:ProtoIdResource
+#     ProtoId: CP14RuggedLeather
 #     count: 6
-#   - !type:StackResource
-#     stack: CP14RuggedStrap
+#   - !type:ProtoIdResource
+#     ProtoId: CP14RuggedStrap
 #     count: 4
-#   - !type:StackResource
-#     stack: CP14IronBuckle
+#   - !type:ProtoIdResource
+#     ProtoId: CP14IronBuckle
 #     count: 12
 #   result: CP14ClothingExplorerBackpackT3
