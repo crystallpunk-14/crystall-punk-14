@@ -1,3 +1,7 @@
+# ========================
+# Base
+# ========================
+
 - type: entity
   abstract: true
   parent: CP14ClothingBackContainerBase
@@ -14,10 +18,14 @@
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
   - type: Storage
-    grid:
-    - 0,0,1,3
-    - 3,0,6,3
-    - 8,0,9,3
+    grid: # 28
+    - 0,0,1,3 # 2x4=8
+    - 3,0,6,3 # 4x4=16
+    - 8,0,9,3 # 2x4=4
+
+# ========================
+# Tiers
+# ========================
 
 - type: entity
   parent: CP14ClothingSatchelBase
@@ -26,15 +34,19 @@
   suffix: backpack T0
   description: A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.
   components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
   - type: Storage
-    grid:
-    - 1,0,1,0
-    - 0,1,1,2
-    - 3,0,5,2
-    - 7,0,7,0
-    - 7,1,8,2
+    grid: # 19
+    - 1,0,1,0 # 1x1=1
+    - 0,1,1,2 # 2x2=4
+    - 3,0,5,2 # 3x3=9
+    - 7,0,7,0 # 1x1=1
+    - 7,1,8,2 # 2x2=4
 
 - type: entity
   parent: CP14ClothingSatchelT0
@@ -43,15 +55,21 @@
   suffix: backpack T1
   description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling.
   components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t1.rsi
   - type: Storage
-    grid:
-    - 0,1,1,3
-    - 3,0,3,3
-    - 5,0,7,3
-    - 9,0,9,3
-    - 11,1,12,3
+    grid: # 32
+    - 0,1,1,3 # 2x3=6
+    - 3,0,3,3 # 1x4=4
+    - 5,0,7,3 # 3x4=12
+    - 9,0,9,3 # 1x4=4
+    - 11,1,12,3 # 2x3=6
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.96
 
 - type: entity
   parent: CP14ClothingSatchelT1
@@ -63,13 +81,23 @@
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t2.rsi
   - type: Storage
-    grid:
-    - 0,0,1,1
-    - 0,3,1,4
-    - 3,0,5,4
-    - 7,0,9,4
-    - 11,0,12,1
-    - 11,3,12,4
+    grid: # 46
+    - 0,0,1,1 # 2x2=4
+    - 0,3,1,4 # 2x2=4
+    - 3,0,5,4 # 3x5=15
+    - 7,0,9,4 # 3x5=15
+    - 11,0,12,1 # 2x2=4
+    - 11,3,12,4 # 2x2=4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.98
+        Caustic: 0.96
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.94
+  - type: CP14MagicManacostModify
+    globalModifier: 1.02
 
 - type: entity
   parent: CP14ClothingSatchelT2
@@ -81,13 +109,25 @@
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t3.rsi
   - type: Storage
-    grid:
-    - 0,0,1,1
-    - 0,3,1,6
-    - 3,0,5,6
-    - 7,0,9,6
-    - 11,0,12,1
-    - 11,3,12,6
+    grid: # 66
+    - 0,0,1,1 # 2x2=4
+    - 0,3,1,6 # 2x4=8
+    - 3,0,5,6 # 3x7=21
+    - 7,0,9,6 # 3x7=21
+    - 11,0,12,1 # 2x2=4
+    - 11,3,12,6 # 2x4=8
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.96
+        Heat: 0.94
+        Caustic: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.90
+  - type: CP14MagicManacostModify
+    globalModifier: 1.05
 
 # ========================
 # Special
@@ -103,12 +143,24 @@
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t2_reinforced.rsi
   - type: Storage
-    grid:
-    - 1,0,3,0
-    - 0,1,3,1
-    - 0,3,3,4
-    - 1,5,3,5
-    - 5,0,7,0
-    - 5,1,8,1
-    - 5,3,8,4
-    - 5,5,7,5
+    grid: # 36
+    - 1,0,3,0 # 3x1=3
+    - 0,1,3,1 # 4x1=4
+    - 0,3,3,4 # 4x2=8
+    - 1,5,3,5 # 3x1=3
+    - 5,0,7,0 # 3x1=3
+    - 5,1,8,1 # 4x1=4
+    - 5,3,8,4 # 4x2=8
+    - 5,5,7,5 # 3x1=3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.91
+        Slash: 0.94
+        Piercing: 0.97
+        Heat: 0.98
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.94
+  - type: CP14MagicManacostModify
+    globalModifier: 1.03

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "All right reserved",
-  "copyright": "Created by creame (Discord)",
+  "copyright": "Created by Ell_Good (icon) and PhantomRU (equiped, recolor, inhand)",
   "size": {
     "x": 32,
     "y": 32
@@ -11,11 +11,11 @@
       "name": "icon"
     },
     {
-      "name": "equipped",
+      "name": "equipped-BACKPACK",
       "directions": 4
     },
     {
-      "name": "flipped-equipped",
+      "name": "flipped-equipped-BACKPACK",
       "directions": 4
     },
     {
