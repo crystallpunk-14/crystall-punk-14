@@ -19,7 +19,7 @@
     state: icon
   - type: PhysicalComposition
     materialComposition:
-      CP14IronBar: 0.2
+      CP14Iron: 2
   - type: StaticPrice
     price: 2
 
