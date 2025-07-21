@@ -7,8 +7,8 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 10
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 4
   - !type:ProtoIdResource
     protoId: CP14IronBuckle

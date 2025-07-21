@@ -53,8 +53,8 @@
   - !type:ProtoIdResource
     ProtoId: CP14ScrapAnimalHide
     count: 3
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 3
   result: CP14AnimalHide
   resultCount: 1
@@ -69,8 +69,8 @@
   - !type:ProtoIdResource
     protoId: CP14ThinLeather
     count: 2
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 4
   result: CP14Leather
   resultCount: 1
@@ -85,8 +85,8 @@
   - !type:ProtoIdResource
     protoId: CP14ThinLeather
     count: 1
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 4
   result: CP14LeatherStrap
   resultCount: 4
@@ -110,8 +110,8 @@
   - !type:ProtoIdResource
     protoId: CP14Leather
     count: 2
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 8
   result: CP14RuggedStrap
   resultCount: 4
@@ -124,8 +124,8 @@
   - !type:ProtoIdResource
     protoId: CP14RuggedLeather
     count: 1
-  - !type:StackResource
-    stack: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14String
     count: 4
   result: CP14RuggedStrap
   resultCount: 4
