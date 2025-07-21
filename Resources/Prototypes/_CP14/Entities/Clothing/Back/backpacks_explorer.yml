@@ -1,10 +1,18 @@
 # TODO: Icons, Modifiers
 
+# ========================
+# Base
+# ========================
+
 # - type: entity
 #   abstract: true
 #   parent: CP14ClothingBackContainerBase
 #   id: CP14ClothingExplorerBackpackBase
 #   categories: [ ForkFiltered ]
+
+# ========================
+# Tiers
+# ========================
 
 # - type: entity
 #   parent: CP14ClothingExplorerBackpackBase

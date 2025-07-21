@@ -10,6 +10,7 @@
     size: Huge
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t2.rsi
+    state: icon
   - type: Clothing
     equipDelay: 0.4
     unequipDelay: 0.2

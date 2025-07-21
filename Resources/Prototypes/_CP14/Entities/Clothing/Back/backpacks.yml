@@ -1,17 +1,30 @@
+ # TODO: recolor woth tags --- normal backpack T0 --- color backpack T0
+
+# ========================
+# Base
+# ========================
+
 - type: entity
   abstract: true
   parent: CP14ClothingBackContainerBase
   id: CP14ClothingBackpackBase
   categories: [ ForkFiltered ]
 
+# ========================
+# Tiers
+# ========================
+
 - type: entity
   parent: CP14ClothingBackpackBase
   id: CP14ClothingBackpackT0
   name: Sack
-  suffix: backpack T0 # !!!!!! TODO: normal backpack T0 --- color backpack T0
+  suffix: backpack T0
   description: A simple cloth sack with basic storage capacity. Lightweight but not very secure.
   components:
   - type: Clothing
+    slots:
+    - back
+    - belt
     equipDelay: 0.8
     unequipDelay: 0.3
   - type: Sprite
@@ -25,8 +38,11 @@
   id: CP14ClothingBackpackT1
   name: Backpack
   suffix: backpack T1
-  description: A standard backpack with decent storage space. Perfect for everyday use.
+  description: A standard backpack with decent storage space. Perfect for everyday use. It restricts movement a little, but it protects your back from blows!
   components:
+  - type: Clothing
+    slots:
+    - back
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t1.rsi
   - type: Storage
@@ -50,7 +66,7 @@
   id: CP14ClothingBackpackT2
   name: Extended Backpack
   suffix: backpack T2
-  description: An expanded backpack with increased capacity. Ideal for longer trips.
+  description: An expanded backpack with increased capacity. Ideal for longer trips. It restricts movement, but it protects your back from blows and keeps you warm!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t2.rsi
@@ -77,7 +93,7 @@
   id: CP14ClothingBackpackT3
   name: Traveler Backpack
   suffix: backpack T3
-  description: A large, well-organized backpack designed for extensive traveling with multiple compartments.
+  description: A large, well-organized backpack designed for extensive traveling with multiple compartments. It greatly restricts movement, but it protects your back!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t3.rsi
@@ -112,7 +128,7 @@
   id: CP14ClothingBackpackReinforced
   name: Reinforced Backpack
   suffix: backpack T2
-  description: A durable backpack with reinforced stitching and materials for extra protection of your belongings.
+  description: A durable backpack with reinforced stitching and materials for extra protection of your belongings. It restricts movement, but it protects your back from blows and keeps you warm!
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t2_reinforced.rsi
@@ -137,13 +153,12 @@
   - type: CP14MagicManacostModify
     globalModifier: 1.04
 
-
 - type: entity
   parent: CP14ClothingBackpackT2
   id: CP14ClothingBackpackCargo
   name: Cargo Bag
   suffix: backpack T2
-  description: A utilitarian cargo bag designed for heavy-duty use.
+  description: A utilitarian cargo bag designed for heavy-duty use. Convenient for carrying and storing work stuff.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t2_cargo.rsi
@@ -155,5 +170,5 @@
     - 0,4,7,5 # 8*2=16
     - 1,6,6,6 # 6*1=6
   - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+    walkModifier: 0.97
+    sprintModifier: 0.97
