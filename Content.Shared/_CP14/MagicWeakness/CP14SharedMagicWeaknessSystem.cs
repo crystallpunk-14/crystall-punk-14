@@ -9,7 +9,7 @@ namespace Content.Shared._CP14.MagicWeakness;
 
 public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
