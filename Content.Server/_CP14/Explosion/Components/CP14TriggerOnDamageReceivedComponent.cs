@@ -4,4 +4,4 @@ namespace Content.Server.Explosion.Components;
 /// Triggers when the entity is damaged.
 /// </summary>
 [RegisterComponent]
-public sealed partial class TriggerOnDamageReceivedComponent : Component { }
+public sealed partial class CP14TriggerOnDamageReceivedComponent : Component { }

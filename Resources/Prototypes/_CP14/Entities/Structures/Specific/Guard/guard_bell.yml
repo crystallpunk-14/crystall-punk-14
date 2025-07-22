@@ -16,7 +16,7 @@
   - type: Damageable
     damageContainer: Inorganic
   - type: TriggerOnActivate
-  - type: TriggerOnDamageReceived
+  - type: CP14TriggerOnDamageReceived
   - type: SpawnOnTrigger
     proto: GuardBellEffect1
   - type: UseDelay
@@ -88,6 +88,7 @@
 - type: entity
   id: CP14GuardBellEffect1
   parent: CP14BaseGuardBellEffect
+  categories: [ HideSpawnMenu ]
   components:
   - type: EmitSoundOnSpawn
     sound:
@@ -99,6 +100,7 @@
 - type: entity
   id: CP14GuardBellEffect2
   parent: CP14BaseGuardBellEffect
+  categories: [ HideSpawnMenu ]
   components:
   - type: EmitSoundOnSpawn
     sound:
@@ -110,6 +112,7 @@
 - type: entity
   id: CP14GuardBellEffect3
   parent: CP14BaseGuardBellEffect
+  categories: [ HideSpawnMenu ]
   components:
   - type: EmitSoundOnSpawn
     sound:
@@ -122,6 +125,7 @@
 - type: entity
   id: CP14GuardBellEffect4
   parent: CP14BaseGuardBellEffect
+  categories: [ HideSpawnMenu ]
   components:
   - type: EmitSoundOnSpawn
     sound:

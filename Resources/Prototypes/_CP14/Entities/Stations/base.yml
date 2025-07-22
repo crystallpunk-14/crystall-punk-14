@@ -5,6 +5,7 @@
   - BaseStation
   - BaseStationAllEventsEligible
   - BaseStationJobsSpawning
+  - BaseStationAlertLevels
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
   - CP14BaseStationDemiplaneMap
