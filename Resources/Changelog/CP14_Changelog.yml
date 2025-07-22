@@ -1176,3 +1176,50 @@
   id: 8171
   time: '2025-07-18T18:38:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1546
+- author: cooldolphin
+  changes:
+  - message: The mercenary outfit is now available for equipping in the loadout menu.
+    type: Add
+  id: 8172
+  time: '2025-07-18T23:59:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1550
+- author: KittyCat432
+  changes:
+  - message: Innkeepers now start with Tiefling's gambit in their closet.
+    type: Tweak
+  id: 8173
+  time: '2025-07-18T23:59:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1549
+- author: Deserty0
+  changes:
+  - message: Many Russian words blocked on Twitch have been added to the chat sanitizer.
+    type: Remove
+  - message: "\u042F \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u044E \u0432\u0430\
+      \u043C \u043C\u0430\u0442\u044E\u043A\u0430\u0442\u044C\u0441\u044F"
+    type: Remove
+  id: 8174
+  time: '2025-07-19T00:03:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1548
+- author: Nyranu
+  changes:
+  - message: Added hard coal - new efficient fuel in the game.
+    type: Add
+  - message: Wood is now less efficient fuel.
+    type: Tweak
+  - message: Hard coal now can be found in demiplanes
+    type: Add
+  id: 8175
+  time: '2025-07-19T10:24:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1521
+- author: TheShuEd
+  changes:
+  - message: Fixed various cooking bugs
+    type: Fix
+  - message: Old pie recipes have been completely removed
+    type: Remove
+  - message: Modular pies have been added to the new cooking system (only 4 pie recipe
+      rn)
+    type: Add
+  id: 8176
+  time: '2025-07-20T12:45:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1540

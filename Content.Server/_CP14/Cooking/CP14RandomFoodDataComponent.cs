@@ -11,4 +11,7 @@ public sealed partial class CP14RandomFoodDataComponent : Component
     /// </summary>
     [DataField]
     public float Prob = 0.75f;
+
+    [DataField]
+    public bool Rename = true;
 }
