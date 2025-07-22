@@ -15,7 +15,7 @@
   description: A sturdy metal buckle for fastening straps and belts.
   components:
   - type: Sprite
-    sprite: _CP14/Ingredients/buckle.rsi
+    sprite: _CP14/Objects/Ingredients/buckle.rsi
     state: icon
   - type: PhysicalComposition
     materialComposition:
@@ -25,7 +25,7 @@
 
 # Salt
 - type: entity
-  id: CP14Salt
+  id: CP14Salt1
   parent: CP14IngredientBase
   name: Salt
   description: A crystalline mineral used to season and preserve food.
@@ -44,7 +44,7 @@
 
 - type: entity
   id: CP14Salt5
-  parent: CP14Salt
+  parent: CP14Salt1
   suffix: 5
   components:
   - type: Stack
@@ -52,7 +52,7 @@
 
 - type: entity
   id: CP14Salt10
-  parent: CP14Salt
+  parent: CP14Salt1
   suffix: 10
   components:
   - type: Stack

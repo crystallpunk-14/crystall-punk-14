@@ -13,41 +13,44 @@
 # Fur Types
 - type: entity
   id: CP14CheapFur
-  parent: CP14HideBase
+  parent: CP14FurBase
   name: cheap fur
   description: Thin, uneven fur that is only good for wiping your feet on.
   components:
   - type: Item
     size: Small
   - type: Sprite
+    sprite: _CP14/Objects/Ingredients/fur.rsi
     state: cheap_fur
   - type: StaticPrice
     price: 15
 
 - type: entity
   id: CP14Fur
-  parent: CP14HideBase
+  parent: CP14FurBase
   name: fur
   description: Ordinary fur, intended for everyday use and carpets.
   components:
   - type: Item
     size: Normal
   - type: Sprite
+    sprite: _CP14/Objects/Ingredients/fur.rsi
     state: fur
   - type: StaticPrice
     price: 40
 
 - type: entity
   id: CP14GoodFur
-  parent: CP14HideBase
+  parent: CP14FurBase
   name: soft fur
   description: Good, pleasant fur, perfect for fur coats and insulation.
   components:
   - type: Item
     size: Normal
-    shape:
+    shape:koi
     - 0,0,1,2 # 2x3
   - type: Sprite
+    sprite: _CP14/Objects/Ingredients/fur.rsi
     state: good_fur
   - type: StaticPrice
     price: 80
