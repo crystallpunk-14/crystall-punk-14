@@ -105,14 +105,14 @@
 
 - type: entity
   parent: CP14ClothingShoesBase
-  id: CP14ClothingShoesBlackThighHighBoots
-  name: Black thigh high boots
+  id: CP14ClothingShoesThighHighBoots
+  name: thigh high boots
   description: this isnt even thigh high. this is leg high
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Shoes/black-thigh-high-boots.rsi
+    sprite: _CP14/Clothing/Shoes/thigh-high-boots.rsi
   - type: Clothing
-    sprite: _CP14/Clothing/Shoes/black-thigh-high-boots.rsi
+    sprite: _CP14/Clothing/Shoes/thigh-high-boots.rsi
 
 - type: entity
   parent: CP14ClothingShoesBase
