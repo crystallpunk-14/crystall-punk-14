@@ -23,7 +23,7 @@
     delay: 2.0
 
 - type: entity
-  id: CP14GuardBell1
+  id: CP14GuardBell
   parent: CP14BaseGuardBell
   components:
   - type: Sprite
