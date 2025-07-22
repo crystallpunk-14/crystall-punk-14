@@ -3,7 +3,7 @@ using Content.Shared.Damage;
 
 namespace Content.Server.Explosion.EntitySystems;
 
-public sealed partial class CP14TriggerSystem
+public sealed partial class TriggerSystem
 {
     private void InitializeDamageReceived()
     {
