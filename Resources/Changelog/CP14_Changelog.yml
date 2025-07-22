@@ -1230,3 +1230,15 @@
   id: 8177
   time: '2025-07-22T08:06:41.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1562
+- author: KittyCat432
+  changes:
+  - message: Added a new guidebook entry under adventurers called Monster Toxins used
+      to show all the different toxins monsters use.
+    type: Add
+  - message: Changed spiders now inject a new reagent called Arachnotoxin.
+    type: Tweak
+  - message: Changed spiders deal half the amount of slash damage from 3 to 1.5
+    type: Tweak
+  id: 8178
+  time: '2025-07-22T10:29:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
