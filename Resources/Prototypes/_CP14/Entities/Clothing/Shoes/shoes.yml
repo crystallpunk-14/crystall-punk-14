@@ -105,6 +105,35 @@
 
 - type: entity
   parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesBlackThighHighBoots
+  name: Black thigh high boots
+  description: this isnt even thigh high. this is leg high
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/black-thigh-high-boots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/black-thigh-high-boots.rsi
+
+- type: entity
+  parent: CP14ClothingShoesBase
+  id: CP14ClothingShoesArtifactSqueakyBoots
+  name: Squeaky boots
+  description: oh no...
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Shoes/squeaky-boots.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Shoes/squeaky-boots.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14SqeakyBoots
+      params:
+        variation: 0.2
+
+- type: entity
+  parent: CP14ClothingShoesBase
   id: CP14ClothingShoesJestersRingers
   name: jester's ringers
   description: Everyone around you should know that you exist, buddy.
