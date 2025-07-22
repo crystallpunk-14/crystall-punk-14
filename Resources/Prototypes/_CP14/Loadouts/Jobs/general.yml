@@ -623,14 +623,14 @@
     shoes: CP14ClothingShoesSandals
 
 - type: loadout
-  id: CP14ClothingShoesThighHighBoots
-  equipment:
-    shoes: CP14ClothingShoesThighHighBoots
-
-- type: loadout
   id: CP14LongLeatherBoots
   equipment:
     shoes: CP14LongLeatherBoots
+
+- type: loadout
+  id: CP14ClothingShoesThighHighBoots
+  equipment:
+    shoes: CP14ClothingShoesThighHighBoots
 
 - type: loadout
   id: CP14ClothingShoesJestersRingers
