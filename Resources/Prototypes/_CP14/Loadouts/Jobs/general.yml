@@ -625,7 +625,7 @@
 - type: loadout
   id: CP14LongLeatherBoots
   equipment:
-    shoes: CP14ColthingShoesLongLeatherBoots
+    shoes: CP14LongLeatherBoots
 
 - type: loadout
   id: CP14ThighHighBoots
