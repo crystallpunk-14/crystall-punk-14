@@ -691,7 +691,7 @@
     minInterval: 80
     maxInterval: 130
     sound:
-      collection: CP14Rooster
+      path: /Audio/_CP14/Animals/rooster.ogg
       params:
         volume: 8
         variation: 0.125

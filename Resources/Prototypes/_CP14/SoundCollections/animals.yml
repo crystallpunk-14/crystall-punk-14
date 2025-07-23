@@ -37,11 +37,6 @@
   - /Audio/_CP14/Animals/bear2.ogg
 
 - type: soundCollection
-  id: CP14Rooster
-  files:
-  - /Audio/_CP14/Animals/rooster.ogg
-
-- type: soundCollection
   id: CP14Chicken
   files:
   - /Audio/_CP14/Animals/chicken1.ogg
