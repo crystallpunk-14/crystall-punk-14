@@ -3,6 +3,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_cheek_left
@@ -12,6 +13,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_cheek_right
@@ -21,6 +23,7 @@
   bodyPart: Chest
   markingCategory: Chest
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_chest_left
@@ -30,6 +33,7 @@
   bodyPart: Chest
   markingCategory: Chest
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_chest_right
@@ -39,6 +43,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_cut_left
@@ -48,6 +53,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_cut_right
@@ -57,6 +63,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_eye_left
@@ -66,6 +73,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_eye_right
@@ -75,6 +83,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_eyebrow_left
@@ -84,6 +93,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_eyebrow_right
@@ -93,6 +103,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_half_face_left
@@ -102,6 +113,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_half_face_right
@@ -111,6 +123,7 @@
   bodyPart: Chest
   markingCategory: Chest
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_near_rib_left
@@ -120,6 +133,7 @@
   bodyPart: Chest
   markingCategory: Chest
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_near_rib_right
@@ -129,6 +143,7 @@
   bodyPart: Head
   markingCategory: Head
   followSkinColor: true
+  speciesRestriction: [ CP14Human, CP14Elf, CP14Dwarf, CP14Tiefling, CP14Silva ]
   sprites:
     - sprite: _CP14/Mobs/Customization/human_scars.rsi
       state: scar_nose
