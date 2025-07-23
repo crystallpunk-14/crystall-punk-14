@@ -9,7 +9,13 @@ Elves are a race very similar to humans, but have no common ancestors. They can 
 
 ## Ancient Magic
 
-Elves have a magic reserve 2 times higher than normal, but their natural regeneration of magical energy is 2 times weaker. 
+Elves magic reserves are [color=#1e90ff]2.5x as big[/color] however they have [color=#ffa500]NO natural regeneration of magic.[/color]
+
+Elves only way to regenerate magic is by using a spell unique to them Mana Trance.
+
+<Box>
+<GuideEntityEmbed Entity="CP14ActionSpellManaTrance" Caption="Mana Trance"/>
+</Box>
 
 Also, elves initially have basic and advanced metamagic.
 
