@@ -21,6 +21,10 @@
     {
       "name": "equipped-MASK",
       "directions": 4
+    },
+    {
+        "name": "equipped-MASK-goblin",
+        "directions": 4
     }
   ]
 }
