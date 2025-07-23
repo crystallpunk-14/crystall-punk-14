@@ -33,12 +33,13 @@ public sealed partial class SolutionResource : CP14WorkbenchCraftRequirement
                 continue;
 
             var volume = solution.Volume;
+
+            if (volume < Amount)
+                continue;
+
             foreach (var (id, quantity) in solution.Contents)
             {
                 if (id.Prototype != Reagent)
-                    continue;
-
-                if (quantity < Amount)
                     continue;
 
                 //Purity check
