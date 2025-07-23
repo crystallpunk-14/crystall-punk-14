@@ -523,6 +523,9 @@
   id: CP14MobChicken
   description: A bird that can't fly is a must-have on any farm.
   components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -587,13 +590,14 @@
     factions:
     - CP14PeacefulAnimals
   - type: SpamEmitSound
-    minInterval: 20
-    maxInterval: 40
+    minInterval: 30
+    maxInterval: 50
     sound:
-      collection: CP14Bear # Звук кудахкания
+      collection: CP14Chicken
       params:
         volume: -2
         variation: 0.125
+  - type: SoundWhileAlive
 
 - type: entity
   parent: CP14MobChicken
@@ -617,6 +621,9 @@
   name: rooster
   description: A colourful and proud rooster, protector of oppressed hens and role model for chicks.
   components:
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -681,13 +688,14 @@
     factions:
     - CP14Adventurers # A dangerous fighting rooster protects his hens.
   - type: SpamEmitSound
-    minInterval: 20
-    maxInterval: 40
+    minInterval: 80
+    maxInterval: 130
     sound:
-      collection: CP14Bear # Эпичное кукареку?
+      collection: CP14Rooster
       params:
-        volume: -2
+        volume: 8
         variation: 0.125
+  - type: SoundWhileAlive
 
 - type: entity
   id: CP14MobChickNotGrowing 
@@ -773,6 +781,7 @@
       params:
         volume: -2
         variation: 0.125
+  - type: SoundWhileAlive
   - type: Tag
     tags:
     - Meat

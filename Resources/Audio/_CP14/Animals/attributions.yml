@@ -123,3 +123,12 @@
   copyright: 'by husky70 of Freesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/husky70/sounds/170454/"
 
+- files: ["rooster.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'By klankbeeld offreesound.org. Mixed from stereo to mono.'
+  source: "https://freesound.org/people/klankbeeld/sounds/379597/"
+
+- files: ["chicken1.ogg, chicken2.ogg, chicken3.ogg, chicken4.ogg, chicken5.ogg"]
+  license: "CC0-1.0"
+  copyright: 'By nickmaysoundmusic offreesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/nickmaysoundmusic/sounds/724215/"
