@@ -804,7 +804,9 @@
 
 - type: entity
   id: CP14FoodEggChickFertilized
-  parent: CP14FoodEgg
+  parent: 
+  - CP14FoodEgg
+  - CP14BurnsAsh
   suffix: Fertilized, Chick # Добавить компонент температуры, чтобы заморозив, можно было превратить в обычное яйцо.
   components:
   - type: Timer
@@ -816,3 +818,7 @@
     maximumEntitiesSpawned: 1
   - type: TimedDespawn #delete the egg after the chick spawns
     lifetime: 300.1
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 100, 200
+      transformTo: CP14FoodEgg
