@@ -168,7 +168,7 @@
     node: CP14WorkbenchLeather
   - type: CP14Workbench
     craftSound:
-      collection: CP14Leather # TODO?
+      collection: CP14Sawing # TODO CP14Leather?
     recipeTags:
     - CP14RecipeLeatherWorking
 
