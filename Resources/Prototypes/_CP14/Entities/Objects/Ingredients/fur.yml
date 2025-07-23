@@ -47,7 +47,7 @@
   components:
   - type: Item
     size: Normal
-    shape:koi
+    shape:
     - 0,0,1,2 # 2x3
   - type: Sprite
     sprite: _CP14/Objects/Ingredients/fur.rsi

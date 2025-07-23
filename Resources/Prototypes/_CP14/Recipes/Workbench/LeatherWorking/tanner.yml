@@ -9,7 +9,7 @@
   craftTime: 1
   requirements:
   - !type:ProtoIdResource
-    ProtoId: CP14ThinAnimalHide
+    protoId: CP14ThinAnimalHide
     count: 2
   - !type:StackResource
     stack: CP14Salt
@@ -23,7 +23,7 @@
   craftTime: 1
   requirements:
   - !type:ProtoIdResource
-    ProtoId: CP14AnimalHide
+    protoId: CP14AnimalHide
     count: 1
   - !type:StackResource
     stack: CP14Salt
@@ -37,7 +37,7 @@
   craftTime: 2
   requirements:
   - !type:ProtoIdResource
-    ProtoId: CP14RuggedAnimalHide
+    protoId: CP14RuggedAnimalHide
     count: 1
   - !type:StackResource
     stack: CP14Salt
@@ -51,7 +51,7 @@
   craftTime: 2
   requirements:
   - !type:ProtoIdResource
-    ProtoId: CP14ScrapAnimalHide
+    protoId: CP14ScrapAnimalHide
     count: 3
   - !type:ProtoIdResource
     protoId: CP14String
