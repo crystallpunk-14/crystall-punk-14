@@ -15,7 +15,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: 2
+        manaDelta: 2.1
         safe: true
       - !type:HealthChange
         damage:
