@@ -195,7 +195,7 @@
     count: 1
 
 - type: cp14TradingPosition
-  id: CP14RuggedHide
+  id: CP14RuggedAnimalHide
   faction: Butchers
   reputationLevel: 3
   uiPosition: 7
@@ -203,5 +203,5 @@
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: rugged_hide
   service: !type:CP14BuyItemsService
-    product: CP14RuggedHide
+    product: CP14RuggedAnimalHide
     count: 1

@@ -32,7 +32,7 @@
   resultCount: 1
 
 - type: CP14Recipe
-  id: CP14RuggedHideRecipe
+  id: CP14RuggedAnimalHideRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:

@@ -33,12 +33,18 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Objects/Materials/ore.rsi
-    state: salt
+    sprite: _CP14/Objects/Materials/salt.rsi
+    layers:
+      - state: ore1
+        map: ["base"]
   - type: Stack
     stackType: CP14Salt
     count: 1
     baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
   - type: StaticPrice
     price: 2
 

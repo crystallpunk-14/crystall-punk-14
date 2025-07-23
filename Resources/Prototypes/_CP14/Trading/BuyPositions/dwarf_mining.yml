@@ -83,8 +83,8 @@
   reputationLevel: 1
   uiPosition: 1
   icon:
-    sprite: Resources/Textures/Objects/Materials/ore.rsi
-    state: salt
+    sprite: _CP14/Objects/Materials/salt.rsi
+    state: ore2
   service: !type:CP14BuyItemsService
     product: CP14Salt5
 
