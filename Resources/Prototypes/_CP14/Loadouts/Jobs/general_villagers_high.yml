@@ -2,7 +2,7 @@
 
 - type: loadoutGroup
   id: CP14GeneralVillagerBackCargo
-  name: cp14-loadout-general-villager-high-back
+  name: cp14-loadout-general-villager-back-cargo
   loadouts:
   - CP14ClothingBackBackpackT2
   - CP14ClothingBackBackpackCargo
@@ -32,7 +32,7 @@
 
 - type: loadoutGroup
   id: CP14GeneralVillagerBackReinforced
-  name: cp14-loadout-general-villager-high-back
+  name: cp14-loadout-general-villager-back-reinforced
   loadouts:
   - CP14ClothingBackBackpackT2
   - CP14ClothingBackBackpackReinforced

@@ -22,11 +22,3 @@
 #   id: CP14ClothingBackExplorerBackpackT1
 #   equipment:
 #     back: CP14ClothingBackExplorerBackpackT1
-
-- type: loadoutGroup
-  id: CP14WorkerVillagerBack
-  name: cp14-loadout-general-villager-back
-  loadouts:
-  - CP14ClothingBackBackpackT2
-  - CP14ClothingBackSatchelT2
-  - CP14ClothingBackExplorerBackpackT2
