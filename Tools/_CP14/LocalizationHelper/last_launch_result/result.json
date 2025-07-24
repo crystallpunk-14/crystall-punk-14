@@ -1667,25 +1667,102 @@
     },
     "CP14ClothingBackBackpackBase": {
         "id": "CP14ClothingBackBackpackBase",
-        "name": "leather backpack",
-        "description": "You wear this on your back and put items into it.",
+        "name": null,
+        "description": null,
         "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
-    "CP14ClothingBackExplorerBackpackBase": {
-        "id": "CP14ClothingBackExplorerBackpackBase",
-        "name": "leather backpack",
-        "description": "You wear this on yourself and put items into it.",
-        "parent": "CP14ClothingBackContainerBase",
-        "suffix": null
+    "CP14ClothingBackBackpackT0": {
+        "id": "CP14ClothingBackBackpackT0",
+        "name": "Sack",
+        "description": "A simple cloth sack with basic storage capacity. Lightweight but not very secure.",
+        "parent": "CP14ClothingBackBackpackBase",
+        "suffix": "backpack T0"
     },
+    "CP14ClothingBackBackpackT1": {
+        "id": "CP14ClothingBackBackpackT1",
+        "name": "Backpack",
+        "description": "A standard backpack with decent storage space. Perfect for everyday use. It restricts movement a little, but it protects your back from blows!",
+        "parent": "CP14ClothingBackBackpackT0",
+        "suffix": "backpack T1"
+    },
+    "CP14ClothingBackBackpackT2": {
+        "id": "CP14ClothingBackBackpackT2",
+        "name": "Extended Backpack",
+        "description": "An expanded backpack with increased capacity. Ideal for longer trips. It restricts movement, but it protects your back from blows and keeps you warm!",
+        "parent": "CP14ClothingBackBackpackT1",
+        "suffix": "backpack T2"
+    },
+    "CP14ClothingBackBackpackT3": {
+        "id": "CP14ClothingBackBackpackT3",
+        "name": "Traveler Backpack",
+        "description": "A large, well-organized backpack designed for extensive traveling with multiple compartments. It greatly restricts movement, but it protects your back!",
+        "parent": "CP14ClothingBackBackpackT2",
+        "suffix": "backpack T3"
+    },
+    "CP14ClothingBackBackpackReinforced": {
+        "id": "CP14ClothingBackBackpackReinforced",
+        "name": "Reinforced Backpack",
+        "description": "A durable backpack with reinforced stitching and materials for extra protection of your belongings. It restricts movement, but it protects your back from blows and keeps you warm!",
+        "parent": "CP14ClothingBackBackpackT2",
+        "suffix": "backpack T2"
+    },
+    "CP14ClothingBackBackpackCargo": {
+        "id": "CP14ClothingBackBackpackCargo",
+        "name": "Cargo Bag",
+        "description": "A utilitarian cargo bag designed for heavy-duty use. Convenient for carrying and storing work stuff.",
+        "parent": "CP14ClothingBackBackpackT2",
+        "suffix": "backpack T2"
+    },
+
     "CP14ClothingBackSatchelBase": {
         "id": "CP14ClothingBackSatchelBase",
-        "name": "leather satchel",
-        "description": "You wear this on your shoulder and put items into it.",
+        "name": null,
+        "description": null,
         "parent": "CP14ClothingBackContainerBase",
         "suffix": null
     },
+    "CP14ClothingBackSatchelT0": {
+        "id": "CP14ClothingBackSatchelT0",
+        "name": "Pouch",
+        "description": "A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.",
+        "parent": "CP14ClothingBackSatchelBase",
+        "suffix": "backpack T0"
+    },
+    "CP14ClothingBackSatchelT1": {
+        "id": "CP14ClothingBackSatchelT1",
+        "name": "Rustic Satchel",
+        "description": "A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling. Can be worn on the belt or over the shoulder. Interferes with sprinting.",
+        "parent": "CP14ClothingBackSatchelT0",
+        "suffix": "backpack T1"
+    },
+    "CP14ClothingBackSatchelT2": {
+        "id": "CP14ClothingBackSatchelT2",
+        "name": "Courier Satchel",
+        "description": "A professional-grade satchel designed for messengers, with organized compartments for quick access. Interferes with sprinting.",
+        "parent": "CP14ClothingBackSatchelT1",
+        "suffix": "backpack T2"
+    },
+    "CP14ClothingBackSatchelT3": {
+        "id": "CP14ClothingBackSatchelT3",
+        "name": "Haversack",
+        "description": "A sturdy military-style haversack with ample capacity, designed for extended field use. Interferes with sprinting.",
+        "parent": "CP14ClothingBackSatchelBase",
+        "suffix": "backpack T3"
+    },
+    "CP14ClothingBackSatchelReinforced": {
+        "id": "CP14ClothingBackSatchelReinforced",
+        "name": "Reinforced Satchel",
+        "description": "A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions. Interferes with sprinting.",
+        "parent": "CP14ClothingBackSatchelT2",
+        "suffix": "backpack T2"
+    },
+
+
+
+
+
+
     "CP14ClothingBeltPouchPotions": {
         "id": "CP14ClothingBeltPouchPotions",
         "name": "potions pouch",

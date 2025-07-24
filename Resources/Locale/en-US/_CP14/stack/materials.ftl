@@ -19,6 +19,8 @@ cp14-stack-iron-ore = iron ore
 cp14-stack-gold-ore = gold ore
 cp14-stack-mithril-ore = mithril ore
 
+cp14-stack-salt = salt stone
+
 cp14-stack-wallpaper = rolls of wallpaper
 
 cp14-stack-glass-sheet = glass
