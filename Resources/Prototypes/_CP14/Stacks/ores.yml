@@ -32,3 +32,10 @@
   spawn: CP14OreCoal1
   icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore3 }
   maxCount: 10
+
+- type: stack
+  id: CP14OreSalt
+  name: cp14-stack-salt
+  spawn: CP14OreSalt1
+  icon: { sprite: _CP14/Objects/Materials/salt.rsi, state: ore3 }
+  maxCount: 10

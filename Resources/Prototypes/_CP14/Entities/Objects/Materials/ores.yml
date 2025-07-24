@@ -242,40 +242,42 @@
 
 # Salt
 - type: entity
-  id: CP14Salt1
-  parent: CP14IngredientBase
+  id: CP14OreSalt1
+  parent: BaseItem
   name: Salt
   description: A crystalline mineral used to season and preserve food.
   components:
   - type: Item
     size: Normal
+  - type: Appearance
   - type: Sprite
     sprite: _CP14/Objects/Materials/salt.rsi
     layers:
       - state: ore1
         map: ["base"]
   - type: Stack
-    stackType: CP14Salt
+    stackType: CP14OreSalt
     count: 1
     baseLayer: base
     layerStates:
     - ore1
     - ore2
     - ore3
+  - type: Material
   - type: StaticPrice
     price: 2
 
 - type: entity
-  id: CP14Salt5
-  parent: CP14Salt1
+  id: CP14OreSalt5
+  parent: CP14OreSalt1
   suffix: 5
   components:
   - type: Stack
     count: 5
 
 - type: entity
-  id: CP14Salt10
-  parent: CP14Salt1
+  id: CP14OreSalt10
+  parent: CP14OreSalt1
   suffix: 10
   components:
   - type: Stack
