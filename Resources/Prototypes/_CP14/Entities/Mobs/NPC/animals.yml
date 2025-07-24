@@ -551,7 +551,7 @@
       tags:
       - CP14Rooster
     offspring:
-    - id: CP14FoodEggChickenFertilized
+    - id: CP14FoodEggChickFertilized
       maxAmount: 3
   - type: Appearance
   - type: MobThresholds
