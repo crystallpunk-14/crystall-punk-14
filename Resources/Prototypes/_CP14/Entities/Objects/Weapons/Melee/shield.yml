@@ -52,8 +52,6 @@
       collection: MetalThud
     cPAnimationLength: 0.3
     cPAnimationOffset: -0.5
-  - type: MeleeThrowOnHit
-    speed: 3
   - type: DamageOnLand
     damage:
       types:

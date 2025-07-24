@@ -1,0 +1,49 @@
+name: "Report an Issue"
+description: "Report a bug or problem you have found"
+type: Bug
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "📄 Description"
+      description: |
+        Explain your issue in detail. Include what you expected to happen.
+      placeholder: |
+        When I click the "Save" button, nothing happens.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "🔁 Reproduction Steps"
+      description: |
+        What steps lead to the problem? Try to list them clearly and precisely.
+      placeholder: |
+        1. Open the app
+        2. Go to Settings
+        3. Click "Save"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "🖼️ Screenshots"
+      description: |
+        If applicable, add screenshots to help explain your problem.
+      placeholder: |
+        You can paste images here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "ℹ️ Additional Context"
+      description: |
+        Any other context about the problem. Logs, version numbers, configs, etc.
+      placeholder: |
+        Occurs only on Android 11, using version 1.2.3.
+    validations:
+      required: false

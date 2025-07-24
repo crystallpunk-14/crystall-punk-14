@@ -27,6 +27,9 @@
   - type: SliceableFood
     count: 5
     slice: CP14FoodCheesePart
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodCheesePart
@@ -62,6 +65,9 @@
   - type: SliceableFood
     count: 3
     slice: CP14FoodCheeseSlice
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodCheeseSlice
@@ -98,6 +104,9 @@
   - type: FoodSequenceElement
     entries:
       CP14Sandwich: CP14CheeseSandwich
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 # Blue Cheese (50% more protein)
 - type: entity
@@ -127,6 +136,9 @@
     slice: CP14FoodBlueCheesePart
   - type: StaticPrice
     price: 20
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodBlueCheesePart
@@ -162,6 +174,9 @@
     slice: CP14FoodBlueCheeseSlice
   - type: StaticPrice
     price: 4
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodBlueCheeseSlice
@@ -194,6 +209,9 @@
           Quantity: 1.5 # 4.5/3
   - type: StaticPrice
     price: 1
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 # Aged Cheese (100% more protein)
 - type: entity
@@ -223,6 +241,9 @@
     slice: CP14FoodAgedCheesePart
   - type: StaticPrice
     price: 35
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodAgedCheesePart
@@ -258,6 +279,9 @@
     slice: CP14FoodAgedCheeseSlice
   - type: StaticPrice
     price: 7
+  - type: Tag
+    tags:
+    - CP14Cheese
 
 - type: entity
   id: CP14FoodAgedCheeseSlice
@@ -290,3 +314,6 @@
           Quantity: 2 # 6/3
   - type: StaticPrice
     price: 2
+  - type: Tag
+    tags:
+    - CP14Cheese

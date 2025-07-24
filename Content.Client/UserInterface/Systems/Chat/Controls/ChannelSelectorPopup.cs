@@ -12,7 +12,7 @@ public sealed class ChannelSelectorPopup : Popup
         ChatSelectChannel.Local,
         ChatSelectChannel.Whisper,
         ChatSelectChannel.Emotes,
-        ChatSelectChannel.Radio,
+       // ChatSelectChannel.Radio, // CP14 remove radio
         ChatSelectChannel.LOOC,
         ChatSelectChannel.OOC,
         ChatSelectChannel.Dead,
