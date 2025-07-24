@@ -2,3 +2,8 @@
   license: "CC0-1.0"
   copyright: "Created by Piddipop from https://freesound.org/"
   source: "https://freesound.org/people/Piddipop/sounds/728101/"
+
+- files: ["chick_scream.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'By GB01 offreesound.org. Cropped.'
+  source: "https://freesound.org/people/GB01/sounds/150298/"

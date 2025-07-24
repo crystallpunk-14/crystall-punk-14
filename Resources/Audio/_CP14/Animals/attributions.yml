@@ -132,3 +132,8 @@
   license: "CC0-1.0"
   copyright: 'By nickmaysoundmusic offreesound.org. Cropped and mixed from stereo to mono.'
   source: "https://freesound.org/people/nickmaysoundmusic/sounds/724215/"
+
+- files: ["chick1.ogg, chick2.ogg, chick3.ogg, chick4.ogg"]
+  license: "CC0-1.0"
+  copyright: 'By YostPeter offreesound.org. Cropped and mixed from stereo to mono.'
+  source: "https://freesound.org/people/YostPeter/sounds/468451/"

@@ -44,3 +44,11 @@
   - /Audio/_CP14/Animals/chicken3.ogg
   - /Audio/_CP14/Animals/chicken4.ogg
   - /Audio/_CP14/Animals/chicken5.ogg
+
+- type: soundCollection
+  id: CP14Chick
+  files:
+  - /Audio/_CP14/Animals/chick1.ogg
+  - /Audio/_CP14/Animals/chick2.ogg
+  - /Audio/_CP14/Animals/chick3.ogg
+  - /Audio/_CP14/Animals/chick4.ogg

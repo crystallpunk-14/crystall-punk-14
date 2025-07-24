@@ -523,9 +523,6 @@
   id: CP14MobChicken
   description: A bird that can't fly is a must-have on any farm.
   components:
-  - type: HTN
-    rootTask:
-      task: RuminantCompound
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -623,7 +620,7 @@
   components:
   - type: HTN
     rootTask:
-      task: RuminantHostileCompound
+      task: SimpleHostileCompound
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -742,6 +739,12 @@
   - type: FlavorProfile
     flavors:
     - meaty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
   - type: Appearance
   - type: NPCImprintingOnSpawnBehaviour
     whitelist:
@@ -766,25 +769,30 @@
   - type: Bloodstream
     bloodMaxVolume: 10
     bloodReagent: CP14BloodAnimal
-  - type: InteractionPopup
-    successChance: 1.0
-    interactSuccessString: cp14-petting-success-rabbit
-    interactFailureString: cp14-petting-failure-rabbit
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+  - type: Vocal
+    sounds:
+      Unsexed: CP14Chick
   - type: SpamEmitSound
-    minInterval: 20
-    maxInterval: 40
+    minInterval: 10
+    maxInterval: 20
     sound:
-      collection: CP14Bear # Милое цип-цип
+      collection: CP14Chick
       params:
-        volume: -2
+        volume: 2
         variation: 0.125
   - type: SoundWhileAlive
   - type: Tag
     tags:
     - Meat
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 15
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
 
 - type: entity
   id: CP14MobChick
