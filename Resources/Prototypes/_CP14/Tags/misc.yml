@@ -62,6 +62,9 @@
   id: CP14Boar
 
 - type: Tag
+  id: CP14Rooster
+
+- type: Tag
   id: CP14Mosquito
 
 - type: Tag
