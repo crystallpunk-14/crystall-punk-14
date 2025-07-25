@@ -84,7 +84,7 @@
   uiPosition: 1
   icon:
     sprite: _CP14/Objects/Materials/salt_stone.rsi
-    state: ore1
+    state: salt1
   service: !type:CP14BuyItemsService
     product: CP14SaltStone5
 
