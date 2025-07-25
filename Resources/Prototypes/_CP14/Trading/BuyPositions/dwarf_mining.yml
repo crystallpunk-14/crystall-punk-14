@@ -83,7 +83,7 @@
   reputationLevel: 1
   uiPosition: 1
   icon:
-    sprite: _CP14/Objects/Materials/salt.rsi
+    sprite: _CP14/Objects/Materials/salt_stone.rsi
     state: ore1
   service: !type:CP14BuyItemsService
     product: CP14SaltStone5
