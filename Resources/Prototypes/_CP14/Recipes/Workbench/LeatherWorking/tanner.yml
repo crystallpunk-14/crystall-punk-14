@@ -12,7 +12,7 @@
     protoId: CP14ThinAnimalHide
     count: 2
   - !type:StackResource
-    stack: CP14OreSalt
+    stack: CP14SaltStone
     count: 1
   result: CP14ThinLeather
   resultCount: 2
@@ -26,7 +26,7 @@
     protoId: CP14AnimalHide
     count: 1
   - !type:StackResource
-    stack: CP14OreSalt
+    stack: CP14SaltStone
     count: 1
   result: CP14Leather
   resultCount: 1
@@ -40,7 +40,7 @@
     protoId: CP14RuggedAnimalHide
     count: 1
   - !type:StackResource
-    stack: CP14OreSalt
+    stack: CP14SaltStone
     count: 2
   result: CP14RuggedLeather
   resultCount: 1

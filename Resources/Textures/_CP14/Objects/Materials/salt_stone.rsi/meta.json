@@ -8,13 +8,13 @@
   "copyright": "Created by PhantomRU",
   "states": [
     {
-      "name": "ore1"
+      "name": "salt1"
     },
     {
-      "name": "ore2"
+      "name": "salt2"
     },
     {
-      "name": "ore3"
+      "name": "salt3"
     }
   ]
 }
