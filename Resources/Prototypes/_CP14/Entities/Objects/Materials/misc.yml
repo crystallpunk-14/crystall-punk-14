@@ -144,8 +144,9 @@
     - salt2
     - salt3
   - type: Material
-  - type: StaticPrice
-    price: 2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14SaltStone: 10
 
 - type: entity
   id: CP14SaltStone5
