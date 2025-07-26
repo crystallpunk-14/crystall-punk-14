@@ -1264,3 +1264,10 @@
   id: 8180
   time: '2025-07-26T12:09:04.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
+- author: TheShuEd
+  changes:
+  - message: Lumera disabled
+    type: Remove
+  id: 8181
+  time: '2025-07-26T12:10:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
