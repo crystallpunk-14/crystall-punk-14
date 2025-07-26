@@ -1271,3 +1271,12 @@
   id: 8181
   time: '2025-07-26T12:10:06.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
+- author: gogenych
+  changes:
+  - message: 'New tree type: Spruce.'
+    type: Add
+  - message: Logs, planks and walls made from spruce wood!
+    type: Add
+  id: 8182
+  time: '2025-07-26T12:24:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539
