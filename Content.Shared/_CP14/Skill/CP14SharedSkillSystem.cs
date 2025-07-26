@@ -11,7 +11,7 @@ namespace Content.Shared._CP14.Skill;
 
 public abstract partial class CP14SharedSkillSystem : EntitySystem
 {
-    private EntityQuery<CP14SkillStorageComponent> _skillStorageQuery = default!;
+    private EntityQuery<CP14SkillStorageComponent> _skillStorageQuery;
 
     public override void Initialize()
     {
@@ -190,7 +190,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         if (skillContainer.Sum + skill.LearnCost > skillContainer.Max)
             return false;
-        
+
         //Restrictions check
         foreach (var req in skill.Restrictions)
         {

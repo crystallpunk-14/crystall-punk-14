@@ -2,7 +2,7 @@
   id: Pyrokinetic
   name: cp14-skill-tree-pyrokinetic-name
   desc: cp14-skill-tree-pyrokinetic-desc
-  skillType: Blood
+  skillType: Memory
   color: "#d6933c"
 
 - type: cp14SkillTree
