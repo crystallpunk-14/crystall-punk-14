@@ -3,3 +3,6 @@
 
 - type: cp14Religion
   id: Lumera
+
+- type: cp14Religion 
+  id: Tomer # rename it when we will make the god of demiplanes 

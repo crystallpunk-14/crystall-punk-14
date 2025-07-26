@@ -294,4 +294,7 @@
             collection: GlassBreak
         - !type:DoActsBehavior
           acts: ["Destruction"]
+  - type: CP14ReligionObserver
+    religion: Tomer
+    radius: 2.5
 
