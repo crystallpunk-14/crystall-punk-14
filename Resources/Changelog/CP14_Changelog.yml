@@ -1242,3 +1242,17 @@
   id: 8178
   time: '2025-07-22T10:29:49.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
+- author: KittyCat432
+  changes:
+  - message: Removed elf natural mana regeneration.
+    type: Remove
+  - message: Changed Mana trance now is exclusive to elves and is an innate skill.
+    type: Tweak
+  - message: Changed Mana trance now has a heavy slowdown instead of breaking upon
+      moving Elf taxi is now possible.
+    type: Tweak
+  - message: Changed Guide book on elves to better reflect their current state.
+    type: Tweak
+  id: 8179
+  time: '2025-07-26T11:49:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
