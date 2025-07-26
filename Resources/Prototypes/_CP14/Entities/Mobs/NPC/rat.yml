@@ -32,15 +32,6 @@
   - type: Tag
     tags:
     - CP14Rat
-  # Yeah probably no
-  # - type: Reproductive
-  #   partnerWhitelist:
-  #     tags:
-  #     - CP14Rat
-  #   offspring:
-  #   - id: CP14MobRat
-  #     maxAmount: 4
-  # - type: ReproductivePartner
   - type: Item
   - type: Clothing
     quickEquip: false
@@ -85,12 +76,10 @@
     states:
       Alive:
         Base: rat
+      Critical:
+        Base: rat_dead
       Dead:
         Base: rat_dead
-  # - type: Butcherable
-  #   spawned:
-  #   - id: CP14FoodMeatRabbit
-  #     amount: 4
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
@@ -116,5 +105,18 @@
     requireAlive: true
   - type: CP14NightVision
   - type: Climbing
-  # Hands required to be able to climb
   - type: Hands
+    hands:
+      hands:
+        location: Middle
+    sortedHands:
+    - hands
+  - type: ComplexInteraction
+  - type: GhostRole
+    makeSentient: true
+    # allowSpeech: true
+    allowMovement: true
+    name: cp14-ghost-role-information-name-rat
+    description: cp14-ghost-role-information-description-rat
+    rules: cp14-ghost-role-information-rules-pet
+  - type: GhostTakeoverAvailable
