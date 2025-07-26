@@ -1256,3 +1256,11 @@
   id: 8179
   time: '2025-07-26T11:49:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
+- author: Kryyto
+  changes:
+  - message: Guard bells no longer change the threat level. But can be used by using/hitting
+      them instead.
+    type: Tweak
+  id: 8180
+  time: '2025-07-26T12:09:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
