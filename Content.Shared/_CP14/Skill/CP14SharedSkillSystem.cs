@@ -64,6 +64,9 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return false;
 
+        if (!_proto.TryIndex(indexedSkill.Tree, out var indexedTree))
+            return false;
+
         foreach (var effect in indexedSkill.Effects)
         {
             effect.AddSkill(EntityManager, target);
@@ -72,7 +75,12 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (free)
             component.FreeLearnedSkills.Add(skill);
         else
-            component.SkillsSumExperience += indexedSkill.LearnCost;
+        {
+            if (component.SkillPoints.TryGetValue(indexedTree.SkillType, out var skillContainer))
+            {
+                skillContainer.Sum += indexedSkill.LearnCost;
+            }
+        }
 
         component.LearnedSkills.Add(skill);
         Dirty(target, component);
@@ -99,13 +107,21 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return false;
 
+        if (!_proto.TryIndex(indexedSkill.Tree, out var indexedTree))
+            return false;
+
         foreach (var effect in indexedSkill.Effects)
         {
             effect.RemoveSkill(EntityManager, target);
         }
 
         if (!component.FreeLearnedSkills.Remove(skill))
-            component.SkillsSumExperience -= indexedSkill.LearnCost;
+        {
+            if (component.SkillPoints.TryGetValue(indexedTree.SkillType, out var skillContainer))
+            {
+                skillContainer.Sum -= indexedSkill.LearnCost;
+            }
+        }
 
         Dirty(target, component);
         return true;
@@ -157,20 +173,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!Resolve(target, ref component, false))
             return false;
 
-        if (!AllowedToLearn(target, skill, component))
-            return false;
-
-        return true;
-    }
-
-    /// <summary>
-    /// Is it allowed to learn this skill? The player may not have enough points to learn it, but has already met all the requirements to learn it.
-    /// </summary>
-    public bool AllowedToLearn(EntityUid target,
-        CP14SkillPrototype skill,
-        CP14SkillStorageComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
+        if (!_proto.TryIndex(skill.Tree, out var indexedTree))
             return false;
 
         //Already learned
@@ -181,10 +184,13 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!component.AvailableSkillTrees.Contains(skill.Tree))
             return false;
 
-        //Check max cap
-        if (component.SkillsSumExperience + skill.LearnCost > component.ExperienceMaxCap)
+        //Check skill points
+        if (!component.SkillPoints.TryGetValue(indexedTree.SkillType, out var skillContainer))
             return false;
 
+        if (skillContainer.Sum + skill.LearnCost > skillContainer.Max)
+            return false;
+        
         //Restrictions check
         foreach (var req in skill.Restrictions)
         {
@@ -294,26 +300,35 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         {
             return false;
         }
-        for(var i = component.LearnedSkills.Count - 1; i >= 0; i--)
+
+        for (var i = component.LearnedSkills.Count - 1; i >= 0; i--)
         {
-            if(HaveFreeSkill(target, component.LearnedSkills[i], component))
+            if (HaveFreeSkill(target, component.LearnedSkills[i], component))
             {
                 continue;
             }
+
             TryRemoveSkill(target, component.LearnedSkills[i], component);
         }
+
         return true;
     }
 
     /// <summary>
     /// Increases the number of memory points for a character, limited to a certain amount.
     /// </summary>
-    public void AddMemoryPoints(EntityUid target, FixedPoint2 points, FixedPoint2 limit, CP14SkillStorageComponent? component = null)
+    public void AddSkillPoints(EntityUid target,
+        ProtoId<CP14SkillPointPrototype> type,
+        FixedPoint2 points,
+        FixedPoint2 limit,
+        CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return;
 
-        component.ExperienceMaxCap = FixedPoint2.Min(component.ExperienceMaxCap + points, limit);
+        if (component.SkillPoints.TryGetValue(type, out var skillContainer))
+            skillContainer.Max = FixedPoint2.Min(skillContainer.Max + points, limit);
+
         Dirty(target, component);
 
         _popup.PopupEntity(Loc.GetString("cp14-skill-popup-added-points", ("count", points)), target, target);
@@ -322,17 +337,23 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     /// <summary>
     /// Removes memory points. If a character has accumulated skills exceeding the new memory limit, random skills will be removed.
     /// </summary>
-    public void RemoveMemoryPoints(EntityUid target, FixedPoint2 points, CP14SkillStorageComponent? component = null)
+    public void RemoveMemoryPoints(EntityUid target,
+        ProtoId<CP14SkillPointPrototype> type,
+        FixedPoint2 points,
+        CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return;
 
-        component.ExperienceMaxCap = FixedPoint2.Max(component.ExperienceMaxCap - points, 0);
+        if (!component.SkillPoints.TryGetValue(type, out var skillContainer))
+            return;
+
+        skillContainer.Max = FixedPoint2.Max(skillContainer.Max - points, 0);
         Dirty(target, component);
 
         _popup.PopupEntity(Loc.GetString("cp14-skill-popup-removed-points", ("count", points)), target, target);
 
-        while (component.SkillsSumExperience > component.ExperienceMaxCap)
+        while (skillContainer.Sum > skillContainer.Max)
         {
             var frontier = GetFrontierSkills(target, component);
             if (frontier.Count == 0)

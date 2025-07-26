@@ -10,13 +10,14 @@ public sealed partial class CP14SkillTreeButtonControl : Control
 {
     public event Action? OnPressed;
 
-    public CP14SkillTreeButtonControl(Color color, string label, float skillpoints)
+    public CP14SkillTreeButtonControl(Color color, string label, float skillpoints, Texture? icon)
     {
         RobustXamlLoader.Load(this);
 
         ColorPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = color };
         if (skillpoints > 0)
         {
+            SkillPointImage.Texture = icon;
             SkillPointImage.Visible = true;
             SkillTreeLabel.Text = $"{skillpoints} {label}";
         }
