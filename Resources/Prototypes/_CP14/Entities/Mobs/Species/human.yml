@@ -27,8 +27,6 @@
     skillPoints:
       Memory:
         max: 5.5 # +0.5 memory point
-      Blood:
-        max: 1 # +0.5 memory point
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:
