@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/17/2025 14:20:12
+  time: 07/26/2025 12:08:36
   entityCount: 19207
 maps:
 - 2
@@ -59007,12 +59007,12 @@ entities:
     - type: Transform
       pos: -25.5,-33.5
       parent: 2
-- proto: CP14ClothingBlueCollarDress
+- proto: CP14ClothingBackLeatherSatchel
   entities:
-  - uid: 15203
+  - uid: 1484
     components:
     - type: Transform
-      pos: 1.5201155,-6.2672186
+      pos: 42.48905,-34.279984
       parent: 2
 - proto: CP14ClothingCloakBone
   entities:
@@ -59041,12 +59041,12 @@ entities:
       parent: 2
     - type: CollisionWake
       enabled: False
-- proto: CP14ClothingSatchelLeather
+- proto: CP14ClothingShirtBlueCollarDress
   entities:
-  - uid: 1484
+  - uid: 15203
     components:
     - type: Transform
-      pos: 42.48905,-34.279984
+      pos: 1.5201155,-6.2672186
       parent: 2
 - proto: CP14CopperCoin1
   entities:
@@ -59371,7 +59371,7 @@ entities:
       pos: 14.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13883.739
+      secondsUntilStateChange: -13940.879
       state: Closing
   - uid: 1792
     components:
@@ -76316,15 +76316,6 @@ entities:
     - type: Transform
       pos: 6.912213,-26.203783
       parent: 2
-- proto: CP14FoodPieApple
-  entities:
-  - uid: 2282
-    components:
-    - type: Transform
-      pos: 5.3909364,-30.305666
-      parent: 2
-    - type: CollisionWake
-      enabled: False
 - proto: CP14FoodTomatoes
   entities:
   - uid: 1486
@@ -76421,6 +76412,18 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-36.5
+      parent: 2
+- proto: CP14GuardBell4
+  entities:
+  - uid: 1154
+    components:
+    - type: Transform
+      pos: -34.5,-24.5
+      parent: 2
+  - uid: 2282
+    components:
+    - type: Transform
+      pos: 41.5,-31.5
       parent: 2
 - proto: CP14IronDoor
   entities:
@@ -102072,12 +102075,6 @@ entities:
       parent: 2
 - proto: CP14StoneWell
   entities:
-  - uid: 1154
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -34.5,-24.5
-      parent: 2
   - uid: 2350
     components:
     - type: Transform
@@ -111670,7 +111667,7 @@ entities:
       parent: 2
     - type: ItemPlacer
       placedEntities:
-      - 2282
+      - invalid
 - proto: CP14WorkbenchFurnace
   entities:
   - uid: 1797
