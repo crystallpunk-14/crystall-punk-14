@@ -181,7 +181,8 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         _window.SkillFree.Visible = _skill.HaveFreeSkill(_targetPlayer.Value, skill);
         _window.SkillView.Texture = skill.Icon.Frame0();
         _window.LearnButton.Disabled = !_skill.CanLearnSkill(_targetPlayer.Value, skill);
-        _window.SkillPointText.Text = Loc.GetString("cp14-skill-menu-learncost", ("type", Loc.GetString(indexedSkillType.Name)));
+        _window.SkillPointText.Text =
+            Loc.GetString("cp14-skill-menu-learncost", ("type", Loc.GetString(indexedSkillType.Name)));
         _window.SkillCost.Text = skill.LearnCost.ToString();
         _window.SkillPointIcon.Texture = indexedSkillType.Icon?.Frame0();
 
@@ -245,7 +246,8 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         var skillPointsMap = storage.SkillPoints;
 
         if (skillPointsMap.TryGetValue(_selectedSkillTree.SkillType, out var skillContainer))
-            _window.LevelLabel.Text = $"{Loc.GetString(indexedSkillType.Name)}: {skillContainer.Sum}/{skillContainer.Max}";
+            _window.LevelLabel.Text =
+                $"{Loc.GetString(indexedSkillType.Name)}: {skillContainer.Sum}/{skillContainer.Max}";
         else
             _window.LevelLabel.Text = $"{Loc.GetString(indexedSkillType.Name)}: 0/0";
 
