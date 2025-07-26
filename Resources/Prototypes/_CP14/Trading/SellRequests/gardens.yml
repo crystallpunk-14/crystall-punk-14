@@ -1,14 +1,4 @@
 - type: cp14TradingRequest
-  id: VictoriaGardensGreenSalad
-  possibleFactions:
-  - VictoriaGardens
-  - Dairy
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodSaladGreen
-    count: 5
-
-- type: cp14TradingRequest
   id: VictoriaGardensBreadBuns
   possibleFactions:
   - VictoriaGardens

@@ -14,6 +14,9 @@
     state: base
   - type: PlaceableSurface
   - type: ItemPlacer
+    whitelist:
+      components:
+        - CP14Sharpened
   - type: Fixtures
     fixtures:
       fix1:

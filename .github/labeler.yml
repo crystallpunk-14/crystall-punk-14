@@ -1,26 +1,34 @@
-﻿"Changes: Sprites":
+﻿"Sprites":
 - changed-files:
   - any-glob-to-any-file: '**/*.rsi/*.png'
 
-"Changes: Map":
+"Mapping":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Maps/**/*.yml'
     - 'Resources/Prototypes/Maps/**/*.yml'
 
-"Changes: UI":
+"UI":
 - changed-files:
   - any-glob-to-any-file: '**/*.xaml*'
 
-"Changes: Shaders":
+"Shaders":
 - changed-files:
   - any-glob-to-any-file: '**/*.swsl'
 
-"Changes: Audio":
+"Audio":
 - changed-files:
   - any-glob-to-any-file: '**/*.ogg'
 
-"Changes: No C#":
+"C#":
+- changed-files:
+  - any-glob-to-any-file: '**/*.cs'
+
+"YML":
+- changed-files:
+  - any-glob-to-any-file: '**/*.yml'
+
+"No C#":
 - changed-files:
   # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
   - all-globs-to-all-files: "!**/*.cs"

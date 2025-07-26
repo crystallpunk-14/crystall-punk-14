@@ -33,6 +33,7 @@ public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
     public override void Initialize()
     {
         base.Initialize();
+        InitProviders();
 
         SubscribeLocalEvent<CP14WorkbenchComponent, MapInitEvent>(OnMapInit);
 
@@ -82,11 +83,12 @@ public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
         if (!_proto.TryIndex(args.Recipe, out var recipe))
             return;
 
-        var placedEntities = _lookup.GetEntitiesInRange(Transform(ent).Coordinates,
-            ent.Comp.WorkbenchRadius,
-            LookupFlags.Uncontained);
+        var getResource = new CP14WorkbenchGetResourcesEvent();
+        RaiseLocalEvent(ent.Owner, getResource);
 
-        if (!CanCraftRecipe(recipe, placedEntities, args.User))
+        var resources = getResource.Resources;
+
+        if (!CanCraftRecipe(recipe, resources, args.User))
         {
             _popup.PopupEntity(Loc.GetString("cp14-workbench-cant-craft"), ent, args.User);
             return;
@@ -106,7 +108,7 @@ public sealed partial class CP14WorkbenchSystem : CP14SharedWorkbenchSystem
 
         foreach (var req in recipe.Requirements)
         {
-            req.PostCraft(EntityManager, _proto, placedEntities);
+            req.PostCraft(EntityManager, _proto, resources);
         }
 
         if (passConditions)

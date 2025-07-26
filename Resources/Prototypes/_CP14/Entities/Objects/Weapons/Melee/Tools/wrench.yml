@@ -31,4 +31,6 @@
       - Anchoring
     useSound:
       path: /Audio/Items/ratchet.ogg
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20

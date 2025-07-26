@@ -26,10 +26,6 @@
           Quantity: 2
   - type: DrawableSolution
     solution: food
-  - type: SolutionSpiker
-    sourceSolution: food
-    ignoreEmpty: true
-    popup: spike-solution-egg
   # egg fragile
   - type: DamageOnHighSpeedImpact
     minimumSpeed: 0.1
@@ -65,6 +61,10 @@
     area: 0.04
     # conductivity of egg shell based on a paper from Romanoff and Romanoff (1949)
     conductivity: 0.456
+  - type: Tag
+    tags:
+    - CP14Egg
+    - CP14FitInFryingPan
 
 # Splat
 - type: entity
@@ -102,3 +102,23 @@
       - random:
           brown: ""
           icon: ""
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodEgg
+
+- type: entity
+  id: CP14FoodEggCooked
+  parent: CP14FoodEgg
+  name: cooked egg
+  components:
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: EggCooked
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 2

@@ -21,6 +21,9 @@
     sprintModifier: 0.96
   - type: CP14MagicManacostModify
     globalModifier: 1.1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 40
 
 - type: entity
   parent: CP14ClothingOuterClothingBase

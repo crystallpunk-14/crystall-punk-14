@@ -5,7 +5,6 @@
 
 using Content.Shared._CP14.Trading.Systems;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Workbench.Requirements;
 
@@ -17,7 +16,7 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
         HashSet<EntityUid> placedEntities)
     {
@@ -26,7 +25,7 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
         return indexedIngredients.TryGetValue(ProtoId, out var availableQuantity) && availableQuantity >= Count;
     }
 
-    public override void PostCraft(EntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
+    public override void PostCraft(IEntityManager entManager,IPrototypeManager protoManager, HashSet<EntityUid> placedEntities)
     {
         var requiredCount = Count;
 
@@ -47,7 +46,7 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager,
+    public override double GetPrice(IEntityManager entManager,
         IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(ProtoId, out var indexedProto))
@@ -74,7 +73,7 @@ public sealed partial class ProtoIdResource : CP14WorkbenchCraftRequirement
         return indexedProto;
     }
 
-    private Dictionary<EntProtoId, int> IndexIngredients(EntityManager entManager, HashSet<EntityUid> ingredients)
+    private Dictionary<EntProtoId, int> IndexIngredients(IEntityManager entManager, HashSet<EntityUid> ingredients)
     {
         var indexedIngredients = new Dictionary<EntProtoId, int>();
 

@@ -95,6 +95,7 @@ namespace Content.Server.Explosion.EntitySystems
             InitializeTimedCollide();
             InitializeVoice();
             InitializeMobstate();
+            InitializeDamageReceived(); //CP14 trigger on damage partial
 
             SubscribeLocalEvent<TriggerOnSpawnComponent, MapInitEvent>(OnSpawnTriggered);
             SubscribeLocalEvent<TriggerOnCollideComponent, StartCollideEvent>(OnTriggerCollide);

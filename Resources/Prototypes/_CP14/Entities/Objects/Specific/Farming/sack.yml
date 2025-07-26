@@ -21,6 +21,9 @@
         - CP14FarmFood
         - CP14FitInMortar
   - type: Dumpable
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 35
 
 - type: entity
   id: CP14SackFarmingVegetables
@@ -97,6 +100,9 @@
     whitelist:
       tags:
         - CP14FarmSeed
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 25
 
 - type: entity
   id: CP14SackFarmingSeedFull

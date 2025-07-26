@@ -16,6 +16,9 @@
   - type: Tag
     tags:
     - WoodwindInstrument
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 40
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -43,6 +46,10 @@
   - type: Tag
     tags:
     - StringInstrument
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
+      CP14Cloth: 10
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -77,6 +84,10 @@
   - type: Tag
     tags:
     - StringInstrument
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 40
+      CP14Cloth: 5
 
 - type: entity
   parent: BaseHandheldInstrument
