@@ -79,6 +79,8 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Flammable
+    firestacksOnIgnite: 2
 
 - type: entity
   parent: CP14Candle
@@ -135,6 +137,8 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10 # 1 iron bar
+  - type: Flammable
+    firestacksOnIgnite: 4
 
 - type: entity
   parent: CP14Candelabra
