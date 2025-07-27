@@ -12,3 +12,34 @@
       tags:
       - CP14DemiplaneArtifactRoom
 
+- type: cp14DemiplaneModifier
+  id: Ruins
+  levels:
+    min: 0
+    max: 10
+  name: cp14-modifier-ruins
+  categories:
+    Reward: 0.2
+  generationProb: 2
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuins
+
+- type: cp14DemiplaneModifier
+  id: Geodes
+  levels:
+    min: 0
+    max: 10
+  name: cp14-modifier-ruins
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneUnderground
+  generationProb: 1
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 5
+      tags:
+      - CP14DemiplanGeodeRoom

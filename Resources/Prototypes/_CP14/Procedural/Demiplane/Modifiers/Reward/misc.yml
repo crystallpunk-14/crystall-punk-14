@@ -90,21 +90,6 @@
       minGroupSize: 4
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
-  id: Ruins
-  levels:
-    min: 0
-    max: 10
-  name: cp14-modifier-ruins
-  categories:
-    Reward: 0.2
-  generationProb: 10.8
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 8
-      tags:
-      - CP14DemiplaneRuins
-
 # TIER 2
 
 - type: cp14DemiplaneModifier

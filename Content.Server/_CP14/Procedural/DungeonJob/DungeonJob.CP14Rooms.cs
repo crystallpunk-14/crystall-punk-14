@@ -70,7 +70,7 @@ public sealed partial class DungeonJob
             }
         }
 
-        for (var i = 0; i < gen.Count; i++)
+        for (var i = 0; i < gen.Count && availableTiles.Count > 0; i++)
         {
             await SuspendDungeon();
 
@@ -78,11 +78,37 @@ public sealed partial class DungeonJob
                 return;
 
             var selectedTile = random.PickAndTake(availableTiles);
-
             availableTiles.Remove(selectedTile);
 
             var room = random.Pick(availableRooms);
-            _dungeon.SpawnRoom(_gridUid, _grid, selectedTile, room , random);
+
+            var roomBounds = new List<Vector2i>();
+            var conflict = false;
+
+            for (int x = 0; x < room.Size.X; x++)
+            {
+                for (int y = 0; y < room.Size.Y; y++)
+                {
+                    var pos = selectedTile + new Vector2i(x, y);
+                    if (reservedTiles.Contains(pos))
+                    {
+                        conflict = true;
+                        break;
+                    }
+                    roomBounds.Add(pos);
+                }
+                if (conflict) break;
+            }
+
+            if (conflict)
+                continue;
+
+            _dungeon.SpawnRoom(_gridUid, _grid, selectedTile, room, random, clearExisting: true, rotation: true);
+
+            foreach (var pos in roomBounds)
+            {
+                reservedTiles.Add(pos);
+            }
         }
     }
 }
