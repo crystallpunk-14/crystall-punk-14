@@ -1294,3 +1294,19 @@
   id: 8183
   time: '2025-07-27T13:45:16.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1583
+- author: SketchiiArtist
+  changes:
+  - message: Added wooden stools
+    type: Add
+  id: 8184
+  time: '2025-07-27T15:54:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1577
+- author: TheShuEd
+  changes:
+  - message: Added candelabras!
+    type: Add
+  - message: Reprite candles + Candles now burn endlessly
+    type: Tweak
+  id: 8185
+  time: '2025-07-27T15:54:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1585
