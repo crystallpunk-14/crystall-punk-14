@@ -116,7 +116,7 @@
           collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
-          CP14BirchWoodenPlanks1:
+          CP14WoodenPlanks1:
             min: 1
             max: 1
 
