@@ -30,6 +30,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodBread
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBread
@@ -53,9 +56,13 @@
     count: 4
     slice: CP14FoodBreadSlice
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadSlice
@@ -75,9 +82,13 @@
         - ReagentId: Protein
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: null
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodDoughMedium
@@ -107,6 +118,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodBreadBun
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBun
@@ -134,9 +148,13 @@
       - id: CP14FoodBreadBunTop
         amount: 1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBunBottom
@@ -171,9 +189,13 @@
         - ReagentId: Protein
           Quantity: 0.25
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodBreadBunTop
@@ -197,9 +219,13 @@
     entries:
       CP14Sandwich: CP14BunTopSandwich
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Dough
 
 - type: entity
   id: CP14FoodDoughMediumFlat
@@ -220,6 +246,10 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1 #TODO: лаваш?
+  - type: Tag
+    tags:
+    - CP14Dough

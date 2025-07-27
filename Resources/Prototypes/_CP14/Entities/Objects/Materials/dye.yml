@@ -10,9 +10,6 @@
     size: Tiny
   - type: Sprite
     sprite: _CP14/Objects/Materials/dye.rsi
-  - type: Tag
-    tags:
-    - CP14Dye
   - type: StaticPrice
     price: 6
 
@@ -26,10 +23,6 @@
     - state: base
     - state: powder
       color: "#bd2b26"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyeRed
   - type: StaticPrice
     price: 4
 
@@ -43,10 +36,6 @@
     - state: base
     - state: powder
       color: "#ffe269"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyeYellow
   - type: StaticPrice
     price: 3.5
 
@@ -60,10 +49,6 @@
     - state: base
     - state: powder
       color: "#5eabeb"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyeBlue
   - type: StaticPrice
     price: 8.6
 
@@ -77,10 +62,6 @@
     - state: base
     - state: powder
       color: "#85903e"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyeGreen
 
 - type: entity
   id: CP14DyePurple
@@ -92,10 +73,6 @@
     - state: base
     - state: powder
       color: "#8241cc"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyePurple
   - type: StaticPrice
     price: 4.4
 
@@ -109,7 +86,3 @@
     - state: base
     - state: powder
       color: "#242329"
-  - type: Tag
-    tags:
-    - CP14Dye
-    - CP14DyeBlack

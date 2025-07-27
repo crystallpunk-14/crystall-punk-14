@@ -1083,3 +1083,200 @@
   id: 8160
   time: '2025-07-11T15:54:37.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1507
+- author: Dinazzewr
+  changes:
+  - message: Many new hats are now available for guards in the loadout menu.
+    type: Add
+  id: 8161
+  time: '2025-07-12T10:10:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1524
+- author: TheShuEd
+  changes:
+  - message: Added a minor lightning spell
+    type: Add
+  - message: Added a lightning staff for guards
+    type: Add
+  - message: Guards can take weapons (and corresponding skills) from the loadout menu
+    type: Add
+  id: 8162
+  time: '2025-07-12T11:52:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1525
+- author: TheShuEd
+  changes:
+  - message: You can now craft a golden chest.
+    type: Add
+  id: 8163
+  time: '2025-07-12T12:10:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1526
+- author: YomieI
+  changes:
+  - message: Ice dagger's hit sound is now a slash
+    type: Fix
+  id: 8164
+  time: '2025-07-14T08:32:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1527
+- author: gogenych
+  changes:
+  - message: new glow portal frame
+    type: Add
+  id: 8165
+  time: '2025-07-16T02:51:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1533
+- author: TheShuEd
+  changes:
+  - message: A new cooking system has been added. No more recipes on the workbench!
+      Now you put things in the pan and fry them until you get something tasty! Be
+      careful not to burn down your tavern.
+    type: Add
+  id: 8166
+  time: '2025-07-16T05:15:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1529
+- author: TheShuEd
+  changes:
+  - message: A pot and the ability to cook soups have been added! Soup bowls have
+      been added. Now there are 7 types of soups and 12 types of dishes on the plate
+      in the game.
+    type: Add
+  - message: 'Added support for food displacement maps: Now dishes visually decrease
+      in size as you eat them.'
+    type: Add
+  - message: Added trade orders for dishes. Merchants may now be interested in cooking
+      specific dishes.
+    type: Add
+  - message: Fixed a bug with raw reagents in ready-made dishes
+    type: Fix
+  id: 8167
+  time: '2025-07-17T14:35:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1535
+- author: gogenych
+  changes:
+  - message: radio chat can no longer be selected
+    type: Remove
+  id: 8168
+  time: '2025-07-17T22:03:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1537
+- author: Viator-MV
+  changes:
+  - message: Lightning strikes now deal less damage.
+    type: Tweak
+  id: 8169
+  time: '2025-07-17T22:02:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1538
+- author: cooldolphin
+  changes:
+  - message: A bottomless goblet to hold all your favorite drink in one vast place.
+    type: Add
+  id: 8170
+  time: '2025-07-18T08:59:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1534
+- author: Deserty0
+  changes:
+  - message: The blacksmith can no longer sharpen planks at the start of a round.
+    type: Fix
+  id: 8171
+  time: '2025-07-18T18:38:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1546
+- author: cooldolphin
+  changes:
+  - message: The mercenary outfit is now available for equipping in the loadout menu.
+    type: Add
+  id: 8172
+  time: '2025-07-18T23:59:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1550
+- author: KittyCat432
+  changes:
+  - message: Innkeepers now start with Tiefling's gambit in their closet.
+    type: Tweak
+  id: 8173
+  time: '2025-07-18T23:59:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1549
+- author: Deserty0
+  changes:
+  - message: Many Russian words blocked on Twitch have been added to the chat sanitizer.
+    type: Remove
+  - message: "\u042F \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u044E \u0432\u0430\
+      \u043C \u043C\u0430\u0442\u044E\u043A\u0430\u0442\u044C\u0441\u044F"
+    type: Remove
+  id: 8174
+  time: '2025-07-19T00:03:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1548
+- author: Nyranu
+  changes:
+  - message: Added hard coal - new efficient fuel in the game.
+    type: Add
+  - message: Wood is now less efficient fuel.
+    type: Tweak
+  - message: Hard coal now can be found in demiplanes
+    type: Add
+  id: 8175
+  time: '2025-07-19T10:24:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1521
+- author: TheShuEd
+  changes:
+  - message: Fixed various cooking bugs
+    type: Fix
+  - message: Old pie recipes have been completely removed
+    type: Remove
+  - message: Modular pies have been added to the new cooking system (only 4 pie recipe
+      rn)
+    type: Add
+  id: 8176
+  time: '2025-07-20T12:45:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1540
+- author: Dezdanna
+  changes:
+  - message: Retextured coal blocks to match the tone of other rock walls
+    type: Fix
+  id: 8177
+  time: '2025-07-22T08:06:41.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1562
+- author: KittyCat432
+  changes:
+  - message: Added a new guidebook entry under adventurers called Monster Toxins used
+      to show all the different toxins monsters use.
+    type: Add
+  - message: Changed spiders now inject a new reagent called Arachnotoxin.
+    type: Tweak
+  - message: Changed spiders deal half the amount of slash damage from 3 to 1.5
+    type: Tweak
+  id: 8178
+  time: '2025-07-22T10:29:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
+- author: KittyCat432
+  changes:
+  - message: Removed elf natural mana regeneration.
+    type: Remove
+  - message: Changed Mana trance now is exclusive to elves and is an innate skill.
+    type: Tweak
+  - message: Changed Mana trance now has a heavy slowdown instead of breaking upon
+      moving Elf taxi is now possible.
+    type: Tweak
+  - message: Changed Guide book on elves to better reflect their current state.
+    type: Tweak
+  id: 8179
+  time: '2025-07-26T11:49:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
+- author: Kryyto
+  changes:
+  - message: Guard bells no longer change the threat level. But can be used by using/hitting
+      them instead.
+    type: Tweak
+  id: 8180
+  time: '2025-07-26T12:09:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
+- author: TheShuEd
+  changes:
+  - message: Lumera disabled
+    type: Remove
+  id: 8181
+  time: '2025-07-26T12:10:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
+- author: gogenych
+  changes:
+  - message: 'New tree type: Spruce.'
+    type: Add
+  - message: Logs, planks and walls made from spruce wood!
+    type: Add
+  id: 8182
+  time: '2025-07-26T12:24:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539

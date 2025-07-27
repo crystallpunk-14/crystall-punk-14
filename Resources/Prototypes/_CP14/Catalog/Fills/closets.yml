@@ -85,7 +85,6 @@
       - id: CP14IronBar10
       - id: CP14PaperFolderRed
       - id: CP14PenFeather
-        amount: 1
 
 - type: entity
   parent: CP14WoodenCloset
@@ -100,3 +99,24 @@
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue
       - id: CP14ArmorIronChainmailPresets
+
+- type: entity
+  parent: CP14WoodenCloset
+  id: CP14WoodenClosetChefFilled
+  suffix: Chef, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14Fork
+        amount: 2
+      - id: CP14Spoon
+        amount: 2
+      - id: CP14FryingPan
+      - id: CP14CookingPot
+      - id: CP14ModularIronDagger
+      - id: CP14SackFarmingSeed
+      - id: CP14PlateWooden
+        amount: 2
+      - id: CP14BowlWooden
+        amount: 2
+      - id: CP14BookTieflingGambit

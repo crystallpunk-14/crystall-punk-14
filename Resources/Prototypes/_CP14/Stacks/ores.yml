@@ -26,3 +26,9 @@
   icon: { sprite: _CP14/Objects/Materials/mithril_ore.rsi, state: ore3 }
   maxCount: 10
 
+- type: stack
+  id: CP14OreCoal
+  name: cp14-stack-coal-ore
+  spawn: CP14OreCoal1
+  icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore3 }
+  maxCount: 10

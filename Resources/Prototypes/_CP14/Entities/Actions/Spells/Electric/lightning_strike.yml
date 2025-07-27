@@ -21,7 +21,7 @@
       - !type:HealthChange
         damage:
           types:
-            Shock: 15
+            Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -75
@@ -89,7 +89,7 @@
             Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
-        staminaDelta: -15
+        staminaDelta: -20
 
 - type: entity
   id: CP14RuneLightningStrike

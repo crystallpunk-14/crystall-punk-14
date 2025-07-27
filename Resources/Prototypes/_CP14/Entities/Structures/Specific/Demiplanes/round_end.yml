@@ -104,6 +104,17 @@
   - type: CP14MagicEnergyPortRelay
 
 - type: entity
+  id: CP14PortalFrameCrystalLight
+  categories: [ ForkFiltered ]
+  parent: CP14PortalFrameCrystal
+  suffix: Glow
+  components:
+  - type: PointLight
+    color: "#9c34e6"
+    energy: 2.5
+    radius: 8
+
+- type: entity
   id: CP14DemiplaneCore
   categories: [ ForkFiltered ]
   parent: BaseStructure

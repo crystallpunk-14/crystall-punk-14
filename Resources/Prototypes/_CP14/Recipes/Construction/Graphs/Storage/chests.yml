@@ -29,3 +29,38 @@
           steps:
             - tool: Prying
               doAfter: 4
+
+- type: constructionGraph
+  id: CP14GoldChest
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14GoldChest
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 5
+              doAfter: 2
+            - material: CP14IronBar
+              amount: 1
+              doAfter: 2
+            - material: CP14GoldBar
+              amount: 1
+              doAfter: 2
+
+    - node: CP14GoldChest
+      entity: CP14GoldChest
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: CP14WoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4

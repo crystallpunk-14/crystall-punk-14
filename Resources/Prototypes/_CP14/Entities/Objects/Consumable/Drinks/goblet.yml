@@ -61,3 +61,34 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Gold: 10
+      
+- type: entity
+  parent: CP14DrinkBaseGoblet
+  id: CP14SteelGobletBottomless
+  name: bottomless goblet
+  description: A jeweled goblet enchanted to have no bottom, fit for a never ending king's banquet.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: bottomless-fill-
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+      - state: bottomless_goblet
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+        state: bottomless-fill-2
+        visible: false
+  - type: SolutionContainerManager
+    solutions:
+      mug:
+        maxVol: 1000
+  - type: Injector
+    solutionName: mug
+    injectOnly: false
+    ignoreMobs: true
+    minTransferAmount: 1
+    maxTransferAmount: 100
+    transferAmount: 1
+    toggleState: 1 # draw

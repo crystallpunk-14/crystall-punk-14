@@ -39,14 +39,3 @@
     protoId: CP14FoodDoughMedium
     count: 1
   result: CP14FoodDoughMediumFlat
-
-- type: CP14Recipe
-  id: CP14FoodStuffedPotato
-  tag: CP14RecipeCooking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14FoodPotatoHot
-  - !type:ProtoIdResource
-    protoId: CP14FoodMeatPigCookedSlice
-  result: CP14FoodStuffedPotato

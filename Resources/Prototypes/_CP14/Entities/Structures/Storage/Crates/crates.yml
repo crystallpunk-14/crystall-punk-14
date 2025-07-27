@@ -41,9 +41,9 @@
           radius: 0.45
         density: 525
         mask:
-        - MachineMask
+        - SmallMobMask #this is so they can go under plastic flaps
         layer:
-        - WallLayer
+        - MachineLayer
 
 - type: entity
   id: CP14BaseSmallCrate
