@@ -1,0 +1,11 @@
+- type: Tag
+  id: CP14DemiplanExitRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanExitRoom_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_exit.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplanExitRoom
