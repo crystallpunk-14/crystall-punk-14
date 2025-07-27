@@ -396,6 +396,8 @@ CP14ClothinGreenLightDress:  CP14ClothingShirtGreenLightDress
 CP14ClothingWarriorsGarbDress:  CP14ClothingShirtWarriorsGarbDress
 CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
 
+#2025-07-27
+CP14DemiplanEnterRoomMarker: null
 
 # <---> CrystallEdge migration zone end
 
