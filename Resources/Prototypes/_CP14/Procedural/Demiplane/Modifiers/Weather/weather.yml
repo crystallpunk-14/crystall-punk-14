@@ -49,7 +49,7 @@
     - !type:CP14RoomsDunGen
       count: 8
       tags:
-      - CP14DemiplaneRuinss
+      - CP14DemiplaneRuins
 
 - type: cp14DemiplaneModifier
   id: WeatherSnow
@@ -97,7 +97,7 @@
     - !type:CP14RoomsDunGen
       count: 8
       tags:
-      - CP14DemiplaneRuinss
+      - CP14DemiplaneRuins
 
 - type: cp14DemiplaneModifier
   id: CP14ManaMist
@@ -115,7 +115,7 @@
     - !type:CP14RoomsDunGen
       count: 8
       tags:
-      - CP14DemiplaneRuinss
+      - CP14DemiplaneRuins
 
 - type: cp14DemiplaneModifier
   id: CP14AntiManaMist
@@ -133,7 +133,7 @@
     - !type:CP14RoomsDunGen
       count: 8
       tags:
-      - CP14DemiplaneRuinss
+      - CP14DemiplaneRuins
 
 - type: cp14DemiplaneModifier
   id: CP14FireStormPeriod
@@ -160,5 +160,5 @@
     - !type:CP14RoomsDunGen
       count: 8
       tags:
-      - CP14DemiplaneRuinss
+      - CP14DemiplaneRuins
 

@@ -17,9 +17,8 @@ public sealed partial class DungeonJob
         HashSet<Vector2i> reservedTiles,
         Random random)
     {
-        // Doesn't use dungeon data because layers and we don't need top-down support at the moment.
-
         List<DungeonRoomPrototype> availableRooms = new();
+        var availableTiles = new List<Vector2i>();
 
         foreach (var room in _prototype.EnumeratePrototypes<DungeonRoomPrototype>())
         {
@@ -36,36 +35,39 @@ public sealed partial class DungeonJob
         if (availableRooms.Count == 0)
             return;
 
-        var availableTiles = new List<Vector2i>();
-        var tiles = _maps.GetAllTilesEnumerator(_gridUid, _grid);
-
-        // WARNING:
-        // This DunGen handles not only the tiles of the passed dungeon, but ALL the tiles of the current grid
-        // So don't run it anywhere
-        while (tiles.MoveNext(out var tileRef))
+        foreach (var dun in dungeons)
         {
-            var tile = tileRef.Value.GridIndices;
-
-            //Tile mask filtering
-            if (gen.TileMask is not null)
+            foreach (var tile in dun.AllTiles)
             {
-                if (!gen.TileMask.Contains(((ContentTileDefinition)_tileDefManager[tileRef.Value.Tile.TypeId]).ID))
+                var tileRef = _maps.GetTileRef(_gridUid, _grid, tile);
+
+                if (reservedTiles.Contains(tile))
                     continue;
+
+                //Tile mask filtering
+                if (gen.TileMask is not null)
+                {
+                    if (!gen.TileMask.Contains(((ContentTileDefinition)_tileDefManager[tileRef.Tile.TypeId]).ID))
+                        continue;
+                }
+                else
+                {
+                    //If entity mask null - we ignore the tiles that have anything on them.
+                    if (!_anchorable.TileFree((_gridUid, _grid),
+                            tile,
+                            DungeonSystem.CollisionLayer,
+                            DungeonSystem.CollisionMask))
+                        continue;
+                }
+
+                // Add it to valid nodes.
+                availableTiles.Add(tile);
+
+                await SuspendDungeon();
+
+                if (!ValidateResume())
+                    return;
             }
-            else
-            {
-                //If entity mask null - we ignore the tiles that have anything on them.
-                if (!_anchorable.TileFree(_grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
-                    continue;
-            }
-
-            // Add it to valid nodes.
-            availableTiles.Add(tile);
-
-            await SuspendDungeon();
-
-            if (!ValidateResume())
-                return;
         }
 
         for (var i = 0; i < gen.Count; i++)
