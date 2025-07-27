@@ -44,6 +44,8 @@
     damage:
       Heat: 1 #Magic regen from fire
       Cold: -1
+  - type: CP14AuraImprint
+    imprintColor: "#e0762b"
   - type: CP14SkillStorage #Innate pyrokinetic
     freeLearnedSkills:
     - PyrokineticT1

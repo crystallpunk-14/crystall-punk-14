@@ -88,6 +88,8 @@
           - MobMask
         layer:
           - MobLayer
+  - type: CP14AuraImprint
+    imprintColor: "#a81b5d"
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: CP14Skeleton

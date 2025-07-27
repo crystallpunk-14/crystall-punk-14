@@ -94,7 +94,7 @@
 
 - type: entity
   parent: CP14ClothingShoesBase
-  id: CP14LongLeatherBoots
+  id: CP14ClothingShoesLongLeatherBoots
   name: long leather boots
   description: the perfect tool for kicking left and right
   components:

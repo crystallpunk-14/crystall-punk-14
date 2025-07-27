@@ -10,5 +10,8 @@ namespace Content.Shared.Eye
         Normal = 1 << 0,
         Ghost  = 1 << 1,
         Subfloor = 1 << 2,
+        //CP14 zone
+        CP14MagicVision = 1 << 3,
+        //CP14 zone end
     }
 }

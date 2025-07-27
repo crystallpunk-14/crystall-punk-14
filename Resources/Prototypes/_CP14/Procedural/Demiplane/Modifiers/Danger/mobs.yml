@@ -56,6 +56,22 @@
       maxGroupSize: 6
 
 - type: cp14DemiplaneModifier
+  id: Fairy
+  levels:
+    min: 2
+    max: 5
+  categories:
+    Danger: 0.20
+  requiredTags:
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobFairy
+      count: 4
+      minGroupSize: 2
+      maxGroupSize: 3
+
+- type: cp14DemiplaneModifier
   id: SmallHydra
   levels:
     min: 1

@@ -17,7 +17,7 @@ public sealed partial class CP14SellingRequestControl : Control
 
     public event Action? OnSellAttempt;
 
-    public CP14SellingRequestControl(ProtoId<CP14TradingRequestPrototype> request, bool active)
+    public CP14SellingRequestControl(ProtoId<CP14TradingRequestPrototype> request, float markupProcent, bool active)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
@@ -36,7 +36,8 @@ public sealed partial class CP14SellingRequestControl : Control
         PriceHolder.RemoveAllChildren();
         var economySystem = _entityManager.System<CP14SharedStationEconomySystem>();
 
-        var price = economySystem.GetPrice(indexedRequest);
+        var originalPrice = economySystem.GetPrice(indexedRequest);
+        var price = (int?)(originalPrice * markupProcent);
         PriceHolder.AddChild(new CP14PriceControl(price ?? 10000));
 
         //Rep reward

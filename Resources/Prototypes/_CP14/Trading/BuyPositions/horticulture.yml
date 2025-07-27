@@ -1,0 +1,208 @@
+# Reputation Level 0 - Basic Herbs & Tools
+- type: cp14TradingPosition
+  id: CP14VialBloodFlowerSap
+  faction: Horticulture
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
+    state: base2
+  service: !type:CP14BuyItemsService
+    product: CP14VialBloodFlowerSap
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14VialWildSageSap
+  faction: Horticulture
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
+    state: base4
+  service: !type:CP14BuyItemsService
+    product: CP14VialWildSageSap
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14VialYellowDayflinPulp
+  faction: Horticulture
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14VialYellowDayflinPulp
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ModularIronHoe
+  faction: Horticulture
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/ModularTools/Blade/Hoe/metall_hoe.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ModularIronHoe
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14CrystalLampBlueEmpty
+  faction: Horticulture
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14CrystalLampBlueEmpty
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WoodenPlanks10
+  faction: Horticulture
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Materials/wood.rsi
+    state: planks_2
+  service: !type:CP14BuyItemsService
+    product: CP14WoodenPlanks10
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant1
+  faction: Horticulture
+  reputationLevel: 0
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant1
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant1
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant3
+  faction: Horticulture
+  reputationLevel: 0
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant3
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant3
+
+# Reputation Level 1 - Advanced Herbs & Tools
+- type: cp14TradingPosition
+  id: CP14VialBlueAmanita
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14VialBlueAmanita
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14VialLumiMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/lumishroom.rsi
+    state: base3
+  service: !type:CP14BuyItemsService
+    product: CP14VialLumiMushroom
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14VialAgaricMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+    state: base3
+  service: !type:CP14BuyItemsService
+    product: CP14VialAgaricMushroom
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ModularIronSickle
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/ModularTools/Blade/Sickle/metall_sickle.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ModularIronSickle
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14CrystalLampOrangeEmpty
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14CrystalLampOrangeEmpty
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14BirchWoodenPlanks10
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Materials/wood_birch.rsi
+    state: planks_2
+  service: !type:CP14BuyItemsService
+    product: CP14BirchWoodenPlanks10
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant2
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant2
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant2
+
+- type: cp14TradingPosition
+  id: CP14PottedPlant4
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Structures/Furniture/flowerpots.rsi
+    state: plant4
+  service: !type:CP14BuyItemsService
+    product: CP14PottedPlant4
+
+# Reputation Level 2 - Rare Herbs
+- type: cp14TradingPosition
+  id: CP14VialSilverNeedle
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/silver_needle.rsi
+    state: base1
+  service: !type:CP14BuyItemsService
+    product: CP14VialSilverNeedle
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14VialChromiumSlime
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Flora/Wild/chromium_slime.rsi
+    state: base3
+  service: !type:CP14BuyItemsService
+    product: CP14VialChromiumSlime
+    count: 1

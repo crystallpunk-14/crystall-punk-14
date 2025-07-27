@@ -85,6 +85,8 @@
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
   - type: Clothing
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   id: CP14MagicFireStaff
@@ -103,6 +105,26 @@
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
   - type: Clothing
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  id: CP14MagicGuardElectroStaff
+  parent: CP14MagicShadowStaff
+  name: guards electric staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into eletric spells.
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellLightningStrike
+    - CP14ActionSpellLightningStrikeSmall
+    - CP14ActionSpellLightningStrikeSmall
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
+  - type: Clothing
+    sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
+  - type: StaticPrice
+    price: 150
 
 - type: entity
   id: CP14MagicDruidStaff

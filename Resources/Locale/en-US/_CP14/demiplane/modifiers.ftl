@@ -1,6 +1,7 @@
 cp14-modifier-iron-ore = iron ore
 cp14-modifier-copper-ore = copper ore
 cp14-modifier-mithril-ore = mithril ore
+cp14-modifier-coal-ore = hard coal
 cp14-modifier-dayflin = dayflins
 cp14-modifier-fly-agaric = fly agaric
 cp14-modifier-blue-amanita = azure amanita
@@ -26,6 +27,7 @@ cp14-modifier-night = darkness
 cp14-modifier-spiders = spider's web
 cp14-modifier-flem = flemings
 cp14-modifier-silver-needle = silver needles
+cp14-modifier-additional-entry = multiple entry points
 
 cp14-modifier-storm = storm
 cp14-modifier-fire-storm = fire storm

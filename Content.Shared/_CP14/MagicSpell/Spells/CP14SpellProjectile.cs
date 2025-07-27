@@ -21,6 +21,9 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
     [DataField]
     public int ProjectileCount = 1;
 
+    [DataField]
+    public bool SaveVelocity = false;
+
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         EntityCoordinates? targetPoint = null;
@@ -45,8 +48,6 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
 
         var fromCoords = xform.Coordinates;
 
-        if (fromCoords == targetPoint)
-            return;
 
         var userVelocity = physics.GetMapLinearVelocity(args.User.Value);
 
@@ -64,12 +65,15 @@ public sealed partial class CP14SpellProjectile : CP14SpellEffect
                 (float) (random.NextDouble() * 2 - 1) * Spread,
                 (float) (random.NextDouble() * 2 - 1) * Spread));
 
+            if (fromCoords == offsetedTargetPoint)
+                continue;
+
             var ent = entManager.PredictedSpawnAtPosition(Prototype, spawnCoords);
 
             var direction = offsetedTargetPoint.ToMapPos(entManager, transform) -
                             spawnCoords.ToMapPos(entManager, transform);
 
-            gunSystem.ShootProjectile(ent, direction, userVelocity, args.User.Value, args.User, ProjectileSpeed);
+            gunSystem.ShootProjectile(ent, direction, SaveVelocity ? userVelocity : new Vector2(), args.User.Value, args.User, ProjectileSpeed);
         }
     }
 }

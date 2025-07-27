@@ -64,7 +64,7 @@
 - type: entity
   parent: CP14DrinkBaseMug
   id: CP14MetalBeerMug
-  name: Metal mug
+  name: metal mug
   categories: [ ForkFiltered ]
   description: The most common metal mug.
   components:
@@ -82,17 +82,20 @@
 - type: entity
   parent: CP14DrinkBaseMug
   id: CP14WoodenBeerMug
-  name: Wooden mug
+  name: wooden mug
   categories: [ ForkFiltered ]
   description: Wooden mug for beer.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Consumable/Drinks/beer_mug_1.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14DrinkBaseMug
   id: CP14SteelBeerMug
-  name: Beer mug
+  name: beer mug
   categories: [ ForkFiltered ]
   description: Wooden mug with iron inclusions.
   components:
@@ -102,7 +105,7 @@
 - type: entity
   parent: CP14DrinkBaseMug
   id: CP14SteelWoodBeerMug
-  name: Beer mug
+  name: beer mug
   categories: [ ForkFiltered ]
   description: Wooden mug with iron inclusions.
   components:

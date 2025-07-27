@@ -60,6 +60,46 @@
 
 - type: entity
   parent: CP14BaseDoorFrame
+  id: CP14WoodenBirchDoorFrame
+  name: wooden birch door frame
+  description: An unfinished wooden birch door.
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Doors/wooden_birch_frame.rsi
+    drawdepth: Mobs
+    state: closed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: CP14WoodenBirchDoor
+    node: CP14WoodenBirchDoorFrame
+
+- type: entity
+  parent: CP14WoodenBirchDoorFrame
+  id: CP14WoodenBirchDoorFrameMirrored
+  components:
+  - type: Sprite
+    state: closed_mirrored
+  - type: Construction
+    graph: CP14WoodenBirchDoor
+    node: CP14WoodenBirchDoorFrameMirrored
+
+- type: entity
+  parent: CP14BaseDoorFrame
   id: CP14IronDoorFrame
   name: iron door frame
   description: An unfinished iron door.

@@ -2,48 +2,63 @@
   id: Pyrokinetic
   name: cp14-skill-tree-pyrokinetic-name
   desc: cp14-skill-tree-pyrokinetic-desc
+  skillType: Memory
   color: "#d6933c"
 
 - type: cp14SkillTree
   id: Hydrosophistry
   name: cp14-skill-tree-hydrosophistry-name
   desc: cp14-skill-tree-hydrosophistry-desc
+  skillType: Memory
   color: "#1554a1"
 
 - type: cp14SkillTree
   id: Illusion
   name: cp14-skill-tree-illusion-name
   desc: cp14-skill-tree-illusion-desc
+  skillType: Memory
   color: "#f55faf"
 
 - type: cp14SkillTree
   id: Metamagic
   name: cp14-skill-tree-metamagic-name
   desc: cp14-skill-tree-metamagic-desc
+  skillType: Memory
   color: "#56e5f5"
 
 - type: cp14SkillTree
   id: Healing
   name: cp14-skill-tree-healing-name
   desc: cp14-skill-tree-healing-desc
+  skillType: Memory
   color: "#51cf72"
 
 - type: cp14SkillTree
-  id: Atlethic
-  name: cp14-skill-tree-atlethic-name
-  desc: cp14-skill-tree-atlethic-desc
+  id: Athletic
+  name: cp14-skill-tree-athletic-name
+  desc: cp14-skill-tree-athletic-desc
+  skillType: Memory
   color: "#b32e37"
 
 #- type: cp14SkillTree
 #  id: Dimension
 #  name: cp14-skill-tree-dimension-name
 #  desc: cp14-skill-tree-dimension-desc
+#  skillType: Memory
 #  color: "#ac66be"
+
+- type: cp14SkillTree
+  id: Electromancy
+  name: cp14-skill-tree-electric-name
+  desc: cp14-skill-tree-electric-desc
+  skillType: Memory
+  color: "#e8ff4c"
 
 - type: cp14SkillTree
   id: MartialArts
   name: cp14-skill-tree-martial-name
   desc: cp14-skill-tree-martial-desc
+  skillType: Memory
   color: "#f54242"
 
 #
@@ -52,22 +67,26 @@
 #  id: Thaumaturgy
 #  name: cp14-skill-tree-thaumaturgy-name
 #  desc: cp14-skill-tree-thaumaturgy-desc
+#  skillType: Memory
 #  color: "#7c52bf"
 
 #- type: cp14SkillTree
 #  id: Blacksmithing
 #  name: cp14-skill-tree-blacksmithing-name
 #  desc: cp14-skill-tree-blacksmithing-desc
+#  skillType: Memory
 #  color: "#6b3200"
 
 #- type: cp14SkillTree
 #  id: Trading
 #  name: cp14-skill-tree-trading-name
 #  desc: cp14-skill-tree-trading-desc
+#  skillType: Memory
 #  color: "#f5edaa"
 
 - type: cp14SkillTree
   id: Craftsmanship
   name: cp14-skill-tree-craftsman-name
   desc: cp14-skill-tree-craftsman-desc
+  skillType: Memory
   color: "#a04b00"

@@ -11,6 +11,12 @@
       "name": "counter_spell"
     },
     {
+      "name": "counter_spell_small"
+    },
+    {
+      "name": "magic_armor"
+    },
+    {
       "name": "magic_music"
     },
     {
@@ -24,6 +30,9 @@
     },
     {
       "name": "mana_trance"
+    },
+    {
+      "name": "magic_vision"
     }
   ]
 }

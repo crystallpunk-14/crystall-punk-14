@@ -12,7 +12,7 @@ uniform highp vec2 renderScale;
 uniform highp vec3 shaderColor;
 
 const highp float radiusFalloff = 20.0;
-const highp float noiseScale = 6;
+const highp float noiseScale = 6.0;
 const highp float timeScale = 0.1;
 
 highp float noise( highp vec2 p ) {

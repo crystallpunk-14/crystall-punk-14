@@ -4,7 +4,6 @@
  */
 
 using Content.Shared._CP14.Trading.Systems;
-using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -13,18 +12,15 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class StackResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public ProtoId<StackPrototype> Stack;
 
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+        HashSet<EntityUid> placedEntities)
     {
         var count = 0;
         foreach (var ent in placedEntities)
@@ -44,9 +40,9 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid? user)
+    public override void PostCraft(IEntityManager entManager,
+        IPrototypeManager protoManager,
+        HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -70,7 +66,7 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
         }
     }
 
-    public override double GetPrice(EntityManager entManager,
+    public override double GetPrice(IEntityManager entManager,
         IPrototypeManager protoManager)
     {
         if (!protoManager.TryIndex(Stack, out var indexedStack))
@@ -90,11 +86,6 @@ public sealed partial class StackResource : CP14WorkbenchCraftRequirement
             return "Error stack";
 
         return $"{Loc.GetString(indexedStack.Name)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

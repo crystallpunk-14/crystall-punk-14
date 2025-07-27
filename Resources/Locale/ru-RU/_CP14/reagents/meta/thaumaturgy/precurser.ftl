@@ -16,6 +16,9 @@ cp14-reagent-desc-blood-elf = Жизненная энергия волшебно
 cp14-reagent-name-blood-goblin = Кровь гоблина
 cp14-reagent-desc-blood-goblin = Жизненная энергия зеленокожих существ.
 
+cp14-reagent-name-blood-monster = Кровь монстра
+cp14-reagent-desc-blood-monster = Жизненная энергия различных монстров.
+
 cp14-reagent-name-bloodflowersap = Нектар кровавых роз
 cp14-reagent-desc-bloodflowersap = Сок кровавых цветов, растущих в местах былых битв. При правильном смешивании с кровью, может давать интересные результаты.
 

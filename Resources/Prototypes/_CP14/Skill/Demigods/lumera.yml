@@ -58,6 +58,20 @@
   - !type:NeedPrerequisite
     prerequisite: LumeraT1
 
+- type: cp14Skill
+  id: LumeraMagicVision
+  skillUiPosition: 2, 5
+  tree: GodLumera
+  icon:
+    sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_vision
+  effects:
+  - !type:AddAction
+    action: CP14ActionToggleMagicVision
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: LumeraT1
+
 # T2
 
 - type: cp14Skill

@@ -6,17 +6,6 @@
   name: wooden chest
   description: A simple wooden chest for easy storage of junk.
   components:
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.29"
-        density: 500
-        mask:
-        - SmallMobMask #this is so they can go under plastic flaps
-        layer:
-        - MachineLayer
   - type: Icon
     sprite: _CP14/Structures/Storage/Crates/chest.rsi
     state: icon
@@ -46,13 +35,6 @@
           collection: WoodDestroy
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: EntityStorage
-    closeSound:
-      path: /Audio/Effects/woodenclosetclose.ogg
-    openSound:
-      path: /Audio/Effects/woodenclosetopen.ogg
-  - type: StaticPrice
-    price: 0
   - type: Construction
     graph: CP14WoodenChest
     node: CP14WoodenChest
@@ -62,3 +44,84 @@
     materialComposition:
       CP14WoodenPlanks: 50
       CP14Iron: 10
+
+- type: entity
+  parent: CP14WoodenChest
+  id: CP14WoodenChestOld
+  name: old wooden chest
+  description: An old chest. It has seen a lot.
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/chest_old.rsi
+    state: icon
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/chest_old.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent:
+  - CP14ChestGeneric
+  - CP14BaseFlammable
+  id: CP14GoldChest
+  name: gold chest
+  description: Someone spent a lot of money and effort to decorate this chest with gold. It didn't make the chest more functional, but it did make it beautiful.
+  components:
+  - type: Icon
+    sprite: _CP14/Structures/Storage/Crates/chest_gold.rsi
+    state: icon
+  - type: Sprite
+    sprite: _CP14/Structures/Storage/Crates/chest_gold.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: CP14GoldChest
+    node: CP14GoldChest
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 50
+      CP14Iron: 10
+      CP14Gold: 10

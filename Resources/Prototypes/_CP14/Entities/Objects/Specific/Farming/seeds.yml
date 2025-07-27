@@ -25,6 +25,8 @@
     - state: wheat
   - type: CP14Seed
     plantProto: CP14PlantWheat
+  - type: StaticPrice
+    price: 0.4
 
 - type: entity
   id: CP14SeedPumpkin
@@ -38,6 +40,8 @@
     - state: pumpkin
   - type: CP14Seed
     plantProto: CP14PlantPumpkin
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14SeedCabbage
@@ -51,6 +55,8 @@
     - state: cabbage
   - type: CP14Seed
     plantProto: CP14PlantCabbage
+  - type: StaticPrice
+    price: 0.6
 
 - type: entity
   id: CP14SeedCucumber
@@ -64,6 +70,8 @@
     - state: cucumber
   - type: CP14Seed
     plantProto: CP14PlantCucumber
+  - type: StaticPrice
+    price: 1
 
 - type: entity
   id: CP14SeedTomato
@@ -77,6 +85,8 @@
     - state: tomato
   - type: CP14Seed
     plantProto: CP14PlantTomatoes
+  - type: StaticPrice
+    price: 0.4
 
 - type: entity
   id: CP14SeedPepper
@@ -90,6 +100,8 @@
     - state: pepper
   - type: CP14Seed
     plantProto: CP14PlantPepper
+  - type: StaticPrice
+    price: 2
 
 - type: entity
   id: CP14SeedSage
@@ -103,6 +115,8 @@
     - state: sage
   - type: CP14Seed
     plantProto: CP14PlantSage
+  - type: StaticPrice
+    price: 5
 
 - type: entity
   id: CP14SeedCotton
@@ -116,3 +130,5 @@
     - state: cotton
   - type: CP14Seed
     plantProto: CP14PlantCotton
+  - type: StaticPrice
+    price: 1

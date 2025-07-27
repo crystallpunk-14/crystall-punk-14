@@ -30,3 +30,6 @@
   - type: Tag
     tags:
     - CP14Scissors
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10

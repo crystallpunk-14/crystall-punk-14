@@ -58,13 +58,17 @@
   - type: CP14MagicUnsafeDamage
   - type: CP14MagicUnsafeSleep
   - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 5
     availableSkillTrees:
     - Pyrokinetic
     - Hydrosophistry
     - Illusion
     - Metamagic
     - Healing
-    - Atlethic
+    - Electromancy
+    - Athletic
     - MartialArts
     - Craftsmanship
 

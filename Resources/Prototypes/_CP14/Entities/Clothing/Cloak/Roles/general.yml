@@ -173,3 +173,14 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
+
+- type: entity
+  parent: CP14ClothingCloakBase
+  id: CP14ClothingCloakHaori
+  name: haori
+  description: Traditional roomy jacket of a traveler from distant lands.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/General/haori.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/General/haori.rsi

@@ -24,3 +24,15 @@
     sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
+
+
+- type: entity
+  parent: CP14ClothingCloakGuardBase
+  id: CP14ClothingCloakGuardInvestigator
+  name: investigator's cloak
+  description: Cloaks that only senior investigators in the service of the empire are allowed to wear.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/investigator.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Roles/Guard/investigator.rsi

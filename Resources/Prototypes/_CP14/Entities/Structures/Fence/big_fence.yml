@@ -103,7 +103,7 @@
     sprite: _CP14/Structures/Fence/iron_big.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
+    damageModifierSet: Metallic
   - type: Destructible
     thresholds:
     - trigger:
@@ -112,7 +112,7 @@
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: WoodDestroy
+          collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14ScrapIron:

@@ -18,10 +18,13 @@ cp14-skill-tree-healing-desc = Изучайте способы влияния м
 cp14-skill-tree-dimension-name = Дименсиум
 cp14-skill-tree-dimension-desc = Погрузитесь в природу пространства и пустоты.
 
+cp14-skill-tree-electric-name = Электромантия
+cp14-skill-tree-electric-desc = Познайте природу оглушающего шторма, ветра и грозы.
+
 # Body
 
-cp14-skill-tree-atlethic-name = Атлетика
-cp14-skill-tree-atlethic-desc = Развивайте свое тело, расширяя границы доступного.
+cp14-skill-tree-athletic-name = Атлетика
+cp14-skill-tree-athletic-desc = Развивайте свое тело, расширяя границы доступного.
 
 cp14-skill-tree-martial-name = Боевые исскуства
 cp14-skill-tree-martial-desc = Овладейте секретами смертельного оружия, или сделайте оружием свое собственное тело.

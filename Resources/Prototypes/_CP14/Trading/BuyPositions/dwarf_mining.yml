@@ -2,30 +2,30 @@
 # Rep 0
 
 - type: cp14TradingPosition
-  id: CP14CopperBar5
+  id: CP14OreCopper5
   faction: DwarfMining
-  priceMarkup: 5
-  uiPosition: 4
+  uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Materials/copper_bar.rsi
-    state: bar_2
+    sprite: _CP14/Objects/Materials/copper_ore.rsi
+    state: ore2
   service: !type:CP14BuyItemsService
-    product: CP14CopperBar5
+    product: CP14OreCopper5
 
 - type: cp14TradingPosition
-  id: CP14GlassSheet5
+  id: CP14CrystalShardQuartz
   faction: DwarfMining
-  uiPosition: 5
+  uiPosition: 1
+  priceMarkup: 3
   icon:
-    sprite: _CP14/Objects/Materials/glass.rsi
-    state: glass_2
+    sprite: _CP14/Structures/Flora/Crystal/crystal_shard.rsi
+    state: shard3
   service: !type:CP14BuyItemsService
-    product: CP14GlassSheet5
+    product: CP14CrystalShardQuartz
 
 - type: cp14TradingPosition
   id: CP14ModularIronPickaxe
   faction: DwarfMining
-  uiPosition: 8
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Pickaxe/metall_pickaxe.rsi
     state: tool
@@ -35,7 +35,7 @@
 - type: cp14TradingPosition
   id: CP14ModularIronShovel
   faction: DwarfMining
-  uiPosition: 9
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi
     state: tool
@@ -45,7 +45,7 @@
 - type: cp14TradingPosition
   id: CP14BaseSharpeningStone
   faction: DwarfMining
-  uiPosition: 10
+  uiPosition: 5
   icon:
     sprite: _CP14/Objects/sharpening_stone.rsi
     state: base
@@ -55,37 +55,58 @@
 # Rep 1
 
 - type: cp14TradingPosition
-  id: CP14IronBar5
+  id: CP14OreIron5
   faction: DwarfMining
   reputationLevel: 1
-  priceMarkup: 5
-  uiPosition: 4
+  uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Materials/iron_bar.rsi
-    state: bar_2
+    sprite: _CP14/Objects/Materials/iron_ore.rsi
+    state: ore2
   service: !type:CP14BuyItemsService
-    product: CP14IronBar5
+    product: CP14OreIron5
+
+- type: cp14TradingPosition
+  id: CP14Lighter
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _CP14/Objects/Tools/flint.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14Lighter
 
 # Rep 2
 
 - type: cp14TradingPosition
-  id: CP14GoldBar5
+  id: CP14OreGold5
   faction: DwarfMining
   reputationLevel: 2
-  priceMarkup: 5
-  uiPosition: 4
+  uiPosition: 0
   icon:
-    sprite: _CP14/Objects/Materials/gold_bar.rsi
-    state: bar_2
+    sprite: _CP14/Objects/Materials/gold_ore.rsi
+    state: ore2
   service: !type:CP14BuyItemsService
-    product: CP14GoldBar5
+    product: CP14OreGold5
+
+#- type: cp14TradingPosition
+#  id: CP14OreMithril5
+#  faction: DwarfMining
+#  reputationLevel: 2
+#  uiPosition: 1
+#  icon:
+#    sprite: _CP14/Objects/Materials/mithril_ore.rsi
+#    state: ore2
+#  service: !type:CP14BuyItemsService
+#    product: CP14OreMithril5
 
 - type: cp14TradingPosition
   id: CP14BaseSharpeningStoneStructure
   faction: DwarfMining
   reputationLevel: 2
   priceMarkup: 5
-  uiPosition: 10
+  uiPosition: 5
   icon:
     sprite: _CP14/Structures/Specific/Blacksmith/sharpening_stone.rsi
     state: base

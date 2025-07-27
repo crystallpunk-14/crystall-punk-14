@@ -117,7 +117,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
         if (entity is null)
             return;
 
-        _flash.Flash(entity.Value, null, null, 3000f, 0.5f);
+        _flash.Flash(entity.Value, null, null, TimeSpan.FromSeconds(3f), 0.5f);
         _transform.SetCoordinates(entity.Value, coordinates);
         _audio.PlayGlobal(sound, entity.Value);
     }
