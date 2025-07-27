@@ -6,8 +6,8 @@
   faction: HomeDecor
   uiPosition: 0
   icon:
-    sprite: Objects/Misc/candles.rsi
-    state: candle-big
+    sprite: _CP14/Objects/Misc/candles.rsi
+    state: small1
   service: !type:CP14BuyItemsService
     product: CP14Candle
 
@@ -122,26 +122,15 @@
 # Rep 1
 
 - type: cp14TradingPosition
-  id: CP14CandleRed
+  id: CP14Candelabra
   faction: HomeDecor
   reputationLevel: 1
   uiPosition: 0
   icon:
-    sprite: Objects/Misc/candles.rsi
-    state: candle-big
+    sprite: _CP14/Objects/Misc/candelabra.rsi
+    state: triple
   service: !type:CP14BuyItemsService
-    product: CP14CandleRed
-
-- type: cp14TradingPosition
-  id: CP14CandleBlack
-  faction: HomeDecor
-  reputationLevel: 1
-  uiPosition: 1
-  icon:
-    sprite: Objects/Misc/candles.rsi
-    state: candle-big
-  service: !type:CP14BuyItemsService
-    product: CP14CandleBlack
+    product: CP14Candelabra
 
 - type: cp14TradingPosition
   id: CP14KeyIronBlank
