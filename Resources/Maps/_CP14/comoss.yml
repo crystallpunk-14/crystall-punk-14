@@ -39128,7 +39128,7 @@ entities:
     - type: Transform
       pos: -1.5383277,-16.33084
       parent: 1
-- proto: CP14ClothingOuterClothingCopperArmor
+- proto: CP14ClothingOuterClothingFish
   entities:
   - uid: 7468
     components:
