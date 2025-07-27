@@ -51,7 +51,9 @@
     - FootstepSound
     - CP14RaidLeader
   - type: CP14SkillStorage
-    experienceMaxCap: 0
+    skillPoints:
+      Memory:
+        max: 0
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery

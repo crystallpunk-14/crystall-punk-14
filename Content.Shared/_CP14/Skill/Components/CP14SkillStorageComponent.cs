@@ -29,23 +29,24 @@ public sealed partial class CP14SkillStorageComponent : Component
     [DataField, AutoNetworkedField]
     public List<ProtoId<CP14SkillPrototype>> LearnedSkills = new();
 
-    /// <summary>
-    /// skills that the player has learned on the research table, but has not yet learned in the skill tree.
-    /// </summary>
     [DataField, AutoNetworkedField]
-    public List<ProtoId<CP14SkillPrototype>> ResearchedSkills = new();
+    public Dictionary<ProtoId<CP14SkillPointPrototype>, CP14SkillPointContainerEntry> SkillPoints = new();
+}
+
+[DataDefinition, Serializable, NetSerializable]
+public sealed partial class CP14SkillPointContainerEntry
+{
+    /// <summary>
+    /// The number of experience points spent on skills.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 Sum = 0;
 
     /// <summary>
-    /// The number of experience points spent on skills. Technically this could be calculated via LearnedSkills, but this is a cached value for optimization.
+    /// The maximum of experience points that can be spent on learning skills.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public FixedPoint2 SkillsSumExperience = 0;
-
-    /// <summary>
-    /// The maximum ceiling of experience points that can be spent on learning skills. Not tied to a category.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public FixedPoint2 ExperienceMaxCap = 5;
+    [DataField]
+    public FixedPoint2 Max = 0;
 }
 
 /// <summary>

@@ -13,8 +13,6 @@
           mapNameTemplate: "Venicialis fort"
         - type: StationJobs
           availableJobs:
-            #Demigods
-            CP14GodLumera: [ 1, 1 ]
             #Mercenary
             #CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
