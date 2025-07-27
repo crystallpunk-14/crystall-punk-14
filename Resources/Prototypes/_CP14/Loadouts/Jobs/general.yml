@@ -635,25 +635,25 @@
   id: CP14GeneralShoes
   name: cp14-loadout-general-shoes
   loadouts:
-  - CP14ShoesBlack
-  - CP14ShoesAristocraticBlack
-  - CP14ShoesSandals
-  - CP14LongLeatherBoots
+  - CP14ClothingShoesBlack
+  - CP14ClothingShoesAristocraticBlack
+  - CP14ClothingShoesSandals
   - CP14ClothingShoesLongLeatherBoots
+  - CP14ClothingShoesThighHighBoots
   - CP14ClothingShoesJestersRingers
 
 - type: loadout
-  id: CP14ShoesBlack
+  id: CP14ClothingShoesBlack
   equipment:
     shoes: CP14ClothingShoesBlack
 
 - type: loadout
-  id: CP14ShoesAristocraticBlack
+  id: CP14ClothingShoesAristocraticBlack
   equipment:
     shoes: CP14ClothingShoesAristocraticBlack
 
 - type: loadout
-  id: CP14ShoesSandals
+  id: CP14ClothingShoesSandals
   equipment:
     shoes: CP14ClothingShoesSandals
 
@@ -663,12 +663,12 @@
     shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: loadout
-  id: CP14ThighHighBoots
+  id: CP14ClothingShoesThighHighBoots
   equipment:
     shoes: CP14ClothingShoesThighHighBoots
 
 - type: loadout
-  id: CP14JestersRingers
+  id: CP14ClothingShoesJestersRingers
   equipment:
     shoes: CP14ClothingShoesJestersRingers
 
