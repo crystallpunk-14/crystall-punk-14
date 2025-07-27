@@ -29,85 +29,55 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
 
     private void OnAppearanceChange(Entity<CP14FoodHolderComponent> ent, ref AppearanceChangeEvent args)
     {
-        var solutionId = string.Empty;
-
-        if (TryComp<CP14FoodHolderComponent>(ent, out var holder))
-            solutionId = holder.SolutionId;
-
-        UpdateVisuals(
-            ent,
-            solutionId,
-            ref ent.Comp.RevealedLayers,
-            ent.Comp.TargetLayerMap,
-            ent.Comp.MaxDisplacementFillLevels,
-            ent.Comp.DisplacementRsiPath,
-            ent.Comp.FoodData);
+        UpdateVisuals(ent);
     }
 
     private void OnAfterHandleState(Entity<CP14FoodHolderComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        var solutionId = string.Empty;
-
-        if (TryComp<CP14FoodHolderComponent>(ent, out var holder))
-            solutionId = holder.SolutionId;
-
-        UpdateVisuals(
-            ent,
-            solutionId,
-            ref ent.Comp.RevealedLayers,
-            ent.Comp.TargetLayerMap,
-            ent.Comp.MaxDisplacementFillLevels,
-            ent.Comp.DisplacementRsiPath,
-            ent.Comp.FoodData);
+        UpdateVisuals(ent);
     }
 
-    private void UpdateVisuals(
-        EntityUid ent,
-        string? solutionId,
-        ref HashSet<string> revealedLayers,
-        string targetLayerMap,
-        int maxDisplacementFillLevels,
-        string? displacementRsiPath,
-        CP14FoodData? data)
+    private void UpdateVisuals(Entity<CP14FoodHolderComponent> ent)
     {
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
+        if (ent.Comp.FoodData is null)
+            return;
+
+        if (!_solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var soln, out var solution))
+            return;
+
         //Remove old layers
-        foreach (var key in revealedLayers)
+        foreach (var key in ent.Comp.RevealedLayers)
         {
             _sprite.RemoveLayer((ent, sprite), key);
         }
 
-        revealedLayers.Clear();
+        ent.Comp.RevealedLayers.Clear();
 
-        if (data is null)
-            return;
 
-        if (!_solution.TryGetSolution(ent, solutionId, out var soln, out var solution))
-            return;
-
-        _sprite.LayerMapTryGet((ent, sprite), targetLayerMap, out var index, false);
+        _sprite.LayerMapTryGet((ent, sprite), ent.Comp.TargetLayerMap, out var index, false);
 
         var fillLevel = (float)solution.Volume / (float)solution.MaxVolume;
         if (fillLevel > 1)
             fillLevel = 1;
 
-        var closestFillSprite = ContentHelpers.RoundToLevels(fillLevel, 1, maxDisplacementFillLevels + 1);
+        var closestFillSprite = ContentHelpers.RoundToLevels(fillLevel, 1, ent.Comp.MaxDisplacementFillLevels + 1);
 
         //Add new layers
         var counter = 0;
-        foreach (var layer in data.Visuals)
+        foreach (var layer in ent.Comp.FoodData.Visuals)
         {
             var layerIndex = index + counter;
             var keyCode = $"cp14-food-layer-{counter}";
-            revealedLayers.Add(keyCode);
+            ent.Comp.RevealedLayers.Add(keyCode);
 
             _sprite.AddBlankLayer((ent, sprite), layerIndex);
             _sprite.LayerMapSet((ent, sprite), keyCode, layerIndex);
             _sprite.LayerSetData((ent, sprite), layerIndex, layer);
 
-            if (displacementRsiPath is not null)
+            if (ent.Comp.DisplacementRsiPath is not null)
             {
                 var displaceData = new DisplacementData
                 {
@@ -116,7 +86,7 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
                         {
                             32, new PrototypeLayerData
                             {
-                                RsiPath = displacementRsiPath,
+                                RsiPath = ent.Comp.DisplacementRsiPath,
                                 State = "fill-" + closestFillSprite,
                             }
                         },
@@ -128,7 +98,7 @@ public sealed class CP14ClientCookingSystem : CP14SharedCookingSystem
                         keyCode,
                         out var displacementKey))
                 {
-                    revealedLayers.Add(displacementKey);
+                    ent.Comp.RevealedLayers.Add(displacementKey);
                 }
             }
 
