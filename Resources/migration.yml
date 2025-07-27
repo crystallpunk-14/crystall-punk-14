@@ -399,6 +399,30 @@ CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
 #2025-07-27
 CP14DemiplanEnterRoomMarker: null
 
+CP14CandleRed: CP14Candle
+CP14CandleBlue: CP14Candle
+CP14CandleBlack: CP14Candle
+CP14CandleGreen: CP14Candle
+CP14CandlePurple: CP14Candle
+CP14CandleSmall: CP14Candle
+CP14CandleRedSmall: CP14Candle
+CP14CandleBlueSmall: CP14Candle
+CP14CandleBlackSmall: CP14Candle
+CP14CandleGreenSmall: CP14Candle
+CP14CandlePurpleSmall: CP14Candle
+
+CP14CandleInfinite: CP14CandleIgnited
+CP14CandleRedInfinite: CP14CandleIgnited
+CP14CandleBlueInfinite: CP14CandleIgnited
+CP14CandleBlackInfinite: CP14CandleIgnited
+CP14CandleGreenInfinite: CP14CandleIgnited
+CP14CandlePurpleInfinite: CP14CandleIgnited
+CP14CandleRedSmallInfinite: CP14CandleIgnited
+CP14CandleBlueSmallInfinite: CP14CandleIgnited
+CP14CandleBlackSmallInfinite: CP14CandleIgnited
+CP14CandleGreenSmallInfinite: CP14CandleIgnited
+CP14CandlePurpleSmallInfinite: CP14CandleIgnited
+
 # <---> CrystallEdge migration zone end
 
 
