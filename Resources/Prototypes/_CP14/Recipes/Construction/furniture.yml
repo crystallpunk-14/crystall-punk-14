@@ -26,6 +26,32 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14StoolWooden
+  graph: CP14Stool
+  startNode: start
+  targetNode: CP14StoolWooden
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14StoolBirch
+  graph: CP14Stool
+  startNode: start
+  targetNode: CP14StoolBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14TableWooden
   graph: CP14TableWooden
   startNode: start
