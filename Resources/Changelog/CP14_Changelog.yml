@@ -1280,3 +1280,17 @@
   id: 8182
   time: '2025-07-26T12:24:59.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539
+- author: TheShuEd
+  changes:
+  - message: Added rare crystals geodes in cave demiplanes
+    type: Add
+  - message: Added "multiple entry points" demiplane modifier. Your team has a chance
+      to be separated in different parts of the demiplane when entering it. (visible
+      during inspection of the demiplane)
+    type: Add
+  - message: Fixed a bug where the cores or the exits might not be generated in the
+      demiplanes.
+    type: Fix
+  id: 8183
+  time: '2025-07-27T13:45:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1583
