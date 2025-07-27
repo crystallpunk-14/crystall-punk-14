@@ -26,9 +26,11 @@ cp14-modifier-shadow-kudzu = поглощающий астральный мра�
 cp14-modifier-night = темнота
 cp14-modifier-spiders = паучье логово
 cp14-modifier-silver-needle = серебрянные иглы
+cp14-modifier-additional-entry = несколько точек входа
 
 cp14-modifier-storm = гроза
 cp14-modifier-fire-storm = огненный шторм
 cp14-modifier-snow-storm = снежный шторм
 cp14-modifier-mana-mist = магический туман
 cp14-modifier-anti-mana-mist = антимагический туман
+
