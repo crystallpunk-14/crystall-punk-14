@@ -20,7 +20,7 @@
   name: cp14-modifier-ruins
   categories:
     Reward: 0.2
-  generationProb: 2
+  generationProb: 0.8
   layers:
     - !type:CP14RoomsDunGen
       count: 8
@@ -37,7 +37,7 @@
     Reward: 0.15
   requiredTags:
   - CP14DemiplaneUnderground
-  generationProb: 1
+  generationWeight: 0.5
   layers:
     - !type:CP14RoomsDunGen
       count: 5

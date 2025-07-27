@@ -61,6 +61,7 @@
   name: cp14-modifier-additional-entry
   categories:
     Danger: 0.15
+  generationProb: 0.8
   generationWeight: 0.25
   layers:
     - !type:CP14RoomsDunGen
