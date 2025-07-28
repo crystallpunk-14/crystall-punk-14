@@ -59041,7 +59041,7 @@ entities:
       parent: 2
     - type: CollisionWake
       enabled: False
-- proto: CP14ClothingBackSatchelT0
+- proto: CP14ClothingSatchelLeather
   entities:
   - uid: 1484
     components:
