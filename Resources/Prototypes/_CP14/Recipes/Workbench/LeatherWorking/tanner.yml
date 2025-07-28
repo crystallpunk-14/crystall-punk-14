@@ -124,7 +124,7 @@
     protoId: CP14String
     count: 8 # 40u cloth
   result: CP14RuggedStrap
-  resultCount: 4 # 4x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
+  resultCount: 2 # 2x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
   # Cost: (10×1.2) + (10×0.4) + (40×0.3) = 12 + 4 + 12 = 28 copper coins
 
 - type: CP14Recipe

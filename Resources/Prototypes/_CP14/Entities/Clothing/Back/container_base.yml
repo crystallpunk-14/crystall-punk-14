@@ -35,4 +35,4 @@
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
   - type: StaticPrice
-    price: 10 # for crafting
+    price: 30 # for crafting
