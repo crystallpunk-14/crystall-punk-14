@@ -142,7 +142,7 @@
 
 - type: material
   id: CP14Leather
-  stackEntity: CP14Leather
+  #stackEntity: CP14Leather
   name: cp14-material-leather
   unit: materials-unit-roll
   icon: { sprite: _CP14/Objects/Ingredients/leather.rsi, state: leather }
