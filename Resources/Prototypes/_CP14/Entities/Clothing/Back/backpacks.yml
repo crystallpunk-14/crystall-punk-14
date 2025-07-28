@@ -56,8 +56,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 46 # 40u CP14Leather (8x5u) + 6u CP14LeatherStrap (2x3u)
+      CP14SaltStone: 46 # 40u (8x5u) + 6u (2x3u)
       CP14Iron: 2 # 2u CP14IronBuckle (1x2u)
-      # Cost: (46×1.2) + (2×2) = 55.2 + 4 = 59.2 copper coins
+      # Cost: (46×1.2) + (46×0.4) + (2×2) = 55.2 + 18.4 + 4 = 77.6 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -86,8 +87,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 92 # 80u CP14Leather (8x10u) + 12u CP14LeatherStrap (4x3u)
+      CP14SaltStone: 92 # 80u (8x10u) + 12u (4x3u)
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
-      # Cost: (92×1.2) + (4×2) = 110.4 + 8 = 118.4 copper coins
+      # Cost: (92×1.2) + (92×0.4) + (4×2) = 110.4 + 36.8 + 8 = 155.2 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -116,8 +118,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 224 # 200u CP14Leather (8x25u) + 24u CP14RuggedStrap (4x6u)
+      CP14SaltStone: 180 # 160u (8x20u) + 20u (4x5u)
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
-      # Cost: (224×1.2) + (4×2) = 268.8 + 8 = 276.8 copper coins
+      # Cost: (224×1.2) + (180×0.4) + (4×2) = 268.8 + 72 + 8 = 348.8 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -157,8 +160,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 110 # 80u CP14Leather (8x10u) + 30u CP14LeatherStrap (10x3u)
+      CP14SaltStone: 110 # 80u (8x10u) + 30u (10x3u)
       CP14Iron: 8 # 8u CP14IronBuckle (4x2u)
-      # Cost: (110×1.2) + (8×2) = 132 + 16 = 148 copper coins
+      # Cost: (110×1.2) + (110×0.4) + (8×2) = 132 + 44 + 16 = 192 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -189,8 +193,9 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 96 # 60u CP14Leather (6x10u) + 36u CP14LeatherStrap (12x3u)
+      CP14SaltStone: 96 # 60u (6x10u) + 36u (12x3u)
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
-      # Cost: (96×1.2) + (12×2) = 115.2 + 24 = 139.2 copper coins
+      # Cost: (96×1.2) + (96×0.4) + (12×2) = 115.2 + 38.4 + 24 = 177.6 copper coins
   - type: ClothingSpeedModifier
     walkModifier: 0.83
     sprintModifier: 0.83

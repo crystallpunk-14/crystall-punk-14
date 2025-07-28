@@ -10,12 +10,12 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14ThinAnimalHide
-    count: 2
+    count: 1
   - !type:StackResource
     stack: CP14SaltStone
     count: 1
   result: CP14ThinLeather
-  resultCount: 4
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14HideRecipe
@@ -27,7 +27,7 @@
     count: 1
   - !type:StackResource
     stack: CP14SaltStone
-    count: 1
+    count: 2
   result: CP14Leather
   resultCount: 2
 
@@ -41,7 +41,7 @@
     count: 1
   - !type:StackResource
     stack: CP14SaltStone
-    count: 2
+    count: 4
   result: CP14RuggedLeather
   resultCount: 2
 
