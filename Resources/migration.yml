@@ -379,8 +379,8 @@ CP14FoodPieMeat: null
 CP14FoodPieMeatRaw: null
 
 # 2025-07-20
-CP14ClothingBackpackLeather: CP14ClothingBackBackpackLeather
-CP14ClothingSatchelLeather:  CP14ClothingBackSatchelLeather
+CP14ClothingBackpackLeather: CP14ClothingBackLeatherBackpack
+CP14ClothingSatchelLeather:  CP14ClothingBackLeatherSatchel
 CP14ClothingBlueCollarDress:  CP14ClothingShirtBlueCollarDress
 CP14ClothingBlueOpenDress:  CP14ClothingShirtBlueOpenDress
 CP14ClothingRedOpenDress:  CP14ClothingShirtRedOpenDress
@@ -424,8 +424,8 @@ CP14CandleGreenSmallInfinite: CP14CandleIgnited
 CP14CandlePurpleSmallInfinite: CP14CandleIgnited
 
 #2025-07-28
-CP14ClothingBackBackpackLeather: CP14ClothingBackBackpackT1
-CP14ClothingBackSatchelLeather:  CP14ClothingBackSatchelT1
+CP14ClothingBackLeatherBackpack: CP14ClothingBackBackpackT1
+CP14ClothingBackLeatherSatchel:  CP14ClothingBackSatchelT1
 
 # <---> CrystallEdge migration zone end
 
