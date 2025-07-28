@@ -145,6 +145,6 @@
   stackEntity: CP14Leather
   name: cp14-material-leather
   unit: cp14-materials-unit-sheet
-  icon: { sprite: _CP14/Objects/Materials/leather.rsi, state: leather }
+  icon: { sprite: _CP14/Objects/Ingredients/leather.rsi, state: leather }
   color: "#a78a63"
   price: 1.2

@@ -26,7 +26,7 @@
   description: Soft and flexible leather, perfect for lightweight items.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Materials/leather.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
     state: thin_leather
   - type: PhysicalComposition
     materialComposition:
@@ -42,7 +42,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _CP14/Objects/Materials/leather.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
     state: leather
   - type: PhysicalComposition
     materialComposition:
@@ -58,7 +58,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _CP14/Objects/Materials/leather.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
     state: rugged_leather
   - type: PhysicalComposition
     materialComposition:
@@ -78,7 +78,7 @@
     shape:
     - 0,0,1,0 # 2x1
   - type: Sprite
-    sprite: _CP14/Objects/Materials/leather.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
     state: strap
   - type: PhysicalComposition
     materialComposition:
@@ -96,7 +96,7 @@
     shape:
     - 0,0,1,0 # 2x1
   - type: Sprite
-    sprite: _CP14/Objects/Materials/leather.rsi
+    sprite: _CP14/Objects/Ingredients/leather.rsi
     state: rugged_strap
   - type: PhysicalComposition
     materialComposition:

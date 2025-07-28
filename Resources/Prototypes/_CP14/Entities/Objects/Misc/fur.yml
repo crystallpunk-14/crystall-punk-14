@@ -7,7 +7,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _CP14/Objects/Ingredients/fur.rsi
+    sprite: _CP14/Objects/Misc/fur.rsi
 
 # ================
 # Fur Types
@@ -20,7 +20,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _CP14/Objects/Ingredients/fur.rsi
+    sprite: _CP14/Objects/Misc/fur.rsi
     state: cheap_fur
   - type: StaticPrice
     price: 15
@@ -34,7 +34,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _CP14/Objects/Ingredients/fur.rsi
+    sprite: _CP14/Objects/Misc/fur.rsi
     state: fur
   - type: StaticPrice
     price: 40
@@ -50,7 +50,7 @@
     shape:
     - 0,0,1,2 # 2x3
   - type: Sprite
-    sprite: _CP14/Objects/Ingredients/fur.rsi
+    sprite: _CP14/Objects/Misc/fur.rsi
     state: good_fur
   - type: StaticPrice
     price: 80
