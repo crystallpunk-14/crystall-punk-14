@@ -39232,7 +39232,7 @@ entities:
     - type: Transform
       pos: -17.41455,-27.582659
       parent: 1
-- proto: CP14ClothingBackSatchelT1
+- proto: CP14ClothingBackLeatherSatchel
   entities:
   - uid: 7478
     components:
