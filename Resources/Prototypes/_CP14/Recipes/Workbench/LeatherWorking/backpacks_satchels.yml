@@ -81,7 +81,7 @@
     count: 2
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap       # +30u CP14Leather (10x3u)
-    count: 10
+    count: 6
   result: CP14ClothingBackSatchelT1
   # Total Leather: 12u + 10u + 30u = 52u vs original 30u+30u=60u
 
