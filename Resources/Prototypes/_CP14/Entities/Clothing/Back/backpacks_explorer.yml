@@ -1,128 +1,128 @@
-# TODO: Icons, Modifiers
+# # TODO: Icons (as unloading and waist bags), Modifiers
 
-# ========================
-# Base
-# ========================
+# # ========================
+# # Base
+# # ========================
 
-- type: entity
-  abstract: true
-  parent: CP14ClothingBackContainerBase
-  id: CP14ClothingBackExplorerBackpackBase
-  categories: [ ForkFiltered ]
+# - type: entity
+#   abstract: true
+#   parent: CP14ClothingBackContainerBase
+#   id: CP14ClothingBackExplorerBackpackBase
+#   categories: [ ForkFiltered ]
 
-# ========================
-# Tiers
-# ========================
+# # ========================
+# # Tiers
+# # ========================
 
-- type: entity
-  parent: CP14ClothingBackExplorerBackpackBase
-  id: CP14ClothingBackExplorerBackpackT0
-  name: Scout Pouch
-  suffix: backpack T0
-  description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid: # 22
-    - 0,0,1,0 # 2x1=2
-    - 0,2,1,2 # 2x1=2
-    - 3,0,4,0 # 2x1=2
-    - 3,2,4,2 # 2x1=2
-    - 6,0,6,2 # 1x3=3
-    - 8,0,8,2 # 1x3=3
-    - 10,0,11,0 # 2x1=2
-    - 10,2,11,2 # 2x1=2
-    - 13,0,14,0 # 2x1=2
-    - 13,2,14,2 # 2x1=2
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Cloth: 80 # 60u CP14Cloth (6x10u) + 20u CP14String (4x5u)
-      CP14Iron: 16 # 16u CP14IronBuckle (8x2u)
-      # Cost: (80×0.3) + (16×2) = 24 + 32 = 56 copper coins
+# - type: entity
+#   parent: CP14ClothingBackExplorerBackpackBase
+#   id: CP14ClothingBackExplorerBackpackT0
+#   name: Scout Pouch
+#   suffix: backpack T0
+#   description: A lightweight pouch for scouts, allowing quick access to essential tools while maintaining mobility.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Explorer_Backpack/explorer_t0.rsi
+#     state: icon
+#   - type: Storage
+#     grid: # 22
+#     - 0,0,1,0 # 2x1=2
+#     - 0,2,1,2 # 2x1=2
+#     - 3,0,4,0 # 2x1=2
+#     - 3,2,4,2 # 2x1=2
+#     - 6,0,6,2 # 1x3=3
+#     - 8,0,8,2 # 1x3=3
+#     - 10,0,11,0 # 2x1=2
+#     - 10,2,11,2 # 2x1=2
+#     - 13,0,14,0 # 2x1=2
+#     - 13,2,14,2 # 2x1=2
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Cloth: 80 # 60u CP14Cloth (6x10u) + 20u CP14String (4x5u)
+#       CP14Iron: 16 # 16u CP14IronBuckle (8x2u)
+#       # Cost: (80×0.3) + (16×2) = 24 + 32 = 56 copper coins
 
-- type: entity
-  parent: CP14ClothingBackExplorerBackpackT0
-  id: CP14ClothingBackExplorerBackpackT1
-  name: Explorer Backpack
-  suffix: Trail Bag
-  description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid: # 36
-    - 0,0,0,1 # 1x2=2
-    - 0,3,0,4 # 1x2=2
-    - 2,0,3,1 # 2x2=4
-    - 2,3,3,4 # 2x2=4
-    - 5,0,7,1 # 3x2=6
-    - 5,3,7,4 # 3x2=6
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Leather: 36 # 30u CP14Leather (6x5u) + 6u CP14LeatherStrap (2x3u)
-      CP14SaltStone: 36 # 30u (6x5u) + 6u (2x3u)
-      CP14Iron: 20 # 20u CP14IronBuckle (10x2u)
-      # Cost: (36×1.2) + (36×0.4) + (20×2) = 43.2 + 14.4 + 40 = 97.6 copper coins
+# - type: entity
+#   parent: CP14ClothingBackExplorerBackpackT0
+#   id: CP14ClothingBackExplorerBackpackT1
+#   name: Explorer Backpack
+#   suffix: Trail Bag
+#   description: A durable trail bag designed for field researchers, with compartments for samples and mapping equipment.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Explorer_Backpack/explorer_t1.rsi
+#     state: icon
+#   - type: Storage
+#     grid: # 36
+#     - 0,0,0,1 # 1x2=2
+#     - 0,3,0,4 # 1x2=2
+#     - 2,0,3,1 # 2x2=4
+#     - 2,3,3,4 # 2x2=4
+#     - 5,0,7,1 # 3x2=6
+#     - 5,3,7,4 # 3x2=6
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 36 # 30u CP14Leather (6x5u) + 6u CP14LeatherStrap (2x3u)
+#       CP14SaltStone: 36 # 30u (6x5u) + 6u (2x3u)
+#       CP14Iron: 20 # 20u CP14IronBuckle (10x2u)
+#       # Cost: (36×1.2) + (36×0.4) + (20×2) = 43.2 + 14.4 + 40 = 97.6 copper coins
 
-- type: entity
-  parent: CP14ClothingBackExplorerBackpackT1
-  id: CP14ClothingBackExplorerBackpackT2
-  name: Reliquary Backpack
-  suffix: Explorer Pack
-  description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid: # 50
-    - 0,0,0,1 # 1x2=2
-    - 0,3,0,5 # 1x3=3
-    - 2,0,3,1 # 2x2=4
-    - 2,3,3,5 # 2x3=6
-    - 5,0,6,1 # 2x2=4
-    - 5,3,6,5 # 2x3=6
-    - 8,0,9,1 # 2x2=4
-    - 8,3,9,5 # 2x3=6
-    - 11,0,12,1 # 2x2=4
-    - 11,3,12,5 # 2x3=6
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Leather: 72 # 60u CP14Leather (6x10u) + 12u CP14LeatherStrap (4x3u)
-      CP14SaltStone: 72 # 60u (6x10u) + 12u (4x3u)
-      CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
-      # Cost: (72×1.2) + (72×0.4) + (24×2) = 86.4 + 28.8 + 48 = 163.2 copper coins
+# - type: entity
+#   parent: CP14ClothingBackExplorerBackpackT1
+#   id: CP14ClothingBackExplorerBackpackT2
+#   name: Reliquary Backpack
+#   suffix: Explorer Pack
+#   description: An archaeologist's specialized pack with protective compartments for delicate artifacts and ancient relics.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Explorer_Backpack/explorer_t2.rsi
+#     state: icon
+#   - type: Storage
+#     grid: # 50
+#     - 0,0,0,1 # 1x2=2
+#     - 0,3,0,5 # 1x3=3
+#     - 2,0,3,1 # 2x2=4
+#     - 2,3,3,5 # 2x3=6
+#     - 5,0,6,1 # 2x2=4
+#     - 5,3,6,5 # 2x3=6
+#     - 8,0,9,1 # 2x2=4
+#     - 8,3,9,5 # 2x3=6
+#     - 11,0,12,1 # 2x2=4
+#     - 11,3,12,5 # 2x3=6
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 72 # 60u CP14Leather (6x10u) + 12u CP14LeatherStrap (4x3u)
+#       CP14SaltStone: 72 # 60u (6x10u) + 12u (4x3u)
+#       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
+#       # Cost: (72×1.2) + (72×0.4) + (24×2) = 86.4 + 28.8 + 48 = 163.2 copper coins
 
-- type: entity
-  parent: CP14ClothingBackExplorerBackpackT2
-  id: CP14ClothingBackExplorerBackpackT3
-  name: Artifact Hunter Rucksack
-  suffix: backpack T3
-  description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/leather_satchel.rsi
-    state: icon
-  - type: Storage
-    grid: # 72
-    - 0,0,0,2 # 1x3=3
-    - 0,4,0,6 # 1x3=3
-    - 2,0,3,2 # 2x3=6
-    - 2,4,3,6 # 2x3=6
-    - 5,0,7,2 # 3x3=9
-    - 5,4,7,6 # 3x3=9
-    - 9,0,11,2 # 3x3=9
-    - 9,4,11,6 # 3x3=9
-    - 13,0,14,2 # 2x3=6
-    - 13,4,14,6 # 2x3=6
-    - 16,0,16,2 # 1x3=3
-    - 16,4,16,6 # 1x3=3
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Leather: 174 # 150u CP14Leather (6x25u) + 24u CP14RuggedStrap (4x6u)
-      CP14SaltStone: 140 # 120u (6x20u) + 20u (4x5u)
-      CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
-      # Cost: (174×1.2) + (140×0.4) + (24×2) = 208.8 + 56 + 48 = 312.8 copper coins
+# - type: entity
+#   parent: CP14ClothingBackExplorerBackpackT2
+#   id: CP14ClothingBackExplorerBackpackT3
+#   name: Artifact Hunter Rucksack
+#   suffix: backpack T3
+#   description: A professional-grade expedition rucksack with reinforced compartments for valuable finds and extended fieldwork.
+#   components:
+#   - type: Sprite
+#     sprite: _CP14/Clothing/Back/Explorer_Backpack/explorer_t3.rsi
+#     state: icon
+#   - type: Storage
+#     grid: # 72
+#     - 0,0,0,2 # 1x3=3
+#     - 0,4,0,6 # 1x3=3
+#     - 2,0,3,2 # 2x3=6
+#     - 2,4,3,6 # 2x3=6
+#     - 5,0,7,2 # 3x3=9
+#     - 5,4,7,6 # 3x3=9
+#     - 9,0,11,2 # 3x3=9
+#     - 9,4,11,6 # 3x3=9
+#     - 13,0,14,2 # 2x3=6
+#     - 13,4,14,6 # 2x3=6
+#     - 16,0,16,2 # 1x3=3
+#     - 16,4,16,6 # 1x3=3
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 174 # 150u CP14Leather (6x25u) + 24u CP14RuggedStrap (4x6u)
+#       CP14SaltStone: 140 # 120u (6x20u) + 20u (4x5u)
+#       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
+#       # Cost: (174×1.2) + (140×0.4) + (24×2) = 208.8 + 56 + 48 = 312.8 copper coins
