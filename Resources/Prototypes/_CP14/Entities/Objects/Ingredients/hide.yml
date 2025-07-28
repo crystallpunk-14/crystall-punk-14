@@ -21,7 +21,7 @@
     state: thin_hide
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 5
+      CP14Leather: 10 # 5*2 ~~~ Gives 2 leather when crafted on a tanner table (LeatherWorking/tanner.yml)
 
 - type: entity
   id: CP14AnimalHide
@@ -33,7 +33,7 @@
     state: hide
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 10
+      CP14Leather: 20 # 10*2 ~~~ Gives 2 leather when crafted on a tanner table (LeatherWorking/tanner.yml)
 
 - type: entity
   id: CP14RuggedAnimalHide
@@ -49,7 +49,7 @@
     state: rugged_hide
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 25
+      CP14Leather: 50 # 25*2 ~~~ Gives 2 leather when crafted on a tanner table (LeatherWorking/tanner.yml)
 
 # Pieces of hide to assemble whole hide.
 - type: entity

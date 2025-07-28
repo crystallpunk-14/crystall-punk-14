@@ -15,7 +15,7 @@
     stack: CP14SaltStone
     count: 1
   result: CP14ThinLeather
-  resultCount: 2
+  resultCount: 4
 
 - type: CP14Recipe
   id: CP14HideRecipe
@@ -29,7 +29,7 @@
     stack: CP14SaltStone
     count: 1
   result: CP14Leather
-  resultCount: 1
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14RuggedAnimalHideRecipe
@@ -43,7 +43,7 @@
     stack: CP14SaltStone
     count: 2
   result: CP14RuggedLeather
-  resultCount: 1
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14ScrapHideRecipe
