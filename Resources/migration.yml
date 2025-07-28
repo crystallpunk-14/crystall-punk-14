@@ -424,8 +424,8 @@ CP14CandleGreenSmallInfinite: CP14CandleIgnited
 CP14CandlePurpleSmallInfinite: CP14CandleIgnited
 
 #2025-07-28
-CP14ClothingBackpackLeather: CP14ClothingBackBackpackT1
-CP14ClothingSatchelLeather:  CP14ClothingBackSatchelT1
+CP14ClothingBackBackpackLeather: CP14ClothingBackBackpackT1
+CP14ClothingBackSatchelLeather:  CP14ClothingBackSatchelT1
 
 # <---> CrystallEdge migration zone end
 
