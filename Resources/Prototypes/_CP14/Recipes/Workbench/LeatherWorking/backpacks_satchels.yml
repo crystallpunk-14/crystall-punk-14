@@ -99,16 +99,16 @@
     protoId: CP14ClothingBackSatchelT1  # 30u + 30u = 60u
     count: 1
   - !type:ProtoIdResource
-    protoId: CP14Leather            # +30u CP14Leather (3x10u)
-    count: 3
+    protoId: CP14Leather            # +20u CP14Leather (2x10u)
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14LeatherStrap       # +36u CP14Leather (12x3u)
-    count: 12
+    protoId: CP14LeatherStrap       # +18u CP14Leather (6x3u)
+    count: 6
   result: CP14ClothingBackSatchelT2
   # Balance:
   # T1 provides 5.5 leather equiv (3+2.5)
   # T2 needs 6+3=9 total: 5.5 + 3 new = 8.5 (close to original)
-  # Total Leather: 60u + 30u + 36u = 126u vs original 60u+36u=96u
+  # Total Leather: 60u + 20u + 18u = 98u vs original 60u+36u=96u
 
 # Satchel T3 Upgrade (Rugged Transition)
 - type: CP14Recipe
@@ -120,14 +120,14 @@
     protoId: CP14ClothingBackSatchelT2  # 60u + 36u = 96u (48u rugged equiv)
     count: 1
   - !type:ProtoIdResource
-    protoId: CP14RuggedLeather       # +75u CP14Leather (3x25u)
-    count: 3
+    protoId: CP14RuggedLeather       # +50u CP14Leather (2x25u)
+    count: 2
   - !type:ProtoIdResource
-    protoId: CP14RuggedStrap         # +72u CP14Leather (12x6u)
-    count: 12
+    protoId: CP14RuggedStrap         # +36u CP14Leather (6x6u)
+    count: 6
   result: CP14ClothingBackSatchelT3
   # Conversion:
   # T2's 9 normal = 4.5 rugged
   # Add 3 new rugged + 3 from straps = 10.5 rugged equiv
   # Matches original 6+3=9 rugged requirement with conversion
-  # Total Leather: 96u + 75u + 72u = 243u (121.5u rugged equiv) vs original 150u+72u=222u
+  # Total Leather: 96u + 50u + 36u = 182u (121.5u rugged equiv) vs original 150u+72u=222u
