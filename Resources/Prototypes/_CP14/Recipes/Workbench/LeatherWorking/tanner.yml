@@ -75,10 +75,10 @@
     count: 2 # 6u leather + 6u salt
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 4 # 20u cloth
+    count: 3 # 15u cloth
   result: CP14Leather
   resultCount: 1 # 10u leather + 10u salt
-  # Cost: (6×1.2) + (6×0.4) + (20×0.3) = 7.2 + 2.4 + 6 = 15.6 copper coins
+  # Cost: (6×1.2) + (6×0.4) + (15×0.3) = 7.2 + 2.4 + 4.5 = 14.1 copper coins
 
 # ================
 # Straps Crafting
@@ -137,7 +137,7 @@
     count: 1 # 25u leather + 20u salt
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 4 # 20u cloth
+    count: 3 # 15u cloth
   result: CP14RuggedStrap
   resultCount: 4 # 4x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
-  # Cost: (25×1.2) + (20×0.4) + (20×0.3) = 30 + 8 + 6 = 44 copper coins
+  # Cost: (25×1.2) + (20×0.4) + (15×0.3) = 30 + 8 + 4.5 = 42.5 copper coins
