@@ -19,6 +19,6 @@
     state: icon
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 2
+      CP14Iron: 2 # 1/5 iron bar (10u)
   - type: StaticPrice
     price: 2

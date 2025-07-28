@@ -89,7 +89,7 @@
     protoId: CP14String
     count: 4
   result: CP14LeatherStrap
-  resultCount: 4
+  resultCount: 2
 
 - type: CP14Recipe
   id: CP14LeatherStrapRecipe

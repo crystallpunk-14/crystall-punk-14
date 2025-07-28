@@ -26,9 +26,12 @@
   description: Soft and flexible leather, perfect for lightweight items.
   components:
   - type: Sprite
+    sprite: _CP14/Objects/Materials/leather.rsi
     state: thin_leather
-  - type: StaticPrice
-    price: 15
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5 # x0.5 Leather from hide
+      CP14SaltStone: 5 # x0.5 Salt
 
 - type: entity
   id: CP14Leather
@@ -39,9 +42,12 @@
   - type: Item
     size: Normal
   - type: Sprite
+    sprite: _CP14/Objects/Materials/leather.rsi
     state: leather
-  - type: StaticPrice
-    price: 30
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 10 # x1 Leather from hide
+      CP14SaltStone: 10 # x1 Salt
 
 - type: entity
   id: CP14RuggedLeather
@@ -52,9 +58,12 @@
   - type: Item
     size: Normal
   - type: Sprite
+    sprite: _CP14/Objects/Materials/leather.rsi
     state: rugged_leather
-  - type: StaticPrice
-    price: 50
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 25 # x2.5 Leather from hide
+      CP14SaltStone: 20 # x2 Salt
 
 # ================
 # Straps
@@ -69,9 +78,12 @@
     shape:
     - 0,0,1,0 # 2x1
   - type: Sprite
+    sprite: _CP14/Objects/Materials/leather.rsi
     state: strap
-  - type: StaticPrice
-    price: 15
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 3 # 2.5 or 1/4 leather (10u)
+      CP14SaltStone: 3 # 1/4 Salt (10u)
 
 - type: entity
   id: CP14RuggedStrap
@@ -84,6 +96,9 @@
     shape:
     - 0,0,1,0 # 2x1
   - type: Sprite
+    sprite: _CP14/Objects/Materials/leather.rsi
     state: rugged_strap
-  - type: StaticPrice
-    price: 25
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 6 # 6.25 or 1/4 rugged leather (25u)
+      CP14SaltStone: 5 # 1/4 Salt (20u)

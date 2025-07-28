@@ -19,8 +19,9 @@
   components:
   - type: Sprite
     state: thin_hide
-  - type: StaticPrice
-    price: 10
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5
 
 - type: entity
   id: CP14AnimalHide
@@ -30,8 +31,9 @@
   components:
   - type: Sprite
     state: hide
-  - type: StaticPrice
-    price: 20
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 10
 
 - type: entity
   id: CP14RuggedAnimalHide
@@ -45,8 +47,9 @@
     - 0,0,2,1 # 3x2
   - type: Sprite
     state: rugged_hide
-  - type: StaticPrice
-    price: 40
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 25
 
 # Pieces of hide to assemble whole hide.
 - type: entity
@@ -59,5 +62,6 @@
     size: Tiny
   - type: Sprite
     state: scrap_hide
-  - type: StaticPrice
-    price: 5
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 3

@@ -139,3 +139,12 @@
   icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
   color: "#85a6a8"
   price: 0.4
+
+- type: material
+  id: CP14Leather
+  stackEntity: CP14Leather
+  name: cp14-material-leather
+  unit: cp14-materials-unit-sheet
+  icon: { sprite: _CP14/Objects/Materials/leather.rsi, state: leather }
+  color: "#a78a63"
+  price: 1.2

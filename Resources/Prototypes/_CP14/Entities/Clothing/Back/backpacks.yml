@@ -32,6 +32,10 @@
   - type: Storage
     grid: # 15
     - 0,0,4,2 # 5*3=15
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5
+      CP14Salt: 5
 
 - type: entity
   parent: CP14ClothingBackBackpackT0

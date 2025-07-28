@@ -6,13 +6,13 @@
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10
+    count: 10 # 100u CP14Cloth ~~~ CP14CLoth (10u)
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 4
+    count: 4 # 20u CP14Cloth ~~~ 1/2 CP14Cloth (5u)
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
-    count: 1
+    count: 1 # 2u CP14Iron ~~~ 1/5 iron bar (10u)
   result: CP14ClothingBackBackpackT0
 
 - type: CP14Recipe
@@ -22,13 +22,13 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14ThinLeather
-    count: 8
+    count: 8 # 40u CP14Leather ~~~ 1/2 CP14Leather (5u)
   - !type:ProtoIdResource
     protoId: CP14LeatherStrap
-    count: 2
+    count: 2 # 1u CP14Leather ~~~ 1/4 CP14Leather (2.5u)
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
-    count: 1
+    count: 1 # 2u CP14Iron ~~~ 1/5 iron bar (10u)
   result: CP14ClothingBackBackpackT1
 
 - type: CP14Recipe
