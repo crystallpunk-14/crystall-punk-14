@@ -2,31 +2,28 @@
   id: EntryRoom
   generationProb: 0
   layers:
-    - !type:CP14OreDunGen
-      entity: CP14DemiplanEnterRoomMarker
+    - !type:CP14RoomsDunGen
       count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+      tags:
+      - CP14DemiplanEnterRoom
 
 - type: cp14DemiplaneModifier
   id: Core
   generationProb: 0
   layers:
-    - !type:CP14OreDunGen
-      entity: CP14DemiplanCoreRoomMarker
+    - !type:CP14RoomsDunGen
       count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+      tags:
+      - CP14DemiplanCoreRoom
 
 - type: cp14DemiplaneModifier
   id: Exit
   generationProb: 0
   layers:
-    - !type:CP14OreDunGen
-      entity: CP14DemiplanePassway
+    - !type:CP14RoomsDunGen
       count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+      tags:
+      - CP14DemiplanExitRoom
     - !type:CP14OreDunGen
       entity: CP14DemiplaneHint
       count: 20

@@ -2,11 +2,13 @@
   id: GodMerkas
   name: cp14-job-name-god-merkas
   desc: cp14-job-desc-god-merkas
+  skillType: Memory
   color: "#51cf72"
 
 - type: cp14SkillTree
   id: GodLumera
   name: cp14-job-name-god-lumera
   desc: cp14-job-desc-god-lumera
+  skillType: Memory
   color: "#5632a8"
   parallax: Default

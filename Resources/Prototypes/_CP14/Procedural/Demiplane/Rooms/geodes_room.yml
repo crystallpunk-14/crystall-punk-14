@@ -1,0 +1,56 @@
+- type: Tag
+  id: CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_3
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_4
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_5
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,8
+  tags:
+    - CP14DemiplanGeodeRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanGeodeRoom_6
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/geodes.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,8
+  tags:
+    - CP14DemiplanGeodeRoom

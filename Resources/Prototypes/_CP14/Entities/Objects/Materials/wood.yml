@@ -249,3 +249,60 @@
   - type: Stack
     count: 20
 
+#Spruce
+
+- type: entity
+  id: CP14SpruceWoodLog
+  parent: CP14WoodLog
+  name: spruce log
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood_spruce.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: CP14SpruceWoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: CP14SpruceWoodenPlanks1
+  parent: CP14WoodenPlanks1
+  name: spruce planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Materials/wood_spruce.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: CP14SpruceWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+
+- type: entity
+  id: CP14SpruceWoodenPlanks10
+  parent: CP14SpruceWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: CP14SpruceWoodenPlanks20
+  parent: CP14SpruceWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20

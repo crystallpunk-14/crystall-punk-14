@@ -11,9 +11,9 @@
       skills:
       - AlchemyVision
   requirements:
-    #- !type:RoleTimeRequirement
-    #  role: CP14JobApprentice
-    #  time: 3600 # 1 hours
+    - !type:DepartmentTimeRequirement
+      department: CP14Artisan
+      time: 7200 # 2 hours
     - !type:TraitsRequirement
       inverted: true
       traits:

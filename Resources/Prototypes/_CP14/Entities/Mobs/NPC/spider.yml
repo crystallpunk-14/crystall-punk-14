@@ -42,7 +42,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 3
+        Slash: 1.5
         Piercing: 3
         Structural: 3
   - type: Body
@@ -51,16 +51,16 @@
     thresholds:
       0: Alive
       40: Dead
-  #- type: SolutionContainerManager
-  #  solutions:
-  #    melee:
-  #      maxVol: 30
-  #- type: SolutionRegeneration
-  #  solution: melee
-  #  generated:
-  #    reagents:
-  #    - ReagentId: Mechanotoxin #TODO
-  #      Quantity: 1
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 30
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: CP14MonsterToxinSpider
+        Quantity: 1
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
