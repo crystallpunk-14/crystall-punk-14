@@ -83,10 +83,6 @@
     protoId: CP14LeatherStrap       # +30u CP14Leather (10x3u)
     count: 10
   result: CP14ClothingBackSatchelT1
-  # Math:
-  # T0: 4 leather (cloth) + 2 leather (string->straps) = 6
-  # T1 needs 6 thin (3 normal) + 10 straps (2.5)
-  # Net: 3 (new) + 6 (from T0) = 9 total vs original 6+2.5=8.5
   # Total Leather: 12u + 10u + 30u = 52u vs original 30u+30u=60u
 
 # Satchel T2 Upgrade (Leather Optimization)
@@ -105,9 +101,6 @@
     protoId: CP14LeatherStrap       # +18u CP14Leather (6x3u)
     count: 6
   result: CP14ClothingBackSatchelT2
-  # Balance:
-  # T1 provides 5.5 leather equiv (3+2.5)
-  # T2 needs 6+3=9 total: 5.5 + 3 new = 8.5 (close to original)
   # Total Leather: 60u + 20u + 18u = 98u vs original 60u+36u=96u
 
 # Satchel T3 Upgrade (Rugged Transition)
@@ -126,8 +119,4 @@
     protoId: CP14RuggedStrap         # +36u CP14Leather (6x6u)
     count: 6
   result: CP14ClothingBackSatchelT3
-  # Conversion:
-  # T2's 9 normal = 4.5 rugged
-  # Add 3 new rugged + 3 from straps = 10.5 rugged equiv
-  # Matches original 6+3=9 rugged requirement with conversion
-  # Total Leather: 96u + 50u + 36u = 182u (121.5u rugged equiv) vs original 150u+72u=222u
+  # Total Leather: 96u + 50u + 36u = 182u vs original 150u+72u=222u

@@ -18,7 +18,6 @@
     protoId: CP14Cotton
     count: 1
   result: CP14String
-  resultCount: 2
 
 - type: CP14Recipe
   id: CP14ClothMaterialString
@@ -41,7 +40,6 @@
     protoId: CP14Web
     count: 2
   result: CP14String
-  resultCount: 3
 
 - type: CP14Recipe
   id: CP14StringCottonCloth

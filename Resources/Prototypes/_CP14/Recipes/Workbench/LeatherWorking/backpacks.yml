@@ -83,10 +83,6 @@
     protoId: CP14LeatherStrap        # 6u CP14Leather (2x3u)
     count: 2
   result: CP14ClothingBackBackpackT1
-  # Calculation:
-  # T0: 10 cloth (5 leather) + 4 string (negligible)
-  # T1 needs 8 leather total: 5 (from T0) + 2 new
-  # Straps not reduced as they're structural additions
   # Total Leather: 100u (cloth) + 20u + 6u = 36u vs original 40u+6u=46u
 
 # Backpack T2 Upgrade (Exact Leather Carryover)
@@ -105,10 +101,6 @@
     protoId: CP14LeatherStrap        # 12u CP14Leather (4x3u)
     count: 4
   result: CP14ClothingBackBackpackT2
-  # Leather Flow:
-  # T1 provides 8/8 needed leather (full value)
-  # But we add 4 new since T2 needs 12 total (8+4)
-  # Strap count unchanged as they're new components
   # Total Leather: 40u+6u + 40u+12u = 98u vs original 80u+12u=92u
 
 # Backpack T3 Upgrade (Rugged Conversion)
@@ -127,8 +119,4 @@
     protoId: CP14RuggedStrap         # 24u CP14Leather (4x6u)
     count: 4
   result: CP14ClothingBackBackpackT3
-  # Leather Economy:
-  # T2's 12 leather becomes 6 rugged (2:1 ratio)
-  # We add 4 rugged (net 10 rugged equiv)
-  # Matches original 8 rugged requirement when counting conversion
   # Total Leather: 92u + 100u + 24u = 216u (108u rugged equiv) vs original 200u+24u=224u
