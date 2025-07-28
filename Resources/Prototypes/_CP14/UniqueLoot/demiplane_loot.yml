@@ -60,3 +60,9 @@
   entity: CP14ClothingCloakLurkerCape
   tags:
   - CP14UniqueSpawnDemiplanetLoot
+  
+- type: uniqueSpawn
+  id: CP14SteelGobletBottomless
+  entity: CP14SteelGobletBottomless
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot

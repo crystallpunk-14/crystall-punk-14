@@ -83,7 +83,7 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
 
     private void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
     {
-        _bloodstream.ChangeBloodReagent(ent, ent.Comp.NewBloodReagent);
+        _bloodstream.ChangeBloodReagent(ent.Owner, ent.Comp.NewBloodReagent);
 
         foreach (var (organUid, _) in _body.GetBodyOrgans(ent))
         {

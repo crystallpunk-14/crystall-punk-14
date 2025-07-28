@@ -11,3 +11,25 @@
   id: CP14ClothingCloakGuardInvestigator
   equipment:
     cloak: CP14ClothingCloakGuardInvestigator
+
+
+# Head
+
+- type: loadoutGroup
+  id: CP14InvestigatorHead
+  name: cp14-loadout-investigator-head
+  minLimit: 1
+  loadouts:
+  - CP14ClothingHeadGuardInvestigatorHelmet
+  - CP14ClothingHeadGuardFedora
+  - CP14ClothingHeadGuardTriangular
+
+- type: loadout
+  id: CP14ClothingHeadGuardTriangular
+  equipment:
+    head: CP14ClothingHeadGuardTriangular
+
+- type: loadout
+  id: CP14ClothingHeadGuardInvestigatorHelmet
+  equipment:
+    head: CP14ClothingHeadGuardInvestigatorHelmet

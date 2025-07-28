@@ -105,7 +105,6 @@
           collection: MetalBreak
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: CP14MeleeParriable
 
 - type: entity
   abstract: true

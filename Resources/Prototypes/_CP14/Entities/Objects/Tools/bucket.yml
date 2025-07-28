@@ -40,15 +40,11 @@
     solutions:
       bucket:
         maxVol: 50
-  - type: Injector
-    solutionName: bucket
-    injectOnly: false
-    ignoreMobs: true
-    ignoreClosed: false
-    minTransferAmount: 1
-    maxTransferAmount: 50
-    transferAmount: 50
-    toggleState: 1 # draw
+  - type: SolutionTransfer
+    transferAmount: 100
+    maxTransferAmount: 100
+    minTransferAmount: 10
+    canChangeTransferAmount: true
   - type: UserInterface
     interfaces:
       enum.TransferAmountUiKey.Key:
@@ -61,15 +57,17 @@
         Blunt: 0
   - type: Spillable
     solution: bucket
+  - type: SpillWhenWorn
+    solution: bucket
   - type: CP14WeatherRefillable
+    solution: bucket
+  - type: DrawableSolution
     solution: bucket
   - type: RefillableSolution
     solution: bucket
-  - type: SolutionItemStatus
-    solution: bucket
-  - type: MixableSolution
-    solution: bucket
   - type: DrainableSolution
+    solution: bucket
+  - type: SolutionItemStatus
     solution: bucket
   - type: Appearance
   - type: SolutionContainerVisuals
@@ -80,6 +78,10 @@
   - type: Tag
     tags:
       - Bucket
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14Bucket
@@ -98,3 +100,7 @@
         Slash: 0.93
   - type: ClothingSpeedModifier
     walkModifier: 0.98
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 30
+      CP14Cloth: 20

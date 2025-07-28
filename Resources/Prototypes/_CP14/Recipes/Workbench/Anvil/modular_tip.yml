@@ -13,7 +13,7 @@
     stack: CP14CopperBar
     count: 1
   result: CP14ModularTipCopperArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipIronArrow
@@ -27,7 +27,7 @@
     stack: CP14IronBar
     count: 1
   result: CP14ModularTipIronArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipGoldArrow
@@ -41,7 +41,7 @@
     stack: CP14GoldBar
     count: 1
   result: CP14ModularTipGoldArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipMithrilArrow
@@ -55,4 +55,4 @@
     stack: CP14MithrilBar
     count: 1
   result: CP14ModularTipMithrilArrow
-  resultCount: 4
+  resultCount: 5

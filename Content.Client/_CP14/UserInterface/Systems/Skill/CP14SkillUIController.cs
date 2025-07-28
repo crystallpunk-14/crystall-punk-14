@@ -155,27 +155,36 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
     private void SelectNode(CP14SkillPrototype? skill)
     {
+        if (skill is null)
+        {
+            DeselectNode();
+            UpdateGraphControl();
+            return;
+        }
+
         if (_window is null)
             return;
 
         if (_targetPlayer == null)
             return;
 
+        if (!_proto.TryIndex(skill.Tree, out var indexedTree))
+            return;
+
+        if (!_proto.TryIndex(indexedTree.SkillType, out var indexedSkillType))
+            return;
+
         _selectedSkill = skill;
 
-        if (skill == null)
-        {
-            DeselectNode();
-        }
-        else
-        {
-            _window.SkillName.Text = _skill.GetSkillName(skill);
-            _window.SkillDescription.SetMessage(GetSkillDescription(skill));
-            _window.SkillFree.Visible = _skill.HaveFreeSkill(_targetPlayer.Value, skill);
-            _window.SkillView.Texture = skill.Icon.Frame0();
-            _window.LearnButton.Disabled = !_skill.CanLearnSkill(_targetPlayer.Value, skill);
-            _window.SkillCost.Text = skill.LearnCost.ToString();
-        }
+        _window.SkillName.Text = _skill.GetSkillName(skill);
+        _window.SkillDescription.SetMessage(GetSkillDescription(skill));
+        _window.SkillFree.Visible = _skill.HaveFreeSkill(_targetPlayer.Value, skill);
+        _window.SkillView.Texture = skill.Icon.Frame0();
+        _window.LearnButton.Disabled = !_skill.CanLearnSkill(_targetPlayer.Value, skill);
+        _window.SkillPointText.Text =
+            Loc.GetString("cp14-skill-menu-learncost", ("type", Loc.GetString(indexedSkillType.Name)));
+        _window.SkillCost.Text = skill.LearnCost.ToString();
+        _window.SkillPointIcon.Texture = indexedSkillType.Icon?.Frame0();
 
         UpdateGraphControl();
     }
@@ -230,6 +239,19 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         if (!EntityManager.TryGetComponent<CP14SkillStorageComponent>(_targetPlayer, out var storage))
             return;
+
+        if (!_proto.TryIndex(_selectedSkillTree.SkillType, out var indexedSkillType))
+            return;
+
+        var skillPointsMap = storage.SkillPoints;
+
+        if (skillPointsMap.TryGetValue(_selectedSkillTree.SkillType, out var skillContainer))
+            _window.LevelLabel.Text =
+                $"{Loc.GetString(indexedSkillType.Name)}: {skillContainer.Sum}/{skillContainer.Max}";
+        else
+            _window.LevelLabel.Text = $"{Loc.GetString(indexedSkillType.Name)}: 0/0";
+
+        _window.LevelTexture.Texture = indexedSkillType.Icon?.Frame0();
 
         HashSet<CP14NodeTreeElement> nodeTreeElements = new();
 
@@ -303,12 +325,13 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
         SelectNode(_selectedSkill);
         UpdateGraphControl();
 
-        _window.LevelLabel.Text = $"{storage.SkillsSumExperience}/{storage.ExperienceMaxCap}";
-
         _window.TreeTabsContainer.RemoveAllChildren();
         foreach (var tree in storage.AvailableSkillTrees)
         {
             if (!_proto.TryIndex(tree, out var indexedTree))
+                return;
+
+            if (!_proto.TryIndex(indexedTree.SkillType, out var indexedSkillType))
                 return;
 
             float learnedPoints = 0;
@@ -323,7 +346,10 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 }
             }
 
-            var treeButton2 = new CP14SkillTreeButtonControl(indexedTree.Color, Loc.GetString(indexedTree.Name), learnedPoints);
+            var treeButton2 = new CP14SkillTreeButtonControl(indexedTree.Color,
+                Loc.GetString(indexedTree.Name),
+                learnedPoints,
+                indexedSkillType.Icon?.Frame0());
             treeButton2.ToolTip = Loc.GetString(indexedTree.Desc ?? string.Empty);
             treeButton2.OnPressed += () =>
             {

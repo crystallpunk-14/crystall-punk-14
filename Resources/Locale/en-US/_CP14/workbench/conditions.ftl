@@ -1,0 +1,1 @@
+cp14-workbench-condition-mana-in-w = The station must be full of mana at {$count}%.

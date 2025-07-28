@@ -19,7 +19,7 @@
     newWideAnimation: CP14WeaponArcThrust
     resetOnHandSelected: true # Disable fast swap
     bonusRange: 0.2
-    angleMultiplier: 0
+    angleMultiplier: 0.6
     attackRateMultiplier: 1.4
     bonusDamage:
       types:
