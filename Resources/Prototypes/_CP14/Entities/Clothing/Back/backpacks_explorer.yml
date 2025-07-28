@@ -36,6 +36,11 @@
 #     - 10,2,11,2 # 2x1=2
 #     - 13,0,14,0 # 2x1=2
 #     - 13,2,14,2 # 2x1=2
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Cloth: 80 # 60u CP14Cloth (6x10u) + 20u CP14String (4x5u)
+#       CP14Iron: 16 # 16u CP14IronBuckle (8x2u)
+#       # Cost: (80×0.3) + (16×2) = 24 + 32 = 56 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT0
@@ -55,6 +60,11 @@
 #     - 2,3,3,4 # 2x2=4
 #     - 5,0,7,1 # 3x2=6
 #     - 5,3,7,4 # 3x2=6
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 36 # 30u CP14Leather (6x5u) + 6u CP14LeatherStrap (2x3u)
+#       CP14Iron: 20 # 20u CP14IronBuckle (10x2u)
+#       # Cost: (36×1.2) + (20×2) = 43.2 + 40 = 83.2 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT1
@@ -78,6 +88,11 @@
 #     - 8,3,9,5 # 2x3=6
 #     - 11,0,12,1 # 2x2=4
 #     - 11,3,12,5 # 2x3=6
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 72 # 60u CP14Leather (6x10u) + 12u CP14LeatherStrap (4x3u)
+#       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
+#       # Cost: (72×1.2) + (24×2) = 86.4 + 48 = 134.4 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT2
@@ -103,3 +118,8 @@
 #     - 13,4,14,6 # 2x3=6
 #     - 16,0,16,2 # 1x3=3
 #     - 16,4,16,6 # 1x3=3
+#   - type: PhysicalComposition
+#     materialComposition:
+#       CP14Leather: 174 # 150u CP14Leather (6x25u) + 24u CP14RuggedStrap (4x6u)
+#       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
+#       # Cost: (174×1.2) + (24×2) = 208.8 + 48 = 256.8 copper coins

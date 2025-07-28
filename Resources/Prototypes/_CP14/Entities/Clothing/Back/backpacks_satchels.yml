@@ -47,6 +47,11 @@
     - 3,0,5,2 # 3x3=9
     - 7,0,7,0 # 1x1=1
     - 7,1,8,2 # 2x2=4
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 120 # 80u CP14Cloth (8x10u) + 40u CP14String (8x5u)
+      CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
+      # Cost: (120×0.3) + (6×2) = 36 + 12 = 48 copper coins
 
 - type: entity
   parent: CP14ClothingBackSatchelT0
@@ -68,6 +73,11 @@
     - 5,0,7,3 # 3x4=12
     - 9,0,9,3 # 1x4=4
     - 11,1,12,3 # 2x3=6
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 60 # 30u CP14Leather (6x5u) + 30u CP14LeatherStrap (10x3u)
+      CP14Iron: 8 # 8u CP14IronBuckle (4x2u)
+      # Cost: (60×1.2) + (8×2) = 72 + 16 = 88 copper coins
   - type: ClothingSpeedModifier
     sprintModifier: 0.97
 
@@ -91,6 +101,11 @@
     - 7,0,9,4 # 3x5=15
     - 11,0,12,1 # 2x2=4
     - 11,3,12,4 # 2x2=4
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 96 # 60u CP14Leather (6x10u) + 36u CP14LeatherStrap (12x3u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (96×1.2) + (12×2) = 115.2 + 24 = 139.2 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -116,6 +131,11 @@
     - 7,0,9,6 # 3x7=21
     - 11,0,12,1 # 2x2=4
     - 11,3,12,6 # 2x4=8
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 222 # 150u CP14Leather (6x25u) + 72u CP14RuggedStrap (12x6u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (222×1.2) + (12×2) = 266.4 + 24 = 290.4 copper coins
   - type: Armor
     modifiers:
       coefficients:
@@ -149,6 +169,11 @@
     - 5,1,8,1 # 4x1=4
     - 5,3,8,4 # 4x2=8
     - 5,5,7,5 # 3x1=3
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 102 # 60u CP14Leather (6x10u) + 42u CP14LeatherStrap (14x3u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (102×1.2) + (12×2) = 122.4 + 24 = 146.4 copper coins
   - type: Armor
     modifiers:
       coefficients:
