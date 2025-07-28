@@ -82,8 +82,9 @@
     state: strap
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 3 # 2.5 or 1/4 leather (10u)
+      CP14Leather: 3 # 2.5 ~~~ 1/4 leather (10u)
       CP14SaltStone: 3 # 1/4 Salt (10u)
+      CP14Cloth: 3 # 2.5 ~~~ 1/2 CP14String (5u)
 
 - type: entity
   id: CP14RuggedStrap
@@ -102,3 +103,4 @@
     materialComposition:
       CP14Leather: 6 # 6.25 or 1/4 rugged leather (25u)
       CP14SaltStone: 5 # 1/4 Salt (20u)
+      CP14Cloth: 5 # 1x CP14String (5u)

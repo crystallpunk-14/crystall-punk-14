@@ -99,6 +99,9 @@
   - !type:ProtoIdResource
     protoId: CP14Leather
     count: 1
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2
   result: CP14LeatherStrap
   resultCount: 4
 
