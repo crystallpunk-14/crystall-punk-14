@@ -44,11 +44,6 @@ public sealed partial class AdminVerbSystem
 
     private readonly EntProtoId _paradoxCloneRuleId = "ParadoxCloneSpawn";
 
-    //CP14
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string CP14VampireRule = "CP14Vampire";
-    //CP14 end
-
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
     {
@@ -64,21 +59,6 @@ public sealed partial class AdminVerbSystem
             return;
 
         var targetPlayer = targetActor.PlayerSession;
-
-        Verb vampire = new()
-        {
-            Text = Loc.GetString("cp14-admin-verb-text-make-vampire"),
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Actions/Spells/vampire.rsi"),
-                "bite"),
-            Act = () =>
-            {
-                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireRule);
-            },
-            Impact = LogImpact.High,
-            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
-        };
-        args.Verbs.Add(vampire);
 
         /* CP14 disable default antags
         var traitorName = Loc.GetString("admin-verb-text-make-traitor");

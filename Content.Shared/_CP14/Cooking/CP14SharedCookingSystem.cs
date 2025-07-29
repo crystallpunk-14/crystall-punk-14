@@ -209,6 +209,8 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
                 layer.Scale = new Vector2(-1, 1);
         }
 
+        DirtyField(ent, ent.Comp, nameof(CP14FoodHolderComponent.FoodData));
+
         //Sliceable
         // > on server overrided side
     }

@@ -15,6 +15,9 @@ public sealed partial class CP14SkillTreePrototype : IPrototype
     [DataField(required: true)]
     public LocId Name;
 
+    [DataField(required: true)]
+    public ProtoId<CP14SkillPointPrototype> SkillType;
+
     [DataField]
     public SpriteSpecifier? FrameIcon;
 

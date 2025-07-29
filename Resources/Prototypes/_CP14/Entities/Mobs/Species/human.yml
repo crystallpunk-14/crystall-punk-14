@@ -23,8 +23,10 @@
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
-  - type: CP14SkillStorage # +0.5 memory point
-    experienceMaxCap: 5.5
+  - type: CP14SkillStorage 
+    skillPoints:
+      Memory:
+        max: 5.5 # +0.5 memory point
   - type: Inventory
     templateId: CP14Human
     femaleDisplacements:

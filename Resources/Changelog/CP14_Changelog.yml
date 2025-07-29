@@ -1242,3 +1242,71 @@
   id: 8178
   time: '2025-07-22T10:29:49.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
+- author: KittyCat432
+  changes:
+  - message: Removed elf natural mana regeneration.
+    type: Remove
+  - message: Changed Mana trance now is exclusive to elves and is an innate skill.
+    type: Tweak
+  - message: Changed Mana trance now has a heavy slowdown instead of breaking upon
+      moving Elf taxi is now possible.
+    type: Tweak
+  - message: Changed Guide book on elves to better reflect their current state.
+    type: Tweak
+  id: 8179
+  time: '2025-07-26T11:49:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
+- author: Kryyto
+  changes:
+  - message: Guard bells no longer change the threat level. But can be used by using/hitting
+      them instead.
+    type: Tweak
+  id: 8180
+  time: '2025-07-26T12:09:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
+- author: TheShuEd
+  changes:
+  - message: Lumera disabled
+    type: Remove
+  id: 8181
+  time: '2025-07-26T12:10:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
+- author: gogenych
+  changes:
+  - message: 'New tree type: Spruce.'
+    type: Add
+  - message: Logs, planks and walls made from spruce wood!
+    type: Add
+  id: 8182
+  time: '2025-07-26T12:24:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539
+- author: TheShuEd
+  changes:
+  - message: Added rare crystals geodes in cave demiplanes
+    type: Add
+  - message: Added "multiple entry points" demiplane modifier. Your team has a chance
+      to be separated in different parts of the demiplane when entering it. (visible
+      during inspection of the demiplane)
+    type: Add
+  - message: Fixed a bug where the cores or the exits might not be generated in the
+      demiplanes.
+    type: Fix
+  id: 8183
+  time: '2025-07-27T13:45:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1583
+- author: SketchiiArtist
+  changes:
+  - message: Added wooden stools
+    type: Add
+  id: 8184
+  time: '2025-07-27T15:54:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1577
+- author: TheShuEd
+  changes:
+  - message: Added candelabras!
+    type: Add
+  - message: Reprite candles + Candles now burn endlessly
+    type: Tweak
+  id: 8185
+  time: '2025-07-27T15:54:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1585
