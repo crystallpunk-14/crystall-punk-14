@@ -6,12 +6,13 @@
   categories: [ ForkFiltered ]
   components:
   - type: HTN
-    constantlyReplan: false
     rootTask:
-      task: MouseCompound
+      task: RuminantHostileCompound
   - type: NpcFactionMember
     factions:
     - CP14PeacefulAnimals
+  - type: NPCRetaliation
+    attackMemoryLength: 30
   - type: Sprite
     drawdepth: SmallMobs
     layers:
@@ -33,12 +34,6 @@
     tags:
     - CP14Rat
   - type: Item
-  - type: Clothing
-    quickEquip: false
-    # sprite: _CP14/Mobs/Animals/frog_helmet.rsi
-    equippedPrefix: 0
-    slots:
-    - HEAD
     size: Tiny
   - type: CanEscapeInventory
     baseResistTime: 1
@@ -68,10 +63,10 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 12
+        Piercing: 8
   - type: MovementSpeedModifier
-    baseWalkSpeed : 4
-    baseSprintSpeed : 8
+    baseWalkSpeed : 3
+    baseSprintSpeed : 6
   - type: DamageStateVisuals
     states:
       Alive:
@@ -83,6 +78,22 @@
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
+  - type: Thirst
+    thresholds:
+      OverHydrated: 150
+      Okay: 100
+      Thirsty: 50
+      Parched: 25
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: Hunger
+    thresholds:
+      Overfed: 50
+      Okay: 25
+      Peckish: 10
+      Starving: 5
+      Dead: 0
+    baseDecayRate: 0.25 # hungry hungry rats
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: cp14-petting-success-rat
@@ -101,22 +112,31 @@
     templateId: CP14Rat
   - type: Puller
     needsHands: false
-  - type: CP14DemiplaneStabilizer
-    requireAlive: true
   - type: CP14NightVision
   - type: Climbing
-  - type: Hands
-    hands:
-      hands:
-        location: Middle
-    sortedHands:
-    - hands
-  - type: ComplexInteraction
+
+
+
+- type: entity
+  id: SpawnPointGhostRat
+  name: ghost role spawn point
+  description: A ghost role for a rat
+  suffix: Rat
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
   - type: GhostRole
-    makeSentient: true
-    # allowSpeech: true
-    allowMovement: true
     name: cp14-ghost-role-information-name-rat
     description: cp14-ghost-role-information-description-rat
     rules: cp14-ghost-role-information-rules-pet
-  - type: GhostTakeoverAvailable
+    allowMovement: true
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: CP14MobRat
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Pets/rat.rsi
+        state: rat
