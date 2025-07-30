@@ -32,6 +32,19 @@
       CP14Innkeeper:
       - CP14PersonalCurrencyCollectObjectiveGroup
 
+# crashing
+
+- type: entity
+  id: CP14CrashToWindlandsRule
+  parent: CP14BaseGameRule
+  components:
+  - type: CP14CrashToWindlandsRule
+    modifiers:
+    - WeatherInfinityStorm
+    - MapLightCycleDefault
+    - Ruins
+    - Geodes
+
 # event schedulers
 
 - type: entity
