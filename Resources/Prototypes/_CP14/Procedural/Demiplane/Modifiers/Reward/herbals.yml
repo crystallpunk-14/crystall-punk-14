@@ -58,10 +58,32 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
       entity: CP14GatherableFlyAgaric
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: FlyAgaric2
+  levels:
+    min: 1
+    max: 10
+  name: cp14-modifier-fly-agaric
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
+      entity: CP14GatherableFlyAgaric
+      count: 10
+      minGroupSize: 6
+      maxGroupSize: 10
 
 - type: cp14DemiplaneModifier
   id: BlueAmanita
@@ -172,7 +194,29 @@
       - CP14FloorSnow
       - CP14FloorSnowDeep
       - CP14FloorSnowDeepDeep
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
       entity: CP14GatherableLumiMushroom
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
+
+- type: cp14DemiplaneModifier
+  id: LumiShroom2
+  levels:
+    min: 4
+    max: 10
+  name: cp14-modifier-lumisroom
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
+      entity: CP14GatherableLumiMushroom
+      count: 10
+      minGroupSize: 6
+      maxGroupSize: 10

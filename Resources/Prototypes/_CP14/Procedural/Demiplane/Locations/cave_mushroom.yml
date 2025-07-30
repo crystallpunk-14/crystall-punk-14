@@ -1,0 +1,35 @@
+- type: cp14DemiplaneLocation
+  id: T1MushroomCaves
+  levels:
+    min: 1
+    max: 5
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: mushroom_caves
+  locationConfig: CP14DemiplaneMushroomCaves
+  name: cp14-demiplane-location-mushroom-caves
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneUnderground
+  - CP14DemiplaneMushrooms
+  components:
+  - type: Biome
+    template: CP14ChasmFill
+
+- type: dungeonConfig
+  id: CP14DemiplaneMushroomCaves
+  layers:
+    # Masks
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskStone
+    - !type:PrototypeDunGen
+      proto: CP14DemiplaneCavesFloorMaskAir
+    # Biomes
+    - !type:BiomeDunGen
+      biomeTemplate: CP14MushroomsCaveResult
+      tileMask:
+      - CP14FloorSand
+    - !type:BiomeDunGen
+      biomeTemplate: CP14CavesMushroomFloor
+      tileMask:
+      - CP14FloorGrass
