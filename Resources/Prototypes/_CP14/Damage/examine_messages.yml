@@ -1,8 +1,5 @@
-﻿- type: examinableDamage
+﻿- type: localizedDataset
   id: CP14WeaponMessages
-  messages:
-    - cp14-damageable-weapon-1
-    - cp14-damageable-weapon-2
-    - cp14-damageable-weapon-3
-    - cp14-damageable-weapon-4
-
+  values:
+    prefix: cp14-damageable-weapon-
+    count: 4
