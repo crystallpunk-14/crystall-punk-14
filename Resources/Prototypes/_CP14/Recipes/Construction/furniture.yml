@@ -91,6 +91,19 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14TableWoodenBirchRound
+  graph: CP14TableWoodenBirchRound
+  startNode: start
+  targetNode: CP14TableWoodenBirchRound
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14TableWoodenCounter
   graph: CP14TableWooden
   startNode: start
