@@ -1,5 +1,5 @@
 - type: biomeTemplate
-  id: CP14CavesMushroom
+  id: CP14CavesMushroomFloor
   layers:
     - !type:BiomeMetaLayer
       template: CP14CavesFloor
@@ -29,6 +29,12 @@
         gain: 0.7
         domainWarpType: OpenSimplex2
         domainWarpAmp: 120
+
+- type: biomeTemplate
+  id: CP14CavesMushroom
+  layers:
+    - !type:BiomeMetaLayer
+      template: CP14CavesMushroomFloor
     #Walls
     - !type:BiomeEntityLayer
       threshold: -0.75

@@ -306,3 +306,35 @@
       count: 1
       minGroupSize: 1
       maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: MyconideFlyagaric
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobMonsterMyconideFlyagaric
+      count: 5
+      minGroupSize: 8
+      maxGroupSize: 14
+
+- type: cp14DemiplaneModifier
+  id: MyconideLumish
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobMonsterMyconideLumish
+      count: 5
+      minGroupSize: 8
+      maxGroupSize: 14
