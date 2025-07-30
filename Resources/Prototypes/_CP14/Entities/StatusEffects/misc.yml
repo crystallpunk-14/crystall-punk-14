@@ -2,6 +2,7 @@
   id: CP14StatusEffectGlowing
   components:
   - type: StatusEffect
+  - type: StatusEffectAlert
     alert: CP14Glowing
   - type: Sprite
     drawdepth: Effects
@@ -20,6 +21,7 @@
   id: CP14StatusEffectMagicArmor
   components:
   - type: StatusEffect
+  - type: StatusEffectAlert
     alert: CP14MagicArmor
   - type: Sprite
     drawdepth: Mobs
