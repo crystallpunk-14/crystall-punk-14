@@ -83,7 +83,7 @@
         - CP14FloorMyceliumLight
         - CP14FloorCobblestone
       entities:
-        - null
+        - CP14RoofRemover #Lol, i just wanna air here. TODO: fix
      # Rare Trees
     - !type:BiomeEntityLayer
       threshold: 0.8
