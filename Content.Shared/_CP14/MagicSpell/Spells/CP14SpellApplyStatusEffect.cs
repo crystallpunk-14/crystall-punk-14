@@ -19,7 +19,7 @@ public sealed partial class CP14SpellApplyStatusEffect : CP14SpellEffect
         if (args.Target is null)
             return;
 
-        var effectSys = entManager.System<SharedStatusEffectsSystem>();
+        var effectSys = entManager.System<StatusEffectsSystem>();
 
         if (!Refresh)
             effectSys.TryAddStatusEffectDuration(args.Target.Value, StatusEffect, Duration);

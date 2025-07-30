@@ -1310,3 +1310,19 @@
   id: 8185
   time: '2025-07-27T15:54:22.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1585
+- author: TheShuEd
+  changes:
+  - message: New mushroom caves demiplane locatoin
+    type: Add
+  id: 8186
+  time: '2025-07-30T11:16:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1590
+- author: Nimfar11
+  changes:
+  - message: Adds a round table made of birch.
+    type: Add
+  - message: Repainting all birch structures. Repainting the floor made of lucene.
+    type: Tweak
+  id: 8187
+  time: '2025-07-30T11:19:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1591

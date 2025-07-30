@@ -12,6 +12,8 @@ cp14-tiles-snow-deep = deep snow
 cp14-tiles-snow-deep-deep = deep deep snow
 cp14-tiles-marble-cave = marble floor
 cp14-tiles-cobblestone = cobblestone
+cp14-tiles-mycelium = mycelium
+cp14-tiles-mycelium-light = dense mycelium
 
 # Produced
 cp14-tiles-foundation = foundation

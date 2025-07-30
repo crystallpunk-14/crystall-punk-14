@@ -1,0 +1,127 @@
+- type: entity
+  parent: CP14BaseTree
+  id: CP14MushroomTree1
+  name: giant mushroom
+  description: Have you ever heard how infected mushrooms sound?
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Flora/tree_mushroom.rsi
+    offset: 0,0.9
+    layers:
+    - state: 1_log
+    - state: 1_hat
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        1_hat: ScurretColors
+
+- type: entity
+  parent: CP14MushroomTree1
+  id: CP14MushroomTree2
+  components:
+  - type: Sprite
+    layers:
+    - state: 2_log
+    - state: 2_hat
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        2_hat: ScurretColors
+
+- type: entity
+  parent: CP14MushroomTree1
+  id: CP14MushroomTree3
+  components:
+  - type: Sprite
+    layers:
+    - state: 3_log
+    - state: 3_hat
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        3_hat: ScurretColors
+
+- type: entity
+  parent: CP14MushroomTree1
+  id: CP14MushroomTree4
+  components:
+  - type: Sprite
+    layers:
+    - state: 4_log
+    - state: 4_hat
+      map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        4_hat: ScurretColors
+
+- type: entity
+  parent: CP14MushroomTree1
+  id: CP14MushroomTree1Glowing
+  name: giant glowing mushroom
+  components:
+  - type: Sprite
+    layers:
+    - state: 1_log
+      map: ["random"]
+    - state: 1_hat
+      shader: unshaded
+      color: "#36c98f"
+  - type: RandomSprite
+    available:
+    - random:
+        1_log: ""
+  - type: PointLight
+    color: "#36c98f"
+    radius: 3.5
+
+- type: entity
+  parent: CP14MushroomTree1Glowing
+  id: CP14MushroomTree2Glowing
+  components:
+  - type: Sprite
+    layers:
+    - state: 2_log
+      map: ["random"]
+    - state: 2_hat
+      shader: unshaded
+      color: "#36c98f"
+  - type: RandomSprite
+    available:
+    - random:
+        2_log: ""
+
+- type: entity
+  parent: CP14MushroomTree1Glowing
+  id: CP14MushroomTree3Glowing
+  components:
+  - type: Sprite
+    layers:
+    - state: 3_log
+      map: ["random"]
+    - state: 3_hat
+      shader: unshaded
+      color: "#36c98f"
+  - type: RandomSprite
+    available:
+    - random:
+        3_log: ""
+
+- type: entity
+  parent: CP14MushroomTree1Glowing
+  id: CP14MushroomTree4Glowing
+  components:
+  - type: Sprite
+    layers:
+    - state: 4_log
+      map: ["random"]
+    - state: 4_hat
+      shader: unshaded
+      color: "#36c98f"
+  - type: RandomSprite
+    available:
+    - random:
+        4_log: ""
