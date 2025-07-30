@@ -25,11 +25,11 @@
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesFloorMaskAir
     # Biomes
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14MushroomsCaveResult
       tileMask:
       - CP14FloorSand
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14CavesMushroomFloor
       tileMask:
       - CP14FloorGrass

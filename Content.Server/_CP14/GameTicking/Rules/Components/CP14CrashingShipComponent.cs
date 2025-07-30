@@ -17,5 +17,5 @@ public sealed partial class CP14CrashingShipComponent : Component
     public EntProtoId ExplosionProto = "CP14ShipExplosion";
 
     [DataField]
-    public EntProtoId FinalExplosionProto = "CP14ShipExplosion";
+    public EntProtoId FinalExplosionProto = "CP14ShipExplosionBig";
 }

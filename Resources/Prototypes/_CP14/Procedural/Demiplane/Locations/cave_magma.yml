@@ -29,15 +29,15 @@
     - !type:PrototypeDunGen
       proto: CP14DemiplaneCavesRingFloorMaskBorderCenter
     # Biomes
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14CavesGeneric
       tileMask:
       - CP14FloorSand
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14CavesFloor
       tileMask:
       - CP14FloorGrass
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14MarbleCaves
       tileMask:
       - CP14FloorMarble

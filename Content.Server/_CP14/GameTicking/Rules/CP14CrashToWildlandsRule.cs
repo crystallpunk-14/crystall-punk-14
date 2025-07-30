@@ -44,6 +44,7 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -61,7 +62,7 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
 
     private void OnFTLCompleted(Entity<CP14CrashingShipComponent> ent, ref FTLCompletedEvent args)
     {
-        SpawnRandomExplosion(ent, ent.Comp.FinalExplosionProto, 3);
+        SpawnRandomExplosion(ent, ent.Comp.FinalExplosionProto, 10);
         RemCompDeferred<CP14CrashingShipComponent>(ent);
     }
 

@@ -10,3 +10,20 @@
     maxIntensity: 400
     explosionType: FireBomb
   - type: ExplodeOnTrigger
+
+- type: entity
+  id: CP14ShipExplosionBig
+  parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ]
+  suffix: Big Fire Explosion
+  components:
+  - type: Explosive
+    totalIntensity: 90
+    intensitySlope: 0.1
+    maxIntensity: 400
+    explosionType: Default
+  - type: ExplodeOnTrigger
+  - type: FlashOnTrigger
+    range: 30
+  - type: SpawnOnTrigger 
+    proto: GrenadeFlashEffect

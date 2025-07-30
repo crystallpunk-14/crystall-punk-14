@@ -34,15 +34,15 @@
     - !type:PrototypeDunGen
       proto: CP14DemiplaneGrasslandIslandFloorMaskStone
     # Biomes
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14SnowlandSwamp
       tileMask:
       - CP14FloorSand
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14IceCavesGeneric
       tileMask:
       - CP14FloorBase
-    - !type:BiomeDunGen
+    - !type:CP14BiomeDunGen
       biomeTemplate: CP14SnowlandTestResult
       tileMask:
       - CP14FloorGrass
