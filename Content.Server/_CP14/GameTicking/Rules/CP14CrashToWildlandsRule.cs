@@ -5,10 +5,12 @@ using Content.Server._CP14.Demiplane.Jobs;
 using Content.Server._CP14.GameTicking.Rules.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Flash;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Procedural;
 using Content.Server.Shuttles.Components;
+using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
@@ -41,6 +43,7 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly ExplosionSystem _explosion = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -51,9 +54,15 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
     public override void Initialize()
     {
         base.Initialize();
-
-
         _sawmill = _logManager.GetSawmill("cp14_crash_to_windlands_rule");
+
+        SubscribeLocalEvent<CP14CrashingShipComponent, FTLCompletedEvent>(OnFTLCompleted);
+    }
+
+    private void OnFTLCompleted(Entity<CP14CrashingShipComponent> ent, ref FTLCompletedEvent args)
+    {
+        SpawnRandomExplosion(ent, ent.Comp.FinalExplosionProto, 3);
+        RemCompDeferred<CP14CrashingShipComponent>(ent);
     }
 
     public override void Update(float frameTime)
@@ -61,6 +70,7 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
         base.Update(frameTime);
 
         UpdateGeneration(frameTime);
+        UpdateExplosions(frameTime);
     }
 
     private void UpdateGeneration(float frameTime)
@@ -75,6 +85,35 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
                     _expeditionJobs.Remove((job, cancelToken));
                     break;
             }
+        }
+    }
+
+    private void UpdateExplosions(float frameTime)
+    {
+        var ruleQuery = EntityQueryEnumerator<CP14CrashToWindlandsRuleComponent>();
+        while (ruleQuery.MoveNext(out var uid, out var rule))
+        {
+            if (!rule.PendingExplosions)
+                continue;
+
+            if (_timing.CurTime < rule.StartExplosionTime)
+                continue;
+
+            if (rule.Ship is null)
+                continue;
+
+            AddComp<CP14CrashingShipComponent>(rule.Ship.Value);
+            rule.PendingExplosions = false;
+        }
+
+        var query = EntityQueryEnumerator<CP14CrashingShipComponent>();
+        while (query.MoveNext(out var uid, out var ship))
+        {
+            if (_timing.CurTime < ship.NextExplosionTime)
+                continue;
+
+            ship.NextExplosionTime = _timing.CurTime + TimeSpan.FromSeconds(_random.Next(2, 10));
+            SpawnRandomExplosion((uid, ship), ship.ExplosionProto, 1);
         }
     }
 
@@ -101,10 +140,11 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
         }
 
         EnsureComp<ShuttleComponent>(largestStationGrid.Value, out var shuttleComp);
+        component.StartExplosionTime += _timing.CurTime;
+        component.Ship = largestStationGrid.Value;
 
         var windlands = CreateWindLands((uid, component));
-
-        _shuttles.FTLToCoordinates(largestStationGrid.Value, shuttleComp, new EntityCoordinates(windlands, Vector2.Zero), 0f, 0f, 60f);
+        _shuttles.FTLToCoordinates(largestStationGrid.Value, shuttleComp, new EntityCoordinates(windlands, Vector2.Zero), 0f, 0f, component.FloatingTime);
     }
 
     private EntityUid CreateWindLands(Entity<CP14CrashToWindlandsRuleComponent> ent)
@@ -132,5 +172,23 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
         _expeditionQueue.EnqueueJob(job);
 
         return expeditionMap;
+    }
+
+    private void SpawnRandomExplosion(Entity<CP14CrashingShipComponent> grid, EntProtoId explosionProto, int count)
+    {
+        var station = _station.GetOwningStation(grid);
+
+        if (station is null)
+            return;
+
+        TryFindRandomTileOnStation((station.Value, Comp<StationDataComponent>(station.Value)),
+            out var tile,
+            out var targetGrid,
+            out var targetCoords);
+
+        for (var i = 0; i < count; i++)
+        {
+            Spawn(explosionProto, targetCoords);
+        }
     }
 }

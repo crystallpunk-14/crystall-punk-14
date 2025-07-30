@@ -10,8 +10,20 @@ namespace Content.Server._CP14.GameTicking.Rules.Components;
 public sealed partial class CP14CrashToWindlandsRuleComponent : Component
 {
     [DataField]
+    public EntityUid? Ship;
+
+    [DataField]
+    public bool PendingExplosions = true;
+
+    [DataField]
     public ProtoId<CP14DemiplaneLocationPrototype> Location = "T1GrasslandIsland";
 
     [DataField]
     public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = [];
+
+    [DataField]
+    public float FloatingTime = 120;
+
+    [DataField]
+    public TimeSpan StartExplosionTime = TimeSpan.FromMinutes(1);
 }

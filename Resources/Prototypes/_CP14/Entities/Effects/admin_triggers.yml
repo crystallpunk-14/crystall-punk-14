@@ -1,0 +1,12 @@
+- type: entity
+  id: CP14ShipExplosion
+  parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ]
+  suffix: Fire Explosion
+  components:
+  - type: Explosive
+    totalIntensity: 75
+    intensitySlope: 1
+    maxIntensity: 400
+    explosionType: FireBomb
+  - type: ExplodeOnTrigger
