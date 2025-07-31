@@ -221,10 +221,10 @@
   - type: Respirator
     damage:
       types:
-        Asphyxiation: 2
+        Asphyxiation: 1
     damageRecovery:
       types:
-        Asphyxiation: -1.0
+        Asphyxiation: -0.5
 
 # Used for mobs that have a bloodstream
 - type: entity
