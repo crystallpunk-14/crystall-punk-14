@@ -1,0 +1,50 @@
+# Default base mob proto
+
+- type: entity
+  parent:
+  - BaseMob
+  - MobCombat
+  - CP14MobDamageable
+  - CP14MobStarving
+  - MobBloodstream
+  - MobFlammable
+  - MobPolymorphable
+  id: CP14SimpleMobBase
+  suffix: AI
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: StandingState
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - TemporaryBlindness
+    - Pacified
+    - Flashed
+    - RadiationProtection
+    - Adrenaline
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+      Acidic: [Touch, Ingestion]
