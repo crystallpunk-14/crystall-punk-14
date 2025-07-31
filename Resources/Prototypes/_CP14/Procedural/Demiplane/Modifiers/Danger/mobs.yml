@@ -338,3 +338,24 @@
       count: 5
       minGroupSize: 8
       maxGroupSize: 14
+
+- type: cp14DemiplaneModifier
+  id: EnemyCackle
+  levels:
+    min: 3
+    max: 8
+  name: cp14-modifier-cackle
+  categories:
+    Danger: 0.4
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneOres
+  blacklistTags:
+  - CP14DemiplaneHerbals
+  - CP14DemiplanePeacefulAnimals
+  layers:
+  - !type:CP14OreDunGen
+    entity: CP14MobMonsterCackle
+    count: 6
+    minGroupSize: 1
+    maxGroupSize: 3
