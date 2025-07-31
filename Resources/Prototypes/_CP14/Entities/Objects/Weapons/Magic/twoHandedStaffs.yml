@@ -61,7 +61,6 @@
     - CP14ActionSpellCureWounds
     - CP14ActionSpellCureBurn
     - CP14ActionSpellBloodPurification
-    - CP14ActionSpellResurrection
   - type: CP14MagicEnergyExaminable
   - type: CP14MagicEnergyContainer
     energy: 80
