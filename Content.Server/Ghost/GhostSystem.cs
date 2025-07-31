@@ -74,7 +74,7 @@ namespace Content.Server.Ghost
         private EntityQuery<PhysicsComponent> _physicsQuery;
 
         private static readonly ProtoId<TagPrototype> AllowGhostShownByEventTag = "AllowGhostShownByEvent";
-        private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Bloodloss"; //CP14 replaced asphyxiation with bloodloss (we dont use asphyxiation damage type)
+        private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Asphyxiation";
 
         public override void Initialize()
         {

@@ -10,6 +10,7 @@
   - MobFlammable
   - CP14MobTemperature
   - MobPolymorphable
+  - MobRespirator
   id: CP14SimpleMobBase
   suffix: AI
   abstract: true

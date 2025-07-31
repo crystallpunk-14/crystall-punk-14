@@ -241,6 +241,7 @@
 - type: entity
   parent:
   - MobBloodstream
+  - MobRespirator
   - MobFlammable
   - CP14MobStarving
   - CP14BaseMobSpecies
