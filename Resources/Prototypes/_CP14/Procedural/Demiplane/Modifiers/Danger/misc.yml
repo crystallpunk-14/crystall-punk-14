@@ -52,3 +52,19 @@
       count: 10
       minGroupSize: 1
       maxGroupSize: 1
+
+- type: cp14DemiplaneModifier
+  id: AdditionalEntry
+  levels:
+    min: 2
+    max: 10
+  name: cp14-modifier-additional-entry
+  categories:
+    Danger: 0.15
+  generationProb: 0.8
+  generationWeight: 0.25
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 1
+      tags:
+      - CP14DemiplanEnterRoom

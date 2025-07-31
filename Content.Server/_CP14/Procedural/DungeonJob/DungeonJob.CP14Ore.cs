@@ -20,62 +20,59 @@ public sealed partial class DungeonJob
         HashSet<Vector2i> reservedTiles,
         Random random)
     {
-        // Doesn't use dungeon data because layers and we don't need top-down support at the moment.
-
         var replaceEntities = new Dictionary<Vector2i, EntityUid>();
         var availableTiles = new List<Vector2i>();
-        var tiles = _maps.GetAllTilesEnumerator(_gridUid, _grid);
 
-        // WARNING:
-        // This DunGen handles not only the tiles of the passed dungeon, but ALL the tiles of the current grid
-        // So don't run it anywhere
-        while (tiles.MoveNext(out var tileRef))
+        foreach (var dun in dungeons)
         {
-            var tile = tileRef.Value.GridIndices;
-
-            //Tile mask filtering
-            if (gen.TileMask is not null)
+            foreach (var tile in dun.AllTiles)
             {
-                if (!gen.TileMask.Contains(((ContentTileDefinition) _tileDefManager[tileRef.Value.Tile.TypeId]).ID))
-                    continue;
-            }
+                var tileRef = _maps.GetTileRef(_gridUid, _grid, tile);
 
-            //Entity mask filtering
-            if (gen.EntityMask is not null)
-            {
-                var found = false;
-                var enumerator2 = _maps.GetAnchoredEntitiesEnumerator(_gridUid, _grid, tile);
-                while (enumerator2.MoveNext(out var uid))
+                //Tile mask filtering
+                if (gen.TileMask is not null)
                 {
-                    var prototype = _entManager.GetComponent<MetaDataComponent>(uid.Value).EntityPrototype;
-
-                    if (prototype?.ID is null)
+                    if (!gen.TileMask.Contains(((ContentTileDefinition) _tileDefManager[tileRef.Tile.TypeId]).ID))
                         continue;
-
-                    if (!gen.EntityMask.Contains(prototype.ID))
-                        continue;
-
-                    replaceEntities[tile] = uid.Value;
-                    found = true;
                 }
 
-                if (!found)
-                    continue;
+                //Entity mask filtering
+                if (gen.EntityMask is not null)
+                {
+                    var found = false;
+                    var enumerator2 = _maps.GetAnchoredEntitiesEnumerator(_gridUid, _grid, tile);
+                    while (enumerator2.MoveNext(out var uid))
+                    {
+                        var prototype = _entManager.GetComponent<MetaDataComponent>(uid.Value).EntityPrototype;
+
+                        if (prototype?.ID is null)
+                            continue;
+
+                        if (!gen.EntityMask.Contains(prototype.ID))
+                            continue;
+
+                        replaceEntities[tile] = uid.Value;
+                        found = true;
+                    }
+
+                    if (!found)
+                        continue;
+                }
+                else
+                {
+                    //If entity mask null - we ignore the tiles that have anything on them.
+                    if (!_anchorable.TileFree(_grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
+                        continue;
+                }
+
+                // Add it to valid nodes.
+                availableTiles.Add(tile);
+
+                await SuspendDungeon();
+
+                if (!ValidateResume())
+                    return;
             }
-            else
-            {
-                //If entity mask null - we ignore the tiles that have anything on them.
-                if (!_anchorable.TileFree(_grid, tile, DungeonSystem.CollisionLayer, DungeonSystem.CollisionMask))
-                    continue;
-            }
-
-            // Add it to valid nodes.
-            availableTiles.Add(tile);
-
-            await SuspendDungeon();
-
-            if (!ValidateResume())
-                return;
         }
 
         var remapping = new Dictionary<EntProtoId, EntProtoId>();
@@ -132,9 +129,9 @@ public sealed partial class DungeonJob
 
                     var prototype = gen.Entity;
 
-                    if (replaceEntities.TryGetValue(node, out var existingEnt))
+                    if (replaceEntities.TryGetValue(node, out var existingEnt) && _entManager.TryGetComponent<MetaDataComponent>(existingEnt, out var metaData))
                     {
-                        var existingProto = _entManager.GetComponent<MetaDataComponent>(existingEnt).EntityPrototype;
+                        var existingProto = metaData.EntityPrototype;
                         _entManager.DeleteEntity(existingEnt);
 
                         if (existingProto != null && remapping.TryGetValue(existingProto.ID, out var remapped))
