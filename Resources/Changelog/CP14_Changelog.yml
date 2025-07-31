@@ -1326,3 +1326,53 @@
   id: 8187
   time: '2025-07-30T11:19:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1591
+- author: TheShuEd
+  changes:
+  - message: Upstream sync moment
+    type: Add
+  id: 8188
+  time: '2025-07-30T13:02:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1558
+- author: TheShuEd
+  changes:
+  - message: Corpse decay has been disabled. Genetic damage no longer accumulates
+      on corpses.
+    type: Tweak
+  - message: Ressurection spell removed from the game.
+    type: Remove
+  - message: Healing ballade spell removed from the game.
+    type: Remove
+  - message: 3 basic magic spells can no longer heal people in critical or dead states.
+      Potions is only way now.
+    type: Tweak
+  - message: The speed at which damage is taken from suffocation has been reduced
+      by half (creatures can remain in critical condition for much longer before death).
+    type: Tweak
+  id: 8189
+  time: '2025-07-31T19:28:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1597
+- author: TheShuEd
+  changes:
+  - message: The sphere of light now returns the item to your hand instead of applying
+      a status effect. Bug fix, as the sphere of light had completely stopped glowing.
+    type: Tweak
+  - message: Roofs can now be deconstructed above walls.
+    type: Fix
+  - message: Fixed a bug with changing the shape of the key, which changed all subsequent
+      doors and keys.
+    type: Fix
+  id: 8190
+  time: '2025-07-31T20:44:45.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
+- author: TheShuEd
+  changes:
+  - message: Fixed barrels injections
+    type: Fix
+  - message: Demiplanes no longer check whether the path to the target is blocked
+      (crates no longer prevent teleportation).
+    type: Fix
+  - message: Vanilla tracks removed from Lobby
+    type: Fix
+  id: 8191
+  time: '2025-07-31T21:34:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600

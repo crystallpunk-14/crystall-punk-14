@@ -1,10 +1,4 @@
 - type: alert
-  id: CP14Glowing
-  icons:
-  - sprite: _CP14/Actions/Spells/light.rsi
-    state: sphere_of_light
-
-- type: alert
   id: CP14MagicArmor
   icons:
   - sprite: _CP14/Actions/Spells/meta.rsi
