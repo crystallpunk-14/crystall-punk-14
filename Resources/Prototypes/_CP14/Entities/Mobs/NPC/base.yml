@@ -16,7 +16,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - SimpleNeutral
+    - CP14Neutrals
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
