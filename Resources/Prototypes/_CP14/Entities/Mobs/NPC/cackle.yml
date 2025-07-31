@@ -17,12 +17,11 @@
         6
   - type: Sprite
     drawdepth: Mobs
+    sprite: _CP14/Mobs/Monster/cackle.rsi
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
-        sprite: _CP14/Mobs/Monster/cackle.rsi
         state: live
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ] #used cause i dont know if there are any more applicable ones
-        sprite: _CP14/Mobs/Monster/cackle.rsi
         state: live_spikes
   - type: Physics
   - type: Fixtures
