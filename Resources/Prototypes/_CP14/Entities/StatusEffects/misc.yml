@@ -1,23 +1,4 @@
 - type: entity
-  id: CP14StatusEffectGlowing
-  components:
-  - type: StatusEffect
-  - type: StatusEffectAlert
-    alert: CP14Glowing
-  - type: Sprite
-    drawdepth: Effects
-    sprite: _CP14/Effects/Magic/sphere_of_light.rsi
-    offset: 0, 1
-    noRot: true
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: PointLight
-    radius: 5.0
-    energy: 1
-    color: "#efedff"
-
-- type: entity
   id: CP14StatusEffectMagicArmor
   components:
   - type: StatusEffect
