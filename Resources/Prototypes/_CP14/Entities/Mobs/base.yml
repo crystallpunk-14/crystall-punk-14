@@ -94,8 +94,6 @@
 
 - type: entity
   id: CP14MobTemperature
-  abstract: true
-  categories: [ ForkFiltered ]
   components:
   - type: ThermalRegulator
     metabolismHeat: 800

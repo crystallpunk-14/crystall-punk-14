@@ -30,6 +30,21 @@
           Quantity: 1
 
 - type: entity
+  id: CP14VialSmallHealingAirloss
+  parent: CP14VialSmall
+  name: "brad's airloss healing potion"
+  suffix: Healing airloss 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 9
+        - ReagentId: CP14BasicEffectHealAirloss
+          Quantity: 1
+
+- type: entity
   id: CP14VialSmallHealingBlood
   parent: CP14VialSmall
   name: "brad's blood restoration potion"

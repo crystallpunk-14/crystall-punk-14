@@ -167,6 +167,48 @@
     addTemperature: -150
 
 - type: reaction
+  id: CP14WaterBrewingHealAirloss
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
+    CP14BasicEffectHealAirloss: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingDamageAirloss
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14BasicEffectEmpty: 2
+    CP14BasicEffectEmoteCough: 1
+    CP14BasicEffectDamageAirloss: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
   id: CP14WaterBrewingBloodRestore
   minTemp: 500
   priority: 2

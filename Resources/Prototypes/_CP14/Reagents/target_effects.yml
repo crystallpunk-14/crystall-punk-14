@@ -200,6 +200,44 @@
   pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
 
 - type: reagent
+  id: CP14BasicEffectHealAirloss
+  name: cp14-reagent-name-basic-heal-airloss
+  desc: cp14-reagent-desc-basic-heal-airloss
+  group: CP14BasicEffect
+  flavor: fizzy
+  color: "#e6f4f5"
+  worksOnTheDead: true
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -10
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Air (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
+
+- type: reagent
+  id: CP14BasicEffectDamageAirloss
+  name: cp14-reagent-name-basic-damage-airloss
+  desc: cp14-reagent-desc-basic-damage-airloss
+  group: CP14BasicEffect
+  flavor: horrible
+  color: "#73091e"
+  worksOnTheDead: true
+  physicalDesc: reagent-physical-desc-viscous
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: 3
+  pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
+
+- type: reagent
   id: CP14BasicEffectHealManaDepletion
   name: cp14-reagent-name-basic-heal-manadepletion
   desc: cp14-reagent-desc-basic-heal-manadepletion
