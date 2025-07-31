@@ -346,7 +346,7 @@
     max: 8
   name: cp14-modifier-cackle
   categories:
-    Danger: 0.4
+    Danger: 0.3
   requiredTags:
   - CP14DemiplaneOpenSky
   - CP14DemiplaneOres
