@@ -37,7 +37,7 @@
   desc: cp14-reagent-desc-toxin-bleed
   group: CP14MonsterToxins
   flavor: CP14Metallic
-  color: "#e31010"
+  color: "#872e2e"
   physicalDesc: cp14-reagent-physical-desc-scarlet
   metabolisms:
     Poison:
