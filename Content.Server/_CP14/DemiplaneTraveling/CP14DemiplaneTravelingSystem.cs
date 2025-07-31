@@ -65,9 +65,6 @@ public sealed partial class CP14DemiplaneTravelingSystem : EntitySystem
                 if (!_mind.TryGetMind(ent, out var mindId, out var mind))
                     continue;
 
-                if (!_interaction.InRangeUnobstructed(ent, uid))
-                    continue;
-
                 teleportedEnts.Add(ent);
             }
 
