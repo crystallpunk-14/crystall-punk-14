@@ -171,10 +171,10 @@ ent-CP14BaseSpellScrollWater = { ent-CP14BaseSpellScroll }
     .desc = { ent-CP14BaseSpellScroll.desc }
 
 ent-CP14ActionSpellDash = Рывок
-    .desc = Вы быстро рывком перемещаетесь в выбранную позицию, чтобы стремительно сократить расстояние или уклониться от опасности.
+    .desc = Вы быстрым рывком перемещаетесь в выбранную позицию, чтобы стремительно сократить расстояние или уклониться от опасности.
 
 ent-CP14ActionSpellKick = Пинок
-    .desc = Вы наносите эпический удар ногой по выбранному объекту, отталкивая его от себя.
+    .desc = Вы совершаете эпичный пинок по выбранному объекту, отталкивая его от себя.
 
 ent-CP14DustEffectKickSound = Нет
 
@@ -185,7 +185,7 @@ ent-CP14ImpactEffectSecondWind = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14ActionSpellSprint = Спринт
-    .desc = За счет значительных затрат выносливости, вы значительно ускоряетесь при движении.
+    .desc = За счет значительных затрат выносливости, вы значительно ускоряетесь в движении.
 
 ent-CP14ActionRenounceFromGod = Отречься от покровителя
     .desc = Вы отрекаетесь от своего покровителя, разрывая с ним связь. После этого вы уже никогда не сможете стать его последователем, но можете стать последователем другого покровителя.
@@ -613,7 +613,7 @@ ent-CP14ActionSpellManaTrance = Мана-транс
 ent-CP14RuneManaTrance = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14ActionToggleMagicVision = Магическое видение
+ent-CP14ActionToggleMagicVision = Магическое зрение
     .desc = Вы сосредоточиваетесь на магических потоках, чтобы отслеживать недавние события и сканировать отпечатки ауры других живых существ.
 
 ent-CP14ManaVisionPointer = указатель
@@ -1620,7 +1620,7 @@ ent-CP14MobDinoSmallHydra = малая гидра
     .suffix = AI
 
 ent-CP14MobFairy = фея
-    .desc = Оно светится, пищит и считает себя очень важным. Похоже, что обычное оружие не способно убить его, и только расщепление магии поможет.
+    .desc = Оно светится, пищит и считает себя очень важным. Похоже, что обычное оружие не способно убить её, и помочь может только расщепление магии.
     .suffix = AI
 
 ent-CP14ActionFairyManaConsume = Выкачивание маны феи
@@ -2012,7 +2012,7 @@ ent-CP14OrangeBottle = оранжевая бутылка
 
 ent-CP14RedBottle = красная бутылка
     .desc = Красная бутылка, идеально подходит для вина.
-    .suffix = Empty
+    .suffix = Пустая
 
 ent-CP14DrinkBaseGoblet = кубок
     .desc = Металлический кубок для тех, кто хочет пить изысканно.
@@ -2072,7 +2072,7 @@ ent-CP14FoodAgedCheeseSlice = ломтик выдержанного сыра
     .desc = Тонкий ломтик ароматного выдержанного сыра.
 
 ent-CP14Fork = вилка
-    .desc = Тысячи лет прогресса, и вот оно, вилка.
+    .desc = Тысячи лет прогресса, и вот результат: Вилка.
 
 ent-CP14Spoon = ложка
     .desc = Он считается первым инструментом для принятия пищи, не считая рук.
@@ -2267,11 +2267,11 @@ ent-CP14FoodPepperSlice = ломтик перца
 ent-CP14FoodOnion = лук
     .desc = Если съесть слишком много, можно расплакаться от радости.
 
-ent-CP14FoodOnionSlice = луковое кольцо
+ent-CP14FoodOnionSlice = луковое колечко
     .desc = Более терпимые и легкие для употребления луковые кольца.
 
 ent-CP14BowlBase = миска
-    .desc = Это ваша миска для вкусных супов!
+    .desc = Это ваша миска для вкусного супа!
 
 ent-CP14BowlWooden = деревянная миска
     .desc = { ent-CP14BowlBase.desc }
@@ -2292,7 +2292,7 @@ ent-CP14BowlWoodenRandom = { ent-CP14BowlWooden }
 ent-CP14FoodPiePieceBase = пирог
 
 ent-CP14FoodPiePieceTrash = кусок отвратительного пирога
-    .desc = Снаружи он выглядел привлекательно и аппетитно, но внутри был просто ужасен.
+    .desc = Снаружи он выглядит привлекательно и аппетитно, но внутри просто ужасен.
 
 ent-CP14FoodPiePieceMeat = кусок мясного пирога
     .desc = Пирог с сочным мясом.
@@ -5167,7 +5167,7 @@ ent-CP14WallmouontButtonStone = { ent-CP14WallmountButtonBase }
 
 ent-CP14CashConverter = конвертер валюты
     .desc = Простое магическое устройство, соединенное маленькими порталами с центральным банком империи. Он позволяет конвертировать монеты между номиналами и даже не взимает проценты! Это щедрость.
-    .suffix = Trade
+    .suffix = Торговля
 
 ent-CP14TradingPlatform = пространственная платформа покупки
     .desc = Позволяет торговать с внешним миром через розничные торговые операции.
@@ -5302,7 +5302,7 @@ ent-CP14WallStoneMithrilOre = { ent-CP14WallStone }
 
 ent-CP14WallStoneCoalOre = { ent-CP14WallStone }
     .desc = Природная стена из цельного камня. Вы видите в ней манящие частицы угля.
-    .suffix = coal ore
+    .suffix = угольная руда
 
 ent-CP14WallFrameStonebrick = стена из каменного кирпича
     .desc = { ent-CP14BaseWallFrame.desc }
