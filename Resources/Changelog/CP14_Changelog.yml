@@ -1364,3 +1364,15 @@
   id: 8190
   time: '2025-07-31T20:44:45.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
+- author: TheShuEd
+  changes:
+  - message: Fixed barrels injections
+    type: Fix
+  - message: Demiplanes no longer check whether the path to the target is blocked
+      (crates no longer prevent teleportation).
+    type: Fix
+  - message: Vanilla tracks removed from Lobby
+    type: Fix
+  id: 8191
+  time: '2025-07-31T21:34:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600
