@@ -28,7 +28,6 @@ public sealed partial class DungeonJob
         var seed = random.Next();
         var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
 
-
         foreach (var dun in dungeons)
         {
             foreach (var node in dun.AllTiles)
@@ -82,16 +81,6 @@ public sealed partial class DungeonJob
                 if (!ValidateResume())
                     return;
             }
-        }
-
-        var tiles = _maps.GetAllTilesEnumerator(_gridUid, _grid);
-        while (tiles.MoveNext(out var tileRef))
-        {
-            var node = tileRef.Value.GridIndices;
-
-            if (reservedTiles.Contains(node))
-                continue;
-
         }
     }
 }
