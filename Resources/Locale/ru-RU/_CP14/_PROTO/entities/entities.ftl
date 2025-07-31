@@ -77,17 +77,13 @@ ent-CP14WoodenClosetBlacksmithFilled = { ent-CP14WoodenCloset }
     .desc = { ent-CP14WoodenCloset.desc }
     .suffix = Кузнец, Заполненный
 
-ent-CP14WoodenClosetGuardFilled = { ent-CP14WoodenCloset }
-    .desc = { ent-CP14WoodenCloset.desc }
-    .suffix = Стража, Заполненный
-
-ent-CP14WoodenClosetGuardCommanderFilled = { ent-CP14WoodenCloset }
-    .desc = { ent-CP14WoodenCloset.desc }
-    .suffix = Командир стражи, Заполненный
-
 ent-CP14WoodenClosetGuildmasterFilled = { ent-CP14WoodenCloset }
     .desc = { ent-CP14WoodenCloset.desc }
     .suffix = Гильдмастер, Заполненный
+
+ent-CP14WoodenClosetChefFilled = { ent-CP14WoodenCloset }
+    .desc = { ent-CP14WoodenCloset.desc }
+    .suffix = Повар, Заполненный
 
 ent-CP14WoodenCabinetAlchemist = { ent-CP14WoodenCabinet }
     .desc = { ent-CP14WoodenCabinet.desc }
@@ -108,6 +104,10 @@ ent-CP14WoodenCabinetBlacksmith = { ent-CP14WoodenCabinet }
 ent-CP14WoodenCabinetGuard = { ent-CP14WoodenCabinet }
     .desc = { ent-CP14WoodenCabinet.desc }
     .suffix = Стража, Заполненный
+
+ent-CP14WoodenCabinetInvestigator = { ent-CP14WoodenCabinet }
+    .desc = { ent-CP14WoodenCabinet.desc }
+    .suffix = Дознаватель, Заполненный
 
 ent-CP14WoodenCabinetGuardCommander = { ent-CP14WoodenCabinet }
     .desc = { ent-CP14WoodenCabinet.desc }
@@ -170,17 +170,22 @@ ent-CP14BaseSpellScrollNecromancy = { ent-CP14BaseSpellScroll }
 ent-CP14BaseSpellScrollWater = { ent-CP14BaseSpellScroll }
     .desc = { ent-CP14BaseSpellScroll.desc }
 
-ent-CP14ActionSpellHealFromDeathBallade = Исцеляющая мёртвых баллада
-    .desc = Ваша музыка наполнена целительной магией, быстро исцеляющей всех существ вокруг вас.
+ent-CP14ActionSpellDash = Рывок
+    .desc = Вы быстро рывком перемещаетесь в выбранную позицию, чтобы стремительно сократить расстояние или уклониться от опасности.
 
-ent-CP14ImpactEffectDeadHealBallade = { ent-CP14BaseMagicImpact }
+ent-CP14ActionSpellKick = Пинок
+    .desc = Вы наносите эпический удар ногой по выбранному объекту, отталкивая его от себя.
+
+ent-CP14DustEffectKickSound = Нет
+
+ent-CP14ActionBearSpellSprint = Спринт
+    .desc = Догнать и разорвать, каждый хищник может ускориться и догнать свою добычу.
+
+ent-CP14ImpactEffectSecondWind = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14RuneDeadHealBallade = { ent-CP14BaseMagicRune }
-    .desc = { ent-CP14BaseMagicRune.desc }
-
-ent-CP14ActionSpellResurrectionDead = Воскрешение смерти
-    .desc = Вы воскрешаете цель и излечиваете ее от урона.
+ent-CP14ActionSpellSprint = Спринт
+    .desc = За счет значительных затрат выносливости, вы значительно ускоряетесь при движении.
 
 ent-CP14ActionRenounceFromGod = Отречься от покровителя
     .desc = Вы отрекаетесь от своего покровителя, разрывая с ним связь. После этого вы уже никогда не сможете стать его последователем, но можете стать последователем другого покровителя.
@@ -211,6 +216,9 @@ ent-CP14LumeraMindImproveImpact = { ent-CP14BaseMagicImpact }
 
 ent-CP14ActionSpellGodLumeraMoonStrike = Лунный удар
     .desc = Вы фокусируете концентрированный свет звезд в одной точке, ослепляя и повреждая все, что попадает в поле зрения разгневанной богини.
+
+ent-CP14ImpactEffectMoonStrike = { ent-CP14BaseMagicImpact }
+    .desc = { ent-CP14BaseMagicImpact.desc }
 
 ent-CP14SkyLumeraStrike = удар Лумеры
 
@@ -295,6 +303,40 @@ ent-CP14ImpactEffectEarthWall = { ent-CP14BaseMagicImpact }
 
 ent-CP14SpellScrollEarthWall = свиток заклинания земляной стены
     .desc = { ent-CP14BaseSpellScrollEarth.desc }
+
+ent-CP14ActionSpellLightningStrike = Удар молнии
+    .desc = Вы выпускаете мощную молнию, которая выжигает у цели большое количество выносливости.
+
+ent-CP14LightningStrikeBeam = молния
+
+ent-CP14RuneLightningStrike = { ent-CP14BaseMagicRune }
+    .desc = { ent-CP14BaseMagicRune.desc }
+
+ent-CP14ActionSpellLightningStrikeSmall = Небольшой удар молнии
+    .desc = Вы выпускаете молнию, которая отнимает у цели среднее количество выносливости.
+
+ent-CP14LightningStrikeSmallBeam = молния
+
+ent-CP14ActionSpellResurrection = Восстанавливающий разряд
+    .desc = Вы поражаете умирающую цель безопасным электрическим разрядом, заставляя ее сердце снова биться.
+
+ent-CP14RuneResurrection = { ent-CP14BaseMagicRune }
+    .desc = { ent-CP14BaseMagicRune.desc }
+
+ent-CP14ImpactEffectResurrection = { ent-CP14BaseMagicImpact }
+    .desc = { ent-CP14BaseMagicImpact.desc }
+
+ent-CP14SpellScrollResurrection = свиток заклинания воскрешения
+    .desc = { ent-CP14BaseSpellScrollNecromancy.desc }
+
+ent-CP14ActionSpellSpeedBallade = Баллада скорости
+    .desc = Ваша музыка наполняется магией, ускоряющей движение всех существ поблизости.
+
+ent-CP14ImpactEffectSpeedBallade = { ent-CP14BaseMagicImpact }
+    .desc = { ent-CP14BaseMagicImpact.desc }
+
+ent-CP14RuneSpeedBallade = { ent-CP14BaseMagicRune }
+    .desc = { ent-CP14BaseMagicRune.desc }
 
 ent-CP14ActionSpellFireball = Огненный шар
     .desc = Эффективный метод уничтожения - взрывной огненный шар.
@@ -443,18 +485,6 @@ ent-CP14ImpactEffectPlantGrowth = { ent-CP14BaseMagicImpact }
 ent-CP14RunePlantGrowth = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14ActionSpellResurrection = Воскрешение
-    .desc = Вы пытаетесь вернуть душу обратно в искалеченное тело.
-
-ent-CP14RuneResurrection = { ent-CP14BaseMagicRune }
-    .desc = { ent-CP14BaseMagicRune.desc }
-
-ent-CP14ImpactEffectResurrection = { ent-CP14BaseMagicImpact }
-    .desc = { ent-CP14BaseMagicImpact.desc }
-
-ent-CP14SpellScrollResurrection = свиток заклинания воскрешения
-    .desc = { ent-CP14BaseSpellScrollNecromancy.desc }
-
 ent-CP14ActionSpellSheepPolymorph = Овечкофикация
     .desc = Вы проклинаете цель, превращая ее на короткое время в глупую овцу.
 
@@ -466,15 +496,6 @@ ent-CP14ImpactEffectSheepPolymorph = { ent-CP14BaseMagicImpact }
 
 ent-CP14SpellScrollSheepPolymorph = свиток заклинания овечкофикации
     .desc = { ent-CP14BaseSpellScrollHealing.desc }
-
-ent-CP14ActionSpellSpeedBallade = Баллада скорости
-    .desc = Ваша музыка наполняется магией, ускоряющей движение всех существ поблизости.
-
-ent-CP14ImpactEffectSpeedBallade = { ent-CP14BaseMagicImpact }
-    .desc = { ent-CP14BaseMagicImpact.desc }
-
-ent-CP14RuneSpeedBallade = { ent-CP14BaseMagicRune }
-    .desc = { ent-CP14BaseMagicRune.desc }
 
 ent-CP14ActionSpellFlashLight = Вспышка света
     .desc = Создает вспышку яркого, ослепительного света.
@@ -511,9 +532,6 @@ ent-CP14RuneSphereOfLight = { ent-CP14BaseMagicRune }
 ent-CP14ImpactEffectSphereOfLight = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14SphereOfLight = сфера света
-    .desc = Сгусток яркого света в форме сферы.
-
 ent-CP14SpellScrollSphereOfLight = свиток заклинания сферы света
     .desc = { ent-CP14BaseSpellScrollLight.desc }
 
@@ -537,6 +555,9 @@ ent-CP14ActionSpellLurkerStep = Теневой шаг
 
 ent-CP14ImpactEffectLurkerStep = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
+
+ent-CP14ActionSpellMagicArmor = Магическая броня
+    .desc = Вы окружаете цель кратковременным магическим барьером, который поглощает часть получаемого ею урона.
 
 ent-CP14ActionSpellMagicBallade = Магическая баллада
     .desc = Своей музыкой вы наполняете маной окружающие вас предметы.
@@ -583,8 +604,8 @@ ent-CP14RuneMagicSplitting = { ent-CP14BaseMagicRune }
 ent-CP14ImpactEffectMagicSplitting = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14SpellScrollMagicSplitting = свиток магического заклинания расщепления
-    .desc = { ent-CP14BaseSpellScrollMeta.desc }
+ent-CP14ActionSpellMagicSplittingSmall = Малое магическое расщепление
+    .desc = Вы разрушаете саму суть магии, прерывая заклинания, уничтожая ману и многое другое.
 
 ent-CP14ActionSpellManaTrance = Мана-транс
     .desc = На некоторое время вы погружаетесь в транс, восстанавливая ману.
@@ -592,22 +613,12 @@ ent-CP14ActionSpellManaTrance = Мана-транс
 ent-CP14RuneManaTrance = { ent-CP14BaseMagicRune }
     .desc = { ent-CP14BaseMagicRune.desc }
 
-ent-CP14ActionSpellKick = Пинок
-    .desc = Вы наносите эпический удар ногой по выбранному объекту, отталкивая его от себя.
+ent-CP14ActionToggleMagicVision = Магическое видение
+    .desc = Вы сосредоточиваетесь на магических потоках, чтобы отслеживать недавние события и сканировать отпечатки ауры других живых существ.
 
-ent-CP14DustEffectKickSound = None
+ent-CP14ManaVisionPointer = указатель
 
-ent-CP14ActionSpellKickSkeleton = Пинок
-    .desc = Вы наносите эпический удар ногой по выбранному объекту, отталкивая его от себя.
-
-ent-CP14ActionSpellSprint = Спринт
-    .desc = Затрачивая много выносливости, вы значительно ускоряетесь в движении.
-
-ent-CP14ActionSpellSprintGoblin = Проворство гоблина
-    .desc = { ent-CP14ActionSpellSprint.desc }
-
-ent-CP14ActionSpellSprintSkeleton = Спринт
-    .desc = Затрачивая много выносливости, вы значительно ускоряетесь в движении.
+ent-CP14MagicVisionMarker = след маны
 
 ent-CP14ActionSpellSlimeJump = Слаймопрыжок
     .desc = Прыгай! ПРЫГАЙ!
@@ -796,6 +807,9 @@ ent-CP14ClothingCloakYellowSyurko = жёлтый сюртук
 ent-CP14ClothingCloakAristocraticCloak = аристократический плащ
     .desc = Аристократическое красное пальто с меховым воротником, очень дорогое, очень крутое, немного неудобное.
 
+ent-CP14ClothingCloakHaori = хаори
+    .desc = Традиционная просторная куртка путешественника из дальних стран.
+
 ent-CP14ClothingCloakGuardBase = накидка стражи
     .desc = Наплечная накидка в стандартных цветах Имперской гвардии.
 
@@ -804,6 +818,9 @@ ent-CP14ClothingCloakGuardBlue = { ent-CP14ClothingCloakGuardBase }
 
 ent-CP14ClothingCloakGuardSyurko = сюртук стражи
     .desc = Длинный и просторный сюртук, который служит для защиты доспехов.
+
+ent-CP14ClothingCloakGuardInvestigator = плащ дознавателя
+    .desc = Плащи, которые разрешено носить только старшим дознавателям, служащим империи.
 
 ent-CP14ClothingCloakGuardCommander = бронированный плащ командира гвардии
     .desc = Это чрезвычайно прочная и легкая накидка, разработанная специально для командиров Имперской гвардии.
@@ -973,9 +990,22 @@ ent-CP14ClothingHeadJagermeisterHat = шапка егермейстера
 ent-CP14ClothingHeadStrawHat = соломенная шляпа
     .desc = Легко сделать, не жалко потерять.
 
+ent-CP14ClothingHeadKasaHat = фермерская шляпа
+    .desc = Добро пожаловать на рисовые поля, искатель приключений!
+
 ent-CP14ClothingHeadGuardBase = шлем
 
 ent-CP14ClothingHeadGuardHelmet = шлем стражи
+
+ent-CP14ClothingHeadGuardCorinthianHelmet = коринфский шлем
+
+ent-CP14ClothingHeadGuardCap = шлем стража
+
+ent-CP14ClothingHeadGuardFedora = федора стража
+
+ent-CP14ClothingHeadGuardTriangular = треугольная шляпа стража
+
+ent-CP14ClothingHeadGuardInvestigatorHelmet = шлем дознавателя
 
 ent-CP14ClothingHeadGildmaster = шляпа гильдмастера
     .desc = Знак безграничного опыта и чести.
@@ -1166,6 +1196,9 @@ ent-CP14ClothingPantsJestersPantaloons = шутовские панталоны
 
 ent-CP14ClothingPantsJagermeisterTrousers = брюки егермейстера
     .desc = { ent-CP14ClothingPantsBase.desc }
+
+ent-CP14ClothingPantsHakama = хакама
+    .desc = Традиционные длинные брюки путешественника из дальних стран.
 
 ent-CP14ClothingPantsGuardsChainmailSkirt = кольчужная юбка стражи
     .desc = Юбка с вшитой подкладкой из кольчуги, окрашенная в стандартные цвета униформы Имперской гвардии.
@@ -1427,6 +1460,8 @@ ent-CP14SpawnPointGuardCommander = командир стражи
 
 ent-CP14SpawnPointGuard = стража
 
+ent-CP14SpawnPointInvestigator = дознаватель
+
 ent-CP14SpawnPointAdventurer = авантюрист
     .desc = { ent-CP14SpawnPointJobBase.desc }
 
@@ -1472,6 +1507,10 @@ ent-CP14SpawnMobMonsterInvisibleWhistler = спавнер невидимого �
 
 ent-CP14SpawnMobMonsterFlem = спавнер флема
 
+ent-CP14SpawnMobFairy = спавнер феи
+
+ent-CP14SpawnMobBigBear = спавнер большого медведя
+
 ent-CP14SpawnUniqueBase = спавнер уникальных предметов
 
 ent-CP14SpawnUniqueArtifact = случайный спавнер артефактов
@@ -1498,6 +1537,10 @@ ent-CP14BiomeSpawnerCave = { ent-CP14BaseBiomeSpawner }
 ent-CP14BiomeSpawnerCaveEmpty = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Пещера открытая
+
+ent-CP14BiomeSpawnerCaveGeneric = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
+    .suffix = Пещера обычная
 
 ent-CP14BiomeSpawnerForest = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
@@ -1531,6 +1574,10 @@ ent-CP14BiomeSpawnerWastelands = { ent-CP14BaseBiomeSpawner }
     .desc = { ent-CP14BaseBiomeSpawner.desc }
     .suffix = Пустоши
 
+ent-CP14BiomeSpawnerCavesMushroom = { ent-CP14BaseBiomeSpawner }
+    .desc = { ent-CP14BaseBiomeSpawner.desc }
+    .suffix = Грибная пещера
+
 ent-CP14SpawnerDemiplaneLootT1 = Демиплан T1 Loot
 
 ent-CP14SpawnerDemiplaneLootT2 = Демиплан T2 Loot
@@ -1557,6 +1604,10 @@ ent-CP14MobSheep = овца
     .desc = Белая и пушистая, как овечка из облака.
     .suffix = AI
 
+ent-CP14MobBigBear = большой медведь
+    .desc = Большой, злобный медведь. Возможно, он не выспался.
+    .suffix = AI
+
 ent-CP14MobDino = дино
     .suffix = AI
 
@@ -1567,6 +1618,13 @@ ent-CP14MobDinoYumkaraptor = юмкараптор
 ent-CP14MobDinoSmallHydra = малая гидра
     .desc = Небольшая двухголовая ящерица, несмотря на свои размеры, может быть довольно опасной.
     .suffix = AI
+
+ent-CP14MobFairy = фея
+    .desc = Оно светится, пищит и считает себя очень важным. Похоже, что обычное оружие не способно убить его, и только расщепление магии поможет.
+    .suffix = AI
+
+ent-CP14ActionFairyManaConsume = Выкачивание маны феи
+    .desc = Вы поглощаете небольшое количество маны у цели.
 
 ent-CP14MobMonsterFlem = флем
     .desc = Странная рыба, стоящая на двух корявых ногах. Вы знаете, что это значит...
@@ -1867,6 +1925,9 @@ ent-CP14GuidebookBase = { ent-CP14BookBase }
 ent-CP14BookGuildMoral = Гильдейская мораль авантюриста
     .desc = Книга, в которой записаны неофициальные правила, принятые среди авантюристов.
 
+ent-CP14BookTieflingGambit = Гамбит Тифлинга
+    .desc = Правила игры в кости, созданные Каллистой Зянур.
+
 ent-CP14GuidebookImperialLaws = имперские законы
     .desc = Книга об императорских законах.
     .suffix = Путеводитель
@@ -1883,8 +1944,58 @@ ent-CP14BookRandom = { ent-CP14BookWriteableBase }
     .desc = Каждая книга уникальна! Что спрятано в этой?
     .suffix = Случайный визуал
 
-ent-CP14GreenBottle = зеленая бутылка
-    .desc = Зеленая бутылка, идеально подходит для пива.
+ent-CP14FloorTileItemBase = Нет
+
+ent-CP14FloorCarpetItemBlue1 = синий ковер
+    .suffix = Синий
+
+ent-CP14FloorCarpetItemRed1 = красный ковер
+    .suffix = Красный
+
+ent-CP14FloorCarpetItemCyan1 = бирюзовый ковер
+    .suffix = Бирюзовый
+
+ent-CP14FloorCarpetItemGreen1 = зелёный ковер
+    .suffix = Зелёный
+
+ent-CP14FloorCarpetItemOrange1 = оранжевый ковер
+    .suffix = Оранжевый
+
+ent-CP14FloorCarpetItemPurple1 = пурпурный ковер
+    .suffix = Пурпурный
+
+ent-CP14FloorCarpetItemBlack1 = чёрный ковер
+    .suffix = Чёрный
+
+ent-CP14FloorCarpetItemYellow1 = жёлтый ковер
+    .suffix = Жёлтый
+
+ent-CP14FloorCarpetItemBlue10 = { ent-CP14FloorCarpetItemBlue1 }
+    .suffix = Синий 10
+
+ent-CP14FloorCarpetItemRed10 = { ent-CP14FloorCarpetItemRed1 }
+    .suffix = Красный 10
+
+ent-CP14FloorCarpetItemCyan10 = { ent-CP14FloorCarpetItemCyan1 }
+    .suffix = Бирюзовый 10
+
+ent-CP14FloorCarpetItemGreen10 = { ent-CP14FloorCarpetItemGreen1 }
+    .suffix = Зелёный 10
+
+ent-CP14FloorCarpetItemOrange10 = { ent-CP14FloorCarpetItemOrange1 }
+    .suffix = Оранжевый 10
+
+ent-CP14FloorCarpetItemPurple10 = { ent-CP14FloorCarpetItemPurple1 }
+    .suffix = Пурпурный 10
+
+ent-CP14FloorCarpetItemBlack10 = { ent-CP14FloorCarpetItemBlack1 }
+    .suffix = Чёрный 10
+
+ent-CP14FloorCarpetItemYellow10 = { ent-CP14FloorCarpetItemYellow1 }
+    .suffix = Жёлтый 10
+
+ent-CP14GreenBottle = зелёная бутылка
+    .desc = Зелёная бутылка, идеально подходящая для пива.
     .suffix = Пустая
 
 ent-CP14BlueBottle = синяя бутылка
@@ -1901,7 +2012,23 @@ ent-CP14OrangeBottle = оранжевая бутылка
 
 ent-CP14RedBottle = красная бутылка
     .desc = Красная бутылка, идеально подходит для вина.
-    .suffix = Пустая
+    .suffix = Empty
+
+ent-CP14DrinkBaseGoblet = кубок
+    .desc = Металлический кубок для тех, кто хочет пить изысканно.
+
+ent-CP14SteelGobletIron = железный кубок
+    .desc = { ent-CP14DrinkBaseGoblet.desc }
+
+ent-CP14SteelGobletCopper = медный кубок
+    .desc = { ent-CP14DrinkBaseGoblet.desc }
+
+ent-CP14SteelGobletGold = золотой кубок
+    .desc = Кубок из чистого золота, демонстрирующий богатство его владельца.
+
+ent-CP14SteelGobletBottomless = бездонный кубок
+    .desc = Драгоценный кубок, заколдованный так, чтобы не иметь дна, подходящий для бесконечного королевского банкета.
+    .suffix = Артефакт
 
 ent-CP14DrinkBaseMug = кружка
 
@@ -1925,6 +2052,30 @@ ent-CP14FoodCheesePart = сыр
 
 ent-CP14FoodCheeseSlice = долька сыра
     .desc = Тонкий ломтик вкусно пахнущего сыра.
+
+ent-CP14FoodBlueCheeseWheel = колесо голубого сыра
+    .desc = Сыр с характерными голубыми прожилками. Сильный аромат!
+
+ent-CP14FoodBlueCheesePart = кусочек голубого сыра
+    .desc = Треугольник острого сыра с голубой плесенью.
+
+ent-CP14FoodBlueCheeseSlice = ломтик голубого сыра
+    .desc = Тонкий ломтик острого голубого сыра.
+
+ent-CP14FoodAgedCheeseWheel = колесо выдержанного сыра
+    .desc = Твердый сыр, выдержанный в течение нескольких месяцев для приобретения насыщенного вкуса.
+
+ent-CP14FoodAgedCheesePart = кусочек выдержанного сыра
+    .desc = Треугольник выдержанного сыра с насыщенным вкусом.
+
+ent-CP14FoodAgedCheeseSlice = ломтик выдержанного сыра
+    .desc = Тонкий ломтик ароматного выдержанного сыра.
+
+ent-CP14Fork = вилка
+    .desc = Тысячи лет прогресса, и вот оно, вилка.
+
+ent-CP14Spoon = ложка
+    .desc = Он считается первым инструментом для принятия пищи, не считая рук.
 
 ent-CP14FoodDoughLarge = большой кусок теста
     .desc = Идеальный ингредиент для любого мучного изделия. Остается только придать ему форму.
@@ -1954,6 +2105,9 @@ ent-CP14Eggshells = яичная скорлупа
 
 ent-CP14FoodEgg = яйцо
     .desc = { ent-CP14FoodEggBase.desc }
+
+ent-CP14FoodEggCooked = варёное яйцо
+    .desc = { ent-CP14FoodEgg.desc }
 
 ent-CP14FoodMeatBase = мясо
 
@@ -2074,43 +2228,6 @@ ent-CP14FoodMeatFlemLeg = сырая нога флема
 ent-CP14FoodMeatFlemLegCooked = рыбные палочки
     .desc = Как картошка-фри. Но рыба!
 
-ent-CP14FoodPieBase = пирог
-
-ent-CP14FoodPieBaseRaw = сырой пирог
-
-ent-CP14FoodPieAppleRaw = сырой яблочный пирог
-    .desc = Сырое тесто с яблоками - это то, что вам сейчас не стоит есть.
-
-ent-CP14FoodPieApple = яблочный пирог
-    .desc = Яблочный пирог манит вас своим ароматом.
-
-ent-CP14FoodPieMeatRaw = сырой мясной пирог
-    .desc = Сырое тесто с сырым мясом - не самое лучшее блюдо на данный момент.
-
-ent-CP14FoodPieMeat = мясной пирог
-    .desc = О, этот чудесный аромат хлеба и мяса, я бы съел его прямо сейчас.
-
-ent-CP14FoodPieFishRaw = сырой рыбный пирог
-    .desc = Сырое тесто с сырой рыбой..... Где они взяли рыбу?!
-
-ent-CP14FoodPieFish = рыбный пирог
-    .desc = Рыбный пирог - хорошая альтернатива мясным блюдам.
-
-ent-CP14FoodPiePumpkinRaw = сырой тыквенный пирог
-    .desc = Сырое тесто с тыквой может стать восхитительно ароматным блюдом.
-
-ent-CP14FoodPiePumpkin = тыквенный пирог
-    .desc = Вкусный тыквенный пирог с поджаристой корочкой снаружи.
-
-ent-CP14FoodPieBurnt = сгоревший пирог
-    .desc = Пирог подгорел и представляет собой горелую и несъедобную массу. Лучше это вычистить ножом.
-
-ent-CP14Plate = тарелка
-    .desc = Это ваша тарелка для вкусной еды!
-
-ent-CP14PlatePie = пирожковая тарелка
-    .desc = Форма для приготовления вкусного пирога.
-
 ent-CP14FoodCabbage = капуста
     .desc = Зеленый съедобный шарик
 
@@ -2129,6 +2246,9 @@ ent-CP14FoodPotato = картошка
 ent-CP14FoodCucumber = огурец
     .desc = Продолговатый зеленый овощ. Освежает!
 
+ent-CP14FoodCucumberSlice = кусочек огурца
+    .desc = Равномерно нарезанный огурец, все еще зеленый и сочный.
+
 ent-CP14FoodTomatoesSlice = срез помидора
     .desc = Тонкий ломтик красного помидора. Их уже не так приятно бросать в людей, как целые помидоры.
 
@@ -2141,11 +2261,63 @@ ent-CP14FoodAppleSlice = яблочная долька
 ent-CP14FoodPepper = перец
     .desc = Красный и сладковатый.
 
+ent-CP14FoodPepperSlice = ломтик перца
+    .desc = Всё так же красный и сладковатый.
+
 ent-CP14FoodOnion = лук
     .desc = Если съесть слишком много, можно расплакаться от радости.
 
-ent-CP14FoodSaladGreen = зелёный салат
-    .desc = Очень питательный зеленый салат с тыквенной ноткой.
+ent-CP14FoodOnionSlice = луковое кольцо
+    .desc = Более терпимые и легкие для употребления луковые кольца.
+
+ent-CP14BowlBase = миска
+    .desc = Это ваша миска для вкусных супов!
+
+ent-CP14BowlWooden = деревянная миска
+    .desc = { ent-CP14BowlBase.desc }
+
+ent-CP14BowlIron = железная миска
+    .desc = { ent-CP14BowlBase.desc }
+
+ent-CP14BowlGold = золотая миска
+    .desc = { ent-CP14BowlBase.desc }
+
+ent-CP14BowlCopper = медная миска
+    .desc = { ent-CP14BowlBase.desc }
+
+ent-CP14BowlWoodenRandom = { ent-CP14BowlWooden }
+    .desc = { ent-CP14BowlWooden.desc }
+    .suffix = Случайная еда
+
+ent-CP14FoodPiePieceBase = пирог
+
+ent-CP14FoodPiePieceTrash = кусок отвратительного пирога
+    .desc = Снаружи он выглядел привлекательно и аппетитно, но внутри был просто ужасен.
+
+ent-CP14FoodPiePieceMeat = кусок мясного пирога
+    .desc = Пирог с сочным мясом.
+
+ent-CP14FoodPiePiecePumpkin = кусок тыквенного пирога
+    .desc = Тыквенный пирог. Сладкий и нежный.
+
+ent-CP14FoodPiePieceVeg = кусок овощного пирога
+    .desc = Овощи и зелень внутри.
+
+ent-CP14PlateBase = тарелка
+    .desc = Это ваша тарелка для вкусного обеда!
+
+ent-CP14PlateWooden = деревянная тарелка
+    .desc = { ent-CP14PlateBase.desc }
+
+ent-CP14PlateIron = железная тарелка
+    .desc = { ent-CP14PlateBase.desc }
+
+ent-CP14PlateGold = золотая тарелка
+    .desc = { ent-CP14PlateBase.desc }
+
+ent-CP14PlateWoodenRandom = { ent-CP14PlateWooden }
+    .desc = { ent-CP14PlateWooden.desc }
+    .suffix = Случайная еда
 
 ent-CP14SmokingPipe = курительная трубка
     .desc = Удобная и практичная курительная трубка, последняя мода в Империи.
