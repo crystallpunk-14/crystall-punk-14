@@ -5,6 +5,7 @@
   - MobCombat
   - CP14MobDamageable
   - CP14MobMagical
+  - CP14MobTemperature
   - MobPolymorphable
   id: CP14BaseMobSpecies
   categories: [ ForkFiltered ]

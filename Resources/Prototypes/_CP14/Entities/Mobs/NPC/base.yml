@@ -8,6 +8,7 @@
   - CP14MobStarving
   - MobBloodstream
   - MobFlammable
+  - CP14MobTemperature
   - MobPolymorphable
   id: CP14SimpleMobBase
   suffix: AI
