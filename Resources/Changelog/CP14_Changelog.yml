@@ -1351,3 +1351,16 @@
   id: 8189
   time: '2025-07-31T19:28:52.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1597
+- author: TheShuEd
+  changes:
+  - message: The sphere of light now returns the item to your hand instead of applying
+      a status effect. Bug fix, as the sphere of light had completely stopped glowing.
+    type: Tweak
+  - message: Roofs can now be deconstructed above walls.
+    type: Fix
+  - message: Fixed a bug with changing the shape of the key, which changed all subsequent
+      doors and keys.
+    type: Fix
+  id: 8190
+  time: '2025-07-31T20:44:45.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
