@@ -148,7 +148,8 @@
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
-
+      
+ #Air lily was removed from generation, as useless! Because we remove airloss damage supports
 #- type: cp14DemiplaneModifier
 #  id: AirLily
 #  levels:
