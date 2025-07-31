@@ -14,19 +14,3 @@
 
 # Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
 
-# Emote cough -> Heal airloss
-
-- type: reaction
-  id: CP14AirLilyAdmixture
-  minTemp: 500
-  reactants:
-    CP14AirLily:
-      amount: 1
-    CP14BasicEffectEmpty:
-      amount: 1
-    CP14BasicEffectEmoteCough:
-      amount: 1
-  products:
-    CP14BasicEffectHealAirloss: 2
-    CP14BasicEffectDrunk: 1
-
