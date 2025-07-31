@@ -95,13 +95,6 @@
 - type: entity
   id: CP14MobTemperature
   components:
-  - type: Temperature
-    heatDamageThreshold: 325
-    coldDamageThreshold: 0
-    currentTemperature: 310.15
-    coldDamage: #per second, scales with temperature & other constants
-      types:
-        Cold : 0.1
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
