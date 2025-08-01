@@ -213,6 +213,7 @@
   - type: Tag
     tags:
     - FootstepSound
+  - type: CP14DemiplaneForceExtract
   - type: CP14DemiplaneStabilizer
     requireAlive: true
   - type: CP14IgnitionModifier

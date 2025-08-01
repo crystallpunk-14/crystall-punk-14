@@ -1,5 +1,6 @@
-using Content.Server.Body.Systems;
 using Content.Shared._CP14.Demiplane.Components;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.SSDIndicator;
 
@@ -11,7 +12,7 @@ public sealed partial class CP14DemiplaneSystem
     private TimeSpan _nextCheckTime = TimeSpan.Zero;
 
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     private void InitStabilization()
     {
@@ -79,15 +80,18 @@ public sealed partial class CP14DemiplaneSystem
 
     public void DeleteDemiplane(Entity<CP14DemiplaneComponent> demiplane, bool safe = false)
     {
-        var query = EntityQueryEnumerator<CP14DemiplaneStabilizerComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<CP14DemiplaneForceExtractComponent, TransformComponent>();
 
-        while (query.MoveNext(out var uid, out var stabilizer, out var xform))
+        while (query.MoveNext(out var uid, out var extract, out var xform))
         {
-            if (TryTeleportOutDemiplane(demiplane, uid))
-            {
-                if (!safe)
-                    _body.GibBody(uid);
-            }
+            if (!extract.Enabled)
+                continue;
+
+            if (!TryTeleportOutDemiplane(demiplane, uid))
+                continue;
+
+            if (!safe)
+                _damageable.TryChangeDamage(uid, extract.ExtractDamage);
         }
 
         QueueDel(demiplane);
