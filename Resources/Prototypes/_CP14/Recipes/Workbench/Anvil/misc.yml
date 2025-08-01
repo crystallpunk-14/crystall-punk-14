@@ -70,19 +70,6 @@
   result: CP14Scissors
 
 - type: CP14Recipe
-  id: CP14ClothingOuterClothingCopperArmor
-  tag: CP14RecipeAnvil
-  category: Armor
-  craftTime: 4
-  requiredSkills:
-  - CopperMelting
-  requirements:
-  - !type:StackResource
-    stack: CP14CopperBar
-    count: 4
-  result: CP14ClothingOuterClothingCopperArmor
-
-- type: CP14Recipe
   id: CP14ClothingGlovesGirdles
   tag: CP14RecipeAnvil
   category: Armor

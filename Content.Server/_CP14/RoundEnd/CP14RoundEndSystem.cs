@@ -49,7 +49,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         if (_roundEndMoment > _timing.CurTime)
             return;
 
-        _demiplane.DeleteAllDemiplanes(safe: false);
+        _demiplane.DeleteAllDemiplanes();
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
         _roundEnd.EndRound();

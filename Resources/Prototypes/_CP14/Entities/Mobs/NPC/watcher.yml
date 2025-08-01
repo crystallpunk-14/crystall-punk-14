@@ -1,7 +1,7 @@
 ﻿- type: entity
   name: watcher
   id: CP14MobWatcherBase
-  parent: [ CP14SimpleMobNoLifeBase, FlyingMobBase ]
+  parent: [ CP14SimpleMobBase, FlyingMobBase ]
   abstract: true
   description: It's like it's staring right through you.
   categories: [ ForkFiltered ]

@@ -59,20 +59,9 @@
       visible: false
   - type: HumanoidAppearance
     species: CP14Silva
-  - type: Hunger
-    starvationDamage:
-      types:
-        Cold: 0.25
-        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi #TODO
     state: full
-  - type: Thirst
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: CP14FoodMeatHuman # Replace it with silva meat, heh.
-        amount: 5
   - type: CP14SkillStorage #Innate vivification
     freeLearnedSkills:
     - HealingT1

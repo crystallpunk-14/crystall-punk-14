@@ -30,7 +30,7 @@
     endSpeech: "pecora tua"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSheepPolymorph
-  - type: CP14MagicEffectAliveTargetRequired
+  - type: CP14MagicEffectTargetMobStatusRequired
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/misc.rsi

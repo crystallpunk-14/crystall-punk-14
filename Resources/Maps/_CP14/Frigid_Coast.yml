@@ -36043,7 +36043,7 @@ entities:
     - type: Transform
       pos: -15.482462,17.62666
       parent: 1
-- proto: CP14ClothingOuterClothingCopperArmor
+- proto: CP14ClothingOuterClothingFish
   entities:
   - uid: 17
     components:
