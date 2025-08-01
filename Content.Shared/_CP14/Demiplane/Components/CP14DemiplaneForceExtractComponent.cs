@@ -1,3 +1,5 @@
+using Content.Shared.Damage;
+
 namespace Content.Shared._CP14.Demiplane.Components;
 
 /// <summary>
@@ -8,4 +10,13 @@ public sealed partial class CP14DemiplaneForceExtractComponent : Component
 {
     [DataField]
     public bool Enabled = true;
+
+    [DataField]
+    public DamageSpecifier ExtractDamage = new()
+    {
+        DamageDict = new()
+        {
+            { "Blunt", 111 },
+        }
+    };
 }
