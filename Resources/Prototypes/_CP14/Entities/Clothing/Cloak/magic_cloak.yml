@@ -11,6 +11,7 @@
   - type: Clothing
     sprite: _CP14/Clothing/Cloak/lurker_cape.rsi
   - type: ItemToggle
+    onActivate: false
     onUse: false
   - type: ToggleClothing
     action: CP14ActionToggleLurkerCape
@@ -31,6 +32,7 @@
 
 - type: entity
   id: CP14ActionToggleLurkerCape
+  parent: BaseAction
   name: Lurker cape
   description: Gives the cape wearer the invisibility of the mythical Lurker, but only if standing still.
   components:
