@@ -105,6 +105,88 @@
     prototypes:
     - CP14MobSheep
 
+- type: entity
+  name: big bear spawner
+  id: CP14SpawnMobBigBear
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/bear.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobBigBear
+
+- type: entity
+  name: chicken spawner
+  id: CP14SpawnMobChicken
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/chicken_white.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobChicken
+    - CP14MobChicken2
+
+- type: entity
+  name: rooster spawner
+  id: CP14SpawnMobRooster
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/rooster.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobRooster
+
+- type: entity
+  name: chick spawner
+  id: CP14SpawnMobChickNotGrowing
+  parent: MarkerBase
+  suffix: Not Growing
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/chick.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobChickNotGrowing
+
+- type: entity
+  name: chick spawner
+  id: CP14SpawnMobChick
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/chick.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobChick
+
 # Dino
 
 - type: entity
@@ -221,19 +303,3 @@
    - type: ConditionalSpawner
      prototypes:
       - CP14MobFairy
-
-- type: entity
-  name: big bear spawner
-  id: CP14SpawnMobBigBear
-  parent: MarkerBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Animals/bear.rsi
-      state: live
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobBigBear
