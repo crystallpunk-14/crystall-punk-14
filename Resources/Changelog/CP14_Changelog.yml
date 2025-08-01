@@ -1384,3 +1384,10 @@
   id: 8192
   time: '2025-08-01T08:57:16.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1603
+- author: AnyTap
+  changes:
+  - message: Removed non-modular copper armour from game
+    type: Remove
+  id: 8193
+  time: '2025-08-01T08:59:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1571
