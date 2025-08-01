@@ -1351,3 +1351,55 @@
   id: 8189
   time: '2025-07-31T19:28:52.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1597
+- author: TheShuEd
+  changes:
+  - message: The sphere of light now returns the item to your hand instead of applying
+      a status effect. Bug fix, as the sphere of light had completely stopped glowing.
+    type: Tweak
+  - message: Roofs can now be deconstructed above walls.
+    type: Fix
+  - message: Fixed a bug with changing the shape of the key, which changed all subsequent
+      doors and keys.
+    type: Fix
+  id: 8190
+  time: '2025-07-31T20:44:45.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
+- author: TheShuEd
+  changes:
+  - message: Fixed barrels injections
+    type: Fix
+  - message: Demiplanes no longer check whether the path to the target is blocked
+      (crates no longer prevent teleportation).
+    type: Fix
+  - message: Vanilla tracks removed from Lobby
+    type: Fix
+  id: 8191
+  time: '2025-07-31T21:34:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600
+- author: TheShuEd
+  changes:
+  - message: Added Air saturation T1 healing spell - allows you to treat suffocation
+      damage, even in people in critical condition.
+    type: Add
+  id: 8192
+  time: '2025-08-01T08:57:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1603
+- author: AnyTap
+  changes:
+  - message: Removed non-modular copper armour from game
+    type: Remove
+  id: 8193
+  time: '2025-08-01T08:59:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1571
+- author: TheShuEd
+  changes:
+  - message: Demoplans no longer bend over pools of blood and the organs of players
+      who died inside the demiplane, simply inflict an additional 111 Blunt damage
+      on them.
+    type: Tweak
+  - message: Skeleton equipment (and the skeletons themselves) no longer drop from
+      the demiplane when it is closed.
+    type: Fix
+  id: 8194
+  time: '2025-08-01T11:09:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1607

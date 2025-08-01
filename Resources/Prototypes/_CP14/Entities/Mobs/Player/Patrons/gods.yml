@@ -67,8 +67,7 @@
       types:
         CP14ManaDepletion: 1
   - type: CP14ZLevelMover
-  - type: CP14DemiplaneStabilizer # teleports gods outside when the demiplane closes
-    enabled: false
+  - type: CP14DemiplaneForceExtract
   - type: UserInterface
     interfaces:
       enum.CP14ReligionEntityUiKey.Key:
