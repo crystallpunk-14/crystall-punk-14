@@ -54,6 +54,12 @@
   entity: CP14LockpickSkeletonArtifact
   tags:
   - CP14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: CP14ClothingCloakLurkerCape
+  entity: CP14ClothingCloakLurkerCape
+  tags:
+  - CP14UniqueSpawnDemiplanetLoot
   
 - type: uniqueSpawn
   id: CP14SteelGobletBottomless
