@@ -22,6 +22,7 @@ public sealed class CP14SpawnProceduralLocationJob(
     SharedMapSystem map,
     EntityUid demiplaneMapUid,
     MapId demiplaneMapId,
+    Vector2i position,
     ProtoId<CP14DemiplaneLocationPrototype> config,
     List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers,
     int seed,
@@ -83,7 +84,7 @@ public sealed class CP14SpawnProceduralLocationJob(
         dungeon.GenerateDungeon(dungeonConfig,
             DemiplaneMapUid,
             gridComp,
-            Vector2i.Zero,
+            position,
             seed); //TODO: Transform to Async
 
         return true;

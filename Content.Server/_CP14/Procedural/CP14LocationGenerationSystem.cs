@@ -5,6 +5,7 @@ using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server._CP14.Procedural;
 
@@ -14,6 +15,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private const double JobMaxTime = 0.002;
     private readonly JobQueue _expeditionQueue = new();
@@ -34,7 +36,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
         }
     }
 
-    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, int seed)
+    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null)
     {
         var cancelToken = new CancellationTokenSource();
 
@@ -47,9 +49,10 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
             _mapSystem,
             mapUid,
             mapId,
+            position,
             location,
             modifiers,
-            seed,
+            seed ?? _random.Next(-10000, 10000),
             cancelToken.Token);
 
         _expeditionJobs.Add((job, cancelToken));

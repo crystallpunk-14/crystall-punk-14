@@ -200,7 +200,7 @@ public sealed partial class CP14DemiplaneSystem
     {
         var mapUid = _mapSystem.CreateMap(out mapId, runMapInit: false);
         var seed = _random.Next(-10000, 10000);
-        _generation.GenerateLocation(mapUid, mapId, location, modifiers, seed);
+        _generation.GenerateLocation(mapUid, mapId, location, modifiers, seed: seed);
 
         _metaData.SetEntityName(mapUid, $"Demiplane {location.Id} - {seed}");
         var demiComp = EntityManager.EnsureComponent<CP14DemiplaneComponent>(mapUid);
