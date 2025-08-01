@@ -6,15 +6,9 @@ namespace Content.Server._CP14.GameTicking.Rules.Components;
 /// <summary>
 /// A rule that assigns common goals to different roles. Common objectives are generated once at the beginning of a round and are shared between players.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14CrashToWindlandsRule))]
-public sealed partial class CP14CrashToWindlandsRuleComponent : Component
+[RegisterComponent, Access(typeof(CP14ExpeditionToWindlandsRule))]
+public sealed partial class CP14ExpeditionToWindlandsRuleComponent : Component
 {
-    [DataField]
-    public EntityUid? Ship;
-
-    [DataField]
-    public bool PendingExplosions = true;
-
     [DataField]
     public ProtoId<CP14DemiplaneLocationPrototype> Location = "T1GrasslandIsland";
 
@@ -23,7 +17,4 @@ public sealed partial class CP14CrashToWindlandsRuleComponent : Component
 
     [DataField]
     public float FloatingTime = 120;
-
-    [DataField]
-    public TimeSpan StartExplosionTime = TimeSpan.FromMinutes(1);
 }

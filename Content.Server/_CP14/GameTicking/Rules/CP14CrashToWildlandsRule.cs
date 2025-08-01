@@ -1,125 +1,35 @@
 using System.Linq;
 using System.Numerics;
-using System.Threading;
-using Content.Server._CP14.Demiplane.Jobs;
 using Content.Server._CP14.GameTicking.Rules.Components;
-using Content.Server.Chat.Managers;
-using Content.Server.Chat.Systems;
-using Content.Server.Explosion.EntitySystems;
-using Content.Server.Flash;
+using Content.Server._CP14.Procedural;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Procedural;
 using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Popups;
-using Robust.Shared.CPUJob.JobQueues;
-using Robust.Shared.CPUJob.JobQueues.Queues;
-using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.GameTicking.Rules;
 
-public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlandsRuleComponent>
+public sealed class CP14ExpeditionToWindlandsRule : GameRuleSystem<CP14ExpeditionToWindlandsRuleComponent>
 {
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly ShuttleSystem _shuttles = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly DungeonSystem _dungeon = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly FlashSystem _flash = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
 
     private ISawmill _sawmill = default!;
-
-    private const double JobMaxTime = 0.002;
-    private readonly JobQueue _expeditionQueue = new();
-    private readonly List<(CP14SpawnRandomDemiplaneJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
 
     public override void Initialize()
     {
         base.Initialize();
         _sawmill = _logManager.GetSawmill("cp14_crash_to_windlands_rule");
-
-        SubscribeLocalEvent<CP14CrashingShipComponent, FTLCompletedEvent>(OnFTLCompleted);
-    }
-
-    private void OnFTLCompleted(Entity<CP14CrashingShipComponent> ent, ref FTLCompletedEvent args)
-    {
-        SpawnRandomExplosion(ent, ent.Comp.FinalExplosionProto, 10);
-        RemCompDeferred<CP14CrashingShipComponent>(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        UpdateGeneration(frameTime);
-        UpdateExplosions(frameTime);
-    }
-
-    private void UpdateGeneration(float frameTime)
-    {
-        _expeditionQueue.Process();
-
-        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
-        {
-            switch (job.Status)
-            {
-                case JobStatus.Finished:
-                    _expeditionJobs.Remove((job, cancelToken));
-                    break;
-            }
-        }
-    }
-
-    private void UpdateExplosions(float frameTime)
-    {
-        var ruleQuery = EntityQueryEnumerator<CP14CrashToWindlandsRuleComponent>();
-        while (ruleQuery.MoveNext(out var uid, out var rule))
-        {
-            if (!rule.PendingExplosions)
-                continue;
-
-            if (_timing.CurTime < rule.StartExplosionTime)
-                continue;
-
-            if (rule.Ship is null)
-                continue;
-
-            AddComp<CP14CrashingShipComponent>(rule.Ship.Value);
-            rule.PendingExplosions = false;
-        }
-
-        var query = EntityQueryEnumerator<CP14CrashingShipComponent>();
-        while (query.MoveNext(out var uid, out var ship))
-        {
-            if (_timing.CurTime < ship.NextExplosionTime)
-                continue;
-
-            ship.NextExplosionTime = _timing.CurTime + TimeSpan.FromSeconds(_random.Next(2, 10));
-            SpawnRandomExplosion((uid, ship), ship.ExplosionProto, 1);
-        }
     }
 
     protected override void Started(EntityUid uid,
-        CP14CrashToWindlandsRuleComponent component,
+        CP14ExpeditionToWindlandsRuleComponent component,
         GameRuleComponent gameRule,
         GameRuleStartedEvent args)
     {
@@ -141,55 +51,10 @@ public sealed class CP14CrashToWindlandsRule : GameRuleSystem<CP14CrashToWindlan
         }
 
         EnsureComp<ShuttleComponent>(largestStationGrid.Value, out var shuttleComp);
-        component.StartExplosionTime += _timing.CurTime;
-        component.Ship = largestStationGrid.Value;
 
-        var windlands = CreateWindLands((uid, component));
+        var windlands = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+
+        _generation.GenerateLocation(windlands, mapId, component.Location, component.Modifiers, 0);
         _shuttles.FTLToCoordinates(largestStationGrid.Value, shuttleComp, new EntityCoordinates(windlands, Vector2.Zero), 0f, 0f, component.FloatingTime);
-    }
-
-    private EntityUid CreateWindLands(Entity<CP14CrashToWindlandsRuleComponent> ent)
-    {
-        var expeditionMap = _mapSystem.CreateMap(out var mapId, false);
-
-        var cancelToken = new CancellationTokenSource();
-
-        var job = new CP14SpawnRandomDemiplaneJob(
-            JobMaxTime,
-            EntityManager,
-            _logManager,
-            _proto,
-            _dungeon,
-            _metaData,
-            _mapSystem,
-            expeditionMap,
-            mapId,
-            ent.Comp.Location,
-            ent.Comp.Modifiers,
-            _random.Next(-10000, 10000),
-            cancelToken.Token);
-
-        _expeditionJobs.Add((job, cancelToken));
-        _expeditionQueue.EnqueueJob(job);
-
-        return expeditionMap;
-    }
-
-    private void SpawnRandomExplosion(Entity<CP14CrashingShipComponent> grid, EntProtoId explosionProto, int count)
-    {
-        var station = _station.GetOwningStation(grid);
-
-        if (station is null)
-            return;
-
-        TryFindRandomTileOnStation((station.Value, Comp<StationDataComponent>(station.Value)),
-            out var tile,
-            out var targetGrid,
-            out var targetCoords);
-
-        for (var i = 0; i < count; i++)
-        {
-            Spawn(explosionProto, targetCoords);
-        }
     }
 }

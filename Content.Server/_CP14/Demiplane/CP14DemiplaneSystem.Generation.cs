@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Threading;
 using Content.Server._CP14.Demiplane.Components;
-using Content.Server._CP14.Demiplane.Jobs;
+using Content.Server._CP14.Procedural;
 using Content.Server.GameTicking;
 using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Demiplane.Prototypes;
@@ -21,12 +21,9 @@ namespace Content.Server._CP14.Demiplane;
 
 public sealed partial class CP14DemiplaneSystem
 {
-    private readonly JobQueue _expeditionQueue = new();
-    private readonly List<(CP14SpawnRandomDemiplaneJob Job, CancellationTokenSource CancelToken)> _expeditionJobs = new();
-    private const double JobMaxTime = 0.002;
-
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
+    [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
 
     private void InitGeneration()
     {
@@ -196,50 +193,19 @@ public sealed partial class CP14DemiplaneSystem
         return msg;
     }
 
-    private void UpdateGeneration(float frameTime)
-    {
-        _expeditionQueue.Process();
-
-        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
-        {
-            switch (job.Status)
-            {
-                case JobStatus.Finished:
-                    _expeditionJobs.Remove((job, cancelToken));
-                    break;
-            }
-        }
-    }
-
     /// <summary>
     /// Generates a new random demiplane based on the specified parameters
     /// </summary>
     public void SpawnRandomDemiplane(ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, out Entity<CP14DemiplaneComponent>? demiplane, out MapId mapId)
     {
         var mapUid = _mapSystem.CreateMap(out mapId, runMapInit: false);
+        var seed = _random.Next(-10000, 10000);
+        _generation.GenerateLocation(mapUid, mapId, location, modifiers, seed);
+
+        _metaData.SetEntityName(mapUid, $"Demiplane {location.Id} - {seed}");
         var demiComp = EntityManager.EnsureComponent<CP14DemiplaneComponent>(mapUid);
         demiplane = (mapUid, demiComp);
-
-        var cancelToken = new CancellationTokenSource();
-        var job = new CP14SpawnRandomDemiplaneJob(
-            JobMaxTime,
-            EntityManager,
-            _logManager,
-            _proto,
-            _dungeon,
-            _metaData,
-            _mapSystem,
-            mapUid,
-            mapId,
-            location,
-            modifiers,
-            _random.Next(-10000, 10000),
-            cancelToken.Token);
-
-        _expeditionJobs.Add((job, cancelToken));
-        _expeditionQueue.EnqueueJob(job);
     }
-
 
     /// <summary>
     /// Returns a suitable demiplane location for the specified difficulty level.

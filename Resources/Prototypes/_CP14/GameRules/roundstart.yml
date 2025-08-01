@@ -38,7 +38,8 @@
   id: CP14CrashToWindlandsRule
   parent: CP14BaseGameRule
   components:
-  - type: CP14CrashToWindlandsRule
+  - type: CP14CrashingShipRule
+  - type: CP14ExpeditionToWindlandsRule
     modifiers:
     - WeatherInfinityStorm
     - MapLightCycleDefault

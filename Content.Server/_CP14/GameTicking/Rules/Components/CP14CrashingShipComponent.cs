@@ -1,13 +1,11 @@
-using Content.Shared.Random;
-using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.GameTicking.Rules.Components;
 
 /// <summary>
-/// A rule that assigns common goals to different roles. Common objectives are generated once at the beginning of a round and are shared between players.
+///When attached to shuttle, start firebombing it until FTL ends.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14CrashToWindlandsRule))]
+[RegisterComponent, Access(typeof(CP14CrashingShipRule))]
 public sealed partial class CP14CrashingShipComponent : Component
 {
     [DataField]

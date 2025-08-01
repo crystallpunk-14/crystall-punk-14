@@ -22,9 +22,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -79,7 +77,6 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
     {
         base.Update(frameTime);
 
-        UpdateGeneration(frameTime);
         UpdateStabilization(frameTime);
         UpdateDestruction(frameTime);
     }
@@ -148,16 +145,6 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 
     private void OnDemiplanShutdown(Entity<CP14DemiplaneComponent> demiplane, ref ComponentShutdown args)
     {
-        //We stop asynchronous generation of a demiplane early if for some reason this demiplane is deleted before generation is complete
-        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
-        {
-            if (job.DemiplaneMapUid == demiplane.Owner)
-            {
-                cancelToken.Cancel();
-                _expeditionJobs.Remove((job, cancelToken));
-            }
-        }
-
         foreach (var exit in demiplane.Comp.ExitPoints)
         {
             RemoveDemiplaneRandomExitPoint(demiplane, exit);
