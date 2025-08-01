@@ -1376,3 +1376,11 @@
   id: 8191
   time: '2025-07-31T21:34:36.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600
+- author: TheShuEd
+  changes:
+  - message: Added Air saturation T1 healing spell - allows you to treat suffocation
+      damage, even in people in critical condition.
+    type: Add
+  id: 8192
+  time: '2025-08-01T08:57:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1603
