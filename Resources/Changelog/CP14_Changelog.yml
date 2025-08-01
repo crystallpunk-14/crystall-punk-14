@@ -1391,3 +1391,15 @@
   id: 8193
   time: '2025-08-01T08:59:05.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1571
+- author: TheShuEd
+  changes:
+  - message: Demoplans no longer bend over pools of blood and the organs of players
+      who died inside the demiplane, simply inflict an additional 111 Blunt damage
+      on them.
+    type: Tweak
+  - message: Skeleton equipment (and the skeletons themselves) no longer drop from
+      the demiplane when it is closed.
+    type: Fix
+  id: 8194
+  time: '2025-08-01T11:09:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1607
