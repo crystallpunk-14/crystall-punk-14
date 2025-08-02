@@ -67,7 +67,6 @@
       types:
         CP14ManaDepletion: 1
   - type: CP14ZLevelMover
-  - type: CP14DemiplaneForceExtract
   - type: UserInterface
     interfaces:
       enum.CP14ReligionEntityUiKey.Key:

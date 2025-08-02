@@ -1,36 +1,4 @@
 - type: cp14LocationModifier
-  id: EntryRoom
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanEnterRoom
-
-- type: cp14LocationModifier
-  id: Core
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanCoreRoom
-
-- type: cp14LocationModifier
-  id: Exit
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanExitRoom
-    - !type:CP14OreDunGen
-      entity: CP14DemiplaneHint
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14LocationModifier
   id: DemiplaneDecor
   generationProb: 0
   layers:

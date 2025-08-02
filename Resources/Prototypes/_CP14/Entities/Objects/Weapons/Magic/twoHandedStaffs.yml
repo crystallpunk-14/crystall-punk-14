@@ -79,7 +79,6 @@
     - CP14ActionSpellShadowStep
     - CP14ActionSpellShadowGrab
     - CP14ActionSpellShadowSwap
-    - CP14ActionSpellDemiplaneInfiltration
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
   - type: Clothing
