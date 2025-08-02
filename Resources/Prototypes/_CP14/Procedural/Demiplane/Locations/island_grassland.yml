@@ -47,7 +47,7 @@
   id: CP14DemiplaneGrasslandIslandFloorMaskStone
   layers:
   - !type:NoiseDistanceDunGen
-    size: 110, 110
+    size: 180, 180
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.5
     layers:
@@ -65,7 +65,7 @@
   id: CP14DemiplaneGrasslandIslandFloorMaskGrass
   layers:
   - !type:NoiseDistanceDunGen
-    size: 150, 150
+    size: 250, 250
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.6
     layers:
@@ -83,7 +83,7 @@
   id: CP14DemiplaneGrasslandIslandFloorMaskSand
   layers:
   - !type:NoiseDistanceDunGen
-    size: 160, 160
+    size: 260, 260
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
