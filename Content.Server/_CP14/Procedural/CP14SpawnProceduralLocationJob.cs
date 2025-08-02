@@ -6,6 +6,7 @@ using Content.Shared._CP14.Demiplane.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
 using Content.Shared.Procedural;
+using Content.Shared.Procedural.DungeonLayers;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -40,6 +41,9 @@ public sealed class CP14SpawnProceduralLocationJob(
 
         MetaDataComponent? metadata = null;
         DungeonConfigPrototype dungeonConfig = new();
+
+        //Boilerplate: reserve all old grid tiles
+        dungeonConfig.Layers.Add(new CP14ReserveGrid());
 
         //Setup demiplane config
         var expeditionConfig = protoManager.Index(config);
@@ -77,7 +81,8 @@ public sealed class CP14SpawnProceduralLocationJob(
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
 
-        map.InitializeMap(demiplaneMapId);
+        if (!map.IsInitialized(demiplaneMapId))
+            map.InitializeMap(demiplaneMapId);
         map.SetPaused(demiplaneMapId, false);
 
         //Spawn modified config

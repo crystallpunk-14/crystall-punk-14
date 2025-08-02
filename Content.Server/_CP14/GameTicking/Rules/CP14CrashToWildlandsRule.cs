@@ -25,7 +25,7 @@ public sealed class CP14ExpeditionToWindlandsRule : GameRuleSystem<CP14Expeditio
     public override void Initialize()
     {
         base.Initialize();
-        _sawmill = _logManager.GetSawmill("cp14_crash_to_windlands_rule");
+        _sawmill = _logManager.GetSawmill("cp14_expedition_to_windlands_rule");
     }
 
     protected override void Started(EntityUid uid,

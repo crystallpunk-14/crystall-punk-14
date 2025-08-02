@@ -71,7 +71,4 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
 
     [DataField]
     public LocId? Name;
-
-    [DataField]
-    public float ExamineProb = 0.75f;
 }
