@@ -24,9 +24,10 @@ public sealed class CP14SpawnProceduralLocationJob(
     EntityUid mapUid,
     MapId mapId,
     Vector2i position,
+    int seed,
     ProtoId<CP14ProceduralLocationPrototype> config,
     List<ProtoId<CP14ProceduralModifierPrototype>> modifiers,
-    int seed,
+    List<IDunGenLayer>? layers = null,
     CancellationToken cancellation = default)
     : Job<bool>(maxTime, cancellation)
 {
@@ -50,6 +51,9 @@ public sealed class CP14SpawnProceduralLocationJob(
         var indexedLocation = protoManager.Index(locationConfig.LocationConfig);
 
         dungeonConfig.Layers.AddRange(indexedLocation.Layers);
+        if (layers is not null)
+            dungeonConfig.Layers.AddRange(layers);
+
         dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
 
         //Add map components

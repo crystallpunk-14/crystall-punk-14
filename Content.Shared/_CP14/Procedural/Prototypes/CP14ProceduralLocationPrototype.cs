@@ -39,8 +39,5 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     public LocId? Name;
 
     [DataField]
-    public float ExamineProb = 0.75f;
-
-    [DataField]
     public SpriteSpecifier? Icon = null;
 }

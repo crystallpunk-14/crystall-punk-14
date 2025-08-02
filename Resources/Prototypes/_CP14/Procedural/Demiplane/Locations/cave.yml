@@ -1,12 +1,12 @@
 - type: cp14Location
-  id: T1Caves
+  id: Caves
   levels:
     min: 1
     max: 5
   icon:
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi
     state: caves
-  locationConfig: CP14DemiplaneCaves
+  locationConfig: CP14Caves
   name: cp14-demiplane-location-cave
   tags:
   - CP14DemiplaneOres
@@ -16,26 +16,9 @@
     template: CP14CavesIndestructibleFill
 
 - type: dungeonConfig
-  id: CP14DemiplaneCaves
+  id: CP14Caves
   layers:
-    # Masks
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesFloorMaskStone
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesFloorMaskAir
-    # Biomes
-    - !type:CP14BiomeDunGen
-      biomeTemplate: CP14CavesGeneric
-      tileMask:
-      - CP14FloorSand
-    - !type:CP14BiomeDunGen
-      biomeTemplate: CP14CavesFloor
-      tileMask:
-      - CP14FloorGrass
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesFloorMaskStone
-  layers:
+  # Masks
   - !type:NoiseDistanceDunGen
     size: 120, 120
     distanceConfig: !type:DunGenEuclideanSquaredDistance
@@ -50,10 +33,6 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesFloorMaskAir
-  layers:
   - !type:NoiseDistanceDunGen
     size: 80, 80
     distanceConfig: !type:DunGenEuclideanSquaredDistance
@@ -68,4 +47,12 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
+  # Biomes
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14CavesGeneric
+    tileMask:
+    - CP14FloorSand
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14CavesFloor
+    tileMask:
+    - CP14FloorGrass

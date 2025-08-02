@@ -1,6 +1,7 @@
 using System.Threading;
 using Content.Server.Procedural;
 using Content.Shared._CP14.Procedural.Prototypes;
+using Content.Shared.Procedural;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -36,7 +37,12 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
         }
     }
 
-    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null)
+    /// <summary>
+    /// Generates a new procedural location on the specified map and coordinates.
+    /// Essentially, this is a wrapper for _dungeon.GenerateDungeon, which collects the necessary settings for the
+    /// dungeon based on the location and modifiers.
+    /// </summary>
+    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, List<IDunGenLayer>? layers = null, Vector2i position = new(), int? seed = null)
     {
         var cancelToken = new CancellationTokenSource();
 
@@ -50,9 +56,10 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
             mapUid,
             mapId,
             position,
+            seed ?? _random.Next(-10000, 10000),
             location,
             modifiers,
-            seed ?? _random.Next(-10000, 10000),
+            layers,
             cancelToken.Token);
 
         _expeditionJobs.Add((job, cancelToken));
