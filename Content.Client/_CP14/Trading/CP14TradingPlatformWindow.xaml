@@ -65,7 +65,7 @@
 
         <customControls:VSeparator StyleClasses="LowDivider" />
 
-        <!-- Demiplane map Tree -->
+        <!-- Trading positions map Tree -->
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer HorizontalExpand="True">
                 <Label Name="TreeName" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"

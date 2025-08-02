@@ -1,0 +1,18 @@
+- type: gameMap
+  id: NautilusShip
+  mapName: "Nautilus ship"
+  mapPath: /Maps/_CP14/nautilus_ship.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  maxPlayers: 20
+  stations:
+    NautilusShip:
+      stationProto: CP14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Nautilus ship"
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            CP14Adventurer: [ -1, -1 ]

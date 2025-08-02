@@ -18,13 +18,13 @@ public sealed partial class FTLMapComponent : Component
     /// What parallax to use for the background, immediately gets deffered to ParallaxComponent.
     /// </summary>
     [DataField]
-    public string Parallax = "CP14Ocean"; //CP14 parallax replacement
+    public string Parallax = "Sky"; //CP14 parallax replacement
 
     /// <summary>
     /// CP14 FTL map ambient color
     /// </summary>
     [DataField]
-    public Color AmbientColor = new(34, 90, 122);
+    public Color AmbientColor = new(47, 51, 54);
 
     /// <summary>
     /// Can FTL on this map only be done to beacons.

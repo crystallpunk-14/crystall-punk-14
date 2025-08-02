@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemySkeletonT1
   levels:
     min: 2
@@ -15,7 +15,7 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemySkeletonT2
   levels:
     min: 4
@@ -31,7 +31,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyLurker
   levels:
     min: 2

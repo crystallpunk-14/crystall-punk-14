@@ -70,6 +70,7 @@ namespace Content.IntegrationTests.Tests
             "Comoss",
             "Venicialis",
             "Frigid_Coast",
+            "NautilusShip",
             //CrystallEdge Map replacement end
         };
 

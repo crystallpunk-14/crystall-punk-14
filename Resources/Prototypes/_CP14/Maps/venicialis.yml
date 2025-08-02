@@ -45,3 +45,8 @@
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
+        - type: CP14StationGlobalWorldIntegrated
+          location: T1GrasslandIsland
+          generationOffset: 0, 0
+          #modifiers:
+          #- WeatherInfinityStorm

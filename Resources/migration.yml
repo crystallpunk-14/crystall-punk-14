@@ -424,8 +424,13 @@ CP14CandleBlackSmallInfinite: CP14CandleIgnited
 CP14CandleGreenSmallInfinite: CP14CandleIgnited
 CP14CandlePurpleSmallInfinite: CP14CandleIgnited
 
-#2025-08-21
+#2025-08-01
 CP14SpellScrollResurrection: null
+
+#2025-08-02
+CP14SpellScrollDemiplaneInfiltration: null
+CP14DemiplaneEntryPointMarker: null
+CP14SpellScrollMonolithWarp: null
 
 # <---> CrystallEdge migration zone end
 

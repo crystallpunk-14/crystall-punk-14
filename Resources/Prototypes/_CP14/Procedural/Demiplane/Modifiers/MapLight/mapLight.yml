@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightDarkness
   levels:
     min: 3
@@ -11,7 +11,7 @@
   - type: MapLight
     ambientLightColor: "#000000"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightDarkRed
   levels:
     min: 5
@@ -23,7 +23,7 @@
   - type: MapLight
     ambientLightColor: "#0f0104"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightDarkPurple
   levels:
     min: 1
@@ -35,7 +35,7 @@
   - type: MapLight
     ambientLightColor: "#09010f"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightDarkGreen
   levels:
     min: 1
@@ -47,7 +47,7 @@
   - type: MapLight
     ambientLightColor: "#000502"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightDarkNight
   levels:
     min: 1
@@ -61,7 +61,7 @@
 
 # Open sky time entries
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightCycleDefault
   levels:
     min: 1
@@ -74,7 +74,7 @@
   components:
   - type: LightCycle
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightCycleCold
   levels:
     min: 1
@@ -89,7 +89,7 @@
   - type: LightCycle
     originalColor: "#7bc2e0"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightCycleHot
   levels:
     min: 1
@@ -103,7 +103,7 @@
   - type: LightCycle
     originalColor: "#ff8929"
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MapLightCycleHot2
   levels:
     min: 1

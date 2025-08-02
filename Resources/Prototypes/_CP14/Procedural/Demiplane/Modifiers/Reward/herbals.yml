@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Dayflin
   levels:
     min: 1
@@ -20,7 +20,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: SilverNeedle
   levels:
     min: 1
@@ -41,7 +41,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: FlyAgaric
   levels:
     min: 1
@@ -65,7 +65,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: FlyAgaric2
   levels:
     min: 1
@@ -85,7 +85,7 @@
       minGroupSize: 6
       maxGroupSize: 10
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: BlueAmanita
   levels:
     min: 1
@@ -106,7 +106,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: BloodFlower
   levels:
     min: 1
@@ -127,7 +127,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WildSage
   levels:
     min: 1
@@ -149,7 +149,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: AirLily
   levels:
     min: 1
@@ -172,7 +172,7 @@
 
 # TIER 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LumiShroom
   levels:
     min: 4
@@ -201,7 +201,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LumiShroom2
   levels:
     min: 4

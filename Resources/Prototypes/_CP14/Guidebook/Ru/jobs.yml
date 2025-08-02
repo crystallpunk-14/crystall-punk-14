@@ -18,7 +18,6 @@
   name: Авантюрист
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Adventurers.xml"
   children:
-  - CP14_RU_Demiplanes
   - CP14_RU_Monster_Toxins
   filterEnabled: True
 
