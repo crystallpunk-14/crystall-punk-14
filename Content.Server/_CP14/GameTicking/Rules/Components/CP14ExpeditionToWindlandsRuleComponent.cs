@@ -1,4 +1,4 @@
-using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared._CP14.Procedural.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.GameTicking.Rules.Components;
@@ -10,10 +10,10 @@ namespace Content.Server._CP14.GameTicking.Rules.Components;
 public sealed partial class CP14ExpeditionToWindlandsRuleComponent : Component
 {
     [DataField]
-    public ProtoId<CP14DemiplaneLocationPrototype> Location = "T1GrasslandIsland";
+    public ProtoId<CP14ProceduralLocationPrototype> Location = "T1GrasslandIsland";
 
     [DataField]
-    public List<ProtoId<CP14DemiplaneModifierPrototype>> Modifiers = [];
+    public List<ProtoId<CP14ProceduralModifierPrototype>> Modifiers = [];
 
     [DataField]
     public float FloatingTime = 120;

@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Quartz
   levels:
     min: 1
@@ -15,7 +15,7 @@
       minGroupSize: 1
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzEarth
   levels:
     min: 1
@@ -35,7 +35,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzFire
   levels:
     min: 1
@@ -55,7 +55,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzWater
   levels:
     min: 1
@@ -75,7 +75,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzAir
   levels:
     min: 1
@@ -95,7 +95,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzOrder
   levels:
     min: 1
@@ -113,7 +113,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14CrystalQuartzChaos
   levels:
     min: 1

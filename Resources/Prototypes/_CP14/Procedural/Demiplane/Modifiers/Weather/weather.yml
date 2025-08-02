@@ -1,10 +1,10 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherNone
   generationWeight: 3
   categories:
     Weather: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherInfinityMist
   categories:
     Weather: 1
@@ -13,7 +13,7 @@
     entries:
     - visuals: CP14Mist
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherRain
   categories:
     Weather: 1
@@ -31,7 +31,7 @@
         min: 180
         max: 240
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherInfinityStorm
   levels:
     min: 3
@@ -51,7 +51,7 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherSnow
   levels:
     min: 1
@@ -72,7 +72,7 @@
         min: 30
         max: 180
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherSnowHeavy
   levels:
     min: 5
@@ -99,7 +99,7 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14ManaMist
   name: cp14-modifier-mana-mist
   levels:
@@ -117,7 +117,7 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14AntiManaMist
   name: cp14-modifier-anti-mana-mist
   levels:
@@ -135,7 +135,7 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14FireStormPeriod
   name: cp14-modifier-fire-storm
   levels:

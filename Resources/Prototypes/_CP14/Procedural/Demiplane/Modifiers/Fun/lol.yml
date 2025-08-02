@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: RoyalPumpkin
   levels:
     min: 1
@@ -21,7 +21,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LucenTree
   levels:
     min: 6
@@ -44,7 +44,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: StatueStoneHead
   levels:
     min: 2

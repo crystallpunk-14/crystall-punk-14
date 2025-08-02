@@ -1,6 +1,6 @@
 # TIER 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LootT1
   levels:
     min: 1
@@ -15,7 +15,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Rabbits
   levels:
     min: 1
@@ -33,7 +33,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Boar
   levels:
     min: 1
@@ -51,7 +51,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Frog
   levels:
     min: 1
@@ -72,7 +72,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Sheep
   levels:
     min: 1
@@ -92,7 +92,7 @@
 
 # TIER 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LootT2
   levels:
     min: 5

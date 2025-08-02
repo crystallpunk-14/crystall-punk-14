@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared._CP14.Procedural.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Gravity;
 using Content.Shared.Procedural;
@@ -21,23 +21,23 @@ public sealed class CP14SpawnProceduralLocationJob(
     IPrototypeManager protoManager,
     DungeonSystem dungeon,
     SharedMapSystem map,
-    EntityUid demiplaneMapUid,
-    MapId demiplaneMapId,
+    EntityUid mapUid,
+    MapId mapId,
     Vector2i position,
-    ProtoId<CP14DemiplaneLocationPrototype> config,
-    List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers,
+    ProtoId<CP14ProceduralLocationPrototype> config,
+    List<ProtoId<CP14ProceduralModifierPrototype>> modifiers,
     int seed,
     CancellationToken cancellation = default)
     : Job<bool>(maxTime, cancellation)
 {
-    public readonly EntityUid DemiplaneMapUid = demiplaneMapUid;
+    public readonly EntityUid MapUid = mapUid;
 
     private readonly ISawmill _sawmill = logManager.GetSawmill("cp14_procedural_location_job");
 
     protected override async Task<bool> Process()
     {
-        _sawmill.Debug($"Spawning demiplane `{config.Id}` with seed {seed}");
-        var gridComp = entManager.EnsureComponent<MapGridComponent>(DemiplaneMapUid);
+        _sawmill.Debug($"Spawning procedural location `{config.Id}` with seed {seed}");
+        var gridComp = entManager.EnsureComponent<MapGridComponent>(MapUid);
 
         MetaDataComponent? metadata = null;
         DungeonConfigPrototype dungeonConfig = new();
@@ -45,15 +45,15 @@ public sealed class CP14SpawnProceduralLocationJob(
         //Boilerplate: reserve all old grid tiles
         dungeonConfig.Layers.Add(new CP14ReserveGrid());
 
-        //Setup demiplane config
-        var expeditionConfig = protoManager.Index(config);
-        var indexedLocation = protoManager.Index(expeditionConfig.LocationConfig);
+        //Setup location config
+        var locationConfig = protoManager.Index(config);
+        var indexedLocation = protoManager.Index(locationConfig.LocationConfig);
 
         dungeonConfig.Layers.AddRange(indexedLocation.Layers);
         dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
 
         //Add map components
-        entManager.AddComponents(DemiplaneMapUid, expeditionConfig.Components);
+        entManager.AddComponents(MapUid, locationConfig.Components);
 
         //Apply modifiers
         foreach (var modifier in modifiers)
@@ -64,30 +64,30 @@ public sealed class CP14SpawnProceduralLocationJob(
             if (indexedModifier.Layers != null)
                 dungeonConfig.Layers.AddRange(indexedModifier.Layers);
             if (indexedModifier.Components != null)
-                entManager.AddComponents(DemiplaneMapUid, indexedModifier.Components);
+                entManager.AddComponents(MapUid, indexedModifier.Components);
 
             _sawmill.Debug($"Added modifier: {seed} - {modifier.Id}");
         }
 
         //Setup gravity
-        var gravity = entManager.EnsureComponent<GravityComponent>(DemiplaneMapUid);
+        var gravity = entManager.EnsureComponent<GravityComponent>(MapUid);
         gravity.Enabled = true;
-        entManager.Dirty(DemiplaneMapUid, gravity, metadata);
+        entManager.Dirty(MapUid, gravity, metadata);
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
         moles[(int) Gas.Oxygen] = 21.824779f;
         moles[(int) Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
-        entManager.System<AtmosphereSystem>().SetMapAtmosphere(DemiplaneMapUid, false, mixture);
+        entManager.System<AtmosphereSystem>().SetMapAtmosphere(MapUid, false, mixture);
 
-        if (!map.IsInitialized(demiplaneMapId))
-            map.InitializeMap(demiplaneMapId);
-        map.SetPaused(demiplaneMapId, false);
+        if (!map.IsInitialized(mapId))
+            map.InitializeMap(mapId);
+        map.SetPaused(mapId, false);
 
         //Spawn modified config
         dungeon.GenerateDungeon(dungeonConfig,
-            DemiplaneMapUid,
+            MapUid,
             gridComp,
             position,
             seed); //TODO: Transform to Async

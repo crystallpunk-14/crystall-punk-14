@@ -1,6 +1,6 @@
 using System.Threading;
 using Content.Server.Procedural;
-using Content.Shared._CP14.Demiplane.Prototypes;
+using Content.Shared._CP14.Procedural.Prototypes;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -36,7 +36,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
         }
     }
 
-    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14DemiplaneLocationPrototype> location, List<ProtoId<CP14DemiplaneModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null)
+    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null)
     {
         var cancelToken = new CancellationTokenSource();
 
@@ -62,10 +62,10 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
 
     //Need implement this:
 
-    //We stop asynchronous generation of a demiplane early if for some reason this demiplane is deleted before generation is complete
+    //We stop asynchronous generation of a location early if for some reason this location is deleted before generation is complete
     //foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
     //{
-    //    if (job.DemiplaneMapUid == demiplane.Owner)
+    //    if (job.mapUid == map.Owner)
     //    {
     //        cancelToken.Cancel();
     //        _expeditionJobs.Remove((job, cancelToken));

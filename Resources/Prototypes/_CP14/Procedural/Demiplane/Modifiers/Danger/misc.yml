@@ -1,6 +1,6 @@
 # TIER 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Lava
   levels:
     min: 2
@@ -22,7 +22,7 @@
 
 # TIER 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Explosive
   levels:
     min: 5
@@ -38,7 +38,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: ShadowKudzu
   levels:
     min: 5
@@ -53,7 +53,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: AdditionalEntry
   levels:
     min: 2

@@ -3,13 +3,13 @@ using Content.Shared.Procedural;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Demiplane.Prototypes;
+namespace Content.Shared._CP14.Procedural.Prototypes;
 
 /// <summary>
-/// Demiplane modifier prototype. The answer to the question “Which” in terms of the combinatorics of demiplane generation is
+/// Location modifier prototype. The answer to the question “What's inside" from the point of view of the combinatorics of creating locations
 /// </summary>
-[Prototype("cp14DemiplaneModifier")]
-public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
+[Prototype("cp14LocationModifier")]
+public sealed partial class CP14ProceduralModifierPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
@@ -23,7 +23,7 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     /// Each modifier belongs to specific categories. Used by the generator to determine what to generate
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<CP14DemiplaneModifierCategoryPrototype>, float> Categories = new();
+    public Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float> Categories = new();
 
     /// <summary>
     /// How often can this modifier be generated? Determined by weight from all modifiers available for the location
@@ -40,7 +40,7 @@ public sealed partial class CP14DemiplaneModifierPrototype : IPrototype
     public float GenerationProb = 1f;
 
     /// <summary>
-    /// Can this modifier be generated multiple times within a single demiplane?
+    /// Can this modifier be generated multiple times within a single location?
     /// </summary>
     [DataField]
     public bool Unique = true;

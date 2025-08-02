@@ -4,13 +4,13 @@ using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Shared._CP14.Demiplane.Prototypes;
+namespace Content.Shared._CP14.Procedural.Prototypes;
 
 /// <summary>
 /// procedural location template. The answer to the question “Where” as far as the combinatorics of the expedition is concerned.
 /// </summary>
-[Prototype("cp14DemiplaneLocation")]
-public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
+[Prototype("cp14Location")]
+public sealed partial class CP14ProceduralLocationPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
@@ -24,7 +24,7 @@ public sealed partial class CP14DemiplaneLocationPrototype : IPrototype
     public ProtoId<DungeonConfigPrototype> LocationConfig;
 
     /// <summary>
-    /// Components that will be automatically added to the demiplane when it is generated
+    /// Components that will be automatically added to the location map when it is generated
     /// </summary>
     [DataField]
     public ComponentRegistry Components = new();

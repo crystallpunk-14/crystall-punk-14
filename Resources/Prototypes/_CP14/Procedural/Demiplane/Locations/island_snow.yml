@@ -1,4 +1,4 @@
-- type: cp14DemiplaneLocation
+- type: cp14Location
   id: T1SnowIsland
   levels:
     min: 2

@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EntryRoom
   generationProb: 0
   layers:
@@ -7,7 +7,7 @@
       tags:
       - CP14DemiplanEnterRoom
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Core
   generationProb: 0
   layers:
@@ -16,7 +16,7 @@
       tags:
       - CP14DemiplanCoreRoom
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Exit
   generationProb: 0
   layers:
@@ -30,7 +30,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: DemiplaneDecor
   generationProb: 0
   layers:

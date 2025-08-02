@@ -1,6 +1,6 @@
 # TIER 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyZombie
   levels:
     min: 1
@@ -18,7 +18,7 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyDyno
   levels:
     min: 3
@@ -36,7 +36,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MonsterMosquito
   levels:
     min: 1
@@ -55,7 +55,7 @@
       minGroupSize: 2
       maxGroupSize: 6
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Fairy
   levels:
     min: 2
@@ -71,7 +71,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: SmallHydra
   levels:
     min: 1
@@ -88,7 +88,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyFlem
   levels:
     min: 1
@@ -109,7 +109,7 @@
 
 # TIER 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyMole
   levels:
     min: 6
@@ -126,7 +126,7 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyIceSpectre
   levels:
     min: 6
@@ -145,7 +145,7 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-#- type: cp14DemiplaneModifier #Removed to Whistler rebalance
+#- type: cp14LocationModifier #Removed to Whistler rebalance
 #  id: EnemyInvisibleWhistler
 #  levels:
 #    min: 6
@@ -162,7 +162,7 @@
 #      minGroupSize: 1
 #      maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSlimeElectric
   levels:
     min: 5
@@ -177,7 +177,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSlimeFire
   levels:
     min: 4
@@ -194,7 +194,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSlimeIce
   levels:
     min: 1
@@ -211,7 +211,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSlimeBase
   levels:
     min: 1
@@ -225,7 +225,7 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobWatcherIce
   levels:
     min: 3
@@ -244,7 +244,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobWatcherMagma
   levels:
     min: 3
@@ -263,7 +263,7 @@
       minGroupSize: 2
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSpiders
   levels:
     min: 1
@@ -290,7 +290,7 @@
       minGroupSize: 5
       maxGroupSize: 15
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobBigBear
   levels:
     min: 5
@@ -307,7 +307,7 @@
       minGroupSize: 1
       maxGroupSize: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MyconideFlyagaric
   levels:
     min: 1
@@ -323,7 +323,7 @@
       minGroupSize: 8
       maxGroupSize: 14
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MyconideLumish
   levels:
     min: 1

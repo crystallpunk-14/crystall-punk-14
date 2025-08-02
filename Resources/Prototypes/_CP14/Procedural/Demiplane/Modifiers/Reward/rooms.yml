@@ -1,4 +1,4 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: ArtifactRoom
   levels:
     min: 3
@@ -12,7 +12,7 @@
       tags:
       - CP14DemiplaneArtifactRoom
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Ruins
   levels:
     min: 0
@@ -27,7 +27,7 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Geodes
   levels:
     min: 0
