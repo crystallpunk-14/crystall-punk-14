@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared._CP14.Procedural.Prototypes;
 
 /// <summary>
-/// procedural location template. The answer to the question “Where” as far as the combinatorics of the expedition is concerned.
+/// procedural location template. The answer to the question “Where” as far as the combinatorics of the generation is concerned.
 /// </summary>
 [Prototype("cp14Location")]
 public sealed partial class CP14ProceduralLocationPrototype : IPrototype
@@ -18,10 +18,13 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     /// The difficulty levels at which this location can be generated.
     /// </summary>
     [DataField]
-    public MinMax Levels = new(1, 10);
+    public MinMax Levels = new(0, 10);
 
     [DataField(required: true)]
     public ProtoId<DungeonConfigPrototype> LocationConfig;
+
+    [DataField]
+    public float GenerationProb = 1f;
 
     /// <summary>
     /// Components that will be automatically added to the location map when it is generated
@@ -34,10 +37,4 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<TagPrototype>> Tags = new();
-
-    [DataField]
-    public LocId? Name;
-
-    [DataField]
-    public SpriteSpecifier? Icon = null;
 }

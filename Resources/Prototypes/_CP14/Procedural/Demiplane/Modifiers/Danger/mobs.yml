@@ -3,7 +3,7 @@
 - type: cp14LocationModifier
   id: EnemyZombie
   levels:
-    min: 1
+    min: 0
     max: 6
   name: cp14-modifier-zombie
   generationWeight: 1.5
@@ -21,7 +21,7 @@
 - type: cp14LocationModifier
   id: EnemyDyno
   levels:
-    min: 3
+    min: 2
     max: 8
   name: cp14-modifier-dyno
   categories:
@@ -39,7 +39,7 @@
 - type: cp14LocationModifier
   id: MonsterMosquito
   levels:
-    min: 1
+    min: 0
     max: 5
   name: cp14-modifier-dyno
   categories:
@@ -48,6 +48,7 @@
   - CP14DemiplaneHerbals
   blacklistTags:
   - CP14DemiplaneHot
+  - CP14DemiplaneCold
   layers:
     - !type:CP14OreDunGen
       entity: CP14SpawnMobMonsterMosquito
@@ -58,7 +59,7 @@
 - type: cp14LocationModifier
   id: Fairy
   levels:
-    min: 2
+    min: 0
     max: 5
   categories:
     Danger: 0.20
@@ -74,7 +75,7 @@
 - type: cp14LocationModifier
   id: SmallHydra
   levels:
-    min: 1
+    min: 0
     max: 5
   name: cp14-modifier-dyno
   categories:
@@ -91,7 +92,7 @@
 - type: cp14LocationModifier
   id: EnemyFlem
   levels:
-    min: 1
+    min: 0
     max: 8
   name: cp14-modifier-flem
   generationWeight: 0.33
@@ -112,7 +113,7 @@
 - type: cp14LocationModifier
   id: EnemyMole
   levels:
-    min: 6
+    min: 1
     max: 10
   name: cp14-modifier-mole
   categories:
@@ -129,7 +130,7 @@
 - type: cp14LocationModifier
   id: EnemyIceSpectre
   levels:
-    min: 6
+    min: 0
     max: 10
   name: cp14-modifier-zombie
   categories:
@@ -145,27 +146,10 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-#- type: cp14LocationModifier #Removed to Whistler rebalance
-#  id: EnemyInvisibleWhistler
-#  levels:
-#    min: 6
-#    max: 10
-#  name: cp14-modifier-invisible-whistler
-#  categories:
-#    Danger: 0.4
-#  requiredTags:
-#  - CP14DemiplaneUnderground
-#  layers:
-#    - !type:CP14OreDunGen
-#      entity: CP14MobMonsterInvisibleWhistler
-#      count: 2
-#      minGroupSize: 1
-#      maxGroupSize: 2
-
 - type: cp14LocationModifier
   id: MobSlimeElectric
   levels:
-    min: 5
+    min: 1
     max: 10
   name: cp14-modifier-slime
   categories:
@@ -180,7 +164,7 @@
 - type: cp14LocationModifier
   id: MobSlimeFire
   levels:
-    min: 4
+    min: 2
     max: 10
   name: cp14-modifier-slime
   categories:
@@ -197,7 +181,7 @@
 - type: cp14LocationModifier
   id: MobSlimeIce
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-slime
   categories:
@@ -214,7 +198,7 @@
 - type: cp14LocationModifier
   id: MobSlimeBase
   levels:
-    min: 1
+    min: 0
     max: 5
   categories:
     Danger: 0.25
@@ -228,7 +212,7 @@
 - type: cp14LocationModifier
   id: MobWatcherIce
   levels:
-    min: 3
+    min: 1
     max: 10
   name: cp14-modifier-watcher
   categories:
@@ -247,7 +231,7 @@
 - type: cp14LocationModifier
   id: MobWatcherMagma
   levels:
-    min: 3
+    min: 1
     max: 10
   name: cp14-modifier-watcher
   categories:
@@ -293,7 +277,7 @@
 - type: cp14LocationModifier
   id: MobBigBear
   levels:
-    min: 5
+    min: 2
     max: 10
   categories:
     Danger: 0.5
@@ -310,7 +294,7 @@
 - type: cp14LocationModifier
   id: MyconideFlyagaric
   levels:
-    min: 1
+    min: 0
     max: 10
   categories:
     Danger: 0.3
@@ -320,13 +304,13 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideFlyagaric
       count: 5
-      minGroupSize: 8
-      maxGroupSize: 14
+      minGroupSize: 7
+      maxGroupSize: 12
 
 - type: cp14LocationModifier
   id: MyconideLumish
   levels:
-    min: 1
+    min: 0
     max: 10
   categories:
     Danger: 0.3
@@ -336,5 +320,5 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideLumish
       count: 5
-      minGroupSize: 8
-      maxGroupSize: 14
+      minGroupSize: 7
+      maxGroupSize: 12

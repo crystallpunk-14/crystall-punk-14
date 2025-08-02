@@ -34,7 +34,7 @@
 - type: cp14LocationModifier
   id: EnemyLurker
   levels:
-    min: 2
+    min: 0
     max: 10
   generationWeight: 0.33
   generationProb: 0.25

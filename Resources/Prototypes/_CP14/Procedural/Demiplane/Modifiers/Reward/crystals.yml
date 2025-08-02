@@ -1,7 +1,7 @@
 - type: cp14LocationModifier
   id: Quartz
   levels:
-    min: 1
+    min: 0
     max: 10
   categories:
     Reward: 0.15
@@ -18,7 +18,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzEarth
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   requiredTags:
@@ -38,7 +38,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzFire
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   requiredTags:
@@ -58,7 +58,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzWater
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   requiredTags:
@@ -78,7 +78,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzAir
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   requiredTags:
@@ -98,7 +98,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzOrder
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   categories:
@@ -116,7 +116,7 @@
 - type: cp14LocationModifier
   id: CP14CrystalQuartzChaos
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.1
   categories:

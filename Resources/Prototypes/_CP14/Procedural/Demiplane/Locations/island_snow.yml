@@ -2,12 +2,8 @@
   id: SnowIsland
   levels:
     min: 2
-    max: 5
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: snow_island
+    max: 10
   locationConfig: CP14SnowIsland
-  name: cp14-demiplane-location-snow-island
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky

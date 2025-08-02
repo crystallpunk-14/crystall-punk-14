@@ -1,7 +1,7 @@
 - type: cp14LocationModifier
   id: Dayflin
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-dayflin
   categories:
@@ -23,7 +23,7 @@
 - type: cp14LocationModifier
   id: SilverNeedle
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-silver-needle
   categories:
@@ -44,7 +44,7 @@
 - type: cp14LocationModifier
   id: FlyAgaric
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-fly-agaric
   categories:
@@ -68,7 +68,7 @@
 - type: cp14LocationModifier
   id: FlyAgaric2
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-fly-agaric
   categories:
@@ -88,7 +88,7 @@
 - type: cp14LocationModifier
   id: BlueAmanita
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-blue-amanita
   categories:
@@ -109,7 +109,7 @@
 - type: cp14LocationModifier
   id: BloodFlower
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-blood-flower
   categories:
@@ -130,7 +130,7 @@
 - type: cp14LocationModifier
   id: WildSage
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-wild-sage
   categories:
@@ -152,7 +152,7 @@
 - type: cp14LocationModifier
   id: AirLily
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-air-lily
   categories:
@@ -170,12 +170,10 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-# TIER 2
-
 - type: cp14LocationModifier
   id: LumiShroom
   levels:
-    min: 4
+    min: 0
     max: 10
   name: cp14-modifier-lumisroom
   categories:
@@ -204,7 +202,7 @@
 - type: cp14LocationModifier
   id: LumiShroom2
   levels:
-    min: 4
+    min: 0
     max: 10
   name: cp14-modifier-lumisroom
   categories:

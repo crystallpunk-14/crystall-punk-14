@@ -1,13 +1,9 @@
 - type: cp14Location
   id: LeafMaze
   levels:
-    min: 3
-    max: 6
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: leaf_maze
+    min: 1
+    max: 10
   locationConfig: CP14LeafMaze
-  name: cp14-demiplane-location-leaf-maze
   tags:
   - CP14DemiplaneHerbals
   - CP14DemiplaneOpenSky

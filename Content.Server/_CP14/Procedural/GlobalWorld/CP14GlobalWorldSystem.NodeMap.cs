@@ -24,15 +24,18 @@ public sealed partial class CP14GlobalWorldSystem
             Debug.Assert(largestStationGrid is not null);
 
             var mapId = _transform.GetMapId(largestStationGrid.Value);
-            ent.Comp.Nodes.Add(
-                Vector2i.Zero,
+            var zeroNode =
                 new CP14GlobalWorldNode
                 {
                     MapUid = mapId,
                     LocationConfig = integration.Location,
                     Modifiers = integration.Modifiers,
                     Level = 0,
-                }
+                };
+            GenerateNodeData(zeroNode);
+            ent.Comp.Nodes.Add(
+                Vector2i.Zero,
+                zeroNode
             );
         }
         else
@@ -72,10 +75,18 @@ public sealed partial class CP14GlobalWorldSystem
         }
     }
 
-    private void GenerateNodeData(CP14GlobalWorldNode node, bool clearOldModifiers = false)
+    private void GenerateNodeData(CP14GlobalWorldNode node,
+        bool overrideLocation = false,
+        bool clearOldModifiers = false)
     {
-        var location = SelectLocation(node.Level);
-        node.LocationConfig ??= location;
+        if (node.LocationConfig is null || overrideLocation)
+        {
+            var location = SelectLocation(node.Level);
+            node.LocationConfig ??= location;
+        }
+
+        if (!_proto.TryIndex(node.LocationConfig, out var indexedLocation))
+            throw new Exception($"No location config found for node at level {node.Level}!");
 
         var limits = new Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float>
         {
@@ -87,7 +98,7 @@ public sealed partial class CP14GlobalWorldSystem
             { "Weather", 1f },
             { "MapLight", 1f },
         };
-        var mods = SelectModifiers(node.Level, location, limits);
+        var mods = SelectModifiers(node.Level, indexedLocation, limits);
 
         if (clearOldModifiers)
             node.Modifiers.Clear();
@@ -114,8 +125,27 @@ public sealed partial class CP14GlobalWorldSystem
         {
             var randomConfig = _random.Pick(suitableConfigs);
 
-            //LevelRange filter
-            if (level < randomConfig.Levels.Min || level > randomConfig.Levels.Max)
+            var passed = true;
+
+            //Random prob filter
+            if (passed)
+            {
+                if (!_random.Prob(randomConfig.GenerationProb))
+                {
+                    passed = false;
+                }
+            }
+
+            //Levels filter
+            if (passed)
+            {
+                if (level < randomConfig.Levels.Min || level > randomConfig.Levels.Max)
+                {
+                    passed = false;
+                }
+            }
+
+            if (!passed)
             {
                 suitableConfigs.Remove(randomConfig);
                 continue;
@@ -137,7 +167,7 @@ public sealed partial class CP14GlobalWorldSystem
     public List<CP14ProceduralModifierPrototype> SelectModifiers(
         int level,
         CP14ProceduralLocationPrototype location,
-        Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>,float> modifierLimits)
+        Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float> modifierLimits)
     {
         List<CP14ProceduralModifierPrototype> selectedModifiers = new();
 
@@ -244,7 +274,9 @@ public sealed partial class CP14GlobalWorldSystem
     /// <summary>
     /// Optimization moment: avoid re-indexing for weight selection
     /// </summary>
-    private static CP14ProceduralModifierPrototype ModifierPick(Dictionary<CP14ProceduralModifierPrototype, float> weights, IRobustRandom random)
+    private static CP14ProceduralModifierPrototype ModifierPick(
+        Dictionary<CP14ProceduralModifierPrototype, float> weights,
+        IRobustRandom random)
     {
         var picks = weights;
         var sum = picks.Values.Sum();

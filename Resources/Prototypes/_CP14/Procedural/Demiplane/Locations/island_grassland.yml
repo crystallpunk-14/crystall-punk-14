@@ -1,13 +1,9 @@
 - type: cp14Location
   id: GrasslandIsland
   levels:
-    min: 1
+    min: 0
     max: 2
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: grassland_island
   locationConfig: CP14GrasslandIsland
-  name: cp14-demiplane-location-grassland-island
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneHerbals
@@ -24,7 +20,7 @@
   - type: Roof
 
 - type: dungeonConfig
-  id: CP14DemiplaneGrasslandIsland
+  id: CP14GrasslandIsland
   layers:
   # Masks
   - !type:NoiseDistanceDunGen

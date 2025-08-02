@@ -1,11 +1,8 @@
 - type: cp14Location
   id: MagmaCaves
   levels:
-    min: 4
-    max: 20
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: magma_caves
+    min: 3
+    max: 10
   locationConfig: CP14MagmaCaves
   name: cp14-demiplane-location-cave-magma
   tags:

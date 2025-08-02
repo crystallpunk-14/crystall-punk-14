@@ -3,7 +3,7 @@
 - type: cp14LocationModifier
   id: LootT1
   levels:
-    min: 1
+    min: 0
     max: 3
   generationWeight: 2
   categories:
@@ -18,7 +18,7 @@
 - type: cp14LocationModifier
   id: Rabbits
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-rabbits
   generationWeight: 0.4
@@ -36,7 +36,7 @@
 - type: cp14LocationModifier
   id: Boar
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-boars
   generationWeight: 0.4
@@ -54,7 +54,7 @@
 - type: cp14LocationModifier
   id: Frog
   levels:
-    min: 1
+    min: 0
     max: 10
   generationWeight: 0.4
   categories:
@@ -75,7 +75,7 @@
 - type: cp14LocationModifier
   id: Sheep
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-sheeps
   generationWeight: 0.4
@@ -95,7 +95,7 @@
 - type: cp14LocationModifier
   id: LootT2
   levels:
-    min: 5
+    min: 2
     max: 10
   generationWeight: 2
   categories:

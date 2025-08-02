@@ -34,8 +34,8 @@
       - !type:PulseBehaviour
         interpolate: Cubic
         maxDuration: 5
-        startValue: 1.0
-        endValue: 10.0
+        startValue: 0.1
+        endValue: 2.0
         property: Energy
         isLooped: true
         enabled: true
