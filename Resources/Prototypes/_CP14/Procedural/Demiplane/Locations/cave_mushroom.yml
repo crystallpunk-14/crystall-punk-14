@@ -4,6 +4,7 @@
     min: 1
     max: 10
   locationConfig: CP14MushroomCaves
+  connection: ConnectionMushroom
   name: cp14-demiplane-location-mushroom-caves
   tags:
   - CP14DemiplaneOres

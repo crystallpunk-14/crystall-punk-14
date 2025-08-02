@@ -1,6 +1,7 @@
 - type: cp14Location
   id: VenicialistFort
   locationConfig: CP14VenicialistFort
+  connection: ConnectionSnow
   generationProb: 0 #Special location for map only
   tags:
   - CP14DemiplaneOres

@@ -4,6 +4,7 @@
     min: 2
     max: 2
   locationConfig: CP14WastelandsIsland
+  connection: ConnectionStone
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky

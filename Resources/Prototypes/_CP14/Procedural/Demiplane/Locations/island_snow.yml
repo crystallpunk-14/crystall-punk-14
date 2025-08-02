@@ -4,6 +4,7 @@
     min: 2
     max: 10
   locationConfig: CP14SnowIsland
+  connection: ConnectionSnow
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky

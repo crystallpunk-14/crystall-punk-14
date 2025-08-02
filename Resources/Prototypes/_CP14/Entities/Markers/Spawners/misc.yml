@@ -1,0 +1,11 @@
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerLocationConnection
+  name: Location connection
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Structures/Flora/demiplane_cracks.rsi
+      state: crack

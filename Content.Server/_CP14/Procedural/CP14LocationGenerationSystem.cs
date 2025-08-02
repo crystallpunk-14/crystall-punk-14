@@ -42,7 +42,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     /// Essentially, this is a wrapper for _dungeon.GenerateDungeon, which collects the necessary settings for the
     /// dungeon based on the location and modifiers.
     /// </summary>
-    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, List<IDunGenLayer>? layers = null, Vector2i position = new(), int? seed = null)
+    public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null)
     {
         var cancelToken = new CancellationTokenSource();
 
@@ -59,7 +59,6 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
             seed ?? _random.Next(-10000, 10000),
             location,
             modifiers,
-            layers,
             cancelToken.Token);
 
         _expeditionJobs.Add((job, cancelToken));

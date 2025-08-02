@@ -33,7 +33,11 @@ public sealed partial class CP14GlobalWorldSystem : EntitySystem
     private void OnIntegratedPostInit(Entity<CP14StationGlobalWorldComponent> ent, ref StationPostInitEvent args)
     {
         GenerateGlobalWorldMap(ent);
+        SpawnGlobalWorldMap(ent);
+    }
 
+    private void SpawnGlobalWorldMap(Entity<CP14StationGlobalWorldComponent> ent)
+    {
         foreach (var node in ent.Comp.Nodes)
         {
             if (node.Value.LocationConfig is null)

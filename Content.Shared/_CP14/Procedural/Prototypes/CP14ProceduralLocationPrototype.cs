@@ -23,6 +23,12 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     [DataField(required: true)]
     public ProtoId<DungeonConfigPrototype> LocationConfig;
 
+    /// <summary>
+    /// This modifier will be added to all adjacent connected locations leading to this location.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<CP14ProceduralModifierPrototype> Connection;
+
     [DataField]
     public float GenerationProb = 1f;
 
