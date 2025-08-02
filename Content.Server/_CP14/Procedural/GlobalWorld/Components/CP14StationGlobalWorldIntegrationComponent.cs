@@ -7,7 +7,7 @@ namespace Content.Server._CP14.Procedural.GlobalWorld.Components;
 /// Generates the surrounding procedural world on the game map, surrounding the mapped settlement.
 /// </summary>
 [RegisterComponent, Access(typeof(CP14GlobalWorldSystem))]
-public sealed partial class CP14StationGlobalWorldIntegratedComponent : Component
+public sealed partial class CP14StationGlobalWorldIntegrationComponent : Component
 {
     [DataField(required: true)]
     public ProtoId<CP14ProceduralLocationPrototype> Location;
