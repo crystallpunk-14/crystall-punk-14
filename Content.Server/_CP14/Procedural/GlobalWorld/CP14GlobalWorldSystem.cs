@@ -2,6 +2,7 @@ using Content.Server._CP14.Procedural.GlobalWorld.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -18,6 +19,8 @@ public sealed partial class CP14GlobalWorldSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly LinkedEntitySystem _link = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -62,31 +65,80 @@ public sealed partial class CP14GlobalWorldSystem : EntitySystem
 
     private void OnGlobalWorldGenerated(Entity<CP14StationGlobalWorldComponent> ent, ref CP14GlobalWorldGeneratedEvent ev)
     {
-        throw new NotImplementedException();
+        ConnectGlobalWorldMap(ent);
     }
 
     private void SpawnGlobalWorldMap(Entity<CP14StationGlobalWorldComponent> ent)
     {
-        foreach (var node in ent.Comp.Nodes)
+        foreach (var (position, node) in ent.Comp.Nodes)
         {
-            if (node.Value.LocationConfig is null)
+            if (node.LocationConfig is null)
                 continue;
 
-            if (node.Value.MapUid is null)
+            if (node.MapUid is null)
             {
                 _map.CreateMap(out var newMapId, runMapInit: false);
-                node.Value.MapUid = newMapId;
+                node.MapUid = newMapId;
             }
-            var mapId = node.Value.MapUid.Value;
 
+            var mapId = node.MapUid.Value;
             var mapUid = _map.GetMap(mapId);
-            var jobName = $"job_GW_{node.Key}";
+            var jobName = $"job_GW_{position}";
             ent.Comp.LocationInGeneration.Add(jobName);
-            _generation.GenerateLocation(mapUid, mapId, node.Value.LocationConfig.Value, node.Value.Modifiers, jobName: jobName);
 
-            //We dont wanna rename our settlement
-            if (node.Key != Vector2i.Zero)
-                _meta.SetEntityName(mapUid, $"{node.Key} - {node.Value.LocationConfig.Value}");
+            _generation.GenerateLocation(
+                mapUid,
+                mapId,
+                node.LocationConfig.Value,
+                node.Modifiers,
+                jobName: jobName
+            );
+
+            // Avoid renaming the settlement
+            if (position != Vector2i.Zero)
+            {
+                var newName = $"{position} - {node.LocationConfig.Value}";
+                _meta.SetEntityName(mapUid, newName);
+            }
+        }
+    }
+
+    private void ConnectGlobalWorldMap(Entity<CP14StationGlobalWorldComponent> ent)
+    {
+        foreach (var edge in ent.Comp.Edges)
+        {
+            var firstNodeMapUid = ent.Comp.Nodes[edge.Item1].MapUid;
+            var secondNodeMapUid = ent.Comp.Nodes[edge.Item2].MapUid;
+
+            EntityUid? firstConnector = null;
+            EntityUid? secondConnector = null;
+
+            //Get random connector from map
+            var query = EntityQueryEnumerator<CP14GlobalWorldConnectorComponent>();
+            while (query.MoveNext(out var uid, out _))
+            {
+                if (_transform.GetMapId(uid) == firstNodeMapUid)
+                    firstConnector = uid;
+
+                if (_transform.GetMapId(uid) == secondNodeMapUid)
+                    secondConnector = uid;
+
+            }
+
+            if (firstConnector == null || secondConnector == null)
+            {
+                _sawmill.Error($"Failed to find connectors for edge {edge.Item1} - {edge.Item2}. " +
+                               $"First: {firstConnector}, Second: {secondConnector}");
+                continue;
+            }
+
+            var firstPortal = Spawn("CP14LocationPassway", Transform(firstConnector.Value).Coordinates);
+            var secondPortal = Spawn("CP14LocationPassway", Transform(secondConnector.Value).Coordinates);
+
+            _link.TryLink(firstPortal, secondPortal, true);
+
+            Del(firstConnector);
+            Del(secondConnector);
         }
     }
 }

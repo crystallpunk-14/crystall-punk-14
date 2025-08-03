@@ -97,10 +97,10 @@ public sealed partial class CP14GlobalWorldSystem
 
         var limits = new Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float>
         {
-            { "Danger", node.Level * 0.2f },
+            { "Danger", Math.Max(node.Level * 0.2f, 0.5f) },
             { "GhostRoleDanger", 1f },
-            { "Reward", Math.Max(node.Level * 0.2f, 0.5f) },
-            { "Ore", Math.Max(node.Level * 0.2f, 0.5f) },
+            { "Reward", Math.Max(node.Level * 0.3f, 0.5f) },
+            { "Ore", Math.Max(node.Level * 0.5f, 1f) },
             { "Fun", 1f },
             { "Weather", 1f },
             { "MapLight", 1f },

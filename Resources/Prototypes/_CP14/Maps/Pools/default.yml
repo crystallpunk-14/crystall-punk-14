@@ -10,7 +10,7 @@
   maps:
   - MeteorArena
   
-- type: gameMapPool
-  id: ShipMapPool
-  maps:
-   - NautilusShip
+#- type: gameMapPool
+#  id: ShipMapPool
+#  maps:
+#   - NautilusShip

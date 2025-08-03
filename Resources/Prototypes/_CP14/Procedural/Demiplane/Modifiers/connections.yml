@@ -3,7 +3,7 @@
   generationProb: 0
   layers:
     - !type:CP14RoomsDunGen
-      count: 1
+      count: 2
       tags:
       - CP14LocationConnectionStone
 
@@ -12,7 +12,7 @@
   generationProb: 0
   layers:
     - !type:CP14RoomsDunGen
-      count: 1
+      count: 2
       tags:
       - CP14LocationConnectionSnow
 
@@ -21,7 +21,7 @@
   generationProb: 0
   layers:
     - !type:CP14RoomsDunGen
-      count: 1
+      count: 2
       tags:
       - CP14LocationConnectionMushroom
 
@@ -30,6 +30,6 @@
   generationProb: 0
   layers:
     - !type:CP14RoomsDunGen
-      count: 1
+      count: 2
       tags:
       - CP14LocationConnectionGrass
