@@ -73,11 +73,11 @@ public sealed partial class CP14GlobalWorldSystem
             ent.Comp.Nodes.Add(newPosition, newNode);
             ent.Comp.Edges.Add((randomNodePosition, newPosition));
 
-            //Add connection modifiers to each other
+            //Add connections to each other
             if (_proto.TryIndex(newNode.LocationConfig, out var indexedNewNodeLocation) && _proto.TryIndex(randomNode.Value.LocationConfig, out var indexedRandomNodeLocation))
             {
-                newNode.Modifiers.Add(indexedRandomNodeLocation.Connection);
-                randomNode.Value.Modifiers.Add(indexedNewNodeLocation.Connection);
+                newNode.Modifiers.Add(indexedNewNodeLocation.Connection);
+                randomNode.Value.Modifiers.Add(indexedRandomNodeLocation.Connection);
             }
         }
     }

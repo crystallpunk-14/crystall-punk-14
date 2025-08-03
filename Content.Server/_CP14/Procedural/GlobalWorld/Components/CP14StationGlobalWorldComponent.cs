@@ -18,6 +18,12 @@ public sealed partial class CP14StationGlobalWorldComponent : Component
 
     [DataField]
     public int LocationCount = 5;
+
+    /// <summary>
+    /// A list of jobName names that are waiting for generation to complete. This is a hack, but I don't know a better way to do it.
+    /// </summary>
+    [DataField]
+    public List<string> LocationInGeneration = new();
 }
 
 [Serializable]

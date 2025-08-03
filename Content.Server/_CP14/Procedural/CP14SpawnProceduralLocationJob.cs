@@ -27,10 +27,12 @@ public sealed class CP14SpawnProceduralLocationJob(
     int seed,
     ProtoId<CP14ProceduralLocationPrototype> config,
     List<ProtoId<CP14ProceduralModifierPrototype>> modifiers,
+    string? jobName = null,
     CancellationToken cancellation = default)
     : Job<bool>(maxTime, cancellation)
 {
     public readonly EntityUid MapUid = mapUid;
+    public string? JobName = jobName;
 
     private readonly ISawmill _sawmill = logManager.GetSawmill("cp14_procedural_location_job");
 
@@ -86,11 +88,11 @@ public sealed class CP14SpawnProceduralLocationJob(
         map.SetPaused(mapId, false);
 
         //Spawn modified config
-        dungeon.GenerateDungeon(dungeonConfig,
+        await dungeon.GenerateDungeonAsync(dungeonConfig,
             MapUid,
             gridComp,
             position,
-            seed); //TODO: Transform to Async
+            seed);
 
         return true;
     }

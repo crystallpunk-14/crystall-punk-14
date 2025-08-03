@@ -28,12 +28,41 @@ public sealed partial class CP14GlobalWorldSystem : EntitySystem
         _sawmill = _logManager.GetSawmill("cp14_global_world");
 
         SubscribeLocalEvent<CP14StationGlobalWorldComponent, StationPostInitEvent>(OnIntegratedPostInit);
+        SubscribeLocalEvent<CP14LocationGeneratedEvent>(OnLocationGenerated);
+        SubscribeLocalEvent<CP14StationGlobalWorldComponent, CP14GlobalWorldGeneratedEvent>(OnGlobalWorldGenerated);
+    }
+
+    private void OnLocationGenerated(CP14LocationGeneratedEvent args)
+    {
+        var query = EntityQueryEnumerator<CP14StationGlobalWorldComponent>();
+        while (query.MoveNext(out var ent, out var comp))
+        {
+            //Theres no support for multiple GlobalWorld
+            if (comp.LocationInGeneration.Contains(args.JobName))
+            {
+                comp.LocationInGeneration.Remove(args.JobName);
+                _sawmill.Debug($"Location {args.JobName} generated successfully. Remaining: {comp.LocationInGeneration.Count}");
+            }
+
+            if (comp.LocationInGeneration.Count == 0)
+            {
+                //All locations are generated, we can now spawn the global world map
+                _sawmill.Debug("All locations generated, spawning global world map.");
+                var ev = new CP14GlobalWorldGeneratedEvent();
+                RaiseLocalEvent(ent, ev);
+            }
+        }
     }
 
     private void OnIntegratedPostInit(Entity<CP14StationGlobalWorldComponent> ent, ref StationPostInitEvent args)
     {
         GenerateGlobalWorldMap(ent);
         SpawnGlobalWorldMap(ent);
+    }
+
+    private void OnGlobalWorldGenerated(Entity<CP14StationGlobalWorldComponent> ent, ref CP14GlobalWorldGeneratedEvent ev)
+    {
+        throw new NotImplementedException();
     }
 
     private void SpawnGlobalWorldMap(Entity<CP14StationGlobalWorldComponent> ent)
@@ -43,19 +72,25 @@ public sealed partial class CP14GlobalWorldSystem : EntitySystem
             if (node.Value.LocationConfig is null)
                 continue;
 
-            var mapId = node.Value.MapUid;
-            if (mapId is null)
+            if (node.Value.MapUid is null)
             {
                 _map.CreateMap(out var newMapId, runMapInit: false);
-                mapId = newMapId;
+                node.Value.MapUid = newMapId;
             }
+            var mapId = node.Value.MapUid.Value;
 
-            var mapUid = _map.GetMap(mapId.Value);
-            _generation.GenerateLocation(mapUid, mapId.Value, node.Value.LocationConfig.Value, node.Value.Modifiers);
+            var mapUid = _map.GetMap(mapId);
+            var jobName = $"job_GW_{node.Key}";
+            ent.Comp.LocationInGeneration.Add(jobName);
+            _generation.GenerateLocation(mapUid, mapId, node.Value.LocationConfig.Value, node.Value.Modifiers, jobName: jobName);
 
             //We dont wanna rename our settlement
             if (node.Key != Vector2i.Zero)
-                _meta.SetEntityName(mapUid, $"{node.Key} - World {node.Value.LocationConfig.Value}");
+                _meta.SetEntityName(mapUid, $"{node.Key} - {node.Value.LocationConfig.Value}");
         }
     }
+}
+
+public sealed class CP14GlobalWorldGeneratedEvent : EntityEventArgs
+{
 }
