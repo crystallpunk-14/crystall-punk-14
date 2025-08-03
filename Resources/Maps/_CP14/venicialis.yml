@@ -45718,9 +45718,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 5.5,-30.5
       parent: 2
-    - type: ItemPlacer
-      placedEntities:
-      - invalid
 - proto: CP14WorkbenchFurnace
   entities:
   - uid: 1797
