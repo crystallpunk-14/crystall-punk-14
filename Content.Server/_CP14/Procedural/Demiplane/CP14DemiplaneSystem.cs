@@ -11,7 +11,6 @@ namespace Content.Server._CP14.Procedural.Demiplane;
 
 public sealed class CP14DemiplaneSystem : EntitySystem
 {
-    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -68,6 +67,9 @@ public sealed class CP14DemiplaneSystem : EntitySystem
 
     private void OnRiftInteracted(Entity<CP14DemiplaneRiftComponent> ent, ref InteractHandEvent args)
     {
+        if (HasComp<CP14DemiplaneBlockInteractionsComponent>(args.User))
+            return;
+
         if (!ent.Comp.CanCreate)
             return;
 
