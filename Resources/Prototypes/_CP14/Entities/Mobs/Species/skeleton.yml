@@ -112,10 +112,6 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
-  - type: CP14DemiplaneForceExtract
-    enabled: false
-  - type: CP14DemiplaneStabilizer
-    enabled: false
   - type: GhostTakeoverAvailable
 
 - type: entity

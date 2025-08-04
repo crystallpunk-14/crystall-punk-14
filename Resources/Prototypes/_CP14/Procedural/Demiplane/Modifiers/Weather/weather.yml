@@ -1,11 +1,17 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherNone
+  levels:
+    min: 1
+    max: 10
   generationWeight: 3
   categories:
     Weather: 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherInfinityMist
+  levels:
+    min: 1
+    max: 10
   categories:
     Weather: 1
   components:
@@ -13,8 +19,11 @@
     entries:
     - visuals: CP14Mist
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherRain
+  levels:
+    min: 0
+    max: 10
   categories:
     Weather: 1
   requiredTags:
@@ -31,10 +40,10 @@
         min: 180
         max: 240
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherInfinityStorm
   levels:
-    min: 3
+    min: 2
     max: 10
   name: cp14-modifier-storm
   categories:
@@ -51,11 +60,11 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherSnow
   levels:
-    min: 1
-    max: 4
+    min: 0
+    max: 10
   categories:
     Weather: 1
   requiredTags:
@@ -63,6 +72,10 @@
   components:
   - type: CP14WeatherController
     entries:
+    - visuals: null
+      duration:
+        min: 30
+        max: 120
     - visuals: CP14SnowLight
       duration:
         min: 30
@@ -72,10 +85,10 @@
         min: 30
         max: 180
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WeatherSnowHeavy
   levels:
-    min: 5
+    min: 1
     max: 10
   name: cp14-modifier-snow-storm
   categories:
@@ -99,11 +112,11 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14ManaMist
   name: cp14-modifier-mana-mist
   levels:
-    min: 0
+    min: 1
     max: 10
   categories:
     Weather: 1
@@ -117,11 +130,11 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14AntiManaMist
   name: cp14-modifier-anti-mana-mist
   levels:
-    min: 4
+    min: 1
     max: 10
   categories:
     Weather: 1
@@ -135,11 +148,11 @@
       tags:
       - CP14DemiplaneRuins
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CP14FireStormPeriod
   name: cp14-modifier-fire-storm
   levels:
-    min: 4
+    min: 2
     max: 10
   requiredTags:
   - CP14DemiplaneHot

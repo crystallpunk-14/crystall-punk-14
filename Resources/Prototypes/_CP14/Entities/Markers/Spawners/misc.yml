@@ -1,0 +1,36 @@
+- type: entity
+  parent: MarkerBase
+  id: CP14SpawnerLocationConnection
+  name: Location connection
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _CP14/Structures/Flora/demiplane_cracks.rsi
+      state: crack
+  - type: CP14GlobalWorldConnector
+
+- type: entity
+  id: CP14LocationPassway
+  parent: BasePortal
+  categories: [ HideSpawnMenu ]
+  name: location passway
+  description: A gap in space that allows you to travel between worlds.
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: anom
+      shader: unshaded
+  - type: SingularityDistortion
+    falloffPower: 1.5
+    intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Portal
+    canTeleportToOtherMaps: true
