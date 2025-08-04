@@ -23,7 +23,7 @@
   layers:
     # Masks
     - !type:NoiseDistanceDunGen
-      size: 260, 260
+      size: 220, 220
       distanceConfig: !type:DunGenEuclideanSquaredDistance
         blendWeight: 0.8
       layers:
@@ -37,7 +37,7 @@
           lacunarity: 2
           gain: 0.5
     - !type:NoiseDistanceDunGen
-      size: 180, 180
+      size: 140, 140
       distanceConfig: !type:DunGenEuclideanSquaredDistance
         blendWeight: 0.7
       layers:

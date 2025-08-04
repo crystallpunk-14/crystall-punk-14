@@ -7,9 +7,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartz
       count: 30
       minGroupSize: 1
@@ -27,9 +24,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzEarth
       count: 15
       minGroupSize: 1
@@ -47,9 +41,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzFire
       count: 15
       minGroupSize: 1
@@ -67,9 +58,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzWater
       count: 15
       minGroupSize: 1
@@ -87,9 +75,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzAir
       count: 15
       minGroupSize: 1
@@ -105,9 +90,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzOrder
       count: 15
       minGroupSize: 1
@@ -123,9 +105,6 @@
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartzChaos
       count: 15
       minGroupSize: 1

@@ -52,3 +52,5 @@
         - type: CP14StationGlobalWorld
         - type: CP14StationGlobalWorldIntegration
           location: ComossIsland
+          modifiers:
+          - RaidSpawners
