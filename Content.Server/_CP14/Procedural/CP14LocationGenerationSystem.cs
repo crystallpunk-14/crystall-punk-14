@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Server._CP14.Procedural.GlobalWorld.Components;
 using Content.Server.Procedural;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Procedural.Prototypes;
@@ -28,6 +29,8 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<CP14ActiveJobGenerationComponent, ComponentShutdown>(OnGenerationShutdown);
+
     }
 
     public override void Update(float frameTime)
@@ -44,6 +47,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
                         var ev = new CP14LocationGeneratedEvent(job.JobName);
                         RaiseLocalEvent(ev);
                     }
+                    RemComp<CP14ActiveJobGenerationComponent>(job.MapUid);
 
                     _jobs.Remove((job, cancelToken));
                     break;
@@ -59,6 +63,8 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     public void GenerateLocation(EntityUid mapUid, MapId mapId, ProtoId<CP14ProceduralLocationPrototype> location, List<ProtoId<CP14ProceduralModifierPrototype>> modifiers, Vector2i position = new(), int? seed = null, string? jobName = null)
     {
         var cancelToken = new CancellationTokenSource();
+
+        EnsureComp<CP14ActiveJobGenerationComponent>(mapUid);
 
         var job = new CP14SpawnProceduralLocationJob(
             JobMaxTime,
@@ -81,17 +87,18 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     }
 
 
-    //Need implement this:
-
-    //We stop asynchronous generation of a location early if for some reason this location is deleted before generation is complete
-    //foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
-    //{
-    //    if (job.mapUid == map.Owner)
-    //    {
-    //        cancelToken.Cancel();
-    //        _expeditionJobs.Remove((job, cancelToken));
-    //    }
-    //}
+    private void OnGenerationShutdown(Entity<CP14ActiveJobGenerationComponent> ent, ref ComponentShutdown args)
+    {
+        //We stop asynchronous generation of a location early if for some reason this location is deleted before generation is complete
+        foreach (var (job, cancelToken) in _jobs.ToArray())
+        {
+            if (job.MapUid == ent.Owner)
+            {
+                cancelToken.Cancel();
+                _jobs.Remove((job, cancelToken));
+            }
+        }
+    }
 }
 
 
