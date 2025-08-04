@@ -12,8 +12,6 @@
     solution: barrel
   - type: DrawableSolution
     solution: barrel
-  - type: DumpableSolution
-    solution: barrel
   - type: Drink
     solution: barrel
 

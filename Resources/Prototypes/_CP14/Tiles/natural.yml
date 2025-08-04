@@ -1,3 +1,56 @@
+# SORTED BY EDGE SPRITE PRIORITY
+
+# 0
+
+- type: tile
+  editorHidden: false
+  id: CP14FloorMarbleCave
+  name: cp14-tiles-marble-cave
+  sprite: /Textures/_CP14/Tiles/marble_cave.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  deconstructTools: [ CP14Digging ]
+  isSubfloor: true
+  itemDrop: CP14MarbleBlock1
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: CP14FloorIce
+  editorHidden: false
+  name: tiles-ice
+  sprite: /Textures/_CP14/Tiles/ice.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: CP14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000
+  friction: 0.05
+  mobAcceleration: 0.1
+  weather: true
+  
 - type: tile
   editorHidden: false
   id: CP14FloorDirt
@@ -72,11 +125,11 @@
   weather: true
 
 - type: tile
+  id: CP14FloorMycelium
   editorHidden: false
-  id: CP14FloorMarbleCave
-  name: cp14-tiles-marble-cave
-  sprite: /Textures/_CP14/Tiles/marble_cave.png
-  variants: 14
+  name: cp14-tiles-mycelium
+  sprite: /Textures/_CP14/Tiles/Mycelium/tile.png
+  variants: 12
   placementVariants:
   - 1.0
   - 1.0
@@ -90,17 +143,54 @@
   - 1.0
   - 1.0
   - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: CP14FloorBase
+  edgeSpritePriority: 3
+  edgeSprites:
+    South: /Textures/_CP14/Tiles/Mycelium/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Mycelium/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Mycelium/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Mycelium/double_edge_W.png
+  baseTurf: CP14FloorDirt
   deconstructTools: [ CP14Digging ]
-  isSubfloor: true
-  itemDrop: CP14MarbleBlock1
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
   footstepSounds:
-    collection: FootstepAsteroid
+    collection: FootstepGrass
   heatCapacity: 10000
   weather: true
-  indestructible: true
+
+- type: tile
+  id: CP14FloorMyceliumLight
+  editorHidden: false
+  name: cp14-tiles-mycelium-light
+  sprite: /Textures/_CP14/Tiles/MyceliumLight/tile.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 4
+  edgeSprites:
+    South: /Textures/_CP14/Tiles/MyceliumLight/double_edge_S.png
+    East: /Textures/_CP14/Tiles/MyceliumLight/double_edge_E.png
+    North: /Textures/_CP14/Tiles/MyceliumLight/double_edge_N.png
+    West: /Textures/_CP14/Tiles/MyceliumLight/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
 
 - type: tile
   editorHidden: false
@@ -114,7 +204,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 3
+  edgeSpritePriority: 5
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Sand/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/Sand/single_edge_NE.png
@@ -146,7 +236,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 4
+  edgeSpritePriority: 6
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/Grass/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/Grass/single_edge_NE.png
@@ -178,7 +268,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 5
+  edgeSpritePriority: 7
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_NE.png
@@ -210,7 +300,7 @@
   - 1.0
   - 1.0
   - 1.0
-  edgeSpritePriority: 6
+  edgeSpritePriority: 8
   edgeSprites:
     SouthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_SE.png
     NorthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_NE.png
@@ -324,22 +414,3 @@
     collection: FootstepSnow
   heatCapacity: 10000
   weather: true
-
-- type: tile
-  id: CP14FloorIce
-  editorHidden: false
-  name: tiles-ice
-  sprite: /Textures/_CP14/Tiles/ice.png
-  variants: 4
-  placementVariants:
-  - 1.0
-  - 1.0
-  - 1.0
-  - 1.0
-  baseTurf: CP14FloorBase
-  isSubfloor: false
-  heatCapacity: 10000
-  friction: 0.05
-  mobAcceleration: 0.1
-  weather: true
-

@@ -41,6 +41,13 @@
   maxCount: 20
 
 - type: stack
+  id: CP14SpruceWoodenPlanks
+  name: cp14-material-spruce-planks
+  spawn: CP14SpruceWoodenPlanks1
+  icon: { sprite: _CP14/Objects/Materials/wood_spruce.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
   id: CP14Cloth
   name: cp14-stack-cloth
   spawn: CP14Cloth1
@@ -59,6 +66,13 @@
   name: cp14-stack-iron-bars
   spawn: CP14IronBar1
   icon: { sprite: _CP14/Objects/Materials/iron_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: CP14BrassBar
+  name: cp14-stack-brass-bars
+  spawn: CP14BrassBar1
+  icon: { sprite: _CP14/Objects/Materials/brass_bar.rsi, state: bar_2 }
   maxCount: 10
 
 - type: stack
@@ -101,4 +115,11 @@
   name: cp14-stack-ash-pile
   icon: { sprite: "_CP14/Objects/Materials/ash.rsi", state: ash_1 }
   spawn: CP14Ash1
+  maxCount: 10
+
+- type: stack
+  id: CP14SaltStone
+  name: cp14-stack-salt-stone
+  icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
+  spawn: CP14SaltStone1
   maxCount: 10

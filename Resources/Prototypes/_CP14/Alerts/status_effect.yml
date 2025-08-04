@@ -1,0 +1,5 @@
+- type: alert
+  id: CP14MagicArmor
+  icons:
+  - sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_armor

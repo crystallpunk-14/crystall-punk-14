@@ -1,6 +1,6 @@
 - type: entity
   parent:
-  - CP14BaseMobSpeciesNoLife
+  - CP14BaseMobSpecies
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -88,6 +88,8 @@
           - MobMask
         layer:
           - MobLayer
+  - type: CP14AuraImprint
+    imprintColor: "#a81b5d"
   - type: Damageable
     damageContainer: CP14Biological
     damageModifierSet: CP14Skeleton
@@ -110,8 +112,6 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
-  - type: CP14DemiplaneStabilizer
-    enabled: false
   - type: GhostTakeoverAvailable
 
 - type: entity

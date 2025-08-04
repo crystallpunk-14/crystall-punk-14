@@ -22,7 +22,67 @@
     sprite: _CP14/Clothing/Head/Roles/Guard/helmet.rsi
   - type: HideLayerClothing
     slots:
-    - Snout
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardCorinthianHelmet
+  name: "corinthian helmet"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/corinthian_helmet.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/corinthian_helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardCap
+  name: "guard's cap"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_cap.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_cap.rsi
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardFedora
+  name: "guard's fedora"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_fedora.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_fedora.rsi
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardTriangular
+  name: "guard's triangular hat"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_triangularhat.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/guard_triangularhat.rsi
+
+- type: entity
+  parent: CP14ClothingHeadGuardBase
+  id: CP14ClothingHeadGuardInvestigatorHelmet
+  name: "investigator helmet"
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/Guard/investigator_helmet.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/Guard/investigator_helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
     - HeadTop
     - HeadSide
 

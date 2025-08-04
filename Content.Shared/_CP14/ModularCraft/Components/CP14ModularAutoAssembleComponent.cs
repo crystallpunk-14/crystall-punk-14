@@ -4,11 +4,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.ModularCraft.Components;
 
 /// <summary>
-/// Adds all details to the item when initializing. This is useful for spawning modular items directly when mapping or as loot in demiplanes.
+/// Adds all details to the item when initializing. This is useful for spawning modular items directly when mapping or as loot in dungeons
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedModularCraftSystem))]
 public sealed partial class CP14ModularCraftAutoAssembleComponent : Component
 {
     [DataField]
-    public List<ProtoId<CP14ModularCraftPartPrototype>> Details = new();
+    public List<EntProtoId> Details = new();
 }

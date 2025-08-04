@@ -51,3 +51,6 @@ cp14-reagent-desc-essence-crystal = Жидкое воплощение стихи
 
 cp14-reagent-name-essence-magic = Эссенция Praecantatio
 cp14-reagent-desc-essence-magic = Жидкое воплощение магии, чар и колдовства.
+
+cp14-reagent-name-essence-beast = Эссенция Bestia
+cp14-reagent-desc-essence-beast = Жидкое воплощение животных.

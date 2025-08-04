@@ -1,0 +1,189 @@
+# ========================
+# Base
+# ========================
+
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingBackSatchelBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
+  - type: Storage
+    grid: # 28
+    - 0,0,1,3 # 2x4=8
+    - 3,0,6,3 # 4x4=16
+    - 8,0,9,3 # 2x4=4
+
+# ========================
+# Tiers
+# ========================
+
+- type: entity
+  parent: CP14ClothingBackSatchelBase
+  id: CP14ClothingBackSatchelT0
+  name: Pouch
+  suffix: backpack T0
+  description: A small basic pouch for carrying essential items. Can be worn on the belt or over the shoulder.
+  components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
+  - type: Storage
+    grid: # 19
+    - 1,0,1,0 # 1x1=1
+    - 0,1,1,2 # 2x2=4
+    - 3,0,5,2 # 3x3=9
+    - 7,0,7,0 # 1x1=1
+    - 7,1,8,2 # 2x2=4
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 120 # 80u CP14Cloth (8x10u) + 40u CP14String (8x5u)
+      CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
+      # Cost: (120×0.3) + (6×2) = 36 + 12 = 48 copper coins
+
+- type: entity
+  parent: CP14ClothingBackSatchelT0
+  id: CP14ClothingBackSatchelT1
+  name: Rustic Satchel
+  suffix: backpack T1
+  description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling. Can be worn on the belt or over the shoulder. Interferes with sprinting.
+  components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t1.rsi
+  - type: Storage
+    grid: # 32
+    - 0,1,1,3 # 2x3=6
+    - 3,0,3,3 # 1x4=4
+    - 5,0,7,3 # 3x4=12
+    - 9,0,9,3 # 1x4=4
+    - 11,1,12,3 # 2x3=6
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 60 # 30u CP14Leather (6x5u) + 30u CP14LeatherStrap (10x3u)
+      CP14SaltStone: 60 # 30u (6x5u) + 30u (10x3u)
+      CP14Iron: 8 # 8u CP14IronBuckle (4x2u)
+      # Cost: (60×1.2) + (60×0.4) + (8×2) = 72 + 24 + 16 = 112 copper coins
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.97
+
+- type: entity
+  parent: CP14ClothingBackSatchelT1
+  id: CP14ClothingBackSatchelT2
+  name: Courier Satchel
+  suffix: backpack T2
+  description: A professional-grade satchel designed for messengers, with organized compartments for quick access. Interferes with sprinting.
+  components:
+  - type: Clothing
+    slots:
+    - back
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t2.rsi
+  - type: Storage
+    grid: # 46
+    - 0,0,1,1 # 2x2=4
+    - 0,3,1,4 # 2x2=4
+    - 3,0,5,4 # 3x5=15
+    - 7,0,9,4 # 3x5=15
+    - 11,0,12,1 # 2x2=4
+    - 11,3,12,4 # 2x2=4
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 96 # 60u CP14Leather (6x10u) + 36u CP14LeatherStrap (12x3u)
+      CP14SaltStone: 96 # 60u (6x10u) + 36u (12x3u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (96×1.2) + (96×0.4) + (12×2) = 115.2 + 38.4 + 24 = 177.6 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.98
+        Caustic: 0.96
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.80
+
+- type: entity
+  parent: CP14ClothingBackSatchelBase
+  id: CP14ClothingBackSatchelT3
+  name: Haversack
+  suffix: backpack T3
+  description: A sturdy military-style haversack with ample capacity, designed for extended field use. Interferes with sprinting.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t3.rsi
+  - type: Storage
+    grid: # 66
+    - 0,0,1,1 # 2x2=4
+    - 0,3,1,6 # 2x4=8
+    - 3,0,5,6 # 3x7=21
+    - 7,0,9,6 # 3x7=21
+    - 11,0,12,1 # 2x2=4
+    - 11,3,12,6 # 2x4=8
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 222 # 150u CP14Leather (6x25u) + 72u CP14RuggedStrap (12x6u)
+      CP14SaltStone: 180 # 120u (6x20u) + 60u (12x5u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (222×1.2) + (180×0.4) + (12×2) = 266.4 + 72 + 24 = 362.4 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.96
+        Slash: 0.96
+        Heat: 0.94
+        Caustic: 0.90
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.75
+
+# ========================
+# Special
+# ========================
+
+- type: entity
+  parent: CP14ClothingBackSatchelT2
+  id: CP14ClothingBackSatchelReinforced
+  name: Reinforced Satchel
+  suffix: backpack T2
+  description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions. Interferes with sprinting.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t2_reinforced.rsi
+  - type: Storage
+    grid: # 36
+    - 1,0,3,0 # 3x1=3
+    - 0,1,3,1 # 4x1=4
+    - 0,3,3,4 # 4x2=8
+    - 1,5,3,5 # 3x1=3
+    - 5,0,7,0 # 3x1=3
+    - 5,1,8,1 # 4x1=4
+    - 5,3,8,4 # 4x2=8
+    - 5,5,7,5 # 3x1=3
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 102 # 60u CP14Leather (6x10u) + 42u CP14LeatherStrap (14x3u)
+      CP14SaltStone: 102 # 60u (6x10u) + 42u (14x3u)
+      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      # Cost: (102×1.2) + (102×0.4) + (12×2) = 122.4 + 40.8 + 24 = 187.2 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.91
+        Slash: 0.94
+        Piercing: 0.97
+        Heat: 0.98
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.77

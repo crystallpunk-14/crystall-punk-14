@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSkimitar
+    - CP14ModularBladeIronSkimitar
 
 - type: entity
   id: CP14ModularCopperSkimitar
@@ -27,7 +27,7 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperSkimitar
+    - CP14ModularBladeCopperSkimitar
 
 - type: entity
   id: CP14ModularCopperSkimitarTundra
@@ -42,8 +42,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperSkimitar
-    - InlayQuartzWater
+    - CP14ModularBladeCopperSkimitar
+    - CP14ModularInlayQuartzWater
 
 - type: entity
   id: CP14ModularGoldSkimitarAgony
@@ -58,5 +58,5 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeGoldSkimitar
-    - InlayQuartzElectric
+    - CP14ModularBladeGoldSkimitar
+    - CP14ModularInlayQuartzElectric

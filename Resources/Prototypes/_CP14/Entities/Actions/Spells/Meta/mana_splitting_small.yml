@@ -1,0 +1,42 @@
+- type: entity
+  id: CP14ActionSpellMagicSplittingSmall
+  parent: CP14ActionSpellBase
+  name: Small magic splitting
+  description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.7
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectMagicSplitting
+    effects:
+    - !type:CP14SpellMixSolution
+      reactionTypes:
+      - CP14MagicSplitting
+    - !type:CP14SpellInterruptSpell
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:CP14ManaChange
+        manaDelta: -15
+        safe: false
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneMagicSplitting
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: counter_spell_small
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - CP14MagicEnergyContainer
+      - ExaminableSolution
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 0.5
+      breakOnMove: false

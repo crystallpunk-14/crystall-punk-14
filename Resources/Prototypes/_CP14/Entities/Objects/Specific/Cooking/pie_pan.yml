@@ -1,0 +1,84 @@
+- type: entity
+  id: CP14PlatePie
+  parent: CP14CookerBase
+  name: pie plate
+  description: A mould for making a delicious pie.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/Pies/plate.rsi
+    layers:
+    - state: iron
+    - map: ["cp14_foodLayers"]
+    - map: ["enum.StorageFillLayers.Fill"]
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar = 1 plate pie in craft
+  - type: CP14FoodCooker
+    foodType: Pie
+    solutionId: cooker
+  - type: CP14FoodHolder
+    foodType: Pie
+    solutionId: cooker
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,2
+    cP14Ignorelist:
+      components:
+        - CP14FoodHolder
+        - FoodSequenceStartPoint
+        - Sharp
+        - CP14Sharpened
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 3
+    fillBaseName: raw
+  - type: SolutionContainerManager
+    solutions:
+      cooker:
+        maxVol: 50
+  - type: AmbientSound
+    sound:
+      path: /Audio/_CP14/Ambience/pan_frying.ogg
+  - type: GenericVisualizer
+    visuals:
+      enum.CP14CookingVisuals.Cooking:
+        cook:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CP14CookingVisuals.Burning:
+        burn:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Food
+    solution: cooker
+    transferAmount: 2.5
+    trash: 
+    - CP14PlatePie
+  - type: Spillable
+    solution: cooker
+  - type: SolutionContainerVisuals
+  - type: SliceableFood
+
+- type: entity
+  id: CP14PlatePieRandom
+  suffix: Random food
+  parent: CP14PlatePie
+  components:
+  - type: CP14RandomFoodData
+  - type: SolutionContainerManager
+    solutions:
+      cooker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 20
+        - ReagentId: Fat
+          Quantity: 10

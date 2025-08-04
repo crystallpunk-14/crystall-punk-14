@@ -13,13 +13,6 @@ The Tieflings are a race of humanoid demonoids that left the Fire Archipelago lo
 - Basic mana regeneration is slightly impaired, but taking fire damage greatly speeds up mana regeneration, while frostbite on the contrary causes mana drain.
 - Tieflings can slowly regenerate damage from fire burns.
 - Fire spells spend 40% less mana, but all other types spend 20% more mana
-
-# Inner Flame
-
-Tieflings have a special innate ability called Inner Flame. This ability sets the caster on fire, and temporarily speeds him up. 
-
-<Box>
-<GuideEntityEmbed Entity="CP14ActionSpellTieflingInnerFire"/>
-</Box>
+- Tieflings initially have basic and advanced pyrokinesis.
 
 </Document>

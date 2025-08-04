@@ -71,6 +71,9 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 2
 
 - type: entity
   parent: CP14ModularRod
@@ -97,3 +100,6 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 2

@@ -12,7 +12,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - TipIronArrow
+    - CP14ModularTipIronArrow
 
 - type: entity
   id: CP14ModularMithrilArrow
@@ -30,7 +30,7 @@
       color: "#45d2a4"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - TipMithrilArrow
+    - CP14ModularTipMithrilArrow
 
 - type: entity
   id: CP14ModularCopperArrow
@@ -47,5 +47,5 @@
       color: "#bd712f"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - TipCopperArrow
+    - CP14ModularTipCopperArrow
 

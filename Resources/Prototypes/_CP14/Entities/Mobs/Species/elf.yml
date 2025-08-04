@@ -16,20 +16,9 @@
         CP14ManaDepletion: -0.07
       groups:
         Brute: -0.07
-  - type: Hunger
-    starvationDamage:
-      types:
-        Cold: 0.25
-        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi
     state: full
-  - type: Thirst
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: CP14FoodMeatHuman
-        amount: 4
   - type: Body
     prototype: CP14Elf
     requiredLegs: 2
@@ -38,13 +27,17 @@
   - type: CP14MagicEnergyContainer #Increased mana container
     maxEnergy: 200
     energy: 200
-  - type: CP14MagicEnergyDraw #Half of standard mana regeneration
-    energy: 0.5
+  - type: CP14MagicEnergyDraw #No mana regeneration :3
+    energy: 0
     delay: 3
-  - type: CP14SkillStorage #Innate metamagic
+  - type: CP14SkillStorage #Innate metamagic + trance
     freeLearnedSkills:
     - MetamagicT1
     - MetamagicT2
+    - CP14ActionSpellManaTrance
+  - type: CP14AuraImprint
+    imprintLength: 10 #Long imprint hehe
+    imprintColor: "#42aaf5"
   - type: Inventory
     templateId: CP14Human
     displacements:

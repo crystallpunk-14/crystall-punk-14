@@ -11,7 +11,6 @@ namespace Content.Server.Fluids.EntitySystems;
 
 public sealed partial class PuddleSystem
 {
-    [Dependency] private readonly SharedMapSystem _maps = default!; //CP14
     [Dependency] private readonly WeatherSystem _weather = default!; //CP14
     private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
 
@@ -24,7 +23,7 @@ public sealed partial class PuddleSystem
         var xform = Transform(entity);
         if (TryComp<MapGridComponent>(xform.GridUid, out var mapGrid))
         {
-            var tileRef = _maps.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
+            var tileRef = _map.GetTileRef(xform.GridUid.Value, mapGrid, xform.Coordinates);
             entity.Comp.CP14ForceEvaporation = _weather.CanWeatherAffect(xform.GridUid.Value, mapGrid, tileRef);
         }
         //CP14 End force evaporation under sky
@@ -62,6 +61,7 @@ public sealed partial class PuddleSystem
             if (!_solutionContainerSystem.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var puddleSolution))
                 continue;
 
+            // Yes, this means that 50u water + 50u holy water evaporates twice as fast as 100u water.
             foreach ((string evaporatingReagent, FixedPoint2 evaporatingSpeed) in GetEvaporationSpeeds(puddleSolution))
             {
                 var reagentTick = evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporatingSpeed;

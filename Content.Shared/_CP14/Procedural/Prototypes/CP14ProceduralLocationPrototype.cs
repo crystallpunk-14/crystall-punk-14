@@ -1,0 +1,46 @@
+using Content.Shared.Destructible.Thresholds;
+using Content.Shared.Procedural;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+
+namespace Content.Shared._CP14.Procedural.Prototypes;
+
+/// <summary>
+/// procedural location template. The answer to the question “Where” as far as the combinatorics of the generation is concerned.
+/// </summary>
+[Prototype("cp14Location")]
+public sealed partial class CP14ProceduralLocationPrototype : IPrototype
+{
+    [IdDataField] public string ID { get; } = default!;
+
+    /// <summary>
+    /// The difficulty levels at which this location can be generated.
+    /// </summary>
+    [DataField]
+    public MinMax Levels = new(0, 10);
+
+    [DataField(required: true)]
+    public ProtoId<DungeonConfigPrototype> LocationConfig;
+
+    /// <summary>
+    /// This modifier will be added to all adjacent connected locations leading to this location.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<CP14ProceduralModifierPrototype> Connection;
+
+    [DataField]
+    public float GenerationProb = 1f;
+
+    /// <summary>
+    /// Components that will be automatically added to the location map when it is generated
+    /// </summary>
+    [DataField]
+    public ComponentRegistry Components = new();
+
+    /// <summary>
+    /// Tags allow modifiers to filter which ones can apply to the current location and which ones cannot.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<TagPrototype>> Tags = new();
+}

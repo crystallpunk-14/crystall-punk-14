@@ -3,6 +3,7 @@
  * https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT
  */
 
+using Content.Shared._CP14.Trading.Systems;
 using Content.Shared._CP14.Workbench.Prototypes;
 using Content.Shared.Stacks;
 using Robust.Shared.Prototypes;
@@ -12,18 +13,15 @@ namespace Content.Shared._CP14.Workbench.Requirements;
 
 public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
 {
-    public override bool HideRecipe { get; set; } = false;
-
     [DataField(required: true)]
     public ProtoId<CP14StackGroupPrototype> Group;
 
     [DataField]
     public int Count = 1;
 
-    public override bool CheckRequirement(EntityManager entManager,
+    public override bool CheckRequirement(IEntityManager entManager,
         IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid user)
+        HashSet<EntityUid> placedEntities)
     {
         if (!protoManager.TryIndex(Group, out var indexedGroup))
             return false;
@@ -46,9 +44,8 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
         return true;
     }
 
-    public override void PostCraft(EntityManager entManager, IPrototypeManager protoManager,
-        HashSet<EntityUid> placedEntities,
-        EntityUid user)
+    public override void PostCraft(IEntityManager entManager, IPrototypeManager protoManager,
+        HashSet<EntityUid> placedEntities)
     {
         var stackSystem = entManager.System<SharedStackSystem>();
 
@@ -75,16 +72,45 @@ public sealed partial class StackGroupResource : CP14WorkbenchCraftRequirement
         }
     }
 
+    /// <summary>
+    /// We take the cheapest material from the group for evaluation.
+    /// </summary>
+    public override double GetPrice(IEntityManager entManager, IPrototypeManager protoManager)
+    {
+        if (!protoManager.TryIndex(Group, out var indexedGroup))
+            return 0;
+
+        double price = 0;
+        foreach (var stack in indexedGroup.Stacks)
+        {
+            if (!protoManager.TryIndex(stack, out var indexedStack))
+                continue;
+
+            if (!protoManager.TryIndex(indexedStack.Spawn, out var indexedProto))
+                continue;
+
+
+            var priceSys = entManager.System<CP14SharedStationEconomySystem>();
+
+            var tempPrice = priceSys.GetEstimatedPrice(indexedProto);
+            if (price > 0)
+            {
+                price = Math.Min(price, tempPrice);
+            }
+            else
+            {
+                price = tempPrice;
+            }
+        }
+
+        return price * Count;
+    }
+
     public override string GetRequirementTitle(IPrototypeManager protoManager)
     {
         var indexedGroup = protoManager.Index(Group);
 
         return $"{Loc.GetString(indexedGroup.Name)} x{Count}";
-    }
-
-    public override EntityPrototype? GetRequirementEntityView(IPrototypeManager protoManager)
-    {
-        return null;
     }
 
     public override SpriteSpecifier? GetRequirementTexture(IPrototypeManager protoManager)

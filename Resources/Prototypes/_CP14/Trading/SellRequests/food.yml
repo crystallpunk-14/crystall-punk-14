@@ -1,0 +1,101 @@
+- type: cp14TradingRequest
+  id: MeatSoup
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: MeatSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: CheeseSoup
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: CheeseSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: PumpkinPuree
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: PumpkinPuree
+    count: 20
+
+- type: cp14TradingRequest
+  id: VegSoup
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: VegSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: GreenSaladMeat
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: GreenSaladMeat
+    count: 20
+
+- type: cp14TradingRequest
+  id: CheeseBread
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: CheeseBread
+    count: 20
+
+
+# 30 minutes
+
+- type: cp14TradingRequest
+  id: MeatCheeseSoup
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: MeatCheeseSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: MeatSaladSoup
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: MeatSaladSoup
+    count: 20
+
+- type: cp14TradingRequest
+  id: MonsterEgg
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: MonsterEgg
+    count: 20
+
+- type: cp14TradingRequest
+  id: ZellasianBreakfast
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: ZellasianBreakfast
+    count: 20
+
+- type: cp14TradingRequest
+  id: HamInCheese
+  possibleFactions:
+  - Dairy
+  requirements:
+  - !type:FoodResource
+    recipe: HamInCheese
+    count: 20

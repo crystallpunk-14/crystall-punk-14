@@ -2,7 +2,7 @@
   id: CP14ModularIronRapier
   parent: CP14ModularGripWooden
   name: iron rapier
-  description: the gold standard of edged weapons. Medium length, comfortable grip. No frills.
+  description: The gold standard of edged weapons. Medium length, comfortable grip. No frills.
   components:
   - type: Sprite
     layers:
@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronRapier
+    - CP14ModularBladeIronRapier
 
 - type: entity
   id: CP14ModularCopperRapier
@@ -27,7 +27,7 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperRapier
+    - CP14ModularBladeCopperRapier
 
 - type: entity
   id: CP14ModularGuildmasterRapier
@@ -44,6 +44,38 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronRapier
-    - GardeGuildmaster
+    - CP14ModularBladeIronRapier
+    - CP14ModularGardeGuildmaster
 
+- type: entity
+  id: CP14ModularGuardRapier
+  parent: CP14ModularGripIronGuard
+  name: "guard's rapier"
+  description: The standard issue armament of the imperial guard. A short rapier adorned with blue feathers and brass.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+      state: icon
+    - sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeIronRapier
+    - CP14ModularGardeSharpIron
+
+- type: entity
+  id: CP14ModularWoodenRapier
+  parent: CP14ModularGripWooden
+  name: training wooden rapier
+  description: A training wooden rapier that even a complete inept can handle.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/wooden_rapier.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenRapier

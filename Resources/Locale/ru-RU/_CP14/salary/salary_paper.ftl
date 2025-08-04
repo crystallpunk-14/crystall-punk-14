@@ -1,3 +1,4 @@
-cp14-salary-title = [head=3]     Приказ о спонсировании [/head]
-
-cp14-salary-entry = {$dep} получает финансирование в размере {$total}. Передайте эти средства главе отдела, он имеет право распределить их по своему усмотрению.
+cp14-salary-payroll-examine-unsupported-job = Вы не спонсируетесь империей.
+cp14-salary-payroll-examine = Вы можете получить вашу зарплату: {$count}
+cp14-salary-payroll-examine-empty = Вся ваша зарплата уже выплачена.
+cp14-salary-payroll-examine-timer = Следующая зарплата через: {$time}

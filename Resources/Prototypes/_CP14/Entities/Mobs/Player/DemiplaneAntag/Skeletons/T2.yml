@@ -21,7 +21,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
+    - CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonSwordT2
@@ -35,7 +35,7 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
+    - CP14ActionSpellKick
 
 - type: entity
   id: CP14MobUndeadSkeletonDodgerT2
@@ -49,8 +49,8 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellKickSkeleton
-    - CP14ActionSpellSprintSkeleton
+    - CP14ActionSpellKick
+    - CP14ActionSpellSprint
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2
@@ -89,7 +89,9 @@
       types:
         CP14ManaDepletion: -0.1
   - type: CP14SkillStorage
-    experienceMaxCap: 0
+    skillPoints:
+      Memory:
+        max: 0 
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
@@ -104,11 +106,7 @@
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
-    - CP14ActionSpellResurrectionDead
-    - CP14ActionSpellShadowStep
+
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
@@ -121,7 +119,6 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellHealFromDeathBallade
     - CP14ActionSpellMagicBallade
     - CP14ActionSpellSpeedBallade
     - CP14ActionSpellPeaceBallade

@@ -6,6 +6,7 @@ using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -18,6 +19,7 @@ public abstract partial class CP14SharedMagicSystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
+    [Dependency] private readonly SharedHandsSystem _hand = default!;
 
     private void InitializeChecks()
     {
@@ -26,7 +28,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
-        SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
+        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
@@ -89,14 +91,7 @@ public abstract partial class CP14SharedMagicSystem
     {
         if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
         {
-            var freeHand = 0;
-            foreach (var hand in hands.Hands)
-            {
-                if (hand.Value.IsEmpty)
-                    freeHand++;
-            }
-
-            if (freeHand >= ent.Comp.FreeHandRequired)
+            if (_hand.CountFreeableHands((args.Performer, hands)) >= ent.Comp.FreeHandRequired)
                 return;
         }
 
@@ -124,7 +119,7 @@ public abstract partial class CP14SharedMagicSystem
         args.Cancel();
     }
 
-    private void OnMobStateCheck(Entity<CP14MagicEffectAliveTargetRequiredComponent> ent,
+    private void OnMobStateCheck(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent,
         ref CP14CastMagicEffectAttemptEvent args)
     {
         if (args.Target is not { } target)
@@ -137,21 +132,10 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!ent.Comp.Inverted)
+        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
         {
-            if (_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-dead"));
-                args.Cancel();
-            }
-        }
-        else
-        {
-            if (!_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-alive"));
-                args.Cancel();
-            }
+            args.PushReason(Loc.GetString(ent.Comp.Popup));
+            args.Cancel();
         }
     }
 

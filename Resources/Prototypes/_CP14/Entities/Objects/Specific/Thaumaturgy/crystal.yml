@@ -16,7 +16,7 @@
     tags:
     - CP14EnergyCrystal
   - type: StaticPrice
-    price: 10
+    price: 15
 
 - type: entity
   id: CP14EnergyCrystalMedium

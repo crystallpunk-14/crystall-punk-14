@@ -57,7 +57,7 @@ public abstract partial class CP14SharedSkillSystem
             sb.Append($"• [color={indexedTree.Color.ToHex()}]{skillName}[/color]\n");
         }
 
-        sb.Append($"\n{Loc.GetString("cp14-skill-menu-level")} {ent.Comp.SkillsSumExperience}/{ent.Comp.ExperienceMaxCap}\n");
+        //sb.Append($"\n{Loc.GetString("cp14-skill-menu-level")} {ent.Comp.SkillsSumExperience}/{ent.Comp.ExperienceMaxCap}\n");
         msg.AddMarkupOrThrow(sb.ToString());
         return msg;
     }

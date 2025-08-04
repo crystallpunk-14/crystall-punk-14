@@ -43,3 +43,119 @@
             min: 1
             max: 1
 
+- type: entity
+  id: CP14ChairWoodenBirch
+  parent: CP14ChairWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/chairs.rsi
+    state: birch
+  - type: Construction
+    graph: CP14Seat
+    node: CP14ChairWoodenBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 1
+
+- type: entity
+  name: wooden stool
+  id: CP14StoolWooden
+  parent: CP14ChairWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/chairs.rsi
+    state: stoolWooden
+  - type: Construction
+    graph: CP14Stool
+    node: CP14StoolWooden
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
+
+- type: entity
+  name: wooden stool
+  id: CP14StoolBirch
+  parent: CP14StoolWooden
+  components:
+  - type: Sprite
+    sprite: _CP14/Structures/Furniture/chairs.rsi
+    state: stoolBirch
+  - type: Construction
+    graph: CP14Stool
+    node: CP14StoolBirch
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BirchWoodenPlanks1:
+            min: 1
+            max: 1

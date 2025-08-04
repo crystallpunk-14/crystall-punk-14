@@ -70,7 +70,7 @@
   name: cp14-food-sequence-content-cucumber
   sprites:
   - sprite: _CP14/Objects/Flora/Farm/cucumber.rsi
-    state: base1
+    state: slice1
   tags:
   - Vegetable
 
@@ -96,3 +96,26 @@
     state: slice1
   tags:
   - Fruit
+
+# Pepper
+
+- type: foodSequenceElement
+  id: CP14PepperSandwich
+  name: cp14-food-sequence-content-pepper
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/pepper.rsi
+    state: slice1
+  tags:
+  - Vegetable
+
+# Onion
+
+- type: foodSequenceElement
+  id: CP14OnionSandwich
+  name: food-sequence-content-onion
+  sprites:
+  - sprite: _CP14/Objects/Flora/Farm/onion.rsi
+    state: slice1
+  tags:
+  - Vegetable
+  - Slice

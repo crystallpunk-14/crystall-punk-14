@@ -78,6 +78,7 @@
       - !type:AdjustReagent
         reagent: UncookedAnimalProteins
         amount: 0.5
+  pricePerUnit: 0.45
 
 - type: reagent
   id: EggCooked
@@ -94,6 +95,7 @@
       - !type:AdjustReagent
         reagent: Protein
         amount: 1
+  pricePerUnit: 0.6
 
 - type: reagent
   id: Blackpepper

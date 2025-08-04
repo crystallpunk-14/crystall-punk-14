@@ -6,20 +6,9 @@
   components:
   - type: HumanoidAppearance
     species: CP14Tiefling
-  - type: Hunger
-    starvationDamage:
-      types:
-        Cold: 0.25
-        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Tiefling/parts.rsi
     state: full
-  - type: Thirst
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: CP14FoodMeatHuman
-        amount: 5
   - type: Body
     prototype: CP14Tiefling
     requiredLegs: 2
@@ -44,6 +33,8 @@
     damage:
       Heat: 1 #Magic regen from fire
       Cold: -1
+  - type: CP14AuraImprint
+    imprintColor: "#e0762b"
   - type: CP14SkillStorage #Innate pyrokinetic
     freeLearnedSkills:
     - PyrokineticT1

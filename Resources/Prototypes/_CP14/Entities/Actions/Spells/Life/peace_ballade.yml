@@ -17,6 +17,7 @@
     - !type:CP14SpellArea
       range: 4
       maxTargets: 8
+      affectCaster: true
       whitelist:
         components:
         - MobState

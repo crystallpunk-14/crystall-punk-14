@@ -1,17 +1,111 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Quartz
   levels:
-    min: 1
-    max: 8
+    min: 0
+    max: 10
   categories:
     Reward: 0.15
   layers:
     - !type:CP14OreDunGen
-      tileMask:
-      - CP14FloorBase
-      - CP14FloorIce
       entity: CP14CrystalQuartz
       count: 30
       minGroupSize: 1
       maxGroupSize: 5
 
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzEarth
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - CP14DemiplaneUnderground
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzEarth
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzFire
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - CP14DemiplaneHot
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzFire
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzWater
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - CP14DemiplaneWater
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzWater
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzAir
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzAir
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzOrder
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzOrder
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: cp14LocationModifier
+  id: CP14CrystalQuartzChaos
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14CrystalQuartzChaos
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2

@@ -26,6 +26,19 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14WoodenWallSpruce
+  graph: CP14WallWoodenSpruce
+  startNode: start
+  targetNode: CP14WallWoodenSpruce
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14WallWoodenPalisade
   graph: CP14WallWoodenPalisade
   startNode: start
@@ -49,6 +62,19 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WindowWoodenBirch
+  graph: CP14WindowWooden
+  startNode: start
+  targetNode: CP14WindowWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
 
 - type: construction
   crystallPunkAllowed: true

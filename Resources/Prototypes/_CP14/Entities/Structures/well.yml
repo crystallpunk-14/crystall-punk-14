@@ -12,9 +12,6 @@
     sprite: _CP14/Structures/Specific/Farming/well.rsi
     layers:
     - state: icon
-  #- type: Damageable
-  #  damageContainer: StructuralInorganic
-  #  damageModifierSet: CP14RockStructural
   - type: DrawableSolution
     solution: pool
   - type: SolutionContainerManager

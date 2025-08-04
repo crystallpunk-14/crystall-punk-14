@@ -11,7 +11,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSword
+    - CP14ModularBladeIronSword
 
 - type: entity
   id: CP14ModularCopperSword
@@ -27,13 +27,13 @@
       color: "#e28f08"
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeCopperSword
+    - CP14ModularBladeCopperSword
 
 - type: entity
   id: CP14ModularGuardHalberd
   parent: CP14ModularGripIronLongGuard
   name: "guard's halberd"
-  description: The standard issue armament of the imperial guard. A long iron halberd adorned with blue feathers and brass
+  description: The standard issue armament of the imperial guard. A long iron halberd adorned with blue feathers and brass.
   components:
   - type: Sprite
     layers:
@@ -44,8 +44,26 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeIronSword
-    - GardeSharpIron
+    - CP14ModularBladeIronSword
+    - CP14ModularGardeSharpIron
+
+- type: entity
+  id: CP14ModularGuardSword
+  parent: CP14ModularGripIronGuard
+  name: "guard's sword"
+  description: The standard issue armament of the imperial guard. A short sword adorned with blue feathers and brass.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/metall_sword.rsi
+      state: icon
+    - sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeIronSword
+    - CP14ModularGardeSharpIron
 
 - type: entity
   id: CP14ModularSkeletonHalberd
@@ -60,7 +78,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
+    - CP14ModularBladeBoneSword
 
 - type: entity
   id: CP14ModularSkeletonSword
@@ -75,7 +93,7 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
+    - CP14ModularBladeBoneSword
 
 - type: entity
   id: CP14ModularSkeletonHalberdUpgrade
@@ -91,8 +109,8 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
-    - GardeSharpIron
+    - CP14ModularBladeBoneSword
+    - CP14ModularGardeSharpIron
 
 - type: entity
   id: CP14ModularSkeletonSwordUpgrade
@@ -108,6 +126,20 @@
       state: icon
   - type: CP14ModularCraftAutoAssemble
     details:
-    - BladeBoneSword
-    - GardeSharpIron
+    - CP14ModularBladeBoneSword
+    - CP14ModularGardeSharpIron
 
+- type: entity
+  id: CP14ModularWoodenSword
+  parent: CP14ModularGripWooden
+  name: training wooden sword
+  description: A wooden sword, light and easy to use, even a complete inept, will be able to use it.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Sword/wooden_sword.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeWoodenSword

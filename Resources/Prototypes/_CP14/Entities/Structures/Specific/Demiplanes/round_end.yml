@@ -34,8 +34,8 @@
       - !type:PulseBehaviour
         interpolate: Cubic
         maxDuration: 5
-        minValue: 1.0
-        maxValue: 40.0
+        startValue: 0.1
+        endValue: 2.0
         property: Energy
         isLooped: true
         enabled: true
@@ -52,15 +52,6 @@
     range: 10
     sound:
       path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
-  - type: ActivatableUI
-    key: enum.CP14DemiplaneMapUiKey.Key
-    requiresComplex: true
-    singleUser: true
-  - type: CP14DemiplaneNavigationMap
-  - type: UserInterface
-    interfaces:
-      enum.CP14DemiplaneMapUiKey.Key:
-        type: CP14DemiplaneMapBoundUserInterface
 
 - type: entity
   id: CP14PortalFrameCrystal
@@ -104,86 +95,12 @@
   - type: CP14MagicEnergyPortRelay
 
 - type: entity
-  id: CP14DemiplaneCore
+  id: CP14PortalFrameCrystalLight
   categories: [ ForkFiltered ]
-  parent: BaseStructure
-  name: demiplane core
-  description: The heart of the demiplane. Your task is to break it and escape from this place before it collapses.
+  parent: CP14PortalFrameCrystal
+  suffix: Glow
   components:
-  - type: CP14DemiplaneCore
-  - type: Transform
-    anchored: true
-  - type: Clickable
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.25,0.25,0.25"
-        density: 600
-        mask:
-        - MachineMask
-        layer:
-        - MidImpassable
-        - LowImpassable
-  - type: Tag
-    tags:
-      - Structure
-  - type: Sprite
-    noRot: true
-    sprite: _CP14/Structures/Specific/Thaumaturgy/energy_monolith_big.rsi
-    layers:
-    - state: dimension_core
-    drawdepth: Mobs
-    offset: 0,0.4
   - type: PointLight
-    enabled: true
-    color: "#8f42ff"
-    castShadows: false
-    energy: 1
-    radius: 5
-    netsync: false
-  - type: LightBehaviour
-    behaviours:
-      - !type:PulseBehaviour
-        interpolate: Cubic
-        maxDuration: 5
-        minValue: 1.0
-        maxValue: 40.0
-        property: Energy
-        isLooped: true
-        enabled: true
-  - type: AmbientSound
-    volume: 5
-    range: 10
-    sound:
-      path: /Audio/_CP14/Effects/demiplane_heartbeat.ogg
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: CP14Rock
-  - type: MeleeSound
-    soundGroups:
-      Brute:
-        collection: GlassSmash
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 50
-      behaviors:
-        - !type:PlaySoundBehavior
-          sound:
-            collection: GlassBreak
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            CP14DimensitCrystal:
-              min: 2
-              max: 5
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            CP14SkyLightningPurple:
-              min: 1
-              max: 1
+    color: "#9c34e6"
+    energy: 2.5
+    radius: 8

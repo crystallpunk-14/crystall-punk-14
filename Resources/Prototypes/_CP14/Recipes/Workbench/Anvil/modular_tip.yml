@@ -6,57 +6,53 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - CopperMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - CopperMelting
   - !type:StackResource
     stack: CP14CopperBar
     count: 1
   result: CP14ModularTipCopperArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipIronArrow
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 2
+  requiredSkills:
+  - IronMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - IronMelting
   - !type:StackResource
     stack: CP14IronBar
     count: 1
   result: CP14ModularTipIronArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipGoldArrow
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
+  requiredSkills:
+  - GoldMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - GoldMelting
   - !type:StackResource
     stack: CP14GoldBar
     count: 1
   result: CP14ModularTipGoldArrow
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularTipMithrilArrow
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 2
+  requiredSkills:
+  - MithrilMelting
   requirements:
-  - !type:SkillRequired
-    skills:
-    - MithrilMelting
   - !type:StackResource
     stack: CP14MithrilBar
     count: 1
   result: CP14ModularTipMithrilArrow
-  resultCount: 4
+  resultCount: 5

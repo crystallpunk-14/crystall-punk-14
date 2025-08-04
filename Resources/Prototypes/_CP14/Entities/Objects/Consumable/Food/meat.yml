@@ -1,5 +1,4 @@
 ﻿# Base
-
 - type: entity
   parent: FoodInjectableBase
   id: CP14FoodMeatBase
@@ -17,11 +16,11 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2.5
         - ReagentId: UncookedAnimalProteins
           Quantity: 1
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 2
   - type: Temperature
     currentTemperature: 290
   - type: InternalTemperature
@@ -43,11 +42,11 @@
         maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 0.75
         - ReagentId: UncookedAnimalProteins
           Quantity: 0.33
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 0.75
   - type: InternalTemperature
     thickness: 0.006
     area: 0.006 # 1\3 of meat value
@@ -56,7 +55,6 @@
     - CP14MeatSlice
 
 # Lamb Meat
-
 - type: entity
   id: CP14FoodMeatLamb
   parent: CP14FoodMeatBase
@@ -67,8 +65,19 @@
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: sheepmeat
   - type: SliceableFood
-    count: 3
+    count: 4
     slice: CP14FoodMeatLambSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 24
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 8
   - type: Item
     size: Small
     shape:
@@ -77,6 +86,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatLambCooked
@@ -86,23 +98,27 @@
   - type: Sprite
     state: sheepmeat_cooked
   - type: SliceableFood
-    count: 3
+    count: 4
     slice: CP14FoodMeatLambCookedSlice
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 24
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Fat
           Quantity: 6
+        - ReagentId: Fat
+          Quantity: 8
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatLambSlice
@@ -123,13 +139,25 @@
           sheepmeat_slice: ""
           sheepmeat_slice2: ""
           sheepmeat_slice3: ""
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 2
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCookedSlice
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
 
 - type: entity
   id: CP14FoodMeatLambCookedSlice
@@ -149,18 +177,23 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 12
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2
         - ReagentId: Protein
-          Quantity: 0.33
+          Quantity: 1.5
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
 
 - type: entity
   id: CP14FoodMeatLambCutlet
@@ -174,12 +207,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 4
         - ReagentId: UncookedAnimalProteins
-          Quantity: 0.66
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 2
         - ReagentId: Fat
           Quantity: 4
         - ReagentId: Egg
@@ -191,6 +226,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatLambCutletCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatCutlet
 
 - type: entity
   id: CP14FoodMeatLambCutletCooked
@@ -203,12 +242,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 4
         - ReagentId: Protein
-          Quantity: 0.66
+          Quantity: 5
         - ReagentId: Fat
           Quantity: 4
         - ReagentId: EggCooked
@@ -217,10 +256,16 @@
     entries:
       CP14Sandwich: CP14CutletCookedSandwich
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatCutlet
 
+# Frog Leg
 - type: entity
   id: CP14FoodMeatFrogLeg
   parent: CP14FoodMeatBase
@@ -238,13 +283,17 @@
         maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 1.75
         - ReagentId: UncookedAnimalProteins
           Quantity: 1
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFrogLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
 
 - type: entity
   id: CP14FoodMeatFrogLegCooked
@@ -265,12 +314,16 @@
         - ReagentId: Protein
           Quantity: 1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
 
 # Human Meat
-
 - type: entity
   id: CP14FoodMeatHuman
   parent: CP14FoodMeatBase
@@ -290,7 +343,7 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
           Quantity: 10
         - ReagentId: Fat
@@ -304,6 +357,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHumanCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHumanCooked
@@ -331,12 +387,15 @@
           human_meat1_cooked: ""
           human_meat2_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Dino Meat
-
 - type: entity
   id: CP14FoodMeatDino
   parent: CP14FoodMeatBase
@@ -354,7 +413,7 @@
         maxVol: 20
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 3.6
         - ReagentId: UncookedAnimalProteins
           Quantity: 6
         - ReagentId: Fat
@@ -363,6 +422,9 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatDinoCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatDinoCooked
@@ -383,9 +445,13 @@
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHydra
@@ -404,13 +470,16 @@
         maxVol: 10
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5.5
+          Quantity: 2.15
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatHydraCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatHydraCooked
@@ -429,12 +498,15 @@
         - ReagentId: Protein
           Quantity: 3
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Rabbit Meat
-
 - type: entity
   id: CP14FoodMeatRabbit
   parent: CP14FoodMeatBase
@@ -451,24 +523,26 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
           Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 2
   - type: RandomSprite
     available:
       - random:
           rabbit_meat1: ""
           rabbit_meat2: ""
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatRabbitCooked
+  - type: Tag
+    tags:
+    - CP14Meat
 
 - type: entity
   id: CP14FoodMeatRabbitCooked
@@ -483,24 +557,29 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 2
         - ReagentId: Protein
           Quantity: 1.5
+        - ReagentId: Fat
+          Quantity: 2
   - type: RandomSprite
     available:
       - random:
           rabbit_meat1_cooked: ""
           rabbit_meat2_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
 
 # Pig and Boar Meat
-
 - type: entity
   id: CP14FoodMeatPig
   parent: CP14FoodMeatBase
@@ -520,14 +599,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: UncookedAnimalProteins
           Quantity: 4
         - ReagentId: Fat
-          Quantity: 8
+          Quantity: 14
   - type: RandomSprite
     available:
       - random:
@@ -537,6 +616,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigCooked
@@ -553,23 +636,28 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Protein
           Quantity: 4
         - ReagentId: Fat
-          Quantity: 8
+          Quantity: 14
   - type: RandomSprite
     available:
       - random:
           pig_meat1_cooked: ""
           pig_meat4_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigLeg
@@ -585,18 +673,23 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: UncookedAnimalProteins
-          Quantity: 6
+          Quantity: 10
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 10
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigLegCooked
@@ -608,18 +701,24 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: Protein
-          Quantity: 6
+          Quantity: 10
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 10
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatBoar
@@ -640,14 +739,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: UncookedAnimalProteins
-          Quantity: 4
-        - ReagentId: Fat
           Quantity: 8
+        - ReagentId: Fat
+          Quantity: 10
   - type: RandomSprite
     available:
       - random:
@@ -657,6 +756,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatBoarCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatBoarCooked
@@ -674,23 +777,28 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: Protein
-          Quantity: 4
-        - ReagentId: Fat
           Quantity: 8
+        - ReagentId: Fat
+          Quantity: 10
   - type: RandomSprite
     available:
       - random:
           pig_meat2_cooked: ""
           pig_meat3_cooked: ""
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigSlice
@@ -707,21 +815,23 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.5
         - ReagentId: UncookedAnimalProteins
-          Quantity: 1
-        - ReagentId: Fat
           Quantity: 2
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
+        - ReagentId: Fat
+          Quantity: 3
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatPigCookedSlice
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatPig
 
 - type: entity
   id: CP14FoodMeatPigCookedSlice
@@ -734,21 +844,26 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5
+        maxVol: 7
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.5
         - ReagentId: Protein
-          Quantity: 1
-        - ReagentId: Fat
           Quantity: 2
+        - ReagentId: Fat
+          Quantity: 3
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatPig
 
 # Monster Meat
-
 - type: entity
   id: CP14FoodMeatMonster
   parent: CP14FoodMeatBase
@@ -768,14 +883,16 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 26
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 2
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: UncookedAnimalProteins
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 8
   - type: RandomSprite
     available:
       - random:
@@ -787,6 +904,10 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatMonsterCooked
@@ -804,14 +925,14 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        maxVol: 26
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Protein
-          Quantity: 6
+          Quantity: 8
         - ReagentId: Fat
-          Quantity: 6
+          Quantity: 8
   - type: RandomSprite
     available:
       - random:
@@ -820,9 +941,14 @@
           mole_meat3: CP14cookedMeat
           mole_meat4: CP14cookedMeat
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatMonsterLeg
@@ -838,18 +964,25 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 30
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 2
         - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: UncookedAnimalProteins
           Quantity: 6
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 10
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatMonsterLegCooked
@@ -862,18 +995,24 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        maxVol: 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
         - ReagentId: Protein
-          Quantity: 6
+          Quantity: 10
         - ReagentId: Fat
-          Quantity: 4
+          Quantity: 10
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatMonsterSlice
@@ -890,21 +1029,25 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5 # Add a reagent that restores mana, possibly poisonous
+        maxVol: 8
         reagents:
+        - ReagentId: CP14Taikamyrky
+          Quantity: 0.5
         - ReagentId: Nutriment
           Quantity: 1.5
         - ReagentId: UncookedAnimalProteins
-          Quantity: 1.5
+          Quantity: 2
         - ReagentId: Fat
-          Quantity: 1.5
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
+          Quantity: 2
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatMonsterCookedSlice
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatMonsterCookedSlice
@@ -918,26 +1061,31 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 5 # Add a reagent that restores mana, if heated, perhaps change the composition of the reagent
+        maxVol: 8
         reagents:
         - ReagentId: Nutriment
           Quantity: 1.5
         - ReagentId: Protein
-          Quantity: 1.5
+          Quantity: 2
         - ReagentId: Fat
-          Quantity: 1.5
+          Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatMonster
 
-  #Flem meat
-
+# Flem meat
 - type: entity
   id: CP14FoodMeatFlemHead
   parent: CP14FoodMeatBase
   name: raw flem head
-  description: honestly looks quite tasty
+  description: Honestly looks quite tasty.
   components:
   - type: FlavorProfile
     flavors:
@@ -946,7 +1094,7 @@
     sprite: _CP14/Objects/Consumable/Food/meat.rsi
     state: flem_head
   - type: Item
-    size: Large
+    size: Normal
     shape:
     - 0,0,1,1
   - type: SolutionContainerManager
@@ -955,15 +1103,19 @@
         maxVol: 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 7
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
-          Quantity: 18
+          Quantity: 12
         - ReagentId: Fat
-          Quantity: 5
+          Quantity: 2
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemHeadCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemHeadCooked
@@ -980,19 +1132,24 @@
         - ReagentId: Nutriment
           Quantity: 7
         - ReagentId: Protein
-          Quantity: 18
+          Quantity: 12
         - ReagentId: Fat
           Quantity: 5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemTorso
   parent: CP14FoodMeatBase
   name: raw flem torso
-  description: seems to be hollow
+  description: Seems to be hollow.
   components:
   - type: FlavorProfile
     flavors:
@@ -1004,7 +1161,7 @@
     count: 3
     slice: CP14FoodMeatFlemTorsoCut
   - type: Item
-    size: Large
+    size: Normal
     shape:
     - 0,0,1,1
   - type: SolutionContainerManager
@@ -1013,15 +1170,19 @@
         maxVol: 35
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6
+          Quantity: 2
         - ReagentId: UncookedAnimalProteins
           Quantity: 24
         - ReagentId: Fat
-          Quantity: 2
+          Quantity: 1
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemTorsoCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCooked
@@ -1041,19 +1202,24 @@
         - ReagentId: Nutriment
           Quantity: 6
         - ReagentId: Protein
-          Quantity: 24
+          Quantity: 15
         - ReagentId: Fat
           Quantity: 2
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCut
   parent: CP14FoodMeatSliceBase
   name: raw flem ring
-  description: onions not included
+  description: Onions not included.
   components:
   - type: FlavorProfile
     flavors:
@@ -1070,18 +1236,20 @@
         maxVol: 10
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 1
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
         - ReagentId: Fat
           Quantity: 0.5
-  - type: Tag
-    tags:
-    - CP14RawMeatSlice
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemTorsoCookedCut
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemTorsoCookedCut
@@ -1103,15 +1271,21 @@
         - ReagentId: Fat
           Quantity: 0.5
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatSlice
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemLeg
   parent: CP14FoodMeatBase
   name: raw flem leg
-  description: probally not the best part to eat. but you never know until you try
+  description: Probally not the best part to eat. but you never know until you try.
   components:
   - type: FlavorProfile
     flavors:
@@ -1138,12 +1312,17 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14FoodMeatFlemLegCooked
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatMonster
 
 - type: entity
   id: CP14FoodMeatFlemLegCooked
   parent: CP14FoodMeatFlemLeg
   name: fish sticks
-  description: like freis. but fish!
+  description: Like fries. But fish!
   components:
   - type: Sprite
     state: flem_leg_cooked
@@ -1154,11 +1333,17 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 0.2
-        - ReagentId: UncookedAnimalProteins
+        - ReagentId: Protein
           Quantity: 5
         - ReagentId: Fat
           Quantity: 0.1
   - type: CP14TemperatureTransformation
+    autoTransformOnCooked: false
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14Ash1
+  - type: Tag
+    tags:
+    - CP14Meat
+    - CP14MeatLeg
+    - CP14MeatMonster

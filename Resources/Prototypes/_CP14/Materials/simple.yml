@@ -79,6 +79,15 @@
   price: 2
 
 - type: material
+  id: CP14Brass
+  stackEntity: CP14IronBar1
+  name: cp14-material-brass
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/brass_bar.rsi, state: bar_2 }
+  color: "#bb7547"
+  price: 2.5
+
+- type: material
   id: CP14Gold
   stackEntity: CP14GoldBar1
   name: cp14-material-gold
@@ -97,6 +106,14 @@
   price: 5
 
 - type: material
+  id: CP14OreCoal
+  stackEntity: CP14OreCoal1
+  name: cp14-material-coal
+  icon: { sprite: _CP14/Objects/Materials/coal_ore.rsi, state: ore2 }
+  color: "#232526"
+  price: 0.8
+
+- type: material
   id: CP14FloraMaterial
   stackEntity: CP14FloraMaterial1
   name: cp14-material-flora
@@ -113,3 +130,21 @@
   icon: { sprite: _CP14/Objects/Materials/ash.rsi, state: ash_1 }
   color: "#2d313c"
   price: 0
+
+- type: material
+  id: CP14SaltStone
+  stackEntity: CP14SaltStone1
+  name: cp14-material-salt
+  unit: cp14-materials-unit-pile
+  icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
+  color: "#85a6a8"
+  price: 0.4
+
+- type: material
+  id: CP14Leather
+  #stackEntity: CP14Leather
+  name: cp14-material-leather
+  unit: materials-unit-roll
+  icon: { sprite: _CP14/Objects/Ingredients/leather.rsi, state: leather }
+  color: "#a78a63"
+  price: 1.2

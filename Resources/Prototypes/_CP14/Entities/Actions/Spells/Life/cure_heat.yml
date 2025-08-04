@@ -4,9 +4,6 @@
   name: Cure burn
   description: You heal skin damage caused by excessive cooling or heating.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_burn
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
@@ -30,6 +27,7 @@
             Heat: -10
             Shock: -10
       - !type:Jitter
+  - type: CP14MagicEffectTargetMobStatusRequired
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"

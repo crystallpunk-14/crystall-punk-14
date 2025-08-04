@@ -61,6 +61,15 @@
       shader: unshaded
 
 - type: entity
+  parent: CP14BaseSpellScrollLight
+  id: CP14SpellScrollSphereOfLight
+  name: sphere of light spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellSphereOfLight
+
+- type: entity
   id: CP14SphereOfLight
   name: Sphere of light
   parent: BaseItem
@@ -96,12 +105,3 @@
       path: /Audio/Effects/drop.ogg
       params:
         volume: -100 #Yes, it's stupid, but it's easier
-
-- type: entity
-  parent: CP14BaseSpellScrollLight
-  id: CP14SpellScrollSphereOfLight
-  name: sphere of light spell scroll
-  components:
-  - type: CP14SpellStorage
-    spells:
-    - CP14ActionSpellSphereOfLight

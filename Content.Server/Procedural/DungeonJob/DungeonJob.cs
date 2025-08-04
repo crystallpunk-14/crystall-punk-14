@@ -42,6 +42,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
     private readonly EntityTableSystem _entTable;
     private readonly TagSystem _tags;
     private readonly TileSystem _tile;
+    private readonly TurfSystem _turf;
     private readonly SharedMapSystem _maps;
     private readonly SharedTransformSystem _transform;
 
@@ -70,6 +71,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         DungeonSystem dungeon,
         EntityLookupSystem lookup,
         TileSystem tile,
+        TurfSystem turf,
         SharedTransformSystem transform,
         DungeonConfig gen,
         MapGridComponent grid,
@@ -89,6 +91,7 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
         _dungeon = dungeon;
         _lookup = lookup;
         _tile = tile;
+        _turf = turf;
         _tags = _entManager.System<TagSystem>();
         _maps = _entManager.System<SharedMapSystem>();
         _entTable = _entManager.System<EntityTableSystem>();
@@ -216,6 +219,15 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
             //CP14 zone
             case CP14OreDunGen cp14OreDunGen:
                 await PostGen(cp14OreDunGen, dungeons, reservedTiles, random);
+                break;
+            case CP14RoomsDunGen cp14RoomsDunGen:
+                await PostGen(cp14RoomsDunGen, dungeons, reservedTiles, random);
+                break;
+            case CP14BiomeDunGen cp14BiomesDunGen:
+                await PostGen(cp14BiomesDunGen, dungeons, reservedTiles, random);
+                break;
+            case CP14ReserveGrid cp14ReserveGrid:
+                await PostGen(cp14ReserveGrid, reservedTiles);
                 break;
             //CP14 zone end
             case AutoCablingDunGen cabling:

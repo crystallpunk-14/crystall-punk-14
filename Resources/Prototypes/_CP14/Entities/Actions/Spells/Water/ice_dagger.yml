@@ -58,7 +58,7 @@
         Piercing: 5
         Cold: 3
     soundHit:
-      collection: MetalThud
+      path: /Audio/Weapons/bladeslice.ogg
     cPAnimationLength: 0.25
   - type: Clothing
     equipDelay: 0.25
@@ -67,7 +67,6 @@
     breakOnMove: false
     slots:
     - belt
-  - type: CP14MeleeParriable
   - type: Item
     shape:
     - 0,0,0,1
@@ -135,6 +134,7 @@
         acts: ["Destruction"]
   - type: TimedDespawn
     lifetime: 60
+  - type: Execution
 
 - type: entity
   parent: CP14BaseSpellScrollWater

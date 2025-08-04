@@ -131,17 +131,17 @@ CP14BaseTwoHandedSword: null
 CP14TwoHandedSwordScythe: null
 
 #2025-17-01
-CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
+CP14ClothingCloakBrassArmor: null
 CP14ClothingCloakCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
 CP14ClothingCloakCuirassLeg: CP14ArmorIronCuirass
 
 #2025-21-01
-CP14PlateWooden: CP14Plate
-CP14PlateWooden2: CP14Plate
-CP14PlateCeramic: CP14Plate
-CP14PlateIron: CP14Plate
+CP14PlateWooden: CP14PlateWooden
+CP14PlateWooden2: CP14PlateWooden
+CP14PlateCeramic: CP14PlateWooden
+CP14PlateIron: CP14PlateIron
 
 #2025-22-01
 CP14BaseLightHammer: CP14ModularIronHammer
@@ -343,10 +343,11 @@ CP14ClothingRingFireball: null
 CP14ClothingRingFlashLight: null
 CP14ClothingRingIceShards: null
 
-# 2025-06-04
+# 2025-04-06
 CP14BaseMop: CP14ModularWoodMop
+CP14CarpetPink: CP14CarpetPurple
 
-#2025-06-15
+#2025-15-06
 CP14FoodMeatMole: CP14FoodMeatMonster
 CP14FoodMeatMoleCooked: CP14FoodMeatMonsterCooked
 CP14FoodMeatMoleLeg: CP14FoodMeatMonsterLeg
@@ -354,10 +355,89 @@ CP14FoodMeatMoleLegCooked: CP14FoodMeatMonsterLegCooked
 CP14FoodMeatMoleSlice: CP14FoodMeatMonsterSlice
 CP14FoodMeatMoleCookedSlice: CP14FoodMeatMonsterCookedSlice
 
-#2025-06-16
+#2025-16-06
 CP14SpellscrollSignalLightBlue: null
 CP14SpellscrollSignalLightRed: null
 CP14SpellscrollSignalLightYellow: null
+
+#2025-28-06
+CP14SpellScrollMagicSplitting: null
+CP14AlchemyFurnaceDebug: CP14FurnaceDebug
+CP14AlchemyFurnace: CP14Furnace
+
+#2025-06-07
+CP14WoodenClosetGuardFilled: null
+CP14WoodenClosetGuardCommanderFilled: null
+
+#2025-13-07
+CP14Plate: CP14PlateWooden
+CP14FoodPieApple: null
+CP14FoodPieAppleRaw: null
+CP14FoodPieFish: null
+CP14FoodPieFishRaw: null
+CP14FoodPieMeat: null
+CP14FoodPieMeatRaw: null
+
+# 2025-07-20
+CP14ClothingBackpackLeather: CP14ClothingBackBackpackT1
+CP14ClothingSatchelLeather:  CP14ClothingBackSatchelT1
+CP14ClothingBlueCollarDress:  CP14ClothingShirtBlueCollarDress
+CP14ClothingBlueOpenDress:  CP14ClothingShirtBlueOpenDress
+CP14ClothingRedOpenDress:  CP14ClothingShirtRedOpenDress
+CP14ClothingYellowOpenDress:  CP14ClothingShirtYellowOpenDress
+CP14ClothingCottonRedDress:  CP14ClothingShirtCottonRedDress
+CP14ClothingCottonWhiteDress:  CP14ClothingShirtCottonWhiteDress
+CP14ClothingCottonWhiteCollarDress:  CP14ClothingShirtCottonWhiteCollarDress
+CP14ClothingCottonYellowCollarDress:  CP14ClothingShirtCottonYellowCollarDress
+CP14ClothingYellowWizardDress:  CP14ClothingShirtYellowWizardDress
+CP14ClothinGreenBeltDress:  CP14ClothingShirtGreenBeltDress
+CP14ClothinGreenBeltDress2:  CP14ClothingShirtGreenBeltDress2
+CP14ClothinGreenLightDress:  CP14ClothingShirtGreenLightDress
+CP14ClothingWarriorsGarbDress:  CP14ClothingShirtWarriorsGarbDress
+CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
+
+#2025-07-27
+CP14ClothingOuterClothingCopperArmor: null
+CP14DemiplanEnterRoomMarker: null
+
+CP14CandleRed: CP14Candle
+CP14CandleBlue: CP14Candle
+CP14CandleBlack: CP14Candle
+CP14CandleGreen: CP14Candle
+CP14CandlePurple: CP14Candle
+CP14CandleSmall: CP14Candle
+CP14CandleRedSmall: CP14Candle
+CP14CandleBlueSmall: CP14Candle
+CP14CandleBlackSmall: CP14Candle
+CP14CandleGreenSmall: CP14Candle
+CP14CandlePurpleSmall: CP14Candle
+
+CP14CandleInfinite: CP14CandleIgnited
+CP14CandleRedInfinite: CP14CandleIgnited
+CP14CandleBlueInfinite: CP14CandleIgnited
+CP14CandleBlackInfinite: CP14CandleIgnited
+CP14CandleGreenInfinite: CP14CandleIgnited
+CP14CandlePurpleInfinite: CP14CandleIgnited
+CP14CandleRedSmallInfinite: CP14CandleIgnited
+CP14CandleBlueSmallInfinite: CP14CandleIgnited
+CP14CandleBlackSmallInfinite: CP14CandleIgnited
+CP14CandleGreenSmallInfinite: CP14CandleIgnited
+CP14CandlePurpleSmallInfinite: CP14CandleIgnited
+
+#2025-07-28
+CP14ClothingBackLeatherBackpack: CP14ClothingBackBackpackT1
+CP14ClothingBackLeatherSatchel:  CP14ClothingBackSatchelT1
+
+#2025-08-01
+CP14SpellScrollResurrection: null
+
+#2025-08-02
+CP14SpellScrollDemiplaneInfiltration: null
+CP14DemiplaneEntryPointMarker: null
+CP14SpellScrollMonolithWarp: null
+CP14GuidebookDemiplanes: null
+CP14DemiplanePassway: null
+CP14DemiplaneCore: null
 
 # <---> CrystallEdge migration zone end
 
@@ -398,7 +478,7 @@ lanternextrabright: LanternFlash
 
 # 2023-08-04
 BoxMagazineLightRifleHighVelocity: BoxMagazineLightRifle
-BoxMagazineMagnumSubMachineGunHighVelocity: BoxMagazineMagnumSubMachineGun
+BoxMagazineMagnumSubMachineGunHighVelocity: null
 BoxMagazinePistolCaselessRifleHighVelocity: BoxMagazinePistolCaselessRifle
 BoxMagazinePistolHighCapacityHighVelocity: BoxMagazinePistolHighCapacity
 BoxMagazinePistolHighVelocity: BoxMagazinePistol
@@ -420,9 +500,9 @@ MagazineBoxMagnumHighVelocity: MagazineBoxMagnum
 MagazineBoxPistolHighVelocity: MagazineBoxPistol
 MagazineBoxRifleHighVelocity: MagazineBoxRifle
 MagazineCaselessRifleHighVelocity: MagazineCaselessRifle
-MagazineCaselessRifleShortHighVelocity: MagazineCaselessRifleShort
+MagazineCaselessRifleShortHighVelocity: null
 MagazineLightRifleHighVelocity: MagazineLightRifle
-MagazineMagnumSubMachineGunHighVelocity: MagazineMagnumSubMachineGun
+MagazineMagnumSubMachineGunHighVelocity: null
 MagazinePistolCaselessRifleHighVelocity: MagazinePistolCaselessRifle
 MagazinePistolHighCapacityHighVelocity: MagazinePistolHighCapacity
 MagazinePistolHighVelocity: MagazinePistol
@@ -666,11 +746,11 @@ MagazinePistolRubber: MagazinePistol
 MagazinePistolSubMachineGunRubber: MagazinePistolSubMachineGun
 MagazinePistolCaselessRifleRubber: MagazinePistolCaselessRifle
 MagazineMagnumRubber: MagazineMagnum
-MagazineMagnumSubMachineGunRubber: MagazineMagnumSubMachineGun
+MagazineMagnumSubMachineGunRubber: null
 MagazineLightRifleRubber: MagazineLightRifle
 MagazineRifleRubber: MagazineRifle
 MagazineCaselessRifleRubber: MagazineCaselessRifle
-MagazineCaselessRifleShortRubber: MagazineCaselessRifleShort
+MagazineCaselessRifleShortRubber: null
 SpeedLoaderPistolRubber: SpeedLoaderPistol
 SpeedLoaderMagnumRubber: SpeedLoaderMagnum
 MagazineBoxPistolRubber: MagazineBoxPistol
@@ -686,7 +766,7 @@ BoxMagazinePistolSubMachineGunRubber: BoxMagazinePistolSubMachineGun
 BoxMagazineLightRifleRubber: BoxMagazineLightRifle
 BoxMagazineRifleRubber: BoxMagazineRifle
 BoxMagazineCaselessRifleRubber: BoxMagazinePistolCaselessRifle
-BoxMagazineMagnumSubMachineGunRubber: BoxMagazineMagnumSubMachineGun
+BoxMagazineMagnumSubMachineGunRubber: null
 WeaponPistolMk58Nonlethal: WeaponPistolMk58
 WeaponPistolN1984Nonlethal: WeaponPistolN1984
 WeaponSubMachineGunDrozdRubber: WeaponSubMachineGunDrozd
@@ -1006,12 +1086,33 @@ ClothingNeckCloakMiner: null
 MatterBinStockPart: MicroManipulatorStockPart
 CapacitorStockPart: MicroManipulatorStockPart
 
+# 2025-05-26 Turrets
+WeaponEnergyTurretStation: WeaponEnergyTurretSecurity
+WeaponEnergyTurretStationControlPanel: WeaponEnergyTurretSecurityControlPanel
+WeaponEnergyTurretStationMachineCircuitboard: WeaponEnergyTurretSecurityMachineCircuitboard
+
 # 2025-05-30
 SpawnHonkBot: SpawnMobHonkBot
 
 # 2025-06-01
 CrateFoodPizzaLarge: CrateFoodPizza
 CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
+
+# 2025-06-06
+MagazineLightRifleMaxim: null
+MagazineLightRiflePkBox: null
+MagazineCaselessRifle10x24: null
+BaseMagazineCaselessRifleShort: null
+MagazineCaselessRifleShort: null
+MagazineCaselessRifleShortPractice: null
+BaseMagazineMagnumSubMachineGun: null
+MagazineMagnumSubMachineGunEmpty: null
+MagazineMagnumSubMachineGun: null
+MagazineMagnumSubMachineGunPractice: null
+MagazineMagnumSubMachineGunUranium: null
+MagazineMagnumSubMachineGunPiercing: null
+BoxMagazineMagnumSubMachineGun: null
+BoxMagazineMagnumSubMachineGunPractice: null
 
 # 2025-06-09
 BarSignAlignTile: BarSign
@@ -1040,3 +1141,6 @@ BarSignEmprahAlignTile: BarSignEmprah
 BarSignSpacebucksAlignTile: BarSignSpacebucks
 BarSignMaltroachAlignTile: BarSignMaltroach
 BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
+
+# 2025-06-21
+ClothingNeckHeadphones: ClothingMultipleHeadphones

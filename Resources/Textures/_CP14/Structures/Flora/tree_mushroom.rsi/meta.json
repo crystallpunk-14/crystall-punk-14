@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "By jaraten(github/discord), based on wax391's works",
+    "size": {
+        "x": 64,
+        "y": 96
+    },
+    "states": [
+        {
+            "name": "1_log"
+        },
+        {
+            "name": "1_hat"
+        },
+        {
+            "name": "2_log"
+        },
+        {
+            "name": "2_hat"
+        },
+        {
+            "name": "3_log"
+        },
+        {
+            "name": "3_hat"
+        },
+        {
+            "name": "4_log"
+        },
+        {
+            "name": "4_hat"
+        }
+    ]
+}

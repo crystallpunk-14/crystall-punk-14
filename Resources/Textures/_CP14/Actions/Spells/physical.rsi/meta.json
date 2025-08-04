@@ -8,19 +8,16 @@
   "copyright": "Created by TheShuEd",
   "states": [
     {
+      "name": "dash"
+    },
+    {
       "name": "kick"
     },
     {
+      "name": "second_wind"
+    },
+    {
       "name": "sprint"
-    },
-    {
-      "name": "sprint_skull"
-    },
-    {
-      "name": "kick_skull"
-    },
-    {
-      "name": "dash"
     }
   ]
 }

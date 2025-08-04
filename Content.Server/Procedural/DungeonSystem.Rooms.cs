@@ -78,7 +78,7 @@ public sealed partial class DungeonSystem
         Vector2i origin,
         DungeonRoomPrototype room,
         Random random,
-        HashSet<Vector2i>? reservedTiles,
+        HashSet<Vector2i>? reservedTiles = null, //CP14 default null
         bool clearExisting = false,
         bool rotation = false)
     {
@@ -128,29 +128,6 @@ public sealed partial class DungeonSystem
         var roomDimensions = room.Size;
 
         var finalRoomRotation = roomTransform.Rotation();
-
-        // go BRRNNTTT on existing stuff
-        if (clearExisting)
-        {
-            var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
-            _entitySet.Clear();
-            // Polygon skin moment
-            gridBounds = gridBounds.Enlarged(-0.05f);
-            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
-
-            foreach (var templateEnt in _entitySet)
-            {
-                Del(templateEnt);
-            }
-
-            if (TryComp(gridUid, out DecalGridComponent? decalGrid))
-            {
-                foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
-                {
-                    _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
-                }
-            }
-        }
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;

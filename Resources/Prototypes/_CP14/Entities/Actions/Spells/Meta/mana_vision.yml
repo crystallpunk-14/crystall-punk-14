@@ -1,0 +1,53 @@
+- type: entity
+  id: CP14ActionToggleMagicVision
+  parent: BaseMentalAction
+  name: Magical vision
+  description: You focus on magical flows to track recent events and scan the aura imprints of other living beings.
+  components:
+  - type: Action
+    useDelay: 5
+    itemIconStyle: BigAction
+    checkCanInteract: false
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: magic_vision
+  - type: InstantAction
+    event: !type:CP14MagicVisionToggleActionEvent
+
+- type: entity
+  id: CP14ManaVisionPointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    color: "#42a4f5"
+    sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
+    offset: 0, -1
+    layers:
+      - state: pointer
+        shader: unshaded
+    drawdepth: LowFloors
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  id: CP14MagicVisionMarker
+  categories: [ HideSpawnMenu ]
+  name: mana trace
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    layers:
+      - state: sphere
+        sprite: /Textures/_CP14/Effects/Magic/pointer_sphere.rsi
+        shader: unshaded
+        color: "#42a4f5"
+  - type: Clickable
+  - type: Visibility
+    layer: 8 #magic vision only

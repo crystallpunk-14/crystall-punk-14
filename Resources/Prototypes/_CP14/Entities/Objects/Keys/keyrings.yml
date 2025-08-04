@@ -95,6 +95,7 @@
   components:
   - type: StorageFill
     contents:
+    - id: CP14KeyMercantShopPublic
     - id: CP14KeyTavernMerchantShopAbstract
 
 - type: entity

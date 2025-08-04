@@ -33,3 +33,7 @@
       - Screwing
     useSound:
       collection: Screwdriver
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 2
+      CP14WoodenPlanks: 20

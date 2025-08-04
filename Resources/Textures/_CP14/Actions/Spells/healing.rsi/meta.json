@@ -8,6 +8,9 @@
   "copyright": "Created by TheShuEd, cure_wounds created by .kreks.",
   "states": [
     {
+      "name": "air_saturation"
+    },
+    {
       "name": "cure_burn"
     },
     {
@@ -24,9 +27,6 @@
     },
     {
       "name": "plant_growth"
-    },
-    {
-      "name": "speed_music"
     }
   ]
 }

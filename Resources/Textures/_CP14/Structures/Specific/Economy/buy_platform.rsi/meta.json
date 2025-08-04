@@ -14,7 +14,13 @@
       "name": "buy"
     },
     {
+      "name": "old"
+    },
+    {
       "name": "sell"
+    },
+    {
+      "name": "salary"
     },
     {
       "name": "impact",

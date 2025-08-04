@@ -8,10 +8,19 @@
       edges:
         - to: CP14WoodenBed
           steps:
-            - stackGroup: WoodenPlanks
+            - material: CP14WoodenPlanks
               amount: 2
             - material: CP14Cloth
               amount: 1
               doAfter: 2
+        - to: CP14BirchWoodenBed
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 2
+          - material: CP14Cloth
+            amount: 1
+            doAfter: 2
     - node: CP14WoodenBed
       entity: CP14WoodenBed
+    - node: CP14BirchWoodenBed
+      entity: CP14BirchWoodenBed
