@@ -342,20 +342,18 @@
 - type: cp14LocationModifier
   id: EnemyCackle
   levels:
-    min: 3
-    max: 8
+    min: 2
+    max: 5
   name: cp14-modifier-cackle
   categories:
     Danger: 0.3
   requiredTags:
   - CP14DemiplaneOpenSky
-  - CP14DemiplaneOres
   blacklistTags:
-  - CP14DemiplaneHerbals
-  - CP14DemiplanePeacefulAnimals
+  - CP14DemiplaneCold
   layers:
   - !type:CP14OreDunGen
     entity: CP14MobMonsterCackle
-    count: 6
+    count: 4
     minGroupSize: 1
     maxGroupSize: 3
