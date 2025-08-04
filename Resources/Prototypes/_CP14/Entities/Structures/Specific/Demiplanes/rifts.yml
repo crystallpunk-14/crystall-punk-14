@@ -1,6 +1,7 @@
 - type: entity
   id: CP14DemiplaneRiftCore
   name: demiplane rift core
+  description: Touch to open the door to a new world
   categories: [ ForkFiltered ]
   placement:
     mode: SnapgridCenter
@@ -15,6 +16,11 @@
   - type: CP14DemiplaneRift
   - type: Clickable
   - type: InteractionOutline
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
 
 - type: entity
   parent: MarkerBase
@@ -43,9 +49,24 @@
     layers:
     - state: pulse
       shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 2
+        startValue: 0.1
+        endValue: 1.0
+        property: Energy
+        isLooped: true
+        enabled: true
   - type: AmbientSound
     volume: -3
     range: 7
@@ -68,6 +89,11 @@
     layers:
     - state: anom
       shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
   - type: AmbientSound
     volume: -3
     range: 7

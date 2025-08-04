@@ -4,7 +4,7 @@
   id: Lava
   levels:
     min: 2
-    max: 10
+    max: 5
   generationWeight: 0.3
   categories:
     Danger: 0.25

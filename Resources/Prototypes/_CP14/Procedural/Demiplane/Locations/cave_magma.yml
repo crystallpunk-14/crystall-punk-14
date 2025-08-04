@@ -18,7 +18,7 @@
   layers:
   # Masks
   - !type:NoiseDistanceDunGen
-    size: 120, 120
+    size: 90, 90
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -32,7 +32,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 110, 110
+    size: 80, 80
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.8
     layers:
@@ -46,7 +46,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 80, 80
+    size: 60, 60
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -60,7 +60,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 50, 50
+    size: 30, 30
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.8
     layers:
@@ -83,6 +83,6 @@
     tileMask:
     - CP14FloorGrass
   - !type:CP14BiomeDunGen
-    biomeTemplate: CP14MarbleCaves
+    biomeTemplate: CP14LavaOceanFill
     tileMask:
     - CP14FloorMarble

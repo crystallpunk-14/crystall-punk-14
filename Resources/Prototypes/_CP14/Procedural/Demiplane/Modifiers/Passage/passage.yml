@@ -2,7 +2,7 @@
   id: DemiplaneArcTriple
   levels:
     min: 0
-    max: 1
+    max: 2
   generationWeight: 0.3
   categories:
     Passage: 1
@@ -16,7 +16,7 @@
   id: DemiplaneArcDouble
   levels:
     min: 1
-    max: 2
+    max: 3
   generationWeight: 0.6
   categories:
     Passage: 1
@@ -30,7 +30,7 @@
   id: DemiplaneArcSingle
   levels:
     min: 2
-    max: 2
+    max: 4
   generationWeight: 1
   categories:
     Passage: 1

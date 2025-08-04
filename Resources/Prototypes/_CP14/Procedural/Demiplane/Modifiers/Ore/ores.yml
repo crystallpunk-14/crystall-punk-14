@@ -1,10 +1,29 @@
 # TIER 1
 
 - type: cp14LocationModifier
-  id: IronOre
+  id: Marble
   levels:
     min: 0
-    max: 10
+    max: 5
+  unique: true
+  categories:
+    Ore: 0
+  requiredTags:
+  - CP14DemiplaneOres
+  layers:
+    - !type:CP14OreDunGen
+      entityMask:
+      - CP14WallStone
+      entity: CP14WallMarbleStone
+      count: 5
+      minGroupSize: 5
+      maxGroupSize: 10
+
+- type: cp14LocationModifier
+  id: IronOre
+  levels:
+    min: 1
+    max: 5
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -24,8 +43,8 @@
 - type: cp14LocationModifier
   id: IronOreUnderground
   levels:
-    min: 0
-    max: 10
+    min: 1
+    max: 5
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -46,7 +65,7 @@
   id: CopperOre
   levels:
     min: 0
-    max: 5
+    max: 2
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -67,7 +86,7 @@
   id: CopperOreUnderground
   levels:
     min: 0
-    max: 5
+    max: 2
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -88,7 +107,7 @@
   id: CoalOre
   levels:
     min: 0
-    max: 8
+    max: 2
   name: cp14-modifier-coal-ore
   unique: false
   categories:
@@ -109,7 +128,7 @@
   id: CoalOreUnderground
   levels:
     min: 0
-    max: 8
+    max: 2
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -131,8 +150,8 @@
 - type: cp14LocationModifier
   id: GoldOre
   levels:
-    min: 2
-    max: 10
+    min: 3
+    max: 5
   unique: false
   categories:
     Ore: 0.25
@@ -150,8 +169,8 @@
 - type: cp14LocationModifier
   id: MithrilOre
   levels:
-    min: 2
-    max: 10
+    min: 4
+    max: 5
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
@@ -171,8 +190,8 @@
 - type: cp14LocationModifier
   id: MithrilOreUnderground
   levels:
-    min: 2
-    max: 10
+    min: 4
+    max: 5
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
