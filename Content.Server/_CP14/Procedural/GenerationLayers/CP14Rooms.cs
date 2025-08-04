@@ -103,7 +103,7 @@ public sealed partial class DungeonJob
             if (conflict)
                 continue;
 
-            _dungeon.SpawnRoom(_gridUid, _grid, selectedTile, room, random, clearExisting: true, rotation: true);
+            _dungeon.SpawnRoom(_gridUid, _grid, selectedTile - new Vector2i(room.Size.X/2,room.Size.Y/2), room, random, clearExisting: true, rotation: true);
 
             foreach (var pos in roomBounds)
             {

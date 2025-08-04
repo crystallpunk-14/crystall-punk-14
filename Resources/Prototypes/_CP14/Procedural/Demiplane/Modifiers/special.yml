@@ -32,15 +32,6 @@
       maxGroupSize: 3
 
 - type: cp14LocationModifier
-  id: DemiplaneArcRoundstart
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 4
-      tags:
-      - CP14DemiplanArcRoom
-
-- type: cp14LocationModifier
   id: CP14DemiplanEnterRoom
   generationProb: 0
   layers:

@@ -52,5 +52,16 @@
         - type: CP14StationProceduralLocation
           location: ComossIsland
           modifiers:
-          - DemiplaneArcRoundstart
+          - DemiplaneArcTriple
           - RaidSpawners
+          - SmallHydra
+          - EnemyFlem
+          - MonsterMosquito
+          - Marble
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzOrder
+          - Quartz
+          - FlyAgaric
+          - BloodFlower

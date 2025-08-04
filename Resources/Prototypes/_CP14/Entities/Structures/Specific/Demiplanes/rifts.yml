@@ -71,9 +71,12 @@
     volume: -3
     range: 7
     sound:
-      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+      path: /Audio/Ambience/anomaly_scary.ogg
   - type: Portal
     maxRandomRadius: 10
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14SkyLightningPurple
 
 - type: entity
   id: CP14DemiplaneRiftPortal
@@ -101,3 +104,8 @@
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
   - type: Portal
     canTeleportToOtherMaps: true
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/_CP14/Effects/ritual_end.ogg
+      params:
+        variation: 0.3

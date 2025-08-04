@@ -48,5 +48,15 @@
         - type: CP14StationProceduralLocation
           location: VenicialistFort
           modifiers:
-          - DemiplaneArcRoundstart
+          - DemiplaneArcTriple
           - RaidSpawners
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzWater
+          - Quartz
+          - Ruins
+          - EnemyZombie
+          - MobSlimeIce
+          - LumiShroom
+          - SilverNeedle
