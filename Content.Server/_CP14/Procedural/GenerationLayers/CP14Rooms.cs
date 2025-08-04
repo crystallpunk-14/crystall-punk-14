@@ -89,7 +89,7 @@ public sealed partial class DungeonJob
             {
                 for (int y = 0; y < room.Size.Y; y++)
                 {
-                    var pos = selectedTile + new Vector2i(x, y);
+                    var pos = selectedTile + new Vector2i(x, y) - new Vector2i(room.Size.X/2,room.Size.Y/2);
                     if (reservedTiles.Contains(pos))
                     {
                         conflict = true;
