@@ -78,8 +78,8 @@ public sealed class CP14SpawnProceduralLocationJob(
 
         // Setup default atmos
         var moles = new float[Atmospherics.AdjustedNumberOfGases];
-        moles[(int) Gas.Oxygen] = 21.824779f;
-        moles[(int) Gas.Nitrogen] = 82.10312f;
+        moles[(int)Gas.Oxygen] = 21.824779f;
+        moles[(int)Gas.Nitrogen] = 82.10312f;
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         entManager.System<AtmosphereSystem>().SetMapAtmosphere(MapUid, false, mixture);
 
@@ -88,11 +88,11 @@ public sealed class CP14SpawnProceduralLocationJob(
         map.SetPaused(mapId, false);
 
         //Spawn modified config
-        await dungeon.GenerateDungeonAsync(dungeonConfig,
+        await WaitAsyncTask(dungeon.GenerateDungeonAsync(dungeonConfig,
             MapUid,
             gridComp,
             position,
-            seed);
+            seed));
 
         return true;
     }
