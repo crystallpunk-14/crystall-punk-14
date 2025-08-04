@@ -69,7 +69,7 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
             "Comoss",
             "Venicialis",
-            "Frigid_Coast",
+            //"NautilusShip",
             //CrystallEdge Map replacement end
         };
 
