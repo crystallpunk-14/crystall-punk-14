@@ -1403,3 +1403,19 @@
   id: 8194
   time: '2025-08-01T11:09:06.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1607
+- author: TheShuEd
+  changes:
+  - message: Demiplanes have been completely removed from the game. The demiplanes
+      link crystal now only serves as the end of the round.
+    type: Remove
+  - message: The space around cities on the game map is now procedurally generated.
+    type: Tweak
+  - message: In the space around cities, you can now find stable passages to more
+      difficult locations. In these locations, you can find passages that go even
+      deeper...
+    type: Add
+  - message: Venicialis Fort was covered in snow.
+    type: Tweak
+  id: 8195
+  time: '2025-08-04T10:35:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1594
