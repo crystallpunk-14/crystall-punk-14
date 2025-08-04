@@ -4,7 +4,6 @@
     min: 0
     max: 2
   locationConfig: CP14GrasslandIsland
-  connection: ConnectionGrass
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneHerbals

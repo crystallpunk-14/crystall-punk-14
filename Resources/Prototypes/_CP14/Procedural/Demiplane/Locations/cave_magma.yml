@@ -4,7 +4,6 @@
     min: 3
     max: 10
   locationConfig: CP14MagmaCaves
-  connection: ConnectionStone
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground

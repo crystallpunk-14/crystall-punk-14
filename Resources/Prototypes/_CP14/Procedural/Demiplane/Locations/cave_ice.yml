@@ -4,7 +4,6 @@
     min: 2
     max: 10
   locationConfig: CP14IceCaves
-  connection: ConnectionSnow
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
