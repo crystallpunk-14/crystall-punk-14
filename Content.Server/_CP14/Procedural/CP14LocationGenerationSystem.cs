@@ -1,10 +1,12 @@
 using System.Threading;
+using Content.Server._CP14.Procedural.Demiplane;
 using Content.Server._CP14.Procedural.GlobalWorld.Components;
 using Content.Server.Procedural;
+using Content.Server.Station.Components;
+using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Procedural.Prototypes;
-using Content.Shared.Procedural;
-using JetBrains.Annotations;
+using Robust.Client.GameObjects;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.Map;
@@ -20,6 +22,10 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly StationSystem _station = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+
+    private ISawmill _sawmill = null!;
 
     private const double JobMaxTime = 0.002;
     private readonly JobQueue _expeditionQueue = new();
@@ -29,8 +35,31 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14ActiveJobGenerationComponent, ComponentShutdown>(OnGenerationShutdown);
+        _sawmill = _logManager.GetSawmill("cp14_procedural");
 
+        SubscribeLocalEvent<CP14ActiveJobGenerationComponent, ComponentShutdown>(OnGenerationShutdown);
+        SubscribeLocalEvent<CP14StationProceduralLocationComponent, StationPostInitEvent>(OnStationPostInit);
+    }
+
+    private void OnStationPostInit(Entity<CP14StationProceduralLocationComponent> ent, ref StationPostInitEvent args)
+    {
+        if (!TryComp<StationDataComponent>(ent, out var stationData))
+        {
+            _sawmill.Error($"Station {ent} does not have a StationDataComponent, cannot generate location on it.");
+            return;
+        }
+
+        var largestStationGrid = _station.GetLargestGrid(stationData);
+
+        if (largestStationGrid is null)
+        {
+            _sawmill.Error($"No grid found for station {ent} to generate location on.");
+            return;
+        }
+
+        var mapId = _transform.GetMapId(largestStationGrid.Value);
+
+        GenerateLocation(largestStationGrid.Value, mapId, ent.Comp.Location, ent.Comp.Modifiers);
     }
 
     public override void Update(float frameTime)
@@ -44,8 +73,8 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
                 case JobStatus.Finished:
                     if (job.JobName is not null)
                     {
-                        var ev = new CP14LocationGeneratedEvent(job.JobName);
-                        RaiseLocalEvent(ev);
+                        var ev = new CP14LocationGeneratedEvent();
+                        RaiseLocalEvent(job.MapUid, ev);
                     }
                     RemComp<CP14ActiveJobGenerationComponent>(job.MapUid);
 
@@ -99,11 +128,4 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
             }
         }
     }
-}
-
-
-[PublicAPI]
-public sealed class CP14LocationGeneratedEvent(string jobName) : EntityEventArgs
-{
-    public string JobName = jobName;
 }

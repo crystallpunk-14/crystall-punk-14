@@ -19,3 +19,6 @@
 - type: cp14LocationModifierCategory
   id: MapLight
 
+- type: cp14LocationModifierCategory
+  id: Passage
+

@@ -1,0 +1,77 @@
+- type: entity
+  id: CP14DemiplaneRiftCore
+  name: demiplane rift core
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+    layers:
+    - state: connective
+      shader: unshaded
+  - type: CP14DemiplaneRift
+  - type: Clickable
+  - type: InteractionOutline
+
+- type: entity
+  parent: MarkerBase
+  id: CP14DemiplaneEnterPointMarker
+  name: demiplane enter point
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+      state: core1
+  - type: CP14DemiplaneEnterPoint
+
+- type: entity
+  id: CP14DemiplaneRiftAwaiting
+  parent: BasePortal
+  categories: [ ForkFiltered ]
+  name: unstable demiplane rift
+  description: A gap in space that allows you to travel between worlds. It is still unstable, and entering it is hazardous to your health.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+  - type: SingularityDistortion
+    falloffPower: 1.5
+    intensity: 50
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Portal
+    maxRandomRadius: 10
+
+- type: entity
+  id: CP14DemiplaneRiftPortal
+  parent: BasePortal
+  categories: [ ForkFiltered ]
+  name: demiplane rift
+  description: A gap in space that allows you to travel between worlds.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: anom
+      shader: unshaded
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Portal
+    canTeleportToOtherMaps: true

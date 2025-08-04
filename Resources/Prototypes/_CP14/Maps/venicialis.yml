@@ -45,8 +45,8 @@
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
-        - type: CP14StationGlobalWorld
-        - type: CP14StationGlobalWorldIntegration
+        - type: CP14StationProceduralLocation
           location: VenicialistFort
           modifiers:
+          - DemiplaneArcRoundstart
           - RaidSpawners

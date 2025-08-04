@@ -1,13 +1,13 @@
 using Content.Shared._CP14.Procedural.Prototypes;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Procedural.GlobalWorld.Components;
+namespace Content.Server._CP14.Procedural;
 
 /// <summary>
 /// Generates the surrounding procedural world on the game map, surrounding the mapped settlement.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14GlobalWorldSystem))]
-public sealed partial class CP14StationGlobalWorldIntegrationComponent : Component
+[RegisterComponent, Access(typeof(CP14LocationGenerationSystem))]
+public sealed partial class CP14StationProceduralLocationComponent : Component
 {
     [DataField(required: true)]
     public ProtoId<CP14ProceduralLocationPrototype> Location;

@@ -434,6 +434,8 @@ CP14SpellScrollMonolithWarp: null
 CP14GuidebookDemiplanes: null
 CP14DemiplanePassway: null
 CP14DemiplaneCore: null
+CP14SpawnerLocationConnection: null
+CP14LocationPassway: null
 
 # <---> CrystallEdge migration zone end
 

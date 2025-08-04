@@ -42,24 +42,6 @@
   size: 7,7
   atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
   ignoreTile: FloorShuttlePurple
-  offset: 0,8
-  tags:
-    - CP14DemiplanEnterRoom
-
-- type: dungeonRoom
-  id: CP14DemiplanEnterRoom_6
-  size: 9,7
-  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
-  ignoreTile: FloorShuttlePurple
-  offset: 8,8
-  tags:
-    - CP14DemiplanEnterRoom
-
-- type: dungeonRoom
-  id: CP14DemiplanEnterRoom_7
-  size: 7,7
-  atlas: /Maps/_CP14/Dungeon/demiplane_enter.yml
-  ignoreTile: FloorShuttlePurple
-  offset: 19,8
+  offset: 32,0
   tags:
     - CP14DemiplanEnterRoom

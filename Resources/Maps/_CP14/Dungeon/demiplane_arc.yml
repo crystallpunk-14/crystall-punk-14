@@ -131,7 +131,7 @@ entities:
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: RadiationGridResistance
-- proto: CP14DemiplaneEnterPointMarker
+- proto: CP14DemiplaneRiftCore
   entities:
   - uid: 2
     components:
