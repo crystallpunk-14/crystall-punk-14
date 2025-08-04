@@ -339,7 +339,7 @@
       minGroupSize: 8
       maxGroupSize: 14
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: EnemyCackle
   levels:
     min: 3
