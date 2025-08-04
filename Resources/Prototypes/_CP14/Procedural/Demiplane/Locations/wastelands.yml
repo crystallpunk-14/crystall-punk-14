@@ -1,8 +1,8 @@
 - type: cp14Location
   id: T1Wastelands
   levels:
-    min: 2
-    max: 2
+    min: 3
+    max: 5
   locationConfig: CP14WastelandsIsland
   tags:
   - CP14DemiplaneOres
