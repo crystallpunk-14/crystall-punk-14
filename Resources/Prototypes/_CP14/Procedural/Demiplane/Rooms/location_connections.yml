@@ -1,0 +1,86 @@
+- type: Tag
+  id: CP14LocationConnectionStone
+
+- type: dungeonRoom
+  id: CP14LocationConnectionStone_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14LocationConnectionStone
+
+- type: dungeonRoom
+  id: CP14LocationConnectionStone_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14LocationConnectionStone
+
+
+- type: Tag
+  id: CP14LocationConnectionSnow
+
+- type: dungeonRoom
+  id: CP14LocationConnectionSnow_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14LocationConnectionSnow
+
+- type: dungeonRoom
+  id: CP14LocationConnectionSnow_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14LocationConnectionSnow
+
+
+- type: Tag
+  id: CP14LocationConnectionMushroom
+
+- type: dungeonRoom
+  id: CP14LocationConnectionMushroom_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 32,0
+  tags:
+    - CP14LocationConnectionMushroom
+
+- type: dungeonRoom
+  id: CP14LocationConnectionMushroom_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 40,0
+  tags:
+    - CP14LocationConnectionMushroom
+
+
+- type: Tag
+  id: CP14LocationConnectionGrass
+
+- type: dungeonRoom
+  id: CP14LocationConnectionGrass_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,8
+  tags:
+    - CP14LocationConnectionGrass
+
+- type: dungeonRoom
+  id: CP14LocationConnectionGrass_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/location_connections.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,8
+  tags:
+    - CP14LocationConnectionGrass

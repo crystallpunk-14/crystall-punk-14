@@ -1,0 +1,75 @@
+- type: cp14Location
+  id: ComossIsland
+  locationConfig: CP14ComossIsland
+  connection: ConnectionGrass
+  generationProb: 0 #Special location for map only
+  tags:
+  - CP14DemiplaneOres
+  - CP14DemiplaneHerbals
+  - CP14DemiplaneOpenSky
+  - CP14DemiplanePeacefulAnimals
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: CP14CloudShadows
+  - type: Biome
+    template: CP14SandOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+
+- type: dungeonConfig
+  id: CP14ComossIsland
+  layers:
+  # Masks
+  - !type:NoiseDistanceDunGen
+    size: 220, 220
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.8
+    layers:
+    - tile: CP14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  - !type:NoiseDistanceDunGen
+    size: 215, 215
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  - !type:NoiseDistanceDunGen
+    size: 140, 140
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.6
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  # Biomes
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14CavesGeneric
+    tileMask:
+    - CP14FloorBase
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14GrasslandTestResult
+    tileMask:
+    - CP14FloorGrass

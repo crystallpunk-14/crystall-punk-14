@@ -49,3 +49,8 @@
           - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
+        - type: CP14StationGlobalWorld
+        - type: CP14StationGlobalWorldIntegration
+          location: ComossIsland
+          modifiers:
+          - RaidSpawners

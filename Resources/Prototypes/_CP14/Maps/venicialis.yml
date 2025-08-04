@@ -45,3 +45,8 @@
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
+        - type: CP14StationGlobalWorld
+        - type: CP14StationGlobalWorldIntegration
+          location: VenicialistFort
+          modifiers:
+          - RaidSpawners

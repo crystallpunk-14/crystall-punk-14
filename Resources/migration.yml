@@ -428,9 +428,16 @@ CP14CandlePurpleSmallInfinite: CP14CandleIgnited
 CP14ClothingBackLeatherBackpack: CP14ClothingBackBackpackT1
 CP14ClothingBackLeatherSatchel:  CP14ClothingBackSatchelT1
 
-#2025-08-21
+#2025-08-01
 CP14SpellScrollResurrection: null
 
+#2025-08-02
+CP14SpellScrollDemiplaneInfiltration: null
+CP14DemiplaneEntryPointMarker: null
+CP14SpellScrollMonolithWarp: null
+CP14GuidebookDemiplanes: null
+CP14DemiplanePassway: null
+CP14DemiplaneCore: null
 
 # <---> CrystallEdge migration zone end
 

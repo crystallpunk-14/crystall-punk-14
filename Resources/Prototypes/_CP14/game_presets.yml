@@ -33,14 +33,13 @@
     #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
 
-- type: gamePreset
-  id: CP14JudgmentNight
-  name: cp14-judge-night-title
-  description: cp14-judge-night-desc
-  showInVote: true
-  cP14Allowed: true
-  rules:
-    #- CP14RoundObjectivesRule
-    - CP14BasicStationEventScheduler
-    - CP14BloodMoonRule
-
+#- type: gamePreset
+#  id: CP14Survival
+#  name: cp14-gamemode-survival-title
+#  description: cp14-gamemode-survival-description
+#  showInVote: true
+#  cP14Allowed: true
+#  supportedMaps: ShipMapPool
+#  rules:
+#    - Sandbox
+#    - CP14CrashToWindlandsRule
