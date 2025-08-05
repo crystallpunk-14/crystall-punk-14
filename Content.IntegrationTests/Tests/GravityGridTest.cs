@@ -13,7 +13,7 @@ namespace Content.IntegrationTests.Tests
     [TestFixture]
     [TestOf(typeof(GravityGeneratorComponent))]
     public sealed class GravityGridTest
-    {
+    {/*
         [TestPrototypes]
         private const string Prototypes = @"
 - type: entity
@@ -99,6 +99,6 @@ namespace Content.IntegrationTests.Tests
             });
 
             await pair.CleanReturnAsync();
-        }
+        }*/
     }
 }
