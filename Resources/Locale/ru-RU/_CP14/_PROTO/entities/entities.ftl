@@ -1376,7 +1376,7 @@ ent-CP14ClothingShoesJestersRingers = шутовские звонари
     .desc = Все вокруг должны знать, что ты существуешь, приятель.
 
 ent-CP14ClothingShoesArtifactFrogs = жаботапы
-    .desc = Для любителей сред
+    .desc = Для любителей среды.
     .suffix = Артефакт
 
 ent-CP14ClothingShoesPinkSlippers = розовые тапочки
