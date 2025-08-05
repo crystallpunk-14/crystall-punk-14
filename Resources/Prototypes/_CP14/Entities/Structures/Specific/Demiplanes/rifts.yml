@@ -1,107 +1,111 @@
 - type: entity
-  id: CP14DemiplanRiftCore
+  id: CP14DemiplaneRiftCore
+  name: demiplane rift core
+  description: Touch to open the door to a new world
   categories: [ ForkFiltered ]
-  name: demiplan rift core
-  description: A subtle connection between the real world and the demiplane where the adventurers went. Sooner or later they will return from there.
+  placement:
+    mode: SnapgridCenter
   components:
-  - type: CP14DemiplaneRift
-  - type: Transform
-    anchored: True
-  - type: Clickable
-  - type: Physics
-    canCollide: false
-    bodyType: Static
   - type: Sprite
     noRot: true
-    drawdepth: Effects
+    drawdepth: Mobs
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
     layers:
     - state: connective
       shader: unshaded
+  - type: CP14DemiplaneRift
+  - type: Clickable
+  - type: InteractionOutline
   - type: PointLight
-    radius: 2
-    energy: 2
-    color: "#371c5c"
-    netsync: false
-  - type: GuideHelp
-    guides:
-    - CP14_RU_Demiplanes
-    - CP14_EN_Demiplanes
-  - type: Speech
-    speechVerb: Ghost
-
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
 
 - type: entity
-  id: CP14DemiplaneTimedRadiusPassway
-  parent: CP14DemiplanRiftCore
-  name: pulsating demiplane rift
-  description: This rift is gaining strength, and will trap all nearby creatures in a demiplane in a second!
+  parent: MarkerBase
+  id: CP14DemiplaneEnterPointMarker
+  name: demiplane enter point
+  categories: [ ForkFiltered ]
   components:
-  - type: CP14DemiplaneRift
-    activeTeleport: false
-  - type: CP14DemiplaneRadiusTimedPassway
-    maxEntities: 4
-    delay: 4
   - type: Sprite
+    layers:
+    - state: green
+    - sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift_core.rsi
+      state: core1
+  - type: CP14DemiplaneEnterPoint
+
+- type: entity
+  id: CP14DemiplaneRiftAwaiting
+  parent: BasePortal
+  categories: [ ForkFiltered ]
+  name: unstable demiplane rift
+  description: A gap in space that allows you to travel between worlds. It is still unstable, and entering it is hazardous to your health.
+  components:
+  - type: Sprite
+    noRot: true
     drawdepth: Effects
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
     layers:
     - state: pulse
       shader: unshaded
   - type: PointLight
-    radius: 8
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
   - type: SingularityDistortion
     falloffPower: 1.5
     intensity: 50
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 2
+        startValue: 0.1
+        endValue: 1.0
+        property: Energy
+        isLooped: true
+        enabled: true
   - type: AmbientSound
     volume: -3
     range: 7
     sound:
-      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
-  - type: GuideHelp
-    guides:
-    - CP14_RU_Demiplanes
-    - CP14_EN_Demiplanes
+      path: /Audio/Ambience/anomaly_scary.ogg
+  - type: Portal
+    maxRandomRadius: 10
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14SkyLightningPurple
 
 - type: entity
-  id: CP14DemiplanePassway
-  parent: CP14DemiplanRiftCore
+  id: CP14DemiplaneRiftPortal
+  parent: BasePortal
+  categories: [ ForkFiltered ]
   name: demiplane rift
-  description: A gap in space that allows you to travel between world and demiplanes.
+  description: A gap in space that allows you to travel between worlds.
   components:
-  - type: CP14DemiplaneRiftOpened
-  - type: CP14DemiplaneRift
-    activeTeleport: false
   - type: Sprite
+    noRot: true
     drawdepth: Effects
     sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
     layers:
     - state: anom
       shader: unshaded
-  - type: SingularityDistortion
-    falloffPower: 1.5
-    intensity: 50
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
   - type: AmbientSound
     volume: -3
     range: 7
     sound:
       path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
-  - type: GuideHelp
-    guides:
-    - CP14_RU_Demiplanes
-    - CP14_EN_Demiplanes
-
-- type: entity
-  id: CP14DemiplanePasswayRed
-  parent: CP14DemiplanePassway
-  components:
-  - type: Sprite
-    drawdepth: Effects
-    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
-    layers:
-    - state: anom
-      shader: unshaded
-      color: red
-  - type: PointLight
-    color: red
-
+  - type: Portal
+    canTeleportToOtherMaps: true
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/_CP14/Effects/ritual_end.ogg
+      params:
+        variation: 0.3

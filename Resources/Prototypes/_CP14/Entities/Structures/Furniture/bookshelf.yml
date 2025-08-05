@@ -91,7 +91,6 @@
       children:
       - id: CP14GuidebookImperialLaws
       - id: CP14GuidebookAlchemy
-      - id: CP14GuidebookDemiplanes
     #Lore books
     - !type:GroupSelector
       children:

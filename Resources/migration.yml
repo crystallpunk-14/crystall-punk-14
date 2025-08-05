@@ -131,7 +131,7 @@ CP14BaseTwoHandedSword: null
 CP14TwoHandedSwordScythe: null
 
 #2025-17-01
-CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
+CP14ClothingCloakBrassArmor: null
 CP14ClothingCloakCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
@@ -379,8 +379,8 @@ CP14FoodPieMeat: null
 CP14FoodPieMeatRaw: null
 
 # 2025-07-20
-CP14ClothingBackpackLeather: CP14ClothingBackLeatherBackpack
-CP14ClothingSatchelLeather:  CP14ClothingBackLeatherSatchel
+CP14ClothingBackpackLeather: CP14ClothingBackBackpackT1
+CP14ClothingSatchelLeather:  CP14ClothingBackSatchelT1
 CP14ClothingBlueCollarDress:  CP14ClothingShirtBlueCollarDress
 CP14ClothingBlueOpenDress:  CP14ClothingShirtBlueOpenDress
 CP14ClothingRedOpenDress:  CP14ClothingShirtRedOpenDress
@@ -397,6 +397,7 @@ CP14ClothingWarriorsGarbDress:  CP14ClothingShirtWarriorsGarbDress
 CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
 
 #2025-07-27
+CP14ClothingOuterClothingCopperArmor: null
 CP14DemiplanEnterRoomMarker: null
 
 CP14CandleRed: CP14Candle
@@ -423,8 +424,22 @@ CP14CandleBlackSmallInfinite: CP14CandleIgnited
 CP14CandleGreenSmallInfinite: CP14CandleIgnited
 CP14CandlePurpleSmallInfinite: CP14CandleIgnited
 
-#2025-08-21
+#2025-07-28
+CP14ClothingBackLeatherBackpack: CP14ClothingBackBackpackT1
+CP14ClothingBackLeatherSatchel:  CP14ClothingBackSatchelT1
+
+#2025-08-01
 CP14SpellScrollResurrection: null
+
+#2025-08-02
+CP14SpellScrollDemiplaneInfiltration: null
+CP14DemiplaneEntryPointMarker: null
+CP14SpellScrollMonolithWarp: null
+CP14GuidebookDemiplanes: null
+CP14DemiplanePassway: null
+CP14DemiplaneCore: null
+CP14SpawnerLocationConnection: null
+CP14LocationPassway: null
 
 # <---> CrystallEdge migration zone end
 

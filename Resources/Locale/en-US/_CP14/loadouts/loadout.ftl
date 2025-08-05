@@ -15,6 +15,11 @@ cp14-loadout-general-spells = Spells
 cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
+# Villagers
+cp14-loadout-general-villager-back-cargo = Cargo backpacks
+cp14-loadout-general-villager-back = Villager backpacks
+cp14-loadout-general-villager-back-reinforced = Reinforced Backpacks
+
 # Adventurer
 
 cp14-loadout-adventurers-equip = Adventurer weapons

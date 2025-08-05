@@ -69,6 +69,12 @@
     spawned:
     - id: CP14FoodMeatRabbit
       amount: 4
+    - id: CP14ThinAnimalHide
+      amount: 1
+      maxAmount: 2
+    - id: CP14Fur
+      amount: 1
+      prob: 0.75
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
@@ -155,6 +161,9 @@
     - id: CP14FoodMeatPigLeg
       amount: 1
       prob: 0.3
+    - id: CP14AnimalHide
+      amount: 1
+      maxAmount: 3
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -202,6 +211,19 @@
     spawned:
     - id: CP14FoodMeatBoar
       amount: 4
+    - id: CP14AnimalHide
+      amount: 2
+      maxAmount: 4
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      maxAmount: 3
+      prob: 0.5
+    - id: CP14RuggedAnimalHide
+      amount: 1
+      prob: 0.1
+    - id: CP14CheapFur
+      amount: 1
+      prob: 0.25
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -293,6 +315,9 @@
     spawned:
     - id: CP14FoodMeatFrogLeg
       amount: 2
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      prob: 0.5
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -408,6 +433,14 @@
       amount: 4
     - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
       amount: 4
+      maxAmount: 16
+    - id: CP14ThinAnimalHide
+      amount: 2
+      maxAmount: 5
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      maxAmount: 5
+      prob: 0.3
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -489,8 +522,17 @@
   - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatPig # TODO 
+    - id: CP14FoodMeatBoar # TODO
       amount: 5
+    - id: CP14RuggedAnimalHide
+      amount: 2
+      maxAmount: 5
+    - id: CP14ScrapAnimalHide
+      amount: 2
+      maxAmount: 6
+      prob: 0.5
+    - id: CP14GoodFur
+      amount: 1
   - type: Bloodstream
     bloodMaxVolume: 350
     bloodReagent: CP14BloodAnimal
