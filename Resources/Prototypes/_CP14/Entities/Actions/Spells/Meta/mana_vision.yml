@@ -50,4 +50,4 @@
         color: "#42a4f5"
   - type: Clickable
   - type: Visibility
-    layer: 8 #magic vision only
+    layer: 16 #magic vision only
