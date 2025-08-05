@@ -147,7 +147,7 @@
 # Leather belts crafting
 
 - type: CP14Recipe
-  id: CP14LeatherStrapRecipe
+  id: CP14ClothingBeltQuiverRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
@@ -164,7 +164,7 @@
   # Cost: (36×1.2) + (36×0.4) + (20×0.3) = 43.2 + 14.4 + 6 = 63.6 copper coins
 
 - type: CP14Recipe
-  id: CP14LeatherStrapRecipe
+  id: CP14ClothingBeltPouchPotionsRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
@@ -177,6 +177,5 @@
   - !type:ProtoIdResource
     protoId: CP14String
     count: 4 # 20u cloth
-  result: CP14ClothingBeltQuiver
+  result: CP14ClothingBeltPouchPotions
   # Cost: (19×1.2) + (19×0.4) + (20×0.3) = 22.8 + 7.6 + 6 = 36.4 copper coins
-CP14ClothingBeltPouchPotions
