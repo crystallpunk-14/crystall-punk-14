@@ -57,7 +57,7 @@ public sealed partial class CP14KeyholeGenerationSystem : EntitySystem
     private List<int> GetKeyLockData(ProtoId<CP14LockTypePrototype> category)
     {
         if (_roundKeyData.ContainsKey(category))
-            return _roundKeyData[category];
+            return new List<int>(_roundKeyData[category]);
 
         var newData = GenerateNewUniqueLockData(category);
         _roundKeyData[category] = newData;

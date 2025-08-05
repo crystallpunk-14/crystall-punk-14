@@ -174,16 +174,6 @@
   service: !type:CP14BuyItemsService
     product: CP14VialSmallHealingPoison
 
-- type: cp14TradingPosition
-  id: CP14VialSmallHealingAirloss
-  faction: BradPotions
-  reputationLevel: 2
-  uiPosition: 1
-  icon:
-    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
-    state: vial
-  service: !type:CP14BuyItemsService
-    product: CP14VialSmallHealingAirloss
 
 
 - type: cp14TradingPosition

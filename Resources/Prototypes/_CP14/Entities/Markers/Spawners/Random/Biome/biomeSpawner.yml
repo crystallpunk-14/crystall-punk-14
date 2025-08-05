@@ -62,6 +62,18 @@
     biome: CP14CavesFloor
 
 - type: entity
+  id: CP14BiomeSpawnerCaveGeneric
+  parent: CP14BaseBiomeSpawner
+  suffix: Cave Generic
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14CavesGeneric
+
+- type: entity
   id: CP14BiomeSpawnerForest
   parent: CP14BaseBiomeSpawner
   suffix: Forest
@@ -160,10 +172,22 @@
   components:
   - type: Sprite
     layers:
-      - state: cave
-      - sprite: _CP14/Tiles/Water/water.rsi
-        state: full
+      - state: dirt
       - state: frame
   - type: CP14BiomeSpawner
     biome: CP14Wastelands
+
+- type: entity
+  id: CP14BiomeSpawnerCavesMushroom
+  parent: CP14BaseBiomeSpawner
+  suffix: Mushroom cave
+  components:
+  - type: Sprite
+    layers:
+      - state: cave
+      - sprite: _CP14/Structures/Flora/Wild/agaric.rsi
+        state: world4
+      - state: frame
+  - type: CP14BiomeSpawner
+    biome: CP14MushroomsCaveResult
 

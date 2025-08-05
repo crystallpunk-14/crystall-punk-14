@@ -125,7 +125,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: CP14GuidebookDemiplanes
       - id: CP14ClothingCloakGuildmasterCape
         prob: 1
       - id: CP14ClothingShirtCottonWhite

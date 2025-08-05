@@ -3,6 +3,7 @@ cp14-stack-stone-block = stone blocks
 cp14-stack-marble-block = marble rocks
 cp14-stack-wood-planks = oak planks
 cp14-stack-wood-planks-birch = birch planks
+cp14-material-spruce-planks = spruce planks
 cp14-stack-cloth = rolls of fabric
 cp14-stack-flora = tufts of grass
 cp14-stack-compost = compost piles
@@ -18,6 +19,8 @@ cp14-stack-copper-ore = copper ore
 cp14-stack-iron-ore = iron ore
 cp14-stack-gold-ore = gold ore
 cp14-stack-mithril-ore = mithril ore
+
+cp14-stack-salt-stone = salt stone
 
 cp14-stack-wallpaper = rolls of wallpaper
 

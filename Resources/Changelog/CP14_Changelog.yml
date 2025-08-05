@@ -1242,3 +1242,232 @@
   id: 8178
   time: '2025-07-22T10:29:49.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
+- author: KittyCat432
+  changes:
+  - message: Removed elf natural mana regeneration.
+    type: Remove
+  - message: Changed Mana trance now is exclusive to elves and is an innate skill.
+    type: Tweak
+  - message: Changed Mana trance now has a heavy slowdown instead of breaking upon
+      moving Elf taxi is now possible.
+    type: Tweak
+  - message: Changed Guide book on elves to better reflect their current state.
+    type: Tweak
+  id: 8179
+  time: '2025-07-26T11:49:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
+- author: Kryyto
+  changes:
+  - message: Guard bells no longer change the threat level. But can be used by using/hitting
+      them instead.
+    type: Tweak
+  id: 8180
+  time: '2025-07-26T12:09:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
+- author: TheShuEd
+  changes:
+  - message: Lumera disabled
+    type: Remove
+  id: 8181
+  time: '2025-07-26T12:10:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
+- author: gogenych
+  changes:
+  - message: 'New tree type: Spruce.'
+    type: Add
+  - message: Logs, planks and walls made from spruce wood!
+    type: Add
+  id: 8182
+  time: '2025-07-26T12:24:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539
+- author: TheShuEd
+  changes:
+  - message: Added rare crystals geodes in cave demiplanes
+    type: Add
+  - message: Added "multiple entry points" demiplane modifier. Your team has a chance
+      to be separated in different parts of the demiplane when entering it. (visible
+      during inspection of the demiplane)
+    type: Add
+  - message: Fixed a bug where the cores or the exits might not be generated in the
+      demiplanes.
+    type: Fix
+  id: 8183
+  time: '2025-07-27T13:45:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1583
+- author: SketchiiArtist
+  changes:
+  - message: Added wooden stools
+    type: Add
+  id: 8184
+  time: '2025-07-27T15:54:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1577
+- author: TheShuEd
+  changes:
+  - message: Added candelabras!
+    type: Add
+  - message: Reprite candles + Candles now burn endlessly
+    type: Tweak
+  id: 8185
+  time: '2025-07-27T15:54:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1585
+- author: TheShuEd
+  changes:
+  - message: New mushroom caves demiplane locatoin
+    type: Add
+  id: 8186
+  time: '2025-07-30T11:16:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1590
+- author: Nimfar11
+  changes:
+  - message: Adds a round table made of birch.
+    type: Add
+  - message: Repainting all birch structures. Repainting the floor made of lucene.
+    type: Tweak
+  id: 8187
+  time: '2025-07-30T11:19:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1591
+- author: TheShuEd
+  changes:
+  - message: Upstream sync moment
+    type: Add
+  id: 8188
+  time: '2025-07-30T13:02:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1558
+- author: TheShuEd
+  changes:
+  - message: Corpse decay has been disabled. Genetic damage no longer accumulates
+      on corpses.
+    type: Tweak
+  - message: Ressurection spell removed from the game.
+    type: Remove
+  - message: Healing ballade spell removed from the game.
+    type: Remove
+  - message: 3 basic magic spells can no longer heal people in critical or dead states.
+      Potions is only way now.
+    type: Tweak
+  - message: The speed at which damage is taken from suffocation has been reduced
+      by half (creatures can remain in critical condition for much longer before death).
+    type: Tweak
+  id: 8189
+  time: '2025-07-31T19:28:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1597
+- author: TheShuEd
+  changes:
+  - message: The sphere of light now returns the item to your hand instead of applying
+      a status effect. Bug fix, as the sphere of light had completely stopped glowing.
+    type: Tweak
+  - message: Roofs can now be deconstructed above walls.
+    type: Fix
+  - message: Fixed a bug with changing the shape of the key, which changed all subsequent
+      doors and keys.
+    type: Fix
+  id: 8190
+  time: '2025-07-31T20:44:45.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
+- author: TheShuEd
+  changes:
+  - message: Fixed barrels injections
+    type: Fix
+  - message: Demiplanes no longer check whether the path to the target is blocked
+      (crates no longer prevent teleportation).
+    type: Fix
+  - message: Vanilla tracks removed from Lobby
+    type: Fix
+  id: 8191
+  time: '2025-07-31T21:34:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600
+- author: TheShuEd
+  changes:
+  - message: Added Air saturation T1 healing spell - allows you to treat suffocation
+      damage, even in people in critical condition.
+    type: Add
+  id: 8192
+  time: '2025-08-01T08:57:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1603
+- author: AnyTap
+  changes:
+  - message: Removed non-modular copper armour from game
+    type: Remove
+  id: 8193
+  time: '2025-08-01T08:59:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1571
+- author: TheShuEd
+  changes:
+  - message: Demoplans no longer bend over pools of blood and the organs of players
+      who died inside the demiplane, simply inflict an additional 111 Blunt damage
+      on them.
+    type: Tweak
+  - message: Skeleton equipment (and the skeletons themselves) no longer drop from
+      the demiplane when it is closed.
+    type: Fix
+  id: 8194
+  time: '2025-08-01T11:09:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1607
+- author: TheShuEd
+  changes:
+  - message: Demiplanes have been completely removed from the game. The demiplanes
+      link crystal now only serves as the end of the round.
+    type: Remove
+  - message: The space around cities on the game map is now procedurally generated.
+    type: Tweak
+  - message: In the space around cities, you can now find stable passages to more
+      difficult locations. In these locations, you can find passages that go even
+      deeper...
+    type: Add
+  - message: Venicialis Fort was covered in snow.
+    type: Tweak
+  id: 8195
+  time: '2025-08-04T10:35:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1594
+- author: PhantornRU
+  changes:
+  - message: leatherworking and craft backpacks
+    type: Add
+  - message: 3 types of backpacks and T0-T3 of backpacks
+    type: Add
+  - message: Added regular backpacks with wide slots.
+    type: Add
+  - message: Added satchels, more slots, but divided into compartments.
+    type: Add
+  - message: Added explorer backpacks, even more slots, but small compartments.
+    type: Add
+  - message: Hide and fur drop from animals.
+    type: Add
+  - message: Different types of skins, leather, fur.
+    type: Add
+  - message: Special backpacks for guards and villagers
+    type: Add
+  - message: T0 & T1 satchels, T0 backpack (sack) can be worn on the belt
+    type: Tweak
+  - message: Hides, fur and leather can be sold.
+    type: Tweak
+  - message: New butchers positions (hide)
+    type: Add
+  - message: Salt can be bought from the dwarven faction.
+    type: Add
+  - message: Leather can be crafted into straps
+    type: Tweak
+  - message: Iron ingots can be crafted into buckle
+    type: Tweak
+  id: 8196
+  time: '2025-08-04T22:51:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1378
+- author: TheShuEd
+  changes:
+  - message: Mobs can now only fall into chasms if they are pushed or deliberately
+      thrown in. Simply walking towards a chasm will no longer cause player to fall.
+    type: Tweak
+  id: 8197
+  time: '2025-08-05T10:01:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1458
+- author: PhantornRU
+  changes:
+  - message: Adding a bear skin drop.
+    type: Add
+  - message: Adding quiver and alchemy belt crafting
+    type: Add
+  - message: Adjusting the speed between satchels and backpacks.
+    type: Tweak
+  id: 8198
+  time: '2025-08-05T11:31:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1618

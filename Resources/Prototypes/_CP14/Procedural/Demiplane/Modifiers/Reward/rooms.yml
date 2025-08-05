@@ -1,15 +1,45 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: ArtifactRoom
   levels:
     min: 3
-    max: 10
+    max: 5
   generationWeight: 2
   categories:
     Reward: 0.15
   layers:
-    - !type:CP14OreDunGen
-      entity: CP14DemiplaneArtifactRoomSpawner
+    - !type:CP14RoomsDunGen
       count: 1
-      minGroupSize: 1
-      maxGroupSize: 1
+      tags:
+      - CP14DemiplaneArtifactRoom
 
+- type: cp14LocationModifier
+  id: Ruins
+  levels:
+    min: 0
+    max: 5
+  name: cp14-modifier-ruins
+  categories:
+    Reward: 0.2
+  generationProb: 0.8
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 8
+      tags:
+      - CP14DemiplaneRuins
+
+- type: cp14LocationModifier
+  id: Geodes
+  levels:
+    min: 1
+    max: 3
+  name: cp14-modifier-ruins
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneUnderground
+  generationWeight: 0.5
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 5
+      tags:
+      - CP14DemiplanGeodeRoom

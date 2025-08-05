@@ -13,8 +13,6 @@
           mapNameTemplate: "Comoss island"
         - type: StationJobs
           availableJobs:
-            #Demigods
-            CP14GodLumera: [ 1, 1 ]
             #Mercenary
             #CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
@@ -51,3 +49,19 @@
           - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
+        - type: CP14StationProceduralLocation
+          location: ComossIsland
+          modifiers:
+          - DemiplaneArcTriple
+          - RaidSpawners
+          - SmallHydra
+          - EnemyFlem
+          - MonsterMosquito
+          - Marble
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzOrder
+          - Quartz
+          - FlyAgaric
+          - BloodFlower

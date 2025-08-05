@@ -1,5 +1,3 @@
-using Content.Client._CP14.DemiplaneTraveling;
-using Content.Shared._CP14.DemiplaneTraveling;
 using Content.Shared._CP14.Religion.Systems;
 using Robust.Client.UserInterface;
 
