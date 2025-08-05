@@ -39,10 +39,10 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.4"
+        mask: # tables should collide with other tables
+        - TableMask
         layer:
-        - LowImpassable
-        mask:
-        - ItemMask
+        - TableLayer
         density: 1000
         #hard: false
       fix2:
@@ -55,14 +55,8 @@
         - ItemMask
         density: 1000
         hard: false
-      #fix2: # For block AI movement
-      #  shape:
-      #    !type:PhysShapeAabb
-      #    bounds: "-0.5,-0.5,0.5,0.5"
-      #  density: 30
-      #  mask:
-      #  - ItemMask
   - type: Tag
     tags:
     - HideContextMenu
+  - type: Climbable
 
