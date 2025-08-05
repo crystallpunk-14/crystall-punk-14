@@ -490,3 +490,16 @@
     stack: CP14IronBar
     count: 3
   result: CP14CookingPot
+
+- type: CP14Recipe
+  id: CP14IronBuckleRecipe
+  tag: CP14RecipeAnvil
+  craftTime: 4
+  requiredSkills:
+  - IronMelting
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14IronBuckle
+  resultCount: 5

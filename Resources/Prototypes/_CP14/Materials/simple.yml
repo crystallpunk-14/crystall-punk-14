@@ -130,3 +130,21 @@
   icon: { sprite: _CP14/Objects/Materials/ash.rsi, state: ash_1 }
   color: "#2d313c"
   price: 0
+
+- type: material
+  id: CP14SaltStone
+  stackEntity: CP14SaltStone1
+  name: cp14-material-salt
+  unit: cp14-materials-unit-pile
+  icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
+  color: "#85a6a8"
+  price: 0.4
+
+- type: material
+  id: CP14Leather
+  #stackEntity: CP14Leather
+  name: cp14-material-leather
+  unit: materials-unit-roll
+  icon: { sprite: _CP14/Objects/Ingredients/leather.rsi, state: leather }
+  color: "#a78a63"
+  price: 1.2

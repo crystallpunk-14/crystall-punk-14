@@ -1419,3 +1419,36 @@
   id: 8195
   time: '2025-08-04T10:35:55.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1594
+- author: PhantornRU
+  changes:
+  - message: leatherworking and craft backpacks
+    type: Add
+  - message: 3 types of backpacks and T0-T3 of backpacks
+    type: Add
+  - message: Added regular backpacks with wide slots.
+    type: Add
+  - message: Added satchels, more slots, but divided into compartments.
+    type: Add
+  - message: Added explorer backpacks, even more slots, but small compartments.
+    type: Add
+  - message: Hide and fur drop from animals.
+    type: Add
+  - message: Different types of skins, leather, fur.
+    type: Add
+  - message: Special backpacks for guards and villagers
+    type: Add
+  - message: T0 & T1 satchels, T0 backpack (sack) can be worn on the belt
+    type: Tweak
+  - message: Hides, fur and leather can be sold.
+    type: Tweak
+  - message: New butchers positions (hide)
+    type: Add
+  - message: Salt can be bought from the dwarven faction.
+    type: Add
+  - message: Leather can be crafted into straps
+    type: Tweak
+  - message: Iron ingots can be crafted into buckle
+    type: Tweak
+  id: 8196
+  time: '2025-08-04T22:51:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1378

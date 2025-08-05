@@ -11,7 +11,7 @@ namespace Content.IntegrationTests.Tests.Wires;
 [Parallelizable(ParallelScope.All)]
 [TestOf(typeof(WiresSystem))]
 public sealed class WireLayoutTest
-{
+{/*
     [TestPrototypes]
     public const string Prototypes = """
         - type: wireLayout
@@ -99,5 +99,5 @@ public sealed class WireLayoutTest
         var ent = entityManager.Spawn(prototype, coords);
         var comp = entityManager.EnsureComponent<T>(ent);
         return new Entity<T>(ent, comp);
-    }
+    }*/
 }

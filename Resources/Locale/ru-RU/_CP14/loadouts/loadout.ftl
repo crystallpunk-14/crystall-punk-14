@@ -15,6 +15,11 @@ cp14-loadout-general-spells = Заклинания
 cp14-loadout-skill-tree = Специализация
 cp14-loadout-general-keys = Ключи
 
+# Villagers
+cp14-loadout-general-villager-back-cargo = Грузовые рюкзаки
+cp14-loadout-general-villager-back = Рюкзаки жителей
+cp14-loadout-general-villager-back-reinforced = Бронированные рюкзаки
+
 # Adventurer
 
 cp14-loadout-adventurers-equip = Оружие авантюриста
