@@ -337,7 +337,6 @@
       entity: CP14MobMonsterMyconideLumish
       count: 5
       minGroupSize: 7
-      maxGroupSize: 12
 
 - type: cp14LocationModifier
   id: EnemyCackle
