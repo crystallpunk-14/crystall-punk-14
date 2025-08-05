@@ -1452,3 +1452,11 @@
   id: 8196
   time: '2025-08-04T22:51:37.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1378
+- author: TheShuEd
+  changes:
+  - message: Mobs can now only fall into chasms if they are pushed or deliberately
+      thrown in. Simply walking towards a chasm will no longer cause player to fall.
+    type: Tweak
+  id: 8197
+  time: '2025-08-05T10:01:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1458
