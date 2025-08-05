@@ -30,3 +30,12 @@
       count: 8
       minGroupSize: 3
       maxGroupSize: 3
+
+- type: cp14LocationModifier
+  id: CP14DemiplanEnterRoom
+  generationProb: 0
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 2
+      tags:
+      - CP14DemiplanEnterRoom

@@ -1,7 +1,6 @@
 - type: cp14Location
   id: ComossIsland
   locationConfig: CP14ComossIsland
-  connection: ConnectionGrass
   generationProb: 0 #Special location for map only
   tags:
   - CP14DemiplaneOres

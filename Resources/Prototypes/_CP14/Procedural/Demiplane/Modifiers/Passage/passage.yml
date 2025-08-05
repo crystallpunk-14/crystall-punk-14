@@ -1,0 +1,41 @@
+- type: cp14LocationModifier
+  id: DemiplaneArcTriple
+  levels:
+    min: 0
+    max: 1
+  generationWeight: 0.3
+  categories:
+    Passage: 1
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 3
+      tags:
+      - CP14DemiplanArcRoom
+
+- type: cp14LocationModifier
+  id: DemiplaneArcDouble
+  levels:
+    min: 0
+    max: 3
+  generationWeight: 0.6
+  categories:
+    Passage: 1
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 2
+      tags:
+      - CP14DemiplanArcRoom
+
+- type: cp14LocationModifier
+  id: DemiplaneArcSingle
+  levels:
+    min: 1
+    max: 4
+  generationWeight: 1
+  categories:
+    Passage: 1
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 1
+      tags:
+      - CP14DemiplanArcRoom

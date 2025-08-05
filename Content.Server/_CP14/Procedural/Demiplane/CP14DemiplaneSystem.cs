@@ -1,118 +1,120 @@
-using System.Diagnostics;
 using System.Linq;
-using Content.Server._CP14.Procedural.GlobalWorld.Components;
-using Content.Server.Station.Components;
+using Content.Server._CP14.Procedural.Demiplane.Components;
 using Content.Shared._CP14.Procedural.Prototypes;
+using Content.Shared.Interaction;
+using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
-namespace Content.Server._CP14.Procedural.GlobalWorld;
+namespace Content.Server._CP14.Procedural.Demiplane;
 
-public sealed partial class CP14GlobalWorldSystem
+public sealed class CP14DemiplaneSystem : EntitySystem
 {
-    private void GenerateGlobalWorldMap(Entity<CP14StationGlobalWorldComponent> ent)
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly LinkedEntitySystem _link = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
+    public override void Initialize()
     {
-        ent.Comp.Nodes.Clear();
-        ent.Comp.Edges.Clear();
+        base.Initialize();
 
-        //For first - check station integration, and put station into (0,0) global map position
-        if (TryComp<CP14StationGlobalWorldIntegrationComponent>(ent, out var integration) &&
-            TryComp<StationDataComponent>(ent, out var stationData))
+        SubscribeLocalEvent<CP14DemiplaneRiftComponent, InteractHandEvent>(OnRiftInteracted);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<CP14DemiplaneRiftComponent>();
+        while (query.MoveNext(out var uid, out var demiplaneRift))
         {
-            var largestStationGrid = _station.GetLargestGrid(stationData);
-
-            Debug.Assert(largestStationGrid is not null);
-
-            var mapId = _transform.GetMapId(largestStationGrid.Value);
-            var zeroNode =
-                new CP14GlobalWorldNode
-                {
-                    MapUid = mapId,
-                    LocationConfig = integration.Location,
-                    Modifiers = integration.Modifiers,
-                    Level = 0,
-                };
-            GenerateNodeData(zeroNode);
-            ent.Comp.Nodes.Add(
-                Vector2i.Zero,
-                zeroNode
-            );
-        }
-        else
-        {
-            var zeroNode = new CP14GlobalWorldNode();
-            GenerateNodeData(zeroNode);
-            ent.Comp.Nodes.Add(Vector2i.Zero, zeroNode);
-        }
-
-        //Generate nodes with random data until limits
-        while (ent.Comp.Nodes.Count < ent.Comp.LocationCount + 1)
-        {
-            // Get a random existing node
-            var randomNode = _random.Pick(ent.Comp.Nodes);
-            var randomNodePosition = randomNode.Key;
-
-            // Find a random empty adjacent position
-            var directions = new[] { new Vector2i(1, 0), new Vector2i(-1, 0), new Vector2i(0, 1), new Vector2i(0, -1) };
-            var emptyPositions = directions
-                .Select(dir => randomNodePosition + dir)
-                .Where(pos => !ent.Comp.Nodes.ContainsKey(pos))
-                .ToList();
-
-            if (emptyPositions.Count == 0)
+            if (demiplaneRift.ScanningTargetMap is null)
                 continue;
 
-            var newPosition = emptyPositions[Random.Shared.Next(emptyPositions.Count)];
+            if (_timing.CurTime < demiplaneRift.NextScanTime)
+                continue;
 
-            // Add the new node and connect it with an edge
-            var newNode = new CP14GlobalWorldNode
-            {
-                Level = Math.Abs(newPosition.X) + Math.Abs(newPosition.Y),
-            };
-            GenerateNodeData(newNode);
-            ent.Comp.Nodes.Add(newPosition, newNode);
-            ent.Comp.Edges.Add((randomNodePosition, newPosition));
+            demiplaneRift.NextScanTime = _timing.CurTime + TimeSpan.FromSeconds(5);
 
-            //Add connections to each other
-            if (_proto.TryIndex(newNode.LocationConfig, out var indexedNewNodeLocation) && _proto.TryIndex(randomNode.Value.LocationConfig, out var indexedRandomNodeLocation))
+            var targetQuery = EntityQueryEnumerator<CP14DemiplaneEnterPointComponent>();
+            while (targetQuery.MoveNext(out var enterUid, out var enterComp))
             {
-                newNode.Modifiers.Add(indexedNewNodeLocation.Connection);
-                randomNode.Value.Modifiers.Add(indexedRandomNodeLocation.Connection);
+                if (Transform(enterUid).MapUid != demiplaneRift.ScanningTargetMap)
+                    continue;
+
+                //Remove awaiting
+                QueueDel(demiplaneRift.AwaitingEntity);
+
+                //Start connection
+                var portal1 = SpawnAtPosition(demiplaneRift.PortalProto, Transform(enterUid).Coordinates);
+                var portal2 = SpawnAtPosition(demiplaneRift.PortalProto, Transform(uid).Coordinates);
+                _link.TryLink(portal1, portal2, true);
+
+                //Delete self
+                QueueDel(uid);
+                QueueDel(enterUid);
+
+                return;
             }
         }
     }
 
-    private void GenerateNodeData(CP14GlobalWorldNode node,
-        bool overrideLocation = false,
-        bool clearOldModifiers = false)
+    private void OnRiftInteracted(Entity<CP14DemiplaneRiftComponent> ent, ref InteractHandEvent args)
     {
-        if (node.LocationConfig is null || overrideLocation)
+        if (HasComp<CP14DemiplaneBlockInteractionsComponent>(args.User))
+            return;
+
+        if (!ent.Comp.CanCreate)
+            return;
+
+        var nextLevel = 1;
+        var originMap = Transform(ent).MapUid;
+        if (TryComp<CP14DemiplaneMapComponent>(originMap, out var demiplane))
         {
-            var location = SelectLocation(node.Level);
-            node.LocationConfig ??= location;
+            nextLevel = demiplane.Level + 1;
         }
 
-        if (!_proto.TryIndex(node.LocationConfig, out var indexedLocation))
-            throw new Exception($"No location config found for node at level {node.Level}!");
+        _map.CreateMap(out var mapId, runMapInit: false);
+
+        var mapUid = _map.GetMap(mapId);
+        EnsureComp<CP14DemiplaneMapComponent>(mapUid).Level = nextLevel;
 
         var limits = new Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float>
         {
-            { "Danger", Math.Max(node.Level * 0.2f, 0.5f) },
+            { "Danger", Math.Max(nextLevel * 0.2f, 0.5f) },
             { "GhostRoleDanger", 1f },
-            { "Reward", Math.Max(node.Level * 0.3f, 0.5f) },
-            { "Ore", Math.Max(node.Level * 0.5f, 1f) },
+            { "Reward", Math.Max(nextLevel * 0.3f, 0.5f) },
+            { "Ore", Math.Max(nextLevel * 0.5f, 1f) },
             { "Fun", 1f },
             { "Weather", 1f },
             { "MapLight", 1f },
+            { "Passage", 1f },
         };
-        var mods = SelectModifiers(node.Level, indexedLocation, limits);
 
-        if (clearOldModifiers)
-            node.Modifiers.Clear();
-        foreach (var mod in mods)
-        {
-            node.Modifiers.Add(mod);
-        }
+        var nextLocation = SelectLocation(nextLevel);
+        var nextModifiers = SelectModifiers(nextLevel, nextLocation, limits);
+
+        nextModifiers.Add("CP14DemiplanEnterRoom"); //HARDCODE, BOO
+
+        _meta.SetEntityName(mapUid, $"Demi: [{nextLevel}] - {nextLocation.LocationConfig.Id}");
+
+        _generation.GenerateLocation(
+            mapUid,
+            mapId,
+            nextLocation,
+            nextModifiers);
+
+        var awaiting = SpawnAtPosition(ent.Comp.AwaitingProto, Transform(ent).Coordinates);
+
+        ent.Comp.AwaitingEntity = awaiting;
+        ent.Comp.ScanningTargetMap = mapUid;
+        ent.Comp.CanCreate = false;
     }
 
     /// <summary>
@@ -171,12 +173,12 @@ public sealed partial class CP14GlobalWorldSystem
     /// <summary>
     /// Returns a set of modifiers under the specified difficulty level that are appropriate for the specified location
     /// </summary>
-    public List<CP14ProceduralModifierPrototype> SelectModifiers(
+    public List<ProtoId<CP14ProceduralModifierPrototype>> SelectModifiers(
         int level,
         CP14ProceduralLocationPrototype location,
         Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float> modifierLimits)
     {
-        List<CP14ProceduralModifierPrototype> selectedModifiers = new();
+        List<ProtoId<CP14ProceduralModifierPrototype>> selectedModifiers = new();
 
         //Modifier generation
         Dictionary<CP14ProceduralModifierPrototype, float> suitableModifiersWeights = new();
@@ -304,4 +306,8 @@ public sealed partial class CP14GlobalWorldSystem
         // Shouldn't happen
         throw new InvalidOperationException($"Invalid weighted pick in CP14DemiplanSystem.Generation!");
     }
+}
+
+public sealed class CP14LocationGeneratedEvent : EntityEventArgs
+{
 }

@@ -113,6 +113,7 @@
     templateId: CP14Human
   - type: TransferMindOnGib
   - type: GhostTakeoverAvailable
+  - type: CP14DemiplaneBlockInteractions
 
 - type: entity
   parent: CP14BaseSpeciesDummy

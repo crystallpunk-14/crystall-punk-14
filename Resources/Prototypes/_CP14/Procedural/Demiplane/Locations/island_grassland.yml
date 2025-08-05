@@ -4,7 +4,6 @@
     min: 0
     max: 2
   locationConfig: CP14GrasslandIsland
-  connection: ConnectionGrass
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneHerbals
@@ -25,7 +24,7 @@
   layers:
   # Masks
   - !type:NoiseDistanceDunGen
-    size: 160, 160
+    size: 120, 120
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -39,7 +38,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 150, 150
+    size: 115, 115
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.6
     layers:
@@ -53,7 +52,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 110, 110
+    size: 90, 90
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.5
     layers:

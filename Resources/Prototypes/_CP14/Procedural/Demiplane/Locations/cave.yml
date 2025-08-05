@@ -4,7 +4,6 @@
     min: 1
     max: 2
   locationConfig: CP14Caves
-  connection: ConnectionStone
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -17,7 +16,7 @@
   layers:
   # Masks
   - !type:NoiseDistanceDunGen
-    size: 120, 120
+    size: 90, 90
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.9
     layers:
@@ -31,7 +30,7 @@
         lacunarity: 2
         gain: 0.5
   - !type:NoiseDistanceDunGen
-    size: 80, 80
+    size: 60, 60
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.5
     layers:
