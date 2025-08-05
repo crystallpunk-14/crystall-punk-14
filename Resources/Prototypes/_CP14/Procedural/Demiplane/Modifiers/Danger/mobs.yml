@@ -145,23 +145,6 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-#- type: cp14DemiplaneModifier #Removed to Whistler rebalance
-#  id: EnemyInvisibleWhistler
-#  levels:
-#    min: 6
-#    max: 10
-#  name: cp14-modifier-invisible-whistler
-#  categories:
-#    Danger: 0.4
-#  requiredTags:
-#  - CP14DemiplaneUnderground
-#  layers:
-#    - !type:CP14OreDunGen
-#      entity: CP14MobMonsterInvisibleWhistler
-#      count: 2
-#      minGroupSize: 1
-#      maxGroupSize: 2
-
 - type: cp14DemiplaneModifier
   id: MobSlimeElectric
   levels:
