@@ -1460,3 +1460,14 @@
   id: 8197
   time: '2025-08-05T10:01:32.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1458
+- author: PhantornRU
+  changes:
+  - message: Adding a bear skin drop.
+    type: Add
+  - message: Adding quiver and alchemy belt crafting
+    type: Add
+  - message: Adjusting the speed between satchels and backpacks.
+    type: Tweak
+  id: 8198
+  time: '2025-08-05T11:31:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1618
