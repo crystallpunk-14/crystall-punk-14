@@ -69,7 +69,6 @@
   - type: CP14AreaEntityEffect
     range: 1
     effects:
-    - !type:CP14SpellThrowFromUser
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute
@@ -77,7 +76,7 @@
       - !type:HealthChange
         damage:
           types:
-            Shock: 15
+            Shock: 0
   - type: CP14FarSound
     closeSound:
       path: /Audio/_CP14/Ambience/Lightning/lightning_close1.ogg
