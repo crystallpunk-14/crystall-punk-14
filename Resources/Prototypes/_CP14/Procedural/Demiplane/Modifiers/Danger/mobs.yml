@@ -145,7 +145,7 @@
       minGroupSize: 1
       maxGroupSize: 3
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MobSlimeElectric
   levels:
     min: 5
