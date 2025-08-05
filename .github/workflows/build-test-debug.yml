@@ -11,7 +11,9 @@ on:
 jobs:
   build:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest]
 
