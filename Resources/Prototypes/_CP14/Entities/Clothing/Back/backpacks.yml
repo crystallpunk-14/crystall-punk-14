@@ -98,8 +98,8 @@
         Heat: 0.90
         Caustic: 0.90
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.80
+    sprintModifier: 0.80
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -171,8 +171,8 @@
         Piercing: 0.95
         Heat: 0.92
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
+    walkModifier: 0.82
+    sprintModifier: 0.82
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -197,5 +197,5 @@
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
       # Cost: (96×1.2) + (96×0.4) + (12×2) = 115.2 + 38.4 + 24 = 177.6 copper coins
   - type: ClothingSpeedModifier
-    walkModifier: 0.83
-    sprintModifier: 0.83
+    walkModifier: 0.84
+    sprintModifier: 0.84

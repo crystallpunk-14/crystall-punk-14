@@ -522,8 +522,17 @@
   - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatPig # TODO 
+    - id: CP14FoodMeatBoar # TODO
       amount: 5
+    - id: CP14RuggedAnimalHide
+      amount: 2
+      maxAmount: 5
+    - id: CP14ScrapAnimalHide
+      amount: 2
+      maxAmount: 6
+      prob: 0.5
+    - id: CP14GoodFur
+      amount: 1
   - type: Bloodstream
     bloodMaxVolume: 350
     bloodReagent: CP14BloodAnimal

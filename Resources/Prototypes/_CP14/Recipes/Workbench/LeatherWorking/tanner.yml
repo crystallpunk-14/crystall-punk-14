@@ -141,3 +141,41 @@
   result: CP14RuggedStrap
   resultCount: 4 # 4x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
   # Cost: (25×1.2) + (20×0.4) + (15×0.3) = 30 + 8 + 4.5 = 42.5 copper coins
+
+
+# ================
+# Leather belts crafting
+
+- type: CP14Recipe
+  id: CP14ClothingBeltQuiverRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Leather
+    count: 3 # 30u leather + 30u salt
+  - !type:ProtoIdResource
+    protoId: CP14LeatherStrap
+    count: 2 # 6u leather + 6u salt
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 4 # 20u cloth
+  result: CP14ClothingBeltQuiver
+  # Cost: (36×1.2) + (36×0.4) + (20×0.3) = 43.2 + 14.4 + 6 = 63.6 copper coins
+
+- type: CP14Recipe
+  id: CP14ClothingBeltPouchPotionsRecipe
+  tag: CP14RecipeLeatherWorking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14Leather
+    count: 1 # 10u leather + 10u salt
+  - !type:ProtoIdResource
+    protoId: CP14LeatherStrap
+    count: 3 # 9u leather + 9u salt
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 4 # 20u cloth
+  result: CP14ClothingBeltPouchPotions
+  # Cost: (19×1.2) + (19×0.4) + (20×0.3) = 22.8 + 7.6 + 6 = 36.4 copper coins
