@@ -98,8 +98,8 @@
         Heat: 0.90
         Caustic: 0.90
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.80
+    sprintModifier: 0.80
 
 - type: entity
   parent: CP14ClothingBackBackpackT2

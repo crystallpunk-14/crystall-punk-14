@@ -114,7 +114,7 @@
         Heat: 0.98
         Caustic: 0.96
   - type: ClothingSpeedModifier
-    sprintModifier: 0.80
+    sprintModifier: 0.85
 
 - type: entity
   parent: CP14ClothingBackSatchelBase
@@ -186,4 +186,4 @@
         Piercing: 0.97
         Heat: 0.98
   - type: ClothingSpeedModifier
-    sprintModifier: 0.77
+    sprintModifier: 0.88
