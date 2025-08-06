@@ -58,7 +58,7 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+            await server.WaitRunTicks(15); // 15 seconds, enough to trigger most update loops
 
             await server.WaitPost(() =>
             {
@@ -116,7 +116,7 @@ namespace Content.IntegrationTests.Tests
                     entityMan.SpawnEntity(protoId, map.GridCoords);
                 }
             });
-            await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+            await server.WaitRunTicks(15); // 15 seconds, enough to trigger most update loops
             await server.WaitPost(() =>
             {
                 static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
