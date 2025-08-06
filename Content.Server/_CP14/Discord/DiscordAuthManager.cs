@@ -213,7 +213,7 @@ public sealed class DiscordAuthManager
             _sawmill.Debug($"Player {userId} user age check failed: {!response.IsSuccessStatusCode}");
             return new DiscordUserResponse { ErrorMessage = $"Unexpected error: {!response.IsSuccessStatusCode}" };
         }
-        
+
         var user = await response.Content.ReadFromJsonAsync<DiscordUserResponse>(cancel);
         if (user is null)
         {
