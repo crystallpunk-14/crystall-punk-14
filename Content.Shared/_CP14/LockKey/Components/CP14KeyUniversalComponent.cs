@@ -1,12 +1,9 @@
-﻿using Robust.Shared.GameStates;
-
-namespace Content.Shared._CP14.LockKey.Components;
+﻿namespace Content.Shared._CP14.LockKey.Components;
 
 /// <summary>
-/// Makes key universal, so it changes his form to required by lock
+/// Makes key universal, so it changes his form to required by lock on use
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class CP14KeyUniversalComponent : Component
 {
-
 }

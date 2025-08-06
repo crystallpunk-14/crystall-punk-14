@@ -94,6 +94,7 @@
   id: CP14KeyUniversal
   name: omni key
   suffix: Universal
+  categories: [ ForkFiltered, DoNotMap ]
   components:
   - type: CP14Key
   - type: CP14KeyUniversal
