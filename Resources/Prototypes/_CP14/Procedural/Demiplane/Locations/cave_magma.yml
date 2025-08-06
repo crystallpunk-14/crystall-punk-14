@@ -1,13 +1,9 @@
-- type: cp14DemiplaneLocation
-  id: T1MagmaCaves
+- type: cp14Location
+  id: MagmaCaves
   levels:
-    min: 4
-    max: 20
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: magma_caves
-  locationConfig: CP14DemiplaneCavesRing
-  name: cp14-demiplane-location-cave-magma
+    min: 3
+    max: 10
+  locationConfig: CP14MagmaCaves
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneUnderground
@@ -17,36 +13,11 @@
     template: CP14LavaOceanFill
 
 - type: dungeonConfig
-  id: CP14DemiplaneCavesRing
+  id: CP14MagmaCaves
   layers:
-    # Masks
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesRingFloorMaskStone
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesRingFloorMaskAir
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesRingFloorMaskStone2
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneCavesRingFloorMaskBorderCenter
-    # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesGeneric
-      tileMask:
-      - CP14FloorSand
-    - !type:BiomeDunGen
-      biomeTemplate: CP14CavesFloor
-      tileMask:
-      - CP14FloorGrass
-    - !type:BiomeDunGen
-      biomeTemplate: CP14MarbleCaves
-      tileMask:
-      - CP14FloorMarble
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesRingFloorMaskStone
-  layers:
+  # Masks
   - !type:NoiseDistanceDunGen
-    size: 120, 120
+    size: 90, 90
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -59,12 +30,8 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesRingFloorMaskAir
-  layers:
   - !type:NoiseDistanceDunGen
-    size: 110, 110
+    size: 80, 80
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.8
     layers:
@@ -77,12 +44,8 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesRingFloorMaskStone2
-  layers:
   - !type:NoiseDistanceDunGen
-    size: 80, 80
+    size: 60, 60
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -95,12 +58,8 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
-- type: dungeonConfig
-  id: CP14DemiplaneCavesRingFloorMaskBorderCenter
-  layers:
   - !type:NoiseDistanceDunGen
-    size: 50, 50
+    size: 30, 30
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.8
     layers:
@@ -113,4 +72,16 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
+  # Biomes
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14CavesGeneric
+    tileMask:
+    - CP14FloorSand
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14CavesFloor
+    tileMask:
+    - CP14FloorGrass
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14LavaOceanFill
+    tileMask:
+    - CP14FloorMarble
