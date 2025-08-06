@@ -18,7 +18,7 @@ cp14-lock-verb-use-key-message = Use {$item} to lock or unlock the lock.
 cp14-lock-examine-lock-slot = {$lock} is hanging here.
 cp14-lock-examine-lock-lockpicked = {$lock} looks shabby.
 
-cp14-lock-examine-key = The {$item} has prongs of the following shape: 
+cp14-lock-examine-key = The {$item} has prongs of the following shape:
 
 cp14-lock-key-file-use-hint = Grind tooth: {$num}
 cp14-lock-key-file-updated = New key shape:
@@ -29,3 +29,5 @@ cp14-lock-editor-updated = New lock shape:
 cp14-lock-insert-start = {$player} starts installing a lock on {$name}.
 cp14-lock-insert-fail-have-lock = {$name} already has a lock installed!
 cp14-lock-insert-success = The new lock has been successfully installed in {$name}!
+
+cp14-lock-key-transforming = The key changing its shape!
