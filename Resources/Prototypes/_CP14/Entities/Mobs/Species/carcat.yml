@@ -18,7 +18,7 @@
     speechSounds: CP14Carcat
   - type: Wagging
   - type: Body
-    prototype: CP14Human
+    prototype: CP14Carcat
     requiredLegs: 2
   - type: MeleeWeapon
     soundHit:
