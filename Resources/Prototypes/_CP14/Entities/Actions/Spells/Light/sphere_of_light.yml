@@ -15,9 +15,9 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectSphereOfLight
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14SphereOfLight
+    - !type:CP14SpellApplyStatusEffect
+      statusEffect: CP14StatusEffectGlowing
+      duration: 120
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Appare in manu tua..."
     endSpeech: "sphaera lucis"
@@ -28,8 +28,15 @@
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: sphere_of_light
-  - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Item
+      - Anchorable
+    event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 30
       castDelay: 0.5
       breakOnMove: false
@@ -68,40 +75,3 @@
   - type: CP14SpellStorage
     spells:
     - CP14ActionSpellSphereOfLight
-
-- type: entity
-  id: CP14SphereOfLight
-  name: Sphere of light
-  parent: BaseItem
-  description: A lump of bright light in the shape of a sphere.
-  categories: [ ForkFiltered ]
-  components:
-  - type: TimedDespawn
-    lifetime: 120 # 2 min
-  - type: Sprite
-    sprite: _CP14/Effects/Magic/sphere_of_light.rsi
-    noRot: true
-    layers:
-    - state: icon
-      shader: unshaded
-  - type: Item
-    size: Ginormous
-    inhandVisuals:
-      left:
-      - state: inhand-left-unshaded
-        shader: unshaded
-      right:
-      - state: inhand-right-unshaded
-        shader: unshaded
-  - type: LandAtCursor
-  - type: MovementIgnoreGravity
-  - type: PointLight
-    radius: 5.0
-    energy: 1
-    color: "#efedff"
-  - type: Damageable
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Effects/drop.ogg
-      params:
-        volume: -100 #Yes, it's stupid, but it's easier

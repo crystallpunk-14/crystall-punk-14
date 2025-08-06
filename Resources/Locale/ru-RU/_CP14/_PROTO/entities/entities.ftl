@@ -2648,11 +2648,11 @@ ent-CP14KeyAlchemy2 = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Алхимия 2
 
-ent-CP14KeyTavernBlacksmithAbstract = { ent-CP14KeyIronBlank }
+ent-CP14KeyBlacksmithAbstract = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Абстракт. Кузница.
 
-ent-CP14KeyBlacksmith = { ent-CP14KeyIronBlank }
+ent-CP14KeyBlacksmith1 = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Кузница 1
 
@@ -2684,19 +2684,19 @@ ent-CP14KeyTavernMerchantShopAbstract = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Абстракт. Магазин торговца
 
-ent-CP14KeyMercantShopPublic = { ent-CP14KeyCopperBlank }
+ent-CP14KeyMerchantShopPublic = { ent-CP14KeyCopperBlank }
     .desc = { ent-CP14KeyCopperBlank.desc }
     .suffix = Публичный торговый магазин
 
-ent-CP14KeyMercantShop1 = { ent-CP14KeyIronBlank }
+ent-CP14KeyMerchantShop1 = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Магазин торговца 1
 
-ent-CP14KeyMercantShop2 = { ent-CP14KeyIronBlank }
+ent-CP14KeyMerchantShop2 = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Магазин торговца 2
 
-ent-CP14KeyMercantShop3 = { ent-CP14KeyIronBlank }
+ent-CP14KeyMerchantShop3 = { ent-CP14KeyIronBlank }
     .desc = { ent-CP14KeyIronBlank.desc }
     .suffix = Магазин торговца 3
 
