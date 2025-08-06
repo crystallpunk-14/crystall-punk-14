@@ -1516,3 +1516,10 @@
   id: 8203
   time: '2025-08-06T22:22:46.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1632
+- author: oldschoolotaku
+  changes:
+  - message: Carcats can eat raw meat now
+    type: Tweak
+  id: 8204
+  time: '2025-08-06T22:23:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1625
