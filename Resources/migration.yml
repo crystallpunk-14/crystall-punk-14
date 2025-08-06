@@ -131,7 +131,7 @@ CP14BaseTwoHandedSword: null
 CP14TwoHandedSwordScythe: null
 
 #2025-17-01
-CP14ClothingCloakBrassArmor: CP14ClothingOuterClothingCopperArmor
+CP14ClothingCloakBrassArmor: null
 CP14ClothingCloakCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakInfantryCuirass: CP14ArmorIronCuirass
 CP14ClothingCloakCuirassLoincloth: CP14ArmorIronCuirass
@@ -379,8 +379,8 @@ CP14FoodPieMeat: null
 CP14FoodPieMeatRaw: null
 
 # 2025-07-20
-CP14ClothingBackpackLeather: CP14ClothingBackLeatherBackpack
-CP14ClothingSatchelLeather:  CP14ClothingBackLeatherSatchel
+CP14ClothingBackpackLeather: CP14ClothingBackBackpackT1
+CP14ClothingSatchelLeather:  CP14ClothingBackSatchelT1
 CP14ClothingBlueCollarDress:  CP14ClothingShirtBlueCollarDress
 CP14ClothingBlueOpenDress:  CP14ClothingShirtBlueOpenDress
 CP14ClothingRedOpenDress:  CP14ClothingShirtRedOpenDress
@@ -397,6 +397,7 @@ CP14ClothingWarriorsGarbDress:  CP14ClothingShirtWarriorsGarbDress
 CP14LongLeatherBoots:  CP14ClothingShoesLongLeatherBoots
 
 #2025-07-27
+CP14ClothingOuterClothingCopperArmor: null
 CP14DemiplanEnterRoomMarker: null
 
 CP14CandleRed: CP14Candle
@@ -422,6 +423,23 @@ CP14CandleBlueSmallInfinite: CP14CandleIgnited
 CP14CandleBlackSmallInfinite: CP14CandleIgnited
 CP14CandleGreenSmallInfinite: CP14CandleIgnited
 CP14CandlePurpleSmallInfinite: CP14CandleIgnited
+
+#2025-07-28
+CP14ClothingBackLeatherBackpack: CP14ClothingBackBackpackT1
+CP14ClothingBackLeatherSatchel:  CP14ClothingBackSatchelT1
+
+#2025-08-01
+CP14SpellScrollResurrection: null
+
+#2025-08-02
+CP14SpellScrollDemiplaneInfiltration: null
+CP14DemiplaneEntryPointMarker: null
+CP14SpellScrollMonolithWarp: null
+CP14GuidebookDemiplanes: null
+CP14DemiplanePassway: null
+CP14DemiplaneCore: null
+CP14SpawnerLocationConnection: null
+CP14LocationPassway: null
 
 # <---> CrystallEdge migration zone end
 
@@ -462,7 +480,7 @@ lanternextrabright: LanternFlash
 
 # 2023-08-04
 BoxMagazineLightRifleHighVelocity: BoxMagazineLightRifle
-BoxMagazineMagnumSubMachineGunHighVelocity: BoxMagazineMagnumSubMachineGun
+BoxMagazineMagnumSubMachineGunHighVelocity: null
 BoxMagazinePistolCaselessRifleHighVelocity: BoxMagazinePistolCaselessRifle
 BoxMagazinePistolHighCapacityHighVelocity: BoxMagazinePistolHighCapacity
 BoxMagazinePistolHighVelocity: BoxMagazinePistol
@@ -484,9 +502,9 @@ MagazineBoxMagnumHighVelocity: MagazineBoxMagnum
 MagazineBoxPistolHighVelocity: MagazineBoxPistol
 MagazineBoxRifleHighVelocity: MagazineBoxRifle
 MagazineCaselessRifleHighVelocity: MagazineCaselessRifle
-MagazineCaselessRifleShortHighVelocity: MagazineCaselessRifleShort
+MagazineCaselessRifleShortHighVelocity: null
 MagazineLightRifleHighVelocity: MagazineLightRifle
-MagazineMagnumSubMachineGunHighVelocity: MagazineMagnumSubMachineGun
+MagazineMagnumSubMachineGunHighVelocity: null
 MagazinePistolCaselessRifleHighVelocity: MagazinePistolCaselessRifle
 MagazinePistolHighCapacityHighVelocity: MagazinePistolHighCapacity
 MagazinePistolHighVelocity: MagazinePistol
@@ -730,11 +748,11 @@ MagazinePistolRubber: MagazinePistol
 MagazinePistolSubMachineGunRubber: MagazinePistolSubMachineGun
 MagazinePistolCaselessRifleRubber: MagazinePistolCaselessRifle
 MagazineMagnumRubber: MagazineMagnum
-MagazineMagnumSubMachineGunRubber: MagazineMagnumSubMachineGun
+MagazineMagnumSubMachineGunRubber: null
 MagazineLightRifleRubber: MagazineLightRifle
 MagazineRifleRubber: MagazineRifle
 MagazineCaselessRifleRubber: MagazineCaselessRifle
-MagazineCaselessRifleShortRubber: MagazineCaselessRifleShort
+MagazineCaselessRifleShortRubber: null
 SpeedLoaderPistolRubber: SpeedLoaderPistol
 SpeedLoaderMagnumRubber: SpeedLoaderMagnum
 MagazineBoxPistolRubber: MagazineBoxPistol
@@ -750,7 +768,7 @@ BoxMagazinePistolSubMachineGunRubber: BoxMagazinePistolSubMachineGun
 BoxMagazineLightRifleRubber: BoxMagazineLightRifle
 BoxMagazineRifleRubber: BoxMagazineRifle
 BoxMagazineCaselessRifleRubber: BoxMagazinePistolCaselessRifle
-BoxMagazineMagnumSubMachineGunRubber: BoxMagazineMagnumSubMachineGun
+BoxMagazineMagnumSubMachineGunRubber: null
 WeaponPistolMk58Nonlethal: WeaponPistolMk58
 WeaponPistolN1984Nonlethal: WeaponPistolN1984
 WeaponSubMachineGunDrozdRubber: WeaponSubMachineGunDrozd
@@ -1081,6 +1099,22 @@ SpawnHonkBot: SpawnMobHonkBot
 # 2025-06-01
 CrateFoodPizzaLarge: CrateFoodPizza
 CrateFoodSoftdrinksLarge: CrateFoodSoftdrinks
+
+# 2025-06-06
+MagazineLightRifleMaxim: null
+MagazineLightRiflePkBox: null
+MagazineCaselessRifle10x24: null
+BaseMagazineCaselessRifleShort: null
+MagazineCaselessRifleShort: null
+MagazineCaselessRifleShortPractice: null
+BaseMagazineMagnumSubMachineGun: null
+MagazineMagnumSubMachineGunEmpty: null
+MagazineMagnumSubMachineGun: null
+MagazineMagnumSubMachineGunPractice: null
+MagazineMagnumSubMachineGunUranium: null
+MagazineMagnumSubMachineGunPiercing: null
+BoxMagazineMagnumSubMachineGun: null
+BoxMagazineMagnumSubMachineGunPractice: null
 
 # 2025-06-09
 BarSignAlignTile: BarSign

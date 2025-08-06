@@ -27,6 +27,8 @@
     base: roof
   - type: IsRoof
   - type: SunShadowCast
+  - type: WallMount
+    arc: 360
 
 - type: entity
   parent:

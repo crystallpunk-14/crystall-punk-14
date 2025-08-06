@@ -28,7 +28,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
-        SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
+        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
@@ -119,7 +119,7 @@ public abstract partial class CP14SharedMagicSystem
         args.Cancel();
     }
 
-    private void OnMobStateCheck(Entity<CP14MagicEffectAliveTargetRequiredComponent> ent,
+    private void OnMobStateCheck(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent,
         ref CP14CastMagicEffectAttemptEvent args)
     {
         if (args.Target is not { } target)
@@ -132,21 +132,10 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!ent.Comp.Inverted)
+        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
         {
-            if (_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-dead"));
-                args.Cancel();
-            }
-        }
-        else
-        {
-            if (!_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-alive"));
-                args.Cancel();
-            }
+            args.PushReason(Loc.GetString(ent.Comp.Popup));
+            args.Cancel();
         }
     }
 

@@ -12,6 +12,8 @@ cp14-tiles-snow-deep = глубокий снег
 cp14-tiles-snow-deep-deep = очень глубокий снег
 cp14-tiles-marble-cave = мраморный пол
 cp14-tiles-cobblestone = булыжник
+cp14-tiles-mycelium = мицелий
+cp14-tiles-mycelium-light = густой мицелий
 
 # Produced
 cp14-tiles-foundation = фундамент

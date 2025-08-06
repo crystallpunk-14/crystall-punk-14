@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by goblinsable (SS14), recolored from wood table by TheShuEd (Github), Jaraten (Discord) and vladimir.s",
+  "copyright": "Created by goblinsable (SS14), recolored from wood table by TheShuEd (Github), Jaraten (Discord) and vladimir.s, recolored by omsoyk",
   "size": {
     "x": 32,
     "y": 32
@@ -12,6 +12,9 @@
     },
     {
       "name": "full"
+    },
+    {
+      "name": "round"
     },
     {
       "name": "state0",

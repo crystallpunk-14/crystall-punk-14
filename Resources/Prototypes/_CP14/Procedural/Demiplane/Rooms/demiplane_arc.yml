@@ -1,0 +1,47 @@
+- type: Tag
+  id: CP14DemiplanArcRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanArcRoom_1
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_arc.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - CP14DemiplanArcRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanArcRoom_2
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_arc.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - CP14DemiplanArcRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanArcRoom_3
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_arc.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - CP14DemiplanArcRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanArcRoom_4
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_arc.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - CP14DemiplanArcRoom
+
+- type: dungeonRoom
+  id: CP14DemiplanArcRoom_5
+  size: 7,7
+  atlas: /Maps/_CP14/Dungeon/demiplane_arc.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 32,0
+  tags:
+    - CP14DemiplanArcRoom

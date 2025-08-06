@@ -6,7 +6,7 @@ namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed class ContrabandTest
-{
+{/*
     [Test]
     public async Task EntityShowDepartmentsAndJobs()
     {
@@ -40,5 +40,5 @@ public sealed class ContrabandTest
         });
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

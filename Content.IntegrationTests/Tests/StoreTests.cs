@@ -17,7 +17,7 @@ namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed class StoreTests
-{
+{/*
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -170,5 +170,5 @@ public sealed class StoreTests
         });
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

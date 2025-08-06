@@ -116,3 +116,10 @@
   icon: { sprite: "_CP14/Objects/Materials/ash.rsi", state: ash_1 }
   spawn: CP14Ash1
   maxCount: 10
+
+- type: stack
+  id: CP14SaltStone
+  name: cp14-stack-salt-stone
+  icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
+  spawn: CP14SaltStone1
+  maxCount: 10

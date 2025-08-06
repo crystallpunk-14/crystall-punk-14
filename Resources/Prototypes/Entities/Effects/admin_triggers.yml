@@ -32,6 +32,7 @@
   id: AdminInstantEffectFlash
   suffix: Flash
   parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ] #Allow in for CE
   components:
   - type: FlashOnTrigger
     range: 7
@@ -42,6 +43,7 @@
   id: AdminInstantEffectSmoke3
   suffix: Smoke (03 sec)
   parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ] #Allow in for CE
   components:
   - type: SmokeOnTrigger
     duration: 3
@@ -56,6 +58,7 @@
   id: AdminInstantEffectSmoke10
   suffix: Smoke (10 sec)
   parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ] #Allow in for CE
   components:
   - type: SmokeOnTrigger
     duration: 10
@@ -70,6 +73,7 @@
   id: AdminInstantEffectSmoke30
   suffix: Smoke (30 sec)
   parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ] #Allow in for CE
   components:
   - type: SmokeOnTrigger
     duration: 30
@@ -97,6 +101,7 @@
   id: AdminInstantEffectGravityWell
   suffix: Gravity Well
   parent: AdminInstantEffectBase
+  categories: [ ForkFiltered ] #Allow in for CE
   components: 
   - type: SoundOnTrigger
     removeOnTrigger: true

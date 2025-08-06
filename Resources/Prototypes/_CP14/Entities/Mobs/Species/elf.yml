@@ -16,20 +16,9 @@
         CP14ManaDepletion: -0.07
       groups:
         Brute: -0.07
-  - type: Hunger
-    starvationDamage:
-      types:
-        Cold: 0.25
-        Bloodloss: 0.25
   - type: Icon
     sprite: _CP14/Mobs/Species/Elf/parts.rsi
     state: full
-  - type: Thirst
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: CP14FoodMeatHuman
-        amount: 4
   - type: Body
     prototype: CP14Elf
     requiredLegs: 2

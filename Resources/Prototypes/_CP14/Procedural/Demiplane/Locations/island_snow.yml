@@ -1,13 +1,9 @@
-- type: cp14DemiplaneLocation
-  id: T1SnowIsland
+- type: cp14Location
+  id: SnowIsland
   levels:
     min: 2
-    max: 5
-  icon:
-    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
-    state: snow_island
-  locationConfig: CP14DemiplaneSnowIsland
-  name: cp14-demiplane-location-snow-island
+    max: 10
+  locationConfig: CP14SnowIsland
   tags:
   - CP14DemiplaneOres
   - CP14DemiplaneOpenSky
@@ -24,34 +20,11 @@
   - type: Roof
 
 - type: dungeonConfig
-  id: CP14DemiplaneSnowIsland
+  id: CP14SnowIsland
   layers:
-    # Masks
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneIslandFloorMaskSnow
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrasslandIslandFloorMaskGrass
-    - !type:PrototypeDunGen
-      proto: CP14DemiplaneGrasslandIslandFloorMaskStone
-    # Biomes
-    - !type:BiomeDunGen
-      biomeTemplate: CP14SnowlandSwamp
-      tileMask:
-      - CP14FloorSand
-    - !type:BiomeDunGen
-      biomeTemplate: CP14IceCavesGeneric
-      tileMask:
-      - CP14FloorBase
-    - !type:BiomeDunGen
-      biomeTemplate: CP14SnowlandTestResult
-      tileMask:
-      - CP14FloorGrass
-
-- type: dungeonConfig
-  id: CP14DemiplaneIslandFloorMaskSnow
-  layers:
+  # Masks
   - !type:NoiseDistanceDunGen
-    size: 160, 160
+    size: 120, 120
     distanceConfig: !type:DunGenEuclideanSquaredDistance
       blendWeight: 0.7
     layers:
@@ -64,4 +37,44 @@
         octaves: 5
         lacunarity: 2
         gain: 0.5
-
+  - !type:NoiseDistanceDunGen
+    size: 115, 115
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.6
+    layers:
+    - tile: CP14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  - !type:NoiseDistanceDunGen
+    size: 90, 90
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.5
+    layers:
+    - tile: CP14FloorBase
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  # Biomes
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14SnowlandSwamp
+    tileMask:
+    - CP14FloorSand
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14IceCavesGeneric
+    tileMask:
+    - CP14FloorBase
+  - !type:CP14BiomeDunGen
+    biomeTemplate: CP14SnowlandTestResult
+    tileMask:
+    - CP14FloorGrass

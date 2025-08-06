@@ -1,7 +1,7 @@
 ﻿- type: entity
   name: watcher
   id: CP14MobWatcherBase
-  parent: [ CP14SimpleMobNoLifeBase, FlyingMobBase ]
+  parent: [ CP14SimpleMobBase, FlyingMobBase ]
   abstract: true
   description: It's like it's staring right through you.
   categories: [ ForkFiltered ]
@@ -107,6 +107,10 @@
     - id: CP14ModularInlayQuartzWater
       amount: 1
       prob: 0.1
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      maxAmount: 3
+      prob: 0.5
 
 - type: entity
   id: CP14MobWatcherMagma
@@ -138,3 +142,7 @@
     - id: CP14ModularInlayQuartzFire
       amount: 1
       prob: 0.1
+    - id: CP14ScrapAnimalHide
+      amount: 1
+      maxAmount: 3
+      prob: 0.5
