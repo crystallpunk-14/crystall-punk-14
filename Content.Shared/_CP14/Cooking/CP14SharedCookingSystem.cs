@@ -286,6 +286,9 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         {
             if (TryComp<FoodComponent>(contained, out var food))
             {
+                //Assign recipe to the FoodData
+                newData.CurrentRecipe = recipe.ID;
+
                 //Merge trash
                 newData.Trash.AddRange(food.Trash);
 
