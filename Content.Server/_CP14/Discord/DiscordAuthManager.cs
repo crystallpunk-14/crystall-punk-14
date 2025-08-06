@@ -226,9 +226,9 @@ public sealed class DiscordAuthManager
     private double GetAccountAge(string id)
     {
         var intId = Convert.ToInt32(id);
-        var snowflackeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
-        var snowflackeCreationDate = Convert.ToInt32(snowflackeCreationDateBin) + 1420070400000;
-        var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflackeCreationDate);
+        var snowflakeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
+        var snowflakeCreationDate = Convert.ToInt32(snowflakeCreationDateBin) + 1420070400000;
+        var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflakeCreationDate);
         var accountAge = DateTime.Now.Subtract(accountCreationDate);
         return accountAge.TotalDays;
     }
@@ -271,7 +271,6 @@ public sealed class DiscordAuthManager
     {
         [JsonPropertyName("guilds")]
         public DiscordGuild[] Guilds { get; set; } = [];
-
         public string ErrorMessage { get; set; } = string.Empty;
     }
 
@@ -279,7 +278,6 @@ public sealed class DiscordAuthManager
     {
         [JsonPropertyName("id")]
         public string Id { get; set; } = string.Empty;
-
         public string ErrorMessage { get; set; } = string.Empty;
     }
 
@@ -293,7 +291,6 @@ public sealed class DiscordAuthManager
     {
         public bool Verified { get; set; }
         public string ErrorMessage { get; set; } = string.Empty;
-
         public bool Suspicious { get; set; }
     }
 }
