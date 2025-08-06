@@ -77,17 +77,6 @@
   service: !type:CP14BuyItemsService
     product: CP14Lighter
 
-- type: cp14TradingPosition
-  id: CP14SaltStone5
-  faction: DwarfMining
-  reputationLevel: 1
-  uiPosition: 1
-  icon:
-    sprite: _CP14/Objects/Materials/salt_stone.rsi
-    state: salt1
-  service: !type:CP14BuyItemsService
-    product: CP14SaltStone5
-
 # Rep 2
 
 - type: cp14TradingPosition

@@ -20,8 +20,6 @@ cp14-stack-iron-ore = железная руда
 cp14-stack-gold-ore = золотая руда
 cp14-stack-mithril-ore = мифриловая руда
 
-cp14-stack-salt-stone = соляной камень
-
 cp14-stack-wallpaper = рулон обоев
 
 cp14-stack-glass-sheet = стекло
