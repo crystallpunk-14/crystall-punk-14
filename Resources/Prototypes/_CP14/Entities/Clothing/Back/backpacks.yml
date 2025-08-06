@@ -69,6 +69,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: CP14ClothingBackBackpackT1
@@ -100,6 +101,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.80
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -132,6 +134,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.70
     sprintModifier: 0.70
+  - type: HeldSpeedModifier
   - type: Clothing
     equipDelay: 1.2
     unequipDelay: 0.8
@@ -173,6 +176,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.82
     sprintModifier: 0.82
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -199,3 +203,4 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.84
     sprintModifier: 0.84
+  - type: HeldSpeedModifier
