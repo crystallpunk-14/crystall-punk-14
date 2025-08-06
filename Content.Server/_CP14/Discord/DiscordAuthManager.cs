@@ -113,51 +113,35 @@ public sealed class DiscordAuthManager
         _sawmill.Debug($"{await response.Content.ReadAsStringAsync(cancel)}");
         _sawmill.Debug($"{(int)response.StatusCode}");
         var verified = response.StatusCode == HttpStatusCode.OK;
-        var guildsVerified = await CheckGuilds(userId, cancel);
 
         if (!verified)
             return new AuthData { Verified = false, ErrorMessage = Loc.GetString("cp14-discord-info")};
 
-        return guildsVerified;
+        var userVerified = await VerifyUser(userId, cancel);
+        return userVerified;
     }
 
-    private async Task<AuthData> CheckGuilds(NetUserId userId, CancellationToken cancel = default)
+    private async Task<AuthData> VerifyUser(NetUserId userId, CancellationToken cancel = default)
     {
+        var isSuspicious = false;
         var isWhitelisted = await _db.GetWhitelistStatusAsync(userId);
         if (isWhitelisted)
         {
             return new AuthData { Verified = true };
         }
 
-        _sawmill.Debug($"Checking guilds for {userId}");
-
-        var requestUrl = $"{_apiUrl}/api/guilds?method=uid&id={userId}";
-        _sawmill.Debug($"Guilds request url:{requestUrl}");
-        var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
-
-        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
-
-        var response = await _httpClient.SendAsync(request, cancel);
-        _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
-        if (!response.IsSuccessStatusCode)
+        var guilds = await GetUserGuilds(userId, cancel);
+        if (guilds.Guilds is [])
         {
-            _sawmill.Debug($"Player {userId} guilds check failed: !response.IsSuccessStatusCode");
-            return new AuthData { Verified = false, ErrorMessage = "Unexpected error: !response.IsSuccessStatusCode" };
-        }
-
-        var guilds = await response.Content.ReadFromJsonAsync<DiscordGuildsResponse>(cancel);
-        if (guilds is null)
-        {
-            _sawmill.Debug($"Player {userId} guilds check failed: guilds is null");
-            return new AuthData { Verified = false, ErrorMessage = "Unexpected error: guilds is null" };
+            return new AuthData { Verified = false, ErrorMessage = guilds.ErrorMessage };
         }
 
         foreach (var guild in guilds.Guilds)
         {
             if (_blockedGuilds.Contains(guild.Id))
             {
-                var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="));
-                return new AuthData { Verified = false, ErrorMessage = errorMessage };
+                isSuspicious = true;
+                break;
             }
         }
 
@@ -167,7 +151,86 @@ public sealed class DiscordAuthManager
             return new AuthData { Verified = false, ErrorMessage = "You are not a member of the CrystallEdge server." };
         }
 
-        return new AuthData { Verified = true };
+        var user = await GetDiscordUser(userId, cancel);
+        if (user.Id == string.Empty)
+        {
+            return new AuthData { Verified = false, ErrorMessage = user.ErrorMessage };
+        }
+
+        var accountAge = GetAccountAge(user.Id);
+        if (accountAge < 45)
+        {
+            isSuspicious = true;
+        }
+
+        return new AuthData { Verified = true, Suspicious = isSuspicious };
+    }
+
+    private async Task<DiscordGuildsResponse> GetUserGuilds(NetUserId userId, CancellationToken cancel = default)
+    {
+        _sawmill.Debug($"Checking guilds for {userId}");
+
+        var requestUrl = $"{_apiUrl}/api/guilds?method=uid&id={userId}";
+        _sawmill.Debug($"Guilds request url:{requestUrl}");
+
+        var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+        var response = await _httpClient.SendAsync(request, cancel);
+        _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
+        if (!response.IsSuccessStatusCode)
+        {
+            _sawmill.Debug($"Player {userId} guilds check failed: {!response.IsSuccessStatusCode}");
+            return new DiscordGuildsResponse { ErrorMessage = $"Unexpected error: {!response.IsSuccessStatusCode}" };
+        }
+
+        var guilds = await response.Content.ReadFromJsonAsync<DiscordGuildsResponse>(cancel);
+        if (guilds is null)
+        {
+            _sawmill.Debug($"Player {userId} guilds check failed: guilds is null");
+            return new DiscordGuildsResponse { ErrorMessage = "Unexpected error: guilds is null" };
+        }
+        _sawmill.Debug($"Player {userId} guilds check succeed.");
+        return new  DiscordGuildsResponse { Guilds = guilds.Guilds };
+    }
+
+    private async Task<DiscordUserResponse> GetDiscordUser(NetUserId userId, CancellationToken cancel = default)
+    {
+        _sawmill.Debug($"Checking account age for {userId}");
+
+        var requestUrl = $"{_apiUrl}/api/users/@me";
+        _sawmill.Debug($"User request url:{requestUrl}");
+
+        var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+
+        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+        var response = await _httpClient.SendAsync(request, cancel);
+        _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
+        if (!response.IsSuccessStatusCode)
+        {
+            _sawmill.Debug($"Player {userId} user age check failed: {!response.IsSuccessStatusCode}");
+            return new DiscordUserResponse { ErrorMessage = $"Unexpected error: {!response.IsSuccessStatusCode}" };
+        }
+        var user = await response.Content.ReadFromJsonAsync<DiscordUserResponse>(cancel);
+        if (user is null)
+        {
+            _sawmill.Debug($"Player {userId} user age check failed: user is null");
+            return new DiscordUserResponse { ErrorMessage = "Unexpected error: user is null" };
+        }
+        _sawmill.Debug($"Player {userId} user id get succeed.");
+        return new DiscordUserResponse { Id = user.Id };
+    }
+
+    private double GetAccountAge(string id)
+    {
+        var intId = Convert.ToInt32(id);
+        var snowflackeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
+        var snowflackeCreationDate = Convert.ToInt32(snowflackeCreationDateBin) + 1420070400000;
+        var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflackeCreationDate);
+        var accountAge = DateTime.Now.Subtract(accountCreationDate);
+        return accountAge.TotalDays;
     }
 
     public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
@@ -208,6 +271,16 @@ public sealed class DiscordAuthManager
     {
         [JsonPropertyName("guilds")]
         public DiscordGuild[] Guilds { get; set; } = [];
+
+        public string ErrorMessage { get; set; } = string.Empty;
+    }
+
+    private sealed class DiscordUserResponse
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; } = string.Empty;
+
+        public string ErrorMessage { get; set; } = string.Empty;
     }
 
     private sealed class DiscordGuild
@@ -220,5 +293,7 @@ public sealed class DiscordAuthManager
     {
         public bool Verified { get; set; }
         public string ErrorMessage { get; set; } = string.Empty;
+
+        public bool Suspicious { get; set; }
     }
 }
