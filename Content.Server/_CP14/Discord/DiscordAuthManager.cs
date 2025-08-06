@@ -227,8 +227,8 @@ public sealed class DiscordAuthManager
     {
         var intId = Convert.ToInt32(id);
         var snowflakeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
-        var snowflakeCreationDate = Convert.ToInt32(snowflakeCreationDateBin) + 1420070400000;
-        var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflakeCreationDate);
+        var snowflakeCreationDateDecimal = Convert.ToInt32(snowflakeCreationDateBin) + 1420070400000;
+        var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflakeCreationDateDecimal);
         var accountAge = DateTime.Now.Subtract(accountCreationDate);
         return accountAge.TotalDays;
     }
