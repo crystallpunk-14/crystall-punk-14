@@ -1478,3 +1478,11 @@
   id: 8199
   time: '2025-08-06T09:52:51.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1613
+- author: TheShuEd
+  changes:
+  - message: The sphere of light is again applied as a status effect to the specified
+      entity.
+    type: Tweak
+  id: 8200
+  time: '2025-08-06T10:18:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1621
