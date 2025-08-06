@@ -1,7 +1,7 @@
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Dayflin
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-dayflin
   categories:
@@ -20,10 +20,10 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: SilverNeedle
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-silver-needle
   categories:
@@ -41,10 +41,10 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: FlyAgaric
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-fly-agaric
   categories:
@@ -58,15 +58,37 @@
       - CP14FloorGrass
       - CP14FloorGrassLight
       - CP14FloorGrassTall
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
       entity: CP14GatherableFlyAgaric
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
+  id: FlyAgaric2
+  levels:
+    min: 0
+    max: 10
+  name: cp14-modifier-fly-agaric
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
+      entity: CP14GatherableFlyAgaric
+      count: 10
+      minGroupSize: 6
+      maxGroupSize: 10
+
+- type: cp14LocationModifier
   id: BlueAmanita
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-blue-amanita
   categories:
@@ -84,10 +106,10 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: BloodFlower
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-blood-flower
   categories:
@@ -105,10 +127,10 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: WildSage
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-wild-sage
   categories:
@@ -127,10 +149,10 @@
       minGroupSize: 3
       maxGroupSize: 5
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: AirLily
   levels:
-    min: 1
+    min: 0
     max: 10
   name: cp14-modifier-air-lily
   categories:
@@ -148,12 +170,10 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-# TIER 2
-
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: LumiShroom
   levels:
-    min: 4
+    min: 0
     max: 10
   name: cp14-modifier-lumisroom
   categories:
@@ -172,7 +192,29 @@
       - CP14FloorSnow
       - CP14FloorSnowDeep
       - CP14FloorSnowDeepDeep
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
       entity: CP14GatherableLumiMushroom
       count: 10
       minGroupSize: 3
       maxGroupSize: 5
+
+- type: cp14LocationModifier
+  id: LumiShroom2
+  levels:
+    min: 0
+    max: 10
+  name: cp14-modifier-lumisroom
+  categories:
+    Reward: 0.15
+  requiredTags:
+  - CP14DemiplaneMushrooms
+  layers:
+    - !type:CP14OreDunGen
+      tileMask:
+      - CP14FloorMycelium
+      - CP14FloorMyceliumLight
+      entity: CP14GatherableLumiMushroom
+      count: 10
+      minGroupSize: 6
+      maxGroupSize: 10

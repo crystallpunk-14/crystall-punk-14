@@ -7,13 +7,6 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_Demiplanes
-  name: Исследование демипланов
-  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AdventurersTabs/Demiplanes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
   id: CP14_RU_Locks_and_Keys
   name: Замки и ключи
   text: "/ServerInfo/_CP14/Guidebook_RU/LocksKeys.xml"

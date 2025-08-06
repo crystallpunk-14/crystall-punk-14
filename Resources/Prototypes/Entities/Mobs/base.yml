@@ -44,6 +44,7 @@
   - type: MovementSpeedModifier
   - type: RequireProjectileTarget
     active: False
+  - type: StunVisuals
 
 - type: entity
   save: false
@@ -215,14 +216,15 @@
   id: MobRespirator
   abstract: true
   components:
-  #- type: Internals #CP14 dont need this
+  - type: AtmosExposed
+  #- type: Internals #Not required for CP14
   - type: Respirator
     damage:
       types:
-        Asphyxiation: 2
+        Asphyxiation: 1
     damageRecovery:
       types:
-        Asphyxiation: -1.0
+        Asphyxiation: -0.5
 
 # Used for mobs that have a bloodstream
 - type: entity
@@ -234,6 +236,7 @@
   - type: InjectableSolution
     solution: chemicals
   - type: Bloodstream
+    bloodMaxVolume: 150
     bloodlossDamage:
       types:
         Bloodloss: 0.5

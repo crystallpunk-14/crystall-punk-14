@@ -8,7 +8,6 @@
   - BaseStationAlertLevels
   - BaseStationRecords # Required for lobby manifest + cryo leave
   - CP14BaseStationCommonObjectives
-  - CP14BaseStationDemiplaneMap
   - CP14BaseStationEconomy
   #- CP14BaseStationGods
 
@@ -17,12 +16,6 @@
   abstract: true
   components:
     - type: CP14StationCommonObjectives
-
-- type: entity
-  id: CP14BaseStationDemiplaneMap
-  abstract: true
-  components:
-    - type: CP14StationDemiplaneMap
 
 - type: entity
   id: CP14BaseStationEconomy

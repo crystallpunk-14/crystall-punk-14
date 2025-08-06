@@ -1,6 +1,4 @@
-using Content.Server._CP14.Demiplane;
 using Content.Server.Chat.Systems;
-using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared.GameTicking;
@@ -15,7 +13,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly CP14DemiplaneSystem _demiplane = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
@@ -49,7 +46,6 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         if (_roundEndMoment > _timing.CurTime)
             return;
 
-        _demiplane.DeleteAllDemiplanes(safe: false);
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
         _roundEnd.EndRound();

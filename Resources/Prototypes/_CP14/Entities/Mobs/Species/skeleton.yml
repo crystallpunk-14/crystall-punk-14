@@ -1,6 +1,6 @@
 - type: entity
   parent:
-  - CP14BaseMobSpeciesNoLife
+  - CP14BaseMobSpecies
   - MobFlammable
   id: CP14BaseMobSkeleton
   name: Mr. Skeleton
@@ -112,9 +112,8 @@
   - type: Inventory
     templateId: CP14Human
   - type: TransferMindOnGib
-  - type: CP14DemiplaneStabilizer
-    enabled: false
   - type: GhostTakeoverAvailable
+  - type: CP14DemiplaneBlockInteractions
 
 - type: entity
   parent: CP14BaseSpeciesDummy

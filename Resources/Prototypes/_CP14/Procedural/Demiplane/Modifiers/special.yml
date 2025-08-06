@@ -1,36 +1,4 @@
-- type: cp14DemiplaneModifier
-  id: EntryRoom
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanEnterRoom
-
-- type: cp14DemiplaneModifier
-  id: Core
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanCoreRoom
-
-- type: cp14DemiplaneModifier
-  id: Exit
-  generationProb: 0
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanExitRoom
-    - !type:CP14OreDunGen
-      entity: CP14DemiplaneHint
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: DemiplaneDecor
   generationProb: 0
   layers:
@@ -49,3 +17,25 @@
       minGroupSize: 3
       maxGroupSize: 5
 
+- type: cp14LocationModifier
+  id: RaidSpawners
+  generationProb: 0
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14VentCritterMarker
+      tileMask:
+      - CP14FloorSand
+      - CP14FloorBase
+      - CP14FloorSnow
+      count: 8
+      minGroupSize: 3
+      maxGroupSize: 3
+
+- type: cp14LocationModifier
+  id: CP14DemiplanEnterRoom
+  generationProb: 0
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 2
+      tags:
+      - CP14DemiplanEnterRoom

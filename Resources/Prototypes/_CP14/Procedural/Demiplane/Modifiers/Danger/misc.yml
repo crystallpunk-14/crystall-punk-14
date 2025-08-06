@@ -1,10 +1,10 @@
 # TIER 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: Lava
   levels:
     min: 2
-    max: 10
+    max: 5
   generationWeight: 0.3
   categories:
     Danger: 0.25
@@ -21,50 +21,3 @@
       maxGroupSize: 5
 
 # TIER 2
-
-- type: cp14DemiplaneModifier
-  id: Explosive
-  levels:
-    min: 5
-    max: 10
-  name: cp14-modifier-explosive
-  generationWeight: 0.25
-  categories:
-    Danger: 0.2
-  layers:
-    - !type:CP14OreDunGen
-      entity: LandMineExplosive
-      count: 20
-      minGroupSize: 1
-      maxGroupSize: 2
-
-- type: cp14DemiplaneModifier
-  id: ShadowKudzu
-  levels:
-    min: 5
-    max: 10
-  name: cp14-modifier-shadow-kudzu
-  categories:
-    Danger: 0.25
-  layers:
-    - !type:CP14OreDunGen
-      entity: CP14AstralHaze
-      count: 10
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14DemiplaneModifier
-  id: AdditionalEntry
-  levels:
-    min: 2
-    max: 10
-  name: cp14-modifier-additional-entry
-  categories:
-    Danger: 0.15
-  generationProb: 0.8
-  generationWeight: 0.25
-  layers:
-    - !type:CP14RoomsDunGen
-      count: 1
-      tags:
-      - CP14DemiplanEnterRoom

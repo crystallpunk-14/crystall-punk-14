@@ -1,0 +1,106 @@
+# T0 - Rawhide Leather [None]
+# T1 - Thin Leather [By PhantomRU]
+# T2 - Coarse Leather [By PhantomRU]
+# T3 - Rugged Leather [By PhantomRU]
+# T4 - Thick Leather [None]
+# T5 - Hardened Leather [None]
+# Rough Leather ?
+
+- type: entity
+  id: CP14LeatherBase
+  parent: BaseItem
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+
+# ================
+# Leather Types
+- type: entity
+  id: CP14ThinLeather
+  parent: CP14LeatherBase
+  name: thin leather
+  description: Soft and flexible leather, perfect for lightweight items.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: thin_leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5 # x0.5 Leather from hide
+      CP14SaltStone: 5 # x0.5 Salt
+
+- type: entity
+  id: CP14Leather
+  parent: CP14LeatherBase
+  name: coarse leather
+  description: Standard quality leather for various crafts.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 10 # x1 Leather from hide
+      CP14SaltStone: 10 # x1 Salt
+
+- type: entity
+  id: CP14RuggedLeather
+  parent: CP14LeatherBase
+  name: rugged leather
+  description: Thick and durable leather.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: rugged_leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 25 # x2.5 Leather from hide
+      CP14SaltStone: 20 # x2 Salt
+
+# ================
+# Straps
+- type: entity
+  id: CP14LeatherStrap
+  parent: CP14LeatherBase
+  name: leather strap
+  description: A flexible strap made of leather, used in various crafts.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: strap
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 3 # 2.5 ~~~ 1/4 leather (10u)
+      CP14SaltStone: 3 # 1/4 Salt (10u)
+      CP14Cloth: 3 # 2.5 ~~~ 1/2 CP14String (5u)
+
+- type: entity
+  id: CP14RuggedStrap
+  parent: CP14LeatherBase
+  name: reinforced strap
+  description: A sturdy strap reinforced with additional layers.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: rugged_strap
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 6 # 6.25 or 1/4 rugged leather (25u)
+      CP14SaltStone: 5 # 1/4 Salt (20u)
+      CP14Cloth: 5 # 1x CP14String (5u)
