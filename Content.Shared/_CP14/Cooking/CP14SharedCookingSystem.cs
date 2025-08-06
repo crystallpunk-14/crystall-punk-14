@@ -281,14 +281,14 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
 
         var newData = new CP14FoodData(recipe.FoodData);
 
+        //Assign recipe to the FoodData
+        newData.CurrentRecipe = recipe.ID;
+
         //Process entities
         foreach (var contained in container.ContainedEntities)
         {
             if (TryComp<FoodComponent>(contained, out var food))
             {
-                //Assign recipe to the FoodData
-                newData.CurrentRecipe = recipe.ID;
-
                 //Merge trash
                 newData.Trash.AddRange(food.Trash);
 
