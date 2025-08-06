@@ -1486,3 +1486,11 @@
   id: 8200
   time: '2025-08-06T10:18:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1621
+- author: TheShuEd
+  changes:
+  - message: Fixed a bug where entities were duplicated during generation, which prevented
+      digging ores in mines and chopping down trees.
+    type: Fix
+  id: 8201
+  time: '2025-08-06T19:33:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1627
