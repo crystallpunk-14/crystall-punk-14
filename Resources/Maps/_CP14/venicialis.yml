@@ -86,17 +86,6 @@ entities:
       - alpha: 0.5
         direction: 3,-0.1
         ratio: 0.75
-    - type: Biome
-      forcedMarkerLayers: []
-      markerLayers: []
-      loadedMarkers: {}
-      pendingMarkers: {}
-      loadedChunks: []
-      entities: {}
-      decals: {}
-      modifiedTiles: {}
-      template: CP14CavesIndestructibleFill
-      layers: []
     - type: MapGrid
       chunks:
         -1,0:

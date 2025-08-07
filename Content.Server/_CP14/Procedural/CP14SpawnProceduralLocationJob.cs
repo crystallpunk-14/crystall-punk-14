@@ -54,9 +54,6 @@ public sealed class CP14SpawnProceduralLocationJob(
         dungeonConfig.Layers.AddRange(indexedLocation.Layers);
         dungeonConfig.ReserveTiles = indexedLocation.ReserveTiles;
 
-        //Add map components
-        entManager.AddComponents(MapUid, locationConfig.Components);
-
         //Apply modifiers
         foreach (var modifier in modifiers)
         {
@@ -93,6 +90,9 @@ public sealed class CP14SpawnProceduralLocationJob(
             gridComp,
             position,
             seed));
+        
+        //Add map components
+        entManager.AddComponents(MapUid, locationConfig.Components);
 
         return true;
     }
