@@ -1,6 +1,6 @@
 ﻿<widgets:AlertsUI xmlns="https://spacestation14.io"
                   xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Alerts.Widgets"
-                  MinSize="96 96">
+                  MinSize="96 96"> <!-- CP14 Custom alert size -->
     <PanelContainer HorizontalAlignment="Right" VerticalAlignment="Top">
         <BoxContainer Name="AlertContainer" Access="Public" Orientation="Vertical" />
     </PanelContainer>
