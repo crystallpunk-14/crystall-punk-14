@@ -1,3 +1,11 @@
+# T0 - Rawhide Leather [None]
+# T1 - Thin Leather [By PhantomRU]
+# T2 - Coarse Leather [By PhantomRU]
+# T3 - Rugged Leather [By PhantomRU]
+# T4 - Thick Leather [None]
+# T5 - Hardened Leather [None]
+# Rough Leather ?
+
 - type: entity
   id: CP14HideBase
   parent: BaseItem
@@ -5,7 +13,9 @@
   categories: [ ForkFiltered ]
   components:
   - type: Item
-    size: Normal
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
   - type: Sprite
     sprite: _CP14/Objects/Ingredients/hide.rsi
 
@@ -14,7 +24,7 @@
 - type: entity
   id: CP14ThinAnimalHide
   parent: CP14HideBase
-  name: thin animal hide
+  name: thin hide
   description: Untreated thin animal hide. It seems you can push it with your finger!
   components:
   - type: Sprite
@@ -26,9 +36,11 @@
 - type: entity
   id: CP14AnimalHide
   parent: CP14HideBase
-  name: animal hide
+  name: coarse hide
   description: Untreated animal hide. It would make a great pouch.
   components:
+  # - type: Item
+  #   size: Normal # 2x2
   - type: Sprite
     state: hide
   - type: PhysicalComposition
@@ -41,10 +53,10 @@
   name: rugged hide
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
   components:
-  - type: Item
-    size: Normal
-    shape:
-    - 0,0,2,1 # 3x2
+  # - type: Item
+  #   size: Normal
+  #   shape:
+  #   - 0,0,2,1 # 3x2
   - type: Sprite
     state: rugged_hide
   - type: PhysicalComposition
@@ -59,7 +71,7 @@
   description: Scraps of skin, someone cut it off carelessly!
   components:
   - type: Item
-    size: Tiny
+    size: Tiny # 1x1
   - type: Sprite
     state: scrap_hide
   - type: PhysicalComposition

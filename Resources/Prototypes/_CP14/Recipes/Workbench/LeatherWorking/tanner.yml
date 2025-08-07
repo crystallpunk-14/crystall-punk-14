@@ -18,39 +18,17 @@
   resultCount: 1 # 1x hide (20u) = 24 copper coins
   # Cost: (15×1.2) + (15×0.3) = 18 + 4.5 = 22.5 copper coins
 
-# ================
-# Leather belts crafting
-
 - type: CP14Recipe
-  id: CP14ClothingBeltQuiverRecipe
+  id: CP14ThinToRegularHideRecipe
   tag: CP14RecipeLeatherWorking
-  craftTime: 1
+  craftTime: 2
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 3 # 30u leather + 30u salt
-  - !type:ProtoIdResource
-    protoId: CP14LeatherStrap
-    count: 2 # 6u leather + 6u salt
+    protoId: CP14ThinAnimalHide
+    count: 2 # 10u CP14Leather
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 4 # 20u cloth
-  result: CP14ClothingBeltQuiver
-  # Cost: (36×1.2) + (36×0.4) + (20×0.3) = 43.2 + 14.4 + 6 = 63.6 copper coins
-
-- type: CP14Recipe
-  id: CP14ClothingBeltPouchPotionsRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 1 # 10u leather + 10u salt
-  - !type:ProtoIdResource
-    protoId: CP14LeatherStrap
-    count: 3 # 9u leather + 9u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 4 # 20u cloth
-  result: CP14ClothingBeltPouchPotions
-  # Cost: (19×1.2) + (19×0.4) + (20×0.3) = 22.8 + 7.6 + 6 = 36.4 copper coins
+    count: 2 # 10u cloth
+  result: CP14AnimalHide
+  resultCount: 1 # 1x hide (20u)
+  # Cost: (10×1.2) + (10×0.3) = 12 + 3 = 15 copper coins

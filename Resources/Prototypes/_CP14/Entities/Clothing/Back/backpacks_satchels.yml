@@ -1,32 +1,4 @@
-# ========================
-# Base
-# ========================
-
-- type: entity
-  abstract: true
-  parent: CP14ClothingBackContainerBase
-  id: CP14ClothingBackSatchelBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Foldable
-    canFoldInsideContainer: true
-    unfoldVerbText: fold-flip-verb
-    foldVerbText: fold-flip-verb
-  - type: FoldableClothing
-    foldedEquippedPrefix: flipped
-    foldedHeldPrefix: flipped
-  - type: Sprite
-    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
-  - type: Storage
-    grid: # 28
-    - 0,0,1,3 # 2x4=8
-    - 3,0,6,3 # 4x4=16
-    - 8,0,9,3 # 2x4=4
-
-# ========================
-# Tiers
-# ========================
-
+# Satchels (heavy on straps)
 - type: entity
   parent: CP14ClothingBackSatchelBase
   id: CP14ClothingBackSatchelT0
@@ -49,9 +21,9 @@
     - 7,1,8,2 # 2x2=4
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 120 # 80u CP14Cloth (8x10u) + 40u CP14String (8x5u)
-      CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
-      # Cost: (120×0.3) + (6×2) = 36 + 12 = 48 copper coins
+      CP14Cloth: 90 # 80u CP14Cloth (8x10u) + 10u CP14String
+      CP14Iron: 2 # 2u CP14Iron
+      # Cost: (90×0.3) + (2×2) = 31 copper coins
 
 - type: entity
   parent: CP14ClothingBackSatchelT0
@@ -75,12 +47,9 @@
     - 11,1,12,3 # 2x3=6
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 60 # 30u CP14Leather (6x5u) + 30u CP14LeatherStrap (10x3u)
-      CP14SaltStone: 60 # 30u (6x5u) + 30u (10x3u)
-      CP14Iron: 8 # 8u CP14IronBuckle (4x2u)
-      # Cost: (60×1.2) + (60×0.4) + (8×2) = 72 + 24 + 16 = 112 copper coins
-  - type: ClothingSpeedModifier
-    sprintModifier: 0.97
+      CP14Leather: 15 # 15u CP14Leather (3x5u)
+      CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
+      # Cost: (15×1.2) + (6×2) = 18 + 12 = 30 copper coins
 
 - type: entity
   parent: CP14ClothingBackSatchelT1
@@ -104,17 +73,14 @@
     - 11,3,12,4 # 2x2=4
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 96 # 60u CP14Leather (6x10u) + 36u CP14LeatherStrap (12x3u)
-      CP14SaltStone: 96 # 60u (6x10u) + 36u (12x3u)
+      CP14Leather: 45 # 15u thin (3x5u) + 30u regular (3x10u)
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
-      # Cost: (96×1.2) + (96×0.4) + (12×2) = 115.2 + 38.4 + 24 = 177.6 copper coins
+      # Cost: (45×1.2) + (12×2) = 54 + 24 = 78 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Heat: 0.98
-        Caustic: 0.96
-  - type: ClothingSpeedModifier
-    sprintModifier: 0.85
+        Blunt: 0.95
+        Slash: 0.95
 
 - type: entity
   parent: CP14ClothingBackSatchelBase
@@ -135,19 +101,16 @@
     - 11,3,12,6 # 2x4=8
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 222 # 150u CP14Leather (6x25u) + 72u CP14RuggedStrap (12x6u)
-      CP14SaltStone: 180 # 120u (6x20u) + 60u (12x5u)
+      CP14Leather: 80 # 30u regular (3x10u) + 50u rugged (2x25u)
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
-      # Cost: (222×1.2) + (180×0.4) + (12×2) = 266.4 + 72 + 24 = 362.4 copper coins
+      # Cost: (80×1.2) + (12×2) = 96 + 24 = 120 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.96
-        Slash: 0.96
-        Heat: 0.94
-        Caustic: 0.90
+        Blunt: 0.90
+        Slash: 0.90
   - type: ClothingSpeedModifier
-    sprintModifier: 0.75
+    sprintModifier: 0.95
 
 # ========================
 # Special
@@ -174,16 +137,12 @@
     - 5,5,7,5 # 3x1=3
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 102 # 60u CP14Leather (6x10u) + 42u CP14LeatherStrap (14x3u)
-      CP14SaltStone: 102 # 60u (6x10u) + 42u (14x3u)
-      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
-      # Cost: (102×1.2) + (102×0.4) + (12×2) = 122.4 + 40.8 + 24 = 187.2 copper coins
+      CP14Leather: 45 # 15u thin (3x5u) + 30u regular (3x10u)
+      CP14Iron: 32 # 20 + 12u CP14IronBuckle (6x2u)
+      # Cost: (45×1.2) + (32×2) = 54 + 64 = 118 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.91
-        Slash: 0.94
-        Piercing: 0.97
-        Heat: 0.98
-  - type: ClothingSpeedModifier
-    sprintModifier: 0.88
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.95
