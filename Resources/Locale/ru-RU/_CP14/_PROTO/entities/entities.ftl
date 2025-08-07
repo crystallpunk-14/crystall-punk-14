@@ -1972,54 +1972,71 @@ ent-CP14BookRandom = { ent-CP14BookWriteableBase }
     .desc = Каждая книга уникальна! Что спрятано в этой?
     .suffix = Случайный визуал
 
-ent-CP14FloorTileItemBase = ковер
+ent-CP14FloorTileItemBase = ковёр
+    .desc = Свёрнутый ковёр для удобной транспортировки.
 
-ent-CP14FloorCarpetItemBlue1 = синий ковер
+ent-CP14FloorCarpetItemBlue1 = синий ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Синий
 
-ent-CP14FloorCarpetItemRed1 = красный ковер
+ent-CP14FloorCarpetItemRed1 = красный ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Красный
 
-ent-CP14FloorCarpetItemCyan1 = бирюзовый ковер
+ent-CP14FloorCarpetItemCyan1 = бирюзовый ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Бирюзовый
 
-ent-CP14FloorCarpetItemGreen1 = зелёный ковер
+ent-CP14FloorCarpetItemGreen1 = зелёный ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Зелёный
 
-ent-CP14FloorCarpetItemOrange1 = оранжевый ковер
+ent-CP14FloorCarpetItemOrange1 = оранжевый ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Оранжевый
 
-ent-CP14FloorCarpetItemPurple1 = фиолетовый ковер
+ent-CP14FloorCarpetItemPurple1 = фиолетовый ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Фиолетовый
 
-ent-CP14FloorCarpetItemBlack1 = чёрный ковер
+ent-CP14FloorCarpetItemBlack1 = чёрный ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Чёрный
 
-ent-CP14FloorCarpetItemYellow1 = жёлтый ковер
+ent-CP14FloorCarpetItemYellow1 = жёлтый ковёр
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Жёлтый
 
 ent-CP14FloorCarpetItemBlue10 = { ent-CP14FloorCarpetItemBlue1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Синий 10
 
 ent-CP14FloorCarpetItemRed10 = { ent-CP14FloorCarpetItemRed1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Красный 10
 
 ent-CP14FloorCarpetItemCyan10 = { ent-CP14FloorCarpetItemCyan1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Бирюзовый 10
 
 ent-CP14FloorCarpetItemGreen10 = { ent-CP14FloorCarpetItemGreen1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Зелёный 10
 
 ent-CP14FloorCarpetItemOrange10 = { ent-CP14FloorCarpetItemOrange1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Оранжевый 10
 
 ent-CP14FloorCarpetItemPurple10 = { ent-CP14FloorCarpetItemPurple1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Фиолетовый 10
 
 ent-CP14FloorCarpetItemBlack10 = { ent-CP14FloorCarpetItemBlack1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Чёрный 10
 
 ent-CP14FloorCarpetItemYellow10 = { ent-CP14FloorCarpetItemYellow1 }
+    .desc = { ent-CP14FloorTileItemBase.desc }
     .suffix = Жёлтый 10
 
 ent-CP14GreenBottle = зелёная бутылка
@@ -4015,10 +4032,10 @@ ent-CP14ModularIronSkimitar = железный скимитар
 ent-CP14ModularCopperSkimitar = медный скимитар
     .desc = Вам повезет, если он проколет хотя бы бумагу.
 
-ent-CP14ModularCopperSkimitarTundra = Скимитарская Тундра
+ent-CP14ModularCopperSkimitarTundra = скимитар Тундра
     .desc = Золотой стандарт остроконечного оружия. Средняя длина, удобная рукоять. На нем выгравирована надпись «Тундра».
 
-ent-CP14ModularGoldSkimitarAgony = Скимитар Агония
+ent-CP14ModularGoldSkimitarAgony = скимитар Агония
     .desc = Золотой стандарт остроконечного оружия. Средняя длина, удобная рукоять. На нем выгравирована надпись «Агония».
 
 ent-CP14ModularIronSpear = железное копье
@@ -5125,6 +5142,7 @@ ent-CP14FloorTorchIgnited = { ent-CP14FloorTorch }
     .suffix = Зажжённый
 
 ent-CP14FloorTorchAlwaysPowered = напольный факел
+    .desc = { ent-CP14BaseTorch.desc }
     .suffix = Debug, Бесконечный
 
 ent-CP14WallmountTorchIgnited = { ent-CP14WallmountTorch }
@@ -5132,6 +5150,7 @@ ent-CP14WallmountTorchIgnited = { ent-CP14WallmountTorch }
     .suffix = Зажжённый
 
 ent-CP14WallmountTorchAlwaysPowered = настенный факел
+    .desc = { ent-CP14WallmountTorch.desc }
     .suffix = Debug, Бесконечный
 
 ent-CP14WallmountBarShelfA = барная полка
