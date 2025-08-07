@@ -1563,3 +1563,11 @@
   id: 8208
   time: '2025-08-07T20:57:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1637
+- author: Nimfar11
+  changes:
+  - message: Adds an artifact, Lurker's cape, that makes one invisible, but only if
+      standing still.
+    type: Add
+  id: 8209
+  time: '2025-08-07T21:12:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1455
