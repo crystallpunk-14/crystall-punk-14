@@ -19,6 +19,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
             Shock: 5
@@ -84,6 +85,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
             Shock: 5
