@@ -1523,3 +1523,12 @@
   id: 8204
   time: '2025-08-06T22:23:59.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1625
+- author: oldschoolotaku
+  changes:
+  - message: Now soups can be sold when completing contracts
+    type: Fix
+  - message: Now soups sell less when completing contracts
+    type: Tweak
+  id: 8205
+  time: '2025-08-07T06:56:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1630
