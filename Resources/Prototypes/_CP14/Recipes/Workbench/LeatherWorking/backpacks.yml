@@ -74,13 +74,13 @@
     protoId: CP14ClothingBackBackpackT0  # Base backpack
     count: 1
   - !type:StackResource
-    stack: CP14ThinAnimalHide         # +20u CP14Leather (4x5u)
-    count: 4
+    stack: CP14ThinAnimalHide         # +10u CP14Leather (2x5u)
+    count: 2
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
     count: 1 # 2u CP14Iron
   result: CP14ClothingBackBackpackT1
-  # Total Materials: 100u cloth + 20u leather
+  # Total Materials: 100u cloth + 10u leather
 
 # Backpack T2 Upgrade
 - type: CP14Recipe
