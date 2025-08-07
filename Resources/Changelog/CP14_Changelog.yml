@@ -1546,3 +1546,13 @@
   id: 8206
   time: '2025-08-07T11:50:39.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1636
+- author: TheShuEd
+  changes:
+  - message: Removed zombies around venicialis, removed hydras around Comoss. Also,
+      moved latejoin spawnpoints inside city wall.
+    type: Tweak
+  - message: Fixed deep water around city generation
+    type: Fix
+  id: 8207
+  time: '2025-08-07T20:36:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1639
