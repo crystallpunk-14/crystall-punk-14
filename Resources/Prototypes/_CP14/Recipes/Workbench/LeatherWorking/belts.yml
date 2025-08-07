@@ -7,22 +7,22 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide
-    count: 3 # 30u leather
+  - !type:StackResource
+    stack: CP14AnimalHide
+    count: 2 # 20u leather
   - !type:ProtoIdResource
     protoId: CP14String
     count: 4 # 20u cloth
   result: CP14ClothingBeltQuiver
-  # Cost: (30×1.2) + (20×0.3) = 43.2 + 6 = 49.2 copper coins
+  # Cost: (20×1.2) + (20×0.3) = 24 + 6 = 30 copper coins
 
 - type: CP14Recipe
   id: CP14ClothingBeltPouchPotionsRecipe
   tag: CP14RecipeLeatherWorking
   craftTime: 1
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide
+  - !type:StackResource
+    stack: CP14AnimalHide
     count: 1 # 10u leather
   - !type:ProtoIdResource
     protoId: CP14String
