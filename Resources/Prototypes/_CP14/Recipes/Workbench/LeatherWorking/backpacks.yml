@@ -6,7 +6,7 @@
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 10 # 100u CP14Cloth ~~~ CP14Cloth (10u)
+    count: 5 # 50u CP14Cloth ~~~ CP14Cloth (10u)
   - !type:ProtoIdResource
     protoId: CP14String
     count: 2 # 10u CP14Cloth ~~~ 1/2 CP14Cloth (5u)
@@ -80,7 +80,7 @@
     protoId: CP14IronBuckle
     count: 1 # 2u CP14Iron
   result: CP14ClothingBackBackpackT1
-  # Total Materials: 100u cloth + 10u leather
+  # Total Materials: 50u cloth + 10u leather
 
 # Backpack T2 Upgrade
 - type: CP14Recipe

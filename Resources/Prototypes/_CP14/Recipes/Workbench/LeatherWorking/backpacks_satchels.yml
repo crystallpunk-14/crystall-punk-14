@@ -6,7 +6,7 @@
   requirements:
   - !type:StackResource
     stack: CP14Cloth
-    count: 8 # 80u CP14Cloth ~~~ CP14Cloth (10u)
+    count: 4 # 40u CP14Cloth ~~~ CP14Cloth (10u)
   - !type:ProtoIdResource
     protoId: CP14String
     count: 2 # 10u CP14Cloth ~~~ 1/2 CP14Cloth (5u)
@@ -71,7 +71,7 @@
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ClothingBackSatchelT0  # 80u cloth (8u)
+    protoId: CP14ClothingBackSatchelT0  # 40u cloth
     count: 1
   - !type:StackResource
     stack: CP14ThinAnimalHide        # +15u CP14Leather (3x5u)
@@ -80,7 +80,7 @@
     protoId: CP14IronBuckle
     count: 3 # 6u CP14Iron ~~~ 1/5 iron bar (10u)
   result: CP14ClothingBackSatchelT1
-  # Total Leather: 80u (cloth) + 15u = 95u
+  # Total Materials: 40u cloth + 15u Leather
 
 # Satchel T2 Upgrade (Leather Optimization)
 - type: CP14Recipe

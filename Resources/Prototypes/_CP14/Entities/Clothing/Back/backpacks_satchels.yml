@@ -49,9 +49,9 @@
     - 7,1,8,2 # 2x2=4
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 90 # 80u CP14Cloth (8x10u) + 10u CP14String
+      CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String
       CP14Iron: 2 # 2u CP14Iron
-      # Cost: (90×0.3) + (2×2) = 31 copper coins
+      # Cost: (50×0.3) + (2×2) = 19 copper coins
 
 - type: entity
   parent: CP14ClothingBackSatchelT0

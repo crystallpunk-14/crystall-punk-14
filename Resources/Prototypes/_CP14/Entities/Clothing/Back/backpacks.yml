@@ -34,8 +34,8 @@
     - 0,0,4,2 # 5*3=15
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 110 # 100u CP14Cloth (10x10u) + 10u CP14String
-      # Cost: (110×0.3) = 33 copper coins
+      CP14Cloth: 60 # 50u CP14Cloth (10x10u) + 10u CP14String
+      # Cost: (60×0.3) = 18 copper coins
 
 - type: entity
   parent: CP14ClothingBackBackpackT0

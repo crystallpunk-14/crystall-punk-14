@@ -38,9 +38,9 @@
 #     - 13,2,14,2 # 2x1=2
 #   - type: PhysicalComposition
 #     materialComposition:
-#       CP14Cloth: 60 # 60u CP14Cloth (6x10u)
+#       CP14Cloth: 30 # 30u CP14Cloth (3x10u)
 #       CP14Iron: 16 # 16u CP14IronBuckle (8x2u)
-#       # Cost: (60×0.3) + (16×2) = 18 + 32 = 50 copper coins
+#       # Cost: (30×0.3) + (16×2) = 9 + 32 = 41 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT0
