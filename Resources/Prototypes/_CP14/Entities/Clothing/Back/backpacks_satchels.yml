@@ -1,4 +1,32 @@
-# Satchels (heavy on straps)
+# ========================
+# Base
+# ========================
+
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingBackSatchelBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Satchel/satchel_t0.rsi
+  - type: Storage
+    grid: # 28
+    - 0,0,1,3 # 2x4=8
+    - 3,0,6,3 # 4x4=16
+    - 8,0,9,3 # 2x4=4
+
+# ========================
+# Tiers
+# ========================
+
 - type: entity
   parent: CP14ClothingBackSatchelBase
   id: CP14ClothingBackSatchelT0

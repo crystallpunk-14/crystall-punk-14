@@ -179,8 +179,7 @@
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: thin_hide
   service: !type:CP14BuyItemsService
-    product: CP14ThinAnimalHide
-    count: 1
+    product: CP14ThinAnimalHide1
 
 - type: cp14TradingPosition
   id: CP14AnimalHide
@@ -191,7 +190,7 @@
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: hide
   service: !type:CP14BuyItemsService
-    product: CP14AnimalHide
+    product: CP14AnimalHide1
     count: 1
 
 - type: cp14TradingPosition
@@ -203,5 +202,5 @@
     sprite: _CP14/Objects/Ingredients/hide.rsi
     state: rugged_hide
   service: !type:CP14BuyItemsService
-    product: CP14RuggedAnimalHide
+    product: CP14RuggedAnimalHide1
     count: 1

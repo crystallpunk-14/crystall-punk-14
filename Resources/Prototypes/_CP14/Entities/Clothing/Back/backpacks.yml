@@ -1,4 +1,19 @@
-# Backpacks (heavy on leather)
+ # TODO: recolor woth tags --- normal backpack T0 --- color backpack T0
+
+# ========================
+# Base
+# ========================
+
+- type: entity
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingBackBackpackBase
+  categories: [ ForkFiltered ]
+
+# ========================
+# Tiers
+# ========================
+
 - type: entity
   parent: CP14ClothingBackBackpackBase
   id: CP14ClothingBackBackpackT0

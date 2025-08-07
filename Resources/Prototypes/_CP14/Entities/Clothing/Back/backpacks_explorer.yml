@@ -1,4 +1,19 @@
-# # Explorer Backpacks (heavy on buckles)
+# # TODO: Icons (as unloading and waist bags), Modifiers
+
+# # ========================
+# # Base
+# # ========================
+
+# - type: entity
+#   abstract: true
+#   parent: CP14ClothingBackContainerBase
+#   id: CP14ClothingBackExplorerBackpackBase
+#   categories: [ ForkFiltered ]
+
+# # ========================
+# # Tiers
+# # ========================
+
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackBase
 #   id: CP14ClothingBackExplorerBackpackT0

@@ -14,8 +14,7 @@
   - !type:ProtoIdResource
     protoId: CP14String
     count: 3 # 15u cloth
-  result: CP14AnimalHide
-  resultCount: 1 # 1x hide (20u) = 24 copper coins
+  result: CP14AnimalHide1
   # Cost: (15×1.2) + (15×0.3) = 18 + 4.5 = 22.5 copper coins
 
 - type: CP14Recipe
@@ -23,12 +22,11 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 2
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14ThinAnimalHide
+  - !type:StackResource
+    stack: CP14ThinAnimalHide
     count: 2 # 10u CP14Leather
   - !type:ProtoIdResource
     protoId: CP14String
     count: 2 # 10u cloth
-  result: CP14AnimalHide
-  resultCount: 1 # 1x hide (20u)
+  result: CP14AnimalHide1 # 1x hide (20u)
   # Cost: (10×1.2) + (10×0.3) = 12 + 3 = 15 copper coins

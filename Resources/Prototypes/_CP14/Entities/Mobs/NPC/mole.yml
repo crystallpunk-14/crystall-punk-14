@@ -79,10 +79,10 @@
     - id: CP14FoodMeatMonsterLeg
       amount: 1
       prob: 0.6
-    - id: CP14RuggedAnimalHide
+    - id: CP14RuggedAnimalHide1
       amount: 1
       prob: 0.2
-    - id: CP14AnimalHide
+    - id: CP14AnimalHide1
       amount: 1
       maxAmount: 4
     - id: CP14ScrapAnimalHide

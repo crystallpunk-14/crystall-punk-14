@@ -20,8 +20,8 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 4
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14ThinAnimalHide
+  - !type:StackResource
+    stack: CP14ThinAnimalHide
     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
@@ -33,11 +33,11 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 6
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14ThinAnimalHide
+  - !type:StackResource
+    stack: CP14ThinAnimalHide
     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide
+  - !type:StackResource
+    stack: CP14AnimalHide
     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
@@ -49,11 +49,11 @@
   tag: CP14RecipeLeatherWorking
   craftTime: 10
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide
+  - !type:StackResource
+    stack: CP14AnimalHide
     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
-  - !type:ProtoIdResource
-    protoId: CP14RuggedAnimalHide
+  - !type:StackResource
+    stack: CP14RuggedAnimalHide
     count: 2 # 50u CP14Leather ~~~ CP14RuggedLeather (25u)
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
@@ -73,8 +73,8 @@
   - !type:ProtoIdResource
     protoId: CP14ClothingBackSatchelT0  # 80u cloth (8u)
     count: 1
-  - !type:ProtoIdResource
-    protoId: CP14ThinAnimalHide        # +15u CP14Leather (3x5u)
+  - !type:StackResource
+    stack: CP14ThinAnimalHide        # +15u CP14Leather (3x5u)
     count: 1
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
@@ -91,8 +91,8 @@
   - !type:ProtoIdResource
     protoId: CP14ClothingBackSatchelT1  # 15u (thin)
     count: 1
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide            # +30u CP14Leather (3x10u)
+  - !type:StackResource
+    stack: CP14AnimalHide            # +30u CP14Leather (3x10u)
     count: 3
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
@@ -109,8 +109,8 @@
   - !type:ProtoIdResource
     protoId: CP14ClothingBackSatchelT2  # 15u + 30u = 45u
     count: 1
-  - !type:ProtoIdResource
-    protoId: CP14RuggedAnimalHide       # +50u CP14Leather (2x25u)
+  - !type:StackResource
+    stack: CP14RuggedAnimalHide       # +50u CP14Leather (2x25u)
     count: 2
   - !type:ProtoIdResource
     protoId: CP14IronBuckle
