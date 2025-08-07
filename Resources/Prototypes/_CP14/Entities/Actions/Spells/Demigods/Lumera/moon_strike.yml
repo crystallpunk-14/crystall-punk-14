@@ -80,6 +80,7 @@
       effects:
       - !type:Jitter
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
             Heat: 10

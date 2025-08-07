@@ -139,6 +139,7 @@
         Slash: 0.90
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
+  - type: HeldSpeedModifier # Slow down when hold
 
 # ========================
 # Special

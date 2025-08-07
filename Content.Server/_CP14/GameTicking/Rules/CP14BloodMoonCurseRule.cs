@@ -101,7 +101,7 @@ public sealed class CP14BloodMoonCurseRule : GameRuleSystem<CP14BloodMoonCurseRu
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return;
 
-        _stun.TryParalyze(ent, ent.Comp.EndStunDuration, true);
+        _stun.TryUpdateParalyzeDuration(ent, ent.Comp.EndStunDuration);
         _popup.PopupEntity(Loc.GetString("cp14-bloodmoon-curse-removed"), ent, PopupType.SmallCaution);
         if (TryComp<CP14BloodMoonCurseComponent>(ent, out var curseComp))
         {

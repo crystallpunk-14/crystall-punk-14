@@ -17,6 +17,7 @@ public sealed partial class DungeonJob
         HashSet<Vector2i> reservedTiles,
         Random random)
     {
+        HashSet<Vector2i> processedTiles = new();
         List<DungeonRoomPrototype> availableRooms = new();
         var availableTiles = new List<Vector2i>();
 
@@ -39,6 +40,11 @@ public sealed partial class DungeonJob
         {
             foreach (var tile in dun.AllTiles)
             {
+                if (processedTiles.Contains(tile))
+                    continue;
+
+                processedTiles.Add(tile);
+
                 var tileRef = _maps.GetTileRef(_gridUid, _grid, tile);
 
                 if (reservedTiles.Contains(tile))

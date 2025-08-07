@@ -94,6 +94,7 @@
         Caustic: 0.85
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
+  - type: HeldSpeedModifier # Slow down when hold
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -124,6 +125,7 @@
         Caustic: 0.70
   - type: ClothingSpeedModifier
     sprintModifier: 0.90
+  - type: HeldSpeedModifier # Slow down when hold
   - type: Clothing
     equipDelay: 1.2
     unequipDelay: 0.8
@@ -164,6 +166,7 @@
         Caustic: 0.85
   - type: ClothingSpeedModifier
     sprintModifier: 0.94
+  - type: HeldSpeedModifier # Slow down when hold
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -187,4 +190,5 @@
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
       # Cost: (80×1.2) + (4×2) = 96 + 8 = 104 copper coins
   - type: ClothingSpeedModifier
-    sprintModifier: 0.94
+    sprintModifier: 0.97
+  - type: HeldSpeedModifier # Slow down when hold
