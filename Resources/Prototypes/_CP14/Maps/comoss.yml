@@ -54,7 +54,6 @@
           modifiers:
           - DemiplaneArcTriple
           - RaidSpawners
-          - SmallHydra
           - EnemyFlem
           - MonsterMosquito
           - Marble
