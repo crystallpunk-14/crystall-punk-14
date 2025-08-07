@@ -29,9 +29,10 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
-            Blunt: 5
+            Blunt: 10
   - type: CP14MagicEffectEmoting
     startEmote: cp14-kick-lurker-start
     endEmote: cp14-kick-lurker
