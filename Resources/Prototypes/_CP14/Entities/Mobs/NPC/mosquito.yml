@@ -41,6 +41,7 @@
   - type: Appearance
   - type: Stamina
     critThreshold: 50
+    animationThreshold: 9999 # They don't need jitter animation
   - type: DamageContacts
     damage:
       types:
