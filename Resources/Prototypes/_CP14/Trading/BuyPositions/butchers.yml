@@ -177,7 +177,7 @@
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: thin_hide
+    state: thin_hide1
   service: !type:CP14BuyItemsService
     product: CP14ThinAnimalHide1
 
@@ -188,7 +188,7 @@
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: hide
+    state: hide1
   service: !type:CP14BuyItemsService
     product: CP14AnimalHide1
     count: 1
@@ -200,7 +200,7 @@
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: rugged_hide
+    state: rugged_hide1
   service: !type:CP14BuyItemsService
     product: CP14RuggedAnimalHide1
     count: 1
