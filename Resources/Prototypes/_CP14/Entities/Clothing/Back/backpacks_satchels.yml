@@ -81,6 +81,7 @@
       # Cost: (60×1.2) + (60×0.4) + (8×2) = 72 + 24 + 16 = 112 copper coins
   - type: ClothingSpeedModifier
     sprintModifier: 0.97
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: CP14ClothingBackSatchelT1
@@ -115,6 +116,7 @@
         Caustic: 0.96
   - type: ClothingSpeedModifier
     sprintModifier: 0.85
+  - type: HeldSpeedModifier
 
 - type: entity
   parent: CP14ClothingBackSatchelBase
@@ -148,6 +150,7 @@
         Caustic: 0.90
   - type: ClothingSpeedModifier
     sprintModifier: 0.75
+  - type: HeldSpeedModifier
 
 # ========================
 # Special
@@ -187,3 +190,4 @@
         Heat: 0.98
   - type: ClothingSpeedModifier
     sprintModifier: 0.88
+  - type: HeldSpeedModifier

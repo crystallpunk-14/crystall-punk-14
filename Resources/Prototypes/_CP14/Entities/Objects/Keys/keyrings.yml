@@ -68,7 +68,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyTavernBlacksmithAbstract
+    - id: CP14KeyBlacksmithAbstract
 
 - type: entity
   parent: CP14BaseKeyRing
@@ -95,7 +95,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: CP14KeyMercantShopPublic
+    - id: CP14KeyMerchantShopPublic
     - id: CP14KeyTavernMerchantShopAbstract
 
 - type: entity

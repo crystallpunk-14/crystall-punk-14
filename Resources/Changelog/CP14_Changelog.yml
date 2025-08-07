@@ -1486,3 +1486,49 @@
   id: 8200
   time: '2025-08-06T10:18:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1621
+- author: TheShuEd
+  changes:
+  - message: Fixed a bug where entities were duplicated during generation, which prevented
+      digging ores in mines and chopping down trees.
+    type: Fix
+  id: 8201
+  time: '2025-08-06T19:33:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1627
+- author: oldschoolotaku
+  changes:
+  - message: Added slowdown to the backpacks and satchels in hands
+    type: Tweak
+  id: 8202
+  time: '2025-08-06T22:18:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1622
+- author: KittyCat432
+  changes:
+  - message: Changed ice dagger now has its cooldown halved (5s now) and a cast time
+      of 0.5 seconds, along with having 20 hits till breaking (4 for throwing).
+    type: Tweak
+  - message: Changed ice arrow now has its cooldown halved (5s now) and a cast time
+      of 0.5 seconds.
+    type: Tweak
+  - message: Changed ice shard now does 6 cold and 2 pierce damage from 4 and 2.
+    type: Tweak
+  - message: Changed fire wave now does 2 heat damage per projectile from 3.
+    type: Tweak
+  id: 8203
+  time: '2025-08-06T22:22:46.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1632
+- author: oldschoolotaku
+  changes:
+  - message: Carcats can eat raw meat now
+    type: Tweak
+  id: 8204
+  time: '2025-08-06T22:23:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1625
+- author: oldschoolotaku
+  changes:
+  - message: Now soups can be sold when completing contracts
+    type: Fix
+  - message: Now soups sell less when completing contracts
+    type: Tweak
+  id: 8205
+  time: '2025-08-07T06:56:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1630
