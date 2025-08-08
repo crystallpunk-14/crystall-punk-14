@@ -96,7 +96,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 10
+      CP14Leather: 12 # 10 + 2 additional
 
 - type: entity
   id: CP14AnimalHide2
@@ -143,7 +143,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 25
+      CP14Leather: 27 # 25 + 3 additional
 
 - type: entity
   id: CP14RuggedAnimalHide2

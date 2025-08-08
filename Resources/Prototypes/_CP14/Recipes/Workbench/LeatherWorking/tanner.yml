@@ -28,5 +28,5 @@
   - !type:ProtoIdResource
     protoId: CP14String
     count: 2 # 10u cloth
-  result: CP14AnimalHide1 # 1x hide (20u)
+  result: CP14AnimalHide1 # 1x hide (10u)
   # Cost: (10×1.2) + (10×0.3) = 12 + 3 = 15 copper coins
