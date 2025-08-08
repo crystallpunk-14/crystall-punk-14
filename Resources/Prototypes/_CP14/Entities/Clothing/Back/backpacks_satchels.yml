@@ -137,6 +137,8 @@
       coefficients:
         Blunt: 0.90
         Slash: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
   - type: HeldSpeedModifier # Slow down when hold
@@ -175,3 +177,5 @@
         Blunt: 0.90
         Slash: 0.90
         Piercing: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.85

@@ -64,6 +64,8 @@
         Slash: 0.95
         Heat: 0.90
         Caustic: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   parent: CP14ClothingBackBackpackT1
@@ -92,6 +94,8 @@
         Piercing: 0.95
         Heat: 0.85
         Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
   - type: HeldSpeedModifier # Slow down when hold
@@ -123,6 +127,8 @@
         Piercing: 0.90
         Heat: 0.70
         Caustic: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
   - type: ClothingSpeedModifier
     sprintModifier: 0.90
   - type: HeldSpeedModifier # Slow down when hold
@@ -164,6 +170,8 @@
         Piercing: 0.90
         Heat: 0.85
         Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
   - type: ClothingSpeedModifier
     sprintModifier: 0.94
   - type: HeldSpeedModifier # Slow down when hold
@@ -189,6 +197,8 @@
       CP14Leather: 80 # 20 + 20u thin (4x5u) + 40u regular (4x10u)
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
       # Cost: (80×1.2) + (4×2) = 96 + 8 = 104 copper coins
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
   - type: ClothingSpeedModifier
     sprintModifier: 0.97
   - type: HeldSpeedModifier # Slow down when hold
