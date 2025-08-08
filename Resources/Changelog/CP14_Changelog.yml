@@ -1578,3 +1578,14 @@
   id: 8210
   time: '2025-08-08T09:35:21.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1635
+- author: TheShuEd
+  changes:
+  - message: The crystal connecting to the demiplanes has regained the ability to
+      display the map of the demiplanes.
+    type: Add
+  - message: 3 entrances to the demiplanes around the city have been removed, and
+      1 stable entrance to the demiplanes inside the city has been added
+    type: Tweak
+  id: 8211
+  time: '2025-08-08T14:37:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1640
