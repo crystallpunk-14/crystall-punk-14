@@ -1,5 +1,9 @@
 - type: cp14Location
   id: GrasslandIsland
+  name: cp14-demiplane-location-grassland-island
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: grassland_island
   levels:
     min: 0
     max: 2

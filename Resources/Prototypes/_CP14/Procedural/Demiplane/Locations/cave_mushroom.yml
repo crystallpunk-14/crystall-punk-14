@@ -1,5 +1,9 @@
 - type: cp14Location
   id: MushroomCaves
+  name: cp14-demiplane-location-mushroom-caves
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: mushroom_caves
   levels:
     min: 1
     max: 10

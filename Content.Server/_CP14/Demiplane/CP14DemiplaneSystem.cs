@@ -1,5 +1,8 @@
 using System.Linq;
-using Content.Server._CP14.Procedural.Demiplane.Components;
+using Content.Server._CP14.Demiplane.Components;
+using Content.Server._CP14.Procedural;
+using Content.Shared._CP14.Demiplane;
+using Content.Shared._CP14.Demiplane.Components;
 using Content.Shared._CP14.Procedural.Prototypes;
 using Content.Shared.Interaction;
 using Content.Shared.Teleportation.Systems;
@@ -7,9 +10,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._CP14.Procedural.Demiplane;
+namespace Content.Server._CP14.Demiplane;
 
-public sealed class CP14DemiplaneSystem : EntitySystem
+public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
@@ -19,10 +22,16 @@ public sealed class CP14DemiplaneSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
+
+    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        InitializeStation();
+
+        _sawmill = _logManager.GetSawmill("demiplane_map_gen");
 
         SubscribeLocalEvent<CP14DemiplaneRiftComponent, InteractHandEvent>(OnRiftInteracted);
     }
@@ -73,42 +82,50 @@ public sealed class CP14DemiplaneSystem : EntitySystem
         if (!ent.Comp.CanCreate)
             return;
 
-        var nextLevel = 1;
-        var originMap = Transform(ent).MapUid;
-        if (TryComp<CP14DemiplaneMapComponent>(originMap, out var demiplane))
+        var station = _station.GetStations().First();
+        if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
         {
-            nextLevel = demiplane.Level + 1;
+            _sawmill.Error($"Station {station} does not have a CP14StationDemiplaneMapComponent!");
+            QueueDel(ent);
+            return;
+        }
+
+        var currentPosition = Vector2i.Zero;
+        var originMap = Transform(ent).MapUid;
+
+        if (TryComp<CP14DemiplaneMapComponent>(originMap, out var originDemiplaneComp))
+            currentPosition = originDemiplaneComp.Position;
+
+        var targetPosition = GetRandomNeighbourNotGeneratedMap((station, stationMap), currentPosition);
+
+        if (targetPosition is null || !stationMap.Nodes.TryGetValue(targetPosition.Value, out var nextMapNode))
+        {
+            _sawmill.Warning($"No suitable target position found for rift at {currentPosition} in station {station}. " +
+                             $"Either all neighbours are generated or the map is not initialized properly.");
+            QueueDel(ent);
+            return;
+        }
+
+        if (nextMapNode.LocationConfig is null)
+        {
+            _sawmill.Error($"Next map node at {targetPosition} does not have a location config! " +
+                           $"Cannot generate demiplane map.");
+
+            QueueDel(ent);
+            return;
         }
 
         _map.CreateMap(out var mapId, runMapInit: false);
-
         var mapUid = _map.GetMap(mapId);
-        EnsureComp<CP14DemiplaneMapComponent>(mapUid).Level = nextLevel;
+        EnsureComp<CP14DemiplaneMapComponent>(mapUid).Position = targetPosition.Value;
 
-        var limits = new Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float>
-        {
-            { "Danger", Math.Max(nextLevel * 0.2f, 0.5f) },
-            { "GhostRoleDanger", 1f },
-            { "Reward", Math.Max(nextLevel * 0.3f, 0.5f) },
-            { "Ore", Math.Max(nextLevel * 0.5f, 1f) },
-            { "Fun", 1f },
-            { "Weather", 1f },
-            { "MapLight", 1f },
-            { "Passage", 1f },
-        };
-
-        var nextLocation = SelectLocation(nextLevel);
-        var nextModifiers = SelectModifiers(nextLevel, nextLocation, limits);
-
-        nextModifiers.Add("CP14DemiplanEnterRoom"); //HARDCODE, BOO
-
-        _meta.SetEntityName(mapUid, $"Demi: [{nextLevel}] - {nextLocation.LocationConfig.Id}");
+        _meta.SetEntityName(mapUid, $"Demi: [{targetPosition}] - {nextMapNode.LocationConfig}");
 
         _generation.GenerateLocation(
             mapUid,
             mapId,
-            nextLocation,
-            nextModifiers);
+            nextMapNode.LocationConfig.Value,
+            nextMapNode.Modifiers);
 
         var awaiting = SpawnAtPosition(ent.Comp.AwaitingProto, Transform(ent).Coordinates);
 

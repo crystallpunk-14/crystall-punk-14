@@ -39,3 +39,12 @@
       count: 2
       tags:
       - CP14DemiplanEnterRoom
+
+- type: cp14LocationModifier
+  id: DemiplaneArcSingle
+  generationProb: 0
+  layers:
+    - !type:CP14RoomsDunGen
+      count: 1
+      tags:
+      - CP14DemiplanArcRoom
