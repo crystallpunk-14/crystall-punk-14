@@ -48,7 +48,7 @@
 - type: cp14TradingPosition
   id: CP14BaseSpellScrollPortalToCity
   faction: Thaumaturgy
-  priceMarkup: 5
+  priceMarkup: 1
   reputationLevel: 0
   uiPosition: 7
   icon:
