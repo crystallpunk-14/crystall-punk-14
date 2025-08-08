@@ -115,6 +115,7 @@ public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
             return;
         }
 
+        stationMap.GeneratedNodes.Add(targetPosition.Value);
         _map.CreateMap(out var mapId, runMapInit: false);
         var mapUid = _map.GetMap(mapId);
         EnsureComp<CP14DemiplaneMapComponent>(mapUid).Position = targetPosition.Value;
