@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._CP14.Demiplane.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
@@ -16,8 +17,8 @@ public sealed partial class CP14DemiplaneSystem
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
-    private ProtoId<CP14ProceduralModifierPrototype> FirstPointProto = "DemiplaneArcSingle";
-    private ProtoId<CP14ProceduralModifierPrototype> SecondPointProto = "CP14DemiplanEnterRoom";
+    private readonly ProtoId<CP14ProceduralModifierPrototype> _firstPointProto = "DemiplaneArcSingle";
+    private readonly ProtoId<CP14ProceduralModifierPrototype> _secondPointProto = "CP14DemiplanEnterRoom";
 
     private void InitializeStation()
     {
@@ -48,23 +49,18 @@ public sealed partial class CP14DemiplaneSystem
 
     private void UpdateNodesStatus(Entity<CP14StationDemiplaneMapComponent> ent)
     {
-        //foreach (var node in ent.Comp.Nodes)
-        //{
-        //    node.Value.InFrontierZone = NodeInFronrierZone(ent.Comp.Nodes, ent.Comp.Edges, node.Key);
-        //    node.Value.InUsing = false;
-        //}
-//
-        //var query = EntityQueryEnumerator<CP14DemiplaneMapNodeBlockerComponent>();
-        //while (query.MoveNext(out var uid, out var blocker))
-        //{
-        //    if (!TryComp<CP14StationDemiplaneMapComponent>(blocker.Station, out var stationMap))
-        //        continue;
-//
-        //    if (!stationMap.Nodes.TryGetValue(blocker.Position, out var node))
-        //        continue;
-//
-        //    node.InUsing = true;
-        //}
+        var openedMaps = new List<Vector2i>();
+
+        var query = EntityQueryEnumerator<CP14DemiplaneMapComponent>();
+        while (query.MoveNext(out var uid, out var demiplane))
+        {
+            openedMaps.Add(demiplane.Position);
+        }
+
+        foreach (var node in ent.Comp.Nodes)
+        {
+            node.Value.Opened = openedMaps.Contains(node.Key);
+        }
     }
 
     private void GenerateDemiplaneMap(Entity<CP14StationDemiplaneMapComponent> ent)
@@ -90,6 +86,7 @@ public sealed partial class CP14DemiplaneSystem
         {
             Opened = true
         };
+        firstNode.Modifiers.Add(_secondPointProto);
 
         ent.Comp.Nodes.Add(firstNodePosition, firstNode);
         ent.Comp.Edges.Add((Vector2i.Zero, firstNodePosition));
@@ -117,16 +114,19 @@ public sealed partial class CP14DemiplaneSystem
             var newPosition = emptyPositions[_random.Next(emptyPositions.Count)];
 
             // Add the new node and connect it with an edge
-            var lvl = Math.Abs(newPosition.X) + Math.Abs(newPosition.Y);
+            var lvl = randomNode.Value.Level + 1;
             location = SelectLocation(lvl);
             modifiers = SelectModifiers(lvl, location, GetLimits(lvl));
-            var newNode = new CP14DemiplaneMapNode(newPosition, location, modifiers);
+            var newNode = new CP14DemiplaneMapNode(newPosition, location, modifiers)
+            {
+                Level = lvl,
+            };
 
             ent.Comp.Nodes[newPosition] = newNode;
             ent.Comp.Edges.Add((randomNodePosition, newPosition));
 
-            randomNode.Value.Modifiers.Add(FirstPointProto);
-            newNode.Modifiers.Add(SecondPointProto);
+            randomNode.Value.Modifiers.Add(_firstPointProto);
+            newNode.Modifiers.Add(_secondPointProto);
         }
 
         foreach (var (position, node) in ent.Comp.Nodes)
@@ -149,7 +149,25 @@ public sealed partial class CP14DemiplaneSystem
             { "Fun", 1f },
             { "Weather", 1f },
             { "MapLight", 1f },
-            { "Passage", 1f },
         };
+    }
+
+    private Vector2i? GetRandomNeighbourNotGeneratedMap(Entity<CP14StationDemiplaneMapComponent> ent, Vector2i origin)
+    {
+        if (!ent.Comp.Nodes.ContainsKey(origin))
+            return null;
+
+        //Проверить, есть ли у этой ноды исходящие ребра
+        var paths = new List<Vector2i>();
+        foreach (var edge in ent.Comp.Edges)
+        {
+            if (edge.Item1 == origin && !ent.Comp.GeneratedNodes.Contains(edge.Item2))
+                paths.Add(edge.Item2);
+        }
+
+        if (paths.Count == 0)
+            return null;
+
+        return _random.Pick(paths);
     }
 }

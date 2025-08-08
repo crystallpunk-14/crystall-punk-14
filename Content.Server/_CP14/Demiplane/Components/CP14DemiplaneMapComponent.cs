@@ -8,5 +8,5 @@ namespace Content.Server._CP14.Demiplane.Components;
 public sealed partial class CP14DemiplaneMapComponent : Component
 {
     [DataField]
-    public int Level = 0;
+    public Vector2i Position = Vector2i.Zero;
 }

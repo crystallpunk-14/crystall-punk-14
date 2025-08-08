@@ -22,8 +22,8 @@ public sealed class CP14DemiplaneMapUiState(Dictionary<Vector2i, CP14DemiplaneMa
 public sealed class CP14DemiplaneMapNode(Vector2 uiPosition, ProtoId<CP14ProceduralLocationPrototype>? locationConfig = null, List<ProtoId<CP14ProceduralModifierPrototype>>? modifiers = null)
 {
     public bool Start = false;
-    public int AdditionalLevel = 0;
     public Vector2 UiPosition = uiPosition;
+    public int Level = 0;
 
     public bool Opened = false;
 

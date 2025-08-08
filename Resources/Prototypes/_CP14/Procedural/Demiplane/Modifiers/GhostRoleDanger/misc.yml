@@ -19,7 +19,7 @@
   id: EnemySkeletonT2
   levels:
     min: 4
-    max: 5
+    max: 10
   name: cp14-modifier-skeleton
   generationWeight: 2.0
   categories:
@@ -35,7 +35,7 @@
   id: EnemyLurker
   levels:
     min: 0
-    max: 5
+    max: 10
   generationWeight: 0.33
   generationProb: 0.25
   categories:

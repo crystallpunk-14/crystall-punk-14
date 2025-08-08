@@ -1,5 +1,8 @@
 - type: cp14Location
   id: VenicialistFort
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: caves
   locationConfig: CP14VenicialistFort
   generationProb: 0 #Special location for map only
   tags:
