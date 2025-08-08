@@ -9,7 +9,7 @@
 
 # Leather placeholder
 - type: entity
-  id: CP14Leather
+  id: CP14Leather1 # !!! For test
   parent: CP14IngredientBase
   name: Leather Placeholder
   description: ((Placeholder for stackable units if you see it - told developers))
