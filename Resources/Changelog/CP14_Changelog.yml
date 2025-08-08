@@ -1600,3 +1600,12 @@
   id: 8212
   time: '2025-08-08T19:42:08.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1642
+- author: TheShuEd
+  changes:
+  - message: Added support for the material aspect for spells!
+    type: Add
+  - message: Dirt wall spell now requires 2 dirt blocks to use.
+    type: Tweak
+  id: 8213
+  time: '2025-08-08T21:27:23.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1643
