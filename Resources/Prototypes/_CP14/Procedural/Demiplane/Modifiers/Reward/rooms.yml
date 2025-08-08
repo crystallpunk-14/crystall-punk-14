@@ -3,6 +3,7 @@
   levels:
     min: 3
     max: 5
+  unique: true
   generationWeight: 2
   categories:
     Reward: 0.15

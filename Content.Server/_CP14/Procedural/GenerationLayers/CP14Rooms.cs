@@ -34,7 +34,9 @@ public sealed partial class DungeonJob
         }
 
         if (availableRooms.Count == 0)
-            return;
+        {
+            _sawmill.Warning($"No rooms found for generation with tags: {string.Join(", ", gen.Tags)}");
+        }
 
         foreach (var dun in dungeons)
         {
@@ -76,7 +78,8 @@ public sealed partial class DungeonJob
             }
         }
 
-        for (var i = 0; i < gen.Count && availableTiles.Count > 0; i++)
+        var roomCount = gen.Count;
+        while (roomCount > 0 && availableTiles.Count > 0)
         {
             await SuspendDungeon();
 
@@ -115,6 +118,13 @@ public sealed partial class DungeonJob
             {
                 reservedTiles.Add(pos);
             }
+
+            roomCount--;
+        }
+
+        if (roomCount > 0)
+        {
+            _sawmill.Warning($"Not enough space to generate all rooms. Wanted: {gen.Count}, Generated: {gen.Count - roomCount}");
         }
     }
 }
