@@ -141,7 +141,8 @@ public sealed partial class CP14DemiplaneMapWindow : DefaultWindow
 
         if (node.LocationConfig != null && _prototype.TryIndex(node.LocationConfig, out var location))
         {
-            Name.Text = Loc.GetString(location.Name);
+            if (location.Name is not null)
+                Name.Text = Loc.GetString(location.Name);
 
             //Generate description
             HashSet<LocId> modifierNames = new();

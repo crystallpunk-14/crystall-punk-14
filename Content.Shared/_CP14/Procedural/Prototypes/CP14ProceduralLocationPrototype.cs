@@ -21,7 +21,7 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     public MinMax Levels = new(0, 10);
 
     [DataField]
-    public LocId Name = string.Empty;
+    public LocId? Name;
 
     [DataField(required: true)]
     public SpriteSpecifier? Icon;
