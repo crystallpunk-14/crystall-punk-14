@@ -63,7 +63,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
             _icon = new SpriteView
             {
                 Scale = new Vector2(2, 2),
-                MaxSize = new Vector2(64, 64),
+                MaxSize = new Vector2(96, 96), // CP14 Custom alert size
                 Stretch = SpriteView.StretchMode.None,
                 HorizontalAlignment = HAlignment.Left
             };

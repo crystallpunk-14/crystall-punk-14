@@ -1532,3 +1532,49 @@
   id: 8205
   time: '2025-08-07T06:56:14.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1630
+- author: TheShuEd
+  changes:
+  - message: 'Sprint buffs: Stamina consumption reduced by half. The less stamina
+      you have, the slower you move, which is still the case, but sprinting is now
+      useful again.'
+    type: Tweak
+  - message: The web now ignites players upon contact if it is burning.
+    type: Fix
+  - message: Spells that deal direct damage (kicks, lightning strikes, Lumera beams)
+      now take into account the target's damage resistances.
+    type: Fix
+  id: 8206
+  time: '2025-08-07T11:50:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1636
+- author: TheShuEd
+  changes:
+  - message: Removed zombies around venicialis, removed hydras around Comoss. Also,
+      moved latejoin spawnpoints inside city wall.
+    type: Tweak
+  - message: Fixed deep water around city generation
+    type: Fix
+  id: 8207
+  time: '2025-08-07T20:36:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1639
+- author: Morb0
+  changes:
+  - message: Fixed health, mana, stamina bars size
+    type: Fix
+  id: 8208
+  time: '2025-08-07T20:57:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1637
+- author: Nimfar11
+  changes:
+  - message: Adds an artifact, Lurker's cape, that makes one invisible, but only if
+      standing still.
+    type: Add
+  id: 8209
+  time: '2025-08-07T21:12:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1455
+- author: Morb0
+  changes:
+  - message: Fixed mosquitos killing problems
+    type: Fix
+  id: 8210
+  time: '2025-08-08T09:35:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1635
