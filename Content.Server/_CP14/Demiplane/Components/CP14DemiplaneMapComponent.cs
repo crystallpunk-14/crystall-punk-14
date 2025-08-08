@@ -1,5 +1,5 @@
 
-namespace Content.Server._CP14.Procedural.Demiplane.Components;
+namespace Content.Server._CP14.Demiplane.Components;
 
 /// <summary>
 ///

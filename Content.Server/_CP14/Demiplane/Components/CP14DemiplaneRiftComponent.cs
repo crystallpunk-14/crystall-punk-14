@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CP14.Procedural.Demiplane.Components;
+namespace Content.Server._CP14.Demiplane.Components;
 
 /// <summary>
 /// Creates a new map of the next level of the demiplane and connects to it via a portal.

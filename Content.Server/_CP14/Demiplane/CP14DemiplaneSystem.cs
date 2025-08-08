@@ -1,5 +1,7 @@
 using System.Linq;
-using Content.Server._CP14.Procedural.Demiplane.Components;
+using Content.Server._CP14.Demiplane.Components;
+using Content.Server._CP14.Procedural;
+using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Procedural.Prototypes;
 using Content.Shared.Interaction;
 using Content.Shared.Teleportation.Systems;
@@ -7,9 +9,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server._CP14.Procedural.Demiplane;
+namespace Content.Server._CP14.Demiplane;
 
-public sealed class CP14DemiplaneSystem : EntitySystem
+public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
@@ -23,6 +25,7 @@ public sealed class CP14DemiplaneSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeStation();
 
         SubscribeLocalEvent<CP14DemiplaneRiftComponent, InteractHandEvent>(OnRiftInteracted);
     }
