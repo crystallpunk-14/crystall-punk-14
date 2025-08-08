@@ -10,12 +10,12 @@
   requirements:
   - !type:ProtoIdResource
     protoId: CP14ScrapAnimalHide
-    count: 3 # 3x scraps (15u total)
+    count: 2 # 2x scraps (10u total)
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 3 # 15u cloth
+    count: 2 # 10u cloth
   result: CP14AnimalHide1
-  # Cost: (15×1.2) + (15×0.3) = 18 + 4.5 = 22.5 copper coins
+  # Cost: (10×1.2) + (10×0.3) = 12 + 3 = 15 copper coins
 
 - type: CP14Recipe
   id: CP14ThinToRegularHideRecipe
