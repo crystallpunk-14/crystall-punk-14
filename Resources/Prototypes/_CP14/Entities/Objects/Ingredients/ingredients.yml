@@ -7,6 +7,24 @@
   - type: Item
     size: Tiny
 
+# Leather --- placeholder for "pulling material from autolat"
+- type: entity
+  id: CP14Leather
+  parent: CP14IngredientBase
+  name: Leather
+  description: A piece of leather used to make things.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1 # 1x2
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/leather.rsi
+    state: leather
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 1
+
 # Buckle
 - type: entity
   id: CP14IronBuckle
