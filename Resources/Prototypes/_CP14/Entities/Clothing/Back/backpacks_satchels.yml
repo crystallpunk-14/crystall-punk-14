@@ -111,6 +111,8 @@
       coefficients:
         Blunt: 0.95
         Slash: 0.95
+  - type: StaticPrice
+    price: 30 # Balance with backpack
 
 - type: entity
   parent: CP14ClothingBackSatchelBase
@@ -144,6 +146,8 @@
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
   - type: HeldSpeedModifier # Slow down when hold
+  - type: StaticPrice
+    price: 60 # Balance with backpack
 
 # ========================
 # Special
