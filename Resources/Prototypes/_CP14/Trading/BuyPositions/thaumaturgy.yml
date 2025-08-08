@@ -12,16 +12,6 @@
     product: CP14EnergyCrystalMediumEmpty
 
 - type: cp14TradingPosition
-  id: CP14BrassBar5
-  faction: Thaumaturgy
-  uiPosition: 1
-  icon:
-    sprite: _CP14/Objects/Materials/brass_bar.rsi
-    state: bar_2
-  service: !type:CP14BuyItemsService
-    product: CP14BrassBar5
-
-- type: cp14TradingPosition
   id: CP14Paper
   faction: Thaumaturgy
   reputationLevel: 0
@@ -54,6 +44,18 @@
     state: shadow_grab
   service: !type:CP14BuyItemsService
     product: CP14SpellScrollShadowGrab
+
+- type: cp14TradingPosition
+  id: CP14BaseSpellScrollPortalToCity
+  faction: Thaumaturgy
+  priceMarkup: 1
+  reputationLevel: 0
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: demi_arrow
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSpellScrollPortalToCity
 
 - type: cp14TradingPosition
   id: CP14SpellScrollFlameCreation
@@ -189,6 +191,17 @@
     state: flash_light
   service: !type:CP14BuyItemsService
     product: CP14SpellScrollFlashLight
+
+- type: cp14TradingPosition
+  id: CP14SpellScrollResurrection
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: resurrection
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollResurrection
 
 - type: cp14TradingPosition
   id: CP14SpellScrollIceShards
