@@ -24,7 +24,7 @@
 
 # Thin
 - type: entity
-  id: CP14ThinAnimalHide1
+  id: CP14ThinLeather1
   parent: CP14HideBase
   name: thin hide
   description: Untreated thin animal hide. It seems you can push it with your finger!
@@ -39,7 +39,7 @@
       - state: thin_hide1
         map: ["base"]
   - type: Stack
-    stackType: CP14ThinAnimalHide
+    stackType: CP14ThinLeather
     count: 1
     baseLayer: base
     layerStates:
@@ -52,16 +52,16 @@
       CP14Leather: 5
 
 - type: entity
-  id: CP14ThinAnimalHide3
-  parent: CP14ThinAnimalHide1
+  id: CP14ThinLeather3
+  parent: CP14ThinLeather1
   suffix: leather T1 (3)
   components:
     - type: Stack
       count: 2
 
 - type: entity
-  id: CP14ThinAnimalHide5
-  parent: CP14ThinAnimalHide1
+  id: CP14ThinLeather5
+  parent: CP14ThinLeather1
   suffix: leather T1 (5)
   components:
     - type: Stack
@@ -69,7 +69,7 @@
 
 # Coarse
 - type: entity
-  id: CP14AnimalHide1
+  id: CP14Leather1
   parent: CP14HideBase
   name: coarse hide
   description: Untreated animal hide. It would make a great pouch.
@@ -86,7 +86,7 @@
       - state: hide1
         map: ["base"]
   - type: Stack
-    stackType: CP14AnimalHide
+    stackType: CP14Leather
     count: 1
     baseLayer: base
     layerStates:
@@ -99,16 +99,16 @@
       CP14Leather: 12 # 10 + 2 additional
 
 - type: entity
-  id: CP14AnimalHide3
-  parent: CP14AnimalHide1
+  id: CP14Leather3
+  parent: CP14Leather1
   suffix: leather T2 (3)
   components:
     - type: Stack
       count: 3
 
 - type: entity
-  id: CP14AnimalHide5
-  parent: CP14AnimalHide1
+  id: CP14Leather5
+  parent: CP14Leather1
   suffix: leather T2 (5)
   components:
     - type: Stack
@@ -116,7 +116,7 @@
 
 # Rugged
 - type: entity
-  id: CP14RuggedAnimalHide1
+  id: CP14RuggedLeather1
   parent: CP14HideBase
   name: rugged hide
   description: Durable animal hide. It would make great expensive boots or even protect against cuts.
@@ -133,7 +133,7 @@
       - state: rugged_hide1
         map: ["base"]
   - type: Stack
-    stackType: CP14RuggedAnimalHide
+    stackType: CP14RuggedLeather
     count: 1
     baseLayer: base
     layerStates:
@@ -146,16 +146,16 @@
       CP14Leather: 27 # 25 + 3 additional
 
 - type: entity
-  id: CP14RuggedAnimalHide3
-  parent: CP14RuggedAnimalHide1
+  id: CP14RuggedLeather3
+  parent: CP14RuggedLeather1
   suffix: leather T3 (3)
   components:
     - type: Stack
       count: 3
 
 - type: entity
-  id: CP14RuggedAnimalHide5
-  parent: CP14RuggedAnimalHide1
+  id: CP14RuggedLeather5
+  parent: CP14RuggedLeather1
   suffix: leather T3 (5)
   components:
     - type: Stack
@@ -163,7 +163,7 @@
 
 # Pieces of hide to assemble whole hide.
 - type: entity
-  id: CP14ScrapAnimalHide
+  id: CP14ScrapLeather
   parent: CP14HideBase
   name: scraps of hide
   description: Scraps of skin, someone cut it off carelessly!

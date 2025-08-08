@@ -8,7 +8,7 @@
   craftTime: 1
   requirements:
   - !type:StackResource
-    stack: CP14AnimalHide
+    stack: CP14Leather
     count: 2 # 20u leather
   - !type:ProtoIdResource
     protoId: CP14String
@@ -22,7 +22,7 @@
   craftTime: 1
   requirements:
   - !type:StackResource
-    stack: CP14AnimalHide
+    stack: CP14Leather
     count: 1 # 10u leather
   - !type:StackResource
     stack: CP14Cloth

@@ -7,34 +7,6 @@
   - type: Item
     size: Tiny
 
-# Leather --- placeholder for "pulling material from autolat"
-- type: entity
-  id: CP14Leather
-  parent: CP14IngredientBase
-  name: Leather
-  suffix: PlaceHolder
-  description: A piece of leather used to make things.
-  components:
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: _CP14/Objects/Ingredients/hide.rsi
-    layers:
-      - state: hide1
-        map: ["base"]
-  - type: Stack
-    stackType: CP14AnimalHide
-    count: 1
-    baseLayer: base
-    layerStates:
-    - hide1
-    - hide2
-    - hide3
-  - type: Material
-  - type: PhysicalComposition
-    materialComposition:
-      CP14Leather: 10
-
 # Buckle
 - type: entity
   id: CP14IronBuckle

@@ -118,22 +118,22 @@
   maxCount: 10
 
 - type: stack
-  id: CP14ThinAnimalHide
+  id: CP14ThinLeather
   name: cp14-stack-hide-thin
   icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: thin_hide1 }
-  spawn: CP14ThinAnimalHide1
+  spawn: CP14ThinLeather1
   maxCount: 5
 
 - type: stack
-  id: CP14AnimalHide
+  id: CP14Leather
   name: cp14-stack-hide
   icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: hide1 }
-  spawn: CP14AnimalHide1
+  spawn: CP14Leather1
   maxCount: 5
 
 - type: stack
-  id: CP14RuggedAnimalHide
+  id: CP14RuggedLeather
   name: cp14-stack-hide-rugged
   icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: rugged_hide1 }
-  spawn: CP14RuggedAnimalHide1
+  spawn: CP14RuggedLeather1
   maxCount: 5
