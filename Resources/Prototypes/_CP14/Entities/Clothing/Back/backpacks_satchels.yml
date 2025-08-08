@@ -106,6 +106,7 @@
     materialComposition:
       CP14Leather: 45 # 15u thin (3x5u) + 30u regular (3x10u)
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String ~~~ 15 additional coppers
       # Cost: (45×1.2) + (12×2) = 54 + 24 = 78 copper coins
   - type: Armor
     modifiers:
@@ -136,6 +137,7 @@
     materialComposition:
       CP14Leather: 80 # 30u regular (3x10u) + 50u rugged (2x25u)
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
+      CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String ~~~ 15 additional coppers
       # Cost: (80×1.2) + (12×2) = 96 + 24 = 120 copper coins
   - type: Armor
     modifiers:
