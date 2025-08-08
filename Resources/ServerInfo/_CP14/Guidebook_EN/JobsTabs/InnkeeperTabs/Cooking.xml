@@ -1,0 +1,31 @@
+<Document>
+  # Cooking
+
+  Cooking may seem quite difficult at the beginning, but it's quite interesting in the end! The first thing you will definitely need when preparing any meal is ingredients. Most of the ingredients can be bought from a merchant, or grown on your own.
+  <Box>
+    <GuideEntityEmbed Entity="CP14Wheat"/>
+    <GuideEntityEmbed Entity="CP14FoodPepper"/>
+    <GuideEntityEmbed Entity="CP14FoodApple"/>
+    <GuideEntityEmbed Entity="CP14FoodOnion"/>
+  </Box>
+  What can any innkeeper not live without? That's right - plates, cutlery and knives! Most of the food can only be served on plates and in bowls. Also, your knife can be extremely useful in cutting ingredients or in scaring off particularly violent guests.
+  <Box>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
+    <GuideEntityEmbed Entity="CP14BowlWooden"/>
+    <GuideEntityEmbed Entity="CP14Spoon"/>
+    <GuideEntityEmbed Entity="CP14ModularIronDagger"/>
+  </Box>
+
+  And of course, don't forgeta about frying pan and a cooking pot. It is in them that all the dishes that you will serve are prepared!
+  <Box>
+    <GuideEntityEmbed Entity="CP14FryingPan"/>
+    <GuideEntityEmbed Entity="CP14CookingPot"/>
+  </Box>
+
+  The pot and pan should be placed on the furnace. However, the furnace must be burning, right? Therefore, do not forget the wood and a lighter, or you can use the spell [color=#ffa500]"Flame creation"[/color]. It is important not to forget that if you overdo the food on the stove... It will burn and will not be edible!
+  <Box>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14WoodenPlanks20"/>
+    <GuideEntityEmbed Entity="CP14Lighter"/>
+  </Box>
+</Document>

@@ -1,6 +1,14 @@
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_RU_RecipeBook
-  name: Книга рецептов
-  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/InnkeeperTabs/RecipeBook.xml"
+  id: CP14_RU_Cooking
+  name: Готовка
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/InnkeeperTabs/Cooking.xml"
+  children:
+  - CP14_ENG_First_dish
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_First_dish
+  name: Ваше первое блюдо
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/InnkeeperTabs/First_Dish.xml"
   filterEnabled: True

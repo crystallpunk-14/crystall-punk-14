@@ -1,0 +1,58 @@
+<Document>
+  # Your first dish
+
+  Say hello to your new customer, Sylvon the Bony!
+  <Box>
+    <GuideEntityEmbed Entity="CP14MobUndeadSkeletonBardT2" Caption="Hi! ACK, ACK!"/>
+  </Box>
+
+  Sylvon is tired of traveling on demiplanes and has come to your tavern to take a good break from all this running around. He called you over and placed a small order for... Any three dishes of your choice. But you don't know how or what to cook for him... It's okay! We will solve this problem now!
+
+  ## First of all - Pie
+
+  After a little thought, you decided - he definitely needs a pie! In order to make any pie, you will first need to make the dough. The dough is made from wheat bushels on a cooking table.
+  <Box>
+    <GuideEntityEmbed Entity="CP14Wheat"/>
+    <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
+    <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
+  </Box>
+
+  After you make the dough, place it in a mold along with 3 pieces of any meat and two slices of pepper. Put it on the furnace and wait for the pie to cook. The pies are dividable into five parts, one bite for each. Congrats! You've made a meat pie!
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
+    <GuideEntityEmbed Entity="CP14FoodMeatLambSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodPepperSlice"/>
+    <GuideEntityEmbed Entity="CP14PlatePie"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+  </Box>
+
+  ## Frying pan dish
+  Great! The pie is done, so it's time for the main dish. Let's make mashed potatoes!
+  In order to cook potatoes, it is enough to put 5 potatoes and 1 slice of onion in a frying pan and put it on the furnace. Be sure to put it on a plate... And that's it!
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodOnionSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodPotato"/>
+    <GuideEntityEmbed Entity="CP14FryingPan"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
+  </Box>
+
+  ## Soup
+
+  And now it's time to finish this dining table... With some nice soup! After some thought, the idea of... cheese soup came to your mind.
+  Soups are prepared a little more complicated than regular food. You'll need a cooking pot and water. Add 30u of water to the cooking pot and one piece of cheese and wait for everything to cook. Voila! Pour it into a saucer and Bon Appetit!
+  <Box>
+    <GuideEntityEmbed Entity="CP14CookingPot"/>
+    <GuideEntityEmbed Entity="CP14FoodCheesePart"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14BowlWooden"/>
+  </Box>
+
+  ## The most important... EXPERIMENT!
+  These were just the dishes that you might have ever seen... But the world of cooking is full of mysteries! Did you know that you can make a good omelet out of monster meat?
+  Don't forget to ask Sylvon to pay for your meals and wish him a good trip!
+  <Box>
+    <GuideEntityEmbed Entity="CP14MobUndeadSkeletonBardT2" Caption="Here! 5 silver coins, ACK, ACK! With tips!"/> 
+    <GuideEntityEmbed Entity="CP14SilverCoin5" Caption="5 silver coins"/>
+  </Box>
+</Document>

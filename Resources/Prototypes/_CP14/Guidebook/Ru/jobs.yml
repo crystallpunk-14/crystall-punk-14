@@ -35,8 +35,7 @@
   name: Трактирщик
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Innkeepers.xml"
   children:
-  - CP14_RU_RecipeBook
-  filterEnabled: True
+  - CP14_RU_Cooking
 
 - type: guideEntry
   crystallPunkAllowed: true
