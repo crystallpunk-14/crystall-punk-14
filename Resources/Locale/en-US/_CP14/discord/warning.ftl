@@ -1,0 +1,1 @@
+cp14-suspicious-player-join-message = SUSPICIOUS player {$name} joined.

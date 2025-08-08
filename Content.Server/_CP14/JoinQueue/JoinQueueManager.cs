@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server._CP14.Discord;
+using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Shared._CP14.JoinQueue;
 using Content.Shared.CCVar;
@@ -40,6 +41,7 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
     private ISawmill _sawmill = default!;
 
     /// <summary>
@@ -48,6 +50,7 @@ public sealed class JoinQueueManager
     private readonly List<ICommonSession> _queue = new(); // Real Queue class can't delete disconnected users
 
     private bool _isEnabled = false;
+    private string _suspiciousAccountWarningLevel = string.Empty;
 
     public int PlayerInQueueCount => _queue.Count;
     public int ActualPlayersCount => _playerManager.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
@@ -57,6 +60,7 @@ public sealed class JoinQueueManager
         _netManager.RegisterNetMessage<MsgQueueUpdate>();
 
         _cfg.OnValueChanged(CCVars.QueueEnabled, OnQueueCVarChanged, true);
+        _cfg.OnValueChanged(CCVars.SuspiciousAccountsWarningLevel, v =>  _suspiciousAccountWarningLevel = v, true);
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
         _sawmill = Logger.GetSawmill("queue");
@@ -168,5 +172,10 @@ public sealed class JoinQueueManager
     private void SendToGame(ICommonSession s)
     {
         Timer.Spawn(0, () => _playerManager.JoinGame(s));
+        // Suspicious account warning
+        if (_suspiciousAccountWarningLevel != "disabled")
+        {
+            _chatManager.SendAdminAnnouncement(Loc.GetString("cp14-suspicious-player-join-message", ("name", s.Name)));
+        }
     }
 }

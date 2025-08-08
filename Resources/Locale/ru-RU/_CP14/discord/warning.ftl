@@ -1,0 +1,1 @@
+cp14-suspicious-player-join-message = ПОДОЗРИТЕЛЬНЫЙ игрок {$name} зашёл.

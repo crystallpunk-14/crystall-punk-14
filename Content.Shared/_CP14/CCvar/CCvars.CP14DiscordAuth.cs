@@ -12,4 +12,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<string> DiscordAuthToken =
         CVarDef.Create("cp14.discord_auth_token", "token", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> SuspiciousAccountsWarningLevel =
+        CVarDef.Create("cp14.suspicious_accounts_warning_level",  "disabled", CVar.SERVERONLY, "Can be: disabled, low, medium, high");
 }

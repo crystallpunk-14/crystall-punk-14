@@ -55,7 +55,7 @@ public sealed class SponsorSystem : ICP14SponsorManager
 
     private async Task<List<string>?> GetRoles(NetUserId userId)
     {
-        var requestUrl = $"{_apiUrl}/api/roles?method=uid&id={userId}&guildId={DiscordAuthManager.DISCORD_GUILD}";
+        var requestUrl = $"{_apiUrl}/api/roles?method=uid&id={userId}&guildId={DiscordAuthManager.RequiredDiscordGuild}";
         var response = await _httpClient.GetAsync(requestUrl);
 
         if (!response.IsSuccessStatusCode)

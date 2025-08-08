@@ -10,6 +10,7 @@ using Content.Server.Database;
 using Content.Shared._CP14.Discord;
 using Content.Shared.CCVar;
 using Robust.Server.Player;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
@@ -29,8 +30,13 @@ public sealed class DiscordAuthManager
     private bool _enabled;
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
+    // Suspicious activity blocking stuff
+    private string _suspiciousAccountsWarningLevel = string.Empty;
+    private bool _panicBunkerEnabled;
+    private string _panicBunkerCustomReason = string.Empty;
+    private bool _panicBunkerShowReason;
 
-    public const string DISCORD_GUILD = "1221923073759121468"; //CrystallEdge server required
+    public const string RequiredDiscordGuild = "1221923073759121468"; //CrystallEdge server required
 
     private HashSet<string> _blockedGuilds = new()
     {
@@ -54,6 +60,11 @@ public sealed class DiscordAuthManager
         _cfg.OnValueChanged(CCVars.DiscordAuthEnabled, v => _enabled = v, true);
         _cfg.OnValueChanged(CCVars.DiscordAuthUrl, v => _apiUrl = v, true);
         _cfg.OnValueChanged(CCVars.DiscordAuthToken, v => _apiKey = v, true);
+        // Suspicious activity blocking stuff
+        _cfg.OnValueChanged(CCVars.SuspiciousAccountsWarningLevel, v => _suspiciousAccountsWarningLevel = v, true);
+        _cfg.OnValueChanged(CCVars.PanicBunkerEnabled, v => _panicBunkerEnabled = v, true);
+        _cfg.OnValueChanged(CCVars.PanicBunkerCustomReason, v => _panicBunkerCustomReason = v, true);
+        _cfg.OnValueChanged(CCVars.PanicBunkerShowReason, v => _panicBunkerShowReason = v, true);
 
         _netMgr.RegisterNetMessage<MsgDiscordAuthRequired>();
         _netMgr.RegisterNetMessage<MsgDiscordAuthCheck>(OnAuthCheck);
@@ -145,9 +156,9 @@ public sealed class DiscordAuthManager
             }
         }
 
-        if (guilds.Guilds.All(guild => guild.Id != DISCORD_GUILD))
+        if (guilds.Guilds.All(guild => guild.Id != RequiredDiscordGuild))
         {
-            _sawmill.Debug($"Player {userId} is not in required guild {DISCORD_GUILD}");
+            _sawmill.Debug($"Player {userId} is not in required guild {RequiredDiscordGuild}");
             return new AuthData { Verified = false, ErrorMessage = "You are not a member of the CrystallEdge server." };
         }
 
@@ -161,6 +172,33 @@ public sealed class DiscordAuthManager
         if (accountAge < 45)
         {
             isSuspicious = true;
+        }
+
+        // Fastest way to block user is just not verify it
+        switch (_suspiciousAccountsWarningLevel)
+        {
+            case "medium":
+                if (_panicBunkerEnabled)
+                {
+                    var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="));
+                    if (_panicBunkerShowReason)
+                    {
+                        errorMessage = "Panic bunker enabled";
+                        if (_panicBunkerCustomReason != string.Empty)
+                        {
+                            errorMessage = _panicBunkerCustomReason;
+                        }
+                    }
+                    return new  AuthData { Verified = false, ErrorMessage = errorMessage };
+                }
+                break;
+
+            case "high":
+                return new AuthData
+                {
+                    Verified = false,
+                    ErrorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="))
+                };
         }
 
         return new AuthData { Verified = true, Suspicious = isSuspicious };
@@ -226,6 +264,7 @@ public sealed class DiscordAuthManager
 
     private double GetAccountAge(string id)
     {
+        // Please check https://discord.com/developers/docs/reference#convert-snowflake-to-datetime
         var intId = Convert.ToInt32(id);
         var snowflakeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
         var snowflakeCreationDateDecimal = Convert.ToInt32(snowflakeCreationDateBin) + 1420070400000;
