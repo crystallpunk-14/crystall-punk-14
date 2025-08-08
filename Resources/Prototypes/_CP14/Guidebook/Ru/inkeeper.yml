@@ -4,7 +4,7 @@
   name: Готовка
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/InnkeeperTabs/Cooking.xml"
   children:
-  - CP14_ENG_First_dish
+  - CP14_RU_First_dish
 
 - type: guideEntry
   crystallPunkAllowed: true
