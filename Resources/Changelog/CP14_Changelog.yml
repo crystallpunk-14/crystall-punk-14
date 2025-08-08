@@ -1589,3 +1589,14 @@
   id: 8211
   time: '2025-08-08T14:37:17.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1640
+- author: TheShuEd
+  changes:
+  - message: The resurrection spell scroll can now be purchased in the store or selected
+      in the loadout.
+    type: Add
+  - message: "A new spell scroll is now available for purchase: \u201CPortal to the\
+      \ City.\u201D Opens a two-way portal to the city that lasts for one minute."
+    type: Add
+  id: 8212
+  time: '2025-08-08T19:42:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1642
