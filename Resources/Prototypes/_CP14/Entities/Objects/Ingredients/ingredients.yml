@@ -7,6 +7,34 @@
   - type: Item
     size: Tiny
 
+# Leather placeholder
+- type: entity
+  id: CP14Leather
+  parent: CP14IngredientBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+    layers:
+      - state: thin_hide1
+        map: ["base"]
+  - type: Stack
+    stackType: CP14Leather
+    count: 1
+    baseLayer: base
+    layerStates:
+    - thin_hide1
+    - thin_hide2
+    - thin_hide3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 10
+
 # Buckle
 - type: entity
   id: CP14IronBuckle
