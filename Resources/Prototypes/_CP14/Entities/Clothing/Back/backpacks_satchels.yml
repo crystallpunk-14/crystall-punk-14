@@ -78,6 +78,8 @@
       CP14Leather: 15 # 15u CP14Leather (3x5u)
       CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
       # Cost: (15×1.2) + (6×2) = 18 + 12 = 30 copper coins
+  - type: StaticPrice
+    price: 15 # Balance with backpack
 
 - type: entity
   parent: CP14ClothingBackSatchelT1
