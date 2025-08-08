@@ -23,7 +23,7 @@
     state: leather
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 1
+      CP14Leather: 10
 
 # Buckle
 - type: entity
