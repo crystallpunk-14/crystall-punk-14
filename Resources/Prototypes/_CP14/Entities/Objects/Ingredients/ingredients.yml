@@ -13,7 +13,6 @@
   parent: CP14IngredientBase
   name: Leather Placeholder
   description: ((Placeholder for stackable units if you see it - told developers))
-  categories: [ ForkFiltered ]
   components:
   - type: Item
     size: Small
