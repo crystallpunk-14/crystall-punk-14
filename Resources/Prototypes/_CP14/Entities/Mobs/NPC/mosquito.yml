@@ -39,8 +39,6 @@
     damageContainer: CP14Biological
     damageModifierSet: CP14LittleInsects
   - type: Appearance
-  - type: Stamina
-    critThreshold: 50
   - type: DamageContacts
     damage:
       types:
