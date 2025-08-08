@@ -1,0 +1,6 @@
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_RecipeBook
+  name: Книга рецептов
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/InnkeeperTabs/RecipeBook.xml"
+  filterEnabled: True

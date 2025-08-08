@@ -1,0 +1,64 @@
+<Document>
+  # Книга рецептов
+
+  ПИРОГИ:
+  Мясной пирог: кусочки мяса (3), слайс перца (2)
+  Овощной пирог: любые овощи (3), слайс лука (2)
+  Тыквенный пирог: долька тыквы (3), слайс сыра/долька яблока (2)
+
+  Пироги делятся на пять частей, по укусу на каждую.
+
+  ЗАВТРАКИ:
+  Зелессианский завтрак: яйцо (2), кусочки мяса (4), слайс перца (2), лист салата (1), ломтик хлеба (1)
+  Чудовищный омлет: яйцо (2), кусочки мяса (4), слайс перца (2), лист салата (1), слайс сыра (2)
+  Тосты с сыром: ломтик хлеба (7), кусок сыра (1)
+
+  ЗАКУСКИ:
+  Мясная тарелка: кусочки мяса (7)
+  Хлебная тарелка: хлеб (2)
+
+  ОСНОВНОЕ:
+  Свиной окорочок с сыром: свиной окорок (1), кусок сыра (1), слайс сыра (1), слайс перца (2), лист капусты (2)
+  Фаршированный картофель: картофель (4), кусок сыра (1), кусочки мяса (2)
+  Картофельное пюре с зеленью: картофель (4), перец (2), слайс перца (1), капуста (1)
+  Картофельное пюре с мясом: картофель (4), кусочки мяса (2), перец (1)
+  Картофельное пюре: картофель (5), слайс лука (1)
+
+  СУПЫ (30 унций воды на кастрюлю):
+  Сырный суп с мясом: кусок сыра (1), кусочки мяса (3), слайс перца (2), лист капусты (2)
+  Сырный суп: кусок сыра (3), капуста (1), перец (1), ломтик хлеба (1)
+  Мясной суп с зеленью: кусочки мяса (3), капуста (1), перец (1), слайс лука (1)
+  Мясной суп: кусочки мяса (6)
+  Тыквенный суп-пюре: тыква (2), долька тыквы (2), слайс перца (2), слайс лука (2)
+  Овощной суп: капуста (1), перец (2), картофель (2), слайс лука (2)
+  Бибимбап: кусочки монстрятины (2), яйцо (2), слайс перца (2), слайс огурца (2), лист салата (2)
+
+  САЛАТЫ:
+  Овощной салат: томат (2), перец (2), огурец (2), капуста (2)
+  Салат с мясом: перец (4), кусочки мяса (2), капуста (1), лист капусты (1)
+
+  Рассчитано на две порции всего на выходе (с небольшим остатком).
+
+  Let’s begin with cooking something simple: a green salad. Start by growing cabbage, pumpkin, and cucumber. Once the crops are ready, bring them into the kitchen. Go to your cooking table and find the recipe for green salad. You may notice the recipe requires sliced ingredients — simply use your knife to prepare them. Next, find a plate (usually some are stored near the ovens). Once all ingredients are near the table, you can begin to assemble the salad.
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodCabbageSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodCucumber"/>
+    <GuideEntityEmbed Entity="CP14FoodPumpkinSlice"/>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
+  </Box>
+
+
+  Green salad is easy to make because it doesn't require heating. However, almost all other dishes will need to be cooked using the furnace. To use it, place 2–3 wood planks inside to keep the fire burning long enough. Ignite the fire with either the **“Create Flame”** spell or a flint and steel. Then, place the uncooked item on top of the furnace — *after* lighting it — so it begins to cook. Remove the food promptly, or it will burn into inedible ash (which you might try to market, but it won’t end well). The **“Freeze”** spell can stop a furnace from wasting fuel between cooking sessions. The **"Heat"** spell can instantly cook food for patrons without the risk of burning it to ash or using up wood fuel. Mugs and plates can be made at a workbench using the wood saved.
+  <Box>
+    <GuideEntityEmbed Entity="CP14ActionSpellHeat"/>
+    <GuideEntityEmbed Entity="CP14ActionSpellFlameCreation"/>
+    <GuideEntityEmbed Entity="CP14ActionSpellFreeze"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
+    <GuideEntityEmbed Entity="CP14Workbench"/>
+  </Box>
+  
+</Document>
