@@ -16,11 +16,20 @@
   components:
   - type: Item
     size: Small
-    shape:
-    - 0,0,0,1 # 1x2
   - type: Sprite
-    sprite: _CP14/Objects/Ingredients/leather.rsi
-    state: leather
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+    layers:
+      - state: hide1
+        map: ["base"]
+  - type: Stack
+    stackType: CP14AnimalHide
+    count: 1
+    baseLayer: base
+    layerStates:
+    - hide1
+    - hide2
+    - hide3
+  - type: Material
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 10
