@@ -191,6 +191,17 @@
     product: CP14SpellScrollFlashLight
 
 - type: cp14TradingPosition
+  id: CP14SpellScrollResurrection
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: resurrection
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollResurrection
+
+- type: cp14TradingPosition
   id: CP14SpellScrollIceShards
   faction: Thaumaturgy
   reputationLevel: 1
