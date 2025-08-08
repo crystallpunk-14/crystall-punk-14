@@ -329,6 +329,7 @@
     min: 2
     max: 5
   name: cp14-modifier-cackle
+  generationWeight: 0.33
   categories:
     Danger: 0.3
   requiredTags:

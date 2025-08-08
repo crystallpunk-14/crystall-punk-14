@@ -1,7 +1,7 @@
 - type: entity
   parent: CP14SimpleMobBase
   id: CP14MobMonsterCackle
-  name: Cackle
+  name: cackle
   description: A monster that hunts for blood as a source of sustenance.
   categories: [ ForkFiltered ]
   components:
@@ -21,7 +21,7 @@
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: live
-      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ] #used cause i dont know if there are any more applicable ones
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ] #used cause i dont know if there are any more applicable ones no it is not meant to be unshaded
         state: live_spikes
   - type: Physics
   - type: Fixtures
@@ -30,7 +30,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 300 #rotund
+        density: 200 #rotund
         mask:
         - MobMask
         layer:
@@ -60,10 +60,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      60: Dead
+      45: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      45: 0.5
+      30: 0.5
   - type: DamageStateVisuals
     states:
       Alive:
@@ -105,7 +105,7 @@
   - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute from base.yml.
     allowedStates:
     - Alive
-    damageCap: 89
+    damageCap: 45
     damage:
       types:
         Poison: -0.07
