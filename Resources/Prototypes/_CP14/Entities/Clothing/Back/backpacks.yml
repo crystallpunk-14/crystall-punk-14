@@ -54,7 +54,7 @@
     - 0,0,5,3 # 6*4=24
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 20 # 20u CP14Leather (4x5u)
+      CP14Leather: 18 # 20u CP14Leather (4x5u) ~~~ and -2u for cost balance
       CP14Iron: 2 # 2u CP14IronBuckle (1x2u)
       # Cost: (20×1.2) + (2×2) = 24 + 4 = 28 copper coins
   - type: Armor

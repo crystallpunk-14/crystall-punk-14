@@ -77,6 +77,7 @@
     materialComposition:
       CP14Leather: 15 # 15u CP14Leather (3x5u)
       CP14Iron: 6 # 6u CP14IronBuckle (3x2u)
+      CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String ~~~ 15 additional coppers
       # Cost: (15×1.2) + (6×2) = 18 + 12 = 30 copper coins
   - type: StaticPrice
     price: 15 # Balance with backpack
