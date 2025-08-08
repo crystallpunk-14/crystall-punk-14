@@ -12,6 +12,7 @@
   id: CP14Leather
   parent: CP14IngredientBase
   name: Leather
+  suffix: PlaceHolder
   description: A piece of leather used to make things.
   components:
   - type: Item
