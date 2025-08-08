@@ -25,6 +25,7 @@ public abstract partial class CP14SharedMagicSystem
     {
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14CastMagicEffectAttemptEvent>(OnSomaticCheck);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
+        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14CastMagicEffectAttemptEvent>(OnMaterialCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
@@ -36,7 +37,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
-
+        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
     }
 
     /// <summary>
@@ -107,6 +108,27 @@ public abstract partial class CP14SharedMagicSystem
 
         args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
         args.Cancel();
+    }
+
+    private void OnMaterialCheck(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (ent.Comp.Requirement is null)
+            return;
+
+        HashSet<EntityUid> heldedItems = new();
+
+        foreach (var hand in _hand.EnumerateHands(args.Performer))
+        {
+            var helded = _hand.GetHeldItem(args.Performer, hand);
+            if (helded is not null)
+                heldedItems.Add(helded.Value);
+        }
+
+        if (!ent.Comp.Requirement.CheckRequirement(EntityManager, _proto, heldedItems))
+        {
+            args.PushReason(Loc.GetString("cp14-magic-spell-need-material-component"));
+            args.Cancel();
+        }
     }
 
     private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent,
@@ -213,5 +235,22 @@ public abstract partial class CP14SharedMagicSystem
             Emote = true
         };
         RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnMaterialAspectEndCast(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (ent.Comp.Requirement is null || args.Performer is null)
+            return;
+
+        HashSet<EntityUid> heldedItems = new();
+
+        foreach (var hand in _hand.EnumerateHands(args.Performer.Value))
+        {
+            var helded = _hand.GetHeldItem(args.Performer.Value, hand);
+            if (helded is not null)
+                heldedItems.Add(helded.Value);
+        }
+
+        ent.Comp.Requirement.PostCraft(EntityManager, _proto, heldedItems);
     }
 }
