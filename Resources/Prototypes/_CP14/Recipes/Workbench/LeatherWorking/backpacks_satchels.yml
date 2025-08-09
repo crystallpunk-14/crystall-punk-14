@@ -72,7 +72,7 @@
 - type: CP14Recipe
   id: CP14ClothingBackSatchelT1_Upgrade
   tag: CP14RecipeLeatherWorking
-  category: Satchel Upgrade
+  category: SatchelUpgrade
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
@@ -91,7 +91,7 @@
 - type: CP14Recipe
   id: CP14ClothingBackSatchelT2_Upgrade
   tag: CP14RecipeLeatherWorking
-  category: Satchel Upgrade
+  category: SatchelUpgrade
   craftTime: 8
   requirements:
   - !type:ProtoIdResource
@@ -110,7 +110,7 @@
 - type: CP14Recipe
   id: CP14ClothingBackSatchelT3_Upgrade
   tag: CP14RecipeLeatherWorking
-  category: Satchel Upgrade
+  category: SatchelUpgrade
   craftTime: 12
   requirements:
   - !type:ProtoIdResource
