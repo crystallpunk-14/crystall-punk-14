@@ -13,3 +13,4 @@ cp14-material-coal = hard coal
 cp14-material-lucens-planks = lucens planks
 cp14-material-flora = flora material
 cp14-material-ash = ash
+cp14-material-leather = leather

@@ -34,9 +34,8 @@
     - 0,0,4,2 # 5*3=15
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 120 # 100u CP14Cloth (10x10u) + 20u CP14String (4x5u)
-      CP14Iron: 2 # 2u CP14IronBuckle (1x2u)
-      # Cost: (120×0.3) + (2×2) = 36 + 4 = 40 copper coins
+      CP14Cloth: 60 # 50u CP14Cloth (10x10u) + 10u CP14String
+      # Cost: (60×0.3) = 18 copper coins
 
 - type: entity
   parent: CP14ClothingBackBackpackT0
@@ -55,21 +54,18 @@
     - 0,0,5,3 # 6*4=24
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 46 # 40u CP14Leather (8x5u) + 6u CP14LeatherStrap (2x3u)
-      CP14SaltStone: 46 # 40u (8x5u) + 6u (2x3u)
+      CP14Leather: 18 # 20u CP14Leather (4x5u) ~~~ and -2u for cost balance
       CP14Iron: 2 # 2u CP14IronBuckle (1x2u)
-      # Cost: (46×1.2) + (46×0.4) + (2×2) = 55.2 + 18.4 + 4 = 77.6 copper coins
+      # Cost: (20×1.2) + (2×2) = 24 + 4 = 28 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.94
-        Slash: 0.98
-        Heat: 0.94
-        Caustic: 0.94
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
-  - type: HeldSpeedModifier
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.90
+        Caustic: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   parent: CP14ClothingBackBackpackT1
@@ -87,21 +83,22 @@
     - 11,1,12,3 #2*3=6
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 92 # 80u CP14Leather (8x10u) + 12u CP14LeatherStrap (4x3u)
-      CP14SaltStone: 92 # 80u (8x10u) + 12u (4x3u)
+      CP14Leather: 60 # 20u thin (4x5u) + 40u regular (4x10u)
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
-      # Cost: (92×1.2) + (92×0.4) + (4×2) = 110.4 + 36.8 + 8 = 155.2 copper coins
+      # Cost: (60×1.2) + (4×2) = 72 + 8 = 80 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.90
-        Slash: 0.94
-        Heat: 0.90
-        Caustic: 0.90
+        Blunt: 0.85
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
-  - type: HeldSpeedModifier
+    sprintModifier: 0.95
+  - type: HeldSpeedModifier # Slow down when hold
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -119,22 +116,22 @@
     - 0,3,9,6 # 10*4=40
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 224 # 200u CP14Leather (8x25u) + 24u CP14RuggedStrap (4x6u)
-      CP14SaltStone: 180 # 160u (8x20u) + 20u (4x5u)
+      CP14Leather: 115 # 40u regular (4x10u) + 75u rugged (3x25u)
       CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
-      # Cost: (224×1.2) + (180×0.4) + (4×2) = 268.8 + 72 + 8 = 348.8 copper coins
+      # Cost: (115×1.2) + (4×2) = 138 + 8 = 146 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.86
-        Slash: 0.90
-        Piercing: 0.98
-        Heat: 0.86
-        Caustic: 0.86
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.90
+        Heat: 0.70
+        Caustic: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.70
-    sprintModifier: 0.70
-  - type: HeldSpeedModifier
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier # Slow down when hold
   - type: Clothing
     equipDelay: 1.2
     unequipDelay: 0.8
@@ -162,21 +159,22 @@
     - 4,6,5,6 # 2*1=2
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 110 # 80u CP14Leather (8x10u) + 30u CP14LeatherStrap (10x3u)
-      CP14SaltStone: 110 # 80u (8x10u) + 30u (10x3u)
-      CP14Iron: 8 # 8u CP14IronBuckle (4x2u)
-      # Cost: (110×1.2) + (110×0.4) + (8×2) = 132 + 44 + 16 = 192 copper coins
+      CP14Leather: 60 # 20u thin (4x5u) + 40u regular (4x10u)
+      CP14Iron: 24 # 20u + 4u CP14IronBuckle (2x2u)
+      # Cost: (60×1.2) + (24×2) = 72 + 48 = 120 copper coins
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.86
-        Slash: 0.92
-        Piercing: 0.95
-        Heat: 0.92
+        Blunt: 0.85
+        Slash: 0.80
+        Piercing: 0.90
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
   - type: ClothingSpeedModifier
-    walkModifier: 0.82
-    sprintModifier: 0.82
-  - type: HeldSpeedModifier
+    sprintModifier: 0.94
+  - type: HeldSpeedModifier # Slow down when hold
 
 - type: entity
   parent: CP14ClothingBackBackpackT2
@@ -196,11 +194,11 @@
     - 1,6,6,6 # 6*1=6
   - type: PhysicalComposition
     materialComposition:
-      CP14Leather: 96 # 60u CP14Leather (6x10u) + 36u CP14LeatherStrap (12x3u)
-      CP14SaltStone: 96 # 60u (6x10u) + 36u (12x3u)
-      CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
-      # Cost: (96×1.2) + (96×0.4) + (12×2) = 115.2 + 38.4 + 24 = 177.6 copper coins
+      CP14Leather: 80 # 20 + 20u thin (4x5u) + 40u regular (4x10u)
+      CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
+      # Cost: (80×1.2) + (4×2) = 96 + 8 = 104 copper coins
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
   - type: ClothingSpeedModifier
-    walkModifier: 0.84
-    sprintModifier: 0.84
-  - type: HeldSpeedModifier
+    sprintModifier: 0.97
+  - type: HeldSpeedModifier # Slow down when hold
