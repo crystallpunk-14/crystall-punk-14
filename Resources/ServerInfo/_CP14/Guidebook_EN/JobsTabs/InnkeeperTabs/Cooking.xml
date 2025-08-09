@@ -16,7 +16,7 @@
     <GuideEntityEmbed Entity="CP14ModularIronDagger"/>
   </Box>
 
-  And of course, don't forgeta about frying pan and a cooking pot. It is in them that all the dishes that you will serve are prepared!
+  And of course, don't forget about frying pan and a cooking pot. It is in them that all the dishes that you will serve are prepared!
   <Box>
     <GuideEntityEmbed Entity="CP14FryingPan"/>
     <GuideEntityEmbed Entity="CP14CookingPot"/>
