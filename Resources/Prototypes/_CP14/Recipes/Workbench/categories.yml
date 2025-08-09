@@ -45,15 +45,15 @@
 #   name: cp14-recipe-category-backpack-explorer
 
 - type: CP14RecipeCategory
-  id: Backpack Upgrade
+  id: BackpackUpgrade
   name: cp14-recipe-category-backpack-upgrade
 
 - type: CP14RecipeCategory
-  id: Satchel Upgrade
+  id: SatchelUpgrade
   name: cp14-recipe-category-backpack-satchel-upgrade
 
 # - type: CP14RecipeCategory
-#   id: Explorer Upgrade
+#   id: ExplorerUpgrade
 #   name: cp14-recipe-category-backpack-explorer-upgrade
 
 - type: CP14RecipeCategory
@@ -61,7 +61,7 @@
   name: cp14-recipe-category-belt
 
 - type: CP14RecipeCategory
-  id: Leather Working
+  id: LeatherWorking
   name: cp14-recipe-category-leather
 
 # =====================================
