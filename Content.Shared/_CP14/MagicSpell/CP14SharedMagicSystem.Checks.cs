@@ -1,23 +1,19 @@
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
-using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell;
 
 public abstract partial class CP14SharedMagicSystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     [Dependency] private readonly SharedHandsSystem _hand = default!;
 
