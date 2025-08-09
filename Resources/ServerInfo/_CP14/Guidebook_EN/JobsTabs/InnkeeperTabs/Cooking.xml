@@ -8,7 +8,7 @@
     <GuideEntityEmbed Entity="CP14FoodApple"/>
     <GuideEntityEmbed Entity="CP14FoodOnion"/>
   </Box>
-  What can any innkeeper not live without? That's right - plates, bowls and knives! Most of the food can only be served on plates and in bowls. Also, your knife can be extremely useful in cutting ingredients or in scaring off particularly violent guests.
+  What can any innkeeper not live without? That's right - plates, bowls, spoons and knives! Most of the food can only be served on plates and in bowls. Also, your knife can be extremely useful in cutting ingredients or in scaring off particularly violent guests.
   <Box>
     <GuideEntityEmbed Entity="CP14PlateWooden"/>
     <GuideEntityEmbed Entity="CP14BowlWooden"/>
@@ -22,7 +22,7 @@
     <GuideEntityEmbed Entity="CP14CookingPot"/>
   </Box>
 
-  The pot and pan should be placed on the furnace. However, the furnace must be burning, right? Therefore, do not forget the wood and a lighter, or you can use the spell [color=#ffa500]"Flame creation"[/color]. It is important not to forget that if you overdo the food on the stove... It will burn and will not be edible!
+  The pot and pan should be placed on the furnace. However, the furnace must be burning, right? Therefore, do not forget the wood and a lighter, or you can use the spell [color=#ffa500]"Flame creation"[/color]. It is important not to forget that if you overcook the food on the stove...If you keep the food on the furnace for too long - it will surely burn, so pay close attention. Burned food doesn't make a customer happy.
   <Box>
     <GuideEntityEmbed Entity="CP14Furnace"/>
     <GuideEntityEmbed Entity="CP14WoodenPlanks20"/>
