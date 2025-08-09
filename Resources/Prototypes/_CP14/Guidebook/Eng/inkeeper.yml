@@ -10,5 +10,5 @@
   crystallPunkAllowed: true
   id: CP14_ENG_First_dish
   name: Your first dish
-  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/InnkeeperTabs/First_Dish.xml"
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/InnkeeperTabs/First_dish.xml"
   filterEnabled: True
