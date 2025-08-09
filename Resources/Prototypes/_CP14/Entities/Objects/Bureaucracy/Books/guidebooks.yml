@@ -43,7 +43,7 @@
 - type: entity
   id: CP14GuidebookCooking
   parent: CP14GuidebookBase
-  name: Cookbook
+  name: cookbook
   description: A book about cooking, created by unknown Silva innkeeper.
   components:
   - type: Sprite

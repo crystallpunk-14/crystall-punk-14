@@ -17,7 +17,7 @@
     <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
   </Box>
 
-  After you make the dough, place it in a mold along with 3 pieces of any meat and two slices of pepper. Put it on the furnace and wait for the pie to cook. The pies are dividable into five parts, one bite for each. Congrats! You've made a meat pie!
+  After you make the dough, place it in a pie plate along with 3 pieces of any meat and two slices of pepper. Put it on the furnace and wait for the pie to cook. The pies are dividable into five parts, one bite for each. Congrats! You've made a meat pie!
   <Box>
     <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
     <GuideEntityEmbed Entity="CP14FoodMeatLambSlice"/>
@@ -40,7 +40,7 @@
   ## Soup
 
   And now it's time to finish this dining table... With some nice soup! After some thought, the idea of... cheese soup came to your mind.
-  Soups are prepared a little more complicated than regular food. You'll need a cooking pot and water. Add 30u of water to the cooking pot and one piece of cheese and wait for everything to cook. Voila! Pour it into a saucer and Bon Appetit!
+  Making soups is a little bit more complicated process than making regular food. You'll need a cooking pot and water. Add 30u of water to the cooking pot and one piece of cheese and wait for everything to cook. Voila! Pour it into a bowl and Bon Appetit!
   <Box>
     <GuideEntityEmbed Entity="CP14CookingPot"/>
     <GuideEntityEmbed Entity="CP14FoodCheesePart"/>
@@ -50,7 +50,7 @@
 
   ## The most important... EXPERIMENT!
   These were just the dishes that you might have ever seen... But the world of cooking is full of mysteries! Did you know that you can make a good omelet out of monster meat?
-  Don't forget to ask Sylvon to pay for your meals and wish him a good trip!
+  Don't forget to ask Sylvon to pay for your meals and wish him a good trip! Bye-bye, Silvon!
   <Box>
     <GuideEntityEmbed Entity="CP14MobUndeadSkeletonBardT2" Caption="Here! 5 silver coins, ACK, ACK! With tips!"/> 
     <GuideEntityEmbed Entity="CP14SilverCoin5" Caption="5 silver coins"/>
