@@ -150,7 +150,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         OptionCategories.Clear();
         OptionCategories.AddItem(Loc.GetString("cp14-recipe-category-all"), AllCategoryId);
 
-        // Сначала сортируем все рецепты по приоритету и категориям
+        // First, we sort all the recipes by priority and category.
         var sortedRecipes = recipesState.Recipes
             .OrderByDescending(e => e.Craftable)
             .ThenByDescending(e =>
@@ -187,7 +187,7 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
             entries.Add(entry);
         }
 
-        // Сортируем категории по приоритету
+        // Sort categories by priority
         var sortedCategories = _categories
             .OrderByDescending(c =>
             {
