@@ -52,3 +52,67 @@
           collection: GlassBreak
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseBullet
+  id: CP14SpikeCackle
+  name: Cackle spike
+  description: Organically spiked with a destructive liquid inside.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike_cackle.rsi
+    layers:
+    - state: spike
+  - type: EmbeddableProjectile
+    minimumSpeed: 3
+    removalTime: 0.5
+    offset: 0.0,0.0
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 1
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 1
+        reagents:
+        - ReagentId: CP14MonsterToxinBleed
+          Quantity: 1
+  - type: SolutionInjectOnEmbed
+    transferAmount: 1
+    blockSlots: NONE
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 1
+  - type: TimedDespawn
+    lifetime: 10
+  - type: Ammo
+    muzzleFlash: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14SpikeCackleSpread
+  categories: [ HideSpawnMenu ]
+  parent: CP14SpikeCackle
+  components:
+  - type: ProjectileSpread
+    proto: CP14SpikeCackle
+    count: 5
+    spread: 45
