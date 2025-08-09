@@ -6,6 +6,7 @@
 - type: CP14Recipe
   id: CP14ScrapHideRecipe
   tag: CP14RecipeLeatherWorking
+  category: Leather Working
   craftTime: 2
   requirements:
   - !type:ProtoIdResource
@@ -20,6 +21,7 @@
 - type: CP14Recipe
   id: CP14ThinToRegularHideRecipe
   tag: CP14RecipeLeatherWorking
+  category: Leather Working
   craftTime: 2
   requirements:
   - !type:StackResource

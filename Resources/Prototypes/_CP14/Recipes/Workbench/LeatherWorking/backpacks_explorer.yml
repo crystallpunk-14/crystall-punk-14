@@ -2,6 +2,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT0
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
 #   craftTime: 4
 #   requirements:
 #   - !type:StackResource
@@ -12,6 +13,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT1
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
 #   craftTime: 4
 #   requirements:
 #   - !type:StackResource
@@ -25,6 +27,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT2
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
 #   craftTime: 6
 #   requirements:
 #   - !type:StackResource
@@ -41,6 +44,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT3
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
 #   craftTime: 10
 #   requirements:
 #   - !type:StackResource
@@ -62,6 +66,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT1_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorer Upgrade
 #   craftTime: 6
 #   requirements:
 #   - !type:ProtoIdResource
@@ -80,6 +85,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT2_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorer Upgrade
 #   craftTime: 8
 #   requirements:
 #   - !type:ProtoIdResource
@@ -98,6 +104,7 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT3_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorer Upgrade
 #   craftTime: 12
 #   requirements:
 #   - !type:ProtoIdResource
