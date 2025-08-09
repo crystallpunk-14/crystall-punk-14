@@ -87,6 +87,12 @@ public sealed class CP14DayCycleSystem : EntitySystem
         return (float)lightLevel;
     }
 
+    public bool IsDayNow(Entity<LightCycleComponent?> map)
+    {
+        var lightLevel = GetLightLevel(map);
+        return lightLevel >= 0.5;
+    }
+
     /// <summary>
     /// Checks to see if the specified entity is on the map where it's daytime.
     /// </summary>
@@ -101,7 +107,7 @@ public sealed class CP14DayCycleSystem : EntitySystem
         if (xform.MapUid is null || xform.GridUid is null)
             return false;
 
-        var day = GetLightLevel(xform.MapUid.Value) > 0.5f;
+        var day = IsDayNow(xform.MapUid.Value);
 
         var grid = xform.GridUid;
         if (grid is null)
