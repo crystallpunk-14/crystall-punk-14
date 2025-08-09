@@ -11,7 +11,6 @@
   filterEnabled: True
 
 
-
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_JobAdventurer
@@ -35,7 +34,8 @@
   id: CP14_RU_JobInnkeeper
   name: Трактирщик
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Innkeepers.xml"
-  filterEnabled: True
+  children:
+  - CP14_RU_Cooking
 
 - type: guideEntry
   crystallPunkAllowed: true

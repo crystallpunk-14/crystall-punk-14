@@ -34,7 +34,8 @@
   id: CP14_EN_JobInnkeeper
   name: Innkeepers
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Innkeepers.xml"
-  filterEnabled: True
+  children:
+  - CP14_EN_Cooking
 
 - type: guideEntry
   crystallPunkAllowed: true
