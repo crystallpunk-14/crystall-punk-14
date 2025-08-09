@@ -66,9 +66,7 @@
     freeLearnedSkills:
     - HealingT1
     - HealingT2
-  - type: CP14MagicEnergyPhotosynthesis # Silva special feature #Disabled until sunlight fixed
-  - type: CP14MagicEnergyDraw #Enabled default mana regen until sunlight fixed
-    enable: false
+  - type: CP14MagicEnergyPhotosynthesis # Silva special feature
   - type: Body
     prototype: CP14Silva
     requiredLegs: 2
