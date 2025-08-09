@@ -55,5 +55,5 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
     public ProtoId<CP14WorkbenchRecipeCategoryPrototype>? Category;
 
     [DataField]
-    public int Priority = 0;
+    public int Priority = 0;  // In descending order. More means it will be first.
 }
