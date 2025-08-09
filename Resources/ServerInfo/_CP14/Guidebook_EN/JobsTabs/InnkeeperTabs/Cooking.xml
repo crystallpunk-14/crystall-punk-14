@@ -8,7 +8,7 @@
     <GuideEntityEmbed Entity="CP14FoodApple"/>
     <GuideEntityEmbed Entity="CP14FoodOnion"/>
   </Box>
-  What can any innkeeper not live without? That's right - plates, cutlery and knives! Most of the food can only be served on plates and in bowls. Also, your knife can be extremely useful in cutting ingredients or in scaring off particularly violent guests.
+  What can any innkeeper not live without? That's right - plates, bowls and knives! Most of the food can only be served on plates and in bowls. Also, your knife can be extremely useful in cutting ingredients or in scaring off particularly violent guests.
   <Box>
     <GuideEntityEmbed Entity="CP14PlateWooden"/>
     <GuideEntityEmbed Entity="CP14BowlWooden"/>
