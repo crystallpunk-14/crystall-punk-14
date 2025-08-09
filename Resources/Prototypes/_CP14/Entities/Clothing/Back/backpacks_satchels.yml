@@ -58,7 +58,7 @@
   id: CP14ClothingBackSatchelT1
   name: Rustic Satchel
   suffix: backpack T1
-  description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling. Can be worn on the belt or over the shoulder. Interferes with sprinting.
+  description: A handcrafted leather satchel with rustic charm. Provides modest storage with traditional styling. Can be worn on the belt or over the shoulder.
   components:
   - type: Clothing
     slots:
@@ -87,7 +87,7 @@
   id: CP14ClothingBackSatchelT2
   name: Courier Satchel
   suffix: backpack T2
-  description: A professional-grade satchel designed for messengers, with organized compartments for quick access. Interferes with sprinting.
+  description: A professional-grade satchel designed for messengers, with organized compartments for quick access.
   components:
   - type: Clothing
     slots:
@@ -121,7 +121,7 @@
   id: CP14ClothingBackSatchelT3
   name: Haversack
   suffix: backpack T3
-  description: A sturdy military-style haversack with ample capacity, designed for extended field use. Interferes with sprinting.
+  description: A sturdy haversack with ample capacity, designed for extended field use. Interferes with sprinting.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t3.rsi
@@ -161,7 +161,7 @@
   id: CP14ClothingBackSatchelReinforced
   name: Reinforced Satchel
   suffix: backpack T2
-  description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions. Interferes with sprinting.
+  description: A heavy-duty satchel with reinforced seams and weather-resistant materials for tough conditions.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Satchel/satchel_t2_reinforced.rsi

@@ -2,6 +2,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT0
   tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 4
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -15,6 +17,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT1
   tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 3
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -29,6 +33,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT2
   tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 2
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -46,6 +52,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT3
   tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 1
   craftTime: 10
   requirements:
   - !type:StackResource
@@ -68,6 +76,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT1_Upgrade
   tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 3
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
@@ -86,6 +96,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT2_Upgrade
   tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 2
   craftTime: 8
   requirements:
   - !type:ProtoIdResource
@@ -104,6 +116,8 @@
 - type: CP14Recipe
   id: CP14ClothingBackBackpackT3_Upgrade
   tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 1
   craftTime: 12
   requirements:
   - !type:ProtoIdResource

@@ -42,7 +42,7 @@
   id: CP14ClothingBackBackpackT1
   name: Backpack
   suffix: backpack T1
-  description: A standard backpack with decent storage space. Perfect for everyday use. It restricts movement a little, but it protects your back from blows!
+  description: A standard backpack with decent storage space. Perfect for everyday use. It covers your back from blows!
   components:
   - type: Clothing
     slots:
@@ -105,7 +105,7 @@
   id: CP14ClothingBackBackpackT3
   name: Traveler Backpack
   suffix: backpack T3
-  description: A large, well-organized backpack designed for extensive traveling with multiple compartments. It greatly restricts movement, but it protects your back!
+  description: A large, well-organized backpack designed for extensive traveling with multiple compartments. It protects your back and neck from blows! But unfortunately, it is not comfortable to run with.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Back/Backpacks/backpack_t3.rsi
