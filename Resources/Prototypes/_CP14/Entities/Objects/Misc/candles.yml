@@ -96,7 +96,7 @@
   id: CP14Candelabra
   parent: CP14CandleBase
   name: candelabra
-  description: several candles, beautifully placed on a metal support
+  description: Several candles, beautifully placed on a metal support.
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

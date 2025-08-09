@@ -1,6 +1,8 @@
 - type: entity
   parent: BaseItem
   id: CP14FloorTileItemBase
+  name: carpet
+  description: Rolled up carpet for easy transport.
   abstract: true
   components:
   - type: Stack
