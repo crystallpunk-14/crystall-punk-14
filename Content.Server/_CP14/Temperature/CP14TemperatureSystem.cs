@@ -29,29 +29,6 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14TemperatureTransformationComponent, OnTemperatureChangeEvent>(OnTemperatureChanged);
-        SubscribeLocalEvent<CP14TemperatureTransmissionComponent, OnTemperatureChangeEvent>(OnTemperatureTransmite);
-    }
-
-    /// <summary>
-    /// The main idea is that we do not simulate the interaction between the temperature of the container and its contents.
-    /// We directly change the temperature of the entire contents of the container.
-    /// </summary>
-    private void OnTemperatureTransmite(Entity<CP14TemperatureTransmissionComponent> ent,
-        ref OnTemperatureChangeEvent args)
-    {
-        if (!_container.TryGetContainer(ent, ent.Comp.ContainerId, out var container))
-            return;
-
-        var heatAmount = args.TemperatureDelta * _temperature.GetHeatCapacity(ent);
-
-        // copy the list to avoid modifying it while iterating
-        var containedEntities = container.ContainedEntities.ToList();
-
-        var entityCount = containedEntities.Count;
-        foreach (var contained in containedEntities)
-        {
-            _temperature.ChangeHeat(contained, heatAmount / entityCount);
-        }
     }
 
     private void OnTemperatureChanged(Entity<CP14TemperatureTransformationComponent> start,
