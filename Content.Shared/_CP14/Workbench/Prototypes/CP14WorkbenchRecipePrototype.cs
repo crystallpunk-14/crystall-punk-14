@@ -53,4 +53,7 @@ public sealed class CP14WorkbenchRecipePrototype : IPrototype
 
     [DataField]
     public ProtoId<CP14WorkbenchRecipeCategoryPrototype>? Category;
+
+    [DataField]
+    public int Priority = 0;
 }

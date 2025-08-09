@@ -3,6 +3,7 @@
   id: CP14ClothingBackSatchelT0
   tag: CP14RecipeLeatherWorking
   category: Satchels
+  priority: 1
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -20,6 +21,7 @@
   id: CP14ClothingBackSatchelT1
   tag: CP14RecipeLeatherWorking
   category: Satchels
+  priority: 2
   craftTime: 4
   requirements:
   - !type:StackResource
@@ -34,6 +36,7 @@
   id: CP14ClothingBackSatchelT2
   tag: CP14RecipeLeatherWorking
   category: Satchels
+  priority: 3
   craftTime: 6
   requirements:
   - !type:StackResource
@@ -51,6 +54,7 @@
   id: CP14ClothingBackSatchelT3
   tag: CP14RecipeLeatherWorking
   category: Satchels
+  priority: 4
   craftTime: 10
   requirements:
   - !type:StackResource
@@ -73,6 +77,7 @@
   id: CP14ClothingBackSatchelT1_Upgrade
   tag: CP14RecipeLeatherWorking
   category: SatchelUpgrade
+  priority: 1
   craftTime: 6
   requirements:
   - !type:ProtoIdResource
@@ -92,6 +97,7 @@
   id: CP14ClothingBackSatchelT2_Upgrade
   tag: CP14RecipeLeatherWorking
   category: SatchelUpgrade
+  priority: 2
   craftTime: 8
   requirements:
   - !type:ProtoIdResource
@@ -111,6 +117,7 @@
   id: CP14ClothingBackSatchelT3_Upgrade
   tag: CP14RecipeLeatherWorking
   category: SatchelUpgrade
+  priority: 3
   craftTime: 12
   requirements:
   - !type:ProtoIdResource
