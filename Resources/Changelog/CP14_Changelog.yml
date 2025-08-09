@@ -1609,3 +1609,20 @@
   id: 8213
   time: '2025-08-08T21:27:23.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1643
+- author: PhantornRU
+  changes:
+  - message: making crafting much easier. Crafting now requires hide instead of leather.
+    type: Tweak
+  - message: remove salt, leather and straps.
+    type: Remove
+  - message: Leather/Hide is now stackable.
+    type: Fix
+  - message: Speed has been nerfed.
+    type: Fix
+  - message: Heavy backpacks now have more significant armor values.
+    type: Tweak
+  - message: Satchels are good for speed, and backpacks are good for protection.
+    type: Tweak
+  id: 8214
+  time: '2025-08-09T10:21:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1638
