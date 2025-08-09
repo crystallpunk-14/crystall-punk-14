@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Atmos.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Temperature;
@@ -7,8 +6,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
-using Robust.Server.GameObjects;
-using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
@@ -18,8 +15,6 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
