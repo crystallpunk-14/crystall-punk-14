@@ -99,7 +99,6 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
     private void AddRecipeListToGrid(List<CP14WorkbenchUiRecipesEntry> category, GridContainer gridContainer)
     {
-        // Рецепты уже отсортированы в UpdateState, просто выводим их в том же порядке
         foreach (var entry in category)
         {
             if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
