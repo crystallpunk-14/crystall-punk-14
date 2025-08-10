@@ -1,0 +1,34 @@
+- type: entity
+  id: CP14ActionSpellMatterEaterSpread
+  parent: CP14ActionSpellBase
+  name: Spatial shrapnel
+  description: A shot with a large number of repulsive and disorienting fragments
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.4
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    magicType: Fire
+    effects:
+    - !type:CP14SpellProjectile
+      prototype: CP14MatterEaterSpike
+      spread: 1.5
+      projectileSpeed: 20
+      projectileCount: 12
+  - type: CP14MagicEffectPacifiedBlock
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: firewave #TODO
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      hidden: false
+      breakOnMove: false
+      breakOnDamage: false
+      cooldown: 10
+      castDelay: 1
