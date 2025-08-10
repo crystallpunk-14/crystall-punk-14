@@ -1626,3 +1626,11 @@
   id: 8214
   time: '2025-08-09T10:21:26.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1638
+- author: creamybag
+  changes:
+  - message: Most wild flowers and mushrooms can now be worn in mask slots and on
+      the head.
+    type: Add
+  id: 8215
+  time: '2025-08-10T14:27:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1654
