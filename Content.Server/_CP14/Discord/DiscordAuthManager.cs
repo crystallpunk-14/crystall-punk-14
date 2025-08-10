@@ -10,7 +10,6 @@ using Content.Server.Database;
 using Content.Shared._CP14.Discord;
 using Content.Shared.CCVar;
 using Robust.Server.Player;
-using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
@@ -178,9 +177,11 @@ public sealed class DiscordAuthManager
         switch (_suspiciousAccountsWarningLevel)
         {
             case "medium":
+            {
                 if (_panicBunkerEnabled)
                 {
-                    var errorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="));
+                    var errorMessage =
+                        System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="));
                     if (_panicBunkerShowReason)
                     {
                         errorMessage = "Panic bunker enabled";
@@ -189,16 +190,20 @@ public sealed class DiscordAuthManager
                             errorMessage = _panicBunkerCustomReason;
                         }
                     }
-                    return new  AuthData { Verified = false, ErrorMessage = errorMessage };
-                }
-                break;
 
+                    return new AuthData { Verified = false, ErrorMessage = errorMessage };
+                }
+
+                break;
+            }
             case "high":
+            {
                 return new AuthData
                 {
                     Verified = false,
                     ErrorMessage = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String("RXJyb3IgMjcwMQ=="))
                 };
+            }
         }
 
         return new AuthData { Verified = true, Suspicious = isSuspicious };
