@@ -47,10 +47,13 @@
     prototypes:
     - CP14MobSkeletonDodgerT2
   - type: CP14SkillStorage
-    experienceMaxCap: 0
+    skillPoints:
+      Memory:
+        max: 0
     freeLearnedSkills:
     - AthleticT1
     - AthleticT2
+    - AthleticT3
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
     - CP14ActionSpellDash
@@ -70,7 +73,9 @@
     - CP14ActionSpellShadowStep
     - CP14ActionSpellSprint
   - type: CP14SkillStorage
-    experienceMaxCap: 2
+    skillPoints:
+      Memory:
+        max: 1
     freeLearnedSkills:
     - HydrosophistryT1
     learnedSkills:
