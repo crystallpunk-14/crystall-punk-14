@@ -82,3 +82,6 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - GardeSharpWooden
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10

@@ -1,0 +1,28 @@
+name: "Request content or suggest an idea"
+description: "Suggest content, mechanics, or other changes that you think would benefit the project."
+labels: [suggestion]
+type: Suggestion
+body:
+  - type: textarea
+    id: concept
+    attributes:
+      label: Concept
+      placeholder: |
+        What is the nature of your proposal?
+
+        Example:
+        Add a new role ____ that performs tasks related to ____ and ____.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this necessary?
+      placeholder: |
+        Explain how it would improve the game, or what problems it would fix. Suggestions without proper reasoning and reasons for the addition may be closed.
+
+        Example:
+        Currently, ____ often occurs in the round, which is why ____ is missing. This role could close this need by doing _____. 
+    validations:
+      required: true

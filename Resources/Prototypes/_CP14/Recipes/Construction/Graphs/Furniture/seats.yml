@@ -43,3 +43,26 @@
       entity: CP14BenchWood
     - node: CP14BenchWoodBirch
       entity: CP14BenchWoodBirch
+
+- type: constructionGraph
+  id: CP14Stool
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CP14StoolWooden
+          steps:
+            - material: CP14WoodenPlanks
+              amount: 2
+              doAfter: 1
+        - to: CP14StoolBirch
+          steps:
+          - material: CP14BirchWoodenPlanks
+            amount: 2
+            doAfter: 1
+    - node: CP14StoolWooden
+      entity: CP14StoolWooden
+    - node: CP14StoolBirch
+      entity: CP14StoolBirch

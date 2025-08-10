@@ -1,0 +1,133 @@
+# Satchels (heavy on straps)
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT0
+  tag: CP14RecipeLeatherWorking
+  category: Satchels
+  priority: 4
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4 # 40u CP14Cloth ~~~ CP14Cloth (10u)
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2 # 10u CP14Cloth ~~~ 1/2 CP14Cloth (5u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 1 # 2u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT0
+
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT1
+  tag: CP14RecipeLeatherWorking
+  category: Satchels
+  priority: 3
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 3 # 6u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT1
+
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT2
+  tag: CP14RecipeLeatherWorking
+  category: Satchels
+  priority: 2
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
+  - !type:StackResource
+    stack: CP14Leather
+    count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 5 # 10u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT2
+
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT3
+  tag: CP14RecipeLeatherWorking
+  category: Satchels
+  priority: 1
+  craftTime: 10
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
+  - !type:StackResource
+    stack: CP14RuggedLeather
+    count: 2 # 50u CP14Leather ~~~ CP14RuggedLeather (25u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 7 # 14u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT3
+
+# ======================================
+# Upgrade Recipes with Material Tracking
+# ======================================
+
+# Satchel T1 Upgrade (Leather Inheritance)
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT1_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 3
+  craftTime: 6
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackSatchelT0  # 40u cloth
+    count: 1
+  - !type:StackResource
+    stack: CP14ThinLeather        # +15u CP14Leather (3x5u)
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 3 # 6u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT1
+  # Total Materials: 40u cloth + 15u Leather
+
+# Satchel T2 Upgrade (Leather Optimization)
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT2_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 2
+  craftTime: 8
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackSatchelT1  # 15u (thin)
+    count: 1
+  - !type:StackResource
+    stack: CP14Leather            # +30u CP14Leather (3x10u)
+    count: 3
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 2 # 4u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT2
+  # Total Leather: 15u + 30u = 45u
+
+# Satchel T3 Upgrade (Rugged Transition)
+- type: CP14Recipe
+  id: CP14ClothingBackSatchelT3_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 1
+  craftTime: 12
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackSatchelT2  # 15u + 30u = 45u
+    count: 1
+  - !type:StackResource
+    stack: CP14RuggedLeather       # +50u CP14Leather (2x25u)
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 2 # 4u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackSatchelT3
+  # Total Leather: 45u + 50u = 95u

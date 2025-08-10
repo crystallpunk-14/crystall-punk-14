@@ -52,6 +52,20 @@
   - !type:NeedPrerequisite
     prerequisite: HealingT1
 
+- type: cp14Skill
+  id: CP14ActionAirSaturation
+  skillUiPosition: 0, 6
+  tree: Healing
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: air_saturation
+  effects:
+  - !type:AddAction
+    action: CP14ActionAirSaturation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
 # T2
 
 - type: cp14Skill
@@ -99,16 +113,35 @@
   - !type:NeedPrerequisite
     prerequisite: HealingT2
 
+# T3
+
 - type: cp14Skill
-  id: CP14ActionSpellHealBallade
-  skillUiPosition: 8, 6
+  id: HealingT3
+  skillUiPosition: 13, 0
   tree: Healing
+  name: cp14-skill-life-t3-name
+  learnCost: 0.5
   icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: heal_music
+    sprite: _CP14/Actions/skill_tree.rsi
+    state: heal3
   effects:
-  - !type:AddAction
-    action: CP14ActionSpellHealBallade
+  - !type:ModifyManacost
+    modifiers:
+      Life: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT2
+
+#- type: cp14Skill
+#  id: CP14ActionSpellResurrection
+#  skillUiPosition: 12, 4
+#  tree: Healing
+#  icon:
+#    sprite: _CP14/Actions/Spells/healing.rsi
+#    state: resurrection
+#  effects:
+#  - !type:AddAction
+#    action: CP14ActionSpellResurrection
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HealingT3

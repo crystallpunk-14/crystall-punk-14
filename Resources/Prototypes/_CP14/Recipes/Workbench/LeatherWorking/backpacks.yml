@@ -1,0 +1,133 @@
+# Backpacks (heavy on leather)
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT0
+  tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 4
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 5 # 50u CP14Cloth ~~~ CP14Cloth (10u)
+  - !type:ProtoIdResource
+    protoId: CP14String
+    count: 2 # 10u CP14Cloth ~~~ 1/2 CP14Cloth (5u)
+  result: CP14ClothingBackBackpackT0
+
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT1
+  tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 3
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 4 # 20u CP14Leather ~~~ 1/2 CP14Leather (5u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 1 # 2u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackBackpackT1
+  # Total Leather: 20u (4x thin hide)
+
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT2
+  tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 2
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 4 # 20u CP14Leather ~~~ 1/2 CP14Leather (5u)
+  - !type:StackResource
+    stack: CP14Leather
+    count: 4 # 40u CP14Leather ~~~ CP14Leather (10u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 2 # 4u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackBackpackT2
+  # Total Leather: 60u (20u thin + 40u regular)
+
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT3
+  tag: CP14RecipeLeatherWorking
+  category: Backpacks
+  priority: 1
+  craftTime: 10
+  requirements:
+  - !type:StackResource
+    stack: CP14Leather
+    count: 4 # 40u CP14Leather ~~~ CP14Leather (10u)
+  - !type:StackResource
+    stack: CP14RuggedLeather
+    count: 3 # 75u CP14Leather ~~~ CP14RuggedLeather (25u)
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 3 # 6u CP14Iron ~~~ 1/5 iron bar (10u)
+  result: CP14ClothingBackBackpackT3
+  # Total Leather: 105u (40u regular + 75u rugged)
+
+# ======================================
+# Upgrade Recipes with Material Tracking
+# ======================================
+
+# Backpack T1 Upgrade
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT1_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 3
+  craftTime: 6
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackBackpackT0  # Base backpack
+    count: 1
+  - !type:StackResource
+    stack: CP14ThinLeather         # +10u CP14Leather (2x5u)
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 1 # 2u CP14Iron
+  result: CP14ClothingBackBackpackT1
+  # Total Materials: 50u cloth + 10u leather
+
+# Backpack T2 Upgrade
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT2_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 2
+  craftTime: 8
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackBackpackT1  # Contains 20u leather
+    count: 1
+  - !type:StackResource
+    stack: CP14Leather             # +30u CP14Leather (3x10u)
+    count: 4
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 1 # Additional 2u iron
+  result: CP14ClothingBackBackpackT2
+  # Total Materials: 50u leather (20u + 30u)
+
+# Backpack T3 Upgrade
+- type: CP14Recipe
+  id: CP14ClothingBackBackpackT3_Upgrade
+  tag: CP14RecipeLeatherWorking
+  category: BackpackUpgrade
+  priority: 1
+  craftTime: 12
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14ClothingBackBackpackT2  # Contains 60u leather
+    count: 1
+  - !type:StackResource
+    stack: CP14RuggedLeather       # +50u CP14Leather (2x25u)
+    count: 2
+  - !type:ProtoIdResource
+    protoId: CP14IronBuckle
+    count: 1 # Additional 2u iron
+  result: CP14ClothingBackBackpackT3
+  # Total Materials: 110u leather (60u + 50u)

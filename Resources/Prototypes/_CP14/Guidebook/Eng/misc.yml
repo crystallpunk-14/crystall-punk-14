@@ -7,13 +7,6 @@
 
 - type: guideEntry
   crystallPunkAllowed: true
-  id: CP14_EN_Demiplanes
-  name: Demiplanes exploration
-  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AdventurersTabs/Demiplanes.xml"
-  filterEnabled: True
-
-- type: guideEntry
-  crystallPunkAllowed: true
   id: CP14_EN_Locks_and_Keys
   name: Locks and Keys
   text: "/ServerInfo/_CP14/Guidebook_EN/LocksKeys.xml"
@@ -28,3 +21,9 @@
   text: "/ServerInfo/_CP14/Guidebook_EN/Lockpicking.xml"
   filterEnabled: True
 
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_Monster_Toxins
+  name: Monster Toxins
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AdventurersTabs/MonsterToxins.xml"
+  filterEnabled: True

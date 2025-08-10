@@ -48,6 +48,24 @@
     - CP14ModularGardeGuildmaster
 
 - type: entity
+  id: CP14ModularGuardRapier
+  parent: CP14ModularGripIronGuard
+  name: "guard's rapier"
+  description: The standard issue armament of the imperial guard. A short rapier adorned with blue feathers and brass.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - sprite: _CP14/Objects/ModularTools/Blade/Rapier/metall_rapier.rsi
+      state: icon
+    - sprite: _CP14/Objects/ModularTools/Garde/metall_sharp.rsi
+      state: icon
+  - type: CP14ModularCraftAutoAssemble
+    details:
+    - CP14ModularBladeIronRapier
+    - CP14ModularGardeSharpIron
+
+- type: entity
   id: CP14ModularWoodenRapier
   parent: CP14ModularGripWooden
   name: training wooden rapier

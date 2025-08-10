@@ -87,7 +87,7 @@
     impactEffect: CP14ImpactEffectFirebolt
     damage:
       types:
-        Heat: 3
+        Heat: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/energy_metal1.ogg
   - type: Sprite

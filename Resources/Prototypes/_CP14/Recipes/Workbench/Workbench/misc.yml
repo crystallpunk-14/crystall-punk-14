@@ -70,14 +70,24 @@
   result: CP14SmokingPipe
 
 - type: CP14Recipe
-  id: CP14Plate
+  id: CP14PlateWooden
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  craftTime: 2
   requirements:
   - !type:StackGroupResource
     group: WoodenPlanks
     count: 2
-  result: CP14Plate
+  result: CP14PlateWooden
+
+- type: CP14Recipe
+  id: CP14BowlWooden
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: CP14BowlWooden
 
 - type: CP14Recipe
   id: CP14ModularBladeWoodMop
@@ -211,7 +221,7 @@
     stack: CP14WoodenPlanks
     count: 1
   result: CP14ModularRodWooden
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14ModularRodLucens
@@ -223,7 +233,7 @@
     stack: CP14LucensWoodenPlanks
     count: 1
   result: CP14ModularRodLucens
-  resultCount: 4
+  resultCount: 5
 
 - type: CP14Recipe
   id: CP14CrayonWhite
@@ -350,19 +360,9 @@
   result: CP14OpenSign
 
 - type: CP14Recipe
-  id: CP14RopeFromGrass
-  tag: CP14RecipeWorkbench
-  craftTime: 4
-  requirements:
-  - !type:StackResource
-    stack: CP14FloraMaterial
-    count: 4
-  result: CP14Rope
-
-- type: CP14Recipe
   id: CP14RopeFromCloth
   tag: CP14RecipeWorkbench
-  craftTime: 3
+  craftTime: 4
   requirements:
   - !type:StackResource
     stack: CP14Cloth

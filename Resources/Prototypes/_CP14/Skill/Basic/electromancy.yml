@@ -24,6 +24,20 @@
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT1
 
+- type: cp14Skill
+  id: CP14ActionSpellLightningStrikeSmall
+  skillUiPosition: 2, 4
+  tree: Electromancy
+  icon:
+    sprite: _CP14/Actions/Spells/electromancy.rsi
+    state: lightning_strike_small
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellLightningStrikeSmall
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: ElectromancyT1
+
 # T2
 
 - type: cp14Skill
@@ -76,18 +90,4 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT2
-
-- type: cp14Skill
-  id: CP14ActionSpellResurrection
-  skillUiPosition: 12, 4
-  tree: Electromancy
-  icon:
-    sprite: _CP14/Actions/Spells/electromancy.rsi
-    state: defib
-  effects:
-  - !type:AddAction
-    action: CP14ActionSpellResurrection
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: ElectromancyT3
 

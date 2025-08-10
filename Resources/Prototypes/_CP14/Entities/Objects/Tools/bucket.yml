@@ -61,15 +61,17 @@
         Blunt: 0
   - type: Spillable
     solution: bucket
+  - type: SpillWhenWorn
+    solution: bucket
   - type: CP14WeatherRefillable
-    solution: bucket
-  - type: RefillableSolution
-    solution: bucket
-  - type: SolutionItemStatus
     solution: bucket
   - type: MixableSolution
     solution: bucket
+  - type: RefillableSolution
+    solution: bucket
   - type: DrainableSolution
+    solution: bucket
+  - type: SolutionItemStatus
     solution: bucket
   - type: Appearance
   - type: SolutionContainerVisuals
@@ -80,6 +82,10 @@
   - type: Tag
     tags:
       - Bucket
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 30
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14Bucket
@@ -98,3 +104,7 @@
         Slash: 0.93
   - type: ClothingSpeedModifier
     walkModifier: 0.98
+  - type: PhysicalComposition
+    materialComposition:
+      CP14LucensWoodenPlanks: 30
+      CP14Cloth: 20

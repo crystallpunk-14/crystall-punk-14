@@ -31,6 +31,11 @@
   - type: StorageContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 20 # 20u CP14Leather (2x10u)
+      CP14Cloth: 20 # 20u CP14String (4x5u)
+  # Cost: (20×1.2) + (20×0.3) = 24 + 6 = 30 copper coins
 
 - type: entity
   parent: CP14ClothingBeltQuiver

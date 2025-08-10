@@ -15,6 +15,11 @@ cp14-loadout-general-spells = Spells
 cp14-loadout-skill-tree = Specialization
 cp14-loadout-general-keys = Keys
 
+# Villagers
+cp14-loadout-general-villager-back-cargo = Cargo backpacks
+cp14-loadout-general-villager-back = Villager backpacks
+cp14-loadout-general-villager-back-reinforced = Reinforced Backpacks
+
 # Adventurer
 
 cp14-loadout-adventurers-equip = Adventurer weapons
@@ -42,11 +47,14 @@ cp14-loadout-guard-commander-cloak = Guard commander's cloak
 # Guard
 
 cp14-loadout-investigator-cloak = Investigator's cloak
+cp14-loadout-investigator-head = Investigator's head
+
 cp14-loadout-guard-cloak  = Guard's cloak
 cp14-loadout-guard-head = Guard's head
 cp14-loadout-guard-pants = Guard's pants
 cp14-loadout-guard-shirt = Guard's shirt
 cp14-loadout-guard-spells = Guard's spells
+cp14-loadout-guard-equip = Guard's equipment
 
 cp14-loadout-merchant-head = Merchant's hat
 cp14-loadout-merchant-cloak = Merchant's cloak

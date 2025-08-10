@@ -53,4 +53,8 @@
         whitelist:
           tags:
             - CP14CrossbowBolt
-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Copper: 10
+      CP14Iron: 30
+      CP14Cloth: 5

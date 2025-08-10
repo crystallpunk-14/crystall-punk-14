@@ -4,19 +4,12 @@
   name: Plant growth
   description: You restore health and internal resources to the selected plant.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: plant_growth
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffectManaCost
     manaCost: 5
   - type: CP14MagicEffect
     magicType: Life
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectPlantGrowth
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

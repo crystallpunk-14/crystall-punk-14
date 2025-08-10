@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by PhantornRU (Github)",
+    "states": [
+        {
+            "name": "thin_hide1"
+        },
+        {
+            "name": "thin_hide2"
+        },
+        {
+            "name": "thin_hide3"
+        },
+        {
+            "name": "hide1"
+        },
+        {
+            "name": "hide2"
+        },
+        {
+            "name": "hide3"
+        },
+        {
+            "name": "rugged_hide1"
+        },
+        {
+            "name": "rugged_hide2"
+        },
+        {
+            "name": "rugged_hide3"
+        },
+        {
+            "name": "scrap_hide"
+        }
+    ]
+}

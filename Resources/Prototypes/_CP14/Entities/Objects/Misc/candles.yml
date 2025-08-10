@@ -1,21 +1,12 @@
 - type: entity
-  name: candle
   parent: BaseItem
-  id: CP14Candle
-  description: A thin wick threaded through fat.
+  abstract: true
+  id: CP14CandleBase
   categories: [ ForkFiltered ]
   components:
   - type: Tag
     tags:
     - Candle
-  - type: Sprite
-    noRot: true
-    sprite: Objects/Misc/candles.rsi
-    layers:
-      - state: candle-big
-        color: "#decb8e"
-  - type: Item
-    size: Small
   - type: Appearance
   - type: Reactive
     groups:
@@ -37,465 +28,122 @@
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
-    firestacksOnIgnite: 3.0
-    firestackFade: -0.01
+    firestacksOnIgnite: 15.0
+    firestackFade: -0
     damage:
       types:
-        Heat: 0.1
+        Heat: 0
+  - type: StaticPrice
+    price: 3
+
+- type: entity
+  id: CP14Candle
+  parent: CP14CandleBase
+  name: candle
+  description: A thin wick threaded through fat.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _CP14/Objects/Misc/candles.rsi
+    layers:
+      - state: small1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        small1: ""
+        small2: ""
+        small3: ""
+  - type: Item
+    size: Small
   - type: FireVisuals
-    sprite: Objects/Misc/candles.rsi
-    normalState: fire-big
-  - type: ToggleableLightVisuals
-    spriteLayer: null
-    inhandVisuals:
-      left:
-      - state: inhand-left-flame
-        shader: unshaded
-      right:
-      - state: inhand-right-flame
-        shader: unshaded
+    sprite: _CP14/Objects/Misc/candles.rsi
+    normalState: small_fire
+  #- type: ToggleableLightVisuals #TODO inhands
+  #  spriteLayer: null
+  #  inhandVisuals:
+  #    left:
+  #    - state: inhand-left-flame
+  #      shader: unshaded
+  #    right:
+  #    - state: inhand-right-flame
+  #      shader: unshaded
   - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 20
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Flammable
+    firestacksOnIgnite: 2
 
 - type: entity
-  name: red candle
   parent: CP14Candle
-  id: CP14CandleRed
+  id: CP14CandleIgnited
+  suffix: Ignited
   components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#a12349"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#a12349"
-      - state: inhand-left-flame
-      right:
-      - state: inhand-right
-        color: "#a12349"
-  - type: StaticPrice
-    price: 3
+  - type: CP14AutoIgnite
+    startStack: 2
+
+#Candelabra
 
 - type: entity
-  name: blue candle
-  parent: CP14Candle
-  id: CP14CandleBlue
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#425d7d"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#425d7d"
-      right:
-      - state: inhand-right
-        color: "#425d7d"
-
-- type: entity
-  name: black candle
-  parent: CP14Candle
-  id: CP14CandleBlack
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#1b1724"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#1b1724"
-      right:
-      - state: inhand-right
-        color: "#1b1724"
-
-- type: entity
-  name: green candle
-  parent: CP14Candle
-  id: CP14CandleGreen
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#5d997e"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5d997e"
-      right:
-      - state: inhand-right
-        color: "#5d997e"
-
-- type: entity
-  name: purple candle
-  parent: CP14Candle
-  id: CP14CandlePurple
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#984aa1"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#984aa1"
-      right:
-      - state: inhand-right
-        color: "#984aa1"
-
-
-- type: entity
-  name: small candle
-  parent: CP14Candle
-  id: CP14CandleSmall
-  components:
-    - type: Item
-      size: Tiny
-    - type: Sprite
-      layers:
-        - state: candle-small
-          color: "#e2ca90"
-    - type: FireVisuals
-      normalState: fire-small
-    - type: Flammable
-      firestacksOnIgnite: 2.0
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 60
-        behaviors:
-        - !type:SpawnEntitiesBehavior
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-
-- type: entity
-  name: small red candle
-  parent: CP14CandleSmall
-  id: CP14CandleRedSmall
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#a12349"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#a12349"
-      right:
-      - state: inhand-right
-        color: "#a12349"
-
-- type: entity
-  name: small blue candle
-  parent: CP14CandleSmall
-  id: CP14CandleBlueSmall
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#425d7d"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#425d7d"
-      right:
-      - state: inhand-right
-        color: "#425d7d"
-
-- type: entity
-  name: small black candle
-  parent: CP14CandleSmall
-  id: CP14CandleBlackSmall
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#1b1724"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#1b1724"
-      right:
-      - state: inhand-right
-        color: "#1b1724"
-
-- type: entity
-  name: small green candle
-  parent: CP14CandleSmall
-  id: CP14CandleGreenSmall
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#5d997e"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5d997e"
-      right:
-      - state: inhand-right
-        color: "#5d997e"
-
-- type: entity
-  name: small purple candle
-  parent: CP14CandleSmall
-  id: CP14CandlePurpleSmall
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#984aa1"
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#984aa1"
-      right:
-      - state: inhand-right
-        color: "#984aa1"
-
-#Purely decorative candles for mappers. Do not have any functionality.
-
-- type: entity
-  parent: BaseItem
-  id: CP14CandleInfinite
-  name: magic candle
-  description: A magically created candle that never goes out, the flame seems cold and dead, but still burning.
-  suffix: Decorative
+  id: CP14Candelabra
+  parent: CP14CandleBase
+  name: candelabra
+  description: Several candles, beautifully placed on a metal support.
   categories: [ ForkFiltered ]
   components:
-  - type: CP14DelayedIgnitionSource
-  - type: CP14IgnitionModifier
-    hideCaution: true
   - type: Sprite
     noRot: true
-    sprite: Objects/Misc/candles.rsi
+    offset: 0,0.2
+    sprite: _CP14/Objects/Misc/candelabra.rsi
     layers:
-      - state: candle-big
-        color: "#decb8e"
-      - state: fire-big
-        shader: unshaded
-  - type: PointLight
-    color: "#e39c40"
-    radius: 2.5
-    power: 10
+      - state: triple
+  - type: Item
+    size: Normal
+  - type: FireVisuals
+    sprite: _CP14/Objects/Misc/candelabra.rsi
+    normalState: triple_fire
+  - type: Damageable
+    damageModifierSet: CP14Metallic
+  #- type: ToggleableLightVisuals #TODO inhands
+  #  spriteLayer: null
+  #  inhandVisuals:
+  #    left:
+  #    - state: inhand-left-flame
+  #      shader: unshaded
+  #    right:
+  #    - state: inhand-right-flame
+  #      shader: unshaded
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10 # 1 iron bar
+  - type: Flammable
+    firestacksOnIgnite: 4
 
 - type: entity
-  name: magic red candle
-  parent: CP14CandleInfinite
-  id: CP14CandleRedInfinite
+  parent: CP14Candelabra
+  id: CP14CandelabraIgnited
+  suffix: Ignited
   components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#a12349"
-      - state: fire-big
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#a12349"
-      right:
-      - state: inhand-right
-        color: "#a12349"
-
-- type: entity
-  name: magic blue candle
-  parent: CP14CandleInfinite
-  id: CP14CandleBlueInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#425d7d"
-      - state: fire-big
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#425d7d"
-      right:
-      - state: inhand-right
-        color: "#425d7d"
-
-- type: entity
-  name: magic black candle
-  parent: CP14CandleInfinite
-  id: CP14CandleBlackInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#1b1724"
-      - state: fire-big
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#1b1724"
-      right:
-      - state: inhand-right
-        color: "#1b1724"
-
-- type: entity
-  name: magic green candle
-  parent: CP14CandleInfinite
-  id: CP14CandleGreenInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#5d997e"
-      - state: fire-big
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5d997e"
-      right:
-      - state: inhand-right
-        color: "#5d997e"
-
-- type: entity
-  name: magic purple candle
-  parent: CP14CandleInfinite
-  id: CP14CandlePurpleInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-big
-        color: "#984aa1"
-      - state: fire-big
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#984aa1"
-      right:
-      - state: inhand-right
-        color: "#984aa1"
-
-- type: entity
-  name: small magic red candle
-  parent: CP14CandleInfinite
-  id: CP14CandleRedSmallInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#a12349"
-      - state: fire-small
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#a12349"
-      right:
-      - state: inhand-right
-        color: "#a12349"
-
-- type: entity
-  name: small magic blue candle
-  parent: CP14CandleInfinite
-  id: CP14CandleBlueSmallInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#425d7d"
-      - state: fire-small
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#425d7d"
-      right:
-      - state: inhand-right
-        color: "#425d7d"
-
-- type: entity
-  name: small magic black candle
-  parent: CP14CandleInfinite
-  id: CP14CandleBlackSmallInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#1b1724"
-      - state: fire-small
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#1b1724"
-      right:
-      - state: inhand-right
-        color: "#1b1724"
-
-- type: entity
-  name: small magic green candle
-  parent: CP14CandleInfinite
-  id: CP14CandleGreenSmallInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#5d997e"
-      - state: fire-small
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#5d997e"
-      right:
-      - state: inhand-right
-        color: "#5d997e"
-
-- type: entity
-  name: small magic purple candle
-  parent: CP14CandleInfinite
-  id: CP14CandlePurpleSmallInfinite
-  components:
-  - type: Sprite
-    layers:
-      - state: candle-small
-        color: "#984aa1"
-      - state: fire-small
-        shader: unshaded
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        color: "#984aa1"
-      right:
-      - state: inhand-right
-        color: "#984aa1"
+  - type: CP14AutoIgnite
+    startStack: 4

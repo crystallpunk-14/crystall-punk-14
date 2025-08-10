@@ -481,7 +481,18 @@ public sealed class SharedCP14LockKeySystem : EntitySystem
         if (keyShape == null || lockShape == null)
             return;
 
-        if (keyShape.SequenceEqual(lockShape))
+        var isEqual = keyShape.SequenceEqual(lockShape);
+
+        if (HasComp<CP14KeyUniversalComponent>(key) && !isEqual)
+        {
+            // Make new shape for key and force equality for this use
+            _popup.PopupClient(Loc.GetString("cp14-lock-key-transforming"), key, user);
+            key.Comp.LockShape = new List<int>(lockShape);
+            DirtyField(key, key.Comp, nameof(CP14KeyComponent.LockShape));
+            isEqual = true;
+        }
+
+        if (isEqual)
         {
             if (lockComp.Locked)
             {

@@ -13,8 +13,6 @@
           mapNameTemplate: "Venicialis fort"
         - type: StationJobs
           availableJobs:
-            #Demigods
-            CP14GodLumera: [ 1, 1 ]
             #Mercenary
             #CP14Guildmaster: [1, 1]
             CP14Adventurer: [ -1, -1 ]
@@ -47,3 +45,16 @@
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
+        - type: CP14StationProceduralLocation
+          location: VenicialistFort
+          modifiers:
+          - RaidSpawners
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzWater
+          - Quartz
+          - Ruins
+          - MobSlimeIce
+          - LumiShroom
+          - SilverNeedle

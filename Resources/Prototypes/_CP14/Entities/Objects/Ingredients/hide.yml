@@ -1,0 +1,177 @@
+# T0 - Rawhide Leather [None]
+# T1 - Thin Leather [By PhantomRU]
+# T2 - Coarse Leather [By PhantomRU]
+# T3 - Rugged Leather [By PhantomRU]
+# T4 - Thick Leather [None]
+# T5 - Hardened Leather [None]
+# Rough Leather ?
+
+- type: entity
+  id: CP14HideBase
+  parent: BaseItem
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 2x1
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+
+# ================
+# Hide Types
+
+# Thin
+- type: entity
+  id: CP14ThinLeather1
+  parent: CP14HideBase
+  name: thin hide
+  description: Untreated thin animal hide. It seems you can push it with your finger!
+  suffix: leather T1 (1)
+  components:
+  - type: Appearance
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+    layers:
+      - state: thin_hide1
+        map: ["base"]
+  - type: Stack
+    stackType: CP14ThinLeather
+    count: 1
+    baseLayer: base
+    layerStates:
+    - thin_hide1
+    - thin_hide2
+    - thin_hide3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5
+
+- type: entity
+  id: CP14ThinLeather3
+  parent: CP14ThinLeather1
+  suffix: leather T1 (3)
+  components:
+    - type: Stack
+      count: 2
+
+- type: entity
+  id: CP14ThinLeather5
+  parent: CP14ThinLeather1
+  suffix: leather T1 (5)
+  components:
+    - type: Stack
+      count: 5
+
+# Coarse
+- type: entity
+  id: CP14Leather1
+  parent: CP14HideBase
+  name: coarse hide
+  description: Untreated animal hide. It would make a great pouch.
+  suffix: leather T2 (1)
+  components:
+  - type: Appearance
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1 # 2x2
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+    layers:
+      - state: hide1
+        map: ["base"]
+  - type: Stack
+    stackType: CP14Leather
+    count: 1
+    baseLayer: base
+    layerStates:
+    - hide1
+    - hide2
+    - hide3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 12 # 10 + 2 additional
+
+- type: entity
+  id: CP14Leather3
+  parent: CP14Leather1
+  suffix: leather T2 (3)
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: CP14Leather5
+  parent: CP14Leather1
+  suffix: leather T2 (5)
+  components:
+    - type: Stack
+      count: 5
+
+# Rugged
+- type: entity
+  id: CP14RuggedLeather1
+  parent: CP14HideBase
+  name: rugged hide
+  description: Durable animal hide. It would make great expensive boots or even protect against cuts.
+  suffix: leather T3 (1)
+  components:
+  - type: Appearance
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1 # 3x2
+  - type: Sprite
+    sprite: _CP14/Objects/Ingredients/hide.rsi
+    layers:
+      - state: rugged_hide1
+        map: ["base"]
+  - type: Stack
+    stackType: CP14RuggedLeather
+    count: 1
+    baseLayer: base
+    layerStates:
+    - rugged_hide1
+    - rugged_hide2
+    - rugged_hide3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 27 # 25 + 3 additional
+
+- type: entity
+  id: CP14RuggedLeather3
+  parent: CP14RuggedLeather1
+  suffix: leather T3 (3)
+  components:
+    - type: Stack
+      count: 3
+
+- type: entity
+  id: CP14RuggedLeather5
+  parent: CP14RuggedLeather1
+  suffix: leather T3 (5)
+  components:
+    - type: Stack
+      count: 5
+
+# Pieces of hide to assemble whole hide.
+- type: entity
+  id: CP14ScrapLeather
+  parent: CP14HideBase
+  name: scraps of hide
+  description: Scraps of skin, someone cut it off carelessly!
+  components:
+  - type: Item
+    size: Tiny # 1x1
+  - type: Sprite
+    state: scrap_hide
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 3

@@ -18,7 +18,7 @@
   name: Adventurers
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Adventurers.xml"
   children:
-  - CP14_EN_Demiplanes
+  - CP14_EN_Monster_Toxins
   filterEnabled: True
 
 - type: guideEntry

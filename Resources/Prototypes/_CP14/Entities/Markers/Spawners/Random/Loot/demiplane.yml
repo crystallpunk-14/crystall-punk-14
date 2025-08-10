@@ -97,7 +97,6 @@
       children:
       - !type:GroupSelector # remove this when players can create their own magic items
         children:
-        - id: CP14SpellScrollResurrection
         - id: CP14ClothingCloakAmuletMana
         - id: CP14CrystalLampDemiplaneEmpty
 

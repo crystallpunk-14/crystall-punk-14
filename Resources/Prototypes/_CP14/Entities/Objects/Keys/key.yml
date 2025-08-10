@@ -89,3 +89,12 @@
     materialComposition:
       CP14Mithril: 10
 
+- type: entity
+  parent: CP14KeyMithrilBlank
+  id: CP14KeyUniversal
+  name: omni key
+  suffix: Universal
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: CP14Key
+  - type: CP14KeyUniversal

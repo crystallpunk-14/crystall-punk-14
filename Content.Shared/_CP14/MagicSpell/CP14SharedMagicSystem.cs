@@ -5,6 +5,7 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicVision;
+using Content.Shared.Access.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
@@ -12,6 +13,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -34,6 +36,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedMagicVisionSystem _magicVision = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;
     private EntityQuery<CP14MagicEffectComponent> _magicEffectQuery;
@@ -68,6 +71,9 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void OnEndCast(Entity<CP14MagicEffectComponent> ent, ref CP14EndCastMagicEffectEvent args)
     {
+        if (!_net.IsServer)
+            return;
+
         if (!TryComp<CP14MagicCasterComponent>(args.Performer, out var caster))
             return;
 
@@ -129,6 +135,11 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         if (TryComp<CP14MagicEffectSomaticAspectComponent>(ent, out var somatic))
         {
             sb.Append("\n" + Loc.GetString("cp14-magic-somatic-aspect") + " " + somatic.FreeHandRequired);
+        }
+
+        if (TryComp<CP14MagicEffectMaterialAspectComponent>(ent, out var material) && material.Requirement is not null)
+        {
+            sb.Append("\n" + Loc.GetString("cp14-magic-material-aspect") + " " + material.Requirement.GetRequirementTitle(_proto));
         }
 
         if (TryComp<CP14MagicEffectRequiredMusicToolComponent>(ent, out var music))

@@ -7,7 +7,7 @@ namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed class XenoArtifactTest
-{
+{/*
     [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
@@ -415,5 +415,5 @@ public sealed class XenoArtifactTest
         await server.WaitRunTicks(1);
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

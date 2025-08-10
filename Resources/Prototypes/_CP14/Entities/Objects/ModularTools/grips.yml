@@ -106,7 +106,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 10
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripShort
@@ -135,7 +135,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14LucensWoodenPlanks: 10
+      CP14LucensWoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripShort
@@ -162,7 +162,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 10
+      CP14WoodenPlanks: 20
 
 - type: entity
   parent: CP14ModularGripShort
@@ -190,6 +190,18 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 10
+
+- type: entity
+  parent: CP14ModularGripIron
+  id: CP14ModularGripIronGuard
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/ModularTools/Grip/iron_guard_grip.rsi
+    state: icon
+  - type: CP14ModularCraftStartPoint
+    startProtoPart: CP14ModularGripIronGuard
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   parent: CP14ModularGripShort
@@ -328,7 +340,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 20
+      CP14WoodenPlanks: 40
 
 - type: entity
   parent: CP14ModularGripLong
@@ -356,7 +368,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14LucensWoodenPlanks: 20
+      CP14LucensWoodenPlanks: 40
 
 - type: entity
   parent: CP14ModularGripLong
@@ -383,7 +395,7 @@
         acts: ["Destruction"]
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 20
+      CP14WoodenPlanks: 40
 
 - type: entity
   parent: CP14ModularGripLong

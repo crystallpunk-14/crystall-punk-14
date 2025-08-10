@@ -1,11 +1,11 @@
 using Content.Server.Atmos.Components;
 using Content.Server.Temperature.Systems;
+using Content.Shared._CP14.Temperature;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Placeable;
 using Content.Shared.Temperature;
-using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Temperature;
@@ -15,7 +15,6 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TemperatureSystem _temperature = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
 
     private readonly TimeSpan _updateTick = TimeSpan.FromSeconds(1f);
     private TimeSpan _timeToNextUpdate = TimeSpan.Zero;
@@ -33,32 +32,15 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
         var xform = Transform(start);
         foreach (var entry in start.Comp.Entries)
         {
-            if (args.CurrentTemperature > entry.TemperatureRange.X &&
+            if (args.CurrentTemperature >= entry.TemperatureRange.X &&
                 args.CurrentTemperature < entry.TemperatureRange.Y)
             {
-                if (entry.TransformTo is not null)
-                {
-                    var result = SpawnAtPosition(entry.TransformTo, xform.Coordinates);
+                if (entry.TransformTo == null)
+                    continue;
 
-                    //Try putting in container
-                    _transform.DropNextTo(result, (start, xform));
-
-                    if (_solutionContainer.TryGetSolution(result,
-                            start.Comp.Solution,
-                            out var resultSoln,
-                            out _)
-                        && _solutionContainer.TryGetSolution(start.Owner,
-                            start.Comp.Solution,
-                            out var startSoln,
-                            out var startSolution))
-                    {
-                        _solutionContainer.RemoveAllSolution(resultSoln.Value); //Remove all YML reagents
-                        resultSoln.Value.Comp.Solution.MaxVolume = startSoln.Value.Comp.Solution.MaxVolume;
-                        _solutionContainer.TryAddSolution(resultSoln.Value, startSolution);
-                    }
-                }
-
+                SpawnNextToOrDrop(entry.TransformTo, start);
                 Del(start);
+
                 break;
             }
         }
@@ -123,11 +105,11 @@ public sealed partial class CP14TemperatureSystem : EntitySystem
             EntityQueryEnumerator<CP14FlammableSolutionHeaterComponent, ItemPlacerComponent, FlammableComponent>();
         while (query.MoveNext(out _, out var heater, out var itemPlacer, out var flammable))
         {
+            if (!flammable.OnFire)
+                continue;
+
             foreach (var heatingEntity in itemPlacer.PlacedEntities)
             {
-                if (!flammable.OnFire)
-                    continue;
-
                 if (!TryComp<SolutionContainerManagerComponent>(heatingEntity, out var container))
                     continue;
 

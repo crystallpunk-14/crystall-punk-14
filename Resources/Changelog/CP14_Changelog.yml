@@ -1043,3 +1043,594 @@
   id: 8155
   time: '2025-07-08T08:59:20.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1509
+- author: gogenych
+  changes:
+  - message: Fixed the price of artifact staves
+    type: Fix
+  id: 8156
+  time: '2025-07-09T06:17:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1515
+- author: TheShuEd
+  changes:
+  - message: Ropes are now sold at the guards' special trade faction
+    type: Add
+  id: 8157
+  time: '2025-07-09T13:32:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1518
+- author: TheShuEd
+  changes:
+  - message: "New spell \u201CMagical Armor\u201D T2 metamagic. Applies a short-lived\
+      \ shield to the target (object or creature) that absorbs 40% of any damage."
+    type: Add
+  - message: "The \u201CSphere of Light\u201D spell no longer creates a ball in your\
+      \ hand, but instead applies a glowing status effect in the form of a ball floating\
+      \ above your head. The effect can be applied to objects and other creatures."
+    type: Tweak
+  id: 8158
+  time: '2025-07-09T06:16:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1516
+- author: Viator-MV
+  changes:
+  - message: Lightning strike now has a limited radius and cannot be self-casted
+    type: Fix
+  id: 8159
+  time: '2025-07-09T06:18:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1514
+- author: Nimfar, TheShuEd
+  changes:
+  - message: Massive economy rebalance
+    type: Tweak
+  id: 8160
+  time: '2025-07-11T15:54:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1507
+- author: Dinazzewr
+  changes:
+  - message: Many new hats are now available for guards in the loadout menu.
+    type: Add
+  id: 8161
+  time: '2025-07-12T10:10:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1524
+- author: TheShuEd
+  changes:
+  - message: Added a minor lightning spell
+    type: Add
+  - message: Added a lightning staff for guards
+    type: Add
+  - message: Guards can take weapons (and corresponding skills) from the loadout menu
+    type: Add
+  id: 8162
+  time: '2025-07-12T11:52:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1525
+- author: TheShuEd
+  changes:
+  - message: You can now craft a golden chest.
+    type: Add
+  id: 8163
+  time: '2025-07-12T12:10:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1526
+- author: YomieI
+  changes:
+  - message: Ice dagger's hit sound is now a slash
+    type: Fix
+  id: 8164
+  time: '2025-07-14T08:32:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1527
+- author: gogenych
+  changes:
+  - message: new glow portal frame
+    type: Add
+  id: 8165
+  time: '2025-07-16T02:51:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1533
+- author: TheShuEd
+  changes:
+  - message: A new cooking system has been added. No more recipes on the workbench!
+      Now you put things in the pan and fry them until you get something tasty! Be
+      careful not to burn down your tavern.
+    type: Add
+  id: 8166
+  time: '2025-07-16T05:15:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1529
+- author: TheShuEd
+  changes:
+  - message: A pot and the ability to cook soups have been added! Soup bowls have
+      been added. Now there are 7 types of soups and 12 types of dishes on the plate
+      in the game.
+    type: Add
+  - message: 'Added support for food displacement maps: Now dishes visually decrease
+      in size as you eat them.'
+    type: Add
+  - message: Added trade orders for dishes. Merchants may now be interested in cooking
+      specific dishes.
+    type: Add
+  - message: Fixed a bug with raw reagents in ready-made dishes
+    type: Fix
+  id: 8167
+  time: '2025-07-17T14:35:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1535
+- author: gogenych
+  changes:
+  - message: radio chat can no longer be selected
+    type: Remove
+  id: 8168
+  time: '2025-07-17T22:03:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1537
+- author: Viator-MV
+  changes:
+  - message: Lightning strikes now deal less damage.
+    type: Tweak
+  id: 8169
+  time: '2025-07-17T22:02:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1538
+- author: cooldolphin
+  changes:
+  - message: A bottomless goblet to hold all your favorite drink in one vast place.
+    type: Add
+  id: 8170
+  time: '2025-07-18T08:59:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1534
+- author: Deserty0
+  changes:
+  - message: The blacksmith can no longer sharpen planks at the start of a round.
+    type: Fix
+  id: 8171
+  time: '2025-07-18T18:38:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1546
+- author: cooldolphin
+  changes:
+  - message: The mercenary outfit is now available for equipping in the loadout menu.
+    type: Add
+  id: 8172
+  time: '2025-07-18T23:59:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1550
+- author: KittyCat432
+  changes:
+  - message: Innkeepers now start with Tiefling's gambit in their closet.
+    type: Tweak
+  id: 8173
+  time: '2025-07-18T23:59:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1549
+- author: Deserty0
+  changes:
+  - message: Many Russian words blocked on Twitch have been added to the chat sanitizer.
+    type: Remove
+  - message: "\u042F \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u044E \u0432\u0430\
+      \u043C \u043C\u0430\u0442\u044E\u043A\u0430\u0442\u044C\u0441\u044F"
+    type: Remove
+  id: 8174
+  time: '2025-07-19T00:03:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1548
+- author: Nyranu
+  changes:
+  - message: Added hard coal - new efficient fuel in the game.
+    type: Add
+  - message: Wood is now less efficient fuel.
+    type: Tweak
+  - message: Hard coal now can be found in demiplanes
+    type: Add
+  id: 8175
+  time: '2025-07-19T10:24:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1521
+- author: TheShuEd
+  changes:
+  - message: Fixed various cooking bugs
+    type: Fix
+  - message: Old pie recipes have been completely removed
+    type: Remove
+  - message: Modular pies have been added to the new cooking system (only 4 pie recipe
+      rn)
+    type: Add
+  id: 8176
+  time: '2025-07-20T12:45:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1540
+- author: Dezdanna
+  changes:
+  - message: Retextured coal blocks to match the tone of other rock walls
+    type: Fix
+  id: 8177
+  time: '2025-07-22T08:06:41.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1562
+- author: KittyCat432
+  changes:
+  - message: Added a new guidebook entry under adventurers called Monster Toxins used
+      to show all the different toxins monsters use.
+    type: Add
+  - message: Changed spiders now inject a new reagent called Arachnotoxin.
+    type: Tweak
+  - message: Changed spiders deal half the amount of slash damage from 3 to 1.5
+    type: Tweak
+  id: 8178
+  time: '2025-07-22T10:29:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1541
+- author: KittyCat432
+  changes:
+  - message: Removed elf natural mana regeneration.
+    type: Remove
+  - message: Changed Mana trance now is exclusive to elves and is an innate skill.
+    type: Tweak
+  - message: Changed Mana trance now has a heavy slowdown instead of breaking upon
+      moving Elf taxi is now possible.
+    type: Tweak
+  - message: Changed Guide book on elves to better reflect their current state.
+    type: Tweak
+  id: 8179
+  time: '2025-07-26T11:49:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1568
+- author: Kryyto
+  changes:
+  - message: Guard bells no longer change the threat level. But can be used by using/hitting
+      them instead.
+    type: Tweak
+  id: 8180
+  time: '2025-07-26T12:09:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1553
+- author: TheShuEd
+  changes:
+  - message: Lumera disabled
+    type: Remove
+  id: 8181
+  time: '2025-07-26T12:10:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1578
+- author: gogenych
+  changes:
+  - message: 'New tree type: Spruce.'
+    type: Add
+  - message: Logs, planks and walls made from spruce wood!
+    type: Add
+  id: 8182
+  time: '2025-07-26T12:24:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1539
+- author: TheShuEd
+  changes:
+  - message: Added rare crystals geodes in cave demiplanes
+    type: Add
+  - message: Added "multiple entry points" demiplane modifier. Your team has a chance
+      to be separated in different parts of the demiplane when entering it. (visible
+      during inspection of the demiplane)
+    type: Add
+  - message: Fixed a bug where the cores or the exits might not be generated in the
+      demiplanes.
+    type: Fix
+  id: 8183
+  time: '2025-07-27T13:45:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1583
+- author: SketchiiArtist
+  changes:
+  - message: Added wooden stools
+    type: Add
+  id: 8184
+  time: '2025-07-27T15:54:40.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1577
+- author: TheShuEd
+  changes:
+  - message: Added candelabras!
+    type: Add
+  - message: Reprite candles + Candles now burn endlessly
+    type: Tweak
+  id: 8185
+  time: '2025-07-27T15:54:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1585
+- author: TheShuEd
+  changes:
+  - message: New mushroom caves demiplane locatoin
+    type: Add
+  id: 8186
+  time: '2025-07-30T11:16:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1590
+- author: Nimfar11
+  changes:
+  - message: Adds a round table made of birch.
+    type: Add
+  - message: Repainting all birch structures. Repainting the floor made of lucene.
+    type: Tweak
+  id: 8187
+  time: '2025-07-30T11:19:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1591
+- author: TheShuEd
+  changes:
+  - message: Upstream sync moment
+    type: Add
+  id: 8188
+  time: '2025-07-30T13:02:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1558
+- author: TheShuEd
+  changes:
+  - message: Corpse decay has been disabled. Genetic damage no longer accumulates
+      on corpses.
+    type: Tweak
+  - message: Ressurection spell removed from the game.
+    type: Remove
+  - message: Healing ballade spell removed from the game.
+    type: Remove
+  - message: 3 basic magic spells can no longer heal people in critical or dead states.
+      Potions is only way now.
+    type: Tweak
+  - message: The speed at which damage is taken from suffocation has been reduced
+      by half (creatures can remain in critical condition for much longer before death).
+    type: Tweak
+  id: 8189
+  time: '2025-07-31T19:28:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1597
+- author: TheShuEd
+  changes:
+  - message: The sphere of light now returns the item to your hand instead of applying
+      a status effect. Bug fix, as the sphere of light had completely stopped glowing.
+    type: Tweak
+  - message: Roofs can now be deconstructed above walls.
+    type: Fix
+  - message: Fixed a bug with changing the shape of the key, which changed all subsequent
+      doors and keys.
+    type: Fix
+  id: 8190
+  time: '2025-07-31T20:44:45.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1599
+- author: TheShuEd
+  changes:
+  - message: Fixed barrels injections
+    type: Fix
+  - message: Demiplanes no longer check whether the path to the target is blocked
+      (crates no longer prevent teleportation).
+    type: Fix
+  - message: Vanilla tracks removed from Lobby
+    type: Fix
+  id: 8191
+  time: '2025-07-31T21:34:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1600
+- author: TheShuEd
+  changes:
+  - message: Added Air saturation T1 healing spell - allows you to treat suffocation
+      damage, even in people in critical condition.
+    type: Add
+  id: 8192
+  time: '2025-08-01T08:57:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1603
+- author: AnyTap
+  changes:
+  - message: Removed non-modular copper armour from game
+    type: Remove
+  id: 8193
+  time: '2025-08-01T08:59:05.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1571
+- author: TheShuEd
+  changes:
+  - message: Demoplans no longer bend over pools of blood and the organs of players
+      who died inside the demiplane, simply inflict an additional 111 Blunt damage
+      on them.
+    type: Tweak
+  - message: Skeleton equipment (and the skeletons themselves) no longer drop from
+      the demiplane when it is closed.
+    type: Fix
+  id: 8194
+  time: '2025-08-01T11:09:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1607
+- author: TheShuEd
+  changes:
+  - message: Demiplanes have been completely removed from the game. The demiplanes
+      link crystal now only serves as the end of the round.
+    type: Remove
+  - message: The space around cities on the game map is now procedurally generated.
+    type: Tweak
+  - message: In the space around cities, you can now find stable passages to more
+      difficult locations. In these locations, you can find passages that go even
+      deeper...
+    type: Add
+  - message: Venicialis Fort was covered in snow.
+    type: Tweak
+  id: 8195
+  time: '2025-08-04T10:35:55.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1594
+- author: PhantornRU
+  changes:
+  - message: leatherworking and craft backpacks
+    type: Add
+  - message: 3 types of backpacks and T0-T3 of backpacks
+    type: Add
+  - message: Added regular backpacks with wide slots.
+    type: Add
+  - message: Added satchels, more slots, but divided into compartments.
+    type: Add
+  - message: Added explorer backpacks, even more slots, but small compartments.
+    type: Add
+  - message: Hide and fur drop from animals.
+    type: Add
+  - message: Different types of skins, leather, fur.
+    type: Add
+  - message: Special backpacks for guards and villagers
+    type: Add
+  - message: T0 & T1 satchels, T0 backpack (sack) can be worn on the belt
+    type: Tweak
+  - message: Hides, fur and leather can be sold.
+    type: Tweak
+  - message: New butchers positions (hide)
+    type: Add
+  - message: Salt can be bought from the dwarven faction.
+    type: Add
+  - message: Leather can be crafted into straps
+    type: Tweak
+  - message: Iron ingots can be crafted into buckle
+    type: Tweak
+  id: 8196
+  time: '2025-08-04T22:51:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1378
+- author: TheShuEd
+  changes:
+  - message: Mobs can now only fall into chasms if they are pushed or deliberately
+      thrown in. Simply walking towards a chasm will no longer cause player to fall.
+    type: Tweak
+  id: 8197
+  time: '2025-08-05T10:01:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1458
+- author: PhantornRU
+  changes:
+  - message: Adding a bear skin drop.
+    type: Add
+  - message: Adding quiver and alchemy belt crafting
+    type: Add
+  - message: Adjusting the speed between satchels and backpacks.
+    type: Tweak
+  id: 8198
+  time: '2025-08-05T11:31:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1618
+- author: TheShuEd
+  changes:
+  - message: Crawling upstream sync is here
+    type: Add
+  id: 8199
+  time: '2025-08-06T09:52:51.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1613
+- author: TheShuEd
+  changes:
+  - message: The sphere of light is again applied as a status effect to the specified
+      entity.
+    type: Tweak
+  id: 8200
+  time: '2025-08-06T10:18:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1621
+- author: TheShuEd
+  changes:
+  - message: Fixed a bug where entities were duplicated during generation, which prevented
+      digging ores in mines and chopping down trees.
+    type: Fix
+  id: 8201
+  time: '2025-08-06T19:33:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1627
+- author: oldschoolotaku
+  changes:
+  - message: Added slowdown to the backpacks and satchels in hands
+    type: Tweak
+  id: 8202
+  time: '2025-08-06T22:18:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1622
+- author: KittyCat432
+  changes:
+  - message: Changed ice dagger now has its cooldown halved (5s now) and a cast time
+      of 0.5 seconds, along with having 20 hits till breaking (4 for throwing).
+    type: Tweak
+  - message: Changed ice arrow now has its cooldown halved (5s now) and a cast time
+      of 0.5 seconds.
+    type: Tweak
+  - message: Changed ice shard now does 6 cold and 2 pierce damage from 4 and 2.
+    type: Tweak
+  - message: Changed fire wave now does 2 heat damage per projectile from 3.
+    type: Tweak
+  id: 8203
+  time: '2025-08-06T22:22:46.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1632
+- author: oldschoolotaku
+  changes:
+  - message: Carcats can eat raw meat now
+    type: Tweak
+  id: 8204
+  time: '2025-08-06T22:23:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1625
+- author: oldschoolotaku
+  changes:
+  - message: Now soups can be sold when completing contracts
+    type: Fix
+  - message: Now soups sell less when completing contracts
+    type: Tweak
+  id: 8205
+  time: '2025-08-07T06:56:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1630
+- author: TheShuEd
+  changes:
+  - message: 'Sprint buffs: Stamina consumption reduced by half. The less stamina
+      you have, the slower you move, which is still the case, but sprinting is now
+      useful again.'
+    type: Tweak
+  - message: The web now ignites players upon contact if it is burning.
+    type: Fix
+  - message: Spells that deal direct damage (kicks, lightning strikes, Lumera beams)
+      now take into account the target's damage resistances.
+    type: Fix
+  id: 8206
+  time: '2025-08-07T11:50:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1636
+- author: TheShuEd
+  changes:
+  - message: Removed zombies around venicialis, removed hydras around Comoss. Also,
+      moved latejoin spawnpoints inside city wall.
+    type: Tweak
+  - message: Fixed deep water around city generation
+    type: Fix
+  id: 8207
+  time: '2025-08-07T20:36:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1639
+- author: Morb0
+  changes:
+  - message: Fixed health, mana, stamina bars size
+    type: Fix
+  id: 8208
+  time: '2025-08-07T20:57:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1637
+- author: Nimfar11
+  changes:
+  - message: Adds an artifact, Lurker's cape, that makes one invisible, but only if
+      standing still.
+    type: Add
+  id: 8209
+  time: '2025-08-07T21:12:36.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1455
+- author: Morb0
+  changes:
+  - message: Fixed mosquitos killing problems
+    type: Fix
+  id: 8210
+  time: '2025-08-08T09:35:21.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1635
+- author: TheShuEd
+  changes:
+  - message: The crystal connecting to the demiplanes has regained the ability to
+      display the map of the demiplanes.
+    type: Add
+  - message: 3 entrances to the demiplanes around the city have been removed, and
+      1 stable entrance to the demiplanes inside the city has been added
+    type: Tweak
+  id: 8211
+  time: '2025-08-08T14:37:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1640
+- author: TheShuEd
+  changes:
+  - message: The resurrection spell scroll can now be purchased in the store or selected
+      in the loadout.
+    type: Add
+  - message: "A new spell scroll is now available for purchase: \u201CPortal to the\
+      \ City.\u201D Opens a two-way portal to the city that lasts for one minute."
+    type: Add
+  id: 8212
+  time: '2025-08-08T19:42:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1642
+- author: TheShuEd
+  changes:
+  - message: Added support for the material aspect for spells!
+    type: Add
+  - message: Dirt wall spell now requires 2 dirt blocks to use.
+    type: Tweak
+  id: 8213
+  time: '2025-08-08T21:27:23.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1643
+- author: PhantornRU
+  changes:
+  - message: making crafting much easier. Crafting now requires hide instead of leather.
+    type: Tweak
+  - message: remove salt, leather and straps.
+    type: Remove
+  - message: Leather/Hide is now stackable.
+    type: Fix
+  - message: Speed has been nerfed.
+    type: Fix
+  - message: Heavy backpacks now have more significant armor values.
+    type: Tweak
+  - message: Satchels are good for speed, and backpacks are good for protection.
+    type: Tweak
+  id: 8214
+  time: '2025-08-09T10:21:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1638
+- author: creamybag
+  changes:
+  - message: Most wild flowers and mushrooms can now be worn in mask slots and on
+      the head.
+    type: Add
+  id: 8215
+  time: '2025-08-10T14:27:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1654

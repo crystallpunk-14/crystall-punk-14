@@ -19,9 +19,10 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
-            Shock: 15
+            Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -75
@@ -39,8 +40,9 @@
       sprite: _CP14/Actions/Spells/electromancy.rsi
       state: lightning_strike
   - type: TargetAction
-    range: 15
+    range: 5
   - type: EntityTargetAction
+    canTargetSelf: false
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 10
       castDelay: 2.0
@@ -83,12 +85,13 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:HealthChange
+        ignoreResistances: false
         damage:
           types:
             Shock: 5
       - !type:Jitter
       - !type:CP14StaminaChange
-        staminaDelta: -15
+        staminaDelta: -20
 
 - type: entity
   id: CP14RuneLightningStrike

@@ -97,7 +97,9 @@
       types:
         CP14ManaDepletion: -0.1
   - type: CP14SkillStorage
-    experienceMaxCap: 4
+    skillPoints:
+      Memory:
+        max: 4
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery

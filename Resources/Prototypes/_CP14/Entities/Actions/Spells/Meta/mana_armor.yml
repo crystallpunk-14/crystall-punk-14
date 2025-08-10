@@ -1,0 +1,36 @@
+- type: entity
+  id: CP14ActionSpellMagicArmor
+  parent: CP14ActionSpellBase
+  name: Magic Armor
+  description: You surround the target with a short-lived magical barrier that absorbs some of the damage it receives.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 15
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneManaTrance
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectManaGift
+    - !type:CP14SpellApplyStatusEffect
+      statusEffect: CP14StatusEffectMagicArmor
+      duration: 20
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/meta.rsi
+      state: magic_armor
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Item
+      - Anchorable
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 10
+      castDelay: 1.0
+      breakOnMove: false

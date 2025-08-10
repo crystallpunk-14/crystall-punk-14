@@ -30,7 +30,8 @@
       state: ice_dagger
   - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 10
+      cooldown: 5
+      castDelay: 0.5
       breakOnMove: false
 
 - type: entity
@@ -58,7 +59,7 @@
         Piercing: 5
         Cold: 3
     soundHit:
-      collection: MetalThud
+      path: /Audio/Weapons/bladeslice.ogg
     cPAnimationLength: 0.25
   - type: Clothing
     equipDelay: 0.25
@@ -119,13 +120,13 @@
   - type: CP14MeleeSelfDamage
     damageToSelf:
       types:
-        Blunt: 1 # 10 hits
+        Blunt: 1 # 20 hits
   - type: Damageable
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 20
       behaviors:
       - !type:PlaySoundBehavior
         sound:
