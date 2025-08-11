@@ -1,5 +1,7 @@
+using System.Linq;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Examine;
+using Content.Shared.Mobs;
 
 namespace Content.Shared._CP14.MagicSpell;
 
@@ -16,6 +18,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, ExaminedEvent>(OnSomaticExamined);
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, ExaminedEvent>(OnMaterialExamined);
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
+        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
 
     private void OnManaEffectExamined(Entity<CP14MagicEffectComponent> ent, ref ExaminedEvent args)
@@ -43,16 +46,29 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnSomaticExamined(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref ExaminedEvent args)
     {
-        args.PushMarkup("\n" + Loc.GetString("cp14-magic-somatic-aspect") + " " + ent.Comp.FreeHandRequired, 8);
+        args.PushMarkup(Loc.GetString("cp14-magic-somatic-aspect") + " " + ent.Comp.FreeHandRequired, 8);
     }
 
     private void OnMaterialExamined(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref ExaminedEvent args)
     {
         if (ent.Comp.Requirement is not null)
-            args.PushMarkup("\n" + Loc.GetString("cp14-magic-material-aspect") + " " + ent.Comp.Requirement.GetRequirementTitle(_proto));
+            args.PushMarkup(Loc.GetString("cp14-magic-material-aspect") + " " + ent.Comp.Requirement.GetRequirementTitle(_proto));
     }
     private void OnMusicExamined(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref ExaminedEvent args)
     {
-        args.PushMarkup("\n" + Loc.GetString("cp14-magic-music-aspect"));
+        args.PushMarkup(Loc.GetString("cp14-magic-music-aspect"));
+    }
+
+    private void OnMobStateExamined(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
+    {
+        var states = string.Join(", ",
+            ent.Comp.AllowedStates.Select(state => state switch
+        {
+            MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
+            MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
+            MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
+        }));
+
+        args.PushMarkup(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)));
     }
 }
