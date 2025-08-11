@@ -11,11 +11,11 @@
     layers:
     - state: sphere
       shader: unshaded
-      color: "#5096d488"
+      color: "#5096d4"
     - state: circle_increase
       sprite: _CP14/Effects/Magic/cast_impact.rsi
       shader: unshaded
-      color: "#74eaf222"
+      color: "#74eaf2"
   - type: PointLight
     radius: 2.5
     energy: 0.9
@@ -45,3 +45,25 @@
     radius: 5.0
     energy: 1
     color: "#efedff"
+
+- type: entity
+  id: CP14StatusEffectVuln
+  name: vulnerability
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: CP14Vuln
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    noRot: true
+    layers:
+    - state: particles_down
+      shader: unshaded
+      color: "#a81e33"
+  - type: PointLight
+    radius: 2.5
+    energy: 0.9
+    color: "#a81e33"
+  - type: CP14DamageModifierStatusEffect
+    globalDefence: 1.4
