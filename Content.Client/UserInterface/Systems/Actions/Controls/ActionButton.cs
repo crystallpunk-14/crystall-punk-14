@@ -208,7 +208,7 @@ public sealed class ActionButton : Control, IEntityControl
         //CP14
         desc.AddText("\n");
         //CP14 end
-        
+
         var ev = new ExaminedEvent(desc, Action.Value, _player.LocalEntity.Value, true, !desc.IsEmpty);
         _entities.EventBus.RaiseLocalEvent(Action.Value.Owner, ev);
 

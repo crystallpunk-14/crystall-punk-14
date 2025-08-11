@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
@@ -6,6 +7,7 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -152,7 +154,15 @@ public abstract partial class CP14SharedMagicSystem
 
         if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
         {
-            args.PushReason(Loc.GetString(ent.Comp.Popup));
+            var states = string.Join(", ",
+                ent.Comp.AllowedStates.Select(state => state switch
+                {
+                    MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
+                    MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
+                    MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
+                }));
+
+            args.PushReason(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)));
             args.Cancel();
         }
     }
