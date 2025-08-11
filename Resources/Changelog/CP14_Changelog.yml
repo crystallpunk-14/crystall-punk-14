@@ -1634,3 +1634,12 @@
   id: 8215
   time: '2025-08-10T14:27:12.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1654
+- author: oldschoolotaku
+  changes:
+  - message: Guide for cooking
+    type: Add
+  - message: A cookbook to the inkeeper's closet
+    type: Add
+  id: 8216
+  time: '2025-08-11T19:19:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1644
