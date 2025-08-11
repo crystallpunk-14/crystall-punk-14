@@ -50,6 +50,16 @@
     speedModifierThresholds:
       50: 0.8
       75: 0.5
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 6 damage a minute from base.yml.
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      types:
+        Poison: -0.1
+      groups:
+        Brute: -0.1
+        Burn: -0.1
   - type: Stamina
     critThreshold: 200
   - type: CombatMode
