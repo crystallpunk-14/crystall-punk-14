@@ -1,0 +1,107 @@
+- type: entity
+  id: CP14MobMonsterSpineguard
+  parent: CP14SimpleMobBase
+  name: spineguard
+  description: Makes its prey weaker letting other monsters do the kill.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        16
+      AggroVisionRadius: !type:Single
+        12
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: NPCUseActionOnTarget
+    actionId: CP14ActionVulnSpikes
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Monster/spineguard.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 350
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.8
+      75: 0.5
+  - type: Stamina
+    critThreshold: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 1
+        Piercing: 3
+        Structural: 3
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 2.5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: CP14FoodMeatMonster
+      amount: 3
+    - id: CP14FoodMeatPig
+      amount: 1
+      prob: 0.3
+    - id: CP14FoodMeatMonsterLeg
+      amount: 1
+      prob: 0.6
+    - id: CP14RuggedLeather1
+      amount: 1
+      prob: 0.75
+    - id: CP14Leather1
+      amount: 1
+      maxAmount: 3
+    - id: CP14ScrapLeather
+      amount: 1
+      maxAmount: 2
+      prob: 0.5
+    - id: CP14CheapFur
+      amount: 1
+      prob: 0.25
+  - type: Bloodstream
+    bloodMaxVolume: 200
+    bloodReagent: CP14BloodMonster
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: CP14MagicCasterSlowdown
+  - type: CP14MagicEnergyContainer
+  - type: Tag
+    tags:
+      - FootstepSound
+      - CP14Mosquito
