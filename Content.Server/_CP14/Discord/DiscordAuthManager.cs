@@ -270,9 +270,11 @@ public sealed class DiscordAuthManager
     private double GetAccountAge(string id)
     {
         // Please check https://discord.com/developers/docs/reference#convert-snowflake-to-datetime
+        var unixEpoch = 1420070400000;
+
         var intId = Convert.ToInt32(id);
         var snowflakeCreationDateBin = Convert.ToString(intId, 2).Substring(42);
-        var snowflakeCreationDateDecimal = Convert.ToInt32(snowflakeCreationDateBin) + 1420070400000;
+        var snowflakeCreationDateDecimal = Convert.ToInt32(snowflakeCreationDateBin) + unixEpoch;
         var accountCreationDate = DateTime.UnixEpoch.AddSeconds(snowflakeCreationDateDecimal);
         var accountAge = DateTime.Now.Subtract(accountCreationDate);
         return accountAge.TotalDays;
