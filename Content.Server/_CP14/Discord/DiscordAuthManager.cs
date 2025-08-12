@@ -246,7 +246,7 @@ public sealed class DiscordAuthManager
     {
         _sawmill.Debug($"Checking account age for {userId}");
 
-        var requestUrl = $"{_apiUrl}/api/users/@me";
+        var requestUrl = $"{_apiUrl}/api/users/@me?method=uid&id={userId}";
         _sawmill.Debug($"User request url:{requestUrl}");
 
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
