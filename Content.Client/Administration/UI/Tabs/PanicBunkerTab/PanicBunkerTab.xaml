@@ -27,12 +27,12 @@
         <cc:CommandButton Name="ShowReasonButton" Command="panicbunker_show_reason"
                           ToggleMode="True" Text="{Loc admin-ui-panic-bunker-show-reason}"
                           ToolTip="{Loc admin-ui-panic-bunker-show-reason-tooltip}" />
-        <BoxContainer Orientation="Horizontal" Margin="2">
+        <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc cp14-admin-ui-suspicious-warning-level-setting}" MinWidth="175" />
             <OptionButton Name="SuspiciousWarningLevel" HorizontalAlignment="Left" Margin="4 0"
                           ToolTip="{Loc cp14-admin-ui-suspicious-warning-level-setting-desc}" />
         </BoxContainer>
-        <BoxContainer Orientation="Vertical" Margin="0 10 0 0">
+        <BoxContainer Orientation="Vertical">
             <BoxContainer Orientation="Horizontal" Margin="2">
                 <Label Text="{Loc admin-ui-panic-bunker-min-account-age}" MinWidth="175" />
                 <LineEdit Name="MinAccountAge" MinWidth="50" Margin="0 0 5 0" />
