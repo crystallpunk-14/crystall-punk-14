@@ -166,11 +166,20 @@
 
 - type: entity
   parent: CP14SpawnMagicIceTrap
-  id: CP14SpawnMagicIceTrapDemiplan
-  suffix: Invisible. Magical vision
+  id: CP14SpawnMagicIceTrapInvisible
+  suffix: Invisible. Permanent
   components:
   - type: Visibility
     layer: 16
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
+
+- type: entity
+  parent: CP14SpawnMagicIceTrap
+  id: CP14SpawnMagicIceTrapPermanent
+  suffix: Permanent
+  components:
   - type: CP14MagicEnergyDraw
     energy: 0
     delay: 0
