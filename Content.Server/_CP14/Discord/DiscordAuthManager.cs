@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Shared._CP14.Discord;
 using Content.Shared.CCVar;
-using NetCord;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
