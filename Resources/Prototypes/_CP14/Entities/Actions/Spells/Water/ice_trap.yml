@@ -97,7 +97,7 @@
     energy: 42
     unsafeSupport: true
   - type: CP14MagicEnergyDraw
-    energy: -1
+    energy: -0.5
     delay: 5
   - type: CP14MagicUnsafeDamage
   - type: Destructible
@@ -171,3 +171,6 @@
   components:
   - type: Visibility
     layer: 16
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
