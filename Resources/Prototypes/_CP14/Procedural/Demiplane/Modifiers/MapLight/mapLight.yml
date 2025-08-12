@@ -2,7 +2,7 @@
   id: MapLightDarkness
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 2
   categories:
     MapLight: 1
@@ -15,7 +15,7 @@
   id: MapLightDarkRed
   levels:
     min: 3
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -27,7 +27,7 @@
   id: MapLightDarkPurple
   levels:
     min: 1
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -39,7 +39,7 @@
   id: MapLightDarkGreen
   levels:
     min: 1
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -51,7 +51,7 @@
   id: MapLightDarkNight
   levels:
     min: 1
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   name: cp14-modifier-night
@@ -65,7 +65,7 @@
   id: MapLightCycleDefault
   levels:
     min: 0
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   generationWeight: 2
@@ -78,7 +78,7 @@
   id: MapLightCycleCold
   levels:
     min: 0
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   generationWeight: 2
@@ -93,7 +93,7 @@
   id: MapLightCycleHot
   levels:
     min: 0
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   requiredTags:
@@ -107,7 +107,7 @@
   id: MapLightCycleHot2
   levels:
     min: 0
-    max: 5
+    max: 10
   categories:
     MapLight: 1
   requiredTags:

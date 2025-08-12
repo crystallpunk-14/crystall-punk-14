@@ -47,6 +47,19 @@
     - CP14FitInMortar
     - CP14AlchemicalHerbals
     - CP14BloodFlower
+  - type: Clothing 
+    sprite: _CP14/Objects/Flora/Wild/red_rose.rsi
+    slots:
+    - mask
+    - head 
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+
 
 - type: entity
   id: CP14AgaricMushroom
@@ -170,6 +183,17 @@
     entries:
     - temperatureRange: 400, 500
       transformTo: CP14GroundSage
+  - type: Clothing 
+    sprite: _CP14/Objects/Flora/Wild/wild_sage.rsi
+    slots:
+    - head 
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
 
 
 - type: entity
@@ -243,6 +267,17 @@
     tags:
     - CP14FitInMortar
     - CP14AlchemicalHerbals
+  - type: Clothing 
+    sprite: _CP14/Objects/Flora/Wild/blue_amanita.rsi
+    slots:
+    - head 
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
 
 - type: entity
   id: CP14Dayflin
@@ -277,6 +312,17 @@
     - CP14FitInMortar
     - CP14AlchemicalHerbals
     - CP14Dayflin
+  - type: Clothing 
+    sprite: _CP14/Objects/Flora/Wild/yellow_dayflin.rsi
+    slots:
+    - head 
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
 
 - type: entity
   id: CP14AirLily

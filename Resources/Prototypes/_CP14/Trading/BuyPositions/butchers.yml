@@ -171,37 +171,36 @@
 # Hide
 
 - type: cp14TradingPosition
-  id: CP14ThinAnimalHide
+  id: CP14ThinLeather
   faction: Butchers
   reputationLevel: 1
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: thin_hide
+    state: thin_hide1
   service: !type:CP14BuyItemsService
-    product: CP14ThinAnimalHide
-    count: 1
+    product: CP14ThinLeather1
 
 - type: cp14TradingPosition
-  id: CP14AnimalHide
+  id: CP14Leather
   faction: Butchers
   reputationLevel: 2
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: hide
+    state: hide1
   service: !type:CP14BuyItemsService
-    product: CP14AnimalHide
+    product: CP14Leather1
     count: 1
 
 - type: cp14TradingPosition
-  id: CP14RuggedAnimalHide
+  id: CP14RuggedLeather
   faction: Butchers
   reputationLevel: 3
   uiPosition: 7
   icon:
     sprite: _CP14/Objects/Ingredients/hide.rsi
-    state: rugged_hide
+    state: rugged_hide1
   service: !type:CP14BuyItemsService
-    product: CP14RuggedAnimalHide
+    product: CP14RuggedLeather1
     count: 1

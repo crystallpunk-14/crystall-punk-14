@@ -1,5 +1,8 @@
 - type: cp14Location
   id: ComossIsland
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: caves
   locationConfig: CP14ComossIsland
   generationProb: 0 #Special location for map only
   tags:

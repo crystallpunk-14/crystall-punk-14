@@ -1578,3 +1578,59 @@
   id: 8210
   time: '2025-08-08T09:35:21.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1635
+- author: TheShuEd
+  changes:
+  - message: The crystal connecting to the demiplanes has regained the ability to
+      display the map of the demiplanes.
+    type: Add
+  - message: 3 entrances to the demiplanes around the city have been removed, and
+      1 stable entrance to the demiplanes inside the city has been added
+    type: Tweak
+  id: 8211
+  time: '2025-08-08T14:37:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1640
+- author: TheShuEd
+  changes:
+  - message: The resurrection spell scroll can now be purchased in the store or selected
+      in the loadout.
+    type: Add
+  - message: "A new spell scroll is now available for purchase: \u201CPortal to the\
+      \ City.\u201D Opens a two-way portal to the city that lasts for one minute."
+    type: Add
+  id: 8212
+  time: '2025-08-08T19:42:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1642
+- author: TheShuEd
+  changes:
+  - message: Added support for the material aspect for spells!
+    type: Add
+  - message: Dirt wall spell now requires 2 dirt blocks to use.
+    type: Tweak
+  id: 8213
+  time: '2025-08-08T21:27:23.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1643
+- author: PhantornRU
+  changes:
+  - message: making crafting much easier. Crafting now requires hide instead of leather.
+    type: Tweak
+  - message: remove salt, leather and straps.
+    type: Remove
+  - message: Leather/Hide is now stackable.
+    type: Fix
+  - message: Speed has been nerfed.
+    type: Fix
+  - message: Heavy backpacks now have more significant armor values.
+    type: Tweak
+  - message: Satchels are good for speed, and backpacks are good for protection.
+    type: Tweak
+  id: 8214
+  time: '2025-08-09T10:21:26.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1638
+- author: creamybag
+  changes:
+  - message: Most wild flowers and mushrooms can now be worn in mask slots and on
+      the head.
+    type: Add
+  id: 8215
+  time: '2025-08-10T14:27:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1654

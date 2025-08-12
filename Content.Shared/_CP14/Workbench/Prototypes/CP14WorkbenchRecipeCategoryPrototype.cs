@@ -15,4 +15,7 @@ public sealed class CP14WorkbenchRecipeCategoryPrototype : IPrototype
 
     [DataField(required: true)]
     public LocId Name;
+
+    [DataField]
+    public int Priority = 0; // In descending order. More means it will be first.
 }

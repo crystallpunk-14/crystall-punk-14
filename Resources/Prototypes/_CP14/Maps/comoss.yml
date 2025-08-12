@@ -52,7 +52,6 @@
         - type: CP14StationProceduralLocation
           location: ComossIsland
           modifiers:
-          - DemiplaneArcTriple
           - RaidSpawners
           - EnemyFlem
           - MonsterMosquito

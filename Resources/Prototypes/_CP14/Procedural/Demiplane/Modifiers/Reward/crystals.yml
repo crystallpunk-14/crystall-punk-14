@@ -16,7 +16,7 @@
   id: CP14CrystalQuartzEarth
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneUnderground
@@ -33,7 +33,7 @@
   id: CP14CrystalQuartzFire
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneHot
@@ -50,7 +50,7 @@
   id: CP14CrystalQuartzWater
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneWater
@@ -67,7 +67,7 @@
   id: CP14CrystalQuartzAir
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   requiredTags:
   - CP14DemiplaneOpenSky
@@ -84,7 +84,7 @@
   id: CP14CrystalQuartzOrder
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.15
@@ -99,7 +99,7 @@
   id: CP14CrystalQuartzChaos
   levels:
     min: 2
-    max: 5
+    max: 10
   generationWeight: 0.1
   categories:
     Reward: 0.15

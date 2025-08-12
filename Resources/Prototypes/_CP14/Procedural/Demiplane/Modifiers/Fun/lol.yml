@@ -2,7 +2,7 @@
   id: RoyalPumpkin
   levels:
     min: 0
-    max: 5
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:
@@ -25,7 +25,7 @@
   id: LucenTree
   levels:
     min: 0
-    max: 5
+    max: 10
   generationWeight: 0.1
   generationProb: 0.1
   categories:

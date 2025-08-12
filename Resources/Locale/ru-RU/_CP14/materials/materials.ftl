@@ -13,3 +13,4 @@ cp14-material-coal = каменный уголь
 cp14-material-lucens-planks = люценсовые доски
 cp14-material-flora = растительный материал
 cp14-material-ash = пепел
+cp14-material-leather = кожа

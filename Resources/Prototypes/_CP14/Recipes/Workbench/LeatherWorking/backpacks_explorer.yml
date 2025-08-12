@@ -2,65 +2,64 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT0
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 4
 #   craftTime: 4
 #   requirements:
 #   - !type:StackResource
 #     stack: CP14Cloth
-#     count: 6 # 60u CP14Cloth ~~~ CP14Cloth (10u)
-#   - !type:StackResource
-#     stack: CP14String
-#     count: 4 # 20u CP14Cloth ~~~ CP14Cloth (5u)
-#   - !type:ProtoIdResource
-#     protoId: CP14IronBuckle
-#     count: 8 # 16u CP14Iron ~~~ 1/5 iron bar (10u)
+#     count: 3 # 30u CP14Cloth ~~~ CP14Cloth (10u)
 #   result: CP14ClothingBackExplorerBackpackT0
 
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT1
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 3
 #   craftTime: 4
 #   requirements:
-#   - !type:ProtoIdResource
-#     protoId: CP14ThinLeather
-#     count: 6 # 30u CP14Leather ~~~ CP14ThinLeather (5u)
-#   - !type:ProtoIdResource
-#     protoId: CP14LeatherStrap
-#     count: 2 # 6u CP14Leather ~~~ CP14LeatherStrap (3u)
+#   - !type:StackResource
+#     stack: CP14ThinLeather
+#     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
 #   - !type:ProtoIdResource
 #     protoId: CP14IronBuckle
-#     count: 10 # 20u CP14Iron ~~~ 1/5 iron bar (10u)
+#     count: 8 # 16u CP14Iron ~~~ 1/5 iron bar (10u)
 #   result: CP14ClothingBackExplorerBackpackT1
 
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT2
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 2
 #   craftTime: 6
 #   requirements:
-#   - !type:ProtoIdResource
-#     protoId: CP14Leather
-#     count: 6 # 60u CP14Leather ~~~ CP14Leather (10u)
-#   - !type:ProtoIdResource
-#     protoId: CP14LeatherStrap
-#     count: 4 # 12u CP14Leather ~~~ CP14LeatherStrap (3u)
+#   - !type:StackResource
+#     stack: CP14ThinLeather
+#     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
+#   - !type:StackResource
+#     stack: CP14Leather
+#     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
 #   - !type:ProtoIdResource
 #     protoId: CP14IronBuckle
-#     count: 12 # 24u CP14Iron ~~~ 1/5 iron bar (10u)
+#     count: 10 # 20u CP14Iron ~~~ 1/5 iron bar (10u)
 #   result: CP14ClothingBackExplorerBackpackT2
 
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT3
 #   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 1
 #   craftTime: 10
 #   requirements:
-#   - !type:ProtoIdResource
-#     protoId: CP14RuggedLeather
-#     count: 6 # 150u CP14Leather ~~~ CP14RuggedLeather (25u)
-#   - !type:ProtoIdResource
-#     protoId: CP14RuggedStrap
-#     count: 4 # 24u CP14Leather ~~~ CP14RuggedStrap (6u)
+#   - !type:StackResource
+#     stack: CP14Leather
+#     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
+#   - !type:StackResource
+#     stack: CP14RuggedLeather
+#     count: 2 # 50u CP14Leather ~~~ CP14RuggedLeather (25u)
 #   - !type:ProtoIdResource
 #     protoId: CP14IronBuckle
-#     count: 12 # 24u CP14Iron ~~~ 1/5 iron bar (10u)
+#     count: 10 # 20u CP14Iron ~~~ 1/5 iron bar (10u)
 #   result: CP14ClothingBackExplorerBackpackT3
 
 # # ======================================
@@ -71,63 +70,55 @@
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT1_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 3
 #   craftTime: 6
 #   requirements:
 #   - !type:ProtoIdResource
-#     protoId: CP14ClothingBackExplorerBackpackT0  # 60u cloth + 20u string = 80u (8u leather equiv)
+#     protoId: CP14ClothingBackExplorerBackpackT0  # 60u cloth (6u)
+#     count: 1
+#   - !type:StackResource
+#     stack: CP14ThinLeather                 # +15u CP14Leather (3x5u)
 #     count: 1
 #   - !type:ProtoIdResource
-#     protoId: CP14ThinLeather                 # +15u CP14Leather (3x5u)
-#     count: 3
-#   - !type:ProtoIdResource
-#     protoId: CP14IronBuckle                  # +16u CP14Iron (8x2u)
-#     count: 8
+#     protoId: CP14IronBuckle
+#     count: 8 # 16u CP14Iron ~~~ 1/5 iron bar (10u)
 #   result: CP14ClothingBackExplorerBackpackT1
-#   # Leather Logic:
-#   # T0 provides 3 leather, needs 6 total (3 new thin = 1.5 normal)
-#   # Net 4.5/6 leather (75%) since buckles are main cost
-#   # Total Leather: 8u + 15u = 23u vs original 30u
+#   # Total Leather: 60u (cloth) + 15u = 75u
 
 # # Explorer T2 Upgrade (Leather Accumulation)
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT2_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 2
 #   craftTime: 8
 #   requirements:
 #   - !type:ProtoIdResource
-#     protoId: CP14ClothingBackExplorerBackpackT1  # 30u + 6u = 36u
+#     protoId: CP14ClothingBackExplorerBackpackT1  # 15u (thin)
 #     count: 1
-#   - !type:ProtoIdResource
-#     protoId: CP14Leather                     # +30u CP14Leather (3x10u)
+#   - !type:StackResource
+#     stack: CP14Leather                     # +30u CP14Leather (3x10u)
 #     count: 3
 #   - !type:ProtoIdResource
-#     protoId: CP14IronBuckle                  # +20u CP14Iron (10x2u)
-#     count: 10
+#     protoId: CP14IronBuckle
+#     count: 2 # 4u CP14Iron ~~~ 1/5 iron bar (10u)
 #   result: CP14ClothingBackExplorerBackpackT2
-#   # Progression:
-#   # T1 provides 4.5/6 leather (75%)
-#   # T2 adds 3/6 (50%) for total 7.5/12 (62.5%)
-#   # Buckles reduced by 16% to compensate
-#   # Total Leather: 36u + 30u = 66u vs original 60u
+#   # Total Leather: 15u + 30u = 45u
 
 # # Explorer T3 Upgrade (Rugged Premium)
 # - type: CP14Recipe
 #   id: CP14ClothingBackExplorerBackpackT3_Upgrade
 #   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 1
 #   craftTime: 12
 #   requirements:
 #   - !type:ProtoIdResource
-#     protoId: CP14ClothingBackExplorerBackpackT2  # 60u + 12u = 72u (36u rugged equiv)
+#     protoId: CP14ClothingBackExplorerBackpackT2  # 15u + 30u = 45u
 #     count: 1
-#   - !type:ProtoIdResource
-#     protoId: CP14RuggedLeather               # +75u CP14Leather (3x25u)
-#     count: 3
-#   - !type:ProtoIdResource
-#     protoId: CP14IronBuckle                  # +20u CP14Iron (10x2u)
-#     count: 10
+#   - !type:StackResource
+#     stack: CP14RuggedLeather               # +50u CP14Leather (2x25u)
+#     count: 2
 #   result: CP14ClothingBackExplorerBackpackT3
-#   # Final Balance:
-#   # T2's 7.5 normal = 3.75 rugged
-#   # Add 3 new rugged = 6.75 total vs original 6
-#   # Slight overpayment compensates for buckle savings
-#   # Total Leather: 72u + 75u = 147u (73.5u rugged equiv) vs original 150u
+#   # Total Leather: 45u + 50u = 95u
