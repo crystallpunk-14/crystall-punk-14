@@ -44,3 +44,24 @@
     sprite: _CP14/Effects/Magic/cast_impact.rsi
     noRot: true
 
+- type: entity
+  id: CP14BaseMagicTrap
+  name: magic trap
+  description: Manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: Transform
+    anchored: false
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: CP14Spectral
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    noRot: true
+    drawDepth: FloorTiles
+    sprite: _CP14/Effects/Magic/magic_trap.rsi
+  - type: PointLight
+    radius: 1
+    energy: 2.5
+    netsync: false
