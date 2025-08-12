@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Shared._CP14.Discord;
 using Content.Shared.CCVar;
+using NetCord;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -137,6 +138,7 @@ public sealed class DiscordAuthManager
         var isWhitelisted = await _db.GetWhitelistStatusAsync(userId);
         if (isWhitelisted)
         {
+            _sawmill.Debug($"{userId} is  whitelisted, Verified");
             return new AuthData { Verified = true };
         }
 
@@ -150,6 +152,7 @@ public sealed class DiscordAuthManager
         {
             if (_blockedGuilds.Contains(guild.Id))
             {
+                _sawmill.Debug($"{userId} exist in blocked guild {guild.Id}, Suspicious");
                 isSuspicious = true;
                 break;
             }
@@ -170,6 +173,7 @@ public sealed class DiscordAuthManager
         var accountAge = GetAccountAge(user.Id);
         if (accountAge < 45)
         {
+            _sawmill.Debug($"{userId} have account age lower than 45 days, Suspicious");
             isSuspicious = true;
         }
 
@@ -190,14 +194,15 @@ public sealed class DiscordAuthManager
                             errorMessage = _panicBunkerCustomReason;
                         }
                     }
-
+                    _sawmill.Debug($"{userId} is suspicious, warning level medium and panic bunker enabled, Not Verified");
                     return new AuthData { Verified = false, ErrorMessage = errorMessage };
                 }
-
+                _sawmill.Debug($"{userId} is suspicious, warning level medium but panic bunker disabled, Verified");
                 break;
             }
             case "high":
             {
+                _sawmill.Debug($"{userId} is suspicious and warning level high, Not Verified");
                 return new AuthData
                 {
                     Verified = false,

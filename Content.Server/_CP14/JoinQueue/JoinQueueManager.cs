@@ -173,7 +173,7 @@ public sealed class JoinQueueManager
     {
         Timer.Spawn(0, () => _playerManager.JoinGame(s));
         // Suspicious account warning
-        if (_suspiciousAccountWarningLevel != "disabled")
+        if (_suspiciousAccountWarningLevel.ToLower() != "disabled")
         {
             _chatManager.SendAdminAnnouncement(Loc.GetString("cp14-suspicious-player-join-message", ("name", s.Name)));
         }
