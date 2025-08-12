@@ -1634,3 +1634,23 @@
   id: 8215
   time: '2025-08-10T14:27:12.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1654
+- author: oldschoolotaku
+  changes:
+  - message: Guide for cooking
+    type: Add
+  - message: A cookbook to the inkeeper's closet
+    type: Add
+  id: 8216
+  time: '2025-08-11T19:19:32.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1644
+- author: TheShuEd
+  changes:
+  - message: Spells now indicate if they have limited effects on certain creature
+      types (e.g., healing only living creatures).
+    type: Add
+  - message: The skill menu now displays detailed information about spells in advance,
+      including restrictions.
+    type: Add
+  id: 8217
+  time: '2025-08-11T20:46:28.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1661
