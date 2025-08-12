@@ -178,7 +178,7 @@ public sealed class DiscordAuthManager
         }
 
         // Fastest way to block user is just not verify it
-        switch (_suspiciousAccountsWarningLevel)
+        switch (_suspiciousAccountsWarningLevel.ToLower())
         {
             case "medium":
             {
