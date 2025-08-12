@@ -1,0 +1,41 @@
+- type: cp14LocationModifier
+  id: IceTrap
+  levels:
+    min: 3
+    max: 10
+  categories:
+    Danger: 0.1
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14SpawnMagicIceTrap
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14LocationModifier
+  id: FireTrap
+  levels:
+    min: 3
+    max: 10
+  categories:
+    Danger: 0.1
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14SpawnMagicFireTrap
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: cp14LocationModifier
+  id: ElectricTrap
+  levels:
+    min: 2
+    max: 10
+  categories:
+    Danger: 0.1
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14SpawnMagicElectricTrap
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

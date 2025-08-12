@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     sprite: _CP14/Actions/Spells/earth.rsi
-    state: earth_wall
+    state: earth_wall #TODO
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.9
   - type: CP14MagicEffectManaCost
