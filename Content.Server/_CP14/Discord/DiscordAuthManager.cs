@@ -228,8 +228,8 @@ public sealed class DiscordAuthManager
         _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
         if (!response.IsSuccessStatusCode)
         {
-            _sawmill.Debug($"Player {userId} guilds check failed: {!response.IsSuccessStatusCode}");
-            return new DiscordGuildsResponse { ErrorMessage = $"Unexpected error: {!response.IsSuccessStatusCode}" };
+            _sawmill.Debug($"Player {userId} guilds check failed: {(int)response.StatusCode}");
+            return new DiscordGuildsResponse { ErrorMessage = $"Unexpected error: {(int)response.StatusCode}" };
         }
 
         var guilds = await response.Content.ReadFromJsonAsync<DiscordGuildsResponse>(cancel);
@@ -246,7 +246,7 @@ public sealed class DiscordAuthManager
     {
         _sawmill.Debug($"Checking account age for {userId}");
 
-        var requestUrl = $"{_apiUrl}/api/users/@me?method=uid&id={userId}";
+        var requestUrl = $"{_apiUrl}/api/identify?method=uid&id={userId}";
         _sawmill.Debug($"User request url:{requestUrl}");
 
         var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
@@ -257,8 +257,8 @@ public sealed class DiscordAuthManager
         _sawmill.Debug($"(int) response.StatusCode: {(int)response.StatusCode}");
         if (!response.IsSuccessStatusCode)
         {
-            _sawmill.Debug($"Player {userId} user age check failed: {!response.IsSuccessStatusCode}");
-            return new DiscordUserResponse { ErrorMessage = $"Unexpected error: {!response.IsSuccessStatusCode}" };
+            _sawmill.Debug($"Player {userId} user age check failed: {(int)response.StatusCode}");
+            return new DiscordUserResponse { ErrorMessage = $"Unexpected error: {(int)response.StatusCode}" };
         }
 
         var user = await response.Content.ReadFromJsonAsync<DiscordUserResponse>(cancel);
