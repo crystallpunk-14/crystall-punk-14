@@ -44,7 +44,6 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/ice_block.rsi
     state: full
-    color: "#5eabeb"
   - type: TriggerOnCollide
     fixtureID: fix1
   - type: Clickable
