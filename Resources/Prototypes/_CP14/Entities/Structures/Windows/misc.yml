@@ -36,6 +36,7 @@
   id: CP14WindowMagicIceBlock
   name: magic ice block
   description: Ice created by magic with a distinct purple hue.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     drawdepth: Mobs
