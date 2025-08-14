@@ -137,7 +137,7 @@
     tags:
       - HideContextMenu
   - type: CP14AreaEntityEffect
-    range: 2
+    range: 1
     effects:
     - !type:CP14SpellApplyEntityEffect
       effects:
@@ -151,8 +151,11 @@
         sprintSpeedModifier: 0.0
         statusLifetime: 3
       - !type:AdjustTemperature
-        amount: -40000
+        amount: -50000
       - !type:ExtinguishReaction
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14WindowMagicIceBlock
   - type: TriggerOnSpawn
 
 - type: entity

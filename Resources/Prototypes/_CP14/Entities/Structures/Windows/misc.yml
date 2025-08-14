@@ -32,3 +32,63 @@
       params:
         variation: 0.03
 
+- type: entity
+  id: CP14WindowMagicIceBlock
+  name: magic ice block
+  description: Ice created by magic with a distinct purple hue.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Windows/ice_block.rsi
+    color: "#5eabeb"
+  - type: Icon
+    sprite: _CP14/Structures/Windows/ice_block.rsi
+    state: full
+    color: "#5eabeb"
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.1
+    sprintSpeedModifier: 0.1
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 2
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 2
+  - type: DamageContacts
+    damage:
+      types:
+        Cold: 1
