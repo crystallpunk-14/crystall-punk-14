@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.MagicSpell.Spells;
 public sealed partial class CP14SpellSuckBlood : CP14SpellEffect
 {
     [DataField]
-    public FixedPoint2 SuckAmount = 25;
+    public FixedPoint2 SuckAmount = 10;
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
         if (args.Target is null)

@@ -408,7 +408,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     /// <summary>
     /// Removes memory points. If a character has accumulated skills exceeding the new memory limit, random skills will be removed.
     /// </summary>
-    public void RemoveMemoryPoints(EntityUid target,
+    public void RemoveSkillPoints(EntityUid target,
         ProtoId<CP14SkillPointPrototype> type,
         FixedPoint2 points,
         bool silent = false,

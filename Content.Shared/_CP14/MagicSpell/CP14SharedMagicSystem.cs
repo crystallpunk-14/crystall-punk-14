@@ -58,8 +58,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14StartCastMagicEffectEvent>(OnStartCast);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14EndCastMagicEffectEvent>(OnEndCast);
-
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
     }
 
     private void OnStartCast(Entity<CP14MagicEffectComponent> ent, ref CP14StartCastMagicEffectEvent args)
@@ -181,13 +179,5 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
 
         return manaCost;
-    }
-
-    private void OnStaminaConsume(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
-    {
-        if (args.Performer is null)
-            return;
-
-        _stamina.TakeStaminaDamage(args.Performer.Value, ent.Comp.Stamina, visual: false);
     }
 }

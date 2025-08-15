@@ -28,7 +28,7 @@ public sealed partial class CP14SpellVampireGatherEssence : CP14SpellEffect
     {
         DamageDict = new()
         {
-            { "Radiation", 40 },
+            { "Radiation", 30 },
         },
     };
 
@@ -46,7 +46,7 @@ public sealed partial class CP14SpellVampireGatherEssence : CP14SpellEffect
         if (entManager.HasComponent<CP14VampireComponent>(args.Target.Value))
             return;
 
-        if (entManager.TryGetComponent<MobStateComponent>(args.Target.Value, out var mobState) && mobState.CurrentState == MobState.Alive)
+        if (entManager.TryGetComponent<MobStateComponent>(args.Target.Value, out var mobState) && mobState.CurrentState != MobState.Alive)
             return;
 
         if (entManager.TryGetComponent<SSDIndicatorComponent>(args.Target.Value, out var ssd) && ssd.IsSSD)

@@ -1,8 +1,7 @@
-
 - type: cp14Skill
-  id: Bite_Night
-  skillUiPosition: 0, 7
-  learnCost: 0
+  id: Bite
+  skillUiPosition: 0, 6
+  learnCost: 0.5
   tree: NightChildren
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -10,3 +9,15 @@
   effects:
   - !type:AddAction
     action: CP14ActionVampireBite
+
+- type: cp14Skill
+  id: BloodEssenceCreation
+  skillUiPosition: 0, 8
+  learnCost: 0
+  tree: NightChildren
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: essence_create
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellBloodEssenceCreation

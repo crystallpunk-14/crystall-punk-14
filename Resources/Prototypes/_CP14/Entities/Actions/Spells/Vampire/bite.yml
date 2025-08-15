@@ -21,6 +21,7 @@
       - !type:Jitter
     effects:
     - !type:CP14SpellSuckBlood
+      suckAmount: 10
     - !type:CP14SpellVampireGatherEssence
     - !type:CP14SpellSpawnEntityOnUser
       clientside: true

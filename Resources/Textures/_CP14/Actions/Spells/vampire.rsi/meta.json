@@ -18,6 +18,9 @@
     },
     {
       "name": "toggle"
+    },
+    {
+      "name": "essence_create"
     }
   ]
 }

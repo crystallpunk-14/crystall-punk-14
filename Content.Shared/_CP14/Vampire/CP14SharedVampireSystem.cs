@@ -8,6 +8,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -23,6 +24,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -39,6 +41,12 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         SubscribeLocalEvent<CP14VampireVisualsComponent, ExaminedEvent>(OnVampireExamine);
 
         SubscribeLocalEvent<CP14MagicEffectVampireComponent, CP14CastMagicEffectAttemptEvent>(OnVampireCastAttempt);
+        SubscribeLocalEvent<CP14MagicEffectVampireComponent, ExaminedEvent>(OnVampireCastExamine);
+    }
+
+    private void OnVampireCastExamine(Entity<CP14MagicEffectVampireComponent> ent, ref ExaminedEvent args)
+    {
+        args.PushMarkup($"{Loc.GetString("cp14-magic-spell-need-vampire-valid")}", priority: 10);
     }
 
     private void OnVampireCastAttempt(Entity<CP14MagicEffectVampireComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
@@ -70,6 +78,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
 
         //Skill tree
         _skill.AddSkillTree(ent, ent.Comp.SkillTreeProto);
+        _skill.AddSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount);
     }
 
     private void OnVampireRemove(Entity<CP14VampireComponent> ent, ref ComponentRemove args)
@@ -99,6 +108,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
                     _skill.TryRemoveSkill(ent, skill);
             }
         }
+        _skill.RemoveSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount);
     }
 
     private void OnToggleVisuals(Entity<CP14VampireComponent> ent, ref CP14ToggleVampireVisualsAction args)
@@ -106,11 +116,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         if (_timing.IsFirstTimePredicted)
             _jitter.DoJitter(ent, ent.Comp.ToggleVisualsTime, true);
 
-        var doAfterArgs = new DoAfterArgs(EntityManager,
-            ent,
-            ent.Comp.ToggleVisualsTime,
-            new CP14VampireToggleVisualsDoAfter(),
-            ent)
+        var doAfterArgs = new DoAfterArgs(EntityManager, ent, ent.Comp.ToggleVisualsTime, new CP14VampireToggleVisualsDoAfter(), ent)
         {
             Hidden = true,
         };

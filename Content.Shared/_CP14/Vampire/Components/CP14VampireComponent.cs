@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -18,6 +19,12 @@ public sealed partial class CP14VampireComponent : Component
 
     [DataField]
     public ProtoId<MetabolizerTypePrototype> MetabolizerType = "CP14Vampire";
+
+    [DataField]
+    public ProtoId<CP14SkillPointPrototype> SkillPointProto = "Blood";
+
+    [DataField]
+    public FixedPoint2 SkillPointCount = 3f;
 
     [DataField]
     public TimeSpan ToggleVisualsTime = TimeSpan.FromSeconds(2f);
