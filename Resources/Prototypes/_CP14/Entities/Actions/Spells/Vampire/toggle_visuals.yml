@@ -1,0 +1,13 @@
+- type: entity
+  id: CP14ActionVampireToggleVisuals
+  name: Vampiric nature
+  description: You reveal or hide your vampire nature. When you are in your revealed form, you can use more powerful abilities, but you suffer from sunlight.
+  components:
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: toggle
+    itemIconStyle: BigAction
+    priority: -8
+  - type: InstantAction
+    event: !type:CP14ToggleVampireVisualsAction

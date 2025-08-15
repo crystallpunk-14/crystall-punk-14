@@ -20,12 +20,8 @@
       - CP14MindRoleVampire
       components:
       - type: CP14Vampire
-      - type: CP14SpellStorage
-        grantAccessToSelf: true
-        spells:
-        - CP14ActionVampireBite
-        - CP14ActionSpellVampireHypnosis
-        - CP14ActionSpellVampireBloodStep
+        actionsProto:
+        - CP14ActionVampireToggleVisuals
       - type: Hunger
         baseDecayRate: 0.07
         starvationDamage:
@@ -47,5 +43,5 @@
       briefing:
         text: cp14-roles-antag-vampire-briefing
         color: "#630f24"
-        sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
+        #sound: "/Audio/_CP14/Ambience/Antag/bandit_start.ogg"
 
