@@ -5,6 +5,7 @@ using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
 using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Vampire;
 
@@ -14,6 +15,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -59,7 +61,9 @@ public abstract class CP14SharedVampireSystem : EntitySystem
 
     private void OnToggleVisuals(Entity<CP14VampireComponent> ent, ref CP14ToggleVampireVisualsAction args)
     {
-        _jitter.DoJitter(ent, ent.Comp.ToggleVisualsTime, true);
+        if (_timing.IsFirstTimePredicted)
+            _jitter.DoJitter(ent, ent.Comp.ToggleVisualsTime, true);
+
         var doAfterArgs = new DoAfterArgs(EntityManager,
             ent,
             ent.Comp.ToggleVisualsTime,
