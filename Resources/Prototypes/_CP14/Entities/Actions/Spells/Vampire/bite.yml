@@ -2,7 +2,7 @@
   id: CP14ActionVampireBite
   parent: CP14ActionSpellBase
   name: Vampire bite
-  description: You sink your fangs into your victim, draining them of a lot of blood.
+  description: You suck the blood and very essence of life from your victim (if the target is conscious). The target permanently loses its maximum health.
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
@@ -31,13 +31,6 @@
       - !type:Jitter
       - !type:ModifyBloodLevel
         amount: -10
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        ignoreResistances: true
-        damage:
-          types:
-            Radiation: 4 #This number is calculated using complex mathematical formulas; do not change it.
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi

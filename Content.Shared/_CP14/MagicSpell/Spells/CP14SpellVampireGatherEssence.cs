@@ -1,6 +1,7 @@
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Vampire;
+using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
@@ -18,6 +19,18 @@ public sealed partial class CP14SpellVampireGatherEssence : CP14SpellEffect
 
     [DataField]
     public ProtoId<CP14SkillPointPrototype> SkillPointType = "Blood";
+
+    /// <summary>
+    /// How much permanent damage does the target receive per 1 unit of essence?
+    /// </summary>
+    [DataField]
+    public DamageSpecifier DamagePerAmount = new()
+    {
+        DamageDict = new()
+        {
+            { "Radiation", 40 },
+        },
+    };
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
@@ -40,6 +53,8 @@ public sealed partial class CP14SpellVampireGatherEssence : CP14SpellEffect
             return;
 
         var skillSys = entManager.System<CP14SharedSkillSystem>();
+        var damageSys = entManager.System<DamageableSystem>();
         skillSys.AddSkillPoints(args.User.Value, SkillPointType, Amount);
+        damageSys.TryChangeDamage(args.Target.Value, DamagePerAmount * Amount, ignoreResistances: true);
     }
 }
