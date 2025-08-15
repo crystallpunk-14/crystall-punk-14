@@ -45,6 +45,7 @@
       cooldown: 15
       castTime: 120
       hidden: true
+      breakOnDamage: false
 
 - type: entity
   id: CP14ImpactEffectHellBallade
