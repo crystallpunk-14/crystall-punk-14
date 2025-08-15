@@ -1,0 +1,12 @@
+
+- type: cp14Skill
+  id: Bite_Night
+  skillUiPosition: 0, 7
+  learnCost: 0
+  tree: NightChildren
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: bite
+  effects:
+  - !type:AddAction
+    action: CP14ActionVampireBite

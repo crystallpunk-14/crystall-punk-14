@@ -6,9 +6,14 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
+  - type: CP14MagicEffectVampire
+  - type: CP14MagicEffectTargetMobStatusRequired
+    allowedStates:
+    - Alive
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectVampireBite
     - !type:CP14SpellApplyEntityEffect
@@ -16,18 +21,29 @@
       - !type:Jitter
     effects:
     - !type:CP14SpellSuckBlood
-    - !type:CP14SpellSpawnEntityOnTarget
+    - !type:CP14SpellVampireGatherEssence
+    - !type:CP14SpellSpawnEntityOnUser
+      clientside: true
       spawns:
-      - CP14ImpactEffectVampireBite
+      - CP14ImpactEffectBloodEssence
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Jitter
       - !type:ModifyBloodLevel
-        amount: -15
+        amount: -10
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: true
+        damage:
+          types:
+            Radiation: 4 #This number is calculated using complex mathematical formulas; do not change it.
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: bite
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/gib1.ogg
   - type: TargetAction
     repeat: true
     range: 1
@@ -37,9 +53,12 @@
     whitelist:
       components:
       - MobState
+      - Bloodstream
+      - SSDIndicator
+    requireAll: true
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 1
-      castDelay: 1
+      castDelay: 2
 
 - type: entity
   id: CP14ImpactEffectVampireBite
@@ -58,4 +77,7 @@
       - random:
           snow1: Inherit
           snow2: Inherit
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/gib1.ogg
 
