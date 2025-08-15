@@ -1,9 +1,12 @@
+using Content.Shared._CP14.Skill;
+using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
@@ -16,6 +19,9 @@ public abstract class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -42,6 +48,9 @@ public abstract class CP14SharedVampireSystem : EntitySystem
             EntityUid? newAction = null;
             _action.AddAction(ent, ref newAction, proto);
         }
+
+        //Skill tree
+        _skill.AddSkillTree(ent, ent.Comp.SkillTreeProto);
     }
 
     private void OnVampireRemove(Entity<CP14VampireComponent> ent, ref ComponentRemove args)
@@ -56,6 +65,20 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         foreach (var action in ent.Comp.Actions)
         {
             _action.RemoveAction(ent.Owner, action);
+        }
+
+        //Skill tree
+        _skill.RemoveSkillTree(ent, ent.Comp.SkillTreeProto);
+        if (TryComp<CP14SkillStorageComponent>(ent, out var storage))
+        {
+            foreach (var skill in storage.LearnedSkills)
+            {
+                if (!_proto.TryIndex(skill, out var indexedSkill))
+                    continue;
+
+                if (indexedSkill.Tree == ent.Comp.SkillTreeProto)
+                    _skill.TryRemoveSkill(ent, skill);
+            }
         }
     }
 

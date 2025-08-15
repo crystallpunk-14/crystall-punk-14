@@ -1,0 +1,23 @@
+- type: cp14SkillTree
+  id: NightChildren
+  name: cp14-skill-tree-vampire-name
+  desc: cp14-skill-tree-vampire-desc
+  skillType: Blood
+  color: "#b01e34"
+  parallax: CP14Blood
+
+- type: cp14SkillTree
+  id: Unnameable
+  name: cp14-skill-tree-vampire-name
+  desc: cp14-skill-tree-vampire-desc
+  skillType: Blood
+  color: "#b01e34"
+  parallax: CP14Blood
+
+- type: cp14SkillTree
+  id: Devourers
+  name: cp14-skill-tree-vampire-name
+  desc: cp14-skill-tree-vampire-desc
+  skillType: Blood
+  color: "#b01e34"
+  parallax: CP14Blood

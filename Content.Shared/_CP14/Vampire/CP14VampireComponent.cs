@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.GameStates;
@@ -12,6 +13,8 @@ public sealed partial class CP14VampireComponent : Component
 {
     [DataField]
     public ProtoId<ReagentPrototype> NewBloodReagent = "CP14BloodVampire";
+    [DataField]
+    public ProtoId<CP14SkillTreePrototype> SkillTreeProto = "NightChildren";
 
     [DataField]
     public ProtoId<MetabolizerTypePrototype> MetabolizerType = "CP14Vampire";

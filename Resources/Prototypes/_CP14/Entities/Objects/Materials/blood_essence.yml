@@ -1,0 +1,41 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BloodEssence
+  name: blood essence
+  description: The essence of life, extracted by force. Only true vampires know how to use it, but without the right content, it will quickly dissolve into nothingness.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Ginormous
+  - type: TimedDespawn
+    lifetime: 120
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: /Textures/_CP14/Objects/Materials/blood_essence.rsi
+    layers:
+    - state: drop
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+    netsync: false
+  - type: CanMoveInAir
+  - type: RandomWalk
+    minSpeed: 0.25
+    maxSpeed: 0.75
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 2
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true

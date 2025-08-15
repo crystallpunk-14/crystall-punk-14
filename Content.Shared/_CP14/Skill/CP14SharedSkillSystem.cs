@@ -48,6 +48,31 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     }
 
     /// <summary>
+    ///  Adds a skill tree to the player, allowing them to learn skills from it.
+    /// </summary>
+    public void AddSkillTree(EntityUid target,
+        ProtoId<CP14SkillTreePrototype> tree,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component))
+            return;
+
+        component.AvailableSkillTrees.Add(tree);
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.AvailableSkillTrees));
+    }
+
+    public void RemoveSkillTree(EntityUid target,
+        ProtoId<CP14SkillTreePrototype> tree,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component))
+            return;
+
+        component.AvailableSkillTrees.Remove(tree);
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.AvailableSkillTrees));
+    }
+
+    /// <summary>
     /// Directly adds the skill to the player, bypassing any checks.
     /// </summary>
     public bool TryAddSkill(EntityUid target,

@@ -6,7 +6,7 @@ color = "#000000"
 # Bright background nebula stars.
 [[layers]]
 type = "points"
-closecolor = "#aa47ad"
+closecolor = "#db1f1f"
 count = 1000
 seed = 3472
 mask = true
@@ -22,7 +22,7 @@ maskseed = 3551
 # Bright background nebula stars, dim edge.
 [[layers]]
 type = "points"
-closecolor = "#41244a"
+closecolor = "#570d11"
 pointsize = 2
 count = 1000
 seed = 3472
@@ -39,14 +39,14 @@ maskseed = 3551
 # Couple of bright pink stars.
 [[layers]]
 type = "points"
-closecolor = "#ff63ef"
+closecolor = "#ff1c1c"
 count = 30
 seed = 6454
 
 # And their dim edge.
 [[layers]]
 type = "points"
-closecolor = "#301a43"
+closecolor = "#731943"
 pointsize = 2
 count = 30
 seed = 6454
