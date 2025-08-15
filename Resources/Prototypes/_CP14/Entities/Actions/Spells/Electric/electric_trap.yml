@@ -150,6 +150,12 @@
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -100
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+      params:
+        variation: 0.1
+        volume: -2
   - type: TriggerOnSpawn
 
 - type: entity

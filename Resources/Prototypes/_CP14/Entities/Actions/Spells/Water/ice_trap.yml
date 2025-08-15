@@ -156,6 +156,12 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14WindowMagicIceBlock
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/balloon-pop.ogg
+      params:
+        variation: 0.1
+        volume: -2
   - type: TriggerOnSpawn
 
 - type: entity
