@@ -1,7 +1,9 @@
+# Offence
+
 - type: cp14Skill
   id: Bite
   skillUiPosition: 0, 6
-  learnCost: 0.5
+  learnCost: 0
   tree: NightChildren
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -9,6 +11,43 @@
   effects:
   - !type:AddAction
     action: CP14ActionVampireBite
+
+- type: cp14Skill
+  id: BloodStep
+  skillUiPosition: 2, 4
+  learnCost: 1
+  tree: NightChildren
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_step
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampireBloodStep
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: Bite
+
+- type: cp14Skill
+  id: VampireNightVision
+  skillUiPosition: 2, 6
+  name: cp14-skill-vampire-night-vision-name 
+  desc: cp14-skill-vampire-night-vision-desc
+  learnCost: 1
+  tree: NightChildren
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: night_vision
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CP14NightVision
+      lightPrototype: CP14NightVisionVampire
+      actionPrototype: CP14ActionToggleNightVisionVampire 
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: Bite
+
+# Create
 
 - type: cp14Skill
   id: BloodEssenceCreation

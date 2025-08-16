@@ -27,7 +27,7 @@
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: essence_create
     sound: !type:SoundPathSpecifier
-      path: /Audio/Effects/essence_consume.ogg
+      path: /Audio/_CP14/Effects/essence_consume.ogg
   - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
       cooldown: 3
