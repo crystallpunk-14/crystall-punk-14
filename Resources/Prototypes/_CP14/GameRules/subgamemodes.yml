@@ -21,6 +21,8 @@
       - type: CP14Vampire
         factionIcon: CP14VampireNightChildrens
         transmutationMethod: VampireNightChildren
+        singletonTeleportKey: CP14VampirePortalGlyphNightChildrens
+        teleportGlyphProto: CP14VampirePortalGlyphNightChildrens
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireNightChildrens
       - type: Hunger
@@ -55,6 +57,8 @@
       - type: CP14Vampire
         factionIcon: CP14VampireDevourers
         transmutationMethod: VampireDevourers
+        singletonTeleportKey: CP14VampirePortalGlyphDevourers
+        teleportGlyphProto: CP14VampirePortalGlyphDevourers
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireDevourers
       - type: Hunger
@@ -89,6 +93,8 @@
       - type: CP14Vampire
         factionIcon: CP14VampireUnnameable
         transmutationMethod: VampireUnnameable
+        singletonTeleportKey: CP14VampirePortalGlyphUnnameable
+        teleportGlyphProto: CP14VampirePortalGlyphUnnameable
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireUnnameable
       - type: Hunger

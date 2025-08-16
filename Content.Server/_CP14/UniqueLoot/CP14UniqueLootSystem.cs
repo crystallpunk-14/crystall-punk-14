@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Shared._CP14.UniqueLoot;
 using Content.Shared.GameTicking;
 using Content.Shared.Tag;
-using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -23,8 +22,22 @@ public sealed partial class CP14UniqueLootSystem : EntitySystem
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnCleanup);
 
         SubscribeLocalEvent<CP14UniqueLootSpawnerComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14SingletonComponent, MapInitEvent>(OnSingletonMapInit);
 
         RefreshUniqueLoot();
+    }
+
+    private void OnSingletonMapInit(Entity<CP14SingletonComponent> ent, ref MapInitEvent args)
+    {
+        var query = EntityQueryEnumerator<CP14SingletonComponent>();
+        while (query.MoveNext(out var existingEnt, out var existingComp))
+        {
+            if (existingEnt == ent.Owner || existingComp.Key != ent.Comp.Key)
+                continue;
+
+            // Remove the existing entity with the same key.
+            QueueDel(existingEnt);
+        }
     }
 
     private void OnMapInit(Entity<CP14UniqueLootSpawnerComponent> ent, ref MapInitEvent args)

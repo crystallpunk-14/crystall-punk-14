@@ -1,0 +1,66 @@
+- type: entity
+  id: CP14TempPortalRed
+  parent: CP14TempPortalToCity
+  description: A crimson portal that will disappear very quickly. Where is it leading?
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+      color: "#ff0000"
+  - type: PointLight
+    enabled: true
+    color: "#ff0000"
+    energy: 1
+    radius: 5
+  - type: TimedDespawn
+    lifetime: 30
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14ImpactEffectBloodEssence
+
+- type: entity
+  id: CP14BaseVampirePortalGlyph
+  categories: [ ForkFiltered ]
+  abstract: true
+  name: portal glyph
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: _CP14/Objects/Specific/Thaumaturgy/essence.rsi
+    layers:
+    - state: node
+      shader: unshaded
+      color: red
+  - type: Clickable
+
+- type: entity
+  id: CP14VampirePortalGlyphDevourers
+  parent: CP14BaseVampirePortalGlyph
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the "Devourers" clan can teleport here at any moment!
+  suffix: Devourers
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphDevourers
+
+- type: entity
+  id: CP14VampirePortalGlyphUnnameable
+  parent: CP14BaseVampirePortalGlyph
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the "unnameable" clan can teleport here at any moment!
+  suffix: Unnameable
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphUnnameable
+
+- type: entity
+  id: CP14VampirePortalGlyphNightChildrens
+  parent: CP14BaseVampirePortalGlyph
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the "night childrens" clan can teleport here at any moment!
+  suffix: Night Childrens
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphNightChildrens

@@ -17,13 +17,19 @@
       "name": "blood_step"
     },
     {
-      "name": "toggle"
-    },
-    {
       "name": "essence_create"
     },
     {
       "name": "night_vision"
+    },
+    {
+      "name": "portal"
+    },
+    {
+      "name": "portal_create"
+    },
+    {
+      "name": "toggle"
     },
     {
       "name": "transmutation"

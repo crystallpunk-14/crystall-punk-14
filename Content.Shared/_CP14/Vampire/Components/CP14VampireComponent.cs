@@ -30,7 +30,14 @@ public sealed partial class CP14VampireComponent : Component
     public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
 
     [DataField(required: true)]
-    public ProtoId<CP14TransmutationPrototype>? TransmutationMethod;
+    public ProtoId<CP14TransmutationPrototype>? TransmutationMethod; //TODO delete from this component
+
+    [DataField(required: true)]
+    public string SingletonTeleportKey = string.Empty; //TODO delete from this component
+
+    [DataField(required: true)]
+    public EntProtoId TeleportGlyphProto = string.Empty; //TODO delete from this component
+
 
     [DataField]
     public FixedPoint2 SkillPointCount = 1f;
