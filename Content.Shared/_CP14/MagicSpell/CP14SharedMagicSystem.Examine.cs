@@ -13,6 +13,7 @@ public abstract partial class CP14SharedMagicSystem
 
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, ExaminedEvent>(OnManacostExamined);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
+        SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, ExaminedEvent>(OnSomaticExamined);
@@ -37,6 +38,14 @@ public abstract partial class CP14SharedMagicSystem
     private void OnStaminaCostExamined(Entity<CP14MagicEffectStaminaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{ent.Comp.Stamina}[/color]", priority: 9);
+    }
+
+    private void OnSkillPointCostExamined(Entity<CP14MagicEffectSkillPointCostComponent> ent, ref ExaminedEvent args)
+    {
+        if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint))
+            return;
+
+        args.PushMarkup($"{Loc.GetString("cp14-magic-skillpointcost", ("name", Loc.GetString(indexedSkillPoint.Name)), ("count", ent.Comp.Count))}", priority: 9);
     }
 
     private void OnVerbalExamined(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref ExaminedEvent args)

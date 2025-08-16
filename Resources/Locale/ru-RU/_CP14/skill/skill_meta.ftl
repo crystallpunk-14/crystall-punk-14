@@ -43,3 +43,8 @@ cp14-skill-glass-melt-name = Работа со стеклом
 
 cp14-skill-trader-wit-name = Торговая смекалка
 cp14-skill-trader-wit-desc = Вы способны одним взглядом оценить и вычислить точную стоимость предмета в империи.
+
+# Vampire
+
+cp14-skill-vampire-night-vision-name = Ночное зрение
+cp14-skill-vampire-night-vision-desc = Темнота не может быть помехой для существа ночи.

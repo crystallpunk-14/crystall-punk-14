@@ -14,6 +14,10 @@
     {
       "name": "goblin",
       "directions": 4
+    },
+    {
+      "name": "carcat",
+      "directions": 4
     }
   ]
 }

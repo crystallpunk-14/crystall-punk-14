@@ -30,3 +30,6 @@ cp14-magic-spell-target-mob-state-live = живые
 cp14-magic-spell-target-mob-state-critical = умирающие
 
 cp14-magic-spell-target-god-follower = Цель должна быть вашим последователем!
+
+cp14-magic-skillpointcost = Затраты ресурса "{$name}": [color=#eba834]{$count}[/color]
+cp14-magic-spell-skillpoint-not-enough = Не хватает еще {$count} ресурса "{$name}"!

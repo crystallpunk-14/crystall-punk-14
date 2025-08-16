@@ -12,7 +12,10 @@ cp14-skill-desc-add-mana = Увеличивает объем маны вашег
 cp14-skill-desc-add-stamina = Увеличивает выносливость вашего персонажа на {$stamina}.
 cp14-skill-desc-unlock-recipes = Открывает возможность создания:
 
-cp14-skill-popup-added-points = Границы вашего сознания расширяются. Новых очков памяти: {$count}
-cp14-skill-popup-forced-remove-skill = Вы начинаете забывать свое прошлое... Потеряно очков памяти: {$count}
+cp14-skill-popup-memory-added = Границы вашего сознания расширяются. Новых очков памяти: {$count}
+cp14-skill-popup-memory-losed = Вы начинаете забывать свое прошлое... Потеряно очков памяти: {$count}
+
+cp14-skill-popup-blood-added = Вы впитываете чужую жизненную силу. Получено эссенции крови: {$count}
+cp14-skill-popup-blood-losed = Вы теряете чужую жизненную силу. Потеряно эссенции крови: {$count}
 
 cp14-skill-examine-title = Этот персонаж владеет следующими навыками:

@@ -1,0 +1,75 @@
+- type: entity
+  parent: BaseItem
+  id: CP14BloodEssence
+  name: blood essence
+  description: The essence of life, extracted by force. Only true vampires know how to use it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: /Textures/_CP14/Objects/Materials/blood_essence.rsi
+    layers:
+    - state: drop
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+    netsync: false
+  - type: CanMoveInAir
+  - type: RandomWalk
+    minSpeed: 0.05
+    maxSpeed: 0.1
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 2
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: CP14SkillPointConsumable
+    pointType: Blood
+    consumeEffect: CP14ImpactEffectBloodEssence
+    whitelist:
+      components:
+      - CP14Vampire
+
+- type: entity
+  id: CP14ImpactEffectBloodEssence
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    layers:
+    - state: particles_up
+      color: "#d60032"
+      shader: unshaded
+  - type: PointLight
+    color: "#d60032"
+    radius: 4.0
+    energy: 3.0
+  - type: LightFade
+    duration: 1.5
+  - type: TimedDespawn
+    lifetime: 1.6

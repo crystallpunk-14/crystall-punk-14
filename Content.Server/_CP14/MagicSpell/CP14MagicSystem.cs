@@ -45,8 +45,6 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
 
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
-
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
     }
 
@@ -140,29 +138,6 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
     {
         QueueDel(ent.Comp.SpawnedEntity);
         ent.Comp.SpawnedEntity = null;
-    }
-
-    private void OnManaConsume(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
-    {
-        if (!TryComp<CP14MagicEffectComponent>(ent, out var magicEffect))
-            return;
-
-        var requiredMana = CalculateManacost(ent, args.Performer);
-
-        //First - used object
-        if (magicEffect.SpellStorage is not null && TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicStorage))
-        {
-            var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
-            RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
-
-            _magicEnergy.ChangeEnergy((magicEffect.SpellStorage.Value, magicStorage), -requiredMana, out var changedEnergy, out var overloadedEnergy, safe: false);
-            requiredMana -= FixedPoint2.Abs(changedEnergy + overloadedEnergy);
-        }
-
-        //Second - action user
-        if (requiredMana > 0 &&
-            TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
-            _magicEnergy.ChangeEnergy((args.Performer.Value, playerMana), -requiredMana, out _, out _, safe: false);
     }
 
     private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)

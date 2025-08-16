@@ -179,8 +179,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   id: CP14MobBoar
@@ -244,8 +242,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   name: frog

@@ -14,7 +14,6 @@ namespace Content.Shared._CP14.Skill;
 public abstract partial class CP14SharedSkillSystem
 {
     [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;

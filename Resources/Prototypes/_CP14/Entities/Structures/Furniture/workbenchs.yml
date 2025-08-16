@@ -105,6 +105,11 @@
   - type: CP14Workbench
     recipeTags:
     - CP14RecipeWorkbench
+  - type: CP14Transmutable
+    entries:
+      VampireDevourers: CP14WorkbenchVampireDevourers
+      VampireUnnameable: CP14WorkbenchVampireUnnameable
+      VampireNightChildren: CP14WorkbenchVampireChildrenNight
 
 - type: entity
   id: CP14WorkbenchCooking

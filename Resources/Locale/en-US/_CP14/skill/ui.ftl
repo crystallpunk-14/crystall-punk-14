@@ -12,7 +12,10 @@ cp14-skill-desc-add-mana = Increases your character's mana amount by {$mana}.
 cp14-skill-desc-add-stamina = Increases your character's stamina amount by {$stamina}.
 cp14-skill-desc-unlock-recipes = Opens up the possibility of crafting:
 
-cp14-skill-popup-added-points = The boundaries of your consciousness are expanding. New memory points: {$count}
+cp14-skill-popup-memory-added = The boundaries of your consciousness are expanding. New memory points: {$count}
+cp14-skill-popup-memory-losed = You are beginning to forget your past... Memory points lost: {$count}
+
+cp14-skill-popup-blood-added = You absorb the life force of others. Blood essences obtained: {$count}
+cp14-skill-popup-blood-losed = You are losing life force. Blood essence lost: {$count}
 
 cp14-skill-examine-title = This character has the following skills:
-cp14-skill-popup-forced-remove-skill = You are beginning to forget your past... Memory points lost: {$count}

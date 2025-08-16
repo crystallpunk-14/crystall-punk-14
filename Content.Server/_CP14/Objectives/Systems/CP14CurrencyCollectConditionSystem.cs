@@ -1,14 +1,9 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Cargo.Systems;
-using Content.Server.Objectives.Components;
 using Content.Shared._CP14.Currency;
-using Content.Shared.Interaction;
 using Content.Shared.Mind;
-using Content.Shared.Mind.Components;
-using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
-using Robust.Shared.Containers;
 
 namespace Content.Server._CP14.Objectives.Systems;
 

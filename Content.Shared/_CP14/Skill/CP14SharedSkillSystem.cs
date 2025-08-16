@@ -4,13 +4,24 @@ using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Skill.Restrictions;
 using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Whitelist;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Skill;
 
 public abstract partial class CP14SharedSkillSystem : EntitySystem
 {
+    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+
     private EntityQuery<CP14SkillStorageComponent> _skillStorageQuery;
 
     public override void Initialize()
@@ -20,10 +31,33 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         _skillStorageQuery = GetEntityQuery<CP14SkillStorageComponent>();
 
         SubscribeLocalEvent<CP14SkillStorageComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14SkillPointConsumableComponent, UseInHandEvent>(OnInteracted);
 
         InitializeAdmin();
         InitializeChecks();
         InitializeScanning();
+    }
+
+    private void OnInteracted(Entity<CP14SkillPointConsumableComponent> ent, ref UseInHandEvent args)
+    {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        if (ent.Comp.Whitelist is null || !_whitelist.IsValid(ent.Comp.Whitelist, args.User))
+            return;
+
+        if (_net.IsServer)
+            AddSkillPoints(args.User, ent.Comp.PointType, ent.Comp.Volume);
+
+        var position = Transform(ent).Coordinates;
+
+        //Client VFX
+        if (_net.IsClient)
+            SpawnAttachedTo(ent.Comp.ConsumeEffect, position);
+
+        _audio.PlayPredicted(ent.Comp.ConsumeSound, position, args.User);
+
+        PredictedQueueDel(ent.Owner);
     }
 
     private void OnMapInit(Entity<CP14SkillStorageComponent> ent, ref MapInitEvent args)
@@ -45,6 +79,31 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         {
             TryAddSkill(ent.Owner, skill, ent.Comp);
         }
+    }
+
+    /// <summary>
+    ///  Adds a skill tree to the player, allowing them to learn skills from it.
+    /// </summary>
+    public void AddSkillTree(EntityUid target,
+        ProtoId<CP14SkillTreePrototype> tree,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component))
+            return;
+
+        component.AvailableSkillTrees.Add(tree);
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.AvailableSkillTrees));
+    }
+
+    public void RemoveSkillTree(EntityUid target,
+        ProtoId<CP14SkillTreePrototype> tree,
+        CP14SkillStorageComponent? component = null)
+    {
+        if (!Resolve(target, ref component))
+            return;
+
+        component.AvailableSkillTrees.Remove(tree);
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.AvailableSkillTrees));
     }
 
     /// <summary>
@@ -320,29 +379,45 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
     public void AddSkillPoints(EntityUid target,
         ProtoId<CP14SkillPointPrototype> type,
         FixedPoint2 points,
-        FixedPoint2 limit,
+        FixedPoint2? limit = null,
+        bool silent = false,
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
             return;
 
-        if (component.SkillPoints.TryGetValue(type, out var skillContainer))
-            skillContainer.Max = FixedPoint2.Min(skillContainer.Max + points, limit);
+        if (!_proto.TryIndex(type, out var indexedType))
+            return;
 
-        Dirty(target, component);
+        if (!component.SkillPoints.TryGetValue(type, out var skillContainer))
+        {
+            skillContainer = new CP14SkillPointContainerEntry();
+            component.SkillPoints[type] = skillContainer;
+        }
 
-        _popup.PopupEntity(Loc.GetString("cp14-skill-popup-added-points", ("count", points)), target, target);
+        skillContainer.Max = limit is not null
+            ? FixedPoint2.Min(skillContainer.Max + points, limit.Value)
+            : skillContainer.Max + points;
+
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.SkillPoints));
+
+        if (indexedType.GetPointPopup is not null && !silent)
+            _popup.PopupPredicted(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
     }
 
     /// <summary>
     /// Removes memory points. If a character has accumulated skills exceeding the new memory limit, random skills will be removed.
     /// </summary>
-    public void RemoveMemoryPoints(EntityUid target,
+    public void RemoveSkillPoints(EntityUid target,
         ProtoId<CP14SkillPointPrototype> type,
         FixedPoint2 points,
+        bool silent = false,
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
+            return;
+
+        if (!_proto.TryIndex(type, out var indexedType))
             return;
 
         if (!component.SkillPoints.TryGetValue(type, out var skillContainer))
@@ -351,7 +426,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         skillContainer.Max = FixedPoint2.Max(skillContainer.Max - points, 0);
         Dirty(target, component);
 
-        _popup.PopupEntity(Loc.GetString("cp14-skill-popup-removed-points", ("count", points)), target, target);
+        if (indexedType.LosePointPopup is not null && !silent)
+            _popup.PopupPredicted(Loc.GetString(indexedType.LosePointPopup, ("count", points)), target, target);
 
         while (skillContainer.Sum > skillContainer.Max)
         {
