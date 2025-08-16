@@ -23,6 +23,8 @@
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: transmutation
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/vampire_craft.ogg
   - type: TargetAction
     range: 2
     interactOnMiss: false
@@ -31,7 +33,7 @@
     whitelist:
       requireAll: true
       components:
-      - CP14Transmutationable
+      - CP14Transmutable
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 1
       castDelay: 2

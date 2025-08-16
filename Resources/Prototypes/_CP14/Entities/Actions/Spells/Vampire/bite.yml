@@ -49,9 +49,8 @@
       components:
       - MobState
       - Bloodstream
-      - SSDIndicator
     event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 1
+      cooldown: 0.5
       castDelay: 2
 
 - type: entity

@@ -30,6 +30,6 @@
       path: /Audio/_CP14/Effects/essence_consume.ogg
   - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 3
+      cooldown: 0.5
       castDelay: 2.5
       breakOnMove: false
