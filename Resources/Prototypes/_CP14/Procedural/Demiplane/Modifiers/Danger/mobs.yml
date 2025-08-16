@@ -322,3 +322,23 @@
       count: 5
       minGroupSize: 7
       maxGroupSize: 12
+
+- type: cp14LocationModifier
+  id: EnemyCackle
+  levels:
+    min: 2
+    max: 5
+  name: cp14-modifier-cackle
+  generationWeight: 0.33
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  blacklistTags:
+  - CP14DemiplaneCold
+  layers:
+  - !type:CP14OreDunGen
+    entity: CP14MobMonsterCackle
+    count: 4
+    minGroupSize: 1
+    maxGroupSize: 3
