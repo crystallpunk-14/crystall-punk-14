@@ -1,6 +1,6 @@
 cp14-book-text-pantheon-gods-sileita-imitators = [head=2]Imitators of the Gods[/head]
 
-    •[italic]Names[/italic]: Echo-Spirits, Mask-Wearers, Pseudo-Divines.
+    • [bold]Names[/bold]: [italic]Echo-Spirits, Mask-Wearers, Pseudo-Divines.[/italic]
     
     Imitators are beings, spirits, phantoms or possessed that take on the appearance, speech, habits and goals of one of the gods, without their blessing or sanction. They are not true servants, but can outwardly indistinguishably copy divine manifestations. This phenomenon occurs both in ritual art and magic of persuasion, and in unconscious forms of distorted faith. There are also unique creatures created unconsciously, under the influence of magical anomalies, egregors (collective mind) of faith or the Void.
 
