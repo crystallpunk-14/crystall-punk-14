@@ -15,6 +15,7 @@ cp14-modifier-slime = слаймы
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = динозавры
 cp14-modifier-mole = хищные кроты
+cp14-modifier-spineguard = защитники позвоночника
 cp14-modifier-watcher = наблюдатели
 cp14-modifier-rabbits = кролики
 cp14-modifier-boars = дикие кабаны
