@@ -1,6 +1,7 @@
 - type: entity
   id: CP14ActionToggleNightVision
   name: Toggle Night Vision
+  parent: BaseMentalAction
   description: You begin to see the world in a special way that allows you to see even in total darkness.
   components:
   - type: Action
@@ -28,6 +29,7 @@
 - type: entity
   id: CP14ActionToggleNightVisionVampire
   name: Toggle Night Vision
+  parent: BaseMentalAction
   description: You begin to see the world in a special way that allows you to see even in total darkness.
   components:
   - type: Action

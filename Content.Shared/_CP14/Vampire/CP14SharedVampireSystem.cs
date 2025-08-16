@@ -119,6 +119,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, ent, ent.Comp.ToggleVisualsTime, new CP14VampireToggleVisualsDoAfter(), ent)
         {
             Hidden = true,
+            NeedHand = false,
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);

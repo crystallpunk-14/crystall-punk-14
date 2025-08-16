@@ -3,9 +3,10 @@
   id: CP14Vampire
   components:
   - type: CP14VampireRule
-  #- type: AntagObjectives
-  #  objectives:
-  #  - TODO: SURVIVE
+  - type: AntagObjectives
+    objectives:
+    - CP14VampireObjectiveBloodPurity
+    - CP14VampireObjectiveDefenseVillage
   - type: GameRule
     minPlayers: 30
   - type: AntagSelection
