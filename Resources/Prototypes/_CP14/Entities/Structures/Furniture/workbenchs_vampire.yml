@@ -20,7 +20,7 @@
       params:
         variation: 0.125
     recipeTags:
-    - CP14RecipeVampire
+    - CP14RecipeVampireDevourers
   - type: LightBehaviour
     behaviours:
       - !type:PulseBehaviour
@@ -48,6 +48,9 @@
     - state: unnameable
     - state: fx
       shader: unshaded
+  - type: CP14Workbench
+    recipeTags:
+    - CP14RecipeVampireUnnameable
 
 - type: entity
   id: CP14WorkbenchVampireChildrenNight
@@ -60,3 +63,6 @@
     - state: night
     - state: fx
       shader: unshaded
+  - type: CP14Workbench
+    recipeTags:
+    - CP14RecipeVampireNightChildrens

@@ -30,7 +30,7 @@ public sealed partial class CP14VampireComponent : Component
     public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
 
     [DataField(required: true)]
-    public ProtoId<CP14TransmutationPrototype> TransmutationMethod;
+    public ProtoId<CP14TransmutationPrototype>? TransmutationMethod;
 
     [DataField]
     public FixedPoint2 SkillPointCount = 1f;

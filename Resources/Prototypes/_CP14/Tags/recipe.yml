@@ -16,5 +16,13 @@
 - type: Tag
   id: CP14RecipeLeatherWorking
 
+# Vampire
 - type: Tag
-  id: CP14RecipeVampire
+  id: CP14RecipeVampireDevourers
+
+- type: Tag
+  id: CP14RecipeVampireUnnameable
+
+- type: Tag
+  id: CP14RecipeVampireNightChildrens
+  

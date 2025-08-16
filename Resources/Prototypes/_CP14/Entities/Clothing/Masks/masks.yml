@@ -102,13 +102,11 @@
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: cp14skeleton
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.90
+  - type: CP14Transmutable
+    entries:
+      VampireDevourers: CP14ClothingMaskVampireVoiceDevourers
+      VampireUnnameable: CP14ClothingMaskVampireVoiceUnnameable
+      VampireNightChildren: CP14ClothingMaskVampireVoiceNightChildrens
 
 - type: entity
   parent: CP14ClothingMaskBase

@@ -50,8 +50,11 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         if (!TryComp<CP14VampireComponent>(args.Examiner, out var vampire))
             return;
 
+        if (vampire.TransmutationMethod is null)
+            return;
+
         var entries = ent.Comp.Entries;
-        if (!entries.TryGetValue(vampire.TransmutationMethod, out var targetProto))
+        if (!entries.TryGetValue(vampire.TransmutationMethod.Value, out var targetProto))
             return;
 
         if (!_proto.TryIndex(targetProto, out var indexedTargetProto))
