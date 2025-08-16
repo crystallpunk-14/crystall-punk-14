@@ -19,7 +19,7 @@
       clientside: true
       spawns:
       - CP14ImpactEffectBloodEssence
-    - !type:CP14SpellSpawnEntityOnTarget
+    - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14BloodEssence
   - type: Action

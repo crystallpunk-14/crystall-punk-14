@@ -7,6 +7,13 @@
   components:
   - type: Item
     size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -22,8 +29,8 @@
     netsync: false
   - type: CanMoveInAir
   - type: RandomWalk
-    minSpeed: 0.25
-    maxSpeed: 0.75
+    minSpeed: 0.05
+    maxSpeed: 0.1
   - type: Physics
     bodyType: Dynamic
     bodyStatus: InAir

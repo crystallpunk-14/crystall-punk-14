@@ -9,7 +9,6 @@ using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
-using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;

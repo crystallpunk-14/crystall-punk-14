@@ -402,7 +402,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         Dirty(target, component);
 
         if (indexedType.GetPointPopup is not null && !silent)
-            _popup.PopupPredicted(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
+            _popup.PopupEntity(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
     }
 
     /// <summary>
