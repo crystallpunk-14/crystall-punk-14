@@ -1654,3 +1654,21 @@
   id: 8217
   time: '2025-08-11T20:46:28.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1661
+- author: KittyCat432
+  changes:
+  - message: Changed Ice shard to now do 2.5 pierce and 5 cold total of 7.5 damage.
+    type: Tweak
+  - message: Changed Fire wave to now have a 0.5 second cast time that cannot be interrupted
+      and nolonger adjusts the temperature inside of someone.
+    type: Tweak
+  - message: Changed magic, speed, and hell ballade spells to nolonger break upon
+      being damaged.
+    type: Tweak
+  - message: Changed Hell ballade now takes 8 mana per second and slows you down by
+      50% speed.
+    type: Tweak
+  - message: Fixed hell ballad, heat, and freeze nolonger work while under pacifism.
+    type: Fix
+  id: 8218
+  time: '2025-08-16T16:44:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1671
