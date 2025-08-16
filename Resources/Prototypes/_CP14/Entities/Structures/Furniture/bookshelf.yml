@@ -96,6 +96,7 @@
       children:
       - id: CP14BookGuildMoral
       - id: CP14BookPantheonGodsSileita
+      - id: CP14BookPantheonGodsSileitaImitators
     #Empty random
     - id: CP14BookRandom
       amount: !type:RangeNumberSelector
