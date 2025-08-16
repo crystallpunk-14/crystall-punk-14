@@ -20,6 +20,7 @@
       components:
       - type: CP14Vampire
         factionIcon: CP14VampireNightChildrens
+        transmutationMethod: VampireNightChildren
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireNightChildrens
       - type: Hunger
@@ -53,6 +54,7 @@
       components:
       - type: CP14Vampire
         factionIcon: CP14VampireDevourers
+        transmutationMethod: VampireDevourers
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireDevourers
       - type: Hunger
@@ -86,6 +88,7 @@
       components:
       - type: CP14Vampire
         factionIcon: CP14VampireUnnameable
+        transmutationMethod: VampireUnnameable
       - type: CP14ShowVampireFaction
         factionIcon: CP14VampireUnnameable
       - type: Hunger

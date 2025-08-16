@@ -68,10 +68,10 @@
   copyright: 'by DustyWind on Freesound.org'
   source: "https://freesound.org/people/DustyWind/sounds/715784/"
 
-- files: ["vampire_bite.ogg"]
-  license: "CC0-1.0"
-  copyright: 'by magnuswaker on Freesound.org'
-  source: "https://freesound.org/people/magnuswaker/sounds/563491/"
+- files: ["vampire_craft.ogg"]
+  license: "CC-BY-4.0"
+  copyright: 'by Victor_Natas on Freesound.org'
+  source: "https://freesound.org/people/Victor_Natas/sounds/616217/"
 
 - files: ["skill_up1.ogg", "skill_up2.ogg", "skill_up3.ogg", "skill_up3.ogg"]
   license: "CC0-1.0"

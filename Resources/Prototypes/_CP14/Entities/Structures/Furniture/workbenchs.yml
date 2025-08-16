@@ -105,6 +105,9 @@
   - type: CP14Workbench
     recipeTags:
     - CP14RecipeWorkbench
+  - type: CP14Transmutable
+    entries:
+      VampireDevourers: CP14WorkbenchVampireDevourers
 
 - type: entity
   id: CP14WorkbenchCooking

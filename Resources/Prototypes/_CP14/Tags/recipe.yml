@@ -1,0 +1,20 @@
+- type: Tag
+  id: CP14RecipeSewing
+
+- type: Tag
+  id: CP14RecipeCooking
+
+- type: Tag
+  id: CP14RecipeWorkbench
+
+- type: Tag
+  id: CP14RecipeAnvil
+
+- type: Tag
+  id: CP14RecipeMeltingFurnace
+
+- type: Tag
+  id: CP14RecipeLeatherWorking
+
+- type: Tag
+  id: CP14RecipeVampire

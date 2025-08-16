@@ -1,4 +1,5 @@
 using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared._CP14.Transmutation.Prototypes;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
@@ -27,6 +28,9 @@ public sealed partial class CP14VampireComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
+
+    [DataField(required: true)]
+    public ProtoId<CP14TransmutationPrototype> TransmutationMethod;
 
     [DataField]
     public FixedPoint2 SkillPointCount = 3f;

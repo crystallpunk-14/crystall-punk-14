@@ -1,6 +1,7 @@
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
+using Content.Shared._CP14.Transmutation.Components;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
@@ -24,7 +25,6 @@ public abstract class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -42,6 +42,25 @@ public abstract class CP14SharedVampireSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectVampireComponent, CP14CastMagicEffectAttemptEvent>(OnVampireCastAttempt);
         SubscribeLocalEvent<CP14MagicEffectVampireComponent, ExaminedEvent>(OnVampireCastExamine);
+
+        SubscribeLocalEvent<CP14TransmutableComponent, ExaminedEvent>(OnTransmutableExamined);
+    }
+
+    private void OnTransmutableExamined(Entity<CP14TransmutableComponent> ent, ref ExaminedEvent args)
+    {
+        if (!TryComp<CP14VampireComponent>(args.Examiner, out var vampire))
+            return;
+
+        var entries = ent.Comp.Entries;
+        if (!entries.TryGetValue(vampire.TransmutationMethod, out var targetProto))
+            return;
+
+        if (!_proto.TryIndex(targetProto, out var indexedTargetProto))
+            return;
+
+        var name = indexedTargetProto.Name;
+
+        args.PushMarkup(Loc.GetString("cp-14-vampire-transmutable-to", ("name", name)));
     }
 
     private void OnVampireCastExamine(Entity<CP14MagicEffectVampireComponent> ent, ref ExaminedEvent args)

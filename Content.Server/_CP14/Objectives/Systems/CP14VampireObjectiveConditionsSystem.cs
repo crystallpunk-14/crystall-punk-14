@@ -1,7 +1,6 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Station.Components;
 using Content.Shared._CP14.Vampire;
-using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -9,7 +8,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Roles.Jobs;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Objectives.Systems;
 
@@ -17,7 +15,6 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
 {
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly SharedObjectivesSystem _objectives = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;

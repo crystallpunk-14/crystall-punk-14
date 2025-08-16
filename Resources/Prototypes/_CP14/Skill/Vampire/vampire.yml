@@ -42,7 +42,7 @@
     components:
     - type: CP14NightVision
       lightPrototype: CP14NightVisionVampire
-      actionPrototype: CP14ActionToggleNightVisionVampire 
+      actionPrototype: CP14ActionToggleNightVisionVampire
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
@@ -60,3 +60,18 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellBloodEssenceCreation
+
+- type: cp14Skill
+  id: VampireTransmutate
+  skillUiPosition: 4, 8
+  learnCost: 0.5
+  tree: NightChildren
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: transmutation
+  effects:
+  - !type:AddAction
+    action: CP14BaseActionVampireTransmutate
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
