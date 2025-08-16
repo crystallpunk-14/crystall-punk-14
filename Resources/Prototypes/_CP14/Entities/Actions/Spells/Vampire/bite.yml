@@ -45,11 +45,11 @@
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:
+      requireAll: true
       components:
       - MobState
       - Bloodstream
       - SSDIndicator
-    requireAll: true
     event: !type:CP14DelayedEntityTargetActionEvent
       cooldown: 1
       castDelay: 2
