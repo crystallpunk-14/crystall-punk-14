@@ -54,9 +54,13 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT1
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
 
@@ -72,8 +76,15 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellIceArrow
     - CP14ActionSpellSprint
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 1
+    freeLearnedSkills:
+    - HydrosophistryT1
+    learnedSkills:
+    - CP14ActionSpellIceArrow
 
 - type: entity
   id: CP14SpawnPointGhostDemiplaneSkeletonT1
