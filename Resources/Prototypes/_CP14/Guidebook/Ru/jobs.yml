@@ -11,14 +11,12 @@
   filterEnabled: True
 
 
-
 - type: guideEntry
   crystallPunkAllowed: true
   id: CP14_RU_JobAdventurer
   name: Авантюрист
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Adventurers.xml"
   children:
-  - CP14_RU_Demiplanes
   - CP14_RU_Monster_Toxins
   filterEnabled: True
 
@@ -36,7 +34,8 @@
   id: CP14_RU_JobInnkeeper
   name: Трактирщик
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/Innkeepers.xml"
-  filterEnabled: True
+  children:
+  - CP14_RU_Cooking
 
 - type: guideEntry
   crystallPunkAllowed: true

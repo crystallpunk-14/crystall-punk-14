@@ -12,16 +12,6 @@
     product: CP14EnergyCrystalMediumEmpty
 
 - type: cp14TradingPosition
-  id: CP14BrassBar5
-  faction: Thaumaturgy
-  uiPosition: 1
-  icon:
-    sprite: _CP14/Objects/Materials/brass_bar.rsi
-    state: bar_2
-  service: !type:CP14BuyItemsService
-    product: CP14BrassBar5
-
-- type: cp14TradingPosition
   id: CP14Paper
   faction: Thaumaturgy
   reputationLevel: 0
@@ -54,6 +44,18 @@
     state: shadow_grab
   service: !type:CP14BuyItemsService
     product: CP14SpellScrollShadowGrab
+
+- type: cp14TradingPosition
+  id: CP14BaseSpellScrollPortalToCity
+  faction: Thaumaturgy
+  priceMarkup: 1
+  reputationLevel: 0
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Actions/Spells/dimension.rsi
+    state: demi_arrow
+  service: !type:CP14BuyItemsService
+    product: CP14BaseSpellScrollPortalToCity
 
 - type: cp14TradingPosition
   id: CP14SpellScrollFlameCreation
@@ -146,18 +148,6 @@
     product: CP14ManaOperationGlove
 
 - type: cp14TradingPosition
-  id: CP14SpellScrollDemiplaneInfiltration
-  priceMarkup: 5 #Unique trade spells
-  faction: Thaumaturgy
-  reputationLevel: 1
-  uiPosition: 6
-  icon:
-    sprite: _CP14/Actions/Spells/dimension.rsi
-    state: rift_arrow
-  service: !type:CP14BuyItemsService
-    product: CP14SpellScrollDemiplaneInfiltration
-
-- type: cp14TradingPosition
   id: CP14SpellScrollEarthWall
   faction: Thaumaturgy
   priceMarkup: 2
@@ -203,6 +193,17 @@
     product: CP14SpellScrollFlashLight
 
 - type: cp14TradingPosition
+  id: CP14SpellScrollResurrection
+  faction: Thaumaturgy
+  reputationLevel: 1
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Actions/Spells/healing.rsi
+    state: resurrection
+  service: !type:CP14BuyItemsService
+    product: CP14SpellScrollResurrection
+
+- type: cp14TradingPosition
   id: CP14SpellScrollIceShards
   faction: Thaumaturgy
   reputationLevel: 1
@@ -241,17 +242,6 @@
 
 # Rep 3
 
-- type: cp14TradingPosition
-  id: CP14SpellScrollResurrection
-  faction: Thaumaturgy
-  reputationLevel: 3
-  priceMarkup: 5
-  uiPosition: 9
-  icon:
-    sprite: _CP14/Actions/Spells/electromancy.rsi
-    state: defib
-  service: !type:CP14BuyItemsService
-    product: CP14SpellScrollResurrection
 
 # Rep 4
 

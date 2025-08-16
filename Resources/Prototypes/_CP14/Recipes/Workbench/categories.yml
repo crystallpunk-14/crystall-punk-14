@@ -29,3 +29,47 @@
 - type: CP14RecipeCategory
   id: Clothing
   name: cp14-recipe-category-clothing
+
+# =====================================
+# Leather Working
+- type: CP14RecipeCategory
+  id: Backpacks
+  name: cp14-recipe-category-backpack
+  priority: 8
+
+- type: CP14RecipeCategory
+  id: Satchels
+  name: cp14-recipe-category-backpack-satchel
+  priority: 7
+
+# - type: CP14RecipeCategory # TODO need sprites =(
+#   id: Explorers
+#   name: cp14-recipe-category-backpack-explorer
+#  priority: 6
+
+- type: CP14RecipeCategory
+  id: BackpackUpgrade
+  name: cp14-recipe-category-backpack-upgrade
+  priority: 5
+
+- type: CP14RecipeCategory
+  id: SatchelUpgrade
+  name: cp14-recipe-category-backpack-satchel-upgrade
+  priority: 4
+
+# - type: CP14RecipeCategory
+#   id: ExplorerUpgrade
+#   name: cp14-recipe-category-backpack-explorer-upgrade
+#  priority: 3
+
+- type: CP14RecipeCategory
+  id: Belts
+  name: cp14-recipe-category-belt
+  priority: 2
+
+- type: CP14RecipeCategory
+  id: LeatherWorking
+  name: cp14-recipe-category-leather
+  priority: 1
+
+# =====================================

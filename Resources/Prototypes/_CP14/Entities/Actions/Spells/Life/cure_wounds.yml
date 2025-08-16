@@ -35,6 +35,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
+  - type: CP14MagicEffectTargetMobStatusRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
   - type: Action

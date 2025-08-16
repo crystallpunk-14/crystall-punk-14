@@ -5,13 +5,33 @@
     "y": 32
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd (Github)",
+  "copyright": "Base1 and base2 created by TheShuEd (Github), equipped-HELMET, flipped-equipped-HELMET, equipped-MASK, inhand-left and inhand-right created by Dinazewwr",
   "states": [
     {
       "name": "base1"
     },
     {
       "name": "base2"
+    },
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "equipped-MASK",
+      "directions": 4
+    },
+    {
+      "name": "flipped-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
     }
   ]
 }

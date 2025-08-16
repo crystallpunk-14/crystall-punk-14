@@ -19,6 +19,9 @@ public sealed partial class CP14SpellConsumeManaEffect : CP14SpellEffect
 
         var targetEntity = args.Target.Value;
 
+        if (!entManager.HasComponent<CP14MagicEnergyContainerComponent>(targetEntity))
+            return;
+
         var magicEnergy = entManager.System<SharedCP14MagicEnergySystem>();
 
         //First - used object

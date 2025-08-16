@@ -672,18 +672,24 @@
   id: CP14GeneralBack
   name: cp14-loadout-general-back
   loadouts:
-  - CP14ClothingBackLeatherBackpack
-  - CP14ClothingBackLeatherSatchel
+  - CP14ClothingBackBackpackT0
+  - CP14ClothingBackSatchelT0
+#  - CP14ClothingBackExplorerBackpackT0
 
 - type: loadout
-  id: CP14ClothingBackLeatherBackpack
+  id: CP14ClothingBackBackpackT0
   equipment:
-    back: CP14ClothingBackLeatherBackpack
+    back: CP14ClothingBackBackpackT0
 
 - type: loadout
-  id: CP14ClothingBackLeatherSatchel
+  id: CP14ClothingBackSatchelT0
   equipment:
-    back: CP14ClothingBackLeatherSatchel
+    back: CP14ClothingBackSatchelT0
+
+# - type: loadout
+#   id: CP14ClothingBackExplorerBackpackT0
+#   equipment:
+#     back: CP14ClothingBackExplorerBackpackT0
 
 # Trinkets
 
@@ -708,6 +714,7 @@
   - CP14FluteInstrument
   - CP14LuteInstrument
   - CP14LyraInstrument
+  - CP14SpellScrollResurrection
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -798,6 +805,12 @@
   storage:
     back:
     - CP14FluteInstrument
+
+- type: loadout
+  id: CP14SpellScrollResurrection
+  storage:
+    back:
+    - CP14SpellScrollResurrection
 
 # Keys
 

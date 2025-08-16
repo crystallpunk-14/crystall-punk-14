@@ -45,3 +45,16 @@
           - PersonalHouse4
           - PersonalHouse5
           - PersonalHouse6
+        - type: CP14StationProceduralLocation
+          location: VenicialistFort
+          modifiers:
+          - RaidSpawners
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzWater
+          - Quartz
+          - Ruins
+          - MobSlimeIce
+          - LumiShroom
+          - SilverNeedle

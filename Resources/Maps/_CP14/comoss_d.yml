@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 264.0.0
+  engineVersion: 265.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/11/2025 11:55:54
-  entityCount: 23414
+  time: 08/11/2025 09:33:17
+  entityCount: 23409
 maps:
 - 1
 grids:
@@ -100069,53 +100069,37 @@ entities:
       rot: 3.141592653589793 rad
       pos: 25.5,15.5
       parent: 1
-- proto: CP14CraneBarrelAleBloodyTear
-  entities:
-  - uid: 19766
+  - uid: 19768
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -20.5,-7.5
       parent: 1
-- proto: CP14CraneBarrelAleBottomless
-  entities:
-  - uid: 19767
+  - uid: 19769
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -20.5,-8.5
       parent: 1
-- proto: CP14CraneBarrelBeerBlowLaw
-  entities:
-  - uid: 19768
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -20.5,-9.5
-      parent: 1
-- proto: CP14CraneBarrelBeerBreeze
-  entities:
-  - uid: 19769
+  - uid: 19770
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -20.5,-10.5
       parent: 1
-- proto: CP14CraneBarrelBeerGerbil
-  entities:
-  - uid: 19770
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -20.5,-12.5
-      parent: 1
-- proto: CP14CraneBarrelDwarfBeer
-  entities:
   - uid: 19771
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -20.5,-11.5
+      pos: -20.5,-9.5
+      parent: 1
+- proto: CP14CraneBarrelDwarfBeer
+  entities:
+  - uid: 19766
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -20.5,-12.5
       parent: 1
 - proto: CP14CraneBarrelSmallBeerGerbil
   entities:
@@ -100124,6 +100108,14 @@ entities:
     - type: Transform
       noRot: True
       pos: -18.5,-7.5
+      parent: 1
+- proto: CP14CraneBarrelWineLeeks
+  entities:
+  - uid: 19767
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -20.5,-11.5
       parent: 1
 - proto: CP14CrystalLampBlueEmpty
   entities:
@@ -105344,7 +105336,7 @@ entities:
     - type: Transform
       pos: -107.5,24.5
       parent: 1
-- proto: CP14Plate
+- proto: CP14PlateWooden
   entities:
   - uid: 20703
     components:
@@ -116011,18 +116003,6 @@ entities:
     - type: Transform
       pos: 11.5,-21.5
       parent: 1
-- proto: CP14SpellScrollDemiplaneInfiltration
-  entities:
-  - uid: 22011
-    components:
-    - type: Transform
-      pos: 71.28023,40.062893
-      parent: 1
-  - uid: 22012
-    components:
-    - type: Transform
-      pos: -10.368555,-14.392324
-      parent: 1
 - proto: CP14SpellScrollFreeze
   entities:
   - uid: 22013
@@ -116036,25 +116016,6 @@ entities:
     components:
     - type: Transform
       pos: 35.97446,55.636757
-      parent: 1
-- proto: CP14SpellScrollMonolithWarp
-  entities:
-  - uid: 22015
-    components:
-    - type: Transform
-      pos: 71.29585,39.906643
-      parent: 1
-- proto: CP14SpellScrollResurrection
-  entities:
-  - uid: 22017
-    components:
-    - type: Transform
-      pos: 71.73335,39.969143
-      parent: 1
-  - uid: 22018
-    components:
-    - type: Transform
-      pos: 71.73335,39.859768
       parent: 1
 - proto: CP14SpellScrollShadowStep
   entities:

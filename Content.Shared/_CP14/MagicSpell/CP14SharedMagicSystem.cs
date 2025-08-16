@@ -49,11 +49,11 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         InitializeInstantActions();
         InitializeChecks();
         InitializeSlowdown();
+        InitializeExamine();
 
         _magicContainerQuery = GetEntityQuery<CP14MagicEnergyContainerComponent>();
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();
 
-        SubscribeLocalEvent<CP14MagicEffectComponent, MapInitEvent>(OnMagicEffectInit);
         SubscribeLocalEvent<CP14MagicEffectComponent, ComponentShutdown>(OnMagicEffectShutdown);
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14StartCastMagicEffectEvent>(OnStartCast);
@@ -100,49 +100,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         base.Update(frameTime);
 
         UpdateToggleableActions();
-    }
-
-    /// <summary>
-    /// Auto generation description for spell action
-    /// </summary>
-    private void OnMagicEffectInit(Entity<CP14MagicEffectComponent> ent, ref MapInitEvent args)
-    {
-        var meta = MetaData(ent);
-        var sb = new StringBuilder();
-
-        sb.Append(meta.EntityDescription);
-
-        if (TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost) && manaCost.ManaCost > 0)
-        {
-            sb.Append($"\n\n{Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{manaCost.ManaCost}[/color]");
-        }
-
-        if (TryComp<CP14MagicEffectStaminaCostComponent>(ent, out var staminaCost) && staminaCost.Stamina > 0)
-        {
-            sb.Append($"\n\n{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{staminaCost.Stamina}[/color]");
-        }
-
-        if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
-        {
-            sb.Append($"\n{Loc.GetString("cp14-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]");
-        }
-
-        if (TryComp<CP14MagicEffectVerbalAspectComponent>(ent, out var verbal))
-        {
-            sb.Append("\n" + Loc.GetString("cp14-magic-verbal-aspect"));
-        }
-
-        if (TryComp<CP14MagicEffectSomaticAspectComponent>(ent, out var somatic))
-        {
-            sb.Append("\n" + Loc.GetString("cp14-magic-somatic-aspect") + " " + somatic.FreeHandRequired);
-        }
-
-        if (TryComp<CP14MagicEffectRequiredMusicToolComponent>(ent, out var music))
-        {
-            sb.Append("\n" + Loc.GetString("cp14-magic-music-aspect"));
-        }
-
-        _meta.SetEntityDescription(ent, sb.ToString());
     }
 
     private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)

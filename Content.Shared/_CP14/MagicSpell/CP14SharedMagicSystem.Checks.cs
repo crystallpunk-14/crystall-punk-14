@@ -1,23 +1,21 @@
+using System.Linq;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
-using Content.Shared._CP14.Religion.Prototypes;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell;
 
 public abstract partial class CP14SharedMagicSystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     [Dependency] private readonly SharedHandsSystem _hand = default!;
 
@@ -25,10 +23,11 @@ public abstract partial class CP14SharedMagicSystem
     {
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14CastMagicEffectAttemptEvent>(OnSomaticCheck);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
+        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14CastMagicEffectAttemptEvent>(OnMaterialCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
-        SubscribeLocalEvent<CP14MagicEffectAliveTargetRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
+        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
@@ -36,7 +35,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
-
+        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
     }
 
     /// <summary>
@@ -109,6 +108,27 @@ public abstract partial class CP14SharedMagicSystem
         args.Cancel();
     }
 
+    private void OnMaterialCheck(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (ent.Comp.Requirement is null)
+            return;
+
+        HashSet<EntityUid> heldedItems = new();
+
+        foreach (var hand in _hand.EnumerateHands(args.Performer))
+        {
+            var helded = _hand.GetHeldItem(args.Performer, hand);
+            if (helded is not null)
+                heldedItems.Add(helded.Value);
+        }
+
+        if (!ent.Comp.Requirement.CheckRequirement(EntityManager, _proto, heldedItems))
+        {
+            args.PushReason(Loc.GetString("cp14-magic-spell-need-material-component"));
+            args.Cancel();
+        }
+    }
+
     private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent,
         ref CP14CastMagicEffectAttemptEvent args)
     {
@@ -119,7 +139,7 @@ public abstract partial class CP14SharedMagicSystem
         args.Cancel();
     }
 
-    private void OnMobStateCheck(Entity<CP14MagicEffectAliveTargetRequiredComponent> ent,
+    private void OnMobStateCheck(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent,
         ref CP14CastMagicEffectAttemptEvent args)
     {
         if (args.Target is not { } target)
@@ -132,21 +152,18 @@ public abstract partial class CP14SharedMagicSystem
             return;
         }
 
-        if (!ent.Comp.Inverted)
+        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
         {
-            if (_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-dead"));
-                args.Cancel();
-            }
-        }
-        else
-        {
-            if (!_mobState.IsDead(target, mobStateComp))
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-alive"));
-                args.Cancel();
-            }
+            var states = string.Join(", ",
+                ent.Comp.AllowedStates.Select(state => state switch
+                {
+                    MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
+                    MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
+                    MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
+                }));
+
+            args.PushReason(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)));
+            args.Cancel();
         }
     }
 
@@ -224,5 +241,22 @@ public abstract partial class CP14SharedMagicSystem
             Emote = true
         };
         RaiseLocalEvent(ent, ref ev);
+    }
+
+    private void OnMaterialAspectEndCast(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (ent.Comp.Requirement is null || args.Performer is null)
+            return;
+
+        HashSet<EntityUid> heldedItems = new();
+
+        foreach (var hand in _hand.EnumerateHands(args.Performer.Value))
+        {
+            var helded = _hand.GetHeldItem(args.Performer.Value, hand);
+            if (helded is not null)
+                heldedItems.Add(helded.Value);
+        }
+
+        ent.Comp.Requirement.PostCraft(EntityManager, _proto, heldedItems);
     }
 }

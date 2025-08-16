@@ -1,6 +1,25 @@
 # TIER 1
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
+  id: Marble
+  levels:
+    min: 0
+    max: 10
+  unique: true
+  categories:
+    Ore: 0
+  requiredTags:
+  - CP14DemiplaneOres
+  layers:
+    - !type:CP14OreDunGen
+      entityMask:
+      - CP14WallStone
+      entity: CP14WallMarbleStone
+      count: 5
+      minGroupSize: 5
+      maxGroupSize: 10
+
+- type: cp14LocationModifier
   id: IronOre
   levels:
     min: 1
@@ -21,7 +40,7 @@
       minGroupSize: 2
       maxGroupSize: 4
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: IronOreUnderground
   levels:
     min: 1
@@ -42,11 +61,11 @@
       minGroupSize: 4
       maxGroupSize: 6
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CopperOre
   levels:
-    min: 1
-    max: 5
+    min: 0
+    max: 3
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -63,11 +82,11 @@
       minGroupSize: 2
       maxGroupSize: 4
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CopperOreUnderground
   levels:
-    min: 1
-    max: 5
+    min: 0
+    max: 3
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -84,11 +103,11 @@
       minGroupSize: 4
       maxGroupSize: 6
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CoalOre
   levels:
-    min: 1
-    max: 8
+    min: 0
+    max: 5
   name: cp14-modifier-coal-ore
   unique: false
   categories:
@@ -105,11 +124,11 @@
       minGroupSize: 4
       maxGroupSize: 6
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: CoalOreUnderground
   levels:
-    min: 1
-    max: 8
+    min: 0
+    max: 5
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -128,10 +147,10 @@
 
 # TIER 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: GoldOre
   levels:
-    min: 2
+    min: 3
     max: 10
   unique: false
   categories:
@@ -147,10 +166,10 @@
       minGroupSize: 1
       maxGroupSize: 2
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MithrilOre
   levels:
-    min: 3
+    min: 4
     max: 10
   name: cp14-modifier-mithril-ore
   unique: false
@@ -168,10 +187,10 @@
       minGroupSize: 2
       maxGroupSize: 4
 
-- type: cp14DemiplaneModifier
+- type: cp14LocationModifier
   id: MithrilOreUnderground
   levels:
-    min: 3
+    min: 4
     max: 10
   name: cp14-modifier-mithril-ore
   unique: false

@@ -137,6 +137,23 @@ public sealed partial class ShuttleSystem
         var parallax = EnsureComp<ParallaxComponent>(mapUid);
         parallax.Parallax = ftlMap.Parallax;
 
+        //CP14 FTL map tweaks
+        var mapLight = EnsureComp<MapLightComponent>(mapUid);
+        mapLight.AmbientLightColor = ftlMap.AmbientColor;
+
+        var moles = new float[Atmospherics.AdjustedNumberOfGases];
+        moles[(int) Gas.Oxygen] = 21.824779f;
+        moles[(int) Gas.Nitrogen] = 82.10312f;
+
+        var mixture = new GasMixture(moles, Atmospherics.T20C);
+
+        _atmos.SetMapAtmosphere(mapUid, false, mixture);
+
+        var gravity = EnsureComp<GravityComponent>(mapUid);
+        gravity.Enabled = true;
+        gravity.Inherent = true;
+        //CP14 FTL map tweaks ends
+
         return mapUid;
     }
 
@@ -465,7 +482,7 @@ public sealed partial class ShuttleSystem
         var xform = _xformQuery.GetComponent(uid);
         var body = _physicsQuery.GetComponent(uid);
         var comp = entity.Comp1;
-        //DoTheDinosaur(xform); //CP14 without stunning
+        DoTheDinosaur(xform);
         _dockSystem.SetDockBolts(entity, false);
 
         _physics.SetLinearVelocity(uid, Vector2.Zero, body: body);
@@ -618,10 +635,7 @@ public sealed partial class ShuttleSystem
         {
             foreach (var child in toKnock)
             {
-                if (!_statusQuery.TryGetComponent(child, out var status))
-                    continue;
-
-                _stuns.TryParalyze(child, _hyperspaceKnockdownTime, true, status);
+                _stuns.TryUpdateParalyzeDuration(child, _hyperspaceKnockdownTime);
 
                 // If the guy we knocked down is on a spaced tile, throw them too
                 if (grid != null)

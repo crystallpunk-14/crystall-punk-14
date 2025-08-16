@@ -8,8 +8,8 @@
     solution: barrel
   - type: MixableSolution
     solution: barrel
-  #- type: RefillableSolution
-  #  solution: barrel
+  - type: RefillableSolution
+    solution: barrel
   - type: DrawableSolution
     solution: barrel
   - type: Drink

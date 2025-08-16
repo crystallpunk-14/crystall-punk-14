@@ -6,3 +6,4 @@ cp14-demiplane-location-ice-cave = Ледяные пещеры
 cp14-demiplane-location-snow-island = Заснеженный остров
 cp14-demiplane-location-leaf-maze = Травяной лабиринт
 cp14-demiplane-location-wastelands = Пустошь
+cp14-demiplane-location-mushroom-caves = Грибные пещеры

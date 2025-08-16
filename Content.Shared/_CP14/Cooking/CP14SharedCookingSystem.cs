@@ -209,6 +209,8 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
                 layer.Scale = new Vector2(-1, 1);
         }
 
+        DirtyField(ent, ent.Comp, nameof(CP14FoodHolderComponent.FoodData));
+
         //Sliceable
         // > on server overrided side
     }
@@ -278,6 +280,9 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
             return;
 
         var newData = new CP14FoodData(recipe.FoodData);
+
+        //Assign recipe to the FoodData
+        newData.CurrentRecipe = recipe.ID;
 
         //Process entities
         foreach (var contained in container.ContainedEntities)

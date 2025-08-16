@@ -18,7 +18,6 @@
   name: Adventurers
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Adventurers.xml"
   children:
-  - CP14_EN_Demiplanes
   - CP14_EN_Monster_Toxins
   filterEnabled: True
 
@@ -35,7 +34,8 @@
   id: CP14_EN_JobInnkeeper
   name: Innkeepers
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/Innkeepers.xml"
-  filterEnabled: True
+  children:
+  - CP14_EN_Cooking
 
 - type: guideEntry
   crystallPunkAllowed: true

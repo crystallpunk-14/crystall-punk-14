@@ -26,6 +26,9 @@ cp14-stack-glass-sheet = стекло
 
 cp14-stack-ash-pile = кучка пепла
 
+cp14-stack-hide-thin = тонкая шкура
+cp14-stack-hide = грубая шкура
+cp14-stack-hide-rugged = прочная шкура
 
 
 cp14-stack-group-wooden-planks-any = доски (любые)

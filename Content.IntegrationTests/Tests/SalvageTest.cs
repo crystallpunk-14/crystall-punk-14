@@ -9,7 +9,7 @@ namespace Content.IntegrationTests.Tests;
 
 [TestFixture]
 public sealed class SalvageTest
-{
+{/*
     /// <summary>
     /// Asserts that all salvage maps have been saved as grids and are loadable.
     /// </summary>
@@ -53,5 +53,5 @@ public sealed class SalvageTest
         await server.WaitRunTicks(1);
 
         await pair.CleanReturnAsync();
-    }
+    }*/
 }

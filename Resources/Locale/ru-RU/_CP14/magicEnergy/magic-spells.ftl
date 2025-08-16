@@ -11,16 +11,22 @@ cp14-magic-spell-not-enough-mana-cast-warning-4 = Голова наливает�
 cp14-magic-type = Тип
 cp14-magic-verbal-aspect = Требуется возможность говорить
 cp14-magic-somatic-aspect = Требуются свободные руки:
+cp14-magic-material-aspect = Требуются материальный компонент:
 cp14-magic-music-aspect = Вы должны играть на музыкальном инструменте
 
 cp14-magic-spell-need-verbal-component = Вы не можете произнести заклинание вслух.
 cp14-magic-spell-need-somatic-component = Вам не хватает свободных рук.
+cp14-magic-spell-need-material-component = Нужно держать материальный компонент заклинания в руках.
 
 cp14-magic-spell-stamina-not-enough = Вам не хватает сил, чтобы сделать это.
 cp14-magic-staminacost = Затраты энергии
 cp14-magic-spell-pacified = Это может навредить кому либо!
 
 cp14-magic-spell-target-not-mob = Цель должна быть живым существом!
-cp14-magic-spell-target-dead = Нельзя использовать на мертвых!
-cp14-magic-spell-target-alive = Нельзя использовать на живых!
+
+cp14-magic-spell-target-mob-state = Можно использовать только на {$state} цели!
+cp14-magic-spell-target-mob-state-dead = мертвые
+cp14-magic-spell-target-mob-state-live = живые
+cp14-magic-spell-target-mob-state-critical = умирающие
+
 cp14-magic-spell-target-god-follower = Цель должна быть вашим последователем!

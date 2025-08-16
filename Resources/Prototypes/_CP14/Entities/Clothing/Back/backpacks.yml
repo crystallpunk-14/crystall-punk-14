@@ -1,43 +1,204 @@
-- type: entity
-  abstract: true
-  parent:
-  - Clothing
-  - ContentsExplosionResistanceBase
-  id: CP14ClothingBackpackBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Item
-    size: Huge
-  - type: Clothing
-    equipDelay: 0.4
-    unequipDelay: 0.2
-    slots:
-    - back
-    quickEquip: false
-    breakOnMove: false
-  - type: Storage
-    grid:
-    - 0,0,6,3
-    maxItemSize: Huge
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UseDelay
-    delay: 0.5
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+ # TODO: recolor woth tags --- normal backpack T0 --- color backpack T0
+
+# ========================
+# Base
+# ========================
 
 - type: entity
-  parent: CP14ClothingBackpackBase
-  id: CP14ClothingBackLeatherBackpack
-  name: leather backpack
-  description: You wear this on your back and put items into it.
+  abstract: true
+  parent: CP14ClothingBackContainerBase
+  id: CP14ClothingBackBackpackBase
+  categories: [ ForkFiltered ]
+
+# ========================
+# Tiers
+# ========================
+
+- type: entity
+  parent: CP14ClothingBackBackpackBase
+  id: CP14ClothingBackBackpackT0
+  name: Sack
+  suffix: backpack T0
+  description: A simple cloth sack with basic storage capacity. Lightweight but not very secure.
+  components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
+    equipDelay: 0.8
+    unequipDelay: 0.3
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t0.rsi
+  - type: Storage
+    grid: # 15
+    - 0,0,4,2 # 5*3=15
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 60 # 50u CP14Cloth (10x10u) + 10u CP14String
+      # Cost: (60×0.3) = 18 copper coins
+
+- type: entity
+  parent: CP14ClothingBackBackpackT0
+  id: CP14ClothingBackBackpackT1
+  name: Backpack
+  suffix: backpack T1
+  description: A standard backpack with decent storage space. Perfect for everyday use. It covers your back from blows!
+  components:
+  - type: Clothing
+    slots:
+    - back
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t1.rsi
+  - type: Storage
+    grid: # 24
+    - 0,0,5,3 # 6*4=24
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 18 # 20u CP14Leather (4x5u) ~~~ and -2u for cost balance
+      CP14Iron: 2 # 2u CP14IronBuckle (1x2u)
+      # Cost: (20×1.2) + (2×2) = 24 + 4 = 28 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.90
+        Caustic: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+
+- type: entity
+  parent: CP14ClothingBackBackpackT1
+  id: CP14ClothingBackBackpackT2
+  name: Extended Backpack
+  suffix: backpack T2
+  description: An expanded backpack with increased capacity. Ideal for longer trips. It restricts movement, but it protects your back from blows and keeps you warm!
   components:
   - type: Sprite
-    sprite: _CP14/Clothing/Back/Backpacks/leather_backpack.rsi
-    state: icon
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t2.rsi
+  - type: Storage
+    grid: # 40
+    - 0,1,1,3 # 2*3=6
+    - 3,0,9,3 # 7*4=28
+    - 11,1,12,3 #2*3=6
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 60 # 20u thin (4x5u) + 40u regular (4x10u)
+      CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
+      # Cost: (60×1.2) + (4×2) = 72 + 8 = 80 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.90
+        Piercing: 0.95
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.95
+  - type: HeldSpeedModifier # Slow down when hold
+
+- type: entity
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackT3
+  name: Traveler Backpack
+  suffix: backpack T3
+  description: A large, well-organized backpack designed for extensive traveling with multiple compartments. It protects your back and neck from blows! But unfortunately, it is not comfortable to run with.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t3.rsi
+  - type: Storage
+    grid: # 66
+    - 0,0,9,1 # 10*2=20
+    - 2,2,7,2 # 6*1=6
+    - 0,3,9,6 # 10*4=40
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 115 # 40u regular (4x10u) + 75u rugged (3x25u)
+      CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
+      # Cost: (115×1.2) + (4×2) = 138 + 8 = 146 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.90
+        Heat: 0.70
+        Caustic: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier # Slow down when hold
+  - type: Clothing
+    equipDelay: 1.2
+    unequipDelay: 0.8
+
+# ========================
+# Special
+# ========================
+
+- type: entity
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackReinforced
+  name: Reinforced Backpack
+  suffix: backpack T2
+  description: A durable backpack with reinforced stitching and materials for extra protection of your belongings. It restricts movement, but it protects your back from blows and keeps you warm!
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t2_reinforced.rsi
+  - type: Storage
+    grid: # 35
+    - 1,0,5,0 # 5*1=5
+    - 0,1,6,2 # 7*2=14
+    - 0,4,2,5 # 3*2=6
+    - 1,6,2,6 # 2*1=2
+    - 4,4,6,5 # 3*2=6
+    - 4,6,5,6 # 2*1=2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 60 # 20u thin (4x5u) + 40u regular (4x10u)
+      CP14Iron: 24 # 20u + 4u CP14IronBuckle (2x2u)
+      # Cost: (60×1.2) + (24×2) = 72 + 48 = 120 copper coins
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.80
+        Piercing: 0.90
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.94
+  - type: HeldSpeedModifier # Slow down when hold
+
+- type: entity
+  parent: CP14ClothingBackBackpackT2
+  id: CP14ClothingBackBackpackCargo
+  name: Cargo Bag
+  suffix: backpack T2
+  description: A utilitarian cargo bag designed for heavy-duty use. Convenient for carrying and storing work stuff.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Back/Backpacks/backpack_t2_cargo.rsi
+  - type: Storage
+    grid: # 38
+    - 3,0,4,0 # 2*1=2
+    - 2,1,5,2 # 4*2=8
+    - 1,3,6,3 # 6*1=6
+    - 0,4,7,5 # 8*2=16
+    - 1,6,6,6 # 6*1=6
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 80 # 20 + 20u thin (4x5u) + 40u regular (4x10u)
+      CP14Iron: 4 # 4u CP14IronBuckle (2x2u)
+      # Cost: (80×1.2) + (4×2) = 96 + 8 = 104 copper coins
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.97
+  - type: HeldSpeedModifier # Slow down when hold

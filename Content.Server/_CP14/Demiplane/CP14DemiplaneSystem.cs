@@ -1,17 +1,11 @@
+using System.Linq;
 using Content.Server._CP14.Demiplane.Components;
-using Content.Server.Chat.Managers;
-using Content.Server.Chat.Systems;
-using Content.Server.Flash;
-using Content.Server.Procedural;
+using Content.Server._CP14.Procedural;
 using Content.Shared._CP14.Demiplane;
 using Content.Shared._CP14.Demiplane.Components;
-using Content.Shared.Chat;
-using Content.Shared.Popups;
-using Robust.Server.Audio;
-using Robust.Shared.Audio;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Robust.Shared.Player;
+using Content.Shared._CP14.Procedural.Prototypes;
+using Content.Shared.Interaction;
+using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -20,167 +14,318 @@ namespace Content.Server._CP14.Demiplane;
 
 public sealed partial class CP14DemiplaneSystem : CP14SharedDemiplaneSystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly DungeonSystem _dungeon = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly CP14LocationGenerationSystem _generation = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly FlashSystem _flash = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
 
-    private EntityQuery<CP14DemiplaneComponent> _demiplaneQuery;
+    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+        InitializeStation();
 
-        _demiplaneQuery = GetEntityQuery<CP14DemiplaneComponent>();
+        _sawmill = _logManager.GetSawmill("demiplane_map_gen");
 
-        InitGeneration();
-        InitConnections();
-        InitStabilization();
-        InitEchoes();
-        InitDestruction();
-
-        SubscribeLocalEvent<CP14DemiplaneComponent, ComponentShutdown>(OnDemiplanShutdown);
-        SubscribeLocalEvent<CP14SpawnOutOfDemiplaneComponent, MapInitEvent>(OnSpawnOutOfDemiplane);
-    }
-
-    private void OnSpawnOutOfDemiplane(Entity<CP14SpawnOutOfDemiplaneComponent> ent, ref MapInitEvent args)
-    {
-        //Check if entity is in demiplane
-        var map = Transform(ent).MapUid;
-        if (!_demiplaneQuery.TryComp(map, out var demiplane))
-            return;
-
-        //Get random exit demiplane point and spawn entity there
-        if (demiplane.ExitPoints.Count == 0)
-            return;
-
-        var exit = _random.Pick(demiplane.ExitPoints);
-        var coordinates = Transform(exit).Coordinates;
-
-        var proto = ent.Comp.Proto;
-
-        if (proto is null)
-            proto = MetaData(ent).EntityPrototype?.ID;
-
-        Spawn(proto, coordinates);
+        SubscribeLocalEvent<CP14DemiplaneRiftComponent, InteractHandEvent>(OnRiftInteracted);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        UpdateGeneration(frameTime);
-        UpdateStabilization(frameTime);
-        UpdateDestruction(frameTime);
-    }
-
-    /// <summary>
-    /// Teleports the entity inside the demiplane, to one of the random entry points.
-    /// </summary>
-    /// <param name="demiplane">The demiplane the entity will be teleported to</param>
-    /// <param name="entity">The entity to be teleported</param>
-    /// <returns></returns>
-    public override bool TryTeleportIntoDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
-    {
-        if (entity is null)
-            return false;
-
-        if (!TryGetDemiplaneEntryPoint(demiplane, out var entryPoint) || entryPoint is null)
+        var query = EntityQueryEnumerator<CP14DemiplaneRiftComponent>();
+        while (query.MoveNext(out var uid, out var demiplaneRift))
         {
-            Log.Error($"{entity} cant get in demiplane {demiplane}: no active entry points!");
-            return false;
+            if (demiplaneRift.ScanningTargetMap is null)
+                continue;
+
+            if (_timing.CurTime < demiplaneRift.NextScanTime)
+                continue;
+
+            demiplaneRift.NextScanTime = _timing.CurTime + TimeSpan.FromSeconds(5);
+
+            var targetQuery = EntityQueryEnumerator<CP14DemiplaneEnterPointComponent>();
+            while (targetQuery.MoveNext(out var enterUid, out var enterComp))
+            {
+                if (Transform(enterUid).MapUid != demiplaneRift.ScanningTargetMap)
+                    continue;
+
+                //Remove awaiting
+                QueueDel(demiplaneRift.AwaitingEntity);
+
+                //Start connection
+                var portal1 = SpawnAtPosition(demiplaneRift.PortalProto, Transform(enterUid).Coordinates);
+                var portal2 = SpawnAtPosition(demiplaneRift.PortalProto, Transform(uid).Coordinates);
+                _link.TryLink(portal1, portal2, true);
+
+                //Delete self
+                QueueDel(uid);
+                QueueDel(enterUid);
+
+                return;
+            }
         }
-
-        TeleportEntityToCoordinate(entity.Value, Transform(entryPoint.Value).Coordinates, demiplane.Comp.ArrivalSound);
-
-        return true;
     }
 
-    /// <summary>
-    /// Simple teleportation, with common special effects for all the game's teleportation mechanics
-    /// </summary>
-    /// <param name="entity"></param>
-    /// <param name="coordinates"></param>
-    /// <param name="sound"></param>
-    public void TeleportEntityToCoordinate(EntityUid? entity, EntityCoordinates coordinates, SoundSpecifier? sound = null)
+    private void OnRiftInteracted(Entity<CP14DemiplaneRiftComponent> ent, ref InteractHandEvent args)
     {
-        if (entity is null)
+        if (HasComp<CP14DemiplaneBlockInteractionsComponent>(args.User))
             return;
 
-        _flash.Flash(entity.Value, null, null, TimeSpan.FromSeconds(3f), 0.5f);
-        _transform.SetCoordinates(entity.Value, coordinates);
-        _audio.PlayGlobal(sound, entity.Value);
+        if (!ent.Comp.CanCreate)
+            return;
+
+        var station = _station.GetStations().First();
+        if (!TryComp<CP14StationDemiplaneMapComponent>(station, out var stationMap))
+        {
+            _sawmill.Error($"Station {station} does not have a CP14StationDemiplaneMapComponent!");
+            QueueDel(ent);
+            return;
+        }
+
+        var currentPosition = Vector2i.Zero;
+        var originMap = Transform(ent).MapUid;
+
+        if (TryComp<CP14DemiplaneMapComponent>(originMap, out var originDemiplaneComp))
+            currentPosition = originDemiplaneComp.Position;
+
+        var targetPosition = GetRandomNeighbourNotGeneratedMap((station, stationMap), currentPosition);
+
+        if (targetPosition is null || !stationMap.Nodes.TryGetValue(targetPosition.Value, out var nextMapNode))
+        {
+            _sawmill.Warning($"No suitable target position found for rift at {currentPosition} in station {station}. " +
+                             $"Either all neighbours are generated or the map is not initialized properly.");
+            QueueDel(ent);
+            return;
+        }
+
+        if (nextMapNode.LocationConfig is null)
+        {
+            _sawmill.Error($"Next map node at {targetPosition} does not have a location config! " +
+                           $"Cannot generate demiplane map.");
+
+            QueueDel(ent);
+            return;
+        }
+
+        stationMap.GeneratedNodes.Add(targetPosition.Value);
+        _map.CreateMap(out var mapId, runMapInit: false);
+        var mapUid = _map.GetMap(mapId);
+        EnsureComp<CP14DemiplaneMapComponent>(mapUid).Position = targetPosition.Value;
+
+        _meta.SetEntityName(mapUid, $"Demi: [{targetPosition}] - {nextMapNode.LocationConfig}");
+
+        _generation.GenerateLocation(
+            mapUid,
+            mapId,
+            nextMapNode.LocationConfig.Value,
+            nextMapNode.Modifiers);
+
+        var awaiting = SpawnAtPosition(ent.Comp.AwaitingProto, Transform(ent).Coordinates);
+
+        ent.Comp.AwaitingEntity = awaiting;
+        ent.Comp.ScanningTargetMap = mapUid;
+        ent.Comp.CanCreate = false;
     }
 
     /// <summary>
-    /// Teleports an entity from the demiplane to the real world, to one of the random exit points in the real world.
+    /// Returns a suitable location for the specified difficulty level.
     /// </summary>
-    /// <param name="demiplane">The demiplane from which the entity will be teleported</param>
-    /// <param name="entity">An entity that will be teleported into the real world. This entity must be in the demiplane, otherwise the function will not work.</param>
-    /// <returns></returns>
-    public override bool TryTeleportOutDemiplane(Entity<CP14DemiplaneComponent> demiplane, EntityUid? entity)
+    public CP14ProceduralLocationPrototype SelectLocation(int level)
     {
-        if (entity is null)
-            return false;
+        CP14ProceduralLocationPrototype? selectedConfig = null;
 
-        if (Transform(entity.Value).MapUid != demiplane.Owner)
-            return false;
-
-        if (!TryGetDemiplaneExitPoint(demiplane, out var connection) || connection is null)
+        HashSet<CP14ProceduralLocationPrototype> suitableConfigs = new();
+        foreach (var locationConfig in _proto.EnumeratePrototypes<CP14ProceduralLocationPrototype>())
         {
-            Log.Error($"{entity} cant get out of demiplane {demiplane}: no active connections!");
-            return false;
+            suitableConfigs.Add(locationConfig);
         }
 
-        TeleportEntityToCoordinate(entity.Value, Transform(connection.Value).Coordinates, demiplane.Comp.DepartureSound);
-        return true;
+        while (suitableConfigs.Count > 0)
+        {
+            var randomConfig = _random.Pick(suitableConfigs);
+
+            var passed = true;
+
+            //Random prob filter
+            if (passed)
+            {
+                if (!_random.Prob(randomConfig.GenerationProb))
+                {
+                    passed = false;
+                }
+            }
+
+            //Levels filter
+            if (passed)
+            {
+                if (level < randomConfig.Levels.Min || level > randomConfig.Levels.Max)
+                {
+                    passed = false;
+                }
+            }
+
+            if (!passed)
+            {
+                suitableConfigs.Remove(randomConfig);
+                continue;
+            }
+
+            selectedConfig = randomConfig;
+            break;
+        }
+
+        if (selectedConfig is null)
+            throw new Exception($"No suitable procedural location config found for level {level}!");
+
+        return selectedConfig;
     }
 
-    private void OnDemiplanShutdown(Entity<CP14DemiplaneComponent> demiplane, ref ComponentShutdown args)
+    /// <summary>
+    /// Returns a set of modifiers under the specified difficulty level that are appropriate for the specified location
+    /// </summary>
+    public List<ProtoId<CP14ProceduralModifierPrototype>> SelectModifiers(
+        int level,
+        CP14ProceduralLocationPrototype location,
+        Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float> modifierLimits)
     {
-        //We stop asynchronous generation of a demiplane early if for some reason this demiplane is deleted before generation is complete
-        foreach (var (job, cancelToken) in _expeditionJobs.ToArray())
+        List<ProtoId<CP14ProceduralModifierPrototype>> selectedModifiers = new();
+
+        //Modifier generation
+        Dictionary<CP14ProceduralModifierPrototype, float> suitableModifiersWeights = new();
+        foreach (var modifier in _proto.EnumeratePrototypes<CP14ProceduralModifierPrototype>())
         {
-            if (job.DemiplaneMapUid == demiplane.Owner)
+            var passed = true;
+
+            //Random prob filter
+            if (passed)
             {
-                cancelToken.Cancel();
-                _expeditionJobs.Remove((job, cancelToken));
+                if (!_random.Prob(modifier.GenerationProb))
+                {
+                    passed = false;
+                }
+            }
+
+            //Levels filter
+            if (passed)
+            {
+                if (level < modifier.Levels.Min || level > modifier.Levels.Max)
+                {
+                    passed = false;
+                }
+            }
+
+            //Tag blacklist filter
+            foreach (var configTag in location.Tags)
+            {
+                if (modifier.BlacklistTags.Count != 0 && modifier.BlacklistTags.Contains(configTag))
+                {
+                    passed = false;
+                    break;
+                }
+            }
+
+            //Tag required filter
+            if (passed)
+            {
+                foreach (var reqTag in modifier.RequiredTags)
+                {
+                    if (!location.Tags.Contains(reqTag))
+                    {
+                        passed = false;
+                        break;
+                    }
+                }
+            }
+
+            if (passed)
+                suitableModifiersWeights.Add(modifier, modifier.GenerationWeight);
+        }
+
+
+        //Limits calculation
+        Dictionary<ProtoId<CP14ProceduralModifierCategoryPrototype>, float> limits = new();
+        foreach (var limit in modifierLimits)
+        {
+            limits.Add(limit.Key, limit.Value);
+        }
+
+
+        while (suitableModifiersWeights.Count > 0)
+        {
+            var selectedModifier = ModifierPick(suitableModifiersWeights, _random);
+
+            //Fill location under limits
+            var passed = true;
+            foreach (var category in selectedModifier.Categories)
+            {
+                if (!limits.ContainsKey(category.Key))
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
+                    passed = false;
+                    break;
+                }
+
+                if (limits[category.Key] - category.Value < 0)
+                {
+                    suitableModifiersWeights.Remove(selectedModifier);
+                    passed = false;
+                    break;
+                }
+            }
+
+            if (!passed)
+                continue;
+
+            selectedModifiers.Add(selectedModifier);
+
+            foreach (var category in selectedModifier.Categories)
+            {
+                limits[category.Key] -= category.Value;
+            }
+
+            if (selectedModifier.Unique)
+                suitableModifiersWeights.Remove(selectedModifier);
+        }
+
+        return selectedModifiers;
+    }
+
+    /// <summary>
+    /// Optimization moment: avoid re-indexing for weight selection
+    /// </summary>
+    private static CP14ProceduralModifierPrototype ModifierPick(
+        Dictionary<CP14ProceduralModifierPrototype, float> weights,
+        IRobustRandom random)
+    {
+        var picks = weights;
+        var sum = picks.Values.Sum();
+        var accumulated = 0f;
+
+        var rand = random.NextFloat() * sum;
+
+        foreach (var (key, weight) in picks)
+        {
+            accumulated += weight;
+
+            if (accumulated >= rand)
+            {
+                return key;
             }
         }
 
-        foreach (var exit in demiplane.Comp.ExitPoints)
-        {
-            RemoveDemiplaneRandomExitPoint(demiplane, exit);
-        }
-
-        foreach (var entry in demiplane.Comp.EntryPoints)
-        {
-            RemoveDemiplaneRandomEntryPoint(demiplane, entry);
-        }
+        // Shouldn't happen
+        throw new InvalidOperationException($"Invalid weighted pick in CP14DemiplanSystem.Generation!");
     }
+}
 
-    private void DemiplaneAnnounce(EntityUid mapUid, string text)
-    {
-        var mapId = Comp<MapComponent>(mapUid).MapId;
-
-        _chatManager.ChatMessageToManyFiltered(
-            Filter.BroadcastMap(mapId),
-            ChatChannel.Radio,
-            text,
-            text,
-            _mapManager.GetMapEntityId(mapId),
-            false,
-            true,
-            null);
-    }
+public sealed class CP14LocationGeneratedEvent : EntityEventArgs
+{
 }

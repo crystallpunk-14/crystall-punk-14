@@ -149,7 +149,24 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
         OptionCategories.Clear();
         OptionCategories.AddItem(Loc.GetString("cp14-recipe-category-all"), AllCategoryId);
 
-        foreach (var entry in recipesState.Recipes.OrderByDescending(e => e.Craftable))
+        // First, we sort all the recipes by priority and category.
+        var sortedRecipes = recipesState.Recipes
+            .OrderByDescending(e => e.Craftable)
+            .ThenByDescending(e =>
+            {
+                if (!_prototype.TryIndex(e.ProtoId, out CP14WorkbenchRecipePrototype? recipe))
+                    return 0;
+                return recipe.Priority;
+            })
+            .ThenBy(e =>
+            {
+                if (!_prototype.TryIndex(e.ProtoId, out CP14WorkbenchRecipePrototype? recipe) ||
+                    !_prototype.TryIndex(recipe.Category, out CP14WorkbenchRecipeCategoryPrototype? category))
+                    return string.Empty;
+                return category.ID;
+            });
+
+        foreach (var entry in sortedRecipes)
         {
             if (!_prototype.TryIndex(entry.ProtoId, out var indexedEntry))
                 continue;
@@ -168,6 +185,18 @@ public sealed partial class CP14WorkbenchWindow : DefaultWindow
 
             entries.Add(entry);
         }
+
+        // Sort categories by priority
+        var sortedCategories = _categories
+            .OrderByDescending(c =>
+            {
+                var categoryProto = _prototype.EnumeratePrototypes<CP14WorkbenchRecipeCategoryPrototype>()
+                    .FirstOrDefault(p => p.Name == c.Key);
+                return categoryProto?.Priority ?? 0;
+            })
+            .ToList();
+
+        _categories = sortedCategories.ToDictionary(pair => pair.Key, pair => pair.Value);
 
         var count = 0;
         foreach (var category in _categories)

@@ -1,0 +1,124 @@
+# # Explorer Backpacks (heavy on buckles)
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT0
+#   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 4
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14Cloth
+#     count: 3 # 30u CP14Cloth ~~~ CP14Cloth (10u)
+#   result: CP14ClothingBackExplorerBackpackT0
+
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT1
+#   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 3
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14ThinLeather
+#     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle
+#     count: 8 # 16u CP14Iron ~~~ 1/5 iron bar (10u)
+#   result: CP14ClothingBackExplorerBackpackT1
+
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT2
+#   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 2
+#   craftTime: 6
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14ThinLeather
+#     count: 3 # 15u CP14Leather ~~~ CP14ThinLeather (5u)
+#   - !type:StackResource
+#     stack: CP14Leather
+#     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle
+#     count: 10 # 20u CP14Iron ~~~ 1/5 iron bar (10u)
+#   result: CP14ClothingBackExplorerBackpackT2
+
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT3
+#   tag: CP14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 1
+#   craftTime: 10
+#   requirements:
+#   - !type:StackResource
+#     stack: CP14Leather
+#     count: 3 # 30u CP14Leather ~~~ CP14Leather (10u)
+#   - !type:StackResource
+#     stack: CP14RuggedLeather
+#     count: 2 # 50u CP14Leather ~~~ CP14RuggedLeather (25u)
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle
+#     count: 10 # 20u CP14Iron ~~~ 1/5 iron bar (10u)
+#   result: CP14ClothingBackExplorerBackpackT3
+
+# # ======================================
+# # Upgrade Recipes with Material Tracking
+# # ======================================
+
+# # Explorer T1 Upgrade (Leather Carryover)
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT1_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 3
+#   craftTime: 6
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingBackExplorerBackpackT0  # 60u cloth (6u)
+#     count: 1
+#   - !type:StackResource
+#     stack: CP14ThinLeather                 # +15u CP14Leather (3x5u)
+#     count: 1
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle
+#     count: 8 # 16u CP14Iron ~~~ 1/5 iron bar (10u)
+#   result: CP14ClothingBackExplorerBackpackT1
+#   # Total Leather: 60u (cloth) + 15u = 75u
+
+# # Explorer T2 Upgrade (Leather Accumulation)
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT2_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 2
+#   craftTime: 8
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingBackExplorerBackpackT1  # 15u (thin)
+#     count: 1
+#   - !type:StackResource
+#     stack: CP14Leather                     # +30u CP14Leather (3x10u)
+#     count: 3
+#   - !type:ProtoIdResource
+#     protoId: CP14IronBuckle
+#     count: 2 # 4u CP14Iron ~~~ 1/5 iron bar (10u)
+#   result: CP14ClothingBackExplorerBackpackT2
+#   # Total Leather: 15u + 30u = 45u
+
+# # Explorer T3 Upgrade (Rugged Premium)
+# - type: CP14Recipe
+#   id: CP14ClothingBackExplorerBackpackT3_Upgrade
+#   tag: CP14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 1
+#   craftTime: 12
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: CP14ClothingBackExplorerBackpackT2  # 15u + 30u = 45u
+#     count: 1
+#   - !type:StackResource
+#     stack: CP14RuggedLeather               # +50u CP14Leather (2x25u)
+#     count: 2
+#   result: CP14ClothingBackExplorerBackpackT3
+#   # Total Leather: 45u + 50u = 95u

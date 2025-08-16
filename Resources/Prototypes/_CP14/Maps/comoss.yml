@@ -49,3 +49,17 @@
           - PersonalHouse8
           - PersonalHouse9
           - PersonalHouse10
+        - type: CP14StationProceduralLocation
+          location: ComossIsland
+          modifiers:
+          - RaidSpawners
+          - EnemyFlem
+          - MonsterMosquito
+          - Marble
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - CP14CrystalQuartzOrder
+          - Quartz
+          - FlyAgaric
+          - WildSage

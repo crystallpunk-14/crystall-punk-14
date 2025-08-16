@@ -23,7 +23,11 @@ public sealed partial class CP14SpellThrowFromUser : CP14SpellEffect
         var xform = entManager.System<SharedTransformSystem>();
 
         var worldPos = xform.GetWorldPosition(args.User.Value);
-        var foo = Vector2.Normalize(xform.GetWorldPosition(args.Target.Value) - worldPos);
+        var dir = xform.GetWorldPosition(args.Target.Value) - worldPos;
+        if (dir == Vector2.Zero)
+            return;
+
+        var foo = Vector2.Normalize(dir);
 
         if (entManager.TryGetComponent<EmbeddableProjectileComponent>(targetEntity, out var embeddable))
         {

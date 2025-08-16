@@ -31,3 +31,8 @@
   - type: StorageContainerVisuals
     maxFillLevels: 2
     fillBaseName: fill-
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 10 # 10u CP14Leather
+      CP14Cloth: 20 # 20u CP14String (4x5u)
+  # Cost: (10×1.2) + (20×0.3) = 12 + 6 = 18 copper coins

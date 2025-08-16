@@ -8,3 +8,10 @@ cp14-recipe-category-armor = Armor
 cp14-recipe-category-carpet = Carpets
 cp14-recipe-category-wallpaper = Wallpapers
 cp14-recipe-category-clothing = Clothing
+
+cp14-recipe-category-backpack = Backpacks
+cp14-recipe-category-backpack-satchel = Satchels
+cp14-recipe-category-backpack-upgrade = Backpack Upgrade
+cp14-recipe-category-backpack-satchel-upgrade = Satchel Upgrade
+cp14-recipe-category-belt = Belts
+cp14-recipe-category-leather = Leather Working

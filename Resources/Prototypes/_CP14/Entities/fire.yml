@@ -104,7 +104,7 @@
       Flammable: [ Touch ]
       Extinguish: [ Touch ]
   - type: Flammable
-    fireSpread: true
+    fireSpread: false
     canResistFire: false
     alwaysCombustible: true
     canExtinguish: true
@@ -132,4 +132,6 @@
   - type: CP14FireSpread
     spreadCooldownMin: 1
     spreadCooldownMax: 3
+  - type: Flammable
+    fireSpread: true
 
