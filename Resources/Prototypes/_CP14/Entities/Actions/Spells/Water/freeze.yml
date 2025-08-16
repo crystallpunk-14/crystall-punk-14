@@ -31,6 +31,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
+  - type: CP14MagicEffectPacifiedBlock
     proto: CP14RunePlantFreeze
   - type: Action
     icon:
