@@ -8,7 +8,7 @@
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.7
+    speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
     manaCost: 8
   - type: CP14MagicEffect

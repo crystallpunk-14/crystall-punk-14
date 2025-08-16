@@ -31,8 +31,8 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Vos adepto frigus..."
   - type: CP14MagicEffectCastingVisual
-  - type: CP14MagicEffectPacifiedBlock
     proto: CP14RunePlantFreeze
+  - type: CP14MagicEffectPacifiedBlock
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
