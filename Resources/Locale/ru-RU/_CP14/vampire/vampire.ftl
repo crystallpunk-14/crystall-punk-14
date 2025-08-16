@@ -4,4 +4,4 @@ cp14-vampire-examine = [color=red]Ярко красные глаза и длин
 
 cp14-magic-spell-need-vampire-valid = Недоступно в скрытой форме вампира.
 
-cp-14-vampire-transmutable-to = [color=red]Вампирская магия[/color] способна трансмутировать это в "[color=gold]{$name}[/color]"
+cp-14-vampire-transmutable-to = [color=red]Вампирская магия[/color] способна трансмутировать это в "[color=gold]{$name}[/color]" ценой в [color=red]{$count}[/color] эссенции крови.

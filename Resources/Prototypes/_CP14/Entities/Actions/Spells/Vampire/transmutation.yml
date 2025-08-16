@@ -9,9 +9,6 @@
   - type: CP14MagicEffectVampire
   - type: CP14MagicEffectManaCost
     manaCost: 20
-  - type: CP14MagicEffectSkillPointCost
-    skillPoint: Blood
-    count: 0.3
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget

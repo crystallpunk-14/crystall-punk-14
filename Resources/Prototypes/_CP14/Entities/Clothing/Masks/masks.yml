@@ -38,13 +38,6 @@
     sprite: _CP14/Clothing/Masks/steel_mask.rsi
   - type: IdentityBlocker
   - type: IngestionBlocker
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 20
@@ -103,6 +96,8 @@
     accent: ReplacementAccent
     replacement: cp14skeleton
   - type: CP14Transmutable
+    cost: 0.2
+    resource: Blood
     entries:
       VampireDevourers: CP14ClothingMaskVampireVoiceDevourers
       VampireUnnameable: CP14ClothingMaskVampireVoiceUnnameable
@@ -122,13 +117,6 @@
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: cp14skeleton
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
 
 - type: entity
   parent: CP14ClothingMaskBoneMask

@@ -62,7 +62,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
 
         var name = indexedTargetProto.Name;
 
-        args.PushMarkup(Loc.GetString("cp-14-vampire-transmutable-to", ("name", name)));
+        args.PushMarkup(Loc.GetString("cp-14-vampire-transmutable-to", ("name", name), ("count", ent.Comp.Cost)));
     }
 
     private void OnVampireCastExamine(Entity<CP14MagicEffectVampireComponent> ent, ref ExaminedEvent args)

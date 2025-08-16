@@ -21,6 +21,6 @@ public sealed partial class CP14SpellTransmutateVampire : CP14SpellEffect
 
         var transmutateSys = entManager.System<CP14TransmutationSystem>();
 
-        transmutateSys.TryTransmutate(args.Target.Value, vampireComponent.TransmutationMethod.Value);
+        transmutateSys.TryTransmutate(args.Target.Value, vampireComponent.TransmutationMethod.Value, args.User.Value);
     }
 }

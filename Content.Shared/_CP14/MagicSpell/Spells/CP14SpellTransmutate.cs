@@ -13,9 +13,11 @@ public sealed partial class CP14SpellTransmutate : CP14SpellEffect
     {
         if (args.Target is null)
             return;
+        if (args.User is null)
+            return;
 
         var transmutateSys = entManager.System<CP14TransmutationSystem>();
 
-        transmutateSys.TryTransmutate(args.Target.Value, Method);
+        transmutateSys.TryTransmutate(args.Target.Value, Method, args.User.Value);
     }
 }

@@ -106,6 +106,8 @@
     recipeTags:
     - CP14RecipeWorkbench
   - type: CP14Transmutable
+    cost: 0.3
+    resource: Blood
     entries:
       VampireDevourers: CP14WorkbenchVampireDevourers
       VampireUnnameable: CP14WorkbenchVampireUnnameable
