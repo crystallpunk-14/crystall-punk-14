@@ -2,6 +2,7 @@ using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
+using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -9,6 +10,7 @@ namespace Content.Shared._CP14.Vampire;
 
 [RegisterComponent]
 [NetworkedComponent]
+[AutoGenerateComponentState]
 [Access(typeof(CP14SharedVampireSystem))]
 public sealed partial class CP14VampireComponent : Component
 {
@@ -23,6 +25,9 @@ public sealed partial class CP14VampireComponent : Component
     [DataField]
     public ProtoId<CP14SkillPointPrototype> SkillPointProto = "Blood";
 
+    [DataField, AutoNetworkedField]
+    public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
+
     [DataField]
     public FixedPoint2 SkillPointCount = 3f;
 
@@ -33,7 +38,7 @@ public sealed partial class CP14VampireComponent : Component
     /// All this actions was granted to vampires on component added
     /// </summary>
     [DataField]
-    public List<EntProtoId> ActionsProto = new();
+    public List<EntProtoId> ActionsProto = new() { "CP14ActionVampireToggleVisuals" };
 
     /// <summary>
     /// For tracking granted actions, and removing them when component is removed.

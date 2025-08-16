@@ -7,21 +7,86 @@
   #  objectives:
   #  - TODO: SURVIVE
   - type: GameRule
-    minPlayers: 0 #Increase in future
+    minPlayers: 30
   - type: AntagSelection
     definitions:
+    # Night children clan
     - prefRoles: [ CP14Vampire ]
-      max: 5
-      playerRatio: 10
-      multiAntagSetting: NotExclusive
+      max: 3
       lateJoinAdditional: true
-      allowNonHumans: true
       mindRoles:
       - CP14MindRoleVampire
       components:
       - type: CP14Vampire
-        actionsProto:
-        - CP14ActionVampireToggleVisuals
+        factionIcon: CP14VampireNightChildrens
+      - type: CP14ShowVampireFaction
+        factionIcon: CP14VampireNightChildrens
+      - type: Hunger
+        baseDecayRate: 0.07
+        starvationDamage:
+          types:
+            Cold: 0.25
+            Bloodloss: 0.25
+        hungerThresholdAlerts:
+          Peckish: CP14VampirePeckish
+          Starving: CP14VampireStarving
+          Dead: CP14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: cp14-roles-antag-vampire-briefing
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
+    # Devourers clan
+    - prefRoles: [ CP14Vampire ]
+      max: 3
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleVampire
+      components:
+      - type: CP14Vampire
+        factionIcon: CP14VampireDevourers
+      - type: CP14ShowVampireFaction
+        factionIcon: CP14VampireDevourers
+      - type: Hunger
+        baseDecayRate: 0.07
+        starvationDamage:
+          types:
+            Cold: 0.25
+            Bloodloss: 0.25
+        hungerThresholdAlerts:
+          Peckish: CP14VampirePeckish
+          Starving: CP14VampireStarving
+          Dead: CP14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: cp14-roles-antag-vampire-briefing
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
+    # Unnameable clan
+    - prefRoles: [ CP14Vampire ]
+      max: 3
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleVampire
+      components:
+      - type: CP14Vampire
+        factionIcon: CP14VampireUnnameable
+      - type: CP14ShowVampireFaction
+        factionIcon: CP14VampireUnnameable
       - type: Hunger
         baseDecayRate: 0.07
         starvationDamage:
