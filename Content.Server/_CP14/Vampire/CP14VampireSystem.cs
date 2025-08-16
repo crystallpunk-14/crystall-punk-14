@@ -9,6 +9,7 @@ using Content.Shared._CP14.Vampire;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
+namespace Content.Server._CP14.Vampire;
 
 public sealed class CP14VampireSystem : CP14SharedVampireSystem
 {

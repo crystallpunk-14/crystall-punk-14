@@ -95,8 +95,8 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         }
 
         //Skill tree
+        _skill.AddSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount, silent: true);
         _skill.AddSkillTree(ent, ent.Comp.SkillTreeProto);
-        _skill.AddSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount);
     }
 
     private void OnVampireRemove(Entity<CP14VampireComponent> ent, ref ComponentRemove args)
@@ -145,6 +145,9 @@ public abstract class CP14SharedVampireSystem : EntitySystem
 
     private void OnToggleDoAfter(Entity<CP14VampireComponent> ent, ref CP14VampireToggleVisualsDoAfter args)
     {
+        if (args.Cancelled || args.Handled)
+            return;
+
         if (HasComp<CP14VampireVisualsComponent>(ent))
         {
             RemCompDeferred<CP14VampireVisualsComponent>(ent);
@@ -153,6 +156,8 @@ public abstract class CP14SharedVampireSystem : EntitySystem
         {
             EnsureComp<CP14VampireVisualsComponent>(ent);
         }
+
+        args.Handled = true;
     }
 
     protected virtual void OnVampireVisualsShutdown(Entity<CP14VampireVisualsComponent> vampire, ref ComponentShutdown args)

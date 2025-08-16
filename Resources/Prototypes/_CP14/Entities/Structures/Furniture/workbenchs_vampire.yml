@@ -2,17 +2,17 @@
   parent: CP14BaseWorkbench
   id: CP14WorkbenchVampireDevourers
   categories: [ ForkFiltered ]
+  suffix: Devourers
   name: vampire power point
   description: A table imbued with vampire magic, allowing you to create items of dark arts.
   components:
   - type: Sprite
     snapCardinals: true
     sprite: _CP14/Structures/Furniture/workbench_vampire.rsi
-    state: base
     layers:
     - state: base
     - state: devourers
-    - state: devourers_fx
+    - state: fx
       shader: unshaded
   - type: CP14Workbench
     craftSound:
@@ -36,3 +36,27 @@
     color: "#d60032"
     energy: 1
     radius: 3
+
+- type: entity
+  id: CP14WorkbenchVampireUnnameable
+  suffix: Unnameable
+  parent: CP14WorkbenchVampireDevourers
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: unnameable
+    - state: fx
+      shader: unshaded
+
+- type: entity
+  id: CP14WorkbenchVampireChildrenNight
+  suffix: Night childrens
+  parent: CP14WorkbenchVampireDevourers
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: night
+    - state: fx
+      shader: unshaded

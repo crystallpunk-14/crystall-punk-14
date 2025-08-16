@@ -33,7 +33,7 @@ public sealed partial class CP14VampireComponent : Component
     public ProtoId<CP14TransmutationPrototype> TransmutationMethod;
 
     [DataField]
-    public FixedPoint2 SkillPointCount = 3f;
+    public FixedPoint2 SkillPointCount = 1f;
 
     [DataField]
     public TimeSpan ToggleVisualsTime = TimeSpan.FromSeconds(2f);

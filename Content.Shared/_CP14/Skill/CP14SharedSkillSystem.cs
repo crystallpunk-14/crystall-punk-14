@@ -399,10 +399,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             ? FixedPoint2.Min(skillContainer.Max + points, limit.Value)
             : skillContainer.Max + points;
 
-        Dirty(target, component);
+        DirtyField(target, component, nameof(CP14SkillStorageComponent.SkillPoints));
 
         if (indexedType.GetPointPopup is not null && !silent)
-            _popup.PopupEntity(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
+            _popup.PopupPredicted(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
     }
 
     /// <summary>
