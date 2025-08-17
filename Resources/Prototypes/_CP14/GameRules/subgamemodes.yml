@@ -1,6 +1,6 @@
 - type: entity
   parent: CP14BaseGameRule
-  id: CP14Vampire
+  id: CP14GameRuleVampireClanBattle
   components:
   - type: CP14VampireRule
   - type: AntagObjectives
@@ -8,12 +8,15 @@
     - CP14VampireObjectiveBloodPurity
     - CP14VampireObjectiveDefenseVillage
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20
   - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
     definitions:
     # Night children clan
     - prefRoles: [ CP14Vampire ]
+      min: 1
       max: 3
+      playerRatio: 2
       lateJoinAdditional: true
       mindRoles:
       - CP14MindRoleVampire
@@ -44,12 +47,14 @@
           groups:
             Brute: -3
       briefing:
-        text: cp14-roles-antag-vampire-briefing
+        text: cp14-roles-antag-vampire-briefing-night-childrens
         color: "#630f24"
         sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
     # Devourers clan
     - prefRoles: [ CP14Vampire ]
+      min: 1
       max: 3
+      playerRatio: 2
       lateJoinAdditional: true
       mindRoles:
       - CP14MindRoleVampire
@@ -80,12 +85,14 @@
           groups:
             Brute: -3
       briefing:
-        text: cp14-roles-antag-vampire-briefing
+        text: cp14-roles-antag-vampire-briefing-devourers
         color: "#630f24"
         sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
     # Unnameable clan
     - prefRoles: [ CP14Vampire ]
+      min: 1
       max: 3
+      playerRatio: 2
       lateJoinAdditional: true
       mindRoles:
       - CP14MindRoleVampire
@@ -116,7 +123,7 @@
           groups:
             Brute: -3
       briefing:
-        text: cp14-roles-antag-vampire-briefing
+        text: cp14-roles-antag-vampire-briefing-unnameable
         color: "#630f24"
         sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
 

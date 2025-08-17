@@ -24,7 +24,7 @@
   components:
   - type: MindRole
     antagPrototype: CP14Vampire
-    roleType: SoloAntagonist
+    roleType: TeamAntagonist
     exclusiveAntag: true
   - type: CP14VampireRole
   - type: RoleBriefing

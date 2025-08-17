@@ -2,7 +2,7 @@
   id: CP14ActionSpellPortalToVampireHome
   parent: CP14ActionSpellBase
   name: Teleport to the vampire lair
-  description: You open a portal leading to the location of your clan's portal glyph. The portal will disappear in 30 seconds.
+  description: You open a portal leading to the location of your clan's portal glyph. The portal will disappear in 30 seconds. If the glyph is not constructed, the portal will be chaotic, teleporting players in different directions.
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5

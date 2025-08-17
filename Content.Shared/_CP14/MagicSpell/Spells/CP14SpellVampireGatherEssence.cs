@@ -28,7 +28,7 @@ public sealed partial class CP14SpellVampireGatherEssence : CP14SpellEffect
     {
         DamageDict = new()
         {
-            { "Radiation", 30 },
+            { "Radiation", 15 },
         },
     };
 
