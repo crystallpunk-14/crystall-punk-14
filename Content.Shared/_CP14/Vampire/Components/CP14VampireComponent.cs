@@ -9,6 +9,7 @@ namespace Content.Shared._CP14.Vampire.Components;
 
 [RegisterComponent]
 [NetworkedComponent]
+[AutoGenerateComponentState]
 [Access(typeof(CP14SharedVampireSystem))]
 public sealed partial class CP14VampireComponent : Component
 {
@@ -23,8 +24,8 @@ public sealed partial class CP14VampireComponent : Component
     [DataField]
     public ProtoId<CP14SkillPointPrototype> SkillPointProto = "Blood";
 
-    [DataField(required: true)]
-    public ProtoId<CP14VampireFactionPrototype> Faction;
+    [DataField(required: true), AutoNetworkedField]
+    public ProtoId<CP14VampireFactionPrototype>? Faction;
 
     [DataField]
     public FixedPoint2 SkillPointCount = 1f;

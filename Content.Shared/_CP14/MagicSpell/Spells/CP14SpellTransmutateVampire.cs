@@ -20,7 +20,10 @@ public sealed partial class CP14SpellTransmutateVampire : CP14SpellEffect
 
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
 
-        var method = protoMan.Index(vampireComponent.Faction).TransmutationMethod;
+        if (!protoMan.TryIndex(vampireComponent.Faction, out var indexedFaction))
+            return;
+
+        var method = indexedFaction.TransmutationMethod;
         if (method is null)
             return;
 

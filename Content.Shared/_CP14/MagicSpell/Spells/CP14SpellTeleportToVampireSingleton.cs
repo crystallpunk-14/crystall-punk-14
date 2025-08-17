@@ -33,11 +33,15 @@ public sealed partial class CP14SpellTeleportToVampireSingleton : CP14SpellEffec
         var linkSys = entManager.System<LinkedEntitySystem>();
         var query = entManager.EntityQueryEnumerator<CP14SingletonComponent, TransformComponent>();
 
+        if (!protoMan.TryIndex(vampireComponent.Faction, out var indexedVampireFaction))
+            return;
+
         var first = entManager.SpawnAtPosition(PortalProto, args.Position.Value);
 
         while (query.MoveNext(out var uid, out var singleton, out var xform))
         {
-            if (singleton.Key != protoMan.Index(vampireComponent.Faction).SingletonTeleportKey)
+
+            if (singleton.Key != indexedVampireFaction.SingletonTeleportKey)
                 continue;
 
             var randomOffset = new Vector2(random.Next(-1, 1), random.Next(-1, 1));
