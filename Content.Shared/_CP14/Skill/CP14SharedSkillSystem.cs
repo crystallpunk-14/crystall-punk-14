@@ -88,7 +88,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         ProtoId<CP14SkillTreePrototype> tree,
         CP14SkillStorageComponent? component = null)
     {
-        if (!Resolve(target, ref component))
+        if (!Resolve(target, ref component, false))
             return;
 
         component.AvailableSkillTrees.Add(tree);
@@ -99,7 +99,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         ProtoId<CP14SkillTreePrototype> tree,
         CP14SkillStorageComponent? component = null)
     {
-        if (!Resolve(target, ref component))
+        if (!Resolve(target, ref component, false))
             return;
 
         component.AvailableSkillTrees.Remove(tree);
@@ -356,9 +356,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         CP14SkillStorageComponent? component = null)
     {
         if (!Resolve(target, ref component, false))
-        {
             return false;
-        }
 
         for (var i = component.LearnedSkills.Count - 1; i >= 0; i--)
         {
