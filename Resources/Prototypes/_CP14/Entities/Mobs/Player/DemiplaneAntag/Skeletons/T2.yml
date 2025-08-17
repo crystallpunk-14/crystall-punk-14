@@ -1,6 +1,6 @@
 - type: entity
   id: CP14MobUndeadSkeletonDemiplaneT2
-  parent: CP14MobUndeadSkeletonDemiplaneT1 
+  parent: CP14MobUndeadSkeletonDemiplaneT1
   name: skeleton
   abstract: true
   components:
@@ -92,8 +92,8 @@
     - CP14MobSkeletonWizardT2
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
-    maxEnergy: 200
-    energy: 200
+    maxEnergy: 100
+    energy: 100
     unsafeSupport: true
   - type: PassiveDamage
     allowedStates:
@@ -104,22 +104,27 @@
   - type: CP14SkillStorage
     skillPoints:
       Memory:
-        max: 4
+        max: 5
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
     - SkimitarMastery
-    - HydrosophistryT1
-    - HydrosophistryT2
     - MetamagicT1
     - MetamagicT2
-    - PyrokineticT1
     - CP14ActionSpellManaConsume
     - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
+    availableSkillTrees:
+    - Hydrosophistry
+    - Illusion
+    - Metamagic
+    - Electromancy
+    - Athletic
+    - MartialArts
+    - Craftsmanship
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
