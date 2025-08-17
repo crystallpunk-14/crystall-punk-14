@@ -21,6 +21,7 @@
         variation: 0.125
     recipeTags:
     - CP14RecipeVampireDevourers
+    - CP14RecipeVampire
   - type: LightBehaviour
     behaviours:
       - !type:PulseBehaviour
@@ -51,6 +52,7 @@
   - type: CP14Workbench
     recipeTags:
     - CP14RecipeVampireUnnameable
+    - CP14RecipeVampire
 
 - type: entity
   id: CP14WorkbenchVampireChildrenNight
@@ -66,3 +68,4 @@
   - type: CP14Workbench
     recipeTags:
     - CP14RecipeVampireNightChildrens
+    - CP14RecipeVampire

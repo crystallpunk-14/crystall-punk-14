@@ -1,0 +1,14 @@
+- type: CP14Recipe
+  id: CP14ClothingMaskVampireVoiceUnnameable
+  tag: CP14RecipeVampireUnnameable
+  category: Clothing
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ClothingMaskVampireVoiceUnnameable
+  resultCount: 1
