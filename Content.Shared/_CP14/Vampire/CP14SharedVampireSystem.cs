@@ -9,13 +9,14 @@ using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Vampire;
 
-public abstract class CP14SharedVampireSystem : EntitySystem
+public abstract partial class CP14SharedVampireSystem : EntitySystem
 {
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
@@ -28,6 +29,7 @@ public abstract class CP14SharedVampireSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeTree();
 
         SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnVampireInit);
         SubscribeLocalEvent<CP14VampireComponent, ComponentRemove>(OnVampireRemove);
