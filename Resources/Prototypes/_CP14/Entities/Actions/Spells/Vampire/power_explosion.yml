@@ -45,7 +45,7 @@
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
-      state: power_kick
+      state: power_kick_3
     sound: !type:SoundPathSpecifier
       path: /Audio/_CP14/Effects/essence_consume.ogg
   - type: InstantAction

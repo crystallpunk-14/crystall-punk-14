@@ -26,6 +26,26 @@
       castDelay: 1.5
 
 - type: entity
+  parent: CP14ActionSpellBloodConnection
+  id: CP14ActionSpellBloodEnemySearch
+  name: Blood identification
+  description: You are searching within a large radius for all vampires from other factions.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellPointerToVampireClan
+      inversed: true
+      searchRange: 60
+      pointerEntity: CP14BloodlustPointer
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: search_clan_enemy
+
+- type: entity
   id: CP14BloodlustPointer
   name: pointer
   categories: [ HideSpawnMenu ]

@@ -5,6 +5,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 
+/// <summary>
+/// Indicates all vampires within range belonging to the same faction as the caster. If inverted, it indicates enemy vampires.
+/// </summary>
 public sealed partial class CP14SpellPointerToVampireClan : CP14SpellEffect
 {
     [DataField(required: true)]
@@ -12,6 +15,9 @@ public sealed partial class CP14SpellPointerToVampireClan : CP14SpellEffect
 
     [DataField(required: true)]
     public float SearchRange = 60f;
+
+    [DataField]
+    public bool Inversed = false;
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
@@ -37,8 +43,16 @@ public sealed partial class CP14SpellPointerToVampireClan : CP14SpellEffect
             if (ent.Owner == args.User.Value)
                 continue;
 
-            if (ent.Comp.Faction != vampireComponent.Faction)
-                continue;
+            if (!Inversed)
+            {
+                if (ent.Comp.Faction != vampireComponent.Faction)
+                    continue;
+            }
+            else
+            {
+                if (ent.Comp.Faction == vampireComponent.Faction)
+                    continue;
+            }
 
             var targetPosition = transform.GetWorldPosition(ent);
 

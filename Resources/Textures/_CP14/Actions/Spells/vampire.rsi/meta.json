@@ -29,7 +29,16 @@
       "name": "power_kick"
     },
     {
+      "name": "power_kick_2"
+    },
+    {
+      "name": "power_kick_3"
+    },
+    {
       "name": "search_clan"
+    },
+    {
+      "name": "search_clan_enemy"
     },
     {
       "name": "toggle"
