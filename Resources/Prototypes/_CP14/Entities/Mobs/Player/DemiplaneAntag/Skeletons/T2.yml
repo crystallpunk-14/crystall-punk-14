@@ -46,11 +46,17 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonDodgerT2
-  - type: CP14SpellStorage
-    grantAccessToSelf: true
-    spells:
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
+    - AthleticT3
     - CP14ActionSpellKick
     - CP14ActionSpellSprint
+    - CP14ActionSpellDash
 
 - type: entity
   id: CP14MobUndeadSkeletonArcherT2
@@ -64,8 +70,15 @@
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
-    - CP14ActionSpellSprint
     - CP14ActionSpellShadowStep
+    - CP14ActionSpellSprint
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 1
+    freeLearnedSkills:
+    - HydrosophistryT1
+    learnedSkills:
     - CP14ActionSpellIceArrow
 
 - type: entity
@@ -91,7 +104,7 @@
   - type: CP14SkillStorage
     skillPoints:
       Memory:
-        max: 0 
+        max: 4
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
@@ -100,13 +113,13 @@
     - HydrosophistryT2
     - MetamagicT1
     - MetamagicT2
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellIceShards
+    - PyrokineticT1
+    - CP14ActionSpellManaConsume
+    - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
-
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
@@ -139,7 +152,7 @@
         weight: 40
         children:
         - id: CP14SpawnPointGhostDemiplaneSkeletonWizardT2
-        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
+#        - id: CP14SpawnPointGhostDemiplaneSkeletonBardT2
       - !type:GroupSelector
         weight: 60
         children:
