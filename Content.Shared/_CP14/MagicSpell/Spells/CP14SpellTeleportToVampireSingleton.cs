@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Shared._CP14.UniqueLoot;
-using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -28,6 +28,7 @@ public sealed partial class CP14SpellTeleportToVampireSingleton : CP14SpellEffec
         if (net.IsClient)
             return;
 
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
         var random = IoCManager.Resolve<IRobustRandom>();
         var linkSys = entManager.System<LinkedEntitySystem>();
         var query = entManager.EntityQueryEnumerator<CP14SingletonComponent, TransformComponent>();
@@ -36,7 +37,7 @@ public sealed partial class CP14SpellTeleportToVampireSingleton : CP14SpellEffec
 
         while (query.MoveNext(out var uid, out var singleton, out var xform))
         {
-            if (singleton.Key != vampireComponent.SingletonTeleportKey)
+            if (singleton.Key != protoMan.Index(vampireComponent.Faction).SingletonTeleportKey)
                 continue;
 
             var randomOffset = new Vector2(random.Next(-1, 1), random.Next(-1, 1));

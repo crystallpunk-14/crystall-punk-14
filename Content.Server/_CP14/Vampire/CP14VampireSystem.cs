@@ -6,6 +6,7 @@ using Content.Server.Temperature.Components;
 using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 

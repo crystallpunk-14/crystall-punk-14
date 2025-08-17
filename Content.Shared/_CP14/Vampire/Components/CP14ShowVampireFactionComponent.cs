@@ -11,5 +11,5 @@ namespace Content.Shared._CP14.Vampire.Components;
 public sealed partial class CP14ShowVampireFactionComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
+    public ProtoId<CP14VampireFactionPrototype>? Faction;
 }

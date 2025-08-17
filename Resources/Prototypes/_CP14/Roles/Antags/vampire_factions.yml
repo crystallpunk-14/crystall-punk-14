@@ -1,0 +1,20 @@
+- type: cp14VampireFaction
+  id: Unnameable
+  factionIcon: CP14VampireUnnameable
+  transmutationMethod: VampireUnnameable
+  singletonTeleportKey: CP14VampirePortalGlyphUnnameable
+  teleportGlyphProto: CP14VampirePortalGlyphUnnameable
+
+- type: cp14VampireFaction
+  id: Devourers
+  factionIcon: CP14VampireDevourers
+  transmutationMethod: VampireDevourers
+  singletonTeleportKey: CP14VampirePortalGlyphDevourers
+  teleportGlyphProto: CP14VampirePortalGlyphDevourers
+
+- type: cp14VampireFaction
+  id: NightChildrens
+  factionIcon: CP14VampireNightChildrens
+  transmutationMethod: VampireNightChildren
+  singletonTeleportKey: CP14VampirePortalGlyphNightChildrens
+  teleportGlyphProto: CP14VampirePortalGlyphNightChildrens

@@ -1,6 +1,7 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Station.Components;
 using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -8,6 +9,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
 using Content.Shared.Roles.Jobs;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.Objectives.Systems;
 
@@ -18,6 +20,7 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()
     {
@@ -73,7 +76,7 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
          if (!TryComp<CP14VampireComponent>(args.Mind?.OwnedEntity, out var vampireComp))
              return;
 
-         ent.Comp.Faction = vampireComp.FactionIcon;
+         ent.Comp.Faction = vampireComp.Faction;
 
          _meta.SetEntityName(ent, Loc.GetString("cp14-objective-vampire-pure-bood-title"));
          _meta.SetEntityDescription(ent, Loc.GetString("cp14-objective-vampire-pure-bood-desc"));
@@ -86,7 +89,7 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
 
         while (queue.MoveNext(out var uid, out var vampire, out var mobState))
         {
-            if (vampire.FactionIcon != ent.Comp.Faction)
+            if (vampire.Faction != ent.Comp.Faction)
             {
                 if (mobState.CurrentState == MobState.Dead)
                     continue;

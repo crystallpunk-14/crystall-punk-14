@@ -1,4 +1,4 @@
-using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -37,7 +37,7 @@ public sealed partial class CP14SpellPointerToVampireClan : CP14SpellEffect
             if (ent.Owner == args.User.Value)
                 continue;
 
-            if (ent.Comp.FactionIcon != vampireComponent.FactionIcon)
+            if (ent.Comp.Faction != vampireComponent.Faction)
                 continue;
 
             var targetPosition = transform.GetWorldPosition(ent);

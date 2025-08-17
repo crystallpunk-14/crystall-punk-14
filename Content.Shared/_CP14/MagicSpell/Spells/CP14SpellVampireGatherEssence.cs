@@ -1,13 +1,12 @@
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Prototypes;
-using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.SSDIndicator;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;

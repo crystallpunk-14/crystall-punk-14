@@ -24,7 +24,10 @@ public sealed class CP14ShowVampireIconsSystem : EquipmentHudSystem<CP14ShowVamp
 
     private void OnGetStatusIcons(Entity<CP14VampireComponent> ent, ref GetStatusIconsEvent args)
     {
-        if (!IsActive || !_proto.TryIndex(ent.Comp.FactionIcon, out var indexedIcon))
+        if (!_proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+            return;
+
+        if (!IsActive || !_proto.TryIndex(indexedFaction.FactionIcon, out var indexedIcon))
             return;
 
         // Show icons for admins
@@ -35,7 +38,7 @@ public sealed class CP14ShowVampireIconsSystem : EquipmentHudSystem<CP14ShowVamp
         }
 
         if (TryComp<CP14ShowVampireFactionComponent>(_player.LocalEntity, out var showIcons) &&
-            showIcons.FactionIcon == ent.Comp.FactionIcon)
+            showIcons.Faction == indexedFaction)
         {
             args.StatusIcons.Add(indexedIcon);
             return;

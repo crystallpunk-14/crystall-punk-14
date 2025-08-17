@@ -1,17 +1,14 @@
 using Content.Shared._CP14.Skill.Prototypes;
-using Content.Shared._CP14.Transmutation.Prototypes;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
-using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Vampire;
+namespace Content.Shared._CP14.Vampire.Components;
 
 [RegisterComponent]
 [NetworkedComponent]
-[AutoGenerateComponentState]
 [Access(typeof(CP14SharedVampireSystem))]
 public sealed partial class CP14VampireComponent : Component
 {
@@ -26,18 +23,8 @@ public sealed partial class CP14VampireComponent : Component
     [DataField]
     public ProtoId<CP14SkillPointPrototype> SkillPointProto = "Blood";
 
-    [DataField, AutoNetworkedField]
-    public ProtoId<FactionIconPrototype> FactionIcon = "CP14VampireNightChildrens";
-
     [DataField(required: true)]
-    public ProtoId<CP14TransmutationPrototype>? TransmutationMethod; //TODO delete from this component
-
-    [DataField(required: true)]
-    public string SingletonTeleportKey = string.Empty; //TODO delete from this component
-
-    [DataField(required: true)]
-    public EntProtoId TeleportGlyphProto = string.Empty; //TODO delete from this component
-
+    public ProtoId<CP14VampireFactionPrototype> Faction;
 
     [DataField]
     public FixedPoint2 SkillPointCount = 1f;

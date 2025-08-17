@@ -1,5 +1,7 @@
 using Content.Shared._CP14.Transmutation;
 using Content.Shared._CP14.Vampire;
+using Content.Shared._CP14.Vampire.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
 
@@ -16,11 +18,14 @@ public sealed partial class CP14SpellTransmutateVampire : CP14SpellEffect
         if (!entManager.TryGetComponent<CP14VampireComponent>(args.User.Value, out var vampireComponent))
             return;
 
-        if (vampireComponent.TransmutationMethod is null)
+        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+
+        var method = protoMan.Index(vampireComponent.Faction).TransmutationMethod;
+        if (method is null)
             return;
 
         var transmutateSys = entManager.System<CP14TransmutationSystem>();
 
-        transmutateSys.TryTransmutate(args.Target.Value, vampireComponent.TransmutationMethod.Value, args.User.Value);
+        transmutateSys.TryTransmutate(args.Target.Value, method.Value, args.User.Value);
     }
 }
