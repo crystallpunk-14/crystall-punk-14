@@ -6,18 +6,22 @@ namespace Content.Shared._CP14.Vampire.Components;
 
 [RegisterComponent]
 [NetworkedComponent]
+[AutoGenerateComponentState]
 [Access(typeof(CP14SharedVampireSystem))]
 public sealed partial class CP14VampireTreeComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public FixedPoint2 CollectedEssence = 0f;
 
-    [DataField(required: true)]
-    public int TreeLevel = 0;
+    [DataField]
+    public ProtoId<CP14VampireFactionPrototype>? Faction;
 
-    [DataField(required: true)]
+    [DataField]
+    public int? TreeLevel;
+
+    [DataField]
     public FixedPoint2 EssenceToNextLevel = 0;
 
-    [DataField(required: true)]
-    public EntProtoId NextLevelProto = string.Empty;
+    [DataField]
+    public EntProtoId? NextLevelProto;
 }

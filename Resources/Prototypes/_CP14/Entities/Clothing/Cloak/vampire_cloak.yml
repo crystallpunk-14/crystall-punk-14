@@ -1,0 +1,39 @@
+- type: entity
+  parent:
+  - CP14ClothingCloakBase
+  - CP14BaseMajorContraband
+  id: CP14ClothingCloakVampireBase
+  abstract: true
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireDevourers
+  name: сrimson vampire cloak
+  description: A traditional vampire cloak worn by members of the Devourers clan. It is not advisable to stand in the way of someone wearing such attire.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/red.rsi
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireUnnameable
+  name: white vampire cloak
+  description: A traditional vampire cloak worn by members of the Unnameable clan. It is not advisable to stand in the way of someone wearing such attire.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireNightChildrens
+  name: dark vampire cloak
+  description: A traditional vampire cloak worn by members of the Childrens of the Night clan. It is not advisable to stand in the way of someone wearing such attire.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/blue.rsi

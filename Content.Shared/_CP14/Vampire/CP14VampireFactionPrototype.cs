@@ -10,6 +10,9 @@ public sealed partial class CP14VampireFactionPrototype : IPrototype
     [IdDataField] public string ID { get; private set; } = default!;
 
     [DataField(required: true)]
+    public LocId Name = string.Empty;
+
+    [DataField(required: true)]
     public ProtoId<FactionIconPrototype> FactionIcon;
 
     [DataField(required: true)]

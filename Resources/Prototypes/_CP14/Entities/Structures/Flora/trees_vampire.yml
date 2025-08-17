@@ -34,21 +34,18 @@
 - type: entity
   parent: CP14BaseFloraTreeVampire
   id: CP14FloraTreeVampire1
-  suffix: Tier 1
+  abstract: true
   components:
-  - type: Sprite
-    layers:
-    - state: 1
-    - state: 1_leaf
-      shader: unshaded
-      color: "#ff0000ff"
   - type: PointLight
     radius: 4
+  - type: CP14VampireTree
+    treeLevel: 1
+    essenceToNextLevel: 5
 
 - type: entity
   parent: CP14BaseFloraTreeVampire
   id: CP14FloraTreeVampire2
-  suffix: Tier 2
+  abstract: true
   components:
   - type: Sprite
     layers:
@@ -58,11 +55,14 @@
       color: "#ff0000ff"
   - type: PointLight
     radius: 8
+  - type: CP14VampireTree
+    treeLevel: 2
+    essenceToNextLevel: 10
 
 - type: entity
   parent: CP14BaseFloraTreeVampire
   id: CP14FloraTreeVampire3
-  suffix: Tier 3
+  abstract: true
   components:
   - type: Sprite
     layers:
@@ -72,3 +72,149 @@
       color: "#ff0000ff"
   - type: PointLight
     radius: 12
+  - type: CP14VampireTree
+    treeLevel: 3
+
+# Devourers
+- type: entity
+  parent: CP14FloraTreeVampire1
+  id: CP14FloraVampireTreeDevourers1
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Devourers, Lvl 1
+  components:
+  - type: Sprite
+    layers:
+    - state: 1
+    - state: 1_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Devourers
+    nextLevelProto: CP14FloraVampireTreeDevourers2
+
+- type: entity
+  parent: CP14FloraTreeVampire2
+  id: CP14FloraVampireTreeDevourers2
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Devourers, Lvl 2
+  components:
+  - type: Sprite
+    layers:
+    - state: 2
+    - state: 2_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Devourers
+    nextLevelProto: CP14FloraVampireTreeDevourers3
+
+- type: entity
+  parent: CP14FloraTreeVampire3
+  id: CP14FloraVampireTreeDevourers3
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Devourers, Lvl 3
+  components:
+  - type: Sprite
+    layers:
+    - state: 3
+    - state: 3_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Devourers
+
+# Unnameable
+- type: entity
+  parent: CP14FloraTreeVampire1
+  id: CP14FloraVampireTreeUnnameable1
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Unnameable, Lvl 1
+  components:
+  - type: Sprite
+    layers:
+    - state: 1
+    - state: 1_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Unnameable
+    nextLevelProto: CP14FloraVampireTreeUnnameable2
+
+- type: entity
+  parent: CP14FloraTreeVampire2
+  id: CP14FloraVampireTreeUnnameable2
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Unnameable, Lvl 2
+  components:
+  - type: Sprite
+    layers:
+    - state: 2
+    - state: 2_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Unnameable
+    nextLevelProto: CP14FloraVampireTreeUnnameable3
+
+- type: entity
+  parent: CP14FloraTreeVampire3
+  id: CP14FloraVampireTreeUnnameable3
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Unnameable, Lvl 3
+  components:
+  - type: Sprite
+    layers:
+    - state: 3
+    - state: 3_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: Unnameable
+
+# Night childrens
+- type: entity
+  parent: CP14FloraTreeVampire1
+  id: CP14FloraVampireTreeNightChildrens1
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Night Childrens, Lvl 1
+  components:
+  - type: Sprite
+    layers:
+    - state: 1
+    - state: 1_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: NightChildrens
+    nextLevelProto: CP14FloraVampireTreeNightChildrens2
+
+- type: entity
+  parent: CP14FloraTreeVampire2
+  id: CP14FloraVampireTreeNightChildrens2
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Night Childrens, Lvl 2
+  components:
+  - type: Sprite
+    layers:
+    - state: 2
+    - state: 2_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: NightChildrens
+    nextLevelProto: CP14FloraVampireTreeNightChildrens3
+
+- type: entity
+  parent: CP14FloraTreeVampire3
+  id: CP14FloraVampireTreeNightChildrens3
+  categories: [ ForkFiltered, DoNotMap ]
+  suffix: Night Childrens, Lvl 3
+  components:
+  - type: Sprite
+    layers:
+    - state: 3
+    - state: 3_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14VampireTree
+    faction: NightChildrens

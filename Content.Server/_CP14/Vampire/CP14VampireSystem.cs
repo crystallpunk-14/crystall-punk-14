@@ -8,6 +8,8 @@ using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Popups;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Vampire;
@@ -20,6 +22,32 @@ public sealed class CP14VampireSystem : CP14SharedVampireSystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly FlammableSystem _flammable = default!;
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CP14VampireTreeComponent, StartCollideEvent>(OnStartCollide);
+    }
+
+    private void OnStartCollide(Entity<CP14VampireTreeComponent> ent, ref StartCollideEvent args)
+    {
+        if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
+            return;
+
+        ent.Comp.CollectedEssence += collectable.Essence;
+        Dirty(ent);
+        Del(args.OtherEntity);
+
+        _audio.PlayPvs(collectable.CollectSound, ent);
+
+        if (ent.Comp.CollectedEssence >= ent.Comp.EssenceToNextLevel && ent.Comp.NextLevelProto is not null)
+        {
+            SpawnAtPosition(ent.Comp.NextLevelProto, Transform(ent).Coordinates);
+            Del(ent);
+        }
+    }
 
     protected override void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
     {

@@ -1,17 +1,20 @@
 - type: cp14VampireFaction
   id: Unnameable
+  name: cp14-vampire-fraction-name-unnameable
   factionIcon: CP14VampireUnnameable
   transmutationMethod: VampireUnnameable
   singletonTeleportKey: CP14VampirePortalGlyphUnnameable
 
 - type: cp14VampireFaction
   id: Devourers
+  name: cp14-vampire-fraction-name-devourers
   factionIcon: CP14VampireDevourers
   transmutationMethod: VampireDevourers
   singletonTeleportKey: CP14VampirePortalGlyphDevourers
 
 - type: cp14VampireFaction
   id: NightChildrens
+  name: cp14-vampire-fraction-name-night-childrens
   factionIcon: CP14VampireNightChildrens
   transmutationMethod: VampireNightChildren
   singletonTeleportKey: CP14VampirePortalGlyphNightChildrens
