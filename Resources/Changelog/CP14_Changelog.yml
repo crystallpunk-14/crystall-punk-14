@@ -1672,3 +1672,18 @@
   id: 8218
   time: '2025-08-16T16:44:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1671
+- author: Nimfar11
+  changes:
+  - message: Added price for artefacts bottomless goblet and magic healing staff.
+    type: Add
+  id: 8219
+  time: '2025-08-17T22:09:29.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1674
+- author: Nimfar11
+  changes:
+  - message: Adds the book Pantheon of Gods of Sileita, with a description of the
+      gods. And an additional book about the imitators of gods.
+    type: Add
+  id: 8220
+  time: '2025-08-17T22:10:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1673
