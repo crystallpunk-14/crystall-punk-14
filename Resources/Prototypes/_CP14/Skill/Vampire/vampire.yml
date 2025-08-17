@@ -13,6 +13,49 @@
     action: CP14ActionVampireBite
 
 - type: cp14Skill
+  id: PowerKick
+  skillUiPosition: 4, 4
+  learnCost: 1
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: power_kick
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampirePower
+
+- type: cp14Skill
+  id: PowerKick2
+  skillUiPosition: 6, 4
+  learnCost: 1
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: power_kick
+  effects:
+  - !type:ReplaceAction
+    oldAction: CP14ActionSpellVampirePower
+    newAction: CP14ActionSpellVampirePower2
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PowerKick
+
+- type: cp14Skill
+  id: PowerKick3
+  skillUiPosition: 8, 4
+  learnCost: 1
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: power_kick
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampirePower3
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PowerKick2
+
+- type: cp14Skill
   id: BloodStep
   skillUiPosition: 2, 4
   learnCost: 1

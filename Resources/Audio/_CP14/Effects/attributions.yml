@@ -117,3 +117,8 @@
   license: "CC0-1.0"
   copyright: 'Created by RossBell on Freesound.org'
   source: "https://freesound.org/people/RossBell/sounds/389428/"
+
+- files: ["surprise.ogg"]
+  license: "CC0-1.0"
+  copyright: 'Created by qubodup on Freesound.org'
+  source: "https://freesound.org/people/qubodup/sounds/814055/"

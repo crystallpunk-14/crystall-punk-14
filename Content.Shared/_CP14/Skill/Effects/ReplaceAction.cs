@@ -1,6 +1,8 @@
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Actions;
+using Content.Shared.Examine;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Skill.Effects;
 
@@ -65,6 +67,16 @@ public sealed partial class ReplaceAction : CP14SkillEffect
 
     public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill)
     {
-        return !protoManager.TryIndex(NewAction, out var indexedAction) ? string.Empty : indexedAction.Description;
+        var dummyAction = entMagager.Spawn(NewAction);
+        var message = new FormattedMessage();
+        if (!entMagager.TryGetComponent<MetaDataComponent>(dummyAction, out var meta))
+            return null;
+
+        message.AddText(meta.EntityDescription + "\n");
+        var ev = new ExaminedEvent(message, dummyAction, dummyAction, true, true);
+        entMagager.EventBus.RaiseLocalEvent(dummyAction, ev);
+
+        entMagager.DeleteEntity(dummyAction);
+        return ev.GetTotalMessage().ToMarkup();
     }
 }

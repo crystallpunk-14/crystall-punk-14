@@ -31,7 +31,7 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultThiefRule = "Thief";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
     //CP14
-    private static readonly EntProtoId CP14VampireRule = "CP14Vampire";
+    private static readonly EntProtoId CP14VampireRule = "CP14GameRuleVampireClanBattle";
     //CP14 end
 
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
