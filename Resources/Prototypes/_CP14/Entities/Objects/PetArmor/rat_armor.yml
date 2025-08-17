@@ -25,5 +25,5 @@
     sprintModifier: 0.9
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 40
+      CP14Iron: 20
 
