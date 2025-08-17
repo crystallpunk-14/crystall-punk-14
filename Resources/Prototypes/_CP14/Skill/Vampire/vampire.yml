@@ -4,7 +4,7 @@
   id: Bite
   skillUiPosition: 0, 6
   learnCost: 0
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: bite
@@ -16,7 +16,7 @@
   id: BloodStep
   skillUiPosition: 2, 4
   learnCost: 1
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: blood_step
@@ -28,12 +28,24 @@
     prerequisite: Bite
 
 - type: cp14Skill
+  id: BloodConnection
+  skillUiPosition: 0, 10
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: search_clan
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellBloodConnection
+
+- type: cp14Skill
   id: VampireNightVision
   skillUiPosition: 2, 6
   name: cp14-skill-vampire-night-vision-name 
   desc: cp14-skill-vampire-night-vision-desc
   learnCost: 1
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: night_vision
@@ -53,7 +65,7 @@
   id: BloodEssenceCreation
   skillUiPosition: 0, 8
   learnCost: 0
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: essence_create
@@ -65,7 +77,7 @@
   id: VampireTransmutate
   skillUiPosition: 2, 8
   learnCost: 0.5
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: transmutation
@@ -80,7 +92,7 @@
   id: PortalToVampireHome
   skillUiPosition: 0, 12
   learnCost: 1
-  tree: NightChildren
+  tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: portal

@@ -18,7 +18,7 @@ public sealed partial class CP14VampireComponent : Component
     [DataField]
     public ProtoId<ReagentPrototype> NewBloodReagent = "CP14BloodVampire";
     [DataField]
-    public ProtoId<CP14SkillTreePrototype> SkillTreeProto = "NightChildren";
+    public ProtoId<CP14SkillTreePrototype> SkillTreeProto = "Vampire";
 
     [DataField]
     public ProtoId<MetabolizerTypePrototype> MetabolizerType = "CP14Vampire";

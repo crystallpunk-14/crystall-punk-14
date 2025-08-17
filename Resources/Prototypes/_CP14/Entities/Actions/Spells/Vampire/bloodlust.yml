@@ -1,33 +1,28 @@
 - type: entity
-  id: CP14ActionSpellBloodlust
+  id: CP14ActionSpellBloodConnection
   parent: CP14ActionSpellBase
-  name: Bloodlust
-  description: you sense all living things in a large radius around you that you want to KILL.
+  name: Blood connection
+  description: You can sense the location of vampires from your clan from miles away.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/vampire.rsi
-    state: blood_moon
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectVampireHypnosis
-    - !type:CP14SpellPointerToAlive
-      pointerEntity: CP14BloodlustPointer
+    - !type:CP14SpellPointerToVampireClan
       searchRange: 60
-  - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Ego vultus..."
-    endSpeech: "parumper vita"
-  - type: CP14MagicEffectSomaticAspect
+      pointerEntity: CP14BloodlustPointer
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneVampireHypnosis
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
-      state: blood_moon
+      state: search_clan
   - type: InstantAction
     event: !type:CP14DelayedInstantActionEvent
-      cooldown: 30
+      cooldown: 8
       castDelay: 1.5
 
 - type: entity
@@ -53,4 +48,3 @@
     - type: Tag
       tags:
       - HideContextMenu
-

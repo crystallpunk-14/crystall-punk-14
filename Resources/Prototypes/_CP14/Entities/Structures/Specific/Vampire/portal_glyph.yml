@@ -50,7 +50,7 @@
 - type: entity
   id: CP14VampirePortalGlyphUnnameable
   parent: CP14BaseVampirePortalGlyph
-  description: A teleportation glyph imbued with bloody magic. Any vampire from the "unnameable" clan can teleport here at any moment!
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the "Unnameable" clan can teleport here at any moment!
   suffix: Unnameable
   components:
   - type: CP14Singleton
@@ -59,7 +59,7 @@
 - type: entity
   id: CP14VampirePortalGlyphNightChildrens
   parent: CP14BaseVampirePortalGlyph
-  description: A teleportation glyph imbued with bloody magic. Any vampire from the "night childrens" clan can teleport here at any moment!
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the "Night childrens" clan can teleport here at any moment!
   suffix: Night Childrens
   components:
   - type: CP14Singleton
