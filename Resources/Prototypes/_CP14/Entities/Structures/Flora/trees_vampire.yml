@@ -1,0 +1,74 @@
+- type: entity
+  parent: CP14BaseTree
+  abstract: true
+  id: CP14BaseFloraTreeVampire
+  components:
+  - type: Sprite
+    offset: 0,1.1
+    sprite: _CP14/Structures/Flora/tree_vampire.rsi
+    layers:
+    - state: 1
+    - state: 1_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: CP14WaveShader
+    speed: 0.5
+    dis: 6
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 3
+    radius: 1
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 10
+        startValue: 3.0
+        endValue: 6.0
+        property: Energy
+        isLooped: true
+        enabled: true
+
+- type: entity
+  parent: CP14BaseFloraTreeVampire
+  id: CP14FloraTreeVampire1
+  suffix: Tier 1
+  components:
+  - type: Sprite
+    layers:
+    - state: 1
+    - state: 1_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: PointLight
+    radius: 4
+
+- type: entity
+  parent: CP14BaseFloraTreeVampire
+  id: CP14FloraTreeVampire2
+  suffix: Tier 2
+  components:
+  - type: Sprite
+    layers:
+    - state: 2
+    - state: 2_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: PointLight
+    radius: 8
+
+- type: entity
+  parent: CP14BaseFloraTreeVampire
+  id: CP14FloraTreeVampire3
+  suffix: Tier 3
+  components:
+  - type: Sprite
+    layers:
+    - state: 3
+    - state: 3_leaf
+      shader: unshaded
+      color: "#ff0000ff"
+  - type: PointLight
+    radius: 12

@@ -3,3 +3,5 @@ cp14-skill-req-species = You must be the race of “{$name}”
 cp14-skill-req-researched = A study needs to be done on the research table
 cp14-skill-req-impossible = Unable to explore during a round at the current moment
 cp14-skill-req-god-follower-percentage = The number of your followers should be more than {$count}%
+cp14-skill-req-timegate = Available for study {$minute} minutes after the start of the round. Minutes remaining: {$left}
+cp14-skill-req-timegate-disabled = Available for study {$minute} minutes after the start of the round, but time restrictions are disabled.

@@ -2,7 +2,7 @@
 
 - type: cp14Skill
   id: Bite
-  skillUiPosition: 0, 6
+  skillUiPosition: 0, 4
   learnCost: 0
   tree: Vampire
   icon:
@@ -14,7 +14,7 @@
 
 - type: cp14Skill
   id: PowerKick
-  skillUiPosition: 4, 4
+  skillUiPosition: 2, 2
   learnCost: 1
   tree: Vampire
   icon:
@@ -23,10 +23,13 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellVampirePower
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: Bite
 
 - type: cp14Skill
   id: PowerKick2
-  skillUiPosition: 6, 4
+  skillUiPosition: 4, 2
   learnCost: 1
   tree: Vampire
   icon:
@@ -39,10 +42,12 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PowerKick
+  - !type:TimeGate
+    minutes: 30
 
 - type: cp14Skill
   id: PowerKick3
-  skillUiPosition: 8, 4
+  skillUiPosition: 6, 2
   learnCost: 1
   tree: Vampire
   icon:
@@ -54,6 +59,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PowerKick2
+  - !type:TimeGate
+    minutes: 60
 
 - type: cp14Skill
   id: BloodStep
@@ -69,18 +76,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
-
-- type: cp14Skill
-  id: BloodConnection
-  skillUiPosition: 0, 10
-  learnCost: 0.5
-  tree: Vampire
-  icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: search_clan
-  effects:
-  - !type:AddAction
-    action: CP14ActionSpellBloodConnection
 
 - type: cp14Skill
   id: VampireNightVision
@@ -106,7 +101,7 @@
 
 - type: cp14Skill
   id: BloodEssenceCreation
-  skillUiPosition: 0, 8
+  skillUiPosition: 0, 10
   learnCost: 0
   tree: Vampire
   icon:
@@ -115,6 +110,21 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellBloodEssenceCreation
+
+- type: cp14Skill
+  id: BloodConnection
+  skillUiPosition: 2, 10
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: search_clan
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellBloodConnection
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
 
 - type: cp14Skill
   id: VampireTransmutate
@@ -133,7 +143,7 @@
 
 - type: cp14Skill
   id: PortalToVampireHome
-  skillUiPosition: 0, 12
+  skillUiPosition: 2, 12
   learnCost: 1
   tree: Vampire
   icon:
@@ -142,3 +152,6 @@
   effects:
   - !type:AddAction
     action: CP14ActionSpellPortalToVampireHome
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
