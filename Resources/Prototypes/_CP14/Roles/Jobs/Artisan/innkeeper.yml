@@ -6,6 +6,16 @@
   startingGear: CP14InnkeeperGear
   icon: "CP14JobIconInnkeeper"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - HomeDecor
+      - Butchers
+      - Dairy
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - TraderWit
 
 - type: startingGear
   id: CP14InnkeeperGear
