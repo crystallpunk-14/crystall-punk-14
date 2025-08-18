@@ -69,7 +69,6 @@
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
-    - CP14ActionSpellManaTrance
   - type: Loadout
     prototypes:
     - CP14MobSkeletonWizardTownRaid

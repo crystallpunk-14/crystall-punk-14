@@ -95,6 +95,9 @@
     maxEnergy: 200
     energy: 200
     unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 5
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -119,7 +122,6 @@
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
-    - CP14ActionSpellManaTrance
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2
