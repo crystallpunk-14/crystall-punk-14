@@ -92,3 +92,5 @@
     maxTransferAmount: 100
     transferAmount: 1
     toggleState: 1 # draw
+  - type: StaticPrice
+    price: 120

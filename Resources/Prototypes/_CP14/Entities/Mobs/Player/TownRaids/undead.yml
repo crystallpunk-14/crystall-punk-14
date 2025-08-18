@@ -53,21 +53,27 @@
   - type: CP14SkillStorage
     skillPoints:
       Memory:
-        max: 0
+        max: 5
     freeLearnedSkills:
     - SwordMastery
     - RapierMastery
     - SkimitarMastery
     - MetamagicT1
     - MetamagicT2
-    - HydrosophistryT1
-    - HydrosophistryT2
-    - CP14ActionSpellFreeze
-    - CP14ActionSpellIceShards
+    - CP14ActionSpellManaConsume
+    - CP14ActionSpellManaGift
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
     - CP14ActionSpellManaTrance
+    availableSkillTrees:
+    - Hydrosophistry
+    - Illusion
+    - Metamagic
+    - Electromancy
+    - Athletic
+    - MartialArts
+    - Craftsmanship
   - type: Loadout
     prototypes:
     - CP14MobSkeletonWizardTownRaid
