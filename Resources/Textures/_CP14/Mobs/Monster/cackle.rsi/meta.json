@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "license": "All right reserved",
+  "copyright": "Created by Frogoo (discord)",
+  "states": [
+    {
+      "name": "live",
+      "directions": 4
+    },
+    {
+      "name": "live_spikes",
+      "directions": 4
+    },
+    {
+      "name": "dead"
+    },
+    {
+      "name": "dead_spikes"
+    }
+  ]
+}
