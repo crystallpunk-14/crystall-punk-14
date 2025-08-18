@@ -10,8 +10,5 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 public sealed partial class CP14MagicEffectTargetMobStatusRequiredComponent : Component
 {
     [DataField]
-    public LocId Popup = "cp14-magic-spell-target-alive";
-
-    [DataField]
-    public List<MobState> AllowedStates = new() { MobState.Alive };
+    public HashSet<MobState> AllowedStates = new() { MobState.Alive };
 }

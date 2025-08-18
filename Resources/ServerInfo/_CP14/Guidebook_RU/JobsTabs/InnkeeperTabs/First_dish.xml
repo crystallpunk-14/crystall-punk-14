@@ -1,0 +1,58 @@
+<Document>
+  # Ваше первое блюдо
+
+  Скажите привет вашему новому путнику - Сильвон Костлявый!
+  <Box>
+    <GuideEntityEmbed Entity="CP14MobUndeadSkeletonBardT2" Caption="Привет! АЧК, АЧК!"/>
+  </Box>
+
+  Сильвон устал путешествовать по демипланам и пришел к вам на хороший перерыв от всей этой беготни. Подозвав вас, он сделал небольшой заказ из... Любых трёх блюд на ваш выбор. Но вы не знаете, как и что ему приготовить... Ничего страшного! Сейчас мы решим эту проблему!
+
+  ## Для начала - пирог
+
+  Немного подумав, вы решили - ему обязательно нужен пирог! Для того чтобы приготовить любой пирог, вам потребуется для начала сделать тесто. Тесто делается из снопов пшеницы на специальном столе для готовки.
+  <Box>
+    <GuideEntityEmbed Entity="CP14Wheat"/>
+    <GuideEntityEmbed Entity="CP14WorkbenchCooking"/>
+    <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
+  </Box>
+
+  После того, как вы сделаете тесто - помещаете его в формочку вместе с 3 кусочками любого мяса и двумя слайсами перца. Ставите на плиту, ожидая, когда приготовится пирог. Пироги делятся на пять частей, по укусу на каждую. Готово! Вы сделали мясной пирог!
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodDoughMedium"/>
+    <GuideEntityEmbed Entity="CP14FoodMeatLambSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodPepperSlice"/>
+    <GuideEntityEmbed Entity="CP14PlatePie"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+  </Box>
+
+  ## Блюда на сковороде
+  Отлично! Пирог уже есть, значит время для основного блюда. Давайте сделаем картошку с пюре!
+  Для того, чтобы приготовить картошку - достаточно поместить 5 картошин и 1 слайс лука на сковороду и поставить на печку. Обязательно выкладываем на тарелочку... И готово!
+  <Box>
+    <GuideEntityEmbed Entity="CP14FoodOnionSlice"/>
+    <GuideEntityEmbed Entity="CP14FoodPotato"/>
+    <GuideEntityEmbed Entity="CP14FryingPan"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
+  </Box>
+
+  ## Супы
+
+  А теперь время завершить этот обеденный стол... Хорошим супчиком! Немного поразмыслив, в голову пришла идея с... Сырным супом.
+  Супы готовятся немного посложнее, чем обычная еда. Для неё нужна кастрюля и вода. Добавьте 30 единиц воды в кастрюлю и один кусок сыра и ждите, когда все приготовится. Вуаля! Разливайте в блюдце и Bon Appétit!
+  <Box>
+    <GuideEntityEmbed Entity="CP14CookingPot"/>
+    <GuideEntityEmbed Entity="CP14FoodCheesePart"/>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14BowlWooden"/>
+  </Box>
+
+  ## Самое главное... ЭКСПЕРИМЕНТИРУЙТЕ!
+  Это были лишь те блюда, которые вы, возможно когда-либо видели... Но ведь мир готовки полон загадок! Вы знали что из мяса монстра можно сделать хороший омлет?
+  Не забудьте попросить Сильвона заплатить за ваши блюда и пожелать ему хорошей дороги! Пока-пока Сильвон!
+  <Box>
+    <GuideEntityEmbed Entity="CP14MobUndeadSkeletonBardT2" Caption="Держите! 5 Серебряков, АЧК, АЧК! C чаевыми!"/> 
+    <GuideEntityEmbed Entity="CP14SilverCoin5" Caption="5 серебряных монет"/>
+  </Box>
+</Document>

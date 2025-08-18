@@ -32,6 +32,26 @@
   pricePerUnit: 4.0 #arbitrary for now
 
 - type: reagent
+  id: CP14MonsterToxinBleed
+  name: cp14-reagent-name-toxin-bleed
+  desc: cp14-reagent-desc-toxin-bleed
+  group: CP14MonsterToxins
+  flavor: CP14Metallic
+  color: "#872e2e"
+  physicalDesc: cp14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      metabolismRate: 0.5
+      effects:
+      - !type:ModifyBleedAmount
+        amount: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Piercing: 1.5
+  pricePerUnit: 4.0 #arbitrary for now
+
+- type: reagent
   id: CP14MonsterToxinVuln
   name: cp14-reagent-name-toxin-vuln
   desc: cp14-reagent-desc-toxin-vuln

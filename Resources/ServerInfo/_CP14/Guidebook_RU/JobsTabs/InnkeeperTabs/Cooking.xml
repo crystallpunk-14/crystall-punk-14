@@ -1,0 +1,32 @@
+<Document>
+  # Готовка
+
+  Готовка может показаться довольно сложной в начале, но довольно интересной в итоге! Первое, что вам обязательно потребуется при приготовлении любой еды - ингредиенты. Большинство ингридиентов можно купить у торговца, либо вырастить самостоятельно.
+  <Box>
+    <GuideEntityEmbed Entity="CP14Wheat"/>
+    <GuideEntityEmbed Entity="CP14FoodPepper"/>
+    <GuideEntityEmbed Entity="CP14FoodApple"/>
+    <GuideEntityEmbed Entity="CP14FoodOnion"/>
+  </Box>
+  
+  Без чего любой трактирщик не может жить? Правильно - тарелки, столовые приборы и ножи! Большая часть еды может быть подана только на тарелках и в чашках. Также - ваш ножик может быть крайне полезен в нарезке ингридиентов или в отпугивании особо буйных постояльцев.
+  <Box>
+    <GuideEntityEmbed Entity="CP14PlateWooden"/>
+    <GuideEntityEmbed Entity="CP14BowlWooden"/>
+    <GuideEntityEmbed Entity="CP14Spoon"/>
+    <GuideEntityEmbed Entity="CP14ModularIronDagger"/>
+  </Box>
+
+  И конечно же, как же можно забыть - сковорода и кастрюля. Именно в них готовятся все блюда, которые вы будете подавать! 
+  <Box>
+    <GuideEntityEmbed Entity="CP14FryingPan"/>
+    <GuideEntityEmbed Entity="CP14CookingPot"/>
+  </Box>
+
+  Кастрюлю и сковороду нужно ставить на печку. Однако, печка должна же гореть, верно? Поэтому, не забываем дровишки и зажигалочку, либо можно использовать заклинание [color=#ffa500]"Создания огня"[/color]. Если вы будете держать еду на печке слишком долго - она точно сгорит, так что обращайте внимание. Сгоревшая еда точно не делает посетителей счастливыми.
+  <Box>
+    <GuideEntityEmbed Entity="CP14Furnace"/>
+    <GuideEntityEmbed Entity="CP14WoodenPlanks20"/>
+    <GuideEntityEmbed Entity="CP14Lighter"/>
+  </Box>
+</Document>

@@ -4,8 +4,8 @@ meta:
   engineVersion: 265.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/08/2025 13:58:53
-  entityCount: 7141
+  time: 08/11/2025 09:48:01
+  entityCount: 7143
 maps:
 - 2
 grids:
@@ -3903,7 +3903,7 @@ entities:
       pos: 14.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -15581.295
+      secondsUntilStateChange: -16435.895
       state: Closing
   - uid: 1792
     components:
@@ -34255,6 +34255,13 @@ entities:
       parent: 2
     - type: CollisionWake
       enabled: False
+- proto: CP14SackFarmingSeedFull
+  entities:
+  - uid: 3927
+    components:
+    - type: Transform
+      pos: 4.6291857,-32.407352
+      parent: 2
 - proto: CP14SafeMerchant1
   entities:
   - uid: 7835
@@ -35786,12 +35793,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 17.5,-23.5
-      parent: 2
-  - uid: 1805
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 27.5,-22.5
       parent: 2
   - uid: 1806
     components:
@@ -44221,7 +44222,7 @@ entities:
   - uid: 1865
     components:
     - type: Transform
-      pos: 27.722475,-22.3466
+      pos: 28.695774,-22.854174
       parent: 2
   - uid: 1866
     components:
@@ -44312,6 +44313,18 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 28.5,-27.5
+      parent: 2
+- proto: CP14WorkbenchLeather
+  entities:
+  - uid: 1805
+    components:
+    - type: Transform
+      pos: 27.5,-22.5
+      parent: 2
+  - uid: 3928
+    components:
+    - type: Transform
+      pos: 17.5,-24.5
       parent: 2
 - proto: CP14WorkbenchSewing
   entities:
