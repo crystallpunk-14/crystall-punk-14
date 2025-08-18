@@ -5,14 +5,12 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Interaction;
 
@@ -29,50 +27,35 @@ public sealed class InteractionPopupSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<InteractionPopupComponent, ActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<InteractionPopupComponent, InteractHandEvent>(OnInteractHand);
-        SubscribeLocalEvent<InteractionPopupComponent, GetVerbsEvent<Verb>>(AddInteractVerb);
-    }
-
-    private void AddInteractVerb(EntityUid uid, InteractionPopupComponent component, GetVerbsEvent<Verb> args)
-    {
-        if (args.Hands == null || !args.CanAccess || !args.CanInteract || args.User == args.Target)
-            return;
-
-        Verb interactVerb;
-        interactVerb = new()
-        {
-            Text = "Interact",
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/dot.svg.192dpi.png")),
-            Act = () => SharedInteract(uid, component, args.Target, args.User)
-        };
-        args.Verbs.Add(interactVerb);
+        SubscribeLocalEvent<InteractionPopupComponent, ActivateInWorldEvent>(OnActivateInWorld);
     }
 
     private void OnActivateInWorld(EntityUid uid, InteractionPopupComponent component, ActivateInWorldEvent args)
     {
-
-        if (!args.Complex || !component.OnActivate || args.Handled || args.User == args.Target)
+        if (!args.Complex)
             return;
 
-        SharedInteract(uid, component, args.Target, args.User);
-        args.Handled = true;
+        if (!component.OnActivate)
+            return;
+
+        SharedInteract(uid, component, args, args.Target, args.User);
     }
 
     private void OnInteractHand(EntityUid uid, InteractionPopupComponent component, InteractHandEvent args)
     {
-        if (args.Handled || args.User == args.Target)
-            return;
-        SharedInteract(uid, component, args.Target, args.User);
-        args.Handled = true;
+        SharedInteract(uid, component, args, args.Target, args.User);
     }
 
     private void SharedInteract(
         EntityUid uid,
         InteractionPopupComponent component,
+        HandledEntityEventArgs args,
         EntityUid target,
         EntityUid user)
     {
+        if (args.Handled || user == target)
+            return;
 
         //Handling does nothing and this thing annoyingly plays way too often.
         // HUH? What does this comment even mean?
@@ -85,6 +68,8 @@ public sealed class InteractionPopupSystem : EntitySystem
         {
             return;
         }
+
+        args.Handled = true;
 
         var curTime = _gameTiming.CurTime;
 
