@@ -50,27 +50,3 @@ metabolisms:
         types:
           Piercing: 1.5
 pricePerUnit: 4.0 #arbitrary for now
-
-- type: reagent
-id: CP14MonsterToxinVuln
-name: cp14-reagent-name-toxin-vuln
-desc: cp14-reagent-desc-toxin-vuln
-group: CP14MonsterToxins
-flavor: CP14Vomit
-color: "#b545ff"
-physicalDesc: reagent-physical-desc-nondescript
-metabolisms:
-  Poison:
-    metabolismRate: 0.5
-    effects:
-    - !type:ModifyStatusEffect
-      conditions:
-      - !type:ReagentThreshold
-        reagent: CP14MonsterToxinVuln
-        min: 2
-      effectProto: CP14StatusEffectVuln
-      time: 5
-      refresh: false
-    - !type:CP14StaminaChange
-      staminaDelta: -5
-pricePerUnit: 4.0 #arbitrary for now
