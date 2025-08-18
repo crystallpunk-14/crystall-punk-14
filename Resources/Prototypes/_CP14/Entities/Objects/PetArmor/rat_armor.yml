@@ -16,14 +16,14 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.62
+        Blunt: 0.7
         Slash: 0.55
-        Piercing: 0.61
-        Heat: 0.74
+        Piercing: 0.7
+        Heat: 0.9
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 20
+      CP14Iron: 60
 
