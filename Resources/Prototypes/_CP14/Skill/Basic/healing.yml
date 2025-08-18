@@ -23,6 +23,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT1
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellPlantGrowth
@@ -98,6 +100,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
@@ -112,6 +116,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 # T3
 
