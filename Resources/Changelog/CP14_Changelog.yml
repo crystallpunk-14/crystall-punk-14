@@ -1654,3 +1654,47 @@
   id: 8217
   time: '2025-08-11T20:46:28.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1661
+- author: KittyCat432
+  changes:
+  - message: Changed Ice shard to now do 2.5 pierce and 5 cold total of 7.5 damage.
+    type: Tweak
+  - message: Changed Fire wave to now have a 0.5 second cast time that cannot be interrupted
+      and nolonger adjusts the temperature inside of someone.
+    type: Tweak
+  - message: Changed magic, speed, and hell ballade spells to nolonger break upon
+      being damaged.
+    type: Tweak
+  - message: Changed Hell ballade now takes 8 mana per second and slows you down by
+      50% speed.
+    type: Tweak
+  - message: Fixed hell ballad, heat, and freeze nolonger work while under pacifism.
+    type: Fix
+  id: 8218
+  time: '2025-08-16T16:44:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1671
+- author: Nimfar11
+  changes:
+  - message: Added price for artefacts bottomless goblet and magic healing staff.
+    type: Add
+  id: 8219
+  time: '2025-08-17T22:09:29.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1674
+- author: Nimfar11
+  changes:
+  - message: Adds the book Pantheon of Gods of Sileita, with a description of the
+      gods. And an additional book about the imitators of gods.
+    type: Add
+  id: 8220
+  time: '2025-08-17T22:10:17.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1673
+- author: Viator-MV
+  changes:
+  - message: The bone masks were nerfed
+    type: Tweak
+  - message: Skeletons' health has been increased to 100
+    type: Tweak
+  - message: Now raider and skeleton wizard chooses his own spells.
+    type: Tweak
+  id: 8221
+  time: '2025-08-17T22:19:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1447
