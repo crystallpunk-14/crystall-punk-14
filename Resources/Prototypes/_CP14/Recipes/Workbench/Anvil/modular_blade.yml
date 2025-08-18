@@ -5,7 +5,7 @@
   id: CP14ModularBladeIronDagger
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -18,7 +18,7 @@
   id: CP14ModularBladeGoldDagger
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -31,7 +31,7 @@
   id: CP14ModularBladeCopperDagger
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -44,7 +44,7 @@
   id: CP14ModularBladeMithrilDagger
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -59,7 +59,7 @@
   id: CP14ModularBladeIronSpear
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -72,7 +72,7 @@
   id: CP14ModularBladeCopperSpear
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -85,7 +85,7 @@
   id: CP14ModularBladeGoldSpear
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -98,7 +98,7 @@
   id: CP14ModularBladeMithrilSpear
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -113,7 +113,7 @@
   id: CP14ModularBladeIronMace
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -126,7 +126,7 @@
   id: CP14ModularBladeGoldMace
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -139,7 +139,7 @@
   id: CP14ModularBladeCopperMace
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -152,7 +152,7 @@
   id: CP14ModularBladeMithrilMace
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -167,7 +167,7 @@
   id: CP14ModularBladeIronSword
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -180,7 +180,7 @@
   id: CP14ModularBladeGoldSword
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -193,7 +193,7 @@
   id: CP14ModularBladeCopperSword
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -206,7 +206,7 @@
   id: CP14ModularBladeMithrilSword
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -221,7 +221,7 @@
   id: CP14ModularBladeIronSickle
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -234,7 +234,7 @@
   id: CP14ModularBladeCopperSickle
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -247,7 +247,7 @@
   id: CP14ModularBladeGoldSickle
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -260,7 +260,7 @@
   id: CP14ModularBladeMithrilSickle
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -275,7 +275,7 @@
   id: CP14ModularBladeIronShovel
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -288,7 +288,7 @@
   id: CP14ModularBladeGoldShovel
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -302,7 +302,7 @@
   id: CP14ModularBladeCopperShovel
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -315,7 +315,7 @@
   id: CP14ModularBladeMithrilShovel
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -330,7 +330,7 @@
   id: CP14ModularBladeIronPickaxe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -343,7 +343,7 @@
   id: CP14ModularBladeGoldPickaxe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -356,7 +356,7 @@
   id: CP14ModularBladeCopperPickaxe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -369,7 +369,7 @@
   id: CP14ModularBladeMithrilPickaxe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -384,7 +384,7 @@
   id: CP14ModularGripIron
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -397,7 +397,7 @@
   id: CP14ModularGripCopper
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -410,7 +410,7 @@
   id: CP14ModularGripGolden
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -423,7 +423,7 @@
   id: CP14ModularGripMithril
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -438,7 +438,7 @@
   id: CP14ModularGripIronLong
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -451,7 +451,7 @@
   id: CP14ModularGripCopperLong
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -464,7 +464,7 @@
   id: CP14ModularGripGoldLong
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -477,7 +477,7 @@
   id: CP14ModularGripMithrilLong
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -492,7 +492,7 @@
   id: CP14ModularBladeIronRapier
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -505,7 +505,7 @@
   id: CP14ModularBladeGoldRapier
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -518,7 +518,7 @@
   id: CP14ModularBladeCopperRapier
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -531,7 +531,7 @@
   id: CP14ModularBladeMithrilRapier
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -546,7 +546,7 @@
   id: CP14ModularBladeIronAxe
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -559,7 +559,7 @@
   id: CP14ModularBladeCopperAxe
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -572,7 +572,7 @@
   id: CP14ModularBladeGoldAxe
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -585,7 +585,7 @@
   id: CP14ModularBladeMithrilAxe
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -600,7 +600,7 @@
   id: CP14ModularBladeIronHammer
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -613,7 +613,7 @@
   id: CP14ModularBladeCopperHammer
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -626,7 +626,7 @@
   id: CP14ModularBladeGoldHammer
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -639,7 +639,7 @@
   id: CP14ModularBladeMithrilHammer
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -654,7 +654,7 @@
   id: CP14ModularBladeIronHoe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -667,7 +667,7 @@
   id: CP14ModularBladeCopperHoe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -680,7 +680,7 @@
   id: CP14ModularBladeGoldHoe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -693,7 +693,7 @@
   id: CP14ModularBladeMithrilHoe
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -708,7 +708,7 @@
   id: CP14ModularBladeIronSkimitar
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -721,7 +721,7 @@
   id: CP14ModularBladeGoldSkimitar
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -734,7 +734,7 @@
   id: CP14ModularBladeCopperSkimitar
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -747,7 +747,7 @@
   id: CP14ModularBladeMithrilSkimitar
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
