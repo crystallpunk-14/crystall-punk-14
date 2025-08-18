@@ -14,8 +14,3 @@
   requireAdminNotify: true
   jobPreviewEntity: CP14MobGodLumera
   applyTraits: false
-  special:
-    - !type:CP14LearnSkillsSpecial
-      skills:
-      - TraderWit # Lumera is the goddess of knowledge, which means she knows what prices are!
-      - AlchemyVision

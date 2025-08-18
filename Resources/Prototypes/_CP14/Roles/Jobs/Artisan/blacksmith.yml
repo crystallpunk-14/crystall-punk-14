@@ -7,13 +7,6 @@
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
   special:
-    - !type:CP14AddTradingReputationSpecial
-      factions:
-      - DwarfMining
-      - Thaumaturgy
-      - HomeDecor
-      - Butchers # For leather
-      - Tailors
     - !type:CP14LearnSkillsSpecial
       skills:
       - CopperMelting
@@ -21,7 +14,6 @@
       - GoldMelting
       - GlassMelting
       - MithrilMelting
-      - TraderWit
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Artisan
