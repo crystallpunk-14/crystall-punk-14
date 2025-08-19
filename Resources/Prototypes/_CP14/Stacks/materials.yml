@@ -137,3 +137,10 @@
   icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: rugged_hide1 }
   spawn: CP14RuggedLeather1
   maxCount: 5
+
+- type: stack
+  id: CP14Bone
+  name: cp14-stack-bones-pile
+  icon: { sprite: _CP14/Objects/Materials/bones.rsi, state: bone_1 }
+  spawn: CP14Bone1
+  maxCount: 10

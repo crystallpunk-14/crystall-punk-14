@@ -164,6 +164,9 @@
     - id: CP14Leather1
       amount: 1
       maxAmount: 3
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 3
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -224,6 +227,9 @@
     - id: CP14CheapFur
       amount: 1
       prob: 0.25
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 4
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -441,6 +447,9 @@
       amount: 1
       maxAmount: 5
       prob: 0.3
+    - id: CP14Bone1
+      amount: 1
+      maxAmount: 2
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -533,6 +542,9 @@
       prob: 0.5
     - id: CP14GoodFur
       amount: 1
+    - id: CP14Bone1
+      amount: 8
+      maxAmount: 10
   - type: Bloodstream
     bloodMaxVolume: 350
     bloodReagent: CP14BloodAnimal

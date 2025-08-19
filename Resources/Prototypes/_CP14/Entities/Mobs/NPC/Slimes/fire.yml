@@ -68,6 +68,7 @@
           - id: CP14FoodMeatLambCutletCooked
           - id: CP14ModularInlayQuartzFire
           - id: CP14CopperCoin1
+          - id: CP14Bone1
 
 - type: entity
   id: CP14AreaEntityEffectSlimeIgnite
