@@ -114,6 +114,7 @@
   components:
   - type: CP14SpellStorage
     spells:
+    - CP14ActionSpellElectricTrap
     - CP14ActionSpellLightningStrike
     - CP14ActionSpellLightningStrikeSmall
     - CP14ActionSpellLightningStrikeSmall

@@ -34,7 +34,7 @@
     range: 3
   - type: WorldTargetAction
     event: !type:CP14DelayedWorldTargetActionEvent
-      cooldown: 5
+      cooldown: 4
 
 - type: entity
   id: CP14RuneElectricTrap
