@@ -235,6 +235,7 @@
     - Athletic
     - MartialArts
     - Craftsmanship
+  - type: CP14VampireEssenceHolder
 
 - type: entity
   parent:

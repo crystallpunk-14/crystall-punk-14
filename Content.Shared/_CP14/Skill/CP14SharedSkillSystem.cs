@@ -381,6 +381,9 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         bool silent = false,
         CP14SkillStorageComponent? component = null)
     {
+        if (points <= 0)
+            return;
+
         if (!Resolve(target, ref component, false))
             return;
 
@@ -412,6 +415,9 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         bool silent = false,
         CP14SkillStorageComponent? component = null)
     {
+        if (points <= 0)
+            return;
+
         if (!Resolve(target, ref component, false))
             return;
 

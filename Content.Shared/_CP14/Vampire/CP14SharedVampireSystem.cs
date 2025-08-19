@@ -81,7 +81,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
 
     private void OnEssenceHolderExamined(Entity<CP14VampireEssenceHolderComponent> ent, ref ExaminedEvent args)
     {
-        if (!HasComp<CP14VampireComponent>(args.Examiner))
+        if (!HasComp<CP14ShowVampireEssenceComponent>(args.Examiner))
             return;
 
         if (!args.IsInDetailsRange)
@@ -121,6 +121,13 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         //Skill tree
         _skill.AddSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount, silent: true);
         _skill.AddSkillTree(ent, ent.Comp.SkillTreeProto);
+
+        //Remove blood essence
+        if (TryComp<CP14VampireEssenceHolderComponent>(ent, out var essenceHolder))
+        {
+            essenceHolder.Essence = 0;
+            Dirty(ent, essenceHolder);
+        }
     }
 
     private void OnVampireRemove(Entity<CP14VampireComponent> ent, ref ComponentRemove args)
@@ -222,8 +229,13 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
 
         var extractedEssence = MathF.Min(victim.Comp.Essence.Float(), amount.Float());
 
+        if (extractedEssence <= 0)
+            return;
+
         _skill.AddSkillPoints(vampire, _skillPointType, extractedEssence);
         victim.Comp.Essence -= amount;
+
+        Dirty(victim);
     }
 }
 

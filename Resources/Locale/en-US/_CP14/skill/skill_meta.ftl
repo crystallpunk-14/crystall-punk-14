@@ -48,3 +48,6 @@ cp14-skill-trader-wit-desc = You are able to estimate the exact value of any ite
 
 cp14-skill-vampire-night-vision-name = Night vision
 cp14-skill-vampire-night-vision-desc = Darkness cannot be an obstacle for a creature of the night.
+
+cp14-skill-vampire-essence-vision-name = Analysis of blood
+cp14-skill-vampire-essence-vision-desc = You are able to see how much essence can be extracted from the surrounding creatures.

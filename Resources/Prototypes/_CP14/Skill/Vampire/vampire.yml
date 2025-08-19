@@ -30,7 +30,7 @@
 - type: cp14Skill
   id: PowerKick2
   skillUiPosition: 6, 2
-  learnCost: 1
+  learnCost: 1  
   tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -98,6 +98,26 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
+
+- type: cp14Skill
+  id: VampireEssenceVision
+  skillUiPosition: 6, 6
+  name: cp14-skill-vampire-essence-vision-name 
+  desc: cp14-skill-vampire-essence-vision-desc
+  learnCost: 1
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: essence_vision
+  effects:
+  - !type:AddComponents
+    components:
+    - type: CP14ShowVampireEssence
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: VampireNightVision
+  - !type:VampireTreeLevel
+    level: 2
 
 # Create
 
