@@ -13,3 +13,5 @@ cp-14-vampire-transmutable-to = [color=red]Вампирская магия[/colo
 cp14-vampire-tree-examine-level = Текущий уровень древа: [color=red]{$level}[/color]. 
 cp14-vampire-tree-examine-faction = Принадлежит вампирскому клану "[color=red]{$faction}[/color]".
 cp14-vampire-tree-examine-essence-left = До следующего уровня необходимо насытить эссенцией крови: [color=red]{$left}[/color]. 
+
+cp14-vampire-essence-holder-examine = В этой жертве есть еще [color=red]{$essence}[/color] эссенции крови.

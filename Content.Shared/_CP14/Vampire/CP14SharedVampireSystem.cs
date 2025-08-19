@@ -1,12 +1,14 @@
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
+using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Transmutation.Components;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
 using Robust.Shared.Audio.Systems;
@@ -25,6 +27,8 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+
+    private readonly ProtoId<CP14SkillPointPrototype> _skillPointType = "Blood";
 
     public override void Initialize()
     {
@@ -45,8 +49,8 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         SubscribeLocalEvent<CP14MagicEffectVampireComponent, ExaminedEvent>(OnVampireCastExamine);
 
         SubscribeLocalEvent<CP14TransmutableComponent, ExaminedEvent>(OnTransmutableExamined);
+        SubscribeLocalEvent<CP14VampireEssenceHolderComponent, ExaminedEvent>(OnEssenceHolderExamined);
     }
-
     private void OnTransmutableExamined(Entity<CP14TransmutableComponent> ent, ref ExaminedEvent args)
     {
         if (!TryComp<CP14VampireComponent>(args.Examiner, out var vampire))
@@ -74,6 +78,18 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-spell-need-vampire-valid")}", priority: 10);
     }
+
+    private void OnEssenceHolderExamined(Entity<CP14VampireEssenceHolderComponent> ent, ref ExaminedEvent args)
+    {
+        if (!HasComp<CP14VampireComponent>(args.Examiner))
+            return;
+
+        if (!args.IsInDetailsRange)
+            return;
+
+        args.PushMarkup(Loc.GetString("cp14-vampire-essence-holder-examine", ("essence", ent.Comp.Essence)));
+    }
+
 
     private void OnVampireCastAttempt(Entity<CP14MagicEffectVampireComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
     {
@@ -192,6 +208,22 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     private void OnVampireExamine(Entity<CP14VampireVisualsComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup(Loc.GetString("cp14-vampire-examine"));
+    }
+
+    public void GatherEssence(Entity<CP14VampireComponent?> vampire,
+        Entity<CP14VampireEssenceHolderComponent?> victim,
+        FixedPoint2 amount)
+    {
+        if (!Resolve(vampire, ref vampire.Comp, false))
+            return;
+
+        if (!Resolve(victim, ref victim.Comp, false))
+            return;
+
+        var extractedEssence = MathF.Min(victim.Comp.Essence.Float(), amount.Float());
+
+        _skill.AddSkillPoints(vampire, _skillPointType, extractedEssence);
+        victim.Comp.Essence -= amount;
     }
 }
 
