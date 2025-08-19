@@ -71,11 +71,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      30: 0.8
-      40: 0.6
+      70: 0.7
+      90: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -97,7 +97,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 100
       behaviors:
       - !type:GibBehavior
   - type: Vocal
