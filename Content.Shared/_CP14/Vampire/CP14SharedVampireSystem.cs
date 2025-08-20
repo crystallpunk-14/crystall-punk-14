@@ -29,6 +29,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     private readonly ProtoId<CP14SkillPointPrototype> _skillPointType = "Blood";
+    private readonly ProtoId<CP14SkillPointPrototype> _memorySkillPointType = "Memory";
 
     public override void Initialize()
     {
@@ -122,6 +123,9 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         _skill.AddSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount, silent: true);
         _skill.AddSkillTree(ent, ent.Comp.SkillTreeProto);
 
+        //Skill tree base nerf
+        _skill.RemoveSkillPoints(ent, _memorySkillPointType, 2, true);
+
         //Remove blood essence
         if (TryComp<CP14VampireEssenceHolderComponent>(ent, out var essenceHolder))
         {
@@ -158,6 +162,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
             }
         }
         _skill.RemoveSkillPoints(ent, ent.Comp.SkillPointProto, ent.Comp.SkillPointCount);
+        _skill.AddSkillPoints(ent, _memorySkillPointType, 2, null, true);
     }
 
     private void OnToggleVisuals(Entity<CP14VampireComponent> ent, ref CP14ToggleVampireVisualsAction args)
