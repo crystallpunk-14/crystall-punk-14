@@ -47,7 +47,6 @@ public sealed class CP14EntityTest
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 
-        var compFactory = server.ResolveDependency<IComponentFactory>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
         await server.WaitAssertion(() =>
@@ -56,8 +55,6 @@ public sealed class CP14EntityTest
             {
                 if (!protoManager.TryIndex<EntityCategoryPrototype>("ForkFiltered", out var indexedFilter))
                     return;
-
-                var damageableCompName = compFactory.GetComponentName<DamageableComponent>();
 
                 foreach (var proto in protoManager.EnumeratePrototypes<EntityPrototype>())
                 {
@@ -70,11 +67,8 @@ public sealed class CP14EntityTest
                         continue;
 
                     // Check if entity has DamageableComponent
-                    if (!proto.Components.TryGetValue(damageableCompName, out var damageableComponent))
+                    if (!proto.TryGetComponent<DamageableComponent>("Damageable", out var damageable))
                         continue;
-
-                    // Get the DamageableComponent data
-                    var damageable = (DamageableComponent)damageableComponent.Component;
                     
                     // Check if it has a damage modifier set
                     if (damageable.DamageModifierSetId == null)
