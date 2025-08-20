@@ -56,7 +56,7 @@
         - MachineLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:

@@ -7,7 +7,7 @@
   - type: InteractionOutline
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
       - trigger:
@@ -182,4 +182,3 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/fireplace.ogg
-
