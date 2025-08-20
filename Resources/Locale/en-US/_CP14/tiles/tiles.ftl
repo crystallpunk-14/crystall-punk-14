@@ -2,9 +2,14 @@
 cp14-tiles-base = rock strata
 
 # Natural
-cp14-tiles-grass = meadow grass
+cp14-tiles-grass = grass
 cp14-tiles-grass-light = light grass
 cp14-tiles-grass-tall = tall grass
+
+cp14-tiles-bloodgrass = bloodgrass
+cp14-tiles-bloodgrass-light = light bloodgrass
+cp14-tiles-bloodgrass-tall = tall bloodgrass
+
 cp14-tiles-dirt = soil
 cp14-tiles-sand = sand
 cp14-tiles-snow = snow
