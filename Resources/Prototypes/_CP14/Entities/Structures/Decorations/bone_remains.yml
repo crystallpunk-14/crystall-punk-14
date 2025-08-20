@@ -59,7 +59,7 @@
             collection: CP14BoneCrack
 
 - type: entity
-  id: CP14BaseBoneSpine
+  id: CP14BoneSpine
   parent: BaseStructure
   name: bone spine 
   description: The large bony torso of an unknown creature, as if it had been torn to pieces.
@@ -103,7 +103,7 @@
             collection: CP14BoneCrack
 
 - type: entity
-  id: CP14BaseBoneDragon
+  id: CP14BoneDragon
   parent: CP14BaseBoneSpine
   name: bone dragon 
   description: The large skeleton of a dragon, the possibility of encountering such a creature is both fascinating and terrifying.
