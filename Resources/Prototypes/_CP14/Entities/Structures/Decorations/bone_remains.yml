@@ -1,4 +1,5 @@
 - type: entity
+  parent: BaseStructure
   id: CP14BaseBoneRemains
   name: bone remains
   description: The remains of bones have grown into the ground.
@@ -8,7 +9,7 @@
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Decoration/bone_remains.rsi
-    drawdepth: Mobs
+    drawdepth: BelowFloor
     layers:
       - state: bone_remains_1
         map: ["random"]
@@ -26,15 +27,20 @@
         hard: false
         shape:
           !type:PhysShapeCircle
-          radius: 0.15
+          radius: 0.2
         density: 50
         mask:
-        - TableMask
+        - SlipLayer
         layer:
-        - TableLayer
+        - ItemMask
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: CP14Skeleton
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14StepBones
+      params:
+        volume: 4
   - type: Destructible
     thresholds:
     - trigger:
