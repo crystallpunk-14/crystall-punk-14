@@ -75,7 +75,7 @@ public sealed class CP14EntityTest
                         continue;
 
                     // Validate that the damage modifier set ID starts with "CP14"
-                    Assert.That(damageable.DamageModifierSetId.Value.StartsWith("CP14"), 
+                    Assert.That(damageable.DamageModifierSetId.StartsWith("CP14"), 
                         $"CP14 fork entity '{proto.ID}' with ForkFiltered category and DamageableComponent uses damage modifier set '{damageable.DamageModifierSetId}' that doesn't start with 'CP14' prefix. All CP14 entities must use CP14-specific damage modifiers.");
                 }
             });
