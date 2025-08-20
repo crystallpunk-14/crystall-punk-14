@@ -11,7 +11,7 @@
     state: base
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallicStrong
+    damageModifierSet: CP14MetallicStructural
   - type: Fixtures
     fixtures:
       fix1:
