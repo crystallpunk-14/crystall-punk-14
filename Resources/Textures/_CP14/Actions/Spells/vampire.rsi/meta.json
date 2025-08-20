@@ -50,6 +50,9 @@
       "name": "transmutation"
     },
     {
+      "name": "tree"
+    },
+    {
       "name": "wound_heal"
     }
   ]

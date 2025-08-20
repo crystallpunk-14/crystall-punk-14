@@ -1,6 +1,8 @@
 - type: entity
   parent: CP14BaseTree
   abstract: true
+  name: motherblood tree
+  description: FUCK
   id: CP14BaseFloraTreeVampire
   components:
   - type: Sprite
@@ -91,6 +93,8 @@
   - type: CP14VampireTree
     faction: Devourers
     nextLevelProto: CP14FloraVampireTreeDevourers2
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeDevourers
 
 - type: entity
   parent: CP14FloraTreeVampire2
@@ -107,6 +111,8 @@
   - type: CP14VampireTree
     faction: Devourers
     nextLevelProto: CP14FloraVampireTreeDevourers3
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeDevourers
 
 - type: entity
   parent: CP14FloraTreeVampire3
@@ -122,6 +128,8 @@
       color: "#ff0000ff"
   - type: CP14VampireTree
     faction: Devourers
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeDevourers
 
 # Unnameable
 - type: entity
@@ -139,6 +147,8 @@
   - type: CP14VampireTree
     faction: Unnameable
     nextLevelProto: CP14FloraVampireTreeUnnameable2
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeUnnameable
 
 - type: entity
   parent: CP14FloraTreeVampire2
@@ -155,6 +165,8 @@
   - type: CP14VampireTree
     faction: Unnameable
     nextLevelProto: CP14FloraVampireTreeUnnameable3
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeUnnameable
 
 - type: entity
   parent: CP14FloraTreeVampire3
@@ -170,6 +182,8 @@
       color: "#ff0000ff"
   - type: CP14VampireTree
     faction: Unnameable
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeUnnameable
 
 # Night childrens
 - type: entity
@@ -187,6 +201,8 @@
   - type: CP14VampireTree
     faction: NightChildrens
     nextLevelProto: CP14FloraVampireTreeNightChildrens2
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeNightChildrens
 
 - type: entity
   parent: CP14FloraTreeVampire2
@@ -203,6 +219,8 @@
   - type: CP14VampireTree
     faction: NightChildrens
     nextLevelProto: CP14FloraVampireTreeNightChildrens3
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeNightChildrens
 
 - type: entity
   parent: CP14FloraTreeVampire3
@@ -218,3 +236,5 @@
       color: "#ff0000ff"
   - type: CP14VampireTree
     faction: NightChildrens
+  - type: CP14Singleton
+    key: CP14FloraVampireTreeNightChildrens

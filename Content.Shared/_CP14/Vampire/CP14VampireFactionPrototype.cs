@@ -20,4 +20,7 @@ public sealed partial class CP14VampireFactionPrototype : IPrototype
 
     [DataField(required: true)]
     public string SingletonTeleportKey = string.Empty;
+
+    [DataField(required: true)]
+    public EntProtoId? MotherTreeProto;
 }
