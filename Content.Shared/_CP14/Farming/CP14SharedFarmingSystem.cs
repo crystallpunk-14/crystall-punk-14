@@ -59,6 +59,7 @@ public abstract partial class CP14SharedFarmingSystem : EntitySystem
         ent.Comp.Energy = MathHelper.Clamp(ent.Comp.Energy + energyDelta, 0, ent.Comp.EnergyMax);
         Dirty(ent);
     }
+
     public void AffectResource(Entity<CP14PlantComponent> ent, float resourceDelta)
     {
         if (resourceDelta == 0)

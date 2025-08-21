@@ -1,15 +1,3 @@
-- type: cp14Skill
-  id: MotherbloodTree
-  skillUiPosition: 0, 0
-  learnCost: 0
-  tree: Vampire
-  icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: tree
-  effects:
-  - !type:AddAction
-    action: CP14ActionSpellVampireMotherTree
-
 # Offence
 
 - type: cp14Skill
