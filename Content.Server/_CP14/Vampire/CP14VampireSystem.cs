@@ -29,13 +29,15 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
         base.Initialize();
         InitializeAnnounces();
 
-        SubscribeLocalEvent<CP14VampireTreeComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, StartCollideEvent>(OnStartCollide);
     }
 
-    private void OnStartCollide(Entity<CP14VampireTreeComponent> ent, ref StartCollideEvent args)
+    private void OnStartCollide(Entity<CP14VampireClanHeartComponent> ent, ref StartCollideEvent args)
     {
         if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
             return;
+
+        var level = ent.Comp.Level;
 
         ent.Comp.CollectedEssence += collectable.Essence;
         Dirty(ent);
@@ -43,10 +45,14 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
 
         _audio.PlayPvs(collectable.CollectSound, ent);
 
-        if (ent.Comp.CollectedEssence >= ent.Comp.EssenceToNextLevel && ent.Comp.NextLevelProto is not null)
+        _appearance.SetData(ent, VampireClanLevelVisuals.Level, ent.Comp.Level);
+
+        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction) || ent.Comp.Faction == null)
+            return;
+
+        if (level < ent.Comp.Level) //Level up!
         {
-            SpawnAtPosition(ent.Comp.NextLevelProto, Transform(ent).Coordinates);
-            Del(ent);
+            AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing", ("name", Loc.GetString(indexedFaction.Name)), ("level", ent.Comp.Level)));
         }
     }
 

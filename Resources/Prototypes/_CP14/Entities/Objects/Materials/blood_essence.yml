@@ -52,8 +52,7 @@
     minSpeed: 0.5
     maxSpeed: 1
     chasingComponent:
-    - type: CP14VampireTree
-      essenceToNextLevel: 0
+    - type: CP14VampireClanHeart
   - type: CP14VampireTreeCollectable
 
 - type: entity

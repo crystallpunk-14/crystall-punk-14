@@ -26,12 +26,12 @@ public sealed partial class VampireClanLevel : CP14SkillRestriction
 
         var lookup = entManager.System<EntityLookupSystem>();
 
-        foreach (var tree in lookup.GetEntitiesInRange<CP14VampireTreeComponent>(xform.Coordinates, 2))
+        foreach (var tree in lookup.GetEntitiesInRange<CP14VampireClanHeartComponent>(xform.Coordinates, 2))
         {
             if (tree.Comp.Faction != playerVampire.Faction)
                 continue;
 
-            if (tree.Comp.TreeLevel < Level)
+            if (tree.Comp.Level < Level)
                 continue;
 
             return true;

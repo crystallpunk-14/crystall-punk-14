@@ -6,4 +6,4 @@ cp14-skill-req-impossible = Unable to explore during a round at the current mome
 cp14-skill-req-god-follower-percentage = The number of your followers should be more than {$count}%
 cp14-skill-req-timegate = Available for study {$minute} minutes after the start of the round. Minutes remaining: {$left}
 cp14-skill-req-timegate-disabled = Available for study {$minute} minutes after the start of the round, but time restrictions are disabled.
-cp14-skill-req-vampire-tree-level = You must be under the canopy of your faction's vampire tree, at least {$lvl} level.
+cp14-skill-req-vampire-tree-level = You must be near the heart of your clan, at least {$lvl} level.

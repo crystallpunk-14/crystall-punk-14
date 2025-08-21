@@ -1,6 +1,8 @@
+using System.Text;
 using Content.Server.Chat.Systems;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.Examine;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -10,21 +12,55 @@ namespace Content.Server._CP14.Vampire;
 public sealed partial class CP14VampireSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     private void InitializeAnnounces()
     {
-        SubscribeLocalEvent<CP14VampireTreeComponent, MapInitEvent>(OnVampireTreeInit);
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, ExaminedEvent>(OnExamined);
     }
 
-    private void OnVampireTreeInit(Entity<CP14VampireTreeComponent> ent, ref MapInitEvent args)
+    private void OnExamined(Entity<CP14VampireClanHeartComponent> ent, ref ExaminedEvent args)
     {
-        if (ent.Comp.Faction is null || ent.Comp.TreeLevel is null)
+        if (!TryComp<CP14VampireComponent>(args.Examiner, out var examinerVampire))
             return;
 
-        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
-            return;
+        var sb = new StringBuilder();
 
-        AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing", ("name", Loc.GetString(indexedFaction.Name)), ("level", ent.Comp.TreeLevel)));
+        // Faction
+        if (Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+            sb.Append(Loc.GetString("cp14-vampire-tree-examine-faction", ("faction", Loc.GetString(indexedFaction.Name))) + "\n");
+
+        // Are they friend or foe?
+        if (examinerVampire.Faction == ent.Comp.Faction)
+            sb.Append(Loc.GetString("cp14-vampire-tree-examine-friend") + "\n");
+        else
+            sb.Append(Loc.GetString("cp14-vampire-tree-examine-enemy") + "\n");
+
+        //Progress
+        sb.Append(Loc.GetString("cp14-vampire-tree-examine-level",
+            ("level", ent.Comp.Level),
+            ("essence", ent.Comp.EssenceFromLevelStart),
+            ("left", ent.Comp.EssenceToNextLevel?.ToString() ?? "∞")) + "\n"+ "\n");
+
+        var query = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
+
+        sb.Append(Loc.GetString("cp14-vampire-tree-other-title") + "\n");
+        while (query.MoveNext(out var uid, out var heart))
+        {
+            if (uid == ent.Owner)
+                continue;
+
+            if (!Proto.TryIndex(heart.Faction, out var indexedOtherFaction))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-vampire-tree-other-info",
+                ("name", Loc.GetString(indexedOtherFaction.Name)),
+                ("essence", heart.EssenceFromLevelStart),
+                ("left", heart.EssenceToNextLevel?.ToString() ?? "∞"),
+                ("lvl", heart.Level)) + "\n");
+        }
+
+        args.PushMarkup(sb.ToString());
     }
 
     public void AnnounceToFaction(ProtoId<CP14VampireFactionPrototype> faction, string message)

@@ -47,13 +47,48 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: vampire clan heart
+  description:
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 1000
+        layer:
+        - WallLayer
   - type: Sprite
+    drawdepth: Mobs
     snapCardinals: true
     sprite: _CP14/Structures/Furniture/vampire_heart.rsi
   - type: Icon
     sprite: _CP14/Structures/Furniture/vampire_heart.rsi
     state: base
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 8
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+  - type: CP14VampireClanHeart
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.VampireClanLevelVisuals.Level:
+        level:
+          1: {state: orb1}
+          2: {state: orb2}
+          3: {state: orb3}
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -64,6 +99,13 @@
     layers:
     - state: base
     - state: unnameable
+      shader: unshaded
+    - state: orb1
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: CP14VampireClanHeart
+    faction: Unnameable
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -74,6 +116,13 @@
     layers:
     - state: base
     - state: devourers
+      shader: unshaded
+    - state: orb1
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: CP14VampireClanHeart
+    faction: Devourers
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -84,3 +133,10 @@
     layers:
     - state: base
     - state: childrens
+      shader: unshaded
+    - state: orb1
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: CP14VampireClanHeart
+    faction: NightChildrens

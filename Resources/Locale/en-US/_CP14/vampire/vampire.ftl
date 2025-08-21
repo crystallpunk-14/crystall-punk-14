@@ -10,12 +10,17 @@ cp14-vampire-examine = [color=red]Bright red eyes and long fangs tell you that y
 cp14-magic-spell-need-vampire-valid = Not available in the hidden vampire form.
 cp14-magic-spell-need-all-vampires = All living vampires of your clan should be nearby.
 
-cp14-vampire-tree-examine-level = Current tree level: [color=red]{$level}[/color]. 
 cp14-vampire-tree-examine-faction = Belongs to the vampire clan "[color=red]{$faction}[/color]".
-cp14-vampire-tree-examine-essence-left = To reach the next level, you need to feed with blood essence: [color=red]{$left}[/color]. 
+cp14-vampire-tree-examine-friend = [color=green]This is the heart of your clan.[/color] Protect it with all your might.
+cp14-vampire-tree-examine-enemy = [color=red]This is the heart of the enemy clan.[/color].
+
+cp14-vampire-tree-examine-level = Essences: ([color=red]{$essence}/{$left}[/color]). Current clan level: [color=red]{$level}[/color].
 
 cp14-vampire-essence-holder-examine = This victim contains [color=red]{$essence} blood essence[/color].
 
+cp14-vampire-tree-other-title = Progress of other clans:
+cp14-vampire-tree-other-info = "{$name}": [color=red]({$essence}/{$left})[/color] essences, [color=red]{$lvl}[/color] level.
+
 ## Announcements
 
-cp14-vampire-tree-growing = The motherblood tree of the "{$name}" clan grows to level {$level}!
+cp14-vampire-tree-growing = "{$name}" clan grows to level {$level}!

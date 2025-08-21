@@ -200,3 +200,11 @@ public sealed partial class CP14ToggleVampireVisualsAction : InstantActionEvent;
 
 [Serializable, NetSerializable]
 public sealed partial class CP14VampireToggleVisualsDoAfter : SimpleDoAfterEvent;
+
+
+// Appearance Data key
+[Serializable, NetSerializable]
+public enum VampireClanLevelVisuals : byte
+{
+    Level,
+}

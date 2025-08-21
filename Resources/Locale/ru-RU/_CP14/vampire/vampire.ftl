@@ -9,12 +9,17 @@ cp14-vampire-examine = [color=red]Ярко красные глаза и длин
 cp14-magic-spell-need-vampire-valid = Недоступно в скрытой форме вампира.
 cp14-magic-spell-need-all-vampires = Все живые вампиры вашего клана должны находиться рядом.
 
-cp14-vampire-tree-examine-level = Текущий уровень древа: [color=red]{$level}[/color]. 
 cp14-vampire-tree-examine-faction = Принадлежит вампирскому клану "[color=red]{$faction}[/color]".
-cp14-vampire-tree-examine-essence-left = До следующего уровня необходимо насытить эссенцией крови: [color=red]{$left}[/color]. 
+cp14-vampire-tree-examine-friend = [color=green]Это сердце вашего клана. [/color] Защищайте его всеми силами.
+cp14-vampire-tree-examine-enemy = [color=red]Это сердце вражеского клана.[/color]
+
+cp14-vampire-tree-examine-level = Эссенции: ([color=red]{$essence}/{$left}[/color]). Текущий уровень клана: [color=red]{$level}[/color].
 
 cp14-vampire-essence-holder-examine = В этой жертве есть еще [color=red]{$essence} эссенции крови[/color].
 
+cp14-vampire-tree-other-title = Прогресс других кланов:
+cp14-vampire-tree-other-info = "{$name}": [color=red]{$count}[/color] эссенции, [color=red]{$lvl}[/color] уровень.
+
 ## Announcements
 
-cp14-vampire-tree-growing = Материнское древо клана "{$name}" вырастает до {$level} уровня!
+cp14-vampire-tree-growing = "{$name}" вырастает до {$level} уровня!
