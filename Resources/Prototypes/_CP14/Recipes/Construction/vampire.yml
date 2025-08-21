@@ -13,3 +13,51 @@
   cP14Restrictions:
     - !type:NeedPrerequisite
       prerequisite: BloodEssenceCreation
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14VampireClanHeartUnnameable
+  graph: CP14VampireClanHeartUnnameable
+  startNode: start
+  targetNode: CP14VampireClanHeartUnnameable
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateUnnameable
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14VampireClanHeartDevourers
+  graph: CP14VampireClanHeartDevourers
+  startNode: start
+  targetNode: CP14VampireClanHeartDevourers
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateDevourers
+
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14VampireClanHeartNightChildren
+  graph: CP14VampireClanHeartNightChildren
+  startNode: start
+  targetNode: CP14VampireClanHeartNightChildren
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateNightChildrens

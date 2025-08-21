@@ -107,6 +107,11 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: Unnameable
+  - type: CP14Singleton
+    key: CP14VampireClanHeartUnnameable
+  - type: Construction
+    graph: CP14VampireClanHeartUnnameable
+    node: CP14VampireClanHeartUnnameable
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -125,6 +130,11 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: Devourers
+  - type: CP14Singleton
+    key: CP14VampireClanHeartDevourers
+  - type: Construction
+    graph: CP14VampireClanHeartDevourers
+    node: CP14VampireClanHeartDevourers
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -143,3 +153,44 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: NightChildrens
+  - type: CP14Singleton
+    key: CP14VampireClanHeartNightChildren
+  - type: Construction
+    graph: CP14VampireClanHeartNightChildren
+    node: CP14VampireClanHeartNightChildren
+
+- type: entity
+  parent: BaseStructure
+  id: CP14VampireClanHeartFrameUnnameable
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  name: clan heart frame
+  description: A majestic artifact of vampire culture. Unfinished.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _CP14/Structures/Furniture/vampire_heart.rsi
+    layers:
+    - state: frame
+  - type: Construction
+    graph: CP14VampireClanHeartUnnameable
+    node: CP14VampireClanHeartUnnameableFrame
+  
+
+- type: entity
+  parent: CP14VampireClanHeartFrameUnnameable
+  id: CP14VampireClanHeartFrameDevourers
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  components:
+  - type: Construction
+    graph: CP14VampireClanHeartDevourers
+    node: CP14VampireClanHeartDevourersFrame
+  
+- type: entity
+  parent: CP14VampireClanHeartFrameUnnameable
+  id: CP14VampireClanHeartFrameNightChildrens
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  components:
+  - type: Construction
+    graph: CP14VampireClanHeartNightChildren
+    node: CP14VampireClanHeartNightChildrenFrame
+  
