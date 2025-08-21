@@ -51,3 +51,5 @@ cp14-skill-vampire-night-vision-desc = Darkness cannot be an obstacle for a crea
 
 cp14-skill-vampire-essence-vision-name = Analysis of blood
 cp14-skill-vampire-essence-vision-desc = You are able to see how much essence can be extracted from the surrounding creatures.
+
+cp14-skill-vampire-transmutate-name = Blood transmutation

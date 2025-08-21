@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
@@ -7,6 +6,8 @@ namespace Content.Shared._CP14.Skill.Restrictions;
 
 public sealed partial class SpeciesWhitelist : CP14SkillRestriction
 {
+    public override bool HideFromUI => true;
+
     [DataField(required: true)]
     public ProtoId<SpeciesPrototype> Species = new();
 

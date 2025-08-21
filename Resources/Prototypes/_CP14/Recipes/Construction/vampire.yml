@@ -1,0 +1,15 @@
+- type: construction
+  crystallPunkAllowed: true
+  id: CP14WorkbenchVampire
+  graph: CP14WorkbenchVampire
+  startNode: start
+  targetNode: CP14WorkbenchVampire
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: BloodEssenceCreation

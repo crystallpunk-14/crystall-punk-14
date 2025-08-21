@@ -253,7 +253,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         //Restrictions check
         foreach (var req in skill.Restrictions)
         {
-            if (!req.Check(EntityManager, target, skill))
+            if (!req.Check(EntityManager, target))
                 return false;
         }
 
@@ -304,10 +304,10 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (!_proto.TryIndex(skill, out var indexedSkill))
             return string.Empty;
 
-        if (indexedSkill.Desc is not null)
-            return Loc.GetString(indexedSkill.Desc);
-
         var sb = new StringBuilder();
+
+        if (indexedSkill.Desc is not null)
+            Loc.GetString(indexedSkill.Desc);
 
         foreach (var effect in indexedSkill.Effects)
         {

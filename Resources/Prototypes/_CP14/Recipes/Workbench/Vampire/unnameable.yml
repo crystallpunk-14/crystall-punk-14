@@ -1,8 +1,10 @@
 - type: CP14Recipe
   id: CP14ClothingMaskVampireVoiceUnnameable
-  tag: CP14RecipeVampireUnnameable
+  tag: CP14RecipeVampire
   category: Clothing
   craftTime: 1
+  requiredSkills:
+  - VampireTransmutateUnnameable
   requirements:
   - !type:StackResource
     stack: CP14ThinLeather

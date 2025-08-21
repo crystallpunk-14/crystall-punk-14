@@ -51,3 +51,5 @@ cp14-skill-vampire-night-vision-desc = Темнота не может быть �
 
 cp14-skill-vampire-essence-vision-name = Анализ крови
 cp14-skill-vampire-essence-vision-desc = Вы способны видеть сколько эссенции возможно извлечь из окружающих существ.
+
+cp14-skill-vampire-transmutate-unnameable-name = Трансмутация крови

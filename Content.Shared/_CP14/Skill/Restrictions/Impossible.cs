@@ -1,5 +1,3 @@
-using Content.Shared._CP14.Skill.Components;
-using Content.Shared._CP14.Skill.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Skill.Restrictions;

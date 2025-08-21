@@ -1,7 +1,7 @@
 using System.Text;
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Skill.Restrictions;
-using Content.Shared._CP14.Workbench.Prototypes;
+using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -49,9 +49,51 @@ public sealed partial class UnlockConstructions : CP14SkillEffect
                 }
             }
         }
-        foreach (var recipe in affectedRecipes)
+        foreach (var constructionProto in affectedRecipes)
         {
-            sb.Append("- " + recipe.Name + "\n");
+            if (!protoManager.TryIndex(constructionProto.Graph, out var graphProto))
+                continue;
+
+            if (constructionProto.TargetNode is not { } targetNodeId)
+                continue;
+
+            if (!graphProto.Nodes.TryGetValue(targetNodeId, out var targetNode))
+                continue;
+
+            // Recursion is for wimps.
+            var stack = new Stack<ConstructionGraphNode>();
+            stack.Push(targetNode);
+
+
+            do
+            {
+                var node = stack.Pop();
+
+                // We try to get the id of the target prototype, if it fails, we try going through the edges.
+                if (node.Entity.GetId(null, null, new(entMagager)) is not { } entityId)
+                {
+                    // If the stack is not empty, there is a high probability that the loop will go to infinity.
+                    if (stack.Count == 0)
+                    {
+                        foreach (var edge in node.Edges)
+                        {
+                            if (graphProto.Nodes.TryGetValue(edge.Target, out var graphNode))
+                                stack.Push(graphNode);
+                        }
+                    }
+
+                    continue;
+                }
+
+                // If we got the id of the prototype, we exit the “recursion” by clearing the stack.
+                stack.Clear();
+
+                if (!protoManager.TryIndex(entityId, out var proto))
+                    continue;
+
+                sb.Append("- " + Loc.GetString(proto.Name) + "\n");
+
+            } while (stack.Count > 0);
         }
 
         return sb.ToString();

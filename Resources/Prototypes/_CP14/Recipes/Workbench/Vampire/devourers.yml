@@ -1,8 +1,10 @@
 - type: CP14Recipe
   id: CP14ClothingMaskVampireVoiceDevourers
-  tag: CP14RecipeVampireDevourers
+  tag: CP14RecipeVampire
   category: Clothing
   craftTime: 1
+  requiredSkills:
+  - VampireTransmutateDevourers
   requirements:
   - !type:StackResource
     stack: CP14ThinLeather

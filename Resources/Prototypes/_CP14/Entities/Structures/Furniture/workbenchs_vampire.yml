@@ -1,6 +1,6 @@
 - type: entity
   parent: CP14BaseWorkbench
-  id: CP14WorkbenchVampireDevourers
+  id: CP14WorkbenchVampire
   categories: [ ForkFiltered ]
   suffix: Devourers
   name: vampire power point
@@ -14,13 +14,15 @@
     - state: devourers
     - state: fx
       shader: unshaded
+  - type: Icon
+    sprite: _CP14/Structures/Furniture/workbench_vampire.rsi
+    state: base
   - type: CP14Workbench
     craftSound:
       path: /Audio/_CP14/Effects/vampire_craft.ogg
       params:
         variation: 0.125
     recipeTags:
-    - CP14RecipeVampireDevourers
     - CP14RecipeVampire
   - type: LightBehaviour
     behaviours:
@@ -37,35 +39,6 @@
     color: "#d60032"
     energy: 1
     radius: 3
-
-- type: entity
-  id: CP14WorkbenchVampireUnnameable
-  suffix: Unnameable
-  parent: CP14WorkbenchVampireDevourers
-  components:
-  - type: Sprite
-    layers:
-    - state: base
-    - state: unnameable
-    - state: fx
-      shader: unshaded
-  - type: CP14Workbench
-    recipeTags:
-    - CP14RecipeVampireUnnameable
-    - CP14RecipeVampire
-
-- type: entity
-  id: CP14WorkbenchVampireChildrenNight
-  suffix: Night childrens
-  parent: CP14WorkbenchVampireDevourers
-  components:
-  - type: Sprite
-    layers:
-    - state: base
-    - state: night
-    - state: fx
-      shader: unshaded
-  - type: CP14Workbench
-    recipeTags:
-    - CP14RecipeVampireNightChildrens
-    - CP14RecipeVampire
+  - type: Construction
+    graph: CP14WorkbenchVampire
+    node: CP14WorkbenchVampire

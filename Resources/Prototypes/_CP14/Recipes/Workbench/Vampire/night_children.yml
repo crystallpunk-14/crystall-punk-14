@@ -1,8 +1,10 @@
 - type: CP14Recipe
   id: CP14ClothingMaskVampireVoiceNightChildrens
-  tag: CP14RecipeVampireNightChildrens
+  tag: CP14RecipeVampire
   category: Clothing
   craftTime: 1
+  requiredSkills:
+  - VampireTransmutateNightChildrens
   requirements:
   - !type:StackResource
     stack: CP14ThinLeather

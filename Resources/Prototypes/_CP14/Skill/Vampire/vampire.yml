@@ -146,6 +146,7 @@
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: essence_create
   effects:
+  - !type:UnlockConstructions
   - !type:AddAction
     action: CP14ActionSpellBloodEssenceCreation
 
@@ -197,6 +198,63 @@
     prerequisite: BloodConnection
   - !type:VampireTreeLevel
     level: 3
+
+- type: cp14Skill
+  id: VampireTransmutateUnnameable
+  skillUiPosition: 2, 8
+  name: cp14-skill-vampire-transmutate-name 
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: transmutation
+  effects:
+  - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
+  - !type:VampireTreeLevel
+    level: 1
+  - !type:VampireFaction
+    clan: Unnameable
+
+- type: cp14Skill
+  id: VampireTransmutateDevourers
+  skillUiPosition: 2, 8
+  name: cp14-skill-vampire-transmutate-name 
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: transmutation
+  effects:
+  - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
+  - !type:VampireTreeLevel
+    level: 1
+  - !type:VampireFaction
+    clan: Devourers
+
+- type: cp14Skill
+  id: VampireTransmutateNightChildrens
+  skillUiPosition: 2, 8
+  name: cp14-skill-vampire-transmutate-name 
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: transmutation
+  effects:
+  - !type:UnlockRecipes
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: BloodEssenceCreation
+  - !type:VampireTreeLevel
+    level: 1
+  - !type:VampireFaction
+    clan: NightChildrens
 
 - type: cp14Skill
   id: PortalToVampireHome
