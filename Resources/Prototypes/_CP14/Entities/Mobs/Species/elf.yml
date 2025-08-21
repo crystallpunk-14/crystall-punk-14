@@ -41,12 +41,17 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_cloak
-      outerClothing:
+      gloves:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
@@ -62,6 +67,26 @@
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: male_shirt
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
       shirt:
         sizeMaps:
           32:
@@ -78,12 +103,17 @@
   - type: Inventory
     templateId: CP14Human
     displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
       cloak:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_cloak
-      outerClothing:
+      gloves:
         sizeMaps:
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
@@ -99,6 +129,26 @@
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: male_shirt
     femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
       shirt:
         sizeMaps:
           32:
