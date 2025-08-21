@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Transmutation.Prototypes;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 
@@ -14,9 +13,6 @@ public sealed partial class CP14VampireFactionPrototype : IPrototype
 
     [DataField(required: true)]
     public ProtoId<FactionIconPrototype> FactionIcon;
-
-    [DataField(required: true)]
-    public ProtoId<CP14TransmutationPrototype>? TransmutationMethod;
 
     [DataField(required: true)]
     public string SingletonTeleportKey = string.Empty;

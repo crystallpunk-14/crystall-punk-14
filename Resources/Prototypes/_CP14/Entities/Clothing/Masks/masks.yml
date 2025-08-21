@@ -95,13 +95,6 @@
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: cp14skeleton
-  - type: CP14Transmutable
-    cost: 0.2
-    resource: Blood
-    entries:
-      VampireDevourers: CP14ClothingMaskVampireVoiceDevourers
-      VampireUnnameable: CP14ClothingMaskVampireVoiceUnnameable
-      VampireNightChildren: CP14ClothingMaskVampireVoiceNightChildrens
 
 - type: entity
   parent: CP14ClothingMaskBase

@@ -81,13 +81,6 @@
         acts: [ "Destruction" ]
   - type: Flammable
     firestacksOnIgnite: 2
-  - type: CP14Transmutable
-    cost: 0
-    resource: Blood
-    entries:
-      VampireDevourers: CP14CandleBloodIgnited
-      VampireUnnameable: CP14CandleBloodIgnited
-      VampireNightChildren: CP14CandleBloodIgnited
 
 - type: entity
   parent: CP14Candle
@@ -147,13 +140,6 @@
       CP14Iron: 10 # 1 iron bar
   - type: Flammable
     firestacksOnIgnite: 4
-  - type: CP14Transmutable
-    cost: 0
-    resource: Blood
-    entries:
-      VampireDevourers: CP14CandelabraBloodIgnited
-      VampireUnnameable: CP14CandelabraBloodIgnited
-      VampireNightChildren: CP14CandelabraBloodIgnited
 
 - type: entity
   parent: CP14Candelabra

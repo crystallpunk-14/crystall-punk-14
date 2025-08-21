@@ -1,7 +1,6 @@
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
-using Content.Shared._CP14.Transmutation.Components;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
@@ -45,30 +44,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         SubscribeLocalEvent<CP14VampireVisualsComponent, ComponentShutdown>(OnVampireVisualsShutdown);
         SubscribeLocalEvent<CP14VampireVisualsComponent, ExaminedEvent>(OnVampireExamine);
 
-        SubscribeLocalEvent<CP14TransmutableComponent, ExaminedEvent>(OnTransmutableExamined);
         SubscribeLocalEvent<CP14VampireEssenceHolderComponent, ExaminedEvent>(OnEssenceHolderExamined);
-    }
-    private void OnTransmutableExamined(Entity<CP14TransmutableComponent> ent, ref ExaminedEvent args)
-    {
-        if (!TryComp<CP14VampireComponent>(args.Examiner, out var vampire))
-            return;
-
-        if (!Proto.TryIndex(vampire.Faction, out var indexedFaction))
-            return;
-
-        if (indexedFaction.TransmutationMethod is null)
-            return;
-
-        var entries = ent.Comp.Entries;
-        if (!entries.TryGetValue(indexedFaction.TransmutationMethod.Value, out var targetProto))
-            return;
-
-        if (!Proto.TryIndex(targetProto, out var indexedTargetProto))
-            return;
-
-        var name = indexedTargetProto.Name;
-
-        args.PushMarkup(Loc.GetString("cp-14-vampire-transmutable-to", ("name", name), ("count", ent.Comp.Cost)));
     }
 
     private void OnEssenceHolderExamined(Entity<CP14VampireEssenceHolderComponent> ent, ref ExaminedEvent args)

@@ -10,8 +10,6 @@ cp14-vampire-examine = [color=red]Bright red eyes and long fangs tell you that y
 cp14-magic-spell-need-vampire-valid = Not available in the hidden vampire form.
 cp14-magic-spell-need-all-vampires = All living vampires of your clan should be nearby.
 
-cp-14-vampire-transmutable-to = [color=red]Vampire magic[/color] can transmutate this into “[color=gold]{$name}[/color]” at a cost of [color=red]{$count}[/color] blood essences.
-
 cp14-vampire-tree-examine-level = Current tree level: [color=red]{$level}[/color]. 
 cp14-vampire-tree-examine-faction = Belongs to the vampire clan "[color=red]{$faction}[/color]".
 cp14-vampire-tree-examine-essence-left = To reach the next level, you need to feed with blood essence: [color=red]{$left}[/color]. 
