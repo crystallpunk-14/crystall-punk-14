@@ -26,7 +26,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1
 
 - type: cp14Skill
@@ -44,7 +44,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PowerKick
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 2
 
 - type: cp14Skill
@@ -61,7 +61,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PowerKick2
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 3
 
 - type: cp14Skill
@@ -78,7 +78,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 2
 
 - type: cp14Skill
@@ -100,7 +100,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1
 
 - type: cp14Skill
@@ -120,7 +120,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: VampireNightVision
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 2
 
 # Create
@@ -167,7 +167,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodConnection
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 2
 
 - type: cp14Skill
@@ -184,7 +184,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodConnection
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 3
 
 - type: cp14Skill
@@ -201,7 +201,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodEssenceCreation
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1
   - !type:VampireFaction
     clan: Unnameable
@@ -220,7 +220,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodEssenceCreation
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1
   - !type:VampireFaction
     clan: Devourers
@@ -239,7 +239,7 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodEssenceCreation
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1
   - !type:VampireFaction
     clan: NightChildrens
@@ -258,5 +258,5 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: BloodEssenceCreation
-  - !type:VampireTreeLevel
+  - !type:VampireClanLevel
     level: 1

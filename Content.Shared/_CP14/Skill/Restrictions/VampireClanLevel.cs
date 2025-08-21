@@ -9,13 +9,15 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Skill.Restrictions;
 
-public sealed partial class VampireTreeLevel : CP14SkillRestriction
+public sealed partial class VampireClanLevel : CP14SkillRestriction
 {
     [DataField]
     public int Level = 1;
 
     public override bool Check(IEntityManager entManager, EntityUid target)
     {
+        return true;
+
         if (!entManager.TryGetComponent<CP14VampireComponent>(target, out var playerVampire))
             return false;
 

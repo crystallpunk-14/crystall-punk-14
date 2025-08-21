@@ -155,10 +155,9 @@
 
 - type: entity
   parent: CP14BaseTree
-  abstract: true
+  id: CP14FloraTreeRed
   name: motherblood tree
   description: Ask Wanderere to insert lore here
-  id: CP14FloraTreeRed
   components:
   - type: Sprite
     offset: 0,1.1
