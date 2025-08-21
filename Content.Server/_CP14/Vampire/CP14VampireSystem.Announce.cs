@@ -29,7 +29,7 @@ public sealed partial class CP14VampireSystem
 
     public void AnnounceToFaction(ProtoId<CP14VampireFactionPrototype> faction, string message)
     {
-        Filter filter = Filter.Empty();
+        var filter = Filter.Empty();
         var query = EntityQueryEnumerator<CP14VampireComponent, ActorComponent>();
 
         while (query.MoveNext(out var uid, out var vampire, out var actor))

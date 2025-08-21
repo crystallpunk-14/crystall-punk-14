@@ -14,7 +14,7 @@ public sealed partial class VampireTreeLevel : CP14SkillRestriction
     [DataField]
     public int Level = 1;
 
-    public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
+    public override bool Check(IEntityManager entManager, EntityUid target)
     {
         if (!entManager.TryGetComponent<CP14VampireComponent>(target, out var playerVampire))
             return false;

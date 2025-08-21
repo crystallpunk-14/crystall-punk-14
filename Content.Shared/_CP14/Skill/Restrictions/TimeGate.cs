@@ -13,7 +13,7 @@ public sealed partial class TimeGate : CP14SkillRestriction
     [DataField(required: true)]
     public int Minutes = 1;
 
-    public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
+    public override bool Check(IEntityManager entManager, EntityUid target)
     {
         var timing = IoCManager.Resolve<IGameTiming>();
         var cfg = IoCManager.Resolve<IConfigurationManager>();

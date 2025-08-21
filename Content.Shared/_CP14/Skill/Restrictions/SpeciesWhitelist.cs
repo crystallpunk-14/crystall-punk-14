@@ -10,7 +10,7 @@ public sealed partial class SpeciesWhitelist : CP14SkillRestriction
     [DataField(required: true)]
     public ProtoId<SpeciesPrototype> Species = new();
 
-    public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
+    public override bool Check(IEntityManager entManager, EntityUid target)
     {
         if (!entManager.TryGetComponent<HumanoidAppearanceComponent>(target, out var appearance))
             return false;

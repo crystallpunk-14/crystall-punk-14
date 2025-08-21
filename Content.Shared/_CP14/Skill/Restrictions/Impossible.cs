@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.Skill.Restrictions;
 
 public sealed partial class Impossible : CP14SkillRestriction
 {
-    public override bool Check(IEntityManager entManager, EntityUid target, CP14SkillPrototype skill)
+    public override bool Check(IEntityManager entManager, EntityUid target)
     {
         return false;
     }

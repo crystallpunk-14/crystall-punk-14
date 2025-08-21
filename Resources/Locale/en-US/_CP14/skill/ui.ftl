@@ -11,6 +11,7 @@ cp14-skill-menu-free = [color=green]This skill is innate to your character, and 
 cp14-skill-desc-add-mana = Increases your character's mana amount by {$mana}.
 cp14-skill-desc-add-stamina = Increases your character's stamina amount by {$stamina}.
 cp14-skill-desc-unlock-recipes = Opens up the possibility of crafting:
+cp14-skill-desc-unlock-constructions = Opens up the possibility of structure crafting:
 
 cp14-skill-popup-memory-added = The boundaries of your consciousness are expanding. New memory points: {$count}
 cp14-skill-popup-memory-losed = You are beginning to forget your past... Memory points lost: {$count}
