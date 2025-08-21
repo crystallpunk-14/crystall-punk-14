@@ -14,7 +14,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Vampire;
 
-public sealed class CP14VampireSystem : CP14SharedVampireSystem
+public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
 {
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -27,6 +27,7 @@ public sealed class CP14VampireSystem : CP14SharedVampireSystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeAnnounces();
 
         SubscribeLocalEvent<CP14VampireTreeComponent, StartCollideEvent>(OnStartCollide);
     }

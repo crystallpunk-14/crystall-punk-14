@@ -1,4 +1,3 @@
-
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Examine;
@@ -10,6 +9,7 @@ namespace Content.Shared._CP14.Vampire;
 public abstract partial class CP14SharedVampireSystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
+
     private void InitializeSpell()
     {
         SubscribeLocalEvent<CP14MagicEffectAllVampireClanComponent, CP14CastMagicEffectAttemptEvent>(OnVampireClanCastAttempt);

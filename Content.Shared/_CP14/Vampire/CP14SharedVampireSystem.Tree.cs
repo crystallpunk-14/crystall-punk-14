@@ -18,7 +18,7 @@ public abstract partial class CP14SharedVampireSystem
         if (ent.Comp.TreeLevel is not null)
             args.PushMarkup(Loc.GetString("cp14-vampire-tree-examine-level", ("level", ent.Comp.TreeLevel.Value)));
 
-        if (_proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+        if (Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
             args.PushMarkup(Loc.GetString("cp14-vampire-tree-examine-faction", ("faction", Loc.GetString(indexedFaction.Name))));
 
         if (ent.Comp.NextLevelProto is not null)

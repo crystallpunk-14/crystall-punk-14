@@ -17,3 +17,7 @@ cp14-vampire-tree-examine-faction = Belongs to the vampire clan "[color=red]{$fa
 cp14-vampire-tree-examine-essence-left = To reach the next level, you need to feed with blood essence: [color=red]{$left}[/color]. 
 
 cp14-vampire-essence-holder-examine = This victim contains [color=red]{$essence} blood essence[/color].
+
+## Announcements
+
+cp14-vampire-tree-growing = The motherblood tree of the "{$name}" clan grows to level {$level}!

@@ -1,4 +1,3 @@
-using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
@@ -11,7 +10,6 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -26,7 +24,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] protected readonly IPrototypeManager Proto = default!;
 
     private readonly ProtoId<CP14SkillPointPrototype> _skillPointType = "Blood";
     private readonly ProtoId<CP14SkillPointPrototype> _memorySkillPointType = "Memory";
@@ -55,7 +53,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         if (!TryComp<CP14VampireComponent>(args.Examiner, out var vampire))
             return;
 
-        if (!_proto.TryIndex(vampire.Faction, out var indexedFaction))
+        if (!Proto.TryIndex(vampire.Faction, out var indexedFaction))
             return;
 
         if (indexedFaction.TransmutationMethod is null)
@@ -65,7 +63,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         if (!entries.TryGetValue(indexedFaction.TransmutationMethod.Value, out var targetProto))
             return;
 
-        if (!_proto.TryIndex(targetProto, out var indexedTargetProto))
+        if (!Proto.TryIndex(targetProto, out var indexedTargetProto))
             return;
 
         var name = indexedTargetProto.Name;
@@ -131,7 +129,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         {
             foreach (var skill in storage.LearnedSkills)
             {
-                if (!_proto.TryIndex(skill, out var indexedSkill))
+                if (!Proto.TryIndex(skill, out var indexedSkill))
                     continue;
 
                 if (indexedSkill.Tree == ent.Comp.SkillTreeProto)
