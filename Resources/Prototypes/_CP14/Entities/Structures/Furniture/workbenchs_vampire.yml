@@ -2,7 +2,6 @@
   parent: CP14BaseWorkbench
   id: CP14WorkbenchVampire
   categories: [ ForkFiltered ]
-  suffix: Devourers
   name: vampire power point
   description: A table imbued with vampire magic, allowing you to create items of dark arts.
   components:
