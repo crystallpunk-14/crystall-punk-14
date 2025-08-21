@@ -27,8 +27,6 @@
     roleType: TeamAntagonist
     exclusiveAntag: true
   - type: CP14VampireRole
-  - type: RoleBriefing
-    briefing: cp14-roles-antag-vampire-briefing
 
 - type: entity
   parent: BaseMindRoleAntag

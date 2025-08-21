@@ -23,10 +23,19 @@ public sealed partial class CP14VampireClanHeartComponent : Component
     public FixedPoint2 Level2 = 5f;
 
     [DataField]
-    public FixedPoint2 Level3 = 10f;
+    public FixedPoint2 Level3 = 12f;
 
     [DataField]
-    public FixedPoint2 Level4 = 20f;
+    public FixedPoint2 Level4 = 21f;
+
+    [DataField]
+    public FixedPoint2 EssenceRegenPerLevel = 0.1f;
+
+    [DataField]
+    public TimeSpan RegenFrequency = TimeSpan.FromMinutes(1);
+
+    [DataField]
+    public TimeSpan NextRegenTime = TimeSpan.Zero;
 
     public int Level
     {
@@ -41,14 +50,6 @@ public sealed partial class CP14VampireClanHeartComponent : Component
             return 1;
         }
     }
-
-    public FixedPoint2 EssenceRequiredForLevel => Level switch
-    {
-        1 => Level2,
-        2 => Level3,
-        3 => Level4,
-        _ => FixedPoint2.Zero
-    };
 
     public FixedPoint2 EssenceFromLevelStart => Level switch
     {

@@ -31,7 +31,6 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        InitializeTree();
         InitializeSpell();
 
         SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnVampireInit);

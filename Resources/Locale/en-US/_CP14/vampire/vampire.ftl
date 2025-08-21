@@ -24,3 +24,4 @@ cp14-vampire-tree-other-info = "{$name}": [color=red]({$essence}/{$left})[/color
 ## Announcements
 
 cp14-vampire-tree-growing = "{$name}" clan grows to level {$level}!
+cp14-vampire-tree-growing-self = Your clan grows to level {$level}!

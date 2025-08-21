@@ -47,7 +47,7 @@
   abstract: true
   categories: [ ForkFiltered ]
   name: vampire clan heart
-  description:
+  description: The source of power for the vampire clan. By gathering the life force of its victims, the clan becomes stronger.
   components:
   - type: Fixtures
     fixtures:
@@ -94,6 +94,7 @@
   parent: CP14VampireClanHeartBase
   id: CP14VampireClanHeartUnnameable
   suffix: Unnameable
+  name: heart of unnameable clan
   components:
   - type: Sprite
     layers:
@@ -111,6 +112,7 @@
   parent: CP14VampireClanHeartBase
   id: CP14VampireClanHeartDevourers
   suffix: Devourers
+  name: heart of devourers clan
   components:
   - type: Sprite
     layers:
@@ -128,6 +130,7 @@
   parent: CP14VampireClanHeartBase
   id: CP14VampireClanHeartNightChildren
   suffix: Night childrens
+  name: heart of night childrens clan
   components:
   - type: Sprite
     layers:

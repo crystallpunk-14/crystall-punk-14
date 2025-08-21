@@ -7,6 +7,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Events;
@@ -32,28 +33,33 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
         SubscribeLocalEvent<CP14VampireClanHeartComponent, StartCollideEvent>(OnStartCollide);
     }
 
+    private void AddEssence(Entity<CP14VampireClanHeartComponent> ent, FixedPoint2 amount)
+    {
+        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction) || ent.Comp.Faction == null)
+            return;
+
+        var level = ent.Comp.Level;
+
+        ent.Comp.CollectedEssence += amount;
+        Dirty(ent);
+
+        if (level < ent.Comp.Level) //Level up!
+        {
+            _appearance.SetData(ent, VampireClanLevelVisuals.Level, ent.Comp.Level);
+            AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing", ("name", Loc.GetString(indexedFaction.Name)), ("level", ent.Comp.Level)));
+            AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing-self"));
+        }
+    }
+
     private void OnStartCollide(Entity<CP14VampireClanHeartComponent> ent, ref StartCollideEvent args)
     {
         if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
             return;
 
-        var level = ent.Comp.Level;
-
-        ent.Comp.CollectedEssence += collectable.Essence;
-        Dirty(ent);
+        AddEssence(ent, collectable.Essence);
         Del(args.OtherEntity);
 
         _audio.PlayPvs(collectable.CollectSound, ent);
-
-        _appearance.SetData(ent, VampireClanLevelVisuals.Level, ent.Comp.Level);
-
-        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction) || ent.Comp.Faction == null)
-            return;
-
-        if (level < ent.Comp.Level) //Level up!
-        {
-            AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing", ("name", Loc.GetString(indexedFaction.Name)), ("level", ent.Comp.Level)));
-        }
     }
 
     protected override void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
@@ -74,6 +80,7 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
     {
         base.Update(frameTime);
 
+        //Vampire under sun heating
         var query = EntityQueryEnumerator<CP14VampireComponent, CP14VampireVisualsComponent, TemperatureComponent, FlammableComponent>();
         while (query.MoveNext(out var uid, out var vampire, out var visuals, out var temperature, out var flammable))
         {
@@ -93,6 +100,18 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
                 _flammable.AdjustFireStacks(uid, 1, flammable);
                 _flammable.Ignite(uid, uid, flammable);
             }
+        }
+
+        var heartQuery = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
+        //regen essence over time
+        while (heartQuery.MoveNext(out var uid, out var heart))
+        {
+            if (_timing.CurTime < heart.NextRegenTime)
+                continue;
+
+            heart.NextRegenTime = _timing.CurTime + heart.RegenFrequency;
+
+            AddEssence((uid, heart), heart.EssenceRegenPerLevel * heart.Level);
         }
     }
 }

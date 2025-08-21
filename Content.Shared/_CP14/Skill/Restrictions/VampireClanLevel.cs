@@ -16,8 +16,6 @@ public sealed partial class VampireClanLevel : CP14SkillRestriction
 
     public override bool Check(IEntityManager entManager, EntityUid target)
     {
-        return true;
-
         if (!entManager.TryGetComponent<CP14VampireComponent>(target, out var playerVampire))
             return false;
 
