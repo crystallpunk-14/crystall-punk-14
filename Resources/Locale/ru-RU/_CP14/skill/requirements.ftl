@@ -1,5 +1,6 @@
 cp14-skill-req-prerequisite = Навык "{$name}" должен быть изучен
 cp14-skill-req-species = Вы должны быть расы "{$name}"
+cp14-skill-req-notspecies = Вы не должны быть расы "{$name}"
 cp14-skill-req-vampire-clan = Вы должны принадлежать вампирскому клану "{$name}"
 cp14-skill-req-researched = Необходимо провести исследование на исследовательском столе
 cp14-skill-req-impossible = Невозможно изучить во время раунда на текущий момент

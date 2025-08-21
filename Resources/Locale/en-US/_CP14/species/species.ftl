@@ -5,3 +5,4 @@ cp14-species-name-elf = Elf
 cp14-species-name-goblin = Goblin
 cp14-species-name-silva = Silva
 cp14-species-name-carcat = Carcat
+cp14-species-name-skeleton = Skeleton

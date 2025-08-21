@@ -21,8 +21,8 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Damageable
-    damageModifierSet: Wood
     damageContainer: StructuralInorganic
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -56,4 +56,3 @@
   - type: Construction
     graph: CP14WallmountOrdersBorder
     node: CP14WallmountOrdersBorder
-

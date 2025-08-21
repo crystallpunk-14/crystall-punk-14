@@ -13,7 +13,7 @@
       - state: barrel
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -231,7 +231,7 @@
         - TabletopMachineLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
