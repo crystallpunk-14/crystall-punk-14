@@ -56,7 +56,7 @@
         - MachineLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -95,6 +95,8 @@
     - !type:GroupSelector
       children:
       - id: CP14BookGuildMoral
+      - id: CP14BookPantheonGodsSileita
+      - id: CP14BookPantheonGodsSileitaImitators
     #Empty random
     - id: CP14BookRandom
       amount: !type:RangeNumberSelector

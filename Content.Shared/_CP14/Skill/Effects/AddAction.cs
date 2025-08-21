@@ -1,7 +1,9 @@
 using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared.Actions;
+using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.Skill.Effects;
 
@@ -53,6 +55,16 @@ public sealed partial class AddAction : CP14SkillEffect
 
     public override string? GetDescription(IEntityManager entMagager, IPrototypeManager protoManager, ProtoId<CP14SkillPrototype> skill)
     {
-        return !protoManager.TryIndex(Action, out var indexedAction) ? string.Empty : indexedAction.Description;
+        var dummyAction = entMagager.Spawn(Action);
+        var message = new FormattedMessage();
+        if (!entMagager.TryGetComponent<MetaDataComponent>(dummyAction, out var meta))
+            return null;
+
+        message.AddText(meta.EntityDescription + "\n");
+        var ev = new ExaminedEvent(message, dummyAction, dummyAction, true, true);
+        entMagager.EventBus.RaiseLocalEvent(dummyAction, ev);
+
+        entMagager.DeleteEntity(dummyAction);
+        return ev.GetTotalMessage().ToMarkup();
     }
 }

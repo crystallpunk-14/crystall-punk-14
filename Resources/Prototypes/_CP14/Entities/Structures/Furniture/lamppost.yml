@@ -24,7 +24,7 @@
         - WallLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: MeleeSound
     soundGroups:
       Brute:

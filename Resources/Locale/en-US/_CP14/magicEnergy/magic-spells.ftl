@@ -23,6 +23,10 @@ cp14-magic-staminacost = Stamina cost
 cp14-magic-spell-pacified = It could hurt someone!
 
 cp14-magic-spell-target-not-mob = The target must be a living thing!
-cp14-magic-spell-target-dead = Can't be used on the dead!
-cp14-magic-spell-target-alive = Can't be used on the living!
+
+cp14-magic-spell-target-mob-state = Can only be used on {$state} targets!
+cp14-magic-spell-target-mob-state-dead = dead 
+cp14-magic-spell-target-mob-state-live = living
+cp14-magic-spell-target-mob-state-critical = dying
+
 cp14-magic-spell-target-god-follower = Your target should be your follower!

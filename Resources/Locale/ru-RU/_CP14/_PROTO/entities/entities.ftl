@@ -724,34 +724,34 @@ ent-CP14ClothingBackBackpackT0 = мешок
     .desc = Простой тканевый мешок с базовой вместимостью. Легкий, но не очень надежный.
 
 ent-CP14ClothingBackBackpackT1 = рюкзак
-    .desc = Стандартный рюкзак с приличным объемом хранения. Идеально подходит для повседневного использования. Немного стесняет движения, но защищает спину от ударов!
+    .desc = Стандартный рюкзак с приличным объемом. Идеален для повседневного использования. Защищает спину от ударов!
 
-ent-CP14ClothingBackBackpackT2 = расширенный рюкзак
-    .desc = Расширенный рюкзак увеличенной вместимости. Идеально подходит для длительных поездок. Стесняет движения, но защищает спину от ударов и сохраняет тепло!
+ent-CP14ClothingBackBackpackT2 = вместительный рюкзак
+    .desc = Увеличенный рюкзак с большей вместимостью. Идеален для длительных походов. Незначительно сковывает при беге, но защищает спину от ударов и сохраняет тепло!
 
-ent-CP14ClothingBackBackpackT3 = рюкзак путешественника
-    .desc = Большой, хорошо организованный рюкзак, предназначенный для длительных путешествий, с несколькими отделениями. Значительно стесняет движения, но защищает спину!
+ent-CP14ClothingBackBackpackT3 = дорожный рюкзак
+    .desc = Большой, хорошо организованный рюкзак для длительных путешествий с несколькими отделениями. Сковывает при беге и защищает спину и шею от ударов!.
 
-ent-CP14ClothingBackBackpackReinforced = усиленный рюкзак
-    .desc = Прочный рюкзак с усиленными швами и материалами для дополнительной защиты ваших вещей. Стесняет движения, но защищает спину от ударов и сохраняет тепло!
+ent-CP14ClothingBackBackpackReinforced = укрепленный рюкзак
+    .desc = Прочный рюкзак с усиленной строчкой и материалами для дополнительной защиты ваших вещей. Сковывает при беге, но зато защищает спину и бока от ударов и сохраняет тепло!
 
 ent-CP14ClothingBackBackpackCargo = грузовая сумка
-    .desc = Утилитарная грузовая сумка, предназначенная для тяжелых условий эксплуатации. Удобна для переноски и хранения рабочих вещей.
+    .desc = Утилитарная грузовая сумка для тяжелых условий эксплуатации. Удобна для переноски и хранения рабочих принадлежностей.
 
-ent-CP14ClothingBackSatchelT0 = подсумок
-    .desc = Небольшой базовый подсумок для переноски предметов первой необходимости. Можно носить на поясе или через плечо.
+ent-CP14ClothingBackSatchelT0 = сумка
+    .desc = Небольшая сумка для переноски необходимых вещей. Можно носить на поясе или через плечо.
 
 ent-CP14ClothingBackSatchelT1 = деревенская сумка
-    .desc = Кожаная сумка ручной работы с деревенским шармом. Обеспечивает скромное хранение с традиционным стилем. Можно носить на поясе или через плечо. Мешает спринту.
+    .desc = Ручная кожаная сумка с деревенским шармом. Обеспечивает скромное хранилище в традиционном стиле. Можно носить на поясе или через плечо.
 
 ent-CP14ClothingBackSatchelT2 = курьерская сумка
-    .desc = Профессиональная сумка, предназначенная для курьеров, с организованными отделениями для быстрого доступа. Мешает спринту.
+    .desc = Профессиональная сумка, разработанная для курьеров, с организованными отделениями для быстрого доступа.
 
 ent-CP14ClothingBackSatchelT3 = вещмешок
-    .desc = Прочный вещмешок военного образца с большой вместимостью, предназначенный для длительного использования в полевых условиях. Мешает спринту.
+    .desc = Прочный вещмешок с большой вместимостью, предназначенный для длительного использования в полевых условиях. Незначительно стесняет движения, но зато может прикрыть спину.
 
-ent-CP14ClothingBackSatchelReinforced = усиленный вещмешок
-    .desc = Прочный вещмешок с усиленными швами и влагостойкими материалами для тяжелых условий. Мешает спринту.
+ent-CP14ClothingBackSatchelReinforced = укрепленная сумка
+    .desc = Прочная сумка с усиленными швами и водостойкими материалами для тяжелых условий.
 
 ent-CP14ClothingBeltPouchPotions = подсумок для зелий
     .desc = Мешочек для хранения зелий - здесь они точно не разобьются.
@@ -1240,16 +1240,16 @@ ent-CP14ClothingPantsMerchantsPantaloons = купеческие панталон
 ent-CP14ClothingShirtBase = рубашка
     .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
 
-ent-CP14ClothingShirtCottonBlack = холщовая черная рубашка
+ent-CP14ClothingShirtCottonBlack = хлопковая черная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlackDress = хлопковое черное платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonBlue = холщовая синяя рубашка
+ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonBlueCollar = холщовая синяя рубашка с воротником
+ent-CP14ClothingShirtCottonBlueCollar = хлопковая синяя рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlueCollarDress = хлопковое платье с голубым воротником
@@ -1258,34 +1258,34 @@ ent-CP14ClothingShirtBlueCollarDress = хлопковое платье с гол
 ent-CP14ClothingShirtMercenary = рубашка наемника
     .desc = Пестрая рубашка наемника.
 
-ent-CP14ClothingShirtBlueOpen = холщовая открытая синяя рубашка
+ent-CP14ClothingShirtBlueOpen = хлопковая открытая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlueOpenDress = хлопковое голубое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtRedOpen = холщовая открытая красная рубашка
+ent-CP14ClothingShirtRedOpen = хлопковая открытая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtRedOpenDress = хлопковое красное открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtYellowOpen = холщовая открытая желтая рубашка
+ent-CP14ClothingShirtYellowOpen = хлопковая открытая желтая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtYellowOpenDress = хлопковое желтое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonPurple = холщовая фиолетовая рубашка
+ent-CP14ClothingShirtCottonPurple = хлопковая фиолетовая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonRed = холщовая красная рубашка
+ent-CP14ClothingShirtCottonRed = хлопковая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonRedDress = хлопковое красное платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonWhite = холщовая белая рубашка
+ent-CP14ClothingShirtCottonWhite = хлопковая белая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonWhiteDress = хлопковое белое платье
@@ -1297,13 +1297,13 @@ ent-CP14ClothingShirtCottonWhiteCollar = хлопковая рубашка с б
 ent-CP14ClothingShirtCottonWhiteCollarDress = хлопковое платье с белым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonYellow = холщовая желтая рубашка
+ent-CP14ClothingShirtCottonYellow = хлопковая желтая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtJestersAttire = шутовской наряд
     .desc = Это лохмотья, но они красочные.
 
-ent-CP14ClothingShirtCottonYellowCollar = холщовая желтая рубашка с воротником
+ent-CP14ClothingShirtCottonYellowCollar = хлопковая желтая рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonYellowCollarDress = хлопковое платье с желтым воротником
@@ -1962,6 +1962,10 @@ ent-CP14GuidebookImperialLaws = имперские законы
 
 ent-CP14GuidebookAlchemy = справочник ахимика
     .desc = Тайны жидкостей и магии скрыты в этой книге.
+    .suffix = Путеводитель
+
+ent-CP14GuidebookCooking = поварная книга
+    .desc = Книга про готовку, написанная неизвестной сильвой-трактиршей
     .suffix = Путеводитель
 
 ent-CP14GuidebookDemiplanes = руководство по исследованию демиплана
