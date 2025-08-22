@@ -1,6 +1,5 @@
 using Content.Server._CP14.Objectives.Components;
 using Content.Server.Station.Components;
-using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
@@ -22,6 +21,8 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
     [Dependency] private readonly SharedJobSystem _jobs = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
+    public readonly float RequiredAlivePercentage = 0.5f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -36,11 +37,11 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
     private void OnDefenceAfterAssign(Entity<CP14VampireDefenceVillageConditionComponent> ent, ref ObjectiveAfterAssignEvent args)
     {
         _meta.SetEntityName(ent, Loc.GetString("cp14-objective-vampire-defence-settlement-title"));
-        _meta.SetEntityDescription(ent, Loc.GetString("cp14-objective-vampire-defence-settlement-desc", ("count", ent.Comp.DefencePercentage * 100)));
+        _meta.SetEntityDescription(ent, Loc.GetString("cp14-objective-vampire-defence-settlement-desc", ("count", RequiredAlivePercentage * 100)));
         _objectives.SetIcon(ent, ent.Comp.Icon);
     }
 
-    private void OnDefenceGetProgress(Entity<CP14VampireDefenceVillageConditionComponent> ent, ref ObjectiveGetProgressEvent args)
+    public float CalculateAlivePlayersPercentage()
     {
         var query = EntityQueryEnumerator<StationJobsComponent>();
 
@@ -68,7 +69,12 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
             }
         }
 
-        args.Progress = (alivePlayers / totalPlayers) > ent.Comp.DefencePercentage ? 1 : 0;
+        return totalPlayers > 0 ? (alivePlayers / totalPlayers) : 0f;
+    }
+
+    private void OnDefenceGetProgress(Entity<CP14VampireDefenceVillageConditionComponent> ent, ref ObjectiveGetProgressEvent args)
+    {
+        args.Progress = CalculateAlivePlayersPercentage() > RequiredAlivePercentage ? 1 : 0;
     }
 
     private void OnBloodPurityAfterAssign(Entity<CP14VampireBloodPurityConditionComponent> ent, ref ObjectiveAfterAssignEvent args)
@@ -85,9 +91,9 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
 
     private void OnBloodPurityGetProgress(Entity<CP14VampireBloodPurityConditionComponent> ent, ref ObjectiveGetProgressEvent args)
     {
-        var queue = EntityQueryEnumerator<CP14VampireComponent, MobStateComponent>();
+        var query = EntityQueryEnumerator<CP14VampireComponent, MobStateComponent>();
 
-        while (queue.MoveNext(out var uid, out var vampire, out var mobState))
+        while (query.MoveNext(out var uid, out var vampire, out var mobState))
         {
             if (vampire.Faction != ent.Comp.Faction)
             {
