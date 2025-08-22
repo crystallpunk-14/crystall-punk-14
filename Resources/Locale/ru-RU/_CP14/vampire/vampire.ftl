@@ -22,6 +22,8 @@ cp14-vampire-tree-other-info = "{$name}": [color=red]{$count}[/color] эссен
 
 ## Announcements
 
+cp14-vampire-sender = Вампирское чутье
+
 cp14-vampire-tree-growing = Сердце клана "{$name}" вырастает до {$level} уровня!
 cp14-vampire-tree-growing-self = Ваше сердце клана вырастает до {$level} уровня!
 cp14-vampire-tree-damaged = Ваше сердце клана атаковано!

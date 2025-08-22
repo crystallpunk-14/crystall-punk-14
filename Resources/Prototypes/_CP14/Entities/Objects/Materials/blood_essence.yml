@@ -4,6 +4,7 @@
   name: blood essence
   description: The essence of life, extracted by force. Only true vampires know how to use it.
   categories: [ ForkFiltered ]
+  suffix: 1
   components:
   - type: Item
     size: Ginormous
@@ -54,6 +55,13 @@
     chasingComponent:
     - type: CP14VampireClanHeart
   - type: CP14VampireTreeCollectable
+  - type: Stack
+    stackType: CP14BloodEssence
+    count: 1
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CP14BloodEssence: 1
 
 - type: entity
   id: CP14ImpactEffectBloodEssence

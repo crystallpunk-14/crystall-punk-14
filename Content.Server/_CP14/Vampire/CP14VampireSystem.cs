@@ -12,6 +12,7 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Ghost;
 using Content.Shared.Popups;
+using Content.Shared.Stacks;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
@@ -42,7 +43,12 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
         if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
             return;
 
-        AddEssence(ent, collectable.Essence);
+        var collect = collectable.Essence;
+
+        if (TryComp<StackComponent>(args.OtherEntity, out var stack))
+            collect *= stack.Count;
+
+        AddEssence(ent, collect);
         Del(args.OtherEntity);
 
         _audio.PlayPvs(collectable.CollectSound, ent);

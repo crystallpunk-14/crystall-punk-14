@@ -6,6 +6,7 @@ using Content.Shared._CP14.Skill.Restrictions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Stacks;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -47,7 +48,14 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
             return;
 
         if (_net.IsServer)
-            AddSkillPoints(args.User, ent.Comp.PointType, ent.Comp.Volume);
+        {
+            var collect = ent.Comp.Volume;
+
+            if (TryComp<StackComponent>(ent, out var stack))
+                collect *= stack.Count;
+
+            AddSkillPoints(args.User, ent.Comp.PointType, collect);
+        }
 
         var position = Transform(ent).Coordinates;
 

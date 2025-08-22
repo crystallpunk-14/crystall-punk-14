@@ -1,0 +1,47 @@
+- type: constructionGraph
+  id: CP14VampirePortalGlyphDevourers
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14VampirePortalGlyphDevourers
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: CP14VampirePortalGlyphDevourers
+      entity: CP14VampirePortalGlyphDevourers
+
+- type: constructionGraph
+  id: CP14VampirePortalGlyphUnnameable
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14VampirePortalGlyphUnnameable
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: CP14VampirePortalGlyphUnnameable
+      entity: CP14VampirePortalGlyphUnnameable
+
+- type: constructionGraph
+  id: CP14VampirePortalGlyphNightChildrens
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14VampirePortalGlyphNightChildrens
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: CP14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: CP14VampirePortalGlyphNightChildrens
+      entity: CP14VampirePortalGlyphNightChildrens

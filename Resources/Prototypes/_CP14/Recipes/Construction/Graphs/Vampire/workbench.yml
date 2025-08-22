@@ -42,7 +42,9 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-        
+            - material: CP14BloodEssence
+              amount: 1
+              doAfter: 2
     - node: CP14VampireClanHeartUnnameable
       entity: CP14VampireClanHeartUnnameable
 
@@ -73,6 +75,9 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
+            - material: CP14BloodEssence
+              amount: 1
+              doAfter: 2
     - node: CP14VampireClanHeartDevourers
       entity: CP14VampireClanHeartDevourers
 
@@ -102,6 +107,9 @@
           steps:
             - material: CP14IronBar
               amount: 2
+              doAfter: 2
+            - material: CP14BloodEssence
+              amount: 1
               doAfter: 2
     - node: CP14VampireClanHeartNightChildren
       entity: CP14VampireClanHeartNightChildren
