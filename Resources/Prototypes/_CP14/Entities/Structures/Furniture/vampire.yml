@@ -102,6 +102,7 @@
     - state: unnameable
       shader: unshaded
     - state: orb1
+      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
@@ -125,6 +126,7 @@
     - state: devourers
       shader: unshaded
     - state: orb1
+      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
@@ -148,6 +150,7 @@
     - state: childrens
       shader: unshaded
     - state: orb1
+      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
