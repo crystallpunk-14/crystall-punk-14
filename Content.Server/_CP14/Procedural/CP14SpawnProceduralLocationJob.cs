@@ -80,8 +80,6 @@ public sealed class CP14SpawnProceduralLocationJob(
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         entManager.System<AtmosphereSystem>().SetMapAtmosphere(MapUid, false, mixture);
 
-        if (!map.IsInitialized(mapId))
-            map.InitializeMap(mapId);
         map.SetPaused(mapId, false);
 
         //Spawn modified config
@@ -90,7 +88,7 @@ public sealed class CP14SpawnProceduralLocationJob(
             gridComp,
             position,
             seed));
-        
+
         //Add map components
         entManager.AddComponents(MapUid, locationConfig.Components);
 
