@@ -17,6 +17,9 @@ public sealed partial class CP14VampireClanHeartComponent : Component
     public string LevelPrefix = "orb";
 
     [DataField]
+    public EntProtoId LevelUpVfx = "CP14SkyLightningRed";
+
+    [DataField]
     public ProtoId<CP14VampireFactionPrototype>? Faction;
 
     [DataField]

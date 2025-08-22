@@ -290,9 +290,12 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         if (indexedSkill.Name is not null)
             return Loc.GetString(indexedSkill.Name);
 
-        if (indexedSkill.Effects.Count > 0)
-            return indexedSkill.Effects.First().GetName(EntityManager, _proto) ?? string.Empty;
-
+        foreach (var effect in indexedSkill.Effects)
+        {
+            var name = effect.GetName(EntityManager, _proto);
+            if (name != null)
+                return name;
+        }
         return string.Empty;
     }
 

@@ -47,7 +47,9 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
         {
             _appearance.SetData(ent, VampireClanLevelVisuals.Level, ent.Comp.Level);
             AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing", ("name", Loc.GetString(indexedFaction.Name)), ("level", ent.Comp.Level)));
-            AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing-self"));
+            AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-growing-self", ("level", ent.Comp.Level)));
+
+            SpawnAtPosition(ent.Comp.LevelUpVfx, Transform(ent).Coordinates);
         }
     }
 

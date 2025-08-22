@@ -89,3 +89,39 @@
       params:
         variation: 0.2
         volume: -5
+
+- type: entity
+  id: CP14SkyLightningRed
+  parent: CP14SkyLightning
+  suffix: Red
+  components:
+  - type: PointLight
+    color: "#f7112c"
+  - type: Sprite
+    color: "#f7112c"
+  - type: CP14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 0
+  - type: CP14FarSound
+    closeSound:
+      path: /Audio/_CP14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 10
+    farSound:
+      collection: CP14LightningFar
+      params:
+        variation: 0.2
+        volume: -5
+  - type: FlashOnTrigger
+    range: 2
+

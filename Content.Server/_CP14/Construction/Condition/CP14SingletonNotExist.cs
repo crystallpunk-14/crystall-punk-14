@@ -1,13 +1,7 @@
 using Content.Shared._CP14.UniqueLoot;
-using Content.Shared._CP14.Vampire;
-using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Construction;
 using Content.Shared.Examine;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.SSDIndicator;
 using JetBrains.Annotations;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Construction.Condition;
 
@@ -20,9 +14,6 @@ public sealed partial class CP14SingletonNotExist : IGraphCondition
 
     public bool Condition(EntityUid craft, IEntityManager entityManager)
     {
-        if (!entityManager.TryGetComponent<TransformComponent>(craft, out var craftXform))
-            return false;
-
         var query = entityManager.EntityQueryEnumerator<CP14SingletonComponent>();
         while (query.MoveNext(out var uid, out var singleton))
         {
