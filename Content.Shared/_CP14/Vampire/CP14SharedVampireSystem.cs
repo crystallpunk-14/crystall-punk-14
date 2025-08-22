@@ -10,6 +10,7 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -25,6 +26,7 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] protected readonly IPrototypeManager Proto = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private readonly ProtoId<CP14SkillPointPrototype> _skillPointType = "Blood";
     private readonly ProtoId<CP14SkillPointPrototype> _memorySkillPointType = "Memory";
@@ -194,7 +196,10 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         }
 
         if (extractedEssence <= 0)
+        {
+            _popup.PopupClient(Loc.GetString("cp14-vampire-gather-essence-no-left"), victim, vampire, PopupType.SmallCaution);
             return;
+        }
 
         _skill.AddSkillPoints(vampire, _skillPointType, extractedEssence);
         victim.Comp.Essence -= amount;

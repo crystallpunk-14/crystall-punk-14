@@ -12,6 +12,7 @@
     magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureWounds
     - !type:CP14SpellApplyEntityEffect
@@ -33,12 +34,12 @@
             Slash: -1
       - !type:SatiateThirst
         factor: 3
+      - !type:SatiateHunger
+        factor: 3
         conditions:
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
-      - !type:SatiateHunger
-        factor: 3
       - !type:CP14PlantResourceModify
         energy: 3
         resourse: 3

@@ -52,7 +52,7 @@ public sealed class CP14ExpeditionToWindlandsRule : GameRuleSystem<CP14Expeditio
 
         EnsureComp<ShuttleComponent>(largestStationGrid.Value, out var shuttleComp);
 
-        var windlands = _mapSystem.CreateMap(out var mapId, runMapInit: false);
+        var windlands = _mapSystem.CreateMap(out var mapId, runMapInit: true);
 
         _generation.GenerateLocation(windlands, mapId, component.Location, component.Modifiers);
         _shuttles.FTLToCoordinates(largestStationGrid.Value, shuttleComp, new EntityCoordinates(windlands, Vector2.Zero), 0f, 0f, component.FloatingTime);
