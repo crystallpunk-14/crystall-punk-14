@@ -28,6 +28,9 @@
     count: 4
   - !type:StackResource
     stack: CP14MithrilBar
-    count: 2
+    count: 1
+  - !type:StackResource
+    stack: CP14BloodEssence
+    count: 1
   result: CP14ClothingCloakVampireUnnameable
   resultCount: 1
