@@ -7,7 +7,9 @@
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffectVampire
+  - type: CP14MagicEffectSSDBlock
   - type: CP14MagicEffectTargetMobStatusRequired
+    allowedStates:
     allowedStates:
     - Alive
   - type: CP14MagicEffect
