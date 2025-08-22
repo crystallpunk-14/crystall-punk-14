@@ -11,7 +11,7 @@
   - type: CP14MagicEffectVampire
   - type: CP14MagicEffectSkillPointCost
     skillPoint: Blood
-    count: 0.2
+    count: 0.1
   - type: CP14MagicEffect
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -28,15 +28,15 @@
       - !type:HealthChange
         damage:
           types:
-            Slash: -10
-            Blunt: -10
-            Piercing: -10
-            Poison: -10
-            Bloodloss: -10
-            Caustic: -10
-            Cold: -10
-            Heat: -10
-            Shock: -10
+            Slash: -15
+            Blunt: -15
+            Piercing: -15
+            Poison: -15
+            Bloodloss: -15
+            Caustic: -15
+            Cold: -15
+            Heat: -15
+            Shock: -15
       - !type:Jitter
       - !type:ModifyBleedAmount
         amount: -25

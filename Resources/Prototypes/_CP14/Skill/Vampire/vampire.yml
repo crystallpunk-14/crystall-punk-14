@@ -221,6 +221,23 @@
     level: 2
 
 - type: cp14Skill
+  id: VampireResurrection
+  skillUiPosition: 10, 8
+  learnCost: 1
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: resurrection
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampireResurrection
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: VampireCureWounds
+  - !type:VampireClanLevel
+    level: 3
+
+- type: cp14Skill
   id: BloodEnemySearch
   skillUiPosition: 10, 10
   learnCost: 1
