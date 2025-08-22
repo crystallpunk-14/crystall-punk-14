@@ -105,7 +105,7 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 5
-      CP14Cloth: 10
+      CP14Cloth: 5
   - type: Butcherable
     butcheringType: Knife
     spawned:
