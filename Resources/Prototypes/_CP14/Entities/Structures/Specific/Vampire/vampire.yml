@@ -49,6 +49,7 @@
   name: vampire clan heart
   description: The source of power for the vampire clan. By gathering the life force of its victims, the clan becomes stronger.
   components:
+  - type: WarpPoint
   - type: Fixtures
     fixtures:
       fix1:

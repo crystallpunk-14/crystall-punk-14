@@ -14,7 +14,7 @@
 
 - type: cp14Skill
   id: PowerKick
-  skillUiPosition: 2, 0
+  skillUiPosition: 6, 0
   learnCost: 1
   tree: Vampire
   icon:
@@ -26,24 +26,6 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: Bite
-  - !type:VampireClanLevel
-    level: 1
-
-- type: cp14Skill
-  id: PowerKick2
-  skillUiPosition: 6, 0
-  learnCost: 1  
-  tree: Vampire
-  icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: power_kick_2
-  effects:
-  - !type:ReplaceAction
-    oldAction: CP14ActionSpellVampirePower
-    newAction: CP14ActionSpellVampirePower2
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: PowerKick
   - !type:VampireClanLevel
     level: 2
 
@@ -60,7 +42,7 @@
     action: CP14ActionSpellVampirePower3
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: PowerKick2
+    prerequisite: PowerKick
   - !type:VampireClanLevel
     level: 3
 

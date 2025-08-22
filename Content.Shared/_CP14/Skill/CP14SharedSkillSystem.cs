@@ -413,8 +413,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         DirtyField(target, component, nameof(CP14SkillStorageComponent.SkillPoints));
 
-        if (indexedType.GetPointPopup is not null && !silent)
-            _popup.PopupPredicted(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
+        if (indexedType.GetPointPopup is not null && !silent && _timing.IsFirstTimePredicted)
+            _popup.PopupClient(Loc.GetString(indexedType.GetPointPopup, ("count", points)), target, target);
     }
 
     /// <summary>
@@ -441,8 +441,8 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         skillContainer.Max = FixedPoint2.Max(skillContainer.Max - points, 0);
         Dirty(target, component);
 
-        if (indexedType.LosePointPopup is not null && !silent)
-            _popup.PopupPredicted(Loc.GetString(indexedType.LosePointPopup, ("count", points)), target, target);
+        if (indexedType.LosePointPopup is not null && !silent && _timing.IsFirstTimePredicted)
+            _popup.PopupClient(Loc.GetString(indexedType.LosePointPopup, ("count", points)), target, target);
 
         while (skillContainer.Sum > skillContainer.Max)
         {
