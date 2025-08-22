@@ -15,8 +15,7 @@
       - Horticulture
       - Butchers
       - Dairy
-  special:
-    - !type:CP14LearnSkillsSpecial
+     - !type:CP14LearnSkillsSpecial
       skills:
       - CopperMelting
       - AlchemyVision
