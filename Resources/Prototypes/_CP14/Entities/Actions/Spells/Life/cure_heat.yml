@@ -12,10 +12,12 @@
     magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureBurn
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureBurn
     - !type:CP14SpellApplyEntityEffect

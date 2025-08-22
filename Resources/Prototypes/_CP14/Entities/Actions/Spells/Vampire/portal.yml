@@ -1,0 +1,30 @@
+- type: entity
+  id: CP14ActionSpellPortalToVampireHome
+  parent: CP14ActionSpellBase
+  name: Teleport to the vampire lair
+  description: You open a portal leading to the location of your clan's portal glyph. The portal will disappear in 30 seconds. If the glyph is not constructed, the portal will be chaotic, teleporting players in different directions.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectManaCost
+    manaCost: 30
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectBloodEssence
+    effects:
+    - !type:CP14SpellTeleportToVampireSingleton
+  - type: CP14MagicEffectSomaticAspect
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: portal
+  - type: TargetAction
+    range: 3
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      cooldown: 60
+      castDelay: 2
+      breakOnMove: true
+      breakOnDamage: true

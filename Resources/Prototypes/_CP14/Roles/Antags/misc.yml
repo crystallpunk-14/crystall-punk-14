@@ -16,7 +16,7 @@
   id: CP14Vampire
   name: cp14-roles-antag-vampire-name
   antagonist: true
-  setPreference: false #Impossible and boring gameplay ATM
+  setPreference: true
   objective: cp14-roles-antag-vampire-objective
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -27,6 +27,6 @@
   id: CP14BloodMoonCursed
   name: cp14-roles-antag-blood-moon-cursed-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: cp14-roles-antag-blood-moon-cursed-objective
 

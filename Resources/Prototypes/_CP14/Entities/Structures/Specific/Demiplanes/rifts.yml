@@ -141,7 +141,7 @@
     sound: 
       path: /Audio/_CP14/Effects/ritual_end.ogg
       params:
-        variation: 0.3
+        variation: 0.125
   - type: TimedDespawn
     lifetime: 80
   - type: ConditionalSpawner

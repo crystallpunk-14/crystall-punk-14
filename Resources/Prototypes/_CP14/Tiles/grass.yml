@@ -1,0 +1,191 @@
+- type: tile
+  id: CP14FloorGrass
+  editorHidden: false
+  name: cp14-tiles-grass
+  sprite: /Textures/_CP14/Tiles/Grass/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 6
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/Grass/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/Grass/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/Grass/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/Grass/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/Grass/double_edge_S.png
+    East: /Textures/_CP14/Tiles/Grass/double_edge_E.png
+    North: /Textures/_CP14/Tiles/Grass/double_edge_N.png
+    West: /Textures/_CP14/Tiles/Grass/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassLight
+  editorHidden: false
+  name: cp14-tiles-grass-light
+  sprite: /Textures/_CP14/Tiles/GrassLight/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 7
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassLight/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassLight/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassLight/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassLight/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassLight/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassLight/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassLight/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassTall
+  editorHidden: false
+  name: cp14-tiles-grass-tall
+  sprite: /Textures/_CP14/Tiles/GrassTall/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 8
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassTall/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassTall/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassTall/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassTall/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassTall/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassTall/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassTall/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassBlood
+  editorHidden: false
+  name: cp14-tiles-bloodgrass
+  sprite: /Textures/_CP14/Tiles/GrassBlood/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 7
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassBlood/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassBlood/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassBlood/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassBlood/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassBlood/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassBlood/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassBlood/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassBlood/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassLightBlood
+  editorHidden: false
+  name: cp14-tiles-bloodgrass-light
+  sprite: /Textures/_CP14/Tiles/GrassBloodLight/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 8
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassBloodLight/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassBloodLight/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassBloodLight/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassBloodLight/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassBloodLight/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassBloodLight/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassBloodLight/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassBloodLight/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: CP14FloorGrassTallBlood
+  editorHidden: false
+  name: cp14-tiles-bloodgrass-tall
+  sprite: /Textures/_CP14/Tiles/GrassBloodTall/grass.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 9
+  edgeSprites:
+    SouthEast: /Textures/_CP14/Tiles/GrassBloodTall/single_edge_SE.png
+    NorthEast: /Textures/_CP14/Tiles/GrassBloodTall/single_edge_NE.png
+    NorthWest: /Textures/_CP14/Tiles/GrassBloodTall/single_edge_NW.png
+    SouthWest: /Textures/_CP14/Tiles/GrassBloodTall/single_edge_SW.png
+    South: /Textures/_CP14/Tiles/GrassBloodTall/double_edge_S.png
+    East: /Textures/_CP14/Tiles/GrassBloodTall/double_edge_E.png
+    North: /Textures/_CP14/Tiles/GrassBloodTall/double_edge_N.png
+    West: /Textures/_CP14/Tiles/GrassBloodTall/double_edge_W.png
+  baseTurf: CP14FloorDirt
+  deconstructTools: [ CP14Digging ]
+  itemDrop: CP14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true

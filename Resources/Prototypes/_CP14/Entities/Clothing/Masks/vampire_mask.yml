@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: 
+  - CP14ClothingMaskBase
+  - CP14BaseMajorContraband
+  id: CP14ClothingMaskVampireVoiceBase
+  description: This mask reeks of blood. The spells inside it distort the speaker's voice.
+  suffix: Voice mask
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: IdentityBlocker
+  - type: VoiceMask
+  - type: UserInterface
+    interfaces:
+      enum.ChameleonUiKey.Key:
+        type: ChameleonBoundUserInterface
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 10
+      CP14Leather: 10
+
+- type: entity
+  parent: CP14ClothingMaskVampireVoiceBase
+  id: CP14ClothingMaskVampireVoiceDevourers
+  name: bloody bone mask
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/vampire_devourers.rsi
+
+- type: entity
+  parent: CP14ClothingMaskVampireVoiceBase
+  id: CP14ClothingMaskVampireVoiceNightChildrens
+  name: mysterious black mask
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/vampire_night_childrens.rsi
+
+- type: entity
+  parent: CP14ClothingMaskVampireVoiceBase
+  id: CP14ClothingMaskVampireVoiceUnnameable
+  name: frightening white mask
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Masks/vampire_unnameable.rsi

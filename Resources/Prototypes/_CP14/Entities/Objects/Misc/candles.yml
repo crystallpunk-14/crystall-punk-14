@@ -102,6 +102,7 @@
   - type: Sprite
     noRot: true
     offset: 0,0.2
+    drawdepth: Mobs
     sprite: _CP14/Objects/Misc/candelabra.rsi
     layers:
       - state: triple
@@ -147,3 +148,38 @@
   components:
   - type: CP14AutoIgnite
     startStack: 4
+
+- type: entity
+  parent: CP14CandelabraIgnited
+  id: CP14CandelabraBloodIgnited
+  suffix: Vampire, DO NOT MAP
+  categories: [ ForkFiltered, DoNotMap ]
+  name: candelabra of crimson candles
+  components:
+  - type: Sprite
+    layers:
+      - state: blood
+  - type: FireVisuals
+    lightColor: "#ff1100"
+    normalState: blood_fire
+
+- type: entity
+  parent: CP14CandleIgnited
+  id: CP14CandleBloodIgnited
+  suffix: Vampire, DO NOT MAP
+  categories: [ ForkFiltered, DoNotMap ]
+  name: crimson candle
+  components:
+  - type: Sprite
+    layers:
+      - state: blood1
+        map: ["random"]
+  - type: FireVisuals
+    lightColor: "#ff1100"
+    normalState: blood_fire
+  - type: RandomSprite
+    available:
+    - random:
+        blood1: ""
+        blood2: ""
+        blood3: ""
