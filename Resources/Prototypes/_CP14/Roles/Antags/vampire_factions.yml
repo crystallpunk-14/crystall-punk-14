@@ -1,0 +1,17 @@
+- type: cp14VampireFaction
+  id: Unnameable
+  name: cp14-vampire-fraction-name-unnameable
+  factionIcon: CP14VampireUnnameable
+  singletonTeleportKey: CP14VampirePortalGlyphUnnameable
+
+- type: cp14VampireFaction
+  id: Devourers
+  name: cp14-vampire-fraction-name-devourers
+  factionIcon: CP14VampireDevourers
+  singletonTeleportKey: CP14VampirePortalGlyphDevourers
+
+- type: cp14VampireFaction
+  id: NightChildrens
+  name: cp14-vampire-fraction-name-night-childrens
+  factionIcon: CP14VampireNightChildrens
+  singletonTeleportKey: CP14VampirePortalGlyphNightChildrens

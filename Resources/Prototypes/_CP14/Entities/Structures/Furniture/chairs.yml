@@ -9,7 +9,7 @@
   components:
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Sprite
     sprite: _CP14/Structures/Furniture/chairs.rsi
     state: wooden

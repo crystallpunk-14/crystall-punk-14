@@ -1,0 +1,29 @@
+- type: factionIcon
+  abstract: true
+  id: CP14VampireFaction
+  priority: 11
+  locationPreference: Left
+  showTo:
+    components:
+    - CP14Vampire
+
+- type: factionIcon
+  id: CP14VampireNightChildrens
+  parent: CP14VampireFaction
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/vampire_icons.rsi
+    state: NightChildrens
+
+- type: factionIcon
+  id: CP14VampireUnnameable
+  parent: CP14VampireFaction
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/vampire_icons.rsi
+    state: Unnameable
+
+- type: factionIcon
+  id: CP14VampireDevourers
+  parent: CP14VampireFaction
+  icon:
+    sprite: /Textures/_CP14/Interface/Misc/vampire_icons.rsi
+    state: Devourers

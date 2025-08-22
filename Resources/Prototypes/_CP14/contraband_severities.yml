@@ -1,0 +1,7 @@
+- type: contrabandSeverity
+  id: CP14Minor
+  examineText: cp14-contraband-examine-text-CP14Minor
+
+- type: contrabandSeverity
+  id: CP14Major
+  examineText: cp14-contraband-examine-text-CP14Major

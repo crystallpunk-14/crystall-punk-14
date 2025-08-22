@@ -1,0 +1,124 @@
+- type: entity
+  id: CP14TempPortalRed
+  parent: CP14TempPortalToCity
+  description: A crimson portal that will disappear very quickly. Where is it leading?
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+      color: "#ff0000"
+  - type: PointLight
+    enabled: true
+    color: "#ff0000"
+    energy: 1
+    radius: 5
+  - type: TimedDespawn
+    lifetime: 30
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14ImpactEffectBloodEssence
+
+- type: entity
+  id: CP14BaseVampirePortalGlyph
+  categories: [ ForkFiltered ]
+  abstract: true
+  name: portal glyph
+  description: A teleportation glyph imbued with bloody magic. Any vampire from the owner clan can teleport here at any moment! To destroy a glyph, suck all the magical energy out of it.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: LowFloors
+    sprite: _CP14/Effects/Magic/cast_rune.rsi
+    layers:
+    - state: medium_circle
+      shader: unshaded
+      color: red
+    - sprite: _CP14/Structures/Dungeon/demiplan_rift_core.rsi
+      state: connective
+      color: red
+  - type: Clickable
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 1.5
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: CP14MagicEnergyContainer
+    magicAlert: CP14MagicEnergy
+    maxEnergy: 1
+    energy: 1
+    unsafeSupport: true
+  - type: CP14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        CP14ManaDepletion: 1
+  - type: Damageable
+    damageContainer: CP14Spectral
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: 6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BloodEssence:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14BloodEssence: 1
+
+- type: entity
+  id: CP14VampirePortalGlyphDevourers
+  parent: CP14BaseVampirePortalGlyph
+  suffix: Devourers
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphDevourers
+  - type: Construction
+    graph: CP14VampirePortalGlyphDevourers
+    node: CP14VampirePortalGlyphDevourers
+
+- type: entity
+  id: CP14VampirePortalGlyphUnnameable
+  parent: CP14BaseVampirePortalGlyph
+  suffix: Unnameable
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphUnnameable
+  - type: Construction
+    graph: CP14VampirePortalGlyphUnnameable
+    node: CP14VampirePortalGlyphUnnameable
+
+- type: entity
+  id: CP14VampirePortalGlyphNightChildrens
+  parent: CP14BaseVampirePortalGlyph
+  suffix: Night Childrens
+  components:
+  - type: CP14Singleton
+    key: CP14VampirePortalGlyphNightChildrens
+  - type: Construction
+    graph: CP14VampirePortalGlyphNightChildrens
+    node: CP14VampirePortalGlyphNightChildrens

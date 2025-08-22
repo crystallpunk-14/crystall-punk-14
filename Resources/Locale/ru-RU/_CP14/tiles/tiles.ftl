@@ -2,9 +2,14 @@
 cp14-tiles-base = каменная толща
 
 # Natural
-cp14-tiles-grass = луговая трава
+cp14-tiles-grass = трава
 cp14-tiles-grass-light = светлая трава
 cp14-tiles-grass-tall = высокая трава
+
+cp14-tiles-bloodgrass = кровьтрава
+cp14-tiles-bloodgrass-light = светлая кровьтрава
+cp14-tiles-bloodgrass-tall = высокая кровьтрава
+
 cp14-tiles-dirt = почва
 cp14-tiles-sand = песок
 cp14-tiles-snow = снег

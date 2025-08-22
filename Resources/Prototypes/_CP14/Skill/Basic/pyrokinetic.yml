@@ -23,6 +23,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellHeat
@@ -102,6 +104,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellFirewave

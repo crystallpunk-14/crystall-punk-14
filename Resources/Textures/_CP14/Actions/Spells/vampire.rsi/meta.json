@@ -15,6 +15,48 @@
     },
     {
       "name": "blood_step"
+    },
+    {
+      "name": "essence_create"
+    },
+    {
+      "name": "essence_vision"
+    },
+    {
+      "name": "night_vision"
+    },
+    {
+      "name": "portal"
+    },
+    {
+      "name": "power_kick"
+    },
+    {
+      "name": "power_kick_2"
+    },
+    {
+      "name": "power_kick_3"
+    },
+    {
+      "name": "resurrection"
+    },
+    {
+      "name": "search_clan"
+    },
+    {
+      "name": "search_clan_enemy"
+    },
+    {
+      "name": "toggle"
+    },
+    {
+      "name": "transmutation"
+    },
+    {
+      "name": "tree"
+    },
+    {
+      "name": "wound_heal"
     }
   ]
 }

@@ -9,14 +9,14 @@ namespace Content.Shared._CP14.Skill.Components;
 /// <summary>
 /// Component that stores the skills learned by a player and their progress in the skill trees.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true, fieldDeltas: true)]
 [Access(typeof(CP14SharedSkillSystem))]
 public sealed partial class CP14SkillStorageComponent : Component
 {
     /// <summary>
     /// Skill trees displayed in the skill tree interface. Only skills from these trees can be learned by this player.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public HashSet<ProtoId<CP14SkillTreePrototype>> AvailableSkillTrees = new();
 
     /// <summary>

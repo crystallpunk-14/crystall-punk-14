@@ -1,6 +1,7 @@
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Spells;
@@ -15,6 +16,10 @@ public sealed partial class CP14SpellPointerToAlive : CP14SpellEffect
 
     public override void Effect(EntityManager entManager, CP14SpellEffectBaseArgs args)
     {
+        var net = IoCManager.Resolve<INetManager>();
+        if (net.IsClient)
+            return;
+
         if (args.User is null)
             return;
 
