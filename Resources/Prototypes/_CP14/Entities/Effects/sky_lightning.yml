@@ -103,6 +103,8 @@
     range: 1
     effects:
     - !type:CP14SpellThrowFromUser
+      throwPower: 4
+      distance: 0.5
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute

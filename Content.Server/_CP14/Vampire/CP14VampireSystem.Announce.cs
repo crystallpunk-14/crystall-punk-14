@@ -3,6 +3,7 @@ using Content.Server.Chat.Systems;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Examine;
+using Content.Shared.Ghost;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -21,7 +22,7 @@ public sealed partial class CP14VampireSystem
 
     private void OnExamined(Entity<CP14VampireClanHeartComponent> ent, ref ExaminedEvent args)
     {
-        if (!TryComp<CP14VampireComponent>(args.Examiner, out var examinerVampire))
+        if (!HasComp<CP14VampireComponent>(args.Examiner) && !HasComp<GhostComponent>(args.Examiner))
             return;
 
         var sb = new StringBuilder();
@@ -31,10 +32,13 @@ public sealed partial class CP14VampireSystem
             sb.Append(Loc.GetString("cp14-vampire-tree-examine-faction", ("faction", Loc.GetString(indexedFaction.Name))) + "\n");
 
         // Are they friend or foe?
-        if (examinerVampire.Faction == ent.Comp.Faction)
-            sb.Append(Loc.GetString("cp14-vampire-tree-examine-friend") + "\n");
-        else
-            sb.Append(Loc.GetString("cp14-vampire-tree-examine-enemy") + "\n");
+        if (TryComp<CP14VampireComponent>(args.Examiner, out var examinerVampire))
+        {
+            if (examinerVampire.Faction == ent.Comp.Faction)
+                sb.Append(Loc.GetString("cp14-vampire-tree-examine-friend") + "\n");
+            else
+                sb.Append(Loc.GetString("cp14-vampire-tree-examine-enemy") + "\n");
+        }
 
         //Progress
         sb.Append(Loc.GetString("cp14-vampire-tree-examine-level",
