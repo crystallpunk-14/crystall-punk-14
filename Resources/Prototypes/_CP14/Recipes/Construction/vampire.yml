@@ -16,6 +16,22 @@
 
 - type: construction
   crystallPunkAllowed: true
+  id: CP14VampireStoneAltar
+  graph: CP14VampireStoneAltar
+  startNode: start
+  targetNode: CP14VampireStoneAltar
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: BloodEssenceCreation
+
+- type: construction
+  crystallPunkAllowed: true
   id: CP14VampireClanHeartUnnameable
   graph: CP14VampireClanHeartUnnameable
   startNode: start

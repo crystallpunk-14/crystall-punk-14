@@ -15,7 +15,6 @@
       entity: CP14WorkbenchVampire
 
 
-
 - type: constructionGraph
   id: CP14VampireClanHeartUnnameable
   start: start
@@ -29,7 +28,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14VampireClanHeartUnnameableFrame
       entity: CP14VampireClanHeartFrameUnnameable
       edges:
@@ -39,8 +38,6 @@
           conditions:
             - !type:CP14AllVampireClanRequired
               faction: Unnameable
-            - !type:CP14SingletonNotExist
-              key: CP14VampireClanHeartUnnameable
           steps:
             - material: CP14IronBar
               amount: 2
@@ -62,7 +59,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14VampireClanHeartDevourersFrame
       entity: CP14VampireClanHeartFrameDevourers
       edges:
@@ -72,8 +69,6 @@
           conditions:
             - !type:CP14AllVampireClanRequired
               faction: Unnameable
-            - !type:CP14SingletonNotExist
-              key: CP14VampireClanHeartDevourers
           steps:
             - material: CP14IronBar
               amount: 2
@@ -94,7 +89,7 @@
             - material: CP14IronBar
               amount: 2
               doAfter: 2
-              
+
     - node: CP14VampireClanHeartNightChildrenFrame
       entity: CP14VampireClanHeartFrameNightChildrens
       edges:
@@ -104,8 +99,6 @@
           conditions:
             - !type:CP14AllVampireClanRequired
               faction: Unnameable
-            - !type:CP14SingletonNotExist
-              key: CP14VampireClanHeartNightChildren
           steps:
             - material: CP14IronBar
               amount: 2

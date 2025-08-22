@@ -2,7 +2,7 @@
   id: CP14ActionVampireBite
   parent: CP14ActionSpellBase
   name: Vampire bite
-  description: You suck the blood and very essence of life from your victim (if the target is conscious). The target permanently loses its maximum health.
+  description: You suck the blood and very essence of life from your victim. (The amount of essence in each player is limited)
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3

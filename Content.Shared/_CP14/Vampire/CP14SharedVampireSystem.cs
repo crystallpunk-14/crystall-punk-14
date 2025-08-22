@@ -4,6 +4,7 @@ using Content.Shared._CP14.Skill.Prototypes;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
+using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
@@ -183,6 +184,14 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
             return;
 
         var extractedEssence = MathF.Min(victim.Comp.Essence.Float(), amount.Float());
+
+        if (TryComp<BuckleComponent>(victim, out var buckle) && buckle.BuckledTo is not null)
+        {
+            if (TryComp<CP14VampireAltarComponent>(buckle.BuckledTo, out var altar))
+            {
+                extractedEssence *= altar.Multiplier;
+            }
+        }
 
         if (extractedEssence <= 0)
             return;

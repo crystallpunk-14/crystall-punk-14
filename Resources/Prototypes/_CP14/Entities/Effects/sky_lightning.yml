@@ -102,6 +102,7 @@
   - type: CP14AreaEntityEffect
     range: 1
     effects:
+    - !type:CP14SpellThrowFromUser
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Electrocute

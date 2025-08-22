@@ -89,6 +89,9 @@
           1: {state: orb1}
           2: {state: orb2}
           3: {state: orb3}
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Metallic
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -108,11 +111,26 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: Unnameable
-  - type: CP14Singleton
-    key: CP14VampireClanHeartUnnameable
   - type: Construction
     graph: CP14VampireClanHeartUnnameable
     node: CP14VampireClanHeartUnnameable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14VampireAltarExplodeBehavior
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14VampireClanHeartUnnameableFrame
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -132,11 +150,26 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: Devourers
-  - type: CP14Singleton
-    key: CP14VampireClanHeartDevourers
   - type: Construction
     graph: CP14VampireClanHeartDevourers
     node: CP14VampireClanHeartDevourers
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14VampireAltarExplodeBehavior
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14VampireClanHeartDevourersFrame
 
 - type: entity
   parent: CP14VampireClanHeartBase
@@ -156,11 +189,26 @@
       map: [ "level" ]
   - type: CP14VampireClanHeart
     faction: NightChildrens
-  - type: CP14Singleton
-    key: CP14VampireClanHeartNightChildren
   - type: Construction
     graph: CP14VampireClanHeartNightChildren
     node: CP14VampireClanHeartNightChildren
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14VampireAltarExplodeBehavior
+      - !type:ChangeConstructionNodeBehavior
+        node: CP14VampireClanHeartNightChildrenFrame
 
 - type: entity
   parent: BaseStructure
@@ -177,6 +225,25 @@
   - type: Construction
     graph: CP14VampireClanHeartUnnameable
     node: CP14VampireClanHeartUnnameableFrame
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   parent: CP14VampireClanHeartFrameUnnameable
@@ -203,6 +270,7 @@
   name: bloody altar
   description: A gruesome stone altar splattered with blood. Doubles the amount of blood essence extracted from vampire victims.
   components:
+  - type: CP14VampireAltar
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
@@ -215,3 +283,32 @@
   - type: Icon
     sprite: _CP14/Structures/Specific/Vampire/altar.rsi
     state: base
+  - type: Construction
+    graph: CP14VampireStoneAltar
+    node: CP14VampireStoneAltar
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 2
+            max: 4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14ScrapIron:
+            min: 1
+            max: 3
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

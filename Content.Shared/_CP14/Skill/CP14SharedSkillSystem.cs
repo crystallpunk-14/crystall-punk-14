@@ -310,7 +310,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
         var sb = new StringBuilder();
 
         if (indexedSkill.Desc is not null)
-            Loc.GetString(indexedSkill.Desc);
+            sb.Append(Loc.GetString(indexedSkill.Desc));
 
         foreach (var effect in indexedSkill.Effects)
         {
