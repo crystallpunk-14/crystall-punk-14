@@ -62,6 +62,11 @@
     sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_3.rsi
   - type: Clothing
     sprite: _CP14/Clothing/OuterClothing/Roles/General/brown_3.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14ThinLeather1
+      amount: 1
 
 - type: entity
   parent:

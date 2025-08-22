@@ -14,6 +14,11 @@
     modifiers:
       coefficients:
         Heat: 0.95
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14RuggedLeather1
+      amount: 1
   - type: Storage
     maxItemSize: Small
     defaultStorageOrientation: Vertical

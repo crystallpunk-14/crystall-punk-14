@@ -2,7 +2,7 @@
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakBone
   name: bone cloak
-  description: a brutal cloak for brutal skeletons.
+  description: A brutal cloak for brutal skeletons.
   components:
   - type: Sprite
     sprite: _CP14/Clothing/Cloak/bone_cloak.rsi
