@@ -9,3 +9,9 @@
   icons:
   - sprite: _CP14/Actions/Spells/light.rsi
     state: sphere_of_light
+
+- type: alert
+  id: CP14VampireSleeping
+  icons:
+  - sprite: _CP14/Actions/Spells/vampire.rsi
+    state: blood_moon

@@ -13,6 +13,23 @@
     action: CP14ActionVampireBite
 
 - type: cp14Skill
+  id: Hypnosys
+  skillUiPosition: 2, 0
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampireHypnosys
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: Bite
+  - !type:VampireClanLevel
+    level: 1
+
+- type: cp14Skill
   id: PowerKick
   skillUiPosition: 6, 0
   learnCost: 1
@@ -25,12 +42,12 @@
     action: CP14ActionSpellVampirePower
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: Bite
+    prerequisite: Hypnosys
   - !type:VampireClanLevel
     level: 2
 
 - type: cp14Skill
-  id: PowerKick3
+  id: PowerKickArea
   skillUiPosition: 10, 0
   learnCost: 1
   tree: Vampire
@@ -110,7 +127,7 @@
 - type: cp14Skill
   id: VampireTransmutateUnnameable
   skillUiPosition: 0, 6
-  name: cp14-skill-vampire-transmutate-name 
+  name: cp14-skill-vampire-transmutate-name
   learnCost: 0
   tree: Vampire
   icon:
@@ -160,7 +177,7 @@
 - type: cp14Skill
   id: BloodEssenceCreation
   skillUiPosition: 0, 10
-  learnCost: 0.5
+  learnCost: 0
   tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -188,7 +205,7 @@
 - type: cp14Skill
   id: VampireCureWounds
   skillUiPosition: 6, 8
-  learnCost: 0.5
+  learnCost: 1
   tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi

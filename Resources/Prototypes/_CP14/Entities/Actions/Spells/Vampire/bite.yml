@@ -21,7 +21,7 @@
       - !type:Jitter
     effects:
     - !type:CP14SpellSuckBlood
-      suckAmount: 10
+      suckAmount: 5
     - !type:CP14SpellVampireGatherEssence
     - !type:CP14SpellSpawnEntityOnUser
       clientside: true
@@ -31,7 +31,7 @@
       effects:
       - !type:Jitter
       - !type:ModifyBloodLevel
-        amount: -10
+        amount: -3
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi

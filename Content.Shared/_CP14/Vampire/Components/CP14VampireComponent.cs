@@ -28,7 +28,7 @@ public sealed partial class CP14VampireComponent : Component
     public ProtoId<CP14VampireFactionPrototype>? Faction;
 
     [DataField]
-    public FixedPoint2 SkillPointCount = 3f;
+    public FixedPoint2 SkillPointCount = 2f;
 
     [DataField]
     public TimeSpan ToggleVisualsTime = TimeSpan.FromSeconds(2f);
