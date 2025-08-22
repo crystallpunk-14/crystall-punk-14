@@ -10,7 +10,6 @@
   - type: CP14MagicEffectSSDBlock
   - type: CP14MagicEffectTargetMobStatusRequired
     allowedStates:
-    allowedStates:
     - Alive
   - type: CP14MagicEffect
     telegraphyEffects:
