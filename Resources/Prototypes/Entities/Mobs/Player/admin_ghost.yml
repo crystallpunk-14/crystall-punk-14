@@ -94,6 +94,7 @@
   #- type: WirelessNetworkConnection
   #  range: 500
   #- type: StationLimitedNetwork
+  - type: CP14ShowVampireFaction
   - type: CP14SkillScanner
   - type: CP14PriceScanner
   - type: CP14ZLevelMover

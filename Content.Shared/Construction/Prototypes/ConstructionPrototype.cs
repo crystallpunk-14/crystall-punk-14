@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Skill.Restrictions;
 using Content.Shared.Construction.Conditions;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
@@ -61,6 +62,12 @@ public sealed partial class ConstructionPrototype : IPrototype
     /// </summary>
     [DataField]
     public EntityWhitelist? EntityWhitelist { get; private set; }
+
+    /// <summary>
+    /// CP14 - Some recipes are not available until certain conditions are met.
+    /// </summary>
+    [DataField]
+    public List<CP14SkillRestriction> CP14Restrictions = new();
 
     [DataField] public string Category { get; private set; } = string.Empty;
 

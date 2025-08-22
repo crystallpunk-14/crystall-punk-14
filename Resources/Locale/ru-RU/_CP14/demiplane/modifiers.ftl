@@ -12,6 +12,7 @@ cp14-modifier-explosive = взрывные мины
 cp14-modifier-ruins = древние руины
 cp14-modifier-zombie = зомби
 cp14-modifier-slime = слаймы
+cp14-modifier-cackle = кэклзы
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = динозавры
 cp14-modifier-mole = хищные кроты

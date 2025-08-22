@@ -33,7 +33,7 @@
         - Opaque
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Metallic
+    damageModifierSet: CP14Rock
   - type: Destructible
     thresholds:
     - trigger:
@@ -42,6 +42,11 @@
       behaviors:
         - !type:DoActsBehavior
           acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -4
         - !type:SpawnEntitiesBehavior
           spawn:
             CP14StoneBlock1:

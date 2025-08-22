@@ -30,6 +30,9 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
+    //CP14
+    private static readonly EntProtoId CP14VampireRule = "CP14GameRuleVampireClanBattle";
+    //CP14 end
 
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
 
@@ -48,6 +51,21 @@ public sealed partial class AdminVerbSystem
             return;
 
         var targetPlayer = targetActor.PlayerSession;
+
+        Verb vampire = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Actions/Spells/vampire.rsi"),
+                "bite"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire);
 
         /* CP14 disable default antags
         var traitorName = Loc.GetString("admin-verb-text-make-traitor");

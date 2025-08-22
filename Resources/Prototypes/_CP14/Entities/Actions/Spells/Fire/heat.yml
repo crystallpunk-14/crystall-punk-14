@@ -28,6 +28,7 @@
     startSpeech: "Vos adepto calidum..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHeat
+  - type: CP14MagicEffectPacifiedBlock
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi

@@ -137,3 +137,10 @@
   icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: rugged_hide1 }
   spawn: CP14RuggedLeather1
   maxCount: 5
+
+- type: stack
+  id: CP14BloodEssence
+  name: cp14-stack-blood-essence
+  icon: { sprite: "_CP14/Objects/Materials/blood_essence.rsi", state: drop }
+  spawn: CP14BloodEssence
+  maxCount: 10
