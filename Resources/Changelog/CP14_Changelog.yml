@@ -1716,3 +1716,11 @@
   id: 8223
   time: '2025-08-22T15:02:14.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1691
+- author: TheShuEd
+  changes:
+  - message: "A new game mode, \u201CVampire Clan Battle\u201D has been added. Three\
+      \ ancient vampire clans battle each other for control of the settlement."
+    type: Add
+  id: 8224
+  time: '2025-08-22T15:46:28.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1672
