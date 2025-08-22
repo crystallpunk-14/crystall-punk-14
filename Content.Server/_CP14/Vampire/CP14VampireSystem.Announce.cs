@@ -65,6 +65,9 @@ public sealed partial class CP14VampireSystem
             filter.AddPlayer(actor.PlayerSession);
         }
 
+        if (filter.Count == 0)
+            return;
+
         VampireAnnounce(filter, message);
     }
 
@@ -80,6 +83,9 @@ public sealed partial class CP14VampireSystem
 
             filter.AddPlayer(actor.PlayerSession);
         }
+
+        if (filter.Count == 0)
+            return;
 
         VampireAnnounce(filter, message);
     }
