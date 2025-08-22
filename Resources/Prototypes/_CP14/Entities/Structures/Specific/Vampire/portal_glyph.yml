@@ -86,6 +86,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14BloodEssence: 1
 
 - type: entity
   id: CP14VampirePortalGlyphDevourers
