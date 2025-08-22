@@ -12,4 +12,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> CP14ClosedBetaTest =
         CVarDef.Create("cp14.closet_beta_test", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Should powerful spells be restricted from being learned until a certain time has elapsed?
+    /// </summary>
+    public static readonly CVarDef<bool>
+        CP14SkillTimers = CVarDef.Create("cp14.skill_timers", true, CVar.SERVER | CVar.REPLICATED);
 }

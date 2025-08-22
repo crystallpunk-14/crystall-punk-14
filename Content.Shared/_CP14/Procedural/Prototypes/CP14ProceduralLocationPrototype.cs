@@ -20,6 +20,12 @@ public sealed partial class CP14ProceduralLocationPrototype : IPrototype
     [DataField]
     public MinMax Levels = new(0, 10);
 
+    [DataField]
+    public LocId? Name;
+
+    [DataField(required: true)]
+    public SpriteSpecifier? Icon;
+
     [DataField(required: true)]
     public ProtoId<DungeonConfigPrototype> LocationConfig;
 

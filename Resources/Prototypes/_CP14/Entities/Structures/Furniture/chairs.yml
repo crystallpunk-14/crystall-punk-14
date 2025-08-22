@@ -9,7 +9,7 @@
   components:
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Sprite
     sprite: _CP14/Structures/Furniture/chairs.rsi
     state: wooden
@@ -121,7 +121,7 @@
             max: 1
 
 - type: entity
-  name: wooden stool
+  name: birch stool
   id: CP14StoolBirch
   parent: CP14StoolWooden
   components:

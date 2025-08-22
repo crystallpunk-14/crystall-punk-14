@@ -714,6 +714,7 @@
   - CP14FluteInstrument
   - CP14LuteInstrument
   - CP14LyraInstrument
+  - CP14SpellScrollResurrection
 
 - type: loadout
   id: CP14ManaOperationGlove
@@ -804,6 +805,12 @@
   storage:
     back:
     - CP14FluteInstrument
+
+- type: loadout
+  id: CP14SpellScrollResurrection
+  storage:
+    back:
+    - CP14SpellScrollResurrection
 
 # Keys
 

@@ -19,6 +19,6 @@ public sealed partial class CP14SpellRemoveMemoryPoint : CP14SpellEffect
 
         var skillSys = entManager.System<CP14SharedSkillSystem>();
 
-        skillSys.RemoveMemoryPoints(args.Target.Value, SkillPointType, RemovedPoints);
+        skillSys.RemoveSkillPoints(args.Target.Value, SkillPointType, RemovedPoints);
     }
 }

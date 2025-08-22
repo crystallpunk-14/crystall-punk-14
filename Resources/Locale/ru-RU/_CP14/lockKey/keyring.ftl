@@ -18,7 +18,7 @@ cp14-lock-verb-use-key-message = Использовать {$item} чтобы з�
 cp14-lock-examine-lock-slot = Здесь висит {$lock}
 cp14-lock-examine-lock-lockpicked = {$lock} выглядит потрепанным.
 
-cp14-lock-examine-key = {$item} имеет зубцы следующей формы: 
+cp14-lock-examine-key = {$item} имеет зубцы следующей формы:
 
 cp14-lock-key-file-use-hint = Сточить зубец: {$num}
 cp14-lock-key-file-updated = Новая форма ключа:
@@ -29,3 +29,5 @@ cp14-lock-editor-updated = Новая форма замка:
 cp14-lock-insert-start = {$player} начинает устанавливать замок в {$name}.
 cp14-lock-insert-fail-have-lock = В {$name} уже установлен замок!
 cp14-lock-insert-success = Новый замок успешно установлен в {$name}!
+
+cp14-lock-key-transforming = Ключ изменяет свою форму!

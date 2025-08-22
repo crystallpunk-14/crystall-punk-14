@@ -19,7 +19,7 @@
   id: Rabbits
   levels:
     min: 0
-    max: 5
+    max: 10
   name: cp14-modifier-rabbits
   generationWeight: 0.4
   categories:
@@ -37,7 +37,7 @@
   id: Boar
   levels:
     min: 0
-    max: 3
+    max: 10
   name: cp14-modifier-boars
   generationWeight: 0.4
   categories:
@@ -76,7 +76,7 @@
   id: Sheep
   levels:
     min: 0
-    max: 3
+    max: 10
   name: cp14-modifier-sheeps
   generationWeight: 0.4
   categories:
@@ -96,7 +96,7 @@
   id: LootT2
   levels:
     min: 4
-    max: 5
+    max: 10
   generationWeight: 2
   categories:
     Reward: 0.15

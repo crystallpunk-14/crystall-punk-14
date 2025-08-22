@@ -4,7 +4,7 @@
   id: Marble
   levels:
     min: 0
-    max: 5
+    max: 10
   unique: true
   categories:
     Ore: 0
@@ -23,7 +23,7 @@
   id: IronOre
   levels:
     min: 1
-    max: 5
+    max: 10
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -44,7 +44,7 @@
   id: IronOreUnderground
   levels:
     min: 1
-    max: 5
+    max: 10
   name: cp14-modifier-iron-ore
   unique: false
   categories:
@@ -65,7 +65,7 @@
   id: CopperOre
   levels:
     min: 0
-    max: 2
+    max: 3
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -86,7 +86,7 @@
   id: CopperOreUnderground
   levels:
     min: 0
-    max: 2
+    max: 3
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -107,7 +107,7 @@
   id: CoalOre
   levels:
     min: 0
-    max: 2
+    max: 5
   name: cp14-modifier-coal-ore
   unique: false
   categories:
@@ -128,7 +128,7 @@
   id: CoalOreUnderground
   levels:
     min: 0
-    max: 2
+    max: 5
   name: cp14-modifier-copper-ore
   unique: false
   categories:
@@ -151,7 +151,7 @@
   id: GoldOre
   levels:
     min: 3
-    max: 5
+    max: 10
   unique: false
   categories:
     Ore: 0.25
@@ -170,7 +170,7 @@
   id: MithrilOre
   levels:
     min: 4
-    max: 5
+    max: 10
   name: cp14-modifier-mithril-ore
   unique: false
   categories:
@@ -191,7 +191,7 @@
   id: MithrilOreUnderground
   levels:
     min: 4
-    max: 5
+    max: 10
   name: cp14-modifier-mithril-ore
   unique: false
   categories:

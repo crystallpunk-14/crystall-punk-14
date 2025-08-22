@@ -64,8 +64,8 @@
   - type: Projectile
     damage:
       types:
-        Cold: 4
-        Piercing: 2
+        Cold: 5
+        Piercing: 2.5
   - type: Sprite
     sprite: _CP14/Effects/Magic/ice_shard.rsi
     layers:

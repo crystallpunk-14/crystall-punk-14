@@ -109,3 +109,42 @@
       path: /Audio/_CP14/Effects/ritual_end.ogg
       params:
         variation: 0.3
+
+- type: entity
+  id: CP14TempPortalToCity
+  parent: BasePortal
+  categories: [ ForkFiltered ]
+  name: temporary rift
+  description: A temporary portal leading directly to the city. You have about a minute to use it before it closes.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: /Textures/_CP14/Structures/Dungeon/demiplan_rift.rsi
+    layers:
+    - state: pulse
+      shader: unshaded
+      color: "#a1d1ff"
+  - type: PointLight
+    enabled: true
+    color: "#a590de"
+    energy: 1
+    radius: 5
+  - type: AmbientSound
+    volume: -3
+    range: 7
+    sound:
+      path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+  - type: Portal
+    canTeleportToOtherMaps: true
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/_CP14/Effects/ritual_end.ogg
+      params:
+        variation: 0.125
+  - type: TimedDespawn
+    lifetime: 80
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14SkyLightningPurple
+  

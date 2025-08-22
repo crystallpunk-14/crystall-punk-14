@@ -69,7 +69,7 @@
     spawned:
     - id: CP14FoodMeatRabbit
       amount: 4
-    - id: CP14ThinAnimalHide
+    - id: CP14ThinLeather1
       amount: 1
       maxAmount: 2
     - id: CP14Fur
@@ -161,7 +161,7 @@
     - id: CP14FoodMeatPigLeg
       amount: 1
       prob: 0.3
-    - id: CP14AnimalHide
+    - id: CP14Leather1
       amount: 1
       maxAmount: 3
   - type: Bloodstream
@@ -179,8 +179,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   id: CP14MobBoar
@@ -211,14 +209,14 @@
     spawned:
     - id: CP14FoodMeatBoar
       amount: 4
-    - id: CP14AnimalHide
+    - id: CP14Leather1
       amount: 2
       maxAmount: 4
-    - id: CP14ScrapAnimalHide
+    - id: CP14ScrapLeather
       amount: 1
       maxAmount: 3
       prob: 0.5
-    - id: CP14RuggedAnimalHide
+    - id: CP14RuggedLeather1
       amount: 1
       prob: 0.1
     - id: CP14CheapFur
@@ -244,8 +242,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   name: frog
@@ -315,7 +311,7 @@
     spawned:
     - id: CP14FoodMeatFrogLeg
       amount: 2
-    - id: CP14ScrapAnimalHide
+    - id: CP14ScrapLeather
       amount: 1
       prob: 0.5
   - type: MeleeWeapon
@@ -434,10 +430,10 @@
     - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
       amount: 4
       maxAmount: 16
-    - id: CP14ThinAnimalHide
+    - id: CP14ThinLeather1
       amount: 2
       maxAmount: 5
-    - id: CP14ScrapAnimalHide
+    - id: CP14ScrapLeather
       amount: 1
       maxAmount: 5
       prob: 0.3
@@ -524,10 +520,10 @@
     spawned:
     - id: CP14FoodMeatBoar # TODO
       amount: 5
-    - id: CP14RuggedAnimalHide
+    - id: CP14RuggedLeather1
       amount: 2
       maxAmount: 5
-    - id: CP14ScrapAnimalHide
+    - id: CP14ScrapLeather
       amount: 2
       maxAmount: 6
       prob: 0.5

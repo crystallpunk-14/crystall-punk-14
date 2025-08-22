@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "CC-BY-SA-4.0",
-  "copyright": "Created by TheShuEd (Github)",
+  "copyright": "Base1, base2 and base3 created by TheShuEd (Github), inhand-left and inhand-right created by Dinazewwr",
   "states": [
     {
       "name": "base1"
@@ -15,6 +15,14 @@
     },
     {
       "name": "base3"
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
     }
   ]
 }

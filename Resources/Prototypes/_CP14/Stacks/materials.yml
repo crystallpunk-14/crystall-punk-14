@@ -118,8 +118,29 @@
   maxCount: 10
 
 - type: stack
-  id: CP14SaltStone
-  name: cp14-stack-salt-stone
-  icon: { sprite: _CP14/Objects/Materials/salt_stone.rsi, state: salt1 }
-  spawn: CP14SaltStone1
+  id: CP14ThinLeather
+  name: cp14-stack-hide-thin
+  icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: thin_hide1 }
+  spawn: CP14ThinLeather1
+  maxCount: 5
+
+- type: stack
+  id: CP14Leather
+  name: cp14-stack-hide
+  icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: hide1 }
+  spawn: CP14Leather1
+  maxCount: 5
+
+- type: stack
+  id: CP14RuggedLeather
+  name: cp14-stack-hide-rugged
+  icon: { sprite: "_CP14/Objects/Ingredients/hide.rsi", state: rugged_hide1 }
+  spawn: CP14RuggedLeather1
+  maxCount: 5
+
+- type: stack
+  id: CP14BloodEssence
+  name: cp14-stack-blood-essence
+  icon: { sprite: "_CP14/Objects/Materials/blood_essence.rsi", state: drop }
+  spawn: CP14BloodEssence
   maxCount: 10

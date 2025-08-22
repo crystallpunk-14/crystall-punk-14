@@ -288,6 +288,22 @@
     - CP14MobMonsterFlem
 
 - type: entity
+  name: cackle spawner
+  id: CP14SpawnMobMonsterCackle
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/cackle.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterCackle
+
+- type: entity
   name: fairy spawner
   id: CP14SpawnMobFairy
   parent: MarkerBase

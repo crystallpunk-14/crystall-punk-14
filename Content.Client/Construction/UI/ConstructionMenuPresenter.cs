@@ -273,6 +273,21 @@ namespace Content.Client.Construction.UI
                     || _whitelistSystem.IsWhitelistFail(recipe.EntityWhitelist, _playerManager.LocalEntity.Value))
                     continue;
 
+                //CP14 requirements
+                var requirementsMet = true;
+                foreach (var req in recipe.CP14Restrictions)
+                {
+                    if (!req.Check(_entManager, _playerManager.LocalEntity.Value))
+                    {
+                        requirementsMet = false;
+                        break;
+                    }
+                }
+
+                if (!requirementsMet)
+                    continue;
+                //CP14
+
                 if (!string.IsNullOrEmpty(search) && (recipe.Name is { } name &&
                                                       !name.Contains(search.Trim(),
                                                           StringComparison.InvariantCultureIgnoreCase)))

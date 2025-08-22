@@ -43,7 +43,7 @@
   components:
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -262,7 +262,7 @@
   components:
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
+    damageModifierSet: CP14Rock
   - type: Sprite
     sprite: _CP14/Structures/Furniture/Tables/marble.rsi
   - type: Icon

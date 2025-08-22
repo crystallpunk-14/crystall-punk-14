@@ -22,7 +22,7 @@
   id: EnemyDyno
   levels:
     min: 3
-    max: 5
+    max: 10
   name: cp14-modifier-dyno
   categories:
     Danger: 0.4
@@ -114,7 +114,7 @@
   id: EnemyMole
   levels:
     min: 2
-    max: 5
+    max: 7
   name: cp14-modifier-mole
   categories:
     Danger: 0.4
@@ -131,7 +131,7 @@
   id: EnemyIceSpectre
   levels:
     min: 2
-    max: 5
+    max: 7
   name: cp14-modifier-zombie
   categories:
     Danger: 0.4
@@ -165,7 +165,7 @@
   id: MobSlimeFire
   levels:
     min: 2
-    max: 5
+    max: 8
   name: cp14-modifier-slime
   categories:
     Danger: 0.3
@@ -278,7 +278,7 @@
   id: MobBigBear
   levels:
     min: 3
-    max: 5
+    max: 8
   categories:
     Danger: 0.5
   requiredTags:
@@ -322,3 +322,23 @@
       count: 5
       minGroupSize: 7
       maxGroupSize: 12
+
+- type: cp14LocationModifier
+  id: EnemyCackle
+  levels:
+    min: 2
+    max: 5
+  name: cp14-modifier-cackle
+  generationWeight: 0.33
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  blacklistTags:
+  - CP14DemiplaneCold
+  layers:
+  - !type:CP14OreDunGen
+    entity: CP14MobMonsterCackle
+    count: 4
+    minGroupSize: 1
+    maxGroupSize: 3

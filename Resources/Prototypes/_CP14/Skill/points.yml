@@ -1,6 +1,8 @@
 - type: cp14SkillPoint
   id: Memory
   name: cp14-skill-point-memory
+  getPointPopup: cp14-skill-popup-memory-added
+  losePointPopup: cp14-skill-popup-memory-losed
   icon:
     sprite: _CP14/Interface/Misc/skill_point.rsi
     state: exp
@@ -8,6 +10,8 @@
 - type: cp14SkillPoint
   id: Blood
   name: cp14-skill-point-vampire-blood
+  getPointPopup: cp14-skill-popup-blood-added
+  losePointPopup: cp14-skill-popup-blood-losed
   icon:
     sprite: _CP14/Interface/Misc/skill_point.rsi
     state: blood

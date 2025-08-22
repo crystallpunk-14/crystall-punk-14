@@ -38,9 +38,9 @@
 #     - 13,2,14,2 # 2x1=2
 #   - type: PhysicalComposition
 #     materialComposition:
-#       CP14Cloth: 80 # 60u CP14Cloth (6x10u) + 20u CP14String (4x5u)
+#       CP14Cloth: 30 # 30u CP14Cloth (3x10u)
 #       CP14Iron: 16 # 16u CP14IronBuckle (8x2u)
-#       # Cost: (80×0.3) + (16×2) = 24 + 32 = 56 copper coins
+#       # Cost: (30×0.3) + (16×2) = 9 + 32 = 41 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT0
@@ -62,10 +62,9 @@
 #     - 5,3,7,4 # 3x2=6
 #   - type: PhysicalComposition
 #     materialComposition:
-#       CP14Leather: 36 # 30u CP14Leather (6x5u) + 6u CP14LeatherStrap (2x3u)
-#       CP14SaltStone: 36 # 30u (6x5u) + 6u (2x3u)
+#       CP14Leather: 15 # 15u CP14Leather (3x5u)
 #       CP14Iron: 20 # 20u CP14IronBuckle (10x2u)
-#       # Cost: (36×1.2) + (36×0.4) + (20×2) = 43.2 + 14.4 + 40 = 97.6 copper coins
+#       # Cost: (15×1.2) + (20×2) = 18 + 40 = 58 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT1
@@ -91,10 +90,9 @@
 #     - 11,3,12,5 # 2x3=6
 #   - type: PhysicalComposition
 #     materialComposition:
-#       CP14Leather: 72 # 60u CP14Leather (6x10u) + 12u CP14LeatherStrap (4x3u)
-#       CP14SaltStone: 72 # 60u (6x10u) + 12u (4x3u)
+#       CP14Leather: 45 # 15u thin (3x5u) + 30u regular (3x10u)
 #       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
-#       # Cost: (72×1.2) + (72×0.4) + (24×2) = 86.4 + 28.8 + 48 = 163.2 copper coins
+#       # Cost: (45×1.2) + (24×2) = 54 + 48 = 102 copper coins
 
 # - type: entity
 #   parent: CP14ClothingBackExplorerBackpackT2
@@ -122,7 +120,6 @@
 #     - 16,4,16,6 # 1x3=3
 #   - type: PhysicalComposition
 #     materialComposition:
-#       CP14Leather: 174 # 150u CP14Leather (6x25u) + 24u CP14RuggedStrap (4x6u)
-#       CP14SaltStone: 140 # 120u (6x20u) + 20u (4x5u)
+#       CP14Leather: 80 # 30u regular (3x10u) + 50u rugged (2x25u)
 #       CP14Iron: 24 # 24u CP14IronBuckle (12x2u)
-#       # Cost: (174×1.2) + (140×0.4) + (24×2) = 208.8 + 56 + 48 = 312.8 copper coins
+#       # Cost: (80×1.2) + (24×2) = 96 + 48 = 144 copper coins

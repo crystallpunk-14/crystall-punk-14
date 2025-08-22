@@ -23,6 +23,7 @@ public sealed partial class DungeonJob
         if (!_prototype.TryIndex(dunGen.BiomeTemplate, out var indexedBiome))
             return;
 
+        HashSet<Vector2i> processedTiles = new();
         var biomeSystem = _entManager.System<BiomeSystem>();
 
         var seed = random.Next();
@@ -32,6 +33,11 @@ public sealed partial class DungeonJob
         {
             foreach (var node in dun.AllTiles)
             {
+                if (processedTiles.Contains(node))
+                    continue;
+
+                processedTiles.Add(node);
+
                 var tileRef = _maps.GetTileRef(_gridUid, _grid, node);
 
                 if (reservedTiles.Contains(node))

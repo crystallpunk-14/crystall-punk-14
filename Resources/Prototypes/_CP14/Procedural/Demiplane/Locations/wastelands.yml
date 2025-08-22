@@ -1,8 +1,12 @@
 - type: cp14Location
   id: T1Wastelands
+  name: cp14-demiplane-location-wastelands
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: wastelands
   levels:
     min: 3
-    max: 5
+    max: 10
   locationConfig: CP14WastelandsIsland
   tags:
   - CP14DemiplaneOres

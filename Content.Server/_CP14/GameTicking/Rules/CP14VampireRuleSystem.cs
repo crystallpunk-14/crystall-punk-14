@@ -1,96 +1,87 @@
+using System.Linq;
 using Content.Server._CP14.GameTicking.Rules.Components;
-using Content.Server._CP14.Vampire;
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
+using Content.Server._CP14.Objectives.Systems;
+using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Temperature.Components;
-using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.Vampire;
-using Content.Shared.Nutrition.Components;
-using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Popups;
-using Robust.Shared.Timing;
+using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._CP14.GameTicking.Rules;
 
 public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleComponent>
 {
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly TemperatureSystem _temperature = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly FlammableSystem _flammable = default!;
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly CP14VampireObjectiveConditionsSystem _condition = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    public override void Initialize()
+    protected override void AppendRoundEndText(EntityUid uid,
+        CP14VampireRuleComponent component,
+        GameRuleComponent gameRule,
+        ref RoundEndTextAppendEvent args)
     {
-        base.Initialize();
+        base.AppendRoundEndText(uid, component, gameRule, ref args);
 
-        SubscribeLocalEvent<CP14VampireComponent, MapInitEvent>(OnVampireInit);
-        SubscribeLocalEvent<CP14VampireComponent, CP14HungerChangedEvent>(OnVampireHungerChanged);
-    }
+        //Alive percentage
+        var alivePercentage = _condition.CalculateAlivePlayersPercentage();
 
-    private void OnVampireHungerChanged(Entity<CP14VampireComponent> ent, ref CP14HungerChangedEvent args)
-    {
-        if (args.NewThreshold == HungerThreshold.Starving || args.NewThreshold == HungerThreshold.Dead)
+        var aliveFactions = new HashSet<ProtoId<CP14VampireFactionPrototype>>();
+
+        var query = EntityQueryEnumerator<CP14VampireComponent, MobStateComponent>();
+        while (query.MoveNext(out var vampireUid, out var vampire, out var mobState))
         {
-            RevealVampire(ent);
+            if (mobState.CurrentState != MobState.Alive)
+                continue;
+
+            if (vampire.Faction is null)
+                continue;
+
+            aliveFactions.Add(vampire.Faction.Value);
+        }
+
+        args.AddLine($"[head=2][color=#ab1b3d]{Loc.GetString("cp14-vampire-clans-battle")}[/color][/head]");
+
+        if (alivePercentage > _condition.RequiredAlivePercentage)
+        {
+            if (aliveFactions.Count == 0)
+            {
+                //City win
+                args.AddLine($"[head=3][color=#7d112b]{Loc.GetString("cp14-vampire-clans-battle-clan-city-win")}[/color][/head]");
+                args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-city-win-desc"));
+            }
+
+            if (aliveFactions.Count == 1)
+            {
+                var faction = aliveFactions.First();
+
+                if (_proto.TryIndex(faction, out var indexedFaction))
+                    args.AddLine($"[head=3][color=#7d112b]{Loc.GetString("cp14-vampire-clans-battle-clan-win", ("name", Loc.GetString(indexedFaction.Name)))}[/color][/head]");
+                args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-win-desc"));
+            }
+
+            if (aliveFactions.Count == 2)
+            {
+                var factions = aliveFactions.ToArray();
+
+                if (_proto.TryIndex(factions[0], out var indexedFaction1) && _proto.TryIndex(factions[1], out var indexedFaction2))
+                    args.AddLine($"[head=3][color=#7d112b]{Loc.GetString("cp14-vampire-clans-battle-clan-tie-2", ("name1", Loc.GetString(indexedFaction1.Name)), ("name2", Loc.GetString(indexedFaction2.Name)))}[/color][/head]");
+                args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-tie-2-desc"));
+            }
+
+            if (aliveFactions.Count == 3)
+            {
+                args.AddLine($"[head=3][color=#7d112b]{Loc.GetString("cp14-vampire-clans-battle-clan-tie-3")}[/color][/head]");
+                args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-tie-3-desc"));
+            }
         }
         else
         {
-            HideVampire(ent);
+            args.AddLine($"[head=3][color=#7d112b]{Loc.GetString("cp14-vampire-clans-battle-clan-lose")}[/color][/head]");
+            args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-lose-desc"));
         }
-    }
 
-    private void RevealVampire(Entity<CP14VampireComponent> ent)
-    {
-        EnsureComp<CP14VampireVisualsComponent>(ent);
-    }
-
-    private void HideVampire(Entity<CP14VampireComponent> ent)
-    {
-        RemCompDeferred<CP14VampireVisualsComponent>(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        var query = EntityQueryEnumerator<CP14VampireComponent, TemperatureComponent, FlammableComponent>();
-        while (query.MoveNext(out var uid, out var vampire, out var temperature, out var flammable))
-        {
-            if (_timing.CurTime < vampire.NextHeatTime)
-                continue;
-
-            vampire.NextHeatTime = _timing.CurTime + vampire.HeatFrequency;
-
-            return;
-            //if (!_dayCycle.UnderSunlight(uid))
-            //    continue;
-
-            _temperature.ChangeHeat(uid, vampire.HeatUnderSunTemperature);
-            _popup.PopupEntity(Loc.GetString("cp14-heat-under-sun"), uid, uid, PopupType.SmallCaution);
-
-            if (temperature.CurrentTemperature > vampire.IgniteThreshold && !flammable.OnFire)
-            {
-                _flammable.AdjustFireStacks(uid, 1, flammable);
-                _flammable.Ignite(uid, uid, flammable);
-            }
-        }
-    }
-
-    private void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)
-    {
-        _bloodstream.ChangeBloodReagent(ent.Owner, ent.Comp.NewBloodReagent);
-
-        foreach (var (organUid, _) in _body.GetBodyOrgans(ent))
-        {
-            if (TryComp<MetabolizerComponent>(organUid, out var metabolizer) && metabolizer.MetabolizerTypes is not null)
-            {
-                metabolizer.MetabolizerTypes.Add(ent.Comp.MetabolizerType);
-            }
-        }
+        args.AddLine(Loc.GetString("cp14-vampire-clans-battle-alive-people", ("percent", alivePercentage * 100)));
     }
 }

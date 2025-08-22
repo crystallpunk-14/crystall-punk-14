@@ -34,7 +34,7 @@
     placeCentered: true
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -43,6 +43,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14WoodenPlanks1:
@@ -73,6 +76,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
       - !type:SpawnEntitiesBehavior
         spawn:
           CP14BirchWoodenPlanks1:

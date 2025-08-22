@@ -9,6 +9,9 @@
   components:
   - type: Transform
     anchored: true
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Wood
   - type: Rotatable
   - type: Sprite
     sprite: _CP14/Structures/Furniture/bench.rsi

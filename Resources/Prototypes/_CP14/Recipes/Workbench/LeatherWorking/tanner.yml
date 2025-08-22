@@ -2,180 +2,33 @@
 # Hide
 # ================
 # Crafting Recipes
-# Leather Processing
-- type: CP14Recipe
-  id: CP14ThinHideRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14ThinAnimalHide
-    count: 1 # 10u leather
-  - !type:StackResource
-    stack: CP14SaltStone
-    count: 1 # 10u salt
-  result: CP14ThinLeather
-  resultCount: 2 # 2x thin leather (5u leather + 5u salt each)
-  # Cost: (10×1.2) + (10×0.4) = 12 + 4 = 16 copper coins
-
-- type: CP14Recipe
-  id: CP14HideRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14AnimalHide
-    count: 1 # 20u leather
-  - !type:StackResource
-    stack: CP14SaltStone
-    count: 2 # 20u salt
-  result: CP14Leather
-  resultCount: 2 # 2x leather (10u leather + 10u salt each)
-  # Cost: (20×1.2) + (20×0.4) = 24 + 8 = 32 copper coins
-
-- type: CP14Recipe
-  id: CP14RuggedAnimalHideRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14RuggedAnimalHide
-    count: 1 # 50u leather
-  - !type:StackResource
-    stack: CP14SaltStone
-    count: 4 # 40u salt
-  result: CP14RuggedLeather
-  resultCount: 2 # 2x rugged leather (25u leather + 20u salt total, 12.5u + 10u each)
-  # Cost: (50×1.2) + (40×0.4) = 60 + 16 = 76 copper coins
-
+# Hide Crafting
 - type: CP14Recipe
   id: CP14ScrapHideRecipe
   tag: CP14RecipeLeatherWorking
+  category: LeatherWorking
   craftTime: 2
   requirements:
   - !type:ProtoIdResource
-    protoId: CP14ScrapAnimalHide
-    count: 3 # 3x scraps (15u total)
+    protoId: CP14ScrapLeather
+    count: 3 # 3x scraps (9u total)
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 3 # 15u cloth
-  result: CP14AnimalHide
-  resultCount: 1 # 1x hide (20u) = 24 copper coins
-  # Cost: (15×1.2) + (15×0.3) = 18 + 4.5 = 22.5 copper coins
+    count: 1 # 5u cloth
+  result: CP14Leather1
+  # Cost: (15×1.2) + (5×0.3) = 18 + 1.5 = 19.5 copper coins
 
-# ================
-# Leather Crafting
 - type: CP14Recipe
-  id: CP14ThinToNormalLeatherRecipe
+  id: CP14ThinToRegularHideRecipe
   tag: CP14RecipeLeatherWorking
+  category: LeatherWorking
   craftTime: 2
   requirements:
-  - !type:ProtoIdResource
-    protoId: CP14LeatherStrap
-    count: 2 # 6u leather + 6u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 3 # 15u cloth
-  result: CP14Leather
-  resultCount: 1 # 10u leather + 10u salt
-  # Cost: (6×1.2) + (6×0.4) + (15×0.3) = 7.2 + 2.4 + 4.5 = 14.1 copper coins
-
-# ================
-# Straps Crafting
-- type: CP14Recipe
-  id: CP14ThinLeatherStrapRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14ThinLeather
-    count: 1 # 5u leather + 5u salt
+  - !type:StackResource
+    stack: CP14ThinLeather # 5u
+    count: 2 # 10u CP14Leather
   - !type:ProtoIdResource
     protoId: CP14String
-    count: 4 # 20u cloth
-  result: CP14LeatherStrap
-  resultCount: 3 # 3x straps (3u leather + 3u salt total, 1u + 1u each)
-  # Cost: (5×1.2) + (5×0.4) + (20×0.3) = 6 + 2 + 6 = 14 copper coins
-
-- type: CP14Recipe
-  id: CP14LeatherStrapRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 1 # 10u leather + 10u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 2 # 10u cloth
-  result: CP14LeatherStrap
-  resultCount: 4 # 4x straps (3u leather + 3u salt total, 0.6u + 0.6u each)
-  # Cost: (10×1.2) + (10×0.4) + (10×0.3) = 12 + 4 + 3 = 19 copper coins
-
-- type: CP14Recipe
-  id: CP14StringedRuggedStrapRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 1 # 10u leather + 10u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 8 # 40u cloth
-  result: CP14RuggedStrap
-  resultCount: 3 # 2x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
-  # Cost: (10×1.2) + (10×0.4) + (40×0.3) = 12 + 4 + 12 = 28 copper coins
-
-- type: CP14Recipe
-  id: CP14RuggedStrapRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 2
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14RuggedLeather
-    count: 1 # 25u leather + 20u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 3 # 15u cloth
-  result: CP14RuggedStrap
-  resultCount: 4 # 4x straps (6u leather + 5u salt total, 1.5u + 1.25u each)
-  # Cost: (25×1.2) + (20×0.4) + (15×0.3) = 30 + 8 + 4.5 = 42.5 copper coins
-
-
-# ================
-# Leather belts crafting
-
-- type: CP14Recipe
-  id: CP14ClothingBeltQuiverRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 3 # 30u leather + 30u salt
-  - !type:ProtoIdResource
-    protoId: CP14LeatherStrap
-    count: 2 # 6u leather + 6u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 4 # 20u cloth
-  result: CP14ClothingBeltQuiver
-  # Cost: (36×1.2) + (36×0.4) + (20×0.3) = 43.2 + 14.4 + 6 = 63.6 copper coins
-
-- type: CP14Recipe
-  id: CP14ClothingBeltPouchPotionsRecipe
-  tag: CP14RecipeLeatherWorking
-  craftTime: 1
-  requirements:
-  - !type:ProtoIdResource
-    protoId: CP14Leather
-    count: 1 # 10u leather + 10u salt
-  - !type:ProtoIdResource
-    protoId: CP14LeatherStrap
-    count: 3 # 9u leather + 9u salt
-  - !type:ProtoIdResource
-    protoId: CP14String
-    count: 4 # 20u cloth
-  result: CP14ClothingBeltPouchPotions
-  # Cost: (19×1.2) + (19×0.4) + (20×0.3) = 22.8 + 7.6 + 6 = 36.4 copper coins
+    count: 1 # 5u cloth
+  result: CP14Leather1 # 1x hide (10u)
+  # Cost: (10×1.2) + (5×0.3) = 12 + 1.5 = 13.5 copper coins

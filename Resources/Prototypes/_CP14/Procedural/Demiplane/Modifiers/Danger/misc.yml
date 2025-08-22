@@ -3,8 +3,8 @@
 - type: cp14LocationModifier
   id: Lava
   levels:
-    min: 2
-    max: 5
+    min: 3
+    max: 10
   generationWeight: 0.3
   categories:
     Danger: 0.25

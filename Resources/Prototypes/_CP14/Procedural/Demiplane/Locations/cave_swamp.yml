@@ -1,5 +1,9 @@
 - type: cp14Location
   id: SwampCaves
+  name: cp14-demiplane-location-cave-grass
+  icon:
+    sprite: _CP14/Interface/Misc/demiplane_locations.rsi
+    state: swamp_caves
   levels:
     min: 1
     max: 10

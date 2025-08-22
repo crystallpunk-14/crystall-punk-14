@@ -46,8 +46,6 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory CP14ModularCraft =
             new("verb-categories-modular-craft", "/Textures/Interface/AdminActions/unbolt.png");
 
-        public static readonly VerbCategory CP14RitualBook = new("cp14-verb-categories-ritual-book", null);
-
         public static readonly VerbCategory CP14CurrencyConvert = new("cp14-verb-categories-currency-converter", null); //CP14
         //CP14 verbs
 

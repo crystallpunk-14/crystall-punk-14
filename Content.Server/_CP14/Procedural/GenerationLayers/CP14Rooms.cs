@@ -17,6 +17,7 @@ public sealed partial class DungeonJob
         HashSet<Vector2i> reservedTiles,
         Random random)
     {
+        HashSet<Vector2i> processedTiles = new();
         List<DungeonRoomPrototype> availableRooms = new();
         var availableTiles = new List<Vector2i>();
 
@@ -33,12 +34,19 @@ public sealed partial class DungeonJob
         }
 
         if (availableRooms.Count == 0)
-            return;
+        {
+            _sawmill.Warning($"No rooms found for generation with tags: {string.Join(", ", gen.Tags)}");
+        }
 
         foreach (var dun in dungeons)
         {
             foreach (var tile in dun.AllTiles)
             {
+                if (processedTiles.Contains(tile))
+                    continue;
+
+                processedTiles.Add(tile);
+
                 var tileRef = _maps.GetTileRef(_gridUid, _grid, tile);
 
                 if (reservedTiles.Contains(tile))
@@ -70,7 +78,8 @@ public sealed partial class DungeonJob
             }
         }
 
-        for (var i = 0; i < gen.Count && availableTiles.Count > 0; i++)
+        var roomCount = gen.Count;
+        while (roomCount > 0 && availableTiles.Count > 0)
         {
             await SuspendDungeon();
 
@@ -109,6 +118,13 @@ public sealed partial class DungeonJob
             {
                 reservedTiles.Add(pos);
             }
+
+            roomCount--;
+        }
+
+        if (roomCount > 0)
+        {
+            _sawmill.Warning($"Not enough space to generate all rooms. Wanted: {gen.Count}, Generated: {gen.Count - roomCount}");
         }
     }
 }

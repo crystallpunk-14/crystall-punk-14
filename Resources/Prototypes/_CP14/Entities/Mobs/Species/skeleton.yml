@@ -14,10 +14,6 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "vampire_fangs" ]
-      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
-      state: human
-      visible: false #Skeleton vampire? Lol?
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -41,6 +37,10 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Skeleton vampire? Lol?
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -71,11 +71,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      30: 0.8
-      40: 0.6
+      70: 0.7
+      90: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -97,7 +97,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 100
       behaviors:
       - !type:GibBehavior
   - type: Vocal

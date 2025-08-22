@@ -87,7 +87,7 @@ public sealed partial class FoodResource : CP14WorkbenchCraftRequirement
 
         var complexity = indexedRecipe.Requirements.Sum(req => req.GetComplexity());
 
-        return complexity * 10;
+        return complexity * 6;
     }
 
     public override string GetRequirementTitle(IPrototypeManager protoManager)
