@@ -23,5 +23,10 @@ cp14-vampire-tree-other-info = "{$name}": [color=red]({$essence}/{$left})[/color
 
 ## Announcements
 
-cp14-vampire-tree-growing = "{$name}" clan grows to level {$level}!
-cp14-vampire-tree-growing-self = Your clan grows to level {$level}!
+cp14-vampire-sender = Vampire instinct
+
+cp14-vampire-tree-growing = "{$name}" clan heart grows to level {$level}!
+cp14-vampire-tree-growing-self = Your clan heart grows to level {$level}!
+cp14-vampire-tree-damaged = Your clan's heart has been attacked!
+cp14-vampire-tree-destroyed = "{$name}" clan heart has been destroyed!
+cp14-vampire-tree-destroyed-self = Your clan's heart has been destroyed!

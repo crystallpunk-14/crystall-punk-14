@@ -1,3 +1,4 @@
+using System.Text;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -7,7 +8,9 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
+using Content.Shared.Ghost;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Events;
@@ -31,6 +34,65 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
         InitializeAnnounces();
 
         SubscribeLocalEvent<CP14VampireClanHeartComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnStartCollide(Entity<CP14VampireClanHeartComponent> ent, ref StartCollideEvent args)
+    {
+        if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
+            return;
+
+        AddEssence(ent, collectable.Essence);
+        Del(args.OtherEntity);
+
+        _audio.PlayPvs(collectable.CollectSound, ent);
+    }
+
+    private void OnExamined(Entity<CP14VampireClanHeartComponent> ent, ref ExaminedEvent args)
+    {
+        if (!HasComp<CP14VampireComponent>(args.Examiner) && !HasComp<GhostComponent>(args.Examiner))
+            return;
+
+        var sb = new StringBuilder();
+
+        // Faction
+        if (Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+            sb.Append(Loc.GetString("cp14-vampire-tree-examine-faction", ("faction", Loc.GetString(indexedFaction.Name))) + "\n");
+
+        // Are they friend or foe?
+        if (TryComp<CP14VampireComponent>(args.Examiner, out var examinerVampire))
+        {
+            if (examinerVampire.Faction == ent.Comp.Faction)
+                sb.Append(Loc.GetString("cp14-vampire-tree-examine-friend") + "\n");
+            else
+                sb.Append(Loc.GetString("cp14-vampire-tree-examine-enemy") + "\n");
+        }
+
+        //Progress
+        sb.Append(Loc.GetString("cp14-vampire-tree-examine-level",
+            ("level", ent.Comp.Level),
+            ("essence", ent.Comp.EssenceFromLevelStart),
+            ("left", ent.Comp.EssenceToNextLevel?.ToString() ?? "∞")) + "\n"+ "\n");
+
+        var query = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
+
+        sb.Append(Loc.GetString("cp14-vampire-tree-other-title") + "\n");
+        while (query.MoveNext(out var uid, out var heart))
+        {
+            if (uid == ent.Owner)
+                continue;
+
+            if (!Proto.TryIndex(heart.Faction, out var indexedOtherFaction))
+                continue;
+
+            sb.Append(Loc.GetString("cp14-vampire-tree-other-info",
+                ("name", Loc.GetString(indexedOtherFaction.Name)),
+                ("essence", heart.EssenceFromLevelStart),
+                ("left", heart.EssenceToNextLevel?.ToString() ?? "∞"),
+                ("lvl", heart.Level)) + "\n");
+        }
+
+        args.PushMarkup(sb.ToString());
     }
 
     private void AddEssence(Entity<CP14VampireClanHeartComponent> ent, FixedPoint2 amount)
@@ -51,17 +113,6 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
 
             SpawnAtPosition(ent.Comp.LevelUpVfx, Transform(ent).Coordinates);
         }
-    }
-
-    private void OnStartCollide(Entity<CP14VampireClanHeartComponent> ent, ref StartCollideEvent args)
-    {
-        if (!TryComp<CP14VampireTreeCollectableComponent>(args.OtherEntity, out var collectable))
-            return;
-
-        AddEssence(ent, collectable.Essence);
-        Del(args.OtherEntity);
-
-        _audio.PlayPvs(collectable.CollectSound, ent);
     }
 
     protected override void OnVampireInit(Entity<CP14VampireComponent> ent, ref MapInitEvent args)

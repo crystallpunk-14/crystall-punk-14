@@ -22,4 +22,8 @@ cp14-vampire-tree-other-info = "{$name}": [color=red]{$count}[/color] эссен
 
 ## Announcements
 
-cp14-vampire-tree-growing = "{$name}" вырастает до {$level} уровня!
+cp14-vampire-tree-growing = Сердце клана "{$name}" вырастает до {$level} уровня!
+cp14-vampire-tree-growing-self = Ваше сердце клана вырастает до {$level} уровня!
+cp14-vampire-tree-damaged = Ваше сердце клана атаковано!
+cp14-vampire-tree-destroyed = Сердце клана "{$name}" разрушено!
+cp14-vampire-tree-destroyed-self = Ваше сердце клана разрушено!

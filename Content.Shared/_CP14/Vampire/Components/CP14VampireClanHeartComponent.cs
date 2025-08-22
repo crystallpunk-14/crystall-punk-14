@@ -40,6 +40,18 @@ public sealed partial class CP14VampireClanHeartComponent : Component
     [DataField]
     public TimeSpan NextRegenTime = TimeSpan.Zero;
 
+    /// <summary>
+    /// For reduce damage announce spamming
+    /// </summary>
+    [DataField]
+    public TimeSpan MaxAnnounceFreq = TimeSpan.FromSeconds(10f);
+
+    /// <summary>
+    /// For reduce damage announce spamming
+    /// </summary>
+    [DataField]
+    public TimeSpan NextAnnounceTime = TimeSpan.Zero;
+
     public int Level
     {
         get

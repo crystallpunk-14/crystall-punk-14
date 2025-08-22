@@ -2,6 +2,8 @@ using System.Text;
 using Content.Server.Chat.Systems;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.Damage;
+using Content.Shared.Destructible;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
 using Robust.Shared.Audio;
@@ -17,54 +19,37 @@ public sealed partial class CP14VampireSystem
 
     private void InitializeAnnounces()
     {
-        SubscribeLocalEvent<CP14VampireClanHeartComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, DamageChangedEvent>(OnHeartDamaged);
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, ComponentRemove>(OnHeartDestructed);
     }
 
-    private void OnExamined(Entity<CP14VampireClanHeartComponent> ent, ref ExaminedEvent args)
+
+    private void OnHeartDamaged(Entity<CP14VampireClanHeartComponent> ent, ref DamageChangedEvent args)
     {
-        if (!HasComp<CP14VampireComponent>(args.Examiner) && !HasComp<GhostComponent>(args.Examiner))
+        if (ent.Comp.Faction is null)
             return;
 
-        var sb = new StringBuilder();
+        if (!args.DamageIncreased)
+            return;
 
-        // Faction
-        if (Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
-            sb.Append(Loc.GetString("cp14-vampire-tree-examine-faction", ("faction", Loc.GetString(indexedFaction.Name))) + "\n");
+        if (_timing.CurTime < ent.Comp.NextAnnounceTime)
+            return;
 
-        // Are they friend or foe?
-        if (TryComp<CP14VampireComponent>(args.Examiner, out var examinerVampire))
-        {
-            if (examinerVampire.Faction == ent.Comp.Faction)
-                sb.Append(Loc.GetString("cp14-vampire-tree-examine-friend") + "\n");
-            else
-                sb.Append(Loc.GetString("cp14-vampire-tree-examine-enemy") + "\n");
-        }
+        ent.Comp.NextAnnounceTime = _timing.CurTime + ent.Comp.MaxAnnounceFreq;
 
-        //Progress
-        sb.Append(Loc.GetString("cp14-vampire-tree-examine-level",
-            ("level", ent.Comp.Level),
-            ("essence", ent.Comp.EssenceFromLevelStart),
-            ("left", ent.Comp.EssenceToNextLevel?.ToString() ?? "∞")) + "\n"+ "\n");
+        AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-damaged"));
+    }
 
-        var query = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
+    private void OnHeartDestructed(Entity<CP14VampireClanHeartComponent> ent, ref ComponentRemove args)
+    {
+        if (ent.Comp.Faction is null)
+            return;
 
-        sb.Append(Loc.GetString("cp14-vampire-tree-other-title") + "\n");
-        while (query.MoveNext(out var uid, out var heart))
-        {
-            if (uid == ent.Owner)
-                continue;
+        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+            return;
 
-            if (!Proto.TryIndex(heart.Faction, out var indexedOtherFaction))
-                continue;
-
-            sb.Append(Loc.GetString("cp14-vampire-tree-other-info",
-                ("name", Loc.GetString(indexedOtherFaction.Name)),
-                ("essence", heart.EssenceFromLevelStart),
-                ("left", heart.EssenceToNextLevel?.ToString() ?? "∞"),
-                ("lvl", heart.Level)) + "\n");
-        }
-
-        args.PushMarkup(sb.ToString());
+        AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-destroyed-self"));
+        AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-destroyed", ("name", Loc.GetString(indexedFaction.Name))));
     }
 
     public void AnnounceToFaction(ProtoId<CP14VampireFactionPrototype> faction, string message)
@@ -80,7 +65,7 @@ public sealed partial class CP14VampireSystem
             filter.AddPlayer(actor.PlayerSession);
         }
 
-        _chat.DispatchFilteredAnnouncement(filter, message);
+        VampireAnnounce(filter, message);
     }
 
     public void AnnounceToOpposingFactions(ProtoId<CP14VampireFactionPrototype> faction, string message)
@@ -104,6 +89,7 @@ public sealed partial class CP14VampireSystem
         _chat.DispatchFilteredAnnouncement(
             players,
             message,
+            sender: Loc.GetString("cp14-vampire-sender"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/vampire.ogg"),
             colorOverride: Color.FromHex("#820e22"));
     }
