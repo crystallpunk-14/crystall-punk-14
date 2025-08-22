@@ -35,6 +35,7 @@
     event: !type:CP14DelayedWorldTargetActionEvent
       hidden: true
       breakOnMove: false
+      cooldown: 8
 
 - type: entity
   id: CP14ImpactEffectDigging
