@@ -21,6 +21,11 @@
       - !type:Jitter
       - !type:CP14StaminaChange
         staminaDelta: -15
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Shock: 4
     - !type:CP14SpellThrowFromUser
       throwPower: 2
       distance: 0.5
