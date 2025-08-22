@@ -7,13 +7,13 @@
   components:
   - type: Sprite
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/vampire_workbench.rsi
+    sprite: _CP14/Structures/Specific/Vampire/workbench.rsi
     layers:
     - state: base
     - state: fx
       shader: unshaded
   - type: Icon
-    sprite: _CP14/Structures/Furniture/vampire_workbench.rsi
+    sprite: _CP14/Structures/Specific/Vampire/workbench.rsi
     state: base
   - type: CP14Workbench
     craftSound:
@@ -61,9 +61,9 @@
   - type: Sprite
     drawdepth: Mobs
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/vampire_heart.rsi
+    sprite: _CP14/Structures/Specific/Vampire/heart.rsi
   - type: Icon
-    sprite: _CP14/Structures/Furniture/vampire_heart.rsi
+    sprite: _CP14/Structures/Specific/Vampire/heart.rsi
     state: base
   - type: LightBehaviour
     behaviours:
@@ -102,7 +102,7 @@
     - state: unnameable
       shader: unshaded
     - state: orb1
-      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
+      sprite: _CP14/Structures/Specific/Vampire/heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
@@ -126,7 +126,7 @@
     - state: devourers
       shader: unshaded
     - state: orb1
-      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
+      sprite: _CP14/Structures/Specific/Vampire/heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
@@ -150,7 +150,7 @@
     - state: childrens
       shader: unshaded
     - state: orb1
-      sprite: _CP14/Structures/Furniture/vampire_heart_orb.rsi
+      sprite: _CP14/Structures/Specific/Vampire/heart_orb.rsi
       shader: unshaded
       offset: 0, 0.5
       map: [ "level" ]
@@ -171,7 +171,7 @@
   components:
   - type: Sprite
     snapCardinals: true
-    sprite: _CP14/Structures/Furniture/vampire_heart.rsi
+    sprite: _CP14/Structures/Specific/Vampire/heart.rsi
     layers:
     - state: frame
   - type: Construction
@@ -195,4 +195,23 @@
   - type: Construction
     graph: CP14VampireClanHeartNightChildren
     node: CP14VampireClanHeartNightChildrenFrame
-  
+
+- type: entity
+  id: CP14VampireStoneAltar
+  parent: Bed
+  categories: [ ForkFiltered ]
+  name: bloody altar
+  description: A gruesome stone altar splattered with blood. Doubles the amount of blood essence extracted from vampire victims.
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _CP14/Structures/Specific/Vampire/altar.rsi
+    layers:
+    - state: base
+    - state: fx
+      shader: unshaded
+    noRot: true
+  - type: Icon
+    sprite: _CP14/Structures/Specific/Vampire/altar.rsi
+    state: base
