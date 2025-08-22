@@ -43,7 +43,7 @@
         enabled: true
   - type: CP14SkillPointConsumable
     pointType: Blood
-    consumeEffect: CP14ImpactEffectBloodEssence
+    consumeEffect: CP14ImpactEffectBloodEssenceInverse
     whitelist:
       components:
       - CP14Vampire
@@ -64,9 +64,9 @@
   - type: Sprite
     noRot: true
     drawdepth: Effects
-    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    sprite: _CP14/Effects/Magic/cast_impact32.rsi
     layers:
-    - state: particles_up
+    - state: burst
       color: "#d60032"
       shader: unshaded
   - type: PointLight
@@ -74,6 +74,32 @@
     radius: 4.0
     energy: 3.0
   - type: LightFade
-    duration: 1.5
+    duration: 2.5
   - type: TimedDespawn
-    lifetime: 1.6
+    lifetime: 2.5
+
+- type: entity
+  id: CP14ImpactEffectBloodEssenceInverse
+  parent: CP14ImpactEffectBloodEssence
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/cast_impact32.rsi
+    layers:
+    - state: burst_in
+      color: "#d60032"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectBloodEssence2
+  parent: CP14ImpactEffectBloodEssence
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/cast_impact32.rsi
+    layers:
+    - state: burst2
+      color: "#d60032"
+      shader: unshaded

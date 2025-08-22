@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Vampire;
 
@@ -13,4 +14,10 @@ public sealed partial class CP14VampireVisualsComponent : Component
 
     [DataField]
     public string FangsMap = "vampire_fangs";
+
+    [DataField]
+    public EntProtoId EnableVFX = "CP14ImpactEffectBloodEssence2";
+
+    [DataField]
+    public EntProtoId DisableVFX = "CP14ImpactEffectBloodEssenceInverse";
 }

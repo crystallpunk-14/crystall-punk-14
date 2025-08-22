@@ -53,7 +53,7 @@ public abstract partial class CP14SharedSkillSystem : EntitySystem
 
         //Client VFX
         if (_net.IsClient)
-            SpawnAttachedTo(ent.Comp.ConsumeEffect, position);
+            SpawnAtPosition(ent.Comp.ConsumeEffect, position);
 
         _audio.PlayPredicted(ent.Comp.ConsumeSound, position, args.User);
 

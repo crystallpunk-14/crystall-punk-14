@@ -12,3 +12,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "'Arcane Winds' by LINK"
   source: "https://github.com/crystallpunk-14/crystall-punk-14"
+
+- files: ["blood_fog.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "'Creeping Blood Fog' by SoundFlakes"
+  source: "https://freesound.org/people/SoundFlakes/sounds/751524/"
