@@ -2,3 +2,8 @@
   license: "CC-BY-4.0"
   copyright: 'by Victor_Natas of Freesound.org'
   source: "https://freesound.org/people/Victor_Natas/sounds/612156/"
+
+- files: ["vampire.ogg"]
+  license: "CC-BY-NC-3.0"
+  copyright: 'by SergeQuadrado of Freesound.org.'
+  source: "https://freesound.org/people/SergeQuadrado/sounds/455364/"

@@ -28,6 +28,8 @@ cp14-stack-ash-pile = pile of ashes
 
 cp14-stack-group-wooden-planks-any = planks (any)
 
+cp14-stack-blood-essence = blood essence
+
 cp14-stack-hide-thin = thin hide
 cp14-stack-hide = coarse hide
 cp14-stack-hide-rugged = rugged hide

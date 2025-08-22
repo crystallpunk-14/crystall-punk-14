@@ -1,10 +1,14 @@
 using System.Linq;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Systems;
+using Content.Shared._CP14.Skill;
+using Content.Shared._CP14.Skill.Components;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
+using Content.Shared.FixedPoint;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
@@ -18,6 +22,7 @@ public abstract partial class CP14SharedMagicSystem
 {
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     [Dependency] private readonly SharedHandsSystem _hand = default!;
+    [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
 
     private void InitializeChecks()
     {
@@ -26,6 +31,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14CastMagicEffectAttemptEvent>(OnMaterialCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
+        SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, CP14CastMagicEffectAttemptEvent>(OnSkillPointCheck);
         SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
         SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
@@ -33,9 +39,15 @@ public abstract partial class CP14SharedMagicSystem
         //Verbal speaking
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
+
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
+
+        //Consuming resources
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
+        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
+        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
+        SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
     }
 
     /// <summary>
@@ -83,6 +95,35 @@ public abstract partial class CP14SharedMagicSystem
 
         args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
         args.Cancel();
+    }
+
+    private void OnSkillPointCheck(Entity<CP14MagicEffectSkillPointCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    {
+        if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint) || ent.Comp.SkillPoint is null)
+            return;
+
+        if (!TryComp<CP14SkillStorageComponent>(args.Performer, out var skillStorage))
+        {
+            args.PushReason(Loc.GetString("cp14-magic-spell-skillpoint-not-enough", ("name", Loc.GetString(indexedSkillPoint.Name)), ("count", ent.Comp.Count)));
+            args.Cancel();
+            return;
+        }
+
+        var points = skillStorage.SkillPoints;
+        if (points.TryGetValue(ent.Comp.SkillPoint.Value, out var currentPoints))
+        {
+            var freePoints = currentPoints.Max - currentPoints.Sum;
+
+            if (freePoints < ent.Comp.Count)
+            {
+                var d = ent.Comp.Count - freePoints;
+
+                args.PushReason(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
+                    ("name", Loc.GetString(indexedSkillPoint.Name)),
+                    ("count", d)));
+                args.Cancel();
+            }
+        }
     }
 
     private void OnSomaticCheck(Entity<CP14MagicEffectSomaticAspectComponent> ent,
@@ -258,5 +299,44 @@ public abstract partial class CP14SharedMagicSystem
         }
 
         ent.Comp.Requirement.PostCraft(EntityManager, _proto, heldedItems);
+    }
+
+    private void OnStaminaConsume(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (args.Performer is null)
+            return;
+
+        _stamina.TakeStaminaDamage(args.Performer.Value, ent.Comp.Stamina, visual: false);
+    }
+
+    private void OnManaConsume(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (!TryComp<CP14MagicEffectComponent>(ent, out var magicEffect))
+            return;
+
+        var requiredMana = CalculateManacost(ent, args.Performer);
+
+        //First - used object
+        if (magicEffect.SpellStorage is not null && TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicStorage))
+        {
+            var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
+            RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
+
+            _magicEnergy.ChangeEnergy((magicEffect.SpellStorage.Value, magicStorage), -requiredMana, out var changedEnergy, out var overloadedEnergy, safe: false);
+            requiredMana -= FixedPoint2.Abs(changedEnergy + overloadedEnergy);
+        }
+
+        //Second - action user
+        if (requiredMana > 0 &&
+            TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
+            _magicEnergy.ChangeEnergy((args.Performer.Value, playerMana), -requiredMana, out _, out _, safe: false);
+    }
+
+    private void OnSkillPointConsume(Entity<CP14MagicEffectSkillPointCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    {
+        if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint) || ent.Comp.SkillPoint is null || args.Performer is null)
+            return;
+
+        _skill.RemoveSkillPoints(args.Performer.Value, ent.Comp.SkillPoint.Value,  ent.Comp.Count);
     }
 }

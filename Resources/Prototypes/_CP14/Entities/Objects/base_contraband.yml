@@ -1,0 +1,13 @@
+- type: entity
+  id: CP14BaseMinorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CP14Minor
+
+- type: entity
+  id: CP14BaseMajorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: CP14Major

@@ -218,7 +218,7 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             //Restrictions
             foreach (var req in skill.Restrictions)
             {
-                var color = req.Check(_entManager, _targetPlayer.Value, skill) ? "green" : "red";
+                var color = req.Check(_entManager, _targetPlayer.Value) ? "green" : "red";
 
                 sb.Append($"- [color={color}]{req.GetDescription(_entManager, _proto)}[/color]\n");
             }
@@ -245,11 +245,9 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
 
         var skillPointsMap = storage.SkillPoints;
 
-        if (skillPointsMap.TryGetValue(_selectedSkillTree.SkillType, out var skillContainer))
-            _window.LevelLabel.Text =
-                $"{Loc.GetString(indexedSkillType.Name)}: {skillContainer.Sum}/{skillContainer.Max}";
-        else
-            _window.LevelLabel.Text = $"{Loc.GetString(indexedSkillType.Name)}: 0/0";
+        _window.LevelLabel.Text = skillPointsMap.TryGetValue(_selectedSkillTree.SkillType, out var skillContainer)
+            ? $"{Loc.GetString(indexedSkillType.Name)}: {skillContainer.Sum}/{skillContainer.Max}"
+            : $"{Loc.GetString(indexedSkillType.Name)}: 0/0";
 
         _window.LevelTexture.Texture = indexedSkillType.Icon?.Frame0();
 
@@ -263,8 +261,15 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
             if (skill.Tree != _selectedSkillTree)
                 continue;
 
+            var hide = false;
             foreach (var req in skill.Restrictions)
             {
+                if (req.HideFromUI && !req.Check(_entManager, _targetPlayer.Value))
+                {
+                    hide = true;
+                    break;
+                }
+
                 switch (req)
                 {
                     case NeedPrerequisite prerequisite:
@@ -279,13 +284,16 @@ public sealed class CP14SkillUIController : UIController, IOnStateEntered<Gamepl
                 }
             }
 
-            var nodeTreeElement = new CP14NodeTreeElement(
-                skill.ID,
-                gained: learned.Contains(skill),
-                active: _skill.CanLearnSkill(_targetPlayer.Value, skill),
-                skill.SkillUiPosition * 25f,
-                skill.Icon);
-            nodeTreeElements.Add(nodeTreeElement);
+            if (!hide)
+            {
+                var nodeTreeElement = new CP14NodeTreeElement(
+                    skill.ID,
+                    gained: learned.Contains(skill),
+                    active: _skill.CanLearnSkill(_targetPlayer.Value, skill),
+                    skill.SkillUiPosition * 25f,
+                    skill.Icon);
+                nodeTreeElements.Add(nodeTreeElement);
+            }
         }
 
         _window.GraphControl.UpdateState(

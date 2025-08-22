@@ -1,6 +1,10 @@
 cp14-skill-req-prerequisite = Навык "{$name}" должен быть изучен
 cp14-skill-req-species = Вы должны быть расы "{$name}"
 cp14-skill-req-notspecies = Вы не должны быть расы "{$name}"
+cp14-skill-req-vampire-clan = Вы должны принадлежать вампирскому клану "{$name}"
 cp14-skill-req-researched = Необходимо провести исследование на исследовательском столе
 cp14-skill-req-impossible = Невозможно изучить во время раунда на текущий момент
 cp14-skill-req-god-follower-percentage = Количество ваших последователей должно быть больше {$count}%
+cp14-skill-req-timegate = Доступно для изучения через {$minute} минут после начала раунда. Осталось минут: {$left}
+cp14-skill-req-timegate-disabled = Доступно для изучения через {$minute} минут после начала раунда, но ограничения по времени отключены.
+cp14-skill-req-vampire-tree-level = Вы должны находиться рядом с сердцем вашего клана, как минимум {$lvl} уровня.
