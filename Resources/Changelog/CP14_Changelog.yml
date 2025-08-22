@@ -1724,3 +1724,33 @@
   id: 8224
   time: '2025-08-22T15:46:28.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1672
+- author: TheShuEd
+  changes:
+  - message: Fixed a bug where vampires could not see other vampires
+    type: Fix
+  - message: "removed tier 1 skill \u201CDemonstration of power\u201D for vampires\
+      \ (only t2 left)"
+    type: Remove
+  - message: "Added a new vampire tier 1 skill \u201CHypnosis\u201D - allows you to\
+      \ keep the target asleep for up to 30 seconds."
+    type: Add
+  - message: Starting blood essence supply for vampires increased from 1 to 2
+    type: Add
+  - message: All vampire buildings in the construction menu on G are now in a separate
+      category
+    type: Fix
+  - message: Starting vampire skills are now cheaper
+    type: Tweak
+  - message: Vampire hunger has been significantly reduced
+    type: Fix
+  - message: Rabbits and boars now spawn around game maps instead of aggressive mobs
+    type: Tweak
+  - message: Vampires can no longer bite SSD players!
+    type: Tweak
+  - message: Vampire blood can no longer be identified without alchemical vision.
+    type: Fix
+  - message: The tieflings blood no longer ignites vampires!
+    type: Remove
+  id: 8225
+  time: '2025-08-22T22:56:01.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1696
