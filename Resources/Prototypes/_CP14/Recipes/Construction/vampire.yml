@@ -5,7 +5,7 @@
   graph: CP14WorkbenchVampire
   startNode: start
   targetNode: CP14WorkbenchVampire
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -21,7 +21,7 @@
   graph: CP14VampireStoneAltar
   startNode: start
   targetNode: CP14VampireStoneAltar
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -38,7 +38,7 @@
   graph: CP14VampireClanHeartUnnameable
   startNode: start
   targetNode: CP14VampireClanHeartUnnameable
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -54,7 +54,7 @@
   graph: CP14VampirePortalGlyphUnnameable
   startNode: start
   targetNode: CP14VampirePortalGlyphUnnameable
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -71,7 +71,7 @@
   graph: CP14VampireClanHeartDevourers
   startNode: start
   targetNode: CP14VampireClanHeartDevourers
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -87,7 +87,7 @@
   graph: CP14VampirePortalGlyphDevourers
   startNode: start
   targetNode: CP14VampirePortalGlyphDevourers
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -104,7 +104,7 @@
   graph: CP14VampireClanHeartNightChildren
   startNode: start
   targetNode: CP14VampireClanHeartNightChildren
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -120,7 +120,7 @@
   graph: CP14VampirePortalGlyphNightChildrens
   startNode: start
   targetNode: CP14VampirePortalGlyphNightChildrens
-  category: construction-category-furniture
+  category: cp14-construction-category-vampire
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

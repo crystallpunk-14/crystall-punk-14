@@ -28,7 +28,7 @@ public sealed partial class CP14VampireComponent : Component
     public ProtoId<CP14VampireFactionPrototype>? Faction;
 
     [DataField]
-    public FixedPoint2 SkillPointCount = 1f;
+    public FixedPoint2 SkillPointCount = 3f;
 
     [DataField]
     public TimeSpan ToggleVisualsTime = TimeSpan.FromSeconds(2f);
@@ -56,6 +56,4 @@ public sealed partial class CP14VampireComponent : Component
 
     [DataField]
     public float IgniteThreshold = 350f;
-
-    public override bool SendOnlyToOwner => true;
 }

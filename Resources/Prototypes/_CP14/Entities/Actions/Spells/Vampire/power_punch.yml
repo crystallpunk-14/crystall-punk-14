@@ -4,8 +4,6 @@
   name: Demonstration of strength
   description: By channeling the power of the oldest vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
   components:
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.4
   - type: CP14MagicEffectPacifiedBlock
   - type: CP14MagicEffectVampire
   - type: CP14MagicEffectManaCost
@@ -15,7 +13,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Paralyze
-        paralyzeTime: 1
+        paralyzeTime: 3
     - !type:CP14SpellThrowFromUser
       throwPower: 9
     - !type:CP14SpellSpawnEntityOnTarget
@@ -39,7 +37,7 @@
   - type: EntityTargetAction
     canTargetSelf: false
     event: !type:CP14EntityTargetActionEvent
-      cooldown: 15
+      cooldown: 45
     whitelist:
       components:
       - Body
@@ -59,7 +57,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:Paralyze
-        paralyzeTime: 2
+        paralyzeTime: 6
     - !type:CP14SpellThrowFromUser
       throwPower: 15
     - !type:CP14SpellSpawnEntityOnTarget
