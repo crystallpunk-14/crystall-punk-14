@@ -110,5 +110,3 @@
     tags:
       - FootstepSound
       - CP14Mosquito
-  - type: StealTarget
-    stealGroup: CP14Mole

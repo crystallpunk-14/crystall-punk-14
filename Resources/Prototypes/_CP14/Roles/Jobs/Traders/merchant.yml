@@ -7,6 +7,7 @@
   startingGear: CP14MerchantGear
   icon: "CP14JobIconMerchant"
   supervisors: cp14-job-supervisors-commandant
+  canBeAntag: false
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hours

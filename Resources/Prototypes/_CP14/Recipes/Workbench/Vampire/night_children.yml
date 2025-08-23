@@ -1,0 +1,36 @@
+- type: CP14Recipe
+  id: CP14ClothingMaskVampireVoiceNightChildrens
+  tag: CP14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateNightChildrens
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 2
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 1
+  result: CP14ClothingMaskVampireVoiceNightChildrens
+  resultCount: 1
+
+- type: CP14Recipe
+  id: CP14ClothingCloakVampireNightChildrens
+  tag: CP14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateNightChildrens
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4
+  - !type:StackResource
+    stack: CP14MithrilBar
+    count: 1
+  - !type:StackResource
+    stack: CP14BloodEssence
+    count: 1
+  result: CP14ClothingCloakVampireNightChildrens
+  resultCount: 1

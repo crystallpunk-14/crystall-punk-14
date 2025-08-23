@@ -7,6 +7,7 @@
   startingGear: CP14InvestigatorGear
   icon: "CP14JobIconInvestigator"
   supervisors: cp14-job-supervisors-guard-commander
+  canBeAntag: false
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Guard

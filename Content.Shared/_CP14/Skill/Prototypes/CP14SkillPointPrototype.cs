@@ -16,4 +16,10 @@ public sealed partial class CP14SkillPointPrototype : IPrototype
 
     [DataField]
     public SpriteSpecifier? Icon;
+
+    [DataField]
+    public LocId? GetPointPopup;
+
+    [DataField]
+    public LocId? LosePointPopup;
 }

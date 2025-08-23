@@ -79,7 +79,7 @@
         map: ["fuel"]
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
       - trigger:

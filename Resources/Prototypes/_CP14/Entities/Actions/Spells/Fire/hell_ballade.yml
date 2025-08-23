@@ -8,9 +8,9 @@
     sprite: _CP14/Actions/Spells/fire.rsi
     state: fire_music
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.8
+    speedMultiplier: 0.5
   - type: CP14MagicEffectManaCost
-    manaCost: 1
+    manaCost: 8
   - type: CP14MagicEffect
     magicType: Fire
     effects:
@@ -35,6 +35,7 @@
   - type: CP14MagicEffectRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHellBallade
+  - type: CP14MagicEffectPacifiedBlock
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
@@ -45,6 +46,7 @@
       cooldown: 15
       castTime: 120
       hidden: true
+      breakOnDamage: false
 
 - type: entity
   id: CP14ImpactEffectHellBallade

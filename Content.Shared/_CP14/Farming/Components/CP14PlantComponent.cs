@@ -38,8 +38,11 @@ public sealed partial class CP14PlantComponent : Component
     [DataField, AutoPausedField]
     public TimeSpan NextUpdateTime = TimeSpan.Zero;
 
-    [DataField(required: true)]
-    public string Solution = string.Empty;
+    /// <summary>
+    /// Solution for metabolizing resources
+    /// </summary>
+    [DataField]
+    public string? Solution;
 }
 
 /// <summary>

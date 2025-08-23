@@ -1,0 +1,9 @@
+- type: parallax
+  id: CP14Blood
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_CP14/Parallaxes/BloodBG.png"
+      slowness: 0.998046875
+      scale: "1, 1"
+

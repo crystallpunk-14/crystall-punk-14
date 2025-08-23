@@ -1,0 +1,70 @@
+- type: entity
+  id: CP14ActionSpellBloodConnection
+  parent: CP14ActionSpellBase
+  name: Blood connection
+  description: You can sense the location of vampires from your clan from miles away.
+  components:
+  - type: CP14MagicEffectManaCost
+    manaCost: 10
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellPointerToVampireClan
+      searchRange: 60
+      pointerEntity: CP14BloodlustPointer
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneVampireHypnosis
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: search_clan
+  - type: InstantAction
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 8
+      castDelay: 1.5
+
+- type: entity
+  parent: CP14ActionSpellBloodConnection
+  id: CP14ActionSpellBloodEnemySearch
+  name: Blood identification
+  description: You are searching within a large radius for all vampires from other factions.
+  components:
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellPointerToVampireClan
+      inversed: true
+      searchRange: 60
+      pointerEntity: CP14BloodlustPointer
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: search_clan_enemy
+
+- type: entity
+  id: CP14BloodlustPointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      color: red
+      sprite: /Textures/_CP14/Effects/Magic/pointer.rsi
+      offset: 0, -1
+      layers:
+        - state: pointer
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: PointLight
+      netSync: false
+      radius: 3
+      color: red
+      energy: 0.2
+    - type: TimedDespawn
+      lifetime: 8
+    - type: Tag
+      tags:
+      - HideContextMenu
