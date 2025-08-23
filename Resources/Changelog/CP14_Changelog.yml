@@ -1761,3 +1761,35 @@
   id: 8226
   time: '2025-08-23T09:00:27.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1695
+- author: PhantornRU
+  changes:
+  - message: Added Trade Vision and Contracts for villagers
+    type: Add
+  - message: Added Trade Vision and AlchemyVision for Lumera
+    type: Add
+  id: 8227
+  time: '2025-08-23T12:03:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1657
+- author: TheShuEd
+  changes:
+  - message: Magical vision no longer shows a person's aura during examination. Guards
+      may have to force people to use spells to check their aura imprint.
+    type: Tweak
+  - message: Vampires have gained access to the "Vampire Lair" trading faction.
+    type: Add
+  - message: "A new potion called \u201CConfusing Aura\u201D that temporarily gives\
+      \ the user a new false aura imprint when using spells. Currently only available\
+      \ to vampires in the store."
+    type: Add
+  - message: "The spell \u201CDispel Magic\u201D can now destroy traces of magic from\
+      \ spells that have been used. (However, traces of dispel magic will remain.)"
+    type: Add
+  - message: Vampire clothing (mask and cloak) no longer requires metals to craft,
+      making them accessible early in the game.
+    type: Tweak
+  - message: The traces of the aura of used spells gradually dissipate, retaining
+      less and less information.
+    type: Tweak
+  id: 8228
+  time: '2025-08-23T12:03:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1697
