@@ -1,0 +1,68 @@
+- type: entity
+  id: CP14ActionSpellVampireHypnosys
+  parent: CP14ActionSpellBase
+  name: Hypnosys
+  description: You focus on the target, mesmerizing and lulling it to sleep.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14MagicEffectVampire
+  - type: CP14MagicEffectManaCost
+    manaCost: 5
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
+      spawns:
+      - CP14ImpactEffectVampireHypnosis
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: CP14StatusEffectVampireForceSleep
+        type: Add
+        time: 4
+        refresh: true
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneVampireHypnosis
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+  - type: TargetAction
+    range: 3
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:CP14ToggleableEntityTargetActionEvent
+      effectFrequency: 3
+      cooldown: 60
+      castTime: 30
+      distanceThreshold: 6
+
+- type: entity
+  id: CP14RuneVampireHypnosis
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: red
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: red
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectVampireHypnosis
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: red
+      shader: unshaded

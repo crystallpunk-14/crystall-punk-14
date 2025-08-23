@@ -20,11 +20,9 @@
     parent: true
     components:
     - type: Stealth
-      minVisibility: 0.5
-      lastVisibility: 0.5
     - type: StealthOnMove
       passiveVisibilityRate: -0.5
-      movementVisibilityRate: 0.5
+      movementVisibilityRate: 0.2
   - type: UseDelay
     delay: 3
   - type: StaticPrice

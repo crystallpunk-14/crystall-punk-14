@@ -1,5 +1,6 @@
 - type: entity
   id: CP14StatusEffectMagicArmor
+  parent: MobStatusEffectBase
   components:
   - type: StatusEffect
   - type: StatusEffectAlert
@@ -45,3 +46,14 @@
     radius: 5.0
     energy: 1
     color: "#efedff"
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: CP14StatusEffectVampireForceSleep
+  name: vampire forced sleep
+  components:
+  - type: StatusEffectAlert
+    alert: CP14VampireSleeping
+  - type: ForcedSleepingStatusEffect
+  - type: StunnedStatusEffect
+  - type: KnockdownStatusEffect

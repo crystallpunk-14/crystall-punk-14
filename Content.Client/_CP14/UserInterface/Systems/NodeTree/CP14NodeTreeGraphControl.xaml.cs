@@ -133,6 +133,9 @@ public sealed partial class CP14NodeTreeGraphControl : BoxContainer
         //Draw connection lines
         foreach (var edge in _state.Edges)
         {
+            if (!_nodeDict.ContainsKey(edge.Item1) || !_nodeDict.ContainsKey(edge.Item2))
+                continue;
+
             var node1 = _nodeDict[edge.Item1];
             var node2 = _nodeDict[edge.Item2];
             var fromPos = node1.UiPosition * Scale + _globalOffset;

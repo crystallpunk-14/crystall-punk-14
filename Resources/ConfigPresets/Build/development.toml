@@ -45,3 +45,9 @@ ssd_sleep_time = 3600
 
 [server]
 rules_file = "CP14Rules"
+
+[audio]
+lobby_music_collection = "CP14LobbyMusic"
+
+[cp14]
+skill_timers = false

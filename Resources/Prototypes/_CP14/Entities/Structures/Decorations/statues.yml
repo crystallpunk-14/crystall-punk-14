@@ -32,7 +32,7 @@
         - MachineLayer
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14Rock
   - type: Destructible
     thresholds:
     - trigger:
@@ -143,7 +143,7 @@
         - MachineLayer
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14Rock
   - type: Destructible
     thresholds:
     - trigger:
@@ -210,7 +210,7 @@
         - MachineLayer
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14Rock
   - type: Destructible
     thresholds:
     - trigger:
@@ -268,7 +268,7 @@
   - type: SpriteFade
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Rock
+    damageModifierSet: CP14Rock
   - type: Destructible
     thresholds:
     - trigger:

@@ -18,8 +18,8 @@ public sealed partial class CP14IsNight : RulesRule
         if (map is null)
             return false;
 
-        var lightLevel = dayCycle.GetLightLevel(map.Value);
+        var isDay = dayCycle.IsDayNow(map.Value);
 
-        return Inverted ? lightLevel < 0.5 : lightLevel >= 0.5;
+        return Inverted ? !isDay : isDay;
     }
 }

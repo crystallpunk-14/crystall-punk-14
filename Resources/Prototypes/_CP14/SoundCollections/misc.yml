@@ -5,6 +5,7 @@
     - /Audio/_CP14/Lobby/crystal.ogg
     - /Audio/_CP14/Lobby/eldermourne.ogg
     - /Audio/_CP14/Lobby/arcane_winds.ogg
+    - /Audio/_CP14/Lobby/blood_fog.ogg
 
 - type: soundCollection
   id: CP14DemiplaneIntro

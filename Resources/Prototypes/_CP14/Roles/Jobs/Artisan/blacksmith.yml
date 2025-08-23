@@ -6,6 +6,7 @@
   startingGear: CP14BlacksmithGear
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
+  canBeAntag: false
   special:
     - !type:CP14LearnSkillsSpecial
       skills:
