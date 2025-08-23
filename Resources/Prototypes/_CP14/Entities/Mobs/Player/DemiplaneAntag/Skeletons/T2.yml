@@ -51,6 +51,9 @@
       Memory:
         max: 0
     freeLearnedSkills:
+    - SwordMastery
+    - RapierMastery
+    - SkimitarMastery
     - AthleticT1
     - AthleticT2
     - AthleticT3
