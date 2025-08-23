@@ -18,6 +18,12 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonHalberdT2
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0 
+    freeLearnedSkills:
+    - SwordMastery
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
@@ -32,6 +38,12 @@
   - type: Loadout
     prototypes:
     - CP14MobSkeletonSwordT2
+  - type: CP14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0 
+    freeLearnedSkills:
+    - SwordMastery
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
@@ -51,8 +63,6 @@
       Memory:
         max: 0
     freeLearnedSkills:
-    - SwordMastery
-    - RapierMastery
     - SkimitarMastery
     - AthleticT1
     - AthleticT2
@@ -113,8 +123,6 @@
         max: 4
     freeLearnedSkills:
     - SwordMastery
-    - RapierMastery
-    - SkimitarMastery
     - HydrosophistryT1
     - HydrosophistryT2
     - MetamagicT1
@@ -125,6 +133,7 @@
     - CP14ActionSpellManaConsumeElf
     - CP14ActionSpellManaGiftElf
     - CP14ActionSpellMagicSplitting
+
 - type: entity
   id: CP14MobUndeadSkeletonBardT2
   parent: CP14MobUndeadSkeletonDemiplaneT2

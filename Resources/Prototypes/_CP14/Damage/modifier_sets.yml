@@ -197,8 +197,7 @@
   id: CP14Skeleton
   coefficients:
     Blunt: 1.2
-    Slash: 0.8
-    Piercing: 0.6
+    Piercing: 0.8
     Cold: 0.0
     Poison: 0.0
     Radiation: 0.0
