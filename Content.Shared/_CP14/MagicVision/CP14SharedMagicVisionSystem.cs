@@ -23,15 +23,6 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CP14AuraImprintComponent, ExaminedEvent>(OnAuraHolderExamine);
-    }
-
-    private void OnAuraHolderExamine(Entity<CP14AuraImprintComponent> ent, ref ExaminedEvent args)
-    {
-        if (!HasComp<CP14MagicVisionComponent>(args.Examiner))
-            return;
-
-        args.PushMarkup($"{Loc.GetString("cp14-magic-vision-aura")} {ent.Comp.Imprint}");
     }
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
