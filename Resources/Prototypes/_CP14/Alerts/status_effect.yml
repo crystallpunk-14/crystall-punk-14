@@ -15,3 +15,11 @@
   icons:
   - sprite: _CP14/Actions/Spells/vampire.rsi
     state: blood_moon
+
+- type: alert
+  id: CP14ConfusedAura
+  name: cp14-alerts-confused-aura-name
+  description: cp14-alerts-confused-aura-desc
+  icons:
+  - sprite: _CP14/Actions/Spells/meta.rsi
+    state: magic_vision_shuffled

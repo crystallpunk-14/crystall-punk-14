@@ -19,7 +19,7 @@ public sealed partial class ShowHealthBarsComponent : Component
     [AutoNetworkedField]
     public List<ProtoId<DamageContainerPrototype>> DamageContainers = new()
     {
-        "Biological"
+        "CP14Biological" //CP14 variant
     };
 
     [DataField]

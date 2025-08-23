@@ -20,8 +20,8 @@
         type: VoiceMaskBoundUserInterface
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 10
       CP14Leather: 10
+      CP14BloodEssence: 1
 
 - type: entity
   parent: CP14ClothingMaskVampireVoiceBase

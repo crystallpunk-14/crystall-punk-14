@@ -1,5 +1,7 @@
 - type: entity
-  parent: BaseItem
+  parent: 
+  - BaseItem
+  - CP14SpectralBase
   id: CP14BloodEssence
   name: blood essence
   description: The essence of life, extracted by force. Only true vampires know how to use it.

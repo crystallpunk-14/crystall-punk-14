@@ -1,0 +1,9 @@
+- type: cp14TradingPosition
+  id: CP14BasicEffectConfuseAura
+  faction: VampireMarket
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:CP14BuyItemsService
+    product: CP14BasicEffectConfuseAura
