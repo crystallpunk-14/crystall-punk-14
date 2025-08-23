@@ -90,7 +90,7 @@
     - GodMerkas
   - type: CP14ReligionEntity
     religion: Merkas
-  - type: CP14ReligionVision 
+  - type: CP14ReligionVision
     shaderColor:  0.02, 0.36, 0.05
 
 - type: entity
@@ -118,3 +118,5 @@
         toggleAction: CP14ActionSpellGodLumeraWarp
   - type: CP14ReligionSpeaker
     speaker: CP14LumeraSpeakImpact
+  - type: CP14PriceScanner
+  - type: SolutionScanner
