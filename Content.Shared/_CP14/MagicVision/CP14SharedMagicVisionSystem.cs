@@ -1,7 +1,10 @@
+using System.Linq;
 using System.Text;
 using Content.Shared._CP14.AuraDNA;
+using Content.Shared._CP14.MagicVision.Components;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -15,6 +18,7 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     public readonly EntProtoId MagicTraceProto = "CP14MagicVisionMarker";
 
@@ -40,6 +44,19 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         args.AddMarkup(sb.ToString());
     }
 
+    public string? GetAuraImprint(Entity<CP14AuraImprintComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return null;
+
+        if (_statusEffects.TryEffectsWithComp<CP14HideMagicAuraStatusEffectComponent>(ent, out var hideComps))
+        {
+            return hideComps.First().Comp1.Imprint;
+        }
+
+        return ent.Comp.Imprint;
+    }
+
     /// <summary>
     /// Creates an invisible “magical trace” entity that can be seen with magical vision.
     /// </summary>
@@ -49,7 +66,7 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     /// <param name="duration">Duration of the magical trace</param>
     /// <param name="target">Optional: The direction in which this trace “faces.” When studying the trace,
     /// this direction can be seen in order to understand, for example, in which direction the spell was used.</param>
-    public void SpawnMagicVision(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityUid? aura = null, EntityCoordinates? target = null)
+    public void SpawnMagicTrace(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityUid? aura = null, EntityCoordinates? target = null)
     {
         if (_net.IsClient)
             return;
@@ -62,10 +79,8 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         markerComp.TargetCoordinates = target;
         markerComp.Icon = icon;
 
-        if (aura is not null && TryComp<CP14AuraImprintComponent>(aura, out var auraImprint))
-        {
-            markerComp.AuraImprint = auraImprint.Imprint;
-        }
+        if (aura is not null)
+            markerComp.AuraImprint = GetAuraImprint(aura.Value);
 
         _meta.SetEntityDescription(ent, description);
 

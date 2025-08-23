@@ -151,7 +151,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             && TryComp<ActionComponent>(ent, out var actionComp)
             && TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
         {
-            _magicVision.SpawnMagicVision(
+            _magicVision.SpawnMagicTrace(
                 Transform(args.User.Value).Coordinates,
                 actionComp.Icon,
                 Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
