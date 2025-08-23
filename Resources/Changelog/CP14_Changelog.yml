@@ -1793,3 +1793,12 @@
   id: 8228
   time: '2025-08-23T12:03:33.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1697
+- author: Nimfar11
+  changes:
+  - message: Adds bone material. This can be found in demiplanes or large animals.
+    type: Add
+  - message: Now you can make bone blades and bone armour from bones.
+    type: Tweak
+  id: 8229
+  time: '2025-08-23T12:06:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1683
