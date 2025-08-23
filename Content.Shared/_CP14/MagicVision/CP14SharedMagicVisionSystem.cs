@@ -34,12 +34,68 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         var sb = new StringBuilder();
 
         var timePassed = _timing.CurTime - ent.Comp.SpawnTime;
-        sb.Append($"{Loc.GetString("cp14-magic-vision-timed-past")} {timePassed.Minutes}:{(timePassed.Seconds < 10 ? "0" : "")}{timePassed.Seconds}\n");
+        var timeRemaining = ent.Comp.EndTime - _timing.CurTime;
+        var totalDuration = ent.Comp.EndTime - ent.Comp.SpawnTime;
 
-        if (ent.Comp.AuraImprint is not null)
+        sb.Append($"{Loc.GetString("cp14-magic-vision-timed-past")} {timePassed.Minutes}:{timePassed.Seconds:D2}\n");
+
+        if (string.IsNullOrEmpty(ent.Comp.AuraImprint))
         {
-            sb.Append($"{Loc.GetString("cp14-magic-vision-aura")} {ent.Comp.AuraImprint}");
+            args.AddMarkup(sb.ToString());
+            return;
         }
+
+        var imprint = ent.Comp.AuraImprint;
+
+        // Try to extract the content between [color=...] and [/color]
+        var startTag = imprint.IndexOf(']') + 1;
+        var endTag = imprint.LastIndexOf('[');
+        if (startTag <= 0 || endTag <= startTag)
+        {
+            sb.Append($"{Loc.GetString("cp14-magic-vision-aura")} {imprint}");
+            args.AddMarkup(sb.ToString());
+            return;
+        }
+
+        var content = imprint[startTag..endTag];
+        var obscuredContent = new StringBuilder(content.Length);
+
+        // Progress goes from 0 (fresh) to 1 (completely faded)
+        var progress = Math.Clamp(1.0 - (timeRemaining.TotalSeconds / totalDuration.TotalSeconds), 0.0, 1.0);
+
+        // Number of characters to obscure
+        var charsToObscure = (int)Math.Round(content.Length * progress);
+
+        // Deterministic pseudo-random based on content + entity id
+        var hash = (content + ent.Owner.Id).GetHashCode();
+
+        var obscuredCount = 0;
+        for (var i = 0; i < content.Length; i++)
+        {
+            // Pick bits from hash + index to ensure distribution
+            var mask = ((hash >> (i % 32)) ^ i) & 1;
+            var shouldObscure = obscuredCount < charsToObscure && mask == 1;
+
+            obscuredContent.Append(shouldObscure ? '~' : content[i]);
+            if (shouldObscure)
+                obscuredCount++;
+        }
+
+        // If we still didn't obscure enough (due to unlucky bit pattern), obscure remaining from the start
+        while (obscuredCount < charsToObscure && obscuredCount < obscuredContent.Length)
+        {
+            for (var i = 0; i < obscuredContent.Length && obscuredCount < charsToObscure; i++)
+            {
+                if (obscuredContent[i] != '~')
+                {
+                    obscuredContent[i] = '~';
+                    obscuredCount++;
+                }
+            }
+        }
+
+        var obscuredImprint = imprint.Substring(0, startTag) + obscuredContent + imprint.Substring(endTag);
+        sb.Append($"{Loc.GetString("cp14-magic-vision-aura")} {obscuredImprint}");
 
         args.AddMarkup(sb.ToString());
     }
@@ -66,7 +122,12 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
     /// <param name="duration">Duration of the magical trace</param>
     /// <param name="target">Optional: The direction in which this trace “faces.” When studying the trace,
     /// this direction can be seen in order to understand, for example, in which direction the spell was used.</param>
-    public void SpawnMagicTrace(EntityCoordinates position, SpriteSpecifier? icon, string description, TimeSpan duration, EntityUid? aura = null, EntityCoordinates? target = null)
+    public void SpawnMagicTrace(EntityCoordinates position,
+        SpriteSpecifier? icon,
+        string description,
+        TimeSpan duration,
+        EntityUid? aura = null,
+        EntityCoordinates? target = null)
     {
         if (_net.IsClient)
             return;
