@@ -22,10 +22,10 @@
         ignoreResistances: false
         damage:
           types:
-            Shock: 5
+            Shock: 12
       - !type:Jitter
       - !type:CP14StaminaChange
-        staminaDelta: -75
+        staminaDelta: -80
     - !type:CP14SpellThrowFromUser
       throwPower: 4
       distance: 1
@@ -71,9 +71,9 @@
   - type: Beam
     sound: /Audio/Effects/Lightning/lightningshock.ogg
   - type: TimedDespawn
-    lifetime: 2
+    lifetime: 1.5
   - type: LightFade
-    duration: 2
+    duration: 1.5
   - type: Tag
     tags:
       - HideContextMenu
@@ -88,10 +88,10 @@
         ignoreResistances: false
         damage:
           types:
-            Shock: 5
+            Shock: 10
       - !type:Jitter
       - !type:CP14StaminaChange
-        staminaDelta: -20
+        staminaDelta: -30
 
 - type: entity
   id: CP14RuneLightningStrike

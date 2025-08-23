@@ -1240,16 +1240,16 @@ ent-CP14ClothingPantsMerchantsPantaloons = купеческие панталон
 ent-CP14ClothingShirtBase = рубашка
     .desc = Приятный на ощупь материал, удобная свободная форма рубашки.
 
-ent-CP14ClothingShirtCottonBlack = холщовая черная рубашка
+ent-CP14ClothingShirtCottonBlack = хлопковая черная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlackDress = хлопковое черное платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonBlue = холщовая синяя рубашка
+ent-CP14ClothingShirtCottonBlue = хлопковая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonBlueCollar = холщовая синяя рубашка с воротником
+ent-CP14ClothingShirtCottonBlueCollar = хлопковая синяя рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlueCollarDress = хлопковое платье с голубым воротником
@@ -1258,34 +1258,34 @@ ent-CP14ClothingShirtBlueCollarDress = хлопковое платье с гол
 ent-CP14ClothingShirtMercenary = рубашка наемника
     .desc = Пестрая рубашка наемника.
 
-ent-CP14ClothingShirtBlueOpen = холщовая открытая синяя рубашка
+ent-CP14ClothingShirtBlueOpen = хлопковая открытая синяя рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtBlueOpenDress = хлопковое голубое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtRedOpen = холщовая открытая красная рубашка
+ent-CP14ClothingShirtRedOpen = хлопковая открытая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtRedOpenDress = хлопковое красное открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtYellowOpen = холщовая открытая желтая рубашка
+ent-CP14ClothingShirtYellowOpen = хлопковая открытая желтая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtYellowOpenDress = хлопковое желтое открытое платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonPurple = холщовая фиолетовая рубашка
+ent-CP14ClothingShirtCottonPurple = хлопковая фиолетовая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonRed = холщовая красная рубашка
+ent-CP14ClothingShirtCottonRed = хлопковая красная рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonRedDress = хлопковое красное платье
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonWhite = холщовая белая рубашка
+ent-CP14ClothingShirtCottonWhite = хлопковая белая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonWhiteDress = хлопковое белое платье
@@ -1297,13 +1297,13 @@ ent-CP14ClothingShirtCottonWhiteCollar = хлопковая рубашка с б
 ent-CP14ClothingShirtCottonWhiteCollarDress = хлопковое платье с белым воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
-ent-CP14ClothingShirtCottonYellow = холщовая желтая рубашка
+ent-CP14ClothingShirtCottonYellow = хлопковая желтая рубашка
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtJestersAttire = шутовской наряд
     .desc = Это лохмотья, но они красочные.
 
-ent-CP14ClothingShirtCottonYellowCollar = холщовая желтая рубашка с воротником
+ent-CP14ClothingShirtCottonYellowCollar = хлопковая желтая рубашка с воротником
     .desc = { ent-CP14ClothingShirtBase.desc }
 
 ent-CP14ClothingShirtCottonYellowCollarDress = хлопковое платье с желтым воротником

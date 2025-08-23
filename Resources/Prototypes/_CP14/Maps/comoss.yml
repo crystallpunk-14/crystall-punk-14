@@ -53,8 +53,8 @@
           location: ComossIsland
           modifiers:
           - RaidSpawners
-          - EnemyFlem
-          - MonsterMosquito
+          - Rabbits
+          - Boar
           - Marble
           - CopperOre
           - CopperOre

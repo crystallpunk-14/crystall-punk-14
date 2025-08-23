@@ -58,8 +58,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14StartCastMagicEffectEvent>(OnStartCast);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14EndCastMagicEffectEvent>(OnEndCast);
-
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
     }
 
     private void OnStartCast(Entity<CP14MagicEffectComponent> ent, ref CP14StartCastMagicEffectEvent args)
@@ -127,6 +125,9 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         foreach (var effect in ent.Comp.TelegraphyEffects)
         {
             effect.Effect(EntityManager, args);
@@ -135,6 +136,9 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
     private void CastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
         RaiseLocalEvent(ent, ref ev);
 
@@ -147,7 +151,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             && TryComp<ActionComponent>(ent, out var actionComp)
             && TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
         {
-            _magicVision.SpawnMagicVision(
+            _magicVision.SpawnMagicTrace(
                 Transform(args.User.Value).Coordinates,
                 actionComp.Icon,
                 Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
@@ -175,13 +179,5 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
 
         return manaCost;
-    }
-
-    private void OnStaminaConsume(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
-    {
-        if (args.Performer is null)
-            return;
-
-        _stamina.TakeStaminaDamage(args.Performer.Value, ent.Comp.Stamina, visual: false);
     }
 }

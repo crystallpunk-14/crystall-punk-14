@@ -7,3 +7,8 @@
   license: "CC0-1.0"
   copyright: "Sound from brumxyz: https://freesound.org/people/brumxyz/"
   source: "https://freesound.org/people/brumxyz/sounds/560728/"
+
+- files: ["bones1.ogg", "bones2.ogg", "bones3.ogg", "bones4.ogg"]
+  license: "CC0-1.0"
+  copyright: "Sound from nayahnaidoo: https://freesound.org/people/nayahnaidoo/"
+  source: "https://freesound.org/people/nayahnaidoo/sounds/656054/"

@@ -1,6 +1,6 @@
 - type: species
   id: CP14Skeleton
-  name: cp14-species-name-human
+  name: cp14-species-name-skeleton
   roundStart: false
   prototype: CP14BaseMobSkeleton
   sprites: CP14MobSkeletonSprites

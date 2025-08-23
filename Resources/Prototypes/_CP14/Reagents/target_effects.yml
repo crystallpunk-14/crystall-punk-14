@@ -602,3 +602,22 @@
       effects:
       - !type:Jitter
   pricePerUnit: 0.3  # Weakest negative effect
+
+- type: reagent
+  id: CP14BasicEffectConfuseAura
+  name: cp14-reagent-name-basic-confuse-aura
+  desc: cp14-reagent-desc-basic-confuse-aura
+  group: CP14BasicEffect
+  flavor: CP14Vomit
+  color: "#eb34b7"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyStatusEffect
+        effectProto: MobStatusEffectMagicAuraConfused
+        type: Add
+        time: 2
+        refresh: false
+  pricePerUnit: 0.6

@@ -1709,3 +1709,96 @@
   id: 8222
   time: '2025-08-18T08:41:34.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1602
+- author: Morb0
+  changes:
+  - message: Silvas and Elfs clothing now always displayed as female
+    type: Fix
+  id: 8223
+  time: '2025-08-22T15:02:14.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1691
+- author: TheShuEd
+  changes:
+  - message: "A new game mode, \u201CVampire Clan Battle\u201D has been added. Three\
+      \ ancient vampire clans battle each other for control of the settlement."
+    type: Add
+  id: 8224
+  time: '2025-08-22T15:46:28.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1672
+- author: TheShuEd
+  changes:
+  - message: Fixed a bug where vampires could not see other vampires
+    type: Fix
+  - message: "removed tier 1 skill \u201CDemonstration of power\u201D for vampires\
+      \ (only t2 left)"
+    type: Remove
+  - message: "Added a new vampire tier 1 skill \u201CHypnosis\u201D - allows you to\
+      \ keep the target asleep for up to 30 seconds."
+    type: Add
+  - message: Starting blood essence supply for vampires increased from 1 to 2
+    type: Add
+  - message: All vampire buildings in the construction menu on G are now in a separate
+      category
+    type: Fix
+  - message: Starting vampire skills are now cheaper
+    type: Tweak
+  - message: Vampire hunger has been significantly reduced
+    type: Fix
+  - message: Rabbits and boars now spawn around game maps instead of aggressive mobs
+    type: Tweak
+  - message: Vampires can no longer bite SSD players!
+    type: Tweak
+  - message: Vampire blood can no longer be identified without alchemical vision.
+    type: Fix
+  - message: The tieflings blood no longer ignites vampires!
+    type: Remove
+  id: 8225
+  time: '2025-08-22T22:56:01.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1696
+- author: Viator-MV
+  changes:
+  - message: The lightning strike has become stronger. Proceed using it!
+    type: Tweak
+  id: 8226
+  time: '2025-08-23T09:00:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1695
+- author: PhantornRU
+  changes:
+  - message: Added Trade Vision and Contracts for villagers
+    type: Add
+  - message: Added Trade Vision and AlchemyVision for Lumera
+    type: Add
+  id: 8227
+  time: '2025-08-23T12:03:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1657
+- author: TheShuEd
+  changes:
+  - message: Magical vision no longer shows a person's aura during examination. Guards
+      may have to force people to use spells to check their aura imprint.
+    type: Tweak
+  - message: Vampires have gained access to the "Vampire Lair" trading faction.
+    type: Add
+  - message: "A new potion called \u201CConfusing Aura\u201D that temporarily gives\
+      \ the user a new false aura imprint when using spells. Currently only available\
+      \ to vampires in the store."
+    type: Add
+  - message: "The spell \u201CDispel Magic\u201D can now destroy traces of magic from\
+      \ spells that have been used. (However, traces of dispel magic will remain.)"
+    type: Add
+  - message: Vampire clothing (mask and cloak) no longer requires metals to craft,
+      making them accessible early in the game.
+    type: Tweak
+  - message: The traces of the aura of used spells gradually dissipate, retaining
+      less and less information.
+    type: Tweak
+  id: 8228
+  time: '2025-08-23T12:03:33.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1697
+- author: Nimfar11
+  changes:
+  - message: Adds bone material. This can be found in demiplanes or large animals.
+    type: Add
+  - message: Now you can make bone blades and bone armour from bones.
+    type: Tweak
+  id: 8229
+  time: '2025-08-23T12:06:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1683

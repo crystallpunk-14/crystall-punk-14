@@ -43,3 +43,8 @@ cp14-skill-tree-martial-desc = Master the secrets of deadly weapons, or make you
 
 cp14-skill-tree-craftsman-name = Craftsmanship
 cp14-skill-tree-craftsman-desc = Learn the arts and crafts that let you create and use all kinds of useful things.
+
+# Vampires
+
+cp14-skill-tree-vampire-name = Vampire powers
+cp14-skill-tree-vampire-desc = Vampire clan. Ask Wandederere to write the lore here.

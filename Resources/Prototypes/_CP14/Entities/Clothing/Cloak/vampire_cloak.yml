@@ -1,0 +1,68 @@
+- type: entity
+  parent:
+  - CP14ClothingCloakBase
+  - CP14BaseMajorContraband
+  id: CP14ClothingCloakVampireBase
+  abstract: true
+  components:
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+  - type: ToggleClothing
+    action: CP14ActionToggleVampireCape
+    disableOnUnequip: true
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.5
+      movementVisibilityRate: 0.8
+  - type: UseDelay
+    delay: 3
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 40
+      CP14BloodEssence: 1
+
+- type: entity
+  id: CP14ActionToggleVampireCape
+  parent: BaseAction
+  name: Vampire cloak
+  description: Gives the cape wearer the invisibility, but only if standing still.
+  components:
+  - type: InstantAction
+    event: !type:ToggleActionEvent
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireDevourers
+  name: сrimson vampire cloak
+  description: A traditional vampire cloak worn by members of the Devourers clan. Hides the owner from prying eyes, granting invisibility.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/red.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/red.rsi
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireUnnameable
+  name: white vampire cloak
+  description: A traditional vampire cloak worn by members of the Unnameable clan. Hides the owner from prying eyes, granting invisibility.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/white.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/white.rsi
+
+- type: entity
+  parent: CP14ClothingCloakVampireBase
+  id: CP14ClothingCloakVampireNightChildrens
+  name: dark vampire cloak
+  description: A traditional vampire cloak worn by members of the Childrens of the Night clan. Hides the owner from prying eyes, granting invisibility.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Cloak/Vampire/blue.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Cloak/Vampire/blue.rsi
