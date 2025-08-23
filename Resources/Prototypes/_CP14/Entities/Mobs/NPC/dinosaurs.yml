@@ -101,6 +101,9 @@
     - id: CP14Leather1
       amount: 2
       maxAmount: 4
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 3
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: SpamEmitSound
