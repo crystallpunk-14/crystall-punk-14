@@ -44,9 +44,9 @@
       metabolismRate: 0.5
       effects:
       - !type:ModifyBleedAmount
-        amount: 2
+        amount: 3
       - !type:HealthChange
         damage:
           types:
-            Piercing: 1.5
+            Piercing: 2.5
   pricePerUnit: 4.0 #arbitrary for now

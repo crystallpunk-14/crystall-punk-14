@@ -212,28 +212,15 @@
 
 - type: entity
   parent: CP14BaseMobGroupSpawner
-  id: CP14MobGroupSpawnerFlem
-  suffix: 1-3 Flems
+  id: CP14MobGroupSpawnerMeme
+  suffix: 1-2 Meme Mobs
   components:
   - type: EntityTableSpawner
     deleteSpawnerAfterSpawn: false
     offset: 1
     table: !type:GroupSelector
       rolls: !type:RangeNumberSelector
-        range: 1, 3
-      children:
-      - id: CP14MobMonsterFlem
-
-- type: entity
-  parent: CP14BaseMobGroupSpawner
-  id: CP14MobGroupSpawnerCackle
-  suffix: 2-3 Cackles
-  components:
-  - type: EntityTableSpawner
-    deleteSpawnerAfterSpawn: false
-    offset: 1
-    table: !type:GroupSelector
-      rolls: !type:RangeNumberSelector
-        range: 2, 3
+        range: 1, 2
       children:
       - id: CP14MobMonsterCackle
+      - id: CP14MobMonsterFlem

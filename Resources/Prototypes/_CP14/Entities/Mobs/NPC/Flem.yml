@@ -2,7 +2,7 @@
   id: CP14MobMonsterFlem
   parent: CP14SimpleMobBase
   name: flem
-  description: An odd looking fish standing on two stubby legs. you know what that means...
+  description: An odd, dangerous looking fish standing on two stubby legs. You know what that means...
   categories: [ ForkFiltered ]
   components:
   - type: HTN
@@ -41,7 +41,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      30: Dead
+      60: Dead
   - type: Stamina
     critThreshold: 200
   - type: CombatMode
@@ -50,8 +50,8 @@
     animation: WeaponArcPunch
     damage:
       types:
-        Blunt: 8
-        Structural: 20
+        Blunt: 15
+        Structural: 30
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.6
     baseSprintSpeed: 2.6

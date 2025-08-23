@@ -253,3 +253,24 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobBigBear
+
+- type: entity
+  name: meme mobs spawner
+  id: CP14SpawnMobMonsterMeme
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/flem.rsi
+      state: flem_live
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 40
+        children:
+        - id: CP14MobMonsterCackle
+        - id: CP14MobMonsterFlem
