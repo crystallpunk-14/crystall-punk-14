@@ -304,8 +304,8 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideFlyagaric
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
 
 - type: cp14LocationModifier
   id: MyconideLumish
@@ -320,8 +320,8 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideLumish
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
 
 - type: cp14LocationModifier
   id: EnemyCackle
