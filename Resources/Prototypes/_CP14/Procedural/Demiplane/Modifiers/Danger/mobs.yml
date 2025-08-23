@@ -312,7 +312,7 @@
     min: 4
     max: 5
   name: cp14-modifier-meme-mobs
-  generationWeight: 0.33
+  generationWeight: 0.1
   categories:
     Danger: 0.6
   requiredTags:
