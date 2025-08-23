@@ -17,7 +17,7 @@
     - !type:CP14LearnSkillsSpecial
       skills:
       - AlchemyVision
-      - TraderWit
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Artisan

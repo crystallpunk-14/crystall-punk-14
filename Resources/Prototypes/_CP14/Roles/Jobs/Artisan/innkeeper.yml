@@ -15,7 +15,7 @@
       - Dairy
     - !type:CP14LearnSkillsSpecial
       skills:
-      - TraderWit
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
 
 - type: startingGear
   id: CP14InnkeeperGear
