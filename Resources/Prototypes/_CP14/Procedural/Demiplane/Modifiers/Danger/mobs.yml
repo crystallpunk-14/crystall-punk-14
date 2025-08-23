@@ -309,16 +309,12 @@
 - type: cp14LocationModifier
   id: EnemyMemeMobs
   levels:
-    min: 4
-    max: 5
+    min: 5
+    max: 8
   name: cp14-modifier-meme-mobs
-  generationWeight: 0.1
+  generationWeight: 0.33
   categories:
-    Danger: 0.6
-  requiredTags:
-  - CP14DemiplaneOpenSky
-  blacklistTags:
-  - CP14DemiplaneCold
+    Danger: 0.7
   layers:
   - !type:CP14OreDunGen
     entity: CP14SpawnMobMonsterMeme
