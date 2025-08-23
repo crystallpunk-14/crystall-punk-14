@@ -1,29 +1,34 @@
 - type: entity
   name: produce sack
-  id: CP14SackFarming
-  parent: BaseStorageItem
-  description: A bag for various fruits, vegetables, plants and anything else that grows in the garden.
+  id: CP14SackFarming #Remove "Farming"
+  parent: 
+  - BaseStorageItem
+  - CP14ClothingHeadBase
+  description: Bag for quick transport of items
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Storage/sack.rsi
     state: icon
   - type: Item
-    size: Ginormous
+    size: Normal
+    shape:
+    - 0,0,3,3
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,6,3
+    - 0,0,3,3
     quickInsert: true
     areaInsert: true
-    whitelist:
-      tags:
-        - CP14FarmFood
-        - CP14FitInMortar
   - type: Dumpable
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 35
+  - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: EyeProtection
+  - type: IngestionBlocker
+  - type: Blindfold
 
 - type: entity
   id: CP14SackFarmingVegetables
