@@ -1847,3 +1847,15 @@
   id: 8234
   time: '2025-08-24T15:36:24.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1702
+- author: TheShuEd
+  changes:
+  - message: The day now lasts much longer in relation to the night.
+    type: Tweak
+  - message: Even at midnight, the stars still dimly illuminate this cursed world.
+    type: Tweak
+  - message: Day and night calculations have been corrected. Vampires no longer burn
+      at night.
+    type: Fix
+  id: 8235
+  time: '2025-08-24T23:03:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1705
