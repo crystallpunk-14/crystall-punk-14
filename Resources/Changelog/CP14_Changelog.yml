@@ -1825,3 +1825,17 @@
   id: 8232
   time: '2025-08-24T11:45:30.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1698
+- author: TheShuEd
+  changes:
+  - message: The plant sack can now be used for any items.
+    type: Tweak
+  - message: The sack can now be placed over the head, blocking vision.
+    type: Add
+  - message: Removed raid skeletons event
+    type: Remove
+  - message: The number of mushroom enemies in mushroom demiplanes has been reduced.
+      The probability of dropping a mushroom cap has been reduced by 10 times.
+    type: Fix
+  id: 8233
+  time: '2025-08-24T12:58:35.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1701
