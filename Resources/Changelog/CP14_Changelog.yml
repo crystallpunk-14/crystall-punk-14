@@ -1839,3 +1839,11 @@
   id: 8233
   time: '2025-08-24T12:58:35.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1701
+- author: TheShuEd
+  changes:
+  - message: Ghosts can return to the lobby on their own five minutes after death
+      and reconnect to the round as a new character.
+    type: Add
+  id: 8234
+  time: '2025-08-24T15:36:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1702
