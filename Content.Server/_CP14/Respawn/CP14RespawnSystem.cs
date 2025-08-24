@@ -2,6 +2,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Shared._CP14.Respawn;
+using Content.Shared.Administration.Managers;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
 using Content.Shared.Preferences;
@@ -16,6 +17,7 @@ public sealed partial class CP14RespawnSystem : EntitySystem
 {
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly ISharedAdminManager _admin = default!;
 
     /// <summary>
     /// We keep a list of all characters connected in a round to prevent the same character from re-entering the round.
@@ -41,6 +43,9 @@ public sealed partial class CP14RespawnSystem : EntitySystem
 
     private void OnBeforePlayerSpawn(CP14PlayerSpawnAttemptEvent ev)
     {
+        if (_admin.IsAdmin(ev.Player, true))
+            return;
+
         if (!_usedCharacters.TryGetValue(ev.Player.UserId, out var usedCharacters))
         {
             usedCharacters = [];
