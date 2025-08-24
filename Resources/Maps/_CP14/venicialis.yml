@@ -332,7 +332,7 @@ entities:
     - type: GridPathfinding
     - type: CP14CloudShadows
     - type: MapLight
-      ambientLightColor: '#D8B059FF'
+      ambientLightColor: "#7bc2e0"
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg

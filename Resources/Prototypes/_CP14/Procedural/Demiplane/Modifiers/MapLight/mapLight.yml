@@ -88,6 +88,8 @@
   components:
   - type: LightCycle
     originalColor: "#7bc2e0"
+  - type: MapLight
+    ambientLightColor: "#7bc2e0"
 
 - type: cp14LocationModifier
   id: MapLightCycleHot
@@ -102,6 +104,8 @@
   components:
   - type: LightCycle
     originalColor: "#ff8929"
+  - type: MapLight
+    ambientLightColor: "#ff8929"
 
 - type: cp14LocationModifier
   id: MapLightCycleHot2
@@ -116,4 +120,6 @@
   components:
   - type: LightCycle
     originalColor: "#d68787"
+  - type: MapLight
+    ambientLightColor: "#d68787"
 
