@@ -91,11 +91,11 @@
   - type: Item
     size: Normal
     shape:
-    - 0,0,2,2
+    - 0,0,3,3
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,2,2
+    - 0,0,3,3
     quickInsert: true
     areaInsert: true
   - type: Dumpable
@@ -111,18 +111,12 @@
   - type: StorageFill
     contents:
       - id: CP14SeedWheat
-        amount: 2
+        amount: 1
       - id: CP14SeedWheat
         amount: 1
         prob: 0.6
-      - id: CP14SeedWheat
-        amount: 1
-        prob: 0.4
       - id: CP14SeedPumpkin
         amount: 1
-      - id: CP14SeedPumpkin
-        amount: 1
-        prob: 0.4
       - id: CP14SeedCucumber
         amount: 1
       - id: CP14SeedTomato
