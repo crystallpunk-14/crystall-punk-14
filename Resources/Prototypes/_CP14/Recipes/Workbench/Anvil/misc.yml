@@ -2,7 +2,7 @@
   id: CP14BaseShield
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -18,7 +18,7 @@
   id: CP14BaseWrench
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -30,7 +30,7 @@
 - type: CP14Recipe
   id: CP14PlatePie
   tag: CP14RecipeAnvil
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -43,7 +43,7 @@
   id: CP14CrystalLampBlueEmpty
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   - CopperMelting
@@ -60,7 +60,7 @@
   id: CP14Scissors
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -73,7 +73,7 @@
   id: CP14ClothingGlovesGirdles
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -198,7 +198,7 @@
   id: CP14BaseLockpick
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -211,7 +211,7 @@
   id: CP14LockpickMithril
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -224,7 +224,7 @@
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   - IronMelting
@@ -244,7 +244,7 @@
   id: CP14BaseCrossbow
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -260,7 +260,7 @@
   id: CP14ClothingMaskSteelMask
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -273,7 +273,7 @@
   id: CP14KeyCopperBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -286,7 +286,7 @@
   id: CP14KeyIronBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -299,7 +299,7 @@
   id: CP14KeyGoldBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -312,7 +312,7 @@
   id: CP14KeyMithrilBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -325,7 +325,7 @@
   id: CP14KeyFile
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -338,7 +338,7 @@
   id: CP14LockCopper
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -351,7 +351,7 @@
   id: CP14LockIron
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -364,7 +364,7 @@
   id: CP14LockGold
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -377,7 +377,7 @@
   id: CP14LockMithril
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -390,7 +390,7 @@
   id: CP14EnergyCrystalMediumEmpty
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -405,7 +405,7 @@
 - type: CP14Recipe
   id: CP14Fork
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -418,7 +418,7 @@
 - type: CP14Recipe
   id: CP14Spoon
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -431,7 +431,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletCopper
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -443,7 +443,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletIron
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -455,7 +455,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletGold
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -467,7 +467,7 @@
 - type: CP14Recipe
   id: CP14FryingPan
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -482,7 +482,7 @@
 - type: CP14Recipe
   id: CP14CookingPot
   tag: CP14RecipeAnvil
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -494,7 +494,7 @@
 - type: CP14Recipe
   id: CP14IronBuckleRecipe
   tag: CP14RecipeAnvil
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:

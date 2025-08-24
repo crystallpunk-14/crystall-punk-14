@@ -1802,3 +1802,19 @@
   id: 8229
   time: '2025-08-23T12:06:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1683
+- author: gogenych
+  changes:
+  - message: Temporarily reduced crafting time for all blacksmith recipes
+    type: Tweak
+  id: 8230
+  time: '2025-08-23T17:10:08.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1676
+- author: Nimfar11
+  changes:
+  - message: Added the ability to make leather boots on a leather workbench.
+    type: Add
+  - message: Leather clothing can now be cut into leather.
+    type: Tweak
+  id: 8231
+  time: '2025-08-24T10:51:48.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1692
