@@ -89,6 +89,25 @@
       minGroupSize: 2
       maxGroupSize: 3
 
+- type: cp14LocationModifier
+  id: EnemyFlem
+  levels:
+    min: 0
+    max: 2
+  name: cp14-modifier-flem
+  generationWeight: 0.05
+  categories:
+    Danger: 0.25
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  - CP14DemiplaneHerbals
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14MobMonsterFlem
+      count: 3
+      minGroupSize: 3
+      maxGroupSize: 4
+
 # TIER 2
 
 - type: cp14LocationModifier
@@ -304,20 +323,22 @@
       minGroupSize: 7
       maxGroupSize: 12
 
-# TIER 3: MINIBOSSES
-
 - type: cp14LocationModifier
-  id: EnemyMemeMobs
+  id: EnemyCackle
   levels:
-    min: 5
-    max: 8
-  name: cp14-modifier-meme-mobs
-  generationWeight: 0.33
+    min: 2
+    max: 5
+  name: cp14-modifier-cackle
+  generationWeight: 0.05
   categories:
-    Danger: 0.7
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  blacklistTags:
+  - CP14DemiplaneCold
   layers:
   - !type:CP14OreDunGen
-    entity: CP14SpawnMobMonsterMeme
-    count: 3
+    entity: CP14MobMonsterCackle
+    count: 4
     minGroupSize: 1
-    maxGroupSize: 2
+    maxGroupSize: 3

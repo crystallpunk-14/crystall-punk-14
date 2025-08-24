@@ -12,6 +12,7 @@ cp14-modifier-explosive = взрывные мины
 cp14-modifier-ruins = древние руины
 cp14-modifier-zombie = зомби
 cp14-modifier-slime = слаймы
+cp14-modifier-cackle = кэклзы
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = динозавры
 cp14-modifier-mole = хищные кроты
@@ -27,7 +28,6 @@ cp14-modifier-night = темнота
 cp14-modifier-spiders = паучье логово
 cp14-modifier-silver-needle = серебрянные иглы
 cp14-modifier-additional-entry = несколько точек входа
-cp14-modifier-meme-mobs = древние ужасы
 
 cp14-modifier-storm = гроза
 cp14-modifier-fire-storm = огненный шторм

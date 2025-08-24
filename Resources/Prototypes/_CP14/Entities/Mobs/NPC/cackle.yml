@@ -60,10 +60,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      60: Dead
+      45: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      45: 0.5
+      30: 0.5
   - type: DamageStateVisuals
     states:
       Alive:
@@ -105,13 +105,13 @@
   - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute from base.yml.
     allowedStates:
     - Alive
-    damageCap: 60
+    damageCap: 45
     damage:
       types:
-        Poison: -0.1
+        Poison: -0.07
       groups:
-        Brute: -0.1
-        Burn: -0.1
+        Brute: -0.07
+        Burn: -0.07
   - type: BasicEntityAmmoProvider
     proto: CP14SpikeCackleSpread
     capacity: 2
