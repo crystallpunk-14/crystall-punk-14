@@ -1,0 +1,1 @@
+cp14-respawn-action-popup = Are you sure you want to return to the lobby? You will no longer be able to play as this character!
