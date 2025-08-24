@@ -136,6 +136,7 @@ namespace Content.Client.Ghost
             //_actions.RemoveAction(uid, component.ToggleGhostHearingActionEntity); //Dont need in CP14
             //CP14
             _actions.RemoveAction(uid, component.CP14ToggleRoofActionEntity);
+            _actions.RemoveAction(uid, component.CP14RespawnActionEntity);
             //CP14 end
 
             if (uid != _playerManager.LocalEntity)
