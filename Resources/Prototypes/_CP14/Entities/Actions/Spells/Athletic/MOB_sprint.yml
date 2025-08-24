@@ -9,6 +9,8 @@
     state: sprint
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1.8
+  - type: CP14MagicEffectStaminaCost
+    stamina: 0.5
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
