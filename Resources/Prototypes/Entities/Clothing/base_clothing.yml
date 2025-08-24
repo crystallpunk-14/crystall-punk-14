@@ -9,8 +9,8 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-  #- type: StaticPrice #CP14 disable base cost
-  #  price: 10
+  - type: StaticPrice
+    price: 10
   - type: FlavorProfile #yes not every peice of clothing is edible, but this way every edible piece of clothing should have the flavor without me having to track down what specific clothing can and cannot be eaten.
     flavors:
     - fiber
