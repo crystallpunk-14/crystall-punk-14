@@ -11,7 +11,7 @@
     sprite: _CP14/Objects/Storage/sack.rsi
     state: icon
   - type: Item
-    size: Normal
+    size: Huge
     shape:
     - 0,0,3,3
   - type: Storage
@@ -87,7 +87,7 @@
 
 - type: entity
   id: CP14SackFarmingSeed
-  parent: CP14SackFarming
+  parent: BaseStorageItem
   name: seed sack
   description: A sack for various plant seeds.
   components:
@@ -95,16 +95,16 @@
     sprite: _CP14/Objects/Storage/sack.rsi
     state: seed
   - type: Item
-    size: Small
+    size: Normal
+    shape:
+    - 0,0,2,2
   - type: Storage
-    maxItemSize: Tiny
+    maxItemSize: Small
     grid:
-    - 0,0,6,3
+    - 0,0,2,2
     quickInsert: true
     areaInsert: true
-    whitelist:
-      tags:
-        - CP14FarmSeed
+  - type: Dumpable
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 25
