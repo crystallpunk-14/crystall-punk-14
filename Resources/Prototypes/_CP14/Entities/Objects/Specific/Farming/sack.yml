@@ -39,19 +39,19 @@
   - type: StorageFill
     contents:
       - id: CP14Wheat
-        amount: 4
+        amount: 2
       - id: CP14FoodCabbage
         orGroup: LargeVegetables
-        amount: 3
+        amount: 2
       - id: CP14FoodPumpkin
         orGroup: LargeVegetables
-        amount: 3
+        amount: 2
       - id: CP14FoodPotato
-        amount: 3
+        amount: 2
       - id: CP14FoodCucumber
-        amount: 3
+        amount: 2
       - id: CP14FoodTomatoes
-        amount: 3
+        amount: 2
 
 - type: entity
   id: CP14SackFarmingApple
@@ -61,13 +61,10 @@
   - type: StorageFill
     contents:
       - id: CP14FoodApple
-        amount: 6
+        amount: 3
       - id: CP14FoodApple
-        amount: 5
+        amount: 3
         prob: 0.6
-      - id: CP14FoodApple
-        amount: 5
-        prob: 0.4
 
 - type: entity
   id: CP14SackFarmingWheat
@@ -77,13 +74,10 @@
   - type: StorageFill
     contents:
       - id: CP14Wheat
-        amount: 8
+        amount: 4
       - id: CP14Wheat
-        amount: 5
+        amount: 2
         prob: 0.6
-      - id: CP14Wheat
-        amount: 5
-        prob: 0.4
 
 - type: entity
   id: CP14SackFarmingSeed
@@ -117,33 +111,28 @@
   - type: StorageFill
     contents:
       - id: CP14SeedWheat
-        amount: 4
-      - id: CP14SeedWheat
         amount: 2
+      - id: CP14SeedWheat
+        amount: 1
         prob: 0.6
       - id: CP14SeedWheat
         amount: 1
         prob: 0.4
       - id: CP14SeedPumpkin
-        amount: 3
+        amount: 1
       - id: CP14SeedPumpkin
         amount: 1
         prob: 0.4
       - id: CP14SeedCucumber
-        amount: 3
+        amount: 1
       - id: CP14SeedTomato
-        amount: 3
+        amount: 1
       - id: CP14SeedCabbage
-        amount: 2
+        amount: 1
       - id: CP14SeedPepper
-        amount: 2
-      - id: CP14SeedSage
-        amount: 2
+        amount: 1
       - id: CP14SeedSage
         amount: 1
-        prob: 0.4
-      - id: CP14SeedCotton
-        amount: 2
       - id: CP14SeedCotton
         amount: 1
         prob: 0.4
