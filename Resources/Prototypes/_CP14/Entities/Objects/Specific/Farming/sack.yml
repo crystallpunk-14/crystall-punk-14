@@ -84,6 +84,7 @@
   parent: BaseStorageItem
   name: seed sack
   description: A sack for various plant seeds.
+  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     sprite: _CP14/Objects/Storage/sack.rsi
