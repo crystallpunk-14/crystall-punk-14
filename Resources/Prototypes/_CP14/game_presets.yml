@@ -32,15 +32,27 @@
     - CP14BasicStationEventScheduler
 
 - type: gamePreset
-  id: CP14VampireClansBattle
+  id: CP14VampireClansBattleDouble
   name: cp14-vampire-clans-battle
   description: cp14-vampire-clans-description
   showInVote: true
   cP14Allowed: true
   minPlayers: 20
+  maxPlayers: 29
   rules:
     - CP14BasicStationEventScheduler
-    - CP14GameRuleVampireClanBattle
+    - CP14GameRuleVampireClanBattleDouble
+
+- type: gamePreset
+  id: CP14VampireClansBattleTriple
+  name: cp14-vampire-clans-battle
+  description: cp14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 30
+  rules:
+    - CP14BasicStationEventScheduler
+    - CP14GameRuleVampireClanBattleTriple
 
 #- type: gamePreset
 #  id: CP14Survival

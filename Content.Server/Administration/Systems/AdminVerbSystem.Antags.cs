@@ -31,7 +31,9 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultThiefRule = "Thief";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
     //CP14
-    private static readonly EntProtoId CP14VampireRule = "CP14GameRuleVampireClanBattle";
+    private static readonly EntProtoId CP14VampireUnnameable = "CP14GameRuleVampireClanUnnameable";
+    private static readonly EntProtoId CP14VampireDevourers = "CP14GameRuleVampireClanDevourers";
+    private static readonly EntProtoId CP14VampireNightChildrens = "CP14GameRuleVampireClanNightChildrens";
     //CP14 end
 
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
@@ -52,20 +54,47 @@ public sealed partial class AdminVerbSystem
 
         var targetPlayer = targetActor.PlayerSession;
 
-        Verb vampire = new()
+        Verb vampire3 = new()
         {
-            Text = Loc.GetString("cp14-admin-verb-text-make-vampire"),
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-night-childrens"),
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Actions/Spells/vampire.rsi"),
-                "bite"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "NightChildrens"),
             Act = () =>
             {
-                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireRule);
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireNightChildrens);
             },
             Impact = LogImpact.High,
             Message = Loc.GetString("cp14-admin-verb-make-vampire"),
         };
-        args.Verbs.Add(vampire);
+        args.Verbs.Add(vampire3);
+
+        Verb vampire2 = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-devourers"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "Devourers"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireDevourers);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire2);
+
+        Verb vampire1 = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-unnameable"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "Unnameable"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireUnnameable);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire1);
 
         /* CP14 disable default antags
         var traitorName = Loc.GetString("admin-verb-text-make-traitor");

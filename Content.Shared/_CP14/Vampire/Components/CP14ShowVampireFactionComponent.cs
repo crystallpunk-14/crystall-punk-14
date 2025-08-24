@@ -6,7 +6,6 @@ namespace Content.Shared._CP14.Vampire.Components;
 [RegisterComponent]
 [NetworkedComponent]
 [AutoGenerateComponentState]
-[Access(typeof(CP14SharedVampireSystem))]
 public sealed partial class CP14ShowVampireFactionComponent : Component
 {
     [DataField, AutoNetworkedField]
