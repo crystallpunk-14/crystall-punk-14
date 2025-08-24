@@ -23,7 +23,7 @@
   - type: Dumpable
   - type: PhysicalComposition
     materialComposition:
-      CP14Cloth: 35
+      CP14Cloth: 55
   - type: FlashImmunity
   - type: IdentityBlocker
   - type: EyeProtection
