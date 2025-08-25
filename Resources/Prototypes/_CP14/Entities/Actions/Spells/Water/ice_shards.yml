@@ -19,7 +19,7 @@
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
       - CP14ImpactEffectWaterCreation
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     endSpeech: "Glacies acus!"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneIceShards

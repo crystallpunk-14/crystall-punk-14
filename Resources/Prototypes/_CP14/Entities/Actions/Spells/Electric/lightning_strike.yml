@@ -29,7 +29,7 @@
     - !type:CP14SpellThrowFromUser
       throwPower: 4
       distance: 1
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "A fulgur percutiens... "
     endSpeech: "erit ledo vobis!"
   - type: CP14MagicEffectCastingVisual

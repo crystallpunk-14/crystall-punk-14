@@ -19,7 +19,7 @@
       spread: 2
       projectileSpeed: 5
       projectileCount: 8
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     endSpeech: "Ignis acus!"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFirebolt

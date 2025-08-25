@@ -24,7 +24,7 @@
       - !type:AdjustTemperature
         amount: 20000
       - !type:ExtinguishReaction
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Vos adepto calidum..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHeat

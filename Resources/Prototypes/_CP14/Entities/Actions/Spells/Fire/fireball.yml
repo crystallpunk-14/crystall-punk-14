@@ -16,7 +16,7 @@
       - CP14ImpactEffectFireball
     - !type:CP14SpellProjectile
       prototype: CP14Fireball
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Quaeso, quemdam inter vos quaero... "
     endSpeech: "A pila!"
   - type: CP14ActionFreeHandsRequired

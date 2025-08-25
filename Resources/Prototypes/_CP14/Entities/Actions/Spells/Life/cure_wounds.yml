@@ -34,7 +34,7 @@
       - !type:Jitter
       - !type:ModifyBleedAmount
         amount: -5
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
   - type: CP14ActionTargetMobStatusRequired

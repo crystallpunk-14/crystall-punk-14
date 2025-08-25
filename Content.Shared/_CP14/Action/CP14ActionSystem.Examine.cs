@@ -14,19 +14,19 @@ public sealed partial class CP14ActionSystem
         SubscribeLocalEvent<CP14ActionStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, ExaminedEvent>(OnVerbalExamined);
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ExaminedEvent>(OnSomaticExamined);
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, ExaminedEvent>(OnMaterialExamined);
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
 
-    private void OnManacostExamined(Entity<Components.CP14ActionManaCostComponent> ent, ref ExaminedEvent args)
+    private void OnManacostExamined(Entity<CP14ActionManaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{ent.Comp.ManaCost}[/color]", priority: 9);
     }
 
-    private void OnStaminaCostExamined(Entity<Components.CP14ActionStaminaCostComponent> ent, ref ExaminedEvent args)
+    private void OnStaminaCostExamined(Entity<CP14ActionStaminaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{ent.Comp.Stamina}[/color]", priority: 9);
     }
@@ -39,7 +39,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup($"{Loc.GetString("cp14-magic-skillpointcost", ("name", Loc.GetString(indexedSkillPoint.Name)), ("count", ent.Comp.Count))}", priority: 9);
     }
 
-    private void OnVerbalExamined(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref ExaminedEvent args)
+    private void OnVerbalExamined(Entity<CP14ActionSpeakingComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup(Loc.GetString("cp14-magic-verbal-aspect"), 8);
     }

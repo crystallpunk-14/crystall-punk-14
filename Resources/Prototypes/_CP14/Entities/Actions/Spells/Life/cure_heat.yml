@@ -30,7 +30,7 @@
             Shock: -10
       - !type:Jitter
   - type: CP14ActionTargetMobStatusRequired
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"
   - type: CP14MagicEffectCastingVisual

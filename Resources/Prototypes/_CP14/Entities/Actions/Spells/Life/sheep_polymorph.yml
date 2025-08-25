@@ -25,7 +25,7 @@
       effects:
       - !type:Polymorph
         prototype: CP14Sheep
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Pascam et custodiam..."
     endSpeech: "pecora tua"
   - type: CP14MagicEffectCastingVisual

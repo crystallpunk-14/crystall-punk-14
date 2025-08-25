@@ -19,7 +19,7 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14SpawnEffectFlashLight
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Lux clara..."
     endSpeech: "excaecant inimicos meos"
   - type: CP14MagicEffectCastingVisual

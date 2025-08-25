@@ -5,10 +5,8 @@ using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill;
-using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Speech.Muting;
 using Content.Shared.SSDIndicator;
 
 namespace Content.Shared._CP14.MagicSpell;
@@ -21,13 +19,11 @@ public abstract partial class CP14SharedMagicSystem
 
     private void InitializeChecks()
     {
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
-        SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
 
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14StartCastMagicEffectEvent>(OnEmoteStartCast);
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
@@ -37,31 +33,6 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14ActionStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
         SubscribeLocalEvent<CP14ActionManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
-    }
-
-    private void OnVerbalCheck(Entity<CP14MagicEffectVerbalAspectComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (!HasComp<MutedComponent>(args.Performer))
-            return;
-
-        args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
-        args.Cancel();
-    }
-
-    private void OnSSDCheck(Entity<CP14MagicEffectSSDBlockComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (args.Target is null)
-            return;
-
-        if (!TryComp<SSDIndicatorComponent>(args.Target.Value, out var ssdIndication))
-            return;
-
-        if (ssdIndication.IsSSD)
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-ssd"));
-            args.Cancel();
-        }
     }
 
     private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent,
@@ -93,10 +64,10 @@ public abstract partial class CP14SharedMagicSystem
         }
     }
 
-    private void OnVerbalAspectStartCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
+    private void OnVerbalAspectStartCast(Entity<CP14ActionSpeakingComponent> ent,
         ref CP14StartCastMagicEffectEvent args)
     {
-        var ev = new CP14SpellSpeechEvent
+        var ev = new CP14ActionSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.StartSpeech),
@@ -105,10 +76,10 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void OnVerbalAspectAfterCast(Entity<CP14MagicEffectVerbalAspectComponent> ent,
+    private void OnVerbalAspectAfterCast(Entity<CP14ActionSpeakingComponent> ent,
         ref CP14MagicEffectConsumeResourceEvent args)
     {
-        var ev = new CP14SpellSpeechEvent
+        var ev = new CP14ActionSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.EndSpeech),
@@ -119,7 +90,7 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteStartCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14StartCastMagicEffectEvent args)
     {
-        var ev = new CP14SpellSpeechEvent
+        var ev = new CP14ActionSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.StartEmote),
@@ -131,7 +102,7 @@ public abstract partial class CP14SharedMagicSystem
 
     private void OnEmoteEndCast(Entity<CP14MagicEffectEmotingComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        var ev = new CP14SpellSpeechEvent
+        var ev = new CP14ActionSpeechEvent
         {
             Performer = args.Performer,
             Speech = Loc.GetString(ent.Comp.EndEmote),
@@ -140,7 +111,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void OnMaterialAspectEndCast(Entity<Action.Components.CP14ActionMaterialCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnMaterialAspectEndCast(Entity<CP14ActionMaterialCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (ent.Comp.Requirement is null || args.Performer is null)
             return;
@@ -157,7 +128,7 @@ public abstract partial class CP14SharedMagicSystem
         ent.Comp.Requirement.PostCraft(EntityManager, _proto, heldedItems);
     }
 
-    private void OnStaminaConsume(Entity<Action.Components.CP14ActionStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnStaminaConsume(Entity<CP14ActionStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (args.Performer is null)
             return;

@@ -13,6 +13,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.Speech.Muting;
+using Content.Shared.SSDIndicator;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -28,13 +30,15 @@ public sealed partial class CP14ActionSystem
     private void InitializeAttempts()
     {
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, ActionAttemptEvent>(OnVerbalActionAttempt);
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, ActionAttemptEvent>(OnMaterialActionAttempt);
         SubscribeLocalEvent<CP14ActionManaCostComponent, ActionAttemptEvent>(OnManacostActionAttempt);
         SubscribeLocalEvent<CP14ActionStaminaCostComponent, ActionAttemptEvent>(OnStaminaCostActionAttempt);
-
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
-        SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ActionAttemptEvent>(OnSkillPointActionAttempt);
+
+        SubscribeLocalEvent<CP14ActionSSDBlockComponent, ActionValidateEvent>(OnActionSSDAttempt);
+        SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
     }
 
     /// <summary>
@@ -112,6 +116,15 @@ public sealed partial class CP14ActionSystem
         args.Cancelled = true;
     }
 
+    private void OnVerbalActionAttempt(Entity<CP14ActionSpeakingComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (!HasComp<MutedComponent>(args.User))
+            return;
+
+        _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-verbal-component"), args.User, args.User);
+        args.Cancelled = true;
+    }
+
     private void OnMaterialActionAttempt(Entity<CP14ActionMaterialCostComponent> ent, ref ActionAttemptEvent args)
     {
         if (args.Cancelled)
@@ -133,38 +146,6 @@ public sealed partial class CP14ActionSystem
         {
             _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-material-component"), args.User, args.User);
             args.Cancelled = true;
-        }
-    }
-
-    private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent,
-        ref ActionValidateEvent args)
-    {
-        if (args.Invalid)
-            return;
-
-        var target = GetEntity(args.Input.EntityTarget);
-
-        if (!TryComp<MobStateComponent>(target, out var mobStateComp))
-        {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-not-mob"), args.User, args.User);
-            args.Invalid = true;
-            return;
-        }
-
-        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
-        {
-            var states = string.Join(", ",
-                ent.Comp.AllowedStates.Select(state => state switch
-                {
-                    MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
-                    MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
-                    MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
-                }));
-
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)),
-                args.User,
-                args.User);
-            args.Invalid = true;
         }
     }
 
@@ -212,6 +193,53 @@ public sealed partial class CP14ActionSystem
                     args.User);
                 args.Cancelled = true;
             }
+        }
+    }
+
+    private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent,
+        ref ActionValidateEvent args)
+    {
+        if (args.Invalid)
+            return;
+
+        var target = GetEntity(args.Input.EntityTarget);
+
+        if (!TryComp<MobStateComponent>(target, out var mobStateComp))
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-not-mob"), args.User, args.User);
+            args.Invalid = true;
+            return;
+        }
+
+        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
+        {
+            var states = string.Join(", ",
+                ent.Comp.AllowedStates.Select(state => state switch
+                {
+                    MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
+                    MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
+                    MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
+                }));
+
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)),
+                args.User,
+                args.User);
+            args.Invalid = true;
+        }
+    }
+
+    private void OnActionSSDAttempt(Entity<CP14ActionSSDBlockComponent> ent, ref ActionValidateEvent args)
+    {
+        if (args.Invalid)
+            return;
+
+        if (!TryComp<SSDIndicatorComponent>(GetEntity(args.Input.EntityTarget), out var ssdIndication))
+            return;
+
+        if (ssdIndication.IsSSD)
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-ssd"), args.User, args.User);
+            args.Invalid = true;
         }
     }
 }

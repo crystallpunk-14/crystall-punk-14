@@ -2,6 +2,7 @@ using Content.Server._CP14.MagicEnergy;
 using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Instruments;
+using Content.Shared._CP14.Action.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -40,7 +41,7 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<CP14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
 
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14SpellSpeechEvent>(OnSpellSpoken);
+        SubscribeLocalEvent<Shared._CP14.Action.Components.CP14ActionSpeakingComponent, CP14ActionSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
@@ -121,7 +122,7 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         }
     }
 
-    private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14SpellSpeechEvent args)
+    private void OnSpellSpoken(Entity<Shared._CP14.Action.Components.CP14ActionSpeakingComponent> ent, ref CP14ActionSpeechEvent args)
     {
         if (args.Performer is not null && args.Speech is not null)
             _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, args.Emote ? InGameICChatType.Emote : InGameICChatType.Speak, true);

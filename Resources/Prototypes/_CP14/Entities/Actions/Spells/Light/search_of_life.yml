@@ -18,7 +18,7 @@
     - !type:CP14SpellPointerToAlive
       pointerEntity: CP14SearchOfLifePointer
       searchRange: 30
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Ego vultus..."
     endSpeech: "parumper vita"
   - type: CP14ActionFreeHandsRequired

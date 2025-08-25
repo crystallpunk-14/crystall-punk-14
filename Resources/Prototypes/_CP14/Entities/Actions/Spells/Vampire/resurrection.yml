@@ -41,7 +41,7 @@
             Asphyxiation: -500
             Bloodloss: -100
       - !type:Jitter
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Redi animam meam..."
     endSpeech: "Eu rezei por ti"
   - type: CP14MagicEffectCastingVisual

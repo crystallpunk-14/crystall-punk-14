@@ -44,7 +44,7 @@
         energy: 3
         resourse: 3
       - !type:Jitter
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Plantae durant..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantGrowth

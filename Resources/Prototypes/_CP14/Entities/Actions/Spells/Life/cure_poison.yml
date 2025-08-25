@@ -34,7 +34,7 @@
       - !type:Jitter
       - !type:ModifyBloodLevel
         amount: 25
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
   - type: CP14ActionTargetMobStatusRequired
