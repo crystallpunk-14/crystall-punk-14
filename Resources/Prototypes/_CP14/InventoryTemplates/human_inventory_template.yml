@@ -53,6 +53,9 @@
       uiWindowPos: 2,2
       strippingWindowPos: 2,1
       displayName: Armor
+      blacklist:
+        tags:
+          - PetOnly
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
