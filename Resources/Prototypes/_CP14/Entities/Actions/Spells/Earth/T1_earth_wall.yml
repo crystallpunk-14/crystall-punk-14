@@ -9,7 +9,7 @@
     state: earth_wall
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 15
   - type: CP14MagicEffect
     telegraphyEffects:

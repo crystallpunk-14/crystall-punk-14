@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 7
   - type: CP14MagicEffect
     magicType: Water

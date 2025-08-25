@@ -1,4 +1,5 @@
 using System.Text;
+using Content.Shared._CP14.Action.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -25,7 +26,7 @@ namespace Content.Shared._CP14.MagicSpell;
 public abstract partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -147,7 +148,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         if (args.User is not null
             && TryComp<ActionComponent>(ent, out var actionComp)
-            && TryComp<CP14MagicEffectManaCostComponent>(ent, out var manaCost))
+            && TryComp<CP14ActionManaCostComponent>(ent, out var manaCost))
         {
             _magicVision.SpawnMagicTrace(
                 Transform(args.User.Value).Coordinates,
@@ -159,7 +160,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         }
     }
 
-    protected FixedPoint2 CalculateManacost(Entity<CP14MagicEffectManaCostComponent> ent, EntityUid? caster)
+    public FixedPoint2 CalculateManacost(Entity<CP14ActionManaCostComponent> ent, EntityUid? caster)
     {
         var manaCost = ent.Comp.ManaCost;
 

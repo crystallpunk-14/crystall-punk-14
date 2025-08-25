@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/dimension.rsi
     state: shadow_grab
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
     telegraphyEffects:

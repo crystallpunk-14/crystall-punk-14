@@ -25,7 +25,7 @@ public sealed partial class CP14SpellTransferManaToGod : CP14SpellEffect
             return;
 
         var religionSys = entManager.System<CP14SharedReligionGodSystem>();
-        var magicEnergySys = entManager.System<SharedCP14MagicEnergySystem>();
+        var magicEnergySys = entManager.System<CP14SharedMagicEnergySystem>();
 
         var gods = religionSys.GetGods(follower.Religion.Value);
         var manaAmount = Amount / gods.Count;

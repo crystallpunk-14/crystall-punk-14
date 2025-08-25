@@ -9,7 +9,7 @@
     state: firewave
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.75
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
   - type: CP14MagicEffect
     magicType: Fire

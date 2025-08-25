@@ -12,7 +12,7 @@ public sealed partial class CP14ActionSystem
     {
         SubscribeLocalEvent<CP14MagicEffectComponent, ExaminedEvent>(OnManaEffectExamined);
 
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, ExaminedEvent>(OnManacostExamined);
+        SubscribeLocalEvent<CP14ActionManaCostComponent, ExaminedEvent>(OnManacostExamined);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
@@ -31,7 +31,7 @@ public sealed partial class CP14ActionSystem
         }
     }
 
-    private void OnManacostExamined(Entity<CP14MagicEffectManaCostComponent> ent, ref ExaminedEvent args)
+    private void OnManacostExamined(Entity<Components.CP14ActionManaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{ent.Comp.ManaCost}[/color]", priority: 9);
     }

@@ -9,7 +9,7 @@
     state: magic_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
     canModifyManacost: false
   - type: CP14MagicEffect

@@ -9,7 +9,7 @@
     state: polymorph
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 30
   - type: CP14MagicEffect
     magicType: Life

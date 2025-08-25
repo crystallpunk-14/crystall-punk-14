@@ -25,7 +25,7 @@ public partial class CP14MagicEssenceSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 

@@ -5,7 +5,7 @@
   description: You summon a thick fog that obscures vision and disorients mortals.
   components:
   - type: CP14MagicEffectReligionRestricted
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
   - type: CP14MagicEffect
     telegraphyEffects:

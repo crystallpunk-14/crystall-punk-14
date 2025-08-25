@@ -9,7 +9,7 @@
     state: heat
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 7
   - type: CP14MagicEffect
     magicType: Fire

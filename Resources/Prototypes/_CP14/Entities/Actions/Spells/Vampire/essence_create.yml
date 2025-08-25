@@ -4,7 +4,7 @@
   name: Form the essence of blood
   description: You extract the essence of life stolen from other beings from your body to pass on to other vampires or use in rituals.
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 15
   - type: CP14ActionSkillPointCost
     skillPoint: Blood

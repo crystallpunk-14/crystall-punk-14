@@ -6,7 +6,7 @@
   components:
   - type: CP14ActionDangerous
   - type: CP14MagicEffectVampire
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
     effects:

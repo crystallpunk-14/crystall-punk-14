@@ -6,7 +6,7 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
     magicType: Life
@@ -70,7 +70,7 @@
   id: CP14ActionSpellPlantGrowthSilva
   name: Blessing of silvas
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 3
 
 # Scrolls

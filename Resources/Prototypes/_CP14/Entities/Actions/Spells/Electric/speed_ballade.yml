@@ -6,7 +6,7 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 1
   - type: CP14MagicEffect
     magicType: Energia

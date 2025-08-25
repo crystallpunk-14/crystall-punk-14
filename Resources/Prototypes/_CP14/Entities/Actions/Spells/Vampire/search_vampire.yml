@@ -4,7 +4,7 @@
   name: Blood connection
   description: You can sense the location of vampires from your clan from miles away.
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
   - type: CP14MagicEffect
     effects:

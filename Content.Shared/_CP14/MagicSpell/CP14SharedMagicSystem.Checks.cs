@@ -8,7 +8,6 @@ using Content.Shared._CP14.Skill;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.SSDIndicator;
 
@@ -23,7 +22,6 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeChecks()
     {
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
@@ -38,42 +36,8 @@ public abstract partial class CP14SharedMagicSystem
         //Consuming resources
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
+        SubscribeLocalEvent<CP14ActionManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
-    }
-
-    /// <summary>
-    /// Before using a spell, a mana check is made for the amount of mana to show warnings.
-    /// </summary>
-    private void OnManaCheck(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        //Total man required
-        var requiredMana = CalculateManacost(ent, args.Performer);
-
-        //First - trying get mana from item
-        if (_magicEffectQuery.TryComp(ent, out var magicEffect))
-        {
-            if (magicEffect.SpellStorage is not null &&
-                _magicContainerQuery.TryComp(magicEffect.SpellStorage, out var magicContainer))
-                requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
-        }
-
-        if (requiredMana <= 0)
-            return;
-
-        //Second - trying get mana from performer
-        if (!_magicContainerQuery.TryComp(args.Performer, out var playerMana))
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-no-mana-component"));
-            args.Cancel();
-            return;
-        }
-
-        if (!_magicEnergy.HasEnergy(args.Performer, requiredMana, playerMana, true))
-            _popup.PopupEntity(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
-                args.Performer,
-                args.Performer,
-                PopupType.SmallCaution);
     }
 
     private void OnStaminaCheck(Entity<CP14MagicEffectStaminaCostComponent> ent,
@@ -215,7 +179,7 @@ public abstract partial class CP14SharedMagicSystem
         _stamina.TakeStaminaDamage(args.Performer.Value, ent.Comp.Stamina, visual: false);
     }
 
-    private void OnManaConsume(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnManaConsume(Entity<CP14ActionManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (!TryComp<CP14MagicEffectComponent>(ent, out var magicEffect))
             return;
@@ -238,9 +202,9 @@ public abstract partial class CP14SharedMagicSystem
             _magicEnergy.ChangeEnergy((args.Performer.Value, playerMana), -requiredMana, out _, out _, safe: false);
     }
 
-    private void OnSkillPointConsume(Entity<Action.Components.CP14ActionSkillPointCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnSkillPointConsume(Entity<CP14ActionSkillPointCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
-        if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint) || ent.Comp.SkillPoint is null || args.Performer is null)
+        if (ent.Comp.SkillPoint is null || args.Performer is null)
             return;
 
         _skill.RemoveSkillPoints(args.Performer.Value, ent.Comp.SkillPoint.Value,  ent.Comp.Count);

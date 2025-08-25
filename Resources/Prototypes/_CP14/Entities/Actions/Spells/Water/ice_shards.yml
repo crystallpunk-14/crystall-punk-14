@@ -9,7 +9,7 @@
     state: ice_shards
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.75
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
     magicType: Water

@@ -1,6 +1,9 @@
 using System.Linq;
 using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
@@ -8,25 +11,83 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Popups;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Action;
 
 public sealed partial class CP14ActionSystem
 {
     [Dependency] private readonly SharedHandsSystem _hand = default!;
+    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private void InitializeAttempts()
     {
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, ActionAttemptEvent>(OnMaterialActionAttempt);
+        SubscribeLocalEvent<CP14ActionManaCostComponent, ActionAttemptEvent>(OnManacostActionAttempt);
 
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ActionAttemptEvent>(OnSkillPointActionAttempt);
     }
 
+    /// <summary>
+    /// Before using a spell, a mana check is made for the amount of mana to show warnings.
+    /// </summary>
+    private void OnManacostActionAttempt(Entity<CP14ActionManaCostComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        TryComp<CP14MagicEffectComponent>(ent, out var magicEffect);
+
+        //Total man required
+        var requiredMana = ent.Comp.ManaCost;
+
+        if (ent.Comp.CanModifyManacost)
+        {
+            var manaEv = new CP14CalculateManacostEvent(args.User, ent.Comp.ManaCost);
+
+            RaiseLocalEvent(args.User, manaEv);
+
+            if (magicEffect?.SpellStorage is not null)
+                RaiseLocalEvent(magicEffect.SpellStorage.Value, manaEv);
+
+            requiredMana = manaEv.GetManacost();
+        }
+
+        //First - trying get mana from item
+        if (magicEffect is not null && magicEffect.SpellStorage is not null &&
+            TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicContainer))
+            requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
+
+        if (requiredMana <= 0)
+            return;
+
+        //Second - trying get mana from performer
+        if (!TryComp<CP14MagicEnergyContainerComponent>(args.User, out var playerMana))
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-no-mana-component"), args.User, args.User);
+            args.Cancelled = true;
+            return;
+        }
+
+        if (!_magicEnergy.HasEnergy(args.User, requiredMana, playerMana, true) && _timing.IsFirstTimePredicted)
+            _popup.PopupClient(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
+                args.User,
+                args.User,
+                PopupType.SmallCaution);
+    }
+
     private void OnSomaticActionAttempt(Entity<CP14ActionFreeHandsRequiredComponent> ent, ref ActionAttemptEvent args)
     {
+        if (args.Cancelled)
+            return;
+
         if (TryComp<HandsComponent>(args.User, out var hands) || hands is not null)
         {
             if (_hand.CountFreeableHands((args.User, hands)) >= ent.Comp.FreeHandRequired)
@@ -39,6 +100,9 @@ public sealed partial class CP14ActionSystem
 
     private void OnMaterialActionAttempt(Entity<CP14ActionMaterialCostComponent> ent, ref ActionAttemptEvent args)
     {
+        if (args.Cancelled)
+            return;
+
         if (ent.Comp.Requirement is null)
             return;
 
@@ -58,8 +122,12 @@ public sealed partial class CP14ActionSystem
         }
     }
 
-    private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent, ref ActionValidateEvent args)
+    private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent,
+        ref ActionValidateEvent args)
     {
+        if (args.Invalid)
+            return;
+
         var target = GetEntity(args.Input.EntityTarget);
 
         if (!TryComp<MobStateComponent>(target, out var mobStateComp))
@@ -79,7 +147,9 @@ public sealed partial class CP14ActionSystem
                     MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
                 }));
 
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)), args.User, args.User);
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)),
+                args.User,
+                args.User);
             args.Invalid = true;
         }
     }
@@ -103,7 +173,11 @@ public sealed partial class CP14ActionSystem
 
         if (!TryComp<CP14SkillStorageComponent>(args.User, out var skillStorage))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough", ("name", Loc.GetString(indexedSkillPoint.Name)), ("count", ent.Comp.Count)), args.User, args.User);
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
+                    ("name", Loc.GetString(indexedSkillPoint.Name)),
+                    ("count", ent.Comp.Count)),
+                args.User,
+                args.User);
             args.Cancelled = true;
             return;
         }
@@ -118,8 +192,8 @@ public sealed partial class CP14ActionSystem
                 var d = ent.Comp.Count - freePoints;
 
                 _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
-                    ("name", Loc.GetString(indexedSkillPoint.Name)),
-                    ("count", d)),
+                        ("name", Loc.GetString(indexedSkillPoint.Name)),
+                        ("count", d)),
                     args.User,
                     args.User);
                 args.Cancelled = true;

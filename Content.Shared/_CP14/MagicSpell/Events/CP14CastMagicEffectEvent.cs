@@ -20,11 +20,10 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
     public EntityUid? Performer;
     public ProtoId<CP14MagicTypePrototype>? MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
+    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost)
     {
         Performer = performer;
         Manacost = initialManacost;
-        MagicType = magicType;
     }
 
     public float GetManacost()

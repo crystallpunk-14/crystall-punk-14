@@ -9,7 +9,7 @@
     state: cure_wounds
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 12
   - type: CP14MagicEffect
     magicType: Life

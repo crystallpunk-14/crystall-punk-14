@@ -22,7 +22,7 @@ public sealed partial class CP14SpellInterruptSpell : CP14SpellEffect
         var interrupt = false;
         foreach (var spell in caster.CastedSpells)
         {
-            if (entManager.HasComponent<CP14MagicEffectManaCostComponent>(spell))
+            if (entManager.HasComponent<Action.Components.CP14ActionManaCostComponent>(spell))
             {
                 interrupt = true;
                 break;

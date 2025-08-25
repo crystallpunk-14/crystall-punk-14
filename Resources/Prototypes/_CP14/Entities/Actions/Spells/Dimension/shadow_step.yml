@@ -9,7 +9,7 @@
     state: shadow_step
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
     telegraphyEffects:
