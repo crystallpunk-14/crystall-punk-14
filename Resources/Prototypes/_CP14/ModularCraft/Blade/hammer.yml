@@ -34,10 +34,6 @@
     bonusDamage:
       types:
         Blunt: 7
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Blunt: 5
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

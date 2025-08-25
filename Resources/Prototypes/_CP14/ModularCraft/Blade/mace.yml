@@ -16,11 +16,6 @@
       types:
         Blunt: 5
         Piercing: 2
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Blunt: 8
-        Piercing: 4
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

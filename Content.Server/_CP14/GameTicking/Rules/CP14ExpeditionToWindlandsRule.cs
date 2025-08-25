@@ -5,9 +5,9 @@ using Content.Server._CP14.Procedural;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 
 namespace Content.Server._CP14.GameTicking.Rules;
@@ -36,13 +36,7 @@ public sealed class CP14ExpeditionToWindlandsRule : GameRuleSystem<CP14Expeditio
         base.Started(uid, component, gameRule, args);
 
         var station = _station.GetStations().First();
-        if (!TryComp<StationDataComponent>(station, out var stationData))
-        {
-            _sawmill.Error($"Station {station} does not have a StationDataComponent.");
-            return;
-        }
-
-        var largestStationGrid = _station.GetLargestGrid(stationData);
+        var largestStationGrid = _station.GetLargestGrid(station);
 
         if (largestStationGrid is null)
         {

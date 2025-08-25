@@ -33,10 +33,6 @@
     bonusDamage:
       types:
         Piercing: 6
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Piercing: 3
   - !type:EditDamageableModifier # Improvised weapon
     multiplier: 1.2
   - !type:EditItem

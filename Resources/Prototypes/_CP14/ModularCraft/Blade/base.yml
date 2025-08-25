@@ -7,8 +7,6 @@
     sharpnessDamageMultiplier: 3
   - !type:EditMeleeWeapon
     damageMultiplier: 0.75
-  - !type:EditIncreaseDamageOnWield
-    damageMultiplier: 0.75
 
 - type: modularPart
   id: BaseBladeWooden
@@ -18,8 +16,6 @@
   - !type:EditSharpened
     sharpnessDamageMultiplier: 3
   - !type:EditMeleeWeapon
-    damageMultiplier: 0.25
-  - !type:EditIncreaseDamageOnWield
     damageMultiplier: 0.25
 
 - type: modularPart
@@ -54,7 +50,5 @@
   - !type:EditSharpened
     sharpnessDamageMultiplier: 0.80
   - !type:EditMeleeWeapon
-    damageMultiplier: 1.25
-  - !type:EditIncreaseDamageOnWield
     damageMultiplier: 1.25
 

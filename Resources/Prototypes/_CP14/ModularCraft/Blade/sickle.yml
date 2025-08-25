@@ -13,10 +13,6 @@
     bonusDamage:
       types:
         Slash: 5
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Slash: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1

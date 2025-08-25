@@ -1,7 +1,7 @@
-using Content.Server.Explosion.Components;
+using Content.Shared._CP14.Explosion.Components;
 using Content.Shared.Damage;
 
-namespace Content.Server.Explosion.EntitySystems;
+namespace Content.Shared.Trigger.Systems;
 
 public sealed partial class TriggerSystem
 {
