@@ -1,6 +1,6 @@
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Restricts the use of this action, by spending mana or user requirements.

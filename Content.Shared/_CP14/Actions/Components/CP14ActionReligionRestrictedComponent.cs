@@ -1,5 +1,5 @@
 
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// If the user belongs to a religion, this spell can only be used within the area of influence of that religion

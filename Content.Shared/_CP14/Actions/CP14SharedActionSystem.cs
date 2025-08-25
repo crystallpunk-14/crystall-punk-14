@@ -1,7 +1,7 @@
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._CP14.Action;
+namespace Content.Shared._CP14.Actions;
 
 public abstract partial class CP14SharedActionSystem : EntitySystem
 {

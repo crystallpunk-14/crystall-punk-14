@@ -1,3 +1,4 @@
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Electrocution;
 
@@ -22,7 +23,7 @@ public sealed partial class CP14SpellInterruptSpell : CP14SpellEffect
         var interrupt = false;
         foreach (var spell in caster.CastedSpells)
         {
-            if (entManager.HasComponent<Action.Components.CP14ActionManaCostComponent>(spell))
+            if (entManager.HasComponent<CP14ActionManaCostComponent>(spell))
             {
                 interrupt = true;
                 break;

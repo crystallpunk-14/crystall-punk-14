@@ -1,7 +1,7 @@
 using Content.Shared.Mobs;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Allows you to limit the use of a spell based on the target's alive/dead status

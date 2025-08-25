@@ -1,6 +1,6 @@
 using Content.Shared._CP14.MagicSpell;
 
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Restricts the use of this action, by spending stamina.

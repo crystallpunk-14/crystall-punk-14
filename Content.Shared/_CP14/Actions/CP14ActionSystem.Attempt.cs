@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -20,7 +20,7 @@ using Content.Shared.SSDIndicator;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._CP14.Action;
+namespace Content.Shared._CP14.Actions;
 
 public abstract partial class CP14SharedActionSystem
 {

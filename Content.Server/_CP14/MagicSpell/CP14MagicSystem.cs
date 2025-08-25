@@ -2,7 +2,7 @@ using Content.Server._CP14.MagicEnergy;
 using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Instruments;
-using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;

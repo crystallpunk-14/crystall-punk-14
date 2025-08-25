@@ -1,4 +1,4 @@
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Requires the user to be able to speak in order to use this action. Also forces the user to use certain phrases at the beginning and end of a action use

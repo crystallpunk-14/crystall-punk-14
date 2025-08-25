@@ -1,7 +1,7 @@
 using Content.Shared._CP14.MagicSpell;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._CP14.Action.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Blocks the target from using magic if they are pacified.

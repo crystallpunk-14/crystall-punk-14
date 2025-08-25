@@ -1,10 +1,10 @@
 using Content.Server.Instruments;
-using Content.Shared._CP14.Action;
+using Content.Shared._CP14.Actions;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.Instruments;
 
-namespace Content.Server._CP14.Action;
+namespace Content.Server._CP14.Actions;
 
 public sealed partial class CP14ActionSystem : CP14SharedActionSystem
 {

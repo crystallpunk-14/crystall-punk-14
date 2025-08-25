@@ -1,10 +1,10 @@
 using System.Linq;
-using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
 
-namespace Content.Shared._CP14.Action;
+namespace Content.Shared._CP14.Actions;
 
 public abstract partial class CP14SharedActionSystem
 {

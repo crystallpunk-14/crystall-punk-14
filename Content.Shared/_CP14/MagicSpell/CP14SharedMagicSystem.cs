@@ -1,5 +1,5 @@
 using System.Text;
-using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
