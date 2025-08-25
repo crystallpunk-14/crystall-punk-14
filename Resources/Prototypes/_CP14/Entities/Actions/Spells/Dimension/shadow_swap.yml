@@ -24,7 +24,7 @@
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
   - type: CP14MagicEffectSomaticAspect
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi

@@ -12,7 +12,7 @@
   - type: CP14MagicEffectSkillPointCost
     skillPoint: Blood
     count: 1
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Dead
   - type: CP14MagicEffect

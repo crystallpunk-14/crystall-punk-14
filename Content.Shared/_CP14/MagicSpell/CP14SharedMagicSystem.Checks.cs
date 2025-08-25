@@ -34,7 +34,6 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, CP14CastMagicEffectAttemptEvent>(OnSkillPointCheck);
         SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
-        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
         //Verbal speaking
@@ -182,34 +181,6 @@ public abstract partial class CP14SharedMagicSystem
         if (ssdIndication.IsSSD)
         {
             args.PushReason(Loc.GetString("cp14-magic-spell-ssd"));
-            args.Cancel();
-        }
-    }
-
-    private void OnMobStateCheck(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (args.Target is not { } target)
-            return;
-
-        if (!TryComp<MobStateComponent>(target, out var mobStateComp))
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-target-not-mob"));
-            args.Cancel();
-            return;
-        }
-
-        if (!ent.Comp.AllowedStates.Contains(mobStateComp.CurrentState))
-        {
-            var states = string.Join(", ",
-                ent.Comp.AllowedStates.Select(state => state switch
-                {
-                    MobState.Alive => Loc.GetString("cp14-magic-spell-target-mob-state-live"),
-                    MobState.Dead => Loc.GetString("cp14-magic-spell-target-mob-state-dead"),
-                    MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
-                }));
-
-            args.PushReason(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)));
             args.Cancel();
         }
     }

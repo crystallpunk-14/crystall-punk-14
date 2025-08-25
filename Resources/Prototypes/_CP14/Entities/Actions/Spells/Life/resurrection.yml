@@ -8,7 +8,7 @@
     speedMultiplier: 0.2
   - type: CP14MagicEffectManaCost
     manaCost: 100
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Dead
   - type: CP14MagicEffect
