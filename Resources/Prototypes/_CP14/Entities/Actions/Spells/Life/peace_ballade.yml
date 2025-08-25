@@ -9,10 +9,9 @@
     state: peace_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 2
   - type: CP14MagicEffect
-    magicType: Life
     effects:
     - !type:CP14SpellArea
       range: 4
@@ -32,7 +31,7 @@
           component: Pacified
           type: Add
           time: 1.8
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePeaceBallade
   - type: Action

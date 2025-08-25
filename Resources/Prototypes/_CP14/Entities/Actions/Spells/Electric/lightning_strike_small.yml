@@ -6,10 +6,9 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 7
   - type: CP14MagicEffect
-    magicType: Energia
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -29,7 +28,7 @@
     - !type:CP14SpellThrowFromUser
       throwPower: 2
       distance: 0.5
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/electromancy.rsi

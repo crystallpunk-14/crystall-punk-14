@@ -1,6 +1,5 @@
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
-using Robust.Server;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 
@@ -10,7 +9,6 @@ public sealed partial class CP14RoundEndSystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
-    [Dependency] private readonly IBaseServer _baseServer = default!;
 
     private TimeSpan _nextUpdateTime = TimeSpan.Zero;
     private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(60f);
@@ -114,7 +112,7 @@ public sealed partial class CP14RoundEndSystem
     {
         var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
 
-        var timeMap = new (int Hour, int Minute, Action Action)[]
+        var timeMap = new (int Hour, int Minute, System.Action Action)[]
         {
             (21, 45, () =>
             {

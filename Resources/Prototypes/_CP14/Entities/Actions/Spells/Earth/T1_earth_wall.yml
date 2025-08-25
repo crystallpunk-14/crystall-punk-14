@@ -9,7 +9,7 @@
     state: earth_wall
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.3
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 15
   - type: CP14MagicEffect
     telegraphyEffects:
@@ -20,11 +20,11 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14WallSpawnEarthWall
-  - type: CP14MagicEffectMaterialAspect
+  - type: CP14ActionMaterialCost
     requirement: !type:StackResource
       stack: CP14Dirt
       count: 2
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Surgite terram..."
     endSpeech: "de profundis terrae"
   - type: CP14MagicEffectCastingVisual
