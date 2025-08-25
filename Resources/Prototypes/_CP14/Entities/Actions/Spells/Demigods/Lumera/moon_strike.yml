@@ -4,7 +4,7 @@
   name: Lunar strike
   description: You focus the concentrated light of the stars into a single point, blinding and damaging everything that comes within reach of the angry goddess.
   components:
-  - type: CP14MagicEffectReligionRestricted
+  - type: CP14ActionReligionRestricted
   - type: CP14ActionManaCost
     manaCost: 30
   - type: CP14MagicEffect

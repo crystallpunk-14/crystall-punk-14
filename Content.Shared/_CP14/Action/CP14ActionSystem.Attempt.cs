@@ -4,6 +4,8 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
+using Content.Shared._CP14.Religion.Components;
+using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
@@ -26,7 +28,7 @@ public sealed partial class CP14ActionSystem
     [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-
+    [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     private void InitializeAttempts()
     {
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
@@ -39,6 +41,7 @@ public sealed partial class CP14ActionSystem
 
         SubscribeLocalEvent<CP14ActionSSDBlockComponent, ActionValidateEvent>(OnActionSSDAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
+        SubscribeLocalEvent<CP14ActionReligionRestrictedComponent, ActionValidateEvent>(OnReligionActionValidate);
     }
 
     /// <summary>
@@ -240,6 +243,38 @@ public sealed partial class CP14ActionSystem
         {
             _popup.PopupClient(Loc.GetString("cp14-magic-spell-ssd"), args.User, args.User);
             args.Invalid = true;
+        }
+    }
+
+    private void OnReligionActionValidate(Entity<CP14ActionReligionRestrictedComponent> ent, ref ActionValidateEvent args)
+    {
+        if (args.Invalid)
+            return;
+
+        if (!TryComp<CP14ReligionEntityComponent>(args.User, out var religionComp))
+            return;
+
+        var position = GetCoordinates(args.Input.EntityCoordinatesTarget);
+        var target = GetEntity(args.Input.EntityTarget);
+
+        if (target is not null)
+            position ??= Transform(target.Value).Coordinates;
+
+        if (ent.Comp.OnlyInReligionZone)
+        {
+            if (position is null || !_god.InVision(position.Value, (args.User, religionComp)))
+            {
+                args.Invalid = true;
+            }
+        }
+
+        if (ent.Comp.OnlyOnFollowers)
+        {
+            if (target is null || !TryComp<CP14ReligionFollowerComponent>(target, out var follower) || follower.Religion != religionComp.Religion)
+            {
+                _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-god-follower"), args.User, args.User);
+                args.Invalid = true;
+            }
         }
     }
 }

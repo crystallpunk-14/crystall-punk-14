@@ -2,12 +2,10 @@ using Content.Shared._CP14.Action.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
-using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.SSDIndicator;
 
 namespace Content.Shared._CP14.MagicSpell;
 
@@ -19,8 +17,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void InitializeChecks()
     {
-        SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
-
         //Verbal speaking
         SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14StartCastMagicEffectEvent>(OnVerbalAspectStartCast);
         SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14MagicEffectConsumeResourceEvent>(OnVerbalAspectAfterCast);
@@ -33,35 +29,6 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14ActionStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
         SubscribeLocalEvent<CP14ActionManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
-    }
-
-    private void OnReligionRestrictedCheck(Entity<CP14MagicEffectReligionRestrictedComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (!TryComp<CP14ReligionEntityComponent>(args.Performer, out var religionComp))
-            return;
-
-        var position = args.Position;
-
-        if (args.Target is not null)
-            position ??= Transform(args.Target.Value).Coordinates;
-
-        if (ent.Comp.OnlyInReligionZone)
-        {
-            if (position is null || !_god.InVision(position.Value, (args.Performer, religionComp)))
-            {
-                args.Cancel();
-            }
-        }
-
-        if (ent.Comp.OnlyOnFollowers)
-        {
-            if (args.Target is null || !TryComp<CP14ReligionFollowerComponent>(args.Target, out var follower) || follower.Religion != religionComp.Religion)
-            {
-                args.PushReason(Loc.GetString("cp14-magic-spell-target-god-follower"));
-                args.Cancel();
-            }
-        }
     }
 
     private void OnVerbalAspectStartCast(Entity<CP14ActionSpeakingComponent> ent,
