@@ -6,7 +6,7 @@
   components:
   - type: CP14MagicEffectManaCost
     manaCost: 15
-  - type: CP14MagicEffectSkillPointCost
+  - type: CP14ActionSkillPointCost
     skillPoint: Blood
     count: 1
   - type: CP14MagicEffect

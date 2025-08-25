@@ -9,7 +9,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 12
   - type: CP14MagicEffectVampire
-  - type: CP14MagicEffectSkillPointCost
+  - type: CP14ActionSkillPointCost
     skillPoint: Blood
     count: 0.1
   - type: CP14MagicEffect

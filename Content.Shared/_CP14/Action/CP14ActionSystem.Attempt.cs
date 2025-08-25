@@ -1,6 +1,6 @@
 using System.Linq;
 using Content.Shared._CP14.Action.Components;
-using Content.Shared.Actions.Components;
+using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Mobs;
@@ -14,6 +14,7 @@ public sealed partial class CP14ActionSystem
     {
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
+        SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ActionAttemptEvent>(OnSkillPointAttempt);
     }
 
     private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent, ref ActionValidateEvent args)
@@ -51,6 +52,37 @@ public sealed partial class CP14ActionSystem
         {
             _popup.PopupClient(Loc.GetString("cp14-magic-spell-pacified"), args.User, args.User);
             args.Cancelled = true;
+        }
+    }
+
+    private void OnSkillPointAttempt(Entity<CP14ActionSkillPointCostComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint) || ent.Comp.SkillPoint is null)
+            return;
+
+        if (!TryComp<CP14SkillStorageComponent>(args.User, out var skillStorage))
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough", ("name", Loc.GetString(indexedSkillPoint.Name)), ("count", ent.Comp.Count)), args.User, args.User);
+            args.Cancelled = true;
+            return;
+        }
+
+        var points = skillStorage.SkillPoints;
+        if (points.TryGetValue(ent.Comp.SkillPoint.Value, out var currentPoints))
+        {
+            var freePoints = currentPoints.Max - currentPoints.Sum;
+
+            if (freePoints < ent.Comp.Count)
+            {
+                var d = ent.Comp.Count - freePoints;
+
+                _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
+                    ("name", Loc.GetString(indexedSkillPoint.Name)),
+                    ("count", d)),
+                    args.User,
+                    args.User);
+                args.Cancelled = true;
+            }
         }
     }
 }

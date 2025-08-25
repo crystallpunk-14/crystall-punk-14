@@ -14,7 +14,7 @@ public sealed partial class CP14ActionSystem
 
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, ExaminedEvent>(OnManacostExamined);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
-        SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
+        SubscribeLocalEvent<Components.CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, ExaminedEvent>(OnSomaticExamined);
@@ -41,7 +41,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup($"{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{ent.Comp.Stamina}[/color]", priority: 9);
     }
 
-    private void OnSkillPointCostExamined(Entity<CP14MagicEffectSkillPointCostComponent> ent, ref ExaminedEvent args)
+    private void OnSkillPointCostExamined(Entity<Components.CP14ActionSkillPointCostComponent> ent, ref ExaminedEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint))
             return;
