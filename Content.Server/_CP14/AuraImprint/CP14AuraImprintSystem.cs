@@ -1,6 +1,8 @@
 using Content.Shared._CP14.AuraDNA;
 using Content.Shared._CP14.MagicVision;
+using Content.Shared._CP14.MagicVision.Components;
 using Content.Shared.Mobs;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -18,17 +20,27 @@ public sealed partial class CP14AuraImprintSystem : CP14SharedAuraImprintSystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14AuraImprintComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CP14HideMagicAuraStatusEffectComponent, StatusEffectAppliedEvent>(OnShuffleStatusApplied);
         SubscribeLocalEvent<CP14AuraImprintComponent, MobStateChangedEvent>(OnMobStateChanged);
+    }
+
+    private void OnShuffleStatusApplied(Entity<CP14HideMagicAuraStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        ent.Comp.Imprint = GenerateAuraImprint(args.Target);
+        Dirty(ent);
     }
 
     private void OnMapInit(Entity<CP14AuraImprintComponent> ent, ref MapInitEvent args)
     {
-        ent.Comp.Imprint = GenerateAuraImprint(ent);
+        ent.Comp.Imprint = GenerateAuraImprint((ent.Owner, ent.Comp));
         Dirty(ent);
     }
 
-    public string GenerateAuraImprint(Entity<CP14AuraImprintComponent> ent)
+    public string GenerateAuraImprint(Entity<CP14AuraImprintComponent?> ent)
     {
+        if (!Resolve(ent, ref ent.Comp))
+            return string.Empty;
+
         var letters = new[] { "ä", "ã", "ç", "ø", "ђ", "œ", "Ї", "Ћ", "ў", "ž", "Ћ", "ö", "є", "þ"};
         var imprint = string.Empty;
 
@@ -46,7 +58,7 @@ public sealed partial class CP14AuraImprintSystem : CP14SharedAuraImprintSystem
         {
             case MobState.Critical:
             {
-                _vision.SpawnMagicVision(
+                _vision.SpawnMagicTrace(
                     Transform(ent).Coordinates,
                     new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull"),
                     Loc.GetString("cp14-magic-vision-crit"),
@@ -56,7 +68,7 @@ public sealed partial class CP14AuraImprintSystem : CP14SharedAuraImprintSystem
             }
             case MobState.Dead:
             {
-                _vision.SpawnMagicVision(
+                _vision.SpawnMagicTrace(
                     Transform(ent).Coordinates,
                     new SpriteSpecifier.Rsi(new ResPath("_CP14/Actions/Spells/misc.rsi"), "skull_red"),
                     Loc.GetString("cp14-magic-vision-dead"),

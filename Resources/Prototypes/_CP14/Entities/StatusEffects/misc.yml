@@ -1,5 +1,6 @@
 - type: entity
   id: CP14StatusEffectMagicArmor
+  parent: MobStatusEffectBase
   components:
   - type: StatusEffect
   - type: StatusEffectAlert
@@ -29,6 +30,7 @@
 
 - type: entity
   id: CP14StatusEffectGlowing
+  name: glowing
   components:
   - type: StatusEffect
   - type: StatusEffectAlert
@@ -45,3 +47,23 @@
     radius: 5.0
     energy: 1
     color: "#efedff"
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: CP14StatusEffectVampireForceSleep
+  name: forced sleep
+  components:
+  - type: StatusEffectAlert
+    alert: CP14VampireSleeping
+  - type: ForcedSleepingStatusEffect
+  - type: StunnedStatusEffect
+  - type: KnockdownStatusEffect
+
+- type: entity
+  id: MobStatusEffectMagicAuraConfused
+  name: confused aura
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: CP14ConfusedAura
+  - type: CP14HideMagicAuraStatusEffect

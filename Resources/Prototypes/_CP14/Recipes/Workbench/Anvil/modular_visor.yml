@@ -5,7 +5,7 @@
   id: CP14ModularVisorIronPlate
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -18,7 +18,7 @@
   id: CP14ModularVisorGoldPlate
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -31,7 +31,7 @@
   id: CP14ModularVisorCopperPlate
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -44,7 +44,7 @@
   id: CP14ModularVisorMithrilPlate
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -59,7 +59,7 @@
   id: CP14ModularVisorIronChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 6
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -72,7 +72,7 @@
   id: CP14ModularVisorGoldChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 6
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -85,7 +85,7 @@
   id: CP14ModularVisorCopperChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 6
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -98,7 +98,7 @@
   id: CP14ModularVisorMithrilChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 6
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:

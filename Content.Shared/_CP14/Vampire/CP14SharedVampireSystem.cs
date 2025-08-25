@@ -1,6 +1,8 @@
 using Content.Shared._CP14.Skill;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared._CP14.Skill.Prototypes;
+using Content.Shared._CP14.Trading.Prototypes;
+using Content.Shared._CP14.Trading.Systems;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Systems;
@@ -10,6 +12,7 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Jittering;
+using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
@@ -25,9 +28,12 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] protected readonly IPrototypeManager Proto = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly CP14SharedTradingPlatformSystem _trade = default!;
 
     private readonly ProtoId<CP14SkillPointPrototype> _skillPointType = "Blood";
     private readonly ProtoId<CP14SkillPointPrototype> _memorySkillPointType = "Memory";
+    private readonly ProtoId<CP14TradingFactionPrototype> _tradeFaction = "VampireMarket";
 
     public override void Initialize()
     {
@@ -83,6 +89,9 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
             essenceHolder.Essence = 0;
             Dirty(ent, essenceHolder);
         }
+
+        //Additional trade faction
+        _trade.AddReputation(ent.Owner, _tradeFaction, 1);
     }
 
     private void OnVampireRemove(Entity<CP14VampireComponent> ent, ref ComponentRemove args)
@@ -194,7 +203,10 @@ public abstract partial class CP14SharedVampireSystem : EntitySystem
         }
 
         if (extractedEssence <= 0)
+        {
+            _popup.PopupClient(Loc.GetString("cp14-vampire-gather-essence-no-left"), victim, vampire, PopupType.SmallCaution);
             return;
+        }
 
         _skill.AddSkillPoints(vampire, _skillPointType, extractedEssence);
         victim.Comp.Essence -= amount;

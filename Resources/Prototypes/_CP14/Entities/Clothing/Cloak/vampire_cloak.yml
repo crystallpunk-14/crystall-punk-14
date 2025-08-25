@@ -23,7 +23,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 40
-      CP14Mithril: 10
       CP14BloodEssence: 1
 
 - type: entity

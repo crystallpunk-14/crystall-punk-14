@@ -12,7 +12,7 @@ public abstract class SharedCP14MagicEnergyCrystalSlotSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly SharedCP14MagicEnergySystem _magicEnergy = default!;
+    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 

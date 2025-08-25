@@ -4,8 +4,8 @@
   name: The Wrath of Lumera
   description: "You unleash your anger on the creature, stunning it, inflicting damage, and burning its mind, removing 0.5 memory points."
   components:
-  - type: CP14MagicEffectReligionRestricted
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionReligionRestricted
+  - type: CP14ActionManaCost
     manaCost: 300
   - type: CP14MagicEffect
     telegraphyEffects:

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by vladimir.s ",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bone_remains_1"
+    },
+    {
+      "name": "bone_remains_2"
+    },
+    {
+      "name": "bone_remains_3"
+    }
+  ]
+}

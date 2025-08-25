@@ -5,7 +5,7 @@
   id: CP14ModularTipCopperArrow
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -19,7 +19,7 @@
   id: CP14ModularTipIronArrow
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -33,7 +33,7 @@
   id: CP14ModularTipGoldArrow
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -47,7 +47,7 @@
   id: CP14ModularTipMithrilArrow
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 2
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:

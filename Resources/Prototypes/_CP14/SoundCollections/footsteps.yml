@@ -11,3 +11,11 @@
   - /Audio/_CP14/Effects/Footsteps/slippers1.ogg
   - /Audio/_CP14/Effects/Footsteps/slippers2.ogg
   - /Audio/_CP14/Effects/Footsteps/slippers3.ogg
+
+- type: soundCollection
+  id: CP14StepBones
+  files:
+  - /Audio/_CP14/Effects/Footsteps/bones1.ogg
+  - /Audio/_CP14/Effects/Footsteps/bones2.ogg
+  - /Audio/_CP14/Effects/Footsteps/bones3.ogg
+  - /Audio/_CP14/Effects/Footsteps/bones4.ogg

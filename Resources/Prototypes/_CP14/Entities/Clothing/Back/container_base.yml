@@ -34,3 +34,5 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+  - type: StaticPrice
+    price: 10 #TODO get rid of this

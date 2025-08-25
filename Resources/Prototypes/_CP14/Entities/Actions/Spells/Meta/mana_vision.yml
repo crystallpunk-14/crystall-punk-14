@@ -37,6 +37,7 @@
 
 - type: entity
   id: CP14MagicVisionMarker
+  parent: CP14SpectralBase
   categories: [ HideSpawnMenu ]
   name: mana trace
   components:

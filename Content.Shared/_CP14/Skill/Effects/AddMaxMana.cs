@@ -11,13 +11,13 @@ public sealed partial class AddManaMax : CP14SkillEffect
     public FixedPoint2 AdditionalMana = 0;
     public override void AddSkill(IEntityManager entManager, EntityUid target)
     {
-        var magicSystem = entManager.System<SharedCP14MagicEnergySystem>();
+        var magicSystem = entManager.System<CP14SharedMagicEnergySystem>();
         magicSystem.ChangeMaximumEnergy(target, AdditionalMana);
     }
 
     public override void RemoveSkill(IEntityManager entManager, EntityUid target)
     {
-        var magicSystem = entManager.System<SharedCP14MagicEnergySystem>();
+        var magicSystem = entManager.System<CP14SharedMagicEnergySystem>();
         magicSystem.ChangeMaximumEnergy(target, -AdditionalMana);
     }
 

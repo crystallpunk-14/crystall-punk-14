@@ -9,7 +9,7 @@
     state: magic_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
     canModifyManacost: false
   - type: CP14MagicEffect
@@ -30,7 +30,7 @@
         - !type:CP14ManaChange
           manaDelta: 1.2
           safe: true
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicBallade
   - type: Action

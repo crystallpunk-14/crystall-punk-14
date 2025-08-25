@@ -9,35 +9,6 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._CP14.MagicSpell.Events;
 
 /// <summary>
-/// Called first to verify that all conditions are met and the spell can be performed.
-/// </summary>
-public sealed class CP14CastMagicEffectAttemptEvent : CancellableEntityEventArgs
-{
-    /// <summary>
-    /// The Performer of the event, to check if they meet the requirements.
-    /// </summary>
-    public readonly EntityUid Performer;
-    public readonly EntityUid? Used;
-    public readonly EntityUid? Target;
-    public readonly EntityCoordinates? Position;
-
-    public string Reason = string.Empty;
-
-    public CP14CastMagicEffectAttemptEvent(EntityUid performer, EntityUid? used, EntityUid? target, EntityCoordinates? position)
-    {
-        Performer = performer;
-        Used = used;
-        Target = target;
-        Position = position;
-    }
-
-    public void PushReason(string reason)
-    {
-        Reason += $"{reason}\n";
-    }
-}
-
-/// <summary>
 /// An event that checks all sorts of conditions, and calculates the total cost of casting a spell. Called before the spell is cast.
 /// </summary>
 /// <remarks>TODO: This call is duplicated at the beginning of the cast for checks, and at the end of the cast for mana subtraction.</remarks>
@@ -47,13 +18,11 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
 
     public float Multiplier = 1f;
     public EntityUid? Performer;
-    public ProtoId<CP14MagicTypePrototype>? MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
+    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost)
     {
         Performer = performer;
         Manacost = initialManacost;
-        MagicType = magicType;
     }
 
     public float GetManacost()

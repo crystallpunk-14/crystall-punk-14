@@ -18,9 +18,6 @@ public sealed partial class CP14MagicEffectComponent : Component
     [DataField]
     public EntityUid? SpellStorage;
 
-    [DataField]
-    public ProtoId<CP14MagicTypePrototype>? MagicType = null;
-
     /// <summary>
     /// Effects that will trigger at the beginning of the cast, before mana is spent. Should have no gameplay importance, just special effects, popups and sounds.
     /// </summary>

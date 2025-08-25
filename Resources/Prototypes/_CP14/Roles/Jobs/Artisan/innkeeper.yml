@@ -6,6 +6,16 @@
   startingGear: CP14InnkeeperGear
   icon: "CP14JobIconInnkeeper"
   supervisors: cp14-job-supervisors-command
+  special:
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - HomeDecor
+      - Butchers
+      - Dairy
+    - !type:CP14LearnSkillsSpecial
+      skills:
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
 
 - type: startingGear
   id: CP14InnkeeperGear
