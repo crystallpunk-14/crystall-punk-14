@@ -1,6 +1,6 @@
 using Content.Server.Instruments;
 using Content.Shared._CP14.Actions;
-using Content.Shared._CP14.MagicSpell.Components;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.Instruments;
 
