@@ -102,7 +102,7 @@
     damageContainer: Biological
   - type: Edible
     edible: Drink
-    solution: drink
+    solution: drop
     delay: 0.5
     forceFeedDelay: 1.5
   - type: ExaminableSolution
