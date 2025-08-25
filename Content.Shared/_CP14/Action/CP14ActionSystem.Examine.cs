@@ -10,10 +10,8 @@ public sealed partial class CP14ActionSystem
 {
     private void InitializeExamine()
     {
-        SubscribeLocalEvent<CP14MagicEffectComponent, ExaminedEvent>(OnManaEffectExamined);
-
         SubscribeLocalEvent<CP14ActionManaCostComponent, ExaminedEvent>(OnManacostExamined);
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
+        SubscribeLocalEvent<CP14ActionStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
@@ -23,20 +21,12 @@ public sealed partial class CP14ActionSystem
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
 
-    private void OnManaEffectExamined(Entity<CP14MagicEffectComponent> ent, ref ExaminedEvent args)
-    {
-        if (_proto.TryIndex(ent.Comp.MagicType, out var indexedMagic))
-        {
-            args.PushMarkup($"{Loc.GetString("cp14-magic-type")}: [color={indexedMagic.Color.ToHex()}]{Loc.GetString(indexedMagic.Name)}[/color]", 10);
-        }
-    }
-
     private void OnManacostExamined(Entity<Components.CP14ActionManaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-manacost")}: [color=#5da9e8]{ent.Comp.ManaCost}[/color]", priority: 9);
     }
 
-    private void OnStaminaCostExamined(Entity<CP14MagicEffectStaminaCostComponent> ent, ref ExaminedEvent args)
+    private void OnStaminaCostExamined(Entity<Components.CP14ActionStaminaCostComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup($"{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{ent.Comp.Stamina}[/color]", priority: 9);
     }

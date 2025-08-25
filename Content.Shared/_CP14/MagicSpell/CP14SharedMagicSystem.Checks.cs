@@ -22,7 +22,6 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeChecks()
     {
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
 
@@ -35,22 +34,9 @@ public abstract partial class CP14SharedMagicSystem
 
         //Consuming resources
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
-        SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
+        SubscribeLocalEvent<CP14ActionStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
         SubscribeLocalEvent<CP14ActionManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
-    }
-
-    private void OnStaminaCheck(Entity<CP14MagicEffectStaminaCostComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (!TryComp<StaminaComponent>(args.Performer, out var staminaComp))
-            return;
-
-        if (!staminaComp.Critical)
-            return;
-
-        args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
-        args.Cancel();
     }
 
     private void OnVerbalCheck(Entity<CP14MagicEffectVerbalAspectComponent> ent,
@@ -171,7 +157,7 @@ public abstract partial class CP14SharedMagicSystem
         ent.Comp.Requirement.PostCraft(EntityManager, _proto, heldedItems);
     }
 
-    private void OnStaminaConsume(Entity<CP14MagicEffectStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnStaminaConsume(Entity<Action.Components.CP14ActionStaminaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (args.Performer is null)
             return;

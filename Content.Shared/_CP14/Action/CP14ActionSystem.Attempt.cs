@@ -7,6 +7,7 @@ using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
@@ -29,6 +30,7 @@ public sealed partial class CP14ActionSystem
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, ActionAttemptEvent>(OnMaterialActionAttempt);
         SubscribeLocalEvent<CP14ActionManaCostComponent, ActionAttemptEvent>(OnManacostActionAttempt);
+        SubscribeLocalEvent<CP14ActionStaminaCostComponent, ActionAttemptEvent>(OnStaminaCostActionAttempt);
 
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
@@ -81,6 +83,18 @@ public sealed partial class CP14ActionSystem
                 args.User,
                 args.User,
                 PopupType.SmallCaution);
+    }
+
+    private void OnStaminaCostActionAttempt(Entity<CP14ActionStaminaCostComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (!TryComp<StaminaComponent>(args.User, out var staminaComp))
+            return;
+
+        if (!staminaComp.Critical)
+            return;
+
+        _popup.PopupClient(Loc.GetString("cp14-magic-spell-stamina-not-enough"), args.User, args.User);
+        args.Cancelled = true;
     }
 
     private void OnSomaticActionAttempt(Entity<CP14ActionFreeHandsRequiredComponent> ent, ref ActionAttemptEvent args)
