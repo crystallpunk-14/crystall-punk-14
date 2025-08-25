@@ -32,7 +32,7 @@
           component: Pacified
           type: Add
           time: 1.8
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePeaceBallade
   - type: Action

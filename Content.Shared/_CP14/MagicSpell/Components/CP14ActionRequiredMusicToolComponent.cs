@@ -4,6 +4,6 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 /// Requires the user to play music to use this spell
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14MagicEffectRequiredMusicToolComponent : Component
+public sealed partial class CP14ActionRequiredMusicToolComponent : Component
 {
 }

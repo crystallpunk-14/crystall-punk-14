@@ -3,9 +3,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Action;
 
-public sealed partial class CP14ActionSystem : EntitySystem
+public abstract partial class CP14SharedActionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public override void Initialize()

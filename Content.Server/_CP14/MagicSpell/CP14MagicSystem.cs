@@ -41,12 +41,10 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<CP14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
 
-        SubscribeLocalEvent<Shared._CP14.Action.Components.CP14ActionSpeakingComponent, CP14ActionSpeechEvent>(OnSpellSpoken);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14ActionSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
-
-        SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
     }
 
     private void OnStartCollide(Entity<CP14SpellEffectOnCollideComponent> ent, ref StartCollideEvent args)
@@ -122,7 +120,7 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         }
     }
 
-    private void OnSpellSpoken(Entity<Shared._CP14.Action.Components.CP14ActionSpeakingComponent> ent, ref CP14ActionSpeechEvent args)
+    private void OnSpellSpoken(Entity<CP14ActionSpeakingComponent> ent, ref CP14ActionSpeechEvent args)
     {
         if (args.Performer is not null && args.Speech is not null)
             _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, args.Emote ? InGameICChatType.Emote : InGameICChatType.Speak, true);
@@ -139,28 +137,5 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
     {
         QueueDel(ent.Comp.SpawnedEntity);
         ent.Comp.SpawnedEntity = null;
-    }
-
-    private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        var passed = false;
-        var query = EntityQueryEnumerator<ActiveInstrumentComponent, InstrumentComponent>();
-        while (query.MoveNext(out var uid, out var active, out var instrument))
-        {
-            if (!instrument.Playing)
-                continue;
-
-            if (Transform(uid).ParentUid != args.Performer)
-                continue;
-
-            passed = true;
-            break;
-        }
-
-        if (passed)
-            return;
-
-        args.PushReason(Loc.GetString("cp14-magic-music-aspect"));
-        args.Cancel();
     }
 }

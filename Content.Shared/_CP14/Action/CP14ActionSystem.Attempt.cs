@@ -22,7 +22,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Action;
 
-public sealed partial class CP14ActionSystem
+public abstract partial class CP14SharedActionSystem
 {
     [Dependency] private readonly SharedHandsSystem _hand = default!;
     [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
@@ -80,13 +80,13 @@ public sealed partial class CP14ActionSystem
         //Second - trying get mana from performer
         if (!TryComp<CP14MagicEnergyContainerComponent>(args.User, out var playerMana))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-no-mana-component"), args.User, args.User);
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-no-mana-component"), args.User, args.User);
             args.Cancelled = true;
             return;
         }
 
         if (!_magicEnergy.HasEnergy(args.User, requiredMana, playerMana, true) && _timing.IsFirstTimePredicted)
-            _popup.PopupClient(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
+            Popup.PopupClient(Loc.GetString($"cp14-magic-spell-not-enough-mana-cast-warning-{_random.Next(5)}"),
                 args.User,
                 args.User,
                 PopupType.SmallCaution);
@@ -100,7 +100,7 @@ public sealed partial class CP14ActionSystem
         if (!staminaComp.Critical)
             return;
 
-        _popup.PopupClient(Loc.GetString("cp14-magic-spell-stamina-not-enough"), args.User, args.User);
+        Popup.PopupClient(Loc.GetString("cp14-magic-spell-stamina-not-enough"), args.User, args.User);
         args.Cancelled = true;
     }
 
@@ -115,7 +115,7 @@ public sealed partial class CP14ActionSystem
                 return;
         }
 
-        _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-somatic-component"), args.User, args.User);
+        Popup.PopupClient(Loc.GetString("cp14-magic-spell-need-somatic-component"), args.User, args.User);
         args.Cancelled = true;
     }
 
@@ -124,7 +124,7 @@ public sealed partial class CP14ActionSystem
         if (!HasComp<MutedComponent>(args.User))
             return;
 
-        _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-verbal-component"), args.User, args.User);
+        Popup.PopupClient(Loc.GetString("cp14-magic-spell-need-verbal-component"), args.User, args.User);
         args.Cancelled = true;
     }
 
@@ -147,7 +147,7 @@ public sealed partial class CP14ActionSystem
 
         if (!ent.Comp.Requirement.CheckRequirement(EntityManager, _proto, heldedItems))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-material-component"), args.User, args.User);
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-need-material-component"), args.User, args.User);
             args.Cancelled = true;
         }
     }
@@ -159,7 +159,7 @@ public sealed partial class CP14ActionSystem
 
         if (HasComp<PacifiedComponent>(args.User))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-pacified"), args.User, args.User);
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-pacified"), args.User, args.User);
             args.Cancelled = true;
         }
     }
@@ -171,7 +171,7 @@ public sealed partial class CP14ActionSystem
 
         if (!TryComp<CP14SkillStorageComponent>(args.User, out var skillStorage))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
                     ("name", Loc.GetString(indexedSkillPoint.Name)),
                     ("count", ent.Comp.Count)),
                 args.User,
@@ -189,7 +189,7 @@ public sealed partial class CP14ActionSystem
             {
                 var d = ent.Comp.Count - freePoints;
 
-                _popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
+                Popup.PopupClient(Loc.GetString("cp14-magic-spell-skillpoint-not-enough",
                         ("name", Loc.GetString(indexedSkillPoint.Name)),
                         ("count", d)),
                     args.User,
@@ -209,7 +209,7 @@ public sealed partial class CP14ActionSystem
 
         if (!TryComp<MobStateComponent>(target, out var mobStateComp))
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-not-mob"), args.User, args.User);
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-target-not-mob"), args.User, args.User);
             args.Invalid = true;
             return;
         }
@@ -224,7 +224,7 @@ public sealed partial class CP14ActionSystem
                     MobState.Critical => Loc.GetString("cp14-magic-spell-target-mob-state-critical")
                 }));
 
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)),
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-target-mob-state", ("state", states)),
                 args.User,
                 args.User);
             args.Invalid = true;
@@ -241,7 +241,7 @@ public sealed partial class CP14ActionSystem
 
         if (ssdIndication.IsSSD)
         {
-            _popup.PopupClient(Loc.GetString("cp14-magic-spell-ssd"), args.User, args.User);
+            Popup.PopupClient(Loc.GetString("cp14-magic-spell-ssd"), args.User, args.User);
             args.Invalid = true;
         }
     }
@@ -272,7 +272,7 @@ public sealed partial class CP14ActionSystem
         {
             if (target is null || !TryComp<CP14ReligionFollowerComponent>(target, out var follower) || follower.Religion != religionComp.Religion)
             {
-                _popup.PopupClient(Loc.GetString("cp14-magic-spell-target-god-follower"), args.User, args.User);
+                Popup.PopupClient(Loc.GetString("cp14-magic-spell-target-god-follower"), args.User, args.User);
                 args.Invalid = true;
             }
         }

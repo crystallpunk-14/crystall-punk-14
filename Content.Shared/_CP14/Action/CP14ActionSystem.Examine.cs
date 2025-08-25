@@ -6,7 +6,7 @@ using Content.Shared.Mobs;
 
 namespace Content.Shared._CP14.Action;
 
-public sealed partial class CP14ActionSystem
+public abstract partial class CP14SharedActionSystem
 {
     private void InitializeExamine()
     {
@@ -17,7 +17,7 @@ public sealed partial class CP14ActionSystem
         SubscribeLocalEvent<CP14ActionSpeakingComponent, ExaminedEvent>(OnVerbalExamined);
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ExaminedEvent>(OnSomaticExamined);
         SubscribeLocalEvent<CP14ActionMaterialCostComponent, ExaminedEvent>(OnMaterialExamined);
-        SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
+        SubscribeLocalEvent<CP14ActionRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
 
@@ -54,7 +54,7 @@ public sealed partial class CP14ActionSystem
         if (ent.Comp.Requirement is not null)
             args.PushMarkup(Loc.GetString("cp14-magic-material-aspect") + " " + ent.Comp.Requirement.GetRequirementTitle(_proto));
     }
-    private void OnMusicExamined(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref ExaminedEvent args)
+    private void OnMusicExamined(Entity<CP14ActionRequiredMusicToolComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup(Loc.GetString("cp14-magic-music-aspect"));
     }

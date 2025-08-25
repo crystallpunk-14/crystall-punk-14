@@ -30,7 +30,7 @@
         - !type:CP14ManaChange
           manaDelta: 1.2
           safe: true
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicBallade
   - type: Action

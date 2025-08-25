@@ -32,7 +32,7 @@
         - !type:AdjustTemperature
           amount: 500
         - !type:Ignite
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHellBallade
   - type: CP14ActionDangerous
