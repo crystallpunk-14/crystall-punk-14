@@ -57,7 +57,6 @@
   components:
   - type: Item
     size: Ginormous
-  - type: BadFood
   - type: SolutionContainerManager
     solutions:
       drop:
@@ -101,10 +100,9 @@
         Brute: 0.016 # ~ 1 minute
   - type: Damageable
     damageContainer: Biological
-  - type: Food
-    solution: drop
-    useSound: /Audio/Items/drink.ogg
-    eatMessage: drink-component-try-use-drink-success-slurp
+  - type: Edible
+    edible: Drink
+    solution: drink
     delay: 0.5
     forceFeedDelay: 1.5
   - type: ExaminableSolution
