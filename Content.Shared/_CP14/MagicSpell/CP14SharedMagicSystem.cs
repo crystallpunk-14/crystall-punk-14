@@ -105,23 +105,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
             _doAfter.Cancel(ent.Comp.ActiveDoAfter);
     }
 
-    /// <summary>
-    /// Checking to see if the spell can be used at all
-    /// </summary>
-    private bool CanCastSpell(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
-    {
-        if (args.User is not { } performer)
-            return true;
-
-        var ev = new CP14CastMagicEffectAttemptEvent(performer, args.Used, args.Target, args.Position);
-        RaiseLocalEvent(ent, ev);
-
-        if (ev.Reason != string.Empty)
-            _popup.PopupPredicted(ev.Reason, performer, performer);
-
-        return !ev.Cancelled;
-    }
-
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
     {
         if (!_timing.IsFirstTimePredicted)
