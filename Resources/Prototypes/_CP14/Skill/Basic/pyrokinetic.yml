@@ -83,10 +83,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
@@ -132,10 +128,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2

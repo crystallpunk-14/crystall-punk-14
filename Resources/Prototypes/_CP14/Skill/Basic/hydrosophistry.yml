@@ -80,10 +80,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: water2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Water: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HydrosophistryT1
@@ -127,10 +123,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: water3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Water: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HydrosophistryT2

@@ -49,10 +49,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: electro2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Energia: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT1
@@ -83,10 +79,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: electro3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Energia: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT2

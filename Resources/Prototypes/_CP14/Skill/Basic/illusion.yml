@@ -50,10 +50,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Light: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: IllusionT1
@@ -97,10 +93,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: light3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Light: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: IllusionT2
