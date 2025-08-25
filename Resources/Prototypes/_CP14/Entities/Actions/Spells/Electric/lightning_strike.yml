@@ -9,7 +9,6 @@
   - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
-    magicType: Energia
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

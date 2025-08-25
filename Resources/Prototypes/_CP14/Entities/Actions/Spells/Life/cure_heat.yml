@@ -9,7 +9,6 @@
   - type: CP14ActionManaCost
     manaCost: 12
   - type: CP14MagicEffect
-    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       clientside: true

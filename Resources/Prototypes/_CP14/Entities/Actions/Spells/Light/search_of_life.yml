@@ -10,7 +10,6 @@
   - type: CP14ActionManaCost
     manaCost: 30
   - type: CP14MagicEffect
-    magicType: Light
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

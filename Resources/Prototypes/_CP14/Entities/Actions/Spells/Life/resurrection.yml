@@ -12,7 +12,6 @@
     allowedStates:
     - Dead
   - type: CP14MagicEffect
-    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

@@ -12,7 +12,6 @@
   - type: CP14ActionManaCost
     manaCost: 8
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellArea
       range: 3

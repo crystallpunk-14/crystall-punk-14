@@ -10,7 +10,6 @@
   - type: CP14ActionManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

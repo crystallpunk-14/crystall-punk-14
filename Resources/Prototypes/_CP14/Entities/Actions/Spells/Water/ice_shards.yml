@@ -12,7 +12,6 @@
   - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellProjectile
       prototype: CP14IceShard
