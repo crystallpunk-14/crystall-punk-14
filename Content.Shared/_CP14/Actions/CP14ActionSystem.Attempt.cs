@@ -109,9 +109,9 @@ public abstract partial class CP14SharedActionSystem
         if (args.Cancelled)
             return;
 
-        if (TryComp<HandsComponent>(args.User, out var hands) || hands is not null)
+        if (TryComp<HandsComponent>(args.User, out var hands))
         {
-            if (_hand.CountFreeableHands((args.User, hands)) >= ent.Comp.FreeHandRequired)
+            if (_hand.CountFreeHands((args.User, hands)) >= ent.Comp.FreeHandRequired)
                 return;
         }
 
