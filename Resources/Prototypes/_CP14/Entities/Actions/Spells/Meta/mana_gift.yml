@@ -24,7 +24,7 @@
       - !type:CP14ManaChange
         manaDelta: 10
         safe: false
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaGift
   - type: Action

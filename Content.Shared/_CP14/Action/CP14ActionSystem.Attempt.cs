@@ -1,8 +1,11 @@
 using System.Linq;
 using Content.Shared._CP14.Action.Components;
+using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 
@@ -10,11 +13,27 @@ namespace Content.Shared._CP14.Action;
 
 public sealed partial class CP14ActionSystem
 {
+    [Dependency] private readonly SharedHandsSystem _hand = default!;
+
     private void InitializeAttempts()
     {
+        SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
+
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
-        SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ActionAttemptEvent>(OnSkillPointAttempt);
+        SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ActionAttemptEvent>(OnSkillPointActionAttempt);
+    }
+
+    private void OnSomaticActionAttempt(Entity<CP14ActionFreeHandsRequiredComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (TryComp<HandsComponent>(args.User, out var hands) || hands is not null)
+        {
+            if (_hand.CountFreeableHands((args.User, hands)) >= ent.Comp.FreeHandRequired)
+                return;
+        }
+
+        _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-somatic-component"), args.User, args.User);
+        args.Cancelled = true;
     }
 
     private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent, ref ActionValidateEvent args)
@@ -55,7 +74,7 @@ public sealed partial class CP14ActionSystem
         }
     }
 
-    private void OnSkillPointAttempt(Entity<CP14ActionSkillPointCostComponent> ent, ref ActionAttemptEvent args)
+    private void OnSkillPointActionAttempt(Entity<CP14ActionSkillPointCostComponent> ent, ref ActionAttemptEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint) || ent.Comp.SkillPoint is null)
             return;

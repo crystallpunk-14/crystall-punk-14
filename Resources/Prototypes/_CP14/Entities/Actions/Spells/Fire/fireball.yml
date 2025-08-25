@@ -19,7 +19,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Quaeso, quemdam inter vos quaero... "
     endSpeech: "A pila!"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
   - type: CP14ActionDangerous

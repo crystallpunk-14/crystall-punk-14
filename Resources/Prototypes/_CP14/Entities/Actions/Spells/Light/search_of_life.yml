@@ -21,7 +21,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Ego vultus..."
     endSpeech: "parumper vita"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSearchOfLife
   - type: Action

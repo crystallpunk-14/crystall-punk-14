@@ -21,7 +21,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Un pittore sulla..."
     endSpeech: "soglia della mano"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
   - type: Action

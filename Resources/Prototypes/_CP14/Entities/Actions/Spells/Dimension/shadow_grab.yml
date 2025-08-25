@@ -23,7 +23,7 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectShadowStep
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi

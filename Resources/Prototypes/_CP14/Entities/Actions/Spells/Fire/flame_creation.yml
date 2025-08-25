@@ -19,7 +19,7 @@
   - type: CP14MagicEffectVerbalAspect
     startSpeech: "Et conteret ignis..."
     endSpeech: "in manu mea"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlameCreation
   - type: Action

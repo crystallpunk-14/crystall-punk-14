@@ -20,7 +20,7 @@
     - !type:CP14SpellCasterTeleport
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi

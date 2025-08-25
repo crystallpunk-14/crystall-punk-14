@@ -7,7 +7,6 @@ using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill;
 using Content.Shared.Damage.Components;
 using Content.Shared.FixedPoint;
-using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
@@ -23,7 +22,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void InitializeChecks()
     {
-        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, CP14CastMagicEffectAttemptEvent>(OnSomaticCheck);
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14CastMagicEffectAttemptEvent>(OnMaterialCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
@@ -89,19 +87,6 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         args.PushReason(Loc.GetString("cp14-magic-spell-stamina-not-enough"));
-        args.Cancel();
-    }
-
-    private void OnSomaticCheck(Entity<CP14MagicEffectSomaticAspectComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (TryComp<HandsComponent>(args.Performer, out var hands) || hands is not null)
-        {
-            if (_hand.CountFreeableHands((args.Performer, hands)) >= ent.Comp.FreeHandRequired)
-                return;
-        }
-
-        args.PushReason(Loc.GetString("cp14-magic-spell-need-somatic-component"));
         args.Cancel();
     }
 

@@ -17,7 +17,7 @@ public sealed partial class CP14ActionSystem
         SubscribeLocalEvent<Components.CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
-        SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, ExaminedEvent>(OnSomaticExamined);
+        SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ExaminedEvent>(OnSomaticExamined);
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, ExaminedEvent>(OnMaterialExamined);
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
@@ -54,7 +54,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup(Loc.GetString("cp14-magic-verbal-aspect"), 8);
     }
 
-    private void OnSomaticExamined(Entity<CP14MagicEffectSomaticAspectComponent> ent, ref ExaminedEvent args)
+    private void OnSomaticExamined(Entity<CP14ActionFreeHandsRequiredComponent> ent, ref ExaminedEvent args)
     {
         args.PushMarkup(Loc.GetString("cp14-magic-somatic-aspect") + " " + ent.Comp.FreeHandRequired, 8);
     }

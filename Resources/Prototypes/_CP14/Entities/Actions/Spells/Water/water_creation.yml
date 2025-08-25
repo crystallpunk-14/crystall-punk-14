@@ -18,7 +18,7 @@
     - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14LiquidDropWater
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
   - type: Action

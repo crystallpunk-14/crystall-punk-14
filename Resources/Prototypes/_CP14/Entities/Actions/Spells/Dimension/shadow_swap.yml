@@ -23,7 +23,7 @@
     - !type:CP14SpellCasterSwap
   - type: CP14MagicEffectCastingVisual
     proto: CP14ImpactEffectShadowStep
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14ActionTargetMobStatusRequired
   - type: Action
     icon:

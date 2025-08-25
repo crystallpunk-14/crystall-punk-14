@@ -4,7 +4,7 @@ namespace Content.Shared._CP14.MagicSpell.Components;
 /// Requires the user to have at least one free hand to use this spell
 /// </summary>
 [RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14MagicEffectSomaticAspectComponent : Component
+public sealed partial class CP14ActionFreeHandsRequiredComponent : Component
 {
     [DataField]
     public int FreeHandRequired = 1;
