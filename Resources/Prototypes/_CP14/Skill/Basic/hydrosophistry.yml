@@ -114,16 +114,16 @@
 
 # T3
 
-- type: cp14Skill
-  id: HydrosophistryT3
-  skillUiPosition: 13, 0
-  tree: Hydrosophistry
-  name: cp14-skill-water-t3-name
-  learnCost: 0.5
-  icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: water3
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: HydrosophistryT2
+#- type: cp14Skill
+#  id: HydrosophistryT3
+#  skillUiPosition: 13, 0
+#  tree: Hydrosophistry
+#  name: cp14-skill-water-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _CP14/Actions/skill_tree.rsi
+#    state: water3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HydrosophistryT2
 
