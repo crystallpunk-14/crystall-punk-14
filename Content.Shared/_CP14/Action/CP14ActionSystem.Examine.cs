@@ -6,7 +6,7 @@ using Content.Shared.Mobs;
 
 namespace Content.Shared._CP14.Action;
 
-public abstract partial class CP14ActionSystem
+public sealed partial class CP14ActionSystem
 {
     private void InitializeExamine()
     {

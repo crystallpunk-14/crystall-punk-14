@@ -22,7 +22,7 @@
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFireball
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi

@@ -9,7 +9,7 @@
   - type: CP14MagicEffectVampire
   - type: CP14MagicEffectManaCost
     manaCost: 50
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnUser

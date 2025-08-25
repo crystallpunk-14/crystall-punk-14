@@ -29,7 +29,7 @@
     - !type:CP14SpellThrowFromUser
       throwPower: 2
       distance: 0.5
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/electromancy.rsi

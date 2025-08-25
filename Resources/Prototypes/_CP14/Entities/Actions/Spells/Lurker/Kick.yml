@@ -36,7 +36,7 @@
   - type: CP14MagicEffectEmoting
     startEmote: cp14-kick-lurker-start
     endEmote: cp14-kick-lurker
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
