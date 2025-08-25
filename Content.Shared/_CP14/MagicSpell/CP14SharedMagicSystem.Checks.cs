@@ -33,7 +33,6 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectSkillPointCostComponent, CP14CastMagicEffectAttemptEvent>(OnSkillPointCheck);
-        SubscribeLocalEvent<CP14MagicEffectPacifiedBlockComponent, CP14CastMagicEffectAttemptEvent>(OnPacifiedCheck);
         SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
         SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, CP14CastMagicEffectAttemptEvent>(OnMobStateCheck);
         SubscribeLocalEvent<CP14MagicEffectReligionRestrictedComponent, CP14CastMagicEffectAttemptEvent>(OnReligionRestrictedCheck);
@@ -170,16 +169,6 @@ public abstract partial class CP14SharedMagicSystem
             args.PushReason(Loc.GetString("cp14-magic-spell-need-material-component"));
             args.Cancel();
         }
-    }
-
-    private void OnPacifiedCheck(Entity<CP14MagicEffectPacifiedBlockComponent> ent,
-        ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (!HasComp<PacifiedComponent>(args.Performer))
-            return;
-
-        args.PushReason(Loc.GetString("cp14-magic-spell-pacified"));
-        args.Cancel();
     }
 
     private void OnSSDCheck(Entity<CP14MagicEffectSSDBlockComponent> ent, ref CP14CastMagicEffectAttemptEvent args)

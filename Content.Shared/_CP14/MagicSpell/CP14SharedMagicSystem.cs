@@ -5,7 +5,6 @@ using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicVision;
-using Content.Shared.Access.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
@@ -49,7 +48,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         InitializeInstantActions();
         InitializeChecks();
         InitializeSlowdown();
-        InitializeExamine();
 
         _magicContainerQuery = GetEntityQuery<CP14MagicEnergyContainerComponent>();
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();

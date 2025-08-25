@@ -1,11 +1,12 @@
 using System.Linq;
+using Content.Shared._CP14.Action.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
 
-namespace Content.Shared._CP14.MagicSpell;
+namespace Content.Shared._CP14.Action;
 
-public abstract partial class CP14SharedMagicSystem
+public abstract partial class CP14ActionSystem
 {
     private void InitializeExamine()
     {
@@ -19,7 +20,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectSomaticAspectComponent, ExaminedEvent>(OnSomaticExamined);
         SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, ExaminedEvent>(OnMaterialExamined);
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
-        SubscribeLocalEvent<CP14MagicEffectTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
+        SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
 
     private void OnManaEffectExamined(Entity<CP14MagicEffectComponent> ent, ref ExaminedEvent args)
@@ -68,7 +69,7 @@ public abstract partial class CP14SharedMagicSystem
         args.PushMarkup(Loc.GetString("cp14-magic-music-aspect"));
     }
 
-    private void OnMobStateExamined(Entity<CP14MagicEffectTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
+    private void OnMobStateExamined(Entity<Action.Components.CP14ActionTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
     {
         var states = string.Join(", ",
             ent.Comp.AllowedStates.Select(state => state switch
