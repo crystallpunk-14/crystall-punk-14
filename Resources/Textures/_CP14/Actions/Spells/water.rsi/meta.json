@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All right reserved",
-  "copyright": "Created by TheShuEd, ice dagger by .kreks.",
+  "copyright": "Created by TheShuEd, ice_dagger by .kreks., ice_trap by nimfar11",
   "states": [
     {
       "name": "beer_creation"
@@ -24,6 +24,9 @@
     },
     {
       "name": "water_creation"
+    },
+    {
+      "name": "ice_trap"
     }
   ]
 }
