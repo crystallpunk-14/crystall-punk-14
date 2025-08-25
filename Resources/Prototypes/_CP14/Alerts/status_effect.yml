@@ -23,3 +23,9 @@
   icons:
   - sprite: _CP14/Actions/Spells/meta.rsi
     state: magic_vision_shuffled
+
+- type: alert
+  id: CP14Vuln
+  icons:
+  - sprite: _CP14/Actions/Spells/misc.rsi
+    state: vulnerability
