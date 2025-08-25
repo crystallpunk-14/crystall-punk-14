@@ -149,7 +149,7 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         if (ent.Comp.CanModifyManacost && _magicEffectQuery.TryComp(ent, out var magicEffect))
         {
-            var manaEv = new CP14CalculateManacostEvent(caster, ent.Comp.ManaCost, magicEffect.MagicType);
+            var manaEv = new CP14CalculateManacostEvent(caster, ent.Comp.ManaCost);
 
             if (caster is not null)
                 RaiseLocalEvent(caster.Value, manaEv);
