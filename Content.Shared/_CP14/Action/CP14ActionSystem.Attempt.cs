@@ -18,6 +18,7 @@ public sealed partial class CP14ActionSystem
     private void InitializeAttempts()
     {
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);
+        SubscribeLocalEvent<CP14ActionMaterialCostComponent, ActionAttemptEvent>(OnMaterialActionAttempt);
 
         SubscribeLocalEvent<CP14ActionDangerousComponent, ActionAttemptEvent>(OnDangerousActionAttempt);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ActionValidateEvent>(OnTargetMobStatusRequiredValidate);
@@ -34,6 +35,27 @@ public sealed partial class CP14ActionSystem
 
         _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-somatic-component"), args.User, args.User);
         args.Cancelled = true;
+    }
+
+    private void OnMaterialActionAttempt(Entity<CP14ActionMaterialCostComponent> ent, ref ActionAttemptEvent args)
+    {
+        if (ent.Comp.Requirement is null)
+            return;
+
+        HashSet<EntityUid> heldedItems = new();
+
+        foreach (var hand in _hand.EnumerateHands(args.User))
+        {
+            var helded = _hand.GetHeldItem(args.User, hand);
+            if (helded is not null)
+                heldedItems.Add(helded.Value);
+        }
+
+        if (!ent.Comp.Requirement.CheckRequirement(EntityManager, _proto, heldedItems))
+        {
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-material-component"), args.User, args.User);
+            args.Cancelled = true;
+        }
     }
 
     private void OnTargetMobStatusRequiredValidate(Entity<CP14ActionTargetMobStatusRequiredComponent> ent, ref ActionValidateEvent args)

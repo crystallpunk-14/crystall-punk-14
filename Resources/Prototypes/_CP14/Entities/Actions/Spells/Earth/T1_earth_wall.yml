@@ -20,7 +20,7 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14WallSpawnEarthWall
-  - type: CP14MagicEffectMaterialAspect
+  - type: CP14ActionMaterialCost
     requirement: !type:StackResource
       stack: CP14Dirt
       count: 2

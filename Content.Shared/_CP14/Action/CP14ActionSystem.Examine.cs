@@ -14,11 +14,11 @@ public sealed partial class CP14ActionSystem
 
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, ExaminedEvent>(OnManacostExamined);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, ExaminedEvent>(OnStaminaCostExamined);
-        SubscribeLocalEvent<Components.CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
+        SubscribeLocalEvent<CP14ActionSkillPointCostComponent, ExaminedEvent>(OnSkillPointCostExamined);
 
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, ExaminedEvent>(OnVerbalExamined);
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ExaminedEvent>(OnSomaticExamined);
-        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, ExaminedEvent>(OnMaterialExamined);
+        SubscribeLocalEvent<CP14ActionMaterialCostComponent, ExaminedEvent>(OnMaterialExamined);
         SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, ExaminedEvent>(OnMusicExamined);
         SubscribeLocalEvent<CP14ActionTargetMobStatusRequiredComponent, ExaminedEvent>(OnMobStateExamined);
     }
@@ -41,7 +41,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup($"{Loc.GetString("cp14-magic-staminacost")}: [color=#3fba54]{ent.Comp.Stamina}[/color]", priority: 9);
     }
 
-    private void OnSkillPointCostExamined(Entity<Components.CP14ActionSkillPointCostComponent> ent, ref ExaminedEvent args)
+    private void OnSkillPointCostExamined(Entity<CP14ActionSkillPointCostComponent> ent, ref ExaminedEvent args)
     {
         if (!_proto.TryIndex(ent.Comp.SkillPoint, out var indexedSkillPoint))
             return;
@@ -59,7 +59,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup(Loc.GetString("cp14-magic-somatic-aspect") + " " + ent.Comp.FreeHandRequired, 8);
     }
 
-    private void OnMaterialExamined(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref ExaminedEvent args)
+    private void OnMaterialExamined(Entity<CP14ActionMaterialCostComponent> ent, ref ExaminedEvent args)
     {
         if (ent.Comp.Requirement is not null)
             args.PushMarkup(Loc.GetString("cp14-magic-material-aspect") + " " + ent.Comp.Requirement.GetRequirementTitle(_proto));
@@ -69,7 +69,7 @@ public sealed partial class CP14ActionSystem
         args.PushMarkup(Loc.GetString("cp14-magic-music-aspect"));
     }
 
-    private void OnMobStateExamined(Entity<Action.Components.CP14ActionTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
+    private void OnMobStateExamined(Entity<CP14ActionTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
     {
         var states = string.Join(", ",
             ent.Comp.AllowedStates.Select(state => state switch

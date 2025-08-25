@@ -23,7 +23,6 @@ public abstract partial class CP14SharedMagicSystem
     private void InitializeChecks()
     {
         SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14CastMagicEffectAttemptEvent>(OnVerbalCheck);
-        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14CastMagicEffectAttemptEvent>(OnMaterialCheck);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14CastMagicEffectAttemptEvent>(OnManaCheck);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14CastMagicEffectAttemptEvent>(OnStaminaCheck);
         SubscribeLocalEvent<CP14MagicEffectSSDBlockComponent, CP14CastMagicEffectAttemptEvent>(OnSSDCheck);
@@ -37,7 +36,7 @@ public abstract partial class CP14SharedMagicSystem
         SubscribeLocalEvent<CP14MagicEffectEmotingComponent, CP14MagicEffectConsumeResourceEvent>(OnEmoteEndCast);
 
         //Consuming resources
-        SubscribeLocalEvent<CP14MagicEffectMaterialAspectComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
+        SubscribeLocalEvent<CP14ActionMaterialCostComponent, CP14MagicEffectConsumeResourceEvent>(OnMaterialAspectEndCast);
         SubscribeLocalEvent<CP14MagicEffectStaminaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnStaminaConsume);
         SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
         SubscribeLocalEvent<CP14ActionSkillPointCostComponent, CP14MagicEffectConsumeResourceEvent>(OnSkillPointConsume);
@@ -98,27 +97,6 @@ public abstract partial class CP14SharedMagicSystem
 
         args.PushReason(Loc.GetString("cp14-magic-spell-need-verbal-component"));
         args.Cancel();
-    }
-
-    private void OnMaterialCheck(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        if (ent.Comp.Requirement is null)
-            return;
-
-        HashSet<EntityUid> heldedItems = new();
-
-        foreach (var hand in _hand.EnumerateHands(args.Performer))
-        {
-            var helded = _hand.GetHeldItem(args.Performer, hand);
-            if (helded is not null)
-                heldedItems.Add(helded.Value);
-        }
-
-        if (!ent.Comp.Requirement.CheckRequirement(EntityManager, _proto, heldedItems))
-        {
-            args.PushReason(Loc.GetString("cp14-magic-spell-need-material-component"));
-            args.Cancel();
-        }
     }
 
     private void OnSSDCheck(Entity<CP14MagicEffectSSDBlockComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
@@ -212,7 +190,7 @@ public abstract partial class CP14SharedMagicSystem
         RaiseLocalEvent(ent, ref ev);
     }
 
-    private void OnMaterialAspectEndCast(Entity<CP14MagicEffectMaterialAspectComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
+    private void OnMaterialAspectEndCast(Entity<Action.Components.CP14ActionMaterialCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
     {
         if (ent.Comp.Requirement is null || args.Performer is null)
             return;
