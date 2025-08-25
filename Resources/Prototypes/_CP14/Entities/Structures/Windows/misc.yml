@@ -37,6 +37,10 @@
   name: magic ice block
   description: Ice created by magic with a distinct purple hue.
   categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -45,8 +49,19 @@
   - type: Icon
     sprite: _CP14/Structures/Windows/ice_block.rsi
     state: full
+  - type: IconSmooth
+    key: CP14window
+    base: window
+  - type: PlacementReplacement
+    key: walls
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
   - type: TriggerOnCollide
     fixtureID: fix1
+  - type: Appearance
+  - type: Transform
+    anchored: true
   - type: Clickable
   - type: Physics
     bodyType: Static

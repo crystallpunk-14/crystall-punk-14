@@ -61,7 +61,3 @@
     noRot: true
     drawDepth: FloorTiles
     sprite: _CP14/Effects/Magic/magic_trap.rsi
-  - type: PointLight
-    radius: 1
-    energy: 2.5
-    netsync: false
