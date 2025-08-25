@@ -35,14 +35,7 @@ public sealed partial class CP14StationZLevelsSystem : EntitySystem
         if (ent.Comp.Initialized)
             return;
 
-        if (!TryComp(ent, out StationDataComponent? dataComp))
-        {
-            Log.Error($"Failed to init CP14StationZLevelsSystem: no StationData");
-            return;
-        }
-
-        var defaultMap = _station.GetLargestGrid(dataComp);
-
+        var defaultMap = _station.GetLargestGrid(ent.Owner);
         if (defaultMap is null)
         {
             Log.Error($"Failed to init CP14StationZLevelsSystem: defaultMap is null");

@@ -22,11 +22,6 @@
       types:
         Slash: 3
         Blunt: 3
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Slash: 1
-        Blunt: 3
   - !type:EditDamageableModifier # Improvised weapon
     multiplier: 1.2
   - !type:EditItem

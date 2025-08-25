@@ -20,10 +20,6 @@
     bonusDamage:
       types:
         Blunt: 5
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Blunt: 5
   - !type:EditDamageableModifier # Improvised weapon
     multiplier: 1.2
   - !type:EditItem

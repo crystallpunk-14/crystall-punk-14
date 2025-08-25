@@ -10,8 +10,6 @@
     sharpnessDamageMultiplier: 0.8
   - !type:EditMeleeWeapon
     damageMultiplier: 1.2
-  - !type:EditIncreaseDamageOnWield
-    damageMultiplier: 1.2
 
 - type: modularPart
   id: GardeGuildmaster

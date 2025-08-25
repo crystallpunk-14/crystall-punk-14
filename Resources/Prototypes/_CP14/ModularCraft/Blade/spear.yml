@@ -30,10 +30,6 @@
     bonusDamage:
       types:
         Piercing: 8
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Piercing: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
@@ -125,10 +121,6 @@
     newWideAnimation: CP14WeaponArcThrust
     angleMultiplier: 0
     bonusRange: 0.2
-    bonusDamage:
-      types:
-        Blunt: 1
-  - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
         Blunt: 1
