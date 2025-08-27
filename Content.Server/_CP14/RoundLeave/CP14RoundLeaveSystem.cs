@@ -146,8 +146,5 @@ public sealed class CP14RoundLeaveSystem : EntitySystem
         //);
 
         QueueDel(uid);
-
-        //if (mind is not null && mind.Value.Comp.Session is not null)
-        //    _gameTicker.Respawn(mind.Value.Comp.Session);
     }
 }
