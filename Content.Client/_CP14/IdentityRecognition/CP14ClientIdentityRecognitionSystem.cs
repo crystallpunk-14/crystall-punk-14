@@ -22,7 +22,7 @@ public sealed partial class CP14ClientIdentityRecognitionSystem : CP14SharedIden
         if (speaker == ent.Owner)
             return;
 
-        if (ent.Comp.Names.TryGetValue(speaker, out var name))
+        if (ent.Comp.Names.TryGetValue(args.Speaker.Id, out var name))
         {
             args.Name = name;
         }

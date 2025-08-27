@@ -9,6 +9,7 @@ namespace Content.Shared._CP14.IdentityRecognition;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CP14KnownNamesComponent : Component
 {
+    //Pair of NetEntity Id and names
     [DataField, AutoNetworkedField]
-    public Dictionary<EntityUid, string> Names = [];
+    public Dictionary<int, string> Names = [];
 }
