@@ -1859,3 +1859,20 @@
   id: 8235
   time: '2025-08-24T23:03:24.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1705
+- author: TheShuEd
+  changes:
+  - message: Players no longer know each other's names at the start of the round.
+    type: Tweak
+  - message: "The player can \u201CRemember\u201D the name of any other character\
+      \ (by entering any text) via the Verb menu. This \u201CRemembered\u201D name\
+      \ will be visible in chat and when viewing the character."
+    type: Tweak
+  - message: Notifications about players arriving at and leaving the settlement are
+      disabled.
+    type: Remove
+  - message: Vampire masks no longer require blood essence to craft, but do not change
+      the wearer's voice.
+    type: Tweak
+  id: 8236
+  time: '2025-08-27T14:34:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1710
