@@ -239,7 +239,6 @@
     - Craftsmanship
   - type: CP14VampireEssenceHolder
   - type: CP14UnknownIdentity
-  - type: CP14KnownNames
 
 - type: entity
   parent:

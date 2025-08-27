@@ -1,20 +1,31 @@
 using Content.Shared._CP14.IdentityRecognition;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 
 namespace Content.Client._CP14.IdentityRecognition;
 
 public sealed partial class CP14ClientIdentityRecognitionSystem : CP14SharedIdentityRecognitionSystem
 {
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14KnownNamesComponent, CP14ClientTransformNameEvent>(OnTransformSpeakerName);
+        SubscribeLocalEvent<MindContainerComponent, CP14ClientTransformNameEvent>(OnTransformSpeakerName);
     }
 
-    private void OnTransformSpeakerName(Entity<CP14KnownNamesComponent> ent, ref CP14ClientTransformNameEvent args)
+    private void OnTransformSpeakerName(Entity<MindContainerComponent> ent, ref CP14ClientTransformNameEvent args)
     {
         if (args.Handled)
+            return;
+
+        var mindEntity = ent.Comp.Mind;
+        if (mindEntity is null)
+            return;
+
+        if (!TryComp<CP14RememberedNamesComponent>(mindEntity.Value, out var knownNames))
             return;
 
         var speaker = GetEntity(args.Speaker);
@@ -22,7 +33,7 @@ public sealed partial class CP14ClientIdentityRecognitionSystem : CP14SharedIden
         if (speaker == ent.Owner)
             return;
 
-        if (ent.Comp.Names.TryGetValue(args.Speaker.Id, out var name))
+        if (knownNames.Names.TryGetValue(args.Speaker.Id, out var name))
         {
             args.Name = name;
         }

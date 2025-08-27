@@ -7,7 +7,7 @@ namespace Content.Shared._CP14.IdentityRecognition;
 /// These players will be visible to the player under that name, rather than as nameless characters.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class CP14KnownNamesComponent : Component
+public sealed partial class CP14RememberedNamesComponent : Component
 {
     //Pair of NetEntity Id and names
     [DataField, AutoNetworkedField]

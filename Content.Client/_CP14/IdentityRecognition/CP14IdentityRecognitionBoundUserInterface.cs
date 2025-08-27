@@ -1,5 +1,6 @@
 using Content.Shared._CP14.IdentityRecognition;
 using Content.Shared.Labels.Components;
+using Content.Shared.Mind.Components;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 
@@ -64,21 +65,32 @@ public sealed class CP14IdentityRecognitionBoundUserInterface : BoundUserInterfa
 
     private string? CurrentName()
     {
-        if (!_entManager.TryGetComponent<CP14KnownNamesComponent>(_player.LocalEntity, out var knownNames))
+        if (_rememberedTarget is null)
+            return null;
+        if (!_entManager.TryGetComponent<MindContainerComponent>(_player.LocalEntity, out var mindContainer))
+            return null;
+        if (!_entManager.TryGetComponent<CP14RememberedNamesComponent>(mindContainer.Mind, out var knownNames))
             return null;
 
-        var netEnt = _entManager.GetNetEntity(Owner).Id;
-        return knownNames.Names.GetValueOrDefault(netEnt);
+        var netId = _rememberedTarget.Value.Id;
+        return knownNames.Names.GetValueOrDefault(netId);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
 
+        if (_window is null)
+            return;
+
         switch (state)
         {
             case CP14RememberNameUiState rememberNameUiState:
                 _rememberedTarget = rememberNameUiState.Target;
+
+                var currentName = CurrentName();
+                if (currentName is not null)
+                    _window.SetCurrentLabel(currentName);
                 break;
         }
     }
