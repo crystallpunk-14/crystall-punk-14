@@ -286,6 +286,8 @@
   # Other
   - type: FireVisuals
     alternateState: Standing #TODO - custom visuals
+  - type: CP14UnknownIdentity
+  - type: CP14KnownNames
 
 - type: entity
   save: false
