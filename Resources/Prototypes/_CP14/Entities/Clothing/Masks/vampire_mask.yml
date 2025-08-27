@@ -4,24 +4,16 @@
   - CP14ClothingMaskBase
   - CP14BaseMajorContraband
   id: CP14ClothingMaskVampireVoiceBase
-  description: This mask reeks of blood. The spells inside it distort the speaker's voice.
+  description: This mask reeks of blood. Effectively conceals the identity of the wearer.
   suffix: Voice mask
   components:
   - type: HideLayerClothing
     slots:
     - Snout
   - type: IdentityBlocker
-  - type: VoiceMask
-  - type: UserInterface
-    interfaces:
-      enum.ChameleonUiKey.Key:
-        type: ChameleonBoundUserInterface
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
   - type: PhysicalComposition
     materialComposition:
       CP14Leather: 10
-      CP14BloodEssence: 1
 
 - type: entity
   parent: CP14ClothingMaskVampireVoiceBase
