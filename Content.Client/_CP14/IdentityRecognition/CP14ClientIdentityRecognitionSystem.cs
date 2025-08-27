@@ -25,15 +25,14 @@ public sealed partial class CP14ClientIdentityRecognitionSystem : CP14SharedIden
         if (mindEntity is null)
             return;
 
-        if (!TryComp<CP14RememberedNamesComponent>(mindEntity.Value, out var knownNames))
-            return;
+        TryComp<CP14RememberedNamesComponent>(mindEntity.Value, out var knownNames);
 
         var speaker = GetEntity(args.Speaker);
 
         if (speaker == ent.Owner)
             return;
 
-        if (knownNames.Names.TryGetValue(args.Speaker.Id, out var name))
+        if (knownNames is not null && knownNames.Names.TryGetValue(args.Speaker.Id, out var name))
         {
             args.Name = name;
         }
@@ -41,7 +40,6 @@ public sealed partial class CP14ClientIdentityRecognitionSystem : CP14SharedIden
         {
             args.Name = Identity.Name(speaker, EntityManager, ent);
         }
-
         args.Handled = true;
     }
 }

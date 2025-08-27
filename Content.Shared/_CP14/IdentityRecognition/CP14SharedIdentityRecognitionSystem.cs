@@ -1,4 +1,6 @@
+using Content.Shared.Examine;
 using Content.Shared.Ghost;
+using Content.Shared.IdentityManagement;
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -13,15 +15,32 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SharedIdentitySystem _identity = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14UnknownIdentityComponent, SeeIdentityAttemptEvent>(OnSeeIdentityAttempt);
         SubscribeLocalEvent<CP14UnknownIdentityComponent, GetVerbsEvent<Verb>>(OnUnknownIdentityVerb);
+        SubscribeLocalEvent<CP14UnknownIdentityComponent, ExaminedEvent>(OnExaminedEvent);
 
         SubscribeLocalEvent<MindContainerComponent, CP14RememberedNameChangedMessage>(OnRememberedNameChanged);
+
+        SubscribeLocalEvent<CP14RememberedNamesComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<CP14RememberedNamesComponent> ent, ref MapInitEvent args)
+    {
+        if (!TryComp<MindComponent>(ent, out var mind))
+            return;
+
+        if (mind.OwnedEntity is null)
+            return;
+
+        if (mind.CharacterName is null)
+            return;
+
+        RememberCharacter(ent, GetNetEntity(mind.OwnedEntity.Value), mind.CharacterName);
     }
 
     private void OnUnknownIdentityVerb(Entity<CP14UnknownIdentityComponent> ent, ref GetVerbsEvent<Verb> args)
@@ -55,6 +74,26 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
+    private void OnExaminedEvent(Entity<CP14UnknownIdentityComponent> ent, ref ExaminedEvent args)
+    {
+        var ev = new SeeIdentityAttemptEvent();
+        RaiseLocalEvent(ent.Owner, ev);
+
+        if (ev.Cancelled)
+            return;
+
+        if (!_mind.TryGetMind(args.Examiner, out var mindId, out var mind))
+            return;
+
+        if (!TryComp<CP14RememberedNamesComponent>(mindId, out var knownNames))
+            return;
+
+        if (knownNames.Names.TryGetValue(GetNetEntity(ent).Id, out var name))
+        {
+            args.PushMarkup(Loc.GetString("cp14-remember-name-examine", ("name", name)), priority: -1);
+        }
+    }
+
     private void OnRememberedNameChanged(Entity<MindContainerComponent> ent, ref CP14RememberedNameChangedMessage args)
     {
         var mindEntity = ent.Comp.Mind;
@@ -62,15 +101,15 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
         if (mindEntity is null)
             return;
 
-        var knownNames = EnsureComp<CP14RememberedNamesComponent>(mindEntity.Value);
-
-        knownNames.Names[args.Target.Id] = args.Name;
-        Dirty(mindEntity.Value, knownNames);
+        RememberCharacter(mindEntity.Value, args.Target, args.Name);
     }
 
-    private void OnSeeIdentityAttempt(Entity<CP14UnknownIdentityComponent> ent, ref SeeIdentityAttemptEvent args)
+    private void RememberCharacter(EntityUid mindEntity, NetEntity targetId, string name)
     {
-        args.Cancel();
+        var knownNames = EnsureComp<CP14RememberedNamesComponent>(mindEntity);
+
+        knownNames.Names[targetId.Id] = name;
+        Dirty(mindEntity, knownNames);
     }
 }
 
