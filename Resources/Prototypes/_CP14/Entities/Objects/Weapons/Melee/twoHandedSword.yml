@@ -1,13 +1,12 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponSpear
+  id: CP14BaseWeaponTwoHandedSword
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponSelfDamage
   - CP14BaseWeaponSharp
-  - CP14BaseWeaponThrowable
   components:
   - type: ExaminableDamage
     messages: CP14WeaponMessages
@@ -19,45 +18,36 @@
     shape:
     - 0,0,0,1
     storedOffset: 0, -15
-  - type: ThrowingAngle
-    angle: 90
-  - type: EmbeddableProjectile
-    offset: -0.15,-0.15
-    removalTime: 1.5
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Piercing: 16
   - type: MeleeWeapon
     attackRate: 1
     clickDamageModifier: 1.5 #HMMM
-    range: 2.75
-    angle: 15 #Lower in 4 times
+    range: 2
+    angle: 120 #Bigger in 2 times
     wideAnimationRotation: 90
     damage:
       types:
-        Piercing: 5
+        Slash: 5
     animation: CP14WeaponArcThrust
-    wideAnimation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-    cPAnimationLength: 0.3
+    cPAnimationLength: 0.5
     cPAnimationOffset: 1
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 10
+        Slash: 10
   - type: Wieldable
   - type: Clothing
     slots:
     - neck
 
 - type: entity
-  parent: CP14BaseWeaponSpear
-  id: CP14WeaponSpearImperial
-  name: imperial spear
-  description: A reliable spear that is standard in the Zellasian Empire. It strikes far, but slowly.
+  parent: CP14BaseWeaponTwoHandedSword
+  id: CP14WeaponTwoHandedSwordImperial
+  name: imperial two-handed sword
+  description: A large and heavy two-handed sword. Heavy means reliable.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Spear/imperial.rsi
+    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/imperial.rsi
     state: icon

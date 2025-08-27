@@ -103,9 +103,9 @@ public sealed partial class MeleeWeaponSystem
             case WeaponArcAnimation.CPThrust:
                 track = EnsureComp<TrackUserComponent>(animationUid);
                 track.User = user;
-                _animation.Play(animationUid, CPGetThrustAnimation(sprite, -offset, spriteRotation, length), ThrustAnimationKey);
+                _animation.Play(animationUid, CPGetThrustAnimation(sprite, -offset * 2, spriteRotation, length), ThrustAnimationKey);
                 if (arcComponent.Fadeout)
-                    _animation.Play(animationUid, GetFadeAnimation(sprite, 0f, 0.15f), FadeAnimationKey);
+                    _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey);
                 break;
             //CrystallEdge MeleeUpgrade end
         }
@@ -260,8 +260,9 @@ public sealed partial class MeleeWeaponSystem
         var startRotation = sprite.Rotation + (arc * 0.5f);
         var endRotation = sprite.Rotation - (arc * 0.5f);
 
-        var startRotationOffset = startRotation.RotateVec(new Vector2(0f, offset));
-        var endRotationOffset = endRotation.RotateVec(new Vector2(0f, offset));
+        var startRotationOffset = startRotation.RotateVec(new Vector2(0f, -offset * 0.9f));
+        var minRotationOffset = sprite.Rotation.RotateVec(new Vector2(0f, -offset * 1.1f));
+        var endRotationOffset = endRotation.RotateVec(new Vector2(0f, -offset * 0.9f));
 
         startRotation += spriteRotation;
         endRotation += spriteRotation;
@@ -279,6 +280,7 @@ public sealed partial class MeleeWeaponSystem
                     KeyFrames =
                     {
                         new AnimationTrackProperty.KeyFrame(Angle.Lerp(startRotation,endRotation,0.0f), length * 0.0f),
+                        new AnimationTrackProperty.KeyFrame(Angle.Lerp(startRotation,endRotation,0.5f), length * 0.3f),
                         new AnimationTrackProperty.KeyFrame(Angle.Lerp(startRotation,endRotation,1.0f), length * 0.6f),
                         new AnimationTrackProperty.KeyFrame(Angle.Lerp(startRotation,endRotation,0.8f), length * 1.0f),
                     }
@@ -290,6 +292,7 @@ public sealed partial class MeleeWeaponSystem
                     KeyFrames =
                     {
                         new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startRotationOffset,endRotationOffset,0.0f), length * 0.0f),
+                        new AnimationTrackProperty.KeyFrame(minRotationOffset, length * 0.3f),
                         new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startRotationOffset,endRotationOffset,1.0f), length * 0.6f),
                         new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startRotationOffset,endRotationOffset,0.8f), length * 1.0f),
                     }
@@ -298,10 +301,16 @@ public sealed partial class MeleeWeaponSystem
         };
     }
 
-    private Animation CPGetThrustAnimation(SpriteComponent sprite, float distance, Angle spriteRotation, float length)
+
+
+    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 0f), length * 0f),
+    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 1f), length * 0.6f),
+    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 0f), length * 1.0f),
+
+    private Animation CPGetThrustAnimation(SpriteComponent sprite, float offset, Angle spriteRotation, float length)
     {
-        var startOffset = sprite.Rotation.RotateVec(new Vector2(0f, -distance / 5f));
-        var endOffset = sprite.Rotation.RotateVec(new Vector2(0f, -distance));
+        var startOffset = sprite.Rotation.RotateVec(new Vector2(0f, 0f));
+        var endOffset = sprite.Rotation.RotateVec(new Vector2(0f, offset / 2));
 
         sprite.Rotation += spriteRotation;
 
