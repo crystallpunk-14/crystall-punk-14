@@ -2,10 +2,11 @@ using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._CP14.IdentityRecognition;
 
-public abstract partial class CP14SharedIdentityRecognitionSystem : EntitySystem
+public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
 
@@ -26,11 +27,14 @@ public abstract partial class CP14SharedIdentityRecognitionSystem : EntitySystem
         if (!TryComp<ActorComponent>(args.User, out var actor))
             return;
 
+        if (args.User == ent.Owner)
+            return;
+
         var _args = args;
         var verb = new Verb
         {
             Priority = 2,
-            Category = VerbCategory.Examine,
+            Icon =  new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/sentient.svg.192dpi.png")),
             Text = Loc.GetString("cp14-remember-name-verb"),
             Act = () =>
             {
