@@ -73,15 +73,6 @@ CP14ClothingCloakSimpleDarkBlue: null
 CP14ClothingCloakArmoredRed: CP14ClothingCloakGuardCommander
 CP14SpawnPointCaptain: null
 
-#2024-27-11
-CP14BaseDagger: CP14ModularIronDagger
-CP14BaseMace: CP14ModularIronMace
-CP14BaseSickle: CP14ModularIronSickle
-CP14BaseThrowableSpear: CP14ModularIronSpear
-CP14BaseSword: CP14ModularIronSword
-CP14BaseShovel: CP14ModularIronShovel
-CP14BasePickaxe: CP14ModularIronPickaxe
-
 #2024-02-12
 CP14WoodenDoorTavernAlchemy: CP14WoodenDoorAlchemy1
 CP14WoodenDoorTavernAlchemyMirrored: CP14WoodenDoorAlchemyMirrored1
@@ -94,9 +85,6 @@ CP14FenceIronGrilleCorner: null
 #2024-04-12
 CP14ClothingShirtGuardsChainmailShirtWB: CP14ClothingShirtGuardsChainmailShirtB
 CP14KeyRingGuardCommandant: CP14KeyRingGuardCommander
-
-#2024-08-12
-CP14BaseHandheldAxe: CP14ModularGripWoodenLong
 
 #2024-12-12
 CP14FloraTree01: CP14FloraTreeGreen
@@ -142,10 +130,6 @@ CP14PlateWooden: CP14PlateWooden
 CP14PlateWooden2: CP14PlateWooden
 CP14PlateCeramic: CP14PlateWooden
 CP14PlateIron: CP14PlateIron
-
-#2025-22-01
-CP14BaseLightHammer: CP14ModularIronHammer
-CP14BaseBattleHammer: CP14ModularIronHammer
 
 #2025-30-01
 CP14OreCopper: CP14OreCopper1
@@ -252,7 +236,6 @@ CP14PlantPotatoDeath: CP14PlantPotato
 CP14PlantPumpkinDeath: CP14PlantPumpkin
 CP14PlantTomatoesDeath: CP14PlantTomatoes
 CP14PlantWheatDeath: CP14PlantWheat
-CP14BaseHoe: CP14ModularIronHoe
 CP14PlantOnion: null
 
 #2025-14-04
@@ -277,7 +260,6 @@ CP14WallStonebrickCrushedMedium: CP14WallFrameStonebrick
 CP14WallStonebrickCrushedLow: CP14WallFrameStonebrick
 CP14WallCyan: CP14WallStonebrick
 CP14FrameWooden: CP14WallFrameWooden
-CP14BaseCrowbar: CP14ModularIronPickaxe
 
 #2025-26-04
 CP14WallSkulls: CP14WallStonebrickOld
@@ -344,7 +326,6 @@ CP14ClothingRingFlashLight: null
 CP14ClothingRingIceShards: null
 
 # 2025-04-06
-CP14BaseMop: CP14ModularWoodMop
 CP14CarpetPink: CP14CarpetPurple
 
 #2025-15-06
@@ -440,6 +421,52 @@ CP14DemiplanePassway: null
 CP14DemiplaneCore: null
 CP14SpawnerLocationConnection: null
 CP14LocationPassway: null
+
+#2025-08-27
+CP14ModularBladeBoneSword: null
+CP14ModularBladeCopperSickle: null
+CP14ModularBladeIronAxe: null
+CP14ModularBladeIronMace: null
+CP14ModularBladeIronRapier: null
+CP14ModularBladeIronSickle: null
+CP14ModularBladeMithrilDagger: null
+CP14ModularGardeSharpCopper: null
+CP14ModularGardeSharpIron: null
+CP14ModularGardeSharpMithril: null
+CP14ModularGardeSturdyGold: null
+CP14ModularGripCopper: null
+CP14ModularGripIron: null
+CP14ModularGripIronLong: null
+CP14ModularGripMithril: null
+CP14ModularGripWoodenLong: null
+CP14ModularGuardHalberd: null
+CP14ModularInlayQuartzDarkness: null
+CP14ModularInlayQuartzElectric: null
+CP14ModularInlayQuartzFire: null
+CP14ModularInlayQuartzHealing: null
+CP14ModularInlayQuartzLight: null
+CP14ModularInlayQuartzWater: null
+CP14ModularIronAxe: null
+CP14ModularIronDagger: null
+CP14ModularIronHammer: null
+CP14ModularIronKunai: null
+CP14ModularIronMace: null
+CP14ModularIronPickaxe: null
+CP14ModularIronShovel: null
+CP14ModularIronSickle: null
+CP14ModularIronSpear: null
+CP14ModularIronSword: null
+CP14ModularRodLucens: null
+CP14ModularRodWooden: null
+CP14ModularSkeletonHalberd: null
+CP14ModularTipGoldArrow: null
+CP14ModularTipIronArrow: null
+CP14ModularWoodMop: null
+CP14ModularIronHoe: null
+
+CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiver
+CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiver
+CP14ClothingBeltQuiverIronArrow: CP14ClothingBeltQuiver
 
 # <---> CrystallEdge migration zone end
 

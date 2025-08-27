@@ -15,8 +15,6 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     shoes: CP14ClothingShoesLongLeatherBoots
-    belt: CP14ModularSkeletonSwordUpgrade
-    neck: CP14ModularIronPickaxe
 
 # TIER 1
 
@@ -27,7 +25,6 @@
     cloak: CP14ClothingCloakBone
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularSkeletonHalberd
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -36,7 +33,6 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     cloak: CP14ClothingCloakBone
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularSkeletonSword
     shoes: CP14ClothingShoesSandals
     head: CP14ClothingHeadMetalHeadband
   inhand:
@@ -47,8 +43,6 @@
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularCopperSkimitar
-    belt2: CP14ModularIronDagger
 
 - type: startingGear
   id: CP14MobSkeletonArcherT1
@@ -68,7 +62,6 @@
     mask: CP14ClothingMaskSteelMask
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularSkeletonHalberdUpgrade
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -78,7 +71,6 @@
     cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularSkeletonSwordUpgrade
     shoes: CP14ClothingShoesSandals
   inhand:
     - CP14BaseShield
@@ -89,8 +81,6 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularCopperSkimitarTundra
-    belt2: CP14ModularGoldSkimitarAgony
     shoes: CP14ClothingShoesSandals
 
 - type: startingGear
@@ -102,7 +92,6 @@
     pants: CP14ClothingPantsBrown
     neck: CP14BowCombat
     belt: CP14ClothingBeltQuiverIronArrow
-    belt2: CP14ModularSkeletonSword
     shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: startingGear
@@ -115,7 +104,6 @@
     pants: CP14ClothingPantsBrown
     shoes: CP14ClothingShoesLongLeatherBoots
     ring2: CP14ClothingCloakAmuletMana
-    belt: CP14ModularSkeletonSword
 
 - type: startingGear
   id: CP14MobSkeletonBardT2
