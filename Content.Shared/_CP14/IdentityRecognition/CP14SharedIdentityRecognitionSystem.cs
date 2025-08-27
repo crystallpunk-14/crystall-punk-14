@@ -59,12 +59,16 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
 
         EnsureComp<CP14RememberedNamesComponent>(mindId);
 
+        var seeAttemptEv = new SeeIdentityAttemptEvent();
+        RaiseLocalEvent(ent.Owner, seeAttemptEv);
+
         var _args = args;
         var verb = new Verb
         {
             Priority = 2,
             Icon =  new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/sentient.svg.192dpi.png")),
             Text = Loc.GetString("cp14-remember-name-verb"),
+            Disabled = seeAttemptEv.Cancelled,
             Act = () =>
             {
                 _uiSystem.SetUiState(_args.User, CP14RememberNameUiKey.Key, new CP14RememberNameUiState(GetNetEntity(ent)));
