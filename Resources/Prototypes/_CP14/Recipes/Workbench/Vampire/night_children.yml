@@ -9,9 +9,6 @@
   - !type:StackResource
     stack: CP14ThinLeather
     count: 2
-  - !type:StackResource
-    stack: CP14BloodEssence
-    count: 1
   result: CP14ClothingMaskVampireVoiceNightChildrens
   resultCount: 1
 
