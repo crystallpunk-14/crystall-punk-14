@@ -14,7 +14,7 @@
     shape:
     - 0,0,1,0
   - type: ThrowingAngle
-    angle: 90
+    angle: -90
   - type: EmbeddableProjectile
     offset: -0.15,-0.15
     removalTime: 1.5
@@ -29,7 +29,7 @@
     clickDamageModifier: 1.5 #HMMM
     range: 1
     angle: 60
-    wideAnimationRotation: 90
+    wideAnimationRotation: -90
     damage:
       types:
         Piercing: 5

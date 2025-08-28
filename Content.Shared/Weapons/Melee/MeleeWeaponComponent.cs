@@ -112,8 +112,11 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public Angle WideAnimationRotation = Angle.Zero;
 
+    /// <summary>
+    /// CrystallEdge melee upgrade. Next attack will be a left swing if true, right if false.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public bool SwingLeft;
+    public bool CPSwingLeft;
 
     /// <summary>
     /// CrystallEdge Melee upgrade. Allows each attack to take turns being either left or right
@@ -131,7 +134,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// CrystallEdge Melee upgrade. how far away from the player the animation should be played.
     /// </summary>
     [DataField]
-    public float CPAnimationOffset = -1f;
+    public float CPAnimationOffset = 1f;
 
     // Sounds
 

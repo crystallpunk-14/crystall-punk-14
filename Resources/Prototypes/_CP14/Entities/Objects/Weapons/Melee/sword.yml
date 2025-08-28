@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponTwoHandedSword
+  id: CP14BaseWeaponSword
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
@@ -13,8 +13,8 @@
   - type: MeleeWeapon
     attackRate: 1
     clickDamageModifier: 1.5 #HMMM
-    range: 1.6
-    angle: 170 #Bigger in 2 times
+    range: 1.2
+    angle: 60 #Bigger in 2 times
     wideAnimationRotation: -90
     damage:
       types:
@@ -25,21 +25,16 @@
       path: /Audio/Weapons/bladeslice.ogg
     cPAnimationLength: 0.5
     cPAnimationOffset: 1
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Slash: 10
-  - type: Wieldable
   - type: Clothing
     slots:
     - neck
 
 - type: entity
-  parent: CP14BaseWeaponTwoHandedSword
-  id: CP14WeaponTwoHandedSwordImperial
-  name: imperial two-handed sword
-  description: A large and heavy two-handed sword. Heavy means reliable.
+  parent: CP14BaseWeaponSword
+  id: CP14WeaponSwordImperial
+  name: imperial  sword
+  description: TODO
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/imperial.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Sword/imperial.rsi
     state: icon

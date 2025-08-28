@@ -12,7 +12,7 @@
   - type: Item
     size: Ginormous
   - type: ThrowingAngle
-    angle: 90
+    angle: -90
   - type: EmbeddableProjectile
     offset: -0.15,-0.15
     removalTime: 1.5
@@ -25,7 +25,7 @@
     clickDamageModifier: 1.5 #HMMM
     range: 2.75
     angle: 10 #Lower in 4 times
-    wideAnimationRotation: 90
+    wideAnimationRotation: -90
     damage:
       types:
         Piercing: 5
