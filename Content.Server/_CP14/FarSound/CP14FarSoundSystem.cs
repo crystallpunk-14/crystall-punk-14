@@ -1,5 +1,6 @@
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared._CP14.FarSound;
+using Content.Shared.Trigger;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 

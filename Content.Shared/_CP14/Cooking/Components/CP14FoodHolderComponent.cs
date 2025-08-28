@@ -12,7 +12,7 @@ namespace Content.Shared._CP14.Cooking.Components;
 /// <summary>
 /// Food of the specified type can be transferred to this entity.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(CP14SharedCookingSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true, raiseAfterAutoHandleState: true), Access(typeof(CP14SharedCookingSystem))]
 public sealed partial class CP14FoodHolderComponent : Component
 {
     /// <summary>

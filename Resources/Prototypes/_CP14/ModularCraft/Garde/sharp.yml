@@ -6,8 +6,6 @@
   modifiers:
   - !type:EditMeleeWeapon
     damageMultiplier: 1.2
-  - !type:EditIncreaseDamageOnWield
-    damageMultiplier: 1.2
 
 - type: modularPart
   id: GardeSharpIron
@@ -64,5 +62,3 @@
   modifiers:
   - !type:EditMeleeWeapon
     damageMultiplier: 1.1
-  - !type:EditIncreaseDamageOnWield
-    damageMultiplier: 1.0
