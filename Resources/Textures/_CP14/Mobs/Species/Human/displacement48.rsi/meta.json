@@ -11,11 +11,11 @@
   },
   "states": [
     {
-      "name": "head",
+      "name": "female_neck",
       "directions": 4
     },
     {
-      "name": "neck",
+      "name": "male_neck",
       "directions": 4
     }
   ]
