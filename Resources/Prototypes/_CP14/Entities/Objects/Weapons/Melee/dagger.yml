@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponSpear
+  id: CP14BaseWeaponDagger
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
@@ -10,7 +10,9 @@
   - CP14BaseWeaponThrowable
   components:
   - type: Item
-    size: Ginormous
+    size: Normal
+    shape:
+    - 0,0,1,0
   - type: ThrowingAngle
     angle: 90
   - type: EmbeddableProjectile
@@ -19,37 +21,34 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 16
+        Piercing: 8
   - type: MeleeWeapon
-    attackRate: 1
+    resetOnHandSelected: false
+    autoAttack: true
+    attackRate: 2
     clickDamageModifier: 1.5 #HMMM
-    range: 2.75
-    angle: 10 #Lower in 4 times
+    range: 1
+    angle: 60
     wideAnimationRotation: 90
     damage:
       types:
         Piercing: 5
     animation: CP14WeaponArcThrust
-    wideAnimation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
-    cPAnimationLength: 0.3
-    cPAnimationOffset: 2
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Piercing: 10
-  - type: Wieldable
+    cPAnimationLength: 0.15
+    cPAnimationOffset: 0.75
   - type: Clothing
     slots:
-    - neck
+    - belt
 
 - type: entity
-  parent: CP14BaseWeaponSpear
-  id: CP14WeaponSpearImperial
-  name: imperial spear
-  description: A reliable spear that is standard in the Zellasian Empire. It strikes far, but slowly.
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDagger
+  name: imperial dagger
+  description: TODO
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Spear/imperial.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/imperial.rsi
     state: icon

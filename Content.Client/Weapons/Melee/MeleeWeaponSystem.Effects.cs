@@ -301,12 +301,6 @@ public sealed partial class MeleeWeaponSystem
         };
     }
 
-
-
-    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 0f), length * 0f),
-    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 1f), length * 0.6f),
-    //new AnimationTrackProperty.KeyFrame(Vector2.Lerp(startOffset, endOffset, 0f), length * 1.0f),
-
     private Animation CPGetThrustAnimation(SpriteComponent sprite, float offset, Angle spriteRotation, float length)
     {
         var startOffset = sprite.Rotation.RotateVec(new Vector2(0f, 0f));

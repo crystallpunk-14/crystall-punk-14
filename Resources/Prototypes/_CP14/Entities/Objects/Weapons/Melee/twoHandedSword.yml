@@ -8,21 +8,13 @@
   - CP14BaseWeaponSelfDamage
   - CP14BaseWeaponSharp
   components:
-  - type: ExaminableDamage
-    messages: CP14WeaponMessages
-  - type: Damageable
-    damageContainer: Inorganic
   - type: Item
     size: Ginormous
-    storedRotation: 45
-    shape:
-    - 0,0,0,1
-    storedOffset: 0, -15
   - type: MeleeWeapon
     attackRate: 1
     clickDamageModifier: 1.5 #HMMM
-    range: 2
-    angle: 120 #Bigger in 2 times
+    range: 1.6
+    angle: 170 #Bigger in 2 times
     wideAnimationRotation: 90
     damage:
       types:
