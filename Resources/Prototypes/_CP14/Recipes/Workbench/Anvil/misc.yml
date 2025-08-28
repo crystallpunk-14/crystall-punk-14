@@ -503,3 +503,16 @@
     count: 1
   result: CP14IronBuckle
   resultCount: 5
+
+- type: CP14Recipe
+  id: CP14RatArmor
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requiredSkills:
+  - IronMelting
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 6
+  result: CP14RatArmor
