@@ -13,8 +13,8 @@
     size: Normal
     shape:
     - 0,0,1,0
-  - type: ThrowingAngle
-    angle: -90
+  #- type: ThrowingAngle
+  #  angle: -90
   - type: EmbeddableProjectile
     offset: -0.15,-0.15
     removalTime: 1.5
@@ -46,9 +46,19 @@
 - type: entity
   parent: CP14BaseWeaponDagger
   id: CP14WeaponDagger
-  name: imperial dagger
+  name: dagger
   description: TODO
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/imperial.rsi
+    state: icon
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerHatchet
+  name: hatchet
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
     state: icon
