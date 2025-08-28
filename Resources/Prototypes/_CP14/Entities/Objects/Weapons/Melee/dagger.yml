@@ -13,8 +13,6 @@
     size: Normal
     shape:
     - 0,0,1,0
-  #- type: ThrowingAngle
-  #  angle: -90
   - type: EmbeddableProjectile
     offset: -0.15,-0.15
     removalTime: 1.5
@@ -50,7 +48,7 @@
   description: TODO
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/imperial.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
     state: icon
 
 - type: entity
@@ -61,4 +59,14 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
+    state: icon
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerSickle
+  name: sickle
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/sickle.rsi
     state: icon
