@@ -43,6 +43,10 @@
       "directions": 4
     },
     {
+      "name": "neck",
+      "directions": 4
+    },
+    {
       "name": "pants",
       "directions": 4
     },

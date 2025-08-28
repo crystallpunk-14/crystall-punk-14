@@ -99,6 +99,14 @@
           32:
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
     femaleDisplacements:
       outerClothing:
         sizeMaps:
@@ -125,6 +133,14 @@
           32:
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -210,6 +226,14 @@
           32:
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
     femaleDisplacements:
       outerClothing:
         sizeMaps:
@@ -236,4 +260,12 @@
           32:
             sprite: _CP14/Mobs/Species/Elf/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
 

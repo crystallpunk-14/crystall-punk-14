@@ -17,6 +17,10 @@
     {
       "name": "hair",
       "directions": 4
+    },
+    {
+      "name": "neck",
+      "directions": 4
     }
   ]
 }

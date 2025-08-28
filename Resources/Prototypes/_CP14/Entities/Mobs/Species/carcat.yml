@@ -146,6 +146,14 @@
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: gloves
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+          49:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
   - type: Hands
     leftHandDisplacement:
       sizeMaps:
@@ -222,6 +230,14 @@
           32:
             sprite: _CP14/Mobs/Species/Carcat/displacement.rsi
             state: gloves
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+          49:
+            sprite: _CP14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
   - type: Hands
     leftHandDisplacement:
       sizeMaps:

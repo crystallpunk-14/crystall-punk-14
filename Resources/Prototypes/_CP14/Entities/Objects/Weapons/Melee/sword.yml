@@ -1,0 +1,49 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponSword
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 1.2
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 10
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: Clothing
+    slots:
+    - neck
+
+- type: entity
+  parent: CP14BaseWeaponSword
+  id: CP14WeaponSwordImperial
+  name: sword
+  description: A finely crafted sword favored by imperial officers. Its blade gleams with authority and tradition.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Sword/imperial.rsi
+    state: icon
+
+- type: entity
+  parent: CP14BaseWeaponSword
+  id: CP14WeaponSwordSkimitar
+  name: skimitar
+  description: A curved sword designed for swift, slashing attacks. Its exotic shape makes it both elegant and deadly.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Sword/skimitar.rsi
+    state: icon

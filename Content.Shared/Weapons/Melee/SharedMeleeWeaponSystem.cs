@@ -415,7 +415,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         //CrystallEdge melee improvment
         if (weapon.CPSwingBeverage)
-            weapon.SwingLeft = !weapon.SwingLeft;
+            weapon.CPSwingLeft = !weapon.CPSwingLeft;
         //CrystallEdge melee improvment end
 
         if (ev.Cancelled)

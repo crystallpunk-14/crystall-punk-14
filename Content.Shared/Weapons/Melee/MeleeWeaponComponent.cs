@@ -84,7 +84,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// Multiplies damage by this amount for single-target attacks.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public FixedPoint2 ClickDamageModifier = FixedPoint2.New(1);
+    public FixedPoint2 ClickDamageModifier = FixedPoint2.New(1.3); //CP14 default bonus damage
 
     // TODO: Temporarily 1.5 until interactionoutline is adjusted to use melee, then probably drop to 1.2
     /// <summary>
@@ -112,8 +112,11 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public Angle WideAnimationRotation = Angle.Zero;
 
+    /// <summary>
+    /// CrystallEdge melee upgrade. Next attack will be a left swing if true, right if false.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public bool SwingLeft;
+    public bool CPSwingLeft;
 
     /// <summary>
     /// CrystallEdge Melee upgrade. Allows each attack to take turns being either left or right
@@ -131,7 +134,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// CrystallEdge Melee upgrade. how far away from the player the animation should be played.
     /// </summary>
     [DataField]
-    public float CPAnimationOffset = -1f;
+    public float CPAnimationOffset = 1f;
 
     // Sounds
 

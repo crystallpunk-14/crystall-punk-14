@@ -1,0 +1,71 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponDagger
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponThrowable
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: EmbeddableProjectile
+    offset: -0.15,-0.15
+    removalTime: 1.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    autoAttack: true
+    attackRate: 2
+    range: 1
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Piercing: 5
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.15
+    cPAnimationOffset: 0.75
+  - type: Clothing
+    slots:
+    - belt
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDagger
+  name: dagger
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    state: icon
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerHatchet
+  name: hatchet
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
+    state: icon
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerSickle
+  name: sickle
+  description: TODO
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/sickle.rsi
+    state: icon

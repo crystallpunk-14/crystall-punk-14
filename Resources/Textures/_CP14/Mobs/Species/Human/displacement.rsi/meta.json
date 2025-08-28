@@ -15,11 +15,19 @@
       "directions": 4
     },
     {
+      "name": "female_neck",
+      "directions": 4
+    },
+    {
       "name": "female_pants",
       "directions": 4
     },
     {
       "name": "female_shirt",
+      "directions": 4
+    },
+    {
+      "name": "male_neck",
       "directions": 4
     }
   ]
