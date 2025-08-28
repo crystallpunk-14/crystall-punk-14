@@ -22,7 +22,6 @@
         Piercing: 16
   - type: MeleeWeapon
     attackRate: 1
-    clickDamageModifier: 1.5 #HMMM
     range: 2.75
     angle: 10 #Lower in 4 times
     wideAnimationRotation: -90

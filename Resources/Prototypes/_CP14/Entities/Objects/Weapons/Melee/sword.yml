@@ -12,13 +12,12 @@
     size: Ginormous
   - type: MeleeWeapon
     attackRate: 1
-    clickDamageModifier: 1.5 #HMMM
     range: 1.2
-    angle: 60 #Bigger in 2 times
+    angle: 60
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 5
+        Slash: 10
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash
     soundHit:

@@ -24,7 +24,6 @@
     resetOnHandSelected: false
     autoAttack: true
     attackRate: 2
-    clickDamageModifier: 1.5 #HMMM
     range: 1
     angle: 60
     wideAnimationRotation: -90
