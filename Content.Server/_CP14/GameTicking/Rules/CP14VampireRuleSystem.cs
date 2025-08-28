@@ -82,6 +82,6 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
             args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-lose-desc"));
         }
 
-        args.AddLine(Loc.GetString("cp14-vampire-clans-battle-alive-people", ("percent", alivePercentage * 100)));
+        args.AddLine(Loc.GetString("cp14-vampire-clans-battle-alive-people", ("percent", MathF.Round(alivePercentage * 100))));
     }
 }

@@ -6,10 +6,9 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 1
   - type: CP14MagicEffect
-    magicType: Energia
     effects:
     - !type:CP14SpellArea
       affectCaster: true
@@ -28,7 +27,7 @@
           walkSpeedModifier: 1.2
           sprintSpeedModifier: 1.2
           statusLifetime: 1.8
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSpeedBallade
   - type: Action

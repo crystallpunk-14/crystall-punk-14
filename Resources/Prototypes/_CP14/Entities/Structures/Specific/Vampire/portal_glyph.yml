@@ -26,6 +26,7 @@
   id: CP14BaseVampirePortalGlyph
   categories: [ ForkFiltered ]
   abstract: true
+  parent: CP14SpectralBase
   name: portal glyph
   description: A teleportation glyph imbued with bloody magic. Any vampire from the owner clan can teleport here at any moment! To destroy a glyph, suck all the magical energy out of it.
   components:
@@ -57,17 +58,6 @@
         property: Energy
         isLooped: true
         enabled: true
-  - type: CP14MagicEnergyContainer
-    magicAlert: CP14MagicEnergy
-    maxEnergy: 1
-    energy: 1
-    unsafeSupport: true
-  - type: CP14MagicUnsafeDamage
-    damagePerEnergy:
-      types:
-        CP14ManaDepletion: 1
-  - type: Damageable
-    damageContainer: CP14Spectral
   - type: Destructible
     thresholds:
     - trigger:

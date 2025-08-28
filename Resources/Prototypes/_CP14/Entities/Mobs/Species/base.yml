@@ -195,6 +195,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.CP14RememberNameUiKey.Key:
+        type: CP14IdentityRecognitionBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -236,6 +238,7 @@
     - MartialArts
     - Craftsmanship
   - type: CP14VampireEssenceHolder
+  - type: CP14UnknownIdentity
 
 - type: entity
   parent:

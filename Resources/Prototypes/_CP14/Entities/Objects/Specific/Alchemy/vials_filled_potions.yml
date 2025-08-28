@@ -120,3 +120,18 @@
           Quantity: 9
         - ReagentId: CP14BasicEffectHealManaDepletion
           Quantity: 1
+
+- type: entity
+  id: CP14BasicEffectConfuseAura
+  parent: CP14VialSmall
+  name: "brad's aura confusion potion"
+  suffix: Aura confusion 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: CP14BasicEffectEmpty
+          Quantity: 8
+        - ReagentId: CP14BasicEffectConfuseAura
+          Quantity: 2

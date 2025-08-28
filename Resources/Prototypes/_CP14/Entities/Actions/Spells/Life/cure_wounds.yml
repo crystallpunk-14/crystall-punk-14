@@ -9,10 +9,9 @@
     state: cure_wounds
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 12
   - type: CP14MagicEffect
-    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       clientside: true
@@ -34,10 +33,10 @@
       - !type:Jitter
       - !type:ModifyBleedAmount
         amount: -5
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneCureWounds
   - type: Action

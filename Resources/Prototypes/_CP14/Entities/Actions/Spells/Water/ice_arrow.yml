@@ -7,10 +7,9 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_arrow
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 7
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -18,10 +17,10 @@
     - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14IceArrow
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Sagitta glaciei..."
     endSpeech: "in manu mea"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
   - type: Action

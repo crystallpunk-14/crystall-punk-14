@@ -1,5 +1,6 @@
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.Actions.Events;
 using Content.Shared.Examine;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.SSDIndicator;
@@ -12,22 +13,25 @@ public abstract partial class CP14SharedVampireSystem
 
     private void InitializeSpell()
     {
-        SubscribeLocalEvent<CP14MagicEffectVampireComponent, CP14CastMagicEffectAttemptEvent>(OnVampireCastAttempt);
+        SubscribeLocalEvent<CP14MagicEffectVampireComponent, ActionAttemptEvent>(OnVampireCastAttempt);
         SubscribeLocalEvent<CP14MagicEffectVampireComponent, ExaminedEvent>(OnVampireCastExamine);
     }
 
-    private void OnVampireCastAttempt(Entity<CP14MagicEffectVampireComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
+    private void OnVampireCastAttempt(Entity<CP14MagicEffectVampireComponent> ent, ref ActionAttemptEvent args)
     {
+        if (args.Cancelled)
+            return;
+
         //If we are not vampires in principle, we certainly should not have this ability,
         //but then we will not limit its use to a valid vampire form that is unavailable to us.
 
-        if (!HasComp<CP14VampireComponent>(args.Performer))
+        if (!HasComp<CP14VampireComponent>(args.User))
             return;
 
-        if (!HasComp<CP14VampireVisualsComponent>(args.Performer))
+        if (!HasComp<CP14VampireVisualsComponent>(args.User))
         {
-            args.PushReason(Loc.GetString("cp14-magic-spell-need-vampire-valid"));
-            args.Cancel();
+            _popup.PopupClient(Loc.GetString("cp14-magic-spell-need-vampire-valid"), args.User, args.User);
+            args.Cancelled = true;
         }
     }
 

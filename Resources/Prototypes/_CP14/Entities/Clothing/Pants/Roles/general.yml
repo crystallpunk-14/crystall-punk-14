@@ -32,6 +32,11 @@
     sprite: _CP14/Clothing/Pants/loincloth.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Pants/loincloth.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14ThinLeather1
+      amount: 1
 
 - type: entity
   parent: CP14ClothingPantsBase

@@ -9,9 +9,6 @@
   - !type:StackResource
     stack: CP14ThinLeather
     count: 2
-  - !type:StackResource
-    stack: CP14IronBar
-    count: 1
   result: CP14ClothingMaskVampireVoiceDevourers
   resultCount: 1
 
@@ -26,9 +23,6 @@
   - !type:StackResource
     stack: CP14Cloth
     count: 4
-  - !type:StackResource
-    stack: CP14MithrilBar
-    count: 1
   - !type:StackResource
     stack: CP14BloodEssence
     count: 1

@@ -6,13 +6,12 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.2
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 100
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Dead
   - type: CP14MagicEffect
-    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -36,7 +35,7 @@
             Asphyxiation: -500
             Bloodloss: -100
       - !type:Jitter
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Redi animam meam..."
     endSpeech: "Eu rezei por ti"
   - type: CP14MagicEffectCastingVisual

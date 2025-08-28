@@ -28,7 +28,7 @@ public sealed partial class MagicInWorkbench : CP14WorkbenchCraftCondition
         EntityUid workbench,
         EntityUid user)
     {
-        var magicSys = entManager.System<SharedCP14MagicEnergySystem>();
+        var magicSys = entManager.System<CP14SharedMagicEnergySystem>();
 
         magicSys.ChangeEnergy(workbench, -Energy, out _, out _);
     }
@@ -39,7 +39,7 @@ public sealed partial class MagicInWorkbench : CP14WorkbenchCraftCondition
         EntityUid workbench,
         EntityUid user)
     {
-        var magicSys = entManager.System<SharedCP14MagicEnergySystem>();
+        var magicSys = entManager.System<CP14SharedMagicEnergySystem>();
         magicSys.ChangeEnergy(workbench, -Energy, out _, out _);
 
         if (entManager.TryGetComponent<TransformComponent>(workbench, out var xform))

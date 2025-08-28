@@ -5,7 +5,7 @@
   id: CP14ArmorIronCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -18,7 +18,7 @@
   id: CP14ArmorGoldCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -31,7 +31,7 @@
   id: CP14ArmorCopperCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -44,7 +44,7 @@
   id: CP14ArmorMithrilCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -59,7 +59,7 @@
   id: CP14ArmorIronInfantryCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -72,7 +72,7 @@
   id: CP14ArmorGoldInfantryCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -85,7 +85,7 @@
   id: CP14ArmorCopperInfantryCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -98,7 +98,7 @@
   id: CP14ArmorMithrilInfantryCuirass
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:
@@ -113,7 +113,7 @@
   id: CP14ArmorIronChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 8
+  craftTime: 1
   requiredSkills:
   - IronMelting
   requirements:
@@ -126,7 +126,7 @@
   id: CP14ArmorGoldChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 8
+  craftTime: 1
   requiredSkills:
   - GoldMelting
   requirements:
@@ -139,7 +139,7 @@
   id: CP14ArmorCopperChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 8
+  craftTime: 1
   requiredSkills:
   - CopperMelting
   requirements:
@@ -152,7 +152,7 @@
   id: CP14ArmorMithrilChainmail
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 8
+  craftTime: 1
   requiredSkills:
   - MithrilMelting
   requirements:

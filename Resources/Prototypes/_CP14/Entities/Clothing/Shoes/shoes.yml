@@ -102,6 +102,15 @@
     sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Shoes/long_leather_boots.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Leather: 5
+      CP14Cloth: 5
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14ThinLeather1
+      amount: 1
 
 - type: entity
   parent: CP14ClothingShoesBase

@@ -26,12 +26,12 @@ public sealed partial class SunShadowCycleComponent : Component
     /// Time to have each direction applied. Will lerp from the current value to the next one.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public List<SunShadowCycleDirection> Directions = new()
+    public List<SunShadowCycleDirection> Directions = new() //CP14 replaced vectors
     {
-        new SunShadowCycleDirection(0f, new Vector2(0f, 3f), 0f),
-        new SunShadowCycleDirection(0.25f, new Vector2(-3f, -0.1f), 0.5f),
-        new SunShadowCycleDirection(0.5f, new Vector2(0f, -3f), 0.8f),
-        new SunShadowCycleDirection(0.75f, new Vector2(3f, -0.1f), 0.5f),
+        new SunShadowCycleDirection(0f,   new Vector2(0.1f,  3f), 0f),
+        new SunShadowCycleDirection(0.25f,new Vector2(3f,   0f), 0.5f),
+        new SunShadowCycleDirection(0.5f, new Vector2(-0.1f,-3f), 0.8f),
+        new SunShadowCycleDirection(0.75f,new Vector2(-3f,  0f), 0.5f),
     };
 };
 

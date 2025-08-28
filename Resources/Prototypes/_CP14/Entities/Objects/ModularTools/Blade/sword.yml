@@ -88,6 +88,12 @@
   - type: CP14ModularCraftPart
     possibleParts:
     - BladeBoneSword
+  - type: Construction
+    graph: CP14BoneSword
+    node: cp14bonesword
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Bone: 50
 
 - type: entity
   parent: CP14ModularBladeSwordBase

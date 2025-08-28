@@ -4,9 +4,9 @@
   name: Demonstration of strength
   description: By channeling the power of the oldest vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
   components:
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: CP14MagicEffectVampire
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
     effects:

@@ -6,7 +6,7 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 30
   - type: CP14MagicEffect
     telegraphyEffects:
@@ -15,7 +15,7 @@
       - CP14ImpactEffectBloodEssence
     effects:
     - !type:CP14SpellTeleportToVampireSingleton
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi

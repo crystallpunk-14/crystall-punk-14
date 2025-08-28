@@ -6,8 +6,7 @@
     xmlns:nodeTree="clr-namespace:Content.Client._CP14.UserInterface.Systems.NodeTree"
     xmlns:demiplane="clr-namespace:Content.Client._CP14.Demiplane"
     Title="{Loc 'cp14-demiplane-map-title'}"
-    MinSize="1000 650"
-    SetSize="1800 950">
+    MinSize="1000 650">
 
     <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
         <!-- Selected Location -->
