@@ -65,9 +65,9 @@
 
 - type: entity
   parent: CP14BaseBoneStructure
-  id: CP14BoneRemainsBoneBeagle
-  name: bone remains beagle
-  description: The bones of a beagle that died a long time ago... or very recently.
+  id: CP14BoneRemainsBoneHound
+  name: bone remains hound
+  description: The bones of a hound that died a long time ago... or very recently.
   components:
   - type: Sprite
     noRot: true
