@@ -20,6 +20,6 @@ public sealed partial class CP14IsNight : RulesRule
 
         var isDay = dayCycle.IsDayNow(map.Value);
 
-        return Inverted ? !isDay : isDay;
+        return Inverted ? isDay : !isDay;
     }
 }

@@ -64,10 +64,6 @@ public abstract partial class CP14SharedMagicSystem
         if (currentTarget is not null && currentTarget == EntityUid.Invalid)
             currentTarget = null;
 
-        var spellArgs = new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, currentTarget, worldTarget);
-        if (!CanCastSpell(action, spellArgs))
-            return false;
-
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
         {
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
@@ -79,6 +75,8 @@ public abstract partial class CP14SharedMagicSystem
 
         var evStart = new CP14StartCastMagicEffectEvent(performer);
         RaiseLocalEvent(action, ref evStart);
+
+        var spellArgs = new CP14SpellEffectBaseArgs(performer, action.Comp.SpellStorage, currentTarget, worldTarget);
         CastTelegraphy(action, spellArgs);
         return true;
     }

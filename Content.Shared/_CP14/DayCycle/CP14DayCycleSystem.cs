@@ -2,6 +2,9 @@ using Content.Shared.GameTicking;
 using Content.Shared.Light.Components;
 using Content.Shared.Storage.Components;
 using Content.Shared.Weather;
+using Robust.Client.GameObjects;
+using Robust.Client.Player;
+using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
@@ -83,14 +86,13 @@ public sealed class CP14DayCycleSystem : EntitySystem
             .TotalSeconds;
 
         var normalizedTime = time % map.Comp.Duration.TotalSeconds;
-        var lightLevel = Math.Sin((normalizedTime / map.Comp.Duration.TotalSeconds) * MathF.PI);
+        var lightLevel = 1 - Math.Sin((normalizedTime / map.Comp.Duration.TotalSeconds) * MathF.PI);
         return (float)lightLevel;
     }
 
     public bool IsDayNow(Entity<LightCycleComponent?> map)
     {
-        var lightLevel = GetLightLevel(map);
-        return lightLevel >= 0.5;
+        return GetLightLevel(map) >= 0.4;
     }
 
     /// <summary>
@@ -133,4 +135,37 @@ public sealed class CP14StartNightEvent(EntityUid map) : EntityEventArgs
 public sealed class CP14StartDayEvent(EntityUid map) : EntityEventArgs
 {
     public EntityUid Map = map;
+}
+
+internal sealed class CheckLightLevel : LocalizedCommands
+{
+    [Dependency] private readonly IEntitySystemManager _entityManager = default!;
+
+    public override string Command => "cp14_check_light";
+
+    public override string Help => "Checks the light level of the map you are on.";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
+        var entity = shell.Player?.AttachedEntity;
+
+        if (entity is null)
+        {
+            shell.WriteLine("You don't have an attached entity.");
+            return;
+        }
+
+        var transformSys = _entityManager.GetEntitySystem<TransformSystem>();
+
+        var map = transformSys.GetMap(entity.Value);
+
+        if (map is null)
+        {
+            shell.WriteLine("You are not on a map.");
+            return;
+        }
+
+        var dayCycle = _entityManager.GetEntitySystem<CP14DayCycleSystem>();
+        shell.WriteLine("Current light level: " + dayCycle.GetLightLevel(map.Value));
+    }
 }

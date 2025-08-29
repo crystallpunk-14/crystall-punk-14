@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_gift
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
     canModifyManacost: false
   - type: CP14MagicEffect
@@ -24,7 +24,7 @@
       - !type:CP14ManaChange
         manaDelta: 10
         safe: false
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneManaGift
   - type: Action
@@ -50,7 +50,7 @@
   name: Carefull mana transfer
   description: You transfer mana at a tremendous rate without dealing damage to the target.
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
     effects:

@@ -1,78 +1,39 @@
 - type: entity
   parent: CP14BaseGameRule
-  id: CP14GameRuleVampireClanBattle
+  id: CP14GameRuleVampireClanBattleTriple
   components:
   - type: CP14VampireRule
+  - type: GameRule
+    minPlayers: 30
+  - type: SubGamemodes
+    rules:
+    - id: CP14GameRuleVampireClanUnnameable
+    - id: CP14GameRuleVampireClanDevourers
+    - id: CP14GameRuleVampireClanNightChildrens
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14GameRuleVampireClanBattleDouble
+  components:
+  - type: CP14VampireRule
+  - type: GameRule
+    minPlayers: 20
+  - type: SubGamemodes
+    rules:
+    - id: CP14GameRuleVampireClanDevourers
+    - id: CP14GameRuleVampireClanNightChildrens
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14GameRuleVampireClanUnnameable
+  components:
   - type: AntagObjectives
     objectives:
     - CP14VampireObjectiveBloodPurity
     - CP14VampireObjectiveDefenseVillage
-  - type: GameRule
-    minPlayers: 20
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
-    # Night children clan
-    - prefRoles: [ CP14Vampire ]
-      min: 1
-      max: 3
-      playerRatio: 2
-      lateJoinAdditional: true
-      mindRoles:
-      - CP14MindRoleVampire
-      components:
-      - type: CP14Vampire
-        faction: NightChildrens
-      - type: CP14ShowVampireFaction
-        faction: NightChildrens
-      - type: Hunger
-        hungerThresholdAlerts:
-          Peckish: CP14VampirePeckish
-          Starving: CP14VampireStarving
-          Dead: CP14VampireStarving
-        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
-      - type: PassiveDamage
-        allowedStates:
-        - Alive
-        - Critical
-        damage:
-          groups:
-            Brute: -3
-      briefing:
-        text: cp14-roles-antag-vampire-briefing-night-childrens
-        color: "#630f24"
-        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
-    # Devourers clan
-    - prefRoles: [ CP14Vampire ]
-      min: 1
-      max: 3
-      playerRatio: 2
-      lateJoinAdditional: true
-      mindRoles:
-      - CP14MindRoleVampire
-      components:
-      - type: CP14Vampire
-        faction: Devourers
-      - type: CP14ShowVampireFaction
-        faction: Devourers
-      - type: Hunger
-        hungerThresholdAlerts:
-          Peckish: CP14VampirePeckish
-          Starving: CP14VampireStarving
-          Dead: CP14VampireStarving
-        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
-      - type: PassiveDamage
-        allowedStates:
-        - Alive
-        - Critical
-        damage:
-          groups:
-            Brute: -3
-      briefing:
-        text: cp14-roles-antag-vampire-briefing-devourers
-        color: "#630f24"
-        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
-    # Unnameable clan
     - prefRoles: [ CP14Vampire ]
       min: 1
       max: 3
@@ -103,3 +64,84 @@
         color: "#630f24"
         sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
 
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14GameRuleVampireClanDevourers
+  components:
+  - type: AntagObjectives
+    objectives:
+    - CP14VampireObjectiveBloodPurity
+    - CP14VampireObjectiveDefenseVillage
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ CP14Vampire ]
+      min: 1
+      max: 3
+      playerRatio: 2
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleVampire
+      components:
+      - type: CP14Vampire
+        faction: Devourers
+      - type: CP14ShowVampireFaction
+        faction: Devourers
+      - type: Hunger
+        hungerThresholdAlerts:
+          Peckish: CP14VampirePeckish
+          Starving: CP14VampireStarving
+          Dead: CP14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: cp14-roles-antag-vampire-briefing-devourers
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"
+
+- type: entity
+  parent: CP14BaseGameRule
+  id: CP14GameRuleVampireClanNightChildrens
+  components:
+  - type: AntagObjectives
+    objectives:
+    - CP14VampireObjectiveBloodPurity
+    - CP14VampireObjectiveDefenseVillage
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ CP14Vampire ]
+      min: 1
+      max: 3
+      playerRatio: 2
+      lateJoinAdditional: true
+      mindRoles:
+      - CP14MindRoleVampire
+      components:
+      - type: CP14Vampire
+        faction: NightChildrens
+      - type: CP14ShowVampireFaction
+        faction: NightChildrens
+      - type: Hunger
+        hungerThresholdAlerts:
+          Peckish: CP14VampirePeckish
+          Starving: CP14VampireStarving
+          Dead: CP14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: cp14-roles-antag-vampire-briefing-night-childrens
+        color: "#630f24"
+        sound: "/Audio/_CP14/Ambience/Antag/vampire.ogg"

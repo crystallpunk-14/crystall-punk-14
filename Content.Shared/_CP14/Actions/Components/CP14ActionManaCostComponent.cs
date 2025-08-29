@@ -1,12 +1,12 @@
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared._CP14.MagicSpell.Components;
+namespace Content.Shared._CP14.Actions.Components;
 
 /// <summary>
 /// Restricts the use of this action, by spending mana or user requirements.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
-public sealed partial class CP14MagicEffectManaCostComponent : Component
+[RegisterComponent]
+public sealed partial class CP14ActionManaCostComponent : Component
 {
     [DataField]
     public FixedPoint2 ManaCost = 0f;

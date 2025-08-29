@@ -49,10 +49,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: electro2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Energia: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: ElectromancyT1
@@ -74,20 +70,16 @@
 
 # T3
 
-- type: cp14Skill
-  id: ElectromancyT3
-  skillUiPosition: 13, 0
-  tree: Electromancy
-  name: cp14-skill-electric-t3-name
-  learnCost: 0.5
-  icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: electro3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Energia: -0.25
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: ElectromancyT2
+#- type: cp14Skill
+#  id: ElectromancyT3
+#  skillUiPosition: 13, 0
+#  tree: Electromancy
+#  name: cp14-skill-electric-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _CP14/Actions/skill_tree.rsi
+#    state: electro3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: ElectromancyT2
 

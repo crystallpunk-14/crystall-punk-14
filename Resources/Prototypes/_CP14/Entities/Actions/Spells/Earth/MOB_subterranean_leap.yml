@@ -5,7 +5,7 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: -1.0
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
     telegraphyEffects:

@@ -4,10 +4,9 @@
   name: Flame creation
   description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       clientside: true
@@ -16,10 +15,10 @@
     - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14FlameCreationArtificialFlame
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Et conteret ignis..."
     endSpeech: "in manu mea"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneFlameCreation
   - type: Action

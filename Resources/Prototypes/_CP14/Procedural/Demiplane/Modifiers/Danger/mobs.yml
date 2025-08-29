@@ -95,7 +95,7 @@
     min: 0
     max: 2
   name: cp14-modifier-flem
-  generationWeight: 0.33
+  generationWeight: 0.05
   categories:
     Danger: 0.25
   requiredTags:
@@ -321,8 +321,8 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideFlyagaric
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
 
 - type: cp14LocationModifier
   id: MyconideLumish
@@ -337,8 +337,8 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideLumish
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
 
 - type: cp14LocationModifier
   id: EnemyCackle
@@ -346,7 +346,7 @@
     min: 2
     max: 5
   name: cp14-modifier-cackle
-  generationWeight: 0.33
+  generationWeight: 0.05
   categories:
     Danger: 0.3
   requiredTags:

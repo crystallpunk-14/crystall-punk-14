@@ -224,18 +224,19 @@ namespace Content.Server.Ghost
 
             // Entity can't see ghosts anymore.
             _eye.RefreshVisibilityMask(uid);
-            _actions.RemoveAction(uid, component.BooActionEntity);
+            //_actions.RemoveAction(uid, component.BooActionEntity);  //Dont need in CP14
         }
 
         private void OnMapInit(EntityUid uid, GhostComponent component, MapInitEvent args)
         {
-            _actions.AddAction(uid, ref component.BooActionEntity, component.BooAction);
+            //_actions.AddAction(uid, ref component.BooActionEntity, component.BooAction); //Dont need in CP14
             //_actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction); //Dont need in CP14
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
             //CP14
             _actions.AddAction(uid, ref component.CP14ToggleRoofActionEntity, component.CP14ToggleRoofAction);
+            _actions.AddAction(uid, ref component.CP14RespawnActionEntity, component.CP14RespawnAction);
             //CP14 end
         }
 

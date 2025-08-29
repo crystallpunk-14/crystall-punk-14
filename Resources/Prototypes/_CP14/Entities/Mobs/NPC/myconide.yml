@@ -69,7 +69,7 @@
       amount: 2
     - id: CP14ClothingHeadaAgaricHelmet
       amount: 1
-      prob: 0.3
+      prob: 0.05
   - type: Food
   - type: SolutionContainerManager
     solutions:

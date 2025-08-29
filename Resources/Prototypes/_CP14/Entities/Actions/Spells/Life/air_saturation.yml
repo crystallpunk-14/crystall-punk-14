@@ -6,10 +6,9 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.4
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:

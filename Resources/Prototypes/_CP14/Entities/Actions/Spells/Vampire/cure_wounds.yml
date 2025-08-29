@@ -6,10 +6,10 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 12
   - type: CP14MagicEffectVampire
-  - type: CP14MagicEffectSkillPointCost
+  - type: CP14ActionSkillPointCost
     skillPoint: Blood
     count: 0.1
   - type: CP14MagicEffect

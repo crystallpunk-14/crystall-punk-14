@@ -11,9 +11,6 @@ namespace Content.Shared._CP14.MagicManacostModify;
 public sealed partial class CP14MagicManacostModifyComponent : Component
 {
     [DataField]
-    public Dictionary<ProtoId<CP14MagicTypePrototype>, FixedPoint2> Modifiers = new();
-
-    [DataField]
     public FixedPoint2 GlobalModifier = 1f;
 
     [DataField]

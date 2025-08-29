@@ -22,11 +22,8 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Performer, Transform(args.Performer).Coordinates);
-
-        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
-            return;
-
         CastSpell((args.Action, magicEffect), spellArgs);
+
         _action.SetCooldown(args.Action.Owner, args.Cooldown);
     }
 
@@ -39,11 +36,8 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, null, args.Target);
-
-        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
-            return;
-
         CastSpell((args.Action, magicEffect), spellArgs);
+
         _action.SetCooldown(args.Action.Owner, args.Cooldown);
     }
 
@@ -56,11 +50,8 @@ public abstract partial class CP14SharedMagicSystem
             return;
 
         var spellArgs = new CP14SpellEffectBaseArgs(args.Performer, magicEffect.SpellStorage, args.Target, Transform(args.Target).Coordinates);
-
-        if (!CanCastSpell((args.Action, magicEffect), spellArgs))
-            return;
-
         CastSpell((args.Action, magicEffect), spellArgs);
+
         _action.SetCooldown(args.Action.Owner, args.Cooldown);
     }
 }

@@ -7,10 +7,9 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/light.rsi
     state: search_of_life
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 30
   - type: CP14MagicEffect
-    magicType: Light
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -18,10 +17,10 @@
     - !type:CP14SpellPointerToAlive
       pointerEntity: CP14SearchOfLifePointer
       searchRange: 30
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Ego vultus..."
     endSpeech: "parumper vita"
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneSearchOfLife
   - type: Action
