@@ -28,7 +28,7 @@
     startSpeech: "Ossa mortuorum..."
     endSpeech: "incipiunt mihi quasi canis canis servire"
   - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneCallBoneBeagle
+    proto: CP14RuneCallBoneHound
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/skeleton.rsi
