@@ -4,19 +4,19 @@
 
 Используя комбинации тауматургических эссенций в правильных пропорциях, можно создавать разнообразные алхимические вещества — от мощных лекарств до смертельных ядов:
 
-## Healing
+## Выздоровление
 <GuideReagentGroupEmbed Group="CP14HealingEffect"/>
 
-## Damaging
+## Повреждающий
 <GuideReagentGroupEmbed Group="CP14DamageEffect"/>
 
-## Positive
+## Позитивный
 <GuideReagentGroupEmbed Group="CP14PositiveEffect"/>
 
-## Negative
+## Отрицательный
 <GuideReagentGroupEmbed Group="CP14NegativeEffect"/>
 
-## Contaminants
+## Загрязняющие вещества
 <GuideReagentGroupEmbed Group="CP14SideEffect"/>
 
 </Document>
