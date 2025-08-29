@@ -4,6 +4,19 @@
 
 Using combinations of thaumaturgical essences in the right proportions, you can create a variety of alchemical substances, from powerful medicines to deadly poisons:
 
-<GuideReagentGroupEmbed Group="CP14BasicEffect"/>
+## Healing
+<GuideReagentGroupEmbed Group="CP14HealingEffect"/>
+
+## Damaging
+<GuideReagentGroupEmbed Group="CP14DamageEffect"/>
+
+## Positive
+<GuideReagentGroupEmbed Group="CP14PositiveEffect"/>
+
+## Negative
+<GuideReagentGroupEmbed Group="CP14NegativeEffect"/>
+
+## Contaminants
+<GuideReagentGroupEmbed Group="CP14SideEffect"/>
 
 </Document>
