@@ -15,7 +15,7 @@
       projectileCount: 10
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneVulnSpikes
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     useDelay: 7.5
     icon:
