@@ -6,3 +6,6 @@ cp14-ghost-role-information-description-lurker = A spirit of night and hunger th
 
 cp14-ghost-role-information-name-raid-undead = Undead raid
 cp14-ghost-role-information-description-raid-undead = Lead the attack on the city by the forces of the dead. Destroy the demiplane communication crystal at any cost.
+
+cp14-ghost-role-information-name-bone-hound = Bone hound
+cp14-ghost-role-information-description-bone-hound = A bone hound created by necromantic magic, usually summoned by skeleton mages to form a pack of hunters. Obeys the skeleton that summoned it.

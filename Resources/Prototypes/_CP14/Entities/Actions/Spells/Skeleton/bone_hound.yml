@@ -1,0 +1,74 @@
+- type: entity
+  id: CP14ActionSpellCallBoneHound
+  parent: CP14ActionSpellBase
+  name: Call of the Bone hound
+  description: The spell creates a bloodthirsty bone hound from bones. With luck, it may even gain a mind as cunning as your own.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/skeleton.rsi
+    state: bone_hound
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.5
+  - type: CP14ActionManaCost
+    manaCost: 50
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectCallBoneHound
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14MobMonsterBoneHound
+  - type: CP14ActionMaterialCost
+    requirement: !type:StackResource
+      stack: CP14Bone
+      count: 10
+  - type: CP14ActionSpeaking
+    startSpeech: "Ossa mortuorum..."
+    endSpeech: "incipiunt mihi quasi canis canis servire"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneCallBoneBeagle
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/skeleton.rsi
+      state: bone_hound
+  - type: LimitedCharges
+    maxCharges: 3
+  - type: TargetAction
+    range: 10
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      cooldown: 20
+
+- type: entity
+  id: CP14RuneCallBoneHound
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#ae9c86"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#ae9c86"
+      shader: unshaded
+    - state: medium_circle
+      color: "#ae9c86"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectCallBoneHound
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#ae9c86"
+      shader: unshaded
+    - state: medium_circle
+      color: "#ae9c86"
+      shader: unshaded
