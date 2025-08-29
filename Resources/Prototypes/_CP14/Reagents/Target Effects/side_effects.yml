@@ -1,0 +1,95 @@
+- type: reagent
+  id: CP14SideEffectEmpty
+  name: cp14-reagent-name-basic-empty
+  desc: cp14-reagent-desc-basic-empty
+  group: CP14SideEffect
+  flavor: CP14Bitterly
+  color: "#858585"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  pricePerUnit: 0  # Basic empty solution, should cost nothing
+
+# Side effects (gimmick)
+- type: reagent
+  id: CP14SideEffectRainbow
+  name: cp14-reagent-name-see-rainbow
+  desc: cp14-reagent-desc-see-rainbow
+  group: CP14SideEffect
+  flavor: CP14Bitterly
+  color: "#d442db"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.05
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 25
+        refresh: false
+  pricePerUnit: 0.5  # Purely decorative effect
+
+- type: reagent
+  id: CP14SideEffectEmoteCough
+  name: cp14-reagent-name-basic-emote-cough
+  desc: cp14-reagent-desc-basic-emote-cough
+  group: CP14SideEffect
+  flavor: CP14Water
+  color: "#2b7fed"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+  pricePerUnit: 0.3  # Minimal cost
+
+- type: reagent
+  id: CP14SideEffectVomit
+  name: cp14-reagent-name-basic-vomit
+  desc: cp14-reagent-desc-basic-vomit
+  group: CP14SideEffect
+  flavor: CP14Vomit
+  color: "#87a667"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:ChemVomit
+        probability: 0.25
+  pricePerUnit: 0.5  # Negative effect but not lethal
+
+- type: reagent
+  id: CP14SideEffectDrunk
+  name: cp14-reagent-name-basic-drunk
+  desc: cp14-reagent-desc-basic-drunk
+  group: CP14SideEffect
+  flavor: CP14Vomit
+  color: "#ae64c4"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:Drunk
+        boozePower: 15
+  pricePerUnit: 0.5  # Similar to vomit
+
+- type: reagent
+  id: CP14SideEffectJitter
+  name: cp14-reagent-name-basic-jitter
+  desc: cp14-reagent-desc-basic-jitter
+  group: CP14SideEffect
+  flavor: CP14Vomit
+  color: "#347d70"
+  physicalDesc: cp14-reagent-physical-desc-colorless
+  metabolisms:
+    Food:
+      metabolismRate: 0.05
+      effects:
+      - !type:Jitter
+  pricePerUnit: 0.3  # Weakest negative effect

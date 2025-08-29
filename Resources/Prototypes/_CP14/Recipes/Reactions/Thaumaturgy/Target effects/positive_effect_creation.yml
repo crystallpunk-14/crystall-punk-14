@@ -1,0 +1,100 @@
+# Simple recipes made from T0 and T1 essences and water
+# T1
+# The result is always 75% empty solution
+
+- type: reaction
+  id: CP14WaterBrewingSatiateHunger
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceBeast:
+      amount: 2
+    CP14EssenceLife:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectEmoteCough: 1
+    CP14PositiveEffectSatiateHunger: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingSatiateThirst
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceWater:
+      amount: 1
+    CP14EssenceLife:
+      amount: 1
+    Water:
+      amount: 2
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectRainbow: 1
+    CP14PositiveEffectSatiateThirst: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingHealMana
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceEnergia:
+      amount: 2
+    CP14EssenceMotion:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14HealingEffectHealManaDepletion: 1
+    CP14PositiveEffectHealMana: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingHealStam
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceLife:
+      amount: 1
+    CP14EssenceMotion:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectDrunk: 1
+    CP14PositiveEffectHealStam: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingSpeedUp
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceMotion:
+      amount: 2
+    CP14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectJitter: 1
+    CP14PositiveEffectSpeedUp: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150

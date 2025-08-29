@@ -9,9 +9,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectHealBrute
+        - ReagentId: CP14HealingEffectHealBrute
           Quantity: 1
 
 - type: entity
@@ -24,9 +24,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectHealPoison
+        - ReagentId: CP14HealingEffectHealPoison
           Quantity: 1
 
 - type: entity
@@ -39,9 +39,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectHealAirloss
+        - ReagentId: CP14HealingEffectHealAirloss
           Quantity: 1
 
 - type: entity
@@ -54,9 +54,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectBloodRestore
+        - ReagentId: CP14HealingEffectBloodRestore
           Quantity: 1
 
 - type: entity
@@ -69,9 +69,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectHealMana
+        - ReagentId: CP14PositiveEffectHealMana
           Quantity: 1
 
 - type: entity
@@ -84,9 +84,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectSpeedUp
+        - ReagentId: CP14PositiveEffectSpeedUp
           Quantity: 1
 
 - type: entity
@@ -99,11 +99,11 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 6
-        - ReagentId: CP14BasicEffectRainbow
+        - ReagentId: CP14SideEffectRainbow
           Quantity: 2
-        - ReagentId: CP14BasicEffectDrunk
+        - ReagentId: CP14SideEffectDrunk
           Quantity: 2
 
 - type: entity
@@ -116,9 +116,9 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 9
-        - ReagentId: CP14BasicEffectHealManaDepletion
+        - ReagentId: CP14HealingEffectHealManaDepletion
           Quantity: 1
 
 - type: entity
@@ -131,7 +131,7 @@
     solutions:
       vial:
         reagents:
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 8
-        - ReagentId: CP14BasicEffectConfuseAura
+        - ReagentId: CP14PositiveEffectConfuseAura
           Quantity: 2

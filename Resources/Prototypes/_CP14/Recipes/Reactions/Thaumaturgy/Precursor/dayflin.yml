@@ -20,13 +20,13 @@
   reactants:
     CP14YellowDayflinPulp:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectSatiateThirst:
+    CP14PositiveEffectSatiateThirst:
       amount: 1
   products:
-    CP14BasicEffectSpeedUp: 2
-    CP14BasicEffectJitter: 1
+    CP14PositiveEffectSpeedUp: 2
+    CP14SideEffectJitter: 1
 
 - type: reaction
   id: CP14DayflinAdmixture2
@@ -34,13 +34,13 @@
   reactants:
     CP14YellowDayflinPulp:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectSatiateHunger:
+    CP14PositiveEffectSatiateHunger:
       amount: 1
   products:
-    CP14BasicEffectSpeedUp: 2
-    CP14BasicEffectJitter: 1
+    CP14PositiveEffectSpeedUp: 2
+    CP14SideEffectJitter: 1
 
 - type: reaction
   id: CP14DayflinAdmixture3
@@ -48,13 +48,13 @@
   reactants:
     CP14YellowDayflinPulp:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectHealStam:
+    CP14PositiveEffectHealStam:
       amount: 1
   products:
-    CP14BasicEffectDamageStam: 2
-    CP14BasicEffectJitter: 1
+    CP14NegativeEffectDamageStam: 2
+    CP14SideEffectJitter: 1
 
 - type: reaction
   id: CP14DayflinAdmixture4
@@ -62,10 +62,10 @@
   reactants:
     CP14YellowDayflinPulp:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectDamageStam:
+    CP14NegativeEffectDamageStam:
       amount: 1
   products:
-    CP14BasicEffectHealStam: 2
-    CP14BasicEffectJitter: 1
+    CP14PositiveEffectHealStam: 2
+    CP14SideEffectJitter: 1

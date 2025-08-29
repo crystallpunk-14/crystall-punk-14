@@ -22,12 +22,12 @@
   reactants:
     CP14GroundQuartz:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectJitter:
+    CP14SideEffectJitter:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14SideEffectEmpty: 3
 
 - type: reaction
   id: CP14GroundQuartzAdmixture2
@@ -35,12 +35,12 @@
   reactants:
     CP14GroundQuartz:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectDrunk:
+    CP14SideEffectDrunk:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14SideEffectEmpty: 3
 
 - type: reaction
   id: CP14GroundQuartzAdmixture3
@@ -48,12 +48,12 @@
   reactants:
     CP14GroundQuartz:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectEmoteCough:
+    CP14SideEffectEmoteCough:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14SideEffectEmpty: 3
 
 - type: reaction
   id: CP14GroundQuartzAdmixture4
@@ -61,10 +61,10 @@
   reactants:
     CP14GroundQuartz:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectRainbow:
+    CP14SideEffectRainbow:
       amount: 1
   products:
-    CP14BasicEffectEmpty: 3
+    CP14SideEffectEmpty: 3
 
