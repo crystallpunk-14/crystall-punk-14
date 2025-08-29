@@ -22,7 +22,7 @@
           Quantity: 20
         - ReagentId: CP14EssenceFire
           Quantity: 20
-        - ReagentId: CP14BasicEffectDamageHeat
+        - ReagentId: CP14DamageEffectDamageHeat
           Quantity: 10
   - type: MeleeWeapon
     damage:

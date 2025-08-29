@@ -81,7 +81,7 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 20
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 30
   - type: Destructible
     thresholds:
