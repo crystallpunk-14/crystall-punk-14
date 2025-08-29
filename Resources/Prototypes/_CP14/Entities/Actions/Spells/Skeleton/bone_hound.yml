@@ -69,6 +69,7 @@
     - state: particles_up
       color: "#ae9c86"
       shader: unshaded
-    - state: medium_circle
+    - sprite: _CP14/Effects/Magic/cast_rune.rsi
+      state: medium_circle
       color: "#ae9c86"
       shader: unshaded
