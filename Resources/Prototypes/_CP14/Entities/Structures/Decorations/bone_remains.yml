@@ -71,7 +71,7 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: _CP14/Mobs/Monster/bone_beagle.rsi
+    sprite: _CP14/Mobs/Monster/bone_hound.rsi
     drawdepth: BelowFloor
     layers:
       - state: dead
