@@ -1876,3 +1876,13 @@
   id: 8236
   time: '2025-08-27T14:34:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1710
+- author: KittyCat432
+  changes:
+  - message: Added the spineguard a new mob that can be found in underground areas.
+    type: Add
+  - message: Added a new monster toxin depletonide which is used in the spineguards
+      spines it causes you to take increased damage (1.4x).
+    type: Add
+  id: 8237
+  time: '2025-08-30T07:27:04.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1659
