@@ -16,6 +16,7 @@ cp14-modifier-cackle = кэклзы
 cp14-modifier-skeleton = разумные скелеты
 cp14-modifier-dyno = динозавры
 cp14-modifier-mole = хищные кроты
+cp14-modifier-spineguard = шипостражи
 cp14-modifier-watcher = наблюдатели
 cp14-modifier-rabbits = кролики
 cp14-modifier-boars = дикие кабаны
