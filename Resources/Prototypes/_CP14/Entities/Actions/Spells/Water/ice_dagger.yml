@@ -40,7 +40,7 @@
   description: A sharp ice dagger, not very durable but can temporarily replace real weapons.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/ice.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/ice.rsi
     state: icon
   - type: MeleeWeapon
     damage:
