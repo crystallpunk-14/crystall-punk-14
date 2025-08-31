@@ -208,26 +208,46 @@
   - type: Tag
     tags:
     - CP14Boar
+  # - type: Butcherable
+  #   spawned:
+  #   - id: CP14FoodMeatBoar
+  #     amount: 4
+  #   - id: CP14Leather1
+  #     amount: 2
+  #     maxAmount: 4
+  #   - id: CP14ScrapLeather
+  #     amount: 1
+  #     maxAmount: 3
+  #     prob: 0.5
+  #   - id: CP14RuggedLeather1
+  #     amount: 1
+  #     prob: 0.1
+  #   - id: CP14CheapFur
+  #     amount: 1
+  #     prob: 0.25
+  #   - id: CP14Bone1
+  #     amount: 2
+  #     maxAmount: 4
   - type: Butcherable
-    spawned:
-    - id: CP14FoodMeatBoar
-      amount: 4
-    - id: CP14Leather1
-      amount: 2
-      maxAmount: 4
-    - id: CP14ScrapLeather
-      amount: 1
-      maxAmount: 3
-      prob: 0.5
-    - id: CP14RuggedLeather1
-      amount: 1
-      prob: 0.1
-    - id: CP14CheapFur
-      amount: 1
-      prob: 0.25
-    - id: CP14Bone1
-      amount: 2
-      maxAmount: 4
+    type: Knife           # или Spike — как нужно
+    butcherDelay: 2.0
+    spawned: []           # игнорируется нашим модулем, если есть CP14ButcherableStages
+  - type: CP14ButcherableStages
+    stages:
+      - spawned:
+          - id: CP14CheapFur
+            amount: 1
+      - spawned:
+          - id: CP14RuggedLeather1
+            amount: 1
+          - id: CP14Leather1
+            amount: 2
+      - spawned:
+          - id: CP14FoodMeatBoar
+            amount: 4
+          - id: CP14Bone1
+            amount: 3
+        finalStage: true
   - type: Reproductive
     partnerWhitelist:
       tags:

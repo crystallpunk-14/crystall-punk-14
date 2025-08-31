@@ -1,44 +1,45 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Content.Shared.Kitchen;
 using Content.Shared.Storage;
-using Content.Shared._CP14.Butchering;
+
+namespace Content.Shared._CP14.Butchering;
 
 /// <summary>
-/// Allows defining staged butchering for entities.
-/// Each stage can spawn different loot, and entity is deleted only on the final stage.
+/// Component that enables staged butchering: each stage spawns its own loot.
+/// The entity is deleted only on the final stage.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(CP14ButcheringShared))]
 public sealed partial class CP14ButcherableStagesComponent : Component
 {
     /// <summary>
-    /// List of stages for butchering. Each stage defines items to spawn.
+    /// Stages configuration.
     /// </summary>
     [DataField("stages", required: true)]
     public List<ButcherStage> Stages = new();
 
     /// <summary>
-    /// Current progress of butchering (stage index).
+    /// Current stage index (0-based).
     /// </summary>
+    [DataField("currentStage")]
     [ViewVariables(VVAccess.ReadWrite)]
     public int CurrentStage = 0;
 }
 
 /// <summary>
-/// Defines a single stage of staged butchering.
+/// A single stage of the staged butchering.
 /// </summary>
-[Serializable, NetSerializable]
+[Serializable]
+[DataDefinition]
 public sealed partial class ButcherStage
 {
     /// <summary>
-    /// What items should spawn at this stage.
+    /// Items to spawn on this stage (supports amount/prob/maxAmount like vanilla).
     /// </summary>
     [DataField("spawned", required: true)]
     public List<EntitySpawnEntry> Spawned = new();
 
     /// <summary>
-    /// If true, the entity will be deleted after this stage.
+    /// If true, entity is removed after this stage.
     /// </summary>
     [DataField("finalStage")]
     public bool FinalStage = false;
