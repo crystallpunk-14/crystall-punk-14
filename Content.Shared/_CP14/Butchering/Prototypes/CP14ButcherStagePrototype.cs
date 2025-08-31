@@ -29,11 +29,6 @@ public sealed class CP14ButcherStagePrototype : IPrototype
     [DataField] public bool RequireDead = true;
 
     /// <summary>
-    /// If true, after this stage the entity is destroyed (final stage).
-    /// </summary>
-    [DataField] public bool Finalize = false;
-
-    /// <summary>
     /// Optional: also gib body when finalizing (if it has a BodyComponent).
     /// </summary>
     [DataField] public bool GibOnFinalize = true;

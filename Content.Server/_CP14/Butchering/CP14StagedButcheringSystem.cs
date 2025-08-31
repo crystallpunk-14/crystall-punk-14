@@ -101,7 +101,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
         var verb = new InteractionVerb
         {
             Text = Loc.GetString("butcherable-verb-name"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
             Disabled = disabled,
             Message = msg,
             Act = () =>
@@ -109,7 +109,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
                 if (!disabled && sharpEnt != EntityUid.Invalid)
                 {
                     TryComp(sharpEnt, out SharpComponent? sharp);
-                    TryStartStage(sharpEnt, uid, args.User, staged, sharp!);
+                    TryStartStage(sharpEnt, uid, args.User, staged, sharp);
                 }
             }
         };
@@ -118,7 +118,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
     }
 
     private bool TryStartStage(EntityUid tool, EntityUid target, EntityUid user,
-        CP14StagedButcherableComponent staged, SharpComponent sharp)
+        CP14StagedButcherableComponent staged, SharpComponent? sharp)
     {
         if (staged.BeingButchered)
             return false;
@@ -138,7 +138,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             return false;
 
         staged.BeingButchered = true;
-        Dirty(staged);
+        Dirty(target, staged);
 
         var needHand = user != tool;
 
@@ -167,7 +167,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             return;
 
         staged.BeingButchered = false;
-        Dirty(staged);
+        Dirty(target, staged);
 
         if (_containers.IsEntityInContainer(target))
         {
@@ -189,21 +189,24 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
         // Popup and sound (optional)
         if (popupEnt != null)
         {
-            var text = stage.PopupOnSuccess?.ToString() ?? Loc.GetString("butcherable-knife-butchered-success",
-                ("target", target), ("knife", Identity.Entity(uid, EntityManager)));
+            var text = stage.PopupOnSuccess != null
+                ? Loc.GetString(stage.PopupOnSuccess.Value)
+                : Loc.GetString("butcherable-knife-butchered-success",
+                    ("target", target), ("knife", Identity.Entity(uid, EntityManager)));
+
             _popups.PopupEntity(text, popupEnt.Value, ev.Args.User);
         }
 
         // TODO sounds...
-        //if (stage.SoundOnSuccess != null)
-        //    SoundSystem.Play(stage.SoundOnSuccess.GetSound(), Filter.Pvs(target), target);
+        // if (stage.SoundOnSuccess != null)
+        //     SoundSystem.Play(stage.SoundOnSuccess.GetSound(), Filter.Pvs(target), target);
 
         // Advance stage pointer
         staged.CurrentStageIndex++;
-        Dirty(staged);
+        Dirty(target, staged);
 
-        // Finalize?
-        if (stage.Finalize)
+        // Проверяем: был ли это последний stage
+        if (staged.CurrentStageIndex >= staged.Stages.Count)
         {
             // optional gib for things with body
             if (stage.GibOnFinalize && TryComp<BodyComponent>(target, out var body))
@@ -215,12 +218,15 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
 
         ev.Handled = true;
 
-        _logs.Add(LogType.Gib, $"{ToPrettyString(ev.Args.User):user} staged-butchered {ToPrettyString(target):target} with {ToPrettyString(ev.Args.Used):tool} (stage {staged.CurrentStageIndex}/{staged.Stages.Count})");
+        _logs.Add(LogType.Gib,
+            $"{ToPrettyString(ev.Args.User):user} staged-butchered {ToPrettyString(target):target} " +
+            $"with {ToPrettyString(ev.Args.Used):tool} (stage {staged.CurrentStageIndex}/{staged.Stages.Count})");
     }
 
-    private bool TryGetCurrentStage(CP14StagedButcherableComponent comp, out CP14ButcherStagePrototype stage)
+    private bool TryGetCurrentStage(CP14StagedButcherableComponent comp, out CP14ButcherStagePrototype? stage)
     {
-        stage = default!;
+        stage = null;
+
         if (comp.CurrentStageIndex < 0 || comp.CurrentStageIndex >= comp.Stages.Count)
             return false;
 

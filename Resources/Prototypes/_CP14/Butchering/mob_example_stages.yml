@@ -6,7 +6,6 @@
     - id: CP14CheapFur
       amount: 1
   requireDead: true
-  finalize: false
 
 - type: CP14ButcherStage
   id: CP14Stage_Example_Part_2_skin
@@ -21,7 +20,6 @@
       amount: 2
       maxAmount: 4
   requireDead: true
-  finalize: false
 
 - type: CP14ButcherStage
   id: CP14Stage_Example_Part_3_meat
@@ -34,4 +32,3 @@
       amount: 2
       maxAmount: 3
   requireDead: true
-  finalize: true
