@@ -1,5 +1,6 @@
-﻿using Content.Server.Body.Systems;
+using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
+using Content.Shared._CP14.Butchering;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Database;
@@ -93,6 +94,18 @@ public sealed class SharpSystem : EntitySystem
     {
         if (args.Handled || !TryComp<ButcherableComponent>(args.Args.Target, out var butcher))
             return;
+
+        // Crystall Punk Edit - Start
+        // Check if the target has our staged butchering component
+        if (HasComp<CP14ButcherableStagesComponent>(args.Args.Target.Value))
+        {
+            // Let our system handle the doafter event instead.
+            // The CP14ButcheringSystem subscribes to SharpDoAfterEvent to handle this.
+            args.Handled = true;
+            component.Butchering.Remove(args.Args.Target.Value);
+            return;
+        }
+        // Crystall Punk Edit - End
 
         if (args.Cancelled)
         {
