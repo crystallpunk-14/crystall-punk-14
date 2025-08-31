@@ -229,6 +229,7 @@
   #     amount: 2
   #     maxAmount: 4
   - type: Butcherable
+    butcherDelay: 2.0
     # NOTE: The parent Butcherable component must still be present for the verb/doafter to work,
     # but its spawned list will be ignored by our new system.
     spawned:
