@@ -20,7 +20,7 @@
 - type: entity
   parent: CP14ClothingCloakBase
   id: CP14ClothingCloakWizardCoatBlue
-  name: red wizard coat
+  name: blue wizard coat
   description: Clothes that wizards usually wear. Look what happens when I cast a spell I don't know
   components:
   - type: Sprite
@@ -29,25 +29,6 @@
     sprite: _CP14/Clothing/Cloak/Roles/General/wizard_blue_coat.rsi
   - type: ToggleableClothing
     clothingPrototype: CP14ClothingHeadWizardHoodBlue
-    requiredSlot:
-    - cloak
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-
-- type: entity
-  parent: CP14ClothingCloakBase
-  id: CP14ClothingCloakWizardCoatBlue
-  name: red wizard coat
-  description: Clothes that wizards usually wear. Of course, I'll cast cure wounds on you.
-  components:
-  - type: Sprite
-    sprite: _CP14/Clothing/Cloak/Roles/General/wizard_green_coat.rsi
-  - type: Clothing
-    sprite: _CP14/Clothing/Cloak/Roles/General/wizard_green_coat.rsi
-  - type: ToggleableClothing
-    clothingPrototype: CP14ClothingHeadWizardHoodGreen
     requiredSlot:
     - cloak
     slot: head
