@@ -208,6 +208,13 @@
   - type: Tag
     tags:
     - CP14Boar
+
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Example_Part_1_loot
+      - CP14Stage_Example_Part_2_skin
+      - CP14Stage_Example_Part_3_meat
+
   # - type: Butcherable
   #   spawned:
   #   - id: CP14FoodMeatBoar
@@ -229,34 +236,34 @@
   #     amount: 2
   #     maxAmount: 4
 
-  - type: Butcherable         # vanilla, чтобы нож/шпиль могли запускать DoAfter
-    type: Knife               # или Spike — зависит от того, чем нужно разделывать
-    butcherDelay: 3
-  - type: CP14ButcherableStages
-    midStagePopup: cp14-butchering-mid
-    finalStagePopup: cp14-butchering-final
-    stages:
-      - spawned:
-          - id: CP14CheapFur
-            amount: 1
-        finalStage: false
-      - spawned:
-          - id: CP14RuggedLeather1
-            amount: 1
-            maxAmount: 2
-            prob: 0.2
-          - id: CP14Leather1
-            amount: 2
-            maxAmount: 4
-        finalStage: false
-      - spawned:
-          - id: CP14FoodMeatBoar
-            amount: 4
-          - id: CP14Bone1
-            amount: 2
-            maxAmount: 3
-        finalStage: true
-        gibOnFinal: true
+  # - type: Butcherable         # vanilla, чтобы нож/шпиль могли запускать DoAfter
+  #   type: Knife               # или Spike — зависит от того, чем нужно разделывать
+  #   butcherDelay: 3
+  # - type: CP14ButcherableStages
+  #   midStagePopup: cp14-butchering-mid
+  #   finalStagePopup: cp14-butchering-final
+  #   stages:
+  #     - spawned:
+  #         - id: CP14CheapFur
+  #           amount: 1
+  #       finalStage: false
+  #     - spawned:
+  #         - id: CP14RuggedLeather1
+  #           amount: 1
+  #           maxAmount: 2
+  #           prob: 0.2
+  #         - id: CP14Leather1
+  #           amount: 2
+  #           maxAmount: 4
+  #       finalStage: false
+  #     - spawned:
+  #         - id: CP14FoodMeatBoar
+  #           amount: 4
+  #         - id: CP14Bone1
+  #           amount: 2
+  #           maxAmount: 3
+  #       finalStage: true
+  #       gibOnFinal: true
 
 
   # - type: Butcherable
