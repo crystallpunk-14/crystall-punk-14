@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponTwoHandedSword
+  id: CP14BaseWeaponShovel
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
@@ -13,35 +13,45 @@
   - type: MeleeWeapon
     attackRate: 1
     range: 1.6
-    angle: 170 #Bigger in 2 times
+    angle: 170
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 5
+        Slash: 3
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash
     soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+      collection: MetalThud
     cPAnimationLength: 0.5
     cPAnimationOffset: 1
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 10
+        Slash: 5
   - type: Wieldable
   - type: Clothing
-    slots:
-    - neck
     breakOnMove: false
     equipDelay: 1
     unequipDelay: 1
+    slots:
+    - neck
+  - type: Shovel
+  - type: ToolTileCompatible
+  - type: Tool
+    qualities:
+      - CP14Digging
+    useSound:
+      collection: CP14Digging
+      params:
+        variation: 0.03
+        volume: 2
 
 - type: entity
-  parent: CP14BaseWeaponTwoHandedSword
-  id: CP14WeaponTwoHandedSwordIron
-  name: iron two-handed sword
-  description: A large and heavy two-handed sword. Heavy means reliable.
+  parent: CP14BaseWeaponShovel
+  id: CP14WeaponShovelIron
+  name: iron shovel
+  description: A sturdy iron shovel, perfect for digging and not for combat.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/iron.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Shovel/iron.rsi
     state: icon

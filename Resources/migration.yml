@@ -436,21 +436,22 @@ CP14ModularInlayQuartzFire: null
 CP14ModularInlayQuartzHealing: null
 CP14ModularInlayQuartzLight: null
 CP14ModularInlayQuartzWater: null
-CP14ModularIronAxe: null
-CP14ModularIronDagger: null
-CP14ModularIronHammer: null
-CP14ModularIronKunai: null
-CP14ModularIronMace: null
-CP14ModularIronPickaxe: null
-CP14ModularIronShovel: null
-CP14ModularIronSickle: null
-CP14ModularIronSpear: null
-CP14ModularIronSword: null
-CP14ModularRodLucens: null
-CP14ModularRodWooden: null
-CP14ModularSkeletonHalberd: null
 CP14ModularTipGoldArrow: null
 CP14ModularTipIronArrow: null
+CP14ModularRodLucens: null
+CP14ModularRodWooden: null
+
+CP14ModularIronAxe: null
+CP14ModularIronDagger: CP14WeaponDaggerIron
+CP14ModularIronHammer: null
+CP14ModularIronKunai: CP14WeaponDaggerHatchet
+CP14ModularIronMace: CP14WeaponSwordSkimitar
+CP14ModularIronPickaxe: CP14WeaponPickaxeIron
+CP14ModularIronShovel: CP14WeaponShovelIron
+CP14ModularIronSickle: CP14WeaponDaggerSickle
+CP14ModularIronSpear: CP14WeaponSpearIron
+CP14ModularIronSword: CP14WeaponSwordIron
+CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: null
 CP14ModularIronHoe: null
 

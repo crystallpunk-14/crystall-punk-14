@@ -39,22 +39,25 @@
   - type: Clothing
     slots:
     - belt
+    breakOnMove: false
+    equipDelay: 0.5
+    unequipDelay: 0.5
 
 - type: entity
   parent: CP14BaseWeaponDagger
-  id: CP14WeaponDagger
-  name: dagger
-  description: TODO
+  id: CP14WeaponDaggerIron
+  name: iron dagger
+  description: A standard dagger made of iron.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/dagger.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
     state: icon
 
 - type: entity
   parent: CP14BaseWeaponDagger
   id: CP14WeaponDaggerHatchet
   name: hatchet
-  description: TODO
+  description: A small hatchet, commonly used as a kitchen utensil for preparing food.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
@@ -64,7 +67,7 @@
   parent: CP14BaseWeaponDagger
   id: CP14WeaponDaggerSickle
   name: sickle
-  description: TODO
+  description: A curved blade used for harvesting crops, but can be deadly in skilled hands.
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/sickle.rsi

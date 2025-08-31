@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponTwoHandedSword
+  id: CP14BaseWeaponPickaxe
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
@@ -13,35 +13,47 @@
   - type: MeleeWeapon
     attackRate: 1
     range: 1.6
-    angle: 170 #Bigger in 2 times
+    angle: 90
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 5
-    animation: CP14WeaponArcThrust
+        Piercing: 3
+        Structural: 4
+    animation: CP14WeaponArcSlash
     wideAnimation: CP14WeaponArcSlash
     soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+      collection: MetalThud
     cPAnimationLength: 0.5
     cPAnimationOffset: 1
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 10
+        Piercing: 6
+        Structural: 20
   - type: Wieldable
   - type: Clothing
-    slots:
-    - neck
     breakOnMove: false
     equipDelay: 1
     unequipDelay: 1
+    slots:
+    - neck
+  - type: Tool
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
 
 - type: entity
-  parent: CP14BaseWeaponTwoHandedSword
-  id: CP14WeaponTwoHandedSwordIron
-  name: iron two-handed sword
-  description: A large and heavy two-handed sword. Heavy means reliable.
+  parent: CP14BaseWeaponPickaxe
+  id: CP14WeaponPickaxeIron
+  name: iron pickaxe
+  description: A sturdy iron pickaxe, perfect for mining and not for combat.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/iron.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Pickaxe/iron.rsi
     state: icon

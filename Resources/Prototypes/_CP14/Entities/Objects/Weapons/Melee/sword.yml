@@ -27,15 +27,18 @@
   - type: Clothing
     slots:
     - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
 
 - type: entity
   parent: CP14BaseWeaponSword
-  id: CP14WeaponSwordImperial
-  name: sword
+  id: CP14WeaponSwordIron
+  name: iron sword
   description: A finely crafted sword favored by imperial officers. Its blade gleams with authority and tradition.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Sword/imperial.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Sword/iron.rsi
     state: icon
 
 - type: entity
