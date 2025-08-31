@@ -41,27 +41,42 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ISharedAdminLogManager _logs = default!;
-
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SharpComponent, AfterInteractEvent>(OnAfterInteract, before: new[] { typeof(UtensilSystem) });
+        // Listen on TARGETS that can be staged-butchered (avoids duplicate subscription with SharpSystem).
+        SubscribeLocalEvent<CP14StagedButcherableComponent, AfterInteractEvent>(
+            OnAfterInteract,
+            before: new[] { typeof(UtensilSystem) });
+
+        // Keep DoAfter completion on sharp tools.
         SubscribeLocalEvent<SharpComponent, CP14ButcherStageDoAfterEvent>(OnDoAfter);
+
         SubscribeLocalEvent<CP14StagedButcherableComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerbs);
     }
 
-    private void OnAfterInteract(EntityUid uid, SharpComponent sharp, AfterInteractEvent args)
+
+    // Handler must match: (EntityUid uid, TComp comp, ref TEvent args)
+    private void OnAfterInteract(EntityUid uid, CP14StagedButcherableComponent staged, ref AfterInteractEvent args)
     {
-        if (args.Handled || args.Target is not { } target || !args.CanReach)
+        // uid is the TARGET entity (the one with CP14StagedButcherableComponent)
+        if (args.Handled || !args.CanReach)
             return;
 
-        if (!TryComp<CP14StagedButcherableComponent>(target, out var staged))
+        // Only react when the player actually interacted with this uid.
+        if (args.Target != uid)
             return;
 
-        if (TryStartStage(uid, target, args.User, staged, sharp))
+        // Require a sharp tool in use.
+        if (!TryComp(args.Used, out SharpComponent? sharp))
+            return;
+
+        // Start stage using the used tool (args.Used), the target (uid) and the user.
+        if (TryStartStage(args.Used, uid, args.User, staged, sharp))
             args.Handled = true;
     }
+
 
     private void OnGetVerbs(EntityUid uid, CP14StagedButcherableComponent staged, GetVerbsEvent<InteractionVerb> args)
     {
