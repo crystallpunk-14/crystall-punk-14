@@ -17,9 +17,9 @@
   sprites:
     Head: CP14MobCarrinHead
     HeadTop: CP14MobCarrinMarkingMatchSkin
-    #Hair: CP14MobCarrinAnyMarking
-    #FacialHair: CP14MobCarrinAnyMarking
-    Snout: CP14MobCarrinMarkingMatchSkin
+    Hair: CP14MobCarrinAnyMarking
+    FacialHair: CP14MobCarrinMarkingMatchSkin
+    Snout: CP14MobCarrinAnyMarking
     Tail: CP14MobCarrinMarkingMatchSkin
     Chest: CP14MobCarrinTorso
     Eyes: CP14MobCarrinEyes
@@ -42,10 +42,10 @@
     #FacialHair:
     #  points: 1
     #  required: false
-    #Snout:
-    #  points: 1
-    #  required: true
-    #  defaultMarkings: [ CP14CarrinNose ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ CP14CarrinBeak ]
     #Tail:
     #  points: 1
     #  required: true
@@ -76,6 +76,9 @@
 - type: humanoidBaseSprite
   id: CP14MobCarrinMarkingMatchSkin
   markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinMarkingBeak
 
 - type: humanoidBaseSprite
   id: CP14MobCarrinHead
