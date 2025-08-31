@@ -147,7 +147,7 @@ C14IronCabinet: CP14IronCabinet
 C14IronCabinetCargo: CP14IronCabinet
 
 #2025-16-02
-CP14Arrow: CP14ModularIronArrow
+CP14Arrow: null
 CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverIronArrow
 
 #2025-17-02
@@ -454,6 +454,7 @@ CP14ModularIronSword: CP14WeaponSwordIron
 CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: null
 CP14ModularIronHoe: null
+CP14ModularIronArrow: null
 
 CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiver
 CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiver
