@@ -12,13 +12,16 @@ using Content.Shared.Interaction;
 using Content.Shared.Kitchen;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
+using Content.Shared.Verbs;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server._CP14.Butchering;
 
@@ -191,8 +194,9 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             _popups.PopupEntity(text, popupEnt.Value, ev.Args.User);
         }
 
-        if (stage.SoundOnSuccess != null)
-            SoundSystem.Play(stage.SoundOnSuccess.GetSound(), Filter.Pvs(target), target);
+        // TODO sounds...
+        //if (stage.SoundOnSuccess != null)
+        //    SoundSystem.Play(stage.SoundOnSuccess.GetSound(), Filter.Pvs(target), target);
 
         // Advance stage pointer
         staged.CurrentStageIndex++;
