@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
+using Content.Shared._CP14.Butchering;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
@@ -89,6 +90,22 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             if (args.Args.Target == null)
                 return;
+
+            // Crystall Punk Edit - Start
+            // Check if the target has our staged butchering component
+            if (HasComp<CP14ButcherableStagesComponent>(args.Args.Target.Value))
+            {
+                // Let our system handle the doafter event instead.
+                // The CP14ButcheringSystem subscribes to SpikeDoAfterEvent to handle this.
+                args.Handled = true;
+
+                if (TryComp<ButcherableComponent>(args.Args.Target.Value, out var butcherableStageable))
+                    butcherableStageable.BeingButchered = false;
+
+                entity.Comp.InUse = false;
+                return;
+            }
+            // Crystall Punk Edit - End
 
             if (TryComp<ButcherableComponent>(args.Args.Target.Value, out var butcherable))
                 butcherable.BeingButchered = false;
