@@ -16,6 +16,9 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 35
 
 - type: entity
   parent: CP14ClothingCloakBase
@@ -35,3 +38,6 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 35

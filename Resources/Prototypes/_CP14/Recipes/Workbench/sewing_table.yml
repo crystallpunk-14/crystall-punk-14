@@ -299,6 +299,62 @@
     count: 2
   result: CP14ClothingHeadFishMask
 
+- type: CP14Recipe
+  id: CP14ClothingCloakWizardCoatRed
+  tag: CP14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingCloakWizardCoatRed
+
+- type: CP14Recipe
+  id: CP14ClothingHeadWizardHatRed
+  tag: CP14RecipeSewing
+  craftTime: 1
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14DyeRed
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14ClothingHeadWizardHatRed
+
+- type: CP14Recipe
+  id: CP14ClothingCloakWizardCoatBlue
+  tag: CP14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14String
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 3
+  result: CP14ClothingCloakWizardCoatBlue
+
+- type: CP14Recipe
+  id: CP14ClothingHeadWizardHatBlue
+  tag: CP14RecipeSewing
+  craftTime: 1
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14DyeBlue
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 2
+  result: CP14ClothingHeadWizardHatBlue
+
 # Misc
 
 - type: CP14Recipe

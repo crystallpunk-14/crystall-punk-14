@@ -30,6 +30,9 @@
     sprite: _CP14/Clothing/Head/Roles/General/wizard_hat_red.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/wizard_hat_red.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14ClothingHeadBase
@@ -56,6 +59,9 @@
     sprite: _CP14/Clothing/Head/Roles/General/wizard_hat_blue.rsi
   - type: Clothing
     sprite: _CP14/Clothing/Head/Roles/General/wizard_hat_blue.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Cloth: 20
 
 - type: entity
   parent: CP14ClothingHeadBase
