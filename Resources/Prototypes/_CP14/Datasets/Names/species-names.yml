@@ -114,3 +114,17 @@
   values:
     prefix: cp14-species-name-carcat-first-
     count: 50
+
+# Carrin
+
+- type: localizedDataset
+  id: CP14_Names_Carrin_First
+  values:
+    prefix: cp14-species-name-carrin-male-first-
+    count: 35
+
+- type: localizedDataset
+  id: CP14_Names_Carrin_Last
+  values:
+    prefix: cp14-species-name-carrin-last-
+    count: 25

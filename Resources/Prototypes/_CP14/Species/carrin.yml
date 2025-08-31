@@ -1,0 +1,162 @@
+- type: species
+  id: CP14Carrin
+  name: cp14-species-name-carrin
+  roundStart: true
+  prototype: CP14MobCarrin
+  sprites: CP14MobCarrinSprites
+  markingLimits: CP14MobCarrinMarkingLimits
+  dollPrototype: CP14MobCarrinDummy
+  skinColoration: Hues
+  defaultSkinTone: "#313131"
+  maleFirstNames: CP14_Names_Carrin_First
+  femaleFirstNames: CP14_Names_Carrin_First
+  lastNames: CP14_Names_Carrin_Last
+
+- type: speciesBaseSprites
+  id: CP14MobCarrinSprites
+  sprites:
+    Head: CP14MobCarrinHead
+    HeadTop: CP14MobCarrinMarkingMatchSkin
+    #Hair: CP14MobCarrinAnyMarking
+    #FacialHair: CP14MobCarrinAnyMarking
+    Snout: CP14MobCarrinMarkingMatchSkin
+    Tail: CP14MobCarrinMarkingMatchSkin
+    Chest: CP14MobCarrinTorso
+    Eyes: CP14MobCarrinEyes
+    LArm: CP14MobCarrinLArm
+    RArm: CP14MobCarrinRArm
+    LHand: CP14MobCarrinLHand
+    RHand: CP14MobCarrinRHand
+    LLeg: CP14MobCarrinLLeg
+    RLeg: CP14MobCarrinRLeg
+    LFoot: CP14MobCarrinLFoot
+    RFoot: CP14MobCarrinRFoot
+
+- type: markingPoints
+  id: CP14MobCarrinMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 1
+      required: false
+    #FacialHair:
+    #  points: 1
+    #  required: false
+    #Snout:
+    #  points: 1
+    #  required: true
+    #  defaultMarkings: [ CP14CarrinNose ]
+    #Tail:
+    #  points: 1
+    #  required: true
+    #  defaultMarkings: [ CP14CarrinTail ]
+    #HeadTop:
+    #  points: 1
+    #  required: true
+    #  defaultMarkings: [ CP14CarrinEars ]
+    #Chest:
+    #  points: 1
+    #  required: false
+    #Legs:
+    #  points: 2
+    #  required: false
+    #Arms:
+    #  points: 2
+    #  required: false
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinEyes
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinAnyMarking
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinHead
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinHeadMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinHeadFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinTorso
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinTorsoMale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinTorsoFemale
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinLLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinLArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinLHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinLFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinRLeg
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinRArm
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinRHand
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: CP14MobCarrinRFoot
+  baseSprite:
+    sprite: _CP14/Mobs/Species/Carrin/parts.rsi
+    state: r_foot
