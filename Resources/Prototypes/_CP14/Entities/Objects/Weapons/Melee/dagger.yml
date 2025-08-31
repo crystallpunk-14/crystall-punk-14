@@ -19,7 +19,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Piercing: 8
+        Slash: 5
+        Piercing: 5
   - type: MeleeWeapon
     resetOnHandSelected: false
     autoAttack: true
@@ -29,6 +30,7 @@
     wideAnimationRotation: -90
     damage:
       types:
+        Slash: 5
         Piercing: 5
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash
