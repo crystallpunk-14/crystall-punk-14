@@ -16,9 +16,9 @@
       department: CP14Guard
       time: 10980 # 3 hours
   special:
-    - !type:CP14LearnSkillsSpecial
-      skills:
-      - SwordMastery
+    №- !type:CP14LearnSkillsSpecial
+    №  skills:
+    №  - SwordMastery
     - !type:AddComponentSpecial
       components:
       - type: CP14SalaryCounter
