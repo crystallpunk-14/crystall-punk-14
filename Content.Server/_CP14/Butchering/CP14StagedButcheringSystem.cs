@@ -26,8 +26,8 @@ namespace Content.Server._CP14.Butchering;
 
 /// <summary>
 /// Server-side staged butchering logic for CP14StagedButcherableComponent.
-/// Works with SharpSystem interactions and verb-based butchering.
-/// Does NOT modify vanilla ButcherableComponent behavior.
+/// Integrates with SharpSystem and verb-based interaction.
+/// Ensures cancelled DoAfter does not block retrying the stage.
 /// </summary>
 public sealed class CP14StagedButcheringSystem : EntitySystem
 {
@@ -49,12 +49,12 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         // This prevents conflicts with SharpSystem or vanilla Butcherable
         SubscribeLocalEvent<SharpComponent, CP14ButcherStageDoAfterEvent>(OnDoAfter);
 
-        // Subscribe to verbs for interaction with staged butcherable entities
+        // Add verbs for entities with staged butcherable component
         SubscribeLocalEvent<CP14StagedButcherableComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerbs);
     }
 
     /// <summary>
-    /// Public entry point for SharpSystem to start a staged butchering stage.
+    /// Entry point from SharpSystem for starting a stage.
     /// </summary>
     public bool TryStartStageFromSharp(EntityUid tool, EntityUid target, EntityUid user, SharpComponent sharp)
     {
@@ -81,20 +81,19 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         var disabled = false;
         string? msg = null;
 
-        // Disable verb if no sharp tool is available
+        // Disable verb if no sharp tool available
         if (!hasSharpInHand && !hasSharpOnUser)
         {
             disabled = true;
             msg = Loc.GetString("butcherable-need-knife", ("target", uid));
         }
-        // Disable verb if entity is inside a container
         else if (_containers.IsEntityInContainer(uid))
         {
             disabled = true;
             msg = Loc.GetString("butcherable-not-in-container", ("target", uid));
         }
 
-        // Disable verb if stage requires dead target and target is alive
+        // Disable if stage requires dead target and target is alive
         if (!disabled && TryGetCurrentStage(staged, out var stage) && stage!.RequireDead &&
             TryComp<MobStateComponent>(uid, out var state) && !_mobState.IsDead(uid, state))
         {
@@ -126,14 +125,12 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
     }
 
     /// <summary>
-    /// Starts the current butchering stage.
-    /// Checks stage tool requirement, death requirement, sets BeingButchered flag,
-    /// and schedules a DoAfter for completion.
+    /// Starts a butchering stage, checking conditions and scheduling DoAfter.
     /// </summary>
     private bool TryStartStage(EntityUid tool, EntityUid target, EntityUid user,
         CP14StagedButcherableComponent staged, SharpComponent? sharp)
     {
-        // Prevent multiple concurrent butchering
+        // Prevent concurrent stage execution
         if (staged.BeingButchered)
             return false;
 
@@ -151,8 +148,9 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         if (stage.RequireDead && TryComp<MobStateComponent>(target, out var state) && !_mobState.IsDead(target, state))
             return false;
 
-        // Set flag and mark component dirty for network sync
+        // Mark stage as in progress
         staged.BeingButchered = true;
+        staged.StageInProgress = true;
         Dirty(target, staged);
 
         var needHand = user != tool;
@@ -180,14 +178,24 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
     /// </summary>
     private void OnDoAfter(EntityUid uid, SharpComponent sharp, DoAfterEvent ev)
     {
-        if (ev.Handled || ev.Cancelled || ev.Args.Target is not EntityUid target)
+        if (ev.Handled || ev.Args.Target is not EntityUid target)
             return;
 
         if (!TryComp<CP14StagedButcherableComponent>(target, out var staged))
             return;
 
-        // Reset being-butchered flag
+        if (ev.Cancelled)
+        {
+            // Reset flags to allow retrying the stage
+            staged.BeingButchered = false;
+            staged.StageInProgress = false;
+            Dirty(target, staged);
+            ev.Handled = true;
+            return;
+        }
+
         staged.BeingButchered = false;
+        staged.StageInProgress = false;
         Dirty(target, staged);
 
         // Prevent further processing if target is inside a container
@@ -226,7 +234,7 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         staged.CurrentStageIndex++;
         Dirty(target, staged);
 
-        // If all stages completed, optionally gib body and delete entity
+        // Finalize entity if last stage
         if (staged.CurrentStageIndex >= staged.Stages.Count)
         {
             if (stage.GibOnFinalize && TryComp<BodyComponent>(target, out var body))

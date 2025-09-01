@@ -33,6 +33,14 @@ public sealed partial class CP14StagedButcherableComponent : Component
     /// </summary>
     [ViewVariables]
     public bool BeingButchered;
+
+    /// <summary>
+    /// Tracks whether a stage is in progress (even if BeingButchered is temporarily false after cancel).
+    /// Ensures the stage can be retried if the previous DoAfter was cancelled.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
+    public bool StageInProgress;
 }
 
 /// <summary>
