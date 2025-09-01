@@ -1,3 +1,6 @@
+# ============================
+# Flem
+# ============================
 - type: entity
   id: CP14MobMonsterFlem
   parent: CP14SimpleMobBase
@@ -61,15 +64,9 @@
         Base: flem_live
       Dead:
         Base: flem_dead
-  - type: Butcherable
-    spawned:
-    - id: CP14FoodMeatFlemHead
-      amount: 1
-    - id: CP14FoodMeatFlemTorso
-      amount: 1
-    - id: CP14FoodMeatFlemLeg
-      amount: 2
-      prob: 0.6
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Meat_Flem
   - type: Bloodstream
     bloodMaxVolume: 200
     bloodReagent: CP14BloodAnimal

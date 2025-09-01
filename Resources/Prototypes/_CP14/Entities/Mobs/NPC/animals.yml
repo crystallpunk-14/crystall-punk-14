@@ -1,3 +1,6 @@
+# ============================
+# Rabbit
+# ============================
 - type: entity
   id: CP14MobRabbit
   parent: CP14SimpleMobBase
@@ -67,9 +70,9 @@
         Base: rabbit_dead
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Example_Part_1_loot
-      - CP14Stage_Example_Part_2_skin
-      - CP14Stage_Example_Part_3_meat
+      - CP14Stage_Loot_SmallFur
+      - CP14Stage_Skin_Light
+      - CP14Stage_Meat_Rabbit
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
@@ -81,6 +84,9 @@
     interactSuccessSound:
       path: /Audio/Animals/fox_squeak.ogg
 
+# ============================
+# Pig
+# ============================
 - type: entity
   id: CP14MobPig
   parent: CP14SimpleMobBase
@@ -146,9 +152,8 @@
         Base: dead
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Example_Part_1_loot
-      - CP14Stage_Example_Part_2_skin
-      - CP14Stage_Example_Part_3_meat
+      - CP14Stage_Skin_Medium
+      - CP14Stage_Meat_Pig
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -165,6 +170,9 @@
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
 
+# ============================
+# Boar
+# ============================
 - type: entity
   id: CP14MobBoar
   parent: CP14MobPig
@@ -190,13 +198,10 @@
   - type: Tag
     tags:
     - CP14Boar
-
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Example_Part_1_loot
-      - CP14Stage_Example_Part_2_skin
-      - CP14Stage_Example_Part_3_meat
-
+      - CP14Stage_Skin_Heavy
+      - CP14Stage_Meat_Boar
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -218,8 +223,11 @@
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
 
+# ============================
+# Frog
+# ============================
 - type: entity
-  name: frog
+  id: CP14MobFrog
   parent: CP14SimpleMobBase
   id: CP14MobFrog
   description: Green and constantly jumping frog, and perhaps thanks to it mosquitoes have not completely filled the marshes.
@@ -281,14 +289,10 @@
         Base: frog
       Dead:
         Base: frog_dead
-  - type: Butcherable
-    butcherDelay: 2
-    spawned:
-    - id: CP14FoodMeatFrogLeg
-      amount: 2
-    - id: CP14ScrapLeather
-      amount: 1
-      prob: 0.5
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Skin_Light
+      - CP14Stage_Meat_Frog
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -328,6 +332,9 @@
         variation: 0.125
   - type: SoundWhileAlive
 
+# ============================
+# Sheep
+# ============================
 - type: entity
   id: CP14MobSheep
   parent: CP14SimpleMobBase
@@ -398,23 +405,11 @@
         Base: sheep
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
-    - id: CP14FoodMeatLamb
-      amount: 4
-    - id: CP14String # As long as there are no mechanics to shearing wool, the only way to get string.
-      amount: 4
-      maxAmount: 16
-    - id: CP14ThinLeather1
-      amount: 2
-      maxAmount: 5
-    - id: CP14ScrapLeather
-      amount: 1
-      maxAmount: 5
-      prob: 0.3
-    - id: CP14Bone1
-      amount: 1
-      maxAmount: 2
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Loot_Wool
+      - CP14Stage_Skin_Medium
+      - CP14Stage_Meat_Sheep
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -426,6 +421,9 @@
     interactSuccessSound:
       path: /Audio/Animals/goat_bah.ogg
 
+# ============================
+# Big Bear
+# ============================
 - type: entity
   id: CP14MobBigBear
   parent: CP14SimpleMobBase
@@ -496,20 +494,10 @@
   - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
-    - id: CP14FoodMeatBoar # TODO
-      amount: 5
-    - id: CP14RuggedLeather1
-      amount: 2
-      maxAmount: 5
-    - id: CP14ScrapLeather
-      amount: 2
-      maxAmount: 6
-      prob: 0.5
-    - id: CP14GoodFur
-      amount: 1
-    - id: CP14Bone1
-      amount: 8
-      maxAmount: 10
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Skin_Heavy
+      - CP14Stage_Meat_Bear
   - type: Bloodstream
     bloodMaxVolume: 350
     bloodReagent: CP14BloodAnimal

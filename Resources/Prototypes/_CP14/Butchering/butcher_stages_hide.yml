@@ -1,0 +1,42 @@
+
+# ============================
+# Hide Stages (Leather)
+# ============================
+
+# Parent stage for all leather/skin items
+- type: CP14ButcherStage
+  id: ParentStage_Skin
+  tool: Knife
+  delay: 3
+  requireDead: true
+
+# Light leather (rabbit, frog)
+- type: CP14ButcherStage
+  parent: ParentStage_Skin
+  id: CP14Stage_Skin_Light
+  spawned:
+    - id: CP14ThinLeather1
+      amount: 1
+      maxAmount: 2
+
+# Medium leather (pig, sheep)
+- type: CP14ButcherStage
+  parent: ParentStage_Skin
+  id: CP14Stage_Skin_Medium
+  spawned:
+    - id: CP14Leather1
+      amount: 2
+      maxAmount: 4
+
+# Heavy leather (boar, bear)
+- type: CP14ButcherStage
+  parent: ParentStage_Skin
+  id: CP14Stage_Skin_Heavy
+  spawned:
+    - id: CP14RuggedLeather1
+      amount: 2
+      maxAmount: 5
+    - id: CP14ScrapLeather
+      amount: 2
+      maxAmount: 6
+      prob: 0.5

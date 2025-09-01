@@ -1,0 +1,40 @@
+
+# ============================
+# Loot Stages (Fur / Wool)
+# ============================
+
+# Parent stage for all loot/fur items
+- type: CP14ButcherStage
+  id: ParentStage_Loot
+  tool: Knife
+  delay: 2
+  requireDead: true
+
+# Small fur (e.g., rabbit, frog)
+- type: CP14ButcherStage
+  parent: ParentStage_Loot
+  id: CP14Stage_Loot_SmallFur
+  spawned:
+    - id: CP14Fur
+      amount: 1
+      prob: 0.75
+
+# Medium fur (e.g., pig)
+- type: CP14ButcherStage
+  parent: ParentStage_Loot
+  id: CP14Stage_Loot_MediumFur
+  spawned:
+    - id: CP14CheapFur
+      amount: 1
+    - id: CP14Fur
+      amount: 1
+      prob: 0.5
+
+# Wool / string (sheep)
+- type: CP14ButcherStage
+  parent: ParentStage_Loot
+  id: CP14Stage_Loot_Wool
+  spawned:
+    - id: CP14String
+      amount: 4
+      maxAmount: 16

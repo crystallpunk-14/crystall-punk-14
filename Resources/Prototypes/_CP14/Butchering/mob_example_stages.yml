@@ -1,16 +1,20 @@
 - type: CP14ButcherStage
-  id: CP14Stage_Example_Part_1_loot
+  id: ParentStage_Example
   tool: Knife
+  delay: 3
+  requireDead: true
+
+- type: CP14ButcherStage
+  parent: ParentStage_Example
+  id: CP14Stage_Example_Part_1_loot
   delay: 3
   spawned:
     - id: CP14CheapFur
       amount: 1
-  requireDead: true
 
 - type: CP14ButcherStage
+  parent: ParentStage_Example
   id: CP14Stage_Example_Part_2_skin
-  tool: Knife
-  delay: 3
   spawned:
     - id: CP14RuggedLeather1
       amount: 1
@@ -19,11 +23,10 @@
     - id: CP14Leather1
       amount: 2
       maxAmount: 4
-  requireDead: true
 
 - type: CP14ButcherStage
+  parent: ParentStage_Example
   id: CP14Stage_Example_Part_3_meat
-  tool: Knife
   delay: 3
   spawned:
     - id: CP14FoodMeatBoar
@@ -31,4 +34,3 @@
     - id: CP14Bone1
       amount: 2
       maxAmount: 3
-  requireDead: true

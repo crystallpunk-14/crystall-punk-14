@@ -35,6 +35,9 @@
     tags:
       - FootstepSound
 
+# ============================
+# Dino Yumkaraptor
+# ============================
 - type: entity
   id: CP14MobDinoYumkaraptor
   parent: CP14MobDino
@@ -90,20 +93,10 @@
     baseSprintSpeed: 6
     acceleration: 16.0
   - type: Climbing
-  - type: Butcherable
-    spawned:
-    - id: CP14FoodMeatDino
-      amount: 4
-    - id: CP14RuggedLeather1
-      amount: 1
-      maxAmount: 2
-      prob: 0.2
-    - id: CP14Leather1
-      amount: 2
-      maxAmount: 4
-    - id: CP14Bone1
-      amount: 2
-      maxAmount: 3
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Skin_Heavy
+      - CP14Stage_Meat_DinoYumkaraptor
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: SpamEmitSound
@@ -117,6 +110,9 @@
   - type: SoundWhileAlive
   - type: FloorOcclusion
 
+# ============================
+# Dino Small Hydra
+# ============================
 - type: entity
   id: CP14MobDinoSmallHydra
   parent: CP14MobDino
@@ -170,17 +166,10 @@
     baseWalkSpeed: 4
     baseSprintSpeed: 5
     acceleration: 16.0
-  - type: Butcherable
-    spawned:
-    - id: CP14FoodMeatHydra
-      amount: 2
-    - id: CP14Leather1
-      amount: 1
-      prob: 0.5
-    - id: CP14ScrapLeather
-      amount: 1
-      maxAmount: 3
-      prob: 0.75
+  - type: CP14StagedButcherable
+    stages:
+      - CP14Stage_Skin_Medium
+      - CP14Stage_Meat_DinoSmallHydra
   - type: Bloodstream
     bloodMaxVolume: 100
   - type: SoundWhileAlive
