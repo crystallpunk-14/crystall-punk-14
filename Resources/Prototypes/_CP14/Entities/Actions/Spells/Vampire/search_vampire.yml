@@ -29,7 +29,7 @@
   parent: CP14ActionSpellBloodConnection
   id: CP14ActionSpellBloodEnemySearch
   name: Blood identification
-  description: You are searching within a large radius for all vampires from other factions.
+  description: You are searching within a large radius for all vampires from other clans.
   components:
   - type: CP14MagicEffect
     effects:
