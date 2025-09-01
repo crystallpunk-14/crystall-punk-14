@@ -1886,3 +1886,13 @@
   id: 8237
   time: '2025-08-30T07:27:04.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1659
+- author: Nimfar11
+  changes:
+  - message: Small boxes and barrels are once again being carried across the water.
+    type: Fix
+  - message: The T2 skeleton archer now has the ability to fight with a sword, which
+      he is also armed with.
+    type: Fix
+  id: 8238
+  time: '2025-09-01T12:07:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1730
