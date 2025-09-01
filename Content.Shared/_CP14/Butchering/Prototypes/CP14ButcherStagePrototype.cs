@@ -28,11 +28,6 @@ public sealed class CP14ButcherStagePrototype : IPrototype
     /// </summary>
     [DataField] public bool RequireDead = true;
 
-    /// <summary>
-    /// Optional: also gib body when finalizing (if it has a BodyComponent).
-    /// </summary>
-    [DataField] public bool GibOnFinalize = true;
-
     /// <summary>Optional popup localization key to show on success.</summary>
     [DataField] public LocId? PopupOnSuccess;
 

@@ -237,7 +237,7 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         // Finalize entity if last stage
         if (staged.CurrentStageIndex >= staged.Stages.Count)
         {
-            if (stage.GibOnFinalize && TryComp<BodyComponent>(target, out var body))
+            if (TryComp<BodyComponent>(target, out var body))
                 _body.GibBody(target, body: body);
 
             EntityManager.DeleteEntity(target);
