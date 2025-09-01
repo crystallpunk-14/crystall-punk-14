@@ -1,6 +1,5 @@
 using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
-using Content.Shared._CP14.Butchering;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Database;

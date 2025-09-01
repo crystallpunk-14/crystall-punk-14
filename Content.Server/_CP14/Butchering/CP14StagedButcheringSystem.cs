@@ -25,9 +25,9 @@ using Robust.Shared.Utility;
 namespace Content.Server._CP14.Butchering;
 
 /// <summary>
-/// Server-side staged butchering logic. It listens to sharp interactions and offers a verb,
-/// but only for entities having CP14StagedButcherableComponent.
-/// It does NOT modify vanilla ButcherableComponent behavior.
+/// Server-side staged butchering logic for CP14StagedButcherableComponent.
+/// Works with SharpSystem interactions and verb-based butchering.
+/// Does NOT modify vanilla ButcherableComponent behavior.
 /// </summary>
 public sealed class CP14StagedButcheringSystem : EntitySystem
 {
@@ -45,46 +45,56 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
     {
         base.Initialize();
 
-        // DoAfter завершение — отдельный тип события, не конфликтует с ванильным.
+        // Subscribe to DoAfter event specific for staged butchering
+        // This prevents conflicts with SharpSystem or vanilla Butcherable
         SubscribeLocalEvent<SharpComponent, CP14ButcherStageDoAfterEvent>(OnDoAfter);
 
-        // Вербы на цели оставляем — они не конфликтуют.
+        // Subscribe to verbs for interaction with staged butcherable entities
         SubscribeLocalEvent<CP14StagedButcherableComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerbs);
     }
 
     /// <summary>
-    /// Публичная точка входа, которую зовёт SharpSystem из своего OnAfterInteract.
+    /// Public entry point for SharpSystem to start a staged butchering stage.
     /// </summary>
     public bool TryStartStageFromSharp(EntityUid tool, EntityUid target, EntityUid user, SharpComponent sharp)
     {
         if (!TryComp(target, out CP14StagedButcherableComponent? staged))
             return false;
 
+        // Delegate actual stage start to internal method
         return TryStartStage(tool, target, user, staged, sharp);
     }
 
+    /// <summary>
+    /// Adds the butcher verb to entities.
+    /// Determines availability based on tool in hand, container state, and death requirement.
+    /// </summary>
     private void OnGetVerbs(EntityUid uid, CP14StagedButcherableComponent staged, GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
 
+        // Check if user or their held item has a sharp component
         var hasSharpInHand = TryComp<SharpComponent>(args.Using, out var _);
         var hasSharpOnUser = TryComp<SharpComponent>(args.User, out var _);
 
         var disabled = false;
         string? msg = null;
 
+        // Disable verb if no sharp tool is available
         if (!hasSharpInHand && !hasSharpOnUser)
         {
             disabled = true;
             msg = Loc.GetString("butcherable-need-knife", ("target", uid));
         }
+        // Disable verb if entity is inside a container
         else if (_containers.IsEntityInContainer(uid))
         {
             disabled = true;
             msg = Loc.GetString("butcherable-not-in-container", ("target", uid));
         }
 
+        // Disable verb if stage requires dead target and target is alive
         if (!disabled && TryGetCurrentStage(staged, out var stage) && stage!.RequireDead &&
             TryComp<MobStateComponent>(uid, out var state) && !_mobState.IsDead(uid, state))
         {
@@ -92,8 +102,10 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
             msg = Loc.GetString("butcherable-mob-isnt-dead");
         }
 
+        // Determine which entity performs the action (tool in hand or user)
         var sharpEnt = hasSharpInHand ? args.Using!.Value : (hasSharpOnUser ? args.User : EntityUid.Invalid);
 
+        // Create interaction verb
         var verb = new InteractionVerb
         {
             Text = Loc.GetString("butcherable-verb-name"),
@@ -113,36 +125,44 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 
+    /// <summary>
+    /// Starts the current butchering stage.
+    /// Checks stage tool requirement, death requirement, sets BeingButchered flag,
+    /// and schedules a DoAfter for completion.
+    /// </summary>
     private bool TryStartStage(EntityUid tool, EntityUid target, EntityUid user,
         CP14StagedButcherableComponent staged, SharpComponent? sharp)
     {
+        // Prevent multiple concurrent butchering
         if (staged.BeingButchered)
             return false;
 
         if (!TryGetCurrentStage(staged, out var stage))
             return false;
 
-        // Только нож запускает стейдж с клика (аналогично ванили).
+        // Only knife can trigger a click-stage
         if (stage!.Tool != CP14ButcheringTool.Knife)
         {
             _popups.PopupEntity(Loc.GetString("butcherable-different-tool", ("target", target)), tool, user);
             return false;
         }
 
-        // death requirement
+        // Check death requirement
         if (stage.RequireDead && TryComp<MobStateComponent>(target, out var state) && !_mobState.IsDead(target, state))
             return false;
 
+        // Set flag and mark component dirty for network sync
         staged.BeingButchered = true;
         Dirty(target, staged);
 
         var needHand = user != tool;
 
-        // apply tool modifier if Sharp system defines it
+        // Calculate delay, optionally modified by SharpComponent
         var delay = stage.Delay;
         if (sharp != null)
             delay = sharp.ButcherDelayModifier * stage.Delay;
 
+        // Setup DoAfter for stage completion
         var doAfter = new DoAfterArgs(EntityManager, user, delay, new CP14ButcherStageDoAfterEvent(), tool, target: target, used: tool)
         {
             BreakOnDamage = true,
@@ -154,6 +174,10 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    /// Handles completion or cancellation of staged butchering DoAfter.
+    /// Spawns items, advances stage, and finalizes entity destruction if necessary.
+    /// </summary>
     private void OnDoAfter(EntityUid uid, SharpComponent sharp, DoAfterEvent ev)
     {
         if (ev.Handled || ev.Cancelled || ev.Args.Target is not EntityUid target)
@@ -162,9 +186,11 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         if (!TryComp<CP14StagedButcherableComponent>(target, out var staged))
             return;
 
+        // Reset being-butchered flag
         staged.BeingButchered = false;
         Dirty(target, staged);
 
+        // Prevent further processing if target is inside a container
         if (_containers.IsEntityInContainer(target))
         {
             ev.Handled = true;
@@ -174,7 +200,7 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         if (!TryGetCurrentStage(staged, out var stage))
             return;
 
-        // Spawn drops for this stage
+        // Spawn the items for this stage
         var spawns = EntitySpawnCollection.GetSpawns(stage!.Spawned, _rand);
         var coords = _xform.GetMapCoordinates(target);
         EntityUid? popupEnt = null;
@@ -182,7 +208,7 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         foreach (var proto in spawns)
             popupEnt = Spawn(proto, coords.Offset(_rand.NextVector2(0.25f)));
 
-        // Popup and sound (optional)
+        // Show popup for spawned items
         if (popupEnt != null)
         {
             var text = stage.PopupOnSuccess != null
@@ -196,29 +222,30 @@ public sealed class CP14StagedButcheringSystem : EntitySystem
         // TODO sounds...
         // if (stage.SoundOnSuccess != null)
         //     SoundSystem.Play(stage.SoundOnSuccess.GetSound(), Filter.Pvs(target), target);
-
-        // Advance stage pointer
+        // Advance stage index
         staged.CurrentStageIndex++;
         Dirty(target, staged);
 
-        // Если прошли все этапы — финализация
+        // If all stages completed, optionally gib body and delete entity
         if (staged.CurrentStageIndex >= staged.Stages.Count)
         {
-            // optional gib for things with body
             if (stage.GibOnFinalize && TryComp<BodyComponent>(target, out var body))
                 _body.GibBody(target, body: body);
 
-            // destroy target (final butcher)
             EntityManager.DeleteEntity(target);
         }
 
         ev.Handled = true;
 
+        // Log the butcher action for admin purposes
         _logs.Add(LogType.Gib,
             $"{ToPrettyString(ev.Args.User):user} staged-butchered {ToPrettyString(target):target} " +
             $"with {ToPrettyString(ev.Args.Used):tool} (stage {staged.CurrentStageIndex}/{staged.Stages.Count})");
     }
 
+    /// <summary>
+    /// Attempts to retrieve the current stage prototype from the staged component.
+    /// </summary>
     private bool TryGetCurrentStage(CP14StagedButcherableComponent comp, out CP14ButcherStagePrototype? stage)
     {
         stage = null;
