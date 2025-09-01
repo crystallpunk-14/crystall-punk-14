@@ -20,9 +20,11 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-// вверху файла рядом с остальными using:
-using Content.Server._CP14.Butchering; // доступ к системе
-using Content.Shared._CP14.Butchering.Components; // доступ к компоненту-метке
+// ===== CP14 staged butcher integration BEGIN =====
+// Add CP14 staged butcher system and component for integration
+using Content.Server._CP14.Butchering; // Access to the staged butcher system
+using Content.Shared._CP14.Butchering.Components; // Access to the marker component
+// ===== CP14 staged butcher integration END =====
 
 namespace Content.Server.Kitchen.EntitySystems;
 
@@ -56,24 +58,26 @@ public sealed class SharpSystem : EntitySystem
         // ===== CP14 staged butcher integration BEGIN =====
         var target = args.Target.Value;
 
-        // Если на цели есть CP14StagedButcherableComponent — отдаём обработку нашей CP14-системе
+        // If the target has a staged butcher component, defer handling to the CP14 system
         if (EntityManager.HasComponent<CP14StagedButcherableComponent>(target))
         {
             var cp14 = EntitySystem.Get<CP14StagedButcheringSystem>();
 
+            // Try to start a staged butcher stage
             if (cp14.TryStartStageFromSharp(uid, target, args.User, component))
             {
+                // Mark event as handled to prevent vanilla butcher logic
                 args.Handled = true;
                 return;
             }
 
-            // Если компонент есть, но условия не выполнены — не падаем в ванильный Butcherable.
-            // Это защищает от конфликтов, если у сущности одновременно есть оба компонента.
+            // If conditions are not met, do not fallback to vanilla ButcherableComponent
+            // This avoids conflicts if entity has both components
             return;
         }
         // ===== CP14 staged butcher integration END =====
 
-        // Ваниль: обычное разделывание ButcherableComponent
+        // Fallback: vanilla ButcherableComponent handling if no staged butcher is present
         if (TryStartButcherDoafter(uid, target, args.User))
             args.Handled = true;
     }
