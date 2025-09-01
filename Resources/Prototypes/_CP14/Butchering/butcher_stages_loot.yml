@@ -19,6 +19,13 @@
       amount: 1
       prob: 0.75
 
+- type: CP14ButcherStage
+  parent: ParentStage_Loot
+  id: CP14Stage_Loot_Fur
+  spawned:
+    - id: CP14Fur
+      amount: 1
+
 # Medium fur (e.g., pig)
 - type: CP14ButcherStage
   parent: ParentStage_Loot

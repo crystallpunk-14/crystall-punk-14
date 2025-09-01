@@ -78,9 +78,11 @@
       amount: 8
       maxAmount: 10
 
+
 # ============================
-# Meat stages for monsters
+# Meat stages for dino
 # ============================
+
 - type: CP14ButcherStage
   parent: ParentStage_Meat
   id: CP14Stage_Meat_DinoYumkaraptor
@@ -97,9 +99,10 @@
   spawned:
     - id: CP14FoodMeatHydra
       amount: 2
-    - id: CP14Bone1
-      amount: 1
-      prob: 0.5
+
+# ============================
+# Meat stages for monsters
+# ============================
 
 - type: CP14ButcherStage
   parent: ParentStage_Meat
@@ -116,6 +119,7 @@
     - id: CP14Bone1
       amount: 2
       maxAmount: 3
+
 
 # ============================
 # Fish

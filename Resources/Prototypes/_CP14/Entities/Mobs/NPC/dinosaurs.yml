@@ -95,7 +95,7 @@
   - type: Climbing
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Skin_Heavy
+      - CP14Stage_Skin_Medium_With_Extra_Heavy
       - CP14Stage_Meat_DinoYumkaraptor
   - type: Bloodstream
     bloodMaxVolume: 200
