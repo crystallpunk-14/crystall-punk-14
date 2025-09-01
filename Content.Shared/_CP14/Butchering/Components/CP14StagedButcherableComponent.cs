@@ -3,7 +3,6 @@ using Content.Shared.Kitchen;
 using Content.Shared.Storage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared._CP14.Butchering.Components;
 
@@ -40,16 +39,4 @@ public sealed partial class CP14StagedButcherableComponent : Component
     /// </summary>
     [AutoNetworkedField]
     public bool StageInProgress;
-}
-
-/// <summary>
-/// Which tool/process is valid for the stage.
-/// Mirrors vanilla enum to stay upstream-compatible.
-/// </summary>
-[Serializable, NetSerializable]
-public enum CP14ButcheringTool : byte
-{
-    Knife,
-    Spike,
-    Gibber
 }
