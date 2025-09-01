@@ -4868,8 +4868,8 @@ ent-CP14FloraTreeGreen = { ent-CP14BaseTree }
 ent-CP14FloraTreeSnow = { ent-CP14BaseTree }
     .desc = { ent-CP14BaseTree.desc }
 
-ent-CP14FloraTreeRed = материнское кровавое дерево
-    .desc = Ask Wanderere to insert lore here
+ent-CP14FloraTreeRed = красное дерево
+    .desc = { ent-CP14BaseTree.desc }
 
 ent-CP14FloraTreeDead = { ent-CP14BaseTree }
     .desc = { ent-CP14BaseTree.desc }
@@ -5374,16 +5374,18 @@ ent-CP14BaseSharpeningStoneStructure = стационарный точильны
     .desc = Прочный, долговечный точильный камень, способный затачивать оружие без особого вреда для него.
 
 ent-CP14DemiplanRiftCore = ядро разрыва демиплана
-    .desc = Тонкая связь между реальным миром и демипланом, куда отправились искатели приключений. Рано или поздно они вернутся оттуда.
+    .desc = Прикоснитесь, чтобы открыть дверь в новый мир.
 
-ent-CP14DemiplaneTimedRadiusPassway = пульсирующий разлом демиплана
-    .desc = Этот разлом набирает силу, и через секунду все ближайшие существа окажутся в ловушке демиплана!
+ent-CP14DemiplaneEnterPointMarker = точка входа в демиплан
 
-ent-CP14DemiplanePassway = разлом демиплана
-    .desc = Промежуток в пространстве, позволяющий путешествовать между мирами и демипланами.
+ent-CP14DemiplaneRiftAwaiting = нестабильный разрыв демиплана
+    .desc = Разрыв в пространстве, позволяющий путешествовать между мирами. Он все еще нестабилен, и вход в него опасен для здоровья.
 
-ent-CP14DemiplanePasswayRed = { ent-CP14DemiplanePassway }
-    .desc = { ent-CP14DemiplanePassway.desc }
+ent-CP14DemiplaneRiftPortal = разрыва демиплана
+    .desc = Разрыв в пространстве, позволяющий путешествовать между мирами.
+
+ent-CP14TempPortalToCity = временный разрыв
+    .desc = Временный портал, ведущий прямо в город. У вас есть около минуты, чтобы воспользоваться им, прежде чем он закроется.
 
 ent-CP14DemiplaneLinkCrystal = кристалл связи демиплана
     .desc = Поддерживает связь с демипланами во время заряда. Вызывает монстров из демипланов атаковать город. Когда он разряжается, игра заканчивается.
@@ -5395,9 +5397,6 @@ ent-CP14PortalFrameCrystal = рамка портала
 ent-CP14PortalFrameCrystalLight = { ent-CP14PortalFrameCrystal }
     .desc = { ent-CP14PortalFrameCrystal.desc }
     .suffix = Свечение
-
-ent-CP14DemiplaneCore = демиплановое ядро
-    .desc = Сердце демиплана. Ваша задача - вынести его из демиплана в целости и сохранности и передать гильдмастеру.
 
 ent-CP14PressurePlateBase = нажимная пластина
     .desc = Эта кнопка может активировать что-то!
@@ -5492,6 +5491,54 @@ ent-CP14EssenceNodeChaos = { ent-CP14BaseEssenceNode }
     .suffix = perditio
 
 ent-CP14EssenceSplitterImpactEffect = воздействие разделителя эссенции
+
+ent-CP14TempPortalRed = { ent-CP14TempPortalToCity }
+    .desc = Багровый портал, который очень быстро исчезает. Куда он ведет?
+
+ent-CP14BaseVampirePortalGlyph = портальный глиф
+    .desc = Глиф телепортации, пропитанный кровавой магией. Любой вампир из клана владельца может в любой момент телепортироваться сюда! Чтобы уничтожить глиф, высасывайте из него всю магическую энергию.
+
+ent-CP14VampirePortalGlyphDevourers = { ent-CP14BaseVampirePortalGlyph }
+    .desc = { ent-CP14BaseVampirePortalGlyph.desc }
+    .suffix = Пожиратели
+
+ent-CP14VampirePortalGlyphUnnameable = { ent-CP14BaseVampirePortalGlyph }
+    .desc = { ent-CP14BaseVampirePortalGlyph.desc }
+    .suffix = Неназываемые
+
+ent-CP14VampirePortalGlyphNightChildrens = { ent-CP14BaseVampirePortalGlyph }
+    .desc = { ent-CP14BaseVampirePortalGlyph.desc }
+    .suffix = Дети Ночи
+
+ent-CP14WorkbenchVampire = вампирское место силы
+    .desc = Стол, пропитанный магией вампиров, позволяющий создавать предметы темных искусств.
+
+ent-CP14VampireClanHeartBase = сердце клана вампиров
+    .desc = Источник силы клана вампиров. Собирая жизненную силу своих жертв, клан становится сильнее.
+
+ent-CP14VampireClanHeartUnnameable = сердце клана Неназываемых
+    .desc = { ent-CP14VampireClanHeartBase.desc }
+    .suffix = Неназываемые
+
+ent-CP14VampireClanHeartDevourers = сердце клана Пожирателей
+    .desc = { ent-CP14VampireClanHeartBase.desc }
+    .suffix = Пожиратели
+
+ent-CP14VampireClanHeartNightChildren = сердце клана Детей Ночи
+    .desc = { ent-CP14VampireClanHeartBase.desc }
+    .suffix = Дети Ночи
+
+ent-CP14VampireClanHeartFrameUnnameable = рамка сердца клана
+    .desc = Величественный артефакт культуры вампиров. Незавершенный.
+
+ent-CP14VampireClanHeartFrameDevourers = { ent-CP14VampireClanHeartFrameUnnameable }
+    .desc = { ent-CP14VampireClanHeartFrameUnnameable.desc }
+
+ent-CP14VampireClanHeartFrameNightChildrens = { ent-CP14VampireClanHeartFrameUnnameable }
+    .desc = { ent-CP14VampireClanHeartFrameUnnameable.desc }
+
+ent-CP14VampireStoneAltar = кровавый алтарь
+    .desc = Жуткий каменный алтарь, забрызганный кровью. Удваивает количество эссенции крови, извлеченной из жертв вампиров.
 
 ent-CP14ChestGeneric = сундук
     .desc = Сундук.
@@ -5625,8 +5672,6 @@ ent-CP14BaseStationEventShortDelay = None
 
 ent-CP14BaseStationEventLongDelay = None
 
-ent-CP14TestRaidSpawn = тестовый спавнер рейда
-
 ent-CP14Storm = шторм
 
 ent-CP14BloodMoonRule = кровавая луна
@@ -5635,13 +5680,19 @@ ent-CP14BloodMoonCurseRule = проклятие кровавой луны
 
 ent-CP14BaseGameRule = игровое правило
 
-ent-CP14SubGamemodesRule = None
-
 ent-CP14RoundObjectivesRule = None
 
 ent-CP14BasicStationEventScheduler = None
 
-ent-CP14Vampire = вампир
+ent-CP14GameRuleVampireClanBattleTriple = { ent-CP14BaseGameRule }
+
+ent-CP14GameRuleVampireClanBattleDouble = { ent-CP14BaseGameRule }
+
+ent-CP14GameRuleVampireClanUnnameable = { ent-CP14BaseGameRule }
+
+ent-CP14GameRuleVampireClanDevourers = { ent-CP14BaseGameRule }
+
+ent-CP14GameRuleVampireClanNightChildrens = { ent-CP14BaseGameRule }
 
 ent-CP14BaseTownObjective = None
 
@@ -5651,13 +5702,17 @@ ent-CP14BasePersonalCurrencyCollectObjective = None
 
 ent-CP14PersonalCurrencyCollectObjective = None
 
+ent-CP14BaseVampireObjective = None
+
+ent-CP14VampireObjectiveBloodPurity = None
+
+ent-CP14VampireObjectiveDefenseVillage = None
+
 ent-CP14DemiplaneArtifactRoomSpawner = Спавнер комнаты артефактов в демиплане
 
 ent-CP14DemiplaneRuinsRoomSpawner = Спавнер руин демиплана
 
 ent-CP14MindRoleDemiplaneAntag = Роль антага в демиплане
-
-ent-CP14MindRoleRaidAntag = Роль антага рейда
 
 ent-CP14MindRoleVampire = Роль Вампира
 
@@ -5681,8 +5736,7 @@ ent-CP14LiquidDropWater = парящая капля жидкости
     .desc = Сгусток жидкости, удерживаемый в форме шара с помощью магии.
     .suffix = Вода
 
-ent-CP14ClothingCloakMaidArpon = фартук горничной
-    .desc = Чистота, порядок и послушание - главные черты хорошей горничной.
+ent-CP14ClothingCloakVampireBase = { ent-CP14ClothingCloakBase }
 
 ent-CP14ClothingCloakAlchemist = плащ алхимика
     .desc = Дорогая ткань, выдерживающая брызги кислоты, - стандарт для экспертов-алхимиков.
@@ -5699,11 +5753,18 @@ ent-CP14ClothingCloakCaptainJacket = куртка капитана
 ent-CP14ClothingCloakCommandantJacket = плащ коменданта
     .desc = Белый и золотой цвета говорят о том, что вы обращаетесь к высшей власти.
 
+ent-CP14ClothingCloakMaidArpon = фартук горничной
+    .desc = Чистота, порядок и послушание - главные черты хорошей горничной.
+
 ent-CP14ClothingCloakGuildmasterCape = плащ гильдмастера
     .desc = Зеленый и золотой цвета говорят о том, что вы обращаетесь к высшей власти.
 
 ent-CP14ClothingHeadaAgaricHelmet = мухоморовый шлем
     .desc = Отрубленная голова миконида в виде головного убора. Устрашает грибной народ.
+
+ent-CP14ClothingMaskVampireVoiceBase = { ent-CP14ClothingMaskBase }
+    .desc = Эта маска пропитана запахом крови. Эффективно скрывает личность того, кто ее носит.
+    .suffix = Голосовая маска
 
 ent-CP14ClothingOuterFoldableBase = расстегиваемая одежда
 
@@ -5737,12 +5798,6 @@ ent-CP14ClothingOuterClothingMerchantWaistCoat = купеческий жилет
 ent-CP14SimpleMobBase = моб
     .suffix = AI
 
-ent-CP14SimpleMobNoLifeBase = неживой моб
-    .suffix = AI
-
-ent-CP14SimpleSpaceMobNoLifeBase = неживой моб
-    .suffix = AI
-
 ent-CP14MobIceSpectre = ледяной спектр
     .desc = Непогребенная душа замерзших искателей приключений. Ее ярость против мира лишает ее разума.
 
@@ -5760,11 +5815,7 @@ ent-CP14MobWatcherBase = наблюдатель
 ent-CP14MobGodBase = бог
     .desc = Высшая сущность, сформированная из верований, желаний и страхов человеческой расы.
 
-ent-CP14BaseMobSpecies = None
-
 ent-CP14BaseMobSpeciesOrganic = None
-
-ent-CP14BaseMobSpeciesNoLife = неживой моб
 
 ent-CP14BaseMobSkeleton = мистер Скелет
 
@@ -5791,6 +5842,10 @@ ent-CP14GoblinPlushie = плюшевый гоблин
 ent-CP14SilvaPlushie = плюшевая сильва
     .desc = Маленький, симпатичный кустик! Любит семена, и может последить за вашей фермой.
 
+ent-CP14BloodEssence = кровавая эссенция
+    .desc = Сущность жизни, извлеченная силой. Только настоящие вампиры знают, как ее использовать.
+    .suffix = 1
+
 ent-CP14Snowball = снежок
     .desc = Небольшая горсть снега, удобная для метания.
 
@@ -5799,6 +5854,9 @@ ent-CP14OpenSign = перевернутая табличка «Открыто»
 
 ent-CP14ClosedSign = перевернутая табличка «Закрыто»
     .desc = Небольшая двусторонняя табличка, которую можно перевернуть.
+
+ent-CP14SackFarming = мешок для продуктов
+    .desc = Сумка для быстрой переноски предметов.
 
 ent-CP14ManaOperationGlove = мана-перчатка
     .desc = Несложная, но эстетически приятная смесь технологии и магических кристаллов, позволяющая оперировать сырой маной: высасывать ее из одних предметов и вливать в другие.
@@ -6010,9 +6068,15 @@ ent-CP14Workbench = верстак
 
 ent-CP14WorkbenchCooking = кулинарный стол
     .desc = Стол для работы с едой. Пора готовить!
+    .suffix = Верстак
 
 ent-CP14WorkbenchSewing = швейный стол
     .desc = Стол с инструментами для вышивания, позволяющими создавать различную одежду и материалы.
+    .suffix = Верстак одежды
+
+ent-CP14WorkbenchLeather = стол для дубления
+    .desc = Стол для обработки кожи и изготовления кожаных изделий.
+    .suffix = Верстак кожи
 
 ent-CP14RoofWooden = деревянная крыша
     .desc = { ent-CP14BaseRoof.desc }
@@ -6085,3 +6149,4 @@ ent-CP14WindowFrameWooden = деревянная оконная рама
 
 ent-CP14WindowWoodenBroken = разбитое деревянное окно
     .desc = { ent-CP14BaseWindowFrameBroken.desc }
+
