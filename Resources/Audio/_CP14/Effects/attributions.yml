@@ -132,3 +132,8 @@
   license: "CC0-1.0"
   copyright: 'Created by qubodup on Freesound.org'
   source: "https://freesound.org/people/qubodup/sounds/814055/"
+
+- files: ["critical.ogg"]
+  license: "CC-BY-3.0"
+  copyright: 'Created by CpawsMusic on Freesound.org'
+  source: "https://freesound.org/people/CpawsMusic/sounds/437113/"

@@ -1,37 +1,34 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponTwoHandedSword
+  id: CP14BaseWeaponWarHammer
   parent:
   - BaseItem
-  - CP14BaseWeaponChemical
   - CP14BaseWeaponDestructible
   - CP14BaseWeaponSelfDamage
-  - CP14BaseWeaponSharp
   components:
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
+    clickDamageModifier: 0.1
     attackRate: 0.5
     range: 1.6
     angle: 170 #Bigger in 2 times
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 7
+        Blunt: 7
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash
     soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+      collection: MetalThud
     cPAnimationLength: 0.5
     cPAnimationOffset: 1
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Slash: 13
-  - type: CP14ComboBonusMeleeDamage
-    bonusDamage:
-      types:
-        Piercing: 10
+        Blunt: 13
+        Structural: 5
+  - type: CP14LightMeleeKnockdown
   - type: Wieldable
   - type: Clothing
     slots:
@@ -41,11 +38,11 @@
     unequipDelay: 1
 
 - type: entity
-  parent: CP14BaseWeaponTwoHandedSword
-  id: CP14WeaponTwoHandedSwordIron
-  name: iron two-handed sword
-  description: A large and heavy two-handed sword. Heavy means reliable.
+  parent: CP14BaseWeaponWarHammer
+  id: CP14WeaponWarHammerIron
+  name: iron war hammer
+  description: A large and heavy war hammer. Heavy means reliable.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/iron.rsi
+    sprite: _CP14/Objects/Weapons/Melee/WarHammer/iron.rsi
     state: icon
