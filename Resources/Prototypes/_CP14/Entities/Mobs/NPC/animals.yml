@@ -200,7 +200,7 @@
     - CP14Boar
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Skin_Heavy
+      - CP14Stage_Skin_Medium_With_Extra_Scrap_Heavy
       - CP14Stage_Meat_Boar
   - type: Reproductive
     partnerWhitelist:
@@ -227,6 +227,7 @@
 # Frog
 # ============================
 - type: entity
+  name: frog
   id: CP14MobFrog
   parent: CP14SimpleMobBase
   id: CP14MobFrog
@@ -291,7 +292,7 @@
         Base: frog_dead
   - type: CP14StagedButcherable
     stages:
-      - CP14Stage_Skin_Light
+      - CP14Stage_Skin_Scrap
       - CP14Stage_Meat_Frog
   - type: MeleeWeapon
     angle: 0
@@ -408,7 +409,7 @@
   - type: CP14StagedButcherable
     stages:
       - CP14Stage_Loot_Wool
-      - CP14Stage_Skin_Medium
+      - CP14Stage_Skin_Light_Many
       - CP14Stage_Meat_Sheep
   - type: Bloodstream
     bloodMaxVolume: 150
