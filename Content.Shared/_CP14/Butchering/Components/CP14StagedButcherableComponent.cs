@@ -12,7 +12,7 @@ namespace Content.Shared._CP14.Butchering.Components;
 /// spawning configured drops. Only at the final stage the entity is removed.
 /// Coexists with vanilla ButcherableComponent; if this exists, staged flow is used.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14SharedStagedButcheringSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CP14StagedButcherableComponent : Component
 {
     /// <summary>
@@ -31,7 +31,8 @@ public sealed partial class CP14StagedButcherableComponent : Component
     /// <summary>
     /// Prevents double do-after or multi-spike overlaps.
     /// </summary>
-    [ViewVariables]
+    [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
     public bool BeingButchered;
 
     /// <summary>
