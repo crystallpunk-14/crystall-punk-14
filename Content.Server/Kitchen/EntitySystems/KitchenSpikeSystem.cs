@@ -2,7 +2,6 @@ using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
-using Content.Shared._CP14.Butchering;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
