@@ -21,6 +21,10 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+// вверху файла рядом с остальными using:
+using Content.Server._CP14.Butchering; // доступ к системе
+using Content.Shared._CP14.Butchering.Components; // доступ к компоненту-метке
+
 namespace Content.Server.Kitchen.EntitySystems;
 
 public sealed class SharpSystem : EntitySystem
@@ -50,7 +54,28 @@ public sealed class SharpSystem : EntitySystem
         if (args.Handled || args.Target is null || !args.CanReach)
             return;
 
-        if (TryStartButcherDoafter(uid, args.Target.Value, args.User))
+        // ===== CP14 staged butcher integration BEGIN =====
+        var target = args.Target.Value;
+
+        // Если на цели есть CP14StagedButcherableComponent — отдаём обработку нашей CP14-системе
+        if (EntityManager.HasComponent<CP14StagedButcherableComponent>(target))
+        {
+            var cp14 = EntitySystem.Get<CP14StagedButcheringSystem>();
+
+            if (cp14.TryStartStageFromSharp(uid, target, args.User, component))
+            {
+                args.Handled = true;
+                return;
+            }
+
+            // Если компонент есть, но условия не выполнены — не падаем в ванильный Butcherable.
+            // Это защищает от конфликтов, если у сущности одновременно есть оба компонента.
+            return;
+        }
+        // ===== CP14 staged butcher integration END =====
+
+        // Ваниль: обычное разделывание ButcherableComponent
+        if (TryStartButcherDoafter(uid, target, args.User))
             args.Handled = true;
     }
 

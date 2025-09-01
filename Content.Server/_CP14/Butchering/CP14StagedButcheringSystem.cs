@@ -12,7 +12,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Kitchen;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Verbs;
@@ -30,7 +29,7 @@ namespace Content.Server._CP14.Butchering;
 /// but only for entities having CP14StagedButcherableComponent.
 /// It does NOT modify vanilla ButcherableComponent behavior.
 /// </summary>
-public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSystem
+public sealed class CP14StagedButcheringSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
@@ -41,51 +40,36 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ISharedAdminLogManager _logs = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
-        // Listen on TARGETS that can be staged-butchered (avoids duplicate subscription with SharpSystem).
-        SubscribeLocalEvent<CP14StagedButcherableComponent, AfterInteractEvent>(
-            OnAfterInteract,
-            before: new[] { typeof(UtensilSystem) });
-
-        // Keep DoAfter completion on sharp tools.
+        // DoAfter завершение — отдельный тип события, не конфликтует с ванильным.
         SubscribeLocalEvent<SharpComponent, CP14ButcherStageDoAfterEvent>(OnDoAfter);
 
+        // Вербы на цели оставляем — они не конфликтуют.
         SubscribeLocalEvent<CP14StagedButcherableComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerbs);
     }
 
-
-    // Handler must match: (EntityUid uid, TComp comp, ref TEvent args)
-    private void OnAfterInteract(EntityUid uid, CP14StagedButcherableComponent staged, ref AfterInteractEvent args)
+    /// <summary>
+    /// Публичная точка входа, которую зовёт SharpSystem из своего OnAfterInteract.
+    /// </summary>
+    public bool TryStartStageFromSharp(EntityUid tool, EntityUid target, EntityUid user, SharpComponent sharp)
     {
-        // uid is the TARGET entity (the one with CP14StagedButcherableComponent)
-        if (args.Handled || !args.CanReach)
-            return;
+        if (!TryComp(target, out CP14StagedButcherableComponent? staged))
+            return false;
 
-        // Only react when the player actually interacted with this uid.
-        if (args.Target != uid)
-            return;
-
-        // Require a sharp tool in use.
-        if (!TryComp(args.Used, out SharpComponent? sharp))
-            return;
-
-        // Start stage using the used tool (args.Used), the target (uid) and the user.
-        if (TryStartStage(args.Used, uid, args.User, staged, sharp))
-            args.Handled = true;
+        return TryStartStage(tool, target, user, staged, sharp);
     }
-
 
     private void OnGetVerbs(EntityUid uid, CP14StagedButcherableComponent staged, GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        // allow using a sharp item in hand or the user itself (if it has SharpComponent)
-        var hasSharpInHand = TryComp<SharpComponent>(args.Using, out var usingSharp);
-        var hasSharpOnUser = TryComp<SharpComponent>(args.User, out var userSharp);
+        var hasSharpInHand = TryComp<SharpComponent>(args.Using, out var _);
+        var hasSharpOnUser = TryComp<SharpComponent>(args.User, out var _);
 
         var disabled = false;
         string? msg = null;
@@ -101,14 +85,11 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             msg = Loc.GetString("butcherable-not-in-container", ("target", uid));
         }
 
-        // also check death requirement of CURRENT stage to pre-disable the verb
-        if (!disabled && TryGetCurrentStage(staged, out var stage))
+        if (!disabled && TryGetCurrentStage(staged, out var stage) && stage!.RequireDead &&
+            TryComp<MobStateComponent>(uid, out var state) && !_mobState.IsDead(uid, state))
         {
-            if (stage.RequireDead && TryComp<MobStateComponent>(uid, out var state) && !_mobState.IsDead(uid, state))
-            {
-                disabled = true;
-                msg = Loc.GetString("butcherable-mob-isnt-dead");
-            }
+            disabled = true;
+            msg = Loc.GetString("butcherable-mob-isnt-dead");
         }
 
         var sharpEnt = hasSharpInHand ? args.Using!.Value : (hasSharpOnUser ? args.User : EntityUid.Invalid);
@@ -121,11 +102,11 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             Message = msg,
             Act = () =>
             {
-                if (!disabled && sharpEnt != EntityUid.Invalid)
-                {
-                    TryComp(sharpEnt, out SharpComponent? sharp);
+                if (disabled || sharpEnt == EntityUid.Invalid)
+                    return;
+
+                if (TryComp(sharpEnt, out SharpComponent? sharp))
                     TryStartStage(sharpEnt, uid, args.User, staged, sharp);
-                }
             }
         };
 
@@ -141,8 +122,8 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
         if (!TryGetCurrentStage(staged, out var stage))
             return false;
 
-        // validate tool type: for now only Knife is triggered by SharpComponent interaction.
-        if (stage.Tool != CP14ButcheringTool.Knife)
+        // Только нож запускает стейдж с клика (аналогично ванили).
+        if (stage!.Tool != CP14ButcheringTool.Knife)
         {
             _popups.PopupEntity(Loc.GetString("butcherable-different-tool", ("target", target)), tool, user);
             return false;
@@ -194,7 +175,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
             return;
 
         // Spawn drops for this stage
-        var spawns = EntitySpawnCollection.GetSpawns(stage.Spawned, _rand);
+        var spawns = EntitySpawnCollection.GetSpawns(stage!.Spawned, _rand);
         var coords = _xform.GetMapCoordinates(target);
         EntityUid? popupEnt = null;
 
@@ -220,7 +201,7 @@ public sealed class CP14StagedButcheringSystem : CP14SharedStagedButcheringSyste
         staged.CurrentStageIndex++;
         Dirty(target, staged);
 
-        // Проверяем: был ли это последний stage
+        // Если прошли все этапы — финализация
         if (staged.CurrentStageIndex >= staged.Stages.Count)
         {
             // optional gib for things with body
