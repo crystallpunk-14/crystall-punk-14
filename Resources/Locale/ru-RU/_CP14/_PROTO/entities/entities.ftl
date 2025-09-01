@@ -633,7 +633,7 @@ ent-CP14ActionSpellVampireBloodStep = Кровавый шаг
 ent-CP14ImpactEffectBloodStep = { ent-CP14BaseMagicImpact }
     .desc = { ent-CP14BaseMagicImpact.desc }
 
-ent-CP14ActionSpellVampireCureWounds = Лечение крови
+ent-CP14ActionSpellVampireCureWounds = Кровавое лечение
     .desc = Вы исцеляете цель от любого вида урона.
 
 ent-CP14ActionSpellBloodEssenceCreation = Сформировать эссенцию крови
@@ -3319,11 +3319,11 @@ ent-CP14CandelabraIgnited = { ent-CP14Candelabra }
 
 ent-CP14CandelabraBloodIgnited = канделябр с багровыми свечами
     .desc = { ent-CP14CandelabraIgnited.desc }
-    .suffix = Вымпир, DO NOT MAP
+    .suffix = Вампиры, DO NOT MAP
 
 ent-CP14CandleBloodIgnited = багровая свеча
     .desc = { ent-CP14CandleIgnited.desc }
-    .suffix = Вымпир, DO NOT MAP
+    .suffix = Вампиры, DO NOT MAP
 
 ent-CP14Crayon = мелок
     .desc = Цветной мелок для рисования.
