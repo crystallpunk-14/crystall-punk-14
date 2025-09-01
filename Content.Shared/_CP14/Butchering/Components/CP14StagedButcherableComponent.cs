@@ -31,7 +31,6 @@ public sealed partial class CP14StagedButcherableComponent : Component
     /// <summary>
     /// Prevents double do-after or multi-spike overlaps.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public bool BeingButchered;
 
@@ -39,7 +38,6 @@ public sealed partial class CP14StagedButcherableComponent : Component
     /// Tracks whether a stage is in progress (even if BeingButchered is temporarily false after cancel).
     /// Ensures the stage can be retried if the previous DoAfter was cancelled.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public bool StageInProgress;
 }
