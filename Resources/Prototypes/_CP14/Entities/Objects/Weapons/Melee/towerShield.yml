@@ -1,0 +1,90 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponTowerShield
+  parent:
+  - BaseItem
+  - CP14BaseWeaponLight
+  - CP14BaseWeaponThrowable
+  name: tower wooden shield
+  description: A wooden shield capable of withstanding multiple blows.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 3
+  - type: Clothing
+    equipDelay: 1.5
+    unequipDelay: 1.5
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    angle: 60
+    attackRate: 0.5
+    wideAnimationRotation: 0
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
+    damage:
+      types:
+        Blunt: 3
+        Piercing: 3
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.6
+    cPAnimationOffset: 0.5
+  - type: CP14LightMeleeKnockdown
+  - type: Damageable
+    damageContainer: Shield
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              CP14WoodenPlanks1:
+                min: 1
+                max: 2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: HeldSpeedModifier
+
+- type: entity
+  parent: CP14BaseWeaponTowerShield
+  id: CP14WeaponTowerShieldWooden
+  name: wooden tower shield
+  description: A wooden shield capable of withstanding multiple blows.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/TowerShield/wooden.rsi
+    state: icon

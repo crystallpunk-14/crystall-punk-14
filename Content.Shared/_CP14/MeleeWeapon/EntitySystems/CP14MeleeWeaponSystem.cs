@@ -99,7 +99,7 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
         }
 
         // Light attack after enough heavies → check if it hits any tracked target
-        if (comp.HitEntities.Overlaps(args.HitEntities))
+        if (comp.HitEntities.Overlaps(args.HitEntities) && !args.CP14Heavy)
         {
             if (_timing.IsFirstTimePredicted)
             {
