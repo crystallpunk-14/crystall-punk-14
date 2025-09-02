@@ -3,8 +3,8 @@
   id: CP14BaseWeaponTowerShield
   parent:
   - BaseItem
-  - CP14BaseWeaponLight
-  - CP14BaseWeaponThrowable
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
   name: tower wooden shield
   description: A wooden shield capable of withstanding multiple blows.
   components:
@@ -56,7 +56,7 @@
     thresholds:
       - trigger:
           !type:DamageTrigger
-          damage: 500
+          damage: 300
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
