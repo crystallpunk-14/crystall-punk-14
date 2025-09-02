@@ -17,11 +17,6 @@
       types:
         Slash: 14
         Piercing: 3
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Slash: 11
-        Piercing: 3
   - !type:EditItem
     newSize: Normal
     adjustShape: 0, 1
@@ -99,10 +94,6 @@
     resetOnHandSelected: true # Disable fast swap
     attackRateMultiplier: 0.6
     angleMultiplier: 1.2
-    bonusDamage:
-      types:
-        Blunt: 1
-  - !type:EditIncreaseDamageOnWield
     bonusDamage:
       types:
         Blunt: 1

@@ -24,11 +24,6 @@
       types:
         Piercing: 10
         Structural: 4
-  - !type:EditIncreaseDamageOnWield
-    bonusDamage:
-      types:
-        Piercing: 6
-        Structural: 17
   - !type:EditItem
     newSize: Normal
     adjustShape: 1, 1
