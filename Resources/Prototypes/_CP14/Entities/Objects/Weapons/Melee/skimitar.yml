@@ -40,8 +40,8 @@
   parent: CP14BaseWeaponSkimitar
   id: CP14WeaponSkimitarIron
   name: iron skimitar
-  description: A finely crafted skimitar favored by imperial officers. Its blade gleams with authority and tradition.
+  description: A finely crafted skimitar favored by Bafamir carcats. 
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Sword/skimitar.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Skimitar/iron.rsi
     state: icon

@@ -445,7 +445,7 @@ CP14ModularIronAxe: null
 CP14ModularIronDagger: CP14WeaponDaggerIron
 CP14ModularIronHammer: null
 CP14ModularIronKunai: CP14WeaponDaggerHatchet
-CP14ModularIronMace: CP14WeaponSwordSkimitar
+CP14ModularIronMace: CP14WeaponSkimitarIron
 CP14ModularIronPickaxe: CP14WeaponPickaxeIron
 CP14ModularIronShovel: CP14WeaponShovelIron
 CP14ModularIronSickle: CP14WeaponDaggerSickle

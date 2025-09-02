@@ -19,8 +19,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Slash: 2
-        Piercing: 3
+        Slash: 4
+        Piercing: 8
   - type: MeleeWeapon
     resetOnHandSelected: false
     autoAttack: true
