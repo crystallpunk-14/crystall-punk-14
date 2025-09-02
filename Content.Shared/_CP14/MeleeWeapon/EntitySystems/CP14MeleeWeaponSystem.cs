@@ -108,12 +108,12 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
 
                 // Visual feedback on every hit entity this swing
                 foreach (var hit in args.HitEntities)
+                {
                     PredictedSpawnAtPosition(comp.VFX, Transform(hit).Coordinates);
+                }
             }
+            Reset();
         }
-
-        // Combo always ends after the resolving light attack
-        Reset();
     }
 
     private void OnDistanceBonusDamage(Entity<CP14BonusDistanceMeleeDamageComponent> ent, ref MeleeHitEvent args)
