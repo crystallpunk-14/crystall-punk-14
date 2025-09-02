@@ -24,7 +24,7 @@ public sealed partial class CP14ComboBonusMeleeDamageComponent : Component
     public HashSet<EntityUid> HitEntities = new();
 
     [DataField]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_CP14/Effects/critical.ogg")
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_CP14/Effects/critical_sword.ogg")
     {
         Params = AudioParams.Default.WithVariation(0.125f),
     };

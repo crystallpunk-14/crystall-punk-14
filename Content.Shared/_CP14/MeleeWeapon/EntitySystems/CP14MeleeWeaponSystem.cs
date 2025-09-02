@@ -98,13 +98,6 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
             return;
         }
 
-        // Threshold reached: a heavy attack now cancels the combo
-        if (args.CP14Heavy)
-        {
-            Reset();
-            return;
-        }
-
         // Light attack after enough heavies → check if it hits any tracked target
         if (comp.HitEntities.Overlaps(args.HitEntities))
         {

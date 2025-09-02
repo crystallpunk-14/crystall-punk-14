@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  id: CP14BaseWeaponSword
+  id: CP14BaseWeaponSkimitar
   parent:
   - BaseItem
   - CP14BaseWeaponChemical
@@ -11,13 +11,14 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
+    resetOnHandSelected: false
     attackRate: 1.5
     range: 1.2
     angle: 60
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 7.5
+        Slash: 5
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash
     soundHit:
@@ -36,11 +37,11 @@
     unequipDelay: 1
 
 - type: entity
-  parent: CP14BaseWeaponSword
-  id: CP14WeaponSwordIron
-  name: iron sword
-  description: A finely crafted sword favored by imperial officers. Its blade gleams with authority and tradition.
+  parent: CP14BaseWeaponSkimitar
+  id: CP14WeaponSkimitarIron
+  name: iron skimitar
+  description: A finely crafted skimitar favored by imperial officers. Its blade gleams with authority and tradition.
   components:
   - type: Sprite
-    sprite: _CP14/Objects/Weapons/Melee/Sword/iron.rsi
+    sprite: _CP14/Objects/Weapons/Melee/Sword/skimitar.rsi
     state: icon
