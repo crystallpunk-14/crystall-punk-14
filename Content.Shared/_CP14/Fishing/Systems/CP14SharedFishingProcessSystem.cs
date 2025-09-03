@@ -2,19 +2,15 @@
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared._CP14.Fishing.Core;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Fishing.Systems;
 
 public abstract partial class CP14SharedFishingProcessSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     protected EntityQuery<CP14FishingRodComponent> FishingRod;
     protected EntityQuery<CP14FishingPoolComponent> FishingPool;
-
-    private int _frames;
 
     public override void Initialize()
     {
@@ -33,8 +29,6 @@ public abstract partial class CP14SharedFishingProcessSystem : EntitySystem
         {
             Update((entityUid, processComponent), frameTime);
         }
-
-        Log.Debug($"Frame {_frames++} FrameTime: {frameTime}");
     }
 
     private void UpdateReeling(Entity<CP14FishingProcessComponent> process,
@@ -90,9 +84,9 @@ public abstract partial class CP14SharedFishingProcessSystem : EntitySystem
 
         if (process.Comp.Fish is { } fish)
         {
-            fish.Update(frameTime);
-            fish.UpdateSpeed(_timing);
+            FishPreUpdate(process, fish, frameTime);
 
+            fish.Update(frameTime);
             var collides = Collide(fish, player);
 
             var progressAdditive = collides ? 0.1f : -0.2f;
