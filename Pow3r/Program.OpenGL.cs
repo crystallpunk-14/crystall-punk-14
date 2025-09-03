@@ -26,7 +26,6 @@ namespace Pow3r
                 BlendingFactorSrc.One,
                 BlendingFactorDest.OneMinusSrcAlpha);
 
-
             var io = ImGui.GetIO();
 
             io.Fonts.GetTexDataAsRGBA32(out byte* pixels, out var width, out var height, out _);
