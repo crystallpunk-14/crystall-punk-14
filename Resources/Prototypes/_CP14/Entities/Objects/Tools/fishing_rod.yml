@@ -9,7 +9,7 @@
     shape:
     - 0,0,0,1
   - type: Sprite
-    sprite: _CP14\Objects\Fishing\fishing_rod.rsi
+    sprite: _CP14/Objects/Tools/fishing_rod.rsi
     state: icon
   - type: Damageable
     damageContainer: Inorganic
