@@ -443,7 +443,7 @@ CP14ModularRodWooden: null
 
 CP14ModularIronAxe: null
 CP14ModularIronDagger: CP14WeaponDaggerIron
-CP14ModularIronHammer: null
+CP14ModularIronHammer: CP14WeaponHammerIron
 CP14ModularIronKunai: CP14WeaponDaggerHatchet
 CP14ModularIronMace: CP14WeaponSkimitarIron
 CP14ModularIronPickaxe: CP14WeaponPickaxeIron
@@ -455,6 +455,8 @@ CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: null
 CP14ModularIronHoe: null
 CP14ModularIronArrow: null
+CP14BaseShield: CP14WeaponShieldWooden
+
 
 CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiver
 CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiver
