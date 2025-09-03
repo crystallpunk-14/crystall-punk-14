@@ -1,0 +1,49 @@
+- type: entity
+  parent: BaseItem
+  id: CP14FishingRod
+  name: fishing rod
+  description: Wooden stick with string attached.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    shape:
+    - 0,0,0,1
+  - type: Sprite
+    sprite: _CP14/Objects/Tools/fishing_rod.rsi
+    state: icon
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:CP14ModularDisassembleBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: CP14ModularCraftStartPoint
+    startSlots:
+    - FishingRodShaft
+  - type: MeleeWeapon
+    angle: 45
+    attackRate: 1
+    wideAnimationRotation: 135
+    wideAnimation: CP14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 0.1
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+  - type: Clothing
+    equipDelay: 0.25
+    unequipDelay: 0.25
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: CP14FishingRod
