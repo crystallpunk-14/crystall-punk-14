@@ -1,10 +1,13 @@
 using System.Numerics;
 using Content.Shared._CP14.MeleeWeapon.Components;
 using Content.Shared.Damage;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.MeleeWeapon.EntitySystems;
@@ -17,6 +20,9 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ThrowingSystem _throw = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -24,6 +30,38 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
         SubscribeLocalEvent<CP14BonusDistanceMeleeDamageComponent, MeleeHitEvent>(OnDistanceBonusDamage);
         SubscribeLocalEvent<CP14ComboBonusMeleeDamageComponent, MeleeHitEvent>(OnComboBonusDamage);
         SubscribeLocalEvent<CP14LightMeleeKnockdownComponent, MeleeHitEvent>(OnKnockdownAttack);
+        SubscribeLocalEvent<CP14MeleeParryComponent, MeleeHitEvent>(OnMeleeParryHit);
+        SubscribeLocalEvent<CP14MeleeParriableComponent, AttemptMeleeEvent>(OnMeleeParriableHitAttmpt);
+    }
+
+    private void OnMeleeParryHit(Entity<CP14MeleeParryComponent> ent, ref MeleeHitEvent args)
+    {
+        if (args.HitEntities.Count != 1)
+            return;
+
+        var target = args.HitEntities[0];
+
+        var activeTargetHand = _hands.GetActiveHand(target);
+
+        var heldItem = _hands.GetHeldItem(target, activeTargetHand);
+        if (heldItem is null)
+            return;
+
+        if (!TryComp<CP14MeleeParriableComponent>(heldItem, out var meleeParriable))
+            return;
+
+        if (_timing.CurTime > meleeParriable.LastMeleeHit + ent.Comp.ParryWindow)
+            return;
+
+        _hands.TryDrop(target, heldItem.Value);
+        _throw.TryThrow(heldItem.Value, _random.NextAngle().ToWorldVec(), ent.Comp.ParryPower, target);
+        _popup.PopupPredicted( Loc.GetString("cp14-successful-parry"), args.User, args.User);
+        _audio.PlayPredicted(meleeParriable.ParrySound, heldItem.Value, args.User);
+    }
+
+    private void OnMeleeParriableHitAttmpt(Entity<CP14MeleeParriableComponent> ent, ref AttemptMeleeEvent args)
+    {
+        ent.Comp.LastMeleeHit = _timing.CurTime;
     }
 
     private void OnKnockdownAttack(Entity<CP14LightMeleeKnockdownComponent> ent, ref MeleeHitEvent args)
