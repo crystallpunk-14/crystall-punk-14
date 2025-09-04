@@ -72,8 +72,8 @@
           - !type:SpawnEntitiesBehavior
             spawn:
               CP14WoodenPlanks1:
-                min: 1
-                max: 2
+                min: 2
+                max: 4
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -88,3 +88,7 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/TowerShield/wooden.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 50
+      CP14Iron: 40

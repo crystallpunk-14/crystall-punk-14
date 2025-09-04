@@ -1,5 +1,5 @@
 - type: CP14Recipe
-  id: CP14BaseShield
+  id: CP14WeaponShieldWooden
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
@@ -10,7 +10,21 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  result: CP14BaseShield
+  result: CP14WeaponShieldWooden
+
+- type: CP14Recipe
+  id: CP14WeaponTowerShieldWooden
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 5
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 4
+  result: CP14WeaponTowerShieldWooden
 
 - type: CP14Recipe
   id: CP14BaseWrench

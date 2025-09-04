@@ -36,7 +36,7 @@
     shoes: CP14ClothingShoesSandals
     head: CP14ClothingHeadMetalHeadband
   inhand:
-    - CP14BaseShield
+    - CP14WeaponShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT1
@@ -73,7 +73,7 @@
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
   inhand:
-    - CP14BaseShield
+    - CP14WeaponTowerShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT2
