@@ -16,6 +16,7 @@ cp14-modifier-cackle = cackles
 cp14-modifier-skeleton = sentient skeletons
 cp14-modifier-dyno = dynos
 cp14-modifier-mole = predatory moles
+cp14-modifier-spineguard = spineguards
 cp14-modifier-watcher = watchers
 cp14-modifier-rabbits = rabbits
 cp14-modifier-boars = wild boars

@@ -86,6 +86,7 @@
         max: 1
     freeLearnedSkills:
     - HydrosophistryT1
+    - SwordMastery
     learnedSkills:
     - CP14ActionSpellIceArrow
 

@@ -1,0 +1,193 @@
+- type: entity
+  id: CP14ActionSpellIceTrap
+  parent: CP14ActionSpellBase
+  name: Ice trap
+  description: Creates a ice trap at the selected location. Don't forget to recharge it with mana.
+  components:
+  - type: Sprite
+    sprite: _CP14/Actions/Spells/water.rsi
+    state: ice_trap
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.9
+  - type: CP14ActionManaCost
+    manaCost: 40
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectIceTrap
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14SpawnMagicIceTrap
+  - type: CP14ActionSpeaking
+    startSpeech: "Signum glaciei..."
+    endSpeech: "hunc locum custodi"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneIceTrap
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/water.rsi
+      state: ice_trap
+  - type: TargetAction
+    range: 3
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      cooldown: 4
+
+- type: entity
+  id: CP14RuneIceTrap
+  parent: CP14BaseMagicTrap
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#5eabeb"
+      shader: unshaded
+    - state: rune_ice
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectIceTrap
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: CP14SpawnMagicIceTrap
+  parent: CP14BaseMagicTrap
+  name: ice trap
+  description: A rune of ice drawn on the ground using magic — it's best not to step on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#5eabeb"
+      shader: unshaded
+    - state: rune_ice
+      color: "#5eabeb"
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      trap:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+          - MobMask
+        layer:
+          - SlipLayer
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 42
+    energy: 42
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: -0.5
+    delay: 5
+  - type: CP14MagicUnsafeDamage
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: TriggerOnCollide
+    fixtureID: trap
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: ToySqueak
+  - type: SpawnOnTrigger
+    proto: CP14ActionSpellIceTrapEffect
+
+- type: entity
+  id: CP14ActionSpellIceTrapEffect
+  name: ice circle
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    drawdepth: Mobs
+    noRot: true
+    layers:
+      - state: circle_decrease
+        color: "#5eabeb"
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: CP14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Cold: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.0
+        sprintSpeedModifier: 0.0
+        statusLifetime: 3
+      - !type:AdjustTemperature
+        amount: -50000
+      - !type:ExtinguishReaction
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14WindowMagicIceBlock
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/balloon-pop.ogg
+      params:
+        variation: 0.1
+        volume: -2
+  - type: TriggerOnSpawn
+
+- type: entity
+  parent: CP14BaseSpellScrollWater
+  id: CP14SpellScrollIceTrap
+  name: ice trap spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellIceTrap
+
+- type: entity
+  parent: CP14SpawnMagicIceTrap
+  id: CP14SpawnMagicIceTrapInvisible
+  suffix: Invisible. Permanent
+  components:
+  - type: Visibility
+    layer: 16
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
+
+- type: entity
+  parent: CP14SpawnMagicIceTrap
+  id: CP14SpawnMagicIceTrapPermanent
+  suffix: Permanent
+  components:
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
