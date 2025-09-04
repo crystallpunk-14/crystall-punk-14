@@ -1,0 +1,49 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponWarAxe
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 0.5
+    range: 1.6
+    angle: 170 #Bigger in 2 times
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 10
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 15
+  - type: CP14MeleeWeaponStaminaCost
+    stamina: 15
+  - type: Wieldable
+  - type: Clothing
+    slots:
+    - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+
+- type: entity
+  parent: CP14BaseWeaponWarAxe
+  id: CP14WeaponWarAxeIron
+  name: iron war axe
+  description: A heavy war axe made of iron, designed for powerful strikes in battle.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/WarAxe/iron.rsi
+    state: icon

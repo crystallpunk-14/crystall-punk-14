@@ -456,7 +456,7 @@ CP14ModularIronSpear: CP14WeaponSpearIron
 CP14ModularIronSword: CP14WeaponSwordIron
 CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: CP14Mop
-CP14ModularIronHoe: null
+CP14ModularIronHoe: CP14WeaponFork
 CP14ModularIronArrow: null
 CP14ModularCopperArrow: null
 CP14ModularCopperSkimitar: null

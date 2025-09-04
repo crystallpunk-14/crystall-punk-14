@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._CP14.MeleeWeapon.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
@@ -23,6 +24,7 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
 
     public override void Initialize()
     {
@@ -32,6 +34,12 @@ public sealed class CP14MeleeWeaponSystem : EntitySystem
         SubscribeLocalEvent<CP14LightMeleeKnockdownComponent, MeleeHitEvent>(OnKnockdownAttack);
         SubscribeLocalEvent<CP14MeleeParryComponent, MeleeHitEvent>(OnMeleeParryHit);
         SubscribeLocalEvent<CP14MeleeParriableComponent, AttemptMeleeEvent>(OnMeleeParriableHitAttmpt);
+        SubscribeLocalEvent<CP14MeleeWeaponStaminaCostComponent, MeleeHitEvent>(OnMeleeStaminaCost);
+    }
+
+    private void OnMeleeStaminaCost(Entity<CP14MeleeWeaponStaminaCostComponent> ent, ref MeleeHitEvent args)
+    {
+        _stamina.TakeStaminaDamage(args.User, ent.Comp.Stamina);
     }
 
     private void OnMeleeParryHit(Entity<CP14MeleeParryComponent> ent, ref MeleeHitEvent args)
