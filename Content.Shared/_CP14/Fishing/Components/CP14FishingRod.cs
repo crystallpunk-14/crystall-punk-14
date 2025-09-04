@@ -6,5 +6,5 @@ namespace Content.Shared._CP14.Fishing.Components;
 [RegisterComponent]
 public sealed partial class CP14FishingRodComponent : Component
 {
-    
+    public bool FishingProcess = false;
 }
