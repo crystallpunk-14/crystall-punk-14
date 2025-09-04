@@ -419,6 +419,8 @@ CP14ModularBladeIronAxe: null
 CP14ModularBladeIronMace: null
 CP14ModularBladeIronRapier: null
 CP14ModularBladeIronSickle: null
+CP14ModularBladeIronShovel: null
+CP14ModularBladeIronPickaxe: null
 CP14ModularBladeMithrilDagger: null
 CP14ModularGardeSharpCopper: null
 CP14ModularGardeSharpIron: null
@@ -427,6 +429,7 @@ CP14ModularGardeSturdyGold: null
 CP14ModularGripCopper: null
 CP14ModularGripIron: null
 CP14ModularGripIronLong: null
+CP14ModularGripIronLongGuard: null
 CP14ModularGripMithril: null
 CP14ModularGripWoodenLong: null
 CP14ModularGuardHalberd: null
@@ -455,6 +458,8 @@ CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: null
 CP14ModularIronHoe: null
 CP14ModularIronArrow: null
+CP14ModularCopperArrow: null
+CP14ModularCopperSkimitar: null
 CP14BaseShield: CP14WeaponShieldWooden
 
 
