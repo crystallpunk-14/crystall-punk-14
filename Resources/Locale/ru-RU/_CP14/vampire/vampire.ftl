@@ -19,7 +19,7 @@ cp14-vampire-essence-holder-examine = В этой жертве есть еще [
 
 cp14-vampire-tree-other-title = Прогресс других кланов:
 cp14-vampire-tree-other-info = "{$name}": [color=red]({$essence}/{$left})[/color] эссенции, [color=red]{$lvl}[/color] уровень.
-cp14-vampire-gather-essence-no-left = There is no more essence here!
+cp14-vampire-gather-essence-no-left = Здесь больше нет эссенции!
 
 ## Announcements
 
