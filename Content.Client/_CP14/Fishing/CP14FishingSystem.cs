@@ -2,8 +2,10 @@ using System.Numerics;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared.Interaction;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.Fishing;
 
@@ -44,9 +46,21 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             CloseOnClick = false,
             CloseOnEscape = false,
             MinSize = new Vector2(41, 149),
-            MaxSize = new Vector2(41, 149)
+            MaxSize = new Vector2(41, 149), // 41, 149 is minigame texture format
         };
         _userInterfaceManager.ModalRoot.AddChild(_fishingPopup);
+
+        var panel = new PanelContainer
+        {
+            PanelOverride = new StyleBoxTexture
+            {
+                Texture = SpriteSpecifier.Texture()
+            }
+        };
     }
 
+    private ResPath RequestTexture(FishingMinigameElement element, CP14FishingRodComponent minigamePrototype)
+    {
+
+    }
 }
