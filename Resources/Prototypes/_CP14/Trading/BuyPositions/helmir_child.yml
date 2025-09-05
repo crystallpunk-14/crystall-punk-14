@@ -1,0 +1,166 @@
+# Reputation Level 0
+
+- type: cp14TradingPosition
+  id: CP14WeaponHammerIron
+  faction: HelmirChild
+  uiPosition: 0
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Hammer/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponHammerIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponPickaxeIronHelmir
+  faction: HelmirChild
+  uiPosition: 1
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Pickaxe/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponPickaxeIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponShovelIron
+  faction: HelmirChild
+  uiPosition: 2
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Shovel/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponShovelIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponDaggerIron
+  faction: HelmirChild
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponDaggerIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponDaggerIron
+  faction: HelmirChild
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponDaggerIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponShieldWooden
+  faction: HelmirChild
+  uiPosition: 5
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Shield/shield.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponShieldWooden
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponShieldBuckler
+  faction: HelmirChild
+  uiPosition: 6
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/ShieldBuckler/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponShieldBuckler
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponSkimitarIron
+  faction: HelmirChild
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Skimitar/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponSkimitarIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponSpearIron
+  faction: HelmirChild
+  uiPosition: 8
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Spear/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponSpearIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponSwordIron
+  faction: HelmirChild
+  uiPosition: 9
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Sword/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponSwordIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponTowerShieldWooden
+  faction: HelmirChild
+  uiPosition: 10
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/TowerShield/wooden.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponTowerShieldWooden
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponTwoHandedSwordIron
+  faction: HelmirChild
+  uiPosition: 11
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/TwoHandedSword/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponTwoHandedSwordIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponWarAxeIron
+  faction: HelmirChild
+  uiPosition: 12
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/WarAxe/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponWarAxeIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponWarHammerIron
+  faction: HelmirChild
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/WarHammer/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponWarHammerIron
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14WeaponWarHammerIron
+  faction: CP14Arrow
+  uiPosition: 13
+  icon:
+    sprite: _CP14/Objects/Weapons/Ranged/Projectiles/arrows.rsi
+    state: rod
+  service: !type:CP14BuyItemsService
+    product: CP14Arrow
+    count: 4

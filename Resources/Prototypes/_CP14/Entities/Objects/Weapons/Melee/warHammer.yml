@@ -46,3 +46,7 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/WarHammer/iron.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
+      CP14Iron: 20

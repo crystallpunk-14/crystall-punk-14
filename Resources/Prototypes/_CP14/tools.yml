@@ -11,4 +11,3 @@
   toolName: cp14-tool-quality-hammering-tool-name
   spawn: CP14WeaponHammerIron
   icon: { sprite: _CP14/Objects/Weapons/Melee/Hammer/iron.rsi, state: icon}
-

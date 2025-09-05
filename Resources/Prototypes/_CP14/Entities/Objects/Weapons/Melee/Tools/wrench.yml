@@ -33,4 +33,4 @@
       path: /Audio/Items/ratchet.ogg
   - type: PhysicalComposition
     materialComposition:
-      CP14Iron: 20
+      CP14Iron: 10

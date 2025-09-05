@@ -54,6 +54,10 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10
 
 - type: entity
   parent: CP14BaseWeaponDagger
@@ -64,6 +68,10 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10
 
 - type: entity
   parent: CP14BaseWeaponDagger
@@ -74,3 +82,7 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Dagger/sickle.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10

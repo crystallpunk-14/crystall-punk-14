@@ -50,7 +50,10 @@
   components:
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/ice_arrow.rsi
-    state: icon
+    layers: 
+    - state: icon
+    - state: icon
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: Projectile
     damage:
       types:

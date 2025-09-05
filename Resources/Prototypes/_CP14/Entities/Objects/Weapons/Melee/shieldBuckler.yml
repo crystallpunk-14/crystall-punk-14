@@ -80,3 +80,6 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/ShieldBuckler/iron.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 20

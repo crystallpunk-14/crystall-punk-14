@@ -126,3 +126,14 @@
     state: guard
   - type: CP14TradingContract
     faction: Guards
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractHelmirChild
+  description: Trading contract with the "Helmirs childs". Allows you to purchase various weapons and ammunition
+  suffix: Helmirs childs
+  components:
+  - type: Sprite
+    state: helmir_child
+  - type: CP14TradingContract
+    faction: Guards

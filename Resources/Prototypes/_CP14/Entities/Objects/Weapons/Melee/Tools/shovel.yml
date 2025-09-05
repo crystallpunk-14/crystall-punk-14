@@ -55,3 +55,7 @@
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Melee/Shovel/iron.rsi
     state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
+      CP14Iron: 10

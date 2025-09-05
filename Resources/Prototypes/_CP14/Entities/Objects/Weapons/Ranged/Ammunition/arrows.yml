@@ -71,8 +71,6 @@
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/arrows.rsi
     layers:
     - state: rod
-    - state: tail
-    - state: tip
     - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Projectile
@@ -90,3 +88,7 @@
           collection: WoodDestroy
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 5
+      CP14Iron: 5
