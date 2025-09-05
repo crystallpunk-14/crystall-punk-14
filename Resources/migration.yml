@@ -148,7 +148,7 @@ C14IronCabinetCargo: CP14IronCabinet
 
 #2025-16-02
 CP14Arrow: null
-CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiver
+CP14ClothingBeltQuiverArrow: CP14ClothingBeltQuiverArrows
 
 #2025-17-02
 CP14Crossbolt: CP14CrossboltIron
@@ -457,15 +457,15 @@ CP14ModularIronSword: CP14WeaponSwordIron
 CP14ModularSkeletonHalberd: CP14WeaponTwoHandedSwordIron
 CP14ModularWoodMop: CP14Mop
 CP14ModularIronHoe: CP14WeaponFork
-CP14ModularIronArrow: null
-CP14ModularCopperArrow: null
+CP14ModularIronArrow: CP14Arrow
+CP14ModularCopperArrow: CP14Arrow
 CP14ModularCopperSkimitar: CP14WeaponSkimitarIron
 CP14BaseShield: CP14WeaponShieldWooden
 
 
-CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiver
-CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiver
-CP14ClothingBeltQuiverIronArrow: CP14ClothingBeltQuiver
+CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiverArrows
+CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiverArrows
+CP14ClothingBeltQuiverIronArrow: CP14ClothingBeltQuiverArrows
 CP14ArmorIronCuirass: null
 
 # <---> CrystallEdge migration zone end

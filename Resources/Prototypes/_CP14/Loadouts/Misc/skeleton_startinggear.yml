@@ -50,7 +50,7 @@
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14BowCombat
-    #belt: CP14ClothingBeltQuiverCopperArrow
+    belt: CP14ClothingBeltQuiverArrows
 
 # TIER 2
 
@@ -91,7 +91,7 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     neck: CP14BowCombat
-    #belt: CP14ClothingBeltQuiverIronArrow
+    belt: CP14ClothingBeltQuiverArrows
     shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: startingGear

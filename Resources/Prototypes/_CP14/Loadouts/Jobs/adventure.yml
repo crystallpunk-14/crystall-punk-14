@@ -1,21 +1,74 @@
-#- type: loadoutGroup
-#  id: CP14AdventureEquip
-#  name: cp14-loadout-adventurers-equip
-#  minLimit: 0
-#  maxLimit: 1
-#  loadouts:
-#  - CP14BowCombat
-#  #- CP14MagicDruidStaff
-#
-#- type: loadout
-#  id: CP14BowCombat
-#  dummyEntity: CP14BowCombat
-#  equipment:
-#    belt2: CP14ClothingBeltQuiverCopperArrow
-#    neck: CP14BowCombat
+- type: loadoutGroup
+  id: CP14AdventureEquip
+  name: cp14-loadout-adventurers-equip
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CP14BowCombat
+  - CP14WeaponDaggerIron
+  - CP14WeaponSwordIron
+  - CP14WeaponSkimitarIron
+  - CP14WeaponSpearIron
+  - CP14WeaponWarHammerIron
+  - CP14WeaponTwoHandedSwordIron
+  - CP14WeaponWarAxeIron
 
-#- type: loadout
-#  id: CP14MagicDruidStaff
-#  dummyEntity: CP14MagicDruidStaff
-#  equipment:
-#    neck: CP14MagicDruidStaff
+- type: loadout
+  id: CP14BowCombat
+  dummyEntity: CP14BowCombat
+  equipment:
+    belt2: CP14ClothingBeltQuiverArrows
+    neck: CP14BowCombat
+
+- type: loadout
+  id: CP14WeaponDaggerIron
+  dummyEntity: CP14WeaponDaggerIron
+  equipment:
+    belt2: CP14WeaponDaggerIron
+  storage:
+    back:
+    - CP14WeaponDaggerIron
+    - CP14WeaponDaggerIron
+    - CP14WeaponDaggerIron
+
+- type: loadout
+  id: CP14WeaponSwordIron
+  dummyEntity: CP14WeaponSwordIron
+  equipment:
+    neck: CP14WeaponShieldWooden
+  inhand:
+    - CP14WeaponSwordIron
+
+- type: loadout
+  id: CP14WeaponSkimitarIron
+  dummyEntity: CP14WeaponSkimitarIron
+  equipment:
+    neck: CP14WeaponShieldBuckler
+  inhand:
+    - CP14WeaponSkimitarIron
+
+- type: loadout
+  id: CP14WeaponSpearIron
+  dummyEntity: CP14WeaponSpearIron
+  equipment:
+    neck: CP14WeaponSpearIron
+
+- type: loadout
+  id: CP14WeaponWarHammerIron
+  dummyEntity: CP14WeaponWarHammerIron
+  equipment:
+    neck: CP14WeaponTowerShieldWooden
+  inhand:
+  - CP14WeaponWarHammerIron
+
+- type: loadout
+  id: CP14WeaponTwoHandedSwordIron
+  dummyEntity: CP14WeaponTwoHandedSwordIron
+  equipment:
+    neck: CP14WeaponTwoHandedSwordIron
+
+- type: loadout
+  id: CP14WeaponWarAxeIron
+  dummyEntity: CP14WeaponWarAxeIron
+  equipment:
+    neck: CP14WeaponWarAxeIron
