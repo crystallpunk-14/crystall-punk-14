@@ -172,6 +172,11 @@
         !type:DamageTrigger
         damage: 100
       behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14StoneBlock1:
+            min: 1
+            max: 2
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/break_stone.ogg

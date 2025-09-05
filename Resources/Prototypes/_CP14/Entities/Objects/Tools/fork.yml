@@ -1,0 +1,60 @@
+- type: entity
+  abstract: true
+  id: CP14BaseFork
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: ThrowingAngle
+    angle: -90
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 2
+    angle: 10
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Piercing: 3
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.3
+    cPAnimationOffset: 1.75
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 3
+  - type: CP14BonusDistanceMeleeDamage
+    minDistance: 2
+    bonusDamage:
+      types:
+        Piercing: 3
+  - type: Wieldable
+  - type: Clothing
+    slots:
+    - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+  - type: CP14EditTileTool
+    sound:
+      collection: CP14Digging
+    tileReplace:
+      CP14FloorDirt: CP14FloorDirtSeedbed
+      CP14FloorDirtSeedbed: CP14FloorDirt
+
+- type: entity
+  parent: CP14BaseFork
+  id: CP14WeaponFork
+  name: fork
+  description: A simple fork for digging and planting seeds in the soil.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Fork/fork.rsi
+    state: icon

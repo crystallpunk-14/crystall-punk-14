@@ -51,13 +51,8 @@
       - id: CP14Scissors
       - id: CP14Torch
       - id: CP14Lighter
-      - id: CP14ModularIronShovel
       - id: CP14KeyFile
-      - id: CP14ModularWoodMop
       - id: CP14LockCopper
-      - id: CP14ModularCopperPickaxe
-      - id: CP14ModularIronSickle
-      - id: CP14ModularIronPickaxe
         weight: 0.3
 
 

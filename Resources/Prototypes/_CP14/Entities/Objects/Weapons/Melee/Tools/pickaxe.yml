@@ -1,0 +1,63 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponPickaxe
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 1.6
+    angle: 90
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Piercing: 3
+        Structural: 4
+    animation: CP14WeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 6
+        Structural: 20
+  - type: Wieldable
+  - type: Clothing
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - neck
+  - type: Tool
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+
+- type: entity
+  parent: CP14BaseWeaponPickaxe
+  id: CP14WeaponPickaxeIron
+  name: iron pickaxe
+  description: A sturdy iron pickaxe, perfect for mining and not for combat.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Pickaxe/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
+      CP14Iron: 20

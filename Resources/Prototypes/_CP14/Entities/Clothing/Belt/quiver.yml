@@ -39,55 +39,11 @@
 
 - type: entity
   parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverIronArrow
+  id: CP14ClothingBeltQuiverArrows
   categories: [ ForkFiltered ]
-  suffix: Full. Iron. Arrow
+  suffix: Filled with arrows
   components:
   - type: StorageFill
     contents:
-      - id: CP14ModularIronArrow
-        amount: 16
-
-- type: entity
-  parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverCopperArrow
-  categories: [ ForkFiltered ]
-  suffix: Full. Copper. Arrow
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14ModularCopperArrow
-        amount: 16
-
-- type: entity
-  parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverMithrilArrow
-  categories: [ ForkFiltered ]
-  suffix: Full. Mithril. Arrow
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14ModularMithrilArrow
-        amount: 16
-
-- type: entity
-  parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverCrossbolt
-  categories: [ ForkFiltered ]
-  suffix: Full. Iron. Crossbolt
-  components:
-  - type: StorageFill
-    contents:
-      - id: CP14CrossboltIron
-        amount: 32
-
-- type: entity
-  parent: CP14ClothingBeltQuiver
-  id: CP14ClothingBeltQuiverBigCrossbolt
-  categories: [ ForkFiltered ]
-  suffix: Full. Iron. BigCrossbolt
-  components:
-  - type: StorageFill
-    contents:
-    - id: CP14BigCrossboltIron
+    - id: CP14Arrow
       amount: 16

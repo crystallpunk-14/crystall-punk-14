@@ -18,6 +18,15 @@
         max: 5.5 # +0.5 memory point
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
     femaleDisplacements:
       outerClothing:
         sizeMaps:
@@ -39,6 +48,14 @@
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -49,6 +66,15 @@
     species: CP14Human
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
     femaleDisplacements:
       cloak:
         sizeMaps:
@@ -75,3 +101,11 @@
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
