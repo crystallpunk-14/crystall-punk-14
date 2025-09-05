@@ -34,7 +34,7 @@
   requirements:
   - !type:StackResource
     stack: CP14IronBar
-    count: 2
+    count: 1
   result: CP14BaseWrench
 
 - type: CP14Recipe
