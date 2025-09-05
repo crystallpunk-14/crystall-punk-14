@@ -52,7 +52,7 @@
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/ice_arrow.rsi
     layers: 
     - state: icon
-    - state: icon
+    - state: solution1
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Projectile
     damage:

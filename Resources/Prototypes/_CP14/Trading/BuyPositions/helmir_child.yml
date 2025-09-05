@@ -36,17 +36,6 @@
 - type: cp14TradingPosition
   id: CP14WeaponDaggerIron
   faction: HelmirChild
-  uiPosition: 3
-  icon:
-    sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
-    state: icon
-  service: !type:CP14BuyItemsService
-    product: CP14WeaponDaggerIron
-    count: 1
-
-- type: cp14TradingPosition
-  id: CP14WeaponDaggerIron
-  faction: HelmirChild
   uiPosition: 4
   icon:
     sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
@@ -155,12 +144,24 @@
     count: 1
 
 - type: cp14TradingPosition
-  id: CP14WeaponWarHammerIron
-  faction: CP14Arrow
-  uiPosition: 13
+  id: CP14Arrow
+  faction: HelmirChild
+  uiPosition: 14
   icon:
     sprite: _CP14/Objects/Weapons/Ranged/Projectiles/arrows.rsi
     state: rod
   service: !type:CP14BuyItemsService
     product: CP14Arrow
     count: 4
+
+- type: cp14TradingPosition
+  id: CP14BowCombat
+  faction: HelmirChild
+  uiPosition: 15
+  icon:
+    sprite: _CP14/Objects/Weapons/Ranged/bow.rsi
+    state: unwielded
+  service: !type:CP14BuyItemsService
+    product: CP14BowCombat
+    count: 1
+  priceMarkup: 3

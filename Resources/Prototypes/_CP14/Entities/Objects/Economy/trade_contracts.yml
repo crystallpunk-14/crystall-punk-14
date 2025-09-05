@@ -136,4 +136,4 @@
   - type: Sprite
     state: helmir_child
   - type: CP14TradingContract
-    faction: Guards
+    faction: HelmirChild
