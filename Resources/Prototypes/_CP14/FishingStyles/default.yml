@@ -1,5 +1,5 @@
 - type: CP14FishingMinigameStyle
-  id: default
+  id: Default
   texture:
     background:
       - texture: _CP14/Interface/Fishing/Default/background.png

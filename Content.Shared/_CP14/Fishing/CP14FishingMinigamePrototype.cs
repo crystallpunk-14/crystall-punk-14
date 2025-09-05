@@ -11,7 +11,7 @@ public sealed partial class CP14FishingMinigamePrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField(required: true)]
-    public Dictionary<FishingMinigameElement, FishingMinigameElementData>? Texture;
+    public Dictionary<CP14FishingMinigameElement, FishingMinigameElementData>? Texture;
 
     [DataDefinition]
     public partial struct FishingMinigameElementData
@@ -21,7 +21,7 @@ public sealed partial class CP14FishingMinigamePrototype : IPrototype
     }
 }
 
-public enum FishingMinigameElement : byte
+public enum CP14FishingMinigameElement : byte
 {
     Background,
     DefaultFishIcon,

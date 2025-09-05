@@ -1,3 +1,5 @@
+using Robust.Shared.Prototypes;
+
 namespace Content.Shared._CP14.Fishing.Components;
 
 /// <summary>
@@ -7,4 +9,7 @@ namespace Content.Shared._CP14.Fishing.Components;
 public sealed partial class CP14FishingRodComponent : Component
 {
     public bool FishingProcess = false;
+
+    [DataField]
+    public ProtoId<CP14FishingMinigamePrototype> FishingMinigame = "Default";
 }
