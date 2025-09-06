@@ -49,6 +49,7 @@ public sealed partial class CP14RoundEndSystem : EntitySystem
         _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("cp14-round-end"),
             announcementSound: new SoundPathSpecifier("/Audio/_CP14/Announce/event_boom.ogg"));
         _roundEnd.EndRound();
+        _roundEndMoment = TimeSpan.Zero;
     }
 
     private void OnFinisherMagicEnergyLevelChange(Entity<CP14MagicContainerRoundFinisherComponent> ent,
