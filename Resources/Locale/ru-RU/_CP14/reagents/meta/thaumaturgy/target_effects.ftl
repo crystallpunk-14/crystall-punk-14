@@ -5,7 +5,7 @@ cp14-reagent-name-basic-heal-brute = Лечебный раствор
 cp14-reagent-desc-basic-heal-brute = Способен залечивать все виды физических повреждений.
 
 cp14-reagent-name-basic-damage-brute = Раствор язв
-cp14-reagent-desc-basic-damage-brute = При употреблении внутрь вызывает разъедание плоти и другие механические травмы.
+cp14-reagent-desc-basic-damage-brute = При употреблении внутрь, вызывает разъедание плоти и другие механические травмы.
 
 cp14-reagent-name-basic-damage-heat = Поджигающий раствор
 cp14-reagent-desc-basic-damage-heat = Вызывает сильные огненные ожоги и даже поджигает.

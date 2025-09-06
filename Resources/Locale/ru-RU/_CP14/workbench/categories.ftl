@@ -14,4 +14,4 @@ cp14-recipe-category-backpack-satchel = Сумки
 cp14-recipe-category-backpack-upgrade = Расширение Рюкзака
 cp14-recipe-category-backpack-satchel-upgrade = Расширение Сумки
 cp14-recipe-category-belt = Пояса
-cp14-recipe-category-leather = Кожанный изделия
+cp14-recipe-category-leather = Кожаные изделия

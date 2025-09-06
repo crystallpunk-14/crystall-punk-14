@@ -2,7 +2,7 @@
   id: CP14ActionSpellVampirePower
   parent: CP14ActionSpellBase
   name: Demonstration of strength
-  description: By channeling the power of the oldest vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
+  description: By channeling the power of your ancient vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
   components:
   - type: CP14ActionDangerous
   - type: CP14MagicEffectVampire

@@ -2,7 +2,7 @@
   id: CP14ActionSpellVampirePower3
   parent: CP14ActionSpellBase
   name: Impulse
-  description: By unleashing the power of an ancient vampire clan, you repel everyone and everything around you, stunning them for a long time.
+  description: By unleashing the power of your ancient vampire clan, you repel everyone and everything around you, stunning them for a long time.
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.4

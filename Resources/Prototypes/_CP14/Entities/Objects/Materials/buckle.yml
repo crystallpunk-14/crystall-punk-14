@@ -11,7 +11,7 @@
 - type: entity
   id: CP14IronBuckle
   parent: CP14IngredientBase
-  name: Iron Buckle
+  name: iron buckle
   description: A sturdy metal buckle for fastening straps and belts.
   components:
   - type: Sprite
