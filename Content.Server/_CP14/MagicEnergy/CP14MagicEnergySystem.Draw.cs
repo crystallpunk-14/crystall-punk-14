@@ -12,7 +12,6 @@ public partial class CP14MagicEnergySystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly CP14DayCycleSystem _dayCycle = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
 
     private void InitializeDraw()
     {
@@ -62,7 +61,7 @@ public partial class CP14MagicEnergySystem
             if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
                 continue;
 
-            draw.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(draw.Delay);
+            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
             ChangeEnergy((uid, magicContainer), draw.Energy, out _, out _, draw.Safe);
         }
