@@ -94,10 +94,7 @@ public sealed partial class CP14VampireSystem
             filter.AddPlayer(actor.PlayerSession);
         }
 
-        foreach (var adminSession in _admin.ActiveAdmins)
-        {
-            filter.AddPlayer(adminSession);
-        }
+        filter.AddPlayers(_admin.ActiveAdmins);
 
         if (filter.Count == 0)
             return;

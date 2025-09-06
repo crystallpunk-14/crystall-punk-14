@@ -104,7 +104,7 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
             if (vampire.Faction != ent.Comp.Faction && vampire.Level >= RequiredHeartLevel)
             {
                 othersHeartsExist = true;
-                return;
+                break;
             }
         }
 
