@@ -14,16 +14,8 @@
       "directions": 4
     },
     {
-      "name": "rat_armored",
-      "directions": 4
-    },
-    {
       "name": "rat_dead",
-      "directions": 1
-    },
-    {
-      "name": "rat_armored_dead",
-      "directions": 1
+      "directions": 4
     }
   ]
 }

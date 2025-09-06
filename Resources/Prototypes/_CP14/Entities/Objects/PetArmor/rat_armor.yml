@@ -5,9 +5,9 @@
   description: A sturdy armor, suit for a noble rat squire
   components:
   - type: Sprite
-    sprite: _CP14/Objects/PetArmor/rat_armor.rsi
+    sprite: _CP14/Clothing/PetArmor/rat_armor.rsi
   - type: Clothing
-    sprite: _CP14/Objects/PetArmor/rat_armor.rsi
+    sprite: _CP14/Clothing/PetArmor/rat_armor.rsi
     unequipDelay: 1
   - type: Tag
     tags:
