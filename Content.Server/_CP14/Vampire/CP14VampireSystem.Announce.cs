@@ -17,10 +17,22 @@ public sealed partial class CP14VampireSystem
 
     private void InitializeAnnounces()
     {
+        SubscribeLocalEvent<CP14VampireClanHeartComponent, MapInitEvent>(OnHeartCreate);
         SubscribeLocalEvent<CP14VampireClanHeartComponent, DamageChangedEvent>(OnHeartDamaged);
         SubscribeLocalEvent<CP14VampireClanHeartComponent, ComponentRemove>(OnHeartDestructed);
     }
 
+    private void OnHeartCreate(Entity<CP14VampireClanHeartComponent> ent, ref MapInitEvent args)
+    {
+        if (ent.Comp.Faction is null)
+            return;
+
+        if (!Proto.TryIndex(ent.Comp.Faction, out var indexedFaction))
+            return;
+
+        AnnounceToFaction(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-created", ("name", Loc.GetString(indexedFaction.Name))));
+        AnnounceToOpposingFactions(ent.Comp.Faction.Value, Loc.GetString("cp14-vampire-tree-created", ("name", Loc.GetString(indexedFaction.Name))));
+    }
 
     private void OnHeartDamaged(Entity<CP14VampireClanHeartComponent> ent, ref DamageChangedEvent args)
     {

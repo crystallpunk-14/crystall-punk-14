@@ -25,6 +25,7 @@ cp14-vampire-gather-essence-no-left = There is no more essence here!
 
 cp14-vampire-sender = Вампирское чутье
 
+cp14-vampire-tree-created = Создано сердце клана "{$name}"!
 cp14-vampire-tree-growing = Сердце клана "{$name}" вырастает до {$level} уровня!
 cp14-vampire-tree-growing-self = Ваше сердце клана вырастает до {$level} уровня!
 cp14-vampire-tree-damaged = Ваше сердце клана атаковано!
