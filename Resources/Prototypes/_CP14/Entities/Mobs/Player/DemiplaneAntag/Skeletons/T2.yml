@@ -22,7 +22,7 @@
     skillPoints:
       Memory:
         max: 0 
-    #freeLearnedSkills:
+    freeLearnedSkills:
     #- SwordMastery
     - AthleticT1
     - AthleticT2
