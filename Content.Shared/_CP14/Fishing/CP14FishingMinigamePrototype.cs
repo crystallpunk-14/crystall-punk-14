@@ -39,7 +39,7 @@ public sealed partial class CP14FishingMinigamePrototype : IPrototype
         [DataField(required: true)] public Vector2 Size;
 
         /// <summary>
-        /// Offset from top left corner. Starter position in the bottom.
+        /// Offset from bottom left corner. Starter position in the bottom.
         /// </summary>
         [DataField(required: true)] public Vector2 Offset;
     }

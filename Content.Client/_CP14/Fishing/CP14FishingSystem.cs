@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Numerics;
 using Content.Client.Resources;
 using Content.Shared._CP14.Fishing;
@@ -53,6 +52,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         var progressbar = minigameStyle.Progressbar;
         var fishIcon = minigameStyle.FishIcon;
 
+        // Generating popup
         var fishingPopup = new Popup
         {
             CloseOnClick = false,
@@ -62,8 +62,9 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         };
         _userInterfaceManager.ModalRoot.AddChild(fishingPopup);
 
+        // Generating layers
         var backgroundTexture = _resourceCache.GetTexture(background.Texture);
-        var panel = new PanelContainer
+        var firstLayer = new PanelContainer
         {
             PanelOverride = new StyleBoxTexture
             {
@@ -72,8 +73,64 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MinSize = new Vector2(background.Size.X, background.Size.Y),
             MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-        fishingPopup.AddChild(panel);
+        fishingPopup.AddChild(firstLayer);
 
-        fishingPopup.Open(UIBox2.FromDimensions(new Vector2(0, 0), background.Size));
+        var secondLayer = new PanelContainer
+        {
+            MinSize = new Vector2(background.Size.X, background.Size.Y),
+            MaxSize = new Vector2(background.Size.X, background.Size.Y),
+        };
+        fishingPopup.AddChild(secondLayer);
+
+        // Filling first layer
+        var progressbarTexture = _resourceCache.GetTexture(progressbar.Texture);
+        var progressbarContainer = new PanelContainer
+        {
+            PanelOverride = new StyleBoxTexture
+            {
+                Texture = progressbarTexture,
+            },
+            MinSize = new Vector2(progressbar.Size.X, 0),
+            SetSize = new Vector2(progressbar.Size.X, 0),
+            MaxSize = new Vector2(progressbar.Size.X, progressbar.Size.Y),
+            Margin = new Thickness(progressbar.Offset.X, 0, 0, progressbar.Offset.Y),
+            HorizontalAlignment = Control.HAlignment.Left,
+            VerticalAlignment = Control.VAlignment.Bottom
+        };
+        firstLayer.AddChild(progressbarContainer);
+
+        var floatTexture = _resourceCache.GetTexture(floatUI.Texture);
+        var floatContainer = new PanelContainer
+        {
+            PanelOverride = new StyleBoxTexture
+            {
+                Texture = floatTexture,
+            },
+            MinSize = new Vector2(floatUI.Size.X, floatUI.Size.Y),
+            MaxSize = new Vector2(floatUI.Size.X, floatUI.Size.Y),
+            Margin = new Thickness(floatUI.Offset.X, 0, 0, floatUI.Offset.Y),
+            HorizontalAlignment = Control.HAlignment.Left,
+            VerticalAlignment = Control.VAlignment.Bottom
+        };
+        firstLayer.AddChild(floatContainer);
+
+        // Filling second layer
+        var fishTexture = _resourceCache.GetTexture(fishIcon.Texture);
+        var fishIconContainer = new PanelContainer
+        {
+            PanelOverride = new StyleBoxTexture
+            {
+                Texture = fishTexture,
+            },
+            MinSize = new Vector2(fishIcon.Size.X, fishIcon.Size.Y),
+            MaxSize = new Vector2(fishIcon.Size.X, fishIcon.Size.Y),
+            Margin = new Thickness(fishIcon.Offset.X, 0, 0, fishIcon.Offset.Y),
+            HorizontalAlignment = Control.HAlignment.Left,
+            VerticalAlignment = Control.VAlignment.Bottom
+        };
+        secondLayer.AddChild(fishIconContainer);
+
+        var screenCenter = _userInterfaceManager.ModalRoot.Size / 2;
+        fishingPopup.Open(UIBox2.FromDimensions(new Vector2(screenCenter.X * 0.85f, screenCenter.Y * 0.65f), background.Size));
     }
 }
