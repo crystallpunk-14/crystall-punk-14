@@ -81,8 +81,6 @@
     - id: CP14ClothingMaskBoneHornedMask
       amount: 1
   - type: FloorOcclusion
-  - type: Puller
-    needsHands: false
   - type: GhostTakeoverAvailable
   - type: TypingIndicator
     proto: alien
