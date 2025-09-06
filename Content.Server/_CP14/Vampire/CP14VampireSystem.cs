@@ -170,7 +170,7 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
 
             heart.NextRegenTime = _timing.CurTime + heart.RegenFrequency;
 
-            AddEssence((uid, heart), heart.EssenceRegenPerLevel * heart.Level);
+            AddEssence((uid, heart), heart.EssenceRegen);
         }
     }
 }
