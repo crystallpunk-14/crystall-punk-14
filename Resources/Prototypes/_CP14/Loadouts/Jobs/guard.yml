@@ -85,7 +85,14 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  #- CP14BowCombat
+  - CP14BowCombat
+  - CP14WeaponDaggerIron
+  - CP14WeaponSwordIron
+  - CP14WeaponSkimitarIron
+  - CP14WeaponSpearIron
+  - CP14WeaponWarHammerIron
+  - CP14WeaponTwoHandedSwordIron
+  - CP14WeaponWarAxeIron
   - CP14MagicGuardElectroStaff
 
 - type: loadout
