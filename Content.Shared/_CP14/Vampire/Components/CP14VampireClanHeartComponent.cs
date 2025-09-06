@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.Vampire.Components;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("Spawner")]
 [NetworkedComponent]
 [AutoGenerateComponentState]
 [Access(typeof(CP14SharedVampireSystem))]
