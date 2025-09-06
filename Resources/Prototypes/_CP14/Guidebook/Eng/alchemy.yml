@@ -28,5 +28,45 @@
   id: CP14_EN_TargetEffects
   name: Target alchemical solutions
   text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
+  children:
+  - CP14_EN_HealingEffects
+  - CP14_EN_DamageEffects
+  - CP14_EN_PositiveEffects
+  - CP14_EN_NegativeEffects
+  - CP14_EN_SideEffects
   filterEnabled: True
 
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_HealingEffects
+  name: Healing solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/HealingEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_DamageEffects
+  name: Damaging solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/DamageEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_PositiveEffects
+  name: Positive solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/PositiveEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_NegativeEffects
+  name: Negative solutions
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/NegativeEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_EN_SideEffects
+  name: Contaminants
+  text: "/ServerInfo/_CP14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/SideEffects.xml"
+  filterEnabled: True

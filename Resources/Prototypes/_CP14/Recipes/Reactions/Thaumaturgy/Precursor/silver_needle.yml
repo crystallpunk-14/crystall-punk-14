@@ -20,10 +20,10 @@
   reactants:
     CP14SilverNeedle:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectHealMana:
+    CP14PositiveEffectHealMana:
       amount: 1
   products:
-    CP14BasicEffectHealCold: 2
-    CP14BasicEffectSpeedDown: 1
+    CP14HealingEffectHealCold: 2
+    CP14NegativeEffectSpeedDown: 1
