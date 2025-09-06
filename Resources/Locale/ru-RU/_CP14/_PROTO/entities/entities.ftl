@@ -1085,7 +1085,7 @@ ent-CP14ClothingHeadGuardHelmet = шлем стражи
 
 ent-CP14ClothingHeadGuardCorinthianHelmet = коринфский шлем
 
-ent-CP14ClothingHeadGuardCap = шлем стража
+ent-CP14ClothingHeadGuardCap = фуражка стражи
 
 ent-CP14ClothingHeadGuardFedora = федора стража
 
