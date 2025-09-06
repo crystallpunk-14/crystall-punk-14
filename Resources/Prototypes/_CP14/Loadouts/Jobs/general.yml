@@ -22,8 +22,6 @@
   - CP14ClothingCloakWhiteSyurko
   - CP14ClothingCloakYellowSyurko
   - CP14ClothingCloakHaori
-  - CP14ClothingCloakWizardCoatRed
-  - CP14ClothingCloakWizardCoatBlue
 
 - type: loadout
   id: CP14ClothingCloakFurcapeBlack
@@ -109,16 +107,6 @@
   id: CP14ClothingCloakHaori
   equipment:
     cloak: CP14ClothingCloakHaori
-
-- type: loadout
-  id: CP14ClothingCloakWizardCoatRed
-  equipment:
-    cloak: CP14ClothingCloakWizardCoatRed
-
-- type: loadout
-  id: CP14ClothingCloakWizardCoatBlue
-  equipment:
-    cloak: CP14ClothingCloakWizardCoatBlue
 
 # OuterClothing
 
@@ -271,8 +259,6 @@
   - CP14ClothingHeadStrawHat
   - CP14ClothingHeadKasaHat
   - CP14ClothingHeadBeretMercenary
-  - CP14ClothingHeadWizardHatRed
-  - CP14ClothingHeadWizardHatBlue
 
 - type: loadout
   id: CP14ClothingHeadMetalHeadband
@@ -328,16 +314,6 @@
   id: CP14ClothingHeadBeretMercenary
   equipment:
     head: CP14ClothingHeadBeretMercenary
-
-- type: loadout
-  id: CP14ClothingHeadWizardHatRed
-  equipment:
-    head: CP14ClothingHeadWizardHatRed
-
-- type: loadout
-  id: CP14ClothingHeadWizardHatBlue
-  equipment:
-    head: CP14ClothingHeadWizardHatBlue
 
 # Pants
 
