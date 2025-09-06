@@ -26,6 +26,7 @@
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
+    neck: CP14WeaponTwoHandedSwordIron
 
 - type: startingGear
   id: CP14MobSkeletonSwordT1
@@ -33,16 +34,19 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     cloak: CP14ClothingCloakBone
     pants: CP14ClothingPantsLoincloth
+    shirt: CP14ClothingShirtWarriorsGarbDress
     shoes: CP14ClothingShoesSandals
     head: CP14ClothingHeadMetalHeadband
-  inhand:
-    - CP14WeaponShieldWooden
+    belt: CP14WeaponSwordIron
+    neck: CP14WeaponShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT1
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
+    belt: CP14WeaponDaggerIron
+    belt2: CP14WeaponSkimitarIron
 
 - type: startingGear
   id: CP14MobSkeletonArcherT1
@@ -63,6 +67,7 @@
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
+    neck: CP14WeaponWarAxeIron
 
 - type: startingGear
   id: CP14MobSkeletonSwordT2
@@ -70,10 +75,11 @@
     outerClothing: CP14ClothingOuterClothingBoneArmorUpgrade
     cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
+    shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
-  inhand:
-    - CP14WeaponTowerShieldWooden
+    belt: CP14WeaponSwordIron
+    neck: CP14WeaponShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT2
@@ -82,6 +88,8 @@
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
     shoes: CP14ClothingShoesSandals
+    belt: CP14WeaponSkimitarIron
+    belt2: CP14WeaponSkimitarIron
 
 - type: startingGear
   id: CP14MobSkeletonArcherT2
@@ -92,6 +100,7 @@
     pants: CP14ClothingPantsBrown
     neck: CP14BowCombat
     belt: CP14ClothingBeltQuiverArrows
+    belt2: CP14WeaponSwordIron # change to Rapier when it will be added
     shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: startingGear
@@ -103,7 +112,7 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     shoes: CP14ClothingShoesLongLeatherBoots
-    ring2: CP14ClothingCloakAmuletMana
+    belt: CP14WeaponSwordIron # change to Rapier when it will be added
 
 - type: startingGear
   id: CP14MobSkeletonBardT2

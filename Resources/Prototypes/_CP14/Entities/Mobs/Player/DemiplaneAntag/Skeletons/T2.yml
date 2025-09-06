@@ -24,6 +24,8 @@
         max: 0 
     #freeLearnedSkills:
     #- SwordMastery
+    - AthleticT1
+    - AthleticT2
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
