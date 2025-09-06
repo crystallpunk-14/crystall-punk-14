@@ -22,6 +22,7 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public readonly float RequiredAlivePercentage = 0.5f;
+    public readonly int RequiredHeartLevel = 3;
 
     public override void Initialize()
     {
@@ -84,27 +85,37 @@ public sealed class CP14VampireObjectiveConditionsSystem : EntitySystem
 
          ent.Comp.Faction = vampireComp.Faction;
 
-         _meta.SetEntityName(ent, Loc.GetString("cp14-objective-vampire-pure-bood-title"));
-         _meta.SetEntityDescription(ent, Loc.GetString("cp14-objective-vampire-pure-bood-desc"));
+         _meta.SetEntityName(ent, Loc.GetString("cp14-objective-vampire-pure-blood-title"));
+         _meta.SetEntityDescription(ent, Loc.GetString("cp14-objective-vampire-pure-blood-desc"));
          _objectives.SetIcon(ent, ent.Comp.Icon);
     }
 
     private void OnBloodPurityGetProgress(Entity<CP14VampireBloodPurityConditionComponent> ent, ref ObjectiveGetProgressEvent args)
     {
-        var query = EntityQueryEnumerator<CP14VampireComponent, MobStateComponent>();
+        var query = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
 
-        while (query.MoveNext(out var uid, out var vampire, out var mobState))
+        var ourHeartReady = false;
+        var othersHeartsExist = false;
+        while (query.MoveNext(out var uid, out var vampire))
         {
-            if (vampire.Faction != ent.Comp.Faction)
-            {
-                if (mobState.CurrentState == MobState.Dead)
-                    continue;
+            if (vampire.Faction == ent.Comp.Faction && vampire.Level >= RequiredHeartLevel)
+                ourHeartReady = true;
 
-                args.Progress = 0f;
-                return;
+            if (vampire.Faction != ent.Comp.Faction && vampire.Level >= RequiredHeartLevel)
+            {
+                othersHeartsExist = true;
+                break;
             }
         }
 
-        args.Progress = 1f;
+        var progress = 0f;
+
+        if (ourHeartReady)
+            progress += 0.5f;
+
+        if (!othersHeartsExist)
+            progress += 0.5f;
+
+        args.Progress = progress;
     }
 }
