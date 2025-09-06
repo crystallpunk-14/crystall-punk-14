@@ -1906,19 +1906,22 @@
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1662
 - author: TheShuEd
   changes:
-  - message: "Blacksmith removed (temporarily)"
+  - message: Blacksmith removed (temporarily)
     type: Remove
-  - message: "All equipment modularity has been removed. Including weapons, tools, armor, and arrows."
+  - message: All equipment modularity has been removed. Including weapons, tools,
+      armor, and arrows.
     type: Remove
-  - message: "All weapon martial skills have been removed (temporarily)"
+  - message: All weapon martial skills have been removed (temporarily)
     type: Remove
-  - message: "The entire arsenal of weapons has been reintroduced into the game. Each weapon type now has its own characteristics and gameplay."
+  - message: The entire arsenal of weapons has been reintroduced into the game. Each
+      weapon type now has its own characteristics and gameplay.
     type: Add
-  - message: "Added 3 types of shields. A buckler that can be used to parry, a regular shield, and a large tower shield that can be used to stun."
+  - message: Added 3 types of shields. A buckler that can be used to parry, a regular
+      shield, and a large tower shield that can be used to stun.
     type: Add
-  - message: "Pinok no longer picks up objects from people's hands."
+  - message: Pinok no longer picks up objects from people's hands.
     type: Tweak
-  - message: "All weapons, shields, and arrows can now be purchased in the store."
+  - message: All weapons, shields, and arrows can now be purchased in the store.
     type: Add
   id: 8240
   time: '2025-09-05T21:59:59.0000000+00:00'
@@ -1930,3 +1933,10 @@
   id: 8241
   time: '2025-09-05T22:05:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1725
+- author: TheShuEd
+  changes:
+  - message: Reverted adding red and blue magical robes an hats
+    type: Remove
+  id: 8242
+  time: '2025-09-06T11:17:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1737
