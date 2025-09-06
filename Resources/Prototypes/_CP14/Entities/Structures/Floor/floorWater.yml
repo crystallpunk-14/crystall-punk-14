@@ -71,6 +71,7 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
+  - type: CP14FishingPond
 
 - type: entity
   parent: CP14FloorWaterOptimized

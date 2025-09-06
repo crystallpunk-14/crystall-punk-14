@@ -1,11 +1,18 @@
 - type: CP14FishingMinigameStyle
   id: Default
-  texture:
-    background:
-      - texture: _CP14/Interface/Fishing/Default/background.png
-    defaultFishIcon:
-      - texture: _CP14/Interface/Fishing/Default/fish_icon.png
-    progressbar:
-      - texture: _CP14/Interface/Fishing/Default/progressbar.png
-    float:
-      - texture: _CP14/Interface/Fishing/Default/float.png
+  background:
+    texture: Textures/Interface/Paper/paper_background_default.svg.96dpi.png
+    size: 39, 149
+    offset: 0, 0
+  fishIcon:
+    texture: Textures/_CP14/Interface/Fishing/Default/fish_icon.png
+    size: 11, 9
+    offset: 3, 3
+  progressbar:
+    texture: Textures/_CP14/Interface/Fishing/Default/progressbar.png
+    size: 2, 142
+    offset: 13, 134
+  float:
+    texture: Textures/_CP14/Interface/Fishing/Default/float.png
+    size: 11, 38
+    offset: 13, 105

@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
+using Content.Client.Resources;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared.Interaction;
@@ -16,10 +17,6 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
-
-    private Popup? _fishingPopup;
-    private const int FishingMinigameSizeX = 41;
-    private const int FishingMinigameSizeY = 149;
 
     public override void Initialize()
     {
@@ -42,44 +39,41 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (component.FishingProcess)
             return;
 
-        OpenFishingPopup(component);
+        OpenFishingPopup(uid, component, args);
     }
 
-    private void OpenFishingPopup(CP14FishingRodComponent component)
+    private void OpenFishingPopup(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
     {
-        _fishingPopup = new Popup
+        // Getting data
+        if (!_prototypeManager.Resolve(component.FishingMinigame, out var minigameStyle))
+            return;
+
+        var background = minigameStyle.Background;
+        var floatUI = minigameStyle.Float;
+        var progressbar = minigameStyle.Progressbar;
+        var fishIcon = minigameStyle.FishIcon;
+
+        var fishingPopup = new Popup
         {
             CloseOnClick = false,
             CloseOnEscape = false,
-            MinSize = new Vector2(FishingMinigameSizeX, FishingMinigameSizeY),
-            MaxSize = new Vector2(FishingMinigameSizeX, FishingMinigameSizeY),
+            MinSize = new Vector2(background.Size.X, background.Size.Y),
+            MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-        _userInterfaceManager.ModalRoot.AddChild(_fishingPopup);
+        _userInterfaceManager.ModalRoot.AddChild(fishingPopup);
 
-        var backgroundTexture = RequestTexture(CP14FishingMinigameElement.Background, component);
-        if (backgroundTexture is null)
-            return;
-
+        var backgroundTexture = _resourceCache.GetTexture(background.Texture);
         var panel = new PanelContainer
         {
             PanelOverride = new StyleBoxTexture
             {
                 Texture = backgroundTexture,
             },
+            MinSize = new Vector2(background.Size.X, background.Size.Y),
+            MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-    }
+        fishingPopup.AddChild(panel);
 
-    private TextureResource? RequestTexture(CP14FishingMinigameElement element, CP14FishingRodComponent fishingRodComponent)
-    {
-        var minigamePrototype = _prototypeManager.Index(fishingRodComponent.FishingMinigame);
-
-        if (minigamePrototype.Texture is null || !minigamePrototype.Texture.TryGetValue(element, out var data))
-        {
-            Debug.Fail($"Tried to request a fishing minigame element {element} without a texture.");
-            return null;
-        }
-
-        var texture = _resourceCache.GetResource<TextureResource>(data.Texture);
-        return texture;
+        fishingPopup.Open(UIBox2.FromDimensions(new Vector2(0, 0), background.Size));
     }
 }
