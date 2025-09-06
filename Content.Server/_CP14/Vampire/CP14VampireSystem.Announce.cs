@@ -1,11 +1,8 @@
-using System.Text;
+using Content.Server.Administration.Managers;
 using Content.Server.Chat.Systems;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Damage;
-using Content.Shared.Destructible;
-using Content.Shared.Examine;
-using Content.Shared.Ghost;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -16,6 +13,7 @@ public sealed partial class CP14VampireSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly IAdminManager _admin = default!;
 
     private void InitializeAnnounces()
     {
@@ -82,6 +80,11 @@ public sealed partial class CP14VampireSystem
                 continue;
 
             filter.AddPlayer(actor.PlayerSession);
+        }
+
+        foreach (var adminSession in _admin.ActiveAdmins)
+        {
+            filter.AddPlayer(adminSession);
         }
 
         if (filter.Count == 0)
