@@ -509,8 +509,6 @@
   tag: CP14RecipeAnvil
   category: Armor
   craftTime: 4
-  requiredSkills:
-  - IronMelting
   requirements:
   - !type:StackResource
     stack: CP14IronBar
