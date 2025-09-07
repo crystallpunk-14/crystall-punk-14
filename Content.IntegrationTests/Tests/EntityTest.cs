@@ -34,7 +34,6 @@ namespace Content.IntegrationTests.Tests
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
 
-            var forkFiltered = prototypeMan.Index<EntityCategoryPrototype>("ForkFiltered"); //CP14
             await server.WaitPost(() =>
             {
                 var protoIds = prototypeMan
@@ -46,7 +45,6 @@ namespace Content.IntegrationTests.Tests
                     //CP14
                     .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // this component delete all entities on this tile
                     .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // lightning detonates entities
-                    .Where(p => p.Categories.Contains(forkFiltered)) //CP14 only entities
                     //CP14 end
                     .Select(p => p.ID)
                     .ToList();
@@ -102,8 +100,6 @@ namespace Content.IntegrationTests.Tests
             var entityMan = server.ResolveDependency<IEntityManager>();
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
 
-            var forkFiltered = prototypeMan.Index<EntityCategoryPrototype>("ForkFiltered"); //CP14
-
             await server.WaitPost(() =>
             {
 
@@ -116,7 +112,6 @@ namespace Content.IntegrationTests.Tests
                     //CP14
                     .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
                     .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // CP14 lightning detonates entities
-                    .Where(p => p.Categories.Contains(forkFiltered)) //CP14 only entities
                     //CP14 end
                     .Select(p => p.ID)
                     .ToList();
@@ -171,8 +166,6 @@ namespace Content.IntegrationTests.Tests
             var sEntMan = server.ResolveDependency<IEntityManager>();
             var mapSys = server.System<SharedMapSystem>();
 
-            var forkFiltered = prototypeMan.Index<EntityCategoryPrototype>("ForkFiltered"); //CP14
-
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
             var protoIds = prototypeMan
@@ -181,7 +174,6 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                 //CP14
-                .Where(p => p.Categories.Contains(forkFiltered)) //CP14 only entities
                 //CP14 end
                 .Select(p => p.ID)
                 .ToList();
