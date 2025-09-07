@@ -55,8 +55,8 @@
     containers:
       storagebase: !type:Container
   - type: Construction
-    graph: CP14WallmountOrdersBorder
-    node: CP14WallmountOrdersBorder
+    graph: CP14OrderBoard
+    node: CP14OrderBoard
 
 - type: entity
   parent: CP14OrderBoard
