@@ -1886,3 +1886,84 @@
   id: 8237
   time: '2025-08-30T07:27:04.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1659
+- author: Nimfar11
+  changes:
+  - message: Small boxes and barrels are once again being carried across the water.
+    type: Fix
+  - message: The T2 skeleton archer now has the ability to fight with a sword, which
+      he is also armed with.
+    type: Fix
+  id: 8238
+  time: '2025-09-01T12:07:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1730
+- author: Nimfar11
+  changes:
+  - message: 'Adds three magic traps: electric, fire, and ice. They can only be created
+      with scrolls or appear in demiplanes.'
+    type: Add
+  id: 8239
+  time: '2025-09-02T08:52:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1662
+- author: TheShuEd
+  changes:
+  - message: Blacksmith removed (temporarily)
+    type: Remove
+  - message: All equipment modularity has been removed. Including weapons, tools,
+      armor, and arrows.
+    type: Remove
+  - message: All weapon martial skills have been removed (temporarily)
+    type: Remove
+  - message: The entire arsenal of weapons has been reintroduced into the game. Each
+      weapon type now has its own characteristics and gameplay.
+    type: Add
+  - message: Added 3 types of shields. A buckler that can be used to parry, a regular
+      shield, and a large tower shield that can be used to stun.
+    type: Add
+  - message: Pinok no longer picks up objects from people's hands.
+    type: Tweak
+  - message: All weapons, shields, and arrows can now be purchased in the store.
+    type: Add
+  id: 8240
+  time: '2025-09-05T21:59:59.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1711
+- author: Viator-MV
+  changes:
+  - message: Added red and blue magical robes an hats!
+    type: Add
+  id: 8241
+  time: '2025-09-05T22:05:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1725
+- author: TheShuEd
+  changes:
+  - message: Reverted adding red and blue magical robes an hats
+    type: Remove
+  id: 8242
+  time: '2025-09-06T11:17:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1737
+- author: TheShuEd
+  changes:
+  - message: Innkeepers now have starting seeds, hoes, and hatchets, while alchemists
+      have roundstart sickles.
+    type: Add
+  - message: If you try to remember the name of a person wearing a mask, a warning
+      will appear stating that you cannot remember the name of a person who is hiding
+      their face.
+    type: Fix
+  - message: Admins can now also see vampire notifications about clan heart progression.
+    type: Add
+  - message: Lurkers can no longer pull items and mobs.
+    type: Remove
+  - message: The teleport spell to the vampire glyph no longer has a random 1-tile
+      shift, which caused people to get stuck in walls.
+    type: Fix
+  - message: The spell to search for enemy vampire clans is now T2 instead of T3,
+      and also now points to enemy hearts.
+    type: Tweak
+  - message: 'Changed the main goal of the vampire clan: Now the clan must upgrade
+      its heart to level 3 and prevent other clans from doing so.'
+    type: Tweak
+  - message: The suffocation healing spell now heals suffocation much more effectively.
+    type: Fix
+  id: 8243
+  time: '2025-09-07T11:22:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1741

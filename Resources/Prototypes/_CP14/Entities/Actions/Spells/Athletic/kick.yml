@@ -13,12 +13,10 @@
     stamina: 40
   - type: CP14MagicEffect
     effects:
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Paralyze
-        paralyzeTime: 1
+    - !type:CP14SpellKnockdown
     - !type:CP14SpellThrowFromUser
-      throwPower: 9
+      distance: 1.5
+      throwPower: 5
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14DustEffectKickSound

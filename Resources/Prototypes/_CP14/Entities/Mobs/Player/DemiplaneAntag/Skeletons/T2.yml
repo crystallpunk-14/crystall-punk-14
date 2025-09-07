@@ -23,7 +23,9 @@
       Memory:
         max: 0 
     freeLearnedSkills:
-    - SwordMastery
+    #- SwordMastery
+    - AthleticT1
+    - AthleticT2
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
@@ -42,8 +44,8 @@
     skillPoints:
       Memory:
         max: 0 
-    freeLearnedSkills:
-    - SwordMastery
+    #freeLearnedSkills:
+    #- SwordMastery
   - type: CP14SpellStorage
     grantAccessToSelf: true
     spells:
@@ -63,7 +65,7 @@
       Memory:
         max: 0
     freeLearnedSkills:
-    - SkimitarMastery
+    #- SkimitarMastery
     - AthleticT1
     - AthleticT2
     - AthleticT3
@@ -122,7 +124,7 @@
       Memory:
         max: 4
     freeLearnedSkills:
-    - SwordMastery
+    #- SwordMastery
     - HydrosophistryT1
     - HydrosophistryT2
     - MetamagicT1

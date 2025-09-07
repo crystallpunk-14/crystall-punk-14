@@ -38,7 +38,7 @@
   name: cp14-skill-tree-athletic-name
   desc: cp14-skill-tree-athletic-desc
   skillType: Memory
-  color: "#b32e37"
+  color: "#8bdb7f"
 
 #- type: cp14SkillTree
 #  id: Dimension

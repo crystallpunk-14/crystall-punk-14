@@ -18,7 +18,7 @@
       - !type:HealthChange
         damage:
           types:
-            Asphyxiation: -2
+            Asphyxiation: -5
       - !type:Jitter
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneAirSaturation

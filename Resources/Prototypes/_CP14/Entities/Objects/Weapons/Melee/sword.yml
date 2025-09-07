@@ -1,0 +1,50 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponSword
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1.5
+    range: 1.2
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 7.5
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.25
+    cPAnimationOffset: 1
+  - type: CP14ComboBonusMeleeDamage
+    bonusDamage:
+      types:
+        Piercing: 5
+  - type: Clothing
+    slots:
+    - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+
+- type: entity
+  parent: CP14BaseWeaponSword
+  id: CP14WeaponSwordIron
+  name: iron sword
+  description: A finely crafted sword favored by imperial officers. Its blade gleams with authority and tradition.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Sword/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 20

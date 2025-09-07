@@ -150,3 +150,14 @@
       shader: unshaded
       color: "#1c94d9"
 
+- type: entity
+  abstract: true
+  id: CP14BaseSpellScrollElectric
+  parent: CP14BaseSpellScroll
+  components:
+  - type: Sprite
+    layers:
+    - state: paper_filled
+    - state: magic
+      shader: unshaded
+      color: "#e8ff4c"

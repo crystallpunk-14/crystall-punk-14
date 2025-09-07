@@ -1,0 +1,46 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponRapier
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1.5
+    range: 1.2
+    angle: 20 
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Piercing: 10
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.3
+    cPAnimationOffset: 1
+  - type: Clothing
+    slots:
+    - belt
+    breakOnMove: false
+    equipDelay: 0.5
+    unequipDelay: 0.5
+
+- type: entity
+  parent: CP14BaseWeaponRapier
+  id: CP14WeaponRapierIron
+  name: rapier
+  description: An elegant and finely balanced blade, favored by Zellasian officers for its reach and precision. Its craftsmanship reflects imperial tradition and deadly efficiency.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Rapier/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10

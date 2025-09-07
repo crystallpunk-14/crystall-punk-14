@@ -1,9 +1,9 @@
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
-using Content.Shared.IdentityManagement;
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
@@ -15,7 +15,7 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedIdentitySystem _identity = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -68,11 +68,17 @@ public abstract class CP14SharedIdentityRecognitionSystem : EntitySystem
             Priority = 2,
             Icon =  new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/sentient.svg.192dpi.png")),
             Text = Loc.GetString("cp14-remember-name-verb"),
-            Disabled = seeAttemptEv.Cancelled,
             Act = () =>
             {
-                _uiSystem.SetUiState(_args.User, CP14RememberNameUiKey.Key, new CP14RememberNameUiState(GetNetEntity(ent)));
-                _uiSystem.TryToggleUi(_args.User, CP14RememberNameUiKey.Key, actor.PlayerSession);
+                if (seeAttemptEv.Cancelled)
+                {
+                    _popup.PopupClient(Loc.GetString("cp14-remember-fail-mask"), _args.Target, _args.User);
+                }
+                else
+                {
+                    _uiSystem.SetUiState(_args.User, CP14RememberNameUiKey.Key, new CP14RememberNameUiState(GetNetEntity(ent)));
+                    _uiSystem.TryToggleUi(_args.User, CP14RememberNameUiKey.Key, actor.PlayerSession);
+                }
             },
         };
         args.Verbs.Add(verb);

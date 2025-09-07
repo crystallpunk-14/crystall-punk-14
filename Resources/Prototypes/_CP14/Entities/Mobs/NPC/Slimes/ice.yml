@@ -80,7 +80,6 @@
           - id: CP14ScrapIron
           - id: CP14Snowball
           - id: CP14CopperCoin1
-          - id: CP14ModularInlayQuartzWater
 
 - type: entity
   id: CP14AreaEntityEffectSlimeFroze
