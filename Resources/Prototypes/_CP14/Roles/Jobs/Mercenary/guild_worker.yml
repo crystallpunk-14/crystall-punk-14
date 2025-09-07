@@ -6,6 +6,7 @@
   startingGear: CP14GuildWorkerGear
   icon: "CP14JobIconGuildWorker"
   supervisors: cp14-job-supervisors-guildmaster
+  weight: 2
   requirements:
     - !type:RoleTimeRequirement
       role: CP14JobAdventurer
