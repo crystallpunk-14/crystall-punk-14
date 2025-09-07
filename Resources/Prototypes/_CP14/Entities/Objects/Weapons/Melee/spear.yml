@@ -21,7 +21,7 @@
       types:
         Piercing: 16
   - type: MeleeWeapon
-    attackRate: 1
+    attackRate: 0.5
     range: 2.75
     angle: 10 #Lower in 4 times
     wideAnimationRotation: -90

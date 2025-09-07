@@ -56,6 +56,14 @@
     thresholds:
       0: Alive
       100: Dead
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 2 damage a minute from base.yml.
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      groups:
+        Brute: -0.035
+        Burn: -0.035
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.6
