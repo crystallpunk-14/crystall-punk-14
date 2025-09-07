@@ -143,6 +143,18 @@
   - CP14GeneralTrinkets
 
 - type: roleLoadout
+  id: JobCP14GuildWorker
+  groups:
+  - CP14GuildmasterOuterClothing
+  - CP14GeneralEyes
+  - CP14GeneralHead
+  - CP14GuildmasterShirt
+  - CP14GuildmasterPants
+  - CP14GuildmasterShoes
+  - CP14GeneralVillagerBackReinforced
+  - CP14GeneralTrinkets
+
+- type: roleLoadout
   id: JobCP14Merchant
   groups:
   - CP14MerchantHead
