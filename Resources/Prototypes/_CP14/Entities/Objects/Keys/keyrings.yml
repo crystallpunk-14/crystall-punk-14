@@ -127,4 +127,13 @@
   - type: StorageFill
     contents:
     - id: CP14KeyGuildmaster
-    - id: CP14KeyDemiplaneCrystal
+    - id: CP14KeyAdventureGuild
+
+- type: entity
+  parent: CP14BaseKeyRing
+  id: CP14KeyRingGuildworker
+  suffix: Guildworker
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14KeyAdventureGuild

@@ -8,25 +8,19 @@
   - type: Lock
     locked: true
 
-# Grill Gate
-
 - type: entity
-  parent: CP14FenceGateBigIron
-  id: CP14FenceGateBigIronGuildmaster
-  suffix: Guildmaster
+  parent: CP14WoodenDoor
+  id: CP14WoodenDoorAdventureGuild
+  suffix: Adventure guild
   components:
   - type: CP14Lock
-    autoGenerateShape: Guildmaster
+    autoGenerateShape: AdventureGuild
   - type: Lock
     locked: true
 
 - type: entity
-  parent: CP14FenceGateBigIron
-  id: CP14FenceGateBigIronDemiplaneCrystal
-  suffix: DemiplaneCrystal
-  components:
-  - type: CP14Lock
-    autoGenerateShape: DemiplaneCrystal
-  - type: Lock
-    locked: false
-
+  parent:
+  - CP14WoodenDoorAdventureGuild
+  - CP14WoodenDoorMirrored
+  id: CP14WoodenDoorAdventureGuildMirrored
+  suffix: Adventure guild, Mirrored

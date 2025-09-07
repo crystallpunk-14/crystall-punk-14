@@ -238,8 +238,8 @@ CP14FenceWoodSmallGate: CP14FenceGateWooden
 CP14FenceIronGrilleStraight: CP14FenceBigIron
 CP14FenceIronGrilleGate: CP14FenceGateBigIron
 CP14FenceIronGrilleGateGuard: CP14FenceGateBigIronGuardBarracks
-CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIronGuildmaster
-CP14FenceIronGrilleGateDemiplaneCrystal: CP14FenceGateBigIronDemiplaneCrystal
+CP14FenceIronGrilleGateGuildmaster: CP14FenceGateBigIron
+CP14FenceIronGrilleGateDemiplaneCrystal: CP14FenceGateBigIron
 CP14FenceIronGrilleWindowStraight: CP14FenceWindowIron
 
 #2025-21-04
@@ -462,11 +462,15 @@ CP14ModularCopperArrow: CP14Arrow
 CP14ModularCopperSkimitar: CP14WeaponSkimitarIron
 CP14BaseShield: CP14WeaponShieldWooden
 
-
 CP14ClothingBeltQuiverMithrilArrow: CP14ClothingBeltQuiverArrows
 CP14ClothingBeltQuiverCopperArrow: CP14ClothingBeltQuiverArrows
 CP14ClothingBeltQuiverIronArrow: CP14ClothingBeltQuiverArrows
 CP14ArmorIronCuirass: null
+
+# 2025-09-07
+CP14WallmountOrdersBorder: null
+CP14FenceGateBigIronDemiplaneCrystal: CP14FenceGateBigIron
+CP14FenceGateBigIronGuildmaster: CP14FenceGateBigIron
 
 # <---> CrystallEdge migration zone end
 

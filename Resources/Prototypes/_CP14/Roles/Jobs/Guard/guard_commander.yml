@@ -22,7 +22,7 @@
     - !type:AddComponentSpecial
       components:
       - type: CP14SalaryCounter
-        salary: 400
+        salary: 200
     - !type:CP14AddTradingReputationSpecial
       factions:
       - Guards

@@ -1,0 +1,119 @@
+- type: entity
+  id: CP14OrderBoard
+  parent:
+  - BaseStructure
+  - CP14BaseFlammableSpreading
+  name: orders board
+  description: Is there a job for a witcher?
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: Mobs
+    sprite: _CP14/Structures/Furniture/order_board.rsi
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: paper
+  - type: Appearance
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Storage
+    grid:
+    - 0,0,4,3
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - Document
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Construction
+    graph: CP14WallmountOrdersBorder
+    node: CP14WallmountOrdersBorder
+
+- type: entity
+  parent: CP14OrderBoard
+  id: CP14OrderBoardBlue
+  suffix: Blue flag
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+      - state: flag_blue
+
+- type: entity
+  parent: CP14OrderBoard
+  id: CP14OrderBoardGreen
+  suffix: Green flag
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+      - state: flag_green
+
+- type: entity
+  parent: CP14OrderBoard
+  id: CP14OrderBoardPurple
+  suffix: Purple flag
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+      - state: flag_purple
+
+- type: entity
+  parent: CP14OrderBoard
+  id: CP14OrderBoardRed
+  suffix: Red flag
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+      - state: flag_red
+
+- type: entity
+  parent: CP14OrderBoard
+  id: CP14OrderBoardYellow
+  suffix: Yellow flag
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+      - state: paper-0
+      - map: ["enum.StorageFillLayers.Fill"]
+      - state: flag_yellow
