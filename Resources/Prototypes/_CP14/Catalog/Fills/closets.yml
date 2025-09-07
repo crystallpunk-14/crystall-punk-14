@@ -112,7 +112,7 @@
         amount: 2
       - id: CP14FryingPan
       - id: CP14CookingPot
-      - id: CP14SackFarmingSeed
+      - id: CP14SackFarmingSeedFull
       - id: CP14PlateWooden
         amount: 2
       - id: CP14BowlWooden
