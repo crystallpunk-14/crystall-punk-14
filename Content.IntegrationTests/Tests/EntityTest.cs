@@ -262,6 +262,9 @@ namespace Content.IntegrationTests.Tests
 
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
+                //CP14
+                "CP14VampireClanHeart", //Also announce on spawn
+                //CP14 end
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);
