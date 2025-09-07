@@ -238,7 +238,7 @@
 
 - type: cp14Skill
   id: BloodEnemySearch
-  skillUiPosition: 10, 10
+  skillUiPosition: 6, 10
   learnCost: 1
   tree: Vampire
   icon:
@@ -251,7 +251,7 @@
   - !type:NeedPrerequisite
     prerequisite: BloodConnection
   - !type:VampireClanLevel
-    level: 3
+    level: 2
 
 - type: cp14Skill
   id: PortalToVampireHome

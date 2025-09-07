@@ -87,10 +87,6 @@ public sealed class CP14IdentityRecognitionBoundUserInterface : BoundUserInterfa
         {
             case CP14RememberNameUiState rememberNameUiState:
                 _rememberedTarget = rememberNameUiState.Target;
-
-                var currentName = CurrentName();
-                if (currentName is not null)
-                    _window.SetCurrentLabel(currentName);
                 break;
         }
     }

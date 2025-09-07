@@ -20,7 +20,7 @@
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
-        manaDelta: -15
+        manaDelta: -5
         safe: false
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneMagicSplitting

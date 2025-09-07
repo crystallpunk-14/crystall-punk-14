@@ -25,6 +25,7 @@ cp14-vampire-gather-essence-no-left = Здесь больше нет эссен�
 
 cp14-vampire-sender = Vampire instinct
 
+cp14-vampire-tree-created = The heart of the “{$name}” clan has been created!
 cp14-vampire-tree-growing = "{$name}" clan heart grows to level {$level}!
 cp14-vampire-tree-growing-self = Your clan heart grows to level {$level}!
 cp14-vampire-tree-damaged = Your clan's heart has been attacked!
