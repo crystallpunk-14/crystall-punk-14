@@ -62,7 +62,7 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await server.WaitRunTicks(15 * 60); // 15 seconds, enough to trigger most update loops
+            await server.WaitRunTicks(15);
 
             await server.WaitPost(() =>
             {
@@ -125,7 +125,7 @@ namespace Content.IntegrationTests.Tests
                     entityMan.SpawnEntity(protoId, map.GridCoords);
                 }
             });
-            await server.WaitRunTicks(15 * 60); // 15 seconds, enough to trigger most update loops
+            await server.WaitRunTicks(15);
             await server.WaitPost(() =>
             {
                 static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
@@ -200,7 +200,7 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await pair.RunTicksSync(15 * 60);
+            await pair.RunTicksSync(15);
 
             // Make sure the client actually received the entities
             // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
