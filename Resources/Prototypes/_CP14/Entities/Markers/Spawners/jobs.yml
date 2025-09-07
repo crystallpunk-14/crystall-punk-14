@@ -90,7 +90,7 @@
   - Spawner
   components:
   - type: SpawnPoint
-    job_id: CP14Guildworker
+    job_id: CP14GuildWorker
   - type: Sprite
     layers:
       - state: green

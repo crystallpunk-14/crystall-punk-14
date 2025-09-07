@@ -13,7 +13,7 @@
   weight: 3
   requirements:
     - !type:RoleTimeRequirement
-      role: CP14GuildWorker
+      role: CP14JobGuildWorker
       time: 7200 # 2 hours
     - !type:RoleTimeRequirement
       role: CP14JobAdventurer
