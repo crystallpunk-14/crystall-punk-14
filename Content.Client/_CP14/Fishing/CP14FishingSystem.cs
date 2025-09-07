@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Resources;
+using Content.Client.UserInterface.Screens;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared.Interaction;
@@ -60,7 +61,20 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MinSize = new Vector2(background.Size.X, background.Size.Y),
             MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-        _userInterfaceManager.ModalRoot.AddChild(fishingPopup);
+
+        var screenCenter = new Vector2();
+        switch (_userInterfaceManager.ActiveScreen)
+        {
+            case DefaultGameScreen gameScreen:
+                gameScreen.AddChild(fishingPopup);
+                screenCenter = gameScreen.Size / 2;
+                break;
+
+            case SeparatedChatGameScreen gameScreen:
+                gameScreen.AddChild(fishingPopup);
+                screenCenter = gameScreen.Size / 2;
+                break;
+        }
 
         // Generating layers
         var backgroundTexture = _resourceCache.GetTexture(background.Texture);
@@ -130,7 +144,6 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         };
         secondLayer.AddChild(fishIconContainer);
 
-        var screenCenter = _userInterfaceManager.ModalRoot.Size / 2;
         fishingPopup.Open(UIBox2.FromDimensions(new Vector2(screenCenter.X * 0.85f, screenCenter.Y * 0.65f), background.Size));
     }
 }
