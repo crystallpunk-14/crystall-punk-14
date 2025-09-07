@@ -174,6 +174,7 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                 //CP14
+                .Where(p => !p.Components.ContainsKey("CP14VampireClanHeart")) //Spawn announcement sound entities on init
                 //CP14 end
                 .Select(p => p.ID)
                 .ToList();
@@ -392,8 +393,6 @@ namespace Content.IntegrationTests.Tests
                 "DebugExceptionStartup",
                 "GridFill",
                 "RoomFill",
-                "CP14BiomeSpawner", // CP14 this component delete all entities on this tile
-                "CP14AreaEntityEffect", // CP14 lightning detonates entities
                 "Map", // We aren't testing a map entity in this test
                 "MapGrid",
                 "Broadphase",
