@@ -1967,3 +1967,16 @@
   id: 8243
   time: '2025-09-07T11:22:30.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1741
+- author: TheShuEd
+  changes:
+  - message: Guildmaster returns (Comoss only)
+    type: Add
+  - message: 'New job added: Guild Worker (Comoss only)'
+    type: Add
+  - message: New building for the Adventurers' Guild, with quest boards (Comoss only)
+    type: Add
+  - message: Guildmasters and guild workers receive salaries, just like guards.
+    type: Tweak
+  id: 8244
+  time: '2025-09-07T16:15:29.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1745
