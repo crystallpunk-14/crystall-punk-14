@@ -2002,3 +2002,11 @@
   id: 8246
   time: '2025-09-07T22:38:18.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1748
+- author: KittyCat432
+  changes:
+  - message: Changed alchemy target solutions guidebook entry has been reworked into
+      categories.
+    type: Tweak
+  id: 8247
+  time: '2025-09-07T23:45:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1717
