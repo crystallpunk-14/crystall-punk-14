@@ -1940,3 +1940,30 @@
   id: 8242
   time: '2025-09-06T11:17:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1737
+- author: TheShuEd
+  changes:
+  - message: Innkeepers now have starting seeds, hoes, and hatchets, while alchemists
+      have roundstart sickles.
+    type: Add
+  - message: If you try to remember the name of a person wearing a mask, a warning
+      will appear stating that you cannot remember the name of a person who is hiding
+      their face.
+    type: Fix
+  - message: Admins can now also see vampire notifications about clan heart progression.
+    type: Add
+  - message: Lurkers can no longer pull items and mobs.
+    type: Remove
+  - message: The teleport spell to the vampire glyph no longer has a random 1-tile
+      shift, which caused people to get stuck in walls.
+    type: Fix
+  - message: The spell to search for enemy vampire clans is now T2 instead of T3,
+      and also now points to enemy hearts.
+    type: Tweak
+  - message: 'Changed the main goal of the vampire clan: Now the clan must upgrade
+      its heart to level 3 and prevent other clans from doing so.'
+    type: Tweak
+  - message: The suffocation healing spell now heals suffocation much more effectively.
+    type: Fix
+  id: 8243
+  time: '2025-09-07T11:22:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1741
