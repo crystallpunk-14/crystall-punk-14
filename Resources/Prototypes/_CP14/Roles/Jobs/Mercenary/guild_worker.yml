@@ -15,7 +15,7 @@
     - !type:AddComponentSpecial
       components:
       - type: CP14SalaryCounter
-        salary: 25
+        salary: 50
 
 - type: startingGear
   id: CP14GuildWorkerGear
