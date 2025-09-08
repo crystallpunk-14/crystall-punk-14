@@ -2010,3 +2010,24 @@
   id: 8247
   time: '2025-09-07T23:45:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1717
+- author: Nimfar11
+  changes:
+  - message: Russian translation update
+    type: Add
+  id: 8248
+  time: '2025-09-08T14:32:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1719
+- author: TheShuEd
+  changes:
+  - message: Upstream sync (1 september)
+    type: Add
+  id: 8249
+  time: '2025-09-08T11:04:48.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1752
+- author: TheShuEd
+  changes:
+  - message: Upstream sync (18 august)
+    type: Add
+  id: 8250
+  time: '2025-09-08T10:00:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1708
