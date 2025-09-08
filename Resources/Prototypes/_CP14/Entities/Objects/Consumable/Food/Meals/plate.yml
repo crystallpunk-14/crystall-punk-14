@@ -22,7 +22,7 @@
     canAcceptFood: true
   - type: Appearance
   - type: SolutionContainerVisuals
-  - type: Food
+  - type: Edible
     transferAmount: 2.5
   - type: Spillable
     solution: food

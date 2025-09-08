@@ -21,9 +21,8 @@
     canAcceptFood: true
   - type: Appearance
   - type: SolutionContainerVisuals
-  - type: Food
-    useSound: 
-      path: /Audio/Items/drink.ogg
+  - type: Edible
+    edible: Drink
     utensil: Spoon
     transferAmount: 2.5
   - type: Spillable
