@@ -4,6 +4,7 @@ using Content.Shared.Damage;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.Trigger.Systems;
 
 namespace Content.Shared._CP14.MagicWeakness;
 
@@ -12,6 +13,7 @@ public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly TriggerSystem _trigger = default!;
 
     public override void Initialize()
     {
@@ -22,6 +24,9 @@ public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
 
         SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutSleep);
         SubscribeLocalEvent<CP14MagicUnsafeSleepComponent, CP14MagicEnergyOverloadEvent>(OnMagicEnergyOverloadSleep);
+
+        SubscribeLocalEvent<CP14MagicUnsafeTriggerComponent, CP14MagicEnergyBurnOutEvent>(OnMagicEnergyBurnOutTrigger);
+        SubscribeLocalEvent<CP14MagicUnsafeTriggerComponent, CP14MagicEnergyOverloadEvent>(OnMagicEnergyOverloadTrigger);
     }
 
     private void OnMagicEnergyBurnOutSleep(Entity<CP14MagicUnsafeSleepComponent> ent,
@@ -54,6 +59,16 @@ public abstract class CP14SharedMagicWeaknessSystem : EntitySystem
                 SleepingSystem.StatusEffectForcedSleeping,
                 TimeSpan.FromSeconds(ent.Comp.SleepPerEnergy * (float)args.OverloadEnergy));
         }
+    }
+
+    private void OnMagicEnergyOverloadTrigger(Entity<CP14MagicUnsafeTriggerComponent> ent, ref CP14MagicEnergyOverloadEvent args)
+    {
+        _trigger.Trigger(ent);
+    }
+
+    private void OnMagicEnergyBurnOutTrigger(Entity<CP14MagicUnsafeTriggerComponent> ent, ref CP14MagicEnergyBurnOutEvent args)
+    {
+        _trigger.Trigger(ent);
     }
 
     private void OnMagicEnergyBurnOutDamage(Entity<CP14MagicUnsafeDamageComponent> ent,

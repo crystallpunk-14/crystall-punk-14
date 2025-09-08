@@ -24,8 +24,6 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14RandomFoodDataComponent, MapInitEvent>(OnRandomFoodMapInit);
-
         SubscribeLocalEvent<CP14FoodHolderComponent, SolutionContainerChangedEvent>(OnHolderChanged);
     }
 
@@ -52,28 +50,6 @@ public sealed class CP14CookingSystem : CP14SharedCookingSystem
 
         ent.Comp.FoodData = null;
         Dirty(ent);
-    }
-
-    private void OnRandomFoodMapInit(Entity<CP14RandomFoodDataComponent> ent, ref MapInitEvent args)
-    {
-        if (!TryComp<CP14FoodHolderComponent>(ent, out var holder))
-            return;
-
-        if (!_random.Prob(ent.Comp.Prob))
-            return;
-
-        var filteredRecipes = OrderedRecipes.Where(r => r.FoodType == holder.FoodType).ToList();
-        if (filteredRecipes.Count == 0)
-        {
-            Log.Error($"No recipes found for food type {holder.FoodType}");
-            return;
-        }
-
-        var randomFood = _random.Pick(filteredRecipes);
-
-        UpdateFoodDataVisuals((ent, holder), randomFood.FoodData, ent.Comp.Rename);
-
-        Dirty(ent.Owner, holder);
     }
 
     protected override void OnCookBurned(Entity<CP14FoodCookerComponent> ent, ref CP14BurningDoAfter args)

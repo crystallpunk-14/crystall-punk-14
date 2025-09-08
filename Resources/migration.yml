@@ -472,6 +472,10 @@ CP14WallmountOrdersBorder: null
 CP14FenceGateBigIronDemiplaneCrystal: CP14FenceGateBigIron
 CP14FenceGateBigIronGuildmaster: CP14FenceGateBigIron
 
+CP14BowlWoodenRandom: CP14BowlWooden
+CP14PlateWoodenRandom: CP14PlateWooden
+CP14PlatePieRandom: CP14PlatePie
+
 # <---> CrystallEdge migration zone end
 
 
@@ -1177,3 +1181,6 @@ BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
 
 # 2025-06-21
 ClothingNeckHeadphones: ClothingMultipleHeadphones
+
+# 2025-08-01
+FoodDonutJellySlugcat: FoodDonutJellyScurret
