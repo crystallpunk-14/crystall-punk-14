@@ -17,9 +17,6 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.98
     sprintModifier: 0.98
-  - type: Construction
-    graph: CP14BoneArmor
-    node: cp14bonearmor
   - type: PhysicalComposition
     materialComposition:
       CP14Bone: 120

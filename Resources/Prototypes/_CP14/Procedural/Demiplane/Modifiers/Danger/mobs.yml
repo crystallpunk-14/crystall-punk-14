@@ -130,11 +130,11 @@
 - type: cp14LocationModifier
   id: EnemySpineguard
   levels:
-    min: 3
+    min: 2
     max: 7
   name: cp14-modifier-spineguard
   categories:
-    Danger: 0.5
+    Danger: 0.3
   requiredTags:
   - CP14DemiplaneUnderground
   layers:

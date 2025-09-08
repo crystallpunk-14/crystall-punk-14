@@ -5,7 +5,7 @@
   description: You make a quick dash to the chosen position to quickly close the distance or dodge danger.
   components:
   - type: CP14ActionStaminaCost
-    stamina: 40
+    stamina: 20
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellDash

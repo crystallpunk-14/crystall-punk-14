@@ -22,7 +22,7 @@
           Quantity: 20
         - ReagentId: CP14EssenceFire
           Quantity: 20
-        - ReagentId: CP14BasicEffectDamageHeat
+        - ReagentId: CP14DamageEffectDamageHeat
           Quantity: 10
   - type: MeleeWeapon
     damage:
@@ -66,7 +66,6 @@
           - id: CP14ScrapCopper
           - id: CP14ScrapIron
           - id: CP14FoodMeatLambCutletCooked
-          - id: CP14ModularInlayQuartzFire
           - id: CP14CopperCoin1
           - id: CP14Bone1
 

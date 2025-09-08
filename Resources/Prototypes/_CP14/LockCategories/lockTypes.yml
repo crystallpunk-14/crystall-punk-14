@@ -101,18 +101,6 @@
   complexity: 5
   name: cp14-lock-shape-merchant3
 
-# Mercenary
-
-- type: CP14LockType
-  id: Guildmaster
-  complexity: 6
-  name: cp14-lock-shape-guildmaster
-
-- type: CP14LockType
-  id: DemiplaneCrystal
-  complexity: 6
-  name: cp14-lock-shape-demiplane-crystal
-
 # Personal house
 
 - type: CP14LockType
@@ -228,3 +216,14 @@
   complexity: 7
   name: cp14-lock-shaper-guard-commander
 
+# Adventure Guild
+
+- type: CP14LockType
+  id: Guildmaster
+  complexity: 6
+  name: cp14-lock-shape-guildmaster
+
+- type: CP14LockType
+  id: AdventureGuild
+  complexity: 4
+  name: cp14-lock-shape-adventure-guild
