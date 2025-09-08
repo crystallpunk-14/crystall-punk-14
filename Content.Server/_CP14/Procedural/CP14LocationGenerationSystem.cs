@@ -2,7 +2,6 @@ using System.Threading;
 using Content.Server._CP14.Demiplane;
 using Content.Server._CP14.Procedural.GlobalWorld.Components;
 using Content.Server.Procedural;
-using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared._CP14.Procedural.Prototypes;
@@ -42,13 +41,7 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
 
     private void OnStationPostInit(Entity<CP14StationProceduralLocationComponent> ent, ref StationPostInitEvent args)
     {
-        if (!TryComp<StationDataComponent>(ent, out var stationData))
-        {
-            _sawmill.Error($"Station {ent} does not have a StationDataComponent, cannot generate location on it.");
-            return;
-        }
-
-        var largestStationGrid = _station.GetLargestGrid(stationData);
+        var largestStationGrid = _station.GetLargestGrid(ent.Owner);
 
         if (largestStationGrid is null)
         {

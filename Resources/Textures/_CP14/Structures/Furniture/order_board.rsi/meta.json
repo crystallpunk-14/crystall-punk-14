@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd ",
+  "size": {
+    "x": 48,
+    "y": 48
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "paper-0"
+    },
+    {
+      "name": "paper-1"
+    },
+    {
+      "name": "paper-2"
+    },
+    {
+      "name": "paper-3"
+    },
+    {
+      "name": "paper-4"
+    },
+    {
+      "name": "flag_blue"
+    },
+    {
+      "name": "flag_green"
+    },
+    {
+      "name": "flag_purple"
+    },
+    {
+      "name": "flag_red"
+    },
+    {
+      "name": "flag_yellow"
+    }
+  ]
+}

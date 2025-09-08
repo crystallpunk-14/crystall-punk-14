@@ -1,5 +1,4 @@
 using System.Text;
-using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -8,6 +7,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._CP14.DayCycle;
 using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Ghost;
@@ -170,7 +170,7 @@ public sealed partial class CP14VampireSystem : CP14SharedVampireSystem
 
             heart.NextRegenTime = _timing.CurTime + heart.RegenFrequency;
 
-            AddEssence((uid, heart), heart.EssenceRegenPerLevel * heart.Level);
+            AddEssence((uid, heart), heart.EssenceRegen);
         }
     }
 }

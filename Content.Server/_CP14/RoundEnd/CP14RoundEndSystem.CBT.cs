@@ -125,6 +125,13 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
+            (22, 0, () =>
+            {
+                if (!ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
+            }),
             (22, 2, () =>
             {
                 if (!ruDays)
@@ -142,6 +149,13 @@ public sealed partial class CP14RoundEndSystem
                     announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
                     sender: "Server"
                 );
+            }),
+            (23, 58, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
             }),
             (23, 59, () =>
             {

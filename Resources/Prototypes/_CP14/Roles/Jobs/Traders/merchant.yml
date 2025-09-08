@@ -23,6 +23,7 @@
       - Butchers
       - Dairy
       - Tailors
+      - HelmirChild
     - !type:CP14LearnSkillsSpecial
       skills:
       - TraderWit

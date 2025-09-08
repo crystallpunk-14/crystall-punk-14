@@ -22,13 +22,13 @@
   reactants:
     CP14AgaricMushroom:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectHealBrute:
+    CP14HealingEffectHealBrute:
       amount: 1
   products:
-    CP14BasicEffectDamageBrute: 2
-    CP14BasicEffectRainbow: 1
+    CP14DamageEffectDamageBrute: 2
+    CP14SideEffectRainbow: 1
 
 - type: reaction
   id: CP14AgaricShroomAdmixture2
@@ -36,11 +36,11 @@
   reactants:
     CP14AgaricMushroom:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectDamageBrute:
+    CP14DamageEffectDamageBrute:
       amount: 1
   products:
-    CP14BasicEffectHealBrute: 2
-    CP14BasicEffectRainbow: 1
+    CP14HealingEffectHealBrute: 2
+    CP14SideEffectRainbow: 1
 

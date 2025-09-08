@@ -14,12 +14,13 @@
         - type: StationJobs
           availableJobs:
             #Mercenary
-            #CP14Guildmaster: [1, 1]
+            CP14Guildmaster: [1, 1]
+            CP14GuildWorker: [3, 3]
             CP14Adventurer: [ -1, -1 ]
             #Artisans
             CP14Apprentice: [ 5, 5 ]
             CP14Alchemist: [ 2, 2 ]
-            CP14Blacksmith: [ 2, 2 ]
+            #CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 3, 4 ]
             CP14Merchant: [2, 2]
             #Guard
@@ -52,6 +53,7 @@
         - type: CP14StationProceduralLocation
           location: ComossIsland
           modifiers:
+          - DemiplaneArcSingle
           - RaidSpawners
           - Rabbits
           - Boar

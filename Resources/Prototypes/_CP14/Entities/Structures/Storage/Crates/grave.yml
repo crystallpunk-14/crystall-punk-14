@@ -97,7 +97,6 @@
     - !type:GroupSelector # Rarities
       weight: 0.2
       children:
-      - id: CP14ModularSkeletonHalberd
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
 

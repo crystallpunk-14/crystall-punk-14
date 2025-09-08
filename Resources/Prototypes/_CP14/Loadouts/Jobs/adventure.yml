@@ -4,45 +4,71 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - CP14ModularCopperSkimitar
-  - CP14ModularCopperSword
-  - CP14ModularCopperRapier
   - CP14BowCombat
-  #- CP14MagicDruidStaff
-
-- type: loadout
-  id: CP14ModularCopperSkimitar
-  dummyEntity: CP14ModularCopperSkimitar
-  equipment:
-    belt2: CP14ModularCopperSkimitar
-  skills:
-  - SkimitarMastery
-
-- type: loadout
-  id: CP14ModularCopperSword
-  dummyEntity: CP14ModularCopperSword
-  equipment:
-    belt2: CP14ModularCopperSword
-  skills:
-  - SwordMastery
-
-- type: loadout
-  id: CP14ModularCopperRapier
-  dummyEntity: CP14ModularCopperRapier
-  equipment:
-    belt2: CP14ModularCopperRapier
-  skills:
-  - RapierMastery
+  - CP14WeaponDaggerIron
+  - CP14WeaponSwordIron
+  - CP14WeaponSkimitarIron
+  - CP14WeaponSpearIron
+  - CP14WeaponWarHammerIron
+  - CP14WeaponTwoHandedSwordIron
+  - CP14WeaponWarAxeIron
 
 - type: loadout
   id: CP14BowCombat
   dummyEntity: CP14BowCombat
   equipment:
-    belt2: CP14ClothingBeltQuiverCopperArrow
+    belt2: CP14ClothingBeltQuiverArrows
     neck: CP14BowCombat
 
-#- type: loadout
-#  id: CP14MagicDruidStaff
-#  dummyEntity: CP14MagicDruidStaff
-#  equipment:
-#    neck: CP14MagicDruidStaff
+- type: loadout
+  id: CP14WeaponDaggerIron
+  dummyEntity: CP14WeaponDaggerIron
+  equipment:
+    belt2: CP14WeaponDaggerIron
+  storage:
+    back:
+    - CP14WeaponDaggerIron
+    - CP14WeaponDaggerIron
+    - CP14WeaponDaggerIron
+
+- type: loadout
+  id: CP14WeaponSwordIron
+  dummyEntity: CP14WeaponSwordIron
+  equipment:
+    neck: CP14WeaponShieldWooden
+  inhand:
+    - CP14WeaponSwordIron
+
+- type: loadout
+  id: CP14WeaponSkimitarIron
+  dummyEntity: CP14WeaponSkimitarIron
+  equipment:
+    neck: CP14WeaponShieldBuckler
+  inhand:
+    - CP14WeaponSkimitarIron
+
+- type: loadout
+  id: CP14WeaponSpearIron
+  dummyEntity: CP14WeaponSpearIron
+  equipment:
+    neck: CP14WeaponSpearIron
+
+- type: loadout
+  id: CP14WeaponWarHammerIron
+  dummyEntity: CP14WeaponWarHammerIron
+  equipment:
+    neck: CP14WeaponTowerShieldWooden
+  inhand:
+  - CP14WeaponWarHammerIron
+
+- type: loadout
+  id: CP14WeaponTwoHandedSwordIron
+  dummyEntity: CP14WeaponTwoHandedSwordIron
+  equipment:
+    neck: CP14WeaponTwoHandedSwordIron
+
+- type: loadout
+  id: CP14WeaponWarAxeIron
+  dummyEntity: CP14WeaponWarAxeIron
+  equipment:
+    neck: CP14WeaponWarAxeIron
