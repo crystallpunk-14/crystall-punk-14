@@ -20,7 +20,10 @@ cp14-job-desc-merchant = You have the ability to buy and sell almost anything in
 # Mercenary
 
 cp14-job-name-guildmaster = Guildmaster
-cp14-job-desc-guildmaster = Protect the lives of your adventurers, provide them with everything they need, and make sure they do their job.
+cp14-job-desc-guildmaster = Establish a connection between the needs of the city and the desires of adventurers to earn money. Organize the delivery of resources and provide adventurers with everything they need for their work.
+
+cp14-job-name-guildworker = Guild Worker
+cp14-job-desc-guildworker = Working under the guidance of the guildmaster, issue and accept quests, organize parties of lone adventurers, and train newbies so they don't die from the first fly.
 
 cp14-job-name-adventurer = Adventurer
 cp14-job-desc-adventurer = A hunter for thrills, riches and fame, constantly risking his life. Fulfill the most dangerous orders, earning a living by mining resources or killing monsters.

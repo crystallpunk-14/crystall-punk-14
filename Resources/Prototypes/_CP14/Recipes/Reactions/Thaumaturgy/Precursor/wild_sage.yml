@@ -20,11 +20,11 @@
   reactants:
     CP14WildSageSap:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectHealManaDepletion:
+    CP14HealingEffectHealManaDepletion:
       amount: 1
   products:
-    CP14BasicEffectRainbow: 2
-    CP14BasicEffectEmoteCough: 1
+    CP14SideEffectRainbow: 2
+    CP14SideEffectEmoteCough: 1
 

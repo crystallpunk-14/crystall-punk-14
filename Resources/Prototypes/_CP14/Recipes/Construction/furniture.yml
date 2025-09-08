@@ -130,10 +130,10 @@
 
 - type: construction
   crystallPunkAllowed: true
-  id: CP14WallmountOrdersBorder
-  graph: CP14WallmountOrdersBorder
+  id: CP14OrderBoard
+  graph: CP14OrderBoard
   startNode: start
-  targetNode: CP14WallmountOrdersBorder
+  targetNode: CP14OrderBoard
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

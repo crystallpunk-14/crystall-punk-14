@@ -1,6 +1,5 @@
 using Content.Server._CP14.Currency;
 using Content.Server.Cargo.Systems;
-using Content.Server.Storage.Components;
 using Content.Shared._CP14.Trading;
 using Content.Shared._CP14.Trading.Components;
 using Content.Shared._CP14.Trading.Prototypes;
@@ -9,6 +8,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
+using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;

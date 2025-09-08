@@ -1967,3 +1967,46 @@
   id: 8243
   time: '2025-09-07T11:22:30.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1741
+- author: TheShuEd
+  changes:
+  - message: Guildmaster returns (Comoss only)
+    type: Add
+  - message: 'New job added: Guild Worker (Comoss only)'
+    type: Add
+  - message: New building for the Adventurers' Guild, with quest boards (Comoss only)
+    type: Add
+  - message: Guildmasters and guild workers receive salaries, just like guards.
+    type: Tweak
+  id: 8244
+  time: '2025-09-07T16:15:29.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1745
+- author: KittyCat432
+  changes:
+  - message: Changed lurker now has a very slight health regen.
+    type: Tweak
+  - message: Changed mosquitos description now tell how to kill them
+    type: Tweak
+  - message: Changed dash consumes 20 stamina instead of 40.
+    type: Tweak
+  - message: Changed spear now swings at 0.5 speed instead of 1
+    type: Tweak
+  - message: Fixed merchants start off with the weapon contract.
+    type: Fix
+  id: 8245
+  time: '2025-09-07T22:37:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1749
+- author: omsoyk
+  changes:
+  - message: Resprite satchels
+    type: Tweak
+  id: 8246
+  time: '2025-09-07T22:38:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1748
+- author: KittyCat432
+  changes:
+  - message: Changed alchemy target solutions guidebook entry has been reworked into
+      categories.
+    type: Tweak
+  id: 8247
+  time: '2025-09-07T23:45:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1717
