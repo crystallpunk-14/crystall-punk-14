@@ -284,7 +284,7 @@ namespace Content.Server.GameTicking
             var jobName = _jobs.MindTryGetJobName(newMind);
             _admin.UpdatePlayerList(player);
 
-            if (lateJoin && !silent)
+            if (lateJoin && !silent && false) //CP14 disable arrival snnouncement
             {
                 if (jobPrototype.JoinNotifyCrew)
                 {
@@ -301,7 +301,7 @@ namespace Content.Server.GameTicking
                 else
                 {
                     _chatSystem.DispatchStationAnnouncement(station,
-                        Loc.GetString("cp14-latejoin-arrival-announcement",//CrystallEdge
+                        Loc.GetString("latejoin-arrival-announcement",
                             ("character", MetaData(mob).EntityName),
                             ("gender", character.Gender), // CrystallEdge-LastnameGender
                             ("entity", mob),

@@ -6,10 +6,9 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
   - type: CP14MagicEffect
-    magicType: Energia
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -29,12 +28,12 @@
     - !type:CP14SpellThrowFromUser
       throwPower: 4
       distance: 1
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "A fulgur percutiens... "
     endSpeech: "erit ledo vobis!"
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneLightningStrike
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/electromancy.rsi

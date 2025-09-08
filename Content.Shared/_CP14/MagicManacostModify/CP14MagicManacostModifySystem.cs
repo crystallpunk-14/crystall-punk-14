@@ -28,7 +28,7 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess || !ent.Comp.Examinable)
             return;
 
-        var markup = GetManacostModifyMessage(ent.Comp.GlobalModifier, ent.Comp.Modifiers);
+        var markup = GetManacostModifyMessage(ent.Comp.GlobalModifier);
         _examine.AddDetailedExamineVerb(
             args,
             ent.Comp,
@@ -38,7 +38,7 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
             Loc.GetString("cp14-magic-examinable-verb-message"));
     }
 
-    public FormattedMessage GetManacostModifyMessage(FixedPoint2 global, Dictionary<ProtoId<CP14MagicTypePrototype>, FixedPoint2> modifiers)
+    public FormattedMessage GetManacostModifyMessage(FixedPoint2 global)
     {
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("cp14-clothing-magic-examine"));
@@ -52,18 +52,6 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
                 $"{Loc.GetString("cp14-clothing-magic-global")}: {plus}{MathF.Round((float)(global - 1) * 100, MidpointRounding.AwayFromZero)}%");
         }
 
-        foreach (var modifier in modifiers)
-        {
-            if (modifier.Value == 1)
-                continue;
-
-            msg.PushNewline();
-
-            var plus = modifier.Value > 1 ? "+" : "";
-            var indexedType = _proto.Index(modifier.Key);
-            msg.AddMarkupOrThrow($"- [color={indexedType.Color.ToHex()}]{Loc.GetString(indexedType.Name)}[/color]: {plus}{(modifier.Value - 1)*100}%");
-        }
-
         return msg;
     }
 
@@ -75,10 +63,5 @@ public sealed partial class CP14MagicManacostModifySystem : EntitySystem
     private void OnCalculateManacost(Entity<CP14MagicManacostModifyComponent> ent, ref CP14CalculateManacostEvent args)
     {
         args.Multiplier *= (float)ent.Comp.GlobalModifier;
-
-        if (args.MagicType is not null && ent.Comp.Modifiers.TryGetValue(args.MagicType.Value, out var modifier))
-        {
-            args.Multiplier *= (float)modifier;
-        }
     }
 }

@@ -9,7 +9,7 @@ using Content.Shared.Rounding;
 
 namespace Content.Shared._CP14.MagicEnergy;
 
-public abstract class SharedCP14MagicEnergySystem : EntitySystem
+public abstract class CP14SharedMagicEnergySystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
