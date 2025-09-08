@@ -74,19 +74,3 @@
   - type: Food
     trash: 
     - CP14PlateGold
-
-- type: entity
-  id: CP14PlateWoodenRandom
-  parent: CP14PlateWooden
-  suffix: Random food
-  components:
-  - type: CP14RandomFoodData
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Protein
-          Quantity: 10

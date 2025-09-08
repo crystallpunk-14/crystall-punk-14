@@ -472,6 +472,10 @@ CP14WallmountOrdersBorder: null
 CP14FenceGateBigIronDemiplaneCrystal: CP14FenceGateBigIron
 CP14FenceGateBigIronGuildmaster: CP14FenceGateBigIron
 
+CP14BowlWoodenRandom: CP14BowlWooden
+CP14PlateWoodenRandom: CP14PlateWooden
+CP14PlatePieRandom: CP14PlatePie
+
 # <---> CrystallEdge migration zone end
 
 
