@@ -68,6 +68,8 @@
       Unsexed: CP14UnisexCarcat
   - type: Speech
     speechSounds: CP14Carcat
+  - type: MessyDrinker
+    spillChance: 0.3
   - type: Wagging
   - type: Body
     prototype: CP14Carcat
