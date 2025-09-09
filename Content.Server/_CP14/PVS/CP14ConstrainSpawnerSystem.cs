@@ -4,6 +4,7 @@ using Content.Server.GameTicking;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Content.Shared.Trigger;
 using MyNamespace;
 using Robust.Shared.Random;
 

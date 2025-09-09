@@ -19,12 +19,13 @@ cp14-vampire-essence-holder-examine = This victim contains [color=red]{$essence}
 
 cp14-vampire-tree-other-title = Progress of other clans:
 cp14-vampire-tree-other-info = "{$name}": [color=red]({$essence}/{$left})[/color] essences, [color=red]{$lvl}[/color] level.
-cp14-vampire-gather-essence-no-left = Здесь больше нет эссенции!
+cp14-vampire-gather-essence-no-left = There is no more essence here!
 
 ## Announcements
 
 cp14-vampire-sender = Vampire instinct
 
+cp14-vampire-tree-created = The heart of the “{$name}” clan has been created!
 cp14-vampire-tree-growing = "{$name}" clan heart grows to level {$level}!
 cp14-vampire-tree-growing-self = Your clan heart grows to level {$level}!
 cp14-vampire-tree-damaged = Your clan's heart has been attacked!

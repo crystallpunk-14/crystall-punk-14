@@ -1,0 +1,15 @@
+- type: entity
+  id: CP14ActionToggleKeenEye
+  name: Keen Eye
+  parent: BaseMentalAction
+  description: You gaze into the distance, which allows you to see things that are farther away.
+  components:
+  - type: Action
+    useDelay: 5 # Spamming prevention
+    icon:
+      sprite: _CP14/Actions/Spells/physical.rsi
+      state: keen_eye
+    checkCanInteract: false
+    itemIconStyle: BigAction
+  - type: InstantAction
+    event: !type:CP14EyeOffsetToggleActionEvent

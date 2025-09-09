@@ -2,7 +2,7 @@
   id: CP14MobMonsterMosquito
   parent: [ CP14SimpleMobBase, FlyingMobBase ]
   name: bloodworm mosquitoes
-  description: A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast.
+  description: A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast. They seem to only disperse from heat or cold.
   categories: [ ForkFiltered ]
   components:
   - type: HTN

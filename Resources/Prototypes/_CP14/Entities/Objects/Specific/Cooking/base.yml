@@ -32,6 +32,7 @@
     whitelist:
       components:
         - Food
+        - Edible
       tags:
         - CP14FitInFryingPan #Todo delete this tag from game
     cP14Ignorelist:

@@ -1,0 +1,28 @@
+- type: job
+  id: CP14GuildWorker
+  name: cp14-job-name-guildworker
+  description: cp14-job-desc-guildworker
+  playTimeTracker: CP14JobGuildWorker
+  startingGear: CP14GuildWorkerGear
+  icon: "CP14JobIconGuildWorker"
+  supervisors: cp14-job-supervisors-guildmaster
+  weight: 2
+  requirements:
+    - !type:RoleTimeRequirement
+      role: CP14JobAdventurer
+      time: 7200 # 2 hours
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 50
+
+- type: startingGear
+  id: CP14GuildWorkerGear
+  storage:
+    back:
+    - CP14EnergyCrystalMedium
+    - CP14EnergyCrystalMedium
+  equipment:
+    keys: CP14KeyRingGuildworker
+    belt: CP14WalletFilledTest

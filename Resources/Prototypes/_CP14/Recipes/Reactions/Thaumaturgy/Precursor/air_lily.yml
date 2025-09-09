@@ -22,11 +22,11 @@
   reactants:
     CP14AirLily:
       amount: 1
-    CP14BasicEffectEmpty:
+    CP14SideEffectEmpty:
       amount: 1
-    CP14BasicEffectEmoteCough:
+    CP14SideEffectEmoteCough:
       amount: 1
   products:
-    CP14BasicEffectHealAirloss: 2
-    CP14BasicEffectDrunk: 1
+    CP14HealingEffectHealAirloss: 2
+    CP14SideEffectDrunk: 1
 

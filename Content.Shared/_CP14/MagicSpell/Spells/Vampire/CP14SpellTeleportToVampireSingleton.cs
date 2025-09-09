@@ -44,8 +44,7 @@ public sealed partial class CP14SpellTeleportToVampireSingleton : CP14SpellEffec
             if (singleton.Key != indexedVampireFaction.SingletonTeleportKey)
                 continue;
 
-            var randomOffset = new Vector2(random.Next(-1, 1), random.Next(-1, 1));
-            var second = entManager.SpawnAtPosition(PortalProto, xform.Coordinates.Offset(randomOffset));
+            var second = entManager.SpawnAtPosition(PortalProto, xform.Coordinates);
 
             linkSys.TryLink(first, second, true);
             return;

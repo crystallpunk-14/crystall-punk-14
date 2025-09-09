@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  id: CP14BaseMop
+  parent:
+  - BaseItem
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    clickDamageModifier: 0.1
+    attackRate: 1.5
+    range: 1.6
+    angle: 30
+    wideAnimationRotation: 0
+    damage:
+      types:
+        Blunt: 2
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: Wieldable
+  - type: Clothing
+    slots:
+    - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+  - type: Spillable
+    solution: absorbed
+  - type: Absorbent
+  - type: SolutionContainerManager
+    solutions:
+      absorbed:
+        maxVol: 50
+
+- type: entity
+  parent: CP14BaseMop
+  id: CP14Mop
+  name: mop
+  description: A simple mop for cleaning up spills and messes.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Mop/mop.rsi
+    state: icon

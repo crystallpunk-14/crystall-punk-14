@@ -1,7 +1,8 @@
+using Content.Server._CP14.DeviceLinking.Components;
 using Content.Server.DeviceLinking.Systems;
-using Content.Server.Storage.Components;
 using Content.Shared._CP14.DeviceLinking;
 using Content.Shared.Placeable;
+using Content.Shared.Storage.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
@@ -17,28 +18,28 @@ public sealed class CP14PressurePlateSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<Components.CP14PressurePlateComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<Components.CP14PressurePlateComponent, ItemPlacedEvent>(OnItemPlaced);
-        SubscribeLocalEvent<Components.CP14PressurePlateComponent, ItemRemovedEvent>(OnItemRemoved);
+        SubscribeLocalEvent<CP14PressurePlateComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<CP14PressurePlateComponent, ItemPlacedEvent>(OnItemPlaced);
+        SubscribeLocalEvent<CP14PressurePlateComponent, ItemRemovedEvent>(OnItemRemoved);
     }
 
-    private void OnInit(Entity<Components.CP14PressurePlateComponent> plate, ref ComponentInit args)
+    private void OnInit(Entity<CP14PressurePlateComponent> plate, ref ComponentInit args)
     {
         _signal.EnsureSourcePorts(plate, plate.Comp.PressedPort, plate.Comp.ReleasedPort);
         _appearance.SetData(plate, PressurePlateVisuals.Pressed, false);
     }
 
-    private void OnItemRemoved(Entity<Components.CP14PressurePlateComponent> plate, ref ItemRemovedEvent args)
+    private void OnItemRemoved(Entity<CP14PressurePlateComponent> plate, ref ItemRemovedEvent args)
     {
         UpdateState(plate);
     }
 
-    private void OnItemPlaced(Entity<Components.CP14PressurePlateComponent> plate, ref ItemPlacedEvent args)
+    private void OnItemPlaced(Entity<CP14PressurePlateComponent> plate, ref ItemPlacedEvent args)
     {
         UpdateState(plate);
     }
 
-    private void UpdateState(Entity<Components.CP14PressurePlateComponent> plate)
+    private void UpdateState(Entity<CP14PressurePlateComponent> plate)
     {
         if (!TryComp<ItemPlacerComponent>(plate, out var itemPlacer))
             return;
