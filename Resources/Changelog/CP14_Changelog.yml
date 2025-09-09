@@ -2038,3 +2038,10 @@
   id: 8251
   time: '2025-09-09T07:44:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1756
+- author: Viator-MV
+  changes:
+  - message: Added guards and guild to Venicialis!
+    type: Add
+  id: 8252
+  time: '2025-09-09T22:32:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1754
