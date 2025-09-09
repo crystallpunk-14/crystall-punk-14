@@ -14,7 +14,7 @@ public sealed partial class CP14ActionSystem : CP14SharedActionSystem
     public override void Initialize()
     {
         base.Initialize();
-        InitializePerformed();
+        InitializeDoAfter();
 
         SubscribeLocalEvent<CP14ActionRequiredMusicToolComponent, ActionAttemptEvent>(OnActionMusicAttempt);
     }

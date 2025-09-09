@@ -76,6 +76,15 @@ public abstract partial class CP14SharedActionSystem
         if (manaCost > 0 &&
             TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
             _magicEnergy.ChangeEnergy((args.Performer, playerMana), -manaCost, out _, out _, safe: false);
+
+        //And spawn mana trace
+        _magicVision.SpawnMagicTrace(
+                Transform(args.Performer).Coordinates,
+                action.Icon,
+                Loc.GetString("cp14-magic-vision-used-spell", ("name", MetaData(ent).EntityName)),
+                TimeSpan.FromSeconds((float)ent.Comp.ManaCost * 50),
+                args.Performer,
+                null); //TODO: We need a way to pass spell target here
     }
 
     private void OnSkillPointCostActionPerformed(Entity<CP14ActionSkillPointCostComponent> ent, ref ActionPerformedEvent args)

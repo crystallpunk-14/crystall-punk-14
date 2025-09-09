@@ -1,4 +1,5 @@
 using Content.Shared._CP14.MagicEnergy;
+using Content.Shared._CP14.MagicVision;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill;
 using Content.Shared.Actions.Components;
@@ -22,6 +23,7 @@ public abstract partial class CP14SharedActionSystem : EntitySystem
     [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
+    [Dependency] private readonly CP14SharedMagicVisionSystem _magicVision = default!;
 
     private EntityQuery<ActionComponent> _actionQuery;
 
@@ -34,6 +36,7 @@ public abstract partial class CP14SharedActionSystem : EntitySystem
         InitializeAttempts();
         InitializeExamine();
         InitializePerformed();
+        InitializeModularEffects();
     }
 }
 
