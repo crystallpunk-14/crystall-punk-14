@@ -34,7 +34,7 @@
     tags:
     - CP14Rat
   - type: Item
-    size: Tiny
+    size: Normal
   - type: CanEscapeInventory
     baseResistTime: 1
   - type: Speech
