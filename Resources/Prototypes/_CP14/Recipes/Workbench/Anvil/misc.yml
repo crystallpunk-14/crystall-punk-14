@@ -1,10 +1,8 @@
 - type: CP14Recipe
-  id: CP14BaseShield
+  id: CP14WeaponShieldWooden
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14WoodenPlanks
@@ -12,27 +10,37 @@
   - !type:StackResource
     stack: CP14IronBar
     count: 2
-  result: CP14BaseShield
+  result: CP14WeaponShieldWooden
+
+- type: CP14Recipe
+  id: CP14WeaponTowerShieldWooden
+  tag: CP14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: CP14WoodenPlanks
+    count: 5
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 4
+  result: CP14WeaponTowerShieldWooden
 
 - type: CP14Recipe
   id: CP14BaseWrench
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
-    count: 2
+    count: 1
   result: CP14BaseWrench
 
 - type: CP14Recipe
   id: CP14PlatePie
   tag: CP14RecipeAnvil
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar # Physical Composition in item
@@ -43,10 +51,7 @@
   id: CP14CrystalLampBlueEmpty
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
-  - CopperMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar  # Physical Composition in item
@@ -60,9 +65,7 @@
   id: CP14Scissors
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -73,9 +76,7 @@
   id: CP14ClothingGlovesGirdles
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -87,8 +88,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - CopperMelting
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -101,8 +100,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - IronMelting
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -115,8 +112,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - GoldMelting
   requirements:
   - !type:StackResource
     stack: CP14GoldBar
@@ -129,8 +124,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - MithrilMelting
   requirements:
   - !type:StackResource
     stack: CP14MithrilBar
@@ -143,8 +136,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - CopperMelting
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -157,8 +148,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - IronMelting
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -171,8 +160,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - GoldMelting
   requirements:
   - !type:StackResource
     stack: CP14GoldBar
@@ -185,8 +172,6 @@
   tag: CP14RecipeAnvil
   category: Weapon
   craftTime: 1
-  requiredSkills:
-  - MithrilMelting
   requirements:
   - !type:StackResource
     stack: CP14MithrilBar
@@ -198,9 +183,7 @@
   id: CP14BaseLockpick
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -211,9 +194,7 @@
   id: CP14LockpickMithril
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 4
-  requiredSkills:
-  - MithrilMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14MithrilBar
@@ -224,10 +205,7 @@
   id: CP14BaseLightCrossbow
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
-  requiredSkills:
-  - CopperMelting
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -244,9 +222,7 @@
   id: CP14BaseCrossbow
   tag: CP14RecipeAnvil
   category: Weapon
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -260,9 +236,7 @@
   id: CP14ClothingMaskSteelMask
   tag: CP14RecipeAnvil
   category: Armor
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -273,9 +247,7 @@
   id: CP14KeyCopperBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
-  requiredSkills:
-  - CopperMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -286,9 +258,7 @@
   id: CP14KeyIronBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -299,9 +269,7 @@
   id: CP14KeyGoldBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
-  requiredSkills:
-  - GoldMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GoldBar
@@ -312,9 +280,7 @@
   id: CP14KeyMithrilBlank
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 3
-  requiredSkills:
-  - MithrilMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14MithrilBar
@@ -325,9 +291,7 @@
   id: CP14KeyFile
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -338,9 +302,7 @@
   id: CP14LockCopper
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - CopperMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -351,9 +313,7 @@
   id: CP14LockIron
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -364,9 +324,7 @@
   id: CP14LockGold
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - GoldMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GoldBar
@@ -377,9 +335,7 @@
   id: CP14LockMithril
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - MithrilMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14MithrilBar
@@ -390,9 +346,7 @@
   id: CP14EnergyCrystalMediumEmpty
   tag: CP14RecipeAnvil
   category: Tools
-  craftTime: 2
-  requiredSkills:
-  - CopperMelting
+  craftTime: 1
   requirements:
   - !type:ProtoIdResource
     protoId: CP14CrystalShardQuartz
@@ -405,9 +359,7 @@
 - type: CP14Recipe
   id: CP14Fork
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -418,9 +370,7 @@
 - type: CP14Recipe
   id: CP14Spoon
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -431,9 +381,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletCopper
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - CopperMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -443,9 +391,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletIron
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -455,9 +401,7 @@
 - type: CP14Recipe
   id: CP14SteelGobletGold
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - GoldMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GoldBar
@@ -467,9 +411,7 @@
 - type: CP14Recipe
   id: CP14FryingPan
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -482,9 +424,7 @@
 - type: CP14Recipe
   id: CP14CookingPot
   tag: CP14RecipeAnvil
-  craftTime: 2
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar
@@ -494,9 +434,7 @@
 - type: CP14Recipe
   id: CP14IronBuckleRecipe
   tag: CP14RecipeAnvil
-  craftTime: 4
-  requiredSkills:
-  - IronMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14IronBar

@@ -4,8 +4,8 @@ meta:
   engineVersion: 265.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/11/2025 09:33:17
-  entityCount: 23409
+  time: 09/07/2025 13:44:45
+  entityCount: 23413
 maps:
 - 1
 grids:
@@ -748,48 +748,6 @@ entities:
     components:
     - type: Transform
       pos: 49.269325,-15.964533
-      parent: 1
-- proto: CP14BaseShield
-  entities:
-  - uid: 23375
-    components:
-    - type: Transform
-      parent: 23374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23376
-    components:
-    - type: Transform
-      parent: 23374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23377
-    components:
-    - type: Transform
-      parent: 23374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23378
-    components:
-    - type: Transform
-      parent: 23374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23379
-    components:
-    - type: Transform
-      parent: 23374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23406
-    components:
-    - type: Transform
-      pos: 22.628853,-17.18603
       parent: 1
 - proto: CP14BaseVat
   entities:
@@ -99799,7 +99757,7 @@ entities:
     - type: Transform
       pos: -6.616871,-35.262444
       parent: 1
-- proto: CP14ClothingBeltQuiverIronArrow
+- proto: CP14ClothingBeltQuiverArrows
   entities:
   - uid: 23381
     components:
@@ -100000,6 +99958,27 @@ entities:
       canCollide: False
 - proto: CP14CopperCoin1
   entities:
+  - uid: 19655
+    components:
+    - type: Transform
+      parent: 19654
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 19656
+    components:
+    - type: Transform
+      parent: 19654
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 19657
+    components:
+    - type: Transform
+      parent: 19654
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 19754
     components:
     - type: Transform
@@ -100025,6 +100004,58 @@ entities:
     - type: Transform
       pos: 37.238976,38.83274
       parent: 1
+  - uid: 20653
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 78.04069,28.695343
+      parent: 1
+  - uid: 20654
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 78.686516,29.049511
+      parent: 1
+  - uid: 20656
+    components:
+    - type: Transform
+      pos: 57.78772,-39.823143
+      parent: 1
+  - uid: 23392
+    components:
+    - type: Transform
+      parent: 23391
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23393
+    components:
+    - type: Transform
+      parent: 23391
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23394
+    components:
+    - type: Transform
+      parent: 23391
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23395
+    components:
+    - type: Transform
+      parent: 23391
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23396
+    components:
+    - type: Transform
+      parent: 23391
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CP14CraneBarrel
   entities:
   - uid: 19759
@@ -104952,138 +104983,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: CP14ModularBladeBoneSword
-  entities:
-  - uid: 20653
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 78.04069,28.695343
-      parent: 1
-- proto: CP14ModularGripIronLongGuard
-  entities:
-  - uid: 19655
-    components:
-    - type: Transform
-      parent: 19654
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 19656
-    components:
-    - type: Transform
-      parent: 19654
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 19657
-    components:
-    - type: Transform
-      parent: 19654
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: CP14ModularGripWoodenLong
-  entities:
-  - uid: 20654
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 78.686516,29.049511
-      parent: 1
-- proto: CP14ModularGuardHalberd
-  entities:
-  - uid: 23392
-    components:
-    - type: Transform
-      parent: 23391
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23393
-    components:
-    - type: Transform
-      parent: 23391
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23394
-    components:
-    - type: Transform
-      parent: 23391
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23395
-    components:
-    - type: Transform
-      parent: 23391
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 23396
-    components:
-    - type: Transform
-      parent: 23391
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: CP14ModularInlayQuartzWater
-  entities:
-  - uid: 20656
-    components:
-    - type: Transform
-      pos: 57.78772,-39.823143
-      parent: 1
-- proto: CP14ModularIronDagger
-  entities:
-  - uid: 20657
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 31.32473,-9.408573
-      parent: 1
-    - type: CollisionWake
-      enabled: False
-  - uid: 20658
-    components:
-    - type: Transform
-      pos: -9.242605,-0.28940845
-      parent: 1
-  - uid: 20659
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.204089,-0.0896281
-      parent: 1
-- proto: CP14ModularIronPickaxe
-  entities:
-  - uid: 20660
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 37.62259,39.517784
-      parent: 1
-  - uid: 20661
-    components:
-    - type: Transform
-      pos: -73.40671,32.00686
-      parent: 1
-  - uid: 20662
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -70.56778,28.4129
-      parent: 1
-- proto: CP14ModularIronShovel
-  entities:
-  - uid: 20663
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -71.14161,31.674646
-      parent: 1
-- proto: CP14ModularWoodMop
+- proto: CP14Mop
   entities:
   - uid: 25
     components:
@@ -117259,6 +117159,36 @@ entities:
       fixtures: {}
 - proto: CP14WallmountTorchAlwaysPowered
   entities:
+  - uid: 22011
+    components:
+    - type: Transform
+      pos: 13.5,-15.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22012
+    components:
+    - type: Transform
+      pos: 18.5,-19.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22015
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 20.5,-21.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22017
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 11.5,-18.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
   - uid: 22241
     components:
     - type: Transform
@@ -122837,6 +122767,96 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.3843646,-18.70323
+      parent: 1
+- proto: CP14WeaponDaggerIron
+  entities:
+  - uid: 20657
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 31.32473,-9.408573
+      parent: 1
+    - type: CollisionWake
+      enabled: False
+  - uid: 20658
+    components:
+    - type: Transform
+      pos: -9.242605,-0.28940845
+      parent: 1
+  - uid: 20659
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -9.204089,-0.0896281
+      parent: 1
+- proto: CP14WeaponPickaxeIron
+  entities:
+  - uid: 20660
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 37.62259,39.517784
+      parent: 1
+  - uid: 20661
+    components:
+    - type: Transform
+      pos: -73.40671,32.00686
+      parent: 1
+  - uid: 20662
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -70.56778,28.4129
+      parent: 1
+- proto: CP14WeaponShieldWooden
+  entities:
+  - uid: 23375
+    components:
+    - type: Transform
+      parent: 23374
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23376
+    components:
+    - type: Transform
+      parent: 23374
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23377
+    components:
+    - type: Transform
+      parent: 23374
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23378
+    components:
+    - type: Transform
+      parent: 23374
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23379
+    components:
+    - type: Transform
+      parent: 23374
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 23406
+    components:
+    - type: Transform
+      pos: 22.628853,-17.18603
+      parent: 1
+- proto: CP14WeaponShovelIron
+  entities:
+  - uid: 20663
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -71.14161,31.674646
       parent: 1
 - proto: CP14WindowStoneBrick
   entities:

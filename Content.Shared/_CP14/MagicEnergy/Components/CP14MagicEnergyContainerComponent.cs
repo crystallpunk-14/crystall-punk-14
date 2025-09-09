@@ -9,7 +9,7 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 /// Allows an item to store magical energy within itself.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedCP14MagicEnergySystem))]
+[Access(typeof(CP14SharedMagicEnergySystem))]
 public sealed partial class CP14MagicEnergyContainerComponent : Component
 {
     [DataField, AutoNetworkedField]

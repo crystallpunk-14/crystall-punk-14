@@ -1,10 +1,8 @@
 - type: CP14Recipe
   id: CP14CopperBar1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - CopperMelting
   requirements:
   - !type:MaterialResource
     material: CP14Copper
@@ -14,10 +12,8 @@
 - type: CP14Recipe
   id: CP14IronBar1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - IronMelting
   requirements:
   - !type:MaterialResource
     material: CP14Iron
@@ -27,10 +23,8 @@
 - type: CP14Recipe
   id: CP14GoldBar1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - GoldMelting
   requirements:
   - !type:MaterialResource
     material: CP14Gold
@@ -40,10 +34,8 @@
 - type: CP14Recipe
   id: CP14MithrilBar1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - MithrilMelting
   requirements:
   - !type:MaterialResource
     material: CP14Mithril
@@ -53,10 +45,8 @@
 - type: CP14Recipe
   id: CP14GlassSheet1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 2
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - GlassMelting
   requirements:
   - !type:ProtoIdResource
     protoId: CP14CrystalShardQuartz
@@ -66,10 +56,8 @@
 - type: CP14Recipe
   id: CP14GlassSheetShard1
   tag: CP14RecipeMeltingFurnace
-  craftTime: 2
+  craftTime: 1
   category: Materials
-  requiredSkills:
-  - GlassMelting
   requirements:
   - !type:ProtoIdResource
     protoId: CP14GlassShard
@@ -79,9 +67,7 @@
 - type: CP14Recipe
   id: CP14VialTiny
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet
@@ -91,9 +77,7 @@
 - type: CP14Recipe
   id: CP14VialTinyReinforced
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -106,9 +90,7 @@
 - type: CP14Recipe
   id: CP14VialSmall
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet
@@ -118,9 +100,7 @@
 - type: CP14Recipe
   id: CP14VialSmallReinforced
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -133,9 +113,7 @@
 - type: CP14Recipe
   id: CP14VialMedium
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet
@@ -145,9 +123,7 @@
 - type: CP14Recipe
   id: CP14VialMediumReinforced
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -160,9 +136,7 @@
 - type: CP14Recipe
   id: CP14VialStar
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet
@@ -172,9 +146,7 @@
 - type: CP14Recipe
   id: CP14VialStarReinforced
   tag: CP14RecipeMeltingFurnace
-  craftTime: 3
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14CopperBar
@@ -187,9 +159,7 @@
 - type: CP14Recipe
   id: CP14BaseAlchemyBomb
   tag: CP14RecipeMeltingFurnace
-  craftTime: 4
-  requiredSkills:
-  - GlassMelting
+  craftTime: 1
   requirements:
   - !type:StackResource
     stack: CP14GlassSheet

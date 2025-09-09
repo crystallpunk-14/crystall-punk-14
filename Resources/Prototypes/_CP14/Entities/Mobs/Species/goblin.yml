@@ -10,10 +10,6 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "vampire_fangs" ]
-      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
-      state: goblin # Goblin fangs state
-      visible: false
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -47,6 +43,10 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: goblin # Goblin fangs state
+      visible: false
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -183,6 +183,14 @@
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: shoes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: neck
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: neck
 
 - type: entity
   parent: CP14BaseSpeciesDummy
@@ -257,3 +265,11 @@
           32:
             sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
             state: shoes
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Goblin/displacement.rsi
+            state: neck
+          48:
+            sprite: _CP14/Mobs/Species/Goblin/displacement48.rsi
+            state: neck

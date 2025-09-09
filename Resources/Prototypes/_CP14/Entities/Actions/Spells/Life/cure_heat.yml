@@ -6,16 +6,17 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 12
   - type: CP14MagicEffect
-    magicType: Life
     telegraphyEffects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureBurn
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureBurn
     - !type:CP14SpellApplyEntityEffect
@@ -27,8 +28,8 @@
             Heat: -10
             Shock: -10
       - !type:Jitter
-  - type: CP14MagicEffectTargetMobStatusRequired
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionTargetMobStatusRequired
+  - type: CP14ActionSpeaking
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"
   - type: CP14MagicEffectCastingVisual

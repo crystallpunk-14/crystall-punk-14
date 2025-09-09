@@ -23,6 +23,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT1
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellPlantGrowth
@@ -77,10 +79,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: heal2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Life: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT1
@@ -98,6 +96,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellCureWounds
@@ -112,25 +112,23 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 # T3
 
-- type: cp14Skill
-  id: HealingT3
-  skillUiPosition: 13, 0
-  tree: Healing
-  name: cp14-skill-life-t3-name
-  learnCost: 0.5
-  icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: heal3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Life: -0.25
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: HealingT2
+#- type: cp14Skill
+#  id: HealingT3
+#  skillUiPosition: 13, 0
+#  tree: Healing
+#  name: cp14-skill-life-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _CP14/Actions/skill_tree.rsi
+#    state: heal3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HealingT2
 
 #- type: cp14Skill
 #  id: CP14ActionSpellResurrection

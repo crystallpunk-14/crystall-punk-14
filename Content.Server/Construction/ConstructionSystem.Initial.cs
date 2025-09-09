@@ -375,6 +375,17 @@ namespace Content.Server.Construction
                 return false;
             }
 
+            //CP14 requirements
+            foreach (var req in constructionPrototype.CP14Restrictions)
+            {
+                if (!req.Check(EntityManager, user))
+                {
+                    _popup.PopupEntity(req.GetDescription(EntityManager, PrototypeManager), user, user);
+                    return false;
+                }
+            }
+            //CP14 end
+
             var startNode = constructionGraph.Nodes[constructionPrototype.StartNode];
             var targetNode = constructionGraph.Nodes[constructionPrototype.TargetNode];
             var pathFind = constructionGraph.Path(startNode.Name, targetNode.Name);
@@ -459,6 +470,17 @@ namespace Content.Server.Construction
                 _popup.PopupEntity(Loc.GetString("construction-system-cannot-start"), user, user);
                 return;
             }
+
+            //CP14 requirements
+            foreach (var req in constructionPrototype.CP14Restrictions)
+            {
+                if (!req.Check(EntityManager, user))
+                {
+                    _popup.PopupEntity(req.GetDescription(EntityManager, PrototypeManager), user, user);
+                    return;
+                }
+            }
+            //CP14 end
 
             if (_container.IsEntityInContainer(user))
             {

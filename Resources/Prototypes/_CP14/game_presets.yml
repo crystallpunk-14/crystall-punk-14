@@ -19,19 +19,40 @@
   showInVote: false
   cP14Allowed: true
   rules:
-    #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
     - Sandbox
 
 - type: gamePreset
-  id: CP14Greenshift
-  name: greenshift-title
-  description: greenshift-description
+  id: CP14Peaceful
+  name: cp14-peaceful-title
+  description: cp14-peaceful-description
   showInVote: true
   cP14Allowed: true
   rules:
-    #- CP14RoundObjectivesRule
     - CP14BasicStationEventScheduler
+
+- type: gamePreset
+  id: CP14VampireClansBattleDouble
+  name: cp14-vampire-clans-battle
+  description: cp14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 20
+  maxPlayers: 29
+  rules:
+    - CP14BasicStationEventScheduler
+    - CP14GameRuleVampireClanBattleDouble
+
+- type: gamePreset
+  id: CP14VampireClansBattleTriple
+  name: cp14-vampire-clans-battle
+  description: cp14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 30
+  rules:
+    - CP14BasicStationEventScheduler
+    - CP14GameRuleVampireClanBattleTriple
 
 #- type: gamePreset
 #  id: CP14Survival

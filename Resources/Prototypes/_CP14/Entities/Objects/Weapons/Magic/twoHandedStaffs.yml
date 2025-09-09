@@ -65,6 +65,8 @@
   - type: CP14MagicEnergyContainer
     energy: 80
     maxEnergy: 80
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   id: CP14MagicShadowStaff
@@ -114,6 +116,7 @@
   components:
   - type: CP14SpellStorage
     spells:
+    - CP14ActionSpellElectricTrap
     - CP14ActionSpellLightningStrike
     - CP14ActionSpellLightningStrikeSmall
     - CP14ActionSpellLightningStrikeSmall
@@ -142,3 +145,5 @@
     maxEnergy: 30
   - type: CP14MagicManacostModify
     globalModifier: 0.9
+  - type: StaticPrice
+    price: 20

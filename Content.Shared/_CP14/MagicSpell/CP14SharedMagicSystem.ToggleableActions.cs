@@ -37,12 +37,12 @@ public abstract partial class CP14SharedMagicSystem
             var spellArgs =
                 new CP14SpellEffectBaseArgs(toggled.Performer, effect.SpellStorage, toggled.EntityTarget, toggled.WorldTarget);
 
-            if (!CanCastSpell((uid, effect), spellArgs))
-            {
-                if (_doAfter.IsRunning(toggled.DoAfterId))
-                    _doAfter.Cancel(toggled.DoAfterId);
-                continue;
-            }
+            //if (!CanCastSpell((uid, effect), spellArgs))
+            //{
+            //    if (_doAfter.IsRunning(toggled.DoAfterId))
+            //        _doAfter.Cancel(toggled.DoAfterId);
+            //    continue;
+            //}
 
             CastSpell((uid, effect), spellArgs);
         }
@@ -127,10 +127,6 @@ public abstract partial class CP14SharedMagicSystem
 
     private void ToggleToggleableAction(ICP14ToggleableMagicEffect toggleable, DoAfterEvent doAfter, Entity<CP14MagicEffectComponent> action, EntityUid performer, EntityUid? entityTarget = null, EntityCoordinates? worldTarget = null)
     {
-        var spellArgs = new CP14SpellEffectBaseArgs(performer, entityTarget, entityTarget, worldTarget);
-        if (!CanCastSpell(action, spellArgs))
-            return;
-
         if (_doAfter.IsRunning(action.Comp.ActiveDoAfter))
             _doAfter.Cancel(action.Comp.ActiveDoAfter);
         else

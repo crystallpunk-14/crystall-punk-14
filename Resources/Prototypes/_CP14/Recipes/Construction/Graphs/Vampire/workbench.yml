@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: CP14WorkbenchVampire
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: CP14WorkbenchVampire
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 2
+    - node: CP14WorkbenchVampire
+      entity: CP14WorkbenchVampire

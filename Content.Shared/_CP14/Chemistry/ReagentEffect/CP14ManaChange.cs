@@ -35,7 +35,7 @@ public sealed partial class CP14ManaChange : EntityEffect
         if (args is EntityEffectReagentArgs reagentArgs)
             scale = ScaleByQuantity ? reagentArgs.Quantity * reagentArgs.Scale : reagentArgs.Scale;
 
-        var magicSystem = entityManager.System<SharedCP14MagicEnergySystem>();
+        var magicSystem = entityManager.System<CP14SharedMagicEnergySystem>();
         magicSystem.ChangeEnergy(args.TargetEntity, ManaDelta * scale, out var changed, out var overload, safe: Safe);
 
         scale -= FixedPoint2.Abs(changed + overload);

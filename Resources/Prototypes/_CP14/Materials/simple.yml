@@ -139,3 +139,20 @@
   icon: { sprite: _CP14/Objects/Ingredients/leather.rsi, state: leather }
   color: "#a78a63"
   price: 1.2
+
+- type: material
+  id: CP14BloodEssence
+  stackEntity: CP14BloodEssence
+  name: cp14-stack-blood-essence
+  unit: materials-unit-bar
+  icon: { sprite: _CP14/Objects/Materials/blood_essence.rsi, state: drop }
+  color: "#a78a63"
+  price: 8
+
+- type: material
+  id: CP14Bone
+  stackEntity: CP14Bone1
+  name: cp14-material-bone
+  icon: { sprite: _CP14/Objects/Materials/bones.rsi, state: bone_1 }
+  color: "#ccb495"
+  price: 0.15

@@ -1,0 +1,56 @@
+- type: entity
+  id: CP14ActionSpellVampirePower3
+  parent: CP14ActionSpellBase
+  name: Impulse
+  description: By unleashing the power of your ancient vampire clan, you repel everyone and everything around you, stunning them for a long time.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.4
+  - type: CP14MagicEffectVampire
+  - type: CP14ActionManaCost
+    manaCost: 50
+  - type: CP14ActionDangerous
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectVampireKick #TODO
+    - !type:CP14SpellArea
+      range: 2
+      maxTargets: 16
+      affectCaster: false
+      whitelist:
+        components:
+        - Body
+        - Item
+        - Anchorable
+      effects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Paralyze
+          paralyzeTime: 2
+      - !type:CP14SpellThrowFromUser
+        throwPower: 15
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectBloodStep
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 10
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: power_kick_3
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/essence_consume.ogg
+  - type: InstantAction
+    event: !type:CP14DelayedInstantActionEvent
+      cooldown: 60
+      castDelay: 1.5
+      breakOnMove: false
+      breakOnDamage: false

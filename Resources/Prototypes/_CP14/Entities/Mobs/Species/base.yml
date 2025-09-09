@@ -17,10 +17,6 @@
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "vampire_fangs" ]
-      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
-      state: human
-      visible: false
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
@@ -54,6 +50,10 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _CP14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false
     - map: [ "mask" ]
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -195,6 +195,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.CP14RememberNameUiKey.Key:
+        type: CP14IdentityRecognitionBoundUserInterface
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -235,6 +237,8 @@
     - Athletic
     - MartialArts
     - Craftsmanship
+  - type: CP14VampireEssenceHolder
+  - type: CP14UnknownIdentity
 
 - type: entity
   parent:

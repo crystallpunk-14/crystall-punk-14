@@ -19,7 +19,7 @@
             #Artisans
             CP14Apprentice: [ 3, 3 ]
             CP14Alchemist: [ 2, 2 ]
-            CP14Blacksmith: [ 2, 2 ]
+            #CP14Blacksmith: [ 2, 2 ]
             CP14Innkeeper: [ 2, 3 ]
             CP14Merchant: [2, 2]
             #Guard
@@ -55,6 +55,7 @@
           - CP14CrystalQuartzWater
           - Quartz
           - Ruins
-          - MobSlimeIce
+          - Boar
+          - Rabbits
           - LumiShroom
           - SilverNeedle

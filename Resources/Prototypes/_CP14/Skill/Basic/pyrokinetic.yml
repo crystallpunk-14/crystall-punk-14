@@ -23,6 +23,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellHeat
@@ -81,10 +83,6 @@
   icon:
     sprite: _CP14/Actions/skill_tree.rsi
     state: pyro2
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT1
@@ -102,6 +100,8 @@
   restrictions:
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
+  - !type:SpeciesBlacklist
+    species: CP14Skeleton
 
 - type: cp14Skill
   id: CP14ActionSpellFirewave
@@ -119,20 +119,16 @@
 
 # T3
 
-- type: cp14Skill
-  id: PyrokineticT3
-  skillUiPosition: 13, 0
-  tree: Pyrokinetic
-  name: cp14-skill-pyro-t3-name
-  learnCost: 0.5
-  icon:
-    sprite: _CP14/Actions/skill_tree.rsi
-    state: pyro3
-  effects:
-  - !type:ModifyManacost
-    modifiers:
-      Fire: -0.25
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: PyrokineticT2
+#- type: cp14Skill
+#  id: PyrokineticT3
+#  skillUiPosition: 13, 0
+#  tree: Pyrokinetic
+#  name: cp14-skill-pyro-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _CP14/Actions/skill_tree.rsi
+#    state: pyro3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: PyrokineticT2
 

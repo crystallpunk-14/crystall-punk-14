@@ -60,7 +60,7 @@
     state: icons
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -89,7 +89,7 @@
     state: icons
   - type: Damageable
     damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
+    damageModifierSet: CP14Metallic
   - type: Destructible
     thresholds:
     - trigger:

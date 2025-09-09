@@ -7,9 +7,17 @@
   icon: "CP14JobIconApprentice"
   supervisors: cp14-job-supervisors-command
   special:
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - DwarfMining
+      - HomeDecor
+      - Tailors
+      - Horticulture
+      - Butchers
+      - Dairy
     - !type:CP14LearnSkillsSpecial
       skills:
-      - CopperMelting
+      #- CopperMelting
       - AlchemyVision
 
 - type: startingGear

@@ -6,10 +6,19 @@
   startingGear: CP14AlchemistGear
   icon: "CP14JobIconAlchemist"
   supervisors: cp14-job-supervisors-command
+  canBeAntag: false
   special:
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - BradPotions
+      - Thaumaturgy
+      - HomeDecor
+      - Horticulture
     - !type:CP14LearnSkillsSpecial
       skills:
       - AlchemyVision
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
   requirements:
     - !type:DepartmentTimeRequirement
       department: CP14Artisan

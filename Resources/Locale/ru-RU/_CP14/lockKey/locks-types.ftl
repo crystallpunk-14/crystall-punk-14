@@ -42,3 +42,4 @@ cp14-lock-shaper-guard-commander = дом главы стражи
 
 cp14-lock-shape-guildmaster = гильдмастер
 cp14-lock-shape-demiplane-crystal = кристалл демиплана
+cp14-lock-shape-adventure-guild = Гильдия авантюристов

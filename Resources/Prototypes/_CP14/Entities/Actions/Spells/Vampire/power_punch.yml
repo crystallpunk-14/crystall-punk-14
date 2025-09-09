@@ -1,0 +1,68 @@
+- type: entity
+  id: CP14ActionSpellVampirePower
+  parent: CP14ActionSpellBase
+  name: Demonstration of strength
+  description: By channeling the power of your ancient vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
+  components:
+  - type: CP14ActionDangerous
+  - type: CP14MagicEffectVampire
+  - type: CP14ActionManaCost
+    manaCost: 20
+  - type: CP14MagicEffect
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:Paralyze
+        paralyzeTime: 3
+    - !type:CP14SpellThrowFromUser
+      throwPower: 9
+    - !type:CP14SpellSpawnEntityOnTarget
+      spawns:
+      - CP14ImpactEffectVampireKick
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Blunt: 10
+  - type: Action
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: power_kick
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/essence_consume.ogg
+  - type: TargetAction
+    range: 1
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:CP14EntityTargetActionEvent
+      cooldown: 45
+    whitelist:
+      components:
+      - Body
+      - Item
+      - Anchorable
+
+- type: entity
+  id: CP14ImpactEffectVampireKick
+  parent: CP14ImpactEffectBloodStep
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+      color: red
+      unshaded: true
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/surprise.ogg
+  - type: TimedDespawn
+    lifetime: 4
+  - type: LightFade
+    duration: 4
+  - type: PointLight
+    color: "#d60032"
+    radius: 4.0
+    energy: 8.0

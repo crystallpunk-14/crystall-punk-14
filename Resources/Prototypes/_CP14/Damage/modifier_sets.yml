@@ -118,6 +118,13 @@
     Cold: 0.2
 
 - type: damageModifierSet
+  id: CP14Cackle
+  coefficients:
+    Heat: 1.4
+    Slash: 1.2
+    Piercing: 0.6
+
+- type: damageModifierSet
   id: CP14WatcherFire
   coefficients:
     Heat: 0.2
@@ -190,8 +197,7 @@
   id: CP14Skeleton
   coefficients:
     Blunt: 1.2
-    Slash: 0.8
-    Piercing: 0.6
+    Piercing: 0.8
     Cold: 0.0
     Poison: 0.0
     Radiation: 0.0

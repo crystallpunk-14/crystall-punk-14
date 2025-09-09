@@ -2,6 +2,7 @@ using Content.Server._CP14.MagicEnergy;
 using Content.Server.Atmos.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Instruments;
+using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
@@ -40,14 +41,10 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<CP14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
 
-        SubscribeLocalEvent<CP14MagicEffectVerbalAspectComponent, CP14SpellSpeechEvent>(OnSpellSpoken);
+        SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14ActionSpeechEvent>(OnSpellSpoken);
 
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
         SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
-
-        SubscribeLocalEvent<CP14MagicEffectManaCostComponent, CP14MagicEffectConsumeResourceEvent>(OnManaConsume);
-
-        SubscribeLocalEvent<CP14MagicEffectRequiredMusicToolComponent, CP14CastMagicEffectAttemptEvent>(OnMusicCheck);
     }
 
     private void OnStartCollide(Entity<CP14SpellEffectOnCollideComponent> ent, ref StartCollideEvent args)
@@ -123,7 +120,7 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         }
     }
 
-    private void OnSpellSpoken(Entity<CP14MagicEffectVerbalAspectComponent> ent, ref CP14SpellSpeechEvent args)
+    private void OnSpellSpoken(Entity<CP14ActionSpeakingComponent> ent, ref CP14ActionSpeechEvent args)
     {
         if (args.Performer is not null && args.Speech is not null)
             _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, args.Emote ? InGameICChatType.Emote : InGameICChatType.Speak, true);
@@ -140,51 +137,5 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
     {
         QueueDel(ent.Comp.SpawnedEntity);
         ent.Comp.SpawnedEntity = null;
-    }
-
-    private void OnManaConsume(Entity<CP14MagicEffectManaCostComponent> ent, ref CP14MagicEffectConsumeResourceEvent args)
-    {
-        if (!TryComp<CP14MagicEffectComponent>(ent, out var magicEffect))
-            return;
-
-        var requiredMana = CalculateManacost(ent, args.Performer);
-
-        //First - used object
-        if (magicEffect.SpellStorage is not null && TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicStorage))
-        {
-            var spellEv = new CP14SpellFromSpellStorageUsedEvent(args.Performer, (ent, magicEffect), requiredMana);
-            RaiseLocalEvent(magicEffect.SpellStorage.Value, ref spellEv);
-
-            _magicEnergy.ChangeEnergy((magicEffect.SpellStorage.Value, magicStorage), -requiredMana, out var changedEnergy, out var overloadedEnergy, safe: false);
-            requiredMana -= FixedPoint2.Abs(changedEnergy + overloadedEnergy);
-        }
-
-        //Second - action user
-        if (requiredMana > 0 &&
-            TryComp<CP14MagicEnergyContainerComponent>(args.Performer, out var playerMana))
-            _magicEnergy.ChangeEnergy((args.Performer.Value, playerMana), -requiredMana, out _, out _, safe: false);
-    }
-
-    private void OnMusicCheck(Entity<CP14MagicEffectRequiredMusicToolComponent> ent, ref CP14CastMagicEffectAttemptEvent args)
-    {
-        var passed = false;
-        var query = EntityQueryEnumerator<ActiveInstrumentComponent, InstrumentComponent>();
-        while (query.MoveNext(out var uid, out var active, out var instrument))
-        {
-            if (!instrument.Playing)
-                continue;
-
-            if (Transform(uid).ParentUid != args.Performer)
-                continue;
-
-            passed = true;
-            break;
-        }
-
-        if (passed)
-            return;
-
-        args.PushReason(Loc.GetString("cp14-magic-music-aspect"));
-        args.Cancel();
     }
 }

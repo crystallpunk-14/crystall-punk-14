@@ -7,10 +7,9 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/water.rsi
     state: water_creation
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
   - type: CP14MagicEffect
-    magicType: Water
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
@@ -18,7 +17,7 @@
     - !type:CP14SpellSpawnInHandEntity
       spawns:
       - CP14LiquidDropWater
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneWaterCreation
   - type: Action
@@ -57,7 +56,6 @@
   components:
   - type: Item
     size: Ginormous
-  - type: BadFood
   - type: SolutionContainerManager
     solutions:
       drop:
@@ -101,10 +99,9 @@
         Brute: 0.016 # ~ 1 minute
   - type: Damageable
     damageContainer: Biological
-  - type: Food
+  - type: Edible
+    edible: Drink
     solution: drop
-    useSound: /Audio/Items/drink.ogg
-    eatMessage: drink-component-try-use-drink-success-slurp
     delay: 0.5
     forceFeedDelay: 1.5
   - type: ExaminableSolution

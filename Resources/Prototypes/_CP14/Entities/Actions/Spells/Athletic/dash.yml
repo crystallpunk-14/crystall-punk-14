@@ -4,8 +4,8 @@
   name: Dash
   description: You make a quick dash to the chosen position to quickly close the distance or dodge danger.
   components:
-  - type: CP14MagicEffectStaminaCost
-    stamina: 40
+  - type: CP14ActionStaminaCost
+    stamina: 20
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellDash

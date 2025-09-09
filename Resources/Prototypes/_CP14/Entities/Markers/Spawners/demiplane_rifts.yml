@@ -100,6 +100,20 @@
 
 - type: entity
   parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSpineguard
+  suffix: 1-2 spineguards
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 2
+      children:
+      - id: CP14MobMonsterSpineguard
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
   id: CP14MobGroupSpawnerRabbits
   suffix: 2-3 Rabbits
   components:
@@ -213,7 +227,7 @@
 - type: entity
   parent: CP14BaseMobGroupSpawner
   id: CP14MobGroupSpawnerFlem
-  suffix: 2-3 Flems
+  suffix: 1-3 Flems
   components:
   - type: EntityTableSpawner
     deleteSpawnerAfterSpawn: false
@@ -223,3 +237,17 @@
         range: 1, 3
       children:
       - id: CP14MobMonsterFlem
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerCackle
+  suffix: 2-3 Cackles
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 2, 3
+      children:
+      - id: CP14MobMonsterCackle

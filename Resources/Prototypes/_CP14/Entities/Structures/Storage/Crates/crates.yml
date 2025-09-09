@@ -60,7 +60,7 @@
         mask:
         - MachineMask
         layer:
-        - WallLayer
+        - MachineLayer
   - type: Storage
     grid:
     - 0,0,5,5
@@ -78,7 +78,7 @@
     sprite: _CP14/Structures/Storage/Crates/large_wooden_crate.rsi
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -111,7 +111,7 @@
     sprite: _CP14/Structures/Storage/Crates/small_wooden_crate.rsi
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -131,4 +131,3 @@
   - type: Construction
     graph: CP14SmallWoodenCrate
     node: CP14SmallWoodenCrate
-

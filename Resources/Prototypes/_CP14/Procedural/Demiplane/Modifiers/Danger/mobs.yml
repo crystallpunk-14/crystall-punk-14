@@ -95,7 +95,7 @@
     min: 0
     max: 2
   name: cp14-modifier-flem
-  generationWeight: 0.33
+  generationWeight: 0.05
   categories:
     Danger: 0.25
   requiredTags:
@@ -126,6 +126,23 @@
       count: 6
       minGroupSize: 1
       maxGroupSize: 3
+
+- type: cp14LocationModifier
+  id: EnemySpineguard
+  levels:
+    min: 2
+    max: 7
+  name: cp14-modifier-spineguard
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+  - !type:CP14OreDunGen
+    entity: CP14MobMonsterSpineguard
+    count: 5
+    minGroupSize: 1
+    maxGroupSize: 2
 
 - type: cp14LocationModifier
   id: EnemyIceSpectre
@@ -304,8 +321,8 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideFlyagaric
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
 
 - type: cp14LocationModifier
   id: MyconideLumish
@@ -320,5 +337,25 @@
     - !type:CP14OreDunGen
       entity: CP14MobMonsterMyconideLumish
       count: 5
-      minGroupSize: 7
-      maxGroupSize: 12
+      minGroupSize: 5
+      maxGroupSize: 9
+
+- type: cp14LocationModifier
+  id: EnemyCackle
+  levels:
+    min: 2
+    max: 5
+  name: cp14-modifier-cackle
+  generationWeight: 0.05
+  categories:
+    Danger: 0.3
+  requiredTags:
+  - CP14DemiplaneOpenSky
+  blacklistTags:
+  - CP14DemiplaneCold
+  layers:
+  - !type:CP14OreDunGen
+    entity: CP14MobMonsterCackle
+    count: 4
+    minGroupSize: 1
+    maxGroupSize: 3

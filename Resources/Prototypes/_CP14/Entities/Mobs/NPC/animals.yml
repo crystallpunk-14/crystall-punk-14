@@ -164,6 +164,9 @@
     - id: CP14Leather1
       amount: 1
       maxAmount: 3
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 3
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -179,8 +182,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   id: CP14MobBoar
@@ -224,6 +225,9 @@
     - id: CP14CheapFur
       amount: 1
       prob: 0.25
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 4
   - type: Reproductive
     partnerWhitelist:
       tags:
@@ -244,8 +248,6 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: StealTarget
-    stealGroup: CP14Boar
 
 - type: entity
   name: frog
@@ -441,6 +443,9 @@
       amount: 1
       maxAmount: 5
       prob: 0.3
+    - id: CP14Bone1
+      amount: 1
+      maxAmount: 2
   - type: Bloodstream
     bloodMaxVolume: 150
     bloodReagent: CP14BloodAnimal
@@ -533,6 +538,9 @@
       prob: 0.5
     - id: CP14GoodFur
       amount: 1
+    - id: CP14Bone1
+      amount: 8
+      maxAmount: 10
   - type: Bloodstream
     bloodMaxVolume: 350
     bloodReagent: CP14BloodAnimal

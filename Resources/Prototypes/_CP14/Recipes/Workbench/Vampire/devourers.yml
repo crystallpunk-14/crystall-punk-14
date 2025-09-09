@@ -1,0 +1,30 @@
+- type: CP14Recipe
+  id: CP14ClothingMaskVampireVoiceDevourers
+  tag: CP14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateDevourers
+  requirements:
+  - !type:StackResource
+    stack: CP14ThinLeather
+    count: 2
+  result: CP14ClothingMaskVampireVoiceDevourers
+  resultCount: 1
+
+- type: CP14Recipe
+  id: CP14ClothingCloakVampireDevourers
+  tag: CP14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateDevourers
+  requirements:
+  - !type:StackResource
+    stack: CP14Cloth
+    count: 4
+  - !type:StackResource
+    stack: CP14BloodEssence
+    count: 1
+  result: CP14ClothingCloakVampireDevourers
+  resultCount: 1

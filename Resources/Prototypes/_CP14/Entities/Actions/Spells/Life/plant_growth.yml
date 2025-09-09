@@ -6,12 +6,12 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    magicType: Life
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
       spawns:
       - CP14ImpactEffectCureWounds
     - !type:CP14SpellApplyEntityEffect
@@ -33,17 +33,17 @@
             Slash: -1
       - !type:SatiateThirst
         factor: 3
+      - !type:SatiateHunger
+        factor: 3
         conditions:
         - !type:OrganType
           type: CP14Vampire
           shouldHave: false
-      - !type:SatiateHunger
-        factor: 3
       - !type:CP14PlantResourceModify
         energy: 3
         resourse: 3
       - !type:Jitter
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Plantae durant..."
   - type: CP14MagicEffectCastingVisual
     proto: CP14RunePlantGrowth
@@ -69,7 +69,7 @@
   id: CP14ActionSpellPlantGrowthSilva
   name: Blessing of silvas
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 3
 
 # Scrolls

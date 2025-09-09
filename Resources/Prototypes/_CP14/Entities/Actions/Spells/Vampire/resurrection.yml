@@ -1,0 +1,90 @@
+- type: entity
+  id: CP14ActionSpellVampireResurrection
+  parent: CP14ActionSpellBase
+  name: Resurrection
+  description: You're trying to put the soul back into the body.
+  components:
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.7
+  - type: CP14ActionManaCost
+    manaCost: 50
+  - type: CP14MagicEffectVampire
+  - type: CP14ActionSkillPointCost
+    skillPoint: Blood
+    count: 1
+  - type: CP14ActionTargetMobStatusRequired
+    allowedStates:
+    - Dead
+  - type: CP14MagicEffect
+    telegraphyEffects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
+      spawns:
+      - CP14ImpactEffectBloodEssenceInverse
+    effects:
+    - !type:CP14SpellSpawnEntityOnTarget
+      clientside: true
+      spawns:
+      - CP14ImpactEffectBloodEssence2
+    - !type:CP14SpellResurrectionEffect
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:ChemVomit
+        probability: 0.25
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -500
+            Bloodloss: -100
+      - !type:Jitter
+  - type: CP14ActionSpeaking
+    startSpeech: "Redi animam meam..."
+    endSpeech: "Eu rezei por ti"
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneVampireResurrection
+  - type: Action
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CP14/Effects/ritual_end.ogg
+    icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: resurrection
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:CP14DelayedEntityTargetActionEvent
+      cooldown: 180
+      castDelay: 16
+      breakOnMove: true
+
+- type: entity
+  id: CP14RuneVampireResurrection
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 16
+  - type: LightFade
+    duration: 10
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#d60032"
+      shader: unshaded
+    - state: medium_circle
+      color: "#d60032"
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_CP14/Effects/ritual_begin.ogg

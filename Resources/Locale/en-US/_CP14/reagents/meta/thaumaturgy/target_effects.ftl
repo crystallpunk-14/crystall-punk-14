@@ -87,3 +87,6 @@ cp14-reagent-desc-basic-sleep = Dangerous substance, even in small doses, that s
 
 cp14-reagent-name-basic-unsleep = Awakening solution
 cp14-reagent-desc-basic-unsleep = A substance that stimulates the body and instantly brings it out of any sleep.
+
+cp14-reagent-name-basic-confuse-aura = Aura concealment solution
+cp14-reagent-desc-basic-confuse-aura = A substance that temporarily alters your magical aura.

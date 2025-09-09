@@ -1,10 +1,10 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Nutrition.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared._CP14.Temperature;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Maps;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Smoking;

@@ -1,6 +1,7 @@
 - type: entity
   id: CP14ActionToggleNightVision
   name: Toggle Night Vision
+  parent: BaseMentalAction
   description: You begin to see the world in a special way that allows you to see even in total darkness.
   components:
   - type: Action
@@ -23,6 +24,35 @@
     softness: 10
     color: "#ffa38c"
     netsync: false
-    #mask: /Textures/_CP14/Effects/LightMasks/crystal_cone.png
+    autoRot: true
+
+- type: entity
+  id: CP14ActionToggleNightVisionVampire
+  name: Toggle Night Vision
+  parent: BaseMentalAction
+  description: You begin to see the world in a special way that allows you to see even in total darkness.
+  components:
+  - type: Action
+    icon: 
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: night_vision
+    clientExclusive: true
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:CP14ToggleNightVisionEvent
+
+- type: entity
+  id: CP14NightVisionVampire
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 6
+    energy: 2
+    softness: 10
+    color: "#fc1e26"
+    netsync: false
     autoRot: true
 

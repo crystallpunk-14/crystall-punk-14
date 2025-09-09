@@ -7,10 +7,11 @@
   startingGear: CP14GuardGear
   icon: "CP14JobIconGuard"
   supervisors: cp14-job-supervisors-guard-commander
+  canBeAntag: false
   special:
-    - !type:CP14LearnSkillsSpecial
-      skills:
-      - SwordMastery
+    #- !type:CP14LearnSkillsSpecial
+    #  skills:
+    #  - SwordMastery
     - !type:AddComponentSpecial
       components:
       - type: CP14SalaryCounter

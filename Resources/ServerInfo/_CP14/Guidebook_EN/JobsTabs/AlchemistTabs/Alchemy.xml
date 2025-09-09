@@ -72,10 +72,6 @@
     <GuideEntityEmbed Entity="CP14EssenceCollector"/>
   </Box>
 
-  ## Random Reaction Generation
-
-  Beyond fixed recipes, some reactions have random outcomes generated at round start. You'll need to experiment to discover results.
-
   ## Dyes
 
   Alchemists can create dyes for coloring fabrics:

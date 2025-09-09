@@ -9,3 +9,5 @@ cp14-trade-faction-butchers = Союз мастеровых мясников
 cp14-trade-faction-dairy = Молочная ферма 'Златовымя'
 cp14-trade-faction-tailors = Гильдия портных 'Шелк и игла'
 cp14-trade-faction-guard = Имперская стража
+cp14-trade-faction-vampire-market = Вампирское логово
+cp14-trade-faction-helmir-child = Хельмировы потомки

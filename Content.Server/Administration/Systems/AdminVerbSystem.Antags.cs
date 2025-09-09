@@ -29,9 +29,15 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultChangelingRule = "Changeling";
+    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
 
-    private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
+    //CP14
+    private static readonly EntProtoId CP14VampireUnnameable = "CP14GameRuleVampireClanUnnameable";
+    private static readonly EntProtoId CP14VampireDevourers = "CP14GameRuleVampireClanDevourers";
+    private static readonly EntProtoId CP14VampireNightChildrens = "CP14GameRuleVampireClanNightChildrens";
+    //CP14 end
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -49,6 +55,48 @@ public sealed partial class AdminVerbSystem
 
         var targetPlayer = targetActor.PlayerSession;
 
+        Verb vampire3 = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-night-childrens"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "NightChildrens"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireNightChildrens);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire3);
+
+        Verb vampire2 = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-devourers"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "Devourers"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireDevourers);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire2);
+
+        Verb vampire1 = new()
+        {
+            Text = Loc.GetString("cp14-admin-verb-text-make-vampire") + ": " + Loc.GetString("cp14-vampire-fraction-name-unnameable"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CP14/Interface/Misc/vampire_icons.rsi"), "Unnameable"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CP14VampireRuleComponent>(targetPlayer, CP14VampireUnnameable);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("cp14-admin-verb-make-vampire"),
+        };
+        args.Verbs.Add(vampire1);
+
         /* CP14 disable default antags
         var traitorName = Loc.GetString("admin-verb-text-make-traitor");
         Verb traitor = new()
@@ -61,7 +109,7 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
@@ -155,6 +203,21 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", thiefName, Loc.GetString("admin-verb-make-thief")),
         };
         args.Verbs.Add(thief);
+
+        var changelingName = Loc.GetString("admin-verb-text-make-changeling");
+        Verb changeling = new()
+        {
+            Text = changelingName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Weapons/Melee/armblade.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, DefaultChangelingRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", changelingName, Loc.GetString("admin-verb-make-changeling")),
+        };
+        args.Verbs.Add(changeling);
 
         var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
         Verb paradox = new()

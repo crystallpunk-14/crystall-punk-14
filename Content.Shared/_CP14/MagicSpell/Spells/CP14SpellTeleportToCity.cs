@@ -21,7 +21,6 @@ public sealed partial class CP14SpellTeleportToCity : CP14SpellEffect
         if (net.IsClient)
             return;
 
-        var transform = entManager.System<SharedTransformSystem>();
         var random = IoCManager.Resolve<IRobustRandom>();
         var linkSys = entManager.System<LinkedEntitySystem>();
         var query = entManager.EntityQueryEnumerator<CP14DemiplaneNavigationMapComponent, TransformComponent>();

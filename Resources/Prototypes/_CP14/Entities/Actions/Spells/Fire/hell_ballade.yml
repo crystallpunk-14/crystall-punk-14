@@ -9,10 +9,9 @@
     state: fire_music
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 8
   - type: CP14MagicEffect
-    magicType: Fire
     effects:
     - !type:CP14SpellArea
       range: 3
@@ -32,10 +31,10 @@
         - !type:AdjustTemperature
           amount: 500
         - !type:Ignite
-  - type: CP14MagicEffectRequiredMusicTool
+  - type: CP14ActionRequiredMusicTool
   - type: CP14MagicEffectCastingVisual
     proto: CP14RuneHellBallade
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
