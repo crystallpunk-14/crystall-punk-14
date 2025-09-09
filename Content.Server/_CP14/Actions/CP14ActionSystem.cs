@@ -1,3 +1,4 @@
+using Content.Server.Chat.Systems;
 using Content.Server.Instruments;
 using Content.Shared._CP14.Actions;
 using Content.Shared._CP14.Actions.Components;
@@ -8,9 +9,12 @@ namespace Content.Server._CP14.Actions;
 
 public sealed partial class CP14ActionSystem : CP14SharedActionSystem
 {
+    [Dependency] private readonly ChatSystem _chat = default!;
+
     public override void Initialize()
     {
         base.Initialize();
+        InitializePerformed();
 
         SubscribeLocalEvent<CP14ActionRequiredMusicToolComponent, ActionAttemptEvent>(OnActionMusicAttempt);
     }

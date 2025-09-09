@@ -1,21 +1,14 @@
-using System.Text;
 using Content.Shared._CP14.Actions.Components;
-using Content.Shared._CP14.MagicEnergy;
-using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared._CP14.MagicVision;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
-using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Popups;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.MagicSpell;
@@ -26,19 +19,12 @@ namespace Content.Shared._CP14.MagicSpell;
 public abstract partial class CP14SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly CP14SharedMagicVisionSystem _magicVision = default!;
     [Dependency] private readonly INetManager _net = default!;
 
-    private EntityQuery<CP14MagicEnergyContainerComponent> _magicContainerQuery;
     private EntityQuery<CP14MagicEffectComponent> _magicEffectQuery;
 
     public override void Initialize()
@@ -50,7 +36,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         InitializeChecks();
         InitializeSlowdown();
 
-        _magicContainerQuery = GetEntityQuery<CP14MagicEnergyContainerComponent>();
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();
 
         SubscribeLocalEvent<CP14MagicEffectComponent, ComponentShutdown>(OnMagicEffectShutdown);
@@ -120,9 +105,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
     {
         if (!_timing.IsFirstTimePredicted)
             return;
-
-        var ev = new CP14MagicEffectConsumeResourceEvent(args.User);
-        RaiseLocalEvent(ent, ref ev);
 
         foreach (var effect in ent.Comp.Effects)
         {

@@ -27,7 +27,7 @@
         damage:
           types:
             Blunt: 5
-  - type: CP14MagicEffectEmoting
+  - type: CP14ActionEmoting
     startEmote: cp14-kick-emote-start
     endEmote: cp14-kick-emote
   - type: CP14ActionDangerous

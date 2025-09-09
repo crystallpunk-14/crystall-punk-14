@@ -61,31 +61,14 @@ public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
     }
 }
 
-/// <summary>
-/// is invoked only if the spell has been successfully cast
-/// </summary>
 [ByRefEvent]
-public sealed class CP14MagicEffectConsumeResourceEvent : EntityEventArgs
+public sealed class CP14SpellFromSpellStorageUsedEvent(
+    EntityUid? performer,
+    EntityUid? action,
+    FixedPoint2 manacost)
+    : EntityEventArgs
 {
-    public EntityUid? Performer { get; init; }
-
-    public CP14MagicEffectConsumeResourceEvent(EntityUid? performer)
-    {
-        Performer = performer;
-    }
-}
-
-[ByRefEvent]
-public sealed class CP14SpellFromSpellStorageUsedEvent : EntityEventArgs
-{
-    public EntityUid? Performer { get; init; }
-    public Entity<CP14MagicEffectComponent> Action { get; init; }
-    public FixedPoint2 Manacost { get; init; }
-
-    public CP14SpellFromSpellStorageUsedEvent(EntityUid? performer, Entity<CP14MagicEffectComponent> action, FixedPoint2 manacost)
-    {
-        Performer = performer;
-        Action = action;
-        Manacost = manacost;
-    }
+    public EntityUid? Performer { get; init; } = performer;
+    public EntityUid? Action { get; init; } = action;
+    public FixedPoint2 Manacost { get; init; } = manacost;
 }
