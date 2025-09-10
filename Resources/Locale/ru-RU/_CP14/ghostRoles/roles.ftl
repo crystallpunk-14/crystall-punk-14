@@ -7,5 +7,8 @@ cp14-ghost-role-information-description-lurker = Дух ночи и голода
 cp14-ghost-role-information-name-raid-undead = Рейд нежити
 cp14-ghost-role-information-description-raid-undead = Возглавьте атаку на город силами мертвых. Уничтожьте кристалл связи с демипланами любой ценой.
 
+cp14-ghost-role-information-name-rat = Крыса
+cp14-ghost-role-information-description-rat = Крыса чести. Избавьте тавернщиков от тяжести лишней еды или присоединитесь к группе авантюристов в роли бронированного оруженосца.
+
 cp14-ghost-role-information-name-bone-hound = Костяная гончая
 cp14-ghost-role-information-description-bone-hound = Костяная гончая, созданная с помощью магии некромантии, обычно вызываемая магами скелетами для формирования стаи охотников. Подчиняется скелету, который его вызвал.

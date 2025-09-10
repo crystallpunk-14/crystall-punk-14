@@ -2010,3 +2010,47 @@
   id: 8247
   time: '2025-09-07T23:45:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1717
+- author: Nimfar11
+  changes:
+  - message: Russian translation update
+    type: Add
+  id: 8248
+  time: '2025-09-08T14:32:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1719
+- author: TheShuEd
+  changes:
+  - message: Upstream sync (1 september)
+    type: Add
+  id: 8249
+  time: '2025-09-08T11:04:48.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1752
+- author: TheShuEd
+  changes:
+  - message: Upstream sync (18 august)
+    type: Add
+  id: 8250
+  time: '2025-09-08T10:00:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1708
+- author: Nimfar11
+  changes:
+  - message: Added messy drinker carcats.
+    type: Add
+  id: 8251
+  time: '2025-09-09T07:44:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1756
+- author: Viator-MV
+  changes:
+  - message: Added guards and guild to Venicialis!
+    type: Add
+  id: 8252
+  time: '2025-09-09T22:32:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1754
+- author: 4g10w
+  changes:
+  - message: Rat (+ghost role)
+    type: Add
+  - message: Rat armor (+recipe)
+    type: Add
+  id: 8253
+  time: '2025-09-10T08:31:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1675

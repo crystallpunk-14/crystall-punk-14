@@ -1,0 +1,20 @@
+- type: inventoryTemplate
+  id: CP14Rat
+  slots:
+    - name: outerClothing
+      slotTexture: suit
+      slotFlags: OUTERCLOTHING
+      uiWindowPos: 0,1
+      strippingWindowPos: 1,1
+      displayName: Armor
+      whitelist:
+        tags:
+          - CP14RatWearable
+
+    # Little rat cloak might be cute idk
+    # - name: cloak
+    #   slotTexture: cloak
+    #   slotFlags: CLOAK
+    #   uiWindowPos: 0,2
+    #   strippingWindowPos: 1,2
+    #   displayName: Cloak
