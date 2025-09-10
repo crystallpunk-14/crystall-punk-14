@@ -2045,3 +2045,12 @@
   id: 8252
   time: '2025-09-09T22:32:49.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1754
+- author: 4g10w
+  changes:
+  - message: Rat (+ghost role)
+    type: Add
+  - message: Rat armor (+recipe)
+    type: Add
+  id: 8253
+  time: '2025-09-10T08:31:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1675
