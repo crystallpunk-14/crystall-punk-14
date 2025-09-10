@@ -2054,3 +2054,14 @@
   id: 8253
   time: '2025-09-10T08:31:44.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1675
+- author: TheShuEd
+  changes:
+  - message: Carcats no more have innate T1 and T2 athletic by default
+    type: Remove
+  - message: Second wind ability remove stun status effect again
+    type: Fix
+  - message: Cooking fixed, and works again
+    type: Fix
+  id: 8254
+  time: '2025-09-10T12:51:16.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1761
