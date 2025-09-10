@@ -611,6 +611,8 @@
   - type: Food
   - type: Thirst
   - type: Hunger
+  - type: Body
+    prototype: null
   - type: SolutionContainerManager
     solutions:
       food:
@@ -631,6 +633,11 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: NoSlip
+  - type: Slippery
+  - type: StepTrigger
+    requiredTriggeredSpeed: 1
+  - type: TriggerOnStepTrigger
+  - type: GibOnTrigger
   - type: Destructible
     thresholds:
     - trigger:
