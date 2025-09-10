@@ -2072,3 +2072,20 @@
   id: 8255
   time: '2025-09-10T15:39:23.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1762
+- author: TheShuEd
+  changes:
+  - message: Fixed venicialis demiplanes not spawned around city
+    type: Fix
+  - message: Fixed Cash converter extraction icons
+    type: Fix
+  - message: Crawling works again
+    type: Fix
+  - message: The energy level of magical items is now visible in the status window
+      next to the hand slot.
+    type: Add
+  - message: The sequence of teeth on keys is now visible in the status window next
+      to the hand slot.
+    type: Add
+  id: 8256
+  time: '2025-09-10T21:22:22.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1763
