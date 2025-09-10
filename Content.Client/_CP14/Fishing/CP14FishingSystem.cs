@@ -1,10 +1,15 @@
 using System.Numerics;
+using Content.Client.Hands.Systems;
+using Content.Client.Interactable;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Screens;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
+using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
+using Robust.Client;
 using Robust.Client.Graphics;
+using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -17,6 +22,11 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private readonly HandsSystem _handsSystem = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+    private Popup? _fishingPopup;
+    private EntityUid? _fishingRod;
 
     public override void Initialize()
     {
@@ -25,8 +35,16 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         SubscribeLocalEvent<CP14FishingRodComponent, AfterInteractEvent>(OnInteract);
     }
 
+    public override void Update(float deltaTime)
+    {
+        base.Update(deltaTime);
+    }
+
     private void OnInteract(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
     {
+        if (_fishingPopup is not null)
+            return;
+
         if (args.Handled)
             return;
 
@@ -36,14 +54,12 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!TryComp<CP14FishingPondComponent>(args.Target, out var pond))
             return;
 
-        if (component.FishingProcess)
-            return;
-
         OpenFishingPopup(uid, component, args);
     }
 
     private void OpenFishingPopup(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
     {
+        _fishingRod = uid;
         // Getting data
         if (!_prototypeManager.Resolve(component.FishingMinigame, out var minigameStyle))
             return;
@@ -54,7 +70,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         var fishIcon = minigameStyle.FishIcon;
 
         // Generating popup
-        var fishingPopup = new Popup
+        _fishingPopup = new Popup
         {
             CloseOnClick = false,
             CloseOnEscape = false,
@@ -66,12 +82,12 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         switch (_userInterfaceManager.ActiveScreen)
         {
             case DefaultGameScreen gameScreen:
-                gameScreen.AddChild(fishingPopup);
+                gameScreen.AddChild(_fishingPopup);
                 screenCenter = gameScreen.Size / 2;
                 break;
 
             case SeparatedChatGameScreen gameScreen:
-                gameScreen.AddChild(fishingPopup);
+                gameScreen.AddChild(_fishingPopup);
                 screenCenter = gameScreen.Size / 2;
                 break;
         }
@@ -87,14 +103,14 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MinSize = new Vector2(background.Size.X, background.Size.Y),
             MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-        fishingPopup.AddChild(firstLayer);
+        _fishingPopup.AddChild(firstLayer);
 
         var secondLayer = new PanelContainer
         {
             MinSize = new Vector2(background.Size.X, background.Size.Y),
             MaxSize = new Vector2(background.Size.X, background.Size.Y),
         };
-        fishingPopup.AddChild(secondLayer);
+        _fishingPopup.AddChild(secondLayer);
 
         // Filling first layer
         var progressbarTexture = _resourceCache.GetTexture(progressbar.Texture);
@@ -109,7 +125,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MaxSize = new Vector2(progressbar.Size.X, progressbar.Size.Y),
             Margin = new Thickness(progressbar.Offset.X, 0, 0, progressbar.Offset.Y),
             HorizontalAlignment = Control.HAlignment.Left,
-            VerticalAlignment = Control.VAlignment.Bottom
+            VerticalAlignment = Control.VAlignment.Bottom,
         };
         firstLayer.AddChild(progressbarContainer);
 
@@ -124,7 +140,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MaxSize = new Vector2(floatUI.Size.X, floatUI.Size.Y),
             Margin = new Thickness(floatUI.Offset.X, 0, 0, floatUI.Offset.Y),
             HorizontalAlignment = Control.HAlignment.Left,
-            VerticalAlignment = Control.VAlignment.Bottom
+            VerticalAlignment = Control.VAlignment.Bottom,
         };
         firstLayer.AddChild(floatContainer);
 
@@ -140,10 +156,37 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             MaxSize = new Vector2(fishIcon.Size.X, fishIcon.Size.Y),
             Margin = new Thickness(fishIcon.Offset.X, 0, 0, fishIcon.Offset.Y),
             HorizontalAlignment = Control.HAlignment.Left,
-            VerticalAlignment = Control.VAlignment.Bottom
+            VerticalAlignment = Control.VAlignment.Bottom,
         };
         secondLayer.AddChild(fishIconContainer);
 
-        fishingPopup.Open(UIBox2.FromDimensions(new Vector2(screenCenter.X * 0.85f, screenCenter.Y * 0.65f), background.Size));
+        _fishingPopup.Open(UIBox2.FromDimensions(new Vector2(screenCenter.X - background.Size.X,
+                screenCenter.Y - background.Size.Y),
+                background.Size));
+    }
+
+    private void CloseFishingPopup()
+    {
+        if (_fishingPopup is null)
+            return;
+
+        switch (_userInterfaceManager.ActiveScreen)
+        {
+            case DefaultGameScreen gameScreen:
+                gameScreen.RemoveChild(_fishingPopup);
+                break;
+
+            case SeparatedChatGameScreen gameScreen:
+                gameScreen.RemoveChild(_fishingPopup);
+                break;
+        }
+
+        _fishingPopup = null;
+    }
+
+    private void EndFishingProcess()
+    {
+        _fishingRod = null;
+        CloseFishingPopup();
     }
 }
