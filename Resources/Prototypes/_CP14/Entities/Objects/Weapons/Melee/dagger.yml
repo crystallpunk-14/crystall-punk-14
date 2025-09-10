@@ -1,0 +1,88 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponDagger
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponSharp
+  - CP14BaseWeaponThrowable
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: EmbeddableProjectile
+    offset: -0.15,-0.15
+    removalTime: 1.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 4
+        Piercing: 8
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    autoAttack: true
+    attackRate: 2
+    range: 1
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 2
+        Piercing: 3
+    animation: CP14WeaponArcThrust
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.15
+    cPAnimationOffset: 0.75
+  - type: Clothing
+    slots:
+    - belt
+    breakOnMove: false
+    equipDelay: 0.5
+    unequipDelay: 0.5
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerIron
+  name: iron dagger
+  description: A standard dagger made of iron.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerHatchet
+  name: hatchet
+  description: A small hatchet, commonly used as a kitchen utensil for preparing food.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10
+
+- type: entity
+  parent: CP14BaseWeaponDagger
+  id: CP14WeaponDaggerSickle
+  name: sickle
+  description: A curved blade used for harvesting crops, but can be deadly in skilled hands.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/sickle.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10

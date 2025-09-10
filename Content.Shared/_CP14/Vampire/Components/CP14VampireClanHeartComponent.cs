@@ -32,7 +32,7 @@ public sealed partial class CP14VampireClanHeartComponent : Component
     public FixedPoint2 Level4 = 21f;
 
     [DataField]
-    public FixedPoint2 EssenceRegenPerLevel = 0.1f;
+    public FixedPoint2 EssenceRegen = 0.2f;
 
     [DataField]
     public TimeSpan RegenFrequency = TimeSpan.FromMinutes(1);

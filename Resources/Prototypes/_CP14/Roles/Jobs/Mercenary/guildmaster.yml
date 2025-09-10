@@ -1,6 +1,6 @@
 - type: job
   id: CP14Guildmaster
-  setPreference: false
+  setPreference: true
   name: cp14-job-name-guildmaster
   description: cp14-job-desc-guildmaster
   playTimeTracker: CP14JobGuildmaster
@@ -10,21 +10,19 @@
   joinNotifyCrew: true
   canBeAntag: false
   supervisors: cp14-job-supervisors-command
-  weight: 2
+  weight: 3
   requirements:
-    - !type:RoleTimeRequirement
-      role: CP14JobBlacksmith
-      time: 3600 # 1 hours
-    - !type:RoleTimeRequirement
-      role: CP14JobAlchemist
-      time: 3600 # 1 hours
+    #- !type:RoleTimeRequirement
+    #  role: CP14JobGuildWorker
+    #  time: 7200 # 2 hours
     - !type:RoleTimeRequirement
       role: CP14JobAdventurer
-      time: 7200 # 2 hours
-    - !type:TraitsRequirement
-      inverted: true
-      traits:
-      - CP14ManaWasting
+      time: 18000 # 5 hours
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: CP14SalaryCounter
+        salary: 200
 
 - type: startingGear
   id: CP14GuildmasterGear
@@ -34,5 +32,3 @@
   equipment:
     belt: CP14WalletFilledTest
     keys: CP14KeyRingGuildmaster
-    belt2: CP14ModularGuildmasterRapier
-

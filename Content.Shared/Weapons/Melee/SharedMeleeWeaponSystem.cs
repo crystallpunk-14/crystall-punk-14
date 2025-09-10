@@ -498,7 +498,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     LogImpact.Low,
                     $"{ToPrettyString(user):actor} melee attacked (light) using {ToPrettyString(meleeUid):tool} and missed");
             }
-            var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, null);
+            var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, null, heavy: false);
             RaiseLocalEvent(meleeUid, missEvent);
             _meleeSound.PlaySwingSound(user, meleeUid, component);
             return;
@@ -507,7 +507,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         // Sawmill.Debug($"Melee damage is {damage.Total} out of {component.Damage.Total}");
 
         // Raise event before doing damage so we can cancel damage if the event is handled
-        var hitEvent = new MeleeHitEvent(new List<EntityUid> { target.Value }, user, meleeUid, damage, null);
+        var hitEvent = new MeleeHitEvent(new List<EntityUid> { target.Value }, user, meleeUid, damage, null, heavy: false);
         RaiseLocalEvent(meleeUid, hitEvent);
 
         if (hitEvent.Handled)
@@ -600,7 +600,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                     LogImpact.Low,
                     $"{ToPrettyString(user):actor} melee attacked (heavy) using {ToPrettyString(meleeUid):tool} and missed");
             }
-            var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, direction);
+            var missEvent = new MeleeHitEvent(new List<EntityUid>(), user, meleeUid, damage, direction, heavy: true);
             RaiseLocalEvent(meleeUid, missEvent);
 
             // immediate audio feedback
@@ -649,7 +649,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         // Sawmill.Debug($"Melee damage is {damage.Total} out of {component.Damage.Total}");
 
         // Raise event before doing damage so we can cancel damage if the event is handled
-        var hitEvent = new MeleeHitEvent(targets, user, meleeUid, damage, direction);
+        var hitEvent = new MeleeHitEvent(targets, user, meleeUid, damage, direction, heavy: true);
         RaiseLocalEvent(meleeUid, hitEvent);
 
         if (hitEvent.Handled)

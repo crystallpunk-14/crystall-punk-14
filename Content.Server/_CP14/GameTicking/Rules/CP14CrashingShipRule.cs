@@ -5,6 +5,7 @@ using Content.Server.Shuttles.Events;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -42,13 +43,8 @@ public sealed class CP14CrashingShipRule : GameRuleSystem<CP14CrashingShipRuleCo
         base.Started(uid, component, gameRule, args);
 
         var station = _station.GetStations().First();
-        if (!TryComp<StationDataComponent>(station, out var stationData))
-        {
-            _sawmill.Error($"Station {station} does not have a StationDataComponent.");
-            return;
-        }
 
-        var largestStationGrid = _station.GetLargestGrid(stationData);
+        var largestStationGrid = _station.GetLargestGrid(station);
 
         if (largestStationGrid is null)
         {

@@ -9,6 +9,7 @@ using Content.Shared._CP14.Religion.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Eye;
 using Content.Shared.FixedPoint;
+using Content.Shared.Speech;
 using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Shared.Network;

@@ -104,9 +104,6 @@
     spawned:
     - id: CP14FoodMeatMonster
       amount: 1
-    - id: CP14ModularInlayQuartzWater
-      amount: 1
-      prob: 0.1
     - id: CP14ScrapLeather
       amount: 1
       maxAmount: 3
@@ -139,9 +136,6 @@
     spawned:
     - id: CP14FoodMeatMonster
       amount: 1
-    - id: CP14ModularInlayQuartzFire
-      amount: 1
-      prob: 0.1
     - id: CP14ScrapLeather
       amount: 1
       maxAmount: 3

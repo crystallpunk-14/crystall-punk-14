@@ -77,6 +77,17 @@
     product: CP14Wheat
     count: 3
 
+- type: cp14TradingPosition
+  id: CP14WeaponDaggerHatchet
+  faction: VictoriaGardens
+  uiPosition: 7
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Dagger/hatchet.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponDaggerHatchet
+    count: 3
+
 
 - type: cp14TradingPosition
   id: CP14FloorTileGrassBag

@@ -17,7 +17,7 @@
       - Dairy
     - !type:CP14LearnSkillsSpecial
       skills:
-      - CopperMelting
+      #- CopperMelting
       - AlchemyVision
 
 - type: startingGear

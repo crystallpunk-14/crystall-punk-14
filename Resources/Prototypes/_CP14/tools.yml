@@ -2,13 +2,12 @@
   id: CP14Digging
   name: cp14-tool-quality-digging-name
   toolName: cp14-tool-quality-digging-tool-name
-  spawn: CP14ModularIronShovel
-  icon: { sprite: _CP14/Objects/ModularTools/Blade/Shovel/metall_shovel.rsi, state: tool}
+  spawn: CP14WeaponShovelIron
+  icon: { sprite: _CP14/Objects/Weapons/Melee/Shovel/iron.rsi, state: icon}
 
-- type:  tool
+- type: tool
   id: CP14Hammering
   name: cp14-tool-quality-hammering-name
   toolName: cp14-tool-quality-hammering-tool-name
-  spawn: CP14ModularIronHammer
-  icon: { sprite: _CP14/Objects/ModularTools/Blade/Hammer/metall_hammer.rsi, state: tool}
-
+  spawn: CP14WeaponHammerIron
+  icon: { sprite: _CP14/Objects/Weapons/Melee/Hammer/iron.rsi, state: icon}
