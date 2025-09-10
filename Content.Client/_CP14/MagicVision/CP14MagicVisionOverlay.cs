@@ -44,8 +44,7 @@ public sealed class CP14MagicVisionOverlay : Overlay
 
         var curTime = _timing.CurTime;
         var timeLeft = (float)(curTime - StartOverlay).TotalSeconds;
-
-        CurrentPower = Math.Max(50f, 200f - (150f * Math.Min((float)(timeLeft / 3.0), 1.0f)));
+        CurrentPower = Math.Min(200f, 200f / Math.Max((float)timeLeft * 1.8f, 1.0f));
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -57,7 +56,7 @@ public sealed class CP14MagicVisionOverlay : Overlay
             return false;
 
         _visualScale = Math.Clamp(CurrentPower / PowerDivisor, 0.0f, 1.0f);
-        return _visualScale > 0;
+        return _visualScale >= 0;
     }
 
     protected override void Draw(in OverlayDrawArgs args)
