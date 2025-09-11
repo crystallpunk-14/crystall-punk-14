@@ -44,6 +44,7 @@ public sealed class CP14MagicVisionOverlay : Overlay
 
         var curTime = _timing.CurTime;
         var timeLeft = (float)(curTime - StartOverlay).TotalSeconds;
+
         CurrentPower = Math.Min(200f, 200f / Math.Max((float)timeLeft * 1.8f, 1.0f));
     }
 
