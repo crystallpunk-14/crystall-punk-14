@@ -25,9 +25,6 @@
       - !type:CP14ModularDisassembleBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: CP14ModularCraftStartPoint
-    startSlots:
-    - FishingRodShaft
   - type: MeleeWeapon
     angle: 45
     attackRate: 1
@@ -47,3 +44,17 @@
     slots:
     - neck
   - type: CP14FishingRod
+  - type: Input
+    context: "fishing"
+
+- type: entity
+  parent: BaseItem
+  id: CP14DefaultFishingFloat
+  name: Fishing float
+  description: Little floating ball.
+  suffix: DO NOT MAP
+  categories: [ ForkFiltered, DoNotMap]
+  components:
+    - type: Sprite
+      sprite: _CP14/Objects/Tools/float.rsi
+      state: float

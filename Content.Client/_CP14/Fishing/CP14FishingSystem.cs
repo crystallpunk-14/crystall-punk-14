@@ -1,65 +1,56 @@
 using System.Numerics;
+using Content.Client._CP14.Input;
 using Content.Client.Hands.Systems;
-using Content.Client.Interactable;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Screens;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
-using Content.Shared.Hands.Components;
+using Content.Shared._CP14.Input;
 using Content.Shared.Interaction;
 using Robust.Client;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Input;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Client._CP14.Fishing;
 
 public sealed class CP14FishingSystem : CP14SharedFishingSystem
 {
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly InputSystem _input = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private Popup? _fishingPopup;
-    private EntityUid? _fishingRod;
 
-    public override void Initialize()
+    public override void Update(float dt)
     {
-        base.Initialize();
+        base.Update(dt);
 
-        SubscribeLocalEvent<CP14FishingRodComponent, AfterInteractEvent>(OnInteract);
-    }
-
-    public override void Update(float deltaTime)
-    {
-        base.Update(deltaTime);
-    }
-
-    private void OnInteract(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
-    {
-        if (_fishingPopup is not null)
+        if (!_gameTiming.IsFirstTimePredicted)
             return;
 
-        if (args.Handled)
+        var heldUid = _handsSystem.GetActiveHandEntity();
+
+        if (!TryComp<CP14FishingRodComponent>(heldUid, out var fishingRodComponent))
             return;
 
-        if (!args.CanReach || args.Target is not { Valid: true })
+        if (!fishingRodComponent.FishCaught)
             return;
 
-        if (!TryComp<CP14FishingPondComponent>(args.Target, out var pond))
-            return;
-
-        OpenFishingPopup(uid, component, args);
+        var reeling = _input.CmdStates.GetState(CP14ContentKeyFunctions.CP14FishingAction) == BoundKeyState.Down;
     }
 
     private void OpenFishingPopup(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
     {
-        _fishingRod = uid;
         // Getting data
         if (!_prototypeManager.Resolve(component.FishingMinigame, out var minigameStyle))
             return;
@@ -182,11 +173,5 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         }
 
         _fishingPopup = null;
-    }
-
-    private void EndFishingProcess()
-    {
-        _fishingRod = null;
-        CloseFishingPopup();
     }
 }

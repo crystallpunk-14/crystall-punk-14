@@ -9,5 +9,6 @@ namespace Content.Shared._CP14.Input
         public static readonly BoundKeyFunction OpenBelt2 = "OpenBelt2";
         public static readonly BoundKeyFunction SmartEquipBelt2 = "SmartEquipBelt2";
         public static readonly BoundKeyFunction CP14OpenSkillMenu = "CP14OpenSkillMenu";
+        public static readonly BoundKeyFunction CP14FishingAction = "CP14FishingAction";
     }
 }

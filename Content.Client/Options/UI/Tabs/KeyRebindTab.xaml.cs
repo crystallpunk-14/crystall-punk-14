@@ -318,6 +318,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(CP14ContentKeyFunctions.CP14OpenSkillMenu);
             AddButton(CP14ContentKeyFunctions.OpenBelt2);
             AddButton(CP14ContentKeyFunctions.SmartEquipBelt2);
+            AddButton(CP14ContentKeyFunctions.CP14FishingAction);
             //CP14 end
 
             foreach (var control in _keyControls.Values)
