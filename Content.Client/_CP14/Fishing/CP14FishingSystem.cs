@@ -1,20 +1,19 @@
 using System.Numerics;
-using Content.Client._CP14.Input;
 using Content.Client.Hands.Systems;
+using Content.Client.Interactable;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Screens;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared._CP14.Input;
 using Content.Shared.Interaction;
-using Robust.Client;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
-using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -28,6 +27,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly InputSystem _input = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private Popup? _fishingPopup;
 
@@ -46,7 +46,11 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!fishingRodComponent.FishCaught)
             return;
 
+        if (_playerManager.LocalSession?.AttachedEntity is not { } player)
+            return;
+
         var reeling = _input.CmdStates.GetState(CP14ContentKeyFunctions.CP14FishingAction) == BoundKeyState.Down;
+        RaiseNetworkEvent(new FishingReelKeyMessage(player, reeling));
     }
 
     private void OpenFishingPopup(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)

@@ -1,3 +1,4 @@
+using Content.Server.Hands.Systems;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared.Interaction;
@@ -10,12 +11,14 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly HandsSystem _handsSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CP14FishingRodComponent, AfterInteractEvent>(OnInteract);
+        SubscribeNetworkEvent<FishingReelKeyMessage>(OnReelingMessage);
     }
 
     public override void Update(float delta)
@@ -37,8 +40,21 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         }
     }
 
+    private void OnReelingMessage(FishingReelKeyMessage msg)
+    {
+        var held = _handsSystem.GetActiveItem(msg.User);
+
+        if (!TryComp<CP14FishingRodComponent>(held, out var rodComponent))
+            return;
+
+        rodComponent.Reeling = msg.Reeling;
+    }
+
     private void OnInteract(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (args.Target is not { Valid: true })
             return;
 
@@ -51,6 +67,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!_interactionSystem.InRangeUnobstructed(uid, args.Target.Value, component.MaxFishingDistance))
             return;
 
+        args.Handled = true;
         CastFloat(uid, component, args.Target.Value);
     }
 

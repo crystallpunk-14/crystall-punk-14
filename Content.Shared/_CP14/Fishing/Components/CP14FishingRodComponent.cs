@@ -21,6 +21,9 @@ public sealed partial class CP14FishingRodComponent : Component
     [AutoNetworkedField]
     public bool FishCaught;
 
+    [AutoNetworkedField]
+    public bool Reeling;
+
     [DataField]
     public EntProtoId FloatPrototype = "CP14DefaultFishingFloat";
 
