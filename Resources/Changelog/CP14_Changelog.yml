@@ -2096,3 +2096,10 @@
   id: 8257
   time: '2025-09-11T09:33:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1765
+- author: Nimfar11
+  changes:
+  - message: Removes invisible fire traps from spawns in demiplanes.
+    type: Remove
+  id: 8258
+  time: '2025-09-12T14:24:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1768
