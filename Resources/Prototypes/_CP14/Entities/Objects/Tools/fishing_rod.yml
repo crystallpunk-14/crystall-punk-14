@@ -44,8 +44,6 @@
     slots:
     - neck
   - type: CP14FishingRod
-  - type: Input
-    context: "fishing"
 
 - type: entity
   parent: BaseItem
