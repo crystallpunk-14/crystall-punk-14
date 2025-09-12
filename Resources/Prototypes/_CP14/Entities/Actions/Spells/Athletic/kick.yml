@@ -18,7 +18,6 @@
   #  delay: 0.5
   - type: Action
     useDelay: 5
-    startDelay: true
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: kick

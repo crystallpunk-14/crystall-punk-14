@@ -4,25 +4,32 @@
   name: Sprint
   description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/physical.rsi
-    state: sprint
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 1.3
   - type: CP14ActionStaminaCost
     stamina: 1.5
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    needHand: false
+    breakOnHandChange: false
+    breakOnDropItem: false
+    requireCanInteract: false
+    distanceThreshold: 1.5
+    delay: 0.5
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14DustEffect
   - type: Action
+    useDelay: 2
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: sprint
   - type: InstantAction
-    event: !type:CP14ToggleableInstantActionEvent
-      effectFrequency: 0.2
-      cooldown: 2
-      castTime: 30
-      hidden: true
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14DustEffect
