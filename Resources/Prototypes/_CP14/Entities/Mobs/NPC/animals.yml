@@ -634,10 +634,13 @@
     normalState: Mouse_burning
   - type: NoSlip
   - type: Slippery
-  - type: StepTrigger # Set the chance of gib if you step on it when this feature appears.
+  - type: StepTrigger
     requiredTriggeredSpeed: 1
   - type: TriggerOnStepTrigger
+  - type: RandomChanceTriggerCondition
+    successChance: 0.3
   - type: GibOnTrigger
+  - type: ProtectedFromStepTriggers
   - type: Destructible
     thresholds:
     - trigger:
