@@ -5,7 +5,7 @@
   description: You focus on the target, mesmerizing and lulling it to sleep.
   components:
   - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.5
+    speedMultiplier: 0.0
   - type: CP14MagicEffectVampire
   - type: CP14ActionManaCost
     manaCost: 5
