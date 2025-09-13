@@ -19,13 +19,17 @@
     damageContainer: CP14Biological
     damageModifierSet: CP14Tiefling
   - type: PassiveDamage
-    damageCap: 0
+    damageCap: 80
     allowedStates:
     - Alive
-    - Critical
     damage:
       types:
-        Heat: -0.14 # Around 8 damage a minute healed
+        Heat: -0.14 # Around 8 damage a minute healed (9.6 with burn regeneration below)
+        CP14ManaDepletion: -0.05
+      groups:
+        Brute: -0.05
+        Burn: -0.02
+        Toxin: -0.03
   - type: CP14MagicEnergyDraw
     energy: 0.75
     delay: 3 # 5m to full restore
