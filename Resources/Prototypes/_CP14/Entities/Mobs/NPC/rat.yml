@@ -10,9 +10,9 @@
       task: RuminantHostileCompound
   - type: NpcFactionMember
     factions:
-    - CP14PeacefulAnimals
+    - CP14CityAnimals
   - type: NPCRetaliation
-    attackMemoryLength: 30
+    attackMemoryLength: 20
   - type: Sprite
     drawdepth: SmallMobs
     layers:
