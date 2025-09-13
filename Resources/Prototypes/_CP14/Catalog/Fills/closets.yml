@@ -118,3 +118,5 @@
       - id: CP14BookTieflingGambit
       - id: CP14GuidebookCooking
       - id: CP14SackFarmingSeedFull
+      - id: CP14SackFarmingSeedSnail
+        prob: 0.6

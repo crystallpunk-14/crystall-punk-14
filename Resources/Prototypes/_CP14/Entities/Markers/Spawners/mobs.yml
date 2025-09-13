@@ -105,6 +105,22 @@
     prototypes:
     - CP14MobSheep
 
+- type: entity
+  name: snail spawner
+  id: CP14SpawnMobSnail
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/snail.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSnail
+
 # Dino
 
 - type: entity
