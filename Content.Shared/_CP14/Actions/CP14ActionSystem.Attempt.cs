@@ -1,34 +1,24 @@
 using System.Linq;
 using Content.Shared._CP14.Actions.Components;
-using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
-using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
 using Content.Shared.SSDIndicator;
-using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Actions;
 
 public abstract partial class CP14SharedActionSystem
 {
-    [Dependency] private readonly SharedHandsSystem _hand = default!;
-    [Dependency] private readonly CP14SharedMagicEnergySystem _magicEnergy = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly CP14SharedReligionGodSystem _god = default!;
     private void InitializeAttempts()
     {
         SubscribeLocalEvent<CP14ActionFreeHandsRequiredComponent, ActionAttemptEvent>(OnSomaticActionAttempt);

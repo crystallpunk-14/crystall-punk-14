@@ -33,7 +33,7 @@
         damage:
           types:
             Blunt: 10
-  - type: CP14MagicEffectEmoting
+  - type: CP14ActionEmoting
     startEmote: cp14-kick-lurker-start
     endEmote: cp14-kick-lurker
   - type: CP14ActionDangerous
