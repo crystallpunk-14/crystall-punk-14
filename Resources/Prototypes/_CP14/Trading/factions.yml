@@ -62,3 +62,8 @@
   id: VampireMarket
   color: "#6b1934"
   name: cp14-trade-faction-vampire-market
+
+- type: cp14TradingFaction
+  id: GuildOrder
+  color: "#7e995c"
+  name: cp14-trade-faction-guild-order

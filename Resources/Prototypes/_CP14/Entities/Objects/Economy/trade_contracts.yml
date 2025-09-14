@@ -137,3 +137,14 @@
     state: helmir_child
   - type: CP14TradingContract
     faction: HelmirChild
+
+- type: entity
+  parent: CP14TradeContractBase
+  id: CP14TradeContractGuildOrder
+  description: A special trading contract with the Guild, where requests from across the Empire for special rare goods are left.
+  suffix: Guild order. DO NOT MAP
+  components:
+  - type: Sprite
+    state: guild_order
+  - type: CP14TradingContract
+    faction: GuildOrder

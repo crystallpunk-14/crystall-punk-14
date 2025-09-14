@@ -11,3 +11,4 @@ cp14-trade-faction-tailors = Гильдия портных 'Шелк и игла
 cp14-trade-faction-guard = Имперская стража
 cp14-trade-faction-vampire-market = Вампирское логово
 cp14-trade-faction-helmir-child = Хельмировы потомки
+cp14-trade-faction-guild-order = Гильдийский заказ

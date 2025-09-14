@@ -42,6 +42,9 @@
         },
         {
             "name": "tailors"
+        },
+        {
+            "name": "guild_order"
         }
     ]
 }

@@ -16,6 +16,9 @@
       components:
       - type: CP14SalaryCounter
         salary: 50
+    - !type:CP14AddTradingReputationSpecial
+      factions:
+      - GuildOrder
 
 - type: startingGear
   id: CP14GuildWorkerGear

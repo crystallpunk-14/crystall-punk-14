@@ -1,0 +1,9 @@
+- type: cp14TradingRequest
+  id: GuildOrderCrystalHeart
+  possibleFactions:
+  - GuildOrder
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14EnergyCrystalHeart
+    count: 1
+  additionalReward: 320
