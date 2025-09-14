@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseItem
+  id: CP14RuneFang
+  name: Giant fang
+  description: Giant fang, that seems was taken from some kind of dragon. Can be used to draw runes on runic stones.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/pens.rsi
+    state: pen
+  - type: Item
+    sprite: Objects/Misc/pens.rsi
+    heldPrefix: pen
+    size: Tiny
+    #TODO: change the sprites
+  - type: Tag
+    tags:
+    - Write
+    - Pen
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 25
+  - type: UseDelay
+    delay: 1.5
+  - type: CP14DrawingRuneTool
+  - type: CP14MagicEnergyContainer
+    energy: 50
+    maxEnergy: 50

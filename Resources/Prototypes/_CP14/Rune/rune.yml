@@ -1,0 +1,42 @@
+- type: entity
+  id: CP14RuneBase
+  parent: BaseItem
+  name: Runic stone
+  description: A strange piece of stone. It can be infused with mana to draw rune on it, that can give new abilities.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Bureaucracy/paper.rsi
+  - type: Item
+    size: Normal
+  - type: Appearance
+  - type: Damageable
+  - type: Tag
+    tags:
+    - CP14Rune
+  - type: CP14MagicEnergyContainer
+    energy: 0
+    maxEnergy: 100
+  - type: CP14MagicUnsafeDamage
+  - type: 
+  - type: StaticPrice
+    price: 5
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+
+- type: entity
+  id: CP14RuneDrawn
+  parent: CP14RuneBase
+  name: Infused runic stone
+  description: A strange piece of stone, that stores new magic ability.
+
+- type: entity
+  id: CP14RuneUsed
+  parent: CP14RuneBased
+  name: Used runic stone
+  description: It was a powerful rune once. Now, it's just a rock with some drawings on it.
