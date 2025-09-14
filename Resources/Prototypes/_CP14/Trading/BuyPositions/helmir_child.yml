@@ -154,3 +154,39 @@
     product: CP14BowCombat
     count: 1
   priceMarkup: 3
+
+- type: cp14TradingPosition
+  id: CP14ClothingOuterClothingChainmail
+  faction: HelmirChild
+  uiPosition: 16
+  priceMarkup: 3
+  icon:
+    sprite: _CP14/Clothing/OuterClothing/chainmail.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingOuterClothingChainmail
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ClothingOuterClothingCuirass
+  faction: HelmirChild
+  uiPosition: 17
+  priceMarkup: 3
+  icon:
+    sprite: _CP14/Clothing/OuterClothing/cuirass.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingOuterClothingCuirass
+    count: 1
+
+- type: cp14TradingPosition
+  id: CP14ClothingOuterClothingInfantryCuirass
+  faction: HelmirChild
+  uiPosition: 18
+  priceMarkup: 3
+  icon:
+    sprite: _CP14/Clothing/OuterClothing/infantry_cuirass.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14ClothingOuterClothingInfantryCuirass
+    count: 1

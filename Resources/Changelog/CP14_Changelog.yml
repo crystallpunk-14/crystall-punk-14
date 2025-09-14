@@ -2089,3 +2089,32 @@
   id: 8256
   time: '2025-09-10T21:22:22.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1763
+- author: KittyCat432
+  changes:
+  - message: Changed Thaumaturgy and Brad's merchant contracts to have better UI.
+    type: Tweak
+  id: 8257
+  time: '2025-09-11T09:33:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1765
+- author: Nimfar11
+  changes:
+  - message: Removes invisible fire traps from spawns in demiplanes.
+    type: Remove
+  id: 8258
+  time: '2025-09-12T14:24:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1768
+- author: oldschoolotaku
+  changes:
+  - message: Magic vision effect becomes weaker over time. It can be turned off via
+      "Reduced Motion" setting
+    type: Tweak
+  id: 8259
+  time: '2025-09-12T14:25:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1766
+- author: Nimfar11
+  changes:
+  - message: Returns three types of iron armour that can be purchased on the marketplace.
+    type: Add
+  id: 8260
+  time: '2025-09-13T12:22:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1770
