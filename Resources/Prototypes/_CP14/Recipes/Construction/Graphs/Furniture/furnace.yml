@@ -3,6 +3,8 @@
   start: start
   graph:
     - node: start
+      actions:
+      - !type:DestroyEntity {}
       edges:
         - to: CP14Furnace
           completed:
@@ -10,6 +12,17 @@
           steps:
             - material: CP14IronBar
               amount: 3
-              doAfter: 2
+              doAfter: 4
     - node: CP14Furnace
       entity: CP14Furnace
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 2
+        - tool: Prying
+          doAfter: 4
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14IronBar1
+          amount: 3

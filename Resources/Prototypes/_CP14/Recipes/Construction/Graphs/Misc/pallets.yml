@@ -13,3 +13,12 @@
               doAfter: 2
     - node: CP14WoodenPallet
       entity: CP14WoodenPallet
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 2
