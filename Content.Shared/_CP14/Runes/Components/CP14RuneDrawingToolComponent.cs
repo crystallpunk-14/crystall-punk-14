@@ -1,4 +1,4 @@
-﻿namespace Content.Shared._CP14.Runes;
+﻿namespace Content.Shared._CP14.Runes.Components;
 
 public sealed partial class CP14RuneDrawingToolComponent : Component
 {
@@ -7,4 +7,10 @@ public sealed partial class CP14RuneDrawingToolComponent : Component
     /// </summary>
     [DataField]
     public bool HasEnoughMana = true;
+
+    /// <summary>
+    /// What spell has been chosen
+    /// </summary>
+    [DataField]
+    public CP14RuneSpellComponent ChosenSpell;
 }
