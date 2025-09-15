@@ -15,6 +15,7 @@ public sealed class CP14DrawingRuneSystem : CP14SharedDrawingRuneSystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
 
     private Popup? _drawingPopup;
 
@@ -40,7 +41,16 @@ public sealed class CP14DrawingRuneSystem : CP14SharedDrawingRuneSystem
 
     }
 
-    private void CloseFishingPopup()
+    private void OpenPopup(CP14RuneDrawingToolComponent runeDrawingToolComponent, EntityManager heldEntity)
+    {
+        if (_drawingPopup != null)
+            return;
+
+
+        throw new NotImplementedException();
+    }
+
+    private void ClosePopup()
     {
         if (_drawingPopup is null)
             return;
