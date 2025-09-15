@@ -217,9 +217,11 @@
     injectOnly: false
     ignoreMobs: true
     ignoreClosed: false
-    minTransferAmount: 0.25
-    maxTransferAmount: 1
-    transferAmount: 0.25
+    transferAmounts:
+    - 0.25
+    - 0.5
+    - 1
+    currentTransferAmount: 0.25
     toggleState: 1 # draw
   - type: Sprite
     sprite: _CP14/Objects/Specific/Alchemy/dropper.rsi

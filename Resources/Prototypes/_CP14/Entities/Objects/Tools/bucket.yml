@@ -45,9 +45,11 @@
     injectOnly: false
     ignoreMobs: true
     ignoreClosed: false
-    minTransferAmount: 1
-    maxTransferAmount: 50
-    transferAmount: 50
+    transferAmounts:
+    - 10
+    - 25
+    - 50
+    currentTransferAmount: 50
     toggleState: 1 # draw
   - type: UserInterface
     interfaces:

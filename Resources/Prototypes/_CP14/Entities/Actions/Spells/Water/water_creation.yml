@@ -133,9 +133,9 @@
   - type: Injector
     solutionName: drop
     injectOnly: true
-    minTransferAmount: 10
-    maxTransferAmount: 10
-    transferAmount: 10
+    transferAmounts:
+    - 5
+    currentTransferAmount: 5
     toggleState: 0
 
 - type: entity
