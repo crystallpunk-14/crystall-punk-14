@@ -6,7 +6,7 @@
   sprites: CP14MobSilvaSprites
   markingLimits: CP14MobSilvaMarkingLimits
   dollPrototype: CP14MobSilvaDummy
-  skinColoration: VoxFeathers
+  skinColoration: CP14SilvasHues
   defaultSkinTone: "#6c741d"
   maleFirstNames: CP14_Names_Silva_Male_First
   femaleFirstNames: CP14_Names_Silva_Female_First
