@@ -42,7 +42,7 @@
         - to: CP14WallFrameWoodenSpruce
           steps:
             - tool: CP14Hammering
-              doAfter: 2
+              doAfter: 4
           completed:
             - !type:SpawnPrototype
               prototype: CP14SpruceWoodenPlanks1

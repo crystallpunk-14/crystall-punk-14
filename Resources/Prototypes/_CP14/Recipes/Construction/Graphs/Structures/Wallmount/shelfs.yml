@@ -13,6 +13,17 @@
               doAfter: 2
     - node: CP14WallmountBarShelfA
       entity: CP14WallmountBarShelfA
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 0.5
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 2
 
 - type: constructionGraph
   id: CP14WallmountBarShelfB
@@ -29,3 +40,14 @@
               doAfter: 2
     - node: CP14WallmountBarShelfB
       entity: CP14WallmountBarShelfB
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 0.5
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 2
