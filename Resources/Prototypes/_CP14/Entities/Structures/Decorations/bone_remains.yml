@@ -1,11 +1,21 @@
 - type: entity
   parent: BaseStructure
+  id: CP14BaseBoneStructure
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14Skeleton
+
+- type: entity
+  parent: CP14BaseBoneStructure
   id: CP14BaseBoneRemains
   name: bone remains
   description: The remains of bones have grown into the ground.
-  categories: [ ForkFiltered ]
   components:
-  - type: Clickable
   - type: Sprite
     noRot: true
     sprite: _CP14/Structures/Decoration/bone_remains.rsi
@@ -19,8 +29,6 @@
         bone_remains_1: ""
         bone_remains_2: ""
         bone_remains_3: ""
-  - type: Physics
-    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:
@@ -33,9 +41,6 @@
         - SlipLayer
         layer:
         - ItemMask
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: CP14Skeleton
   - type: FootstepModifier
     footstepSoundCollection:
       collection: CP14StepBones
@@ -59,11 +64,59 @@
             collection: CP14BoneCrack
 
 - type: entity
+  parent: CP14BaseBoneStructure
+  id: CP14BoneRemainsBoneHound
+  name: bone remains hound
+  description: The bones of a hound that died a long time ago... or very recently.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Mobs/Monster/bone_hound.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: dead
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14StepBones
+      params:
+        volume: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 50
+        mask:
+        - SlipLayer
+        layer:
+        - ItemMask
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 2
+              max: 4
+            CP14ClothingMaskBoneHornedMask:
+              min: 0
+              max: 1
+        - !type:PlaySoundBehavior
+          sound:
+            collection: CP14BoneCrack
+
+- type: entity
+  parent: CP14BaseBoneStructure
   id: CP14BoneSpine
-  parent: BaseStructure
   name: bone spine 
   description: The large bony torso of an unknown creature, as if it had been torn to pieces.
-  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     noRot: true
@@ -82,9 +135,6 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: CP14Skeleton
   - type: Destructible
     thresholds:
     - trigger:
@@ -103,11 +153,10 @@
             collection: CP14BoneCrack
 
 - type: entity
+  parent: CP14BaseBoneStructure
   id: CP14BoneDragon
-  parent: CP14BoneSpine
   name: bone dragon 
   description: The large skeleton of a dragon, the possibility of encountering such a creature is both fascinating and terrifying.
-  categories: [ ForkFiltered ]
   components:
   - type: Sprite
     noRot: true
