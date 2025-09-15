@@ -141,7 +141,6 @@
   canRotate: true
   conditions:
     - !type:TileNotBlocked
-    - !type:CP14WallRequired
 
 - type: construction
   crystallPunkAllowed: true

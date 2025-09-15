@@ -13,6 +13,15 @@
               doAfter: 3
     - node: CP14BaseBarrel
       entity: CP14BaseBarrel
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 3
 
 - type: constructionGraph
   id: CP14CraneBarrel
@@ -29,6 +38,17 @@
               doAfter: 3
     - node: CP14CraneBarrel
       entity: CP14CraneBarrel
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 2
+        - tool: Prying
+          doAfter: 5
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 5
 
 - type: constructionGraph
   id: CP14CraneBarrelSmall
@@ -45,4 +65,14 @@
               doAfter: 3
     - node: CP14CraneBarrelSmall
       entity: CP14CraneBarrelSmall
-
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 1
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 3

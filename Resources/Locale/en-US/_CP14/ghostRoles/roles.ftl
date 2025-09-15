@@ -10,3 +10,5 @@ cp14-ghost-role-information-description-raid-undead = Lead the attack on the cit
 cp14-ghost-role-information-name-rat = Rat
 cp14-ghost-role-information-description-rat = An honorable rat. Relieve tavernkeep of their extra food or join the adventurers as an armored squire.
 
+cp14-ghost-role-information-name-bone-hound = Bone hound
+cp14-ghost-role-information-description-bone-hound = A bone hound created by necromantic magic, usually summoned by skeleton mages to form a pack of hunters. Obeys the skeleton that summoned it.

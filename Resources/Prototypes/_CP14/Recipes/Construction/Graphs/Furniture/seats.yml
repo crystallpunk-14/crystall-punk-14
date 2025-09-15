@@ -18,8 +18,26 @@
             doAfter: 2
     - node: CP14ChairWooden
       entity: CP14ChairWooden
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 2
     - node: CP14ChairWoodenBirch
       entity: CP14ChairWoodenBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 2
 
 - type: constructionGraph
   id: CP14BenchWood
@@ -41,8 +59,26 @@
             doAfter: 2
     - node: CP14BenchWood
       entity: CP14BenchWood
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 3
     - node: CP14BenchWoodBirch
       entity: CP14BenchWoodBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 3
 
 - type: constructionGraph
   id: CP14Stool
@@ -64,5 +100,23 @@
             doAfter: 1
     - node: CP14StoolWooden
       entity: CP14StoolWooden
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 2
     - node: CP14StoolBirch
       entity: CP14StoolBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14BirchWoodenPlanks1
+          amount: 2

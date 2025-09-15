@@ -23,12 +23,17 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 2
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 1
           conditions:
           - !type:Locked
             locked: false
           steps:
+            - tool: Screwing
+              doAfter: 1
             - tool: Prying
-              doAfter: 4
+              doAfter: 3
 
 - type: constructionGraph
   id: CP14GoldChest
@@ -58,9 +63,17 @@
             - !type:SpawnPrototype
               prototype: CP14WoodenPlanks1
               amount: 2
+            - !type:SpawnPrototype
+              prototype: CP14IronBar1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: CP14GoldBar1
+              amount: 1
           conditions:
           - !type:Locked
             locked: false
           steps:
+            - tool: Screwing
+              doAfter: 1
             - tool: Prying
-              doAfter: 4
+              doAfter: 5
