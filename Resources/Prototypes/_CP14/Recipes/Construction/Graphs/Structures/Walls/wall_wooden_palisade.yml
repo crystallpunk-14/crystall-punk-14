@@ -13,3 +13,13 @@
               doAfter: 2
     - node: CP14WallWoodenPalisade
       entity: CP14WallWoodenPalisade
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 4
+        - !type:DeleteEntity {}
+        steps:
+        - tool: Prying
+          doAfter: 6
