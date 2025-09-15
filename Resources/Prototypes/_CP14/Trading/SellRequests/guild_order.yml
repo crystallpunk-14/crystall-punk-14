@@ -7,3 +7,13 @@
     protoId: CP14EnergyCrystalHeart
     count: 1
   additionalReward: 320
+
+- type: cp14TradingRequest
+  id: GuildOrderPartsMonsterGlandsSpineguard
+  possibleFactions:
+  - GuildOrder
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14PartsMonsterGlandsSpineguard
+    count: 2
+  additionalReward: 110

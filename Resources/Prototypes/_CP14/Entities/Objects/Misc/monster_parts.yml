@@ -31,5 +31,19 @@
     tags:
     - CP14FitInMortar
   - type: StaticPrice
-    price: 8
+    price: 10
 
+- type: entity
+  parent: CP14PartsMonsterGlands
+  id: CP14PartsMonsterGlandsSpineguard
+  name: spineguard venom glands
+  description: The venom glands of a dangerous monster, maybe there's something left in them.
+  categories: [ ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: CP14MonsterToxinVuln
+          Quantity: 15
