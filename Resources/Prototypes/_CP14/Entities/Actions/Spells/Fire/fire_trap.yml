@@ -117,9 +117,9 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: FireBomb
-    totalIntensity: 10.0
-    intensitySlope: 4
-    maxIntensity: 3
+    totalIntensity: 8.0
+    intensitySlope: 3
+    maxIntensity: 2
   - type: DeleteOnTrigger
 
 - type: entity
@@ -134,7 +134,7 @@
 - type: entity
   parent: CP14SpawnMagicFireTrap
   id: CP14SpawnMagicFireTrapInvisible
-  suffix: Invisible. Permanent
+  suffix: Invisible. Permanent. Admin
   components:
   - type: Visibility
     layer: 16

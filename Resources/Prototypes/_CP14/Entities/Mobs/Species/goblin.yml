@@ -120,6 +120,10 @@
   - type: CP14AuraImprint
     imprintLength: 6 #Short imprint hehe
     imprintColor: "#919e19"
+  - type: CP14SkillStorage #Innate athletic
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
   - type: Hands
     handDisplacement:
       sizeMaps:

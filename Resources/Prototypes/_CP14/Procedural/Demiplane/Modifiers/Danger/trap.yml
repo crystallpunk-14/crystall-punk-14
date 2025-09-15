@@ -31,30 +31,18 @@
       maxGroupSize: 1
 
 - type: cp14LocationModifier
-  id: FireTrapInvisible
-  levels:
-    min: 3
-    max: 10
-  categories:
-    Danger: 0.1
-  layers:
-    - !type:CP14OreDunGen
-      entity: CP14SpawnMagicFireTrapInvisible
-      count: 5
-      minGroupSize: 1
-      maxGroupSize: 1
-
-- type: cp14LocationModifier
   id: FireTrapPermanent
   levels:
-    min: 3
+    min: 5
     max: 10
   categories:
-    Danger: 0.1
+    Danger: 0.15
+  blacklistTags:
+  - CP14DemiplaneCold
   layers:
     - !type:CP14OreDunGen
       entity: CP14SpawnMagicFireTrapPermanent
-      count: 10
+      count: 6
       minGroupSize: 1
       maxGroupSize: 1
 

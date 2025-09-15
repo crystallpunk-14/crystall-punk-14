@@ -151,6 +151,7 @@
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
+  - type: Crawler
   - type: Identity
   - type: Hands
   - type: ComplexInteraction

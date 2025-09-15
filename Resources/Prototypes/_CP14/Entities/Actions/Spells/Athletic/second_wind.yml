@@ -24,12 +24,8 @@
         damage:
           types:
             Blunt: 20
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 6
-        type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 6
         type: Remove
   - type: Action
