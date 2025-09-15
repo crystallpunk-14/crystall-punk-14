@@ -2150,3 +2150,13 @@
   id: 8263
   time: '2025-09-15T16:01:13.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1718
+- author: TheShuEd
+  changes:
+  - message: The day and night cycle on all maps (including demiplanes maps) now begins
+      at middays.
+    type: Tweak
+  - message: Fixed missing shadows from the sun
+    type: Fix
+  id: 8264
+  time: '2025-09-15T19:30:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1780
