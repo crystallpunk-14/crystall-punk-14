@@ -158,7 +158,8 @@
 - type: cp14TradingPosition
   id: CP14ClothingOuterClothingChainmail
   faction: HelmirChild
-  uiPosition: 16
+  reputationLevel: 1
+  uiPosition: 3
   priceMarkup: 3
   icon:
     sprite: _CP14/Clothing/OuterClothing/chainmail.rsi
@@ -170,7 +171,8 @@
 - type: cp14TradingPosition
   id: CP14ClothingOuterClothingCuirass
   faction: HelmirChild
-  uiPosition: 17
+  reputationLevel: 1
+  uiPosition: 4
   priceMarkup: 3
   icon:
     sprite: _CP14/Clothing/OuterClothing/cuirass.rsi
@@ -182,7 +184,8 @@
 - type: cp14TradingPosition
   id: CP14ClothingOuterClothingInfantryCuirass
   faction: HelmirChild
-  uiPosition: 18
+  reputationLevel: 1
+  uiPosition: 5
   priceMarkup: 3
   icon:
     sprite: _CP14/Clothing/OuterClothing/infantry_cuirass.rsi
