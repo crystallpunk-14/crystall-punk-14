@@ -1,11 +1,11 @@
-﻿namespace Content.Shared._CP14.Runes.Components;
+﻿namespace Content.Shared._CP14.Runes;
 
 public abstract class CP14RuneRecipeSystem : EntitySystem
 {
     /// <inheritdoc/>
     public override void Initialize()
     {
-
+        throw new NotImplementedException();
     }
 }
 

@@ -13,5 +13,5 @@ public sealed partial class CP14RuneDrawingToolComponent : Component
     /// What spell has been chosen
     /// </summary>
     [DataField]
-    public CP14RuneSpellComponent ChosenSpell;
+    public CP14RuneSpellComponent? ChosenSpell;
 }

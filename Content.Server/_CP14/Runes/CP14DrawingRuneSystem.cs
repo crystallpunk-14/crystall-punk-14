@@ -12,7 +12,7 @@ public sealed class CP14DrawingRuneSystem : CP14SharedDrawingRuneSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CP14RuneDrawingToolComponent, AfterInteractEvent>(OnInteract);
+        //SubscribeLocalEvent<CP14RuneDrawingToolComponent, AfterInteractEvent>(OnInteract);
     }
 
     private void OnInteract(EntityUid uid, Entity<CP14RuneDrawingToolComponent> ent, ref AfterInteractEvent args)
