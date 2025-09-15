@@ -267,9 +267,10 @@
         maxVol: 10
   - type: Injector
     injectOnly: false
-    transferAmount: 5
-    minTransferAmount: 5
-    maxTransferAmount: 10
+    transferAmounts:
+    - 5
+    - 10
+    currentTransferAmount: 5
     toggleState: Draw
   - type: ExaminableSolution
     solution: injector
