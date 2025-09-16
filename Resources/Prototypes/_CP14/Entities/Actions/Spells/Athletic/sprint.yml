@@ -7,7 +7,7 @@
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 1.3
   - type: CP14ActionStaminaCost
-    stamina: 1.5
+    stamina: 2.0
   - type: DoAfterArgs
     hidden: true
     repeat: true
@@ -16,7 +16,7 @@
     breakOnDropItem: false
     requireCanInteract: false
     distanceThreshold: 1.5
-    delay: 0.5
+    delay: 1.0
   - type: CP14MagicEffect
     effects:
     - !type:CP14SpellSpawnEntityOnTarget
@@ -33,3 +33,11 @@
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:
         - CP14DustEffect
+
+- type: entity
+  id: CP14ActionBearSpellSprint
+  parent: CP14ActionSpellSprint
+  description: Catch up and rip, every predator can accelerate and catch up with its prey.
+  components:
+  - type: CP14ActionDoAfterSlowdown
+    speedMultiplier: 1.8
