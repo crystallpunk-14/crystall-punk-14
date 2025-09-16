@@ -21,7 +21,7 @@
     startSpeech: "Sagitta glaciei..."
     endSpeech: "in manu mea"
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
   - type: Action
     icon:

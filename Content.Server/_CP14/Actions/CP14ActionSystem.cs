@@ -10,6 +10,7 @@ namespace Content.Server._CP14.Actions;
 public sealed partial class CP14ActionSystem : CP14SharedActionSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {

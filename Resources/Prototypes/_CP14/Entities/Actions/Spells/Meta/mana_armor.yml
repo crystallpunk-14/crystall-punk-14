@@ -8,7 +8,7 @@
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 15
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaTrance
   - type: CP14MagicEffect
     effects:

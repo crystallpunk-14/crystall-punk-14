@@ -30,7 +30,7 @@
         component: Pacified
         type: Add
         time: 2
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneLurkerFear
   - type: Action
     icon:

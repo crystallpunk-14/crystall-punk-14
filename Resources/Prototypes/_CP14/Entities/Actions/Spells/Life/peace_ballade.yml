@@ -32,7 +32,7 @@
           type: Add
           time: 1.8
   - type: CP14ActionRequiredMusicTool
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RunePeaceBallade
   - type: Action
     icon:

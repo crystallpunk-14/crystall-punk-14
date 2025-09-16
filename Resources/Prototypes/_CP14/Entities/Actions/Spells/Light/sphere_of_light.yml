@@ -21,7 +21,7 @@
     startSpeech: "Appare in manu tua..."
     endSpeech: "sphaera lucis"
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneSphereOfLight
   - type: Action
     icon:

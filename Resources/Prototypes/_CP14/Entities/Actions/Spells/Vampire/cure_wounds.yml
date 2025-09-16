@@ -40,7 +40,7 @@
       - !type:Jitter
       - !type:ModifyBleedAmount
         amount: -25
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireHypnosis
   - type: Action
     icon:

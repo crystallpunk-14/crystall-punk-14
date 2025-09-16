@@ -7,28 +7,30 @@
   - type: CP14ActionManaCost
     manaCost: 5
   - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectFlameCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14FlameCreationArtificialFlame
   - type: CP14ActionSpeaking
     startSpeech: "Et conteret ignis..."
     endSpeech: "in manu mea"
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneFlameCreation
   - type: Action
+    useDelay: 10
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: flame_creation
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    delay: 1
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 10
-      breakOnMove: false
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectFlameCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14FlameCreationArtificialFlame
 
 - type: entity
   id: CP14RuneFlameCreation

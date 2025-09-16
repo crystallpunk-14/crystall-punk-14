@@ -25,7 +25,7 @@
       - !type:ExtinguishReaction
   - type: CP14ActionSpeaking
     startSpeech: "Vos adepto calidum..."
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneHeat
   - type: CP14ActionDangerous
   - type: Action

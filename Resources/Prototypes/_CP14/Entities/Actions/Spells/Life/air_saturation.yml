@@ -20,7 +20,7 @@
           types:
             Asphyxiation: -5
       - !type:Jitter
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneAirSaturation
   - type: Action
     icon:

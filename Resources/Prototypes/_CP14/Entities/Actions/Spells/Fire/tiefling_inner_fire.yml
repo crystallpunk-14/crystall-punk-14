@@ -6,7 +6,7 @@
   components:
   - type: CP14MagicEffectCastSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneTieflingRevenge
   - type: CP14MagicEffect
     effects:

@@ -23,7 +23,7 @@
         damage:
           types:
             CP14ManaDepletion: -0.1
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaTrance
   - type: Action
     icon:

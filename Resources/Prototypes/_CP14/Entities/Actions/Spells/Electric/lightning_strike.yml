@@ -31,7 +31,7 @@
   - type: CP14ActionSpeaking
     startSpeech: "A fulgur percutiens... "
     endSpeech: "erit ledo vobis!"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneLightningStrike
   - type: CP14ActionDangerous
   - type: Action

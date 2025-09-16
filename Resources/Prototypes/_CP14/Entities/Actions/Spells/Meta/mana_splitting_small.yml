@@ -23,7 +23,7 @@
       - !type:CP14ManaChange
         manaDelta: -15
         safe: false
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicSplitting
   - type: Action
     icon:

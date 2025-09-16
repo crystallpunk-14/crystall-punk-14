@@ -45,7 +45,7 @@
       - !type:Jitter
   - type: CP14ActionSpeaking
     startSpeech: "Plantae durant..."
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RunePlantGrowth
   - type: Action
     icon:

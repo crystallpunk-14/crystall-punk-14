@@ -20,7 +20,7 @@
       projectileCount: 8
   - type: CP14ActionSpeaking
     endSpeech: "Ignis acus!"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneFirebolt
   - type: CP14ActionDangerous
   - type: Action

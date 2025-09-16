@@ -6,6 +6,7 @@ using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
+using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -37,6 +38,7 @@ public abstract partial class CP14SharedActionSystem : EntitySystem
         InitializeExamine();
         InitializePerformed();
         InitializeModularEffects();
+        InitializeDoAfter();
     }
 }
 

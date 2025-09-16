@@ -37,7 +37,7 @@
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
   - type: CP14ActionTargetMobStatusRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneBloodPurification
   - type: Action
     icon:

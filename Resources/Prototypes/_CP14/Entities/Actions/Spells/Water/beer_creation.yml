@@ -21,7 +21,7 @@
     startSpeech: "beer..."
     endSpeech: "Arriva la birra"
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneBeerCreation
   - type: Action
     icon:

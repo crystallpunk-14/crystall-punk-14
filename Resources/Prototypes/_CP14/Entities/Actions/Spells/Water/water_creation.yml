@@ -18,7 +18,7 @@
       spawns:
       - CP14LiquidDropWater
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
   - type: Action
     icon:

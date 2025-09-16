@@ -28,7 +28,7 @@
           sprintSpeedModifier: 1.2
           statusLifetime: 1.8
   - type: CP14ActionRequiredMusicTool
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneSpeedBallade
   - type: Action
     icon:

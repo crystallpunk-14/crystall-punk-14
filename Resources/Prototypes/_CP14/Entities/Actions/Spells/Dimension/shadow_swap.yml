@@ -21,7 +21,7 @@
       - CP14ImpactEffectShadowStep
     effects:
     - !type:CP14SpellCasterSwap
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14ImpactEffectShadowStep
   - type: CP14ActionFreeHandsRequired
   - type: CP14ActionTargetMobStatusRequired

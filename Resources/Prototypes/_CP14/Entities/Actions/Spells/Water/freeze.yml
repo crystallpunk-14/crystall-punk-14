@@ -29,7 +29,7 @@
       - !type:ExtinguishReaction
   - type: CP14ActionSpeaking
     startSpeech: "Vos adepto frigus..."
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RunePlantFreeze
   - type: CP14ActionDangerous
   - type: Action

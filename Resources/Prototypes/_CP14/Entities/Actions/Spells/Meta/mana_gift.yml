@@ -25,7 +25,7 @@
         manaDelta: 10
         safe: false
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaGift
   - type: Action
     icon:

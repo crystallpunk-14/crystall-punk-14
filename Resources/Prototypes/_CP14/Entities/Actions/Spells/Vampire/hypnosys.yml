@@ -22,7 +22,7 @@
         type: Add
         time: 4
         refresh: true
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireHypnosis
   - type: Action
     icon:

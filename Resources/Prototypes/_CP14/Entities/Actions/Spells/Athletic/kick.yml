@@ -4,18 +4,18 @@
   name: Kick
   description: You perform an epic leg kick at your chosen object, pushing it away from you.
   components:
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.4
+  #- type: CP14MagicEffectCastSlowdown
+  #  speedMultiplier: 0.4
   - type: CP14ActionStaminaCost
     stamina: 40
   - type: CP14ActionEmoting
     startEmote: cp14-kick-emote-start
     endEmote: cp14-kick-emote
   - type: CP14ActionDangerous
-  #- type: DoAfterArgs
-  #  breakOnHandChange: false
-  #  distanceThreshold: 1.5
-  #  delay: 0.5
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    distanceThreshold: 1.5
+    delay: 0.5
   - type: Action
     useDelay: 5
     icon:

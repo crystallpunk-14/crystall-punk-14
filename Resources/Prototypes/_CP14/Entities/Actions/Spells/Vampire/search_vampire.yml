@@ -14,7 +14,7 @@
     - !type:CP14SpellPointerToVampireClan
       searchRange: 60
       pointerEntity: CP14BloodlustPointer
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireHypnosis
   - type: Action
     icon:

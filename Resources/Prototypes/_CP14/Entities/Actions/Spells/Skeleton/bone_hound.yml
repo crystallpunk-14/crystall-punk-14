@@ -27,7 +27,7 @@
   - type: CP14ActionSpeaking
     startSpeech: "Ossa mortuorum..."
     endSpeech: "incipiunt mihi quasi canis canis servire"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneCallBoneHound
   - type: Action
     icon:

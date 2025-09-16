@@ -20,7 +20,7 @@
       - CP14ImpactEffectWaterCreation
   - type: CP14ActionSpeaking
     endSpeech: "Glacies acus!"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneIceShards
   - type: CP14ActionDangerous
   - type: Action
