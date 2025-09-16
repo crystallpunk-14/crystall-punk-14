@@ -27,7 +27,7 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
             return false;
 
         if (sat < 5f || sat > 50f)
-        return false;
+            return false;
 
         if (val < 20f || val > 100f)
             return false;
@@ -86,11 +86,12 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
         var hue = hsv.X * 360f;
         var sat = hsv.Y * 100f;
         var val = hsv.Z * 100f;
-        if(hue>255)
+        if (hue > 255)
         {
             var progressVal = (100f - val) / (100f - 25f);
             return Math.Clamp(progressVal * 100f, 0f, 100f);
-        }else
+        }
+        else
         {
             // check for hue/value first, if hue is lower than this percentage
             // and value is 1.0
