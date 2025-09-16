@@ -1,18 +1,8 @@
-using Content.Server._CP14.MagicEnergy;
-using Content.Server.Atmos.Components;
-using Content.Server.Chat.Systems;
-using Content.Server.Instruments;
-using Content.Shared._CP14.Actions.Components;
-using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared.Actions;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.FixedPoint;
-using Content.Shared.Instruments;
-using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
@@ -24,9 +14,7 @@ namespace Content.Server._CP14.MagicSpell;
 
 public sealed  class CP14MagicSystem : CP14SharedMagicSystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;

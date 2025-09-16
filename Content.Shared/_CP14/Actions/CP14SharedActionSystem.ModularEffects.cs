@@ -23,6 +23,8 @@ public abstract partial class CP14SharedActionSystem
         {
             effect.Effect(EntityManager, spellArgs);
         }
+
+        args.Handled = true;
     }
 
     private void OnWorldTargetCast(Entity<TransformComponent> ent, ref CP14WorldTargetModularEffectEvent args)
@@ -36,6 +38,8 @@ public abstract partial class CP14SharedActionSystem
         {
             effect.Effect(EntityManager, spellArgs);
         }
+
+        args.Handled = true;
     }
 
     private void OnEntityTargetCast(Entity<TransformComponent> ent, ref CP14EntityTargetModularEffectEvent args)
@@ -49,6 +53,8 @@ public abstract partial class CP14SharedActionSystem
         {
             effect.Effect(EntityManager, spellArgs);
         }
+
+        args.Handled = true;
     }
 }
 
