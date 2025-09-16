@@ -1,4 +1,4 @@
-using Content.Shared._CP14.Actions;
+﻿using Content.Shared._CP14.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.DoAfter;
 
@@ -22,7 +22,7 @@ public abstract partial class SharedActionsSystem
         var netEnt = GetNetEntity(performer);
 
         //CP14 doAfter start event
-        var cp14StartEv = new CP14ActionStartDoAfterEvent(netEnt);
+        var cp14StartEv = new CP14ActionStartDoAfterEvent(netEnt, input);
         RaiseLocalEvent(ent, cp14StartEv);
         //CP14 end
 

@@ -6,7 +6,6 @@
   components:
   - type: CP14ActionManaCost
     manaCost: 5
-  - type: CP14MagicEffect
   - type: CP14ActionSpeaking
     startSpeech: "Et conteret ignis..."
     endSpeech: "in manu mea"

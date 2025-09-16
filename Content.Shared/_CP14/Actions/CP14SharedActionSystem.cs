@@ -2,6 +2,7 @@ using Content.Shared._CP14.MagicEnergy;
 using Content.Shared._CP14.MagicVision;
 using Content.Shared._CP14.Religion.Systems;
 using Content.Shared._CP14.Skill;
+using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
@@ -45,7 +46,8 @@ public abstract partial class CP14SharedActionSystem : EntitySystem
 /// <summary>
 /// Called on an action when an attempt to start doAfter using this action begins.
 /// </summary>
-public sealed class CP14ActionStartDoAfterEvent(NetEntity performer) : EntityEventArgs
+public sealed class CP14ActionStartDoAfterEvent(NetEntity performer, RequestPerformActionEvent input) : EntityEventArgs
 {
     public NetEntity Performer = performer;
+    public readonly RequestPerformActionEvent Input = input;
 }

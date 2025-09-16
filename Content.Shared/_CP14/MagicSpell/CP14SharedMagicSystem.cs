@@ -37,8 +37,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
 
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();
 
-        SubscribeLocalEvent<CP14MagicEffectComponent, ComponentShutdown>(OnMagicEffectShutdown);
-
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14StartCastMagicEffectEvent>(OnStartCast);
         SubscribeLocalEvent<CP14MagicEffectComponent, CP14EndCastMagicEffectEvent>(OnEndCast);
     }
@@ -81,12 +79,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         base.Update(frameTime);
 
         UpdateToggleableActions();
-    }
-
-    private void OnMagicEffectShutdown(Entity<CP14MagicEffectComponent> ent, ref ComponentShutdown args)
-    {
-        if (_doAfter.IsRunning(ent.Comp.ActiveDoAfter))
-            _doAfter.Cancel(ent.Comp.ActiveDoAfter);
     }
 
     private void CastTelegraphy(Entity<CP14MagicEffectComponent> ent, CP14SpellEffectBaseArgs args)
