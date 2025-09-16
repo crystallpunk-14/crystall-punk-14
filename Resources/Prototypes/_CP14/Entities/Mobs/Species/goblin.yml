@@ -107,6 +107,7 @@
       groups:
         Burn: -0.2
         Brute: -0.2
+        Toxin: -0.05
   - type: Stamina
     decay: 5 # 3 default
     critThreshold: 120 # 100 default
