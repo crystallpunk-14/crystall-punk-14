@@ -39,7 +39,7 @@
       - CP14MagicEnergyContainer
       - CP14MagicEnergyCrystalSlot
     canTargetSelf: true
-    event: !type:CP14ToggleableEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 2
       castTime: 10
       breakOnMove: true

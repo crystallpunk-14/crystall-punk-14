@@ -52,7 +52,7 @@
     whitelist:
       components:
       - MobState
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 300
       castDelay: 10
       breakOnMove: true

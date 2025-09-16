@@ -35,7 +35,7 @@
       components:
       - CP14MagicEnergyContainer
       - ExaminableSolution
-    event: !type:CP14ToggleableEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 15
       castTime: 15
       distanceThreshold: 5

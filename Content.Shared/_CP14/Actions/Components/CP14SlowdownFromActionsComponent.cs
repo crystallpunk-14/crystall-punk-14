@@ -9,5 +9,5 @@ namespace Content.Shared._CP14.Actions.Components;
 public sealed partial class CP14SlowdownFromActionsComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public List<float> SpeedAffectors = new();
+    public Dictionary<NetEntity, float> SpeedAffectors = new();
 }

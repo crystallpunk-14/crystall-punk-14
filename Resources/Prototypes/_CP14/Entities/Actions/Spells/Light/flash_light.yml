@@ -30,7 +30,7 @@
   - type: TargetAction
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 5
       castDelay: 0.5
       breakOnMove: false

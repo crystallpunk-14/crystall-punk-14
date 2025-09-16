@@ -40,7 +40,7 @@
     range: 5
     interactOnMiss: false
   - type: EntityTargetAction
-    event: !type:CP14ToggleableEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 5
       castTime: 3
       distanceThreshold: 5

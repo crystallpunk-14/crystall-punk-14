@@ -38,7 +38,7 @@
   - type: TargetAction
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 20
 
 - type: entity

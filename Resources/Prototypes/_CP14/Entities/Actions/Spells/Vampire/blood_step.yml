@@ -28,7 +28,7 @@
     checkCanAccess: true
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 10
       hidden: true
       castDelay: 0.5

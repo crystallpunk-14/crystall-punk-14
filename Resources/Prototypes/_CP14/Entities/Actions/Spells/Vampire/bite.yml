@@ -50,7 +50,7 @@
       components:
       - MobState
       - Bloodstream
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 0.5
       castDelay: 2
 

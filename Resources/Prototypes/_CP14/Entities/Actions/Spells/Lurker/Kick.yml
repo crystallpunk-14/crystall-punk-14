@@ -45,7 +45,7 @@
     range: 2
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 20
       castDelay: 2.5
       distanceThreshold: 1.5

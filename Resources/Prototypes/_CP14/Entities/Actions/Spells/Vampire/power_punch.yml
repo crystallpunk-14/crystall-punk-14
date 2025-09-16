@@ -36,7 +36,7 @@
     range: 1
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:CP14EntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 45
     whitelist:
       components:

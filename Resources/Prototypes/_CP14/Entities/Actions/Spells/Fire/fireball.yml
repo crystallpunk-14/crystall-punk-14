@@ -16,7 +16,6 @@
     proto: CP14RuneFireball
   - type: CP14ActionDangerous
   - type: DoAfterArgs
-    breakOnHandChange: false
     delay: 2.5
   - type: Action
     useDelay: 25

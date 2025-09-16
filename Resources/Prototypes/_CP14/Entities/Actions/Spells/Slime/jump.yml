@@ -22,7 +22,7 @@
     checkCanAccess: false
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       hidden: true
       breakOnMove: false
       breakOnDamage: false

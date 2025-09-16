@@ -18,18 +18,21 @@ public abstract partial class CP14SharedActionSystem
         var performer = GetEntity(args.Performer);
         EnsureComp<CP14SlowdownFromActionsComponent>(performer, out var slowdown);
 
-        slowdown.SpeedAffectors.Add(ent.Comp.SpeedMultiplier);
+        slowdown.SpeedAffectors.TryAdd(GetNetEntity(ent), ent.Comp.SpeedMultiplier);
         Dirty(performer, slowdown);
         _movement.RefreshMovementSpeedModifiers(performer);
     }
 
     private void OnEndDoAfter(Entity<CP14ActionDoAfterSlowdownComponent> ent, ref ActionDoAfterEvent args)
     {
+        if (args.Repeat)
+            return;
+
         var performer = GetEntity(args.Performer);
         if (!TryComp<CP14SlowdownFromActionsComponent>(performer, out var slowdown))
             return;
 
-        slowdown.SpeedAffectors.Remove(ent.Comp.SpeedMultiplier);
+        slowdown.SpeedAffectors.Remove(GetNetEntity(ent));
         Dirty(performer, slowdown);
 
         _movement.RefreshMovementSpeedModifiers(performer);
@@ -42,7 +45,7 @@ public abstract partial class CP14SharedActionSystem
     {
         var targetSpeedModifier = 1f;
 
-        foreach (var affector in ent.Comp.SpeedAffectors)
+        foreach (var (_, affector) in ent.Comp.SpeedAffectors)
         {
             targetSpeedModifier *= affector;
         }

@@ -1,4 +1,3 @@
-using Content.Shared._CP14.MagicSpell;
 using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Throwing;
@@ -9,7 +8,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._CP14.MagicSpell;
 
-public sealed  class CP14MagicSystem : CP14SharedMagicSystem
+public sealed  class CP14MagicSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;

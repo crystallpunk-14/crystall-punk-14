@@ -86,7 +86,7 @@
   - type: TargetAction
     checkCanAccess: true
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 0.5
       castDelay: 0.2
       breakOnMove: false

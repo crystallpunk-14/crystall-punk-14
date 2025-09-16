@@ -30,7 +30,7 @@
       - MobState
       - Item
       - Anchorable
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 10
       castDelay: 1.0
       breakOnMove: false

@@ -4,36 +4,34 @@
   name: Electric trap
   description: Creates a electric trap at the selected location. Don't forget to recharge it with mana.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/electromancy.rsi
-    state: electric_trap
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.9
   - type: CP14ActionManaCost
     manaCost: 40
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectElectricTrap
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14SpawnMagicElectricTrap
   - type: CP14ActionSpeaking
     startSpeech: "Signum electricum..."
     endSpeech: "hunc locum custodi"
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneElectricTrap
   - type: Action
+    useDelay: 4
     icon:
       sprite: _CP14/Actions/Spells/electromancy.rsi
       state: electric_trap
   - type: TargetAction
     range: 3
+  - type: DoAfterArgs
+    delay: 2
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
-      cooldown: 4
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectElectricTrap
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14SpawnMagicElectricTrap
 
 - type: entity
   id: CP14RuneElectricTrap

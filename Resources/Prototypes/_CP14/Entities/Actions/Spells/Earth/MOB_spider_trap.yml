@@ -5,17 +5,6 @@
   components:
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.3
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactSpiderTrap
-    effects:
-    - !type:CP14SpellSpawnEntitiesOnTargetInRadius
-      spawn: CP14SpiderWeb
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactSpiderTrap
   - type: Action
     itemIconStyle: BigAction
     useDelay: 20
@@ -24,16 +13,26 @@
     icon:
       sprite: _CP14/Structures/Dungeon/floor_web.rsi
       state: full
+  - type: DoAfterArgs
+    breakOnMove: false
+    breakOnDamage: false
+    hidden: true
+    delay: 0.5
   - type: TargetAction
     range: 10
     checkCanAccess: false
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
-      hidden: true
-      breakOnMove: false
-      breakOnDamage: false
-      cooldown: 20
-      castDelay: 0.5
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactSpiderTrap
+      effects:
+      - !type:CP14SpellSpawnEntitiesOnTargetInRadius
+        spawn: CP14SpiderWeb
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactSpiderTrap
 
 - type: entity
   id: CP14ImpactSpiderTrap

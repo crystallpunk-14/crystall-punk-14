@@ -27,7 +27,7 @@
     checkCanAccess: false
     range: 60
   - type: EntityTargetAction
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 7.5
       castDelay: 1.0
       breakOnDamage: false

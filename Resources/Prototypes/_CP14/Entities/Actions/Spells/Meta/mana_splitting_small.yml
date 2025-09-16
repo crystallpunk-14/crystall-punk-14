@@ -36,7 +36,7 @@
       components:
       - CP14MagicEnergyContainer
       - ExaminableSolution
-    event: !type:CP14DelayedEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 10
       castDelay: 0.5
       breakOnMove: false

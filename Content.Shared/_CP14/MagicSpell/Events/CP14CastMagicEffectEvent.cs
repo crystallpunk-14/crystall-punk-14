@@ -1,10 +1,5 @@
-using Content.Shared._CP14.MagicRitual.Prototypes;
-using Content.Shared._CP14.MagicSpell.Components;
-using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
-using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
 
@@ -31,34 +26,6 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
     }
 
     public SlotFlags TargetSlots { get; } = SlotFlags.All;
-}
-
-/// <summary>
-/// is invoked if all conditions are met and the spell has begun to be cast (doAfter start moment)
-/// </summary>
-[ByRefEvent]
-public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid Performer { get; init; }
-
-    public CP14StartCastMagicEffectEvent(EntityUid performer)
-    {
-        Performer = performer;
-    }
-}
-
-/// <summary>
-/// is invoked on the spell itself when the spell process has been completed or interrupted (doAfter end moment)
-/// </summary>
-[ByRefEvent]
-public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid Performer { get; init; }
-
-    public CP14EndCastMagicEffectEvent(EntityUid performer)
-    {
-        Performer = performer;
-    }
 }
 
 [ByRefEvent]

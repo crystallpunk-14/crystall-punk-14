@@ -39,7 +39,7 @@
       sprite: _CP14/Actions/Spells/healing.rsi
       state: peace_music
   - type: InstantAction
-    event: !type:CP14ToggleableInstantActionEvent
+    event: !type:CP14InstantModularEffectEvent
       effectFrequency: 1
       cooldown: 15
       castTime: 120

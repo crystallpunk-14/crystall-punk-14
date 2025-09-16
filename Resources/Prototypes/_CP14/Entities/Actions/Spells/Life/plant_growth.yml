@@ -59,7 +59,7 @@
       components:
       - CP14Plant
       - CP14MagicEnergyPhotosynthesis
-    event: !type:CP14ToggleableEntityTargetActionEvent
+    event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 2
       castTime: 10
       breakOnMove: true
