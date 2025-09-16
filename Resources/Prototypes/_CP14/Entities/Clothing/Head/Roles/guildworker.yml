@@ -1,0 +1,54 @@
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadGuildBeret
+  name: guild beret
+  description: A welcoming sign of care and responsibility.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/guild_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/guild_beret.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadRedGuildBeret
+  name: red guild beret
+  description: A welcoming sign of care and responsibility. This one is associated with hunting and fighting.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/red_guild_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/red_guild_beret.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadYellowGuildBeret
+  name: yellow guild beret
+  description: A welcoming sign of care and responsibility. This one is associated with gathering and mining.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/yellow_guild_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/yellow_guild_beret.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadBlueGuildBeret
+  name: blue guild beret
+  description: A welcoming sign of care and responsibility. This one is associated with creating and building.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/blue_guild_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/blue_guild_beret.rsi
+
+- type: entity
+  parent: CP14ClothingHeadBase
+  id: CP14ClothingHeadGreenGuildBeret
+  name: green guild beret
+  description: A welcoming sign of care and responsibility. This one is associated with speaking and teaching.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/green_guild_beret.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/Head/Roles/GuildWorker/green_guild_beret.rsi
