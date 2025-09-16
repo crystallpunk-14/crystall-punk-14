@@ -49,6 +49,5 @@
       cooldown: 20
       castDelay: 2.5
       distanceThreshold: 1.5
-      breakOnMove: false
       breakOnDamage: true
 

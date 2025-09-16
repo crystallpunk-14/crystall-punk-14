@@ -38,7 +38,6 @@
     event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 30
       castDelay: 0.5
-      breakOnMove: false
 
 - type: entity
   id: CP14RuneSphereOfLight

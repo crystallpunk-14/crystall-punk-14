@@ -32,7 +32,6 @@
       cooldown: 10
       hidden: true
       castDelay: 0.5
-      breakOnMove: false
 
 - type: entity
   id: CP14ImpactEffectBloodStep

@@ -28,7 +28,7 @@
       sprite: _CP14/Actions/Spells/light.rsi
       state: search_of_life
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
+    event: !type:CP14InstantModularEffectEvent
       cooldown: 30
       castDelay: 1.5
 

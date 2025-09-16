@@ -4,35 +4,10 @@
   name: Blood purification
   description: You cleanse the target's blood of poisons and acids, and restore its volume slightly
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: cure_poison
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 12
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodPurification
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodPurification
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: -10
-            Bloodloss: -10
-            Caustic: -10
-      - !type:Jitter
-      - !type:ModifyBloodLevel
-        amount: 25
   - type: CP14ActionSpeaking
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
@@ -40,20 +15,41 @@
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneBloodPurification
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_poison
   - type: TargetAction
     range: 7
     interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 1.5
   - type: EntityTargetAction
     whitelist:
       components:
       - MobState
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 5
-      castDelay: 1.5
-      breakOnMove: false
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectBloodPurification
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectBloodPurification
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Poison: -10
+              Bloodloss: -10
+              Caustic: -10
+        - !type:Jitter
+        - !type:ModifyBloodLevel
+          amount: 25
 
 - type: entity
   id: CP14RuneBloodPurification

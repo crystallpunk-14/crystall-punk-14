@@ -56,4 +56,3 @@
     event: !type:CP14EntityTargetModularEffectEvent
       cooldown: 5
       castDelay: 1.5
-      breakOnMove: false

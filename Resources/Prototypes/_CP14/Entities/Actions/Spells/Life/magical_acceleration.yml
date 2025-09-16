@@ -4,28 +4,26 @@
   name: Magical acceleration
   description: At the cost of magic energy, you significantly accelerate your movement speed
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/misc.rsi
-    state: magical_acceleration
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 1.3
   - type: CP14ActionManaCost
     manaCost: 3
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14MagicAccelerationDustEffect
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    delay: 0.25
   - type: Action
+    useDelay: 2
     icon:
       sprite: _CP14/Actions/Spells/misc.rsi
       state: magical_acceleration
   - type: InstantAction
     event: !type:CP14InstantModularEffectEvent
-      effectFrequency: 0.2
-      cooldown: 2
-      castTime: 10
       hidden: true
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14MagicAccelerationDustEffect
 
 - type: entity
   id: CP14MagicAccelerationDustEffect

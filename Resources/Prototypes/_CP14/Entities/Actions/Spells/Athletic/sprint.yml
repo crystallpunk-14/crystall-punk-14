@@ -11,7 +11,6 @@
   - type: DoAfterArgs
     hidden: true
     repeat: true
-    distanceThreshold: 1.5
     delay: 0.25
   - type: CP14MagicEffect
     effects:

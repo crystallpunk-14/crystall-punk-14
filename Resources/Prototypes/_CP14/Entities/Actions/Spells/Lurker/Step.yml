@@ -31,7 +31,6 @@
     event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 30
       hidden: true
-      breakOnMove: false
 
 - type: entity
   id: CP14ImpactEffectLurkerStep

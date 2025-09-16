@@ -24,6 +24,5 @@
   - type: WorldTargetAction
     event: !type:CP14WorldTargetModularEffectEvent
       hidden: true
-      breakOnMove: false
       breakOnDamage: false
       castDelay: 1

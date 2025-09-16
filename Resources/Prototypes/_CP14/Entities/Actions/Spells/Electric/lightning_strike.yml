@@ -27,7 +27,6 @@
     canTargetSelf: false
     event: !type:CP14EntityTargetModularEffectEvent
       castDelay: 2.0
-      breakOnMove: false
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:

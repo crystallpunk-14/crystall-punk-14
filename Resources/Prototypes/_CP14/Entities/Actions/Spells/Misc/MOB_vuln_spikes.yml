@@ -31,7 +31,6 @@
       cooldown: 7.5
       castDelay: 1.0
       breakOnDamage: false
-      breakOnMove: false
       hidden: true
 
 - type: entity

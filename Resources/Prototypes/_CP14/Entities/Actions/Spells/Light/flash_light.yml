@@ -33,7 +33,6 @@
     event: !type:CP14WorldTargetModularEffectEvent
       cooldown: 5
       castDelay: 0.5
-      breakOnMove: false
 
 - type: entity
   id: CP14RuneFlashLight

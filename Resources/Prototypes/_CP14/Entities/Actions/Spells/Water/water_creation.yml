@@ -25,10 +25,9 @@
       sprite: _CP14/Actions/Spells/water.rsi
       state: water_creation
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
+    event: !type:CP14InstantModularEffectEvent
       cooldown: 10
       castDelay: 0.8
-      breakOnMove: false
 
 - type: entity
   id: CP14RuneWaterCreation

@@ -34,7 +34,6 @@
       cooldown: 60
       castTime: 120
       hidden: true
-      breakOnMove: false
 
 - type: entity
   id: CP14RuneManaTrance

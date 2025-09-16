@@ -44,7 +44,6 @@
       cooldown: 5
       castTime: 3
       distanceThreshold: 5
-      breakOnMove: false
 
 - type: entity
   id: CP14ImpactEffectFreeze

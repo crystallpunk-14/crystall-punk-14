@@ -28,10 +28,9 @@
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_dagger
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
+    event: !type:CP14InstantModularEffectEvent
       cooldown: 5
       castDelay: 0.5
-      breakOnMove: false
 
 - type: entity
   name: ice dagger

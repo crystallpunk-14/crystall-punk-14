@@ -8,21 +8,14 @@
     speedMultiplier: 0.4
   - type: CP14ActionManaCost
     manaCost: 5
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectAirSaturation
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: -5
-      - !type:Jitter
+  - type: DoAfterArgs
+    repeat: true
+    delay: 1
+    breakOnMove: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneAirSaturation
   - type: Action
+    useDelay: 2
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: air_saturation
@@ -31,9 +24,17 @@
     interactOnMiss: false
   - type: EntityTargetAction
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 2
-      castTime: 10
-      breakOnMove: true
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectAirSaturation
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -5
+        - !type:Jitter
 
 # Effects
 
