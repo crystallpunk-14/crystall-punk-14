@@ -1,4 +1,4 @@
-﻿using Content.Shared._CP14.Actions;
+using Content.Shared._CP14.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.DoAfter;
 

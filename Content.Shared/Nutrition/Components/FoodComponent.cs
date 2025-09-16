@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Cooking;
 using Content.Shared.Body.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Nutrition.EntitySystems;
@@ -7,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Nutrition.Components;
 [Obsolete("Migration to Content.Shared.Nutrition.Components.EdibleComponent is required")]
-[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem), typeof(CP14SharedCookingSystem))]
+[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem))]
 public sealed partial class FoodComponent : Component
 {
     [DataField]

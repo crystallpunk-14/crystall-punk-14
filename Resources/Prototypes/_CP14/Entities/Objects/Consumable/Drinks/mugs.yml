@@ -53,9 +53,6 @@
     solutionName: mug
     injectOnly: false
     ignoreMobs: true
-    minTransferAmount: 1
-    maxTransferAmount: 10
-    transferAmount: 1
     toggleState: 1 # draw
   - type: SolutionContainerVisuals
     maxFillLevels: 3

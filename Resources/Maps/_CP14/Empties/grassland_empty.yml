@@ -70,17 +70,6 @@ entities:
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle
-    - type: Biome
-      forcedMarkerLayers: []
-      markerLayers: []
-      loadedMarkers: {}
-      pendingMarkers: {}
-      loadedChunks: []
-      entities: {}
-      decals: {}
-      modifiedTiles: {}
-      template: CP14SandOceanFill
-      layers: []
     - type: MapGrid
       chunks:
         -1,0:

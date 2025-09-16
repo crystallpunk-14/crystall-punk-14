@@ -23,6 +23,26 @@
     product: CP14CrystalShardQuartz
 
 - type: cp14TradingPosition
+  id: CP14Screwdriver
+  faction: DwarfMining
+  uiPosition: 3
+  icon:
+    sprite: _CP14/Objects/Tools/screwdriver.rsi
+    state: screwdriver
+  service: !type:CP14BuyItemsService
+    product: CP14Screwdriver
+
+- type: cp14TradingPosition
+  id: CP14BaseWrench
+  faction: DwarfMining
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Tools/wrench.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14BaseWrench
+
+- type: cp14TradingPosition
   id: CP14BaseSharpeningStone
   faction: DwarfMining
   uiPosition: 5
@@ -44,6 +64,18 @@
     state: ore2
   service: !type:CP14BuyItemsService
     product: CP14OreIron5
+
+- type: cp14TradingPosition #TODO: replace with copper pickaxe when those get added
+  id: CP14WeaponPickaxeIron
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _CP14/Objects/Weapons/Melee/Pickaxe/iron.rsi
+    state: icon
+  service: !type:CP14BuyItemsService
+    product: CP14WeaponPickaxeIron
+    count: 1
 
 - type: cp14TradingPosition
   id: CP14Lighter

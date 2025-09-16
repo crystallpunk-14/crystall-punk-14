@@ -122,12 +122,12 @@ public abstract partial class CP14SharedReligionGodSystem
 
     private void OnPendingFollowerInit(Entity<CP14ReligionPendingFollowerComponent> ent, ref MapInitEvent args)
     {
-        _alerts.ShowAlert(ent, AlertProto);
+        _alerts.ShowAlert(ent.Owner, AlertProto);
     }
 
     private void OnPendingFollowerShutdown(Entity<CP14ReligionPendingFollowerComponent> ent, ref ComponentShutdown args)
     {
-        _alerts.ClearAlert(ent, AlertProto);
+        _alerts.ClearAlert(ent.Owner, AlertProto);
     }
 
     private bool CanBecomeFollower(EntityUid target, ProtoId<CP14ReligionPrototype> religion)
