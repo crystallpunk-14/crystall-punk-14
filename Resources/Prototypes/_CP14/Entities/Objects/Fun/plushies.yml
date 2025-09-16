@@ -150,9 +150,6 @@
     solutionName: plushie
     injectOnly: false
     ignoreMobs: true
-    minTransferAmount: 1
-    maxTransferAmount: 10
-    transferAmount: 1
     toggleState: 1
   - type: PhysicalComposition
     materialComposition:
