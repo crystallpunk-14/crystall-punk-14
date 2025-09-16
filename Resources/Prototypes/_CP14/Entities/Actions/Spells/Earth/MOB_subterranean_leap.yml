@@ -3,7 +3,7 @@
   name: Subterranean leap
   description: Make a subterranean leap, quickly approaching the victim.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: -1.0
   - type: CP14ActionManaCost
     manaCost: 5

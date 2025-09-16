@@ -4,7 +4,7 @@
   name: Inner fire
   description: You unleash your inner fire, setting yourself on fire and temporarily speeding up your movement.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneTieflingRevenge

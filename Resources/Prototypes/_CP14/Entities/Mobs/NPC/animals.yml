@@ -524,7 +524,6 @@
         Base: dead
   - type: Stamina
     critThreshold: 300
-  - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatBoar # TODO

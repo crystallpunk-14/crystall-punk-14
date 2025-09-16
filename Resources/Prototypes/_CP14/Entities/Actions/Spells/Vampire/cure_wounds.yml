@@ -4,7 +4,7 @@
   name: Cure blood
   description: You heal the target from any kind of damage.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 12

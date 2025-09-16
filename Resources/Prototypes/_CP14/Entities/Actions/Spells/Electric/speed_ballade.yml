@@ -4,7 +4,7 @@
   name: Speed ballade
   description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 1
   - type: CP14ActionManaCost
     manaCost: 1

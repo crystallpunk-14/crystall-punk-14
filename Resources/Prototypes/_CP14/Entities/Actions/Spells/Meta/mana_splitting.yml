@@ -4,7 +4,7 @@
   name: Magic splitting
   description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.7
   - type: CP14ActionManaCost
     manaCost: 10

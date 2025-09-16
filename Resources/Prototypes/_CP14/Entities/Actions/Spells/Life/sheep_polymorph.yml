@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/misc.rsi
     state: polymorph
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 30

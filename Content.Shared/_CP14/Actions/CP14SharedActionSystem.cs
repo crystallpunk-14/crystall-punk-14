@@ -6,8 +6,8 @@ using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -26,6 +26,7 @@ public abstract partial class CP14SharedActionSystem : EntitySystem
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly CP14SharedSkillSystem _skill = default!;
     [Dependency] private readonly CP14SharedMagicVisionSystem _magicVision = default!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
 
     private EntityQuery<ActionComponent> _actionQuery;
 

@@ -4,7 +4,7 @@
   name: Portal to city
   description: You open a portal leading to a city that will last for one minute.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 30

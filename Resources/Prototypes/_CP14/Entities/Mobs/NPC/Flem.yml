@@ -78,7 +78,6 @@
       gender: epicene
   - type: TypingIndicator
     proto: alien
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 100

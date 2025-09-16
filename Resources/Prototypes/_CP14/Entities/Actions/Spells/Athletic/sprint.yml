@@ -4,7 +4,7 @@
   name: Sprint
   description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 1.3
   - type: CP14ActionStaminaCost
     stamina: 1.5

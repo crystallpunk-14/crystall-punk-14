@@ -4,7 +4,7 @@
   name: Small lightning strike
   description: You charge a lightning bolt that burns a medium amount of stamina from the target.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 7

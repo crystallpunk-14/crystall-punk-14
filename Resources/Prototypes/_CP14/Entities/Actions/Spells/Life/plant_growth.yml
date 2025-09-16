@@ -4,7 +4,7 @@
   name: Plant growth
   description: You restore health and internal resources to the selected plant.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
   - type: CP14ActionManaCost
     manaCost: 5

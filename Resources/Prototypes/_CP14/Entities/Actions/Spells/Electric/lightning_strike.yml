@@ -4,7 +4,7 @@
   name: Lightning strike
   description: You charge a powerful lightning bolt that burns a large amount of stamina from the target.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 20

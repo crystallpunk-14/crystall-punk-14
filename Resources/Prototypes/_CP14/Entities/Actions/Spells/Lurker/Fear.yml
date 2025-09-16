@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/lurker.rsi
     state: fear
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.4
   - type: CP14MagicEffect
     effects:

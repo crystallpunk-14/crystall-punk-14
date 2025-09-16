@@ -4,7 +4,7 @@
   name: Magic Armor
   description: You surround the target with a short-lived magical barrier that absorbs some of the damage it receives.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 15

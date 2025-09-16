@@ -4,7 +4,7 @@
   name: Resurrection
   description: You're trying to put the soul back into the body.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.7
   - type: CP14ActionManaCost
     manaCost: 50

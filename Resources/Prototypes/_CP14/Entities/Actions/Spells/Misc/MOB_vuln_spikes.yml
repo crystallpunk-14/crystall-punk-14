@@ -4,7 +4,7 @@
   name: Weakness Spikes
   description: You throw out several small spikes that cause weakness.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
   - type: CP14MagicEffect
     effects:

@@ -4,7 +4,7 @@
   name: Cure burn
   description: You heal skin damage caused by excessive cooling or heating.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 12

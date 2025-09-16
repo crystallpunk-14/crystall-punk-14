@@ -4,7 +4,7 @@
   name: Air saturation
   description: You surround the target with fresh air, healing suffocation. This can sustain the dying.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.4
   - type: CP14ActionManaCost
     manaCost: 5

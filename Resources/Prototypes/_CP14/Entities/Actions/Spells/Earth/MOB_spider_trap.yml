@@ -3,7 +3,7 @@
   name: web trap
   description: You wrap a web around the target, slowing its movement.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffect
     telegraphyEffects:

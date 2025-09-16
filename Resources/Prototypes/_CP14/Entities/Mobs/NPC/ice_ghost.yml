@@ -62,7 +62,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 100
@@ -80,7 +79,7 @@
   parent: CP14ActionSpellIceShards
   id: CP14ActionSpellIceShardsGhost
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: -2.0
   - type: Action
     useDelay: 1

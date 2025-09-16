@@ -33,7 +33,6 @@ public abstract partial class CP14SharedMagicSystem : EntitySystem
         InitializeDelayedActions();
         InitializeToggleableActions();
         InitializeInstantActions();
-        InitializeSlowdown();
 
         _magicEffectQuery = GetEntityQuery<CP14MagicEffectComponent>();
 

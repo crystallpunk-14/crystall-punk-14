@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_shards
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.75
   - type: CP14ActionManaCost
     manaCost: 5

@@ -4,7 +4,7 @@
   name: Hypnosys
   description: You focus on the target, mesmerizing and lulling it to sleep.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectVampire
   - type: CP14ActionManaCost
