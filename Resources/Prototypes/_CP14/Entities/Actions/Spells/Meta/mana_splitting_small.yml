@@ -17,7 +17,6 @@
     - !type:CP14SpellMixSolution
       reactionTypes:
       - CP14MagicSplitting
-    - !type:CP14SpellInterruptSpell
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange

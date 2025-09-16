@@ -1,10 +1,10 @@
 using System.Linq;
 using Content.Shared._CP14.Actions.Components;
 using Content.Shared._CP14.MagicEnergy.Components;
-using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.Religion.Components;
 using Content.Shared._CP14.Skill.Components;
+using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage.Components;
@@ -42,9 +42,10 @@ public abstract partial class CP14SharedActionSystem
         if (args.Cancelled)
             return;
 
-        TryComp<CP14MagicEffectComponent>(ent, out var magicEffect);
+        if (!TryComp<ActionComponent>(ent, out var action))
+            return;
 
-        //Total man required
+        //Total mana required
         var requiredMana = ent.Comp.ManaCost;
 
         if (ent.Comp.CanModifyManacost)
@@ -53,15 +54,15 @@ public abstract partial class CP14SharedActionSystem
 
             RaiseLocalEvent(args.User, manaEv);
 
-            if (magicEffect?.SpellStorage is not null)
-                RaiseLocalEvent(magicEffect.SpellStorage.Value, manaEv);
+            if (action.Container is not null)
+                RaiseLocalEvent(action.Container.Value, manaEv);
 
             requiredMana = manaEv.GetManacost();
         }
 
         //First - trying get mana from item
-        if (magicEffect is not null && magicEffect.SpellStorage is not null &&
-            TryComp<CP14MagicEnergyContainerComponent>(magicEffect.SpellStorage, out var magicContainer))
+        if (action.Container is not null &&
+            TryComp<CP14MagicEnergyContainerComponent>(action.Container, out var magicContainer))
             requiredMana = MathF.Max(0, (float)(requiredMana - magicContainer.Energy));
 
         if (requiredMana <= 0)

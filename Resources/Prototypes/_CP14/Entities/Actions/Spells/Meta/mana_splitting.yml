@@ -16,7 +16,6 @@
     - !type:CP14SpellSpawnEntityOnTarget
       spawns:
       - CP14ImpactEffectMagicSplitting
-    - !type:CP14SpellInterruptSpell
     - !type:CP14SpellApplyEntityEffect
       effects:
       - !type:CP14ManaChange
