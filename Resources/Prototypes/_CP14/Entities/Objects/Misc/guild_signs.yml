@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14RedGuildSign
+  id: CP14GuildSignRed
   name: red guild sign
   description: A small sign to indicate a desk related to red quests.
   parent: 
@@ -15,7 +15,7 @@
     size: Small
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    damageModifierSet: CP14Wood
   - type: Destructible
     thresholds:
     - trigger:
@@ -52,11 +52,11 @@
       CP14WoodenPlanks: 20
 
 - type: entity
-  id: CP14YellowGuildSign
+  id: CP14GuildSignYellow
   name: yellow guild sign
   description: A small sign to indicate a desk related to yellow quests.
   parent: 
-  - CP14RedGuildSign
+  - CP14GuildSignRed
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
@@ -65,11 +65,11 @@
     state: yellow
 
 - type: entity
-  id: CP14BlueGuildSign
+  id: CP14GuildSignBlue
   name: blue guild sign
   description: A small sign to indicate a desk related to blue quests.
   parent: 
-  - CP14RedGuildSign
+  - CP14GuildSignRed
   categories: [ ForkFiltered ]
   components:
   - type: Sprite
@@ -78,11 +78,11 @@
     state: blue
 
 - type: entity
-  id: CP14GreenGuildSign
+  id: CP14GuildSignGreen
   name: green guild sign
   description: A small sign to indicate a desk related to green quests.
   parent: 
-  - CP14RedGuildSign
+  - CP14GuildSignRed
   categories: [ ForkFiltered ]
   components:
   - type: Sprite

@@ -16,21 +16,21 @@
     head: CP14ClothingHeadGuildBeret
 
 - type: loadout
-  id: CP14ClothingHeadRedGuildBeret
+  id: CP14ClothingHeadGuildBeretRed
   equipment:
-    head: CP14ClothingHeadRedGuildBeret
+    head: CP14ClothingHeadGuildBeretRed
 
 - type: loadout
-  id: CP14ClothingHeadYellowGuildBeret
+  id: CP14ClothingHeadGuildBeretYellow
   equipment:
-    head: CP14ClothingHeadYellowGuildBeret
+    head: CP14ClothingHeadGuildBeretYellow
 
 - type: loadout
-  id: CP14ClothingHeadGreenGuildBeret
+  id: CP14ClothingHeadGuildBeretGreen
   equipment:
-    head: CP14ClothingHeadGreenGuildBeret
+    head: CP14ClothingHeadGuildBeretGreen
 
 - type: loadout
-  id: CP14ClothingHeadBlueGuildBeret
+  id: CP14ClothingHeadGuildBeretBlue
   equipment:
-    head: CP14ClothingHeadBlueGuildBeret
+    head: CP14ClothingHeadGuildBeretBlue

@@ -93,14 +93,14 @@
       - id: CP14StampDenied
       - id: CP14StampApproved
       - id: CP14PaperFolderBlue
-      - id: CP14ClothingHeadRedGuildBeret
-      - id: CP14ClothingHeadYellowGuildBeret
-      - id: CP14ClothingHeadBlueGuildBeret
-      - id: CP14ClothingHeadGreenGuildBeret
-      - id: CP14RedGuildSign
-      - id: CP14YellowGuildSign
-      - id: CP14GreenGuildSign
-      - id: CP14BlueGuildSign
+      - id: CP14ClothingHeadGuildBeretRed
+      - id: CP14ClothingHeadGuildBeretYellow
+      - id: CP14ClothingHeadGuildBeretBlue
+      - id: CP14ClothingHeadGuildBeretGreen
+      - id: CP14GuildSignRed
+      - id: CP14GuildSignYellow
+      - id: CP14GuildSignGreen
+      - id: CP14GuildSignBlue
 
 - type: entity
   parent: CP14WoodenCloset

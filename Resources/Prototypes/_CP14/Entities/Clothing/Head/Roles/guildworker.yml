@@ -11,7 +11,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadRedGuildBeret
+  id: CP14ClothingHeadGuildBeretRed
   name: red guild beret
   description: A welcoming sign of care and responsibility. This one is associated with hunting and fighting.
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadYellowGuildBeret
+  id: CP14ClothingHeadGuildBeretYellow
   name: yellow guild beret
   description: A welcoming sign of care and responsibility. This one is associated with gathering and mining.
   components:
@@ -33,7 +33,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadBlueGuildBeret
+  id: CP14ClothingHeadGuildBeretBlue
   name: blue guild beret
   description: A welcoming sign of care and responsibility. This one is associated with creating and building.
   components:
@@ -44,7 +44,7 @@
 
 - type: entity
   parent: CP14ClothingHeadBase
-  id: CP14ClothingHeadGreenGuildBeret
+  id: CP14ClothingHeadGuildBeretGreen
   name: green guild beret
   description: A welcoming sign of care and responsibility. This one is associated with speaking and teaching.
   components:
