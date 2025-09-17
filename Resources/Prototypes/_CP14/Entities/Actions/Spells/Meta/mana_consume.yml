@@ -38,14 +38,15 @@
   name: Carefull mana consume
   description: You absorb mana at a tremendous rate without dealing damage to the mana holder.
   components:
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaConsume
-    - !type:CP14SpellConsumeManaEffect
-      safe: true
-      mana: 20
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaConsume
+      - !type:CP14SpellConsumeManaEffect
+        safe: true
+        mana: 20
 
 - type: entity
   id: CP14RuneManaConsume

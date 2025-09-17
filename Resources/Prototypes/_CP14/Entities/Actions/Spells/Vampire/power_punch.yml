@@ -8,7 +8,6 @@
   - type: CP14MagicEffectVampire
   - type: CP14ActionManaCost
     manaCost: 20
-  - type: CP14MagicEffect
   - type: Action
     useDelay: 45
     icon:

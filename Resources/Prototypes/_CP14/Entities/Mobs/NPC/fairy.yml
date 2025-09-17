@@ -101,19 +101,8 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaConsume
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaConsume
-    - !type:CP14SpellConsumeManaEffect
-      safe: false
-      mana: 0.5
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_consume
@@ -123,7 +112,14 @@
       components:
       - CP14MagicEnergyContainer
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 5
-      castTime: 10
-      breakOnMove: false
-      hidden: true
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaConsume
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaConsume
+      - !type:CP14SpellConsumeManaEffect
+        safe: false
+        mana: 0.5

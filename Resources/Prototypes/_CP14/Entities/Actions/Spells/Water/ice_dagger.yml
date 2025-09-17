@@ -4,33 +4,30 @@
   name: Ice dagger
   description: You form an icy sharp dagger that will do for temporary use.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: ice_dagger
   - type: CP14ActionManaCost
     manaCost: 25
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectWaterCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14WeaponDaggerIce
   - type: CP14ActionSpeaking
     startSpeech: "Un pittore sulla..."
     endSpeech: "soglia della mano"
   - type: CP14ActionFreeHandsRequired
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
+  - type: DoAfterArgs
+    delay: 0.5
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_dagger
   - type: InstantAction
     event: !type:CP14InstantModularEffectEvent
-      cooldown: 5
-      castDelay: 0.5
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectWaterCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14WeaponDaggerIce
 
 - type: entity
   name: ice dagger

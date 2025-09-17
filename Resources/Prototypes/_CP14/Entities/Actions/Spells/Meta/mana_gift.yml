@@ -49,16 +49,17 @@
   components:
   - type: CP14ActionManaCost
     manaCost: 20
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaGift
-    - !type:CP14SpellApplyEntityEffect
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetModularEffectEvent
       effects:
-      - !type:CP14ManaChange
-        manaDelta: 20
-        safe: true
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaGift
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: 20
+          safe: true
 
 - type: entity
   id: CP14RuneManaGift

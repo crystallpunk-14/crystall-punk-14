@@ -9,14 +9,6 @@
     state: beer_creation
   - type: CP14ActionManaCost
     manaCost: 20
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectBeerCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14LiquidDropBeer
   - type: CP14ActionSpeaking
     startSpeech: "beer..."
     endSpeech: "Arriva la birra"
@@ -32,6 +24,13 @@
       cooldown: 30
       castDelay: 5
       breakOnMove: true
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectBeerCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14LiquidDropBeer
 
 - type: entity
   id: CP14RuneBeerCreation

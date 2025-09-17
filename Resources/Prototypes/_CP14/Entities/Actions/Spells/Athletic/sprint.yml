@@ -12,11 +12,6 @@
     hidden: true
     repeat: true
     delay: 0.25
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14DustEffect
   - type: Action
     useDelay: 2
     icon:
