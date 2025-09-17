@@ -4,36 +4,18 @@
   name: Vampire bite
   description: You suck the blood and very essence of life from your victim. (The amount of essence in each player is limited)
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.3
   - type: CP14MagicEffectVampire
   - type: CP14ActionSSDBlock
   - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Alive
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectVampireBite
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-    effects:
-    - !type:CP14SpellSuckBlood
-      suckAmount: 5
-    - !type:CP14SpellVampireGatherEssence
-    - !type:CP14SpellSpawnEntityOnUser
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodEssence
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-      - !type:ModifyBloodLevel
-        amount: -3
+  - type: DoAfterArgs
+    delay: 2
+    hidden: true
   - type: Action
+    useDelay: 0.5
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: bite
@@ -50,9 +32,26 @@
       components:
       - MobState
       - Bloodstream
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 0.5
-      castDelay: 2
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectVampireBite
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+      effects:
+      - !type:CP14SpellSuckBlood
+        suckAmount: 5
+      - !type:CP14SpellVampireGatherEssence
+      - !type:CP14SpellSpawnEntityOnUser
+        spawns:
+        - CP14ImpactEffectBloodEssence
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:ModifyBloodLevel
+          amount: -3
 
 - type: entity
   id: CP14ImpactEffectVampireBite

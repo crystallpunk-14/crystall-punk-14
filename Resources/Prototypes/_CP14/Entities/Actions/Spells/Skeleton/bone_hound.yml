@@ -4,22 +4,10 @@
   name: Call of the Bone hound
   description: The spell creates a bloodthirsty bone hound from bones. With luck, it may even gain a mind as cunning as your own.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/skeleton.rsi
-    state: bone_hound
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 50
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectCallBoneHound
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14MobMonsterBoneHound
   - type: CP14ActionMaterialCost
     requirement: !type:StackResource
       stack: CP14Bone
@@ -27,9 +15,12 @@
   - type: CP14ActionSpeaking
     startSpeech: "Ossa mortuorum..."
     endSpeech: "incipiunt mihi quasi canis canis servire"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneCallBoneHound
+  - type: DoAfterArgs
+    delay: 5
   - type: Action
+    useDelay: 20
     icon:
       sprite: _CP14/Actions/Spells/skeleton.rsi
       state: bone_hound
@@ -38,8 +29,15 @@
   - type: TargetAction
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
-      cooldown: 20
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectCallBoneHound
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14MobMonsterBoneHound
 
 - type: entity
   id: CP14RuneCallBoneHound

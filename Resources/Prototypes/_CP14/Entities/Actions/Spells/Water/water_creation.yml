@@ -9,26 +9,25 @@
     state: water_creation
   - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectWaterCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14LiquidDropWater
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
   - type: Action
+    useDelay: 10
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: water_creation
+  - type: DoAfterArgs
+    delay: 1
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 10
-      castDelay: 0.8
-      breakOnMove: false
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectWaterCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14LiquidDropWater
 
 - type: entity
   id: CP14RuneWaterCreation
