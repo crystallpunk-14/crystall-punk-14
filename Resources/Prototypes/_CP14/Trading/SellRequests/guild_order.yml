@@ -16,4 +16,14 @@
   - !type:ProtoIdResource
     protoId: CP14PartsMonsterGlandsSpineguard
     count: 2
+  additionalReward: 130
+
+- type: cp14TradingRequest
+  id: GuildOrderCP14FoodSpiderEgg
+  possibleFactions:
+  - GuildOrder
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodSpiderEgg
+    count: 3
   additionalReward: 110

@@ -122,3 +122,41 @@
           Quantity: 6
         - ReagentId: Protein
           Quantity: 2
+
+# Spider egg
+
+- type: entity
+  id: CP14FoodSpiderEgg
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
+  name: spider egg
+  description: A spider egg with a tiny spider inside.
+  categories: [ ForkFiltered ]
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Food
+    forceFeedDelay: 1
+    transferAmount: null
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/egg.rsi
+    state: spider_egg
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: Egg
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 6
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Damageable
+    damageContainer: Biological
+  - type: StaticPrice
+    price: 2

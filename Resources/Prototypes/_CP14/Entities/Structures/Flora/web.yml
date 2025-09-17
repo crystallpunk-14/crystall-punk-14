@@ -139,12 +139,16 @@
       range: 1, 2
     children:
       - !type:NestedSelector
-        weight: 75
+        weight: 70
         tableId: CP14TableDemiplaneLootT1
       - !type:GroupSelector
         weight: 25
         children:
         - id: CP14MobSpiderBlackHunter
+      - !type:GroupSelector
+        weight: 5
+        children:
+        - id: CP14FoodSpiderEgg
 
 - type: entity
   parent: MarkerBase
