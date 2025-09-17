@@ -4,50 +4,47 @@
   name: Primal terror
   description: You plunge the target into primal terror, robbing them of the ability to fight and speak.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/lurker.rsi
-    state: fear
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.4
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnUser
-      spawns:
-      - CP14RuneLurkerFearImpact
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectLurkerFear
-    - !type:CP14SpellRevealStealthUser
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:MovespeedModifier
-        walkSpeedModifier: 0.2
-        sprintSpeedModifier: 0.2
-        statusLifetime: 2
-      - !type:Jitter
-      - !type:GenericStatusEffect
-        key: Pacified
-        component: Pacified
-        type: Add
-        time: 2
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneLurkerFear
   - type: Action
+    useDelay: 30
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: fear
   - type: TargetAction
     range: 15
     interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 1.5
+    hidden: true
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:
       components:
       - MobState
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 30
-      castTime: 30
-      hidden: true
+      effects:
+      - !type:CP14SpellSpawnEntityOnUser
+        spawns:
+        - CP14RuneLurkerFearImpact
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectLurkerFear
+      - !type:CP14SpellRevealStealthUser
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 0.2
+          sprintSpeedModifier: 0.2
+          statusLifetime: 2
+        - !type:Jitter
+        - !type:GenericStatusEffect
+          key: Pacified
+          component: Pacified
+          type: Add
+          time: 2
 
 - type: entity
   id: CP14ImpactEffectLurkerFear

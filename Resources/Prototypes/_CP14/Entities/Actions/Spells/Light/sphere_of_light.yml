@@ -4,19 +4,8 @@
   name: Sphere of Light
   description: Materialization of a bright and safe light source.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: sphere_of_light
   - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectSphereOfLight
-    - !type:CP14SpellApplyStatusEffect
-      statusEffect: CP14StatusEffectGlowing
-      duration: 120
   - type: CP14ActionSpeaking
     startSpeech: "Appare in manu tua..."
     endSpeech: "sphaera lucis"
@@ -24,9 +13,12 @@
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneSphereOfLight
   - type: Action
+    useDelay: 30
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: sphere_of_light
+  - type: DoAfterArgs
+    delay: 0.5
   - type: TargetAction
     range: 5
   - type: EntityTargetAction
@@ -36,8 +28,13 @@
       - Item
       - Anchorable
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 30
-      castDelay: 0.5
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectSphereOfLight
+      - !type:CP14SpellApplyStatusEffect
+        statusEffect: CP14StatusEffectGlowing
+        duration: 120
 
 - type: entity
   id: CP14RuneSphereOfLight

@@ -4,26 +4,17 @@
   name: Flash Light
   description: Creates a flash of bright, blinding light.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: flash_light
   - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectFlashLight
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14SpawnEffectFlashLight
   - type: CP14ActionSpeaking
     startSpeech: "Lux clara..."
     endSpeech: "excaecant inimicos meos"
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneFlashLight
+  - type: DoAfterArgs
+    delay: 0.5
   - type: Action
+    useDelay: 6
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: flash_light
@@ -31,8 +22,14 @@
     range: 10
   - type: WorldTargetAction
     event: !type:CP14WorldTargetModularEffectEvent
-      cooldown: 5
-      castDelay: 0.5
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectFlashLight
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14SpawnEffectFlashLight
 
 - type: entity
   id: CP14RuneFlashLight
