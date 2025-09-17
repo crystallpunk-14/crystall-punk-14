@@ -31,12 +31,10 @@
     event: !type:CP14EntityTargetModularEffectEvent
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectCureWounds
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectCureWounds
       - !type:CP14SpellApplyEntityEffect

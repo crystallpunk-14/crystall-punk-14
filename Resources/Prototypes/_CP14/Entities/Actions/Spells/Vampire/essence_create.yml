@@ -26,7 +26,6 @@
         - !type:Jitter
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssence
       - !type:CP14SpellSpawnInHandEntity

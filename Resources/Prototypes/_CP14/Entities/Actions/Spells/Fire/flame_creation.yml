@@ -24,7 +24,6 @@
     event: !type:CP14InstantModularEffectEvent
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectFlameCreation
       - !type:CP14SpellSpawnInHandEntity

@@ -41,12 +41,10 @@
       breakOnMove: true
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssenceInverse
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssence2
       - !type:CP14SpellResurrectionEffect

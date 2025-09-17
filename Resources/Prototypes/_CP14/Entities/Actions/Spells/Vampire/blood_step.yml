@@ -26,7 +26,6 @@
     event: !type:CP14WorldTargetModularEffectEvent
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodStep
       effects:

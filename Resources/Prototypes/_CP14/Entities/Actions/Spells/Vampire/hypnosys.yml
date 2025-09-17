@@ -28,7 +28,6 @@
     event: !type:CP14EntityTargetModularEffectEvent
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectVampireHypnosis
       - !type:CP14SpellApplyEntityEffect

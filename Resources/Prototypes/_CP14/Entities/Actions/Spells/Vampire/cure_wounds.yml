@@ -32,12 +32,10 @@
       castDelay: 1.5
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssence
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssence
       - !type:CP14SpellApplyEntityEffect

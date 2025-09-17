@@ -35,7 +35,6 @@
     event: !type:CP14EntityTargetModularEffectEvent
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
-        clientside: true
         spawns:
         - CP14ImpactEffectVampireBite
       - !type:CP14SpellApplyEntityEffect
@@ -46,7 +45,6 @@
         suckAmount: 5
       - !type:CP14SpellVampireGatherEssence
       - !type:CP14SpellSpawnEntityOnUser
-        clientside: true
         spawns:
         - CP14ImpactEffectBloodEssence
       - !type:CP14SpellApplyEntityEffect
