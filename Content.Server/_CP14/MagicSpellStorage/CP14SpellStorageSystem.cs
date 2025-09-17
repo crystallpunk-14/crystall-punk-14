@@ -37,6 +37,15 @@ public sealed partial class CP14SpellStorageSystem : CP14SharedSpellStorageSyste
     /// </summary>
     private void OnMagicStorageInit(Entity<CP14SpellStorageComponent> storage, ref MapInitEvent args)
     {
+        foreach (var spell in storage.Comp.Spells)
+        {
+            var spellEnt = _actionContainer.AddAction(storage, spell);
+            if (spellEnt is null)
+                continue;
+
+            storage.Comp.SpellEntities.Add(spellEnt.Value);
+        }
+
         if (storage.Comp.GrantAccessToSelf)
         {
             if (!_mind.TryGetMind(storage.Owner, out var mind, out _))
