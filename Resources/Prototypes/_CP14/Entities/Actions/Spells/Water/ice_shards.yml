@@ -22,7 +22,7 @@
     checkCanAccess: false
     range: 60
   - type: WorldTargetAction
-    event: !type:CP14WorldTargetActionEvent
+    event: !type:CP14WorldTargetModularEffectEvent
       effects:
       - !type:CP14SpellProjectile
         prototype: CP14IceShard

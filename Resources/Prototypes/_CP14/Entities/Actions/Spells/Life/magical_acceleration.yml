@@ -19,7 +19,6 @@
       state: magical_acceleration
   - type: InstantAction
     event: !type:CP14InstantModularEffectEvent
-      hidden: true
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:

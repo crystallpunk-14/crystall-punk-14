@@ -29,7 +29,6 @@
       components:
       - MobState
     event: !type:CP14EntityTargetModularEffectEvent
-      castDelay: 1.5
       telegraphyEffects:
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:

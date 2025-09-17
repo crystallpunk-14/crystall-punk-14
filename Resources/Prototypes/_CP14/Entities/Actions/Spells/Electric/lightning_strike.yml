@@ -22,11 +22,10 @@
   - type: TargetAction
     range: 5
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 2
   - type: EntityTargetAction
     canTargetSelf: false
     event: !type:CP14EntityTargetModularEffectEvent
-      castDelay: 2.0
       effects:
       - !type:CP14SpellSpawnEntityOnTarget
         spawns:

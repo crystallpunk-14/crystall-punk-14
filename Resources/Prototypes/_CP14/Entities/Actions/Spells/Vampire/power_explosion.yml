@@ -21,7 +21,6 @@
     delay: 1.5
   - type: InstantAction
     event: !type:CP14InstantModularEffectEvent
-      breakOnDamage: false
       effects:
       - !type:CP14SpellSpawnEntityOnUser
         spawns:

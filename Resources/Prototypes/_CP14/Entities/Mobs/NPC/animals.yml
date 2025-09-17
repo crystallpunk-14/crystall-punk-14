@@ -475,8 +475,8 @@
   - type: NpcFactionMember
     factions:
     - CP14AggressiveAnimals
-  - type: NPCUseActionOnTarget
-    actionId: CP14ActionBearSpellSprint
+  #- type: NPCUseActionOnTarget # TODO: add support for non-target actions
+  #  actionId: CP14ActionBearSpellSprint
   - type: Sprite
     drawdepth: Mobs
     layers:
