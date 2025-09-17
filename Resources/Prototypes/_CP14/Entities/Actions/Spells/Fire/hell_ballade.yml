@@ -21,6 +21,7 @@
   - type: CP14ActionDangerous
   - type: Action
     useDelay: 15
+    sound: null
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: fire_music

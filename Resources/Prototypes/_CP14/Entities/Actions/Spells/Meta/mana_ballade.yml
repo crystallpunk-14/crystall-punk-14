@@ -17,6 +17,7 @@
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicBallade
   - type: Action
+    sound: null
     useDelay: 15
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
