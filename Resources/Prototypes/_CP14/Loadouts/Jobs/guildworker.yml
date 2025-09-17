@@ -5,10 +5,10 @@
   name: cp14-loadout-guildworker-head
   loadouts:
   - CP14ClothingHeadGuildBeret
-  - CP14ClothingHeadRedGuildBeret
-  - CP14ClothingHeadYellowGuildBeret
-  - CP14ClothingHeadBlueGuildBeret
-  - CP14ClothingHeadGreenGuildBeret
+  - CP14ClothingHeadGuildBeretRed
+  - CP14ClothingHeadGuildBeretYellow
+  - CP14ClothingHeadGuildBeretBlue
+  - CP14ClothingHeadGuildBeretGreen
 
 - type: loadout
   id: CP14ClothingHeadGuildBeret
