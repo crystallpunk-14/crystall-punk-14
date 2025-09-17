@@ -8,15 +8,12 @@
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
     manaCost: 30
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectBloodEssence
-    effects:
-    - !type:CP14SpellTeleportToVampireSingleton
-  - type: CP14ActionFreeHandsRequired
+  - type: DoAfterArgs
+    delay: 2
+    breakOnMove: true
+    breakOnDamage: true
   - type: Action
+    useDelay: 60
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: portal
@@ -24,7 +21,9 @@
     range: 3
   - type: WorldTargetAction
     event: !type:CP14WorldTargetModularEffectEvent
-      cooldown: 60
-      castDelay: 2
-      breakOnMove: true
-      breakOnDamage: true
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectBloodEssence
+      effects:
+      - !type:CP14SpellTeleportToVampireSingleton

@@ -15,38 +15,15 @@
   - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Dead
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodEssenceInverse
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodEssence2
-    - !type:CP14SpellResurrectionEffect
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:ChemVomit
-        probability: 0.25
-      - !type:Emote
-        showInChat: false
-        emote: Cough
-        probability: 0.3
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: -500
-            Bloodloss: -100
-      - !type:Jitter
   - type: CP14ActionSpeaking
     startSpeech: "Redi animam meam..."
     endSpeech: "Eu rezei por ti"
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireResurrection
+  - type: DoAfterArgs
+    delay: 5
   - type: Action
+    useDelay: 180
     sound: !type:SoundPathSpecifier
       path: /Audio/_CP14/Effects/ritual_end.ogg
     icon:
@@ -61,9 +38,32 @@
       components:
       - MobState
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 180
-      castDelay: 16
       breakOnMove: true
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectBloodEssenceInverse
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        clientside: true
+        spawns:
+        - CP14ImpactEffectBloodEssence2
+      - !type:CP14SpellResurrectionEffect
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:ChemVomit
+          probability: 0.25
+        - !type:Emote
+          showInChat: false
+          emote: Cough
+          probability: 0.3
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -500
+              Bloodloss: -100
+        - !type:Jitter
 
 - type: entity
   id: CP14RuneVampireResurrection
