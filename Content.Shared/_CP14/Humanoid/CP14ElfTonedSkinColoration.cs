@@ -26,7 +26,7 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
         if (hue < 20f || hue > 270f)
             return false;
 
-        if (sat < 5f || sat > 35f)
+        if (sat < 5f || sat > 50f)
             return false;
 
         if (val < 20f || val > 100f)
@@ -83,13 +83,31 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
     public float ToUnary(Color color)
     {
         var hsv = Color.ToHsv(color);
-
         var hue = hsv.X * 360f;
         var sat = hsv.Y * 100f;
         var val = hsv.Z * 100f;
+        if (hue > 255)
+        {
+            var progressVal = (100f - val) / (100f - 25f);
+            return Math.Clamp(progressVal * 100f, 0f, 100f);
+        }
+        else
+        {
+            // check for hue/value first, if hue is lower than this percentage
+            // and value is 1.0
+            // then it'll be hue
+            if (Math.Clamp(hsv.X, 25f / 360f, 1) > 25f / 360f
+                && hsv.Z == 1.0)
+            {
+                return Math.Abs(45 - hsv.X * 360);
+            }
+            // otherwise it'll directly be the saturation
+            else
+            {
+                return hsv.Y * 100;
+            }
+        }
 
-        var progressVal = (100f - val) / (100f - 25f);
 
-        return Math.Clamp(progressVal * 100f, 0f, 100f);
     }
 }
