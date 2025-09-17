@@ -16,6 +16,7 @@
   - type: CP14ActionDoAfterVisuals
     proto: CP14RunePeaceBallade
   - type: Action
+    sound: null
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: peace_music

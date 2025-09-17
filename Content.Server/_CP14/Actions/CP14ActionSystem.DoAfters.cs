@@ -33,18 +33,32 @@ public sealed partial class CP14ActionSystem
 
     private void OnVerbalActionPerformed(Entity<CP14ActionSpeakingComponent> ent, ref ActionDoAfterEvent args)
     {
+        if (args.Cancelled)
+            return;
+
+        if (!args.Handled)
+            return;
+
         var performer = GetEntity(args.Performer);
         _chat.TrySendInGameICMessage(performer, ent.Comp.EndSpeech, ent.Comp.Whisper ? InGameICChatType.Whisper : InGameICChatType.Speak, true);
     }
 
     private void OnEmoteActionPerformed(Entity<CP14ActionEmotingComponent> ent, ref ActionDoAfterEvent args)
     {
+        if (args.Cancelled)
+            return;
+
+        if (!args.Handled)
+            return;
+
         var performer = GetEntity(args.Performer);
         _chat.TrySendInGameICMessage(performer, Loc.GetString(ent.Comp.EndEmote), InGameICChatType.Emote, true);
     }
 
     private void OnSpawnMagicVisualEffect(Entity<CP14ActionDoAfterVisualsComponent> ent, ref CP14ActionStartDoAfterEvent args)
     {
+        QueueDel(ent.Comp.SpawnedEntity);
+
         var performer = GetEntity(args.Performer);
         var vfx = SpawnAttachedTo(ent.Comp.Proto, Transform(performer).Coordinates);
         _transform.SetParent(vfx, performer);
@@ -53,6 +67,9 @@ public sealed partial class CP14ActionSystem
 
     private void OnDespawnMagicVisualEffect(Entity<CP14ActionDoAfterVisualsComponent> ent, ref ActionDoAfterEvent args)
     {
+        if (args.Repeat)
+            return;
+
         QueueDel(ent.Comp.SpawnedEntity);
         ent.Comp.SpawnedEntity = null;
     }

@@ -8,6 +8,7 @@
   components:
   - type: Action
     useDelay: 10
+    sound: null
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: second_wind
