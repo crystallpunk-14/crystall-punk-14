@@ -11,7 +11,7 @@
   - type: DoAfterArgs
     delay: 1
     repeat: true
-    distanceThreshold: 5
+    breakOnMove: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicSplitting
   - type: Action

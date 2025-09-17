@@ -16,7 +16,7 @@
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell_small
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 1
   - type: TargetAction
     range: 5
   - type: EntityTargetAction
@@ -36,5 +36,5 @@
       - !type:CP14SpellApplyEntityEffect
         effects:
         - !type:CP14ManaChange
-          manaDelta: -15
+          manaDelta: -5
           safe: false

@@ -4,36 +4,34 @@
   name: Mana trance
   description: You go into a trance for a while, restoring mana.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: mana_trance
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.05
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaGift
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:CP14ManaChange
-        manaDelta: 2
-        safe: true
-      - !type:HealthChange
-        damage:
-          types:
-            CP14ManaDepletion: -0.1
+  - type: DoAfterArgs
+    repeat: true
+    delay: 1
+    hidden: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaTrance
   - type: Action
+    useDelay: 60
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_trance
   - type: InstantAction
     event: !type:CP14InstantModularEffectEvent
-      cooldown: 60
-      castTime: 120
-      hidden: true
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaGift
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: 2
+          safe: true
+        - !type:HealthChange
+          damage:
+            types:
+              CP14ManaDepletion: -0.1
 
 - type: entity
   id: CP14RuneManaTrance
