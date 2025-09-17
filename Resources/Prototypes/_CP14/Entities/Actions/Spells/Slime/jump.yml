@@ -3,15 +3,11 @@
   name: Slime jump
   description: Jump! JUMP!
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/slime.rsi
-    state: jump
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.1
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellThrowUserTo
-      throwPower: 8
+  - type: DoAfterArgs
+    delay: 1
+    hidden: true
   - type: Action
     itemIconStyle: BigAction
     useDelay: 8
@@ -23,6 +19,6 @@
     range: 10
   - type: WorldTargetAction
     event: !type:CP14WorldTargetModularEffectEvent
-      hidden: true
-      breakOnDamage: false
-      castDelay: 1
+      effects:
+      - !type:CP14SpellThrowUserTo
+        throwPower: 8

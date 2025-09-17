@@ -6,13 +6,9 @@
   components:
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellProjectile
-      prototype: CP14SpikeVuln
-      spread: 1.5
-      projectileSpeed: 10
-      projectileCount: 10
+  - type: DoAfterArgs
+    delay: 1
+    hidden: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVulnSpikes
   - type: CP14ActionDangerous
@@ -28,10 +24,12 @@
     range: 60
   - type: EntityTargetAction
     event: !type:CP14EntityTargetModularEffectEvent
-      cooldown: 7.5
-      castDelay: 1.0
-      breakOnDamage: false
-      hidden: true
+      effects:
+      - !type:CP14SpellProjectile
+        prototype: CP14SpikeVuln
+        spread: 1.5
+        projectileSpeed: 10
+        projectileCount: 10
 
 - type: entity
   id: CP14RuneVulnSpikes
