@@ -2174,3 +2174,15 @@
   id: 8266
   time: '2025-09-17T10:58:12.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1787
+- author: SenorJaba
+  changes:
+  - message: Guild workers now have a new set of 5 berets, with one primary, and 4
+      recoloured ones for each type of quests.
+    type: Add
+  - message: Added 4 guild signs for each type of quests.
+    type: Add
+  - message: Both berets and signs have been added into guildmaster's closet.
+    type: Add
+  id: 8267
+  time: '2025-09-17T14:51:51.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1786
