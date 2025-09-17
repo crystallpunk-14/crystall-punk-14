@@ -157,6 +157,6 @@
   - type: Extractable
     grindableSolutionName: food
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: CP14Biological
   - type: StaticPrice
     price: 2
