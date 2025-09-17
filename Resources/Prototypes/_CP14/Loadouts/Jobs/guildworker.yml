@@ -1,0 +1,36 @@
+# Head
+
+- type: loadoutGroup
+  id: CP14GuildWorkerHead
+  name: cp14-loadout-guildworker-head
+  loadouts:
+  - CP14ClothingHeadGuildBeret
+  - CP14ClothingHeadGuildBeretRed
+  - CP14ClothingHeadGuildBeretYellow
+  - CP14ClothingHeadGuildBeretBlue
+  - CP14ClothingHeadGuildBeretGreen
+
+- type: loadout
+  id: CP14ClothingHeadGuildBeret
+  equipment:
+    head: CP14ClothingHeadGuildBeret
+
+- type: loadout
+  id: CP14ClothingHeadGuildBeretRed
+  equipment:
+    head: CP14ClothingHeadGuildBeretRed
+
+- type: loadout
+  id: CP14ClothingHeadGuildBeretYellow
+  equipment:
+    head: CP14ClothingHeadGuildBeretYellow
+
+- type: loadout
+  id: CP14ClothingHeadGuildBeretGreen
+  equipment:
+    head: CP14ClothingHeadGuildBeretGreen
+
+- type: loadout
+  id: CP14ClothingHeadGuildBeretBlue
+  equipment:
+    head: CP14ClothingHeadGuildBeretBlue

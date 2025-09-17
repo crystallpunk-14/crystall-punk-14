@@ -63,7 +63,7 @@ cp14-loadout-merchant-shirt = Merchant's shirt
 cp14-loadout-merchant-pants = Merchant's pants
 cp14-loadout-merchant-shoes = Merchant's shoes
 
-# Guildmaster
+# Guild
 
 cp14-loadout-guildmaster-outer = Guildmaster outer clothes
 cp14-loadout-guildmaster-head = Guildmaster hat
@@ -72,3 +72,5 @@ cp14-loadout-guildmaster-shirt = Guildmaster shirt
 cp14-loadout-guildmaster-pants = Guildmaster pants
 cp14-loadout-guildmaster-shoes = Guildmaster shoes
 cp14-loadout-guildmaster-spells = Guildmaster spells
+
+cp14-loadout-guildworker-head = Guild worker's head
