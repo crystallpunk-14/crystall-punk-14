@@ -10,7 +10,6 @@
 
   To keep your crops alive for an extended period, be sure to water them frequently. Keeping plants healthy is easier with the spell **“Plant Growth”** from the Vivification tree, which restores a plant’s water, nutrients, and health.
   <Box>
-    <GuideEntityEmbed Entity="CP14ActionSpellPlantGrowth"/>
     <GuideEntityEmbed Entity="CP14StoneWell"/>
   </Box>
 
