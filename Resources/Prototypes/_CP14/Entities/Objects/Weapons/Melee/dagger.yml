@@ -30,7 +30,7 @@
     wideAnimationRotation: -90
     damage:
       types:
-        Slash: 2
+        Slash: 3
         Piercing: 3
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcSlash

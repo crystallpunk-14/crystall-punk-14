@@ -87,5 +87,5 @@
     state: icon
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 20
-      CP14Iron: 20
+      CP14WoodenPlanks: 30
+      CP14Iron: 15

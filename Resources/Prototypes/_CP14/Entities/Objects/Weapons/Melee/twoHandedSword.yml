@@ -11,7 +11,7 @@
   - type: Item
     size: Ginormous
   - type: MeleeWeapon
-    attackRate: 0.5
+    attackRate: 0.6
     range: 1.6
     angle: 170 #Bigger in 2 times
     wideAnimationRotation: -90
