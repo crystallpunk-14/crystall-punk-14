@@ -2096,3 +2096,93 @@
   id: 8257
   time: '2025-09-11T09:33:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1765
+- author: Nimfar11
+  changes:
+  - message: Removes invisible fire traps from spawns in demiplanes.
+    type: Remove
+  id: 8258
+  time: '2025-09-12T14:24:18.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1768
+- author: oldschoolotaku
+  changes:
+  - message: Magic vision effect becomes weaker over time. It can be turned off via
+      "Reduced Motion" setting
+    type: Tweak
+  id: 8259
+  time: '2025-09-12T14:25:53.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1766
+- author: Nimfar11
+  changes:
+  - message: Returns three types of iron armour that can be purchased on the marketplace.
+    type: Add
+  id: 8260
+  time: '2025-09-13T12:22:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1770
+- author: TheShuEd
+  changes:
+  - message: Upstream sync
+    type: Add
+  - message: Dark elves coloring
+    type: Tweak
+  id: 8261
+  time: '2025-09-15T14:42:37.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1779
+- author: KittyCat432
+  changes:
+  - message: Added deconstruction options to most structures that can be made.
+    type: Add
+  - message: Added wrench and screwdriver to Dwarf Steel merchant contract.
+    type: Add
+  - message: Screwdriver and wrench now deal 2 damage of pierce/blunt.
+    type: Tweak
+  - message: Pickaxe now is in Dwarf steel merchant contract.
+    type: Tweak
+  - message: Armor is now in reputation tier 1 of Helmir merchant contract.
+    type: Tweak
+  id: 8262
+  time: '2025-09-15T14:45:42.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1777
+- author: Nimfar11
+  changes:
+  - message: Adds the Bone Hound Summon spell for the skeleton mage. The bone hound
+      is a ghost role.
+    type: Add
+  id: 8263
+  time: '2025-09-15T16:01:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1718
+- author: TheShuEd
+  changes:
+  - message: The day and night cycle on all maps (including demiplanes maps) now begins
+      at middays.
+    type: Tweak
+  - message: Fixed missing shadows from the sun
+    type: Fix
+  id: 8264
+  time: '2025-09-15T19:30:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1780
+- author: Viator-MV
+  changes:
+  - message: Now all races restore health until the damage reaches 80!
+    type: Tweak
+  id: 8265
+  time: '2025-09-16T15:11:46.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1769
+- author: TheKittehJesus
+  changes:
+  - message: Human tone elves skin selection works again
+    type: Fix
+  id: 8266
+  time: '2025-09-17T10:58:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1787
+- author: SenorJaba
+  changes:
+  - message: Guild workers now have a new set of 5 berets, with one primary, and 4
+      recoloured ones for each type of quests.
+    type: Add
+  - message: Added 4 guild signs for each type of quests.
+    type: Add
+  - message: Both berets and signs have been added into guildmaster's closet.
+    type: Add
+  id: 8267
+  time: '2025-09-17T14:51:51.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1786

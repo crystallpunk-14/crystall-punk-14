@@ -101,7 +101,6 @@
   - type: Grammar
     attributes:
       gender: epicene
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 100

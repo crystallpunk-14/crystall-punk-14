@@ -109,7 +109,6 @@
   - type: Grammar
     attributes:
       gender: epicene
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
   - type: Tag
     tags:

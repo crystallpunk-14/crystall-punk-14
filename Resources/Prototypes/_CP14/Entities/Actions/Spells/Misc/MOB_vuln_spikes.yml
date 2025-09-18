@@ -4,16 +4,12 @@
   name: Weakness Spikes
   description: You throw out several small spikes that cause weakness.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellProjectile
-      prototype: CP14SpikeVuln
-      spread: 1.5
-      projectileSpeed: 10
-      projectileCount: 10
-  - type: CP14MagicEffectCastingVisual
+  - type: DoAfterArgs
+    delay: 1
+    hidden: true
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVulnSpikes
   - type: CP14ActionDangerous
   - type: Action
@@ -27,12 +23,13 @@
     checkCanAccess: false
     range: 60
   - type: EntityTargetAction
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 7.5
-      castDelay: 1.0
-      breakOnDamage: false
-      breakOnMove: false
-      hidden: true
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellProjectile
+        prototype: CP14SpikeVuln
+        spread: 1.5
+        projectileSpeed: 10
+        projectileCount: 10
 
 - type: entity
   id: CP14RuneVulnSpikes

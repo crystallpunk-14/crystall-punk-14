@@ -54,7 +54,7 @@
     soundHit:
       collection: MetalThud
     cPAnimationLength: 0.3
-    cPAnimationOffset: -1.3
+    cPAnimationOffset: 1.3
   - type: CP14SpellStorageAccessHolding
   - type: CP14SpellStorage
     spells:
@@ -80,7 +80,6 @@
     spells:
     - CP14ActionSpellShadowStep
     - CP14ActionSpellShadowGrab
-    - CP14ActionSpellShadowSwap
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
   - type: Clothing
@@ -135,7 +134,7 @@
   components:
   - type: CP14SpellStorage
     spells:
-    - CP14ActionSpellPlantGrowth
+    - CP14ActionSpellCureWounds
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/druid_staff.rsi
   - type: Clothing
