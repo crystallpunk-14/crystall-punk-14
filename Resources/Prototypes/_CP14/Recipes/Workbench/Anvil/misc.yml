@@ -6,7 +6,7 @@
   requirements:
   - !type:StackResource
     stack: CP14WoodenPlanks
-    count: 2
+    count: 3
   - !type:StackResource
     stack: CP14IronBar
     count: 2

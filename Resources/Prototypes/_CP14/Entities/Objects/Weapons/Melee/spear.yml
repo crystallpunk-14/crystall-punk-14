@@ -27,7 +27,7 @@
     wideAnimationRotation: -90
     damage:
       types:
-        Piercing: 5
+        Piercing: 8
     animation: CP14WeaponArcThrust
     wideAnimation: CP14WeaponArcThrust
     soundHit:
@@ -42,7 +42,7 @@
     minDistance: 2.25
     bonusDamage:
       types:
-        Piercing: 5
+        Piercing: 6
   - type: Wieldable
   - type: Clothing
     slots:

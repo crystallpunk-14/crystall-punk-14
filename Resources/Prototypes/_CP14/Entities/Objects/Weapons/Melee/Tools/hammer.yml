@@ -18,10 +18,10 @@
         Blunt: 5
         Structural: 3
   - type: MeleeWeapon
-    resetOnHandSelected: false
+    resetOnHandSelected: true
     autoAttack: true
     attackRate: 2
-    range: 1.5
+    range: 1
     angle: 60
     wideAnimationRotation: -90
     damage:

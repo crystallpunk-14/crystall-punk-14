@@ -162,6 +162,7 @@
   - CP14ClothingEyesMonocle
   - CP14ClothingEyesGlasses
   - CP14ClothingEyesEyePatch
+
 - type: loadout
   id: CP14ClothingEyesMonocle
   equipment:

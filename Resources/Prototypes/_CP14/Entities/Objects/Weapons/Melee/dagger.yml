@@ -57,7 +57,7 @@
   - type: PhysicalComposition
     materialComposition:
       CP14WoodenPlanks: 10
-      CP14Iron: 10
+      CP14Iron: 5
 
 - type: entity
   parent: CP14BaseWeaponDagger
