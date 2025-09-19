@@ -1,6 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Client.Lobby;
+using Content.Shared._CP14.Species;
 using Content.Shared.CCVar;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Players;
 using Content.Shared.Players.JobWhitelist;
 using Content.Shared.Players.PlayTimeTracking;
@@ -127,6 +129,38 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         foreach (var requirement in requirements)
         {
             //CP14 Add NetUserId for sponsorship checks
+            if (requirement.Check(_playerManager.LocalSession?.UserId, _entManager, _prototypes, profile, _roles, out var jobReason))
+                continue;
+
+            reasons.Add(jobReason.ToMarkup());
+        }
+
+        reason = reasons.Count == 0 ? null : FormattedMessage.FromMarkupOrThrow(string.Join('\n', reasons));
+        return reason == null;
+    }
+
+
+    // CrystallEdge-SpeciesRequirements : Additional methods for species management.
+    public bool IsAllowed(SpeciesPrototype species, HumanoidCharacterProfile? profile, [NotNullWhen(false)] out FormattedMessage? reason)
+    {
+        var restrictions = _entManager.System<SharedSpeciesSystem>().GetSpeciesRequirements(species);
+        if (!CheckSpeciesRequirements(restrictions, profile, out reason))
+            return false;
+
+        return true;
+    }
+
+    // CrystallEdge-SpeciesRequirements : Additional methods for species management.
+    public bool CheckSpeciesRequirements(HashSet<JobRequirement>? requirements, HumanoidCharacterProfile? profile, [NotNullWhen(false)] out FormattedMessage? reason)
+    {
+        reason = null;
+
+        if (requirements == null || !_cfg.GetCVar(CCVars.RoundstartSpeciesTimers))
+            return true;
+
+        var reasons = new List<string>();
+        foreach (var requirement in requirements)
+        {
             if (requirement.Check(_playerManager.LocalSession?.UserId, _entManager, _prototypes, profile, _roles, out var jobReason))
                 continue;
 
