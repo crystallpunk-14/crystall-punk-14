@@ -1,8 +1,11 @@
 using Content.Server.Hands.Systems;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
+using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
 using Content.Shared.Throwing;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.Fishing;
 
@@ -12,6 +15,8 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -35,19 +40,29 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
                 continue;
 
             PredictedDel(component.FishingFloat);
+
             component.FishingFloat =  null;
             component.Target = null;
+            DirtyFields(uid, component, null, nameof(CP14FishingRodComponent.FishingFloat), nameof(CP14FishingRodComponent.Target));
         }
     }
 
-    private void OnReelingMessage(FishingReelKeyMessage msg)
+    private void OnReelingMessage(FishingReelKeyMessage msg, EntitySessionEventArgs args)
     {
-        var held = _handsSystem.GetActiveItem(msg.User);
-
-        if (!TryComp<CP14FishingRodComponent>(held, out var rodComponent))
+        if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
-        rodComponent.Reeling = msg.Reeling;
+        if (!_handsSystem.TryGetActiveItem(player, out var activeItem) ||
+            !TryComp<CP14FishingRodComponent>(activeItem, out var fishingRodComponent))
+            return;
+
+        if (msg.Reeling &&
+            (!TryComp<CombatModeComponent>(player, out var combatMode) ||
+             !combatMode.IsInCombatMode))
+            return;
+
+        fishingRodComponent.Reeling = msg.Reeling;
+        DirtyField(activeItem.Value, fishingRodComponent, nameof(fishingRodComponent.Reeling));
     }
 
     private void OnInteract(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
@@ -68,7 +83,10 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
             return;
 
         args.Handled = true;
-        CastFloat(uid, component, args.Target.Value);
+
+        component.FishingTime = _gameTiming.CurTime;
+        component.FishingTime += TimeSpan.FromSeconds(_random.NextDouble(component.MinAwaitTime, component.MaxAwaitTime));
+        CastFloat(args.Used, component, args.Target.Value);
     }
 
     private void CastFloat(EntityUid uid, CP14FishingRodComponent component, EntityUid target)
@@ -80,6 +98,13 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
 
         component.FishingFloat = fishingFloat;
         component.Target = target;
+        component.User = uid;
+        DirtyFields(uid,
+            component,
+            null,
+            nameof(CP14FishingRodComponent.FishingFloat),
+            nameof(CP14FishingRodComponent.Target),
+            nameof(CP14FishingRodComponent.User));
 
         _throwingSystem.TryThrow(fishingFloat, targetCoords, component.ThrowPower, recoil: false, doSpin: false);
     }

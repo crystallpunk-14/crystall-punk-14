@@ -25,6 +25,9 @@ public sealed partial class CP14FishingMinigamePrototype : IPrototype
     [DataField(required: true)]
     public FishingMinigameElementData Float;
 
+    [DataField(required: true)]
+    public float FishingMinigameSize;
+
     [DataDefinition]
     public partial struct FishingMinigameElementData
     {

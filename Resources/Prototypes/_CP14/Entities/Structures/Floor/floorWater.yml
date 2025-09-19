@@ -72,6 +72,7 @@
     effects:
     - !type:ExtinguishReaction
   - type: CP14FishingPond
+    lootTable: CP14WaterFishingLootTable
 
 - type: entity
   parent: CP14FloorWaterOptimized

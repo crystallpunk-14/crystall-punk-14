@@ -16,3 +16,4 @@
     texture: /Textures/_CP14/Interface/Fishing/Default/float.png
     size: 22, 76
     offset: 26, 12
+  fishingMinigameSize: 281

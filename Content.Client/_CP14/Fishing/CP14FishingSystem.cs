@@ -1,11 +1,11 @@
 using System.Numerics;
 using Content.Client.Hands.Systems;
-using Content.Client.Interactable;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Screens;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared._CP14.Input;
+using Content.Shared.CombatMode;
 using Content.Shared.Interaction;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -23,14 +23,20 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
 {
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly InputSystem _input = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _handsSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private Popup? _fishingPopup;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<FishingUIStatus>(OnFishingStatusChanged);
+    }
     public override void Update(float dt)
     {
         base.Update(dt);
@@ -43,17 +49,73 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!TryComp<CP14FishingRodComponent>(heldUid, out var fishingRodComponent))
             return;
 
-        if (!fishingRodComponent.FishCaught)
-            return;
-
         if (_playerManager.LocalSession?.AttachedEntity is not { } player)
             return;
 
-        var reeling = _input.CmdStates.GetState(CP14ContentKeyFunctions.CP14FishingAction) == BoundKeyState.Down;
-        RaiseNetworkEvent(new FishingReelKeyMessage(player, reeling));
+        UpdatePressedButtons(fishingRodComponent, player);
+        UpdateUserInterface(fishingRodComponent);
     }
 
-    private void OpenFishingPopup(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
+    private void UpdatePressedButtons(CP14FishingRodComponent fishingRodComponent, EntityUid player)
+    {
+        if (fishingRodComponent.CaughtFish is null)
+            return;
+
+        var reelKey = _input.CmdStates.GetState(CP14ContentKeyFunctions.CP14FishingAction) == BoundKeyState.Down;
+
+        if (!TryComp<CombatModeComponent>(player, out var combatMode) ||
+            !combatMode.IsInCombatMode)
+            reelKey = false;
+
+        if (fishingRodComponent.Reeling == reelKey)
+            return;
+
+        RaiseNetworkEvent(new FishingReelKeyMessage(reelKey));
+    }
+
+    private void UpdateUserInterface(CP14FishingRodComponent fishingRodComponent)
+    {
+        var fish = fishingRodComponent.CaughtFish;
+
+        if (fish is null)
+            return;
+
+        TryComp(fish, out CP14FishComponent? fishComponent);
+
+        if (fishComponent is null)
+            return;
+
+        if (!_prototypeManager.Resolve(fishingRodComponent.FishingMinigame, out var minigameStyle))
+            return;
+
+        var floatUI = minigameStyle.Float;
+        var progressbar = minigameStyle.Progressbar;
+        var fishIcon = minigameStyle.FishIcon;
+
+        var firstLayer = _fishingPopup!.GetChild(0);
+        var secondLayer = _fishingPopup!.GetChild(1);
+
+        var progressbarContainer = firstLayer.GetChild(0);
+        var floatContainer = firstLayer.GetChild(1);
+        var fishContainer = secondLayer.GetChild(0);
+
+        floatContainer.Margin = new Thickness(floatUI.Offset.X, 0, floatUI.Offset.Y + fishingRodComponent.FloatPosition, 0);
+        fishContainer.Margin = new Thickness(fishIcon.Offset.X, 0, fishIcon.Offset.Y + fishComponent.FishPosAndDestination.X, 0);
+    }
+
+    private void OnFishingStatusChanged(FishingUIStatus status)
+    {
+        if (status.UIStatus)
+        {
+            OpenFishingPopup(status.Component);
+        }
+        else
+        {
+            CloseFishingPopup();
+        }
+    }
+
+    private void OpenFishingPopup(CP14FishingRodComponent component)
     {
         // Getting data
         if (!_prototypeManager.Resolve(component.FishingMinigame, out var minigameStyle))

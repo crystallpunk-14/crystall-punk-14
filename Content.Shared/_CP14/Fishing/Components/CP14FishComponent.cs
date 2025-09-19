@@ -1,12 +1,23 @@
+using System.Numerics;
 using Content.Shared._CP14.Fishing.Behaviors;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared._CP14.Fishing.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
 public sealed partial class CP14FishComponent : Component
 {
     [DataField(required: true)]
-    public CP14FishBaseBehavior FishBehavior;
+    public CP14FishBaseBehavior FishBehavior = default!;
+
+    [AutoNetworkedField, AutoPausedField]
+    public TimeSpan FishSelectPosTime = TimeSpan.Zero;
+
+    [AutoNetworkedField, AutoPausedField]
+    public TimeSpan FishGetAwayTime = TimeSpan.Zero;
+
+    [AutoNetworkedField]
+    public Vector2 FishPosAndDestination;
 
     [DataField]
     public double MinAwaitTime = 1;
