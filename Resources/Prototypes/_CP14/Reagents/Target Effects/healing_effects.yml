@@ -100,6 +100,27 @@
         damage:
           types:
             Poison: -10
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14MonsterToxinSpider
+          min: 1
+        reagent: CP14MonsterToxinSpider
+        amount: -3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14MonsterToxinVuln
+          min: 1
+        reagent: CP14MonsterToxinVuln 
+        amount: -3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: CP14MonsterToxinBleed
+          min: 1
+        reagent: CP14MonsterToxinBleed
+        amount: -3
   pricePerUnit: 3.5  # 1×Life (0.2) + 1×Poison (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x4.66
 
 - type: reagent
