@@ -1,0 +1,8 @@
+- type: marking
+  id: CP14CarrinBeard
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  speciesRestriction: [ CP14Carrin ]
+  sprites:
+    - sprite: _CP14/Mobs/Customization/carrin_facial_hair.rsi
+      state: 1
