@@ -4,27 +4,17 @@
   name: Hypnosys
   description: You focus on the target, mesmerizing and lulling it to sleep.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14MagicEffectVampire
   - type: CP14ActionManaCost
     manaCost: 5
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectVampireHypnosis
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:ModifyStatusEffect
-        effectProto: CP14StatusEffectVampireForceSleep
-        type: Add
-        time: 4
-        refresh: true
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireHypnosis
+  - type: DoAfterArgs
+    delay: 3
   - type: Action
+    useDelay: 120
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: blood_moon
@@ -35,11 +25,18 @@
     whitelist:
       components:
       - MobState
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      effectFrequency: 3
-      cooldown: 60
-      castTime: 30
-      distanceThreshold: 6
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectVampireHypnosis
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:ModifyStatusEffect
+          effectProto: CP14StatusEffectVampireForceSleep
+          type: Add
+          time: 4
+          refresh: true
 
 - type: entity
   id: CP14RuneVampireHypnosis

@@ -112,11 +112,11 @@
     religion: Lumera
   - type: CP14ReligionVision
     shaderColor:  0.29, 0.66, 0.87
-  - type: IntrinsicUI
-    uis:
-      enum.CP14ReligionEntityUiKey.Key:
-        toggleAction: CP14ActionSpellGodLumeraWarp
-  - type: CP14ReligionSpeaker
-    speaker: CP14LumeraSpeakImpact
+  #- type: IntrinsicUI
+  #  uis:
+  #    enum.CP14ReligionEntityUiKey.Key:
+  #      toggleAction: CP14ActionSpellGodLumeraWarp
+  #- type: CP14ReligionSpeaker
+  #  speaker: CP14LumeraSpeakImpact
   - type: CP14PriceScanner
   - type: SolutionScanner

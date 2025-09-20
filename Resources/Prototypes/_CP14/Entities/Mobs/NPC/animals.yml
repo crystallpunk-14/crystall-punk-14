@@ -475,8 +475,8 @@
   - type: NpcFactionMember
     factions:
     - CP14AggressiveAnimals
-  - type: NPCUseActionOnTarget
-    actionId: CP14ActionBearSpellSprint
+  #- type: NPCUseActionOnTarget # TODO: add support for non-target actions
+  #  actionId: CP14ActionBearSpellSprint
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -524,7 +524,6 @@
         Base: dead
   - type: Stamina
     critThreshold: 300
-  - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatBoar # TODO

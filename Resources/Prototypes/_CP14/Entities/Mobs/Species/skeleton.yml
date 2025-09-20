@@ -91,7 +91,7 @@
   - type: CP14AuraImprint
     imprintColor: "#a81b5d"
   - type: Damageable
-    damageContainer: CP14Biological
+    damageContainer: CP14BiologicalAnaerobic
     damageModifierSet: CP14Skeleton
   - type: Destructible
     thresholds:

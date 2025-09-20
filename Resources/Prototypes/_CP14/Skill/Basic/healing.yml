@@ -27,20 +27,6 @@
     species: CP14Skeleton
 
 - type: cp14Skill
-  id: CP14ActionSpellPlantGrowth
-  skillUiPosition: 2, 4
-  tree: Healing
-  icon:
-    sprite: _CP14/Actions/Spells/healing.rsi
-    state: plant_growth
-  effects:
-  - !type:AddAction
-    action: CP14ActionSpellPlantGrowth
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: HealingT1
-
-- type: cp14Skill
   id: CP14ActionSpellSheepPolymorph
   skillUiPosition: 0, 4
   tree: Healing

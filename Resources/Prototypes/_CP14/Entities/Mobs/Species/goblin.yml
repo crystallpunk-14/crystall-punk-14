@@ -107,6 +107,7 @@
       groups:
         Burn: -0.2
         Brute: -0.2
+        Toxin: -0.05
   - type: Stamina
     decay: 5 # 3 default
     critThreshold: 120 # 100 default
@@ -120,6 +121,10 @@
   - type: CP14AuraImprint
     imprintLength: 6 #Short imprint hehe
     imprintColor: "#919e19"
+  - type: CP14SkillStorage #Innate athletic
+    freeLearnedSkills:
+    - AthleticT1
+    - AthleticT2
   - type: Hands
     handDisplacement:
       sizeMaps:

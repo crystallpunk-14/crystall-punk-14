@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared._CP14.Actions.Components;
-using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared.Examine;
 using Content.Shared.Mobs;
 
