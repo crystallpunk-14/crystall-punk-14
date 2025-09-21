@@ -52,8 +52,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      40: Critical
-      45: Dead
+      35: Critical
+      40: Dead
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
