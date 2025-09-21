@@ -12,7 +12,7 @@
     factions:
     - CP14PeacefulAnimals
   - type: NPCRetaliation
-    attackMemoryLength: 30
+    attackMemoryLength: 20
   - type: Sprite
     drawdepth: SmallMobs
     layers:
@@ -53,7 +53,7 @@
     thresholds:
       0: Alive
       40: Critical
-      50: Dead
+      45: Dead
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -63,10 +63,10 @@
     animation: WeaponArcBite
     damage:
       types:
-        Piercing: 8
+        Piercing: 4
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3
-    baseSprintSpeed : 6
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
   - type: DamageStateVisuals
     states:
       Alive:
