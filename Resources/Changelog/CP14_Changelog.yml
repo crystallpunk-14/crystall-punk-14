@@ -2193,3 +2193,21 @@
   id: 8268
   time: '2025-09-21T10:47:15.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1794
+- author: Nimfar11
+  changes:
+  - message: The small hammer's strike radius decreased from 1.5 to 1 tiles, hand
+      switching delay added.
+    type: Tweak
+  - message: Spear damage increased from 5 to 8, and damage modifier at a distance
+      of from 5 to 6.
+    type: Tweak
+  - message: Increase the attack speed of axes, two-handed hammers, and two-handed
+      swords from 0.5 to 0.6.
+    type: Tweak
+  - message: A two-handed axe consumes 10 (instead 15) stamina per attack.
+    type: Tweak
+  - message: Weapon durability increased from 50 to 80.
+    type: Tweak
+  id: 8269
+  time: '2025-09-22T10:38:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1790
