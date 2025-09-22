@@ -4,6 +4,8 @@
   name: Hypnosys
   description: You focus on the target, mesmerizing and lulling it to sleep.
   components:
+  - type: CP14ActionDoAfterSlowdown
+    speedMultiplier: 0.4
   - type: CP14MagicEffectVampire
   - type: CP14ActionManaCost
     manaCost: 5
