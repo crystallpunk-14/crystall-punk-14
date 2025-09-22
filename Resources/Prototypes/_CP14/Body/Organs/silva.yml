@@ -28,6 +28,7 @@
 - type: entity
   id: CP14OrganSilvaBrain
   parent: [CP14BaseSilvaOrgan, OrganHumanBrain]
+  categories: [ ForkFiltered ]
   name: brain
   description: "The central hub of a silva's pseudo-neurological activity, its root-like tendrils search for its former body."
   components:
@@ -55,6 +56,7 @@
 - type: entity
   id: CP14OrganSilvaEyes
   parent: CP14BaseSilvaOrgan
+  categories: [ ForkFiltered ]
   name: eyes
   description: "I see you!"
   components:
@@ -66,6 +68,7 @@
 - type: entity
   id: CP14OrganSilvaStomach
   parent: CP14BaseSilvaOrgan
+  categories: [ ForkFiltered ]
   name: stomach
   description: "The silva's equivalent of a stomach, it reeks of asparagus and vinegar."
   components:
@@ -100,6 +103,7 @@
 - type: entity
   id: CP14OrganSilvaLungs
   parent: CP14BaseSilvaOrgan
+  categories: [ ForkFiltered ]
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
