@@ -127,6 +127,9 @@
     sprintModifier: 0.90
   - type: CP14MagicManacostModify
     globalModifier: 1.2
+  - type: CP14ArmorDamageAbsorption
+    absorption: 0.5
   - type: PhysicalComposition
     materialComposition:
       CP14Iron: 90
+  - type: Damageable

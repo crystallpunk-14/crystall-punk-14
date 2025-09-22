@@ -394,7 +394,7 @@ namespace Content.Shared.Damage
         }
     }
 
-    public sealed class DamageChangedEvent : EntityEventArgs
+    public sealed class DamageChangedEvent : EntityEventArgs, IInventoryRelayEvent
     {
         /// <summary>
         ///     This is the component whose damage was changed.
@@ -448,5 +448,9 @@ namespace Content.Shared.Damage
             }
             InterruptsDoAfters = interruptsDoAfters && DamageIncreased;
         }
+
+        //CP14
+        public SlotFlags TargetSlots => SlotFlags.All;
+        //CP14 end
     }
 }
