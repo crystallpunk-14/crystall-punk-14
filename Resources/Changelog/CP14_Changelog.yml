@@ -2211,3 +2211,14 @@
   id: 8269
   time: '2025-09-22T10:38:47.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1790
+- author: KittyCat432
+  changes:
+  - message: Added Tier 3 difficulty modifiers to demiplanes, zombie horde, bear den,
+      spider nest, flame monster. (bring potions)
+    type: Add
+  - message: Changed almost all values and made earlier demiplanes easier while later
+      ones harder.
+    type: Tweak
+  id: 8270
+  time: '2025-09-23T10:19:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1798
