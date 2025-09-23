@@ -1,5 +1,6 @@
 using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -42,6 +43,15 @@ public sealed partial class SpeciesPrototype : IPrototype
     // Species implementors can just override SpriteComponent if they want a custom
     // sprite layout, and leave this null. Keep in mind that this will disable
     // sprite accessories.
+
+
+    // CrystallEdge-SpeciesRequirements start
+    /// <summary>
+    ///     Requirements for the species in the character editor.
+    /// </summary>
+    [DataField]
+    public HashSet<JobRequirement>? Requirements;
+    // CrystallEdge-SpeciesRequirements end
 
     [DataField("sprites")]
     public ProtoId<HumanoidSpeciesBaseSpritesPrototype> SpriteSet { get; private set; } = default!;
