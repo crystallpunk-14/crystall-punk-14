@@ -6,7 +6,7 @@ namespace Content.Server._CP14.WeatherControl;
 /// <summary>
 /// is the controller that hangs on the prototype map. It regulates which weather rules are run and where they are run.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause, Access(typeof(CP14WeatherControllerSystem), typeof(CP14WeatherRule))]
+[RegisterComponent, AutoGenerateComponentPause, Access(typeof(CP14WeatherControllerSystem))]
 public sealed partial class CP14WeatherControllerComponent : Component
 {
     [DataField]

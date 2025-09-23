@@ -49,9 +49,12 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
             return;
         }
 
+        var ev = new CP14BeforeStationLocationGenerationEvent(ent.Comp.Modifiers);
+        RaiseLocalEvent(ent, ev, true);
+
         var mapId = _transform.GetMapId(largestStationGrid.Value);
 
-        GenerateLocation(largestStationGrid.Value, mapId, ent.Comp.Location, ent.Comp.Modifiers);
+        GenerateLocation(largestStationGrid.Value, mapId, ent.Comp.Location, ev.Modifiers);
     }
 
     public override void Update(float frameTime)
@@ -119,5 +122,23 @@ public sealed class CP14LocationGenerationSystem : EntitySystem
                 _jobs.Remove((job, cancelToken));
             }
         }
+    }
+}
+
+/// <summary>
+/// Called before procedural location generation on the main map so that other systems can edit modifiers added to the map.
+/// </summary>
+public sealed class CP14BeforeStationLocationGenerationEvent(List<ProtoId<CP14ProceduralModifierPrototype>> modifiers) : EntityEventArgs
+{
+    public List<ProtoId<CP14ProceduralModifierPrototype>> Modifiers = modifiers;
+
+    public void AddModifier(ProtoId<CP14ProceduralModifierPrototype> toAdd)
+    {
+        Modifiers.Add(toAdd);
+    }
+
+    public void AddModifiers(IEnumerable<ProtoId<CP14ProceduralModifierPrototype>> toAdd)
+    {
+        Modifiers.AddRange(toAdd);
     }
 }
