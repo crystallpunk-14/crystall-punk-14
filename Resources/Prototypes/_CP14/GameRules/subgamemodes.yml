@@ -1,0 +1,10 @@
+- type: entity
+  id: CP14LurkerHuntRule
+  parent: CP14BaseGameRule
+  components:
+  - type: CP14StationAdditionalModifierRule
+    modifiers:
+    - Geodes
+    - Geodes
+    - Geodes
+    - Geodes

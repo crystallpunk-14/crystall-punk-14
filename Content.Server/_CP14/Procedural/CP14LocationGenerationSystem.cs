@@ -132,11 +132,6 @@ public sealed class CP14BeforeStationLocationGenerationEvent(List<ProtoId<CP14Pr
 {
     public List<ProtoId<CP14ProceduralModifierPrototype>> Modifiers = modifiers;
 
-    public void AddModifier(ProtoId<CP14ProceduralModifierPrototype> toAdd)
-    {
-        Modifiers.Add(toAdd);
-    }
-
     public void AddModifiers(IEnumerable<ProtoId<CP14ProceduralModifierPrototype>> toAdd)
     {
         Modifiers.AddRange(toAdd);
