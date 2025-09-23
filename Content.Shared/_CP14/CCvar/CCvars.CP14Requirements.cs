@@ -8,5 +8,5 @@ public sealed partial class CCVars
     ///     If roundstart species should be restricted based on time.
     /// </summary>
     public static readonly CVarDef<bool>
-        RoundstartSpeciesTimers = CVarDef.Create("game.species_timers", true, CVar.SERVER | CVar.REPLICATED);
+        CP14RoundstartSpeciesTimers = CVarDef.Create("game.species_timers", true, CVar.SERVER | CVar.REPLICATED);
 }
