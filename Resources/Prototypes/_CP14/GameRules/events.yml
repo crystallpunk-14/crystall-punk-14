@@ -17,25 +17,3 @@
     delay:
       min:  40
       max:  60
-
-- type: entityTable
-  id: CP14BasicCalmEventsTable
-  table: !type:AllSelector
-    children:
-    - id: CP14Storm
-
-- type: entity
-  parent: CP14BaseStationEventLongDelay
-  id: CP14Storm
-  components:
-  - type: StationEvent
-    startAnnouncement: cp14-event-announcement-storm
-    startAudio:
-      collection: CP14LightningFar
-    earliestStart: 45
-    minimumPlayers: 10
-    duration: 180
-    maxDuration: 600
-  - type: CP14WeatherRule
-    weather: CP14Storm
-
