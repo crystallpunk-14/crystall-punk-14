@@ -155,7 +155,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     {
         reason = null;
 
-        if (requirements == null || !_cfg.GetCVar(CCVars.RoundstartSpeciesTimers))
+        if (requirements == null || !_cfg.GetCVar(CCVars.CP14RoundstartSpeciesTimers))
             return true;
 
         var reasons = new List<string>();

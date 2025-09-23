@@ -77,7 +77,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _configurationManager.OnValueChanged(CCVars.GameRoleWhitelist, _ => RefreshProfileEditor());
 
         // CrystallEdge-SpeciesRequirements
-        _configurationManager.OnValueChanged(CCVars.RoundstartSpeciesTimers, _ => RefreshProfileEditor());
+        _configurationManager.OnValueChanged(CCVars.CP14RoundstartSpeciesTimers, _ => RefreshProfileEditor());
     }
 
     private LobbyCharacterPreviewPanel? GetLobbyPreview()
