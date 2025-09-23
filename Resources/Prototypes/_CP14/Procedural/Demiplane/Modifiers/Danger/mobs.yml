@@ -422,7 +422,7 @@
     maxGroupSize: 5
 
 - type: cp14LocationModifier
-  id: MobSpiders
+  id: MobSpidersNest
   levels:
     min: 3
     max: 10
