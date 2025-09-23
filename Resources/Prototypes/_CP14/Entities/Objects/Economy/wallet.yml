@@ -95,6 +95,3 @@
       orGroup: ZombieLootT1
     - id: CP14CopperCoin1
       orGroup: ZombieLootT1
-    - id: CP14LockIron
-      prob: 0.05
-      orGroup: ZombieLootT1
