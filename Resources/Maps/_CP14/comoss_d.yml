@@ -68,8 +68,8 @@ entities:
         - 0
     - type: CP14WeatherController
       entries:
-      - weight: 2
-        visuals: null
+      - visuals: null
+        weight: 2
       - visuals: CP14Mist
     - type: MapGrid
       chunks:

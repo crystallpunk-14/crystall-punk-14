@@ -66,10 +66,13 @@ entities:
       id: Comoss
     - type: CP14WeatherController
       entries:
-      - weight: 3
-        visuals: null
+      - visuals: null
+        weight: 3
       - visuals: CP14Mist
       - visuals: CP14Rain
+      - visuals: CP14Storm
+        weight: 0.25
+
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle
