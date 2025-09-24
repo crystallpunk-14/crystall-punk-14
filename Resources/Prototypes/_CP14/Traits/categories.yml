@@ -1,7 +1,7 @@
 - type: traitCategory
   id: CP14PhysicalTraits
   name: cp14-trait-category-physical
-  maxTraitPoints: 1
+  maxTraitPoints: 2
 
 - type: traitCategory
   id: CP14Background

@@ -22,3 +22,8 @@ cp14-trait-snoring-desc = It is simply impossible to sleep next to you because y
 
 cp14-trait-mana-wasting-name = Magical mediocrity.
 cp14-trait-mana-wasting-desc = Fate has decreed that magic is just an empty sound for you. You are unable to store or use magical energy.
+
+# Backgrounds
+
+cp14-trait-bg-merkas-servant-name = Servant of the Light Merkas
+cp14-trait-bg-merkas-servant-desc = Your past is closely tied to serving Merkas, the god of light, and his dogma is still strong in your mind. You feel compelled to help those in need, banish darkness, and bring light to the hearts of those around you.

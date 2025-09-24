@@ -21,3 +21,23 @@
       - state: green
       - sprite: _CP14/Mobs/Pets/rat.rsi
         state: rat
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: CP14SpawnPointLurker
+  components:
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-lurker
+    description: cp14-ghost-role-information-description-lurker
+    rules: cp14-ghost-role-information-rules-demiplane #TODO
+    mindRoles:
+    - CP14MindRoleDemiplaneAntag
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _CP14/Mobs/Monster/lurker.rsi
+        state: live

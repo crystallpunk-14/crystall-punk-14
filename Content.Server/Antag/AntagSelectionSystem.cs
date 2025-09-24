@@ -393,7 +393,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 
         if (!antagEnt.HasValue)
         {
-            var getEntEv = new AntagSelectEntityEvent(session, ent);
+            var getEntEv = new AntagSelectEntityEvent(session, ent, def); //CP14 def added
             RaiseLocalEvent(ent, ref getEntEv, true);
             antagEnt = getEntEv.Entity;
         }
@@ -416,7 +416,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         // Therefore any component subscribing to this has to make sure both subscriptions return the same value
         // or the ghost role raffle location preview will be wrong.
 
-        var getPosEv = new AntagSelectLocationEvent(session, ent);
+        var getPosEv = new AntagSelectLocationEvent(session, ent, def); //CP14 def added
         RaiseLocalEvent(ent, ref getPosEv, true);
         if (getPosEv.Handled)
         {
@@ -603,7 +603,7 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
 /// Only raised if the selected player's current entity is invalid.
 /// </summary>
 [ByRefEvent]
-public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule)
+public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition? Def = null) //CP14 Definition added
 {
     public readonly ICommonSession? Session = Session;
 
@@ -616,7 +616,7 @@ public record struct AntagSelectEntityEvent(ICommonSession? Session, Entity<Anta
 /// Event raised on a game rule entity to determine the location for the antagonist.
 /// </summary>
 [ByRefEvent]
-public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule)
+public record struct AntagSelectLocationEvent(ICommonSession? Session, Entity<AntagSelectionComponent> GameRule, AntagSelectionDefinition? Def = null) //CP14 Definition added
 {
     public readonly ICommonSession? Session = Session;
 
