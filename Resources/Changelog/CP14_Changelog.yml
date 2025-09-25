@@ -2236,3 +2236,14 @@
   id: 8272
   time: '2025-09-25T11:25:10.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1797
+- author: Nimfar11
+  changes:
+  - message: Adds money to the wallets of some walking dead.
+    type: Add
+  - message: Wallets can be cut into scraps of leather.
+    type: Tweak
+  - message: The walking dead can be women.
+    type: Fix
+  id: 8273
+  time: '2025-09-25T21:26:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1799
