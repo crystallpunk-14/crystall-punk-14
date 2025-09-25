@@ -2186,3 +2186,53 @@
   id: 8267
   time: '2025-09-17T14:51:51.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1786
+- author: Nimfar11
+  changes:
+  - message: Rat damage reduced by half. Duration of mob rat aggression reduced.
+    type: Tweak
+  id: 8268
+  time: '2025-09-21T10:47:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1794
+- author: Nimfar11
+  changes:
+  - message: The small hammer's strike radius decreased from 1.5 to 1 tiles, hand
+      switching delay added.
+    type: Tweak
+  - message: Spear damage increased from 5 to 8, and damage modifier at a distance
+      of from 5 to 6.
+    type: Tweak
+  - message: Increase the attack speed of axes, two-handed hammers, and two-handed
+      swords from 0.5 to 0.6.
+    type: Tweak
+  - message: A two-handed axe consumes 10 (instead 15) stamina per attack.
+    type: Tweak
+  - message: Weapon durability increased from 50 to 80.
+    type: Tweak
+  id: 8269
+  time: '2025-09-22T10:38:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1790
+- author: KittyCat432
+  changes:
+  - message: Added Tier 3 difficulty modifiers to demiplanes, zombie horde, bear den,
+      spider nest, flame monster. (bring potions)
+    type: Add
+  - message: Changed almost all values and made earlier demiplanes easier while later
+      ones harder.
+    type: Tweak
+  id: 8270
+  time: '2025-09-23T10:19:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1798
+- author: Nimfar11
+  changes:
+  - message: Vampire hypnosis is break if the vampire starts walking.
+    type: Tweak
+  id: 8271
+  time: '2025-09-23T10:23:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1773
+- author: oldschoolotaku
+  changes:
+  - message: New fancy mustage "Hussar"
+    type: Add
+  id: 8272
+  time: '2025-09-25T11:25:10.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1797
