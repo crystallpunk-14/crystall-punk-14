@@ -26,7 +26,7 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
         if (hue < 20f || hue > 270f)
             return false;
 
-        if (sat < 5f || sat > 35f)
+        if (sat < 5f || sat > 50f)
             return false;
 
         if (val < 20f || val > 100f)
@@ -40,36 +40,74 @@ public sealed partial class CP14ElfTonedSkinColoration : ISkinColorationStrategy
         return ValidElfSkinTone;
     }
 
-    public Color FromUnary(float t)
+    public Color FromUnary(float color)
     {
-        var tone = Math.Clamp(t, 0f, 100f);
+        var tone = Math.Clamp(color, 0f, 100f);
 
-        var startSat = 5f;
-        var startVal = 100f;
+        if (color < 50f) //Human toned Elf
+        {
+            var rangeOffset = tone - 20f;
 
-        var endSat = 30f;
-        var endVal = 25f;
+            var hue = 25f;
+            var sat = 20f;
+            var val = 100f;
 
-        var hue = 260f;
-        var sat = MathHelper.Lerp(startSat, endSat, tone / 100f);
-        var val = MathHelper.Lerp(startVal, endVal, tone / 100f);
+            if (rangeOffset <= 0)
+            {
+                hue += Math.Abs(rangeOffset);
+            }
+            else
+            {
+                sat += rangeOffset;
+                val -= rangeOffset;
+            }
 
-        return Color.FromHsv(new Vector4(hue / 360f, sat / 100f, val / 100f, 1.0f));
+            return Color.FromHsv(new Vector4(hue / 360f, sat / 100f, val / 100f, 1.0f));
+        }
+        else //Dark elf
+        {
+            var startSat = 5f;
+            var startVal = 100f;
+
+            var endSat = 30f;
+            var endVal = 25f;
+
+            var hue = 260f;
+            var sat = MathHelper.Lerp(startSat, endSat, tone / 100f);
+            var val = MathHelper.Lerp(startVal, endVal, tone / 100f);
+
+            return Color.FromHsv(new Vector4(hue / 360f, sat / 100f, val / 100f, 1.0f));
+        }
     }
 
     public float ToUnary(Color color)
     {
         var hsv = Color.ToHsv(color);
-
-        // Вычисляем относительное положение между светлой и тёмной точкой
         var hue = hsv.X * 360f;
         var sat = hsv.Y * 100f;
         var val = hsv.Z * 100f;
+        if (hue > 255)
+        {
+            var progressVal = (100f - val) / (100f - 25f);
+            return Math.Clamp(progressVal * 100f, 0f, 100f);
+        }
+        else
+        {
+            // check for hue/value first, if hue is lower than this percentage
+            // and value is 1.0
+            // then it'll be hue
+            if (Math.Clamp(hsv.X, 25f / 360f, 1) > 25f / 360f
+                && hsv.Z == 1.0)
+            {
+                return Math.Abs(45 - hsv.X * 360);
+            }
+            // otherwise it'll directly be the saturation
+            else
+            {
+                return hsv.Y * 100;
+            }
+        }
 
-        // Нормируем по value, потому что основной градиент идёт по яркости
-        var progressVal = (100f - val) / (100f - 25f);
 
-        // Можно слегка учитывать hue/sat, но value остаётся главным драйвером
-        return Math.Clamp(progressVal * 100f, 0f, 100f);
     }
 }

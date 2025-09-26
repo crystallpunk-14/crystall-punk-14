@@ -4,34 +4,30 @@
   name: Ice arrow
   description: You create a temporary sharp ice arrow that can be used as a disposable bow projectile.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: ice_arrow
   - type: CP14ActionManaCost
     manaCost: 7
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectWaterCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14IceArrow
   - type: CP14ActionSpeaking
     startSpeech: "Sagitta glaciei..."
     endSpeech: "in manu mea"
   - type: CP14ActionFreeHandsRequired
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
+  - type: DoAfterArgs
+    delay: 0.5
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_arrow
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 5
-      castDelay: 0.5
-      breakOnMove: false
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectWaterCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14IceArrow
 
 - type: entity
   parent: CP14BaseSpellScrollWater

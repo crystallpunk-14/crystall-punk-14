@@ -9,27 +9,25 @@
   - type: CP14ActionSkillPointCost
     skillPoint: Blood
     count: 1
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectBloodEssence
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14BloodEssence
+  - type: DoAfterArgs
+    delay: 2.5
   - type: Action
+    useDelay: 1
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: essence_create
     sound: !type:SoundPathSpecifier
       path: /Audio/_CP14/Effects/essence_consume.ogg
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 0.5
-      castDelay: 2.5
-      breakOnMove: false
+    event: !type:CP14InstantModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectBloodEssence
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14BloodEssence

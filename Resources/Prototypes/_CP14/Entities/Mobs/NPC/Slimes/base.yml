@@ -102,7 +102,6 @@
     capacity: 2
     showContents: true
     occludesLight: false
-  - type: CP14MagicCasterSlowdown
   - type: Tag
     tags:
     - FootstepSound

@@ -2142,3 +2142,108 @@
   id: 8262
   time: '2025-09-15T14:45:42.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1777
+- author: Nimfar11
+  changes:
+  - message: Adds the Bone Hound Summon spell for the skeleton mage. The bone hound
+      is a ghost role.
+    type: Add
+  id: 8263
+  time: '2025-09-15T16:01:13.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1718
+- author: TheShuEd
+  changes:
+  - message: The day and night cycle on all maps (including demiplanes maps) now begins
+      at middays.
+    type: Tweak
+  - message: Fixed missing shadows from the sun
+    type: Fix
+  id: 8264
+  time: '2025-09-15T19:30:54.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1780
+- author: Viator-MV
+  changes:
+  - message: Now all races restore health until the damage reaches 80!
+    type: Tweak
+  id: 8265
+  time: '2025-09-16T15:11:46.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1769
+- author: TheKittehJesus
+  changes:
+  - message: Human tone elves skin selection works again
+    type: Fix
+  id: 8266
+  time: '2025-09-17T10:58:12.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1787
+- author: SenorJaba
+  changes:
+  - message: Guild workers now have a new set of 5 berets, with one primary, and 4
+      recoloured ones for each type of quests.
+    type: Add
+  - message: Added 4 guild signs for each type of quests.
+    type: Add
+  - message: Both berets and signs have been added into guildmaster's closet.
+    type: Add
+  id: 8267
+  time: '2025-09-17T14:51:51.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1786
+- author: Nimfar11
+  changes:
+  - message: Rat damage reduced by half. Duration of mob rat aggression reduced.
+    type: Tweak
+  id: 8268
+  time: '2025-09-21T10:47:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1794
+- author: Nimfar11
+  changes:
+  - message: The small hammer's strike radius decreased from 1.5 to 1 tiles, hand
+      switching delay added.
+    type: Tweak
+  - message: Spear damage increased from 5 to 8, and damage modifier at a distance
+      of from 5 to 6.
+    type: Tweak
+  - message: Increase the attack speed of axes, two-handed hammers, and two-handed
+      swords from 0.5 to 0.6.
+    type: Tweak
+  - message: A two-handed axe consumes 10 (instead 15) stamina per attack.
+    type: Tweak
+  - message: Weapon durability increased from 50 to 80.
+    type: Tweak
+  id: 8269
+  time: '2025-09-22T10:38:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1790
+- author: KittyCat432
+  changes:
+  - message: Added Tier 3 difficulty modifiers to demiplanes, zombie horde, bear den,
+      spider nest, flame monster. (bring potions)
+    type: Add
+  - message: Changed almost all values and made earlier demiplanes easier while later
+      ones harder.
+    type: Tweak
+  id: 8270
+  time: '2025-09-23T10:19:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1798
+- author: Nimfar11
+  changes:
+  - message: Vampire hypnosis is break if the vampire starts walking.
+    type: Tweak
+  id: 8271
+  time: '2025-09-23T10:23:39.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1773
+- author: oldschoolotaku
+  changes:
+  - message: New fancy mustage "Hussar"
+    type: Add
+  id: 8272
+  time: '2025-09-25T11:25:10.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1797
+- author: Nimfar11
+  changes:
+  - message: Adds money to the wallets of some walking dead.
+    type: Add
+  - message: Wallets can be cut into scraps of leather.
+    type: Tweak
+  - message: The walking dead can be women.
+    type: Fix
+  id: 8273
+  time: '2025-09-25T21:26:03.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1799

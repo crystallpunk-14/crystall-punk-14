@@ -72,7 +72,9 @@ entities:
       - weight: 3
         visuals: null
       - visuals: CP14Mist
-      - visuals: CP14Rain
+      - weight: 2
+        visuals: CP14SnowLight
+      - visuals: CP14SnowMedium
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle

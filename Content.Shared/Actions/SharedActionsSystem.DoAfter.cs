@@ -1,4 +1,5 @@
-﻿using Content.Shared.Actions.Events;
+﻿using Content.Shared._CP14.Actions;
+using Content.Shared.Actions.Events;
 using Content.Shared.DoAfter;
 
 namespace Content.Shared.Actions;
@@ -19,6 +20,11 @@ public abstract partial class SharedActionsSystem
         var delay = ent.Comp.Delay;
 
         var netEnt = GetNetEntity(performer);
+
+        //CP14 doAfter start event
+        var cp14StartEv = new CP14ActionStartDoAfterEvent(netEnt, input);
+        RaiseLocalEvent(ent, cp14StartEv);
+        //CP14 end
 
         var actionDoAfterEvent = new ActionDoAfterEvent(netEnt, originalUseDelay, input);
 

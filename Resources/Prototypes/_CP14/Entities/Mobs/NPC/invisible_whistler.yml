@@ -102,7 +102,6 @@
   - type: StealthOnMove
     passiveVisibilityRate: -0.40
     movementVisibilityRate: 0.10
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 50
