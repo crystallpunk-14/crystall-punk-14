@@ -2247,3 +2247,15 @@
   id: 8273
   time: '2025-09-25T21:26:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1799
+- author: KittyCat432
+  changes:
+  - message: Silva's now contain plant organs.
+    type: Tweak
+  - message: Water and life-giving moisture regenerates 0.2 and 4 mana respectively
+      when in a plant organ.
+    type: Tweak
+  - message: Liquid mana now regenerates 3 mana up from 1.5.
+    type: Tweak
+  id: 8274
+  time: '2025-09-26T16:31:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1789
