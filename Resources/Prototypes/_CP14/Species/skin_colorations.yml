@@ -20,5 +20,5 @@
   id: CP14CarcatHues
   strategy: !type:ClampedHsvColoration
     hue: [0.05, 0.10]
-    saturation: [0.15, 0.35]
+    saturation: [0.15, 0.7]
     value: [0.25, 0.95]

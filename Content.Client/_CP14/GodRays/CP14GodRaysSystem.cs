@@ -22,7 +22,7 @@ public sealed partial class CP14GodRaysSystem : EntitySystem
         base.Update(frameTime);
 
         var spriteSync = EntityQueryEnumerator<CP14SyncColorWithMapLightComponent>();
-        while (spriteSync.MoveNext(out var uid, out var syncComp))
+        while (spriteSync.MoveNext(out var uid, out _))
         {
             if (!_mapLightQuery.TryComp(Transform(uid).MapUid, out var map))
                 continue;
