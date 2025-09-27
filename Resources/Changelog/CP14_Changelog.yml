@@ -2268,3 +2268,21 @@
   id: 8275
   time: '2025-09-27T19:14:11.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1803
+- author: KittyCat432
+  changes:
+  - message: Most spells break when receiving damage again, excluding sprint, ballad
+      spells, and other pure utility spells.
+    type: Tweak
+  - message: Cure wounds/burns and blood purification cost 10 mana instead of 12 again.
+    type: Tweak
+  - message: Shields are more susceptible to breaking from blunt damage and for wooden
+      ones heat aswell.
+    type: Tweak
+  - message: Buckler and wooden shield damage resistances have been modified for the
+      shield to take less damage.
+    type: Tweak
+  - message: All shields have had their health increased by 50.
+    type: Tweak
+  id: 8276
+  time: '2025-09-27T19:17:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1804
