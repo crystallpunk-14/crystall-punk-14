@@ -14,6 +14,8 @@
     max: 10
   categories:
     Weather: 1
+  requiredTags:
+  - CP14DemiplaneOpenSky
   components:
   - type: CP14WeatherController
     entries:
@@ -26,8 +28,6 @@
     max: 10
   categories:
     Weather: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
   components:
   - type: CP14WeatherController
     entries:
@@ -48,8 +48,6 @@
   name: cp14-modifier-storm
   categories:
     Weather: 1
-  requiredTags:
-  - CP14DemiplaneOpenSky
   components:
   - type: CP14WeatherController
     entries:
@@ -124,6 +122,8 @@
   - type: CP14WeatherController
     entries:
     - visuals: CP14ManaMist
+  requiredTags:
+  - CP14DemiplaneOpenSky
   layers:
     - !type:CP14RoomsDunGen
       count: 8
@@ -142,6 +142,8 @@
   - type: CP14WeatherController
     entries:
     - visuals: CP14AntiManaMist
+  requiredTags:
+  - CP14DemiplaneOpenSky
   layers:
     - !type:CP14RoomsDunGen
       count: 8
@@ -156,6 +158,7 @@
     max: 10
   requiredTags:
   - CP14DemiplaneHot
+  - CP14DemiplaneOpenSky
   categories:
     Weather: 1
   components:
