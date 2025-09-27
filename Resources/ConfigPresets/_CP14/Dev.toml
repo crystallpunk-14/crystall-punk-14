@@ -1,8 +1,8 @@
 [whitelist]
 enabled = true
 
-[localization]
-language = "en-US"
+[loc]
+server_language = "en-US"
 
 [log]
 path = "logs"

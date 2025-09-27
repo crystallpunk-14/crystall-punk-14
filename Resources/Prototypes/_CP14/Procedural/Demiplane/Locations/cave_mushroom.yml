@@ -15,6 +15,12 @@
   components:
   - type: Biome
     template: CP14ChasmFill
+  - type: Roof
+  - type: CP14SetGridRooved
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
 
 - type: dungeonConfig
   id: CP14MushroomCaves
