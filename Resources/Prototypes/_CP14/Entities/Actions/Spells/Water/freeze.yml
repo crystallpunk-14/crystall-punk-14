@@ -15,7 +15,7 @@
   - type: CP14ActionDangerous
   - type: DoAfterArgs
     repeat: true
-    breakOnMove: true
+    breakOnDamage: true
     delay: 1.5
     distanceThreshold: 5
   - type: Action

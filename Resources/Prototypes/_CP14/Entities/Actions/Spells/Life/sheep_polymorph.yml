@@ -27,6 +27,7 @@
     interactOnMiss: false
   - type: DoAfterArgs
     delay: 1.5
+    breakOnDamage: true
   - type: EntityTargetAction
     whitelist:
       components:
