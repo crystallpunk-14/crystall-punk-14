@@ -108,11 +108,6 @@
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
       CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String ~~~ 15 additional coppers
       # Cost: (45×1.2) + (12×2) = 54 + 24 = 78 copper coins
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
   - type: StaticPrice
     price: 30 # Balance with backpack
 
@@ -139,11 +134,6 @@
       CP14Iron: 12 # 12u CP14IronBuckle (6x2u)
       CP14Cloth: 50 # 40u CP14Cloth (8x10u) + 10u CP14String ~~~ 15 additional coppers
       # Cost: (80×1.2) + (12×2) = 96 + 24 = 120 copper coins
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: ClothingSpeedModifier
@@ -180,11 +170,5 @@
       CP14Leather: 45 # 15u thin (3x5u) + 30u regular (3x10u)
       CP14Iron: 32 # 20 + 12u CP14IronBuckle (6x2u)
       # Cost: (45×1.2) + (32×2) = 54 + 64 = 118 copper coins
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
   - type: ExplosionResistance
     damageCoefficient: 0.85

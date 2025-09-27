@@ -45,6 +45,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, CP14MagicEssenceScanEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, CP14CalculateManacostEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, CP14SkillScanEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, DamageChangedEvent>(RelayInventoryEvent);
         //CP14 End
 
         SubscribeLocalEvent<InventoryComponent, DamageModifyEvent>(RelayInventoryEvent);
