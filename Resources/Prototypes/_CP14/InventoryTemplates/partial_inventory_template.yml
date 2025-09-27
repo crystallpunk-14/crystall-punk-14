@@ -3,17 +3,17 @@
   slots:
     # Left hotbar
     # 0, y
-    - name: neck
-      slotTexture: neck
-      slotFlags: NECK
-      uiWindowPos: 0,0
-      strippingWindowPos: 1,2
-      displayName: Neck
+    - name: gloves
+      slotTexture: gloves
+      slotFlags: GLOVES
+      uiWindowPos: 0,1
+      strippingWindowPos: 0,2
+      displayName: Gloves
     - name: mask
       slotTexture: mask
       slotFlags: MASK
-      uiWindowPos: 2,3
-      strippingWindowPos: 2,1
+      uiWindowPos: 0,2
+      strippingWindowPos: 2,0
       displayName: Mask
     - name: eyes
       slotTexture: eyes
@@ -22,12 +22,6 @@
       strippingWindowPos: 0,1
       displayName: Eyes
     # 1, y
-    - name: shoes
-      slotTexture: shoes
-      slotFlags: FEET
-      uiWindowPos: 1,0
-      strippingWindowPos: 1,5
-      displayName: Shoes
     - name: pants
       slotTexture: pants
       slotFlags: PANTS
@@ -47,21 +41,18 @@
       strippingWindowPos: 1,1
       displayName: Head
     # 2, y
-    - name: gloves
-      slotTexture: gloves
-      slotFlags: GLOVES
-      uiWindowPos: 2,0
-      strippingWindowPos: 0,2
-      displayName: Gloves
+    - name: shoes
+      slotTexture: shoes
+      slotFlags: FEET
+      uiWindowPos: 2,1
+      strippingWindowPos: 1,5
+      displayName: Shoes
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING
-      uiWindowPos: 2,1
-      strippingWindowPos: 2,3
+      uiWindowPos: 2,2
+      strippingWindowPos: 2,1
       displayName: Armor
-      blacklist:
-        tags:
-          - PetOnly
     - name: cloak
       slotTexture: cloak
       slotFlags: CLOAK
@@ -86,6 +77,14 @@
       dependsOn: pants
       displayName: Keys
       stripHidden: true
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      slotGroup: SecondHotbar
+      uiWindowPos: 0,0
+      strippingWindowPos: 1,2
+      displayName: Neck
+      dependsOn: shirt
     # Right hand
     # Left hand
     - name: belt2
