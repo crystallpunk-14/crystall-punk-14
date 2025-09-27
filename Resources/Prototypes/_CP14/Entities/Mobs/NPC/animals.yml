@@ -612,6 +612,8 @@
   - type: Hunger
   - type: Body
     prototype: null
+  - type: Respirator
+    minSaturation: 5.0
   - type: SolutionContainerManager
     solutions:
       food:
