@@ -10,8 +10,8 @@
     manaCost: 5
   - type: DoAfterArgs
     repeat: true
-    delay: 1
-    breakOnMove: true
+    delay: 2
+    breakOnDamage: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneAirSaturation
   - type: Action

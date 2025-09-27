@@ -15,6 +15,7 @@
     repeat: true
     breakOnMove: true
     delay: 1
+    breakOnDamage: true
   - type: TargetAction
   - type: EntityTargetAction
     whitelist:

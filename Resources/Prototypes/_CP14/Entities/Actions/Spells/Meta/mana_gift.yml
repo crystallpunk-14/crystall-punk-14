@@ -11,6 +11,7 @@
     repeat: true
     breakOnMove: true
     delay: 1
+    breakOnDamage: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaGift
   - type: Action

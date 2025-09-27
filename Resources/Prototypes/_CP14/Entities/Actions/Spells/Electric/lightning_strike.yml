@@ -23,6 +23,7 @@
     range: 5
   - type: DoAfterArgs
     delay: 2
+    breakOnDamage: true
   - type: EntityTargetAction
     canTargetSelf: false
     event: !type:CP14EntityTargetModularEffectEvent

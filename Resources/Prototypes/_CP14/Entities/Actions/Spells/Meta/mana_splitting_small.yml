@@ -17,6 +17,7 @@
       state: counter_spell_small
   - type: DoAfterArgs
     delay: 1
+    breakOnDamage: true
   - type: TargetAction
     range: 5
   - type: EntityTargetAction

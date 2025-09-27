@@ -19,6 +19,7 @@
   - type: DoAfterArgs
     delay: 1.5
     hidden: true
+    breakOnDamage: true
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:

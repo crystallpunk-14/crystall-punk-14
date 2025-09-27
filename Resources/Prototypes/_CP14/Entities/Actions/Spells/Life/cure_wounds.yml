@@ -7,9 +7,10 @@
   - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
-    manaCost: 12
+    manaCost: 10
   - type: DoAfterArgs
     delay: 1.5
+    breakOnDamage: true
   - type: CP14ActionSpeaking
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"

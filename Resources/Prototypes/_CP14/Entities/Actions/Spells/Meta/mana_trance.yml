@@ -10,6 +10,7 @@
     repeat: true
     delay: 1
     hidden: true
+    breakOnDamage: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaTrance
   - type: Action
