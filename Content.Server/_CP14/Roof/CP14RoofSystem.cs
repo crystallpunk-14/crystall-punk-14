@@ -1,4 +1,3 @@
-using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
 using Robust.Shared.Map.Components;
 
@@ -9,7 +8,6 @@ public sealed class CP14RoofSystem : EntitySystem
 {
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedRoofSystem _roof = default!;
-
 
     public override void Initialize()
     {
