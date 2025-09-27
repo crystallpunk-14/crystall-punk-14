@@ -11,6 +11,10 @@
   maleFirstNames: CP14_Names_Silva_Male_First
   femaleFirstNames: CP14_Names_Silva_Female_First
   naming: First
+  requirements:
+    - !type:TraitsRequirement 
+      traits:
+        - CP14Blindness
 
 - type: speciesBaseSprites
   id: CP14MobSilvaSprites
