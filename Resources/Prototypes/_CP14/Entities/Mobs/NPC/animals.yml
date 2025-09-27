@@ -573,6 +573,15 @@
   description: A small and slow snail. It seems that any touch could crush it.
   categories: [ ForkFiltered ]
   components:
+  - type: GhostRole
+    makeSentient: true
+    allowMovement: true
+    name: cp14-ghost-role-information-name-snail
+    description: cp14-ghost-role-information-description-snail
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: GhostTakeoverAvailable
   - type: HTN
     constantlyReplan: false
     rootTask:
