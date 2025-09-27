@@ -450,6 +450,12 @@
       effects:
       - !type:SatiateThirst
         factor: 4
+      - !type:CP14ManaChange #CE change
+        manaDelta: 0.2
+        safe: true
+        conditions:
+        - !type:OrganType
+          type: Plant
     Gas:
       effects:
       - !type:HealthChange

@@ -8,21 +8,18 @@
       connections:
         - torso
       organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
+        brain: CP14OrganSilvaBrain
+        eyes: CP14OrganSilvaEyes
     torso:
-      part: TorsoHuman
+      part: TorsoDiona
       connections:
         - right_arm
         - left_arm
         - right_leg
         - left_leg
       organs:
-        heart: OrganHumanHeart
-        lungs: OrganHumanLungs
-        stomach: OrganHumanStomach
-        liver: OrganHumanLiver
-        kidneys: OrganHumanKidneys
+        lungs: CP14OrganSilvaLungs
+        stomach: CP14OrganSilvaStomach
     right_arm:
       part: CP14RightArmHuman
       connections:

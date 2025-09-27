@@ -15,16 +15,16 @@
     activeBlockFraction: 0.8
     passiveBlockModifier:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
+        Blunt: 0.75
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.75
     activeBlockModifier:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
-        Heat: 0.75
+        Blunt: 0.5
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.5
       flatReductions:
         Blunt: 1
         Slash: 1
@@ -63,7 +63,7 @@
             acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
-          damage: 100 
+          damage: 150
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -87,5 +87,5 @@
     state: icon
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 20
+      CP14WoodenPlanks: 30
       CP14Iron: 20

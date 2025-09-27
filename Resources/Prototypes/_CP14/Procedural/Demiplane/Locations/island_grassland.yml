@@ -14,14 +14,14 @@
   - CP14DemiplaneOpenSky
   - CP14DemiplanePeacefulAnimals
   components:
+  - type: Biome
+    template: CP14SandOceanFill
+  - type: Roof
+  - type: SunShadow
+  - type: SunShadowCycle
   - type: MapLight
     ambientLightColor: "#BFEEFFFF"
   - type: CP14CloudShadows
-  - type: Biome
-    template: CP14SandOceanFill
-  - type: SunShadow
-  - type: SunShadowCycle
-  - type: Roof
 
 - type: dungeonConfig
   id: CP14GrasslandIsland
