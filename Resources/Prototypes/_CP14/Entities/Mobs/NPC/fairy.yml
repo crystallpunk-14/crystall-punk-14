@@ -3,7 +3,7 @@
   parent: CP14SimpleMobBase
   id: CP14MobFairy
   description: It glows, squeaks and considers itself very important. It seems that ordinary weapons are incapable of killing her, and only the dissipation of magic will help.
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, HideSpawnMenu ] #Disable spawn in spawmenu
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
