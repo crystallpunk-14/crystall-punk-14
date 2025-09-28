@@ -2286,3 +2286,14 @@
   id: 8276
   time: '2025-09-27T19:17:27.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1804
+- author: TheShuEd
+  changes:
+  - message: Spells are interrupted again if players move far away from target or
+      drop the item used for casting, or loses sight of the target
+    type: Fix
+  - message: After an interrupted spell cast, the cooldown begins again, preventing
+      spamming.
+    type: Fix
+  id: 8277
+  time: '2025-09-28T08:16:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1805
