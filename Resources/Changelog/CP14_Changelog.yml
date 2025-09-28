@@ -2297,3 +2297,12 @@
   id: 8277
   time: '2025-09-28T08:16:52.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1805
+- author: TheShuEd
+  changes:
+  - message: Disabled magic fairies until fix, becaues they cause server crashes
+    type: Remove
+  - message: Fixed lurker melee stun interrupting
+    type: Fix
+  id: 8278
+  time: '2025-09-28T20:53:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1811
