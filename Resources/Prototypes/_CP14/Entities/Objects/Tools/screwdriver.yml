@@ -25,7 +25,7 @@
     attackRate: 1
     damage:
       types:
-        Piercing: 4
+        Piercing: 2
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
   - type: Tool

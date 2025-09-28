@@ -16,6 +16,8 @@
   - type: NpcFactionMember
     factions:
     - CP14Monster
+  - type: RandomHumanoidAppearance
+    randomizeName: false
   - type: NPCImprintingOnSpawnBehaviour
     whitelist:
       tags:
@@ -48,3 +50,20 @@
   - type: Loadout
     prototypes: [ CP14MobUndeadEasy3 ]
 
+- type: entity
+  id: CP14MobUndeadZombieGearEasy4
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadEasy4 ]
+
+- type: entity
+  id: CP14MobUndeadZombieGearEasy5
+  parent: CP14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ CP14MobUndeadEasy5 ]

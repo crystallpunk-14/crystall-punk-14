@@ -6,6 +6,7 @@
   startingGear: CP14BlacksmithGear
   icon: "CP14JobIconBlacksmith"
   supervisors: cp14-job-supervisors-command
+  setPreference: false
   canBeAntag: false
   special:
     - !type:CP14AddTradingReputationSpecial
@@ -17,11 +18,11 @@
       - Tailors
     - !type:CP14LearnSkillsSpecial
       skills:
-      - CopperMelting
-      - IronMelting
-      - GoldMelting
-      - GlassMelting
-      - MithrilMelting
+      #- CopperMelting
+      #- IronMelting
+      #- GoldMelting
+      #- GlassMelting
+      #- MithrilMelting
       - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
   requirements:
     - !type:DepartmentTimeRequirement

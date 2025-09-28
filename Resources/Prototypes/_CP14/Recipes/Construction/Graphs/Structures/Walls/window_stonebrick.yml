@@ -11,7 +11,7 @@
           steps:
             - material: CP14Stone
               amount: 2
-              doAfter: 2
+              doAfter: 5
 
     - node: CP14WindowFrameStoneBrick
       entity: CP14WindowFrameStoneBrick
@@ -56,4 +56,3 @@
             - !type:SpawnPrototype
               prototype: CP14GlassShard
               amount: 1
-

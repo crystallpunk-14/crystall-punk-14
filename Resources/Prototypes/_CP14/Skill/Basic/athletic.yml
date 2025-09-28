@@ -41,6 +41,20 @@
   - !type:NeedPrerequisite
     prerequisite: AthleticT1
 
+- type: cp14Skill
+  id: CP14ActionToggleKeenEye
+  skillUiPosition: 0, 4
+  tree: Athletic
+  icon:
+    sprite: _CP14/Actions/Spells/physical.rsi
+    state: keen_eye
+  effects:
+  - !type:AddAction
+    action: CP14ActionToggleKeenEye
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: AthleticT1
+
 # T2
 
 - type: cp14Skill

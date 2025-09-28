@@ -6,39 +6,35 @@
   name: Second wind
   description: Through pain and blood, you find a second wind, instantly restoring your stamina.
   components:
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectSecondWind
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Jitter
-      - !type:MovespeedModifier
-        walkSpeedModifier: 1.15
-        sprintSpeedModifier: 1.15
-        statusLifetime: 2
-      - !type:CP14StaminaChange
-        staminaDelta: 100
-      - !type:HealthChange
-        damage:
-          types:
-            Blunt: 20
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 6
-        type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
-        time: 6
-        type: Remove
   - type: Action
+    useDelay: 10
+    sound: null
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: second_wind
   - type: InstantAction
-    event: !type:CP14InstantActionEvent
-      cooldown: 10
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectSecondWind
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.15
+          sprintSpeedModifier: 1.15
+          statusLifetime: 2
+        - !type:CP14StaminaChange
+          staminaDelta: 100
+        - !type:HealthChange
+          damage:
+            types:
+              Blunt: 20
+        - !type:ModifyStatusEffect
+          effectProto: StatusEffectStunned
+          time: 6
+          type: Remove
 
 - type: entity
   id: CP14ImpactEffectSecondWind

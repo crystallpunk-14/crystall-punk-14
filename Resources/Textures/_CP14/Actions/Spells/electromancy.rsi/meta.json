@@ -5,7 +5,7 @@
     "y": 32
   },
   "license": "All right reserved",
-  "copyright": "Created by TheShuEd",
+  "copyright": "Created by TheShuEd, electric_trap by nimfar11",
   "states": [
     {
       "name": "lightning_strike"
@@ -15,6 +15,9 @@
     },
     {
       "name": "speed_music"
+    },
+    {
+      "name": "electric_trap"
     }
   ]
 }

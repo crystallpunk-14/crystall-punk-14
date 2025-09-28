@@ -161,6 +161,9 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.05
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
         time: 2
@@ -447,6 +450,12 @@
       effects:
       - !type:SatiateThirst
         factor: 4
+      - !type:CP14ManaChange #CE change
+        manaDelta: 0.2
+        safe: true
+        conditions:
+        - !type:OrganType
+          type: Plant
     Gas:
       effects:
       - !type:HealthChange

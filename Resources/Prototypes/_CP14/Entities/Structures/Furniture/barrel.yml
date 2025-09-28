@@ -67,7 +67,7 @@
         mask:
         - MachineMask
         layer:
-        - WallLayer
+        - MachineLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: CP14Wood

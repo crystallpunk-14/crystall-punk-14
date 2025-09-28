@@ -162,6 +162,7 @@
   - CP14ClothingEyesMonocle
   - CP14ClothingEyesGlasses
   - CP14ClothingEyesEyePatch
+
 - type: loadout
   id: CP14ClothingEyesMonocle
   equipment:
@@ -705,9 +706,6 @@
   - CP14Scissors
   - CP14Rope
   - CP14SilverCoin
-  - CP14ModularIronDagger
-  - CP14ModularIronSickle
-  - CP14ModularCopperPickaxe
   - CP14Lighter
   - CP14Torch
   - CP14SmokingPipeFilledTobacco
@@ -751,24 +749,6 @@
   storage:
     back:
     - CP14SilverCoin
-
-- type: loadout
-  id: CP14ModularIronDagger
-  storage:
-    back:
-    - CP14ModularIronDagger
-
-- type: loadout
-  id: CP14ModularIronSickle
-  storage:
-    back:
-    - CP14ModularIronSickle
-
-- type: loadout
-  id: CP14ModularCopperPickaxe
-  storage:
-    back:
-    - CP14ModularCopperPickaxe
 
 - type: loadout
   id: CP14Lighter

@@ -21,9 +21,8 @@
     canAcceptFood: true
   - type: Appearance
   - type: SolutionContainerVisuals
-  - type: Food
-    useSound: 
-      path: /Audio/Items/drink.ogg
+  - type: Edible
+    edible: Drink
     utensil: Spoon
     transferAmount: 2.5
   - type: Spillable
@@ -92,19 +91,3 @@
   - type: Food
     trash: 
     - CP14BowlCopper
-
-- type: entity
-  id: CP14BowlWoodenRandom
-  parent: CP14BowlWooden
-  suffix: Random food
-  components:
-  - type: CP14RandomFoodData
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Protein
-          Quantity: 15

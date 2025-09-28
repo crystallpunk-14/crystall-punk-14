@@ -42,8 +42,10 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
-                    .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
-                    .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // CP14 lightning detonates entities
+                    //CP14
+                    .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // this component delete all entities on this tile
+                    .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // lightning detonates entities
+                    //CP14 end
                     .Select(p => p.ID)
                     .ToList();
 
@@ -58,7 +60,7 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await server.WaitRunTicks(15); // 15 seconds, enough to trigger most update loops //CP14 returned back to 15 ticks (operation was cancelled github issue)
+            await server.WaitRunTicks(15);
 
             await server.WaitPost(() =>
             {
@@ -107,8 +109,10 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                    //CP14
                     .Where(p => !p.Components.ContainsKey("CP14BiomeSpawner")) // CP14 this component delete all entities on this tile
                     .Where(p => !p.Components.ContainsKey("CP14AreaEntityEffect")) // CP14 lightning detonates entities
+                    //CP14 end
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -116,7 +120,7 @@ namespace Content.IntegrationTests.Tests
                     entityMan.SpawnEntity(protoId, map.GridCoords);
                 }
             });
-            await server.WaitRunTicks(15); // 15 seconds, enough to trigger most update loops //CP14 returned back to 15 ticks (operation was cancelled github issue)
+            await server.WaitRunTicks(15);
             await server.WaitPost(() =>
             {
                 static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
@@ -169,6 +173,9 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !p.Abstract)
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                //CP14
+                .Where(p => !p.Components.ContainsKey("CP14VampireClanHeart")) //Spawn announcement sound entities on init
+                //CP14 end
                 .Select(p => p.ID)
                 .ToList();
 
@@ -248,6 +255,9 @@ namespace Content.IntegrationTests.Tests
 
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
+                //CP14
+                "CP14VampireClanHeart", //Also announce on spawn
+                //CP14 end
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);
@@ -383,8 +393,6 @@ namespace Content.IntegrationTests.Tests
                 "DebugExceptionStartup",
                 "GridFill",
                 "RoomFill",
-                "CP14BiomeSpawner", // CP14 this component delete all entities on this tile
-                "CP14AreaEntityEffect", // CP14 lightning detonates entities
                 "Map", // We aren't testing a map entity in this test
                 "MapGrid",
                 "Broadphase",

@@ -56,6 +56,7 @@ public abstract partial class CP14SharedSkillSystem
         {
             Text = "Reset skills",
             Message = "Remove all learned skills",
+            Category = VerbCategory.Debug,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_CP14/Interface/Misc/reroll.rsi"), "reroll"),
             Act = () =>
             {

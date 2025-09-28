@@ -54,6 +54,11 @@
   name: cp14-trade-faction-guard
 
 - type: cp14TradingFaction
+  id: HelmirChild
+  color: "#cc0707"
+  name: cp14-trade-faction-helmir-child
+
+- type: cp14TradingFaction
   id: VampireMarket
   color: "#6b1934"
   name: cp14-trade-faction-vampire-market

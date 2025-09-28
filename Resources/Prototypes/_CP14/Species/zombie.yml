@@ -17,7 +17,6 @@
   sprites:
     Head: CP14MobZombieHead
     Chest: CP14MobZombieTorso
-    Eyes: CP14MobZombieEyes
     LArm: CP14MobZombieLArm
     RArm: CP14MobZombieRArm
     LHand: CP14MobZombieLHand
@@ -26,12 +25,6 @@
     RLeg: CP14MobZombieRLeg
     LFoot: CP14MobZombieLFoot
     RFoot: CP14MobZombieRFoot
-
-- type: humanoidBaseSprite
-  id: CP14MobZombieEyes
-  baseSprite:
-    sprite: _CP14/Mobs/Customization/eyes.rsi
-    state: eyes
 
 - type: humanoidBaseSprite
   id: CP14MobZombieHead

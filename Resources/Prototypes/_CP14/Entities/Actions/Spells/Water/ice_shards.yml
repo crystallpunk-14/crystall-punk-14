@@ -7,23 +7,13 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/water.rsi
     state: ice_shards
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.75
   - type: CP14ActionManaCost
     manaCost: 5
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellProjectile
-      prototype: CP14IceShard
-    - !type:CP14SpellSpawnEntityOnUser
-      spawns:
-      - CP14ImpactEffectWaterCreation
   - type: CP14ActionSpeaking
     endSpeech: "Glacies acus!"
-  - type: CP14MagicEffectCastingVisual
-    proto: CP14RuneIceShards
   - type: CP14ActionDangerous
   - type: Action
+    useDelay: 0.5
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: ice_shards
@@ -32,8 +22,13 @@
     checkCanAccess: false
     range: 60
   - type: WorldTargetAction
-    event: !type:CP14WorldTargetActionEvent
-      cooldown: 0.5
+    event: !type:CP14WorldTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellProjectile
+        prototype: CP14IceShard
+      - !type:CP14SpellSpawnEntityOnUser
+        spawns:
+        - CP14ImpactEffectWaterCreation
 
 - type: entity
   id: CP14RuneIceShards

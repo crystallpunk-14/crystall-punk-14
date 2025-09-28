@@ -18,7 +18,7 @@
     - WoodwindInstrument
   - type: PhysicalComposition
     materialComposition:
-      CP14WoodenPlanks: 40
+      CP14WoodenPlanks: 10
 
 - type: entity
   parent: BaseHandheldInstrument

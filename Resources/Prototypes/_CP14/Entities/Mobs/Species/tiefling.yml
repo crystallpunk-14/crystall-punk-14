@@ -19,13 +19,17 @@
     damageContainer: CP14Biological
     damageModifierSet: CP14Tiefling
   - type: PassiveDamage
-    damageCap: 0
+    damageCap: 80
     allowedStates:
     - Alive
-    - Critical
     damage:
       types:
-        Heat: -0.14 # Around 8 damage a minute healed
+        Heat: -0.14 # Around 8 damage a minute healed (9.6 with burn regeneration below)
+        CP14ManaDepletion: -0.05
+      groups:
+        Brute: -0.05
+        Burn: -0.02
+        Toxin: -0.03
   - type: CP14MagicEnergyDraw
     energy: 0.75
     delay: 3 # 5m to full restore
@@ -41,6 +45,15 @@
     - PyrokineticT2
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
     femaleDisplacements:
       outerClothing:
         sizeMaps:
@@ -67,6 +80,14 @@
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
 
 
 - type: entity
@@ -78,6 +99,15 @@
     species: CP14Tiefling
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
     femaleDisplacements:
       cloak:
         sizeMaps:
@@ -104,3 +134,11 @@
           32:
             sprite: _CP14/Mobs/Species/Human/displacement.rsi
             state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck

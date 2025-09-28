@@ -91,7 +91,7 @@
   - type: CP14AuraImprint
     imprintColor: "#a81b5d"
   - type: Damageable
-    damageContainer: CP14Biological
+    damageContainer: CP14BiologicalAnaerobic
     damageModifierSet: CP14Skeleton
   - type: Destructible
     thresholds:
@@ -116,6 +116,15 @@
   - type: ContainerContainer
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
   - type: TransferMindOnGib
   - type: GhostTakeoverAvailable
   - type: CP14DemiplaneBlockInteractions
@@ -129,3 +138,12 @@
     species: CP14Skeleton
   - type: Inventory
     templateId: CP14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _CP14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _CP14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
