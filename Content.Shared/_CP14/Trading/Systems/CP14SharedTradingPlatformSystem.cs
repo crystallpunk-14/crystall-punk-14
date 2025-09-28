@@ -54,7 +54,7 @@ public abstract partial class CP14SharedTradingPlatformSystem : EntitySystem
         var repComp = EnsureComp<CP14TradingReputationComponent>(args.User);
         repComp.Reputation.TryAdd(ent.Comp.Faction, 0);
         _audio.PlayLocal(new SoundCollectionSpecifier("CP14CoinImpact"), args.User, args.User);
-        _popup.PopupPredicted(Loc.GetString("cp14-trading-contract-use", ("name", Loc.GetString(indexedFaction.Name))), args.User, args.User);
+        _popup.PopupClient(Loc.GetString("cp14-trading-contract-use", ("name", Loc.GetString(indexedFaction.Name))), args.User, args.User);
 
         if (_net.IsServer)
             QueueDel(ent);

@@ -1,0 +1,150 @@
+- type: entity
+  id: CP14ActionSpellFireTrap
+  parent: CP14ActionSpellBase
+  name: Fire trap
+  description: Creates a fire trap at the selected location. Don't forget to recharge it with mana.
+  components:
+  - type: CP14ActionDoAfterSlowdown
+    speedMultiplier: 0.9
+  - type: CP14ActionManaCost
+    manaCost: 40
+  - type: CP14ActionSpeaking
+    startSpeech: "Signum ignis..."
+    endSpeech: "hunc locum custodi"
+  - type: CP14ActionDoAfterVisuals
+    proto: CP14RuneFireTrap
+  - type: Action
+    useDelay: 4
+    icon:
+      sprite: _CP14/Actions/Spells/fire.rsi
+      state: fire_trap
+  - type: TargetAction
+    range: 3
+  - type: DoAfterArgs
+    delay: 2
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectFireTrap
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14SpawnMagicFireTrap
+
+- type: entity
+  id: CP14RuneFireTrap
+  parent: CP14BaseMagicTrap
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#fdda5d"
+      shader: unshaded
+    - state: rune_fire
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectFireTrap
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: CP14SpawnMagicFireTrap
+  parent: CP14BaseMagicTrap
+  name: fire trap
+  description: A rune of fire drawn on the ground using magic — it's best not to step on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#fdda5d"
+      shader: unshaded
+    - state: rune_fire
+      color: "#eea911"
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      trap:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+          - MobMask
+        layer:
+          - SlipLayer
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 42
+    energy: 42
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: -0.5
+    delay: 5
+  - type: CP14MagicUnsafeDamage
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: TriggerOnCollide
+    fixtureID: trap
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 3
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 8.0
+    intensitySlope: 3
+    maxIntensity: 2
+  - type: DeleteOnTrigger
+
+- type: entity
+  parent: CP14BaseSpellScrollFire
+  id: CP14SpellScrollFireTrap
+  name: fire trap spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellFireTrap
+
+- type: entity
+  parent: CP14SpawnMagicFireTrap
+  id: CP14SpawnMagicFireTrapInvisible
+  suffix: Invisible. Permanent. Admin
+  components:
+  - type: Visibility
+    layer: 16
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
+
+- type: entity
+  parent: CP14SpawnMagicFireTrap
+  id: CP14SpawnMagicFireTrapPermanent
+  suffix: Permanent
+  components:
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0

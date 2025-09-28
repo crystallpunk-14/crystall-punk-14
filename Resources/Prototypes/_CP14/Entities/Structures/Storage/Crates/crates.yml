@@ -60,7 +60,7 @@
         mask:
         - MachineMask
         layer:
-        - WallLayer
+        - MachineLayer
   - type: Storage
     grid:
     - 0,0,5,5

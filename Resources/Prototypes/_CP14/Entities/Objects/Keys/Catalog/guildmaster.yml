@@ -8,9 +8,8 @@
 
 - type: entity
   parent: CP14KeyGoldBlank
-  id: CP14KeyDemiplaneCrystal
-  suffix: Demiplane Crystal
+  id: CP14KeyAdventureGuild
+  suffix: Adventure Guild
   components:
   - type: CP14Key
-    autoGenerateShape: DemiplaneCrystal
-
+    autoGenerateShape: AdventureGuild

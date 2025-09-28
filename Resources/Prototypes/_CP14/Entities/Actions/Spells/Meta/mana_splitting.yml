@@ -4,27 +4,19 @@
   name: Magic splitting
   description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.7
   - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellMixSolution
-      reactionTypes:
-      - CP14MagicSplitting
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectMagicSplitting
-    - !type:CP14SpellInterruptSpell
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:CP14ManaChange
-        manaDelta: -15
-        safe: false
-  - type: CP14MagicEffectCastingVisual
+  - type: DoAfterArgs
+    delay: 1
+    repeat: true
+    breakOnMove: true
+    breakOnDamage: true
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicSplitting
   - type: Action
+    useDelay: 15
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: counter_spell
@@ -35,11 +27,19 @@
       components:
       - CP14MagicEnergyContainer
       - ExaminableSolution
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 15
-      castTime: 15
-      distanceThreshold: 5
-      breakOnMove: false
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellMixSolution
+        reactionTypes:
+        - CP14MagicSplitting
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectMagicSplitting
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: -5
+          safe: false
 
 - type: entity
   id: CP14RuneMagicSplitting

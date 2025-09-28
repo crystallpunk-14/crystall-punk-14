@@ -4,6 +4,7 @@ using Content.Shared._CP14.MagicEnergy.Components;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.MagicEnergy;
 
@@ -60,7 +61,7 @@ public partial class CP14MagicEnergySystem
             if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsAlive(uid, mobState))
                 continue;
 
-            draw.NextUpdateTime += TimeSpan.FromSeconds(draw.Delay);
+            draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
             ChangeEnergy((uid, magicContainer), draw.Energy, out _, out _, draw.Safe);
         }

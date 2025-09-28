@@ -151,6 +151,7 @@
   - type: Body
     prototype: CP14Human
     requiredLegs: 2
+  - type: Crawler
   - type: Identity
   - type: Hands
   - type: ComplexInteraction
@@ -235,7 +236,6 @@
     - Healing
     - Electromancy
     - Athletic
-    - MartialArts
     - Craftsmanship
   - type: CP14VampireEssenceHolder
   - type: CP14UnknownIdentity
@@ -255,13 +255,14 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 20
+    damageCap: 80
     damage:
       types:
-        Heat: -0.07
         CP14ManaDepletion: -0.05
       groups:
         Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
   - type: StatusEffects
     allowed:
     - Stun

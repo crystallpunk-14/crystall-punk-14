@@ -5,13 +5,10 @@
   description: You make a quick dash to the chosen position to quickly close the distance or dodge danger.
   components:
   - type: CP14ActionStaminaCost
-    stamina: 40
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellDash
-      speed: 20
-      range: 3.5
+    stamina: 20
   - type: Action
+    sound: null
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: dash
@@ -19,5 +16,8 @@
     checkCanAccess: false
     range: 10 #Thats not dash range, thats interaction clickable zone range
   - type: WorldTargetAction
-    event: !type:CP14WorldTargetActionEvent
-      cooldown: 5
+    event: !type:CP14WorldTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellDash
+        speed: 20
+        range: 3.5

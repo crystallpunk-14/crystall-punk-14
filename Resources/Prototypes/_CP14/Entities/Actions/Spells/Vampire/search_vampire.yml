@@ -6,44 +6,45 @@
   components:
   - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectVampireHypnosis
-    - !type:CP14SpellPointerToVampireClan
-      searchRange: 60
-      pointerEntity: CP14BloodlustPointer
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneVampireHypnosis
+  - type: DoAfterArgs
+    delay: 1.5
   - type: Action
+    useDelay: 8
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: search_clan
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 8
-      castDelay: 1.5
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectVampireHypnosis
+      - !type:CP14SpellPointerToVampireClan
+        searchRange: 60
+        pointerEntity: CP14BloodlustPointer
 
 - type: entity
   parent: CP14ActionSpellBloodConnection
   id: CP14ActionSpellBloodEnemySearch
   name: Blood identification
-  description: You are searching within a large radius for all vampires from other factions.
+  description: You are searching within a large radius for all vampires from other factions and their clan hearts.
   components:
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectVampireHypnosis
-    - !type:CP14SpellPointerToVampireClan
-      inversed: true
-      searchRange: 60
-      pointerEntity: CP14BloodlustPointer
   - type: Action
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: search_clan_enemy
+  - type: InstantAction
+    event: !type:CP14InstantModularEffectEvent
+       effects:
+       - !type:CP14SpellSpawnEntityOnTarget
+         spawns:
+         - CP14ImpactEffectVampireHypnosis
+       - !type:CP14SpellPointerToVampireClan
+         inversed: true
+         searchRange: 60
+         pointerEntity: CP14BloodlustPointer
 
 - type: entity
   id: CP14BloodlustPointer

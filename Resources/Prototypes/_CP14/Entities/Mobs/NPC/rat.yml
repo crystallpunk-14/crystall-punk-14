@@ -1,0 +1,116 @@
+- type: entity
+  id: CP14MobRat
+  parent: CP14SimpleMobBase
+  name: rat
+  description: An adorable rat. You see valor in it's eyes fit for a squire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - CP14PeacefulAnimals
+  - type: NPCRetaliation
+    attackMemoryLength: 20
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _CP14/Mobs/Pets/rat.rsi
+      state: rat
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 8
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: Tag
+    tags:
+    - CP14Rat
+  - type: Item
+    size: Normal
+  - type: CanEscapeInventory
+    baseResistTime: 1
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      35: Critical
+      40: Dead
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rat
+      Critical:
+        Base: rat_dead
+      Dead:
+        Base: rat_dead
+  - type: Bloodstream
+    bloodMaxVolume: 50
+    bloodReagent: CP14BloodAnimal
+  - type: Thirst
+    thresholds:
+      OverHydrated: 150
+      Okay: 100
+      Thirsty: 50
+      Parched: 25
+      Dead: 0
+    baseDecayRate: 0.04
+  - type: Hunger
+    thresholds:
+      Overfed: 50
+      Okay: 25
+      Peckish: 10
+      Starving: 5
+      Dead: 0
+    baseDecayRate: 0.03 # hungry hungry rats
+    starvationDamage:
+      types:
+        Cold: 0.1
+        Bloodloss: 0.1
+    starvingSlowdownModifier: 0.9
+  - type: ExaminableHunger
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: Inventory
+    speciesId: CP14Rat
+    templateId: CP14Rat
+  - type: Puller
+    needsHands: false
+  - type: CP14NightVision
+  - type: Climbing
+

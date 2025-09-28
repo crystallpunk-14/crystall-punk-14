@@ -10,7 +10,6 @@ using Content.Shared._CP14.Cooking.Components;
 using Content.Shared.DisplacementMap;
 using Content.Shared.Rounding;
 using Robust.Client.GameObjects;
-using Robust.Shared.Random;
 
 namespace Content.Client._CP14.Cooking;
 

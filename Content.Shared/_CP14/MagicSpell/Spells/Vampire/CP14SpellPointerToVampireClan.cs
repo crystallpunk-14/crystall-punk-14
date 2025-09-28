@@ -63,5 +63,29 @@ public sealed partial class CP14SpellPointerToVampireClan : CP14SpellEffect
 
             transform.SetWorldRotation(pointer, angle + Angle.FromDegrees(90));
         }
+
+        var heartsInRange = lookup.GetEntitiesInRange<CP14VampireClanHeartComponent>(originEntPosition, SearchRange);
+        foreach (var heart in heartsInRange)
+        {
+            if (!Inversed)
+            {
+                if (heart.Comp.Faction != vampireComponent.Faction)
+                    continue;
+            }
+            else
+            {
+                if (heart.Comp.Faction == vampireComponent.Faction)
+                    continue;
+            }
+
+            var targetPosition = transform.GetWorldPosition(heart);
+
+            //Calculate the rotation
+            Angle angle = new(targetPosition - originPosition);
+
+            var pointer = entManager.Spawn(PointerEntity, new MapCoordinates(originPosition, transform.GetMapId(originEntPosition)));
+
+            transform.SetWorldRotation(pointer, angle + Angle.FromDegrees(90));
+        }
     }
 }

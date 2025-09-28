@@ -39,7 +39,7 @@ public abstract class CP14SharedMagicEnergySystem : EntitySystem
         if (ent.Comp.MagicAlert is null)
             return;
 
-        _alerts.ClearAlert(ent, ent.Comp.MagicAlert.Value);
+        _alerts.ClearAlert(ent.Owner, ent.Comp.MagicAlert.Value);
     }
 
     private void OnExamined(Entity<CP14MagicEnergyExaminableComponent> ent, ref ExaminedEvent args)
@@ -68,7 +68,7 @@ public abstract class CP14SharedMagicEnergySystem : EntitySystem
             (float) ent.Comp.MaxEnergy,
             _alerts.GetMaxSeverity(ent.Comp.MagicAlert.Value));
 
-        _alerts.ShowAlert(ent, ent.Comp.MagicAlert.Value, (short) level);
+        _alerts.ShowAlert(ent.Owner, ent.Comp.MagicAlert.Value, (short) level);
     }
 
     public void ChangeEnergy(Entity<CP14MagicEnergyContainerComponent?> ent,

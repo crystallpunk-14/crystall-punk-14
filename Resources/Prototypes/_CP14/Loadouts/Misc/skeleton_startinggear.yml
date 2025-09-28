@@ -15,8 +15,6 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     shoes: CP14ClothingShoesLongLeatherBoots
-    belt: CP14ModularSkeletonSwordUpgrade
-    neck: CP14ModularIronPickaxe
 
 # TIER 1
 
@@ -27,8 +25,8 @@
     cloak: CP14ClothingCloakBone
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularSkeletonHalberd
     shoes: CP14ClothingShoesSandals
+    neck: CP14WeaponTwoHandedSwordIron
 
 - type: startingGear
   id: CP14MobSkeletonSwordT1
@@ -36,19 +34,19 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     cloak: CP14ClothingCloakBone
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularSkeletonSword
+    shirt: CP14ClothingShirtWarriorsGarbDress
     shoes: CP14ClothingShoesSandals
     head: CP14ClothingHeadMetalHeadband
-  inhand:
-    - CP14BaseShield
+    belt: CP14WeaponSwordIron
+    neck: CP14WeaponShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT1
   equipment:
     mask: CP14ClothingMaskSinner
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularCopperSkimitar
-    belt2: CP14ModularIronDagger
+    belt: CP14WeaponDaggerIron
+    belt2: CP14WeaponSkimitarIron
 
 - type: startingGear
   id: CP14MobSkeletonArcherT1
@@ -56,7 +54,7 @@
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
     neck: CP14BowCombat
-    belt: CP14ClothingBeltQuiverCopperArrow
+    belt: CP14ClothingBeltQuiverArrows
 
 # TIER 2
 
@@ -68,8 +66,8 @@
     mask: CP14ClothingMaskSteelMask
     shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    neck: CP14ModularSkeletonHalberdUpgrade
     shoes: CP14ClothingShoesSandals
+    neck: CP14WeaponWarAxeIron
 
 - type: startingGear
   id: CP14MobSkeletonSwordT2
@@ -77,11 +75,11 @@
     outerClothing: CP14ClothingOuterClothingBoneArmorUpgrade
     cloak: CP14ClothingCloakBone
     mask: CP14ClothingMaskSteelMask
+    shirt: CP14ClothingShirtWarriorsGarbDress
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularSkeletonSwordUpgrade
     shoes: CP14ClothingShoesSandals
-  inhand:
-    - CP14BaseShield
+    belt: CP14WeaponSwordIron
+    neck: CP14WeaponShieldWooden
 
 - type: startingGear
   id: CP14MobSkeletonDodgerT2
@@ -89,9 +87,9 @@
     outerClothing: CP14ClothingOuterClothingBoneArmor
     mask: CP14ClothingMaskBoneHornedMask
     pants: CP14ClothingPantsLoincloth
-    belt: CP14ModularCopperSkimitarTundra
-    belt2: CP14ModularGoldSkimitarAgony
     shoes: CP14ClothingShoesSandals
+    belt: CP14WeaponSkimitarIron
+    belt2: CP14WeaponSkimitarIron
 
 - type: startingGear
   id: CP14MobSkeletonArcherT2
@@ -101,8 +99,8 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     neck: CP14BowCombat
-    belt: CP14ClothingBeltQuiverIronArrow
-    belt2: CP14ModularSkeletonSword
+    belt: CP14ClothingBeltQuiverArrows
+    belt2: CP14WeaponSwordIron # change to Rapier when it will be added
     shoes: CP14ClothingShoesLongLeatherBoots
 
 - type: startingGear
@@ -114,8 +112,7 @@
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsBrown
     shoes: CP14ClothingShoesLongLeatherBoots
-    ring2: CP14ClothingCloakAmuletMana
-    belt: CP14ModularSkeletonSword
+    belt: CP14WeaponSwordIron # change to Rapier when it will be added
 
 - type: startingGear
   id: CP14MobSkeletonBardT2

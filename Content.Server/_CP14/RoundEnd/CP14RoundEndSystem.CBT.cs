@@ -32,7 +32,7 @@ public sealed partial class CP14RoundEndSystem
             return;
 
         _nextUpdateTime = _timing.CurTime + _updateFrequency;
-        var now = DateTime.UtcNow.AddHours(3); // Moscow time
+        var now = DateTime.UtcNow.AddHours(0);
 
         OpenWeekendRule(now);
         LanguageRule(now);
@@ -89,8 +89,8 @@ public sealed partial class CP14RoundEndSystem
 
         var isWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
 
-        var allowedRuPlaytime = isWeekend ? now.Hour is >= 16 and < 20 : now.Hour is >= 18 and < 22;
-        var allowedEngPlaytime = now.Hour is >= 20 and < 24;
+        var allowedRuPlaytime = isWeekend ? now.Hour is >= 13 and < 17 : now.Hour is >= 15 and < 19;
+        var allowedEngPlaytime = now.Hour is >= 19 and < 23;
         var isMonday = now.DayOfWeek is DayOfWeek.Monday;
 
         if (((ruDays && allowedRuPlaytime) || (!ruDays && allowedEngPlaytime)) && !isMonday)
@@ -114,7 +114,7 @@ public sealed partial class CP14RoundEndSystem
 
         var timeMap = new (int Hour, int Minute, System.Action Action)[]
         {
-            (21, 45, () =>
+            (18, 45, () =>
             {
                 if (!ruDays)
                     return;
@@ -125,14 +125,21 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (22, 2, () =>
+            (19, 0, () =>
+            {
+                if (!ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
+            }),
+            (19, 2, () =>
             {
                 if (!ruDays)
                     return;
 
                 _consoleHost.ExecuteCommand("golobby");
             }),
-            (23, 44, () =>
+            (22, 44, () =>
             {
                 if (ruDays)
                     return;
@@ -143,7 +150,14 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (23, 59, () =>
+            (22, 58, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
+            }),
+            (23, 00, () =>
             {
                 if (ruDays)
                     return;
