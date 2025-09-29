@@ -278,6 +278,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
 
         var requirements = _roles.GetRoleRequirements(antag);
         return JobRequirements.TryRequirementsMet(
+            player.UserId, //CP14
             requirements,
             playTimes,
             out _,

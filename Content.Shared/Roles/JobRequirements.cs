@@ -27,7 +27,7 @@ public static class JobRequirements
     {
         var sys = entManager.System<SharedRoleSystem>();
         var requirements = sys.GetRoleRequirements(job);
-        return TryRequirementsMet(requirements, playTimes, out reason, entManager, protoManager, profile);
+        return TryRequirementsMet(userId, requirements, playTimes, out reason, entManager, protoManager, profile);
     }
 
     /// <summary>
@@ -38,6 +38,7 @@ public static class JobRequirements
     /// <param name="reason"> If the requirements were not met, details are provided here. </param>
     /// <returns>Returns true if all requirements were met or there were no requirements.</returns>
     public static bool TryRequirementsMet(
+        NetUserId userId,  //CP14 add NetUserId for sponsorship checks
         HashSet<JobRequirement>? requirements,
         IReadOnlyDictionary<string, TimeSpan> playTimes,
         [NotNullWhen(false)] out FormattedMessage? reason,

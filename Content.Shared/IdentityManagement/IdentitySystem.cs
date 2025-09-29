@@ -138,6 +138,16 @@ public sealed class IdentitySystem : EntitySystem
         var representation = GetIdentityRepresentation(ent.Owner);
         var name = GetIdentityName(ent, representation);
 
+        //CP14 override character name
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
+        {
+            var species = _humanoid.GetSpeciesRepresentation(humanoid.Species).ToLower();
+            var age = _humanoid.GetAgeRepresentation(humanoid.Species, humanoid.Age);
+
+            name = age + " " + species;
+        }
+        //CP14 end
+
         // Clone the old entity's grammar to the identity entity, for loc purposes.
         if (TryComp<GrammarComponent>(ent, out var grammar))
         {
