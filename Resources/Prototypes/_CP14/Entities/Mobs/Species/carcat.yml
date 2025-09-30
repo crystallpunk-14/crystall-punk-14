@@ -58,6 +58,8 @@
       visible: false
   - type: HumanoidAppearance
     species: CP14Carcat
+  - type: FireVisuals
+    alternateState: Carcat_burning
   - type: Icon
     sprite: _CP14/Mobs/Species/Carcat/parts.rsi
     state: full
