@@ -131,3 +131,13 @@
       - id: CP14SeedCotton
         amount: 1
         prob: 0.4
+
+- type: entity
+  id: CP14SackFarmingSeedSnail
+  parent: CP14SackFarmingSeed
+  suffix: Snail
+  components:
+  - type: StorageFill
+    contents:
+      - id: CP14FoodSnailShellCooked
+        amount: 12
