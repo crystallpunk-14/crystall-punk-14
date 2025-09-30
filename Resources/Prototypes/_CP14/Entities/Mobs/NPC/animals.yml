@@ -463,62 +463,25 @@
   suffix: "Random color"
   categories: [ ForkFiltered ]
   components:
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      sprite: _CP14/Mobs/Animals/cat.rsi
-      state: walking
-      #color: "#555555"
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: walking
-    noMovementLayers:
-      movement:
-        state: lying
   - type: RandomSprite
     available:
     - enum.DamageStateVisualLayers.Base:
         movement: CP14CatColors
-
-- type: entity
-  parent: CP14MobCatBase
-  id: CP14MobCatRandomColoredWithSpots
-  suffix: "Random color, Spotted"
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      sprite: _CP14/Mobs/Animals/cat.rsi
-      state: walking
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
-      sprite: _CP14/Mobs/Animals/cat.rsi
-      state: walking-overlay
-      #color: "#222222"
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        sprite: _CP14/Mobs/Animals/cat.rsi
-        state: walking
-      overlay:
-        sprite: _CP14/Mobs/Animals/cat.rsi
-        state: walking-overlay
-    noMovementLayers:
-      movement:
-        sprite: _CP14/Mobs/Animals/cat.rsi
-        state: lying
-      overlay:
-        sprite: _CP14/Mobs/Animals/cat.rsi
-        state: lying-overlay
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        movement: ""
     - enum.DamageStateVisualLayers.BaseUnshaded:
-        overlay: CP14CatColors
+        overlay: ""
+
+# - type: entity
+#   parent: CP14MobCatColoredWithSpotsBase
+#   id: CP14MobCatRandomColoredWithSpots
+#   suffix: "Random color, Spotted"
+#   categories: [ ForkFiltered ]
+#   components:
+#   - type: RandomSprite
+#     available:
+#     - enum.DamageStateVisualLayers.Base:
+#         movement: CP14CatColors
+#     - enum.DamageStateVisualLayers.BaseUnshaded:
+#         overlay: CP14CatColors
       
 
 - type: entity

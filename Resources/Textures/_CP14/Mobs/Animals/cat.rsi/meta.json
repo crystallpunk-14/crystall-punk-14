@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b",
+    "copyright": "Sprites by darksovet(discord), modified RSI by oldschool_otaku",
     "states": [
         {
             "name": "walking",
@@ -26,6 +26,16 @@
         },
         {
             "name": "dead-overlay"
+        },
+        {
+            "name": "walking-spots",
+            "directions": 4
+        },
+        {
+            "name": "lying-spots"
+        },
+        {
+            "name": "dead-spots"
         }
     ]
 }

@@ -382,17 +382,24 @@
     baseSprintSpeed: 5
   - type: Sprite
     drawdepth: Mobs
+    sprite: _CP14/Mobs/Animals/cat.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      sprite: _CP14/Mobs/Animals/cat.rsi
       state: walking
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
+      state: walking-overlay
+      shader: unshaded
   - type: SpriteMovement
     movementLayers:
       movement:
         state: walking
+      overlay:
+        state: walking-overlay
     noMovementLayers:
       movement:
         state: lying
+      overlay:
+        state: lying-overlay
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -451,3 +458,46 @@
     description: cp14-ghost-role-information-cat-description
     rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
+
+# - type: entity
+#   parent: CP14MobCatBase
+#   id: CP14MobCatColoredWithSpotsBase
+#   suffix: "Random color, Spotted"
+#   categories: [ ForkFiltered ]
+#   abstract: true
+#   components:
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: _CP14/Mobs/Animals/cat.rsi
+#     layers:
+#     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+#       state: walking
+#     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
+#       state: walking-overlay
+#       shader: unshaded
+#     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "spots"]
+#       state: walking-spots
+#       shader: unshaded
+#   - type: SpriteMovement
+#     movementLayers:
+#       movement:
+#         sprite: _CP14/Mobs/Animals/cat.rsi
+#         state: walking
+#       overlay:
+#         sprite: _CP14/Mobs/Animals/cat.rsi
+#         state: walking-spots
+#     noMovementLayers:
+#       movement:
+#         sprite: _CP14/Mobs/Animals/cat.rsi
+#         state: lying
+#       overlay:
+#         sprite: _CP14/Mobs/Animals/cat.rsi
+#         state: lying-spots
+#   - type: DamageStateVisuals
+#     states:
+#       Alive:
+#         Base: walking
+#         BaseUnshaded: walking-overlay
+#       Dead:
+#         Base: dead
+#         BaseUnshaded: dead-overlay
