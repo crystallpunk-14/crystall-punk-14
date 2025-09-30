@@ -623,6 +623,7 @@
     accent: mouse
   - type: Food
   - type: Thirst
+    baseDecayRate: 0.01
   - type: Hunger
     baseDecayRate: 0.01
   - type: Body
