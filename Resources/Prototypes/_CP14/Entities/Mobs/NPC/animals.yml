@@ -458,7 +458,7 @@
       path: /Audio/Animals/goat_bah.ogg
 
 - type: entity
-  id: CP14MobCatWhite
+  id: CP14MobCatBase
   parent: CP14SimpleMobBase
   name: cat
   description: A cute small feline, that purrs when you pet it.
@@ -484,7 +484,7 @@
       movement:
         state: lying
   - type: FireVisuals
-    sprite: /Mobs/Effects/onfire.rsi
+    sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: Appearance
   - type: FloorOcclusion
@@ -542,11 +542,59 @@
     rules: ghost-role-information-nonantagonist-rules
   - type: GhostTakeoverAvailable
 
-# - type: entity
-#   parrent: CP14MobCatWhite
-#   id: CP14MobCatSpotted
-#   components:
-    
+- type: entity
+  parent: CP14MobCatBase
+  id: CP14MobCatRandomColored
+  suffix: "Random color"
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      sprite: _CP14/Mobs/Animals/cat.rsi
+      state: walking
+      color: "#555555"
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: walking
+    noMovementLayers:
+      movement:
+        state: lying
+
+- type: entity
+  parent: CP14MobCatBase
+  id: CP14MobCatRandomColoredWithSpots
+  suffix: "Random color, Spotted"
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      sprite: _CP14/Mobs/Animals/cat.rsi
+      state: walking
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
+      sprite: _CP14/Mobs/Animals/cat.rsi
+      state: walking-overlay
+      color: "#222222"
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        sprite: _CP14/Mobs/Animals/cat.rsi
+        state: walking
+      overlay:
+        sprite: _CP14/Mobs/Animals/cat.rsi
+        state: walking-overlay
+    noMovementLayers:
+      movement:
+        sprite: _CP14/Mobs/Animals/cat.rsi
+        state: lying
+      overlay:
+        sprite: _CP14/Mobs/Animals/cat.rsi
+        state: lying-overlay
+      
 
 - type: entity
   id: CP14MobBigBear
