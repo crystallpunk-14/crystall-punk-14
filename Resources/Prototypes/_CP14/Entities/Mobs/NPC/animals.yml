@@ -624,6 +624,7 @@
   - type: Food
   - type: Thirst
   - type: Hunger
+    baseDecayRate: 0.01
   - type: Body
     prototype: null
   - type: Respirator
