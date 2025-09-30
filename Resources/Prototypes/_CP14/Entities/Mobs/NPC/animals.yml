@@ -458,91 +458,6 @@
       path: /Audio/Animals/goat_bah.ogg
 
 - type: entity
-  id: CP14MobCatBase
-  parent: CP14SimpleMobBase
-  name: cat
-  description: A cute small feline, that purrs when you pet it.
-  categories: [ ForkFiltered ]
-  components:
-  - type: NpcFactionMember
-    factions:
-    - CP14Neutrals
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 5
-  - type: Sprite
-    drawdepth: Mobs
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
-      sprite: _CP14/Mobs/Animals/cat.rsi
-      state: walking
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: walking
-    noMovementLayers:
-      movement:
-        state: lying
-  - type: FireVisuals
-    sprite: Mobs/Effects/onfire.rsi
-    normalState: Mouse_burning
-  - type: Appearance
-  - type: FloorOcclusion
-  - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        density: 15
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      25: Dead
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: walking
-      Dead:
-        Base: dead
-  - type: MeleeWeapon
-    angle: 0
-    animation: WeaponArcBite
-    damage:
-      types:
-        Slash: 3
-  - type: InteractionPopup
-    successChance: 0.6
-    interactSuccessString: petting-success-cat
-    interactFailureString: petting-failure-generic
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/cat_meow.ogg
-  - type: Bloodstream
-    bloodMaxVolume: 50
-    bloodReagent: CP14BloodAnimal
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 100
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
-  - type: GhostRole
-    prob: 0.25
-    name: cp14-ghost-role-information-cat-name
-    description: cp14-ghost-role-information-cat-description
-    rules: ghost-role-information-nonantagonist-rules
-  - type: GhostTakeoverAvailable
-
-- type: entity
   parent: CP14MobCatBase
   id: CP14MobCatRandomColored
   suffix: "Random color"
@@ -554,7 +469,7 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       sprite: _CP14/Mobs/Animals/cat.rsi
       state: walking
-      color: "#555555"
+      #color: "#555555"
   - type: SpriteMovement
     movementLayers:
       movement:
@@ -562,6 +477,10 @@
     noMovementLayers:
       movement:
         state: lying
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        movement: CP14CatColors
 
 - type: entity
   parent: CP14MobCatBase
@@ -578,7 +497,7 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
       sprite: _CP14/Mobs/Animals/cat.rsi
       state: walking-overlay
-      color: "#222222"
+      #color: "#222222"
   - type: SpriteMovement
     movementLayers:
       movement:
@@ -594,6 +513,12 @@
       overlay:
         sprite: _CP14/Mobs/Animals/cat.rsi
         state: lying-overlay
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        movement: ""
+    - enum.DamageStateVisualLayers.BaseUnshaded:
+        overlay: CP14CatColors
       
 
 - type: entity
