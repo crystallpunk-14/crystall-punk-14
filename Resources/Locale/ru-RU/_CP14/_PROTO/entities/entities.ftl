@@ -1504,6 +1504,14 @@ ent-CP14WeaponArcSlash = None
 
 ent-CP14WeaponArcThrust = None
 
+ent-CP14SpawnMobCatRandomColored = маркер спавна кота
+    .desc = { ent-CP14BaseMobGroupSpawner.desc }
+    .suffix = Цветной
+
+ent-CP14SpawnMobCatRandomColoredWithSpots = маркер спавна кота
+    .desc = { ent-CP14BaseMobGroupSpawner.desc }
+    .suffix = Цветной, Пятнистый
+
 ent-CP14VentCritterMarker = маркер спавна мобов
     .desc = случайные существа, вырвавшиеся из демиплана, будут появляться в этом месте
 
@@ -1714,6 +1722,14 @@ ent-CP14MobBoar = кабан
 ent-CP14MobFrog = лягушка
     .desc = Зеленая и постоянно прыгающая лягушка. Возможно, только благодаря ей комары еще не полностью заполнили болота.
     .suffix = AI
+
+ent-CP14MobCatRandomColored = кот
+    .desc = Маленький котик, который мурчит когда ты его гладишь. Мяу!
+    .suffix = Рандом
+
+ent-CP14MobCatRandomColoredWithSpots = кот
+    .desc = Маленький котик, который мурчит когда ты его гладишь. Мяу!
+    .suffix = Рандом, Пятнистый
 
 ent-CP14MobSheep = овца
     .desc = Белая и пушистая, как овечка из облака.

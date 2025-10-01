@@ -15,3 +15,6 @@ cp14-ghost-role-information-description-bone-hound = Костяная гонча
 
 cp14-ghost-role-information-name-snail = Улитка
 cp14-ghost-role-information-description-snail = Выжить – это уже достижение.
+
+cp14-ghost-role-information-cat-name = Кот
+cp14-ghost-role-information-cat-description = Ты самое пушистое существо в этом мире! Охоться за мышами/крысами, будь милым или ходи вместе с авантюристами!

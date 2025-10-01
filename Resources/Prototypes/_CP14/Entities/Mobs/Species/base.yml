@@ -370,7 +370,7 @@
   id: CP14MobCatBase
   parent: CP14SimpleMobBase
   name: cat
-  description: A cute small feline, that purrs when you pet it.
+  description: A cute small feline, that purrs when you pet it. Meow!
   categories: [ ForkFiltered ]
   abstract: true
   components:
@@ -449,7 +449,7 @@
     prob: 0.25
     name: cp14-ghost-role-information-cat-name
     description: cp14-ghost-role-information-cat-description
-    rules: ghost-role-information-nonantagonist-rules
+    rules: cp14-ghost-role-information-rules-pet
   - type: GhostTakeoverAvailable
 
 - type: entity
