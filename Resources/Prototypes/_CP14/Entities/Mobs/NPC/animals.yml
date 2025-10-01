@@ -466,7 +466,7 @@
   - type: RandomSprite
     available:
     - enum.DamageStateVisualLayers.Base:
-        movement: CP14CatColors
+        walking: CP14CatColors
 
 - type: entity
   parent: CP14MobCatColoredWithSpotsBase
@@ -477,9 +477,9 @@
   - type: RandomSprite
     available:
     - enum.DamageStateVisualLayers.Base:
-        movement: CP14CatColors
+        walking: CP14CatColors
     - enum.DamageStateVisualLayers.BaseUnshaded:
-        overlay: CP14CatColors
+        walking-overlay: CP14CatColors
       
 
 - type: entity

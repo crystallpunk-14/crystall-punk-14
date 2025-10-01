@@ -455,7 +455,6 @@
 - type: entity
   parent: CP14MobCatBase
   id: CP14MobCatColoredWithSpotsBase
-  suffix: "Random color, Spotted"
   categories: [ ForkFiltered ]
   abstract: true
   components:
@@ -467,7 +466,6 @@
       state: walking
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded", "overlay"]
       state: walking-overlay
-      shader: unshaded
   - type: SpriteMovement
     movementLayers:
       movement:
