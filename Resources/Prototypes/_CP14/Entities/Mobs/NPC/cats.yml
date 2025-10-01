@@ -64,7 +64,7 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 10
+        Slash: 5
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
