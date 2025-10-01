@@ -1504,14 +1504,6 @@ ent-CP14WeaponArcSlash = None
 
 ent-CP14WeaponArcThrust = None
 
-ent-CP14SpawnMobCatRandomColored = маркер спавна кота
-    .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = Цветной
-
-ent-CP14SpawnMobCatRandomColoredWithSpots = маркер спавна кота
-    .desc = { ent-CP14BaseMobGroupSpawner.desc }
-    .suffix = Цветной, Пятнистый
-
 ent-CP14VentCritterMarker = маркер спавна мобов
     .desc = случайные существа, вырвавшиеся из демиплана, будут появляться в этом месте
 

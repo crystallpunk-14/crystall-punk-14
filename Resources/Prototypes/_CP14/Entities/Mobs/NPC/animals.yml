@@ -458,31 +458,6 @@
       path: /Audio/Animals/goat_bah.ogg
 
 - type: entity
-  parent: CP14MobCatBase
-  id: CP14MobCatRandomColored
-  suffix: "Colored"
-  categories: [ ForkFiltered ]
-  components:
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        walking: CP14CatColors
-
-- type: entity
-  parent: CP14MobCatColoredWithSpotsBase
-  id: CP14MobCatRandomColoredWithSpots
-  suffix: "Colored, Spotted"
-  categories: [ ForkFiltered ]
-  components:
-  - type: RandomSprite
-    available:
-    - enum.DamageStateVisualLayers.Base:
-        walking: CP14CatColors
-    - enum.DamageStateVisualLayers.BaseUnshaded:
-        walking-overlay: CP14CatColors
-      
-
-- type: entity
   id: CP14MobBigBear
   parent: CP14SimpleMobBase
   name: big bear
