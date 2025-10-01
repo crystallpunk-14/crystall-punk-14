@@ -61,10 +61,12 @@
         Base: dead
   - type: MeleeWeapon
     angle: 0
-    animation: WeaponArcBite
+    animation: WeaponArcClaw
     damage:
       types:
         Slash: 5
+  - type: MessyDrinker
+    spillChance: 0.2
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
