@@ -467,21 +467,19 @@
     available:
     - enum.DamageStateVisualLayers.Base:
         movement: CP14CatColors
-    - enum.DamageStateVisualLayers.BaseUnshaded:
-        overlay: ""
 
-# - type: entity
-#   parent: CP14MobCatColoredWithSpotsBase
-#   id: CP14MobCatRandomColoredWithSpots
-#   suffix: "Random color, Spotted"
-#   categories: [ ForkFiltered ]
-#   components:
-#   - type: RandomSprite
-#     available:
-#     - enum.DamageStateVisualLayers.Base:
-#         movement: CP14CatColors
-#     - enum.DamageStateVisualLayers.BaseUnshaded:
-#         overlay: CP14CatColors
+- type: entity
+  parent: CP14MobCatColoredWithSpotsBase
+  id: CP14MobCatRandomColoredWithSpots
+  suffix: "Random color, Spotted"
+  categories: [ ForkFiltered ]
+  components:
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        movement: CP14CatColors
+    - enum.DamageStateVisualLayers.BaseUnshaded:
+        overlay: CP14CatColors
       
 
 - type: entity
