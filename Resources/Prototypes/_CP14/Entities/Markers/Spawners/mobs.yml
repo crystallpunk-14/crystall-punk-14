@@ -123,6 +123,7 @@
     prototypes:
     - CP14MobBigBear
 
+- type: entity
   name: snail spawner
   id: CP14SpawnMobSnail
   parent: MarkerBase
