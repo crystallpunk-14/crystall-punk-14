@@ -188,22 +188,6 @@
     prototypes:
     - CP14MobChickNotGrowing
 
-- type: entity
-  name: chick spawner
-  id: CP14SpawnMobChick
-  parent: MarkerBase
-  categories: [ ForkFiltered ]
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/cross.rsi
-      state: green
-    - sprite: _CP14/Mobs/Animals/chick.rsi
-      state: live
-  - type: ConditionalSpawner
-    prototypes:
-    - CP14MobChick
-
 # Dino
 
 - type: entity

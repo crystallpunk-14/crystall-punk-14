@@ -883,7 +883,7 @@
   parent: CP14SimpleMobBase
   name: chick
   description: A small yellow chicken with little beady eyes.
-  suffix: Not Growing, Chick # Если вдруг захотят сделать цыпленка который бы не выростал (точно захотят)
+  suffix: Not Growing, Chick
   categories: [ ForkFiltered ]
   components:
   - type: HTN
@@ -933,11 +933,11 @@
   - type: NPCImprintingOnSpawnBehaviour
     whitelist:
       components:
-      - MobThresholds # Ходит за мамой-курицей или игроком если вылупился возле него.
+      - MobThresholds
   - type: MobThresholds
     thresholds:
       0: Alive
-      5: Dead
+      6: Dead
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
@@ -979,37 +979,20 @@
         recursive: false
 
 - type: entity
-  id: CP14MobChick
-  parent: CP14MobChickNotGrowing
-  suffix: Growing, Chicken
+  id: CP14FoodEggChickFertilized
+  parent: 
+  - CP14FoodEgg
+  - CP14BurnsAsh
+  suffix: Fertilized, Chicken
   components:
   - type: Timer
   - type: TimedSpawner
     prototypes:
     - CP14MobChicken
     - CP14MobChicken2
-    intervalSeconds: 600 # It'll grow in 10 minutes
+    intervalSeconds: 360 # It'll grow in 6 minutes
     minimumEntitiesSpawned: 1
     maximumEntitiesSpawned: 1
-  - type: TimedDespawn
-    lifetime: 600.1
-
-- type: entity
-  id: CP14FoodEggChickFertilized
-  parent: 
-  - CP14FoodEgg
-  - CP14BurnsAsh
-  suffix: Fertilized, Chick # Добавить компонент температуры, чтобы заморозив, можно было превратить в обычное яйцо.
-  components:
-  - type: Timer
-  - type: TimedSpawner
-    prototypes: 
-    - CP14MobChick
-    intervalSeconds: 300 # 5 minutes
-    minimumEntitiesSpawned: 1
-    maximumEntitiesSpawned: 1
-  - type: TimedDespawn #delete the egg after the chick spawns
-    lifetime: 300.1
   - type: CP14TemperatureTransformation
     entries:
     - temperatureRange: 100, 200
