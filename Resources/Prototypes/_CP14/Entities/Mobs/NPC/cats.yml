@@ -31,6 +31,9 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: Hands # remove when climbing on tables will be possible without hands component
+  - type: Puller
+    needsHands: false
   - type: Appearance
   - type: Physics
   - type: Fixtures
