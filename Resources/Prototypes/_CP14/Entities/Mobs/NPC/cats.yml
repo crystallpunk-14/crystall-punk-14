@@ -32,7 +32,6 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: Appearance
-  - type: FloorOcclusion
   - type: Physics
   - type: Fixtures
     fixtures:
