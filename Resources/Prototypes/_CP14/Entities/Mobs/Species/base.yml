@@ -376,7 +376,10 @@
   components:
   - type: NpcFactionMember
     factions:
-    - CP14Neutrals
+    - CP14Cat
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 5
@@ -413,7 +416,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      25: Dead
+      50: Dead
   - type: DamageStateVisuals
     states:
       Alive:
@@ -425,7 +428,12 @@
     animation: WeaponArcBite
     damage:
       types:
-        Slash: 3
+        Slash: 10
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: ReplacementAccent
+    accent: cat
   - type: InteractionPopup
     successChance: 0.6
     interactSuccessString: petting-success-cat
@@ -436,21 +444,15 @@
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 100
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
   - type: GhostRole
     prob: 0.25
     name: cp14-ghost-role-information-cat-name
     description: cp14-ghost-role-information-cat-description
     rules: cp14-ghost-role-information-rules-pet
   - type: GhostTakeoverAvailable
+  - type: Tag
+    tags:
+      - CannotSuicide
 
 - type: entity
   parent: CP14MobCatBase

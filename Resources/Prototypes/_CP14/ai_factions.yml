@@ -36,6 +36,15 @@
   id: CP14Neutrals
 
 - type: npcFaction
+  id: CP14Cat
+  hostile:
+    - CP14Rodent
+    - CP14Fishies
+
+- type: npcFaction
+  id: CP14Rodent
+
+- type: npcFaction
   id: CP14AggressiveAnimals
   hostile:
   - CP14Adventurers
