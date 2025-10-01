@@ -702,9 +702,10 @@
         sound:
           collection: MeatLaserImpact
 
-  name: chicken
+- type: entity
   parent: CP14SimpleMobBase
   id: CP14MobChicken
+  name: chicken
   description: A bird that can't fly is a must-have on any farm.
   components:
   - type: Sprite
