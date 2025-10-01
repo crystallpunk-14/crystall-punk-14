@@ -4,31 +4,32 @@
   name: Portal to city
   description: You open a portal leading to a city that will last for one minute.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 30
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectShadowStep
-    effects:
-    - !type:CP14SpellTeleportToCity
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14ImpactEffectShadowStep
-  - type: CP14MagicEffectSomaticAspect
+  - type: CP14ActionFreeHandsRequired
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    breakOnMove: true
+    delay: 2
   - type: Action
+    useDelay: 30
     icon:
       sprite: _CP14/Actions/Spells/dimension.rsi
       state: demi_arrow
   - type: TargetAction
     range: 3
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
-      cooldown: 30
-      castDelay: 2
-      breakOnMove: true
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectShadowStep
+      effects:
+      - !type:CP14SpellTeleportToCity
 
 - type: entity
   parent: CP14BaseSpellScrollDimension

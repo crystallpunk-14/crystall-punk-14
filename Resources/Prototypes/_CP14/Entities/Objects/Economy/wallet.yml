@@ -39,6 +39,11 @@
     slots: [belt]
   - type: Item
     size: Normal
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: CP14ScrapLeather
+      amount: 1
 
 - type: entity
   id: CP14WalletFilledTest
@@ -69,3 +74,24 @@
     - id: CP14CopperCoin
     - id: CP14CopperCoin
 
+- type: entity
+  id: CP14WalletFilledLootT1
+  parent: CP14Wallet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: CP14GoldCoin1
+      prob: 0.001
+      orGroup: ZombieLootT1
+    - id: CP14SilverCoin5
+      prob: 0.1
+      orGroup: ZombieLootT1
+    - id: CP14SilverCoin1
+      prob: 0.3
+      orGroup: ZombieLootT1
+    - id: CP14CopperCoin5
+      prob: 0.6
+      orGroup: ZombieLootT1
+    - id: CP14CopperCoin1
+      orGroup: ZombieLootT1

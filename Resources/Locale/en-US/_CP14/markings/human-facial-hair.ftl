@@ -32,3 +32,4 @@ marking-CP14HumanFacialHairVolaju = steppe fringe
 marking-CP14HumanFacialHairWalrus = walrus storm
 marking-CP14HumanFacialHairWatson = scholarly classic
 marking-CP14HumanFacialHairWise = runebound
+marking-CP14HumanFacialHairHussar = hussar

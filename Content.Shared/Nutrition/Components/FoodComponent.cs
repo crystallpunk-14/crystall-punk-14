@@ -1,4 +1,3 @@
-using Content.Shared._CP14.Cooking;
 using Content.Shared.Body.Components;
 using Content.Shared.FixedPoint;
 using Content.Shared.Nutrition.EntitySystems;
@@ -6,8 +5,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Nutrition.Components;
-
-[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem), typeof(CP14SharedCookingSystem))]
+[Obsolete("Migration to Content.Shared.Nutrition.Components.EdibleComponent is required")]
+[RegisterComponent, Access(typeof(FoodSystem), typeof(FoodSequenceSystem))]
 public sealed partial class FoodComponent : Component
 {
     [DataField]
@@ -54,7 +53,7 @@ public sealed partial class FoodComponent : Component
     /// The localization identifier for the eat message. Needs a "food" entity argument passed to it.
     /// </summary>
     [DataField]
-    public LocId EatMessage = "food-nom";
+    public LocId EatMessage = "edible-nom";
 
     /// <summary>
     /// How long it takes to eat the food personally.

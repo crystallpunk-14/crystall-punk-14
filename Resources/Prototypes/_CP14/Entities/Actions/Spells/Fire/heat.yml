@@ -4,44 +4,40 @@
   name: Heat
   description: You start to heat the target up a lot, burning it from the inside.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/fire.rsi
-    state: heat
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 7
-  - type: CP14MagicEffect
-    magicType: Fire
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectHeat
-    - !type:CP14AdjustAllSolutionThermalEnergy
-      delta: 2500
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:AdjustTemperature
-        amount: 20000
-      - !type:ExtinguishReaction
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Vos adepto calidum..."
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneHeat
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: Action
+    useDelay: 4
     icon:
       sprite: _CP14/Actions/Spells/fire.rsi
       state: heat
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    distanceThreshold: 5
   - type: TargetAction
     range: 8
     interactOnMiss: false
   - type: EntityTargetAction
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 8
-      castTime: 10
-      distanceThreshold: 5
-      breakOnMove: false
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectHeat
+      - !type:CP14AdjustAllSolutionThermalEnergy
+        delta: 2500
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:AdjustTemperature
+          amount: 20000
+        - !type:ExtinguishReaction
 
 - type: entity
   id: CP14ImpactEffectHeat

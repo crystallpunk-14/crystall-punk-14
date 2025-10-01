@@ -22,42 +22,7 @@
   id: CP14BasicCalmEventsTable
   table: !type:AllSelector
     children:
-    - id: CP14TestRaidSpawn
     - id: CP14Storm
-
-#- type: entity
-#  parent: CP14BaseStationEventLongDelay
-#  id: CP14ZombiesSpawn
-#  components:
-#  - type: StationEvent
-#    startAnnouncement: cp14-event-announcement-demiplane-outbreak
-#    startAudio:
-#      path: /Audio/_CP14/Announce/event_boom.ogg
-#    earliestStart: 20
-#    minimumPlayers: 15
-#    weight: 5
-#    duration: 60
-#  - type: VentCrittersRule
-#    entries:
-#    - id: CP14MobGroupSpawnerZombie
-#      prob: 0.08
-
-- type: entity
-  parent: CP14BaseStationEventShortDelay
-  id: CP14TestRaidSpawn
-  components:
-  - type: StationEvent
-    startAnnouncement: cp14-event-announcement-demiplane-outbreak
-    startAudio:
-      path: /Audio/_CP14/Announce/event_boom.ogg
-    earliestStart: 20
-    minimumPlayers: 15
-    weight: 1
-    duration: 60
-  - type: VentCrittersRule
-    specialEntries:
-    - id: CP14SpawnPointTownRaidUndeadEasy
-      prob: 0.001
 
 - type: entity
   parent: CP14BaseStationEventLongDelay

@@ -17,6 +17,9 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.98
     sprintModifier: 0.98
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Bone: 120
 
 - type: entity
   parent: CP14ClothingOuterClothingBoneArmor
@@ -30,12 +33,15 @@
         Blunt: 0.85
         Slash: 0.80
         Piercing: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: CP14ClothingOuterClothingBase
   id: CP14ClothingOuterClothingFish
   name: fish suit
-  description: smells horible....
+  description: Smells horible....
   components:
   - type: Sprite
     sprite: _CP14/Clothing/OuterClothing/fish_suit.rsi
@@ -50,3 +56,77 @@
   - type: FactionClothing
     faction: CP14Fishies
 
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingChainmail
+  name: chainmail
+  description: Ringed armour made of many small metal rings.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/chainmail.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/chainmail.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.80
+        Piercing: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: CP14MagicManacostModify
+    globalModifier: 1.1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 60
+
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingCuirass
+  name: cuirass
+  description: Light armour plate on the chest, little protection, little heaviness.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/cuirass.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/cuirass.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.90
+        Piercing: 0.80
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: CP14MagicManacostModify
+    globalModifier: 1.15
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 60
+
+- type: entity
+  parent: CP14ClothingOuterClothingBase
+  id: CP14ClothingOuterClothingInfantryCuirass
+  name: infantry cuirass
+  description: Heavy armour for strong creatures. It is not easy to wear, but the protection is sometimes worth it.
+  components:
+  - type: Sprite
+    sprite: _CP14/Clothing/OuterClothing/infantry_cuirass.rsi
+  - type: Clothing
+    sprite: _CP14/Clothing/OuterClothing/infantry_cuirass.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.80
+        Piercing: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: CP14MagicManacostModify
+    globalModifier: 1.2
+  - type: PhysicalComposition
+    materialComposition:
+      CP14Iron: 90

@@ -2,33 +2,14 @@
   id: CP14ActionSpellVampirePower
   parent: CP14ActionSpellBase
   name: Demonstration of strength
-  description: By channeling the power of the oldest vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
+  description: By channeling the power of your ancient vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
   components:
-  - type: CP14MagicEffectCastSlowdown
-    speedMultiplier: 0.4
-  - type: CP14MagicEffectPacifiedBlock
+  - type: CP14ActionDangerous
   - type: CP14MagicEffectVampire
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Paralyze
-        paralyzeTime: 1
-    - !type:CP14SpellThrowFromUser
-      throwPower: 9
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectVampireKick
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        ignoreResistances: false
-        damage:
-          types:
-            Blunt: 10
   - type: Action
+    useDelay: 45
     icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
       state: power_kick
@@ -38,44 +19,29 @@
     range: 1
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:CP14EntityTargetActionEvent
-      cooldown: 15
     whitelist:
       components:
       - Body
       - Item
       - Anchorable
-
-- type: entity
-  id: CP14ActionSpellVampirePower2
-  parent: CP14ActionSpellVampirePower
-  name: Demonstration of strength II
-  description: By channeling the power of the oldest vampire clan, you instantly strike your target, causing them to fly back and lose their balance. This powerful version stuns for a longer period of time.
-  components:
-  - type: CP14MagicEffectManaCost
-    manaCost: 30
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellApplyEntityEffect
+    event: !type:CP14EntityTargetModularEffectEvent
       effects:
-      - !type:Paralyze
-        paralyzeTime: 2
-    - !type:CP14SpellThrowFromUser
-      throwPower: 15
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectVampireKick
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        ignoreResistances: false
-        damage:
-          types:
-            Blunt: 15
-  - type: Action
-    icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: power_kick_2
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Paralyze
+          paralyzeTime: 3
+      - !type:CP14SpellThrowFromUser
+        throwPower: 9
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectVampireKick
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 10
 
 - type: entity
   id: CP14ImpactEffectVampireKick

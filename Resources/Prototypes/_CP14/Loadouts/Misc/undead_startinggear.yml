@@ -3,10 +3,12 @@
   equipment:
     shirt: CP14ClothingShirtCottonBlack
     pants: CP14ClothingPantsTrouserDarkBlue
+    belt: CP14WalletFilledLootT1
 
 - type: startingGear
   id: CP14MobUndeadEasy2
   equipment:
+    head: CP14ClothingHeadMetalHeadband
     pants: CP14ClothingPantsLoincloth
 
 - type: startingGear
@@ -16,3 +18,15 @@
     shoes: CP14ClothingShoesSandals
     mask: CP14ClothingMaskSinner
 
+- type: startingGear
+  id: CP14MobUndeadEasy4
+  equipment:
+    cloak: CP14ClothingCloakRitualAttireLeather
+    pants: CP14ClothingPantsGreen
+
+- type: startingGear
+  id: CP14MobUndeadEasy5
+  equipment:
+    pants: CP14ClothingPantsBrown
+    outerClothing: CP14ClothingOuterClothingBrownVest1
+    belt: CP14WalletFilledLootT1

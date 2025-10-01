@@ -36,7 +36,6 @@
         - id: CP14SpellScrollEarthWall
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
-        - id: CP14SpellScrollPlantGrowth
         - id: CP14SpellScrollMagicalAcceleration
         - id: CP14SpellScrollHeat
       - id: CP14ScrapCopper
@@ -48,6 +47,8 @@
       - id: CP14BaseLockpick
       - id: CP14EnergyCrystalMediumEmpty
       - id: CP14ClothingCloakAmuletGold
+      - id: CP14SpellScrollElectricTrap
+      - id: CP14SpellScrollIceTrap
       # Rare standard village crates loot
       - !type:NestedSelector
         tableId: CP14StationCrateLoot
@@ -84,6 +85,7 @@
         weight: 2 #Temp (small amount T2 loot)
       - !type:GroupSelector
         children:
+        - id: CP14SpellScrollFireTrap
         - id: CP14SpellScrollShadowStep
         - id: CP14SpellScrollFireball
         - id: CP14SpellScrollBeerCreation

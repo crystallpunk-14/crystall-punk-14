@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: CP14BoneCrack
+  files:
+  - /Audio/_CP14/Effects/bone_crush1.ogg
+  - /Audio/_CP14/Effects/bone_crush2.ogg

@@ -1,0 +1,105 @@
+- type: entity
+  id: CP14ActionVulnSpikes
+  parent: CP14ActionSpellBase
+  name: Weakness Spikes
+  description: You throw out several small spikes that cause weakness.
+  components:
+  - type: CP14ActionDoAfterSlowdown
+    speedMultiplier: 0.8
+  - type: DoAfterArgs
+    delay: 1
+    hidden: true
+  - type: CP14ActionDoAfterVisuals
+    proto: CP14RuneVulnSpikes
+  - type: CP14ActionDangerous
+  - type: Action
+    useDelay: 7.5
+    icon:
+      sprite: _CP14/Actions/Spells/misc.rsi
+      state: vulnerability
+      color: "#a81e33"
+  - type: TargetAction
+    repeat: false
+    checkCanAccess: false
+    range: 60
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellProjectile
+        prototype: CP14SpikeVuln
+        spread: 1.5
+        projectileSpeed: 10
+        projectileCount: 10
+
+- type: entity
+  id: CP14RuneVulnSpikes
+  parent: CP14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#7c1fff"
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: "#7c1fff"
+      shader: unshaded
+
+- type: entity
+  parent: BaseBullet
+  id: CP14SpikeVuln
+  name: weakness quill
+  description: Organically spiked with a weakening liquid inside.
+  categories: [ ForkFiltered ]
+  components:
+    - type: Sprite
+      sprite: _CP14/Objects/Weapons/Ranged/Projectiles/spike.rsi
+      layers:
+        - state: spike
+          shader: unshaded
+    - type: PointLight
+      color: "#62316b"
+      radius: 3.0
+      energy: 15.0
+    - type: EmbeddableProjectile
+      minimumSpeed: 3
+      removalTime: 0.5
+      offset: 0.0,0.0
+    - type: Projectile
+      damage:
+        types:
+          Piercing: 0.5
+    - type: SolutionContainerManager
+      solutions:
+        melee:
+          maxVol: 1
+          reagents:
+            - ReagentId: CP14MonsterToxinVuln
+              Quantity: 1
+    - type: SolutionInjectOnEmbed
+      transferAmount: 1
+      blockSlots: NONE
+      solution: melee
+    - type: SolutionTransfer
+      maxTransferAmount: 1
+    - type: TimedDespawn
+      lifetime: 10
+    - type: Ammo
+      muzzleFlash: null
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 30
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+        - trigger:
+            !type:DamageTrigger
+            damage: 20
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: GlassBreak
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]

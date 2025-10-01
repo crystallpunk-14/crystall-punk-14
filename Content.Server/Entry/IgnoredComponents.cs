@@ -4,7 +4,10 @@ namespace Content.Server.Entry
     public static class IgnoredComponents
     {
         public static string[] List => new[] {
-            "CP14WaveShader", // CP14 Wave shader
+            //CP14 start
+            "CP14SyncColorWithMapLight",
+            "CP14WaveShader",
+            //CP14 rnd
             "ConstructionGhost",
             "IconSmooth",
             "InteractionOutline",
@@ -21,6 +24,7 @@ namespace Content.Server.Entry
             "LightFade",
             "HolidayRsiSwap",
             "OptionsVisualizer",
+            "AnomalyScannerScreen",
             "MultipartMachineGhost"
         };
     }

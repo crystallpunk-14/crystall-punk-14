@@ -144,3 +144,10 @@
   icon: { sprite: "_CP14/Objects/Materials/blood_essence.rsi", state: drop }
   spawn: CP14BloodEssence
   maxCount: 10
+
+- type: stack
+  id: CP14Bone
+  name: cp14-stack-bones-pile
+  icon: { sprite: _CP14/Objects/Materials/bones.rsi, state: bone_1 }
+  spawn: CP14Bone1
+  maxCount: 10

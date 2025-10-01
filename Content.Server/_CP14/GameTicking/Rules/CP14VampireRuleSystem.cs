@@ -29,16 +29,16 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
 
         var aliveFactions = new HashSet<ProtoId<CP14VampireFactionPrototype>>();
 
-        var query = EntityQueryEnumerator<CP14VampireComponent, MobStateComponent>();
-        while (query.MoveNext(out var vampireUid, out var vampire, out var mobState))
+        var query = EntityQueryEnumerator<CP14VampireClanHeartComponent>();
+        while (query.MoveNext(out _, out var heart))
         {
-            if (mobState.CurrentState != MobState.Alive)
+            if (heart.Faction is null)
                 continue;
 
-            if (vampire.Faction is null)
+            if (heart.Level < _condition.RequiredHeartLevel)
                 continue;
 
-            aliveFactions.Add(vampire.Faction.Value);
+            aliveFactions.Add(heart.Faction.Value);
         }
 
         args.AddLine($"[head=2][color=#ab1b3d]{Loc.GetString("cp14-vampire-clans-battle")}[/color][/head]");
@@ -82,6 +82,6 @@ public sealed class CP14VampireRuleSystem : GameRuleSystem<CP14VampireRuleCompon
             args.AddLine(Loc.GetString("cp14-vampire-clans-battle-clan-lose-desc"));
         }
 
-        args.AddLine(Loc.GetString("cp14-vampire-clans-battle-alive-people", ("percent", alivePercentage * 100)));
+        args.AddLine(Loc.GetString("cp14-vampire-clans-battle-alive-people", ("percent", MathF.Round(alivePercentage * 100))));
     }
 }

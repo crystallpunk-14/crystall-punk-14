@@ -92,13 +92,15 @@
     - id: CP14CheapFur
       amount: 1
       prob: 0.25
+    - id: CP14Bone1
+      amount: 2
+      maxAmount: 3
   - type: Bloodstream
     bloodMaxVolume: 200
     bloodReagent: CP14BloodMonster
   - type: Grammar
     attributes:
       gender: epicene
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 100

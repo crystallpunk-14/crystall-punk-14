@@ -21,6 +21,7 @@ cp14-magic-spell-need-material-component = You need to hold the material compone
 cp14-magic-spell-stamina-not-enough = You don't have the energy to do it.
 cp14-magic-staminacost = Stamina cost
 cp14-magic-spell-pacified = It could hurt someone!
+cp14-magic-spell-ssd = Do not touch disconnected players!
 
 cp14-magic-spell-target-not-mob = The target must be a living thing!
 

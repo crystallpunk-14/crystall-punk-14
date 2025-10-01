@@ -63,7 +63,7 @@ cp14-loadout-merchant-shirt = Рубашка торговца
 cp14-loadout-merchant-pants = Штаны торговца
 cp14-loadout-merchant-shoes = Ботинки торговца
 
-# Guildmaster
+# Guild
 
 cp14-loadout-guildmaster-outer = Верхняя одежда гильдмастера
 cp14-loadout-guildmaster-head = Шляпа гильдмастера
@@ -72,3 +72,5 @@ cp14-loadout-guildmaster-shirt = Рубашка гильдмастера
 cp14-loadout-guildmaster-pants = Штаны гильдмастера
 cp14-loadout-guildmaster-shoes = Ботинки гильдмастера
 cp14-loadout-guildmaster-spells = Заклинания гильдмастера
+
+cp14-loadout-guildworker-head = Шляпа работника гильдии

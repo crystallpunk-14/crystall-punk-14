@@ -12,3 +12,4 @@ marking-CP14HumanFacialHairPigtail = Косичка
 marking-CP14HumanFacialHairSage = Ман Чу
 marking-CP14HumanFacialHairWatson = Ватсон
 marking-CP14HumanFacialHairWhiskers = Бакенбарды
+marking-CP14HumanFacialHairHussar = Гусарские

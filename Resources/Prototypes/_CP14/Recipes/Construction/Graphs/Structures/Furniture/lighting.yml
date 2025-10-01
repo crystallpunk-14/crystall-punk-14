@@ -54,3 +54,14 @@
 
     - node: CP14WallmountLampEmpty
       entity: CP14WallmountLampEmpty
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 4
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14CopperBar1
+          amount: 3

@@ -1,0 +1,197 @@
+- type: entity
+  parent: BaseStructure
+  id: CP14BaseBoneStructure
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: CP14Skeleton
+
+- type: entity
+  parent: CP14BaseBoneStructure
+  id: CP14BaseBoneRemains
+  name: bone remains
+  description: The remains of bones have grown into the ground.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/bone_remains.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: bone_remains_1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        bone_remains_1: ""
+        bone_remains_2: ""
+        bone_remains_3: ""
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 50
+        mask:
+        - SlipLayer
+        layer:
+        - ItemMask
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14StepBones
+      params:
+        volume: 4
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 1
+              max: 3
+        - !type:PlaySoundBehavior
+          sound:
+            collection: CP14BoneCrack
+
+- type: entity
+  parent: CP14BaseBoneStructure
+  id: CP14BoneRemainsBoneHound
+  name: bone remains hound
+  description: The bones of a hound that died a long time ago... or very recently.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Mobs/Monster/bone_hound.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: dead
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CP14StepBones
+      params:
+        volume: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 50
+        mask:
+        - SlipLayer
+        layer:
+        - ItemMask
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 2
+              max: 4
+            CP14ClothingMaskBoneHornedMask:
+              min: 0
+              max: 1
+        - !type:PlaySoundBehavior
+          sound:
+            collection: CP14BoneCrack
+
+- type: entity
+  parent: CP14BaseBoneStructure
+  id: CP14BoneSpine
+  name: bone spine 
+  description: The large bony torso of an unknown creature, as if it had been torn to pieces.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/bone_spine.rsi
+    drawdepth: Mobs
+    layers:
+      - state: bone_spine
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 80
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 5
+              max: 7
+        - !type:PlaySoundBehavior
+          sound:
+            collection: CP14BoneCrack
+
+- type: entity
+  parent: CP14BaseBoneStructure
+  id: CP14BoneDragon
+  name: bone dragon 
+  description: The large skeleton of a dragon, the possibility of encountering such a creature is both fascinating and terrifying.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Structures/Decoration/bone_dragon.rsi
+    layers:
+      - state: bone_dragon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.5,-0.9,1.6,1"
+        density: 500
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 10
+              max: 10
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            CP14Bone1:
+              min: 5
+              max: 10
+        - !type:PlaySoundBehavior
+          sound:
+            collection: CP14BoneCrack

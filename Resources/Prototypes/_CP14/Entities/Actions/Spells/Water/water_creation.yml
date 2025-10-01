@@ -4,32 +4,27 @@
   name: Water creation
   description: Creating a clot of water that is held in a floating balloon shape for some time
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: water_creation
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
-  - type: CP14MagicEffect
-    magicType: Water
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectWaterCreation
-    - !type:CP14SpellSpawnInHandEntity
-      spawns:
-      - CP14LiquidDropWater
-  - type: CP14MagicEffectSomaticAspect
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionFreeHandsRequired
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneWaterCreation
   - type: Action
+    useDelay: 10
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: water_creation
+  - type: DoAfterArgs
+    delay: 1
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 10
-      castDelay: 0.8
-      breakOnMove: false
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectWaterCreation
+      - !type:CP14SpellSpawnInHandEntity
+        spawns:
+        - CP14LiquidDropWater
 
 - type: entity
   id: CP14RuneWaterCreation
@@ -57,7 +52,6 @@
   components:
   - type: Item
     size: Ginormous
-  - type: BadFood
   - type: SolutionContainerManager
     solutions:
       drop:
@@ -101,10 +95,9 @@
         Brute: 0.016 # ~ 1 minute
   - type: Damageable
     damageContainer: Biological
-  - type: Food
+  - type: Edible
+    edible: Drink
     solution: drop
-    useSound: /Audio/Items/drink.ogg
-    eatMessage: drink-component-try-use-drink-success-slurp
     delay: 0.5
     forceFeedDelay: 1.5
   - type: ExaminableSolution
@@ -136,9 +129,9 @@
   - type: Injector
     solutionName: drop
     injectOnly: true
-    minTransferAmount: 10
-    maxTransferAmount: 10
-    transferAmount: 10
+    transferAmounts:
+    - 5
+    currentTransferAmount: 5
     toggleState: 0
 
 - type: entity

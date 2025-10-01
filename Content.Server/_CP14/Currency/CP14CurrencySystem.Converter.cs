@@ -31,7 +31,7 @@ public sealed partial class CP14CurrencySystem
         Verb copperVerb = new()
         {
             Text = Loc.GetString("cp14-currency-converter-get-cp"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_CP14/Objects/Economy/cp_coin.rsi/coin10.png")),
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/_CP14/Objects/Economy/cp_coin.rsi"), "coin10"),
             Category = VerbCategory.CP14CurrencyConvert,
             Priority = 1,
             CloseMenu = false,
@@ -51,7 +51,7 @@ public sealed partial class CP14CurrencySystem
         Verb silverVerb = new()
         {
             Text = Loc.GetString("cp14-currency-converter-get-sp"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_CP14/Objects/Economy/sp_coin.rsi/coin10.png")),
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/_CP14/Objects/Economy/sp_coin.rsi"), "coin10"),
             Category = VerbCategory.CP14CurrencyConvert,
             Priority = 2,
             CloseMenu = false,
@@ -70,7 +70,7 @@ public sealed partial class CP14CurrencySystem
         Verb goldVerb = new()
         {
             Text = Loc.GetString("cp14-currency-converter-get-gp"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_CP14/Objects/Economy/gp_coin.rsi/coin10.png")),
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/_CP14/Objects/Economy/gp_coin.rsi"), "coin10"),
             Category = VerbCategory.CP14CurrencyConvert,
             Priority = 3,
             CloseMenu = false,
@@ -89,7 +89,7 @@ public sealed partial class CP14CurrencySystem
         Verb platinumVerb = new()
         {
             Text = Loc.GetString("cp14-currency-converter-get-pp"),
-            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_CP14/Objects/Economy/pp_coin.rsi/coin10.png")),
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/_CP14/Objects/Economy/pp_coin.rsi"), "coin10"),
             Category = VerbCategory.CP14CurrencyConvert,
             Priority = 4,
             CloseMenu = false,

@@ -4,42 +4,17 @@
   name: Resurrection
   description: You're trying to put the soul back into the body.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.2
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 100
-  - type: CP14MagicEffectTargetMobStatusRequired
+  - type: CP14ActionTargetMobStatusRequired
     allowedStates:
     - Dead
-  - type: CP14MagicEffect
-    magicType: Life
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectResurrection
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectResurrection
-    - !type:CP14SpellResurrectionEffect
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:ChemVomit
-        probability: 0.25
-      - !type:Emote
-        showInChat: false
-        emote: Cough
-        probability: 0.3
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: -500
-            Bloodloss: -100
-      - !type:Jitter
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Redi animam meam..."
     endSpeech: "Eu rezei por ti"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneResurrection
   - type: Action
     icon:
@@ -48,15 +23,38 @@
   - type: TargetAction
     range: 7
     interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 5
+    breakOnMove: true
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:
       components:
       - MobState
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 300
-      castDelay: 10
-      breakOnMove: true
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectResurrection
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectResurrection
+      - !type:CP14SpellResurrectionEffect
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:ChemVomit
+          probability: 0.25
+        - !type:Emote
+          showInChat: false
+          emote: Cough
+          probability: 0.3
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -500
+              Bloodloss: -100
+        - !type:Jitter
 
 - type: entity
   id: CP14RuneResurrection

@@ -1,0 +1,185 @@
+- type: entity
+  id: CP14ActionSpellElectricTrap
+  parent: CP14ActionSpellBase
+  name: Electric trap
+  description: Creates a electric trap at the selected location. Don't forget to recharge it with mana.
+  components:
+  - type: CP14ActionDoAfterSlowdown
+    speedMultiplier: 0.9
+  - type: CP14ActionManaCost
+    manaCost: 40
+  - type: CP14ActionSpeaking
+    startSpeech: "Signum electricum..."
+    endSpeech: "hunc locum custodi"
+  - type: CP14ActionDoAfterVisuals
+    proto: CP14RuneElectricTrap
+  - type: Action
+    useDelay: 4
+    icon:
+      sprite: _CP14/Actions/Spells/electromancy.rsi
+      state: electric_trap
+  - type: TargetAction
+    range: 3
+  - type: DoAfterArgs
+    delay: 2
+  - type: WorldTargetAction
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectElectricTrap
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14SpawnMagicElectricTrap
+
+- type: entity
+  id: CP14RuneElectricTrap
+  parent: CP14BaseMagicTrap
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#e8ff4c"
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#e8ff4c"
+      shader: unshaded
+    - state: rune_fire
+      color: "#e8ff4c"
+      shader: unshaded
+
+- type: entity
+  id: CP14ImpactEffectElectricTrap
+  parent: CP14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#e8ff4c"
+      shader: unshaded
+
+- type: entity
+  id: CP14SpawnMagicElectricTrap
+  parent: CP14BaseMagicTrap
+  name: electric trap
+  description: A rune of electric drawn on the ground using magic — it's best not to step on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#e8ff4c"
+      shader: unshaded
+    - state: rune_energia
+      color: "#e8ff4c"
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      trap:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+          - MobMask
+        layer:
+          - SlipLayer
+  - type: CP14MagicEnergyExaminable
+  - type: CP14MagicEnergyContainer
+    maxEnergy: 42
+    energy: 42
+    unsafeSupport: true
+  - type: CP14MagicEnergyDraw
+    energy: -0.5
+    delay: 5
+  - type: CP14MagicUnsafeDamage
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: TriggerOnCollide
+    fixtureID: trap
+  - type: SpawnOnTrigger
+    proto: CP14ActionSpellElectricTrapEffect
+  - type: DeleteOnTrigger
+
+- type: entity
+  id: CP14ActionSpellElectricTrapEffect
+  name: electric star
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _CP14/Effects/Magic/cast_impact.rsi
+    drawdepth: Mobs
+    noRot: true
+    layers:
+      - state: stars
+        color: "#e8ff4c"
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: CP14AreaEntityEffect
+    range: 2
+    effects:
+    - !type:CP14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Shock: 10
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.3
+        sprintSpeedModifier: 1.3
+        statusLifetime: 4
+      - !type:Jitter
+      - !type:CP14StaminaChange
+        staminaDelta: -100
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/PowerSink/electric.ogg
+      params:
+        variation: 0.1
+        volume: -2
+  - type: TriggerOnSpawn
+
+- type: entity
+  parent: CP14BaseSpellScrollElectric
+  id: CP14SpellScrollElectricTrap
+  name: electric trap spell scroll
+  components:
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellElectricTrap
+
+- type: entity
+  parent: CP14SpawnMagicElectricTrap
+  id: CP14SpawnMagicElectricTrapInvisible
+  suffix: Invisible. Permanent
+  components:
+  - type: Visibility
+    layer: 16
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0
+
+- type: entity
+  parent: CP14SpawnMagicElectricTrap
+  id: CP14SpawnMagicElectricTrapPermanent
+  suffix: Permanent
+  components:
+  - type: CP14MagicEnergyDraw
+    energy: 0
+    delay: 0

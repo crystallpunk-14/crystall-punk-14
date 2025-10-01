@@ -5,7 +5,7 @@
   desc: cp14-reagent-desc-blood
   flavor: CP14Metallic
   color: "#800000"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -31,7 +31,6 @@
         damage:
           groups:
             Brute: -5
-            Burn: -5
 
 - type: reagent
   id: CP14BloodAnimal
@@ -40,7 +39,7 @@
   desc: cp14-reagent-desc-blood-animal
   flavor: CP14Metallic
   color: "#802020"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -67,7 +66,7 @@
   desc: cp14-reagent-desc-blood-vampire
   flavor: CP14Metallic
   color: "#800000"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -82,7 +81,7 @@
   name: cp14-reagent-name-blood-tiefling
   flavor: CP14Metallic
   color: "#803300"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -107,22 +106,7 @@
           type: CP14Vampire
         damage:
           groups:
-            Brute: -3
-            Burn: -3
-      - !type:FlammableReaction
-        conditions:
-        - !type:OrganType
-          type: CP14Vampire
-        multiplier: 1
-      - !type:AdjustTemperature
-        conditions:
-        - !type:OrganType
-          type: CP14Vampire
-        amount: 1000
-      - !type:Ignite
-        conditions:
-        - !type:OrganType
-          type: CP14Vampire
+            Burn: -5
   pricePerUnit: 0.15
 
 - type: reagent
@@ -132,7 +116,7 @@
   name: cp14-reagent-name-blood-elf
   flavor: CP14Metallic
   color: "#80003e"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -163,8 +147,7 @@
           type: CP14Vampire
         damage:
           groups:
-            Brute: -3
-            Burn: -3
+            Burn: -5
   pricePerUnit: 0.25
 
 - type: reagent
@@ -174,7 +157,7 @@
   name: cp14-reagent-name-blood-goblin
   flavor: CP14Metallic
   color: "#576e35"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood
@@ -217,7 +200,7 @@
   desc: cp14-reagent-desc-blood-monster
   flavor: CP14Metallic
   color: "#800058"
-  recognizable: true
+  recognizable: false
   physicalDesc: cp14-reagent-physical-desc-ferrous
   footstepSound:
     collection: FootstepBlood

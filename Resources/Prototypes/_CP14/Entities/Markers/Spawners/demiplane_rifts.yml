@@ -100,6 +100,20 @@
 
 - type: entity
   parent: CP14BaseMobGroupSpawner
+  id: CP14MobGroupSpawnerSpineguard
+  suffix: 1-2 spineguards
+  components:
+  - type: EntityTableSpawner
+    deleteSpawnerAfterSpawn: false
+    offset: 1
+    table: !type:GroupSelector
+      rolls: !type:RangeNumberSelector
+        range: 1, 2
+      children:
+      - id: CP14MobMonsterSpineguard
+
+- type: entity
+  parent: CP14BaseMobGroupSpawner
   id: CP14MobGroupSpawnerRabbits
   suffix: 2-3 Rabbits
   components:

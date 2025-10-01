@@ -9,3 +9,5 @@ cp14-trade-faction-butchers = Master Butchers Union
 cp14-trade-faction-dairy = Golden Udder Dairy
 cp14-trade-faction-tailors = Silk & Needle Tailors Guild
 cp14-trade-faction-guard = Imperial Guard
+cp14-trade-faction-vampire-market = Vampire's lair
+cp14-trade-faction-helmir-child = Helmir's childs

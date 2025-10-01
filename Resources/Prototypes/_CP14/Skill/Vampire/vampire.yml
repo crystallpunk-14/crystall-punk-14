@@ -13,8 +13,25 @@
     action: CP14ActionVampireBite
 
 - type: cp14Skill
-  id: PowerKick
+  id: Hypnosys
   skillUiPosition: 2, 0
+  learnCost: 0.5
+  tree: Vampire
+  icon:
+      sprite: _CP14/Actions/Spells/vampire.rsi
+      state: blood_moon
+  effects:
+  - !type:AddAction
+    action: CP14ActionSpellVampireHypnosys
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: Bite
+  - !type:VampireClanLevel
+    level: 1
+
+- type: cp14Skill
+  id: PowerKick
+  skillUiPosition: 6, 0
   learnCost: 1
   tree: Vampire
   icon:
@@ -25,30 +42,12 @@
     action: CP14ActionSpellVampirePower
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: Bite
-  - !type:VampireClanLevel
-    level: 1
-
-- type: cp14Skill
-  id: PowerKick2
-  skillUiPosition: 6, 0
-  learnCost: 1  
-  tree: Vampire
-  icon:
-      sprite: _CP14/Actions/Spells/vampire.rsi
-      state: power_kick_2
-  effects:
-  - !type:ReplaceAction
-    oldAction: CP14ActionSpellVampirePower
-    newAction: CP14ActionSpellVampirePower2
-  restrictions:
-  - !type:NeedPrerequisite
-    prerequisite: PowerKick
+    prerequisite: Hypnosys
   - !type:VampireClanLevel
     level: 2
 
 - type: cp14Skill
-  id: PowerKick3
+  id: PowerKickArea
   skillUiPosition: 10, 0
   learnCost: 1
   tree: Vampire
@@ -60,7 +59,7 @@
     action: CP14ActionSpellVampirePower3
   restrictions:
   - !type:NeedPrerequisite
-    prerequisite: PowerKick2
+    prerequisite: PowerKick
   - !type:VampireClanLevel
     level: 3
 
@@ -128,7 +127,7 @@
 - type: cp14Skill
   id: VampireTransmutateUnnameable
   skillUiPosition: 0, 6
-  name: cp14-skill-vampire-transmutate-name 
+  name: cp14-skill-vampire-transmutate-name
   learnCost: 0
   tree: Vampire
   icon:
@@ -178,7 +177,7 @@
 - type: cp14Skill
   id: BloodEssenceCreation
   skillUiPosition: 0, 10
-  learnCost: 0.5
+  learnCost: 0
   tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -206,7 +205,7 @@
 - type: cp14Skill
   id: VampireCureWounds
   skillUiPosition: 6, 8
-  learnCost: 0.5
+  learnCost: 1
   tree: Vampire
   icon:
       sprite: _CP14/Actions/Spells/vampire.rsi
@@ -239,7 +238,7 @@
 
 - type: cp14Skill
   id: BloodEnemySearch
-  skillUiPosition: 10, 10
+  skillUiPosition: 6, 10
   learnCost: 1
   tree: Vampire
   icon:
@@ -252,7 +251,7 @@
   - !type:NeedPrerequisite
     prerequisite: BloodConnection
   - !type:VampireClanLevel
-    level: 3
+    level: 2
 
 - type: cp14Skill
   id: PortalToVampireHome

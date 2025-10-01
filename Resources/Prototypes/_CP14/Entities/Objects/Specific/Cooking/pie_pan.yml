@@ -55,30 +55,13 @@
         burn:
           True: { visible: true }
           False: { visible: false }
-  - type: Food
-    solution: cooker
+  - type: Edible
+    edible: Food
     transferAmount: 2.5
+    solution: cooker
     trash: 
     - CP14PlatePie
   - type: Spillable
     solution: cooker
   - type: SolutionContainerVisuals
   - type: SliceableFood
-
-- type: entity
-  id: CP14PlatePieRandom
-  suffix: Random food
-  parent: CP14PlatePie
-  components:
-  - type: CP14RandomFoodData
-  - type: SolutionContainerManager
-    solutions:
-      cooker:
-        maxVol: 50
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Protein
-          Quantity: 20
-        - ReagentId: Fat
-          Quantity: 10

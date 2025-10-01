@@ -4,30 +4,18 @@
   name: Mana transfer
   description: You can transfer a small amount of your magical energy to a target entity or magical object.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: mana_gift
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 10
     canModifyManacost: false
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaGift
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaGift
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:CP14ManaChange
-        manaDelta: 10
-        safe: false
-  - type: CP14MagicEffectSomaticAspect
-  - type: CP14MagicEffectCastingVisual
+  - type: DoAfterArgs
+    repeat: true
+    breakOnMove: true
+    delay: 1
+    breakOnDamage: true
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaGift
   - type: Action
+    useDelay: 2
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_gift
@@ -39,10 +27,20 @@
       - CP14MagicEnergyContainer
       - CP14MagicEnergyCrystalSlot
     canTargetSelf: true
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 2
-      castTime: 10
-      breakOnMove: true
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaGift
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaGift
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: 10
+          safe: false
 
 - type: entity
   id: CP14ActionSpellManaGiftElf
@@ -50,18 +48,19 @@
   name: Carefull mana transfer
   description: You transfer mana at a tremendous rate without dealing damage to the target.
   components:
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 20
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaGift
-    - !type:CP14SpellApplyEntityEffect
+  - type: EntityTargetAction
+    event: !type:CP14EntityTargetModularEffectEvent
       effects:
-      - !type:CP14ManaChange
-        manaDelta: 20
-        safe: true
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaGift
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:CP14ManaChange
+          manaDelta: 20
+          safe: true
 
 - type: entity
   id: CP14RuneManaGift

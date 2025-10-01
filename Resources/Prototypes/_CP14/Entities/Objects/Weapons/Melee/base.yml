@@ -94,11 +94,12 @@
     messages: CP14WeaponMessages
   - type: Damageable
     damageContainer: Inorganic
+  - type: CP14MeleeParriable
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 80
       behaviors:
       - !type:PlaySoundBehavior
         sound:

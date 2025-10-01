@@ -81,7 +81,7 @@
         reagents:
         - ReagentId: CP14ChromiumSlime
           Quantity: 20
-        - ReagentId: CP14BasicEffectEmpty
+        - ReagentId: CP14SideEffectEmpty
           Quantity: 30
   - type: Destructible
     thresholds:
@@ -102,7 +102,6 @@
     capacity: 2
     showContents: true
     occludesLight: false
-  - type: CP14MagicCasterSlowdown
   - type: Tag
     tags:
     - FootstepSound
@@ -118,3 +117,4 @@
           - id: CP14ScrapIron
           - id: CP14CopperCoin1
             weight: 3
+          - id: CP14Bone1

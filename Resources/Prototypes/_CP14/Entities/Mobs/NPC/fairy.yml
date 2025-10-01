@@ -3,7 +3,7 @@
   parent: CP14SimpleMobBase
   id: CP14MobFairy
   description: It glows, squeaks and considers itself very important. It seems that ordinary weapons are incapable of killing her, and only the dissipation of magic will help.
-  categories: [ ForkFiltered ]
+  categories: [ ForkFiltered, HideSpawnMenu ] #Disable spawn in spawmenu
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
@@ -66,7 +66,6 @@
         variation: 0.125
         pitch: 1.1
   - type: SoundWhileAlive
-  - type: CP14MagicCasterSlowdown
   - type: CP14MagicEnergyContainer
     magicAlert: CP14MagicEnergy
     maxEnergy: 300
@@ -102,19 +101,8 @@
   - type: Sprite
     sprite: _CP14/Actions/Spells/meta.rsi
     state: mana_consume
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaConsume
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectManaConsume
-    - !type:CP14SpellConsumeManaEffect
-      safe: false
-      mana: 0.5
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: mana_consume
@@ -123,8 +111,15 @@
     whitelist:
       components:
       - CP14MagicEnergyContainer
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 5
-      castTime: 10
-      breakOnMove: false
-      hidden: true
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaConsume
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectManaConsume
+      - !type:CP14SpellConsumeManaEffect
+        safe: false
+        mana: 0.5

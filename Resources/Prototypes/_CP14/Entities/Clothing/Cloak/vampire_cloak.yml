@@ -23,7 +23,6 @@
   - type: PhysicalComposition
     materialComposition:
       CP14Cloth: 40
-      CP14Mithril: 10
       CP14BloodEssence: 1
 
 - type: entity
@@ -38,7 +37,7 @@
 - type: entity
   parent: CP14ClothingCloakVampireBase
   id: CP14ClothingCloakVampireDevourers
-  name: сrimson vampire cloak
+  name: crimson vampire cloak
   description: A traditional vampire cloak worn by members of the Devourers clan. Hides the owner from prying eyes, granting invisibility.
   components:
   - type: Sprite

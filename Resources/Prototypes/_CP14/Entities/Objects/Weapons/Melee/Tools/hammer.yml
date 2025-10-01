@@ -1,0 +1,64 @@
+- type: entity
+  abstract: true
+  id: CP14BaseWeaponToolHammer
+  parent:
+  - BaseItem
+  - CP14BaseWeaponChemical
+  - CP14BaseWeaponDestructible
+  - CP14BaseWeaponSelfDamage
+  - CP14BaseWeaponThrowable
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+        Structural: 3
+  - type: MeleeWeapon
+    resetOnHandSelected: true
+    autoAttack: true
+    attackRate: 2
+    range: 1
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 5
+        Structural: 3
+    animation: CP14WeaponArcSlash
+    wideAnimation: CP14WeaponArcSlash
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+    cPAnimationOffset: 1
+  - type: Clothing
+    slots:
+    - belt
+    breakOnMove: false
+    equipDelay: 0.5
+    unequipDelay: 0.5
+  - type: Tool
+    qualities:
+      - CP14Hammering
+    useSound:
+      collection: CP14Hammering
+      params:
+        variation: 0.03
+        volume: 2
+
+- type: entity
+  parent: CP14BaseWeaponToolHammer
+  id: CP14WeaponHammerIron
+  name: iron hammer
+  description: A standard hammer made of iron.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Weapons/Melee/Hammer/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 10
+      CP14Iron: 10

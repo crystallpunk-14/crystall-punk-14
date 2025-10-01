@@ -135,19 +135,16 @@ public sealed class CP14RoundLeaveSystem : EntitySystem
             _stationRecords.RemoveRecord(key, stationRecords);
         }
 
-        _chatSystem.DispatchStationAnnouncement(station.Value,
-            Loc.GetString(
-                _mobState.IsAlive(uid) ? "cp14-earlyleave-ship-announcement" : "cp14-earlyleave-ship-announcement-dead",
-                ("character", name),
-                ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
-            ),
-            Loc.GetString("cp14-ship-sender"),
-            playDefaultSound: false
-        );
+        //_chatSystem.DispatchStationAnnouncement(station.Value,
+        //    Loc.GetString(
+        //        _mobState.IsAlive(uid) ? "cp14-earlyleave-ship-announcement" : "cp14-earlyleave-ship-announcement-dead",
+        //        ("character", name),
+        //        ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
+        //    ),
+        //    Loc.GetString("cp14-ship-sender"),
+        //    playDefaultSound: false
+        //);
 
         QueueDel(uid);
-
-        //if (mind is not null && mind.Value.Comp.Session is not null)
-        //    _gameTicker.Respawn(mind.Value.Comp.Session);
     }
 }

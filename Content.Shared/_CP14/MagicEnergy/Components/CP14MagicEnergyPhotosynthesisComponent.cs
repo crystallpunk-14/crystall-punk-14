@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.MagicEnergy.Components;
 /// <summary>
 /// Restores mana if the entity is in the sun, and wastes it if not
 /// </summary>
-[RegisterComponent, Access(typeof(SharedCP14MagicEnergySystem))]
+[RegisterComponent, Access(typeof(CP14SharedMagicEnergySystem))]
 public sealed partial class CP14MagicEnergyPhotosynthesisComponent : Component
 {
     [DataField]

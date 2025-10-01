@@ -12,42 +12,6 @@
     ambientLightColor: "#000000"
 
 - type: cp14LocationModifier
-  id: MapLightDarkRed
-  levels:
-    min: 3
-    max: 10
-  categories:
-    MapLight: 1
-  name: cp14-modifier-night
-  components:
-  - type: MapLight
-    ambientLightColor: "#0f0104"
-
-- type: cp14LocationModifier
-  id: MapLightDarkPurple
-  levels:
-    min: 1
-    max: 10
-  categories:
-    MapLight: 1
-  name: cp14-modifier-night
-  components:
-  - type: MapLight
-    ambientLightColor: "#09010f"
-
-- type: cp14LocationModifier
-  id: MapLightDarkGreen
-  levels:
-    min: 1
-    max: 10
-  categories:
-    MapLight: 1
-  name: cp14-modifier-night
-  components:
-  - type: MapLight
-    ambientLightColor: "#000502"
-
-- type: cp14LocationModifier
   id: MapLightDarkNight
   levels:
     min: 1
@@ -69,8 +33,6 @@
   categories:
     MapLight: 1
   generationWeight: 2
-  requiredTags:
-  - CP14DemiplaneOpenSky
   components:
   - type: LightCycle
 
@@ -83,11 +45,12 @@
     MapLight: 1
   generationWeight: 2
   requiredTags:
-  - CP14DemiplaneOpenSky
   - CP14DemiplaneCold
   components:
   - type: LightCycle
     originalColor: "#7bc2e0"
+  - type: MapLight
+    ambientLightColor: "#7bc2e0"
 
 - type: cp14LocationModifier
   id: MapLightCycleHot
@@ -97,11 +60,12 @@
   categories:
     MapLight: 1
   requiredTags:
-  - CP14DemiplaneOpenSky
   - CP14DemiplaneHot
   components:
   - type: LightCycle
     originalColor: "#ff8929"
+  - type: MapLight
+    ambientLightColor: "#ff8929"
 
 - type: cp14LocationModifier
   id: MapLightCycleHot2
@@ -111,9 +75,26 @@
   categories:
     MapLight: 1
   requiredTags:
-  - CP14DemiplaneOpenSky
   - CP14DemiplaneHot
   components:
   - type: LightCycle
     originalColor: "#d68787"
+  - type: MapLight
+    ambientLightColor: "#d68787"
 
+- type: cp14LocationModifier
+  id: CavesRoofHoles
+  levels:
+    min: 0
+    max: 10
+  generationProb: 0.8
+  categories:
+    MapLight: 0
+  requiredTags:
+  - CP14DemiplaneUnderground
+  layers:
+    - !type:CP14OreDunGen
+      entity: CP14NoRoofMarkerGodRays
+      count: 15
+      minGroupSize: 10
+      maxGroupSize: 30

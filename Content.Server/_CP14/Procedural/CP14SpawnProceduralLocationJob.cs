@@ -80,9 +80,10 @@ public sealed class CP14SpawnProceduralLocationJob(
         var mixture = new GasMixture(moles, Atmospherics.T20C);
         entManager.System<AtmosphereSystem>().SetMapAtmosphere(MapUid, false, mixture);
 
-        if (!map.IsInitialized(mapId))
-            map.InitializeMap(mapId);
         map.SetPaused(mapId, false);
+
+        //Add map components
+        entManager.AddComponents(MapUid, locationConfig.Components);
 
         //Spawn modified config
         await WaitAsyncTask(dungeon.GenerateDungeonAsync(dungeonConfig,
@@ -90,9 +91,6 @@ public sealed class CP14SpawnProceduralLocationJob(
             gridComp,
             position,
             seed));
-        
-        //Add map components
-        entManager.AddComponents(MapUid, locationConfig.Components);
 
         return true;
     }

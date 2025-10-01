@@ -252,7 +252,7 @@
   reputationLevel: 3
   priceMarkup: 2
   faction: BradPotions
-  uiPosition: 2
+  uiPosition: 3
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
     state: vial
@@ -264,7 +264,7 @@
   reputationLevel: 3
   priceMarkup: 3
   faction: BradPotions
-  uiPosition: 3
+  uiPosition: 4
   icon:
     sprite: _CP14/Objects/Specific/Alchemy/vial_skull.rsi
     state: vial

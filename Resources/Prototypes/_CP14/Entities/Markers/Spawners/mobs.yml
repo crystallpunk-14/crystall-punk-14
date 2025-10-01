@@ -22,6 +22,8 @@
         - id: CP14MobUndeadZombieGearEasy1
         - id: CP14MobUndeadZombieGearEasy2
         - id: CP14MobUndeadZombieGearEasy3
+        - id: CP14MobUndeadZombieGearEasy4
+        - id: CP14MobUndeadZombieGearEasy5
 
 # Animal
 
@@ -120,6 +122,21 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobBigBear
+
+  name: snail spawner
+  id: CP14SpawnMobSnail
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/snail.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSnail
 
 - type: entity
   name: chicken spawner
@@ -238,6 +255,22 @@
   - type: ConditionalSpawner
     prototypes:
     - CP14MobMonsterMole
+
+- type: entity
+  name: spineguard spawner
+  id: CP14SpawnMobMonsterSpineguard
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Monster/spineguard.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobMonsterSpineguard
 
 - type: entity
   name: bloodworm mosquitoes spawner

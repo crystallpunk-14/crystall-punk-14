@@ -1,6 +1,5 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Overlays;
-using Content.Shared._CP14.Vampire;
 using Content.Shared._CP14.Vampire.Components;
 using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;

@@ -4,34 +4,31 @@
   name: Search of life
   description: Detects all living things in a large radius around you.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/light.rsi
-    state: search_of_life
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 30
-  - type: CP14MagicEffect
-    magicType: Light
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectSearchOfLife
-    - !type:CP14SpellPointerToAlive
-      pointerEntity: CP14SearchOfLifePointer
-      searchRange: 30
-  - type: CP14MagicEffectVerbalAspect
+  - type: CP14ActionSpeaking
     startSpeech: "Ego vultus..."
     endSpeech: "parumper vita"
-  - type: CP14MagicEffectSomaticAspect
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionFreeHandsRequired
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneSearchOfLife
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
   - type: Action
+    useDelay: 30
     icon:
       sprite: _CP14/Actions/Spells/light.rsi
       state: search_of_life
   - type: InstantAction
-    event: !type:CP14DelayedInstantActionEvent
-      cooldown: 30
-      castDelay: 1.5
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectSearchOfLife
+      - !type:CP14SpellPointerToAlive
+        pointerEntity: CP14SearchOfLifePointer
+        searchRange: 30
 
 - type: entity
   id: CP14ImpactEffectSearchOfLife

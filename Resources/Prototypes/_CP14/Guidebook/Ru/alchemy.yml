@@ -28,5 +28,45 @@
   id: CP14_RU_TargetEffects
   name: Целевые алхимические растворы
   text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
+  children:
+  - CP14_RU_HealingEffects
+  - CP14_RU_DamageEffects
+  - CP14_RU_PositiveEffects
+  - CP14_RU_NegativeEffects
+  - CP14_RU_SideEffects
   filterEnabled: True
 
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_HealingEffects
+  name: Лечебные решения
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/HealingEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_DamageEffects
+  name: Вредные решения
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/DamageEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_PositiveEffects
+  name: Позитивные решения
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/PositiveEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_NegativeEffects
+  name: Негативные решения
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/NegativeEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  crystallPunkAllowed: true
+  id: CP14_RU_SideEffects
+  name: Загрязняющие вещества
+  text: "/ServerInfo/_CP14/Guidebook_RU/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/SideEffects.xml"
+  filterEnabled: True

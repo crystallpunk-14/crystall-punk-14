@@ -1,8 +1,8 @@
 [whitelist]
 enabled = true
 
-[localization]
-language = "en-US"
+[loc]
+server_language = "en-US"
 
 [log]
 path = "logs"
@@ -75,3 +75,6 @@ mob_pushing = true
 discord_auth_enabled = true
 closet_beta_test = true
 sponsor_enabled = true
+
+[viewport]
+maximum_width = 29

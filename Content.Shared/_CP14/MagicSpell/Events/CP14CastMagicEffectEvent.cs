@@ -1,41 +1,7 @@
-using Content.Shared._CP14.MagicRitual.Prototypes;
-using Content.Shared._CP14.MagicSpell.Components;
-using Content.Shared._CP14.MagicSpell.Spells;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
-using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP14.MagicSpell.Events;
-
-/// <summary>
-/// Called first to verify that all conditions are met and the spell can be performed.
-/// </summary>
-public sealed class CP14CastMagicEffectAttemptEvent : CancellableEntityEventArgs
-{
-    /// <summary>
-    /// The Performer of the event, to check if they meet the requirements.
-    /// </summary>
-    public readonly EntityUid Performer;
-    public readonly EntityUid? Used;
-    public readonly EntityUid? Target;
-    public readonly EntityCoordinates? Position;
-
-    public string Reason = string.Empty;
-
-    public CP14CastMagicEffectAttemptEvent(EntityUid performer, EntityUid? used, EntityUid? target, EntityCoordinates? position)
-    {
-        Performer = performer;
-        Used = used;
-        Target = target;
-        Position = position;
-    }
-
-    public void PushReason(string reason)
-    {
-        Reason += $"{reason}\n";
-    }
-}
 
 /// <summary>
 /// An event that checks all sorts of conditions, and calculates the total cost of casting a spell. Called before the spell is cast.
@@ -47,13 +13,11 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
 
     public float Multiplier = 1f;
     public EntityUid? Performer;
-    public ProtoId<CP14MagicTypePrototype>? MagicType;
 
-    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost, ProtoId<CP14MagicTypePrototype>? magicType)
+    public CP14CalculateManacostEvent(EntityUid? performer, FixedPoint2 initialManacost)
     {
         Performer = performer;
         Manacost = initialManacost;
-        MagicType = magicType;
     }
 
     public float GetManacost()
@@ -64,59 +28,14 @@ public sealed class CP14CalculateManacostEvent : EntityEventArgs, IInventoryRela
     public SlotFlags TargetSlots { get; } = SlotFlags.All;
 }
 
-/// <summary>
-/// is invoked if all conditions are met and the spell has begun to be cast (doAfter start moment)
-/// </summary>
 [ByRefEvent]
-public sealed class CP14StartCastMagicEffectEvent : EntityEventArgs
+public sealed class CP14SpellFromSpellStorageUsedEvent(
+    EntityUid? performer,
+    EntityUid? action,
+    FixedPoint2 manacost)
+    : EntityEventArgs
 {
-    public EntityUid Performer { get; init; }
-
-    public CP14StartCastMagicEffectEvent(EntityUid performer)
-    {
-        Performer = performer;
-    }
-}
-
-/// <summary>
-/// is invoked on the spell itself when the spell process has been completed or interrupted (doAfter end moment)
-/// </summary>
-[ByRefEvent]
-public sealed class CP14EndCastMagicEffectEvent : EntityEventArgs
-{
-    public EntityUid Performer { get; init; }
-
-    public CP14EndCastMagicEffectEvent(EntityUid performer)
-    {
-        Performer = performer;
-    }
-}
-
-/// <summary>
-/// is invoked only if the spell has been successfully cast
-/// </summary>
-[ByRefEvent]
-public sealed class CP14MagicEffectConsumeResourceEvent : EntityEventArgs
-{
-    public EntityUid? Performer { get; init; }
-
-    public CP14MagicEffectConsumeResourceEvent(EntityUid? performer)
-    {
-        Performer = performer;
-    }
-}
-
-[ByRefEvent]
-public sealed class CP14SpellFromSpellStorageUsedEvent : EntityEventArgs
-{
-    public EntityUid? Performer { get; init; }
-    public Entity<CP14MagicEffectComponent> Action { get; init; }
-    public FixedPoint2 Manacost { get; init; }
-
-    public CP14SpellFromSpellStorageUsedEvent(EntityUid? performer, Entity<CP14MagicEffectComponent> action, FixedPoint2 manacost)
-    {
-        Performer = performer;
-        Action = action;
-        Manacost = manacost;
-    }
+    public EntityUid? Performer { get; init; } = performer;
+    public EntityUid? Action { get; init; } = action;
+    public FixedPoint2 Manacost { get; init; } = manacost;
 }

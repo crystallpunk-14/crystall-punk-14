@@ -1,0 +1,62 @@
+# Simple recipes made from T0 and T1 essences and water
+# T1
+# The result is always 75% empty solution
+
+- type: reaction
+  id: CP14WaterBrewingDamageMana
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceEnergia:
+      amount: 2
+    CP14EssenceVoid:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectDrunk: 1
+    CP14NegativeEffectDamageMana: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingDamageStam
+  minTemp: 500
+  priority: 1
+  reactants:
+    CP14EssenceVoid:
+      amount: 1
+    CP14EssenceMotion:
+      amount: 1
+    CP14EssenceAir:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectDrunk: 1
+    CP14NegativeEffectDamageStam: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: CP14WaterBrewingSpeedDown
+  minTemp: 500
+  priority: 2
+  reactants:
+    CP14EssenceMotion:
+      amount: 2
+    CP14EssenceChaos:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    CP14SideEffectEmpty: 2
+    CP14SideEffectJitter: 1
+    CP14NegativeEffectSpeedDown: 1
+  effects:
+  - !type:CP14AffectSolutionTemperature
+    addTemperature: -150

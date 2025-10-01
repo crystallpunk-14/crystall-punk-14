@@ -3,6 +3,8 @@
   start: start
   graph:
     - node: start
+      actions:
+      - !type:DestroyEntity {}
       edges:
         - to: CP14WoodenCloset
           completed:
@@ -10,5 +12,15 @@
           steps:
             - stackGroup: WoodenPlanks
               amount: 4
+              doAfter: 2
     - node: CP14WoodenCloset
       entity: CP14WoodenCloset
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 4

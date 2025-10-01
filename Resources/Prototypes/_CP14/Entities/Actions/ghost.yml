@@ -38,3 +38,20 @@
   - type: InstantAction
     event: !type:CP14ToggleRoofVisibilityAction
 
+- type: entity
+  id: CP14ActionRespawn
+  name: Respawn
+  description: Return to the lobby to connect with a new character.
+  components:
+  - type: Action
+    priority: 20
+    startDelay: true
+    useDelay: 300
+    checkCanInteract: false
+    icon:
+      sprite: _CP14/Actions/zLevel.rsi
+      state: respawn
+  - type: ConfirmableAction
+    popup: cp14-respawn-action-popup
+  - type: InstantAction
+    event: !type:CP14RespawnAction

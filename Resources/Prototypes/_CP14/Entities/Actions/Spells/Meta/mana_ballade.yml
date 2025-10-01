@@ -4,46 +4,43 @@
   name: Magic ballade
   description: With your music, you infuse the objects around you with mana
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/meta.rsi
-    state: magic_music
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
-  - type: CP14MagicEffectManaCost
+  - type: CP14ActionManaCost
     manaCost: 5
     canModifyManacost: false
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellArea
-      range: 5
-      maxTargets: 5
-      whitelist:
-        components:
-        - CP14MagicEnergyContainer
-        - CP14MagicEnergyCrystalSlot
-      effects:
-      - !type:CP14SpellSpawnEntityOnTarget
-        spawns:
-        - CP14ImpactEffectMagicBallade
-      - !type:CP14SpellApplyEntityEffect
-        effects:
-        - !type:CP14ManaChange
-          manaDelta: 1.2
-          safe: true
-  - type: CP14MagicEffectRequiredMusicTool
-  - type: CP14MagicEffectCastingVisual
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    delay: 1
+  - type: CP14ActionRequiredMusicTool
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicBallade
   - type: Action
+    sound: null
+    useDelay: 15
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: magic_music
   - type: InstantAction
-    event: !type:CP14ToggleableInstantActionEvent
-      effectFrequency: 1
-      cooldown: 15
-      castTime: 120
-      hidden: true
-      breakOnDamage: false
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+      - !type:CP14SpellArea
+        range: 5
+        maxTargets: 5
+        whitelist:
+          components:
+          - CP14MagicEnergyContainer
+          - CP14MagicEnergyCrystalSlot
+        effects:
+        - !type:CP14SpellSpawnEntityOnTarget
+          spawns:
+          - CP14ImpactEffectMagicBallade
+        - !type:CP14SpellApplyEntityEffect
+          effects:
+          - !type:CP14ManaChange
+            manaDelta: 1.2
+            safe: true
 
 - type: entity
   id: CP14ImpactEffectMagicBallade
