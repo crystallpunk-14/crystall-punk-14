@@ -64,6 +64,13 @@
     damage:
       types:
         Slash: 5
+  - type: GhostRole
+    name: cp14-ghost-role-information-cat-name
+    description: cp14-ghost-role-information-cat-description
+    rules: cp14-ghost-role-information-rules-pet
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
   - type: MessyDrinker
     spillChance: 0.2
   - type: Speech
