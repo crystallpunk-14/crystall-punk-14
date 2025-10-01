@@ -48,11 +48,15 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      50: Critical
+      75: Dead
+  - type: CP14NightVision #Why do carcats have night vision, but not cats?
   - type: DamageStateVisuals
     states:
       Alive:
         Base: walking
+      Critical:
+        Base: dead
       Dead:
         Base: dead
   - type: MeleeWeapon
@@ -76,12 +80,6 @@
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CP14BloodAnimal
-  - type: GhostRole
-    prob: 0.25
-    name: cp14-ghost-role-information-cat-name
-    description: cp14-ghost-role-information-cat-description
-    rules: cp14-ghost-role-information-rules-pet
-  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
       - CannotSuicide
