@@ -94,7 +94,7 @@
   - type: PassiveDamage
     allowedStates:
     - Alive
-    damageCap: 25
+    damageCap: 40
     damage:
       groups:
         Brute: -0.05
