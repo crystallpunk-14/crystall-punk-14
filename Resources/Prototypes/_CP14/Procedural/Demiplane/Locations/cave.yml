@@ -5,7 +5,7 @@
     sprite: _CP14/Interface/Misc/demiplane_locations.rsi
     state: caves
   levels:
-    min: 1
+    min: 0
     max: 2
   locationConfig: CP14Caves
   tags:
@@ -14,6 +14,12 @@
   components:
   - type: Biome
     template: CP14CavesIndestructibleFill
+  - type: Roof
+  - type: CP14SetGridRooved
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
 
 - type: dungeonConfig
   id: CP14Caves

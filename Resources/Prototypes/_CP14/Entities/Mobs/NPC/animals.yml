@@ -475,8 +475,8 @@
   - type: NpcFactionMember
     factions:
     - CP14AggressiveAnimals
-  - type: NPCUseActionOnTarget
-    actionId: CP14ActionBearSpellSprint
+  #- type: NPCUseActionOnTarget # TODO: add support for non-target actions
+  #  actionId: CP14ActionBearSpellSprint
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -524,7 +524,6 @@
         Base: dead
   - type: Stamina
     critThreshold: 300
-  - type: CP14MagicCasterSlowdown
   - type: Butcherable
     spawned:
     - id: CP14FoodMeatBoar # TODO
@@ -566,4 +565,139 @@
         volume: -2
         variation: 0.125
   - type: SoundWhileAlive
-  - type: FloorOcclusion
+
+- type: entity
+  id: CP14MobSnail
+  parent: CP14SimpleMobBase
+  name: snail
+  description: A small and slow snail. It seems that any touch could crush it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: cp14-ghost-role-information-name-snail
+    description: cp14-ghost-role-information-description-snail
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: GhostTakeoverAvailable
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
+  - type: NpcFactionMember
+    factions:
+      - CP14PeacefulAnimals
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - sprite: _CP14/Mobs/Animals/snail.rsi
+      state: live
+  - type: Item
+    size: Tiny
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 20
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: Speech
+    speechVerb: SmallMob
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Food
+  - type: Thirst
+    baseDecayRate: 0.01
+  - type: Hunger
+    baseDecayRate: 0.01
+  - type: Body
+    prototype: null
+  - type: Respirator
+    minSaturation: 5.0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+  - type: CombatMode
+    combatToggleAction: ActionCombatModeToggleOff
+  - type: Bloodstream
+    bloodMaxVolume: 10
+    bloodReagent: CP14BloodAnimal
+  - type: CanEscapeInventory
+  - type: BadFood
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: NoSlip
+  - type: Slippery
+  - type: StepTrigger
+    requiredTriggeredSpeed: 1
+  - type: TriggerOnStepTrigger
+  - type: RandomChanceTriggerCondition
+    successChance: 0.3
+  - type: GibOnTrigger
+  - type: ProtectedFromStepTriggers
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          CP14FoodSnailShell:
+            min: 1
+            max: 1
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 3
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 5
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 9
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          CP14Ash1:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact

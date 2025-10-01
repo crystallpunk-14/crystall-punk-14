@@ -4,25 +4,18 @@
   name: Air saturation
   description: You surround the target with fresh air, healing suffocation. This can sustain the dying.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.4
   - type: CP14ActionManaCost
     manaCost: 5
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectAirSaturation
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: -5
-      - !type:Jitter
-  - type: CP14MagicEffectCastingVisual
+  - type: DoAfterArgs
+    repeat: true
+    delay: 2
+    breakOnDamage: true
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneAirSaturation
   - type: Action
+    useDelay: 2
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: air_saturation
@@ -30,10 +23,18 @@
     range: 2
     interactOnMiss: false
   - type: EntityTargetAction
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 2
-      castTime: 10
-      breakOnMove: true
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectAirSaturation
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -5
+        - !type:Jitter
 
 # Effects
 

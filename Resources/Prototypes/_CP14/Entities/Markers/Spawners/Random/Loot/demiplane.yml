@@ -36,7 +36,6 @@
         - id: CP14SpellScrollEarthWall
         - id: CP14SpellScrollFlashLight
         - id: CP14SpellScrollWaterCreation
-        - id: CP14SpellScrollPlantGrowth
         - id: CP14SpellScrollMagicalAcceleration
         - id: CP14SpellScrollHeat
       - id: CP14ScrapCopper

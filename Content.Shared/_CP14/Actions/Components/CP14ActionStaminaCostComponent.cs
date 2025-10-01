@@ -5,7 +5,7 @@ namespace Content.Shared._CP14.Actions.Components;
 /// <summary>
 /// Restricts the use of this action, by spending stamina.
 /// </summary>
-[RegisterComponent, Access(typeof(CP14SharedMagicSystem))]
+[RegisterComponent]
 public sealed partial class CP14ActionStaminaCostComponent : Component
 {
     [DataField]

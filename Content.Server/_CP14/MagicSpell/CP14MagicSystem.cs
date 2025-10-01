@@ -1,32 +1,15 @@
-using Content.Server._CP14.MagicEnergy;
-using Content.Server.Atmos.Components;
-using Content.Server.Chat.Systems;
-using Content.Server.Instruments;
-using Content.Shared._CP14.Actions.Components;
-using Content.Shared._CP14.MagicEnergy.Components;
-using Content.Shared._CP14.MagicSpell;
-using Content.Shared._CP14.MagicSpell.Components;
-using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpell.Spells;
-using Content.Shared.Actions;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.FixedPoint;
-using Content.Shared.Instruments;
-using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
-using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 
 namespace Content.Server._CP14.MagicSpell;
 
-public sealed  class CP14MagicSystem : CP14SharedMagicSystem
+public sealed  class CP14MagicSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly CP14MagicEnergySystem _magicEnergy = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -40,11 +23,6 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<CP14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<CP14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
-
-        SubscribeLocalEvent<CP14ActionSpeakingComponent, CP14ActionSpeechEvent>(OnSpellSpoken);
-
-        SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14StartCastMagicEffectEvent>(OnSpawnMagicVisualEffect);
-        SubscribeLocalEvent<CP14MagicEffectCastingVisualComponent, CP14EndCastMagicEffectEvent>(OnDespawnMagicVisualEffect);
     }
 
     private void OnStartCollide(Entity<CP14SpellEffectOnCollideComponent> ent, ref StartCollideEvent args)
@@ -118,24 +96,5 @@ public sealed  class CP14MagicSystem : CP14SharedMagicSystem
             if (ent.Comp.MaxTargets > 0 && count >= ent.Comp.MaxTargets)
                 break;
         }
-    }
-
-    private void OnSpellSpoken(Entity<CP14ActionSpeakingComponent> ent, ref CP14ActionSpeechEvent args)
-    {
-        if (args.Performer is not null && args.Speech is not null)
-            _chat.TrySendInGameICMessage(args.Performer.Value, args.Speech, args.Emote ? InGameICChatType.Emote : InGameICChatType.Speak, true);
-    }
-
-    private void OnSpawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14StartCastMagicEffectEvent args)
-    {
-        var vfx = SpawnAttachedTo(ent.Comp.Proto, Transform(args.Performer).Coordinates);
-        _transform.SetParent(vfx, args.Performer);
-        ent.Comp.SpawnedEntity = vfx;
-    }
-
-    private void OnDespawnMagicVisualEffect(Entity<CP14MagicEffectCastingVisualComponent> ent, ref CP14EndCastMagicEffectEvent args)
-    {
-        QueueDel(ent.Comp.SpawnedEntity);
-        ent.Comp.SpawnedEntity = null;
     }
 }

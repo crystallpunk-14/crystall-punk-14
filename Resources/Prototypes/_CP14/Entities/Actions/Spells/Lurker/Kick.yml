@@ -4,40 +4,18 @@
   name: Crushing attack
   description: You prepare a powerful melee strike that will knock your target back with force and stun them for a long time.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/lurker.rsi
-    state: kick
   - type: CP14ActionStaminaCost
     stamina: 20
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellRevealStealthUser
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14LurkerRitualSound
-    effects:
-    - !type:CP14SpellRevealStealthUser
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:Paralyze
-        paralyzeTime: 15
-    - !type:CP14SpellThrowFromUser
-      throwPower: 4
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14DustEffectKickSound
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        ignoreResistances: false
-        damage:
-          types:
-            Blunt: 10
-  - type: CP14MagicEffectEmoting
+  - type: DoAfterArgs
+    delay: 2.5
+    distanceThreshold: 2.5
+    breakOnDamage: true
+  - type: CP14ActionEmoting
     startEmote: cp14-kick-lurker-start
     endEmote: cp14-kick-lurker
   - type: CP14ActionDangerous
   - type: Action
+    useDelay: 20
     icon:
       sprite: _CP14/Actions/Spells/lurker.rsi
       state: kick
@@ -45,10 +23,27 @@
     range: 2
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 20
-      castDelay: 2.5
-      distanceThreshold: 1.5
-      breakOnMove: false
-      breakOnDamage: true
-
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellRevealStealthUser
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14LurkerRitualSound
+      effects:
+      - !type:CP14SpellRevealStealthUser
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:Paralyze
+          paralyzeTime: 15
+      - !type:CP14SpellThrowFromUser
+        throwPower: 4
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14DustEffectKickSound
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 10

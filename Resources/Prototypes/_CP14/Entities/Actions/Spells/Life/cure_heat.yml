@@ -4,40 +4,24 @@
   name: Cure burn
   description: You heal skin damage caused by excessive cooling or heating.
   components:
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.5
   - type: CP14ActionManaCost
-    manaCost: 12
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectCureBurn
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      clientside: true
-      spawns:
-      - CP14ImpactEffectCureBurn
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Cold: -10
-            Heat: -10
-            Shock: -10
-      - !type:Jitter
+    manaCost: 10
   - type: CP14ActionTargetMobStatusRequired
   - type: CP14ActionSpeaking
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneCureBurn
   - type: Action
+    useDelay: 5
     icon:
       sprite: _CP14/Actions/Spells/healing.rsi
       state: cure_burn
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
   - type: TargetAction
     range: 7
     interactOnMiss: false
@@ -45,10 +29,24 @@
     whitelist:
       components:
       - MobState
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 5
-      castDelay: 1.5
-      breakOnMove: false
+    event: !type:CP14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectCureBurn
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectCureBurn
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Cold: -10
+              Heat: -10
+              Shock: -10
+        - !type:Jitter
 
 - type: entity
   id: CP14RuneCureBurn

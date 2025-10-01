@@ -4,22 +4,10 @@
   name: Earth wall
   description: Raises a solid wall of earth from the bowels.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/earth.rsi
-    state: earth_wall
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.3
   - type: CP14ActionManaCost
     manaCost: 15
-  - type: CP14MagicEffect
-    telegraphyEffects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectEarthWall
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14WallSpawnEarthWall
   - type: CP14ActionMaterialCost
     requirement: !type:StackResource
       stack: CP14Dirt
@@ -27,17 +15,27 @@
   - type: CP14ActionSpeaking
     startSpeech: "Surgite terram..."
     endSpeech: "de profundis terrae"
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RuneEarthWall
+  - type: DoAfterArgs
+    delay: 1.5
   - type: Action
+    useDelay: 10
     icon:
       sprite: _CP14/Actions/Spells/earth.rsi
       state: earth_wall
   - type: TargetAction
     range: 10
   - type: WorldTargetAction
-    event: !type:CP14DelayedWorldTargetActionEvent
-      cooldown: 10
+    event: !type:CP14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectEarthWall
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14WallSpawnEarthWall
 
 - type: entity
   id: CP14RuneEarthWall

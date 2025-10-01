@@ -127,6 +127,14 @@
       state: hogan
 
 - type: marking
+  id: CP14HumanFacialHairHussar
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
+      state: hussar
+
+- type: marking
   id: CP14HumanFacialHairJensen
   bodyPart: FacialHair
   markingCategory: FacialHair
@@ -269,4 +277,3 @@
   sprites:
     - sprite: _CP14/Mobs/Customization/human_facial_hair.rsi
       state: wise
-
