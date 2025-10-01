@@ -11,12 +11,11 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:HealthChange
-        damage:
-          groups:
-            Brute: 3
-  pricePerUnit: 3.0  # Similar to healing but with Chaos instead of Order
-
+        - !type:HealthChange
+          damage:
+            groups:
+              Brute: 3
+  pricePerUnit: 3.0 # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14DamageEffectDamageHeat
@@ -26,21 +25,31 @@
   flavor: CP14Stinging
   color: "#d4772a"
   tileReactions:
-  - !type:CreateEntityTileReaction
-    entity: CP14Fire
+    - !type:CreateEntityTileReaction
+      entity: CP14Fire
   physicalDesc: cp14-reagent-physical-desc-sparkling
   worksOnTheDead: true
+  reactiveEffects:
+    Flammable:
+      methods: [Touch]
+      effects:
+        - !type:FlammableReaction
+          multiplier: 0.1
+        - !type:Ignite
   metabolisms:
-    Medicine:
+    Poison:
       metabolismRate: 0.05
       effects:
-      - !type:FlammableReaction
-        multiplier: 1.5
-      - !type:AdjustTemperature
-        amount: 4000
-      - !type:Ignite
-  pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
-
+        - !type:HealthChange
+          damage:
+            types:
+              Heat: 1.5
+        - !type:FlammableReaction
+          multiplier: 1.5
+        - !type:AdjustTemperature
+          amount: 4000
+        - !type:Ignite
+  pricePerUnit: 3.5 # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14DamageEffectDamageCold
@@ -55,19 +64,18 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Cold: 1.5
-      - !type:AdjustTemperature
-        amount: -5000
-      - !type:PopupMessage
-        type: Local
-        visualType: Medium
-        messages: [ "leporazine-effect-temperature-adjusting" ]
-        probability: 0.1
-  pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
-
+        - !type:HealthChange
+          damage:
+            types:
+              Cold: 1.5
+        - !type:AdjustTemperature
+          amount: -5000
+        - !type:PopupMessage
+          type: Local
+          visualType: Medium
+          messages: ["leporazine-effect-temperature-adjusting"]
+          probability: 0.1
+  pricePerUnit: 4.0 # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14DamageEffectDamagePoison
@@ -82,12 +90,11 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Poison: 3
-  pricePerUnit: 3.5  # Similar to healing but with Chaos instead of Order
-
+        - !type:HealthChange
+          damage:
+            types:
+              Poison: 3
+  pricePerUnit: 3.5 # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14DamageEffectDamageAirloss
@@ -102,12 +109,11 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            Asphyxiation: 3
-  pricePerUnit: 4.0  # Similar to healing but with Chaos instead of Order
-
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: 3
+  pricePerUnit: 4.0 # Similar to healing but with Chaos instead of Order
 
 - type: reagent
   id: CP14DamageEffectDamageManaDepletion
@@ -122,12 +128,11 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:HealthChange
-        damage:
-          types:
-            CP14ManaDepletion: 3
-  pricePerUnit: 3.0  # 2×Energia (0.4) + 1×Poison (0.2) + Water (0.1) = 0.7 → x4.28
-
+        - !type:HealthChange
+          damage:
+            types:
+              CP14ManaDepletion: 3
+  pricePerUnit: 3.0 # 2×Energia (0.4) + 1×Poison (0.2) + Water (0.1) = 0.7 → x4.28
 
 - type: reagent
   id: CP14DamageEffectBloodAbsorption
@@ -142,10 +147,10 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:ModifyBloodLevel
-        amount: -10
-      - !type:HealthChange
-        damage:
-          types:
-            Bloodloss: 2
-  pricePerUnit: 4.0  # Similar to restoration but with Chaos instead of Order
+        - !type:ModifyBloodLevel
+          amount: -10
+        - !type:HealthChange
+          damage:
+            types:
+              Bloodloss: 2
+  pricePerUnit: 4.0 # Similar to restoration but with Chaos instead of Order
