@@ -39,7 +39,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
-        density: 100 # Cats are real chonkers now
+        density: 40
         mask:
         - MobMask
         layer:
@@ -59,11 +59,17 @@
       Dead:
         Base: dead
   - type: MeleeWeapon
-    angle: 0
-    animation: WeaponArcClaw
     damage:
       types:
         Slash: 5
+    attackRate: 1.5
+    range: 1.25
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcClaw
+    soundHit:
+      collection: AlienClaw
+    wideAnimation: WeaponArcClaw
   - type: GhostRole
     name: cp14-ghost-role-information-cat-name
     description: cp14-ghost-role-information-cat-description
@@ -85,8 +91,17 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/cat_meow.ogg
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 25
+    damage:
+      groups:
+        Brute: -0.05
+        Burn: -0.02
+        Toxin: -0.02
   - type: Bloodstream
-    bloodMaxVolume: 50
+    bloodMaxVolume: 80
     bloodReagent: CP14BloodAnimal
   - type: Tag
     tags:
