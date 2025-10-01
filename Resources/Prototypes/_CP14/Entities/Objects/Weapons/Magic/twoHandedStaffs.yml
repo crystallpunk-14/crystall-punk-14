@@ -118,7 +118,6 @@
     - CP14ActionSpellElectricTrap
     - CP14ActionSpellLightningStrike
     - CP14ActionSpellLightningStrikeSmall
-    - CP14ActionSpellLightningStrikeSmall
   - type: Sprite
     sprite: _CP14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
   - type: Clothing
