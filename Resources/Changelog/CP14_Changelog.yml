@@ -2335,3 +2335,12 @@
   id: 8282
   time: '2025-10-01T14:44:09.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1814
+- author: kin98
+  changes:
+  - message: Incendiary solution Ignites characters on hit
+    type: Add
+  - message: incendiary solution now does 1.5 heat.
+    type: Tweak
+  id: 8283
+  time: '2025-10-02T10:24:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1815
