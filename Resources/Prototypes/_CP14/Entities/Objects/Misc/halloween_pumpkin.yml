@@ -1,0 +1,130 @@
+- type: entity
+  parent: CP14FoodPumpkin
+  id: CP14HalloweenPumpkinBase
+  name: scary pumpkin
+  description: It was a normal pumpkin one day... Now it's a scary pumpkin!
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+
+- type: entity
+  parent: CP14HalloweenPumpkinBase
+  id: CP14HalloweenPumpkinEmmisiveBase
+  name: jack-o'lantern
+  description: Oooh! Scary!
+  abstract: true
+  components:
+  - type: PointLight
+    radius: 1.6
+    energy: 0.9
+    color: "#FEE68E"
+    castShadows: true
+
+- type: entity
+  parent: CP14HalloweenPumpkinBase
+  id: CP14HalloweenPumpkinWearable
+  components:
+  - type: Clothing
+    quickEquip: false
+    sprite: _CP14/Clothing/Head/halloween_pumpkin_helmet.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+
+# i can't make them to have matching faces easier
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant1
+  suffix: Variant 1
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base1
+      - state: light-base1
+        shader: unshaded
+      - state: light-base1
+        shader: shaded
+      # This is needed to make pumpkin's face to have that emmisive light from the head.
+      # Refer to ClothingOuterVestHazard for more details about it
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant2
+  suffix: Variant 2
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base2
+      - state: light-base2
+        shader: unshaded
+      - state: light-base2
+        shader: shaded
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant3
+  suffix: Variant 3
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base3
+      - state: light-base3
+        shader: unshaded
+      - state: light-base3
+        shader: shaded
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant4
+  suffix: Variant 4
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base4
+      - state: light-base4
+        shader: unshaded
+      - state: light-base4
+        shader: shaded
+
+# - type: entity
+#   id: CP14JackOLantern
+#   name: jack-o'lantern
+#   description: Oooh! Scary!
+#   parent: MarkerBase
+#   categories: [ ForkFiltered ]
+#   placement:
+#     mode: PlaceFree
+#   components:
+#   - type: Sprite
+#     layers:
+#       - sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+#         state: base2
+#       - sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+#         state: light-base2
+#   - type: EntityTableSpawner
+#     table: !type:NestedSelector
+#       tableId: CP14JackOLanternTable
+
+# - type: entityTable
+#   id: CP14JackOLanternTable
+#   table: !type:GroupSelector
+#     children:
+#     - id: CP14JackOLanternVariant1
+#     - id: CP14JackOLanternVariant2
+#     - id: CP14JackOLanternVariant3
+#     - id: CP14JackOLanternVariant4
