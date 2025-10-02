@@ -43,7 +43,7 @@ public sealed partial class CP14ProceduralModifierPrototype : IPrototype
     /// Can this modifier be generated multiple times within a single location?
     /// </summary>
     [DataField]
-    public bool Unique = false;
+    public bool Unique = true;
 
     /// <summary>
     /// Generation layers that will be added to the location generation after the main layers.

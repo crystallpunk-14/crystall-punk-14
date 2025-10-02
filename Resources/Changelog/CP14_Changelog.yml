@@ -2247,3 +2247,100 @@
   id: 8273
   time: '2025-09-25T21:26:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1799
+- author: KittyCat432
+  changes:
+  - message: Silva's now contain plant organs.
+    type: Tweak
+  - message: Water and life-giving moisture regenerates 0.2 and 4 mana respectively
+      when in a plant organ.
+    type: Tweak
+  - message: Liquid mana now regenerates 3 mana up from 1.5.
+    type: Tweak
+  id: 8274
+  time: '2025-09-26T16:31:02.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1789
+- author: Trosling
+  changes:
+  - message: Underground demi-planes may now have holes in the ceiling, allowing sunlight
+      or rain to pour in. This is affect silvas, plants, vampires and others sunlight-reated
+      things
+    type: Add
+  id: 8275
+  time: '2025-09-27T19:14:11.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1803
+- author: KittyCat432
+  changes:
+  - message: Most spells break when receiving damage again, excluding sprint, ballad
+      spells, and other pure utility spells.
+    type: Tweak
+  - message: Cure wounds/burns and blood purification cost 10 mana instead of 12 again.
+    type: Tweak
+  - message: Shields are more susceptible to breaking from blunt damage and for wooden
+      ones heat aswell.
+    type: Tweak
+  - message: Buckler and wooden shield damage resistances have been modified for the
+      shield to take less damage.
+    type: Tweak
+  - message: All shields have had their health increased by 50.
+    type: Tweak
+  id: 8276
+  time: '2025-09-27T19:17:27.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1804
+- author: TheShuEd
+  changes:
+  - message: Spells are interrupted again if players move far away from target or
+      drop the item used for casting, or loses sight of the target
+    type: Fix
+  - message: After an interrupted spell cast, the cooldown begins again, preventing
+      spamming.
+    type: Fix
+  id: 8277
+  time: '2025-09-28T08:16:52.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1805
+- author: TheShuEd
+  changes:
+  - message: Disabled magic fairies until fix, becaues they cause server crashes
+    type: Remove
+  - message: Fixed lurker melee stun interrupting
+    type: Fix
+  id: 8278
+  time: '2025-09-28T20:53:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1811
+- author: TTTomaTTT, oldschool_otaku
+  changes:
+  - message: Added custom burning sprites
+    type: Add
+  id: 8279
+  time: '2025-09-30T12:02:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1813
+- author: Nimfar11
+  changes:
+  - message: Adds snails and their shells as an appetiser. Be careful when hitting
+      them, they are very fragile.
+    type: Add
+  id: 8280
+  time: '2025-09-30T16:27:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1753
+- author: oldschool_otaku
+  changes:
+  - message: Hallucinogenic solution is fixed
+    type: Fix
+  id: 8281
+  time: '2025-10-01T11:36:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1764
+- author: oldschool_otaku
+  changes:
+  - message: Added cats!
+    type: Add
+  id: 8282
+  time: '2025-10-01T14:44:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1814
+- author: kin98
+  changes:
+  - message: Incendiary solution Ignites characters on hit
+    type: Add
+  - message: incendiary solution now does 1.5 heat.
+    type: Tweak
+  id: 8283
+  time: '2025-10-02T10:24:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1815

@@ -1,0 +1,10 @@
+- type: palette
+  id: CP14CatColors
+  name: CP14CatColors
+  colors:
+    black: "#333333"
+    gray: "#666666"
+    white: "#ffffff"
+    brown: "#595042"
+    lightbrown: "#654321"
+    orange: "#e49b0f"

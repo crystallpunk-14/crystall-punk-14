@@ -13,6 +13,7 @@
     proto: CP14RuneFlashLight
   - type: DoAfterArgs
     delay: 0.5
+    breakOnDamage: true
   - type: Action
     useDelay: 6
     icon:

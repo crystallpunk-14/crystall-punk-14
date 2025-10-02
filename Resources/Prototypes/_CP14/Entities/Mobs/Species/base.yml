@@ -289,7 +289,9 @@
     bloodReagent: CP14Blood
   # Other
   - type: FireVisuals
-    alternateState: Standing #TODO - custom visuals
+    sprite: _CP14/Mobs/Effects/onfire.rsi
+    normalState: Small_burning
+    alternateState: Humanoid_burning
 
 - type: entity
   save: false

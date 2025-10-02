@@ -107,6 +107,56 @@
     prototypes:
     - CP14MobSheep
 
+- type: entity
+  name: snail spawner
+  id: CP14SpawnMobSnail
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/snail.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobSnail
+
+- type: entity
+  name: cat spawner
+  id: CP14SpawnMobCatRandomColored
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobCatRandomColored
+
+- type: entity
+  name: cat spawner
+  id: CP14SpawnMobCatRandomColoredWithSpots
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored, Spotted"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobCatRandomColoredWithSpots
+
 # Dino
 
 - type: entity

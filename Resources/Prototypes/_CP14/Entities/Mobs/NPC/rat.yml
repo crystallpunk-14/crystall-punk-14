@@ -10,7 +10,7 @@
       task: RuminantHostileCompound
   - type: NpcFactionMember
     factions:
-    - CP14PeacefulAnimals
+    - CP14Rodent
   - type: NPCRetaliation
     attackMemoryLength: 20
   - type: Sprite

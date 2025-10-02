@@ -63,3 +63,62 @@
           Quantity: 6
   - type: Temperature
     currentTemperature: 250
+
+- type: entity
+  id: CP14FoodSnailShell
+  parent: FoodInjectableBase
+  categories: [ ForkFiltered ]
+  name: shell
+  description: A snail shell with a dead snail inside.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/shell.rsi
+    layers:
+      - state: shell
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006
+  - type: CP14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: CP14FoodSnailShellCooked
+
+- type: entity
+  id: CP14FoodSnailShellCooked
+  parent: 
+  - FoodInjectableBase
+  - CP14BurnsAsh
+  categories: [ ForkFiltered ]
+  name: cooked snail
+  description: Fried shells with snails in their own juice. Excellent.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    sprite: _CP14/Objects/Consumable/Food/shell.rsi
+    layers:
+      - state: cooked_snail
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Protein
+          Quantity: 3

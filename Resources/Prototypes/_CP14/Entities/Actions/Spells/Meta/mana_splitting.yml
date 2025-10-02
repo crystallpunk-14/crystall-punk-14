@@ -12,6 +12,7 @@
     delay: 1
     repeat: true
     breakOnMove: true
+    breakOnDamage: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneMagicSplitting
   - type: Action

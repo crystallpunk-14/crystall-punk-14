@@ -8,7 +8,7 @@
     stamina: 20
   - type: DoAfterArgs
     delay: 2.5
-    distanceThreshold: 1.5
+    distanceThreshold: 2.5
     breakOnDamage: true
   - type: CP14ActionEmoting
     startEmote: cp14-kick-lurker-start
