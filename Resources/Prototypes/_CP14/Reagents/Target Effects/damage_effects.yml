@@ -30,10 +30,21 @@
     entity: CP14Fire
   physicalDesc: cp14-reagent-physical-desc-sparkling
   worksOnTheDead: true
+  reactiveEffects:
+    Flammable:
+      methods: [Touch]
+      effects:
+        - !type:FlammableReaction
+          multiplier: 0.6
+        - !type:Ignite
   metabolisms:
-    Medicine:
+    Poison:
       metabolismRate: 0.05
       effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 1.5
       - !type:FlammableReaction
         multiplier: 1.5
       - !type:AdjustTemperature

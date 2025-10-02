@@ -140,6 +140,40 @@
     - CP14MobSnail
 
 - type: entity
+  name: cat spawner
+  id: CP14SpawnMobCatRandomColored
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green  
+    - sprite: _CP14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobCatRandomColored
+
+- type: entity
+  name: cat spawner
+  id: CP14SpawnMobCatRandomColoredWithSpots
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored, Spotted"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _CP14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - CP14MobCatRandomColoredWithSpots
+
+- type: entity
   name: chicken spawner
   id: CP14SpawnMobChicken
   parent: MarkerBase

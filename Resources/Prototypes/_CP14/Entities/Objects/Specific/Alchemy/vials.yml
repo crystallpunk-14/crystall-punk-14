@@ -53,7 +53,7 @@
     - 1
     - 5
     - 10
-    currentTransferAmount: 1
+    currentTransferAmount: 5
     toggleState: 1 # draw
   - type: Tag
     tags:
