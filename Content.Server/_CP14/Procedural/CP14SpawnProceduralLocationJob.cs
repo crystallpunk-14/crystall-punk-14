@@ -82,15 +82,15 @@ public sealed class CP14SpawnProceduralLocationJob(
 
         map.SetPaused(mapId, false);
 
+        //Add map components
+        entManager.AddComponents(MapUid, locationConfig.Components);
+
         //Spawn modified config
         await WaitAsyncTask(dungeon.GenerateDungeonAsync(dungeonConfig,
             MapUid,
             gridComp,
             position,
             seed));
-
-        //Add map components
-        entManager.AddComponents(MapUid, locationConfig.Components);
 
         return true;
     }

@@ -21,11 +21,10 @@
     Narcotic:
       metabolismRate: 0.05
       effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
-        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 25
+        type: Add
         refresh: false
   pricePerUnit: 0.5  # Purely decorative effect
 

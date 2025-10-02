@@ -19,6 +19,8 @@
   - CP14Monster
   - CP14Slimes
   - CP14Fishies
+  - CP14Cat
+  - CP14Rodent
 
 - type: npcFaction
   id: CP14Undead
@@ -28,12 +30,23 @@
   - CP14PeacefulAnimals
   - CP14AggressiveAnimals
   - CP14Fishies
+  - CP14Cat
+  - CP14Rodent
 
 - type: npcFaction
   id: CP14PeacefulAnimals
 
 - type: npcFaction
   id: CP14Neutrals
+
+- type: npcFaction
+  id: CP14Cat
+  hostile:
+    - CP14Rodent
+    - CP14Fishies
+
+- type: npcFaction
+  id: CP14Rodent
 
 - type: npcFaction
   id: CP14AggressiveAnimals
@@ -45,6 +58,8 @@
   - CP14Slimes
   - CP14HostileEveryone
   - CP14Fishies
+  - CP14Cat
+  - CP14Rodent
 
 - type: npcFaction
   id: CP14Monster
@@ -53,6 +68,8 @@
   - CP14HostileEveryone
   - CP14AggressiveAnimals
   - CP14PeacefulAnimals
+  - CP14Cat
+  - CP14Rodent
 
 - type: npcFaction
   id: CP14Insects
@@ -69,6 +86,8 @@
   - CP14HostileEveryone
   - CP14PeacefulAnimals
   - CP14AggressiveAnimals
+  - CP14Cat
+  - CP14Rodent
 
 - type: npcFaction
   id: CP14Fishies

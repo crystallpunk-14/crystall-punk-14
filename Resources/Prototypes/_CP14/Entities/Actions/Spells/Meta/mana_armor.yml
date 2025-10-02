@@ -10,6 +10,7 @@
     manaCost: 15
   - type: DoAfterArgs
     delay: 1.0
+    breakOnDamage: true
   - type: CP14ActionDoAfterVisuals
     proto: CP14RuneManaTrance
   - type: Action
