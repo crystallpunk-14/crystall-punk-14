@@ -35,7 +35,7 @@
       methods: [Touch]
       effects:
         - !type:FlammableReaction
-          multiplier: 0.1
+          multiplier: 0.6
         - !type:Ignite
   metabolisms:
     Poison:
