@@ -54,8 +54,10 @@
   cost: -1
   components:
     - type: Narcolepsy
-      timeBetweenIncidents: 300, 600
-      durationOfIncident: 10, 30
+      maxTimeBetweenIncidents: 600
+      minTimeBetweenIncidents: 300
+      maxDurationOfIncident: 30
+      minDurationOfIncident: 10
 
 - type: trait
   id: CP14Muted
