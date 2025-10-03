@@ -46,7 +46,8 @@
         type: TransferAmountBoundUserInterface
   - type: Spillable
     solution: mug
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: mug
   - type: Appearance
   - type: Injector

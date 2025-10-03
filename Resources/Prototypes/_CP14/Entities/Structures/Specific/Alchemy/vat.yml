@@ -71,7 +71,8 @@
     solution: vat
   - type: CP14WeatherRefillable
     solution: vat
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: vat
   - type: Anchorable
 

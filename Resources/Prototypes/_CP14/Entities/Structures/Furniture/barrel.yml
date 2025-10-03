@@ -12,7 +12,8 @@
     solution: barrel
   - type: DrawableSolution
     solution: barrel
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: barrel
 
 - type: entity

@@ -23,7 +23,8 @@
           Quantity: 9999999
   - type: DrainableSolution
     solution: pool
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: pool
 
 - type: entity
