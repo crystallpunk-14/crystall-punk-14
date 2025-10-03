@@ -8,7 +8,6 @@
   - type: Edible
     edible: Drink
     solution: bucket
-    ignoreEmpty: true
   - type: Sprite
     sprite: _CP14/Objects/Tools/wooden_bucket.rsi
     layers:
