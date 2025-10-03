@@ -39,3 +39,28 @@
   - type: CP14MagicEnergyContainer
     energy: 0
 
+- type: entity
+  id: CP14EnergyCrystalHeart
+  parent: CP14EnergyCrystalBase
+  name: crystal heart
+  description: The crystalline heart of the skeleton mage, the core of its power and development.
+  suffix: Heart. Artifact
+  components:
+  - type: Sprite
+    layers:
+      - state: crystal_heart
+  - type: Item
+    size: Small
+  - type: CP14MagicEnergyContainer
+    energy: 50
+    maxEnergy: 200
+  - type: CP14MagicEnergyDraw
+    energy: 1
+    delay: 25
+  - type: CP14SpellStorageAccessHolding
+  - type: CP14SpellStorage
+    spells:
+    - CP14ActionSpellManaGift
+    - CP14ActionSpellManaConsume
+  - type: StaticPrice
+    price: 10
