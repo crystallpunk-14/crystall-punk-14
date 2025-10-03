@@ -19,7 +19,7 @@
     locked: true
 
 - type: entity
-  parent: CP14WoodenDoor
+  parent: CP14WoodenDoorAdventureGuild
   id: CP14WoodenDoorAdventureGuildOpen
   suffix: Adventure guild Open
   components:
