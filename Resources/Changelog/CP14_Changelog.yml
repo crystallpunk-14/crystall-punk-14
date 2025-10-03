@@ -2344,3 +2344,14 @@
   id: 8283
   time: '2025-10-02T10:24:58.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1815
+- author: Viator-MV
+  changes:
+  - message: Comoss and Venicialis fort, maps now have distant fog at the end of paths
+      heading out of town (round leave).
+    type: Tweak
+  - message: Comoss and Venicialis fort, guild buildings have their external doors
+      able to be locked now by guild workers.
+    type: Tweak
+  id: 8284
+  time: '2025-10-03T17:47:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1821
