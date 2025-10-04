@@ -25,7 +25,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly InputSystem _input = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly HandsSystem _handsSystem = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
@@ -44,7 +44,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!_gameTiming.IsFirstTimePredicted)
             return;
 
-        var heldUid = _handsSystem.GetActiveHandEntity();
+        var heldUid = _hands.GetActiveHandEntity();
 
         if (!TryComp<CP14FishingRodComponent>(heldUid, out var fishingRodComponent))
             return;
@@ -63,18 +63,21 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
 
         var reelKey = _input.CmdStates.GetState(CP14ContentKeyFunctions.CP14FishingAction) == BoundKeyState.Down;
 
-        if (!TryComp<CombatModeComponent>(player, out var combatMode) ||
-            !combatMode.IsInCombatMode)
-            reelKey = false;
-
         if (fishingRodComponent.Reeling == reelKey)
             return;
 
+        fishingRodComponent.Reeling = reelKey;
         RaiseNetworkEvent(new FishingReelKeyMessage(reelKey));
     }
 
     private void UpdateUserInterface(CP14FishingRodComponent fishingRodComponent)
     {
+        if (_fishingPopup is null)
+            return;
+
+        if (_fishingPopup.Visible == false)
+            return;
+
         var fish = fishingRodComponent.CaughtFish;
 
         if (fish is null)
