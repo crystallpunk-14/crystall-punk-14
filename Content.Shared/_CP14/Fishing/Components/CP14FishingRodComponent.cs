@@ -6,7 +6,7 @@ namespace Content.Shared._CP14.Fishing.Components;
 /// <summary>
 /// Allows to fish with this item
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), AutoGenerateComponentPause]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true, true), AutoGenerateComponentPause]
 public sealed partial class CP14FishingRodComponent : Component
 {
     // Vars

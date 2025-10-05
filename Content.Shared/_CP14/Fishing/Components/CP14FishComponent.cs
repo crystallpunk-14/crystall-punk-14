@@ -20,8 +20,8 @@ public sealed partial class CP14FishComponent : Component
     public Vector2 FishPosAndDestination;
 
     [DataField]
-    public double MinAwaitTime = 1;
+    public double MinAwaitTime = 5;
 
     [DataField]
-    public double MaxAwaitTime = 4;
+    public double MaxAwaitTime = 10;
 }

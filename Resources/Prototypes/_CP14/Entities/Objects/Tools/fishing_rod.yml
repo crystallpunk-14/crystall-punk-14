@@ -44,6 +44,10 @@
     slots:
     - neck
   - type: CP14FishingRod
+  - type: UserInterface
+    interfaces:
+      enum.CP14FishingUiKey.Key:
+        type: CP14FishingBoundUserInterface
 
 - type: entity
   parent: BaseItem

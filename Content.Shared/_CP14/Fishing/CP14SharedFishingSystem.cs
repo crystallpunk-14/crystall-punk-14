@@ -6,6 +6,8 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Throwing;
+using Robust.Client.GameObjects;
+using Robust.Client.UserInterface;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -26,6 +28,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -41,7 +44,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
         SubscribeLocalEvent<CP14FishingRodComponent, AfterInteractEvent>(OnInteract);
         SubscribeLocalEvent<CP14FishingRodComponent, DroppedEvent>(OnDropEvent);
-        SubscribeNetworkEvent<FishingReelKeyMessage>(OnReelingMessage);
+        SubscribeNetworkEvent<CP14FishingReelKeyMessage>(OnReelingMessage);
     }
 
     public override void Update(float frameTime)
@@ -65,6 +68,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
     private void UpdatePositions(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
+        if (_netManager.IsClient && _gameTiming.IsFirstTimePredicted)
+            return;
+
         if (fishingRodComponent.CaughtFish is null)
             return;
 
@@ -158,8 +164,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         {
             fishingRodComponent.FishHooked = true;
 
-            var user = fishingRodComponent.User;
-            RaiseLocalEvent(user!.Value, new FishingUIStatus(true, fishingRodComponent));
+            _userInterface.OpenUi(fishingRod, CP14FishingUiKey.Key);
 
             DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.FishHooked));
             return;
@@ -176,6 +181,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
     private void TryToCatchFish(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
         if (!_netManager.IsServer)
+            return;
+
+        if (fishingRodComponent.CaughtFish is not null)
             return;
 
         if (curTime < fishingRodComponent.FishingTime)
@@ -226,29 +234,33 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(fish, fishComponent, nameof(CP14FishComponent.FishGetAwayTime));
     }
 
-    private void RevalidateFishing(EntityUid fishingRod, CP14FishingRodComponent component)
+    private void RevalidateFishing(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent)
     {
-        if (component.FishingFloat is null)
+        if (fishingRodComponent.FishingFloat is null)
             return;
 
-        if (_transform.InRange(fishingRod, component.FishingFloat.Value, component.MaxFishingDistance * 1.5f))
+        if (_transform.InRange(fishingRod, fishingRodComponent.FishingFloat.Value, fishingRodComponent.MaxFishingDistance * 1.5f))
             return;
 
-        PredictedDel(component.FishingFloat);
+        PredictedDel(fishingRodComponent.FishingFloat);
 
-        component.FishingFloat =  null;
-        component.Target = null;
-        component.User = null;
+        fishingRodComponent.FishHooked =  false;
+        fishingRodComponent.CaughtFish =  null;
+        fishingRodComponent.FishingFloat =  null;
+        fishingRodComponent.Target = null;
+        fishingRodComponent.User = null;
 
         DirtyFields(fishingRod,
-            component,
+            fishingRodComponent,
             null,
             nameof(CP14FishingRodComponent.FishingFloat),
             nameof(CP14FishingRodComponent.Target),
-            nameof(CP14FishingRodComponent.User));
+            nameof(CP14FishingRodComponent.User),
+            nameof(CP14FishingRodComponent.CaughtFish),
+            nameof(CP14FishingRodComponent.FishHooked));
     }
 
-    private void OnReelingMessage(FishingReelKeyMessage msg, EntitySessionEventArgs args)
+    private void OnReelingMessage(CP14FishingReelKeyMessage msg, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
@@ -261,7 +273,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(activeItem.Value, fishingRodComponent, nameof(CP14FishingRodComponent.Reeling));
     }
 
-    private void OnInteract(EntityUid uid, CP14FishingRodComponent component, AfterInteractEvent args)
+    private void OnInteract(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, AfterInteractEvent args)
     {
         if (args.Handled)
             return;
@@ -269,50 +281,48 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         if (args.Target is not { Valid: true })
             return;
 
-        if (component.FishingFloat is not null)
+        if (fishingRodComponent.FishingFloat is not null)
             return;
 
         if (!TryComp<CP14FishingPondComponent>(args.Target, out _))
             return;
 
-        if (!_interaction.InRangeUnobstructed(uid, args.Target.Value, component.MaxFishingDistance))
+        if (!_interaction.InRangeUnobstructed(fishingRod, args.Target.Value, fishingRodComponent.MaxFishingDistance))
             return;
 
         args.Handled = true;
 
-        component.FishingTime = _gameTiming.CurTime;
-        component.FishingTime += TimeSpan.FromSeconds(_random.NextDouble(component.MinAwaitTime, component.MaxAwaitTime));
-        component.User = args.User;
+        fishingRodComponent.FishingTime = _gameTiming.CurTime;
+        fishingRodComponent.FishingTime += TimeSpan.FromSeconds(_random.NextDouble(fishingRodComponent.MinAwaitTime, fishingRodComponent.MaxAwaitTime));
+        fishingRodComponent.User = args.User;
 
-        DirtyFields(uid, component, null, nameof(CP14FishingRodComponent.FishingTime), nameof(CP14FishingRodComponent.User));
+        DirtyFields(fishingRod, fishingRodComponent, null, nameof(CP14FishingRodComponent.FishingTime), nameof(CP14FishingRodComponent.User));
 
-        CastFloat(args.Used, component, args.Target.Value);
+        CastFloat(fishingRod, fishingRodComponent, args.Target.Value);
     }
 
-    private void OnDropEvent(EntityUid entity, CP14FishingRodComponent component, DroppedEvent ev)
+    private void OnDropEvent(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, DroppedEvent ev)
     {
-        component.User = null;
-        DirtyField(entity, component, nameof(CP14FishingRodComponent.User));
+        fishingRodComponent.User = null;
+        DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.User));
     }
 
-    private void CastFloat(EntityUid uid, CP14FishingRodComponent component, EntityUid target)
+    private void CastFloat(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, EntityUid fishingPond)
     {
-        var rodCoords = Transform(uid).Coordinates;
-        var targetCoords = Transform(target).Coordinates;
+        var rodCoords = Transform(fishingRod).Coordinates;
+        var targetCoords = Transform(fishingPond).Coordinates;
 
-        var fishingFloat = PredictedSpawnAtPosition(component.FloatPrototype, rodCoords);
+        var fishingFloat = PredictedSpawnAtPosition(fishingRodComponent.FloatPrototype, rodCoords);
 
-        component.FishingFloat = fishingFloat;
-        component.Target = target;
-        component.User = uid;
-        DirtyFields(uid,
-            component,
+        fishingRodComponent.FishingFloat = fishingFloat;
+        fishingRodComponent.Target = fishingPond;
+        DirtyFields(fishingRod,
+            fishingRodComponent,
             null,
             nameof(CP14FishingRodComponent.FishingFloat),
-            nameof(CP14FishingRodComponent.Target),
-            nameof(CP14FishingRodComponent.User));
+            nameof(CP14FishingRodComponent.Target));
 
-        _throwing.TryThrow(fishingFloat, targetCoords, component.ThrowPower, recoil: false, doSpin: false);
+        _throwing.TryThrow(fishingFloat, targetCoords, fishingRodComponent.ThrowPower, recoil: false, doSpin: false);
     }
 
     private void EnsurePausedMap()
@@ -327,29 +337,5 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         _meta.SetEntityName(mapUid, Loc.GetString("fishing-paused-map-name"));
         _mapId = newMapId;
         _map.SetPaused(mapUid, true);
-    }
-
-    [Serializable, NetSerializable]
-    public sealed class FishingReelKeyMessage : EntityEventArgs
-    {
-        public bool Reeling { get; }
-
-        public FishingReelKeyMessage(bool reeling)
-        {
-            Reeling = reeling;
-        }
-    }
-
-    public sealed class FishingUIStatus : EntityEventArgs
-    {
-        public bool UIStatus { get; }
-
-        public CP14FishingRodComponent Component { get; }
-
-        public FishingUIStatus(bool uiStatus, CP14FishingRodComponent component)
-        {
-            UIStatus = uiStatus;
-            Component = component;
-        }
     }
 }
