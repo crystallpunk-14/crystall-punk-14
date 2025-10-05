@@ -52,14 +52,12 @@
   - CP14Adventurers
   - CP14HostileEveryone
   - CP14AggressiveAnimals
-  - CP14PeacefulAnimals
 
 - type: npcFaction
   id: CP14Insects
   hostile:
   - CP14Adventurers
   - CP14AggressiveAnimals
-  - CP14PeacefulAnimals
   - CP14Fishies
 
 - type: npcFaction
@@ -67,7 +65,6 @@
   hostile:
   - CP14Adventurers
   - CP14HostileEveryone
-  - CP14PeacefulAnimals
   - CP14AggressiveAnimals
 
 - type: npcFaction
@@ -75,7 +72,6 @@
   hostile:
   - CP14Adventurers
   - CP14HostileEveryone
-  - CP14PeacefulAnimals
   - CP14AggressiveAnimals
   - CP14Insects
   - CP14Undead

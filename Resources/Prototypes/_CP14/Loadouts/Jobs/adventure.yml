@@ -43,7 +43,7 @@
   id: CP14WeaponSkimitarIron
   dummyEntity: CP14WeaponSkimitarIron
   equipment:
-    neck: CP14WeaponShieldBuckler
+    neck: CP14WeaponSkimitarIron
   inhand:
     - CP14WeaponSkimitarIron
 
