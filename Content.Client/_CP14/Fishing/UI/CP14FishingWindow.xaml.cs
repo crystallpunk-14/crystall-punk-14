@@ -22,6 +22,8 @@ public sealed partial class CP14FishingWindow : BaseWindow
 
     public void InitVisuals(CP14FishingRodComponent component)
     {
+        FishingWindow.Visible = false;
+
         // Getting data
         if (!_prototypeManager.Resolve(component.FishingMinigame, out var minigameStyle))
             return;
@@ -65,6 +67,8 @@ public sealed partial class CP14FishingWindow : BaseWindow
         {
             Texture = fishTexture,
         };
+
+        FishingWindow.Visible = true;
     }
 }
 

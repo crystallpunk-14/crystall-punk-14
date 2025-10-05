@@ -28,8 +28,8 @@ public abstract class CP14SharedFishingSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -68,7 +68,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
     private void UpdatePositions(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
-        if (_netManager.IsClient && _gameTiming.IsFirstTimePredicted)
+        if (_netManager.IsClient && !_gameTiming.IsFirstTimePredicted)
             return;
 
         if (fishingRodComponent.CaughtFish is null)
@@ -164,7 +164,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         {
             fishingRodComponent.FishHooked = true;
 
-            _userInterface.OpenUi(fishingRod, CP14FishingUiKey.Key);
+            _userInterface.TryOpenUi(fishingRod, CP14FishingUiKey.Key, fishingRodComponent.User!.Value);
 
             DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.FishHooked));
             return;

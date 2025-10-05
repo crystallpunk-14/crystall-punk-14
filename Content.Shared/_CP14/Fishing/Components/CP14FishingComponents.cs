@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.Fishing
+namespace Content.Shared._CP14.Fishing.Components
 {
     [Serializable, NetSerializable]
     public enum CP14FishingUiKey : byte
