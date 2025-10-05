@@ -1,7 +1,7 @@
 - type: entity
   id: CP14ActionSpellVampireHypnosys
   parent: CP14ActionSpellBase
-  name: Hypnosys
+  name: Hypnosis
   description: You focus on the target, mesmerizing and lulling it to sleep.
   components:
   - type: CP14ActionDoAfterSlowdown
