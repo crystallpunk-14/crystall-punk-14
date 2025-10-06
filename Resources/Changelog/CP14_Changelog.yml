@@ -2306,3 +2306,52 @@
   id: 8278
   time: '2025-09-28T20:53:15.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1811
+- author: TTTomaTTT, oldschool_otaku
+  changes:
+  - message: Added custom burning sprites
+    type: Add
+  id: 8279
+  time: '2025-09-30T12:02:49.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1813
+- author: Nimfar11
+  changes:
+  - message: Adds snails and their shells as an appetiser. Be careful when hitting
+      them, they are very fragile.
+    type: Add
+  id: 8280
+  time: '2025-09-30T16:27:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1753
+- author: oldschool_otaku
+  changes:
+  - message: Hallucinogenic solution is fixed
+    type: Fix
+  id: 8281
+  time: '2025-10-01T11:36:06.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1764
+- author: oldschool_otaku
+  changes:
+  - message: Added cats!
+    type: Add
+  id: 8282
+  time: '2025-10-01T14:44:09.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1814
+- author: kin98
+  changes:
+  - message: Incendiary solution Ignites characters on hit
+    type: Add
+  - message: incendiary solution now does 1.5 heat.
+    type: Tweak
+  id: 8283
+  time: '2025-10-02T10:24:58.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1815
+- author: Viator-MV
+  changes:
+  - message: Comoss and Venicialis fort, maps now have distant fog at the end of paths
+      heading out of town (round leave).
+    type: Tweak
+  - message: Comoss and Venicialis fort, guild buildings have their external doors
+      able to be locked now by guild workers.
+    type: Tweak
+  id: 8284
+  time: '2025-10-03T17:47:24.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1821

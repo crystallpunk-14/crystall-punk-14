@@ -12,3 +12,9 @@ cp14-ghost-role-information-description-rat = An honorable rat. Relieve tavernke
 
 cp14-ghost-role-information-name-bone-hound = Bone hound
 cp14-ghost-role-information-description-bone-hound = A bone hound created by necromantic magic, usually summoned by skeleton mages to form a pack of hunters. Obeys the skeleton that summoned it.
+
+cp14-ghost-role-information-name-snail = Snail
+cp14-ghost-role-information-description-snail = Surviving is already an achievement.
+
+cp14-ghost-role-information-cat-name = Cat
+cp14-ghost-role-information-cat-description = You're the fluffiest thing in the world. Hunt the mice/rats, be cute or stick with some adventurers!
