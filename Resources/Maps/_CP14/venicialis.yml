@@ -69,12 +69,16 @@ entities:
       id: Venicialis
     - type: CP14WeatherController
       entries:
-      - weight: 3
-        visuals: null
+      - visuals: null
+        weight: 3
       - visuals: CP14Mist
-      - weight: 2
-        visuals: CP14SnowLight
+      - visuals: CP14SnowLight
+        weight: 2
       - visuals: CP14SnowMedium
+      - visuals: CP14SnowHeavy
+        weight: 0.5
+      - visuals: CP14SnowHeavyWithStorm
+        weight: 0.25
     - type: LightCycle
     - type: SunShadow
     - type: SunShadowCycle

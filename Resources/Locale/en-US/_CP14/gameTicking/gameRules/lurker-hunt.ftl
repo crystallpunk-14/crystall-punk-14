@@ -1,0 +1,3 @@
+cp14-lurker-briefing = In the past, you made a pact with Darkness for power and influence. Now it demands its payment. You must reap the harvest from those chosen by Lady Darkness. Use your Lurker form, to turn pitiful mortals into obedient servants of darkness.
+cp14-lurker-victim-briefing = Shadows gather around you. Whispers call your name in the darkness. Dark entities are out hunting, and you are their prey. What has attracted their attention, that Darkness itself reaches out to embrace you?
+cp14-lurker-hunter-briefing = Your duty as a servant of Merkas has brought you to these lands, where Darkness has set its sights on mortals. Protect the people by destroying the cursed creatures lurking in the darkness.
