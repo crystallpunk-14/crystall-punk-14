@@ -436,8 +436,8 @@
   - !type:CP14OreDunGen
     entity: CP14MobSpiderBlackHunter
     count: 12
-    minGroupSize: 2
-    maxGroupSize: 5
+    minGroupSize: 4
+    maxGroupSize: 7
   - !type:CP14OreDunGen
     entity: CP14WebCocoon
     count: 15
