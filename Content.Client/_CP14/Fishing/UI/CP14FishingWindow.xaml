@@ -1,0 +1,11 @@
+<!-- Empty fishing popup -->
+<fishingWindow:CP14FishingWindow
+    xmlns="https://spacestation14.io"
+    xmlns:fishingWindow="clr-namespace:Content.Client._CP14.Fishing.UI"
+    Name="FishingWindow">
+    <PanelContainer Name="FishingBackground">
+        <PanelContainer Name="Progressbar" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
+        <PanelContainer Name="Float" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
+        <PanelContainer Name="FishIcon" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
+    </PanelContainer>
+</fishingWindow:CP14FishingWindow>
