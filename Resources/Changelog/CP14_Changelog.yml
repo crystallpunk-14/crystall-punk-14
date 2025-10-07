@@ -2355,3 +2355,21 @@
   id: 8284
   time: '2025-10-03T17:47:24.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1821
+- author: KittyCat432
+  changes:
+  - message: hypnosis and fear (lurker) spells have a shorter use time, to compensate
+      for the increase to mana cost on hypnosis its been cut in half.
+    type: Tweak
+  - message: Spider's nest now includes more spiders
+    type: Tweak
+  - message: The scimitar loadout option now spawns with 2 scimitars instead of 1
+      and a buckler.
+    type: Tweak
+  - message: Peaceful mobs (sheep, rabbits, boars, etc.) will nolonger be attacked
+      by monsters.
+    type: Tweak
+  - message: Skeleton and bone hound now have passive health regen.
+    type: Tweak
+  id: 8285
+  time: '2025-10-07T09:14:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1825
