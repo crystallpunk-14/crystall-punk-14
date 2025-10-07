@@ -40,7 +40,8 @@
     solution: vat
   - type: SolutionItemStatus
     solution: vat
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: vat
   - type: Injector
     solutionName: vat
@@ -137,7 +138,8 @@
     solution: mortar
   - type: SolutionItemStatus
     solution: mortar
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: mortar
   - type: Injector
     solutionName: mortar

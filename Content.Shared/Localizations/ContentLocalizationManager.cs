@@ -30,7 +30,7 @@ namespace Content.Shared.Localizations
             //CP14 Boilerplate! Should be deleted when https://github.com/space-wizards/space-station-14/pull/34404 is merged
             _loc.Initialize();
             //CP14 Boilerplate end
-            
+
             _loc.LoadCulture(culture);
 
             /*
@@ -64,6 +64,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
 
             _loc.AddFunction(culture, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
 
@@ -151,7 +152,7 @@ namespace Content.Shared.Localizations
                 <= 0 => string.Empty,
                 1 => list[0],
                 2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(" or ", list)}"
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, or {list[^1]}"
             };
         }
 
