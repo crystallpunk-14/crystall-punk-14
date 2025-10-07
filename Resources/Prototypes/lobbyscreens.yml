@@ -26,3 +26,7 @@
 - type: lobbyBackground
   id: Carcatoro
   background: /Textures/_CP14/LobbyScreens/carcatoro.webp
+
+- type: lobbyBackground
+  id: TeaTime
+  background: /Textures/_CP14/LobbyScreens/tea_time.webp
