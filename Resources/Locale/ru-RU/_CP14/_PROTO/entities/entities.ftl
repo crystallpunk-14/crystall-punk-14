@@ -6152,3 +6152,23 @@ ent-CP14WindowFrameWooden = деревянная оконная рама
 ent-CP14WindowWoodenBroken = разбитое деревянное окно
     .desc = { ent-CP14BaseWindowFrameBroken.desc }
 
+ent-CP14HalloweenPumpkin = страшная тыква
+    .desc = Когда-то это была обычная тыква... А теперь это страшная тыква!
+
+ent-CP14HalloweenPumpkinEmmisiveBase = тыквенный фонарь
+    .desc = Ууууу! Страшная!
+
+ent-CP14JackOLanternVariant1 = { ent-CP14HalloweenPumpkinEmmisiveBase }
+    .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
+
+ent-CP14JackOLanternVariant2 = { ent-CP14HalloweenPumpkinEmmisiveBase }
+    .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
+
+ent-CP14JackOLanternVariant3 = { ent-CP14HalloweenPumpkinEmmisiveBase }
+    .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
+
+ent-CP14JackOLanternVariant4 = { ent-CP14HalloweenPumpkinEmmisiveBase }
+    .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
+
+ent-CP14JackOLantern = спавнер тыквенного фонаря
+    .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
