@@ -67,7 +67,6 @@
   - CP14Adventurers
   - CP14HostileEveryone
   - CP14AggressiveAnimals
-  - CP14PeacefulAnimals
   - CP14Cat
   - CP14Rodent
 
@@ -76,7 +75,6 @@
   hostile:
   - CP14Adventurers
   - CP14AggressiveAnimals
-  - CP14PeacefulAnimals
   - CP14Fishies
 
 - type: npcFaction
@@ -84,7 +82,6 @@
   hostile:
   - CP14Adventurers
   - CP14HostileEveryone
-  - CP14PeacefulAnimals
   - CP14AggressiveAnimals
   - CP14Cat
   - CP14Rodent
@@ -94,7 +91,6 @@
   hostile:
   - CP14Adventurers
   - CP14HostileEveryone
-  - CP14PeacefulAnimals
   - CP14AggressiveAnimals
   - CP14Insects
   - CP14Undead
