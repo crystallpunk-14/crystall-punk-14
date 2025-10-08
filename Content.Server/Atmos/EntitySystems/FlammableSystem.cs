@@ -360,9 +360,9 @@ namespace Content.Server.Atmos.EntitySystems
             if (flammable.FireStacks > 0 && !flammable.OnFire)
             {
                 if (ignitionSourceUser != null)
-                    _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSourceUser.Value):actor} with {ToPrettyString(ignitionSource):tool}");
+                    _adminLogger.Add(LogType.Flammable, LogImpact.Extreme, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSourceUser.Value):actor} with {ToPrettyString(ignitionSource):tool}");
                 else
-                    _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
+                    _adminLogger.Add(LogType.Flammable, LogImpact.Extreme, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
                 flammable.OnFire = true;
 
                 var extinguished = new IgnitedEvent();
