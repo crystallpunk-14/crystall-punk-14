@@ -60,7 +60,14 @@ public sealed partial class CP14FireSpreadSystem : CP14SharedFireSpreadSystem
         if (args.Cancelled || args.Handled)
             return;
 
-        _flammable.AdjustFireStacks(ent, ent.Comp.FirestacksOnIgnite, ent.Comp, true);
+        _flammable.AdjustFireStacks(ent, ent.Comp.FirestacksOnIgnite);
+
+        if (args.Used is EntityUid ignitionSource)
+            // Used a Entity for ignition
+            _flammable.Ignite(ent, ignitionSource, ent.Comp, args.User);
+        else
+            // Did not use a Entity for ignition
+            _flammable.Ignite(ent, args.User, ent.Comp);
 
         args.Handled = true;
     }
