@@ -359,10 +359,13 @@ namespace Content.Server.Atmos.EntitySystems
 
             if (flammable.FireStacks > 0 && !flammable.OnFire)
             {
+                //CrystalEdge - ignition admin alarming
+                //Raised LogImpact to Extreme
                 if (ignitionSourceUser != null)
                     _adminLogger.Add(LogType.Flammable, LogImpact.Extreme, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSourceUser.Value):actor} with {ToPrettyString(ignitionSource):tool}");
                 else
                     _adminLogger.Add(LogType.Flammable, LogImpact.Extreme, $"{ToPrettyString(uid):target} set on fire by {ToPrettyString(ignitionSource):actor}");
+                //CrystalEdge end
                 flammable.OnFire = true;
 
                 var extinguished = new IgnitedEvent();
@@ -464,16 +467,16 @@ namespace Content.Server.Atmos.EntitySystems
 
                 if (flammable.FireStacks > 0)
                 {
-/* CP14 Airtight walls should burn too!
-                    var air = _atmosphereSystem.GetContainingMixture(uid);
+                    /* CP14 Airtight walls should burn too!
+                                        var air = _atmosphereSystem.GetContainingMixture(uid);
 
-                    // If we're in an oxygenless environment, put the fire out.
-                    if (air == null || air.GetMoles(Gas.Oxygen) < 1f)
-                    {
-                        Extinguish(uid, flammable);
-                        continue;
-                    }
-*/
+                                        // If we're in an oxygenless environment, put the fire out.
+                                        if (air == null || air.GetMoles(Gas.Oxygen) < 1f)
+                                        {
+                                            Extinguish(uid, flammable);
+                                            continue;
+                                        }
+                    */
                     var source = EnsureComp<IgnitionSourceComponent>(uid);
                     _ignitionSourceSystem.SetIgnited((uid, source));
 
