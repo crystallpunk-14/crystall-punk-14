@@ -2373,3 +2373,11 @@
   id: 8285
   time: '2025-10-07T09:14:44.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1825
+- author: oldschool_otaku
+  changes:
+  - message: Solution cleaner works faster now(1.6x if to be precise), but uses more
+      mana.
+    type: Tweak
+  id: 8286
+  time: '2025-10-12T11:55:15.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1827
