@@ -27,6 +27,10 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
+
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnApplied);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnRemoved);
+
     }
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
@@ -147,7 +151,37 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
 
         Dirty(ent, markerComp);
     }
+
+    private void OnApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        if (!ent.Comp.Overlay)
+            return;
+
+        if (TryComp<EyeComponent>(ent.Owner, out var comp))
+        {
+            var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
+
+            // Apply the visibility mask if it's not already present
+            if ((comp.VisibilityMask & appliedMask) == 0)
+                comp.VisibilityMask |= appliedMask;
+        }
+
+    }
+
+    private void OnRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        if (TryComp<EyeComponent>(ent.Owner, out var comp))
+        {
+            var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
+
+            // Removes the visibility mask if it's present
+            if ((comp.VisibilityMask & appliedMask) != 0)
+                comp.VisibilityMask ^= appliedMask;
+        }
+    }
+
 }
+
 
 public sealed partial class CP14MagicVisionToggleActionEvent : InstantActionEvent
 {
