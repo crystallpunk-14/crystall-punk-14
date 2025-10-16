@@ -23,7 +23,6 @@
     slots:
     - HEAD
 
-# The reason, why i don't make a child from CP14FoodPumpkin is simple - CP14FoodPumpkin has a randomsprite, which is copied to this base prototype
 - type: entity
   parent: FoodInjectableBase
   id: CP14HalloweenPumpkinEmmisiveBase
@@ -77,8 +76,6 @@
         shader: unshaded
       - state: light-base1
         shader: shaded
-      # This is needed to make pumpkin's face to have that emmisive light from the head.
-      # Refer to ClothingOuterVestHazard for more details about it
 
 - type: entity
   parent: CP14HalloweenPumpkinEmmisiveBase
