@@ -10,7 +10,6 @@ namespace Content.Shared._CP14.StatusEffect;
 
 public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
 {
-
     /// <summary>
     /// List of Effects that will be applied
     /// </summary>

@@ -10,7 +10,6 @@ namespace Content.Server._CP14.MagicVision;
 [RegisterComponent]
 public sealed partial class CP14MagicVisionStatusEffectComponent : Component
 {
-
     /// <summary>
     /// VisionMask to see Magic Vision layer
     /// </summary>
