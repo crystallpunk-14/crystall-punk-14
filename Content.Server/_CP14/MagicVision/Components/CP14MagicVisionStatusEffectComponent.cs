@@ -10,11 +10,6 @@ namespace Content.Server._CP14.MagicVision;
 [RegisterComponent]
 public sealed partial class CP14MagicVisionStatusEffectComponent : Component
 {
-    /// <summary>
-    /// Enables or disables Magic Vision Overlay
-    /// </summary>
-    [DataField]
-    public bool Overlay = true;
 
     /// <summary>
     /// VisionMask to see Magic Vision layer
