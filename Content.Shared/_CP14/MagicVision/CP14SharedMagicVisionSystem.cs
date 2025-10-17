@@ -27,7 +27,6 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
-
     }
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
@@ -148,10 +147,7 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
 
         Dirty(ent, markerComp);
     }
-
-
 }
-
 
 public sealed partial class CP14MagicVisionToggleActionEvent : InstantActionEvent
 {
