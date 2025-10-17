@@ -1,0 +1,7 @@
+- type: entity
+  id: CP14MagicVisionStatusEffect
+  name: Magical vision status Effect
+  components:
+    - type: StatusEffect
+    - type: CP14MagicVisionStatusEffect
+

@@ -1,5 +1,4 @@
 using Content.Shared._CP14.MagicVision;
-using Content.Shared.Eye;
 using Robust.Shared.Timing;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
@@ -11,7 +10,9 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedEyeSystem _eye = default!;
+    [Dependency] private readonly StatusEffectsSystem _status = default!;
 
+    private static EntProtoId _magicalVisionId = "CP14MagicVisionStatusEffect";
 
     public override void Initialize()
     {
@@ -28,21 +29,20 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnGetVisMask(Entity<CP14MagicVisionStatusEffectComponent> ent, ref GetVisMaskEvent args)
     {
-        if (ent.Comp.Overlay)
-            args.VisibilityMask |= (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
+        var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
+
+        args.VisibilityMask |= appliedMask;
     }
 
     private void OnMagicVisionToggle(Entity<MetaDataComponent> ent, ref CP14MagicVisionToggleActionEvent args)
     {
-        if (!HasComp<CP14MagicVisionStatusEffectComponent>(ent))
-        {
-            AddComp<CP14MagicVisionStatusEffectComponent>(ent);
-        }
+        if (!_status.CanAddStatusEffect(ent, _magicalVisionId))
+            return;
+
+        if (_status.HasStatusEffect(ent, _magicalVisionId))
+            _status.TryRemoveStatusEffect(ent, _magicalVisionId);
         else
-        {
-            RemComp<CP14MagicVisionStatusEffectComponent>(ent);
-        }
-        _eye.RefreshVisibilityMask(ent.Owner);
+            _status.TrySetStatusEffectDuration(ent, _magicalVisionId);
     }
 
     public override void Update(float frameTime)
@@ -62,32 +62,21 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
         }
     }
 
-        private void OnApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    private void OnApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        if (!ent.Comp.Overlay)
-            return;
-
-        if (TryComp<EyeComponent>(ent.Owner, out var comp))
+        if (HasComp<EyeComponent>(ent.Owner))
         {
-            var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
-
-            // Apply the visibility mask if it's not already present
-/*             if ((comp.VisibilityMask & appliedMask) == 0)
-                comp.VisibilityMask |= appliedMask; */
+            _eye.RefreshVisibilityMask(ent.Owner);
         }
 
     }
 
     private void OnRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
-        if (TryComp<EyeComponent>(ent.Owner, out var comp))
+        if (HasComp<EyeComponent>(ent.Owner))
         {
-            var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
-
-            // Removes the visibility mask if it's present
-/*             if ((comp.VisibilityMask & appliedMask) != 0)
-                comp.VisibilityMask ^= appliedMask;
- */        }
+            _eye.RefreshVisibilityMask(ent.Owner);
+        }
     }
 
 }
