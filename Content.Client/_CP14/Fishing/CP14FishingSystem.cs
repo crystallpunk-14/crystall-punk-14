@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.Hands.Systems;
 using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
@@ -62,5 +63,24 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
 
         fishingRodComponent.Reeling = reelKey;
         RaiseNetworkEvent(new CP14FishingReelKeyMessage(reelKey));
+    }
+
+    public bool GetInfo([NotNullWhen(true)] out CP14FishingRodComponent? rodComponent,
+        [NotNullWhen(true)] out CP14FishComponent? fishComponent)
+    {
+        rodComponent = null;
+        fishComponent = null;
+
+        var heldUid = _hands.GetActiveHandEntity();
+
+        if (!TryComp<CP14FishingRodComponent>(heldUid, out var posRodComponent))
+            return false;
+
+        if (!TryComp<CP14FishComponent>(posRodComponent.CaughtFish, out var posFishComponent))
+            return false;
+
+        rodComponent = posRodComponent;
+        fishComponent = posFishComponent;
+        return true;
     }
 }

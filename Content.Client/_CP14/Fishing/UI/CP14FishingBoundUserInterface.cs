@@ -1,12 +1,15 @@
 using Content.Shared._CP14.Fishing.Components;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client._CP14.Fishing.UI;
 
 [UsedImplicitly]
 public sealed class CP14FishingBoundUserInterface : BoundUserInterface
 {
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
     [ViewVariables]
     private CP14FishingWindow? _fishingWindow;
 
@@ -21,39 +24,17 @@ public sealed class CP14FishingBoundUserInterface : BoundUserInterface
         if (!EntMan.TryGetComponent<CP14FishingRodComponent>(Owner, out var rodComponent))
             return;
 
+        if (!_prototypeManager.Resolve(rodComponent.FishingMinigame, out var fishingMinigame))
+            return;
+
         _fishingWindow = this.CreateWindow<CP14FishingWindow>();
-        _fishingWindow.InitVisuals(rodComponent);
+        _fishingWindow.InitVisuals(fishingMinigame);
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (_fishingWindow is null || !EntMan.TryGetComponent<CP14FishingRodComponent>(Owner, out var rodComponent))
-            return;
-
-        var fish = rodComponent.CaughtFish;
-
-        if (fish is null)
-            return;
-
-        if (!EntMan.TryGetComponent<CP14FishComponent>(fish, out var fishComponent))
-            return;
-
-        var backgroundContainer = _fishingWindow.GetChild(0);
-
-        var progressbar = backgroundContainer.GetChild(0);
-        var floatContainer = backgroundContainer.GetChild(1);
-        var fishContainer = backgroundContainer.GetChild(2);
-
-        floatContainer.Margin = new Thickness(floatContainer.Margin.Left,
-            0,
-            floatContainer.Margin.Right + rodComponent.FloatPosition,
-            0);
-
-        fishContainer.Margin = new Thickness(fishContainer.Margin.Left,
-            0,
-            fishContainer.Margin.Right + fishComponent.FishPosAndDestination.X,
-            0);
+        _fishingWindow?.UpdateDraw();
     }
 }

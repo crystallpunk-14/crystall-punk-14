@@ -2,10 +2,6 @@
 <fishingWindow:CP14FishingWindow
     xmlns="https://spacestation14.io"
     xmlns:fishingWindow="clr-namespace:Content.Client._CP14.Fishing.UI"
-    Name="FishingWindow">
-    <PanelContainer Name="FishingBackground">
-        <PanelContainer Name="Progressbar" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
-        <PanelContainer Name="Float" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
-        <PanelContainer Name="FishIcon" HorizontalAlignment="Left" VerticalAlignment="Bottom"></PanelContainer>
-    </PanelContainer>
+    Name="FishingWindow" MaxSize="0 0">
+    <PanelContainer Name="FishingBackground"></PanelContainer>
 </fishingWindow:CP14FishingWindow>

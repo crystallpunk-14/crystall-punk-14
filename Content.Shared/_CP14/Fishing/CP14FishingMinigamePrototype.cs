@@ -8,7 +8,7 @@ namespace Content.Shared._CP14.Fishing;
 /// Prototype of fishing minigame stylesheet.
 /// </summary>
 [Prototype("CP14FishingMinigameStyle")]
-public sealed partial class CP14FishingMinigamePrototype : IPrototype
+public sealed class CP14FishingMinigamePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; } = default!;
@@ -27,23 +27,23 @@ public sealed partial class CP14FishingMinigamePrototype : IPrototype
 
     [DataField(required: true)]
     public float FishingMinigameSize;
+}
 
-    [DataDefinition]
-    public partial struct FishingMinigameElementData
-    {
-        /// <summary>
-        /// Texture path.
-        /// </summary>
-        [DataField(required: true)] public ResPath Texture;
+[DataDefinition]
+public partial struct FishingMinigameElementData
+{
+    /// <summary>
+    /// Texture path.
+    /// </summary>
+    [DataField(required: true)] public ResPath Texture;
 
-        /// <summary>
-        /// Size of a texture.
-        /// </summary>
-        [DataField(required: true)] public Vector2 Size;
+    /// <summary>
+    /// Size of a texture.
+    /// </summary>
+    [DataField(required: true)] public Vector2 Size;
 
-        /// <summary>
-        /// Offset from bottom left corner. Starter position in the bottom.
-        /// </summary>
-        [DataField(required: true)] public Vector2 Offset;
-    }
+    /// <summary>
+    /// Offset from bottom left corner. Starter position in the bottom.
+    /// </summary>
+    [DataField(required: true)] public Vector2 Offset;
 }
