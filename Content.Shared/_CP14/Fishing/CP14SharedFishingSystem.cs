@@ -53,6 +53,8 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
         var curTime = _gameTiming.CurTime;
         var query = EntityQueryEnumerator<CP14FishingRodComponent>();
+
+        // Seeding prediction doesnt work
         _random.SetSeed((int)curTime.Ticks);
         while (query.MoveNext(out var uid, out var component))
         {
@@ -66,6 +68,10 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Handles float and fish positions updates
+    /// Please burn it down
+    /// </summary>
     private void UpdatePositions(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
         if (_netManager.IsClient && !_gameTiming.IsFirstTimePredicted)
@@ -130,7 +136,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
             if (Math.Abs(fishPos - fishDest) < 0.1f)
             {
-                fishComponent.FishSelectPosTime = curTime + fishDiff + fishDiff * 0.2 * _random.NextFloat(-1, 1);
+                fishComponent.FishSelectPosTime = curTime + fishDiff * 0.2 * _random.NextFloat(-1, 1);
             }
         }
 
@@ -138,14 +144,21 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(fish.Value, fishComponent, nameof(CP14FishComponent.FishPosAndDestination));
     }
 
+    /// <summary>
+    /// Handles updating fish destination
+    /// </summary>
     private void UpdateFishDestination(EntityUid fish, CP14FishComponent fishComponent, TimeSpan curTime, float maxCord)
     {
         if (curTime < fishComponent.FishSelectPosTime)
             return;
 
         fishComponent.FishPosAndDestination.X = _random.NextFloat(0, maxCord);
+        DirtyField(fish, fishComponent, nameof(CP14FishComponent.FishPosAndDestination));
     }
 
+    /// <summary>
+    /// Handles if fish got caught or flees
+    /// </summary>
     private void UpdateFishWaitingStatus(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
         if (fishingRodComponent.CaughtFish is null)
@@ -178,6 +191,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         PredictedDel(fish);
     }
 
+    /// <summary>
+    /// Handles fish catching
+    /// </summary>
     private void TryToCatchFish(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
         if (!_netManager.IsServer)
@@ -234,6 +250,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(fish, fishComponent, nameof(CP14FishComponent.FishGetAwayTime));
     }
 
+    /// <summary>
+    /// Validates if user is still in range of fishing float
+    /// </summary>
     private void RevalidateFishing(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent)
     {
         if (fishingRodComponent.FishingFloat is null)
@@ -307,6 +326,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.User));
     }
 
+    /// <summary>
+    /// Spawns and throws fishing float
+    /// </summary>
     private void CastFloat(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, EntityUid fishingPond)
     {
         var rodCoords = Transform(fishingRod).Coordinates;

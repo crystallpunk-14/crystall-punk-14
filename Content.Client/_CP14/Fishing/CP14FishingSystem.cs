@@ -4,7 +4,6 @@ using Content.Shared._CP14.Fishing;
 using Content.Shared._CP14.Fishing.Components;
 using Content.Shared._CP14.Input;
 using Robust.Client.GameObjects;
-using Robust.Client.Player;
 using Robust.Shared.Input;
 using Robust.Shared.Timing;
 
@@ -15,7 +14,6 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     [Dependency] private readonly InputSystem _input = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
     public override void Initialize()
@@ -37,12 +35,12 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (!TryComp<CP14FishingRodComponent>(heldUid, out var fishingRodComponent))
             return;
 
-        if (_playerManager.LocalSession?.AttachedEntity is not { } player)
-            return;
-
-        UpdatePressedButtons(fishingRodComponent, player);
+        UpdatePressedButtons(fishingRodComponent);
     }
 
+    /// <summary>
+    /// Handles BUI updates
+    /// </summary>
     private void OnFishingRodState(Entity<CP14FishingRodComponent> entity, ref AfterAutoHandleStateEvent args)
     {
         if (_userInterface.TryGetOpenUi(entity.Owner, CP14FishingUiKey.Key, out var bui))
@@ -51,7 +49,10 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         }
     }
 
-    private void UpdatePressedButtons(CP14FishingRodComponent fishingRodComponent, EntityUid player)
+    /// <summary>
+    /// Handles user inputs
+    /// </summary>
+    private void UpdatePressedButtons(CP14FishingRodComponent fishingRodComponent)
     {
         if (fishingRodComponent.CaughtFish is null)
             return;
@@ -65,6 +66,10 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         RaiseNetworkEvent(new CP14FishingReelKeyMessage(reelKey));
     }
 
+    /// <summary>
+    /// Used to get fish and rod component by FishingUI
+    /// </summary>
+    /// <returns>True when all info can be resolved</returns>
     public bool GetInfo([NotNullWhen(true)] out CP14FishingRodComponent? rodComponent,
         [NotNullWhen(true)] out CP14FishComponent? fishComponent)
     {
