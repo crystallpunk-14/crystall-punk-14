@@ -20,7 +20,7 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 
         SubscribeLocalEvent<MetaDataComponent, CP14MagicVisionToggleActionEvent>(OnMagicVisionToggle);
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, GetVisMaskEvent>(OnGetVisMaskBody);
-        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<GetVisMaskEvent>>(OnGetVisMask);
+        SubscribeLocalEvent<EyeComponent, GetVisMaskEvent>(OnGetVisMask);
 
 
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnApplied);
@@ -29,12 +29,14 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 
     }
 
-    private void OnGetVisMask(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<GetVisMaskEvent> args)
+    private void OnGetVisMask(Entity<EyeComponent> ent, ref GetVisMaskEvent args)
     {
-        var eventArgs = args.Args;
+        if (!_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(ent))
+            return;
+
         var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
 
-        eventArgs.VisibilityMask |= appliedMask;
+        args.VisibilityMask |= appliedMask;
     }
     private void OnGetVisMaskBody(Entity<CP14MagicVisionStatusEffectComponent> ent, ref GetVisMaskEvent args)
     {
@@ -72,11 +74,11 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        _eye.RefreshVisibilityMask(ent.Owner);
+        _eye.RefreshVisibilityMask(args.Target);
     }
 
     private void OnRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
-        _eye.RefreshVisibilityMask(ent.Owner);
+        _eye.RefreshVisibilityMask(args.Target);
     }
 }
