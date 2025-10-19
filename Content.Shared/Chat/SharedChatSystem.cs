@@ -19,12 +19,15 @@ public abstract class SharedChatSystem : EntitySystem
     public const char DeadPrefix = '\\';
     public const char LOOCPrefix = '(';
     public const char OOCPrefix = '[';
-    public const char EmotesPrefix = '%'; // CP14 change emote prefix from @ to %
+    public const char EmotesPrefix = '@';
     public const char EmotesAltPrefix = '*';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
     public const char DefaultChannelKey = 'h';
-
+    // CrystallEdge # and % emotes prefix
+    public const char CEEmotesPrefix = '%';
+    public const char CEEmotesAltPrefix = '#';
+    // CrystallEdge End
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
