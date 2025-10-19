@@ -11,6 +11,10 @@
   maleFirstNames: CP14_Names_Goblin_Male_First
   femaleFirstNames: CP14_Names_Goblin_Female_First
   naming: First
+  minAge: 18
+  maxAge: 60
+  youngAge: 30
+  oldAge: 45
 
 - type: speciesBaseSprites
   id: CP14MobGoblinSprites

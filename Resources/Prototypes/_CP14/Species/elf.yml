@@ -10,6 +10,10 @@
   maleFirstNames: CP14_Names_Elf_Male_First
   femaleFirstNames: CP14_Names_Elf_Female_First
   lastNames: CP14_Names_Elf_Last
+  minAge: 100
+  maxAge: 750
+  youngAge: 320
+  oldAge: 550
 
 - type: speciesBaseSprites
   id: CP14MobElfSprites

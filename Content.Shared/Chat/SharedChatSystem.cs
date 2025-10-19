@@ -19,7 +19,7 @@ public abstract class SharedChatSystem : EntitySystem
     public const char DeadPrefix = '\\';
     public const char LOOCPrefix = '(';
     public const char OOCPrefix = '[';
-    public const char EmotesPrefix = '@';
+    public const char EmotesPrefix = '%'; // CP14 change emote prefix from @ to %
     public const char EmotesAltPrefix = '*';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';

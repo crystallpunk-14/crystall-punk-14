@@ -11,6 +11,10 @@
   maleFirstNames: CP14_Names_Carcat_First
   femaleFirstNames: CP14_Names_Carcat_First
   naming: First
+  minAge: 18
+  maxAge: 110
+  youngAge: 50
+  oldAge: 70
 
 - type: speciesBaseSprites
   id: CP14MobCarcatSprites
