@@ -139,7 +139,7 @@ public sealed partial class CP14RoundEndSystem
 
                 _consoleHost.ExecuteCommand("golobby");
             }),
-            (22, 44, () =>
+            (20, 45, () =>
             {
                 if (ruDays)
                     return;
@@ -150,14 +150,14 @@ public sealed partial class CP14RoundEndSystem
                     sender: "Server"
                 );
             }),
-            (22, 58, () =>
+            (20, 58, () =>
             {
                 if (ruDays)
                     return;
 
                 _consoleHost.ExecuteCommand("endround");
             }),
-            (23, 00, () =>
+            (21, 00, () =>
             {
                 if (ruDays)
                     return;
