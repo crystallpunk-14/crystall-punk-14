@@ -23,12 +23,6 @@ public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan Frequency = TimeSpan.FromSeconds(5);
 
-    public CP14EntityEffectsStatusEffectComponent(IEnumerable<EntityEffect> effects, TimeSpan? frequency)
-    {
-        Effects = effects.ToList();
-        Frequency = frequency ?? TimeSpan.FromSeconds(5);
-    }
-
     /// <summary>
     /// the time of the next Effect trigger
     /// </summary>
