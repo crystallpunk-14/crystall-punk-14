@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._CP14.MagicVision;
 using Content.Shared.Examine;
+using Content.Shared.StatusEffectNew;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -36,13 +37,50 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, AfterAutoHandleStateEvent>(OnHandleStateMarker);
 
-        SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
 
-        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<CP14MagicVisionComponent, ComponentShutdown>(OnComponentShutdown);
+        //  SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
+        //  SubscribeLocalEvent<CP14MagicVisionComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
+
+        //  SubscribeLocalEvent<CP14MagicVisionComponent, ComponentInit>(OnComponentInit);
+        //  SubscribeLocalEvent<CP14MagicVisionComponent, ComponentShutdown>(OnComponentShutdown);
     }
 
+    private void OnStatusEffectApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        if (_player.LocalEntity != args.Target)
+            return;
+
+        _overlay = new CP14MagicVisionOverlay();
+        _overlayMan.AddOverlay(_overlay);
+        _overlay.StartOverlay = _timing.CurTime;
+
+        _overlay2 = new CP14MagicVisionNoirOverlay();
+        _overlayMan.AddOverlay(_overlay2);
+
+        _audio.PlayGlobal(_startSound, ent);
+    }
+
+    private void OnStatusEffectRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        if (_player.LocalEntity != args.Target)
+            return;
+        if (_overlay != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay);
+            _overlay = null;
+        }
+        if (_overlay2 != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay2);
+            _overlay2 = null;
+        }
+
+        _audio.PlayGlobal(_endSound, ent);
+    }
+
+    [Obsolete]
     private void OnComponentShutdown(Entity<CP14MagicVisionComponent> ent, ref ComponentShutdown args)
     {
         if (_player.LocalEntity != ent)
@@ -61,6 +99,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _audio.PlayGlobal(_endSound, ent);
     }
 
+    [Obsolete]
+
     private void OnComponentInit(Entity<CP14MagicVisionComponent> ent, ref ComponentInit args)
     {
         if (_player.LocalEntity != ent)
@@ -76,6 +116,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _audio.PlayGlobal(_startSound, ent);
     }
 
+    [Obsolete]
     private void OnPlayerAttached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerAttachedEvent args)
     {
         _overlay = new CP14MagicVisionOverlay();
@@ -88,6 +129,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _audio.PlayGlobal(_startSound, ent);
     }
 
+    [Obsolete]
     private void OnPlayerDetached(Entity<CP14MagicVisionComponent> ent, ref LocalPlayerDetachedEvent args)
     {
         if (_overlay != null)
