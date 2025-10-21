@@ -13,6 +13,5 @@ public sealed partial class CP14MagicVisionStatusEffectComponent : Component
     /// <summary>
     /// VisionMask to see Magic Vision layer
     /// </summary>
-    [DataField]
     public const VisibilityFlags VisibilityMask = VisibilityFlags.CP14MagicVision;
 }
