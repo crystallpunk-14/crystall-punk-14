@@ -13,8 +13,8 @@
   naming: First
   minAge: 18
   maxAge: 110
-  youngAge: 50
-  oldAge: 70
+  youngAge: 20
+  oldAge: 80
 
 - type: speciesBaseSprites
   id: CP14MobCarcatSprites
