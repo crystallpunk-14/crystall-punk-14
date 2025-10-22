@@ -7,7 +7,7 @@ namespace Content.Shared._CP14.StatusEffect;
 /// <summary>
 /// Applies Entity Effects at a given frequency
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14EntityEffectsStatusEffectSystem))]
 
 public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
 {
