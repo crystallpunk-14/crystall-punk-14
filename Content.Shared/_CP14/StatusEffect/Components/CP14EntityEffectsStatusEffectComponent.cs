@@ -2,12 +2,13 @@ using System.Linq;
 using Content.Shared.EntityEffects;
 using Robust.Shared.GameStates;
 
+
 namespace Content.Shared._CP14.StatusEffect;
 
 /// <summary>
 /// Applies Entity Effects at a given frequency
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14EntityEffectsStatusEffectSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14EntityEffectsStatusEffectSystemShared))]
 
 public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
 {
