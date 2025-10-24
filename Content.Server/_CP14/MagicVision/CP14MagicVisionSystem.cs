@@ -35,17 +35,6 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
         args.VisibilityMask |= appliedMask;
     }
 
-    private void OnMagicVisionSpellToggle(Entity<MetaDataComponent> ent, ref CP14MagicVisionToggleActionEvent args)
-    {
-        if (!_status.CanAddStatusEffect(ent, _magicalVisionSpellProtoId))
-            return;
-
-        if (_status.HasStatusEffect(ent, _magicalVisionSpellProtoId))
-            _status.TryRemoveStatusEffect(ent, _magicalVisionSpellProtoId);
-        else
-            _status.TrySetStatusEffectDuration(ent, _magicalVisionSpellProtoId);
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);

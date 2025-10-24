@@ -14,7 +14,11 @@
       sprite: _CP14/Actions/Spells/meta.rsi
       state: magic_vision
   - type: InstantAction
-    event: !type:CP14MagicVisionToggleActionEvent
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+        - !type:CP14SpellToggleStatusEffect
+          statusEffect: CP14MetaMagicVisionSpellStatusEffect
+
 
 - type: entity
   id: CP14ManaVisionPointer
