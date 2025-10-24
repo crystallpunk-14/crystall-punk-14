@@ -34,20 +34,5 @@ public sealed partial class CP14EntityEffectsStatusEffectSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<CP14EntityEffectsStatusEffectComponent, StatusEffectAppliedEvent>(OnApply);
-        SubscribeLocalEvent<CP14EntityEffectsStatusEffectComponent, StatusEffectRemovedEvent>(OnRemove);
-
     }
-
-    public void OnApply(Entity<CP14EntityEffectsStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
-    {
-
-    }
-
-    public void OnRemove(Entity<CP14EntityEffectsStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
-    {
-
-    }
-
 }
