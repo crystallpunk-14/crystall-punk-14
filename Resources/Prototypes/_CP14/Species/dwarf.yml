@@ -10,6 +10,10 @@
   maleFirstNames: CP14_Names_Dwarf_Male_First #TODO
   femaleFirstNames: CP14_Names_Dwarf_Female_First #TODO
   lastNames: CP14_Names_Dwarf_Last #TODO
+  minAge: 18
+  maxAge: 350
+  youngAge: 100
+  oldAge: 175
 
 - type: speciesBaseSprites
   id: CP14MobDwarfSprites
