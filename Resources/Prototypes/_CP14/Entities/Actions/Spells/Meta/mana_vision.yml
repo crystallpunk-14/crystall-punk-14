@@ -19,7 +19,6 @@
         - !type:CP14SpellToggleStatusEffect
           statusEffect: CP14MetaMagicVisionSpellStatusEffect
 
-
 - type: entity
   id: CP14ManaVisionPointer
   name: pointer
