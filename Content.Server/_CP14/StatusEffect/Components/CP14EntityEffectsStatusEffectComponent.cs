@@ -22,7 +22,7 @@ public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
     public TimeSpan Frequency = TimeSpan.FromSeconds(5);
 
     /// <summary>
-    /// the time of the next Effect trigger
+    /// The time of the next Effect trigger
     /// </summary>
     [DataField]
     public TimeSpan NextUpdateTime { get; set; } = TimeSpan.Zero;
