@@ -1,27 +1,24 @@
-using System.Linq;
 using Content.Shared.EntityEffects;
-using Robust.Shared.GameStates;
 
-
-namespace Content.Shared._CP14.StatusEffect;
+namespace Content.Server._CP14.StatusEffect;
 
 /// <summary>
 /// Applies Entity Effects at a given frequency
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(CP14EntityEffectsStatusEffectSystemShared))]
+[RegisterComponent, AutoGenerateComponentState, Access(typeof(CP14EntityEffectsStatusEffectSystem))]
 
 public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
 {
     /// <summary>
     /// List of Effects that will be applied
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public List<EntityEffect> Effects = [];
 
     /// <summary>
     /// how often objects will try to apply <see cref="Effects"/>. In Seconds.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public TimeSpan Frequency = TimeSpan.FromSeconds(5);
 
     /// <summary>

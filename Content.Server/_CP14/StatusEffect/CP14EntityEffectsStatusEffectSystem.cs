@@ -1,10 +1,11 @@
 using Content.Shared._CP14.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CP14.StatusEffect;
 
-public sealed partial class CP14EntityEffectsStatusEffectSystem : CP14EntityEffectsStatusEffectSystemShared
+public sealed partial class CP14EntityEffectsStatusEffectSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
@@ -30,5 +31,23 @@ public sealed partial class CP14EntityEffectsStatusEffectSystem : CP14EntityEffe
         }
     }
 
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<CP14EntityEffectsStatusEffectComponent, StatusEffectAppliedEvent>(OnApply);
+        SubscribeLocalEvent<CP14EntityEffectsStatusEffectComponent, StatusEffectRemovedEvent>(OnRemove);
+
+    }
+
+    public void OnApply(Entity<CP14EntityEffectsStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+
+    }
+
+    public void OnRemove(Entity<CP14EntityEffectsStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+
+    }
 
 }
