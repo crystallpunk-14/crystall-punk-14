@@ -3,7 +3,6 @@ using Robust.Shared.Timing;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
-
 namespace Content.Server._CP14.MagicVision;
 
 public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
@@ -22,11 +21,8 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
         //SubscribeLocalEvent<CP14MagicVisionComponent, GetVisMaskEvent>(OnGetVisMaskBody); //Incase a non Status effect component
         SubscribeLocalEvent<EyeComponent, GetVisMaskEvent>(OnGetVisMask);
 
-
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnApplied);
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnRemoved);
-
-
     }
 
     private void OnGetVisMask(Entity<EyeComponent> ent, ref GetVisMaskEvent args)
