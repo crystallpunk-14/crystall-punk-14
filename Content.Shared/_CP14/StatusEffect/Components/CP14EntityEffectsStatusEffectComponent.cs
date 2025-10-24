@@ -15,7 +15,7 @@ public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
     /// <summary>
     /// List of Effects that will be applied
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField(serverOnlly: true), AutoNetworkedField]
     public List<EntityEffect> Effects = [];
 
     /// <summary>
