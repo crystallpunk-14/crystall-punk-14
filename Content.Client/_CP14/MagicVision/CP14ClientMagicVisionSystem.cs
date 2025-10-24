@@ -75,7 +75,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _audio.PlayGlobal(_endSound, ent);
     }
 
-
     protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
     {
         base.OnExamined(ent, ref args);
