@@ -16,7 +16,7 @@ public sealed partial class CP14EntityEffectsStatusEffectComponent : Component
     public List<EntityEffect> Effects = [];
 
     /// <summary>
-    /// how often objects will try to apply <see cref="Effects"/>. In Seconds.
+    /// How often objects will try to apply <see cref="Effects"/>. In Seconds.
     /// </summary>
     [DataField]
     public TimeSpan Frequency = TimeSpan.FromSeconds(5);
