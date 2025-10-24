@@ -39,14 +39,6 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
         args.VisibilityMask |= appliedMask;
     }
 
-    //Incase there will be a component that applies Magic vision whitout a status Effect
-    [Obsolete($"Switched to Status Effect. Use {nameof(OnGetVisMask)} instead.", false)]
-    private void OnGetVisMaskBody(Entity<CP14MagicVisionComponent> ent, ref GetVisMaskEvent args)
-    {
-        var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
-
-        args.VisibilityMask |= appliedMask;
-    }
     private void OnMagicVisionSpellToggle(Entity<MetaDataComponent> ent, ref CP14MagicVisionToggleActionEvent args)
     {
         if (!_status.CanAddStatusEffect(ent, _magicalVisionSpellProtoId))
