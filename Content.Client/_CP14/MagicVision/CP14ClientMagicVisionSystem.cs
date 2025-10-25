@@ -47,6 +47,9 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         if (_player.LocalEntity != args.Target)
             return;
 
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         _overlay = new CP14MagicVisionOverlay();
         _overlayMan.AddOverlay(_overlay);
         _overlay.StartOverlay = _timing.CurTime;
@@ -61,6 +64,10 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     {
         if (_player.LocalEntity != args.Target)
             return;
+
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         if (_overlay != null)
         {
             _overlayMan.RemoveOverlay(_overlay);
