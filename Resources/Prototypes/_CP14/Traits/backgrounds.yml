@@ -1,0 +1,8 @@
+- type: trait
+  id: CP14BackgroundMerkasServant
+  name: cp14-trait-bg-merkas-servant-name
+  description: cp14-trait-bg-merkas-servant-desc
+  category: CP14Background
+  cost: 1
+  components:
+    - type: CP14BackgroundMerkasServant

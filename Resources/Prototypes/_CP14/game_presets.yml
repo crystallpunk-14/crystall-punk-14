@@ -19,8 +19,9 @@
   showInVote: false
   cP14Allowed: true
   rules:
-    - CP14BasicStationEventScheduler
+    #- CP14BasicStationEventScheduler
     - Sandbox
+    - CP14LurkerHuntRule
 
 - type: gamePreset
   id: CP14Peaceful
@@ -28,8 +29,8 @@
   description: cp14-peaceful-description
   showInVote: true
   cP14Allowed: true
-  rules:
-    - CP14BasicStationEventScheduler
+  #rules:
+  #  - CP14BasicStationEventScheduler
 
 - type: gamePreset
   id: CP14VampireClansBattleDouble
@@ -40,7 +41,7 @@
   minPlayers: 20
   maxPlayers: 29
   rules:
-    - CP14BasicStationEventScheduler
+    #- CP14BasicStationEventScheduler
     - CP14GameRuleVampireClanBattleDouble
 
 - type: gamePreset
@@ -51,16 +52,5 @@
   cP14Allowed: true
   minPlayers: 30
   rules:
-    - CP14BasicStationEventScheduler
+    #- CP14BasicStationEventScheduler
     - CP14GameRuleVampireClanBattleTriple
-
-#- type: gamePreset
-#  id: CP14Survival
-#  name: cp14-gamemode-survival-title
-#  description: cp14-gamemode-survival-description
-#  showInVote: true
-#  cP14Allowed: true
-#  supportedMaps: ShipMapPool
-#  rules:
-#    - Sandbox
-#    - CP14CrashToWindlandsRule
