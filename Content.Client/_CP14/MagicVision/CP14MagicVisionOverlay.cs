@@ -44,9 +44,6 @@ public sealed class CP14MagicVisionOverlay : Overlay
         if (playerEntity == null)
             return;
 
-        if (!_entityManager.HasComponent<CP14MagicVisionComponent>(playerEntity))
-            return;
-
         var curTime = _timing.CurTime;
         var timeLeft = (float)(curTime - StartOverlay).TotalSeconds;
 
