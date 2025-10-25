@@ -8,7 +8,6 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedEyeSystem _eye = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
 
     public override void Initialize()
     {
