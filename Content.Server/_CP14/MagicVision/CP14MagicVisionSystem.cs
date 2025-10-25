@@ -14,20 +14,19 @@ public sealed class CP14MagicVisionSystem : CP14SharedMagicVisionSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<EyeComponent, GetVisMaskEvent>(OnGetVisMask);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<GetVisMaskEvent>>(OnGetVisMask);
 
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnApplied);
         SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnRemoved);
     }
 
-    private void OnGetVisMask(Entity<EyeComponent> ent, ref GetVisMaskEvent args)
+    private void OnGetVisMask(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<GetVisMaskEvent> args)
     {
-        if (!_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(ent))
-            return;
-
         var appliedMask = (int)CP14MagicVisionStatusEffectComponent.VisibilityMask;
+        var newArgs = args.Args;
 
-        args.VisibilityMask |= appliedMask;
+        newArgs.VisibilityMask |= appliedMask;
+        args = args with { Args = newArgs };
     }
 
     public override void Update(float frameTime)
