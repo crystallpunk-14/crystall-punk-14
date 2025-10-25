@@ -16,6 +16,7 @@ public sealed partial class StatusEffectsSystem
     {
         //CP14 Zone
         SubscribeLocalEvent<StatusEffectContainerComponent, DamageModifyEvent>(RelayStatusEffectEvent);
+        SubscribeLocalEvent<StatusEffectContainerComponent, GetVisMaskEvent>(RefRelayStatusEffectEvent);
         //CP14 Zone end
 
         SubscribeLocalEvent<StatusEffectContainerComponent, LocalPlayerAttachedEvent>(RelayStatusEffectEvent);
