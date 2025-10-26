@@ -11,17 +11,7 @@ public sealed partial class CP14ActionSpeakingComponent : Component
 
     [DataField]
     public string EndSpeech = string.Empty; //Not LocId!
-}
 
-/// <summary>
-/// patch to send an event to the server for saying a phrase out loud
-/// </summary>
-[ByRefEvent]
-public sealed class CP14ActionSpeechEvent : EntityEventArgs
-{
-    public EntityUid? Performer { get; init; }
-
-    public string? Speech { get; init; }
-
-    public bool Emote { get; init; }
+    [DataField]
+    public bool Whisper = false;
 }

@@ -6,7 +6,7 @@
   requirements:
   - !type:StackResource
     stack: CP14WoodenPlanks
-    count: 2
+    count: 3
   - !type:StackResource
     stack: CP14IronBar
     count: 2
@@ -441,3 +441,14 @@
     count: 1
   result: CP14IronBuckle
   resultCount: 5
+
+- type: CP14Recipe
+  id: CP14RatArmor
+  tag: CP14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: CP14IronBar
+    count: 6
+  result: CP14RatArmor

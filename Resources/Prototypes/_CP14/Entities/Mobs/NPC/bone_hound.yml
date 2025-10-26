@@ -1,0 +1,106 @@
+- type: entity
+  id: CP14MobMonsterBoneHound
+  parent: CP14SimpleMobBase
+  name: bone hound
+  description: The skeleton of a hound, animated by dark magic, even more bloodthirsty and dangerous than when alive.
+  categories: [ ForkFiltered ]
+  components:
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: cp14-ghost-role-information-name-bone-hound
+    allowMovement: true
+    description: cp14-ghost-role-information-description-bone-hound
+    rules: cp14-ghost-role-information-rules-demiplane
+    mindRoles:
+    - CP14MindRoleDemiplaneAntag
+    raffle:
+      settings: default
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        10
+      AggroVisionRadius: !type:Single
+        10
+  - type: NpcFactionMember
+    factions:
+    - CP14Monster
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      components:
+      - MobThresholds
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - sprite: _CP14/Mobs/Monster/bone_hound.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: CP14NightVision
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.8
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 40
+    damage:
+      types:
+        CP14ManaDepletion: -0.05
+      groups:
+        Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 4
+        Piercing: 4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
+  - type: Damageable
+    damageContainer: CP14BiologicalAnaerobic
+    damageModifierSet: CP14Skeleton
+  - type: Bloodstream
+    bloodReagent: CP14BloodAnimal
+    bloodMaxVolume: 0
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Tag
+    tags:
+      - FootstepSound
+      - CP14Mosquito
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14BoneRemainsBoneHound:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: CP14BoneCrack

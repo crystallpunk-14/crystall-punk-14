@@ -1,0 +1,24 @@
+- type: skinColoration
+  id: CP14TieflingHues
+  strategy: !type:ClampedHsvColoration
+    hue: [0.6, 1.05]
+    saturation: [0.15, 0.8]
+    value: [0.25, 0.55]
+
+- type: skinColoration
+  id: CP14Elf
+  strategy: !type:CP14ElfTonedSkinColoration {}
+
+- type: skinColoration
+  id: CP14SilvasHues
+  strategy: !type:ClampedHsvColoration
+    hue: [0.1, 0.4]
+    saturation: [0.15, 0.8]
+    value: [0.25, 0.55]
+
+- type: skinColoration
+  id: CP14CarcatHues
+  strategy: !type:ClampedHsvColoration
+    hue: [0.05, 0.10]
+    saturation: [0.15, 0.7]
+    value: [0.25, 0.95]

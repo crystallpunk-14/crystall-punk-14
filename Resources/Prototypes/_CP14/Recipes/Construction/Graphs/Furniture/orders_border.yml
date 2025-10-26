@@ -14,3 +14,12 @@
 
     - node: CP14OrderBoard
       entity: CP14OrderBoard
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: CP14WoodenPlanks1
+          amount: 3

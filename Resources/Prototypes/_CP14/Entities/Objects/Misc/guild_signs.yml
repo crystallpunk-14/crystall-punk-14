@@ -1,0 +1,91 @@
+- type: entity
+  id: CP14GuildSignRed
+  name: red guild sign
+  description: A small sign to indicate a desk related to red quests.
+  parent: 
+  - BaseItem
+  - CP14BaseFlammable
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Misc/guild_signs.rsi
+    state: red
+  - type: Item
+    size: Small
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: CP14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 6
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Ash1:
+            min: 1
+            max: 2
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14WoodenPlanks1:
+            min: 1
+            max: 1
+  - type: PhysicalComposition
+    materialComposition:
+      CP14WoodenPlanks: 20
+
+- type: entity
+  id: CP14GuildSignYellow
+  name: yellow guild sign
+  description: A small sign to indicate a desk related to yellow quests.
+  parent: 
+  - CP14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Misc/guild_signs.rsi
+    state: yellow
+
+- type: entity
+  id: CP14GuildSignBlue
+  name: blue guild sign
+  description: A small sign to indicate a desk related to blue quests.
+  parent: 
+  - CP14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Misc/guild_signs.rsi
+    state: blue
+
+- type: entity
+  id: CP14GuildSignGreen
+  name: green guild sign
+  description: A small sign to indicate a desk related to green quests.
+  parent: 
+  - CP14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _CP14/Objects/Misc/guild_signs.rsi
+    state: green

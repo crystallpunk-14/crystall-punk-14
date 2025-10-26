@@ -32,6 +32,12 @@
       effects:
       - !type:SatiateThirst
         factor: 15
+      - !type:CP14ManaChange
+        manaDelta: 4
+        safe: true
+        conditions:
+        - !type:OrganType
+          type: Plant
   pricePerUnit: 1.0  # Most basic effect
 
 - type: reagent
@@ -47,7 +53,7 @@
       metabolismRate: 0.05
       effects:
       - !type:CP14ManaChange
-        manaDelta: 1.5
+        manaDelta: 3
         safe: true
   pricePerUnit: 5.0  # 2×Energia (0.4) + 1×Motion (0.2) + Water (0.1) = 0.7 → x7.14 (high value)
 

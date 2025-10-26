@@ -119,7 +119,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         if (source.Comp.FoodData is null)
             return false;
 
-        if (!TryComp<FoodComponent>(target, out var holderFoodComp))
+        if (!TryComp<EdibleComponent>(target, out var holderFoodComp))
             return false;
 
         if (!_solution.TryGetSolution(source.Owner, source.Comp.SolutionId, out var cookerSoln, out var cookerSolution))
@@ -287,7 +287,7 @@ public abstract partial class CP14SharedCookingSystem : EntitySystem
         //Process entities
         foreach (var contained in container.ContainedEntities)
         {
-            if (TryComp<FoodComponent>(contained, out var food))
+            if (TryComp<EdibleComponent>(contained, out var food))
             {
                 //Merge trash
                 newData.Trash.AddRange(food.Trash);

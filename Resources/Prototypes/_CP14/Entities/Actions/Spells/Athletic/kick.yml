@@ -4,34 +4,21 @@
   name: Kick
   description: You perform an epic leg kick at your chosen object, pushing it away from you.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/physical.rsi
-    state: kick
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.4
   - type: CP14ActionStaminaCost
     stamina: 40
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellKnockdown
-    - !type:CP14SpellThrowFromUser
-      distance: 1.5
-      throwPower: 5
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14DustEffectKickSound
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:HealthChange
-        ignoreResistances: false
-        damage:
-          types:
-            Blunt: 5
-  - type: CP14MagicEffectEmoting
+  - type: CP14ActionEmoting
     startEmote: cp14-kick-emote-start
     endEmote: cp14-kick-emote
   - type: CP14ActionDangerous
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    distanceThreshold: 1.5
+    delay: 0.5
   - type: Action
+    useDelay: 5
+    sound: null
     icon:
       sprite: _CP14/Actions/Spells/physical.rsi
       state: kick
@@ -39,17 +26,27 @@
     range: 1
   - type: EntityTargetAction
     canTargetSelf: false
-    event: !type:CP14DelayedEntityTargetActionEvent
-      cooldown: 5
-      castDelay: 0.5
-      distanceThreshold: 1.5
-      breakOnMove: false
-      breakOnDamage: false
     whitelist:
       components:
       - Body
       - Item
       - Anchorable
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellKnockdown
+      - !type:CP14SpellThrowFromUser
+        distance: 1.5
+        throwPower: 5
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14DustEffectKickSound
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 5
 
 - type: entity
   id: CP14DustEffectKickSound

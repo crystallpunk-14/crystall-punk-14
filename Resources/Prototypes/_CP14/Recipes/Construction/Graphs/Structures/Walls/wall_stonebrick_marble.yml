@@ -11,7 +11,7 @@
           steps:
             - material: CP14MarbleStone
               amount: 2
-              doAfter: 2
+              doAfter: 5
 
     - node: CP14WallFrameMarbleBrick
       entity: CP14WallFrameMarblebrick
@@ -24,12 +24,12 @@
             - !type:DeleteEntity {}
           steps:
             - tool: Prying
-              doAfter: 2
+              doAfter: 4
         - to: CP14WallMarbleBrick
           steps:
             - material: CP14MarbleStone
               amount: 2
-              doAfter: 2
+              doAfter: 5
 
     - node: CP14WallMarbleBrick
       entity: CP14WallMarbleBrick
@@ -38,6 +38,10 @@
           steps:
             - tool: CP14Hammering
               doAfter: 2
+            - tool: Prying
+              doAfter: 4
+            - tool: CP14Hammering
+              doAfter: 6
           completed:
             - !type:SpawnPrototype
               prototype: CP14MarbleBlock1

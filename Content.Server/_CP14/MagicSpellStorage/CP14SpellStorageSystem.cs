@@ -1,10 +1,8 @@
 using Content.Server._CP14.MagicSpellStorage.Components;
-using Content.Shared._CP14.MagicSpell.Components;
 using Content.Shared._CP14.MagicSpell.Events;
 using Content.Shared._CP14.MagicSpellStorage;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 
 namespace Content.Server._CP14.MagicSpellStorage;
@@ -17,7 +15,6 @@ public sealed partial class CP14SpellStorageSystem : CP14SharedSpellStorageSyste
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()
@@ -45,9 +42,6 @@ public sealed partial class CP14SpellStorageSystem : CP14SharedSpellStorageSyste
             var spellEnt = _actionContainer.AddAction(storage, spell);
             if (spellEnt is null)
                 continue;
-
-            var provided = EntityManager.EnsureComponent<CP14MagicEffectComponent>(spellEnt.Value);
-            provided.SpellStorage = storage;
 
             storage.Comp.SpellEntities.Add(spellEnt.Value);
         }

@@ -5,14 +5,16 @@
 <GuideEntityEmbed Entity="CP14MobSilva" Caption="Silva"/>
 </Box>
 
-The Silva are a race of humanoid plants living in deep relic forests. Emerging from the mother tree in the centre of their cities, the Silvas do not travel the world very often.
+The Silva are a race of humanoid plants living in deep relic forests. Emerging from the mother tree in the centre of their cities, the Silva's do not travel the world very often.
 
 ## Magical photosynthesis
 
-Silvas regenerate [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight, but without it, mana regeneration is completely absent. 
+Silva's regenerate [protodata="CP14MobSilva" comp="CP14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight, but without it, mana regeneration is completely absent.
+
+Silva's can also drink water to regenerate small amounts of mana; life-giving moisture gives the silva a large amount of mana.
 
 ## Connection with nature
 
-Silvas initially have basic and advanced vivification.
+Silva's initially have basic and advanced vivification.
 
 </Document>

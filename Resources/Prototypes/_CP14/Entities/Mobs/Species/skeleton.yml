@@ -76,6 +76,17 @@
     speedModifierThresholds:
       70: 0.7
       90: 0.5
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      types:
+        CP14ManaDepletion: -0.05
+      groups:
+        Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
   - type: Fixtures
     fixtures:
       fix1:
@@ -91,7 +102,7 @@
   - type: CP14AuraImprint
     imprintColor: "#a81b5d"
   - type: Damageable
-    damageContainer: CP14Biological
+    damageContainer: CP14BiologicalAnaerobic
     damageModifierSet: CP14Skeleton
   - type: Destructible
     thresholds:

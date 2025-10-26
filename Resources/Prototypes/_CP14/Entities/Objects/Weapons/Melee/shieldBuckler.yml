@@ -15,16 +15,16 @@
     activeBlockFraction: 0.6
     passiveBlockModifier:
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
+        Blunt: 0.75
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
     activeBlockModifier:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.5
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.4
   - type: Clothing
     equipDelay: 0.5
     unequipDelay: 0.5
@@ -60,7 +60,7 @@
             acts: [ "Destruction" ]
       - trigger:
           !type:DamageTrigger
-          damage: 75 
+          damage: 125
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
@@ -69,9 +69,9 @@
               collection: MetalBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              CP14WoodenPlanks1:
+              CP14IronBar1:
                 min: 1
-                max: 2
+                max: 1
 
 - type: entity
   parent: CP14BaseWeaponShieldBuckler

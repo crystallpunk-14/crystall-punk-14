@@ -4,35 +4,22 @@
   name: Freeze
   description: You begin to severely cool down the target, slowing its movement speed.
   components:
-  - type: Sprite
-    sprite: _CP14/Actions/Spells/water.rsi
-    state: freeze
-  - type: CP14MagicEffectCastSlowdown
+  - type: CP14ActionDoAfterSlowdown
     speedMultiplier: 0.8
   - type: CP14ActionManaCost
     manaCost: 7
-  - type: CP14MagicEffect
-    effects:
-    - !type:CP14SpellSpawnEntityOnTarget
-      spawns:
-      - CP14ImpactEffectFreeze
-    - !type:CP14AdjustAllSolutionThermalEnergy
-      delta: -1200 # One full use cools 100u from ~300k to ~250k
-    - !type:CP14SpellApplyEntityEffect
-      effects:
-      - !type:MovespeedModifier
-        walkSpeedModifier: 0.5
-        sprintSpeedModifier: 0.5
-        statusLifetime: 2
-      - !type:AdjustTemperature
-        amount: -12000
-      - !type:ExtinguishReaction
   - type: CP14ActionSpeaking
     startSpeech: "Vos adepto frigus..."
-  - type: CP14MagicEffectCastingVisual
+  - type: CP14ActionDoAfterVisuals
     proto: CP14RunePlantFreeze
   - type: CP14ActionDangerous
+  - type: DoAfterArgs
+    repeat: true
+    breakOnDamage: true
+    delay: 1.5
+    distanceThreshold: 5
   - type: Action
+    useDelay: 15
     icon:
       sprite: _CP14/Actions/Spells/water.rsi
       state: freeze
@@ -40,11 +27,22 @@
     range: 5
     interactOnMiss: false
   - type: EntityTargetAction
-    event: !type:CP14ToggleableEntityTargetActionEvent
-      cooldown: 5
-      castTime: 3
-      distanceThreshold: 5
-      breakOnMove: false
+    event: !type:CP14EntityTargetModularEffectEvent
+      effects:
+      - !type:CP14SpellSpawnEntityOnTarget
+        spawns:
+        - CP14ImpactEffectFreeze
+      - !type:CP14AdjustAllSolutionThermalEnergy
+        delta: -1200 # One full use cools 100u from ~300k to ~250k
+      - !type:CP14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 0.5
+          sprintSpeedModifier: 0.5
+          statusLifetime: 2
+        - !type:AdjustTemperature
+          amount: -12000
+        - !type:ExtinguishReaction
 
 - type: entity
   id: CP14ImpactEffectFreeze

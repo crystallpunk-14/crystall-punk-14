@@ -49,9 +49,11 @@
     solutionName: vial
     injectOnly: false
     ignoreMobs: true
-    minTransferAmount: 1
-    maxTransferAmount: 10
-    transferAmount: 1
+    transferAmounts:
+    - 1
+    - 5
+    - 10
+    currentTransferAmount: 5
     toggleState: 1 # draw
   - type: Tag
     tags:
@@ -145,8 +147,6 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
-  - type: Injector
-    maxTransferAmount: 5
   - type: PhysicalComposition
     materialComposition:
       CP14Glass: 10
@@ -179,8 +179,6 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
-  - type: Injector
-    maxTransferAmount: 5
   - type: PhysicalComposition
     materialComposition:
       CP14Glass: 10
@@ -310,8 +308,6 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: liq-
-  - type: Injector
-    transferAmount: 10
   - type: PhysicalComposition
     materialComposition:
       CP14Glass: 40
