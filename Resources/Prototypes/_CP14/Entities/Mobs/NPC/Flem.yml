@@ -98,4 +98,4 @@
       - FootstepSound
       - CP14Mosquito
   - type: CP14Fish
-    fishBehavior: !type:CP14FishLerpBehaviour
+    fishBehavior: !type:CP14FishDartBehaviour

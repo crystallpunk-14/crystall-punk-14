@@ -5,14 +5,12 @@ using Content.Shared._CP14.Fishing.Components;
 using Content.Shared._CP14.Input;
 using Robust.Client.GameObjects;
 using Robust.Shared.Input;
-using Robust.Shared.Timing;
 
 namespace Content.Client._CP14.Fishing;
 
 public sealed class CP14FishingSystem : CP14SharedFishingSystem
 {
     [Dependency] private readonly InputSystem _input = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
 
@@ -26,9 +24,6 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
     public override void Update(float dt)
     {
         base.Update(dt);
-
-        if (!_gameTiming.IsFirstTimePredicted)
-            return;
 
         var heldUid = _hands.GetActiveHandEntity();
 

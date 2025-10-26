@@ -10,20 +10,28 @@ public abstract partial class CP14FishBaseBehavior
     /// <summary>
     /// Calculates fish position
     /// </summary>
-    /// <param name="random"> Robust random</param>
-    /// <param name="fishCords"> Current fish coordinates</param>
+    /// <param name="random"> Robust random </param>
+    /// <param name="fishCords"> Current fish coordinates </param>
     /// <returns> Calculated fish coordinates </returns>
-    public abstract Vector2 TryCalculatePosition(IRobustRandom random, Vector2 fishCords);
+    public Vector2 TryCalculatePosition(IRobustRandom random, Vector2 fishCords)
+    {
+        var speed = CalculateSpeed(random);
+        var nextPos = float.Lerp(fishCords.X, fishCords.Y, speed);
+
+        return new Vector2(nextPos, fishCords.Y);
+    }
 
     /// <summary>
-    /// Speed which fish uses when going from A to B +- 0.2 * Speed
+    /// Formula to calculate fish speed
     /// </summary>
+    public abstract float CalculateSpeed(IRobustRandom random);
+
     [DataField]
     public float Speed = 0.25f;
 
-    /// <summary>
-    /// How long fish will be in point B until selecting next point B +- 0.2 * Difficulty
-    /// </summary>
     [DataField]
-    public TimeSpan Difficulty = TimeSpan.FromSeconds(0.2);
+    public float Difficulty = 2f;
+
+    [DataField]
+    public TimeSpan BaseWaitTime = TimeSpan.FromSeconds(5);
 }

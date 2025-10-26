@@ -6,15 +6,12 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Throwing;
-using Robust.Client.GameObjects;
-using Robust.Client.UserInterface;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._CP14.Fishing;
@@ -55,17 +52,48 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         var query = EntityQueryEnumerator<CP14FishingRodComponent>();
 
         // Seeding prediction doesnt work
-        _random.SetSeed((int)curTime.Ticks);
         while (query.MoveNext(out var uid, out var component))
         {
+            _random.SetSeed((int)_gameTiming.CurTick.Value + GetNetEntity(uid).Id);
             if (component.User is null)
                 continue;
 
             RevalidateFishing(uid, component);
+
+            if (!IsFishingValid(component))
+                continue;
+
             TryToCatchFish(uid, component, curTime);
             UpdateFishWaitingStatus(uid, component, curTime);
             UpdatePositions(uid, component, curTime);
         }
+    }
+
+    /// <summary>
+    /// Does all possible null checks to not duplicate code
+    /// </summary>
+    private bool IsFishingValid(CP14FishingRodComponent fishingRodComponent)
+    {
+        if (fishingRodComponent.User is null)
+            return false;
+
+        if (fishingRodComponent.FishingFloat is null)
+            return false;
+
+        if (fishingRodComponent.Target is null)
+            return false;
+
+        var fish = fishingRodComponent.CaughtFish;
+
+        if (fish is null)
+            return true;
+
+        TryComp(fish, out CP14FishComponent? fishComponent);
+
+        if (fishComponent is null)
+            return false;
+
+        return true;
     }
 
     /// <summary>
@@ -74,9 +102,6 @@ public abstract class CP14SharedFishingSystem : EntitySystem
     /// </summary>
     private void UpdatePositions(EntityUid fishingRod, CP14FishingRodComponent fishingRodComponent, TimeSpan curTime)
     {
-        if (_netManager.IsClient && !_gameTiming.IsFirstTimePredicted)
-            return;
-
         if (fishingRodComponent.CaughtFish is null)
             return;
 
@@ -86,9 +111,6 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         var fish = fishingRodComponent.CaughtFish;
 
         TryComp(fish, out CP14FishComponent? fishComponent);
-
-        if (fishComponent is null)
-            return;
 
         _prototypeManager.Resolve(fishingRodComponent.FishingMinigame, out var minigamePrototype);
 
@@ -101,43 +123,25 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
         if (fishingRodComponent.Reeling)
         {
-            if (floatSpeed + floatPosition < maxCord)
-            {
-                fishingRodComponent.FloatPosition +=  fishingRodComponent.FloatSpeed;
-            }
-            else
-            {
-                fishingRodComponent.FloatPosition = maxCord;
-            }
+            Math.Clamp(floatPosition + floatSpeed, 0, maxCord);
         }
         else
         {
-            if (floatPosition - floatSpeed > 0f)
-            {
-                fishingRodComponent.FloatPosition -=  floatSpeed;
-            }
-            else
-            {
-                fishingRodComponent.FloatPosition = 0;
-            }
+            Math.Clamp(floatPosition - floatSpeed, 0, maxCord);
         }
 
-        var fishPos = fishComponent.FishPosAndDestination.X;
+        var fishPos = fishComponent!.FishPosAndDestination.X;
         var fishDest = fishComponent.FishPosAndDestination.Y;
-        var fishDiff = fishComponent.FishBehavior.Difficulty;
+        var fishBaseWaitTime = fishComponent.FishBehavior.BaseWaitTime;
 
         if (Math.Abs(fishPos - fishDest) < 0.1f)
         {
             UpdateFishDestination(fish.Value, fishComponent, curTime, maxCord);
+            fishComponent.FishSelectPosTime = curTime + fishBaseWaitTime +  fishBaseWaitTime * 0.2 * _random.NextFloat(-1, 1);
         }
         else
         {
             fishComponent.FishPosAndDestination = fishComponent.FishBehavior.TryCalculatePosition(_random, fishComponent.FishPosAndDestination);
-
-            if (Math.Abs(fishPos - fishDest) < 0.1f)
-            {
-                fishComponent.FishSelectPosTime = curTime + fishDiff * 0.2 * _random.NextFloat(-1, 1);
-            }
         }
 
         DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.FloatPosition));
@@ -170,9 +174,6 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         var fish = fishingRodComponent.CaughtFish;
         TryComp(fish, out CP14FishComponent? fishComponent);
 
-        if (fishComponent is null)
-            return;
-
         if (fishingRodComponent.Reeling)
         {
             fishingRodComponent.FishHooked = true;
@@ -183,7 +184,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             return;
         }
 
-        if (curTime < fishComponent.FishGetAwayTime)
+        if (curTime < fishComponent!.FishGetAwayTime)
             return;
 
         fishingRodComponent.CaughtFish = null;
@@ -205,15 +206,6 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         if (curTime < fishingRodComponent.FishingTime)
             return;
 
-        if (fishingRodComponent.User is null)
-            return;
-
-        if (fishingRodComponent.FishingFloat is null)
-            return;
-
-        if (fishingRodComponent.Target is null)
-            return;
-
         var pond = fishingRodComponent.Target;
         TryComp(pond, out CP14FishingPondComponent? pondComponent);
 
@@ -231,7 +223,7 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         EnsurePausedMap();
         var fish = PredictedSpawnAtPosition(fishId, new EntityCoordinates(_map.GetMap(_mapId!.Value), Vector2.Zero));
 
-        _playerManager.TryGetSessionByEntity(fishingRodComponent.User.Value, out var session);
+        _playerManager.TryGetSessionByEntity(fishingRodComponent.User!.Value, out var session);
 
         if (session is null)
             return;
@@ -240,11 +232,8 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
         TryComp(fish, out CP14FishComponent? fishComponent);
 
-        if (fishComponent is null)
-            return;
-
         fishingRodComponent.CaughtFish = fish;
-        fishComponent.FishGetAwayTime = curTime;
+        fishComponent!.FishGetAwayTime = curTime;
         fishComponent.FishGetAwayTime += TimeSpan.FromSeconds(_random.NextDouble(fishingRodComponent.MinAwaitTime, fishingRodComponent.MaxAwaitTime));
         DirtyField(fishingRod, fishingRodComponent, nameof(CP14FishingRodComponent.CaughtFish));
         DirtyField(fish, fishComponent, nameof(CP14FishComponent.FishGetAwayTime));
