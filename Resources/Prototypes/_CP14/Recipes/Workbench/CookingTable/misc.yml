@@ -39,3 +39,13 @@
     protoId: CP14FoodDoughMedium
     count: 1
   result: CP14FoodDoughMediumFlat
+
+- type: CP14Recipe
+  id: CP14HalloweenPumpkin
+  tag: CP14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14FoodPumpkin
+    count: 1
+  result: CP14HalloweenPumpkin
