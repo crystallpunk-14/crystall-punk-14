@@ -34,3 +34,11 @@
     - sprite: _CP14/Mobs/Customization/elf_ears.rsi
       state: ears3_broken
 
+- type: marking
+  id: CP14ElfEars4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ CP14Elf ]
+  sprites:
+  - sprite: _CP14/Mobs/Customization/elf_ears.rsi
+    state: ears4

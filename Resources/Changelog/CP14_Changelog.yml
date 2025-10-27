@@ -2381,3 +2381,17 @@
   id: 8286
   time: '2025-10-12T11:55:15.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1827
+- author: oldschool_otaku, lugzag
+  changes:
+  - message: '"Big ears" marking for elves'
+    type: Add
+  id: 8287
+  time: '2025-10-24T11:49:47.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1836
+- author: omsoyk
+  changes:
+  - message: Resprite hide, leather and tanner table
+    type: Tweak
+  id: 8288
+  time: '2025-10-24T18:17:19.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1837
