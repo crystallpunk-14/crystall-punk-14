@@ -30,7 +30,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     private CP14MagicVisionNoirOverlay? _overlay2;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
-    private EntProtoId _statusEffectEntProtoId = "CP14MagicVisionStatusEffect";
 
     private SoundSpecifier _startSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_open.ogg"));
     private SoundSpecifier _endSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_close.ogg"));
@@ -54,7 +53,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         if (!_timing.IsFirstTimePredicted)
             return;
         // Check if it has already Magic Vision Status Effect
-        if (_status.HasStatusEffect(ent, _statusEffectEntProtoId))
+        if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(ent))
             return;
 
         _overlay = new CP14MagicVisionOverlay();
@@ -75,7 +74,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         if (!_timing.IsFirstTimePredicted)
             return;
         // Check if it is the last Magic Vision Status Effect
-        if (_status.HasStatusEffect(ent, _statusEffectEntProtoId))
+        if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(ent))
             return;
 
         if (_overlay != null)
