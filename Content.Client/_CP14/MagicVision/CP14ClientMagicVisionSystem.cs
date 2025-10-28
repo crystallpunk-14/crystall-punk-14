@@ -10,6 +10,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.MagicVision;
@@ -22,11 +23,14 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly StatusEffectsSystem _status = default!;
+
 
     private CP14MagicVisionOverlay? _overlay;
     private CP14MagicVisionNoirOverlay? _overlay2;
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
+    private EntProtoId _statusEffectEntProtoId = "CP14MagicVisionStatusEffect";
 
     private SoundSpecifier _startSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_open.ogg"));
     private SoundSpecifier _endSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_close.ogg"));
@@ -66,6 +70,9 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
             return;
 
         if (!_timing.IsFirstTimePredicted)
+            return;
+        // Check if it is the last Magic Vision Status Effect
+        if (_status.HasStatusEffect(ent, _statusEffectEntProtoId))
             return;
 
         if (_overlay != null)
