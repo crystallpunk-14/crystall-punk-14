@@ -52,9 +52,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         if (!_timing.IsFirstTimePredicted)
             return;
-        // Check if it has already Magic Vision Status Effect
-        if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(_player.LocalEntity))
-            return;
 
         _overlay = new CP14MagicVisionOverlay();
         _overlayMan.AddOverlay(_overlay);
