@@ -49,21 +49,6 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         // Seeding prediction doesnt work
         while (query.MoveNext(out var uid, out var fishRod))
         {
-            if (fishRod.User is null)
-                continue;
-
-            if (fishRod.FishingFloat is null)
-                continue;
-
-            if (fishRod.Target is null)
-                continue;
-
-            var fish = fishRod.CaughtFish;
-
-            if (fishRod.CaughtFish is not null &&
-                _fishQuery.TryComp(fish, out var fishComp)) //TODO: remove multiple fish TryComp in next functions
-                continue;
-
             TryToCatchFish((uid, fishRod), curTime);
         }
     }
@@ -76,6 +61,15 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (rod.Comp.CaughtFish is not null)
             return false;
 
+        if (rod.Comp.User is null)
+            return false;
+
+        if (rod.Comp.FishingFloat is null)
+            return false;
+
+        if (rod.Comp.Target is null)
+            return false;
+
         if (curTime < rod.Comp.FishingTime)
             return false;
 
@@ -86,10 +80,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         if (pondComp.LootTable is null)
             return false;
 
-        if (_proto.TryIndex(pondComp.LootTable, out var lootTable))
-            return false;
-
-        if (lootTable is null)
+        if (!_proto.Resolve(pondComp.LootTable, out var lootTable))
             return false;
 
         var fishes = _entityTable.GetSpawns(lootTable, _random.GetRandom());
@@ -98,7 +89,7 @@ public sealed class CP14FishingSystem : CP14SharedFishingSystem
         EnsurePausedMap();
         var fish = PredictedSpawnAtPosition(fishId, new EntityCoordinates(_map.GetMap(_mapId!.Value), Vector2.Zero));
 
-        if (!_player.TryGetSessionByEntity(rod.Comp.User!.Value, out var session))
+        if (!_player.TryGetSessionByEntity(rod.Comp.User.Value, out var session))
             return false;
 
         if (!_fishQuery.TryComp(fish, out var fishComp))
