@@ -15,4 +15,4 @@
       effects:
         - !type:CP14ManaChange
           manaDelta: -5
-          safe: true
+          safe: false
