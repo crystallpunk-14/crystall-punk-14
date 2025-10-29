@@ -40,16 +40,13 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, AfterAutoHandleStateEvent>(OnHandleStateMarker);
 
-        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
-        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<PlayerAttachedEvent>>(OnPlayerAttached);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<PlayerDetachedEvent>>(OnPlayerDetached);
 
     }
 
-    private void OnStatusEffectApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    private void OnPlayerAttached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerAttachedEvent> args)
     {
-        if (_player.LocalEntity != args.Target)
-            return;
-
         if (!_timing.IsFirstTimePredicted)
             return;
 
@@ -63,11 +60,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         _audio.PlayGlobal(_startSound, ent);
     }
 
-    private void OnStatusEffectRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    private void OnPlayerDetached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerDetachedEvent> args)
     {
-        if (_player.LocalEntity != args.Target)
-            return;
-
         if (!_timing.IsFirstTimePredicted)
             return;
         // Check if it is the last Magic Vision Status Effect
