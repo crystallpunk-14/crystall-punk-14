@@ -18,32 +18,22 @@ namespace Content.Shared._CP14.Fishing;
 
 public abstract class CP14SharedFishingSystem : EntitySystem
 {
-    [Dependency] private readonly EntityTableSystem _entityTable = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedPvsOverrideSystem _pvs= default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
-    private MapId? _mapId;
-
-    private  EntityQuery<CP14FishComponent> _fishQuery;
-    private  EntityQuery<CP14FishingPondComponent> _pondQuery;
+    private EntityQuery<CP14FishComponent> _fishQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
         _fishQuery = GetEntityQuery<CP14FishComponent>();
-        _pondQuery = GetEntityQuery<CP14FishingPondComponent>();
 
         SubscribeLocalEvent<CP14FishingRodComponent, AfterInteractEvent>(OnInteract);
         SubscribeLocalEvent<CP14FishingRodComponent, DroppedEvent>(OnDropEvent);
@@ -60,7 +50,6 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         // Seeding prediction doesnt work
         while (query.MoveNext(out var uid, out var fishRod))
         {
-            _random.SetSeed((int)_gameTiming.CurTick.Value + GetNetEntity(uid).Id);
             if (fishRod.User is null)
                 continue;
 
@@ -80,7 +69,8 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             if (fishRod.CaughtFish is not null && _fishQuery.TryComp(fish, out var fishComp)) //TODO: remove multiple fish TryComp in next functions
                 continue;
 
-            TryToCatchFish((uid, fishRod), curTime);
+            _random.SetSeed((int)_gameTiming.CurTick.Value + GetNetEntity(uid).Id);
+
             UpdateFishWaitingStatus((uid, fishRod), curTime);
             UpdatePositions((uid, fishRod), curTime);
         }
@@ -88,8 +78,8 @@ public abstract class CP14SharedFishingSystem : EntitySystem
 
     /// <summary>
     /// Handles float and fish positions updates
-    /// Please burn it down
     /// </summary>
+    /// <remarks> Please burn it down </remarks>
     private void UpdatePositions(Entity<CP14FishingRodComponent> rod, TimeSpan curTime)
     {
         if (rod.Comp.CaughtFish is null)
@@ -121,34 +111,34 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             Math.Clamp(floatPosition - floatSpeed, 0, maxCord);
         }
 
-        var fishPos = fishComp.FishPosAndDestination.X;
-        var fishDest = fishComp.FishPosAndDestination.Y;
-        var fishBaseWaitTime = fishComp.FishBehavior.BaseWaitTime;
+        var fishPos = fishComp.Position;
+        var fishDest = fishComp.Destination;
+        var fishBaseWaitTime = fishComp.Behavior.BaseWaitTime;
 
         if (Math.Abs(fishPos - fishDest) < 0.1f)
         {
             UpdateFishDestination((fish.Value, fishComp), curTime, maxCord);
-            fishComp.FishSelectPosTime = curTime + fishBaseWaitTime +  fishBaseWaitTime * 0.2 * _random.NextFloat(-1, 1);
+            fishComp.SelectPosTime = curTime + fishBaseWaitTime +  fishBaseWaitTime * 0.2 * _random.NextFloat(-1, 1);
         }
         else
         {
-            fishComp.FishPosAndDestination = fishComp.FishBehavior.TryCalculatePosition(_random, fishComp.FishPosAndDestination);
+            fishComp.Position = fishComp.Behavior.TryCalculatePosition(_random, fishComp.Position, fishComp.Destination);
         }
 
         DirtyField(rod, rod.Comp, nameof(CP14FishingRodComponent.FloatPosition));
-        DirtyField(fish.Value, fishComp, nameof(CP14FishComponent.FishPosAndDestination));
+        DirtyField(fish.Value, fishComp, nameof(CP14FishComponent.Position));
     }
 
     /// <summary>
-    /// Handles updating fish destination
+    /// Calculates new fish destination
     /// </summary>
     private void UpdateFishDestination(Entity<CP14FishComponent> fish, TimeSpan curTime, float maxCord)
     {
-        if (curTime < fish.Comp.FishSelectPosTime)
+        if (curTime < fish.Comp.SelectPosTime)
             return;
 
-        fish.Comp.FishPosAndDestination.X = _random.NextFloat(0, maxCord);
-        DirtyField(fish, fish.Comp, nameof(CP14FishComponent.FishPosAndDestination));
+        fish.Comp.Destination = _random.NextFloat(0, maxCord);
+        DirtyField(fish, fish.Comp, nameof(CP14FishComponent.Destination));
     }
 
     /// <summary>
@@ -179,62 +169,12 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             return;
         }
 
-        if (curTime < fishComp.FishGetAwayTime)
+        if (curTime < fishComp.GetAwayTime)
             return;
 
         rod.Comp.CaughtFish = null;
         DirtyField(rod, rod.Comp, nameof(CP14FishingRodComponent.CaughtFish));
         PredictedDel(fish);
-    }
-
-    /// <summary>
-    /// Handles fish catching
-    /// </summary>
-    private bool TryToCatchFish(Entity<CP14FishingRodComponent> rod, TimeSpan curTime)
-    {
-        if (!_net.IsServer)
-            return false;
-
-        if (rod.Comp.CaughtFish is not null)
-            return false;
-
-        if (curTime < rod.Comp.FishingTime)
-            return false;
-
-        var pond = rod.Comp.Target;
-        if (!_pondQuery.TryComp(pond, out var pondComp))
-            return false;
-
-        if (pondComp.LootTable is null)
-            return false;
-
-        if (_proto.TryIndex(pondComp.LootTable, out var lootTable))
-            return false;
-
-        if (lootTable is null)
-            return false;
-
-        var fishes = _entityTable.GetSpawns(lootTable, _random.GetRandom());
-        var fishId = fishes.First();
-
-        EnsurePausedMap();
-        var fish = PredictedSpawnAtPosition(fishId, new EntityCoordinates(_map.GetMap(_mapId!.Value), Vector2.Zero));
-
-        if (!_player.TryGetSessionByEntity(rod.Comp.User!.Value, out var session))
-            return false;
-
-        if (!_fishQuery.TryComp(fish, out var fishComp))
-            return false;
-
-        _pvs.AddSessionOverride(fish, session);
-
-        rod.Comp.CaughtFish = fish;
-        fishComp.FishGetAwayTime = curTime;
-        fishComp.FishGetAwayTime += TimeSpan.FromSeconds(_random.NextDouble(rod.Comp.MinAwaitTime, rod.Comp.MaxAwaitTime));
-        DirtyField(rod, rod.Comp, nameof(CP14FishingRodComponent.CaughtFish));
-        DirtyField(fish, fishComp, nameof(CP14FishComponent.FishGetAwayTime));
-
-        return true;
     }
 
     /// <summary>
@@ -266,6 +206,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             nameof(CP14FishingRodComponent.FishHooked));
     }
 
+    /// <summary>
+    /// Sets <see cref="CP14FishingRodComponent.Reeling"/> to user button status
+    /// </summary>
     private void OnReelingMessage(CP14FishingReelKeyMessage msg, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { } player)
@@ -279,6 +222,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         DirtyField(activeItem.Value, fishingRodComponent, nameof(CP14FishingRodComponent.Reeling));
     }
 
+    /// <summary>
+    /// Starts new fishing process when user interacts with pond using fishing rod
+    /// </summary>
     private void OnInteract(Entity<CP14FishingRodComponent> rod, ref AfterInteractEvent args)
     {
         if (args.Handled)
@@ -307,6 +253,9 @@ public abstract class CP14SharedFishingSystem : EntitySystem
         ThrowFishingFloat(rod, args.Target.Value);
     }
 
+    /// <summary>
+    /// Deletes <see cref="CP14FishingRodComponent.User"/> link
+    /// </summary>
     private void OnDropEvent(Entity<CP14FishingRodComponent> rod, ref DroppedEvent args)
     {
         rod.Comp.User = null;
@@ -332,19 +281,5 @@ public abstract class CP14SharedFishingSystem : EntitySystem
             nameof(CP14FishingRodComponent.Target));
 
         _throwing.TryThrow(fishingFloat, targetCoords, rod.Comp.ThrowPower, recoil: false, doSpin: false);
-    }
-
-    private void EnsurePausedMap()
-    {
-        if (!_net.IsServer)
-            return;
-
-        if (_map.MapExists(_mapId))
-            return;
-
-        var mapUid = _map.CreateMap(out var newMapId);
-        _meta.SetEntityName(mapUid, Loc.GetString("fishing-paused-map-name"));
-        _mapId = newMapId;
-        _map.SetPaused(mapUid, true);
     }
 }

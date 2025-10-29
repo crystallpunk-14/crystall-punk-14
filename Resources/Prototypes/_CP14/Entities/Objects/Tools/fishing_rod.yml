@@ -54,8 +54,7 @@
   id: CP14DefaultFishingFloat
   name: Fishing float
   description: Little floating ball.
-  suffix: DO NOT MAP
-  categories: [ ForkFiltered, DoNotMap]
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _CP14/Objects/Tools/float.rsi

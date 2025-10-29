@@ -66,7 +66,7 @@ public sealed partial class CP14FishingWindow : BaseWindow
             return;
 
         var floatBox = CalculateUIBox(_fishingMinigame.Float, rodComponent.FloatPosition);
-        var fishBox = CalculateUIBox(_fishingMinigame.FishIcon, fishComponent.FishPosAndDestination.X);
+        var fishBox = CalculateUIBox(_fishingMinigame.FishIcon, fishComponent.Position);
 
         handle.DrawTextureRect(_floatTexture, floatBox);
         handle.DrawTextureRect(_fishTexture, fishBox);

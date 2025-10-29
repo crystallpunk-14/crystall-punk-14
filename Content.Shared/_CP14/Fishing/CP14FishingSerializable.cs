@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CP14.Fishing.Components;
+namespace Content.Shared._CP14.Fishing;
 
 /// <summary>
 /// Key for CP14FishingBoundUserInterface
