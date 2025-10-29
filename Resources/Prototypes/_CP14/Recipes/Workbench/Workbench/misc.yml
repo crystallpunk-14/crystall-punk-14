@@ -251,3 +251,16 @@
     stack: CP14Cloth
     count: 2
   result: CP14Rope
+
+- type: CP14Recipe
+  id: CP14JackOLantern
+  tag: CP14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: CP14HalloweenPumpkin
+    count: 1
+  - !type:ProtoIdResource
+    protoId: CP14Candle
+    count: 1
+  result: CP14JackOLanternVariant2

@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "equipped-HELMET created by Dinazewwr",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "0-equipped-HELMET",
+            "directions": 4
+        }
+    ]
+}

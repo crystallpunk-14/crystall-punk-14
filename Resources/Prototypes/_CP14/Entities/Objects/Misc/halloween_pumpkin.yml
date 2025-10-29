@@ -1,0 +1,148 @@
+- type: entity
+  parent: CP14FoodPumpkin
+  id: CP14HalloweenPumpkin
+  name: scary pumpkin
+  description: It was a normal pumpkin one day... Now it's a scary pumpkin!
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+    layers:
+      - state: base1
+        map: [ "random" ]
+  - type: RandomSprite
+    available:
+      - random:
+          base1: ""
+          base2: ""
+          base3: ""
+          base4: ""
+  - type: Clothing
+    quickEquip: false
+    sprite: _CP14/Clothing/Head/halloween_pumpkin_helmet.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+
+- type: entity
+  parent: FoodInjectableBase
+  id: CP14HalloweenPumpkinEmmisiveBase
+  name: jack-o lantern
+  description: Oooh! Scary!
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+  - type: PointLight
+    radius: 2.1
+    energy: 0.9
+    color: "#FEE68E"
+    castShadows: true
+  - type: Item
+    size: Normal
+  - type: StaticPrice
+    price: 6
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: SliceableFood
+    count: 5
+    sliceTime: 2
+    slice: CP14FoodPumpkinSlice
+  - type: Tag
+    tags:
+    - CP14FarmFood
+    - CP14Vegetable
+    - CP14Pumpkin
+
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant1
+  suffix: Variant 1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base1
+      - state: light-base1
+        shader: unshaded
+      - state: light-base1
+        shader: shaded
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant2
+  suffix: Variant 2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base2
+      - state: light-base2
+        shader: unshaded
+      - state: light-base2
+        shader: shaded
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant3
+  suffix: Variant 3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base3
+      - state: light-base3
+        shader: unshaded
+      - state: light-base3
+        shader: shaded
+
+- type: entity
+  parent: CP14HalloweenPumpkinEmmisiveBase
+  id: CP14JackOLanternVariant4
+  suffix: Variant 4
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+      - state: base4
+      - state: light-base4
+        shader: unshaded
+      - state: light-base4
+        shader: shaded
+
+- type: entity
+  id: CP14JackOLantern
+  name: jack-o lantern spawner
+  description: Oooh! Scary!
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+        state: base2
+      - sprite: _CP14/Objects/Misc/halloween_pumpkin.rsi
+        state: light-base2
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: CP14JackOLanternTable
+
+- type: entityTable
+  id: CP14JackOLanternTable
+  table: !type:GroupSelector
+    children:
+    - id: CP14JackOLanternVariant1
+    - id: CP14JackOLanternVariant2
+    - id: CP14JackOLanternVariant3
+    - id: CP14JackOLanternVariant4
