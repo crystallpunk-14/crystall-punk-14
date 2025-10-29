@@ -1,15 +1,8 @@
-using System.Linq;
-using System.Numerics;
 using Content.Shared._CP14.Fishing.Components;
-using Content.Shared.EntityTable;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Throwing;
-using Robust.Shared.GameStates;
-using Robust.Shared.Map;
-using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
