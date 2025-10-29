@@ -47,9 +47,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnPlayerAttached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerAttachedEvent> args)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
         _overlay = new CP14MagicVisionOverlay();
         _overlayMan.AddOverlay(_overlay);
         _overlay.StartOverlay = _timing.CurTime;
@@ -62,8 +59,6 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnPlayerDetached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerDetachedEvent> args)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
         // Check if it is the last Magic Vision Status Effect
         if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(_player.LocalEntity))
             return;
