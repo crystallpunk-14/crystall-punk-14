@@ -22,7 +22,7 @@ public sealed partial class CP14EntityEffectsStatusEffectSystem : EntitySystem
             if (statusEffect.AppliedTo is not EntityUid targetUid)
                 continue;
 
-            entityEffect.NextUpdateTime += entityEffect.Frequency;
+            entityEffect.NextUpdateTime = _timing.CurTime + entityEffect.Frequency;
             foreach (var effect in entityEffect.Effects)
             {
                 //Apply Effect on target
