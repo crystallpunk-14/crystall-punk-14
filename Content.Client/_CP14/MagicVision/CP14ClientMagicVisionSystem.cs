@@ -40,41 +40,31 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, AfterAutoHandleStateEvent>(OnHandleStateMarker);
 
-        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<PlayerAttachedEvent>>(OnPlayerAttached);
-        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<PlayerDetachedEvent>>(OnPlayerDetached);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<LocalPlayerAttachedEvent>>(OnPlayerAttached);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<LocalPlayerDetachedEvent>>(OnPlayerDetached);
+
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRemovedEvent>(OnStatusEffectRemoved);
 
     }
 
-    private void OnPlayerAttached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerAttachedEvent> args)
+    private void OnPlayerAttached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerAttachedEvent> args)
     {
-        _overlay = new CP14MagicVisionOverlay();
-        _overlayMan.AddOverlay(_overlay);
-        _overlay.StartOverlay = _timing.CurTime;
-
-        _overlay2 = new CP14MagicVisionNoirOverlay();
-        _overlayMan.AddOverlay(_overlay2);
-
-        _audio.PlayGlobal(_startSound, ent);
+        ApplyOverlay(ent);
+    }
+    private void OnStatusEffectApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
+    {
+        ApplyOverlay(ent);
     }
 
-    private void OnPlayerDetached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<PlayerDetachedEvent> args)
+    private void OnPlayerDetached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerDetachedEvent> args)
     {
-        // Check if it is the last Magic Vision Status Effect
-        if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(_player.LocalEntity))
-            return;
+        RemoveOverlay(ent);
+    }
 
-        if (_overlay != null)
-        {
-            _overlayMan.RemoveOverlay(_overlay);
-            _overlay = null;
-        }
-        if (_overlay2 != null)
-        {
-            _overlayMan.RemoveOverlay(_overlay2);
-            _overlay2 = null;
-        }
-
-        _audio.PlayGlobal(_endSound, ent);
+    private void OnStatusEffectRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
+    {
+        RemoveOverlay(ent);
     }
 
     protected override void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
@@ -129,5 +119,37 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
         var progress = Math.Clamp((_timing.CurTime.TotalSeconds - ent.Comp.SpawnTime.TotalSeconds) / (ent.Comp.EndTime.TotalSeconds - ent.Comp.SpawnTime.TotalSeconds), 0, 1);
         var alpha = 1 - progress;
         _sprite.SetColor(ent.Owner, Color.White.WithAlpha((float)alpha));
+    }
+
+    private void ApplyOverlay(Entity<CP14MagicVisionStatusEffectComponent> ent)
+    {
+        _overlay = new CP14MagicVisionOverlay();
+        _overlayMan.AddOverlay(_overlay);
+        _overlay.StartOverlay = _timing.CurTime;
+
+        _overlay2 = new CP14MagicVisionNoirOverlay();
+        _overlayMan.AddOverlay(_overlay2);
+
+        _audio.PlayGlobal(_startSound, ent);
+    }
+
+    private void RemoveOverlay(Entity<CP14MagicVisionStatusEffectComponent> ent)
+    {
+        // Check if it is the last Magic Vision Status Effect
+        if (_status.HasEffectComp<CP14MagicVisionStatusEffectComponent>(_player.LocalEntity))
+            return;
+
+        if (_overlay != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay);
+            _overlay = null;
+        }
+        if (_overlay2 != null)
+        {
+            _overlayMan.RemoveOverlay(_overlay2);
+            _overlay2 = null;
+        }
+
+        _audio.PlayGlobal(_endSound, ent);
     }
 }
