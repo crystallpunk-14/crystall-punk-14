@@ -148,7 +148,3 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         Dirty(ent, markerComp);
     }
 }
-
-public sealed partial class CP14MagicVisionToggleActionEvent : InstantActionEvent
-{
-}
