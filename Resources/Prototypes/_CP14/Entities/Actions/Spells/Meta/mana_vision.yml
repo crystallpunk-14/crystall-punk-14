@@ -5,16 +5,20 @@
   description: You focus on magical flows to track recent events and scan the aura imprints of other living beings.
   components:
   - type: Action
-    useDelay: 5
+    useDelay: 0.5
     itemIconStyle: BigAction
     checkCanInteract: false
+    checkConsciousness: true
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
       sprite: _CP14/Actions/Spells/meta.rsi
       state: magic_vision
   - type: InstantAction
-    event: !type:CP14MagicVisionToggleActionEvent
+    event: !type:CP14InstantModularEffectEvent
+      effects:
+        - !type:CP14SpellToggleStatusEffect
+          statusEffect: CP14MetaMagicVisionSpellStatusEffect
 
 - type: entity
   id: CP14ManaVisionPointer
