@@ -1,0 +1,1 @@
+fishing-paused-map-name = Рыбная карта
