@@ -4,6 +4,7 @@ using Content.Shared._CP14.AuraDNA;
 using Content.Shared._CP14.MagicVision.Components;
 using Content.Shared.Actions;
 using Content.Shared.Examine;
+using Content.Shared.Mobs;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
@@ -27,6 +28,15 @@ public abstract class CP14SharedMagicVisionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<CP14MagicVisionMarkerComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<CP14MagicVisionStatusEffectComponent, StatusEffectRelayedEvent<MobStateChangedEvent>>(OnMobStateChange);
+    }
+
+    private void OnMobStateChange(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<MobStateChangedEvent> args)
+    {
+        if (args.Args.NewMobState == MobState.Alive) return;
+
+        //Removes MagicVisionStatusEffect entity when MobState is Crit,Dead or Invalid
+        TryQueueDel(ent);
     }
 
     protected virtual void OnExamined(Entity<CP14MagicVisionMarkerComponent> ent, ref ExaminedEvent args)
