@@ -54,6 +54,10 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     }
     private void OnStatusEffectApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
+        //Prevents it from beeing applied twice
+        if (_timing.IsFirstTimePredicted == true)
+            return;
+
         ApplyOverlay(ent);
     }
 
@@ -64,6 +68,10 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnStatusEffectRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
+        //Prevents it from beeing removed twice
+        if (_timing.IsFirstTimePredicted == true)
+            return;
+
         RemoveOverlay(ent);
     }
 
