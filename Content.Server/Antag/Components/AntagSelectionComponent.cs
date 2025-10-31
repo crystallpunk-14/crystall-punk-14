@@ -74,6 +74,12 @@ public sealed partial class AntagSelectionComponent : Component
 public partial struct AntagSelectionDefinition()
 {
     /// <summary>
+    /// CP14 - unique keys that allow you to separate logic in AfterAntagEntitySelectedEvent, depending on the key
+    /// </summary>
+    [DataField]
+    public string DefinitionKey = string.Empty;
+
+    /// <summary>
     /// A list of antagonist roles that are used for selecting which players will be antagonists.
     /// </summary>
     [DataField]

@@ -169,7 +169,7 @@ public sealed partial class AntagSelectionSystem
             return true;
 
         if (def.PrefRoles.Count == 0)
-            return false;
+            return true; //CP14 - If definition dont have PrefRoles, everyone can be this antag
 
         var pref = (HumanoidCharacterProfile) _pref.GetPreferences(session.UserId).SelectedCharacter;
         return pref.AntagPreferences.Any(p => def.PrefRoles.Contains(p));
