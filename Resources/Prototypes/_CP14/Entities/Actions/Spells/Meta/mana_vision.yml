@@ -8,6 +8,7 @@
     useDelay: 0.5
     itemIconStyle: BigAction
     checkCanInteract: false
+    checkConsciousness: true
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/rumble.ogg
     icon:
