@@ -11,6 +11,10 @@
   maleFirstNames: CP14_Names_Silva_Male_First
   femaleFirstNames: CP14_Names_Silva_Female_First
   naming: First
+  minAge: 18
+  maxAge: 500
+  youngAge: 100
+  oldAge: 300
 
 - type: speciesBaseSprites
   id: CP14MobSilvaSprites
