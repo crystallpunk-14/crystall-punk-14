@@ -10,7 +10,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client._CP14.MagicVision;
@@ -31,8 +30,8 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private TimeSpan _nextUpdate = TimeSpan.Zero;
 
-    private SoundSpecifier _startSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_open.ogg"));
-    private SoundSpecifier _endSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_close.ogg"));
+    private readonly SoundSpecifier _startSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_open.ogg"));
+    private readonly SoundSpecifier _endSound = new SoundPathSpecifier(new ResPath("/Audio/Effects/eye_close.ogg"));
 
     public override void Initialize()
     {
@@ -50,12 +49,19 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnPlayerAttached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerAttachedEvent> args)
     {
+        if (args.Args.Entity != _player.LocalEntity)
+            return;
+
         ApplyOverlay(ent);
     }
+
     private void OnStatusEffectApplied(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
-        //Prevents it from beeing applied twice
-        if (_timing.IsFirstTimePredicted == true)
+        if (args.Target != _player.LocalEntity)
+            return;
+
+        //Prevents it from being applied twice
+        if (_timing.IsFirstTimePredicted)
             return;
 
         ApplyOverlay(ent);
@@ -63,13 +69,19 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
 
     private void OnPlayerDetached(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRelayedEvent<LocalPlayerDetachedEvent> args)
     {
+        if (args.Args.Entity != _player.LocalEntity)
+            return;
+
         RemoveOverlay(ent);
     }
 
     private void OnStatusEffectRemoved(Entity<CP14MagicVisionStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
+        if (args.Target != _player.LocalEntity)
+            return;
+
         //Prevents it from beeing removed twice
-        if (_timing.IsFirstTimePredicted == true)
+        if (_timing.IsFirstTimePredicted)
             return;
 
         RemoveOverlay(ent);
@@ -126,7 +138,7 @@ public sealed class CP14ClientMagicVisionSystem : CP14SharedMagicVisionSystem
     {
         var progress = Math.Clamp((_timing.CurTime.TotalSeconds - ent.Comp.SpawnTime.TotalSeconds) / (ent.Comp.EndTime.TotalSeconds - ent.Comp.SpawnTime.TotalSeconds), 0, 1);
         var alpha = 1 - progress;
-        _sprite.SetColor(ent.Owner, Color.White.WithAlpha((float)alpha));
+        _sprite.SetColor((ent.Owner, sprite), Color.White.WithAlpha((float)alpha));
     }
 
     private void ApplyOverlay(Entity<CP14MagicVisionStatusEffectComponent> ent)
