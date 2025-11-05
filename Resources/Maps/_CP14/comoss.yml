@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/30/2025 17:24:34
-  entityCount: 5610
+  time: 11/05/2025 15:54:43
+  entityCount: 5606
 maps:
 - 1
 grids:
@@ -1432,6 +1432,13 @@ entities:
       parent: 1
 - proto: CP14Bucket
   entities:
+  - uid: 2134
+    components:
+    - type: Transform
+      parent: 4
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
   - uid: 7155
     components:
     - type: Transform
@@ -2450,6 +2457,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.595049,-36.47414
       parent: 1
+  - uid: 2132
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -13.966419,-3.1013632
+      parent: 1
   - uid: 4469
     components:
     - type: Transform
@@ -2536,18 +2549,6 @@ entities:
     components:
     - type: Transform
       pos: 33.559635,16.54992
-      parent: 1
-  - uid: 7344
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -14.326934,-2.433626
-      parent: 1
-  - uid: 7345
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -12.6811,-2.433626
       parent: 1
   - uid: 7346
     components:
@@ -5043,6 +5044,13 @@ entities:
     - type: Transform
       pos: 18.484926,19.120111
       parent: 1
+  - uid: 2133
+    components:
+    - type: Transform
+      parent: 4
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: CP14OpenSign
   entities:
   - uid: 1843
@@ -5833,18 +5841,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,-9.5
       parent: 1
-  - uid: 9144
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -10.5,-2.5
-      parent: 1
-  - uid: 9145
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-2.5
-      parent: 1
   - uid: 9146
     components:
     - type: Transform
@@ -5856,12 +5852,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -14.5,-0.5
-      parent: 1
-  - uid: 9149
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-1.5
       parent: 1
   - uid: 9150
     components:
@@ -25550,6 +25540,11 @@ entities:
     - type: Transform
       pos: 5.5,-39.5
       parent: 1
+  - uid: 2131
+    components:
+    - type: Transform
+      pos: -14.5,-3.5
+      parent: 1
   - uid: 11591
     components:
     - type: Transform
@@ -25559,12 +25554,6 @@ entities:
     components:
     - type: Transform
       pos: 33.5,15.5
-      parent: 1
-  - uid: 11598
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -13.5,-2.5
       parent: 1
   - uid: 11599
     components:
@@ -26204,16 +26193,6 @@ entities:
     components:
     - type: Transform
       pos: -10.5,-4.5
-      parent: 1
-  - uid: 11731
-    components:
-    - type: Transform
-      pos: -11.5,-3.5
-      parent: 1
-  - uid: 11732
-    components:
-    - type: Transform
-      pos: -10.5,-3.5
       parent: 1
   - uid: 11733
     components:
@@ -35599,6 +35578,18 @@ entities:
     - type: Transform
       pos: -14.5,-14.5
       parent: 1
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 2133
+          - 2134
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
   - uid: 834
     components:
     - type: Transform
