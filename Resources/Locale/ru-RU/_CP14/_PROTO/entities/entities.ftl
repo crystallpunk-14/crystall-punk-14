@@ -6172,3 +6172,15 @@ ent-CP14JackOLanternVariant4 = { ent-CP14HalloweenPumpkinEmmisiveBase }
 
 ent-CP14JackOLantern = спавнер тыквенного фонаря
     .desc = { ent-CP14HalloweenPumpkinEmmisiveBase.desc }
+
+ent-CP14ActionToggleKeenEye = Зоркий глаз
+    .desc = Вы всматриваетесь в даль, что позволяет вам видеть больше.
+
+ent-CP14WeaponPickaxeIron = железная кирка
+    .desc = Прочная железная кирка, идеально подходящая для добычи руды, а не для боя.
+
+ent-CP14WeaponSwordIron = железный меч
+    .desc = Искусно созданный меч, полюбившийся императорскими офицерами. Его клинок излучает силу и традицию.
+
+ent-CP14WeaponDaggerIron = железный кинжал
+    .desc = Стандартный кинжал, сделанный из железа
