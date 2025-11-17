@@ -2416,3 +2416,12 @@
   id: 8291
   time: '2025-11-01T13:56:03.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1842
+- author: Minokaa
+  changes:
+  - message: Change emote prefix from @ to %.
+    type: Tweak
+  - message: Added custom age to different races.
+    type: Tweak
+  id: 8292
+  time: '2025-11-17T08:38:44.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-punk-14/pull/1835
