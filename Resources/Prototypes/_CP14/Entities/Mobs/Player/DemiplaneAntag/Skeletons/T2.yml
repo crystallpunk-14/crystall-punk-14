@@ -139,6 +139,23 @@
     grantAccessToSelf: true
     spells:
     - CP14ActionSpellCallBoneHound
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:GibBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14Bone1:
+            min: 2
+            max: 4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          CP14EnergyCrystalHeart:
+            min: 1
+            max: 1
 
 - type: entity
   id: CP14MobUndeadSkeletonBardT2

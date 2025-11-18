@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "All right reserved",
-    "copyright": "By Prazat",
+    "copyright": "By Prazat, spider_egg by nimfar11",
     "size": {
         "x": 32,
         "y": 32
@@ -18,6 +18,19 @@
         },
         {
             "name": "brown_shell"
+        },
+        {
+           "name": "spider_egg",
+           "delays": [
+             [
+               0.3,
+               0.3,
+               0.3,
+               0.3,
+               0.3,
+               0.3
+            ]
+          ]
         }
     ]
 }

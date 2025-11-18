@@ -103,6 +103,9 @@
     - id: CP14CheapFur
       amount: 1
       prob: 0.25
+    - id: CP14PartsMonsterGlandsSpineguard
+      amount: 1
+      prob: 0.7
   - type: Bloodstream
     bloodMaxVolume: 200
     bloodReagent: CP14BloodMonster
